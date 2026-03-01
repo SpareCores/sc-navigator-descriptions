@@ -202,6 +202,9 @@ def main(n):
             for benchmark in _benchmarks
             if benchmark.server_id == server.server_id
         ]
+        price = next(
+            (price for price in prices if price.server_id == server.server_id), None
+        )
         server_dict = {
             "vendor_name": server.vendor.name,
             "server_name": server.name,
@@ -216,9 +219,11 @@ def main(n):
             "cpu_manufacturer": server.cpu_manufacturer,
             "cpu_family": server.cpu_family,
             "cpu_model": server.cpu_model,
-            "cpu_l1_cache_bytes": server.cpu_l1_cache,
-            "cpu_l2_cache_bytes": server.cpu_l2_cache,
-            "cpu_l3_cache_bytes": server.cpu_l3_cache,
+            "cpu_cache_size": {
+                "l1d (kb)": int(server.cpu_l1_cache / 1024),
+                "l2 (mb)": int(server.cpu_l2_cache / 1024 / 1024),
+                "l3 (mb)": int(server.cpu_l3_cache / 1024 / 1024),
+            },
             "cpu_flags_extra_availability": _categorized_cpu_flags(server.cpu_flags),
             "memory_amount_mb": server.memory_amount,
             "memory_amount_mb_per_core": server.memory_amount / server.vcpus,
