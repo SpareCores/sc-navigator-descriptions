@@ -10,10 +10,10 @@ from json import dumps
 import click
 import numpy as np
 from sc_crawler.table_fields import Status
-from sc_crawler.tables import BenchmarkScore, Server, Vendor
+from sc_crawler.tables import BenchmarkScore, Server, ServerPrice, Vendor
 from sc_data import db
 from sqlalchemy.orm import contains_eager
-from sqlmodel import Session, create_engine, select
+from sqlmodel import Session, create_engine, func, select
 
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
@@ -180,6 +180,18 @@ def main(n):
                 BenchmarkScore.server_id.in_([server.server_id for server in servers])
             )
         ).all()
+        prices = session.exec(
+            select(
+                ServerPrice.vendor_id,
+                ServerPrice.server_id,
+                func.min(ServerPrice.price).label("price"),
+            )
+            .where(
+                ServerPrice.allocation == "ONDEMAND"
+                and ServerPrice.status == Status.ACTIVE
+            )
+            .group_by(ServerPrice.vendor_id, ServerPrice.server_id)
+        ).all()
 
     _benchmarks = benchmarks
 
@@ -190,7 +202,6 @@ def main(n):
             for benchmark in _benchmarks
             if benchmark.server_id == server.server_id
         ]
-        print(len(benchmark_scores))
         server_dict = {
             "vendor_name": server.vendor.name,
             "server_name": server.name,
@@ -222,6 +233,7 @@ def main(n):
             "local_storage_type": server.storage_type,
             "network_bandwidth_gbps": server.network_speed,
             "complimentary_public_ipv4_addresses": server.ipv4,
+            "price_per_hour_usd": price.price if price is not None else None,
             "benchmarks": {},
         }
         # drop null values
