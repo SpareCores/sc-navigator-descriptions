@@ -22,7 +22,7 @@ DATA_FOLDER = os.environ.get("DATA_FOLDER", default="data")
 os.makedirs(DATA_FOLDER, exist_ok=True)
 
 INTERESTING_CPU_FLAGS = {
-    "SIMD and data science/machine learning": [
+    "Advanced Vector Extensions and Advanced Matrix Extensions": [
         "avx",
         "avx512f",
         "avx512_vnni",
@@ -31,12 +31,12 @@ INTERESTING_CPU_FLAGS = {
         "amx_tile",
         "amx_int8",
     ],
-    "crypto": ["aes", "vaes", "sha_ni"],
-    "integeres and bit manipulation": ["bmi2", "adx", "fma"],
-    "topology": ["ht", "xtopology", "x2apic"],
-    "memory and cache control": ["clflushopt", "clwb", "wbnoinvd", "flush_l1d"],
-    "virtualization": ["vmx", "svm", "hypervisor"],
-    "security": ["ibrs", "ssbd", "ibt", "tme"],
+    "Cryptography": ["aes", "vaes", "sha_ni"],
+    "Integers and bit manipulation": ["bmi2", "adx", "fma"],
+    "Topology": ["ht", "xtopology", "x2apic"],
+    "Memory and cache control": ["clflushopt", "clwb", "wbnoinvd", "flush_l1d"],
+    "Virtualization": ["vmx", "svm", "hypervisor"],
+    "Security": ["ibrs", "ssbd", "ibt", "tme"],
 }
 INTERESTING_BENCHMARKS = {
     "single-core CPU performance": {"benchmark_id": "stress_ng:best1", "config": None},
@@ -154,9 +154,9 @@ def get_benchmark_stats_for_server(server_id: str, benchmark_category: str):
 def _categorized_cpu_flags(server_flags):
     out = {}
     for category, flags in INTERESTING_CPU_FLAGS.items():
-        present = [f for f in flags if f in server_flags]
-        if present:
-            out[category] = present
+        out[category] = {}
+        for flag in flags:
+            out[category][flag] = flag in server_flags
     return out
 
 
