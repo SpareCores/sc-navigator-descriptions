@@ -60,19 +60,35 @@ INTERESTING_BENCHMARKS = {
     "geekbench score": {"benchmark_id": "geekbench:score", "config": None},
     "passmark cpu score": {"benchmark_id": "passmark:cpu_mark", "config": None},
     "passmark memory score": {"benchmark_id": "passmark:memory_mark", "config": None},
-    "llm inference speed for text generation using 2B model": {
+    "llm inference speed for prompt processing using 135M model": {
         "benchmark_id": "llm_speed:prompt_processing",
         "config": {
             "framework_version": "51f311e0",
-            "model": "gemma-2b.Q4_K_M.gguf",
+            "model": "SmolLM-135M.Q4_K_M.gguf",
             "tokens": 128,
         },
     },
-    "llm inference speed for text generation using 2B model": {
+    "llm inference speed for text generation using 135M model": {
         "benchmark_id": "llm_speed:text_generation",
         "config": {
             "framework_version": "51f311e0",
-            "model": "gemma-2b.Q4_K_M.gguf",
+            "model": "SmolLM-135M.Q4_K_M.gguf",
+            "tokens": 128,
+        },
+    },
+    "llm inference speed for prompt processing using 70B model": {
+        "benchmark_id": "llm_speed:prompt_processing",
+        "config": {
+            "framework_version": "51f311e0",
+            "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+            "tokens": 128,
+        },
+    },
+    "llm inference speed for text generation using 70B model": {
+        "benchmark_id": "llm_speed:text_generation",
+        "config": {
+            "framework_version": "51f311e0",
+            "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
             "tokens": 128,
         },
     },
@@ -106,7 +122,6 @@ def get_benchmark_stats(benchmark_category: str):
 
 
 def get_benchmark_stats_for_server(server_id: str, benchmark_category: str):
-    print(benchmark_category)
     reference_stats = get_benchmark_stats(benchmark_category)
     benchmark_mapping = INTERESTING_BENCHMARKS[benchmark_category]
     values = [
@@ -122,6 +137,8 @@ def get_benchmark_stats_for_server(server_id: str, benchmark_category: str):
             )
         )
     ]
+    if len(values) == 0:
+        return "no data available"
     if np.mean(values) > reference_stats["p90"]:
         return "elite (top 10%) performer server"
     elif np.mean(values) > reference_stats["p75"]:
