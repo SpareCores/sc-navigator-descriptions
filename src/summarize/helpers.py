@@ -105,6 +105,7 @@ def _server_spec_dict(server, price) -> dict:
         "cpu_vcpus": server.vcpus,
         "cpu_physical_cores": server.cpu_cores,
         "cpu_threads_per_core": server.vcpus / server.cpu_cores,
+        "cpu_allocation": server.cpu_allocation,
         "cpu_speed": str(server.cpu_speed) + " GHz" if server.cpu_speed else None,
         "cpu_manufacturer": server.cpu_manufacturer,
         "cpu_family": server.cpu_family,
@@ -151,7 +152,9 @@ def _server_spec_dict(server, price) -> dict:
         ),
         "complimentary_public_ipv4_addresses": server.ipv4,
         "min_ondemand_price_per_hour": (
-            str(round(price.price, 2)) + " USD" if price is not None else None
+            str(round(price.price, 4)) + " " + price.currency
+            if price is not None
+            else None
         ),
         "benchmarks": {},
     }

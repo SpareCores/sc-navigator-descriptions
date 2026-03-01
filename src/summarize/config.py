@@ -49,15 +49,15 @@ INTERESTING_BENCHMARKS = {
         "unit": "GB/sec",
         "transform": lambda x: x / 1024,
     },
-    "memory bandwidth read-only large block (8mb - potentially uncached)": {
+    "memory bandwidth read-only large block (256mb - potentially uncached)": {
         "benchmark_id": "bw_mem",
-        "config": {"operation": "rd", "size": 8.0},
+        "config": {"operation": "rd", "size": 256.0},
         "unit": "GB/sec",
         "transform": lambda x: x / 1024,
     },
-    "memory bandwidth write large block (8mb - potentially uncached)": {
+    "memory bandwidth write large block (256mb - potentially uncached)": {
         "benchmark_id": "bw_mem",
-        "config": {"operation": "wr", "size": 8.0},
+        "config": {"operation": "wr", "size": 256.0},
         "unit": "GB/sec",
         "transform": lambda x: x / 1024,
     },
@@ -103,7 +103,8 @@ INTERESTING_BENCHMARKS = {
     "redis SET operations": {
         "benchmark_id": "redis:rps-extrapolated",
         "config": {"operation": "SET", "pipeline": 512.0},
-        "unit": "operations/sec",
+        "unit": "million operations/sec",
+        "transform": lambda x: x / 1_000_000,
     },
     "static web serving throughput": {
         "benchmark_id": "static_web:throughput",
