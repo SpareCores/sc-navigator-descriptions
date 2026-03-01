@@ -8,7 +8,7 @@ from json import dumps
 import numpy as np
 
 from . import config, database
-from .config import INTERESTING_BENCHMARKS, INTERESTING_CPU_FLAGS
+from .config import INTERESTING_BENCHMARKS, INTERESTING_CPU_FLAGS, MODEL_CONFIG
 from .models import ServerSummary
 
 
@@ -186,8 +186,9 @@ def generate_summary(server_dict: dict) -> ServerSummary:
             },
         ],
         generation_config={
-            "temperature": 0.25,
-            "top_p": 1.0,
+            "temperature": MODEL_CONFIG["temperature"],
+            "top_p": MODEL_CONFIG["top_p"],
         },
+        max_retries=MODEL_CONFIG["max_retries"],
     )
     return resp

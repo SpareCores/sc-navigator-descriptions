@@ -17,7 +17,15 @@ user_prompt = (_PROMPTS_DIR / "user.md").read_text()
 # client = from_provider("google/gemini-2.5-pro")
 # client = from_provider("google/gemini-3.1-pro-preview")
 # client = from_provider("google/gemini-3-flash-preview")
-client = from_provider("google/gemini-2.5-flash")
+
+MODEL_CONFIG = {
+    "model": "google/gemini-2.5-flash",
+    "temperature": 0.25,
+    "top_p": 1.0,
+    "max_retries": 5,
+}
+
+client = from_provider(MODEL_CONFIG["model"])
 
 # #############################################################################
 # Server lookup configuration
