@@ -37,15 +37,21 @@ def load(n: int | None = None) -> None:
             if isinstance(getattr(b, "config", None), dict):
                 b.config.pop("framework_version", None)
 
+        rn = func.row_number().over(
+            partition_by=[ServerPrice.vendor_id, ServerPrice.server_id],
+            order_by=ServerPrice.price.asc(),
+        )
+        priced = (
+            select(ServerPrice, rn.label("rn")).where(
+                ServerPrice.allocation == "ONDEMAND",
+                ServerPrice.status == Status.ACTIVE,
+            )
+        ).subquery()
         prices = session.exec(
             select(
-                ServerPrice.vendor_id,
-                ServerPrice.server_id,
-                func.min(ServerPrice.price).label("price"),
-            )
-            .where(
-                ServerPrice.allocation == "ONDEMAND"
-                and ServerPrice.status == Status.ACTIVE
-            )
-            .group_by(ServerPrice.vendor_id, ServerPrice.server_id)
+                priced.c.vendor_id,
+                priced.c.server_id,
+                priced.c.price,
+                priced.c.currency,
+            ).where(priced.c.rn == 1)
         ).all()
