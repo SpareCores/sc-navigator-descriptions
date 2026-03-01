@@ -5,4 +5,4 @@ install:
 	uv pip install -r requirements.txt
 
 run:
-	uv run python src/summarize/generate.py $(ARGS)
+	uv run python -m src.summarize.generate $(ARGS)
