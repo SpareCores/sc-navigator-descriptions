@@ -44,18 +44,26 @@ INTERESTING_BENCHMARKS = {
     "memory bandwidth read-only small block (16kb - cached)": {
         "benchmark_id": "bw_mem",
         "config": {"operation": "rd", "size": 0.016384},
+        "unit": "GB/sec",
+        "transform": lambda x: x / 1024,
     },
     "memory bandwidth read-only large block (8mb - potentially uncached)": {
         "benchmark_id": "bw_mem",
         "config": {"operation": "rd", "size": 8.0},
+        "unit": "GB/sec",
+        "transform": lambda x: x / 1024,
     },
     "gzip compression single-threaded": {
         "benchmark_id": "compression_text:compress",
         "config": {"algo": "gzip", "compression_level": 5, "threads": 1},
+        "unit": "GB/sec",
+        "transform": lambda x: x / 1024 / 1024,
     },
     "zstd decompression single-threaded": {
         "benchmark_id": "compression_text:decompress",
         "config": {"algo": "zstd", "compression_level": 1, "threads": 0},
+        "unit": "GB/sec",
+        "transform": lambda x: x / 1024 / 1024,
     },
     "geekbench score": {"benchmark_id": "geekbench:score", "config": None},
     "passmark cpu score": {"benchmark_id": "passmark:cpu_mark", "config": None},
@@ -67,6 +75,7 @@ INTERESTING_BENCHMARKS = {
             "model": "SmolLM-135M.Q4_K_M.gguf",
             "tokens": 128,
         },
+        "unit": "tokens/sec",
     },
     "llm inference speed for text generation using 135M model": {
         "benchmark_id": "llm_speed:text_generation",
@@ -75,6 +84,7 @@ INTERESTING_BENCHMARKS = {
             "model": "SmolLM-135M.Q4_K_M.gguf",
             "tokens": 128,
         },
+        "unit": "tokens/sec",
     },
     "llm inference speed for prompt processing using 70B model": {
         "benchmark_id": "llm_speed:prompt_processing",
@@ -83,6 +93,7 @@ INTERESTING_BENCHMARKS = {
             "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
             "tokens": 128,
         },
+        "unit": "tokens/sec",
     },
     "llm inference speed for text generation using 70B model": {
         "benchmark_id": "llm_speed:text_generation",
@@ -91,6 +102,7 @@ INTERESTING_BENCHMARKS = {
             "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
             "tokens": 128,
         },
+        "unit": "tokens/sec",
     },
 }
 
@@ -138,17 +150,23 @@ def get_benchmark_stats_for_server(server_id: str, benchmark_category: str):
         )
     ]
     if len(values) == 0:
-        return "no data available"
-    if np.mean(values) > reference_stats["p90"]:
-        return "elite (top 10%) performer server"
-    elif np.mean(values) > reference_stats["p75"]:
-        return "strong (top 10-25%) performer server"
-    elif np.mean(values) > reference_stats["p25"]:
-        return "average (25-75% percentile) performer server"
-    elif np.mean(values) > reference_stats["p10"]:
-        return "weak (bottom 10-25%) performer server"
+        return ("no data available", None)
+    value = np.mean(values)
+    if benchmark_mapping.get("transform") is not None:
+        value = benchmark_mapping["transform"](value)
+    value_str = str(round(value, 2))
+    if benchmark_mapping.get("unit") is not None:
+        value_str = f"{value_str} {benchmark_mapping['unit']}"
+    if value > reference_stats["p90"]:
+        return ("elite", value_str)
+    elif value > reference_stats["p75"]:
+        return ("strong", value_str)
+    elif value > reference_stats["p25"]:
+        return ("average", value_str)
+    elif value > reference_stats["p10"]:
+        return ("weak", value_str)
     else:
-        return "poor (bottom 10%) performer server"
+        return ("poor", value_str)
 
 
 def _categorized_cpu_flags(server_flags):
@@ -226,7 +244,7 @@ def main(n):
             },
             "cpu_flags_extra_availability": _categorized_cpu_flags(server.cpu_flags),
             "memory_amount_mb": server.memory_amount,
-            "memory_amount_mb_per_core": server.memory_amount / server.vcpus,
+            "memory_amount_mb_per_core": round(server.memory_amount / server.vcpus),
             "memory_generation": server.memory_generation,
             "memory_speed_mhz": server.memory_speed,
             "gpu_count": server.gpu_count,
@@ -244,13 +262,13 @@ def main(n):
         # drop null values
         server_dict = {k: v for k, v in server_dict.items() if v is not None}
         # add benchmark scores
-        for benchmark_category, benchmark_mapping in INTERESTING_BENCHMARKS.items():
-            result = get_benchmark_stats_for_server(
-                server.server_id,
-                benchmark_category,
-            )
-            if result is not None:
-                server_dict["benchmarks"][benchmark_category] = result
+        for benchmark, _ in INTERESTING_BENCHMARKS.items():
+            result = get_benchmark_stats_for_server(server.server_id, benchmark)
+            category, value = result
+            server_dict["benchmarks"][benchmark] = {
+                "value": value,
+                "category": category,
+            }
         print(server_dict)
         print(dumps(server_dict, indent=2))
 
