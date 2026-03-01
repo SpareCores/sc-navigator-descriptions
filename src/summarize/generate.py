@@ -4,10 +4,13 @@ Generate human-friendly, plain English summaries for all servers.
 
 import logging
 import os
+from functools import cache
 from json import dumps
 
 import click
-from sc_crawler.tables import Server, Vendor
+import numpy as np
+from sc_crawler.table_fields import Status
+from sc_crawler.tables import BenchmarkScore, Server, Vendor
 from sc_data import db
 from sqlalchemy.orm import contains_eager
 from sqlmodel import Session, create_engine, select
@@ -35,6 +38,100 @@ INTERESTING_CPU_FLAGS = {
     "virtualization": ["vmx", "svm", "hypervisor"],
     "security": ["ibrs", "ssbd", "ibt", "tme"],
 }
+INTERESTING_BENCHMARKS = {
+    "single-core CPU performance": {"benchmark_id": "stress_ng:best1", "config": None},
+    "multi-core CPU performance": {"benchmark_id": "stress_ng:bestn", "config": None},
+    "memory bandwidth read-only small block (16kb - cached)": {
+        "benchmark_id": "bw_mem",
+        "config": {"operation": "rd", "size": 0.016384},
+    },
+    "memory bandwidth read-only large block (8mb - potentially uncached)": {
+        "benchmark_id": "bw_mem",
+        "config": {"operation": "rd", "size": 8.0},
+    },
+    "gzip compression single-threaded": {
+        "benchmark_id": "compression_text:compress",
+        "config": {"algo": "gzip", "compression_level": 5, "threads": 1},
+    },
+    "zstd decompression single-threaded": {
+        "benchmark_id": "compression_text:decompress",
+        "config": {"algo": "zstd", "compression_level": 1, "threads": 0},
+    },
+    "geekbench score": {"benchmark_id": "geekbench:score", "config": None},
+    "passmark cpu score": {"benchmark_id": "passmark:cpu_mark", "config": None},
+    "passmark memory score": {"benchmark_id": "passmark:memory_mark", "config": None},
+    "llm inference speed for text generation using 2B model": {
+        "benchmark_id": "llm_speed:prompt_processing",
+        "config": {
+            "framework_version": "51f311e0",
+            "model": "gemma-2b.Q4_K_M.gguf",
+            "tokens": 128,
+        },
+    },
+    "llm inference speed for text generation using 2B model": {
+        "benchmark_id": "llm_speed:text_generation",
+        "config": {
+            "framework_version": "51f311e0",
+            "model": "gemma-2b.Q4_K_M.gguf",
+            "tokens": 128,
+        },
+    },
+}
+
+_benchmarks: list[BenchmarkScore] = []
+
+
+@cache
+def get_benchmark_stats(benchmark_category: str):
+    benchmark_mapping = INTERESTING_BENCHMARKS[benchmark_category]
+    benchmark_id, config = (
+        benchmark_mapping["benchmark_id"],
+        benchmark_mapping["config"],
+    )
+    values = [
+        benchmark.score
+        for benchmark in _benchmarks
+        if benchmark.benchmark_id == benchmark_id
+        and (benchmark.config == config if config is not None else True)
+    ]
+    return {
+        "min": min(values),
+        "max": max(values),
+        "mean": sum(values) / len(values),
+        "p90": np.percentile(values, 90),  # top 10%
+        "p75": np.percentile(values, 75),
+        "p25": np.percentile(values, 25),
+        "p10": np.percentile(values, 10),
+    }
+
+
+def get_benchmark_stats_for_server(server_id: str, benchmark_category: str):
+    print(benchmark_category)
+    reference_stats = get_benchmark_stats(benchmark_category)
+    benchmark_mapping = INTERESTING_BENCHMARKS[benchmark_category]
+    values = [
+        benchmark.score
+        for benchmark in _benchmarks
+        if (
+            benchmark.server_id == server_id
+            and benchmark.benchmark_id == benchmark_mapping["benchmark_id"]
+            and (
+                benchmark.config == benchmark_mapping["config"]
+                if benchmark_mapping["config"] is not None
+                else True
+            )
+        )
+    ]
+    if np.mean(values) > reference_stats["p90"]:
+        return "elite (top 10%) performer server"
+    elif np.mean(values) > reference_stats["p75"]:
+        return "strong (top 10-25%) performer server"
+    elif np.mean(values) > reference_stats["p25"]:
+        return "average (25-75% percentile) performer server"
+    elif np.mean(values) > reference_stats["p10"]:
+        return "weak (bottom 10-25%) performer server"
+    else:
+        return "poor (bottom 10%) performer server"
 
 
 def _categorized_cpu_flags(server_flags):
@@ -51,8 +148,9 @@ def _categorized_cpu_flags(server_flags):
     "--n", type=int, default=None, help="Limit the number of servers to process"
 )
 def main(n):
+    global _benchmarks
     engine = create_engine(f"sqlite:///{db.path}")
-    query = select(Server)
+    query = select(Server).where(Server.status == Status.ACTIVE)
     if n is not None:
         query = query.limit(n)
 
@@ -60,9 +158,22 @@ def main(n):
 
     with Session(engine) as session:
         servers = session.exec(query).all()
+        benchmarks = session.exec(
+            select(BenchmarkScore).where(
+                BenchmarkScore.server_id.in_([server.server_id for server in servers])
+            )
+        ).all()
+
+    _benchmarks = benchmarks
 
     for server in servers:
         print(server.name)
+        benchmark_scores = [
+            benchmark
+            for benchmark in _benchmarks
+            if benchmark.server_id == server.server_id
+        ]
+        print(len(benchmark_scores))
         server_dict = {
             "vendor_name": server.vendor.name,
             "server_name": server.name,
@@ -94,8 +205,18 @@ def main(n):
             "local_storage_type": server.storage_type,
             "network_bandwidth_gbps": server.network_speed,
             "complimentary_public_ipv4_addresses": server.ipv4,
+            "benchmarks": {},
         }
-        # TODO drop null values
+        # drop null values
+        server_dict = {k: v for k, v in server_dict.items() if v is not None}
+        # add benchmark scores
+        for benchmark_category, benchmark_mapping in INTERESTING_BENCHMARKS.items():
+            result = get_benchmark_stats_for_server(
+                server.server_id,
+                benchmark_category,
+            )
+            if result is not None:
+                server_dict["benchmarks"][benchmark_category] = result
         print(server_dict)
         print(dumps(server_dict, indent=2))
 
