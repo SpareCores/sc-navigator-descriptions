@@ -92,8 +92,8 @@ INTERESTING_CPU_FLAGS = {
     "Security": ["ibrs", "ssbd", "ibt", "tme"],
 }
 INTERESTING_BENCHMARKS = {
-    "single-core CPU performance": {"benchmark_id": "stress_ng:best1", "config": None},
-    "multi-core CPU performance": {"benchmark_id": "stress_ng:bestn", "config": None},
+    "stress-ng single-core CPU performance": {"benchmark_id": "stress_ng:best1"},
+    "stress-ng multi-core CPU performance": {"benchmark_id": "stress_ng:bestn"},
     "memory bandwidth read-only small block (16kb - cached)": {
         "benchmark_id": "bw_mem",
         "config": {"operation": "rd", "size": 0.016384},
@@ -103,6 +103,12 @@ INTERESTING_BENCHMARKS = {
     "memory bandwidth read-only large block (8mb - potentially uncached)": {
         "benchmark_id": "bw_mem",
         "config": {"operation": "rd", "size": 8.0},
+        "unit": "GB/sec",
+        "transform": lambda x: x / 1024,
+    },
+    "memory bandwidth write large block (8mb - potentially uncached)": {
+        "benchmark_id": "bw_mem",
+        "config": {"operation": "wr", "size": 8.0},
         "unit": "GB/sec",
         "transform": lambda x: x / 1024,
     },
@@ -118,43 +124,62 @@ INTERESTING_BENCHMARKS = {
         "unit": "GB/sec",
         "transform": lambda x: x / 1024 / 1024,
     },
-    "geekbench score": {"benchmark_id": "geekbench:score", "config": None},
-    "passmark cpu score": {"benchmark_id": "passmark:cpu_mark", "config": None},
-    "passmark memory score": {"benchmark_id": "passmark:memory_mark", "config": None},
+    "geekbench single-core score": {
+        "benchmark_id": "geekbench:score",
+        "config": {"cores": "Single-Core Performance"},
+    },
+    "geekbench multi-core score": {
+        "benchmark_id": "geekbench:score",
+        "config": {"cores": "Multi-Core Performance"},
+    },
+    "geekbench compiling software with clang": {
+        "benchmark_id": "geekbench:clang",
+        "config": {"cores": "Multi-Core Performance"},
+    },
+    "geekbench ray tracing": {
+        "benchmark_id": "geekbench:ray_tracer",
+        "config": {"cores": "Multi-Core Performance"},
+    },
+    "geekbench image processing": {
+        "benchmark_id": "geekbench:object_remover",
+        "config": {"cores": "Multi-Core Performance"},
+    },
+    "geekbench text processing": {
+        "benchmark_id": "geekbench:text_processing",
+        "config": {"cores": "Multi-Core Performance"},
+    },
+    "passmark cpu score": {"benchmark_id": "passmark:cpu_mark"},
+    "passmark memory score": {"benchmark_id": "passmark:memory_mark"},
+    "passmark database operations": {"benchmark_id": "passmark:database_operations"},
+    "redis SET operations": {
+        "benchmark_id": "redis:rps-extrapolated",
+        "config": {"operation": "SET", "pipeline": 512.0},
+        "unit": "operations/sec",
+    },
+    "static web serving throughput": {
+        "benchmark_id": "static_web:throughput",
+        "config": {"connections_per_vcpus": 8.0, "size": "256k"},
+        "unit": "GB/sec",
+        "transform": lambda x: x / 1024 / 1024 / 1024,
+    },
     "llm inference speed for prompt processing using 135M model": {
         "benchmark_id": "llm_speed:prompt_processing",
-        "config": {
-            "framework_version": "51f311e0",
-            "model": "SmolLM-135M.Q4_K_M.gguf",
-            "tokens": 128,
-        },
+        "config": {"model": "SmolLM-135M.Q4_K_M.gguf", "tokens": 128},
         "unit": "tokens/sec",
     },
     "llm inference speed for text generation using 135M model": {
         "benchmark_id": "llm_speed:text_generation",
-        "config": {
-            "framework_version": "51f311e0",
-            "model": "SmolLM-135M.Q4_K_M.gguf",
-            "tokens": 128,
-        },
+        "config": {"model": "SmolLM-135M.Q4_K_M.gguf", "tokens": 128},
         "unit": "tokens/sec",
     },
     "llm inference speed for prompt processing using 70B model": {
         "benchmark_id": "llm_speed:prompt_processing",
-        "config": {
-            "framework_version": "51f311e0",
-            "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
-            "tokens": 128,
-        },
+        "config": {"model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf", "tokens": 128},
         "unit": "tokens/sec",
     },
     "llm inference speed for text generation using 70B model": {
         "benchmark_id": "llm_speed:text_generation",
-        "config": {
-            "framework_version": "51f311e0",
-            "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
-            "tokens": 128,
-        },
+        "config": {"model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf", "tokens": 128},
         "unit": "tokens/sec",
     },
 }
@@ -167,7 +192,7 @@ def get_benchmark_stats(benchmark_category: str):
     benchmark_mapping = INTERESTING_BENCHMARKS[benchmark_category]
     benchmark_id, config = (
         benchmark_mapping["benchmark_id"],
-        benchmark_mapping["config"],
+        benchmark_mapping.get("config"),
     )
     values = [
         benchmark.score
@@ -196,8 +221,8 @@ def get_benchmark_stats_for_server(server_id: str, benchmark_category: str):
             benchmark.server_id == server_id
             and benchmark.benchmark_id == benchmark_mapping["benchmark_id"]
             and (
-                benchmark.config == benchmark_mapping["config"]
-                if benchmark_mapping["config"] is not None
+                benchmark.config == benchmark_mapping.get("config")
+                if benchmark_mapping.get("config") is not None
                 else True
             )
         )
@@ -250,11 +275,17 @@ def main(n):
 
     with Session(engine) as session:
         servers = session.exec(query).all()
+
         benchmarks = session.exec(
             select(BenchmarkScore).where(
                 BenchmarkScore.server_id.in_([server.server_id for server in servers])
             )
         ).all()
+        # remove framework version from config for standardized comparison
+        for b in benchmarks:
+            if isinstance(getattr(b, "config", None), dict):
+                b.config.pop("framework_version", None)
+
         prices = session.exec(
             select(
                 ServerPrice.vendor_id,
@@ -345,7 +376,6 @@ def main(n):
                 "value": value,
                 "category": category,
             }
-        print(server_dict)
         print(dumps(server_dict, indent=2))
 
         resp = client.create(
