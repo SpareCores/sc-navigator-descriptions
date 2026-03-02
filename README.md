@@ -12,8 +12,8 @@ The descriptions are generated using the Gemini 2.5 Flash model utilizing
 
 ## License
 
-The data records published in this repository are licensed under
-[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+All data records and software in this repository are licensed under
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Please contact us if you are unhappy with these licensing terms -- we would love to hear what you are working on and help you find the best setup.
 
 ## Repository Structure
 
