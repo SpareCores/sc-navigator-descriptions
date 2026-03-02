@@ -75,9 +75,25 @@ INTERESTING_BENCHMARKS = {
         "unit": "GB/sec",
         "transform": lambda x: x / 1024 / 1024,
     },
-    "zstd decompression single-threaded": {
+    "bzip3 decompression single-threaded": {
         "benchmark_id": "compression_text:decompress",
-        "config": {"algo": "zstd", "compression_level": 1, "threads": 0},
+        "config": {
+            "algo": "bzip3",
+            "block_size": 1048576,
+            "compression_level": None,
+            "threads": 1,
+        },
+        "unit": "GB/sec",
+        "transform": lambda x: x / 1024 / 1024,
+    },
+    "bzip3 decompression multi-threaded": {
+        "benchmark_id": "compression_text:decompress",
+        "config": {
+            "algo": "bzip3",
+            "block_size": 1048576,
+            "compression_level": None,
+            "threads": "all",
+        },
         "unit": "GB/sec",
         "transform": lambda x: x / 1024 / 1024,
     },
@@ -105,7 +121,12 @@ INTERESTING_BENCHMARKS = {
         "benchmark_id": "geekbench:text_processing",
         "config": {"cores": "Multi-Core Performance"},
     },
-    "passmark cpu score": {"benchmark_id": "passmark:cpu_mark"},
+    "passmark CPU score": {"benchmark_id": "passmark:cpu_mark"},
+    "passmark CPU extended instructions test": {
+        "benchmark_id": "passmark:cpu_extended_instructions_test"
+    },
+    "passmark CPU encryption test": {"benchmark_id": "passmark:cpu_encryption_test"},
+    "passmark CPU physics test": {"benchmark_id": "passmark:cpu_physics_test"},
     "passmark memory score": {"benchmark_id": "passmark:memory_mark"},
     "passmark database operations": {"benchmark_id": "passmark:database_operations"},
     "redis SET operations": {
@@ -120,22 +141,32 @@ INTERESTING_BENCHMARKS = {
         "unit": "GB/sec",
         "transform": lambda x: x / 1024 / 1024 / 1024,
     },
-    "llm inference speed for prompt processing using 135M model": {
+    "llm inference speed for prompt processing using small (135M) model": {
         "benchmark_id": "llm_speed:prompt_processing",
         "config": {"model": "SmolLM-135M.Q4_K_M.gguf", "tokens": 128},
         "unit": "tokens/sec",
     },
-    "llm inference speed for text generation using 135M model": {
+    "llm inference speed for text generation using small (135M) model": {
         "benchmark_id": "llm_speed:text_generation",
         "config": {"model": "SmolLM-135M.Q4_K_M.gguf", "tokens": 128},
         "unit": "tokens/sec",
     },
-    "llm inference speed for prompt processing using 70B model": {
+    "llm inference speed for prompt processing using medium (7B) model": {
+        "benchmark_id": "llm_speed:prompt_processing",
+        "config": {"model": "llama-7b.Q4_K_M.gguf", "tokens": 128},
+        "unit": "tokens/sec",
+    },
+    "llm inference speed for text generation using medium (7B) model": {
+        "benchmark_id": "llm_speed:text_generation",
+        "config": {"model": "llama-7b.Q4_K_M.gguf", "tokens": 128},
+        "unit": "tokens/sec",
+    },
+    "llm inference speed for prompt processing using large (70B) model": {
         "benchmark_id": "llm_speed:prompt_processing",
         "config": {"model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf", "tokens": 128},
         "unit": "tokens/sec",
     },
-    "llm inference speed for text generation using 70B model": {
+    "llm inference speed for text generation using large (70B) model": {
         "benchmark_id": "llm_speed:text_generation",
         "config": {"model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf", "tokens": 128},
         "unit": "tokens/sec",

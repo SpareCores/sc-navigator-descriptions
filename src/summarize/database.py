@@ -34,8 +34,16 @@ def load(n: int | None = None) -> None:
             select(BenchmarkScore).where(BenchmarkScore.status == Status.ACTIVE)
         ).all()
         for b in benchmarks:
+            # hack: don't include framework version in config -- will be moved to another column later anyway
             if isinstance(getattr(b, "config", None), dict):
                 b.config.pop("framework_version", None)
+            # hack: don't pin threads to actual vcpu number but mark as "all" for multi-threaded benchmarks
+            if (
+                isinstance(getattr(b, "config", None), dict)
+                and b.config.get("threads")
+                and b.config.get("threads") > 1.0
+            ):
+                b.config["threads"] = "all"
 
         rn = func.row_number().over(
             partition_by=[ServerPrice.vendor_id, ServerPrice.server_id],
