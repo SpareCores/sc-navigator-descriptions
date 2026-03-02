@@ -32,6 +32,12 @@ for each server record under the `data` folder:
 - `input.json` all data shared with the LLM
 - `system_prompt.md` and `user_prompt.md`
 - `hashes.json` hashes of the inputs to detect changes
+- `output.json` the generated summary in JSON format with the following fields:
+
+    - `w20`: around 20 words, readable tagline, without mentioning vendor or server name
+    - `c150`: around 150 characters description, including vendor and server name
+    - `c200`: around 200 characters, longer-format description
+    - `w150`: around 150 words, even longer description
 
 ## Further References
 
