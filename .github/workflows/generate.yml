@@ -1,0 +1,44 @@
+name: Generate descriptions
+
+on:
+  workflow_dispatch:
+    inputs:
+      n:
+        description: "Number of servers to process"
+        required: false
+        default: "25"
+  # schedule:
+  #   - cron: "0 3 * * *"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Generate descriptions
+        run: uv run python -m src.summarize.generate --n ${{ github.event.inputs.n || '25' }}
+
+      - name: Count described instances
+        id: count
+        run: |
+          count=$(git status --porcelain | grep -c '/output\.json$' || true)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Describe ${{ steps.count.outputs.count }} server instance(s)"
