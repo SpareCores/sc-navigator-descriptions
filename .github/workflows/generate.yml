@@ -29,6 +29,11 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@v5
 
+      - name: Install dependencies
+        run: |
+          uv venv
+          uv pip install -r requirements.txt
+
       - name: Generate descriptions
         run: uv run python -m src.summarize.generate --n ${{ github.event.inputs.n || '25' }}
 
