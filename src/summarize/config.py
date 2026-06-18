@@ -5,7 +5,7 @@ Constants, prompts, and LLM client for server summary generation.
 import os
 from pathlib import Path
 
-from instructor import from_provider
+from instructor import Mode, from_provider
 
 DATA_FOLDER = os.environ.get("DATA_FOLDER", default="data")
 os.makedirs(DATA_FOLDER, exist_ok=True)
@@ -19,13 +19,16 @@ user_prompt = (_PROMPTS_DIR / "user.md").read_text()
 # client = from_provider("google/gemini-3-flash-preview")
 
 MODEL_CONFIG = {
-    "model": "google/gemini-3.1-flash-lite",
+    "model": "google/gemini-3.5-flash",
     "temperature": 0.25,
     "top_p": 1.0,
     "max_retries": 5,
 }
 
-client = from_provider(MODEL_CONFIG["model"])
+client = from_provider(
+    MODEL_CONFIG["model"],
+    mode=Mode.GENAI_STRUCTURED_OUTPUTS,
+)
 
 # #############################################################################
 # Server lookup configuration

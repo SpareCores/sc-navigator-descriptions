@@ -2,6 +2,8 @@
 Helper functions for building server payloads and calling the LLM.
 """
 
+import logging
+import warnings
 from functools import cache
 from json import dumps
 
@@ -10,6 +12,33 @@ import numpy as np
 from . import config, database
 from .config import INTERESTING_BENCHMARKS, INTERESTING_CPU_FLAGS, MODEL_CONFIG
 from .models import ServerSummary
+
+logger = logging.getLogger(__name__)
+_validation_failures: list[Exception] = []
+
+
+def _log_parse_error(error: Exception) -> None:
+    attempt = len(_validation_failures) + 1
+    _validation_failures.append(error)
+    logger.warning(
+        "LLM response validation failed (attempt %d of %d): %s",
+        attempt,
+        MODEL_CONFIG["max_retries"],
+        error,
+    )
+
+
+def _log_last_attempt(error: Exception) -> None:
+    logger.error(
+        "LLM response validation failed on final attempt (%d of %d): %s",
+        len(_validation_failures),
+        MODEL_CONFIG["max_retries"],
+        error,
+    )
+
+
+config.client.on("parse:error", _log_parse_error)
+config.client.on("completion:last_attempt", _log_last_attempt)
 
 
 def _categorized_cpu_flags(server_flags) -> dict:
@@ -117,7 +146,7 @@ def _server_spec_dict(server, price) -> dict:
         },
         "cpu_flags_extra_availability": _categorized_cpu_flags(server.cpu_flags),
         "memory_amount": (
-            str(round(server.memory_amount / 1024)) + " GB"
+            str(round(server.memory_amount / 1024, 0 if server.memory_amount > 1024 else 1)) + " GB"
             if server.memory_amount
             else None
         ),
@@ -176,21 +205,33 @@ def build_server_payload(server, price) -> dict:
 
 def generate_summary(server_dict: dict) -> ServerSummary:
     """Call LLM to produce ServerSummary from server payload."""
-    resp = config.client.create(
-        response_model=ServerSummary,
-        messages=[
-            {"role": "system", "content": config.system_prompt},
-            {
-                "role": "user",
-                "content": config.user_prompt + dumps(server_dict, indent=2),
+    _validation_failures.clear()
+    with warnings.catch_warnings():
+        # google-genai pydantic types warn when serializing reask contents
+        warnings.filterwarnings(
+            "ignore",
+            message="Pydantic serializer warnings:",
+            category=UserWarning,
+            module="pydantic.main",
+        )
+        summary = config.client.create(
+            response_model=ServerSummary,
+            messages=[
+                {"role": "system", "content": config.system_prompt},
+                {
+                    "role": "user",
+                    "content": config.user_prompt + dumps(server_dict, indent=2),
+                },
+            ],
+            generation_config={
+                "temperature": MODEL_CONFIG["temperature"],
+                "top_p": MODEL_CONFIG["top_p"],
             },
-        ],
-        generation_config={
-            "temperature": MODEL_CONFIG["temperature"],
-            "top_p": MODEL_CONFIG["top_p"],
-        },
-        max_retries=MODEL_CONFIG["max_retries"],
-    )
-    return ServerSummary.model_validate(
-        {field: getattr(resp, field) for field in ServerSummary.model_fields}
-    )
+            max_retries=MODEL_CONFIG["max_retries"],
+        )
+    if _validation_failures:
+        logger.info(
+            "LLM response validated after %d failed attempt(s)",
+            len(_validation_failures),
+        )
+    return summary

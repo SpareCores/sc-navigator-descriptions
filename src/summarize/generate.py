@@ -18,7 +18,7 @@ from src.summarize.helpers import (
     generate_summary,
 )
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("src.summarize")
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 stream_handler = logging.StreamHandler()
@@ -80,7 +80,7 @@ def main(n):
 
         summary = generate_summary(server_dict)
         with open(folder / "output.json", "w") as f:
-            f.write(dumps(summary.model_dump(), indent=2))
+            f.write(dumps(summary.model_dump(mode="json"), indent=2))
 
 
 if __name__ == "__main__":
