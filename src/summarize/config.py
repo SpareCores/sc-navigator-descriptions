@@ -19,7 +19,7 @@ user_prompt = (_PROMPTS_DIR / "user.md").read_text()
 # client = from_provider("google/gemini-3-flash-preview")
 
 MODEL_CONFIG = {
-    "model": "google/gemini-2.5-flash",
+    "model": "google/gemini-3.1-flash-lite",
     "temperature": 0.25,
     "top_p": 1.0,
     "max_retries": 5,
