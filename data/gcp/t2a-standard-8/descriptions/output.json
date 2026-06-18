@@ -1,0 +1,23 @@
+{
+  "page": [
+    "Google Cloud Platform t2a-standard-8 is a general-purpose virtual machine instance powered by the ARMv8 architecture. It features 8 dedicated physical cores running at 3.0 GHz on an Ampere Altra Neoverse-N1 processor, with 1.0 thread per core and no hyperthreading. The hardware configuration includes 32 GB of system memory, providing a balanced 4.0 GB of RAM per vCPU. There is no local NVMe storage bundled with this instance, and it does not include any GPUs or complimentary public IPv4 addresses.",
+    "In benchmark evaluations, the t2a-standard-8 demonstrates average performance across most general-purpose workloads. Multi-core performance is solid, with a stress-ng multi-core CPU score of 14472.4 and a Geekbench multi-core score of 6000.0. Memory performance is also average, delivering a read-only small block cached bandwidth of 563.91 GB/sec and a write large block uncached bandwidth of 47.24 GB/sec. The instance handles static web serving efficiently, achieving a throughput of 10.09 GB/sec, and performs well in database operations with a PassMark database score of 5611.0 and Redis SET operations reaching 10.91 million operations per second.",
+    "However, the ARM-based architecture presents certain performance tradeoffs. Single-core performance is relatively weak, as evidenced by a Geekbench single-core score of 1073.0 and a weak single-threaded bzip3 decompression rate of 8.58 GB/sec. Cryptographic and vector-heavy tasks are also limited; the processor lacks AVX, AMX, and SHA extensions, resulting in a weak PassMark CPU encryption score of 1300.22. Additionally, LLM inference performance is poor, with text generation on a small 135M model yielding only 32.29 tokens per second.",
+    "From a cost-efficiency perspective, the t2a-standard-8 offers a highly competitive hardware profile for workloads that benefit from dedicated physical cores and balanced memory distribution without requiring high single-thread performance or specialized instruction sets. This makes the instance well-suited for scale-out workloads, static web serving, multi-threaded application compiling, and standard database operations."
+  ],
+  "description": "Google Cloud Platform t2a-standard-8 is an ARM-based general-purpose instance featuring 8 dedicated physical cores on a 3.0 GHz Ampere Altra Neoverse-N1 processor and 32 GB of RAM. Lacking hyperthreading, local storage, and GPU accelerators, it provides a balanced 1:4 vCPU-to-memory ratio. Benchmarks indicate average multi-core and memory performance, with strong results in static web serving at 10.09 GB/sec and Redis SET operations at 10.91 million operations per second. However, single-core performance is weak, and the lack of AVX, AMX, and SHA extensions limits cryptographic and vector-heavy workloads. LLM inference speeds are also poor. This instance is best suited for scale-out general-purpose workloads, multi-threaded software compilation, and database operations where dedicated core allocation is required without the need for specialized x86 instruction sets.",
+  "og_description": "Google Cloud Platform t2a-standard-8 is an ARM-based instance with 8 dedicated Neoverse-N1 cores and 32 GB RAM, offering balanced multi-core performance for web serving and databases.",
+  "meta_description": "Google Cloud Platform t2a-standard-8 is an ARM-based instance featuring 8 dedicated cores and 32 GB RAM, optimized for balanced general-purpose workloads.",
+  "tagline": "A dedicated ARM-based instance delivering balanced memory and multi-core performance for scale-out workloads and database operations.",
+  "bullet_points": [
+    "8 dedicated ARMv8 Neoverse-N1 physical cores running at 3.0 GHz",
+    "32 GB of system memory providing a balanced 4.0 GB per core",
+    "Solid multi-core performance for static web serving and Redis operations",
+    "No local storage or GPU accelerators included",
+    "Weak single-core performance and lack of AVX/AMX instruction sets",
+    "Best suited for scale-out applications, web servers, and database workloads"
+  ],
+  "categories": [
+    "General Purpose"
+  ]
+}
