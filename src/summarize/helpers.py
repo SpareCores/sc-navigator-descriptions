@@ -140,13 +140,18 @@ def _server_spec_dict(server, price) -> dict:
         "cpu_family": server.cpu_family,
         "cpu_model": server.cpu_model,
         "cpu_cache_size": {
-            "l1d": str(int(server.cpu_l1_cache / 1024)) + " KB",
-            "l2": str(int(server.cpu_l2_cache / 1024 / 1024)) + " MB",
-            "l3": str(int(server.cpu_l3_cache / 1024 / 1024)) + " MB",
+            "l1d": str(int(server.cpu_l1d_cache)) + " KB",
+            "l2": str(int(server.cpu_l2_cache / 1024)) + " MB",
+            "l3": str(int(server.cpu_l3_cache / 1024)) + " MB",
         },
         "cpu_flags_extra_availability": _categorized_cpu_flags(server.cpu_flags),
         "memory_amount": (
-            str(round(server.memory_amount / 1024, 0 if server.memory_amount > 1024 else 1)) + " GB"
+            str(
+                round(
+                    server.memory_amount / 1024, 0 if server.memory_amount > 1024 else 1
+                )
+            )
+            + " GB"
             if server.memory_amount
             else None
         ),
@@ -176,8 +181,10 @@ def _server_spec_dict(server, price) -> dict:
         "local_storage_type": (
             server.storage_type.value if server.storage_type else None
         ),
-        "network_bandwidth": (
-            str(round(server.network_speed)) + " Gbps" if server.network_speed else None
+        "network_bandwidth_baseline": (
+            str(round(server.network_speed_baseline)) + " Gbps"
+            if server.network_speed_baseline
+            else None
         ),
         "complimentary_public_ipv4_addresses": server.ipv4,
         "min_ondemand_price_per_hour": (
