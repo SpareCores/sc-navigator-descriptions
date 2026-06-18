@@ -141,9 +141,14 @@ def _server_spec_dict(server, price) -> dict:
         "cpu_model": server.cpu_model,
         "cpu_cache_size": {
             "l1d": str(int(server.cpu_l1d_cache)) + " KB",
-            "l2": str(
-                round(
-                    server.cpu_l2_cache / 1024, 0 if server.cpu_l2_cache > 1024 else 2
+            "l2": (
+                str(int(server.cpu_l2_cache / 1024))
+                if server.cpu_l2_cache > 1024
+                else str(
+                    round(
+                        server.cpu_l2_cache / 1024,
+                        2,
+                    )
                 )
             )
             + " MB",
