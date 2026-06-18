@@ -191,4 +191,6 @@ def generate_summary(server_dict: dict) -> ServerSummary:
         },
         max_retries=MODEL_CONFIG["max_retries"],
     )
-    return resp
+    return ServerSummary.model_validate(
+        {field: getattr(resp, field) for field in ServerSummary.model_fields}
+    )
