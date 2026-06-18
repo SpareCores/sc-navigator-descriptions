@@ -1,6 +1,22 @@
 {
-  "w20": "Shared-core entry-level instance for minimal, low-demand computing tasks requiring high cost efficiency and basic x86_64 architecture support.",
-  "c150": "Google Cloud Platform f1-micro is a shared-core entry-level instance with 1 vCPU and 1 GB of RAM, designed for minimal resource-light workloads.",
-  "c200": "The Google Cloud Platform f1-micro is a shared-core instance featuring 1 vCPU and 1 GB of RAM. This entry-level server is engineered for extremely lightweight, low-demand computing tasks.",
-  "w150": "The Google Cloud Platform f1-micro is an entry-level, shared-core instance designed for minimal computing requirements. It utilizes an x86_64 Intel Xeon architecture with a single shared virtual CPU and 1 GB of RAM. This configuration does not include a GPU or local storage. Performance benchmarks, including stress-ng CPU tests and Redis SET operations, consistently rank in the bottom 10 percent, reflecting its shared resource model. The instance supports specific instruction sets such as AVX, AVX512F, BMI2, ADX, and FMA, alongside security features like IBRS and SSBD. Given the constrained hardware profile and performance metrics, this server is not suitable for compute-intensive or memory-heavy applications. It is intended for very lightweight, non-critical tasks such as low-traffic static web serving or basic background processes where cost efficiency is the primary requirement and performance demands are negligible. Workload fit includes simple microservices, small-scale static web hosting, or basic development environments."
+  "page": [
+    "Google Cloud Platform f1-micro is a burstable, budget-oriented virtual machine instance belonging to the f1 server family. It features 1 vCPU allocated on a shared physical Intel Xeon core using the x86_64 architecture. The instance is configured with 0.6 GB of system memory, which equates to 0.6 GB per core. It does not include local storage or dedicated GPU hardware, and it offers zero complimentary public IPv4 addresses. The underlying Intel Xeon processor provides an L3 cache of 38 MB, alongside support for instruction sets such as AVX, AVX512F, AES, and BMI2.",
+    "Benchmark data indicates that the f1-micro operates within a highly constrained performance envelope. In stress-ng single-core and multi-core CPU evaluations, the instance achieved a score of 384.79, placing it in the bottom 10% of tested hardware. Memory performance is similarly limited, with a read-only small block cached bandwidth of 80.8 GB/sec and a large block write bandwidth of 0.2 GB/sec. Passmark testing yielded a CPU score of 236.08 and a memory score of 0.0. For operational workloads, the instance sustained 0.24 million operations per second in Redis SET tests and a static web serving throughput of 0.22 GB/sec.",
+    "Due to its shared-core architecture and minimal memory footprint, the f1-micro is positioned as a highly cost-efficient option for low-intensity workloads where continuous full CPU utilization is not required. The primary trade-off is the potential for CPU throttling under sustained loads, as the shared physical core model relies on burstable performance dynamics. This instance is best suited for lightweight administrative tasks, basic cron jobs, development prototyping, low-traffic static web serving, or small utility scripts that do not demand significant memory or computational throughput."
+  ],
+  "description": "Google Cloud Platform f1-micro is a budget-tier, shared-core virtual machine designed for low-intensity workloads. Powered by an Intel Xeon x86_64 processor, it provides 1 vCPU on a shared physical core and 0.6 GB of system memory. The instance does not include local storage or dedicated GPU resources. Benchmark results place the f1-micro in the bottom 10% of performance, with a stress-ng CPU score of 384.79, a Passmark CPU score of 236.08, and a Redis SET throughput of 0.24 million operations per second. Given its shared-core architecture and minimal memory allocation, it offers high resource density and qualitative cost efficiency for lightweight tasks. It is best suited for basic utility scripts, development prototyping, low-traffic static web serving, and simple cron jobs that do not require sustained computational power.",
+  "og_description": "Google Cloud Platform f1-micro is a budget-tier virtual machine featuring 1 shared-core Intel Xeon vCPU, 0.6 GB of RAM, and no local storage, designed for lightweight utility workloads.",
+  "meta_description": "Google Cloud Platform f1-micro is a shared-core virtual machine with 1 Intel Xeon vCPU and 0.6 GB of RAM, optimized for low-intensity budget workloads.",
+  "tagline": "A shared-core, budget-friendly virtual machine designed for lightweight utility tasks, basic prototyping, and low-intensity background processes.",
+  "bullet_points": [
+    "1 vCPU on a shared physical Intel Xeon core",
+    "0.6 GB of system memory with no local storage",
+    "Burstable CPU model suited for intermittent workloads",
+    "Low-tier benchmark performance in the bottom 10%",
+    "Appropriate for cron jobs, utility scripts, and prototyping"
+  ],
+  "categories": [
+    "Burstable & Budget",
+    "General Purpose"
+  ]
 }
