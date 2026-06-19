@@ -133,7 +133,9 @@ def _server_spec_dict(server, price) -> dict:
         "cpu_architecture": server.cpu_architecture,
         "cpu_vcpus": server.vcpus,
         "cpu_physical_cores": server.cpu_cores,
-        "cpu_threads_per_core": server.vcpus / server.cpu_cores,
+        "cpu_threads_per_core": (
+            server.vcpus / server.cpu_cores if server.cpu_cores else None
+        ),
         "cpu_allocation": server.cpu_allocation,
         "cpu_speed": str(server.cpu_speed) + " GHz" if server.cpu_speed else None,
         "cpu_manufacturer": server.cpu_manufacturer,
