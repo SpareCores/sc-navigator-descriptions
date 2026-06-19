@@ -140,19 +140,29 @@ def _server_spec_dict(server, price) -> dict:
         "cpu_family": server.cpu_family,
         "cpu_model": server.cpu_model,
         "cpu_cache_size": {
-            "l1d": str(int(server.cpu_l1d_cache)) + " KB",
+            "l1d": (
+                str(int(server.cpu_l1d_cache)) + " KB" if server.cpu_l1d_cache else None
+            ),
             "l2": (
-                str(int(server.cpu_l2_cache / 1024))
-                if server.cpu_l2_cache > 1024
-                else str(
-                    round(
-                        server.cpu_l2_cache / 1024,
-                        2,
+                (
+                    str(int(server.cpu_l2_cache / 1024))
+                    if server.cpu_l2_cache > 1024
+                    else str(
+                        round(
+                            server.cpu_l2_cache / 1024,
+                            2,
+                        )
                     )
                 )
-            )
-            + " MB",
-            "l3": str(int(server.cpu_l3_cache / 1024)) + " MB",
+                + " MB"
+                if server.cpu_l2_cache
+                else None
+            ),
+            "l3": (
+                str(int(server.cpu_l3_cache / 1024)) + " MB"
+                if server.cpu_l3_cache
+                else None
+            ),
         },
         "cpu_flags_extra_availability": _categorized_cpu_flags(server.cpu_flags),
         "memory_amount": (
