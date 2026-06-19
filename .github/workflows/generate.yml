@@ -40,7 +40,7 @@ jobs:
       - name: Count described instances
         id: count
         run: |
-          count=$(git status --porcelain | grep -c '/output\.json$' || true)
+          count=$(git status --porcelain --untracked-files=all | grep -c '/output\.json$' || true)
           echo "count=$count" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push changes
