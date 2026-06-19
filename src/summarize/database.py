@@ -14,13 +14,17 @@ servers: list = []
 benchmarks: list = []
 prices: list = []
 
+# cached indexes over benchmarks, built by load() to avoid full scans per server.
+benchmarks_by_id: dict = {}
+benchmarks_by_server: dict = {}
+
 
 def load(n: int | None = None) -> None:
     """Load active servers, their benchmarks, and min ONDEMAND prices.
 
     Preprocess benchmarks (remove framework version from config).
     """
-    global servers, benchmarks, prices
+    global servers, benchmarks, prices, benchmarks_by_id, benchmarks_by_server
     engine = create_engine(f"sqlite:///{db.path}")
     query = select(Server).where(Server.status == Status.ACTIVE)
     if n is not None:
@@ -44,6 +48,12 @@ def load(n: int | None = None) -> None:
                 and b.config.get("threads") > 1.0
             ):
                 b.config["threads"] = "all"
+
+        benchmarks_by_id = {}
+        benchmarks_by_server = {}
+        for b in benchmarks:
+            benchmarks_by_id.setdefault(b.benchmark_id, []).append(b)
+            benchmarks_by_server.setdefault((b.vendor_id, b.server_id), []).append(b)
 
         rn = func.row_number().over(
             partition_by=[ServerPrice.vendor_id, ServerPrice.server_id],

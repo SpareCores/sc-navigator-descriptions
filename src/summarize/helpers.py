@@ -60,9 +60,8 @@ def get_benchmark_stats(benchmark_category: str) -> dict:
     )
     values = [
         b.score
-        for b in database.benchmarks
-        if b.benchmark_id == benchmark_id
-        and (b.config == conf if conf is not None else True)
+        for b in database.benchmarks_by_id.get(benchmark_id, [])
+        if conf is None or b.config == conf
     ]
     if not values:
         raise ValueError(
@@ -82,19 +81,12 @@ def get_benchmark_stats_for_server(
     """Get benchmark stats for a server and return tier and value string."""
     reference_stats = get_benchmark_stats(benchmark_category)
     benchmark_mapping = INTERESTING_BENCHMARKS[benchmark_category]
+    benchmark_id = benchmark_mapping["benchmark_id"]
+    conf = benchmark_mapping.get("config")
     values = [
         b.score
-        for b in database.benchmarks
-        if (
-            b.vendor_id == vendor_id
-            and b.server_id == server_id
-            and b.benchmark_id == benchmark_mapping["benchmark_id"]
-            and (
-                b.config == benchmark_mapping.get("config")
-                if benchmark_mapping.get("config") is not None
-                else True
-            )
-        )
+        for b in database.benchmarks_by_server.get((vendor_id, server_id), [])
+        if b.benchmark_id == benchmark_id and (conf is None or b.config == conf)
     ]
     if len(values) == 0:
         return ("no data available", None)
@@ -259,7 +251,7 @@ def generate_summary(server_dict: dict) -> ServerSummary:
             max_retries=MODEL_CONFIG["max_retries"],
         )
     if _validation_failures:
-        logger.info(
+        logger.debug(
             "LLM response validated after %d failed attempt(s)",
             len(_validation_failures),
         )

@@ -19,9 +19,10 @@ from src.summarize.helpers import (
 )
 
 logger = logging.getLogger("src.summarize")
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.DEBUG)
 stream_handler.setFormatter(formatter)
 logger.addHandler(stream_handler)
 
@@ -31,9 +32,9 @@ logger.addHandler(stream_handler)
     "--n", type=int, default=None, help="Limit the number of servers to process"
 )
 def main(n):
-    logger.info("Loading servers from database...")
+    logger.debug("Loading servers from database...")
     database.load(n)
-    logger.info(
+    logger.debug(
         f"Loaded {len(database.servers)} servers, {len(database.benchmarks)} benchmarks, {len(database.prices)} prices"
     )
 
@@ -42,7 +43,7 @@ def main(n):
             Path(DATA_FOLDER) / server.vendor.vendor_id / server.api_reference
         )
         makedirs(server_folder, exist_ok=True)
-        logger.info(f"Processing server: {server.name}")
+        logger.debug(f"Processing server: {server.name}")
 
         folder = server_folder / "descriptions"
         makedirs(folder, exist_ok=True)
@@ -64,7 +65,7 @@ def main(n):
         except FileNotFoundError:
             existing_hashes = {}
         if existing_hashes.get("combined") == hashes.get("combined"):
-            logger.info(f"Skipping server: {server.name} (hashes match)")
+            logger.debug(f"Skipping server: {server.name} (hashes match)")
             continue
 
         with open(folder / "input.json", "w") as f:
@@ -78,7 +79,9 @@ def main(n):
         with open(folder / "hashes.json", "w") as f:
             f.write(dumps(hashes, indent=2))
 
+        logger.debug(f"Generating summary via LLM for server: {server.name}")
         summary = generate_summary(server_dict)
+        logger.info(f"Generated summary for server: {server.name}")
         with open(folder / "output.json", "w") as f:
             f.write(dumps(summary.model_dump(mode="json"), indent=2))
 
