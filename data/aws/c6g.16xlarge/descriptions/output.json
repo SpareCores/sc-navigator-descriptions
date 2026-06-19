@@ -1,0 +1,23 @@
+{
+  "page": [
+    "Amazon Web Services c6g.16xlarge is a compute-optimized server powered by custom 64-core AWS Graviton2 processors built on the ARM64 Neoverse-N1 architecture. Operating at 2.5 GHz, the instance features 64 dedicated physical cores with a single thread per core, eliminating hyperthreading overhead. It is equipped with 128.0 GB of system memory, yielding a 2.0 GB per core ratio. The CPU configuration includes 64 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. The instance runs on the AWS Nitro hypervisor, lacks local storage, and provides a baseline network bandwidth of 25 Gbps.",
+    "Benchmark data indicates strong multi-core performance, with stress-ng multi-core CPU testing placing in the top 25% at 97056.55. Memory bandwidth for cached small-block reads is highly efficient at 3782.53 GB/sec, though uncached large-block reads and writes drop to average tiers of 166.55 GB/sec and 74.45 GB/sec respectively. Single-core performance is a relative bottleneck; both the stress-ng single-core test and Geekbench single-core score fall into the average and weak categories. This single-threaded limitation is reflected in lower gzip compression and bzip3 decompression rates. However, multi-threaded tasks like software compilation with Clang and Redis SET operations perform exceptionally well, registering in the top tier.",
+    "Given the dedicated physical core layout and high multi-threaded efficiency, the c6g.16xlarge offers a highly cost-efficient profile for parallelized workloads that do not require local NVMe storage or GPU acceleration. It is well-suited for high-throughput web serving, distributed data processing, Redis caching layers, and multi-threaded compilation pipelines. Conversely, it is less optimal for single-threaded applications or large-scale LLM inference, where text generation speeds remain low."
+  ],
+  "description": "The Amazon Web Services c6g.16xlarge is a compute-optimized server featuring 64 dedicated physical ARM64 cores powered by AWS Graviton2 Neoverse-N1 processors running at 2.5 GHz. Built on the AWS Nitro hypervisor, this instance provides 128.0 GB of system memory, a baseline network bandwidth of 25 Gbps, and contains no local storage or GPU hardware. Benchmarks reveal strong multi-core capabilities, particularly in software compilation, Redis operations, and static web serving, where it ranks in the top 25%. However, single-core performance and single-threaded compression tasks represent a relative tradeoff, scoring in the lower percentiles. This server is highly cost-efficient for highly parallelized, compute-intensive workloads such as distributed web serving, containerized microservices, and multi-threaded build pipelines that benefit from dedicated physical cores without hyperthreading overhead.",
+  "og_description": "Amazon Web Services c6g.16xlarge is a compute-optimized ARM64 server featuring 64 dedicated Graviton2 physical cores, 128 GB of RAM, and 25 Gbps network bandwidth, optimized for highly parallelized workloads.",
+  "meta_description": "Amazon Web Services c6g.16xlarge is an ARM64 compute-optimized server with 64 dedicated physical cores, 128 GB RAM, and 25 Gbps network speed.",
+  "tagline": "A dedicated 64-core ARM64 compute instance delivering high multi-threaded throughput and memory bandwidth for parallelized workloads and web serving.",
+  "bullet_points": [
+    "64 dedicated physical ARM64 cores running at 2.5 GHz",
+    "128.0 GB system memory with 2.0 GB per core ratio",
+    "25 Gbps baseline network bandwidth on AWS Nitro hypervisor",
+    "Strong multi-core CPU, Redis, and software compilation performance",
+    "No bundled local storage or GPU accelerators",
+    "Best suited for multi-threaded build pipelines and high-throughput web serving"
+  ],
+  "categories": [
+    "Compute Optimized",
+    "General Purpose"
+  ]
+}

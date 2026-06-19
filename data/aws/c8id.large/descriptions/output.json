@@ -1,0 +1,23 @@
+{
+  "page": [
+    "Amazon Web Services c8id.large is a compute-optimized instance powered by the Nitro hypervisor and an Intel Xeon 6975P-C processor. This x86_64 architecture server features 2 dedicated vCPUs derived from 1 physical core with hyper-threading enabled. The CPU operates at 3.9 GHz and is equipped with a 480 MB L3 cache, 2 MB L2 cache, and 48 KB L1d cache. It supports advanced instruction sets including AVX-512, Intel Advanced Matrix Extensions (AMX_TILE and AMX_INT8), and cryptographic acceleration via AES and SHA_NI. The instance is configured with 4.0 GB of DDR5 memory operating at 7 GHz, yielding a memory-to-core ratio of 2.0 GB per core. Local storage is provided via a 118 GB NVMe SSD instance store volume, and the baseline network bandwidth is rated at 1 Gbps.",
+    "Benchmark results highlight strong single-threaded performance alongside notable multi-threaded and memory bandwidth limitations. The instance achieves strong results in single-threaded tasks, with a Geekbench single-core score of 2121.0 and high throughput in gzip compression (33.95 GB/sec) and bzip3 decompression (14.3 GB/sec). However, due to its dual-vCPU configuration, multi-core performance is constrained, as evidenced by a weak Geekbench multi-core score of 2707.0 and a poor stress-ng multi-core rating. Memory performance also presents a bottleneck; uncached read bandwidth is poor at 20.62 GB/sec, and the Passmark memory score is weak. Database operations and static web serving throughput are similarly limited, with Redis SET operations reaching 3.9 million operations per second and web serving throughput at 5.21 GB/sec.",
+    "From a cost-efficiency perspective, the c8id.large offers a specialized entry point for workloads requiring high single-core compute speeds and fast local NVMe storage without the overhead of high memory capacity. The inclusion of a 118 GB NVMe SSD provides high-speed local scratch space, which is highly cost-effective compared to provisioning separate network-attached storage. However, the low memory density (4.0 GB) and weak multi-threaded scaling make it unsuitable for memory-intensive databases or highly parallelized applications. It is best suited for single-threaded processing tasks, lightweight text processing, software compilation, and basic edge-node serving where local storage speed is prioritized over massive memory capacity."
+  ],
+  "description": "Amazon Web Services c8id.large is a compute-optimized, x86_64 instance featuring 2 dedicated vCPUs from a single physical Intel Xeon 6975P-C core running at 3.9 GHz. It is equipped with 4.0 GB of DDR5 memory and a 118 GB local NVMe SSD instance store. Operating on the Nitro hypervisor, the instance supports advanced instruction sets such as AVX-512 and Intel AMX. Benchmarks indicate strong single-core capabilities, with high scores in single-threaded compression and text processing. However, multi-core performance and memory bandwidth are relatively weak due to the dual-vCPU limit and low memory capacity. This instance provides a cost-effective option for workloads requiring fast local storage and strong single-threaded compute, such as lightweight text processing, software compilation, and basic utility services, while being less suited for memory-intensive or highly parallelized applications.",
+  "og_description": "Amazon Web Services c8id.large is a compute-optimized instance with 2 vCPUs, 4.0 GB DDR5 RAM, and a 118 GB NVMe SSD, delivering strong single-core performance but limited multi-threaded capacity.",
+  "meta_description": "Amazon Web Services c8id.large is a compute-optimized instance featuring 2 vCPUs, 4.0 GB DDR5 RAM, and a 118 GB local NVMe SSD.",
+  "tagline": "A compute-optimized server combining high-speed single-core Intel processing with fast local NVMe storage for lightweight, storage-dependent workloads.",
+  "bullet_points": [
+    "Intel Xeon 6975P-C processor with 2 dedicated vCPUs at 3.9 GHz",
+    "4.0 GB of high-speed 7 GHz DDR5 memory",
+    "118 GB of local NVMe SSD instance storage",
+    "Strong single-threaded performance in compression and text processing",
+    "Supports AVX-512 and Intel Advanced Matrix Extensions (AMX)",
+    "Best suited for lightweight single-threaded tasks and software compilation"
+  ],
+  "categories": [
+    "Compute Optimized",
+    "Storage & Database"
+  ]
+}
