@@ -38,12 +38,13 @@ def main(n):
         f"Loaded {len(database.servers)} servers, {len(database.benchmarks)} benchmarks, {len(database.prices)} prices"
     )
 
-    for server in database.servers:
+    total = len(database.servers)
+    for i, server in enumerate(database.servers, start=1):
         server_folder = (
             Path(DATA_FOLDER) / server.vendor.vendor_id / server.api_reference
         )
         makedirs(server_folder, exist_ok=True)
-        logger.debug(f"Processing server: {server.name}")
+        logger.debug(f"Processing server {i}/{total}: {server.name}")
 
         folder = server_folder / "descriptions"
         makedirs(folder, exist_ok=True)
