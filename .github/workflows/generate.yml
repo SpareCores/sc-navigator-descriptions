@@ -36,7 +36,7 @@ jobs:
 
       - name: Generate descriptions
         continue-on-error: true
-        run: uv run python -m src.summarize.generate --n ${{ github.event.inputs.n || '25' }}
+        run: uv run python -m src.summarize.generate -n ${{ github.event.inputs.n || '25' }} --max-minutes 300
 
       - name: Count described instances
         id: count

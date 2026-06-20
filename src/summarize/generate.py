@@ -7,6 +7,7 @@ from hashlib import sha256
 from json import dumps, load
 from os import makedirs
 from pathlib import Path
+from time import monotonic
 
 import click
 
@@ -29,9 +30,34 @@ logger.addHandler(stream_handler)
 
 @click.command()
 @click.option(
-    "--n", type=int, default=None, help="Limit the number of servers to process"
+    "-n",
+    type=int,
+    default=None,
+    help="Limit the number of servers to process (default: all servers)",
 )
-def main(n):
+@click.option(
+    "--max-minutes",
+    type=float,
+    default=None,
+    help=(
+        "Maximum runtime budget in minutes. Exit cleanly before this is reached, "
+        "leaving a safety buffer of 5%% of the budget or 15 minutes, whichever is "
+        "larger (useful to avoid a hard CI cancellation, e.g. GitHub Actions' 6h limit)."
+    ),
+)
+def main(n, max_minutes):
+    start = monotonic()
+    deadline = None
+    if max_minutes is not None:
+        max_seconds = max_minutes * 60
+        buffer_seconds = max(0.05 * max_seconds, 15 * 60)
+        deadline = start + max_seconds - buffer_seconds
+        logger.debug(
+            f"Runtime budget: {max_minutes} min, "
+            f"buffer: {buffer_seconds / 60:.1f} min, "
+            f"will stop after {(max_seconds - buffer_seconds) / 60:.1f} min"
+        )
+
     logger.debug("Loading servers from database...")
     database.load(n)
     logger.debug(
@@ -40,6 +66,14 @@ def main(n):
 
     total = len(database.servers)
     for i, server in enumerate(database.servers, start=1):
+        if deadline is not None and monotonic() >= deadline:
+            logger.info(
+                f"Runtime budget of {max_minutes} min nearly reached after "
+                f"{(monotonic() - start) / 60:.1f} min; "
+                f"stopping early at server {i}/{total} (processed {i - 1})"
+            )
+            break
+
         server_folder = (
             Path(DATA_FOLDER) / server.vendor.vendor_id / server.api_reference
         )
