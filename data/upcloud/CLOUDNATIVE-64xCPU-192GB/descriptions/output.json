@@ -1,23 +1,22 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-64xCPU-192GB is a KVM-based virtual server configured with 64 shared vCPUs and 192.0 GB of system memory. The underlying processor is an AMD EPYC 7542 running at 2.0 GHz on the x86_64 architecture, featuring 64 physical cores with 1.0 thread per core. The CPU cache configuration includes 64 KB L1d, 0.5 MB L2, and 16 MB L3 cache. The server does not include local storage or bundled GPU accelerators, and it comes with zero complimentary public IPv4 addresses.",
-    "Performance benchmarks indicate a contrast between single-core and multi-core capabilities. The single-core stress-ng performance is in the bottom 10%, and single-threaded text processing is in the bottom 25%. However, multi-threaded operations show stronger results. The server achieves top 25% performance in multi-threaded bzip3 decompression, PassMark CPU score, CPU extended instructions, encryption, and physics tests. Redis SET operations and prompt processing for small 135M LLM models also rank in the top 25%. Most other metrics, including Geekbench multi-core, software compilation, and static web serving throughput, fall into the average range.",
-    "The shared CPU allocation model presents a potential tradeoff for workloads requiring sustained, predictable single-core performance, as reflected in the lower single-core benchmark tiers. However, the high core count and 192.0 GB of memory provide resource density suitable for parallelized workloads. From a qualitative cost-efficiency perspective, this server offers a high density of vCPUs and memory for multi-threaded tasks without the added cost of dedicated cores or bundled local storage. It is suited for multi-threaded data processing, parallel software compilation, Redis caching layers, and moderate-scale LLM prompt processing."
+    "UpCloud CLOUDNATIVE-64xCPU-192GB is a KVM-hypervised virtual server featuring 64 vCPUs and 192.0 GB of system memory, yielding a memory-to-core ratio of 3.0 GB per core. The instance is powered by an AMD EPYC 7542 processor operating at 2.0 GHz on the x86_64 architecture. The CPU allocation is shared, and the hardware configuration does not include bundled local storage or integrated GPUs.",
+    "Performance benchmarks reveal a contrast between single-core and multi-core capabilities. The server exhibits poor single-core CPU performance in stress-ng tests, placing in the bottom 10%, and weak text processing in Geekbench. However, multi-core execution is robust, with multi-threaded bzip3 decompression, Passmark CPU scores, and Redis SET operations all performing in the top 25%. Memory bandwidth and static web serving throughput remain in the average tier.",
+    "The shared CPU allocation presents a tradeoff for workloads requiring sustained, predictable single-core performance. However, the high physical core count and strong multi-threaded capabilities make this server efficient for highly parallelized tasks. It is suitable for multi-threaded decompression, database operations, and parallelized general-purpose workloads that can tolerate shared CPU resources."
   ],
-  "description": "UpCloud CLOUDNATIVE-64xCPU-192GB is an x86_64 virtual server featuring 64 shared AMD EPYC 7542 vCPUs and 192.0 GB of RAM. Running on the KVM hypervisor, this server does not include local storage or dedicated GPU hardware. Benchmark data reveals a clear distinction between single-core and multi-core performance; while single-core stress-ng results fall in the bottom 10%, multi-threaded capabilities are robust, with PassMark CPU, encryption, and bzip3 multi-threaded decompression scores ranking in the top 25%. Additionally, Redis SET operations and small LLM prompt processing perform in the top 25%. The shared CPU allocation model makes this server a cost-efficient option for highly parallelized workloads that do not require dedicated single-core execution. It is well-suited for multi-threaded data processing, caching layers, and software compilation.",
-  "og_description": "UpCloud CLOUDNATIVE-64xCPU-192GB is a KVM-based server with 64 shared AMD EPYC vCPUs and 192 GB RAM, offering strong multi-threaded performance for parallel workloads without local storage.",
-  "meta_description": "UpCloud CLOUDNATIVE-64xCPU-192GB features 64 shared AMD EPYC vCPUs and 192 GB RAM, delivering strong multi-threaded and database performance.",
-  "tagline": "A high-core, shared-resource virtual server optimized for parallelized multi-threaded workloads, memory-intensive caching, and data processing tasks.",
+  "description": "UpCloud CLOUDNATIVE-64xCPU-192GB is an x86_64 virtual server configured with 64 vCPUs and 192.0 GB of RAM, running on a KVM hypervisor. Powered by an AMD EPYC 7542 processor at 2.0 GHz with a shared CPU allocation, this instance lacks bundled local storage and dedicated GPUs. Benchmark data indicates a clear tradeoff: single-core CPU performance is poor, ranking in the bottom 10% of stress-ng tests, whereas multi-core performance is highly competitive, with Passmark CPU metrics and multi-threaded bzip3 decompression scoring in the top 25%. Additionally, Redis SET operations demonstrate strong throughput. Given the shared resource model and high core density, this server is best utilized for highly parallelized, non-latency-sensitive workloads such as multi-threaded data processing, database operations, and general-purpose batch computing.",
+  "og_description": "UpCloud CLOUDNATIVE-64xCPU-192GB is a KVM virtual server with 64 AMD EPYC vCPUs and 192 GB RAM. It offers strong multi-core performance alongside shared CPU allocation and no local storage.",
+  "meta_description": "UpCloud CLOUDNATIVE-64xCPU-192GB features 64 AMD EPYC vCPUs and 192 GB RAM, delivering strong multi-core performance with shared CPU allocation.",
+  "tagline": "A high-core virtual server with shared AMD EPYC processors and 192 GB RAM, optimized for parallelized multi-threaded workloads.",
   "bullet_points": [
-    "64 shared AMD EPYC 7542 vCPUs and 192.0 GB of system memory",
-    "KVM hypervisor architecture with no bundled local storage or GPUs",
-    "Strong multi-threaded performance, ranking in the top 25% for PassMark CPU tests",
-    "High-throughput Redis SET operations and small LLM prompt processing",
-    "Shared CPU allocation model optimized for parallel, non-continuous workloads",
-    "Best suited for multi-threaded data processing, caching, and software compilation"
+    "64 AMD EPYC 7542 vCPUs with shared CPU allocation",
+    "192.0 GB of system memory (3.0 GB per core)",
+    "Strong multi-core performance in Passmark and bzip3 benchmarks",
+    "No bundled local storage or GPU resources",
+    "Suited for parallelized batch processing and database operations"
   ],
   "categories": [
     "General Purpose",
-    "Compute Optimized"
+    "Burstable & Budget"
   ]
 }

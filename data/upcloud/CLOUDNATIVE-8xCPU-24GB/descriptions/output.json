@@ -1,22 +1,22 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-8xCPU-24GB is a KVM-based virtual server belonging to the CLOUDNATIVE family. It features 8 shared vCPUs mapped to 8 physical cores of an AMD EPYC 7542 processor running at 2.0 GHz. The system is built on the x86_64 architecture and includes 24.0 GB of system memory, yielding 3.0 GB of RAM per core. No local storage is bundled with this instance, and it does not include any GPUs or complimentary public IPv4 addresses.",
-    "Benchmark data indicates average overall performance across most multi-threaded workloads, though single-core execution is a notable bottleneck. The stress-ng single-core CPU performance falls into the bottom 10%, whereas multi-core performance aligns with the middle 50% of tested systems. Memory performance is mixed; while cached small-block read bandwidth is average at 821.2 GB/sec, the PassMark memory score is weak, placing in the bottom 25%. The server handles standard tasks like software compilation, ray tracing, and static web serving at average speeds, but struggles with heavier workloads, as evidenced by poor text generation speeds on medium-sized 7B LLM models.",
-    "Given its shared CPU allocation and lack of dedicated local storage, this server offers a cost-effective resource profile for non-critical, parallelizable workloads. It is well-suited for multi-threaded applications that can tolerate shared CPU resources, such as general-purpose web serving, basic database operations, and lightweight background processing. It is less suitable for single-threaded tasks or memory-intensive applications due to its lower single-core performance and weak memory benchmark scores."
+    "UpCloud CLOUDNATIVE-8xCPU-24GB is a general-purpose virtual server built on the KVM hypervisor. It features 8 shared vCPUs powered by an AMD EPYC 7542 processor running at 2.0 GHz, utilizing the x86_64 architecture. The hardware configuration includes 24.0 GB of system memory, providing 3.0 GB of RAM per core. This server does not include local storage or dedicated GPU hardware, requiring external storage attachments for persistent data.",
+    "Benchmark results indicate a clear performance profile with distinct tradeoffs. The shared CPU allocation results in poor single-core performance, as shown by a stress-ng single-core score of 772.79, which falls into the bottom 10 percent of tested servers. However, multi-core performance is average, with a stress-ng multi-core score of 6254.7 and a Geekbench multi-core score of 6189.0. Memory performance is mixed; while cached read-only small block bandwidth is average at 821.2 GB/sec, the PassMark memory score is weak, placing in the bottom 25 percent. Static web serving throughput is also weak at 6.02 GB/sec.",
+    "This server is qualitatively cost-efficient for multi-threaded workloads that do not require sustained peak single-core performance. It is suited for tasks such as software compilation, multi-threaded decompression, and moderate database operations, as evidenced by an average PassMark database score of 4451.22 and 11.84 million Redis SET operations per second. It is less suitable for large-scale LLM inference or high-throughput web serving due to weak performance in those specific areas."
   ],
-  "description": "UpCloud CLOUDNATIVE-8xCPU-24GB is a KVM-based virtual server configured with 8 shared AMD EPYC 7542 vCPUs running at 2.0 GHz and 24.0 GB of RAM. Lacking local storage and GPU acceleration, this x86_64 instance relies on shared CPU allocation, making it a budget-friendly option for multi-threaded workloads. Performance benchmarks show average multi-core capabilities, including a Geekbench multi-core score of 6189.0 and a static web serving throughput of 6.02 GB/sec. However, single-core performance is weak, with stress-ng single-core results placing in the bottom 10%. Memory performance is also limited, as reflected in a weak PassMark memory score. This server is best suited for general-purpose web serving, basic database operations, and multi-threaded background tasks that do not require dedicated CPU resources or high single-core speed.",
-  "og_description": "UpCloud CLOUDNATIVE-8xCPU-24GB is a KVM virtual server with 8 shared AMD EPYC vCPUs and 24 GB RAM. It offers average multi-core performance but exhibits weak single-core and memory benchmarks.",
-  "meta_description": "UpCloud CLOUDNATIVE-8xCPU-24GB is an x86_64 virtual server with 8 shared AMD EPYC vCPUs, 24 GB RAM, and average multi-core performance.",
-  "tagline": "A shared-resource virtual server offering eight vCPUs and balanced multi-core performance for budget-conscious general-purpose workloads.",
+  "description": "UpCloud CLOUDNATIVE-8xCPU-24GB is an x86_64 virtual server featuring 8 shared AMD EPYC 7542 vCPUs and 24.0 GB of RAM. Operating on the KVM hypervisor, this instance does not include local storage or GPU accelerators. Performance benchmarks show a significant tradeoff: single-core CPU performance is poor, falling in the bottom 10 percent, whereas multi-core capabilities and memory bandwidth generally align with average mid-range standards. PassMark memory scores and static web serving throughput are weak, but the server demonstrates solid multi-threaded decompression and database operation metrics. This configuration is qualitatively cost-effective for general-purpose, multi-threaded workloads, software compilation, and moderate database tasks that do not demand dedicated CPU cores or high single-thread performance.",
+  "og_description": "UpCloud CLOUDNATIVE-8xCPU-24GB is an x86_64 virtual server with 8 shared AMD EPYC vCPUs and 24 GB RAM, offering balanced multi-core performance with poor single-core speeds and no local storage.",
+  "meta_description": "UpCloud CLOUDNATIVE-8xCPU-24GB is an x86_64 KVM virtual server with 8 shared AMD EPYC vCPUs, 24 GB RAM, and average multi-core performance.",
+  "tagline": "A shared-core virtual server balancing eight AMD EPYC vCPUs and twenty-four gigabytes of memory for multi-threaded general-purpose workloads.",
   "bullet_points": [
     "8 shared AMD EPYC 7542 vCPUs on x86_64 architecture",
     "24.0 GB of system memory with no bundled local storage",
-    "Average multi-core performance for web serving and software compilation",
-    "Weak single-core CPU and memory benchmark results",
-    "Suitable for budget-friendly, multi-threaded general workloads"
+    "Average multi-core performance alongside weak single-core speeds",
+    "Suited for software compilation and multi-threaded decompression",
+    "Capable of moderate database operations and Redis caching"
   ],
   "categories": [
-    "Burstable & Budget",
-    "General Purpose"
+    "General Purpose",
+    "Burstable & Budget"
   ]
 }

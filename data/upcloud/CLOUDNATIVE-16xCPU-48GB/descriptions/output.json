@@ -1,23 +1,22 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-16xCPU-48GB is an x86_64 architecture server powered by an AMD EPYC 7542 processor. It features 16 virtual CPUs mapped to 16 physical cores with a single thread per core, operating at a clock speed of 2.0 GHz. The system is equipped with 48.0 GB of system memory, providing 3.0 GB of RAM per core. This instance does not include local storage or dedicated GPU hardware, and runs on the KVM hypervisor with shared CPU allocation.",
-    "Benchmark data indicates a clear performance tradeoff. The shared CPU allocation results in poor single-core CPU performance, placing in the bottom 10% of stress-ng single-core benchmarks. However, multi-threaded capabilities are more robust, with bzip3 multi-threaded decompression scoring in the top 25% at 149.23 GB/sec. Most other metrics, including Geekbench multi-core, Passmark CPU, and Redis SET operations, fall within the average range.",
-    "From a qualitative cost-efficiency perspective, the shared CPU model offers a high density of vCPUs and memory resources at a lower cost profile, making it suitable for workloads that can tolerate shared CPU scheduling. Appropriate workloads include multi-threaded data processing, static web serving, and moderate database operations, whereas tasks requiring sustained, high-performance single-core execution are less suitable."
+    "UpCloud CLOUDNATIVE-16xCPU-48GB is a virtual server built on the KVM hypervisor. It features 16 vCPUs powered by an AMD EPYC 7542 processor running at 2.0 GHz, utilizing the x86_64 architecture. The server is configured with 48.0 GB of system memory, providing 3.0 GB of RAM per core. No local storage or GPUs are bundled with this instance, and it includes zero complimentary public IPv4 addresses.",
+    "Performance benchmarks indicate a clear tradeoff between single-core and multi-core capabilities. Due to its shared CPU allocation, the instance exhibits poor single-core performance, scoring in the bottom 10% on stress-ng single-core tests. However, its multi-core performance is average, with a stress-ng multi-core score of 12555.22 and a Geekbench multi-core score of 8794.0. Memory bandwidth is stable, reaching 82.52 GB/sec for large-block read operations and 39.0 GB/sec for large-block write operations.",
+    "This server type offers a cost-effective option for multi-threaded workloads that do not require dedicated CPU cores or local storage. It is well-suited for tasks such as static web serving, where it achieves a throughput of 11.83 GB/sec, and database operations, supported by a Redis SET performance of 22.77 million operations per second. It can also handle light LLM inference, processing 56.21 tokens per second on a medium 7B model. It is not recommended for single-threaded applications or high-performance computing due to its shared CPU architecture."
   ],
-  "description": "UpCloud CLOUDNATIVE-16xCPU-48GB is an x86_64 server featuring 16 shared AMD EPYC 7542 vCPUs and 48.0 GB of RAM. Operating on the KVM hypervisor, this instance does not include local storage or GPU accelerators. Performance benchmarks show a distinct tradeoff: single-core CPU performance is poor, ranking in the bottom 10% on stress-ng, while multi-threaded operations like bzip3 decompression perform strongly in the top 25%. Most other benchmarks, including memory bandwidth, Redis SET operations, and Geekbench scores, fall in the average tier. Qualitatively, the shared CPU allocation provides a cost-effective resource density for multi-threaded workloads. This server is suited for static web serving, multi-threaded data processing, and moderate database operations that do not require dedicated single-core CPU performance.",
-  "og_description": "UpCloud CLOUDNATIVE-16xCPU-48GB is an x86_64 server with 16 shared AMD EPYC vCPUs and 48 GB RAM. It offers average multi-core performance but limited single-core capacity, making it a budget-friendly multi-threaded option.",
-  "meta_description": "UpCloud CLOUDNATIVE-16xCPU-48GB is an x86_64 server with 16 shared AMD EPYC vCPUs and 48 GB RAM, suited for budget multi-threaded workloads.",
-  "tagline": "A shared-CPU instance offering sixteen cores and forty-eight gigabytes of memory for cost-effective, multi-threaded data processing workloads.",
+  "description": "The UpCloud CLOUDNATIVE-16xCPU-48GB is an x86_64 virtual server featuring 16 shared AMD EPYC 7542 vCPUs clocked at 2.0 GHz and 48.0 GB of RAM. Operating on the KVM hypervisor, this instance does not include local storage or GPU resources. Benchmark data reveals a significant performance tradeoff: single-core CPU performance is poor, landing in the bottom 10%, while multi-core performance and memory bandwidth remain in the average tier. Specifically, it achieves a Geekbench multi-core score of 8794.0 and a static web serving throughput of 11.83 GB/sec. This resource profile is qualitatively cost-efficient for multi-threaded, non-critical workloads. It is best suited for static web serving, multi-threaded background processing, and moderate database operations that can tolerate shared CPU allocation.",
+  "og_description": "UpCloud CLOUDNATIVE-16xCPU-48GB is an x86_64 virtual server featuring 16 shared AMD EPYC vCPUs and 48 GB RAM. It delivers average multi-core performance and is designed for budget-conscious multi-threaded workloads.",
+  "meta_description": "UpCloud CLOUDNATIVE-16xCPU-48GB is an x86_64 server with 16 shared AMD EPYC vCPUs and 48 GB RAM, delivering average multi-core performance.",
+  "tagline": "A budget-friendly virtual server with sixteen shared AMD EPYC cores and forty-eight gigabytes of RAM for multi-threaded workloads.",
   "bullet_points": [
     "16 shared AMD EPYC 7542 vCPUs and 48.0 GB of system memory",
-    "KVM hypervisor architecture with x86_64 compatibility",
-    "Strong multi-threaded bzip3 decompression performance in the top 25%",
-    "Poor single-core CPU performance due to shared resource allocation",
-    "No bundled local storage or GPU hardware included",
-    "Best suited for static web serving and multi-threaded batch processing"
+    "KVM hypervisor architecture with no bundled local storage or GPUs",
+    "Average multi-core performance contrasted with poor single-core speeds",
+    "Qualitatively cost-effective for non-critical, multi-threaded applications",
+    "Suitable for static web serving, Redis databases, and light LLM inference"
   ],
   "categories": [
-    "General Purpose",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "General Purpose"
   ]
 }
