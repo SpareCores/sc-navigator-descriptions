@@ -35,6 +35,7 @@ jobs:
           uv pip install -r requirements.txt
 
       - name: Generate descriptions
+        continue-on-error: true
         run: uv run python -m src.summarize.generate --n ${{ github.event.inputs.n || '25' }}
 
       - name: Count described instances
