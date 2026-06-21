@@ -1,23 +1,21 @@
 {
   "page": [
-    "UpCloud HICPU-64xCPU-128GB is a compute-optimized server instance built on the KVM hypervisor. It features 64 vCPUs powered by an AMD EPYC 7542 processor running at 2.0 GHz, utilizing the x86_64 architecture. The system is configured with 128.0 GB of RAM, providing a resource density of 2.0 GB of memory per core. Local storage is provided via a bundled 300 GB SSD, and the instance includes one complimentary public IPv4 address.",
-    "Performance benchmarks reveal a clear contrast between single-core and multi-threaded capabilities. Single-core performance is relatively weak, with stress-ng single-core metrics falling into the bottom 10% and single-threaded gzip and bzip3 operations showing average results. However, the server excels in highly parallelized tasks. Multi-threaded bzip3 decompression and PassMark CPU extended instructions tests both rank in the top 10% tier. PassMark CPU overall, encryption, and physics tests all demonstrate strong performance in the top 25%.",
-    "Memory performance is mixed, with small-block cached read bandwidth showing strong top-25% performance, while large-block uncached read and write bandwidths remain average. Database operations, static web serving, and small-model LLM prompt processing perform at average levels, though Redis SET operations achieve strong throughput. The shared CPU allocation model presents a potential tradeoff for workloads requiring sustained, isolated single-core execution, but offers qualitative cost efficiency for highly parallelized workloads that can leverage the 64 physical cores.",
-    "This server is best suited for multi-threaded workloads such as software compilation, ray tracing, parallel data decompression, and high-throughput caching layers. It is less optimal for single-threaded applications or large-scale LLM text generation."
+    "UpCloud HICPU-64xCPU-128GB is a compute-optimized server instance powered by the KVM hypervisor. It features 64 physical cores on an x86_64 AMD EPYC 7542 processor running at 2.0 GHz, utilizing a shared CPU allocation. The system is configured with 128.0 GB of RAM, yielding a resource density of 2.0 GB of memory per core. Local storage consists of a bundled 300 GB SSD, and the instance includes one complimentary public IPv4 address. No GPU hardware is present on this configuration.",
+    "Performance benchmarks reveal a clear distinction between single-core and multi-threaded capabilities. Single-core performance is relatively weak, with stress-ng single-core CPU benchmarks falling into the bottom 10%. However, multi-threaded execution is highly capable, as evidenced by strong, top-25% results in Passmark CPU tests, including extended instructions, encryption, and physics, as well as multi-threaded bzip3 decompression and Geekbench software compilation and ray tracing. Memory bandwidth and database operations perform in the average range, while Redis SET operations demonstrate strong throughput at 74.26 million operations per second.",
+    "The qualitative cost efficiency of this instance is centered on high-density multi-core compute workloads that do not require dedicated CPU cores or massive per-core memory allocations. The 1:2 vCPU-to-RAM ratio presents a tradeoff: while highly efficient for parallelized tasks like software compilation, multi-threaded decompression, and ray tracing, it is less suitable for single-threaded applications or memory-intensive databases. It is well-suited for parallel processing, CI/CD build pipelines, and high-throughput key-value caching, but less optimal for large LLM text generation or single-core execution."
   ],
-  "description": "UpCloud HICPU-64xCPU-128GB is a compute-optimized server instance utilizing the KVM hypervisor and x86_64 architecture. Powered by an AMD EPYC 7542 processor running at 2.0 GHz, it delivers 64 vCPUs and 128.0 GB of RAM, alongside a bundled 300 GB local SSD. While single-core benchmarks like stress-ng fall in the bottom 10%, the server demonstrates top-tier multi-threaded performance, with multi-threaded bzip3 decompression and PassMark extended instructions ranking in the top 10%. Memory bandwidth for cached small blocks and Redis SET operations are also strong. The shared CPU allocation makes this instance a qualitatively cost-effective choice for highly parallelized tasks, though it is less suited for single-threaded workloads. It is highly recommended for software compilation, ray tracing, and parallel data processing.",
-  "og_description": "UpCloud HICPU-64xCPU-128GB is a compute-optimized KVM server with 64 AMD EPYC vCPUs, 128 GB RAM, and a 300 GB SSD, delivering top-tier multi-threaded performance for parallel workloads.",
-  "meta_description": "UpCloud HICPU-64xCPU-128GB is a compute-optimized KVM server featuring 64 AMD EPYC vCPUs, 128 GB RAM, and a 300 GB local SSD.",
-  "tagline": "A high-core-count compute instance optimized for parallel processing, software compilation, and multi-threaded data decompression workloads.",
+  "description": "UpCloud HICPU-64xCPU-128GB is an x86_64 compute-optimized server featuring 64 physical cores on an AMD EPYC 7542 processor running at 2.0 GHz with shared CPU allocation. It is equipped with 128.0 GB of RAM (2.0 GB per core) and a bundled 300 GB local SSD, with no GPU acceleration. While single-core benchmarks are in the bottom 10%, the instance delivers strong multi-threaded performance, scoring in the top 25% for Passmark CPU suites, multi-threaded bzip3 decompression, and software compilation. This hardware profile offers a cost-efficient solution for highly parallelized workloads, such as CI/CD pipelines, ray tracing, and Redis caching, though the shared CPU allocation and lower single-core speeds represent a tradeoff for single-threaded or dedicated-core requirements.",
+  "og_description": "UpCloud HICPU-64xCPU-128GB is an x86_64 compute-optimized server with 64 AMD EPYC cores, 128 GB RAM, and a 300 GB SSD, delivering strong multi-threaded performance for parallel workloads.",
+  "meta_description": "UpCloud HICPU-64xCPU-128GB is a KVM-based server with 64 AMD EPYC cores, 128 GB RAM, and a 300 GB SSD, optimized for multi-threaded workloads.",
+  "tagline": "A high-core-count compute instance featuring 64 AMD EPYC cores and 128 GB RAM, optimized for parallel processing and multi-threaded workloads.",
   "bullet_points": [
-    "64 AMD EPYC 7542 vCPUs and 128.0 GB of system memory",
-    "Bundled 300 GB local SSD storage and KVM hypervisor",
-    "Top-tier multi-threaded decompression and extended instruction performance",
-    "Strong performance in software compilation, ray tracing, and Redis operations",
-    "Qualitatively cost-effective shared CPU model for highly parallel workloads"
+    "64 AMD EPYC 7542 physical cores on x86_64 architecture",
+    "128.0 GB RAM (2.0 GB per core) and 300 GB local SSD",
+    "Strong multi-threaded performance in compilation and cryptography",
+    "Shared CPU allocation under KVM hypervisor",
+    "Best suited for parallel processing, CI/CD pipelines, and Redis caching"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

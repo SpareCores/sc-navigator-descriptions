@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c6gd.xlarge is a compute-optimized instance powered by a dedicated AWS Graviton ARMv8 Neoverse-N1 processor. It features 4 physical cores and 4 vCPUs running at 2.5 GHz with no hyperthreading. The hardware configuration includes 8.0 GB of system memory, providing 2.0 GB per core, and a 237 GB local NVMe SSD instance store volume. It operates on the Nitro hypervisor and provides a baseline network bandwidth of 1 Gbps.",
-    "Performance benchmarks place the c6gd.xlarge in the average tier for stress-ng single-core and multi-core CPU tests, scoring 1519.58 and 6061.97 respectively. Large-block memory bandwidth read and write operations also perform in the average range, measuring 72.54 GB/sec and 33.66 GB/sec. However, the instance exhibits weaker performance in memory-intensive small-block reads and single-threaded gzip compression. Passmark database operations score at an average level of 2607.7, while cryptographic operations benefit from hardware-accelerated AES support.",
-    "From a cost-efficiency perspective, the c6gd.xlarge offers a balanced profile for workloads requiring dedicated ARM64 compute resources paired with fast local NVMe storage. The inclusion of local SSD storage without requiring external network-attached volumes reduces latency for IOPS-sensitive tasks. This configuration is suitable for multi-threaded applications, lightweight database operations, static web serving, and localized caching layers that fit within the 8.0 GB memory limit."
+    "Amazon Web Services c6gd.xlarge is a compute-optimized instance powered by the Nitro hypervisor and custom AWS Graviton processors. It features an arm64 architecture with 4 dedicated physical cores and 4 vCPUs running at 2.5 GHz on the ARMv8 Neoverse-N1 model. The CPU includes 64 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. The instance is equipped with 8.0 GB of memory, providing a resource density of 2.0 GB per core. It also features a bundled 237 GB local NVMe SSD for high-speed temporary storage and a baseline network bandwidth of 1 Gbps.",
+    "Benchmark data reveals average performance in compute-heavy workloads, with stress-ng single-core and multi-core scores reaching 1519.58 and 6061.97 respectively. Memory bandwidth is mixed, showing average performance on large block reads at 72.54 GB/sec and writes at 33.66 GB/sec, but weaker performance on small block cached reads at 235.91 GB/sec. Passmark database operations perform at an average level of 2607.7, while other metrics like Geekbench multi-core and Passmark CPU score rank in the weak to poor categories. Single-threaded compression and decompression tasks also show lower relative performance.",
+    "From a cost-efficiency perspective, the c6gd.xlarge offers a balanced entry point for ARM-based compute workloads requiring local NVMe storage without the overhead of hyperthreading, as it features a 1:1 physical-to-virtual core ratio. However, memory-intensive applications and complex instruction sets may face performance bottlenecks due to the lower memory-to-CPU ratio and weaker memory benchmark scores. This instance is best suited for lightweight database operations, distributed caching, static web serving, and localized development tasks that benefit from dedicated ARM cores and fast local SSD storage."
   ],
-  "description": "Amazon Web Services c6gd.xlarge is a compute-optimized, ARM64-based instance powered by a dedicated 4-core AWS Graviton Neoverse-N1 processor running at 2.5 GHz. It is equipped with 8.0 GB of system memory and a 237 GB local NVMe SSD instance store volume, running on the Nitro hypervisor with a 1 Gbps baseline network speed. Benchmark data indicates average performance in stress-ng CPU tests and large-block memory bandwidth, alongside average database operation capabilities. However, it shows weaker results in small-block memory reads and single-threaded compression tasks. Lacking hyperthreading and AVX extensions, this instance is qualitatively cost-effective for workloads that benefit from dedicated physical cores and low-latency local storage. It is well-suited for distributed caching, lightweight database operations, static web serving, and multi-threaded ARM64 applications.",
-  "og_description": "Amazon Web Services c6gd.xlarge is a compute-optimized ARM64 instance featuring 4 dedicated Graviton cores, 8.0 GB of RAM, and a 237 GB local NVMe SSD for efficient database and web serving workloads.",
-  "meta_description": "Amazon Web Services c6gd.xlarge is an ARM64 compute-optimized instance with 4 dedicated cores, 8.0 GB RAM, and a 237 GB local NVMe SSD.",
-  "tagline": "An ARM64 compute-optimized instance featuring dedicated physical cores and integrated local NVMe SSD storage for efficient localized workloads.",
+  "description": "Amazon Web Services c6gd.xlarge is an arm64 compute-optimized instance featuring 4 dedicated physical cores powered by an AWS Graviton Neoverse-N1 processor running at 2.5 GHz. It is configured with 8.0 GB of memory, a baseline network bandwidth of 1 Gbps, and a bundled 237 GB local NVMe SSD. Operating on the Nitro hypervisor, the instance delivers average performance in stress-ng CPU benchmarks and Passmark database operations, though it exhibits weaker results in memory bandwidth and single-threaded decompression tasks. The dedicated core allocation and local NVMe storage make it a cost-efficient choice for workloads requiring fast local disk access and moderate compute power. It is well-suited for lightweight database operations, static web serving, and ARM-native application development.",
+  "og_description": "Amazon Web Services c6gd.xlarge is an arm64 compute-optimized instance with 4 dedicated Graviton cores, 8.0 GB RAM, and a 237 GB local NVMe SSD, suitable for lightweight database and web serving workloads.",
+  "meta_description": "Amazon Web Services c6gd.xlarge is an arm64 compute-optimized instance with 4 dedicated Graviton cores, 8.0 GB RAM, and 237 GB local NVMe SSD.",
+  "tagline": "An arm64 compute-optimized instance featuring dedicated Graviton cores and high-speed local NVMe SSD storage for balanced, localized workloads.",
   "bullet_points": [
-    "AWS Graviton Neoverse-N1 ARM64 processor with 4 dedicated physical cores",
-    "8.0 GB of system memory and 237 GB of local NVMe SSD instance storage",
-    "Nitro hypervisor architecture with 1 Gbps baseline network bandwidth",
-    "Average performance in CPU stress tests and database operations",
-    "Best suited for static web serving, caching, and lightweight databases"
+    "Powered by 4 dedicated AWS Graviton Neoverse-N1 physical cores at 2.5 GHz",
+    "Equipped with 8.0 GB of system memory and a 1 Gbps baseline network",
+    "Includes 237 GB of high-speed local NVMe SSD storage",
+    "Delivers average performance in stress-ng CPU and database benchmarks",
+    "Best suited for lightweight databases, static web serving, and ARM development"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

@@ -1,22 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c4-standard-48 is a compute-focused virtual machine instance featuring 48 vCPUs and 180 GB of system memory. Powered by a dedicated Intel Xeon 8581C processor operating at 2.3 GHz, this x86_64 architecture server provides 24 physical cores with hyper-threading enabled. The processor is equipped with a 260 MB L3 cache, 2 MB L2 cache, and 48 KB L1d cache. It does not include local storage or bundled GPUs, and has zero complimentary public IPv4 addresses.",
-    "In benchmark testing, the c4-standard-48 demonstrates strong performance across multiple domains. Single-core and multi-core Geekbench scores rank in the top tier and strong categories respectively, with notable strengths in image processing and text processing. The instance features advanced hardware instruction sets, including Intel Advanced Matrix Extensions and Advanced Vector Extensions, which contribute to strong performance in Passmark extended instructions and encryption tests. Memory bandwidth tests show a strong read-only small block cached speed of 3389.0 GB/sec, though uncached large block read and write speeds drop to average levels.",
-    "This hardware configuration is highly suited for compute-intensive workloads that benefit from specialized instruction sets, such as software compilation, cryptography, and static web serving. The inclusion of AMX tiles enables strong performance in CPU-based machine learning tasks, as evidenced by strong LLM inference speeds for small and medium models. However, the lack of local NVMe storage and dedicated GPUs represents a tradeoff for workloads requiring high-speed local disk I/O or massive parallel graphics acceleration. It is best utilized for database operations, web serving, and general-purpose compute tasks that require a balanced memory-to-core ratio of 3.75 GB per vCPU."
+    "Google Cloud Platform c4-standard-48 is a general-purpose server powered by an Intel Xeon 8581C processor. It features 48 dedicated vCPUs mapped to 24 physical cores with hyper-threading enabled, running at a base speed of 2.3 GHz. The instance is configured with 180.0 GB of RAM, translating to 3.75 GB per core. It does not include bundled local storage or integrated GPUs, and has zero complimentary public IPv4 addresses.",
+    "The underlying x86_64 architecture supports advanced instruction sets, including Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX_TILE and AMX_INT8). These hardware accelerators contribute to strong performance in specialized tasks. In benchmarks, the server achieves a Geekbench single-core score of 2175.0 and a multi-core score of 18084.0. Passmark CPU tests yield a score of 54598.51, with strong results in extended instructions and encryption.",
+    "Memory subsystem performance is characterized by a strong cached read bandwidth of 3389.0 GB/sec, though uncached large-block reads and writes drop to average levels of 144.84 GB/sec and 61.98 GB/sec respectively. The server demonstrates strong throughput in static web serving at 74.96 GB/sec and Redis SET operations at 60.15 million operations per second. For machine learning workloads, the CPU-based LLM inference speeds are notable, processing 3296.88 tokens per second for a small 135M model and 24.25 tokens per second for a large 70B model.",
+    "From a qualitative cost-efficiency perspective, the c4-standard-48 offers a balanced resource density suitable for enterprise workloads without the premium cost of dedicated GPU hardware. However, the lack of local NVMe storage means all storage operations must rely on network-attached volumes, which represents a potential I/O bottleneck. This server is well-suited for software compilation, image processing, database operations, web serving, and CPU-based machine learning inference."
   ],
-  "description": "The Google Cloud Platform c4-standard-48 is an x86_64 virtual machine featuring 48 dedicated vCPUs and 180 GB of RAM, powered by an Intel Xeon 8581C processor running at 2.3 GHz. With 24 physical cores and hyper-threading, the instance incorporates a 260 MB L3 cache and advanced instruction sets including Intel AMX and AVX-512. Benchmark results indicate strong performance in multi-threaded decompression, software compilation, and cryptography, alongside top-tier single-core Geekbench results for image and text processing. While the instance lacks local storage and GPU accelerators, its high memory bandwidth and dedicated compute resources make it highly efficient for database operations, static web serving, and CPU-based LLM inference.",
-  "og_description": "Google Cloud Platform c4-standard-48 is an x86_64 server with 48 dedicated Intel Xeon vCPUs, 180 GB RAM, and advanced AMX/AVX-512 instruction sets, optimized for compute-heavy workloads and database operations.",
-  "meta_description": "Google Cloud Platform c4-standard-48 features 48 dedicated Intel Xeon vCPUs and 180 GB RAM, delivering strong performance for compute-intensive workloads.",
-  "tagline": "A dedicated 48-vCPU compute instance featuring Intel Xeon processors and advanced matrix extensions for accelerated mathematical and database workloads.",
+  "description": "The Google Cloud Platform c4-standard-48 is an x86_64 general-purpose server configured with 48 dedicated vCPUs (24 physical cores) powered by an Intel Xeon 8581C processor running at 2.3 GHz, paired with 180.0 GB of RAM. It features no local storage or GPUs. The processor includes advanced instruction sets such as AVX-512 and Intel AMX, enabling top-tier performance in image processing and single-core Geekbench tests. Benchmarks show strong multi-core capabilities, with a Passmark CPU score of 54598.51 and a static web serving throughput of 74.96 GB/sec. Memory performance is robust, delivering 3389.0 GB/sec for cached reads. This instance is highly efficient for workloads requiring balanced compute and memory, such as software compilation, database operations, static web serving, and CPU-based LLM inference, though it lacks local storage.",
+  "og_description": "Google Cloud Platform c4-standard-48 is an x86_64 server featuring 48 dedicated Intel Xeon vCPUs, 180 GB of RAM, and advanced AMX and AVX-512 instruction sets, optimized for balanced general-purpose workloads.",
+  "meta_description": "Google Cloud Platform c4-standard-48 is a general-purpose server with 48 dedicated Intel Xeon vCPUs, 180 GB RAM, and no local storage.",
+  "tagline": "A balanced 48-vCPU general-purpose instance featuring Intel Xeon processors with advanced matrix extensions for accelerated compute and memory-intensive workloads.",
   "bullet_points": [
-    "48 dedicated vCPUs and 180 GB RAM powered by an Intel Xeon 8581C processor.",
-    "Intel AMX and AVX-512 support for accelerated cryptography and matrix operations.",
-    "Strong multi-threaded performance in software compilation and database operations.",
-    "Top-tier single-core benchmarks in image and text processing.",
-    "No local storage or GPU accelerators included in the base configuration."
+    "48 dedicated vCPUs powered by an Intel Xeon 8581C processor at 2.3 GHz",
+    "180.0 GB of system memory providing 3.75 GB per core",
+    "Intel AMX and AVX-512 support for accelerated cryptography and matrix operations",
+    "Strong performance in static web serving, Redis operations, and software compilation",
+    "No bundled local storage or integrated GPU accelerators",
+    "Best suited for database operations, web serving, and CPU-based LLM inference"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

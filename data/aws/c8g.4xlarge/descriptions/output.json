@@ -1,22 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c8g.4xlarge is a compute-optimized server instance powered by the Nitro hypervisor. It features 16 dedicated physical cores utilizing the 64-bit ARM architecture with AWS Neoverse-V2 processors running at 2.8 GHz. The hardware configuration includes 32.0 GB of system memory, providing a resource density of 2.0 GB per core. It does not include local storage or integrated GPUs, and it provides a baseline network bandwidth of 8 Gbps.",
-    "Benchmark evaluations indicate strong memory performance, with a top-tier Passmark memory score and strong uncached read and write memory bandwidths of 302.31 GB/sec and 123.66 GB/sec, respectively. Single-threaded gzip compression and multi-threaded bzip3 decompression also register strong results. However, the instance exhibits weaker performance in LLM inference prompt processing for medium-sized 7B models, though text generation for the same model size remains average.",
-    "Given its ARM-based architecture and dedicated core allocation, the instance offers high resource density and compute efficiency for workloads that do not require local storage or GPU acceleration. It is well-suited for compute-bound tasks such as software compilation, database operations, web serving, and data decompression."
+    "Amazon Web Services c8g.4xlarge is a compute-optimized instance powered by the custom AWS Graviton4 processor utilizing the 64-bit ARM (arm64) architecture. It features 16 dedicated physical cores and 16 vCPUs running at 2.8 GHz, with a 1:1 thread-to-core ratio. The processor includes 64 KB of L1 data cache, 2 MB of L2 cache, and 36 MB of L3 cache. The instance is equipped with 32.0 GB of system memory, providing 2.0 GB of RAM per core. It operates on the AWS Nitro hypervisor, has a baseline network bandwidth of 8 Gbps, and does not include local storage or dedicated GPU hardware.",
+    "Benchmark data indicates strong memory subsystem performance, with the Passmark memory score ranking in the top 10% tier. Uncached large-block memory read bandwidth reaches 302.31 GB/sec, and write bandwidth reaches 123.66 GB/sec, both placing in the top 25% tier. Compute performance is robust, with Geekbench single-core (1888.0) and multi-core (15991.0) scores in the top 25% tier, alongside strong multi-threaded bzip3 decompression and database operations. Standard CPU tasks, such as stress-ng workloads, static web serving, and cryptography, perform within the average range.",
+    "The instance exhibits certain performance limitations, particularly in large-language model (LLM) prompt processing for medium-sized 7B models, which falls into the bottom 25% tier. The lack of local NVMe storage and GPU acceleration restricts its utility for heavy storage-bound databases or deep learning training. However, the high memory bandwidth and dedicated core allocation make it highly cost-efficient for compute-intensive workloads that fit within its 32 GB memory footprint. It is suited for tasks such as software compilation, text processing, web serving, and distributed compute workloads."
   ],
-  "description": "Amazon Web Services c8g.4xlarge is a compute-optimized server instance powered by the Nitro hypervisor and AWS Neoverse-V2 ARM64 processors. It features 16 dedicated physical cores running at 2.8 GHz, 32.0 GB of system memory, and a baseline network bandwidth of 8 Gbps. This instance does not include local storage or integrated GPUs. Benchmark data highlights strong memory performance, with uncached read bandwidth reaching 302.31 GB/sec and a top-tier Passmark memory score. It also demonstrates strong multi-threaded bzip3 decompression and database operations. However, LLM inference prompt processing for 7B models is relatively weak. The c8g.4xlarge is highly efficient for compute-intensive workloads such as software compilation, database operations, web serving, and data compression tasks that benefit from dedicated ARM cores without requiring local storage.",
-  "og_description": "Amazon Web Services c8g.4xlarge is a compute-optimized ARM64 server featuring 16 dedicated Neoverse-V2 cores, 32 GB RAM, and 8 Gbps network bandwidth, delivering strong memory and decompression performance.",
-  "meta_description": "Amazon Web Services c8g.4xlarge is a compute-optimized ARM64 server with 16 dedicated Neoverse-V2 cores, 32 GB RAM, and strong memory performance.",
-  "tagline": "A dedicated ARM64 compute-optimized instance featuring sixteen cores and high-bandwidth memory for efficient database and compression workloads.",
+  "description": "Amazon Web Services c8g.4xlarge is an arm64 compute-optimized instance powered by a 2.8 GHz AWS Graviton processor with 16 dedicated physical cores and 16 vCPUs. It features 32.0 GB of memory, yielding 2.0 GB per core, and operates on the AWS Nitro hypervisor with an 8 Gbps baseline network speed. The instance lacks local storage and GPU accelerators. Benchmark results show top-tier memory performance, with Passmark memory scores in the top 10% and uncached large-block read bandwidth reaching 302.31 GB/sec. Geekbench single-core and multi-core metrics also place in the top 25%. However, prompt processing for medium LLMs is a relative weakness, scoring in the bottom 25%. This instance offers qualitative cost efficiency for compute-bound tasks with moderate memory requirements, making it suitable for software compilation, text processing, database operations, and web serving.",
+  "og_description": "Amazon Web Services c8g.4xlarge is an arm64 compute-optimized instance featuring 16 dedicated Graviton cores, 32 GB of RAM, and top-tier memory bandwidth, suitable for compilation and database operations.",
+  "meta_description": "Amazon Web Services c8g.4xlarge is an arm64 compute-optimized instance with 16 dedicated Graviton cores, 32 GB RAM, and 8 Gbps network bandwidth.",
+  "tagline": "An arm64 compute-optimized instance featuring dedicated physical cores and top-tier memory bandwidth for efficient, high-throughput processing workloads.",
   "bullet_points": [
-    "Powered by 16 dedicated AWS Neoverse-V2 ARM64 cores running at 2.8 GHz",
-    "Equipped with 32.0 GB of system memory and 8 Gbps baseline network bandwidth",
-    "Delivers top-tier memory performance and strong uncached read/write bandwidth",
-    "Features no local storage or integrated GPU accelerators",
-    "Optimized for software compilation, database operations, and web serving"
+    "16 dedicated AWS Graviton physical cores on arm64 architecture",
+    "32 GB of system memory with top-tier memory bandwidth performance",
+    "8 Gbps baseline network bandwidth powered by the Nitro hypervisor",
+    "No local storage or GPU accelerators included",
+    "Strong performance in software compilation, text processing, and database operations",
+    "Reduced performance for medium-sized LLM prompt processing"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

@@ -1,21 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.u1-c1m1.8xlarge is an x86_64 architecture server instance powered by a 2.5 GHz Intel Xeon CPU. It features 32 dedicated physical cores and 32 vCPUs, utilizing KVM virtualization. The memory configuration is 32.0 GB, yielding a 1.0 GB per core ratio. This instance does not include local storage or GPU hardware, relying instead on network-attached storage and a baseline network bandwidth of 10 Gbps.",
-    "Benchmark results place the instance in the average performance tier for most workloads, with a stress-ng single-core CPU score of 1820.09 and a multi-core score of 30911.58. It demonstrates strong multi-threaded decompression capabilities, achieving 161.14 GB/sec in bzip3 tests, which falls into the top 25% tier. Memory bandwidth is measured at 154.63 GB/sec for large-block read operations and 69.38 GB/sec for write operations. For lightweight language model tasks, the server processes 304.01 tokens per second for text generation using a 135M parameter model, representing a strong performance tier.",
-    "The primary tradeoff of this hardware profile is its low memory-to-CPU ratio of 1:1, which limits its utility for memory-intensive databases or large-scale data caching. However, the high density of dedicated CPU cores relative to memory makes it a cost-efficient option for compute-heavy workloads that do not require large memory footprints. Appropriate workloads include multi-threaded compilation, batch processing, text processing, and lightweight web serving."
+    "Alibaba Cloud ecs.u1-c1m1.8xlarge is an x86_64 compute-focused virtual machine powered by the KVM hypervisor. It features 32 dedicated physical cores of an Intel Xeon processor running at 2.5 GHz, paired with 32 GB of system memory. This configuration yields a 1:1 vCPU-to-RAM ratio, positioning it as a highly compute-dense resource. The processor includes a 33 MB L3 cache, 1.0 MB L2 cache per core, and supports advanced instruction sets such as AVX, AVX-512, AES cryptography, and FMA. No local storage or GPU accelerators are bundled with this instance, and it provides a baseline network bandwidth of 10 Gbps.",
+    "Benchmark evaluations place this instance consistently in the average performance tier across most compute and memory workloads. It achieved a Geekbench multi-core score of 12692.0 and a PassMark CPU score of 34140.29. In memory-intensive operations, the instance delivered a read-only small-block cached bandwidth of 1688.6 GB/sec and a large-block uncached write bandwidth of 69.38 GB/sec. Notably, the server demonstrated strong performance in text generation for small language models, reaching 304.01 tokens/sec, while maintaining average speeds of 18.54 tokens/sec for medium models.",
+    "From a cost-efficiency perspective, the ecs.u1-c1m1.8xlarge offers high CPU density relative to its memory footprint, making it a viable option for compute-heavy workloads that do not require large memory allocations. However, the 1.0 GB of RAM per core represents a significant tradeoff, as memory-bound applications or large-scale databases may experience bottlenecks. The absence of local NVMe storage requires reliance on network-attached storage, which may impact I/O-heavy operations. This instance is best suited for parallel processing tasks, software compilation, CPU-based ray tracing, and lightweight machine learning inference."
   ],
-  "description": "Alibaba Cloud ecs.u1-c1m1.8xlarge is an x86_64 compute-focused server featuring 32 dedicated Intel Xeon physical cores at 2.5 GHz and 32.0 GB of RAM. Operating on a KVM hypervisor, this instance provides a 1:1 vCPU-to-RAM ratio, 10 Gbps baseline network bandwidth, and no local storage or GPU accelerators. In benchmark testing, the server demonstrates average performance across most metrics, including a Geekbench multi-core score of 12692.0 and a Passmark CPU score of 34140.29. It shows strong multi-threaded bzip3 decompression at 161.14 GB/sec and efficient text generation for small LLM models at 304.01 tokens per second. The low memory-to-core ratio represents a tradeoff, making it less suitable for memory-heavy databases but highly cost-efficient for compute-dense tasks. It is best utilized for software compilation, multi-threaded batch processing, and lightweight web serving.",
-  "og_description": "Alibaba Cloud ecs.u1-c1m1.8xlarge is a KVM-based server with 32 Intel Xeon cores, 32 GB RAM, and 10 Gbps network bandwidth, offering strong multi-threaded decompression and compute-dense performance.",
-  "meta_description": "Alibaba Cloud ecs.u1-c1m1.8xlarge features 32 Intel Xeon cores and 32 GB RAM, delivering compute-dense performance for multi-threaded workloads.",
-  "tagline": "A compute-dense, x86_64 server featuring a 1:1 CPU-to-memory ratio for efficient multi-threaded batch processing and software compilation.",
+  "description": "Alibaba Cloud ecs.u1-c1m1.8xlarge is an x86_64 compute-focused instance featuring 32 dedicated Intel Xeon physical cores running at 2.5 GHz and 32 GB of RAM. Operating on the KVM hypervisor, this server provides a 1:1 vCPU-to-RAM ratio, making it highly compute-dense. It includes a 10 Gbps baseline network bandwidth but lacks local storage and GPU accelerators. Performance benchmarks place the instance in the average tier for most tasks, with a PassMark CPU score of 34140.29 and a Geekbench multi-core score of 12692.0. It shows strong performance in text generation for small language models, achieving 304.01 tokens/sec. The low memory-to-core ratio represents a tradeoff for memory-intensive applications, making this server best suited for CPU-bound workloads like software compilation, ray tracing, and lightweight inference.",
+  "og_description": "Alibaba Cloud ecs.u1-c1m1.8xlarge is a KVM-based x86_64 server featuring 32 dedicated Intel Xeon cores, 32 GB of RAM, and a 10 Gbps network baseline, optimized for compute-dense workloads without local storage.",
+  "meta_description": "Alibaba Cloud ecs.u1-c1m1.8xlarge is a compute-dense x86_64 server with 32 Intel Xeon cores, 32 GB RAM, and 10 Gbps network bandwidth.",
+  "tagline": "A compute-dense, dedicated 32-core Intel Xeon server with a 1:1 CPU-to-RAM ratio, optimized for parallel processing and software compilation.",
   "bullet_points": [
-    "32 dedicated Intel Xeon physical cores running at 2.5 GHz",
-    "32.0 GB of system memory, establishing a 1:1 vCPU-to-RAM ratio",
-    "10 Gbps baseline network bandwidth with no local storage or GPU",
-    "Strong multi-threaded bzip3 decompression performance at 161.14 GB/sec",
-    "Suited for software compilation, batch processing, and text processing"
+    "32 dedicated Intel Xeon cores running at 2.5 GHz",
+    "32 GB of system memory providing a 1:1 vCPU-to-RAM ratio",
+    "10 Gbps baseline network bandwidth with no local storage",
+    "Strong performance in text generation for small language models",
+    "Best suited for software compilation, ray tracing, and parallel CPU tasks"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

@@ -1,24 +1,23 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-32xCPU-384GB is a KVM-based virtual server configured with 32 vCPUs and 384.0 GB of system memory. The underlying hardware features an AMD EPYC 7542 processor with an x86_64 architecture, operating at a base clock speed of 2.0 GHz. The CPU configuration consists of 32 physical cores with a thread-per-core ratio of 1.0, utilizing a shared CPU allocation model. This server does not include local storage or bundled GPUs, and has zero complimentary public IPv4 addresses.",
-    "Benchmark data reveals a clear performance profile. Single-core processing is a notable bottleneck, with stress-ng single-core CPU performance ranking in the bottom 10% and Geekbench text processing in the bottom 25%. However, multi-core execution is more robust, with stress-ng multi-core performance, Geekbench multi-core, and PassMark CPU scores all landing in the middle 50%. Multi-threaded bzip3 decompression, PassMark CPU extended instructions, and PassMark CPU encryption tests demonstrate strong performance, placing in the top 25%. Memory bandwidth and database operations consistently perform within average parameters.",
-    "The primary tradeoff of this server lies in its shared CPU allocation and weak single-core performance, which limits its suitability for latency-sensitive or single-threaded tasks. Conversely, the high memory-to-vCPU ratio of 12.0 GB per core provides substantial capacity for memory-intensive workloads. Given the shared CPU model, it offers a cost-efficient profile for resource-dense, non-production environments or batch processing. Appropriate workloads include multi-threaded data decompression, memory-cached databases, offline software compilation, and medium-scale LLM inference prompt processing."
+    "UpCloud CLOUDNATIVE-32xCPU-384GB is a KVM-hypervised virtual server configured with 32 vCPUs and 384.0 GB of RAM. The system is powered by an AMD EPYC 7542 processor running at a clock speed of 2.0 GHz on the x86_64 architecture. The CPU allocation is shared, utilizing 32 physical cores with 1.0 thread per core. This configuration provides a high memory-to-vCPU ratio of 12.0 GB per core. No local storage or GPU hardware is bundled with this server type.",
+    "Benchmark data reveals a distinct contrast between single-core and multi-core capabilities. The single-core CPU performance measured by stress-ng is poor, placing in the bottom 10%, and Geekbench text processing is weak, falling in the bottom 25%. However, multi-core performance is more resilient, with stress-ng multi-core and Geekbench multi-core scores both registering in the average range. Notably, the server demonstrates strong performance in the top 25% for multi-threaded bzip3 decompression and PassMark CPU encryption tests. Memory bandwidth and database operations consistently perform in the average tier.",
+    "The primary tradeoff of this server is its shared CPU allocation and low single-core clock speed, which limits its suitability for single-threaded tasks. However, the high memory density of 384.0 GB offers qualitative cost efficiency for memory-intensive workloads that do not require dedicated CPU cores. This profile is suited for large-scale memory caching, multi-threaded database operations, and memory-heavy general-purpose workloads that can tolerate shared CPU resources."
   ],
-  "description": "UpCloud CLOUDNATIVE-32xCPU-384GB is an x86_64 virtual server featuring 32 vCPUs and 384.0 GB of RAM, running on AMD EPYC 7542 processors via KVM. It utilizes a shared CPU allocation model with a 2.0 GHz clock speed and lacks local storage or GPU accelerators. Performance benchmarks indicate a significant contrast between single-core and multi-core capabilities; single-core stress-ng results fall in the bottom 10%, whereas multi-threaded bzip3 decompression and PassMark encryption tests rank in the top 25%. Most other metrics, including memory bandwidth, database operations, and LLM inference, perform in the average tier. With 12.0 GB of memory per core, this server is structured for memory-heavy tasks that can tolerate shared CPU resources. It is suited for multi-threaded data processing, software compilation, and memory-cached database workloads.",
-  "og_description": "UpCloud CLOUDNATIVE-32xCPU-384GB is a KVM virtual server with 32 AMD EPYC vCPUs and 384 GB RAM. It features a shared CPU model, offering strong multi-threaded performance alongside weak single-core metrics.",
-  "meta_description": "UpCloud CLOUDNATIVE-32xCPU-384GB is an x86_64 virtual server with 32 AMD EPYC vCPUs, 384 GB RAM, and a shared CPU allocation model.",
-  "tagline": "A memory-dense virtual server featuring thirty-two shared vCPUs and three hundred eighty-four gigabytes of RAM for multi-threaded workloads.",
+  "description": "UpCloud CLOUDNATIVE-32xCPU-384GB is an x86_64 virtual server configured with 32 vCPUs and 384.0 GB of system memory, running on a KVM hypervisor. Powered by an AMD EPYC 7542 processor at 2.0 GHz, the instance features a shared CPU allocation with 32 physical cores and 1.0 thread per core. It does not include local storage or GPU resources. Performance benchmarks indicate a significant tradeoff: single-core CPU performance is poor, ranking in the bottom 10%, whereas multi-core capabilities and memory bandwidth fall within the average range. The server excels in multi-threaded bzip3 decompression and CPU encryption, placing in the top 25%. Given its high memory-to-vCPU ratio of 12.0 GB per core, this instance is suited for memory-intensive applications, database operations, and multi-threaded workloads that can leverage large memory capacities under a shared CPU resource model.",
+  "og_description": "UpCloud CLOUDNATIVE-32xCPU-384GB is a KVM-based server with 32 shared AMD EPYC vCPUs and 384.0 GB RAM. It offers strong multi-threaded decompression but exhibits poor single-core performance.",
+  "meta_description": "UpCloud CLOUDNATIVE-32xCPU-384GB features 32 shared AMD EPYC vCPUs and 384.0 GB RAM, offering average multi-core and poor single-core performance.",
+  "tagline": "A high-memory virtual server featuring thirty-two shared vCPUs and three hundred eighty-four gigabytes of RAM for memory-intensive workloads.",
   "bullet_points": [
-    "32 AMD EPYC 7542 vCPUs with shared CPU allocation",
+    "32 shared AMD EPYC 7542 vCPUs at 2.0 GHz",
     "384.0 GB of system memory providing 12.0 GB per core",
-    "Strong multi-threaded decompression and encryption performance",
-    "Weak single-core processing and text processing capabilities",
+    "Strong multi-threaded bzip3 decompression and CPU encryption performance",
+    "Poor single-core CPU performance and weak text processing",
     "No bundled local storage or GPU accelerators",
-    "Suited for memory-cached databases and batch compilation"
+    "Suited for memory-intensive databases and multi-threaded workloads"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose",
-    "Burstable & Budget"
+    "General Purpose"
   ]
 }

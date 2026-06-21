@@ -1,23 +1,23 @@
 {
   "page": [
-    "Amazon Web Services i8ge.large is a storage-optimized server instance powered by custom AWS Graviton ARMv9 Neoverse-V2 processors. It features 2 dedicated physical cores and 2 vCPUs running at 2.8 GHz with no hyperthreading, supported by a 36 MB L3 cache. The hardware configuration includes 16.0 GB of system memory, providing a high memory-to-core ratio of 8.0 GB per core. A key hardware feature is the inclusion of 1250 GB of local NVMe SSD storage, managed via the AWS Nitro hypervisor. The instance also provides a baseline network bandwidth of 2 Gbps.",
-    "Performance benchmarks reveal a mix of strengths and limitations. Single-core performance is moderate, with stress-ng single-core and Geekbench single-core scores falling in the average range. Single-threaded data processing is a notable strength, as evidenced by strong results in single-threaded gzip compression and bzip3 decompression. However, multi-core and multi-threaded performance is generally weak, with low scores in multi-core stress-ng, multi-threaded bzip3 decompression, and software compilation. Cryptographic and physics calculations are poor, as indicated by low Passmark CPU encryption and physics scores. Memory performance is average for large block reads and Passmark memory tests, but weak for small block reads and large block writes.",
-    "From a cost-efficiency perspective, the i8ge.large offers a high density of local NVMe SSD storage and memory relative to its low vCPU count, making it a resource-dense option for storage-heavy workloads without requiring expensive high-core instances. It is well-suited for database operations, local caching, and lightweight storage-bound applications. However, it is not recommended for compute-intensive tasks, multi-threaded processing, or LLM inference due to its weak multi-core and cryptographic performance."
+    "Amazon Web Services i8ge.large is a storage-optimized server instance powered by the AWS Graviton ARMv9-based Neoverse-V2 processor. Operating on the Nitro hypervisor, this instance features 2 dedicated physical cores and 2 vCPUs running at 2.8 GHz, with a 1.0 thread-per-core topology. The hardware configuration includes 16.0 GB of system memory, providing 8.0 GB of RAM per core. For local storage, the instance is equipped with a bundled 1250 GB NVMe SSD. Network connectivity is defined by a baseline bandwidth of 2 Gbps.",
+    "Benchmark evaluations reveal a mix of single-core efficiency and multi-core constraints. Single-threaded operations demonstrate strong performance, with gzip compression reaching 30.32 GB/sec and bzip3 decompression at 14.33 GB/sec. Geekbench single-core and text processing scores fall into the average tier, alongside Passmark database operations and large-block memory read bandwidth. However, multi-core scaling is limited, as evidenced by weak scores in multi-core stress-ng, Geekbench multi-core, and multi-threaded bzip3 decompression. Passmark CPU tests, including encryption and extended instructions, register in the poor category, and LLM inference speeds for a small 135M model are low.",
+    "From a cost-efficiency perspective, the i8ge.large offers a high density of local NVMe SSD storage relative to its compute footprint, making it a viable option for storage-heavy workloads that do not require dense multi-core processing. The 8:1 memory-to-vCPU ratio supports memory-resident datasets. Tradeoffs include limited raw CPU throughput and lower network bandwidth. This instance is suited for localized database operations, caching layers, single-threaded data processing, and lightweight web serving where local storage capacity is the primary constraint."
   ],
-  "description": "Amazon Web Services i8ge.large is a storage-optimized instance featuring 2 dedicated physical cores and 2 vCPUs powered by AWS Graviton ARMv9 Neoverse-V2 processors running at 2.8 GHz. The instance is equipped with 16.0 GB of memory, a 36 MB L3 cache, and 1250 GB of local NVMe SSD storage, all managed via the AWS Nitro hypervisor. It operates with a baseline network bandwidth of 2 Gbps. While single-threaded performance is strong in compression and decompression benchmarks, multi-core scaling, cryptographic operations, and memory write speeds are relatively weak. This hardware profile offers high resource density, providing qualitative cost efficiency for storage-heavy workloads with low compute requirements. It is best suited for database operations, local caching, and lightweight storage-bound applications.",
-  "og_description": "Amazon Web Services i8ge.large is a storage-optimized ARM64 instance featuring 2 vCPUs, 16 GB of RAM, and 1250 GB of local NVMe SSD storage, designed for database workloads and local caching.",
-  "meta_description": "Amazon Web Services i8ge.large is a storage-optimized ARM64 instance featuring 2 vCPUs, 16 GB RAM, and 1250 GB of local NVMe SSD storage.",
-  "tagline": "A storage-optimized ARM64 instance featuring high-capacity local NVMe SSD storage and balanced memory for database and caching workloads.",
+  "description": "Amazon Web Services i8ge.large is a storage-optimized instance featuring 2 dedicated vCPUs powered by an ARMv9 AWS Graviton Neoverse-V2 processor running at 2.8 GHz. Built on the Nitro hypervisor, it includes 16.0 GB of RAM and a bundled 1250 GB NVMe SSD, alongside a baseline network bandwidth of 2 Gbps. Performance benchmarks indicate strong single-threaded capabilities, particularly in compression and decompression tasks, while multi-core performance and cryptographic operations are weak. The instance provides a high ratio of local storage and memory relative to its virtual CPU count, offering qualitative cost efficiency for storage-bound applications. It is suited for database operations, caching, and single-threaded processing tasks that require substantial local NVMe storage but do not demand intensive multi-core CPU scaling.",
+  "og_description": "Amazon Web Services i8ge.large is a storage-optimized instance featuring 2 ARMv9 Graviton vCPUs, 16.0 GB of RAM, and a 1250 GB NVMe SSD, offering strong single-threaded performance for database and caching workloads.",
+  "meta_description": "Amazon Web Services i8ge.large is an ARM64 storage-optimized instance with 2 vCPUs, 16 GB RAM, and a 1250 GB NVMe SSD on the Nitro hypervisor.",
+  "tagline": "An ARM64 storage-optimized instance combining dedicated Graviton cores with a 1250 GB NVMe SSD for storage-intensive, single-threaded workloads.",
   "bullet_points": [
-    "Powered by AWS Graviton ARMv9 Neoverse-V2 processors with 2 dedicated vCPUs",
-    "Equipped with 1250 GB of high-speed local NVMe SSD storage",
-    "Includes 16.0 GB of system memory, providing 8.0 GB per core",
-    "Delivers strong single-threaded compression and decompression performance",
-    "Suited for database operations, local caching, and storage-bound workloads",
-    "Shows weak multi-core scaling and poor cryptographic performance"
+    "Powered by a 2-core AWS Graviton Neoverse-V2 ARMv9 processor at 2.8 GHz",
+    "Bundled with 1250 GB of local NVMe SSD storage",
+    "Equipped with 16.0 GB of RAM, yielding an 8:1 memory-to-vCPU ratio",
+    "Strong single-threaded performance in compression and decompression benchmarks",
+    "Suited for localized database operations, caching, and storage-bound workloads"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

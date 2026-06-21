@@ -1,21 +1,23 @@
 {
   "page": [
-    "Amazon Web Services c8gn.large is a compute-optimized instance powered by AWS Graviton processors. It features 2 dedicated physical cores on the ARMv9 architecture, utilizing the AWS Neoverse-V2 model running at 2.8 GHz. The hardware configuration includes 4.0 GB of memory, yielding a 2.0 GB per core ratio, and lacks local storage or GPU accelerators. Network connectivity is delivered via the Nitro hypervisor with a baseline bandwidth of 6 Gbps.",
-    "Benchmark data reveals strong single-threaded performance, with gzip compression reaching 30.29 GB/sec and bzip3 decompression at 14.24 GB/sec. However, multi-core and memory-intensive tasks show clear limitations. The instance scores in the bottom 25% for stress-ng multi-core CPU performance and Geekbench multi-core metrics. Memory bandwidth write operations and small-block cached reads also fall into the lower performance tiers, while Passmark CPU encryption and extended instructions tests register in the bottom 10%.",
-    "From a qualitative cost-efficiency perspective, the c8gn.large offers a low-cost entry point into the Graviton8 family, balancing dedicated ARMv9 cores against a constrained 4.0 GB memory footprint. This resource density makes it suitable for single-threaded utilities, lightweight text processing, and basic database operations, whereas multi-threaded compilation, heavy image processing, and LLM inference are constrained by the low core count and memory capacity."
+    "Amazon Web Services c8gn.large is a compute-optimized instance built on the Nitro hypervisor. It features an arm64 architecture powered by an AWS Graviton Neoverse-V2 processor with 2 dedicated physical cores and 2 vCPUs running at 2.8 GHz. The processor includes 64 KB of L1d cache, 2 MB of L2 cache, and 36 MB of L3 cache. It is configured with 4.0 GB of memory, yielding 2.0 GB per core. There is no local storage or GPU hardware bundled with this instance.",
+    "Benchmark results indicate mixed performance characteristics. Single-core performance is moderate, with stress-ng single-core and Geekbench single-core scores falling into the average range. Single-threaded bzip3 decompression shows strong performance at 14.24 GB/sec. However, multi-core and multi-threaded benchmarks, including stress-ng multi-core, Geekbench multi-core, and bzip3 multi-threaded decompression, are weak. Memory bandwidth is average for large blocks but weak for small cached blocks and large block writes. Passmark CPU, encryption, and extended instruction tests register poor results.",
+    "The instance provides a baseline network bandwidth of 6 Gbps and does not include complimentary public IPv4 addresses. From a cost-efficiency perspective, the c8gn.large offers a low-resource entry point into the ARMv9-based Graviton family, trading off multi-threaded processing power and memory capacity for a lower cost profile. It is suited for single-threaded tasks, lightweight database operations, basic text processing, and network-optimized workloads that do not require high memory density or parallelized multi-core execution."
   ],
-  "description": "Amazon Web Services c8gn.large is a compute-optimized, ARM64-based instance featuring 2 dedicated physical cores powered by AWS Graviton Neoverse-V2 processors running at 2.8 GHz. Equipped with 4.0 GB of memory and a 6 Gbps baseline network bandwidth, this instance operates on the Nitro hypervisor without local storage or GPU acceleration. Performance benchmarks indicate strong single-threaded capabilities, particularly in gzip compression and bzip3 decompression. However, multi-core execution and memory bandwidth write operations are relatively weak, as evidenced by lower tier stress-ng and Geekbench multi-core scores. The instance provides a cost-efficient entry point for workloads that prioritize single-core efficiency over high memory capacity, making it suitable for lightweight database operations, text processing, and single-threaded utility tasks.",
-  "og_description": "Amazon Web Services c8gn.large is a compute-optimized ARM64 instance with 2 dedicated Graviton Neoverse-V2 cores, 4.0 GB RAM, and 6 Gbps network bandwidth, optimized for single-threaded workloads.",
-  "meta_description": "Amazon Web Services c8gn.large is an ARM64 compute-optimized instance with 2 dedicated Graviton cores, 4.0 GB RAM, and 6 Gbps network bandwidth.",
-  "tagline": "An ARM64 compute-optimized instance featuring dedicated Graviton processors, balanced for single-threaded tasks and lightweight network-optimized workloads.",
+  "description": "Amazon Web Services c8gn.large is a compute-optimized instance utilizing the Nitro hypervisor and an arm64 AWS Graviton Neoverse-V2 processor. It features 2 dedicated physical cores (2 vCPUs) running at 2.8 GHz, 4.0 GB of system memory, and a 6 Gbps baseline network bandwidth, with no local storage or GPU. Single-core benchmarks, such as Geekbench and stress-ng, show average performance, while single-threaded bzip3 decompression is strong. Conversely, multi-core benchmarks, memory write bandwidth, and Passmark CPU scores are weak to poor. This instance offers a cost-efficient entry point for ARM-based workloads, trading off multi-threaded performance and memory capacity. It is best suited for single-threaded applications, basic text processing, lightweight database operations, and network-optimized tasks.",
+  "og_description": "Amazon Web Services c8gn.large is an arm64 compute-optimized instance with 2 vCPUs, 4.0 GB RAM, and a 6 Gbps network baseline, offering average single-core but weak multi-core benchmark performance.",
+  "meta_description": "Amazon Web Services c8gn.large is an arm64 compute-optimized instance featuring 2 vCPUs, 4.0 GB RAM, and a 6 Gbps baseline network bandwidth.",
+  "tagline": "An entry-level, network-optimized ARMv9 instance delivering steady single-core performance for lightweight, compute-focused workloads without local storage.",
   "bullet_points": [
-    "Powered by AWS Graviton Neoverse-V2 ARMv9 processor with 2 dedicated cores",
-    "Equipped with 4.0 GB of system memory and 6 Gbps baseline network bandwidth",
-    "Delivers strong single-threaded performance in compression and decompression benchmarks",
-    "Lacks local storage and GPU accelerators, relying entirely on network-attached storage",
-    "Suited for lightweight database operations, text processing, and single-threaded tasks"
+    "AWS Graviton Neoverse-V2 ARMv9 processor with 2 dedicated vCPUs",
+    "4.0 GB of system memory and no local storage",
+    "6 Gbps baseline network bandwidth powered by the Nitro hypervisor",
+    "Strong single-threaded bzip3 decompression performance",
+    "Weak multi-core, memory write, and cryptographic benchmark results",
+    "Suited for single-threaded tasks, text processing, and light database operations"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
