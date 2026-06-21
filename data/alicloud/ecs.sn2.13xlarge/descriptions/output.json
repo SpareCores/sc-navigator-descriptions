@@ -1,21 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.sn2.13xlarge is a general-purpose virtual machine instance powered by the KVM hypervisor. It features 56 dedicated physical cores on an x86_64 architecture, utilizing an Intel Xeon 8269CY processor running at a base clock speed of 2.5 GHz. The system is equipped with 224.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per core. It does not include local storage or dedicated GPU hardware, relying on network-attached storage and a baseline network bandwidth of 10 Gbps.",
-    "Benchmark results indicate a clear distinction between single-core and multi-core performance. Single-core metrics, such as stress-ng single-core CPU performance and Geekbench single-core scores, fall into the weak category. However, the instance leverages its high core count to deliver average multi-core performance, as evidenced by stress-ng multi-core and Geekbench multi-core benchmarks. Notably, multi-threaded bzip3 decompression achieves strong performance, placing in the top 25 percent. Memory bandwidth for both cached and uncached operations remains in the average tier, alongside static web serving throughput and Redis SET operations.",
-    "Given its dedicated CPU allocation and balanced resource ratio, the ecs.sn2.13xlarge offers a stable, predictable environment for multi-threaded workloads. The qualitative cost efficiency is characterized by its high resource density, making it suitable for parallel processing tasks that can offset the lower single-core performance. This instance is best suited for general-purpose workloads, multi-threaded data processing, software compilation, and web serving applications that benefit from high core counts rather than maximum single-thread velocity."
+    "Alibaba Cloud ecs.sn2.13xlarge is an x86_64 architecture server instance powered by an Intel Xeon 8269CY processor running at 2.5 GHz. It features 56 dedicated physical cores with 1.0 thread per core, providing 56 vCPUs. The instance is configured with 224.0 GB of RAM, yielding a balanced memory-to-core ratio of 4.0 GB per core. It does not include local storage or GPU accelerators, and it operates on a KVM hypervisor with a baseline network bandwidth of 10 Gbps.",
+    "Benchmark data reveals a clear contrast between single-core and multi-core performance. Single-core metrics, such as stress-ng and Geekbench single-core scores, fall into the weak category, and single-threaded gzip compression is poor. However, the high physical core count enables average multi-core CPU performance in stress-ng and Geekbench. Notably, multi-threaded bzip3 decompression performs strongly, placing in the top tier. Memory bandwidth and database operations consistently rank in the average tier.",
+    "Given its balanced 1:4 vCPU-to-RAM ratio and dedicated CPU allocation, this instance is classified as a general-purpose server. It is qualitatively cost-efficient for multi-threaded workloads that can leverage all 56 physical cores, such as parallel software compilation, multi-threaded decompression, and static web serving. However, it is less suitable for single-threaded tasks or applications requiring local NVMe storage or GPU acceleration."
   ],
-  "description": "Alibaba Cloud ecs.sn2.13xlarge is a general-purpose instance featuring 56 dedicated physical cores powered by an Intel Xeon 8269CY processor at 2.5 GHz on an x86_64 architecture. It is configured with 224.0 GB of RAM, yielding a balanced 4.0 GB per core ratio, with no local storage or GPU accelerators. Operating on the KVM hypervisor, the instance delivers a baseline network bandwidth of 10 Gbps. Performance benchmarks show weak single-core capabilities but average multi-core and memory bandwidth performance, with strong multi-threaded decompression speeds. This hardware profile makes the instance well-suited for parallelized workloads, multi-threaded data processing, software compilation, and general-purpose web serving where multi-core scaling can compensate for moderate single-thread performance.",
-  "og_description": "Alibaba Cloud ecs.sn2.13xlarge is a general-purpose instance with 56 dedicated Intel Xeon cores, 224 GB RAM, and 10 Gbps network bandwidth, delivering balanced multi-core performance for parallel workloads.",
-  "meta_description": "Alibaba Cloud ecs.sn2.13xlarge is a general-purpose instance featuring 56 dedicated Intel Xeon cores and 224 GB RAM on a KVM hypervisor.",
-  "tagline": "A dedicated multi-core platform offering balanced memory and compute resources for parallelized enterprise workloads and multi-threaded data processing.",
+  "description": "Alibaba Cloud ecs.sn2.13xlarge is an x86_64 general-purpose server instance featuring 56 dedicated physical cores on an Intel Xeon 8269CY processor running at 2.5 GHz. It is equipped with 224.0 GB of RAM, providing a balanced 4.0 GB of memory per core, but lacks local storage and GPU hardware. Operating on a KVM hypervisor, it delivers a baseline network bandwidth of 10 Gbps. Performance benchmarks indicate weak single-core capabilities, but average multi-core CPU and memory bandwidth performance, with strong multi-threaded bzip3 decompression. This resource profile makes the instance qualitatively cost-efficient for highly parallelized workloads, including multi-threaded data processing, software compilation, and static web serving, while remaining less optimal for single-threaded applications.",
+  "og_description": "Alibaba Cloud ecs.sn2.13xlarge is a general-purpose server with 56 dedicated Intel Xeon cores, 224 GB RAM, and 10 Gbps network bandwidth, delivering average multi-core performance for parallel workloads.",
+  "meta_description": "Alibaba Cloud ecs.sn2.13xlarge features 56 dedicated Intel Xeon cores and 224 GB RAM, offering balanced multi-core performance for parallel workloads.",
+  "tagline": "A dedicated 56-core x86_64 server with balanced memory configuration, optimized for highly parallelized multi-threaded workloads and static web serving.",
   "bullet_points": [
-    "56 dedicated Intel Xeon physical cores at 2.5 GHz",
-    "224.0 GB of system memory (4.0 GB per core)",
-    "10 Gbps baseline network bandwidth with KVM virtualization",
+    "56 dedicated physical Intel Xeon cores with 1.0 thread per core",
+    "224.0 GB of system memory providing a balanced 1:4 vCPU-to-RAM ratio",
+    "10 Gbps baseline network bandwidth on a KVM hypervisor",
     "Strong multi-threaded decompression and average multi-core benchmark performance",
-    "Optimized for parallel processing, software compilation, and web serving"
+    "No local storage or GPU accelerators included in the configuration",
+    "Best suited for parallel software compilation, web serving, and multi-threaded data tasks"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

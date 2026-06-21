@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D64plds_v5 is an ARM64-based server instance powered by a 64-core Ampere Altra Neoverse-N1 processor running at 3.0 GHz. Operating on the Microsoft Hyper-V hypervisor, this instance allocates 64 dedicated physical cores with a single thread per core, eliminating hyperthreading overhead. It features 128.0 GB of system memory, yielding a compute-optimized 2.0 GB of RAM per core ratio. Additionally, the instance includes 2458 GB of local storage and supports Premium Storage.",
-    "Benchmark evaluations indicate strong multi-core capabilities and memory performance. The instance achieves top-tier results in multi-core stress-ng tests and exhibits high read-only memory bandwidth, reaching 4384.56 GB/sec for cached small blocks and 177.23 GB/sec for uncached large blocks. Software compilation via Clang and ray tracing workloads also perform in the top 25%. Database operations are highly efficient, as evidenced by strong Passmark database scores and Redis SET performance of 84.83 million operations per second. Single-core performance and write memory bandwidth remain in the average tier.",
-    "Given its ARM64 architecture and high physical core density, the D64plds_v5 offers a cost-efficient profile for multi-threaded workloads that do not require high memory-to-core ratios. The combination of 64 dedicated cores and 2458 GB of local storage makes it highly suitable for scale-out workloads, software development pipelines, containerized microservices, and high-throughput database operations. However, the 2.0 GB of RAM per core represents a tradeoff for memory-intensive applications."
+    "Microsoft Azure D64plds_v5 is an ARM64-based virtual machine belonging to the DPLDSv5 server family, running on the Microsoft Hyper-V hypervisor. It features an Ampere Neoverse-N1 processor with 64 physical cores and 64 dedicated vCPUs operating at 3.0 GHz. The hardware configuration includes 128.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. For local storage, the instance is equipped with 2458 GB of local disk capacity and is Premium Storage capable. No GPU accelerators are present on this system.",
+    "Benchmark data highlights strong multi-core capabilities, with stress-ng multi-core CPU performance and software compilation via Clang scoring in the top tier. Cached small-block read-only memory bandwidth is also highly efficient at 4384.56 GB/sec. However, large-block uncached memory read and write speeds fall into the average tier, at 177.23 GB/sec and 76.55 GB/sec respectively. Single-core performance, measured by stress-ng and Geekbench, remains average. In database operations, the server demonstrates strong performance in Redis SET operations, reaching 84.83 million operations per second, while standard Passmark database operations and static web serving throughput remain in the middle tier.",
+    "With a 1:2 vCPU-to-RAM ratio, this server is optimized for compute-heavy workloads rather than memory-intensive applications. It offers qualitative cost efficiency for multi-threaded tasks that benefit from dedicated physical ARM cores without hyperthreading, though it exhibits weaker performance in large-scale LLM prompt processing. The instance is best suited for multi-threaded application servers, software compilation pipelines, Redis caching layers, and scale-out compute workloads that can leverage the ARM64 architecture and local storage."
   ],
-  "description": "Microsoft Azure D64plds_v5 is an ARM64-based virtual machine featuring 64 dedicated physical cores powered by an Ampere Altra Neoverse-N1 processor running at 3.0 GHz. Operating under Microsoft Hyper-V, this instance provides 128.0 GB of RAM, establishing a compute-optimized 2.0 GB of memory per core ratio. It includes 2458 GB of local storage and supports Premium Storage. Performance benchmarks highlight strong multi-core execution, high read-only memory bandwidth, and excellent database throughput, with Redis SET operations reaching 84.83 million operations per second. Conversely, single-core performance and write memory bandwidth sit in the average tier. This hardware profile makes the instance highly cost-efficient for multi-threaded applications, software compilation, and database workloads, though the low memory-to-core ratio represents a tradeoff for memory-bound tasks.",
-  "og_description": "Microsoft Azure D64plds_v5 is an ARM64 server with 64 dedicated Ampere Neoverse-N1 cores, 128 GB RAM, and 2458 GB local storage, delivering strong multi-core performance and database throughput.",
-  "meta_description": "Microsoft Azure D64plds_v5 is an ARM64 server featuring 64 Ampere cores, 128 GB RAM, and 2458 GB local storage for multi-threaded workloads.",
-  "tagline": "An ARM64-based compute-optimized instance featuring sixty-four dedicated physical cores and substantial local storage for high-throughput multi-threaded workloads.",
+  "description": "Microsoft Azure D64plds_v5 is an ARM64-based virtual machine from the DPLDSv5 family, powered by a 64-core Ampere Neoverse-N1 processor running at 3.0 GHz on Microsoft Hyper-V. It features 128.0 GB of RAM, providing a compute-focused 2.0 GB per core ratio, alongside 2458 GB of local storage. The server delivers strong multi-core performance, as evidenced by high marks in multi-threaded stress-ng benchmarks, Clang software compilation, and Redis SET operations, which reach 84.83 million operations per second. However, single-core processing and uncached memory bandwidth remain in the average tier, and large LLM prompt processing is a notable bottleneck. Lacking GPU acceleration, this instance is qualitatively cost-efficient for scale-out, multi-threaded workloads. It is highly suited for software development pipelines, caching layers, and web serving applications optimized for ARM64 architectures.",
+  "og_description": "Microsoft Azure D64plds_v5 is an ARM64 virtual server featuring 64 Ampere Neoverse-N1 cores, 128 GB RAM, and 2458 GB local storage, optimized for multi-threaded workloads and caching.",
+  "meta_description": "Microsoft Azure D64plds_v5 is a 64-core ARM64 virtual server with 128 GB RAM and 2458 GB local storage, built for compute-heavy workloads.",
+  "tagline": "A 64-core ARM64 compute-focused virtual server with generous local storage, optimized for high-throughput multi-threaded tasks and caching.",
   "bullet_points": [
-    "Powered by a 64-core Ampere Altra Neoverse-N1 ARM64 processor at 3.0 GHz",
-    "Equipped with 128 GB RAM and 2458 GB of local storage",
-    "Strong multi-core performance and high read-only memory bandwidth",
-    "Excellent database throughput, achieving 84.83 million Redis SET operations per second",
-    "Optimized for software compilation, multi-threaded applications, and scale-out databases"
+    "64 dedicated Ampere Neoverse-N1 ARM64 cores running at 3.0 GHz",
+    "128.0 GB system memory providing 2.0 GB of RAM per core",
+    "2458 GB of local storage with Premium Storage capability",
+    "Strong multi-core CPU performance and fast software compilation",
+    "High-throughput Redis performance with 84.83 million SET operations per second",
+    "Best suited for multi-threaded ARM64 applications, caching, and web serving"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

@@ -1,22 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform t2d-standard-8 is a general-purpose server instance powered by an AMD EPYC 7B13 processor. It features 8 dedicated physical cores and 8 vCPUs, operating with a 1.0 thread-per-core topology on the x86_64 architecture. The hardware configuration includes 32.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per core. This instance does not include local storage or bundled GPU hardware, and it comes with zero complimentary public IPv4 addresses.",
-    "Performance benchmarks indicate strong single-core capabilities, with stress-ng single-core CPU performance scoring in the top 25% at 2688.09. Multi-core performance is average, with a stress-ng multi-core score of 21511.57 and a Geekbench multi-core score of 7817.0. Memory bandwidth is stable, reaching 996.35 GB/sec for cached small-block reads and 95.12 GB/sec for uncached large-block reads. The instance also demonstrates strong text generation speeds for small language models, achieving 256.59 tokens per second on a 135M parameter model, while medium 7B model inference runs at average speeds.",
-    "From a cost-efficiency perspective, the t2d-standard-8 offers a balanced resource density for general-purpose workloads, utilizing dedicated physical cores to avoid resource contention without the premium cost of memory-optimized or GPU-accelerated tiers. The lack of local storage requires external block storage attachment, which is a key architectural tradeoff. This server is well-suited for general-purpose workloads, including static web serving, software compilation, database operations, and small-scale language model inference."
+    "Google Cloud Platform t2d-standard-8 is a general-purpose virtual machine belonging to the t2d server family. It features 8 vCPUs mapped to 8 physical cores of an AMD EPYC 7B13 processor using the x86_64 architecture. The CPU allocation is dedicated, with 1.0 thread per core, meaning simultaneous multithreading is not utilized. The instance is configured with 32.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per core. There is no local storage bundled with this instance, and it does not include any GPUs or complimentary public IPv4 addresses.",
+    "Performance benchmarks indicate strong single-core CPU capabilities, with stress-ng single-core performance scoring in the top 25% at 2688.09. Multi-core CPU performance falls into the middle 50% average tier, with a stress-ng multi-core score of 21511.57 and a Geekbench multi-core score of 7817.0. Memory bandwidth benchmarks also align with average tier performance, yielding 95.12 GB/sec for large block read-only operations and 51.75 GB/sec for large block write operations. Cryptographic and compression tasks, such as Passmark CPU encryption and single-threaded gzip compression, consistently register within the average range.",
+    "Given its dedicated AMD EPYC cores and balanced 1:4 vCPU-to-RAM ratio, the t2d-standard-8 offers a predictable resource profile for general-purpose workloads. It is appropriate for tasks such as static web serving, software compilation, and database operations, as demonstrated by its average-tier Passmark database score of 6859.59 and Redis SET throughput of 14.93 million operations per second. The lack of local storage and GPUs makes it less suitable for heavy storage-bound databases or deep learning training, but it remains a cost-efficient option for standard application servers, microservices, and moderate LLM inference tasks using smaller models."
   ],
-  "description": "Google Cloud Platform t2d-standard-8 is a general-purpose server configured with 8 vCPUs and 8 dedicated physical AMD EPYC 7B13 cores on the x86_64 architecture. It features 32.0 GB of RAM, yielding 4.0 GB of memory per core, with no local storage or GPU accelerators. Benchmarks show strong single-core CPU performance and strong text generation speeds for small language models, alongside average multi-core and memory bandwidth results. This instance provides a balanced resource profile, making it a cost-effective option for workloads that do not require local NVMe storage or massive memory arrays. It is suited for static web serving, database operations, software compilation, and light machine learning inference.",
-  "og_description": "Google Cloud Platform t2d-standard-8 is a general-purpose server with 8 dedicated AMD EPYC cores, 32 GB RAM, and strong single-core performance, suited for web serving and database workloads.",
-  "meta_description": "Google Cloud Platform t2d-standard-8 is an 8-vCPU, 32 GB RAM general-purpose server powered by dedicated AMD EPYC 7B13 processors.",
-  "tagline": "A dedicated AMD EPYC server offering balanced compute and memory resources for general-purpose workloads and web serving.",
+  "description": "Google Cloud Platform t2d-standard-8 is a general-purpose virtual machine powered by an AMD EPYC 7B13 processor with 8 dedicated physical cores and 8 vCPUs on the x86_64 architecture. It features 32.0 GB of system memory, yielding a balanced 4.0 GB per core, with no local storage or GPUs. Benchmark results show strong single-core CPU performance, placing in the top 25% for single-core stress-ng tests, while multi-core performance and memory bandwidth fall within the average tier. The instance delivers steady throughput for standard workloads, including static web serving at 11.61 GB/sec and Redis SET operations at 14.93 million operations per second. It is highly suitable for general-purpose applications, software compilation, web serving, and moderate database operations.",
+  "og_description": "Google Cloud Platform t2d-standard-8 is an x86_64 general-purpose server featuring 8 dedicated AMD EPYC 7B13 cores, 32 GB RAM, strong single-core performance, and average multi-core and memory bandwidth.",
+  "meta_description": "Google Cloud Platform t2d-standard-8 features 8 dedicated AMD EPYC vCPUs, 32 GB RAM, and strong single-core performance for general-purpose workloads.",
+  "tagline": "A balanced general-purpose virtual machine featuring dedicated AMD EPYC cores and strong single-core performance for standard enterprise workloads.",
   "bullet_points": [
-    "8 dedicated AMD EPYC 7B13 physical cores with 1.0 thread per core",
-    "32.0 GB of system memory providing 4.0 GB of RAM per core",
-    "Strong single-core CPU performance and small-model text generation speeds",
-    "No bundled local storage or GPU accelerators included",
-    "Suited for static web serving, database operations, and software compilation"
+    "Powered by 8 dedicated AMD EPYC 7B13 physical cores with no SMT.",
+    "Equipped with 32.0 GB of system memory (4.0 GB per core).",
+    "Delivers strong single-core CPU performance in the top 25% of benchmarks.",
+    "No local storage or GPU accelerators are bundled with this instance.",
+    "Optimized for general-purpose workloads, web serving, and software compilation."
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }

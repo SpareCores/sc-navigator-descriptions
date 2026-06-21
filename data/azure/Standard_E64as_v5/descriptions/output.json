@@ -1,0 +1,22 @@
+{
+  "page": [
+    "Microsoft Azure E64as_v5 is a memory-optimized virtual machine belonging to the EASv5 server family. It is built on the x86_64 architecture and powered by a dedicated AMD EPYC 7763 processor running at a clock speed of 3.525 GHz. The server features 64 virtual CPUs, derived from 32 physical cores with 2 threads per core under the Microsoft Hyper-V hypervisor. It is equipped with 512.0 GB of system memory, providing a high memory-to-vCPU ratio of 8.0 GB per core. The processor includes 32 KB of L1 instruction cache, 0.5 MB of L2 cache, and 32 MB of L3 cache, alongside hardware support for AVX, AES, VAES, SHA_NI, and SVM virtualization. It does not include local storage or bundled GPUs, but it is Premium Storage capable.",
+    "Benchmark evaluations indicate strong multi-core and memory capabilities. The server achieves a top 25% tier in stress-ng multi-core CPU performance (86370.39) and PassMark CPU score (62416.81). Memory performance is particularly notable, with the PassMark memory score ranking in the top 10% tier (2982.1) and cached small-block read-only memory bandwidth reaching 4165.53 GB/sec. Multi-threaded operations, such as bzip3 decompression (305.02 GB/sec) and software compilation with Clang (39755.0), also place in the top 25%. However, single-core metrics, such as Geekbench single-core (1640.0) and text processing (1988.0), remain in the average middle 50% range.",
+    "The high memory density of 8.0 GB per vCPU provides qualitative cost efficiency for memory-bound workloads that do not require expensive dedicated GPU hardware. However, there are distinct performance tradeoffs. While prompt processing for a small 135M LLM model is strong at 2318.72 tokens/sec, text generation for a large 70B LLM model drops to a poor 2.47 tokens/sec, indicating a clear limitation for large-scale AI inference. The lack of local storage requires reliance on external network-attached storage. This configuration is suited for memory-intensive applications, database operations (evidenced by a strong PassMark database score of 25630.44 and 63.15 million Redis SET operations per second), and multi-threaded data processing tasks."
+  ],
+  "description": "Microsoft Azure E64as_v5 is an x86_64 memory-optimized virtual machine from the EASv5 family, powered by a dedicated AMD EPYC 7763 processor running at 3.525 GHz. It features 64 vCPUs (32 physical cores) and 512.0 GB of RAM, yielding a high 8.0 GB per core ratio. While it lacks local storage and GPUs, it is Premium Storage capable. Benchmarks show strong multi-core CPU and memory performance, with PassMark memory scores in the top 10% and Redis SET operations reaching 63.15 million per second. However, single-core performance and large-scale LLM text generation (2.47 tokens/sec for a 70B model) represent clear tradeoffs. This server is suited for memory-intensive database operations, multi-threaded data processing, and software compilation.",
+  "og_description": "Microsoft Azure E64as_v5 is a memory-optimized virtual machine featuring 64 vCPUs and 512 GB of RAM on an AMD EPYC 7763 processor, delivering strong multi-core and database performance.",
+  "meta_description": "Microsoft Azure E64as_v5 is a memory-optimized VM with 64 vCPUs, 512 GB RAM, and an AMD EPYC 7763 CPU, designed for database and multi-threaded workloads.",
+  "tagline": "A memory-optimized virtual machine with sixty-four vCPUs and half a terabyte of RAM, built for demanding database and multi-threaded workloads.",
+  "bullet_points": [
+    "64 vCPUs and 512.0 GB of RAM powered by an AMD EPYC 7763 processor",
+    "Top 10% PassMark memory score and 4165.53 GB/sec cached read bandwidth",
+    "Strong database performance with 63.15 million Redis SET operations per second",
+    "No local storage or bundled GPUs, requiring external storage solutions",
+    "Suited for memory-intensive databases, software compilation, and data processing"
+  ],
+  "categories": [
+    "Memory Optimized",
+    "General Purpose"
+  ]
+}

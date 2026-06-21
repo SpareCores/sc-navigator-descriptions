@@ -1,22 +1,21 @@
 {
   "page": [
-    "UpCloud PREMIUM-24xCPU-96GB is a general-purpose virtual server configured on the KVM hypervisor. It features an x86_64 architecture powered by an AMD EPYC 9575F processor running at 2.0 GHz. The hardware allocation includes 24 shared vCPUs, 24 physical cores with 1.0 thread per core, and 96.0 GB of system memory, yielding a balanced 4.0 GB of RAM per core. Local storage consists of a bundled 400 GB SSD, and the instance includes one complimentary public IPv4 address. No GPU accelerators are present on this server type.",
-    "Benchmark data reveals strong compute capabilities alongside specific memory performance trade-offs. The AMD EPYC processor achieves top-tier single-core CPU performance in stress-ng testing and top-tier single-threaded compression and decompression speeds. Multi-core CPU performance and multi-threaded bzip3 decompression are rated as strong, placing in the top 25%. However, while cached read-only memory bandwidth is average, the uncached large-block write memory bandwidth is weak, falling into the bottom 25%. Other operations, including PassMark database tests, Redis SET operations, static web serving throughput, and small-to-medium LLM inference speeds, consistently perform within the average range.",
-    "From a cost-efficiency perspective, the shared CPU allocation provides a high core count and substantial memory density at a lower qualitative cost tier than dedicated-core instances. This resource profile is suitable for multi-threaded workloads that can tolerate shared CPU scheduling, such as batch processing, web serving, database operations, and general-purpose application hosting."
+    "UpCloud PREMIUM-24xCPU-96GB is an x86_64 architecture virtual server running on the KVM hypervisor. It features 24 vCPUs mapped to 24 physical cores of an AMD EPYC 9575F processor operating at 2.0 GHz with shared CPU allocation. The system is equipped with 96.0 GB of RAM, providing a balanced 4.0 GB of memory per core. Local storage consists of a bundled 400 GB SSD, and the instance includes one complimentary public IPv4 address. No dedicated GPU hardware is present.",
+    "Benchmark data indicates strong computational capabilities, particularly in single-threaded tasks. The server achieves top-tier performance in stress-ng single-core CPU tests, gzip compression, and bzip3 decompression. Multi-core performance is also strong, placing in the top 25% for stress-ng multi-core and bzip3 multi-threaded decompression. However, memory performance presents a notable tradeoff; while read-only memory bandwidth remains average, large-block write memory bandwidth and the PassMark memory score fall into the weak category.",
+    "Given the 1:4 vCPU-to-RAM ratio, this server fits the General Purpose category. The high single-core compute performance makes it suitable for tasks requiring rapid sequential processing, such as compression, decompression, and general web serving. However, the weak memory write bandwidth suggests it may face bottlenecks in memory-write-intensive database operations, though standard database operations and Redis SET benchmarks maintain average performance. From a qualitative cost-efficiency perspective, the shared CPU allocation and bundled 400 GB SSD storage provide a balanced resource density for general-purpose workloads that do not require dedicated CPU pinning."
   ],
-  "description": "UpCloud PREMIUM-24xCPU-96GB is a general-purpose virtual server built on the KVM hypervisor and x86_64 architecture. It features 24 shared vCPUs powered by an AMD EPYC 9575F processor at 2.0 GHz, 96.0 GB of RAM, and a bundled 400 GB SSD. The processor includes advanced vector and cryptography extensions such as AVX-512 and AES. Benchmark results indicate top-tier single-core CPU performance and strong multi-core capabilities, though large-block memory write bandwidth is weak. The server delivers average performance for database operations, Redis SET transactions, and static web serving. Given its shared CPU allocation and balanced resource density, this server is suited for multi-threaded general-purpose workloads, web serving, and database applications that do not require dedicated CPU cores.",
-  "og_description": "UpCloud PREMIUM-24xCPU-96GB is a general-purpose KVM virtual server featuring 24 shared AMD EPYC vCPUs, 96 GB RAM, and a 400 GB SSD, delivering strong compute performance for multi-threaded workloads.",
-  "meta_description": "UpCloud PREMIUM-24xCPU-96GB is a general-purpose KVM virtual server featuring 24 shared AMD EPYC vCPUs, 96 GB of RAM, and a bundled 400 GB SSD.",
-  "tagline": "A shared-core virtual server combining twenty-four AMD EPYC cores with ninety-six gigabytes of memory and local SSD storage for balanced workloads.",
+  "description": "The UpCloud PREMIUM-24xCPU-96GB is a general-purpose virtual server built on the KVM hypervisor, featuring 24 vCPUs and 24 physical cores powered by an AMD EPYC 9575F processor running at 2.0 GHz. It is configured with 96.0 GB of RAM and a bundled 400 GB SSD. In benchmark testing, the server demonstrates top-tier single-core CPU performance, particularly in compression and decompression tasks, alongside strong multi-core capabilities. However, a key tradeoff is its memory write performance, which falls into the bottom 25% for large-block write bandwidth. With a balanced 1:4 vCPU-to-RAM ratio and shared CPU allocation, this instance is suited for general-purpose workloads, static web serving, and sequential processing tasks that do not demand continuous high-speed memory writes.",
+  "og_description": "UpCloud PREMIUM-24xCPU-96GB is a KVM-based virtual server featuring 24 AMD EPYC vCPUs, 96 GB of RAM, and a 400 GB SSD, delivering top-tier single-core CPU performance with average memory read speeds.",
+  "meta_description": "UpCloud PREMIUM-24xCPU-96GB is a general-purpose KVM server with 24 AMD EPYC vCPUs, 96 GB RAM, and a 400 GB SSD, offering strong single-core compute.",
+  "tagline": "A balanced general-purpose virtual server combining top-tier single-core CPU performance with bundled SSD storage for diverse workloads.",
   "bullet_points": [
-    "24 shared AMD EPYC 9575F vCPUs and 96.0 GB of system memory.",
-    "Bundled 400 GB local SSD storage and one public IPv4 address.",
-    "Top-tier single-core CPU performance and strong multi-core benchmark results.",
-    "Weak large-block uncached memory write bandwidth of 21.35 GB/sec.",
-    "Suited for web serving, database operations, and general-purpose applications."
+    "24 AMD EPYC 9575F vCPUs with shared allocation and 96 GB RAM",
+    "Bundled 400 GB local SSD storage and one public IPv4 address",
+    "Top-tier single-core CPU performance in compression and decompression",
+    "Weak memory write bandwidth presents a tradeoff for write-heavy tasks",
+    "Suited for general-purpose applications, web serving, and sequential processing"
   ],
   "categories": [
-    "General Purpose",
-    "Burstable & Budget"
+    "General Purpose"
   ]
 }
