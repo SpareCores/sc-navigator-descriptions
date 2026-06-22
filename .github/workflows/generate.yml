@@ -2,13 +2,8 @@ name: Generate descriptions
 
 on:
   workflow_dispatch:
-    inputs:
-      n:
-        description: "Number of servers to process"
-        required: false
-        default: "25"
-  # schedule:
-  #   - cron: "0 3 * * *"
+  schedule:
+    - cron: "0 3 * * *"
 
 jobs:
   generate:
@@ -36,7 +31,7 @@ jobs:
 
       - name: Generate descriptions
         continue-on-error: true
-        run: uv run python -m src.summarize.generate -n ${{ github.event.inputs.n || '25' }} --max-minutes 300
+        run: uv run python -m src.summarize.generate --max-minutes 300
 
       - name: Count described instances
         id: count
