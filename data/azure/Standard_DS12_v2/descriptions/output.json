@@ -1,0 +1,22 @@
+{
+  "page": [
+    "Microsoft Azure DS12_v2 is a virtual machine instance belonging to the DSv2 family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated vCPUs powered by an Intel Xeon E5-2673 v4 processor with an x86_64 architecture operating at 2.3 GHz. The processor includes a 50 MB L3 cache, 32 KB L1d cache, and 0.25 MB L2 cache, supporting instruction sets such as AVX, AES, BMI2, ADX, and FMA. The instance is equipped with 28.0 GB of system memory, providing 7.0 GB of RAM per core, and includes 57 GB of bundled local storage. No GPUs are included.",
+    "Benchmark data indicates that the DS12_v2 exhibits lower-tier compute and memory performance. In stress-ng and PassMark CPU tests, both single-core and multi-core metrics fall into the bottom 25% category. Memory bandwidth tests, including read-only small block (282.07 GB/sec) and large block read/write operations, also rank in the bottom 25%. Single-threaded gzip compression and multi-threaded bzip3 decompression show poor performance, landing in the bottom 10%. However, the instance demonstrates average performance (middle 50%) during LLM inference tasks using a small 135M model, achieving 582.75 tokens/sec for prompt processing and 167.21 tokens/sec for text generation. Performance drops significantly for larger models, with the 7B model prompt processing falling into the bottom 10%.",
+    "From a qualitative cost-efficiency perspective, the DS12_v2 offers a high memory-to-vCPU ratio of 7:1, which provides relatively high resource density for memory-bound workloads without the premium cost of newer hardware generations. However, the tradeoff is its reliance on older Intel Xeon E5-2673 v4 processors, which limits its raw computational throughput and memory bandwidth compared to modern architectures. Given these characteristics, the instance is suitable for memory-intensive but computationally moderate workloads, such as small-scale database operations, caching layers, static web serving, and lightweight text or language model processing."
+  ],
+  "description": "Microsoft Azure DS12_v2 is a virtual machine instance in the DSv2 family, powered by an Intel Xeon E5-2673 v4 processor with 4 dedicated vCPUs running at 2.3 GHz. Built on the x86_64 architecture and managed by Microsoft Hyper-V, it features 28.0 GB of RAM (7.0 GB per core) and 57 GB of bundled local storage, with no GPU capabilities. Benchmark results position this instance in the bottom 25% for general compute, memory bandwidth, and compression tasks, though it maintains average performance for small-scale LLM inference. Qualitatively, the DS12_v2 provides a high memory-to-vCPU ratio on legacy hardware, offering a cost-efficient option for memory-heavy workloads that do not require high CPU throughput. It is best suited for moderate database operations, caching, and static web serving.",
+  "og_description": "Microsoft Azure DS12_v2 is an x86_64 virtual machine featuring 4 dedicated Intel Xeon vCPUs, 28 GB of RAM, and 57 GB of local storage, suitable for memory-intensive, moderate-compute workloads.",
+  "meta_description": "Microsoft Azure DS12_v2 is a virtual machine with 4 Intel Xeon vCPUs, 28 GB RAM, and 57 GB local storage, optimized for moderate memory workloads.",
+  "tagline": "A memory-dense virtual instance featuring dedicated Intel Xeon processors and bundled local storage for moderate, memory-reliant workloads.",
+  "bullet_points": [
+    "4 dedicated Intel Xeon E5-2673 v4 vCPUs running at 2.3 GHz",
+    "28.0 GB of system memory providing a high 7.0 GB per core ratio",
+    "57 GB of bundled local storage with no GPU accelerators",
+    "Average performance for small-scale 135M parameter LLM inference",
+    "Best suited for moderate database operations, caching, and web serving"
+  ],
+  "categories": [
+    "Memory Optimized",
+    "General Purpose"
+  ]
+}

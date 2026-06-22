@@ -1,0 +1,23 @@
+{
+  "page": [
+    "Microsoft Azure L8s is an instance from the LS server family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by an Intel Xeon E5-2698B v3 processor operating at 2.0 GHz. The configuration includes 8 dedicated physical cores with 1.0 thread per core, providing 8 vCPUs. The CPU cache layout consists of 32 KB L1d cache, 0.25 MB L2 cache, and a 40 MB L3 cache. It supports AVX, AES, BMI2, and FMA instruction sets, but lacks AVX-512 capabilities. System memory is configured at 64.0 GB, yielding 8.0 GB of RAM per core. For local storage, the instance is equipped with 1421 GB of Premium Storage capable capacity, and it does not include any GPUs or complimentary public IPv4 addresses.",
+    "Benchmark data reveals distinct performance characteristics and tradeoffs for the L8s instance. Single-core CPU performance is limited, with stress-ng single-core and Geekbench single-core scores falling into the bottom 10%. Multi-core CPU performance is also positioned in the bottom 25% according to stress-ng and Geekbench multi-core metrics. Memory bandwidth varies significantly; small-block cached read operations achieve average performance, whereas large-block uncached write bandwidth is poor, falling into the bottom 10%. In application-specific tests, the server demonstrates average performance for database operations, Redis SET operations, static web serving throughput, and software compilation. However, cryptographic and text processing capabilities are weak to poor, and large-model LLM inference speeds are very low.",
+    "From a cost-efficiency perspective, the L8s instance offers a high ratio of local storage and memory relative to its compute resources, making it a viable option for workloads that require significant local storage capacity and moderate memory density without demanding high-performance CPU processing. Given these hardware and benchmark profiles, the instance is best suited for database operations, Redis caching, static web serving, and basic data processing tasks that leverage the 1421 GB of local storage and 64.0 GB of RAM, rather than compute-intensive or cryptographic workloads."
+  ],
+  "description": "Microsoft Azure L8s is an x86_64 instance from the LS family, featuring 8 dedicated physical cores powered by an Intel Xeon E5-2698B v3 processor running at 2.0 GHz. It is equipped with 64.0 GB of system memory and 1421 GB of Premium Storage capable local storage, with no integrated GPUs. Benchmark evaluations indicate that while single-core and multi-core CPU performance is weak to poor, the instance maintains average performance in database operations, Redis SET operations, and static web serving throughput. Large-block uncached memory write bandwidth and cryptographic processing are notable bottlenecks. Given the high local storage capacity and moderate memory-to-vCPU ratio, the L8s is qualitatively cost-efficient for storage-centric and database workloads that do not require intense computational power.",
+  "og_description": "Microsoft Azure L8s is an LS family instance featuring 8 Intel Xeon vCPUs, 64 GB RAM, and 1421 GB of local storage, offering average database and web serving performance despite lower CPU benchmarks.",
+  "meta_description": "Microsoft Azure L8s features 8 Intel Xeon vCPUs, 64 GB RAM, and 1421 GB local storage, suitable for database and storage-centric workloads.",
+  "tagline": "An x86 server offering substantial local storage and balanced memory capacity for database operations and caching workloads.",
+  "bullet_points": [
+    "Intel Xeon E5-2698B v3 processor with 8 dedicated physical cores",
+    "64.0 GB of system memory providing 8.0 GB per core",
+    "1421 GB of Premium Storage capable local storage",
+    "Average performance in database and Redis SET operations",
+    "Weak single-core and multi-core CPU benchmark results",
+    "Suited for database hosting, caching, and static web serving"
+  ],
+  "categories": [
+    "Storage & Database",
+    "Memory Optimized"
+  ]
+}

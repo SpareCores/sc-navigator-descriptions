@@ -1,0 +1,23 @@
+{
+  "page": [
+    "Microsoft Azure L4s is an LS family virtual machine running on the Microsoft Hyper-V hypervisor. It features 4 dedicated x86_64 vCPUs powered by an Intel Xeon 8370C processor operating at 2.8 GHz. The hardware configuration includes 4 physical cores with 1.0 thread per core, 32.0 GB of system memory providing 8.0 GB per core, and 694 GB of local storage with Premium Storage capability. The CPU cache architecture consists of 48 KB L1d, 1 MB L2, and 48 MB L3 caches, with support for AVX, AVX512F, AES, BMI2, ADX, and FMA instruction sets.",
+    "Benchmark results indicate moderate memory performance alongside constrained computational throughput. The instance achieves average performance in large-block memory bandwidth, with read speeds of 50.82 GB/sec and write speeds of 33.22 GB/sec, though small-block cached read bandwidth is weaker at 301.97 GB/sec. CPU-bound benchmarks show limitations, with stress-ng single-core scoring 880.27 in the bottom 10% and multi-core scoring 3173.22 in the bottom 25%. Similarly, Passmark CPU and database operations scores fall into the bottom 25%, while Redis SET operations maintain an average tier at 6.03 million operations per second.",
+    "Given the 1:8 vCPU-to-RAM ratio and 694 GB of local storage, the L4s is qualitatively cost-efficient for workloads requiring moderate memory capacity and local storage without demanding high-performance CPU compute. It is suitable for memory-optimized tasks, basic database operations, caching layers like Redis, and lightweight text or image processing. However, it is poorly suited for compute-heavy tasks, software compilation, or large-scale LLM inference, as demonstrated by its weak multi-core performance and low tokens-per-second rates on 7B models."
+  ],
+  "description": "Microsoft Azure L4s is an LS family virtual machine configured with 4 dedicated x86_64 vCPUs on an Intel Xeon 8370C processor running at 2.8 GHz. It features 32.0 GB of RAM, 694 GB of Premium Storage capable local storage, and runs on the Microsoft Hyper-V hypervisor. Benchmark data reveals a clear tradeoff: while the instance delivers average performance in large-block memory bandwidth (50.82 GB/sec read) and Redis SET operations (6.03 million operations/sec), its raw computational power is limited, with stress-ng single-core and multi-core scores falling into the bottom 10% and 25% respectively. With an 8.0 GB per core memory allocation and substantial local storage, this server is qualitatively cost-effective for memory-optimized workloads, caching, and database operations that do not require intensive CPU processing, while remaining poorly suited for heavy compute or large-scale language model inference.",
+  "og_description": "Microsoft Azure L4s is an LS family VM featuring 4 dedicated Intel Xeon vCPUs, 32 GB RAM, and 694 GB local storage, offering balanced memory performance for database and caching workloads.",
+  "meta_description": "Microsoft Azure L4s is a 4-vCPU virtual machine with 32 GB RAM and 694 GB local storage, optimized for memory-centric and caching workloads.",
+  "tagline": "A memory-optimized virtual machine featuring dedicated Intel processors and substantial local storage for caching and database workloads.",
+  "bullet_points": [
+    "4 dedicated Intel Xeon 8370C vCPUs running at 2.8 GHz",
+    "32.0 GB of system memory providing 8.0 GB per core",
+    "694 GB of Premium Storage capable local storage",
+    "Average performance in large-block memory bandwidth and Redis operations",
+    "Best suited for memory-optimized tasks, caching, and basic databases",
+    "Constrained CPU performance limits suitability for compute-heavy workloads"
+  ],
+  "categories": [
+    "Memory Optimized",
+    "Storage & Database"
+  ]
+}

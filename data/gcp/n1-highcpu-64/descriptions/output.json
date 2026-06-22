@@ -1,22 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform n1-highcpu-64 is a compute-optimized virtual machine instance powered by an Intel Xeon processor with x86_64 architecture. It features 64 vCPUs mapped to 32 physical cores with hyper-threading enabled, providing two threads per core. The instance is configured with 58.0 GB of system memory, yielding a low memory-to-core ratio of approximately 0.9 GB per vCPU. It does not include bundled local storage or dedicated GPU hardware.",
-    "Benchmark data indicates a clear distinction between single-core and multi-core performance. Single-core metrics, such as the Geekbench single-core score of 948.0 and stress-ng single-core CPU performance, fall into the lower tier. However, the 64-vCPU configuration scales effectively in multi-threaded tasks, achieving an average multi-core Geekbench score of 9980.0 and a multi-core stress-ng CPU score of 47081.36. Memory bandwidth remains stable, with read-only large block transfers reaching 77.81 GB/sec and write operations at 32.34 GB/sec.",
-    "Due to its high core count and low memory density, this instance is qualitatively cost-efficient for highly parallelized, compute-bound workloads that do not demand large memory footprints. It is well-suited for tasks such as multi-threaded software compilation, ray tracing, and batch processing. However, it is less optimal for memory-intensive databases or single-threaded applications due to its weaker single-core performance and low memory-per-core allocation."
+    "Google Cloud Platform n1-highcpu-64 is an x86_64 architecture server instance within the n1 family, configured with 64 dedicated vCPUs mapped to 32 physical Intel Xeon cores running at 2.3 GHz. It features hyper-threading with two threads per core and 58.0 GB of system memory, yielding a low memory-to-core ratio of approximately 0.9 GB per vCPU. This instance does not include local storage or bundled GPU accelerators, relying entirely on network-attached storage and CPU-based processing.",
+    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. Single-core performance is relatively weak, as shown by a stress-ng single-core score of 1116.79 and a Geekbench single-core score of 948.0, both placing in the bottom 25%. Single-threaded tasks like gzip compression and bzip3 decompression also register poor throughput. However, the high core count compensates in parallelized workloads, with multi-core stress-ng scores reaching 47081.36 and Geekbench multi-core scores at 9980.0, both falling into the average tier.",
+    "Memory and specialized operations perform consistently in the middle tier. Uncached read memory bandwidth reaches 77.81 GB/sec, while write bandwidth is 32.34 GB/sec. Database operations, static web serving at 26.36 GB/sec, and Redis SET operations at 41.94 million operations per second demonstrate stable throughput. For machine learning, LLM prompt processing on a 7B model achieves an average speed of 76.68 tokens per second, though text generation remains weak at 8.54 tokens per second.",
+    "Given its high vCPU density and low memory allocation, the n1-highcpu-64 is qualitatively cost-efficient for highly parallelized, compute-bound workloads that do not require large memory footprints. It is well-suited for multi-threaded software compilation, ray tracing, and batch processing. It is less appropriate for memory-intensive databases or single-threaded legacy applications due to its low per-core memory and weak single-core performance."
   ],
-  "description": "The Google Cloud Platform n1-highcpu-64 is an x86_64 compute-optimized instance featuring 64 vCPUs powered by an Intel Xeon processor running at 2.3 GHz. Equipped with 58.0 GB of memory, it has a low memory-to-core ratio of 0.9 GB per vCPU and lacks local storage or GPU accelerators. Performance benchmarks show a contrast between weak single-core execution and average multi-core scaling, with a multi-core Geekbench score of 9980.0 and a stress-ng multi-core score of 47081.36. This resource distribution makes the instance a qualitatively cost-effective option for highly parallelized, compute-heavy workloads that do not require large memory footprints, such as multi-threaded software compilation, ray tracing, and batch processing pipelines.",
-  "og_description": "Google Cloud Platform n1-highcpu-64 is an x86_64 instance with 64 Intel Xeon vCPUs and 58 GB RAM. It offers average multi-core performance for parallelized, compute-bound workloads without local storage.",
-  "meta_description": "Google Cloud Platform n1-highcpu-64 is an Intel Xeon instance with 64 vCPUs and 58 GB RAM, optimized for parallel, compute-heavy workloads.",
-  "tagline": "A high-core virtual machine designed specifically for parallelized, compute-bound workloads that require substantial multi-threaded processing power without massive memory overhead.",
+  "description": "Google Cloud Platform n1-highcpu-64 is an x86_64 compute-optimized server featuring 64 dedicated vCPUs across 32 physical Intel Xeon cores at 2.3 GHz, paired with 58.0 GB of memory. Lacking local storage and GPUs, this instance is designed for parallelized, compute-bound workloads. Benchmarks show weak single-core performance, with a stress-ng single-core score of 1116.79, but average multi-core capabilities, as evidenced by a multi-core stress-ng score of 47081.36 and a Geekbench multi-core score of 9980.0. Memory bandwidth and database operations perform in the average tier, with Redis SET operations reaching 41.94 million operations per second. This hardware profile is highly suitable for multi-threaded tasks such as software compilation, ray tracing, and batch processing, though its low memory-to-core ratio of 0.9 GB per vCPU makes it less ideal for memory-intensive applications.",
+  "og_description": "Google Cloud Platform n1-highcpu-64 is a compute-optimized server with 64 vCPUs and 58 GB RAM. It offers solid multi-core performance for parallel workloads but has limited single-core speed.",
+  "meta_description": "Google Cloud Platform n1-highcpu-64 features 64 vCPUs and 58 GB RAM, delivering average multi-core performance for parallel compute workloads.",
+  "tagline": "A high-core-count compute instance designed for parallel processing, multi-threaded compilation, and batch workloads with low memory requirements.",
   "bullet_points": [
-    "64 vCPUs and 32 physical cores powered by an Intel Xeon processor",
-    "58.0 GB of system memory providing 0.9 GB of RAM per vCPU",
+    "64 dedicated vCPUs and 32 physical Intel Xeon cores at 2.3 GHz",
+    "58.0 GB of system memory providing 0.9 GB per vCPU",
+    "Average multi-core performance for parallelized processing and ray tracing",
     "No bundled local storage or GPU accelerators",
-    "Strong multi-core scaling for parallelized workloads",
-    "Suited for multi-threaded software compilation and ray tracing"
+    "Best suited for multi-threaded software compilation and batch processing"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

@@ -1,23 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform m3-megamem-128 is a memory-optimized server instance powered by an Intel Xeon x86_64 processor. It features 128 dedicated vCPUs mapped to 64 physical cores with hyper-threading enabled, running at a base clock speed of 2.6 GHz. The processor includes a 54 MB L3 cache and supports advanced instruction sets such as AVX-512 and cryptography acceleration via AES and SHA_NI. The instance is equipped with 1952 GB of RAM, providing 15.25 GB of memory per core. It does not include local NVMe storage or bundled GPUs.",
-    "Benchmark data indicates strong multi-core capabilities and high memory throughput. The server achieved a top-tier Passmark CPU score of 81,431.63, driven by strong performance in extended instructions and encryption tests. Multi-core stress-ng tests and Geekbench multi-core scores are also in the top 25% tier. Memory bandwidth is highly efficient, reaching 6,507.69 GB/sec for cached small-block reads and 298.49 GB/sec for large-block reads. However, single-core performance remains average, as shown by Geekbench single-core and stress-ng single-core metrics.",
-    "Given its massive memory footprint and dedicated compute resources, this instance represents a high-end hardware class designed for resource-dense workloads. The absence of local storage and GPUs means storage-heavy or hardware-accelerated AI workloads must rely on network-attached resources or external accelerators, which may introduce latency. It is highly optimized for large-scale in-memory databases, such as Redis, where it achieves 106.54 million operations per second, as well as heavy database operations, enterprise resource planning (ERP) systems, and large-scale data analytics."
+    "Google Cloud Platform m3-megamem-128 is a memory-optimized server instance designed for memory-intensive enterprise workloads. It features 128 vCPUs mapped to 64 physical cores of an Intel Xeon processor running at 2.6 GHz on the x86_64 architecture. The instance is equipped with 1952.0 GB of RAM, providing a high memory-to-vCPU ratio of 15.25 GB per core. It does not include local storage or bundled GPUs, relying entirely on network-attached storage.",
+    "Performance benchmarks indicate strong multi-core capabilities and memory throughput. The server achieved a strong rating in stress-ng multi-core CPU performance and Geekbench multi-core testing. Memory bandwidth is a key strength, with read-only large block bandwidth reaching 298.49 GB/sec and write large block bandwidth at 122.84 GB/sec. Cryptographic performance is also notable, with the PassMark CPU encryption test scoring in the top tier at 104,535.88.",
+    "From a workload perspective, the instance is highly optimized for large-scale in-memory databases, enterprise resource planning systems, and heavy data processing. This is supported by strong performance in PassMark database operations and Redis SET operations, which reached 106.54 million operations per second. However, for large language model inference, the server exhibits limitations, particularly in text generation for 70B models, which registered a weak score of 2.73 tokens per second.",
+    "Qualitatively, the m3-megamem-128 represents a high-resource density profile. The dedicated CPU allocation and massive memory footprint offer high efficiency for consolidated enterprise workloads that require vast RAM without the overhead of multiple smaller instances, though the lack of local NVMe storage requires careful architectural planning for I/O-heavy tasks."
   ],
-  "description": "Google Cloud Platform m3-megamem-128 is a memory-optimized server instance designed for memory-intensive enterprise workloads. It is powered by an Intel Xeon x86_64 processor with 128 dedicated vCPUs (64 physical cores) operating at 2.6 GHz, supported by a 54 MB L3 cache. The instance features a massive 1952 GB of RAM, yielding 15.25 GB per core, though it lacks local storage and GPU accelerators. Benchmark results show top-tier multi-core CPU and encryption performance, alongside strong memory bandwidth of up to 298.49 GB/sec for large-block reads. While single-core performance is average, its high memory density and strong multi-threaded capabilities make it highly efficient for large-scale in-memory databases, complex data analytics, and enterprise database operations.",
-  "og_description": "Google Cloud Platform m3-megamem-128 is a memory-optimized instance featuring 128 dedicated Intel Xeon vCPUs and 1952 GB of RAM, designed for large-scale in-memory databases and enterprise workloads.",
-  "meta_description": "Google Cloud Platform m3-megamem-128 is a memory-optimized server with 128 Intel Xeon vCPUs and 1952 GB of RAM, built for enterprise databases.",
-  "tagline": "A high-density memory-optimized platform featuring massive RAM capacity and dedicated multi-core processing for enterprise database workloads.",
+  "description": "Google Cloud Platform m3-megamem-128 is a memory-optimized server configured with 128 vCPUs and 1952.0 GB of RAM, powered by a 2.6 GHz Intel Xeon processor. Operating on the x86_64 architecture with 64 physical cores, this instance provides a high memory-to-core ratio of 15.25 GB. It features no local storage or GPUs. Benchmark results show strong multi-core CPU performance and high memory bandwidth, with large-block read speeds reaching 298.49 GB/sec. The server excels in memory-bound workloads, demonstrating strong capabilities in database operations and Redis SET operations, which reached 106.54 million operations per second. It is highly suited for large-scale in-memory databases, enterprise applications, and complex data processing tasks, though it shows performance trade-offs in large-scale LLM text generation.",
+  "og_description": "Google Cloud Platform m3-megamem-128 is a memory-optimized server with 128 vCPUs and 1952 GB RAM. It features an Intel Xeon processor and excels in large-scale in-memory databases and enterprise data processing.",
+  "meta_description": "Google Cloud Platform m3-megamem-128 is a memory-optimized server with 128 vCPUs and 1952 GB RAM, built for enterprise databases and data processing.",
+  "tagline": "A high-capacity memory-optimized instance featuring 1952 GB RAM and 128 vCPUs for demanding enterprise database and data processing workloads.",
   "bullet_points": [
-    "128 dedicated Intel Xeon vCPUs with 64 physical cores at 2.6 GHz",
-    "1952 GB of RAM providing 15.25 GB of memory per core",
-    "Top-tier multi-core CPU and encryption performance in benchmarks",
-    "Strong memory bandwidth reaching 298.49 GB/sec for large-block reads",
-    "No local storage or GPU accelerators included",
-    "Optimized for large-scale in-memory databases and enterprise workloads"
+    "128 vCPUs and 1952 GB RAM powered by a 2.6 GHz Intel Xeon processor",
+    "Strong memory bandwidth with large-block read speeds of 298.49 GB/sec",
+    "Excellent fit for in-memory databases, scoring 106.54 million Redis SET operations per second",
+    "Dedicated CPU allocation with 64 physical cores on x86_64 architecture",
+    "No local storage or GPU accelerators included in the default configuration"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

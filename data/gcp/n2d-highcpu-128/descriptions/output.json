@@ -1,19 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform n2d-highcpu-128 is an x86_64 architecture server powered by dedicated AMD EPYC 7B13 processors. It features 128 vCPUs across 64 physical cores with 2 threads per core, paired with 128 GB of RAM, yielding a 1.0 GB per core memory ratio. The CPU includes 32 KB L1d, 0.5 MB L2, and 32 MB L3 cache configurations, supporting hardware features such as AVX, AES, VAES, and SHA_NI. This instance does not include local storage or bundled GPUs.",
-    "In benchmark testing, the instance exhibits top-tier multi-core CPU performance, scoring 172613.68 in stress-ng multi-core and 89602.52 in PassMark CPU tests. Memory bandwidth for small cached blocks is highly efficient at 8132.17 GB/sec, while large block read and write speeds reach 263.09 GB/sec and 131.24 GB/sec respectively. Redis SET operations perform exceptionally well, achieving 120.13 million operations per second. However, memory-bound tasks and large-scale LLM text generation, such as 70B model text generation, show weaker relative performance due to the constrained memory-to-vCPU ratio.",
-    "From a cost-efficiency perspective, the n2d-highcpu-128 offers high compute density for CPU-bound workloads without the added cost of excess memory or local storage. It is highly suitable for compute-heavy tasks such as ray tracing, software compilation, static web serving, and medium-scale LLM prompt processing. It is less suited for memory-intensive databases or large-scale LLM text generation."
+    "Google Cloud Platform n2d-highcpu-128 is a compute-optimized virtual machine powered by an AMD EPYC 7B13 processor using the x86_64 architecture. It features 128 vCPUs mapped to 64 physical cores with multithreading enabled, providing dedicated CPU allocation. The system is configured with 128 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. This instance does not include local storage or integrated GPUs.",
+    "Benchmark data reveals top-tier performance in multi-core processing, with a stress-ng multi-core score of 172,613.68 and a PassMark CPU score of 89,602.52. It demonstrates strong capabilities in memory bandwidth, reaching 8,132.17 GB/sec for cached small-block reads, and excels in cryptographic operations and ray tracing. However, single-core performance and text processing benchmarks fall into the average tier.",
+    "The primary architectural tradeoff of the n2d-highcpu-128 is its low memory-to-CPU ratio, which limits its suitability for memory-intensive databases or large-scale in-memory processing. This is reflected in its weak performance during large-scale LLM text generation, where it achieves only 2.67 tokens/sec on a 70B model. From a cost-efficiency perspective, the instance maximizes compute density per resource for highly parallelizable, CPU-bound tasks that do not require massive memory footprints or local NVMe storage.",
+    "This server type is highly suited for compute-heavy workloads such as software compilation, ray tracing, static web serving, and high-throughput Redis operations. It is also effective for prompt processing in small to medium language models, though it is not recommended for memory-heavy databases or large-model text generation."
   ],
-  "description": "Google Cloud Platform n2d-highcpu-128 is a compute-optimized server featuring 128 vCPUs and 128 GB of RAM, powered by dedicated AMD EPYC 7B13 processors on the x86_64 architecture. With 64 physical cores and a 1.0 GB per core memory ratio, this instance is designed for high-density compute workloads. It lacks local storage and GPU accelerators. Benchmarks show top-tier multi-core CPU performance, exceptional Redis SET operations at 120.13 million operations per second, and strong memory bandwidth. However, its low memory-to-vCPU ratio limits its effectiveness for memory-intensive applications and large LLM text generation. It is highly suited for software compilation, ray tracing, static web serving, and parallel CPU-bound processing.",
-  "og_description": "Google Cloud Platform n2d-highcpu-128 is a compute-optimized server with 128 vCPUs, 128 GB RAM, and AMD EPYC 7B13 processors, delivering top-tier multi-core CPU and Redis performance.",
-  "meta_description": "Google Cloud Platform n2d-highcpu-128 features 128 vCPUs, 128 GB RAM, and AMD EPYC processors, optimized for high-density compute workloads.",
-  "tagline": "A high-density, compute-optimized virtual server featuring 128 AMD EPYC vCPUs for demanding parallel processing and multi-core workloads.",
+  "description": "Google Cloud Platform n2d-highcpu-128 is an x86_64 compute-optimized server powered by a dedicated AMD EPYC 7B13 processor with 128 vCPUs and 128 GB of RAM. Lacking local storage and GPUs, it offers a lean 1.0 GB of memory per vCPU. Benchmarks show top-tier multi-core CPU performance, high memory bandwidth, and strong cryptographic execution, though single-core metrics and large-scale LLM text generation remain average to weak. This resource profile makes the instance highly cost-efficient for parallel, CPU-bound workloads like software compilation, ray tracing, and high-throughput Redis deployments, while presenting a clear tradeoff for memory-intensive applications.",
+  "og_description": "Google Cloud Platform n2d-highcpu-128 is a compute-optimized server with 128 vCPUs and 128 GB RAM, delivering top-tier multi-core performance for parallel CPU-bound workloads.",
+  "meta_description": "Google Cloud Platform n2d-highcpu-128 features 128 AMD EPYC vCPUs and 128 GB RAM, optimized for high-compute parallel workloads.",
+  "tagline": "A high-density compute instance featuring 128 dedicated vCPUs, optimized for parallel processing, software compilation, and high-throughput workloads.",
   "bullet_points": [
-    "128 vCPUs and 128 GB RAM powered by dedicated AMD EPYC 7B13 processors",
-    "Top-tier multi-core CPU performance and high-speed Redis SET operations",
+    "Powered by a dedicated 128-vCPU AMD EPYC 7B13 processor",
+    "Configured with 128 GB RAM, providing 1.0 GB of memory per vCPU",
+    "Top-tier multi-core CPU and cryptographic benchmark performance",
     "No bundled local storage or GPU accelerators",
-    "Optimized for software compilation, ray tracing, and static web serving",
-    "Constrained 1.0 GB per core memory ratio limits large-scale LLM text generation"
+    "Best suited for software compilation, ray tracing, and Redis operations",
+    "Underperforms on memory-intensive tasks and large LLM text generation"
   ],
   "categories": [
     "Compute Optimized",

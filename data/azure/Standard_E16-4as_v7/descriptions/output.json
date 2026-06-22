@@ -1,0 +1,23 @@
+{
+  "page": [
+    "Microsoft Azure E16-4as_v7 is an Easv7-series virtual machine configured with 4 dedicated vCPUs and 128.0 GB of RAM. Powered by an AMD EPYC 9V45 processor running at 4.5 GHz, this x86_64 architecture server features 2 physical cores with hyper-threading, resulting in 2 threads per core. The processor includes 32 MB of L3 cache, 1.0 MB of L2 cache, and 48 KB of L1d cache. It supports advanced instruction sets such as AVX-512, AVX_VNNI, and AVX512_BF16, alongside hardware-accelerated cryptography via AES and SHA_NI.",
+    "This instance runs on the Microsoft Hyper-V hypervisor. It does not include local storage, meaning it relies entirely on remote storage options, though it is Premium Storage capable. There are zero complimentary public IPv4 addresses bundled with the server. The lack of local storage represents a key architectural tradeoff, requiring network-attached storage for any persistent or temporary disk operations.",
+    "Performance benchmarks reveal a strong single-core profile but limited multi-core scaling. Single-core stress-ng CPU performance and single-threaded gzip compression both rank in the top tier. Conversely, multi-threaded bzip3 decompression is weak, falling into the bottom 25%, which reflects the low physical core count of 2. Memory bandwidth tests show average results, with read-only small block cached bandwidth at 447.73 GB/sec and large block uncached write bandwidth at 33.73 GB/sec. Passmark CPU and memory scores are average, as is the Redis SET performance of 7.77 million operations per second.",
+    "From a cost-efficiency perspective, the E16-4as_v7 offers a high memory-to-vCPU ratio of 32.0 GB per core, making it a specialized, resource-dense option for memory-bound workloads that do not require high parallel compute power. This profile is suitable for relational databases, in-memory caching layers like Redis, and lightweight data processing tasks. However, it is poorly suited for heavy multi-threaded compute or large-scale LLM inference, as demonstrated by the poor prompt processing speed of 15.87 tokens/sec on a 7B model."
+  ],
+  "description": "The Microsoft Azure E16-4as_v7 is a memory-optimized virtual machine featuring 4 dedicated vCPUs and 128.0 GB of RAM, yielding a high memory-to-core ratio of 32.0 GB per core. Powered by an AMD EPYC 9V45 processor operating at 4.5 GHz, the server delivers top-tier single-core CPU and single-threaded compression performance. However, its multi-core scaling is limited by its 2 physical cores, resulting in weak multi-threaded decompression benchmarks. The instance lacks local storage and complimentary public IPv4 addresses, relying on remote Premium Storage. This hardware profile provides a cost-efficient, resource-dense solution for memory-heavy, low-compute workloads such as in-memory databases, caching layers, and database operations, while remaining less suitable for highly parallelized computing tasks or large language model inference.",
+  "og_description": "Microsoft Azure E16-4as_v7 is a memory-optimized VM featuring 4 vCPUs, 128 GB RAM, and an AMD EPYC 9V45 processor. It offers top-tier single-core performance but lacks local storage.",
+  "meta_description": "Microsoft Azure E16-4as_v7 is a memory-optimized VM with 4 vCPUs, 128 GB RAM, and an AMD EPYC CPU, designed for memory-intensive workloads.",
+  "tagline": "A high-density memory configuration featuring strong single-core AMD EPYC performance for memory-bound workloads without local storage requirements.",
+  "bullet_points": [
+    "AMD EPYC 9V45 processor with 4 dedicated vCPUs and 4.5 GHz clock speed",
+    "128.0 GB of RAM providing a high 32.0 GB per core memory density",
+    "Top-tier single-core CPU and single-threaded compression performance",
+    "No local storage, requiring remote Premium Storage configurations",
+    "Best suited for in-memory databases, caching, and memory-heavy workloads"
+  ],
+  "categories": [
+    "Memory Optimized",
+    "General Purpose"
+  ]
+}

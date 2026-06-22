@@ -1,0 +1,22 @@
+{
+  "page": [
+    "Microsoft Azure E2s_v7 is an x86_64 architecture virtual machine belonging to the Esv7 server family, running on the Microsoft Hyper-V hypervisor. It features a dedicated Intel Xeon 6973P-C processor operating at 4.2 GHz, configured with 1 physical core and 2 threads to deliver 2 vCPUs. The hardware includes 16.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per core. Cache resources consist of a 48 KB L1d cache, a 2 MB L2 cache, and a large 480 MB L3 cache. The CPU supports advanced instruction sets including Intel Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX) for tile and int8 operations, alongside hardware-accelerated cryptography via AES, VAES, and SHA_NI. This instance does not include local storage or bundled GPUs, but it is Premium Storage capable.",
+    "Benchmark data reveals a stark contrast between single-threaded and multi-threaded execution. Single-core CPU performance under stress-ng is average, while multi-core performance falls into the bottom 10% due to the physical single-core constraint. Memory performance is mixed; PassMark memory scores are average, but uncached large-block write bandwidth is poor at 11.72 GB/sec, and read bandwidth is weak at 22.5 GB/sec. Conversely, single-threaded operations show notable strength, with gzip compression reaching a top-tier 35.12 GB/sec and bzip3 decompression performing strongly at 14.52 GB/sec. Database and web serving operations are relatively weak, with Redis SET operations registering at 3.99 million operations per second and static web serving throughput at 4.81 GB/sec. Large language model inference is constrained, with prompt processing for a medium 7B model limited to 15.46 tokens per second.",
+    "From a cost-efficiency perspective, the E2s_v7 offers a high memory-to-vCPU ratio within a low-vCPU footprint, making it suitable for memory-bound workloads that do not require high parallel compute density. The lack of bundled local storage and public IPv4 addresses requires external provisioning, which should be factored into overall resource planning. Given the strong single-threaded compression performance but weak multi-core and database benchmark results, this server is best suited for lightweight memory-intensive applications, single-threaded data processing, or basic caching layers rather than highly parallelized databases or intensive web serving."
+  ],
+  "description": "Microsoft Azure E2s_v7 is an x86_64 virtual machine in the Esv7 family, powered by a dedicated 4.2 GHz Intel Xeon 6973P-C processor with 1 physical core and 2 vCPUs. It features 16.0 GB of RAM, providing a high 8.0 GB per core memory density, alongside a 480 MB L3 cache and support for Intel AMX and AVX-512 instructions. The instance lacks local storage and bundled GPUs. Benchmarks show strong single-threaded performance, with gzip compression reaching top-tier levels, but multi-core compute and memory write bandwidth are weak. This profile makes the E2s_v7 qualitatively cost-efficient for memory-intensive, low-compute workloads. It is best suited for single-threaded data processing, lightweight caching, and memory-bound applications that do not require extensive parallel processing.",
+  "og_description": "Microsoft Azure E2s_v7 is a 2-vCPU virtual machine featuring a 4.2 GHz Intel Xeon processor, 16 GB of RAM, and a 480 MB L3 cache, optimized for memory-intensive workloads requiring strong single-threaded performance.",
+  "meta_description": "Microsoft Azure E2s_v7 is a 2-vCPU virtual machine with 16 GB RAM and an Intel Xeon processor, designed for memory-intensive, single-threaded workloads.",
+  "tagline": "A memory-optimized virtual machine featuring dedicated Intel Xeon processing and high memory density for single-threaded data workloads.",
+  "bullet_points": [
+    "Dedicated Intel Xeon 6973P-C processor running at 4.2 GHz",
+    "16.0 GB of RAM providing a high 8.0 GB per core memory ratio",
+    "Strong single-threaded performance in gzip and bzip3 benchmarks",
+    "Advanced instruction support including Intel AMX and AVX-512",
+    "Best suited for memory-bound, single-threaded data processing tasks"
+  ],
+  "categories": [
+    "Memory Optimized",
+    "General Purpose"
+  ]
+}

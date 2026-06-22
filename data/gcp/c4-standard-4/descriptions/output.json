@@ -1,21 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c4-standard-4 is a general-purpose server instance featuring 4 dedicated vCPUs and 15 GB of system memory. Powered by an Intel Xeon 8581C processor operating at 2.3 GHz, the hardware configuration includes 2 physical cores with 2 threads per core. The CPU architecture is x86_64, supported by a cache hierarchy consisting of 48 KB L1d, 2 MB L2, and 260 MB L3 cache. This instance does not include local storage or bundled GPUs, and it provides zero complimentary public IPv4 addresses.",
-    "Benchmark evaluations reveal strong single-core performance, with a Geekbench single-core score of 1916.0 and single-threaded bzip3 decompression reaching 14.04 GB/sec. However, multi-core and memory-intensive operations show relative weaknesses. The Geekbench multi-core score is 4292.0, and stress-ng multi-core CPU performance is measured at 3746.88. Uncached memory bandwidth for large blocks is limited, with read speeds at 29.4 GB/sec and write speeds at 18.6 GB/sec. In contrast, cached small-block memory read bandwidth performs at an average level of 335.06 GB/sec.",
-    "Given its dedicated CPU allocation and strong single-threaded capabilities, the c4-standard-4 is suited for workloads that do not heavily parallelize or demand massive memory bandwidth. It is appropriate for static web serving, which achieves a throughput of 8.14 GB/sec, and Redis SET operations, which reach 5.84 million operations per second. It also supports light language model inference, processing 459.57 tokens per second for small 135M models. The lack of local storage and lower multi-core efficiency suggest it is best utilized as a cost-efficient node for single-threaded tasks, basic web hosting, and lightweight utility services rather than heavy database operations or parallel software compilation."
+    "Google Cloud Platform c4-standard-4 is a general-purpose virtual machine instance featuring 4 dedicated vCPUs and 15 GB of RAM. Powered by an Intel Xeon 8581C processor with an x86_64 architecture, the instance operates at a base clock speed of 2.3 GHz across 2 physical cores and 2 threads per core. The CPU configuration includes a 260 MB L3 cache and supports advanced instruction sets, including Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX) for matrix multiplication acceleration. This instance does not include local storage or GPU accelerators.",
+    "Benchmark evaluations indicate strong single-core performance, particularly in text processing and single-threaded bzip3 decompression. However, multi-core performance and memory bandwidth are relatively weak, as evidenced by lower scores in multi-threaded bzip3 decompression, multi-core Geekbench tests, and uncached memory read/write operations. The instance demonstrates average capabilities in static web serving throughput and single-threaded gzip compression.",
+    "From a qualitative cost-efficiency perspective, the c4-standard-4 offers a dedicated hardware profile suitable for workloads that require predictable single-thread CPU execution without the overhead of shared-core environments. However, the resource density and memory bandwidth limitations present a tradeoff for memory-intensive or highly parallelized applications. It is best suited for light web serving, single-threaded data processing, text processing, and small-scale LLM prompt processing."
   ],
-  "description": "Google Cloud Platform c4-standard-4 is an x86_64 general-purpose server configured with 4 dedicated vCPUs and 15 GB of RAM, powered by an Intel Xeon 8581C processor running at 2.3 GHz. The instance features 2 physical cores with hyper-threading, a 260 MB L3 cache, and lacks local storage or integrated GPUs. Performance benchmarks indicate strong single-core capabilities, highlighted by a Geekbench single-core score of 1916.0 and efficient single-threaded text processing. However, multi-core scaling and uncached memory bandwidth are relatively weak, as evidenced by a multi-core Geekbench score of 4292.0 and a 18.6 GB/sec large-block write speed. This server is best suited for workloads prioritizing single-threaded execution, such as static web serving, Redis key-value operations, and lightweight utility tasks, rather than highly parallelized database or compilation workloads.",
-  "og_description": "Google Cloud Platform c4-standard-4 is a general-purpose instance with 4 dedicated vCPUs, 15 GB RAM, and an Intel Xeon 8581C CPU, offering strong single-core performance for web serving and Redis workloads.",
-  "meta_description": "Google Cloud Platform c4-standard-4 features 4 dedicated vCPUs, 15 GB RAM, and an Intel Xeon CPU, optimized for single-threaded and web serving workloads.",
-  "tagline": "A dedicated x86_64 server offering strong single-core performance and balanced memory for web serving and lightweight utility workloads.",
+  "description": "Google Cloud Platform c4-standard-4 is a general-purpose instance configured with 4 dedicated vCPUs and 15 GB of RAM, running on an Intel Xeon 8581C processor at 2.3 GHz. Built on the x86_64 architecture, it features 2 physical cores, 2 threads per core, and a 260 MB L3 cache. The CPU supports advanced instruction sets such as AVX-512 and Intel AMX. This instance does not include bundled local storage or GPU hardware. Performance benchmarks show strong single-core capabilities, particularly in text processing and single-threaded decompression, though multi-core performance and memory bandwidth are comparatively weak. Qualitatively, the instance provides a dedicated, predictable compute environment for workloads that do not require high memory throughput. It is best suited for single-threaded processing, light web serving, and small-scale language model inference.",
+  "og_description": "Google Cloud Platform c4-standard-4 is a general-purpose instance with 4 dedicated Intel Xeon vCPUs, 15 GB RAM, and strong single-core performance, suitable for text processing and light web serving.",
+  "meta_description": "Google Cloud Platform c4-standard-4 features 4 dedicated Intel Xeon vCPUs and 15 GB RAM, delivering strong single-core performance for general workloads.",
+  "tagline": "A dedicated four-vCPU virtual machine delivering strong single-threaded performance and advanced instruction support for general-purpose workloads.",
   "bullet_points": [
-    "Intel Xeon 8581C processor with 4 dedicated vCPUs and 15 GB RAM",
-    "Strong single-core performance with a 1916.0 Geekbench single-core score",
-    "No local storage or integrated GPU accelerators included",
-    "Average performance for static web serving and Redis operations",
-    "Suited for single-threaded tasks, lightweight utility services, and basic web hosting"
+    "Four dedicated vCPUs powered by an Intel Xeon 8581C processor at 2.3 GHz",
+    "15 GB of system memory with a 260 MB L3 CPU cache",
+    "Strong single-core performance in text processing and decompression benchmarks",
+    "Support for advanced instruction sets including AVX-512 and Intel AMX",
+    "No bundled local storage or GPU accelerators",
+    "Best suited for single-threaded applications, light web serving, and small LLM inference"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

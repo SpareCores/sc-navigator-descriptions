@@ -1,0 +1,22 @@
+{
+  "page": [
+    "Microsoft Azure F8-4ams_v7 is a memory-intensive virtual machine belonging to the Famsv7 family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated AMD EPYC 9V45 processor. The configuration includes 4 vCPUs and 4 physical cores with 1.0 thread per core, meaning hyperthreading is not utilized to split physical cores into multiple virtual threads. It is equipped with 64.0 GB of RAM, yielding a high resource density of 16.0 GB of memory per core. The CPU cache configuration consists of 48 KB L1d, 1.0 MB L2, and 32 MB L3 cache. There is no local storage bundled with this instance, though it is premium storage capable, and it does not include any GPUs or complimentary public IPv4 addresses.",
+    "In benchmark evaluations, the F8-4ams_v7 demonstrates top-tier single-core performance. The stress-ng single-core CPU test scores in the top 10% at 3688.19, complemented by top-tier single-threaded gzip compression at 40.54 GB/sec and bzip3 decompression at 18.02 GB/sec. For lightweight machine learning tasks, the instance achieves top-tier text generation speeds of 342.26 tokens per second with a small 135M parameter LLM. However, multi-core and memory bandwidth metrics generally fall into the average tier. The stress-ng multi-core CPU performance score is 14555.95, and large-block uncached memory read bandwidth is measured at 55.03 GB/sec. A notable performance tradeoff is observed in prompt processing for medium-sized 7B LLM models, which registers in the bottom 25% at 30.34 tokens per second.",
+    "Given its high memory-to-vCPU ratio of 16 GB per core, the F8-4ams_v7 offers qualitative cost efficiency for memory-bound workloads that do not require massive parallel CPU scaling. The dedicated AMD EPYC cores provide predictable single-threaded execution, making the instance suitable for database operations, in-memory caching, and memory-intensive enterprise applications. The lack of local storage requires external network-attached storage, which should be factored into the overall architectural design. Appropriate workloads include Redis deployments, single-threaded data processing pipelines, lightweight LLM text generation, and memory-heavy web serving."
+  ],
+  "description": "Microsoft Azure F8-4ams_v7 is a memory-intensive virtual machine from the Famsv7 family, powered by a dedicated AMD EPYC 9V45 processor on the x86_64 architecture. It features 4 vCPUs, 4 physical cores, and 64.0 GB of RAM, providing a high memory-to-core ratio of 16.0 GB. The instance lacks local storage and GPUs but supports premium storage. Benchmarks show top-tier single-core CPU performance, single-threaded compression, and text generation for small LLMs. However, multi-core execution and memory bandwidth remain in the average tier, and medium LLM prompt processing is relatively weak. This profile makes the F8-4ams_v7 qualitatively cost-efficient for memory-heavy, single-threaded workloads such as database operations, in-memory caching, and lightweight text generation, while avoiding the overhead of unused local storage.",
+  "og_description": "Microsoft Azure F8-4ams_v7 is a memory-intensive virtual machine featuring a 4-core AMD EPYC 9V45 processor, 64 GB of RAM, and top-tier single-core performance for database and caching workloads.",
+  "meta_description": "Microsoft Azure F8-4ams_v7 is a memory-intensive VM with 4 AMD EPYC cores, 64 GB RAM, and top-tier single-core CPU performance.",
+  "tagline": "A memory-intensive virtual machine featuring dedicated AMD EPYC cores and high memory density for database and caching workloads.",
+  "bullet_points": [
+    "Dedicated AMD EPYC 9V45 processor with 4 vCPUs and 4 physical cores",
+    "High memory density of 64.0 GB RAM providing 16.0 GB per core",
+    "Top-tier single-core CPU and single-threaded compression performance",
+    "No local storage or GPU resources included in the base configuration",
+    "Best suited for in-memory databases, caching, and memory-bound applications"
+  ],
+  "categories": [
+    "Memory Optimized",
+    "General Purpose"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "page": [
+    "Amazon Web Services r5n.8xlarge is a memory-optimized instance built on the Nitro hypervisor. It features an x86_64 architecture powered by a dedicated Intel Xeon 8259CL processor running at 3.1 GHz. This configuration delivers 16 physical cores and 32 vCPUs, supported by a 35 MB L3 cache. The system is equipped with 256.0 GB of DDR4 memory operating at 3 GHz, providing a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or GPU accelerators, relying instead on network-attached storage and a baseline network bandwidth of 25 Gbps.",
+    "Benchmark results indicate a clear performance profile. Single-core processing capabilities are relatively weak, as shown by stress-ng single-core and Geekbench single-core scores falling into the bottom 25%. However, multi-core performance scales to average levels, with stress-ng multi-core, PassMark CPU, and Geekbench multi-core scores all landing in the middle 50%. Memory bandwidth tests for both small cached blocks and large uncached blocks also demonstrate average performance. For specialized tasks, the instance achieves average throughput in Redis SET operations and static web serving, but struggles with large-scale LLM inference, where prompt processing for a 70B model is categorized as poor.",
+    "From a cost-efficiency perspective, the r5n.8xlarge offers a dense memory allocation relative to its compute resources, making it suitable for memory-bound workloads that do not require high single-threaded CPU performance. The primary tradeoff lies in the contrast between its average multi-core scalability and its weak single-core execution speed. Additionally, the lack of local NVMe storage means all disk operations must traverse the network, though this is mitigated by its network-optimized design and 25 Gbps baseline bandwidth.",
+    "This instance is designed for memory-intensive applications such as medium-sized databases, in-memory caches like Redis, distributed data processing, and enterprise applications requiring a large memory footprint without demanding top-tier single-core CPU speeds."
+  ],
+  "description": "Amazon Web Services r5n.8xlarge is a memory-optimized instance featuring 32 vCPUs and 16 physical cores powered by an Intel Xeon 8259CL processor running at 3.1 GHz. Built on the Nitro hypervisor, it provides 256.0 GB of DDR4 memory, yielding a high 8.0 GB of RAM per core, but lacks local storage and GPU accelerators. Network connectivity is supported by a baseline bandwidth of 25 Gbps. Benchmark data shows a distinct tradeoff: single-core CPU performance is weak, falling in the bottom 25%, while multi-core performance, memory bandwidth, and Redis SET operations achieve average ratings in the middle 50%. This hardware profile offers qualitative cost efficiency for memory-heavy workloads that scale across multiple threads rather than relying on single-threaded speed. It is best suited for in-memory databases, caching layers, and distributed data processing applications.",
+  "og_description": "Amazon Web Services r5n.8xlarge is a memory-optimized instance with 32 vCPUs, 256 GB RAM, and 25 Gbps network bandwidth, delivering average multi-core and weak single-core performance.",
+  "meta_description": "Amazon Web Services r5n.8xlarge is a memory-optimized instance featuring 32 vCPUs, 256 GB DDR4 RAM, and 25 Gbps baseline network bandwidth.",
+  "tagline": "A memory-optimized instance pairing 256 GB of RAM with 25 Gbps network bandwidth for memory-intensive, multi-threaded workloads.",
+  "bullet_points": [
+    "32 vCPUs and 16 physical cores via Intel Xeon 8259CL processor",
+    "256.0 GB of DDR4 memory providing 8.0 GB of RAM per core",
+    "25 Gbps baseline network bandwidth with no local storage",
+    "Average multi-core performance contrasted with weak single-core speeds",
+    "Suited for in-memory databases, caching layers, and data processing"
+  ],
+  "categories": [
+    "Memory Optimized",
+    "General Purpose"
+  ]
+}

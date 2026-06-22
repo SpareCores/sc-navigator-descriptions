@@ -1,0 +1,23 @@
+{
+  "page": [
+    "Microsoft Azure L4aos_v4 is an x86_64 architecture server instance belonging to the Laosv4 family, powered by a dedicated AMD EPYC 9V74 processor running at 3.7 GHz. This virtual machine is provisioned with 4 vCPUs, derived from 2 physical cores with 2 threads per core, and is managed via the Microsoft Hyper-V hypervisor. The hardware configuration includes 32.0 GB of system memory, translating to 8.0 GB of RAM per vCPU, and features a substantial local storage capacity of 2880 GB. Additionally, the instance is Premium Storage capable, though it does not include any complimentary public IPv4 addresses or dedicated GPU hardware.",
+    "Benchmark data reveals strong single-core performance alongside moderate multi-core capabilities. The single-core CPU performance measured via stress-ng falls into the top 25% with a score of 3078.28, a trend mirrored by a strong Geekbench single-core score of 2071.0 and strong single-threaded bzip3 decompression at 13.6 GB/sec. However, multi-core execution scales moderately, with stress-ng multi-core and Geekbench multi-core scores landing in the middle 50%. Memory performance presents a notable bottleneck; read-only memory bandwidth for both small and large blocks is weak, placing in the bottom 25%, while large block write bandwidth remains average. This memory constraint is reflected in database operations, where Passmark database benchmarks scored in the bottom 25%.",
+    "From a qualitative cost-efficiency perspective, the L4aos_v4 offers a high local storage-to-vCPU ratio and a memory-optimized 1:8 vCPU-to-RAM configuration, making it a viable option for workloads requiring significant local scratch space or moderate memory capacity without paying for excessive compute cores. However, users face tradeoffs regarding memory bandwidth and multi-threaded scaling. While single-threaded tasks and text processing perform strongly, complex multi-threaded tasks such as software compilation with clang and medium-sized LLM inference perform poorly, with the latter scoring in the bottom 10%. Consequently, this instance is best suited for workloads such as static web serving, single-threaded data processing, Redis caching, and lightweight database tasks that benefit from its large local storage capacity but do not demand high memory bandwidth or heavy multi-threaded compute."
+  ],
+  "description": "Microsoft Azure L4aos_v4 is an x86_64 virtual machine from the Laosv4 family, powered by a dedicated AMD EPYC 9V74 processor operating at 3.7 GHz. It features 4 vCPUs, 32.0 GB of RAM, and a large local storage capacity of 2880 GB. While single-core CPU benchmarks place the instance in the top 25%, its multi-core performance and memory read bandwidth are weaker, with memory read-only bandwidth falling into the bottom 25%. The instance lacks GPU accelerators and complimentary public IPv4 addresses. Qualitatively, the L4aos_v4 offers a high storage-to-vCPU density and a 1:8 memory-to-vCPU ratio, making it suitable for memory-optimized and storage-centric workloads. It is best fit for static web serving, Redis caching, and single-threaded data processing tasks that leverage its substantial local storage but do not require high memory bandwidth or heavy multi-threaded parallel processing.",
+  "og_description": "Microsoft Azure L4aos_v4 is a Laosv4-family virtual machine featuring a 4-vCPU AMD EPYC 9V74 processor, 32 GB of RAM, and 2880 GB of local storage, delivering strong single-core but weaker memory bandwidth performance.",
+  "meta_description": "Microsoft Azure L4aos_v4 is a 4-vCPU AMD EPYC virtual machine with 32 GB of RAM, 2880 GB of local storage, and strong single-core CPU performance.",
+  "tagline": "A memory-optimized virtual machine featuring high-capacity local storage and strong single-core CPU performance for storage-intensive, single-threaded workloads.",
+  "bullet_points": [
+    "Dedicated AMD EPYC 9V74 processor with 4 vCPUs and 3.7 GHz clock speed",
+    "32.0 GB of system memory providing an 8.0 GB per vCPU ratio",
+    "Generous 2880 GB of local storage with Premium Storage capability",
+    "Strong single-core CPU performance but weak memory read bandwidth",
+    "Best suited for static web serving, Redis caching, and single-threaded processing"
+  ],
+  "categories": [
+    "Memory Optimized",
+    "Storage & Database",
+    "General Purpose"
+  ]
+}
