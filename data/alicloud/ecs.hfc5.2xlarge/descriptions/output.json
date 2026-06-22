@@ -1,23 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.hfc5.2xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 8 dedicated physical cores on an x86_64 Intel Xeon 6149 processor running at a clock speed of 3.1 GHz. The system is equipped with 16.0 GB of system memory, providing a resource density of 2.0 GB per core. It does not include local storage or dedicated GPU hardware, relying entirely on network-attached storage and offering a baseline network bandwidth of 2 Gbps.",
-    "Benchmark evaluations indicate moderate multi-core processing capabilities, with a stress-ng multi-core score of 7203.49 and a PassMark CPU score of 8280.79, both placing in the average tier. Memory performance is mixed; while small-block cached read bandwidth reaches 402.4 GB/sec, large-block uncached read and write speeds are 38.98 GB/sec and 33.47 GB/sec respectively. Single-core performance is relatively weak, as evidenced by a Geekbench single-core score of 1091.0 and a stress-ng single-core score of 1355.68. The instance demonstrates average performance in software compilation and Redis SET operations, but struggles with resource-intensive tasks such as medium-model LLM inference and database operations.",
-    "Given its dedicated CPU allocation and 1:2 RAM-to-vCPU ratio, the ecs.hfc5.2xlarge offers a balanced compute-focused profile for workloads that require consistent CPU performance without massive memory footprints. It is suitable for tasks such as software compilation, text processing, and moderate web serving. However, the lack of local storage and lower single-core benchmark results make it less optimal for high-performance database systems or memory-intensive data science applications."
+    "Alibaba Cloud ecs.hfc5.2xlarge is an x86_64 architecture server instance powered by an Intel Xeon 6149 processor running at 3.1 GHz. It features 8 dedicated physical cores with 1 thread per core, providing 8 vCPUs. The instance is configured with 16.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. It operates on a KVM hypervisor, lacks local storage, and includes a baseline network bandwidth of 2 Gbps. No GPU accelerators are bundled with this instance.",
+    "Benchmark data reveals a mixture of average and weak performance profiles. The single-core CPU performance via stress-ng and Geekbench is categorized as weak, placing in the bottom 25%. However, multi-core performance under stress-ng and PassMark CPU tests reaches average levels. Memory bandwidth tests for both small and large blocks consistently register average performance, with read-only small block speeds reaching 402.4 GB/sec. Conversely, database operations, static web serving, and single-threaded compression tasks like gzip and bzip3 fall into the weak performance tier.",
+    "From a qualitative cost-efficiency perspective, the ecs.hfc5.2xlarge offers a dedicated compute profile with a 1:2 CPU-to-RAM ratio, making it suitable for compute-heavy workloads that do not require massive memory footprints or local storage. Tradeoffs include poor performance on larger LLM inference tasks, such as the 7B model, and weak single-threaded execution. This instance is best suited for multi-threaded compute tasks, software compilation, ray tracing, and basic Redis key-value operations, rather than high-throughput web serving or memory-intensive database systems."
   ],
-  "description": "Alibaba Cloud ecs.hfc5.2xlarge is a compute-optimized instance featuring 8 dedicated physical cores on an Intel Xeon 6149 x86_64 processor clocked at 3.1 GHz. It is configured with 16.0 GB of RAM, translating to 2.0 GB per core, and lacks local storage and GPU accelerators. Operating on the KVM hypervisor, it delivers a baseline network bandwidth of 2 Gbps. Benchmark data shows average multi-core CPU performance, with a PassMark CPU score of 8280.79 and a Redis SET throughput of 7.08 million operations per second, though single-core metrics and memory scores fall into the lower tier. This hardware profile is best suited for parallelizable, compute-focused workloads such as software compilation, text processing, and basic web serving, where dedicated CPU execution is required but massive memory or local storage is not.",
-  "og_description": "Alibaba Cloud ecs.hfc5.2xlarge is a compute-optimized instance with 8 dedicated Intel Xeon cores, 16 GB RAM, and 2 Gbps network bandwidth, suitable for software compilation and text processing.",
-  "meta_description": "Alibaba Cloud ecs.hfc5.2xlarge is a compute-optimized virtual server featuring 8 dedicated Intel Xeon vCPUs and 16 GB of RAM.",
-  "tagline": "A dedicated eight-core Intel Xeon compute-optimized virtual server configured for parallel processing and moderate web serving workloads.",
+  "description": "Alibaba Cloud ecs.hfc5.2xlarge is an x86_64 compute-optimized server instance featuring an 8-core Intel Xeon 6149 processor clocked at 3.1 GHz and 16.0 GB of RAM. Operating on a KVM hypervisor, this instance provides dedicated CPU allocation with 1 thread per core, 2 Gbps baseline network bandwidth, and no local storage or GPU acceleration. Performance benchmarks indicate average multi-core CPU capabilities and memory bandwidth, alongside weaker single-core and database execution speeds. The 1:2 CPU-to-RAM ratio makes it qualitatively cost-efficient for compute-bound workloads that do not demand high memory capacity. It is best suited for multi-threaded processing, software compilation, and moderate Redis operations, while being less optimal for large-scale database management or single-threaded tasks.",
+  "og_description": "Alibaba Cloud ecs.hfc5.2xlarge is an x86_64 compute-optimized server with 8 dedicated Intel Xeon vCPUs, 16 GB RAM, and 2 Gbps network bandwidth, suited for multi-threaded workloads and software compilation.",
+  "meta_description": "Alibaba Cloud ecs.hfc5.2xlarge is an x86_64 server with 8 dedicated Intel Xeon vCPUs, 16 GB RAM, and average multi-core performance.",
+  "tagline": "A dedicated eight-core Intel Xeon compute instance with a one-to-two memory-to-CPU ratio for multi-threaded processing workloads.",
   "bullet_points": [
-    "8 dedicated Intel Xeon 6149 physical cores running at 3.1 GHz",
-    "16.0 GB of system memory providing 2.0 GB per core",
-    "2 Gbps baseline network bandwidth with KVM virtualization",
-    "Average multi-core performance for software compilation and Redis operations",
-    "No local storage or GPU hardware included",
-    "Best suited for compute-focused workloads, text processing, and web serving"
+    "8 dedicated Intel Xeon 6149 vCPUs running at 3.1 GHz",
+    "16.0 GB of system memory with no local storage",
+    "Average multi-core CPU and memory bandwidth performance",
+    "2 Gbps baseline network bandwidth on KVM hypervisor",
+    "Best suited for software compilation and multi-threaded compute tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

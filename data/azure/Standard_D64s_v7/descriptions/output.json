@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D64s_v7 is a general-purpose virtual machine belonging to the Dsv7 server family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated Intel Xeon 6973P-C processor. This CPU provides 32 physical cores and 64 virtual processors (vCPUs) with a base frequency of 4.2 GHz. The memory configuration consists of 256.0 GB of RAM, yielding a balanced ratio of 4.0 GB per vCPU. The processor includes a 480 MB L3 cache and supports advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions (AMX_tile and AMX_int8).",
-    "This instance does not include local storage, meaning all storage requirements must be fulfilled via external network-attached storage, though the instance is Premium Storage capable. There are no bundled GPUs or complimentary public IPv4 addresses. The lack of local storage represents a tradeoff for workloads requiring low-latency local scratch space, necessitating reliance on remote storage volumes.",
-    "In benchmark evaluations, the D64s_v7 demonstrates strong multi-core performance, scoring 73215.97 in stress-ng multi-core tests and 89862.33 in PassMark CPU tests, placing it in the top 10% tier. Single-core performance is moderate, with a stress-ng single-core score of 2269.0. Memory bandwidth is robust, reaching 332.29 GB/sec for large-block read operations. Database and key-value store performance is notable, with Redis SET operations achieving 116.73 million operations per second and PassMark database operations scoring in the top 10% tier. Static web serving throughput is also high at 86.42 GB/sec.",
-    "Given its balanced CPU-to-memory ratio and strong multi-threaded capabilities, the D64s_v7 is appropriate for enterprise-grade database hosting, high-throughput web serving, and multi-threaded data processing. It also supports moderate machine learning inference tasks, processing 219.65 tokens per second for medium-sized 7B models during prompt processing, though text generation speeds are more modest."
+    "Microsoft Azure D64s_v7 is a general-purpose virtual machine belonging to the Dsv7 family, running on the Microsoft Hyper-V hypervisor. It features 64 dedicated vCPUs mapped to 32 physical cores of an Intel Xeon 6973P-C processor operating at 4.2 GHz. The x86_64 architecture includes 256.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. This instance does not include local storage or bundled GPUs, relying instead on Premium Storage capabilities for external disk attachments.",
+    "Benchmark data reveals strong multi-core capabilities and memory throughput. The server achieved a top-tier PassMark CPU score of 89,862.33 and a strong multi-core stress-ng CPU performance of 73,215.97. Single-core stress-ng performance is average at 2,269.0, though single-threaded gzip compression and bzip3 decompression reached top-tier levels at 36.1 GB/sec and 15.13 GB/sec respectively. Memory bandwidth is strong, with read-only small block cached speeds at 5,383.29 GB/sec and large block uncached write speeds at 129.8 GB/sec.",
+    "The lack of local storage requires users to provision external Premium Storage, which introduces network-based storage latency tradeoffs. However, database operations are highly efficient, as evidenced by a top-tier PassMark database score of 33,165.52 and a strong Redis SET throughput of 116.73 million operations per second. The hardware also supports advanced instruction sets like AVX-512 and AMX, contributing to strong prompt processing speeds in LLM inference benchmarks. This profile is suited for database hosting, web serving, and multi-threaded enterprise workloads."
   ],
-  "description": "Microsoft Azure D64s_v7 is a general-purpose virtual machine from the Dsv7 family, powered by a dedicated Intel Xeon 6973P-C processor. Operating on the x86_64 architecture under Microsoft Hyper-V, it delivers 64 vCPUs across 32 physical cores at a clock speed of 4.2 GHz, paired with 256.0 GB of RAM. The CPU features a 480 MB L3 cache and supports AVX-512 and Intel AMX instructions. While it lacks local storage and integrated GPUs, it is Premium Storage capable. In benchmarks, the instance shows strong multi-core capabilities, scoring in the top 10% for PassMark CPU and database operations, and achieving 116.73 million operations per second in Redis SET tests. This profile makes it appropriate for enterprise database hosting, high-throughput static web serving, and multi-threaded data processing workloads.",
-  "og_description": "Microsoft Azure D64s_v7 is a general-purpose VM featuring 64 vCPUs, 256 GB RAM, and an Intel Xeon 6973P-C processor, delivering top-tier database and multi-core benchmark performance.",
-  "meta_description": "Microsoft Azure D64s_v7 is a general-purpose VM with 64 vCPUs, 256 GB RAM, and an Intel Xeon CPU, optimized for databases and web serving.",
-  "tagline": "A balanced 64-vCPU virtual machine featuring dedicated Intel Xeon processing and robust memory bandwidth for enterprise databases and web serving.",
+  "description": "Microsoft Azure D64s_v7 is a general-purpose virtual machine in the Dsv7 family, powered by a 64-vCPU Intel Xeon 6973P-C processor running at 4.2 GHz on the Microsoft Hyper-V hypervisor. It features 256.0 GB of RAM, providing a balanced 4.0 GB per core, but lacks local storage and integrated GPUs. Performance benchmarks show top-tier PassMark CPU and database operation scores, alongside strong multi-core stress-ng results and high memory bandwidth. While single-core performance is average, the inclusion of AVX-512 and AMX instructions enables strong prompt processing speeds for small to large language models. Lacking local disks, the instance relies on external Premium Storage. This configuration is suited for database operations, multi-threaded enterprise applications, and high-throughput web serving.",
+  "og_description": "Microsoft Azure D64s_v7 is a 64-vCPU general-purpose virtual machine featuring an Intel Xeon processor, 256 GB of RAM, and strong multi-core performance suited for database operations and enterprise workloads.",
+  "meta_description": "Microsoft Azure D64s_v7 is a 64-vCPU virtual machine with 256 GB RAM, powered by an Intel Xeon processor for database and multi-threaded workloads.",
+  "tagline": "A balanced sixty-four vCPU virtual machine featuring high-frequency Intel Xeon processing and strong multi-core throughput for enterprise workloads.",
   "bullet_points": [
-    "64 vCPUs and 32 physical cores powered by an Intel Xeon 6973P-C processor at 4.2 GHz",
-    "256.0 GB of system memory providing a balanced 4.0 GB per vCPU ratio",
-    "Top-tier database performance with 116.73 million Redis SET operations per second",
-    "No local storage or integrated GPUs, requiring external Premium Storage volumes",
-    "Supports Intel AMX and AVX-512 instruction sets for accelerated vector and matrix operations",
-    "Appropriate for enterprise databases, high-throughput web serving, and multi-threaded processing"
+    "64 dedicated vCPUs and 256 GB RAM powered by a 4.2 GHz Intel Xeon 6973P-C processor",
+    "Top-tier PassMark CPU and database operation benchmark scores",
+    "Strong multi-threaded performance and high-bandwidth memory architecture",
+    "No local storage, requiring external Premium Storage attachment",
+    "Supports advanced vector and matrix extensions including AVX-512 and AMX",
+    "Suited for database hosting, web serving, and multi-threaded enterprise applications"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

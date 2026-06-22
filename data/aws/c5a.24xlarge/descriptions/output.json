@@ -1,22 +1,21 @@
 {
   "page": [
-    "Amazon Web Services c5a.24xlarge is a compute-optimized server instance powered by the AWS Nitro hypervisor. It features an AMD EPYC 7R32 processor based on the x86_64 architecture, delivering 96 vCPUs across 48 physical cores with 2 threads per core. The CPU operates at a clock speed of 3.3 GHz and is paired with 192.0 GB of DDR4 memory running at 3 GHz, providing a resource density of 2.0 GB of RAM per core. This instance does not include local storage or dedicated GPU hardware, relying instead on network-attached storage and offering a baseline network bandwidth of 20 Gbps.",
-    "Performance benchmarks indicate strong capabilities in multi-threaded and specialized execution. The server achieves top-tier results in cryptographic operations, as evidenced by its Passmark CPU encryption test ranking in the top 10%. It also demonstrates strong performance in software compilation, ray tracing, image processing, database operations, and Redis SET operations, all placing in the top 25%. However, single-core raw compute performance is a notable tradeoff, with stress-ng single-core benchmarks placing in the bottom 10%, while multi-core stress-ng and large-block memory bandwidth tests remain in the average tier.",
-    "From a qualitative cost-efficiency perspective, the c5a.24xlarge offers a high density of dedicated AMD EPYC compute cores relative to its memory footprint, making it a cost-effective choice for compute-bound workloads that do not require massive memory-to-CPU ratios or local NVMe storage. It is highly suited for workloads such as batch processing, distributed analytics, software compilation, web serving, and moderate database operations."
+    "Amazon Web Services c5a.24xlarge is a compute-optimized server instance powered by dedicated AMD EPYC 7R32 processors using the x86_64 architecture. It features 96 virtual CPUs across 48 physical cores with hyperthreading enabled, running at a clock speed of 3.3 GHz. The hardware configuration includes 192.0 GB of DDR4 memory operating at 3 GHz, yielding a resource density of 2.0 GB of RAM per core. This instance does not include local storage or dedicated GPU hardware, relying on the AWS Nitro hypervisor and providing a baseline network bandwidth of 20 Gbps.",
+    "Benchmark data reveals a distinct contrast between single-core and multi-core performance. The instance exhibits poor single-core CPU performance in stress-ng tests, placing in the bottom 10%. However, it demonstrates strong multi-core capabilities, with a top 10% tier performance in PassMark CPU encryption tests and top 25% performance in PassMark CPU score, physics tests, and extended instructions. Memory performance is highly efficient for cached operations, achieving a strong read-only small block bandwidth of 4497.3 GB/sec, though uncached large block read and write speeds remain average.",
+    "Given its high core count and strong multi-threaded execution, the c5a.24xlarge is well-suited for parallel processing tasks such as software compilation, ray tracing, image processing, and high-throughput Redis SET operations, where it scores in the top 25%. It also handles moderate LLM inference prompt processing for smaller models efficiently. However, workloads dependent on high single-thread performance or local high-speed storage may experience bottlenecks. This server profile offers a cost-efficient option for compute-heavy, highly parallelized workloads that do not require local NVMe storage or GPU acceleration."
   ],
-  "description": "Amazon Web Services c5a.24xlarge is a compute-optimized instance featuring 96 vCPUs and 48 physical cores powered by an AMD EPYC 7R32 processor running at 3.3 GHz. Built on the AWS Nitro hypervisor, it includes 192.0 GB of DDR4 memory but lacks local storage and GPU hardware. The instance provides a baseline network bandwidth of 20 Gbps. Benchmark data shows strong performance in cryptographic tasks, software compilation, and database operations, though single-core performance is relatively weak. This hardware profile makes the c5a.24xlarge highly efficient for parallelizable, compute-heavy workloads such as batch processing, web serving, and distributed analytics.",
-  "og_description": "Amazon Web Services c5a.24xlarge is a compute-optimized instance featuring 96 vCPUs, an AMD EPYC 7R32 processor, and 192 GB of DDR4 RAM, designed for high-throughput parallel workloads.",
-  "meta_description": "Amazon Web Services c5a.24xlarge is a compute-optimized instance featuring 96 vCPUs, 192 GB DDR4 RAM, and 20 Gbps network bandwidth.",
-  "tagline": "A high-core-density compute instance featuring dedicated AMD EPYC processors and balanced memory for parallelized enterprise workloads.",
+  "description": "Amazon Web Services c5a.24xlarge is a compute-optimized instance featuring 96 vCPUs and 48 physical cores powered by an AMD EPYC 7R32 processor running at 3.3 GHz. Built on the x86_64 architecture and managed by the Nitro hypervisor, it includes 192.0 GB of DDR4 memory but lacks local storage and GPU hardware. While single-core performance is limited, placing in the bottom 10% in stress-ng tests, the instance delivers strong multi-core and cryptographic capabilities, scoring in the top 10% for PassMark CPU encryption. It also achieves strong results in software compilation, ray tracing, and Redis operations, supported by a high cached memory read bandwidth of 4497.3 GB/sec. With a baseline network bandwidth of 20 Gbps, this instance is highly suited for parallelized compute workloads, software development pipelines, and memory-cached database operations.",
+  "og_description": "Amazon Web Services c5a.24xlarge is a compute-optimized server with 96 vCPUs, 192 GB DDR4 RAM, and AMD EPYC 7R32 processors, delivering strong multi-core performance and high-speed encryption capabilities.",
+  "meta_description": "Amazon Web Services c5a.24xlarge is a compute-optimized server featuring 96 vCPUs, 192 GB DDR4 RAM, and dedicated AMD EPYC processors.",
+  "tagline": "A high-core-count compute instance optimized for parallel processing, cryptographic workloads, and memory-cached operations without local storage.",
   "bullet_points": [
-    "96 vCPUs and 48 physical cores powered by AMD EPYC 7R32 at 3.3 GHz",
-    "192.0 GB of DDR4 memory providing 2.0 GB per core",
-    "Top-tier performance in cryptographic operations and database tasks",
-    "20 Gbps baseline network bandwidth with Nitro hypervisor integration",
-    "Best suited for batch processing, software compilation, and distributed analytics"
+    "96 vCPUs and 192 GB DDR4 RAM powered by AMD EPYC 7R32 processors.",
+    "Top-tier performance in CPU encryption and strong multi-core benchmark results.",
+    "No local storage or GPU hardware, utilizing network-attached storage.",
+    "20 Gbps baseline network bandwidth managed by the Nitro hypervisor.",
+    "Optimal for parallel workloads, software compilation, and Redis operations."
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

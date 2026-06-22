@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure L32s is an LS family virtual machine instance running on the Microsoft Hyper-V hypervisor. It features an Intel Xeon E5-2698B v3 processor based on the x86_64 architecture, providing 32 dedicated physical cores and 32 vCPUs operating at a base clock speed of 2.0 GHz. The processor includes a 40 MB L3 cache and supports AVX, AES, BMI2, and FMA instruction sets, though it lacks AVX-512 capabilities. The instance is equipped with 256.0 GB of system memory, yielding a resource density of 8.0 GB of RAM per core.",
-    "A key feature of the L32s instance is its substantial local storage capacity, offering 5765 GB of Premium Storage capable capacity. This high storage density makes it suitable for data-intensive workloads. However, benchmark data reveals distinct performance tradeoffs. Single-core performance is a notable bottleneck, with stress-ng single-core CPU performance scoring in the bottom 10% and Geekbench single-core scores in the bottom 25%. Single-threaded tasks like gzip compression and bzip3 decompression also rank in the bottom 25%.",
-    "Conversely, multi-threaded performance is significantly stronger. The instance achieves average ratings in multi-core stress-ng, Geekbench multi-core, and PassMark CPU tests. Notably, bzip3 multi-threaded decompression ranks in the top 25%, and LLM inference prompt processing for a small 135M model is also in the top 25%. Memory bandwidth and database operations, such as Redis SET operations, consistently perform in the average tier. This hardware profile is best suited for multi-threaded database workloads, large-scale storage operations, and parallel data processing tasks where local storage capacity and memory density outweigh single-core execution speed."
+    "Microsoft Azure L32s is an LS family virtual machine instance configured with 32 dedicated physical cores on an x86_64 architecture. It is powered by an Intel Xeon E5-2698B v3 processor running at 2.0 GHz, featuring a 40 MB L3 cache. The instance includes 256.0 GB of system memory, yielding 8.0 GB of RAM per core. It is equipped with 5765 GB of local NVMe storage and is Premium Storage capable, though it does not include any GPUs or complimentary public IPv4 addresses.",
+    "Performance benchmarks reveal a clear distinction between single-core and multi-core capabilities. Single-core performance is a notable bottleneck, with stress-ng single-core CPU performance ranking in the bottom 10% and Geekbench single-core scores in the bottom 25%. Single-threaded tasks like gzip compression and bzip3 decompression also show weak performance. Conversely, multi-threaded execution is significantly stronger; bzip3 multi-threaded decompression ranks in the top 25%, while stress-ng multi-core and Geekbench multi-core scores sit in the middle 50%. Memory bandwidth and database operations consistently register average performance.",
+    "From a cost-efficiency perspective, the L32s offers high local storage density and a substantial memory footprint relative to its processing power. Because single-core performance is limited, this instance is less suited for single-threaded applications or latency-sensitive sequential processing. Instead, it is optimized for workloads that can leverage its massive 5765 GB local storage and parallel processing capabilities, such as large-scale database operations, multi-threaded data decompression, and distributed caching systems like Redis."
   ],
-  "description": "The Microsoft Azure L32s is an LS family virtual machine powered by an Intel Xeon E5-2698B v3 processor with 32 dedicated physical cores and 32 vCPUs running at 2.0 GHz. It features 256.0 GB of RAM and 5765 GB of Premium Storage capable local storage. While single-core benchmarks, such as stress-ng and Geekbench single-core, fall into the bottom 10% and 25% respectively, the instance demonstrates solid multi-threaded capabilities. Multi-core CPU performance, memory bandwidth, and database operations consistently score in the average tier, while multi-threaded bzip3 decompression and small-model LLM prompt processing reach the top 25%. This configuration offers high storage and memory density, making it suitable for multi-threaded database workloads, large-scale data processing, and storage-heavy applications where parallel execution can offset lower single-core clock speeds.",
-  "og_description": "Microsoft Azure L32s is an LS family instance with 32 vCPUs, 256 GB RAM, and 5765 GB local storage, offering average multi-core performance but weaker single-core speeds for database workloads.",
-  "meta_description": "Microsoft Azure L32s features 32 vCPUs, 256 GB RAM, and 5765 GB local storage, optimized for multi-threaded database and storage workloads.",
-  "tagline": "A storage-dense virtual machine featuring 256 GB of RAM and 5.7 TB of local capacity for parallelized database workloads.",
+  "description": "Microsoft Azure L32s is an LS family virtual machine featuring 32 dedicated physical cores powered by an Intel Xeon E5-2698B v3 processor at 2.0 GHz. Built on the x86_64 architecture, it is equipped with 256.0 GB of RAM and a substantial 5765 GB of local storage. Benchmark data indicates a significant performance tradeoff: single-core CPU execution and single-threaded compression tasks are weak, ranking in the bottom 10% to 25%, whereas multi-threaded operations, such as bzip3 decompression, perform in the top 25%. Memory bandwidth, database operations, and Redis SET operations consistently achieve average performance. Given its high storage capacity and balanced multi-core capabilities, this instance is suited for storage-heavy workloads, database operations, and parallelized data processing tasks that do not rely on high single-thread clock speeds.",
+  "og_description": "Microsoft Azure L32s is an LS family instance with 32 dedicated Intel Xeon cores, 256 GB RAM, and 5765 GB local storage, offering strong multi-threaded performance alongside weaker single-core speeds.",
+  "meta_description": "Microsoft Azure L32s features 32 dedicated Intel cores, 256 GB RAM, and 5765 GB local storage, optimized for multi-threaded database workloads.",
+  "tagline": "A high-capacity storage instance featuring dedicated multi-core processing and substantial memory for parallelized database and data-handling workloads.",
   "bullet_points": [
-    "32 dedicated Intel Xeon E5-2698B v3 physical cores running at 2.0 GHz",
-    "256.0 GB of system memory providing 8.0 GB of RAM per core",
-    "5765 GB of Premium Storage capable local storage capacity",
-    "Strong multi-threaded performance in decompression and small-model LLM prompt processing",
-    "Weaker single-core performance across synthetic and compression benchmarks",
-    "Suited for multi-threaded databases, parallel data processing, and storage-heavy tasks"
+    "32 dedicated Intel Xeon E5-2698B v3 physical cores on x86_64 architecture",
+    "256.0 GB of system memory paired with 5765 GB of local storage",
+    "Strong multi-threaded performance, highlighted by top-tier bzip3 decompression",
+    "Weaker single-core execution speeds and single-threaded processing tradeoffs",
+    "Suited for large-scale database operations, Redis, and parallel data workloads"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

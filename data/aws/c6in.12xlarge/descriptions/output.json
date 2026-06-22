@@ -1,24 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c6in.12xlarge is a compute-optimized instance built on the Nitro hypervisor. It features 48 vCPUs and 24 physical cores powered by an Intel Xeon 8375C processor running at 3.5 GHz. The system includes 96.0 GB of DDR4 memory operating at 3 GHz, yielding a memory-to-vCPU ratio of 2.0 GB per core. This instance does not include local storage or dedicated GPU hardware, meaning all storage operations rely on network-attached EBS volumes.",
-    "The instance is equipped with a baseline network bandwidth of 75 Gbps, optimizing it for network-heavy workloads and EBS data transfers. The x86_64 architecture supports advanced instruction sets, including AVX, AVX-512F, and AVX-512 VNNI for vector and neural network operations, alongside cryptographic accelerations such as AES, VAES, and SHA_NI.",
-    "Benchmark results place the c6in.12xlarge in the top 25% for PassMark CPU score (48,648.63), PassMark CPU encryption (43,676.13), and Geekbench image processing (15,221.0). It also demonstrates strong performance in small-model LLM prompt processing, reaching 2,446.12 tokens per second. However, most other benchmarks, including multi-core stress-ng (46,470.96) and Redis SET operations (46.17 million operations per second), fall within the average range. The lack of local NVMe storage represents a tradeoff, requiring reliance on network-attached storage for high-throughput disk operations.",
-    "From a cost-efficiency perspective, the c6in.12xlarge offers a high-density compute profile with dedicated CPU allocation and high baseline network throughput, making it suitable for compute-bound tasks that do not require massive memory footprints. Appropriate workloads include network appliances, media processing, encryption tasks, software compilation, and moderate-scale machine learning inference."
+    "Amazon Web Services c6in.12xlarge is an x86_64 compute-optimized server powered by an Intel Xeon 8375C processor running at 3.5 GHz. It features 48 virtual CPUs mapped to 24 physical cores with hyperthreading enabled. The system is equipped with 96.0 GB of DDR4 memory operating at 3 GHz, providing 2.0 GB of RAM per core. This instance does not include local storage or dedicated GPU hardware, relying entirely on network-attached storage. It runs on the Nitro hypervisor and provides a baseline network bandwidth of 75 Gbps.",
+    "Benchmark results place the c6in.12xlarge in the average performance tier for most standard workloads, with a single-core stress-ng CPU score of 1893.0 and a multi-core score of 46470.96. The processor supports advanced instruction sets including AVX-512 and AES cryptography extensions, which contributes to a strong performance in the Passmark CPU encryption test, scoring 43676.13. Image processing benchmarks also show strong results at 15221.0. In contrast, memory bandwidth drops from 2506.71 GB/sec for cached small blocks to 163.17 GB/sec for uncached large blocks, highlighting a potential bottleneck for memory-intensive operations.",
+    "Given its 1:2 vCPU-to-RAM ratio and high network throughput, this server is configured for network-intensive compute workloads, such as distributed analytics, web serving, and moderate-scale machine learning inference. It processed 2446.12 tokens per second in prompt processing for a small 135M LLM model, though performance drops significantly on larger models. From a cost-efficiency perspective, the lack of local storage and specialized GPU hardware means users pay primarily for dedicated compute cycles and high-speed network interfaces, making it a specialized choice for network-bound and CPU-bound tasks rather than memory-heavy databases."
   ],
-  "description": "Amazon Web Services c6in.12xlarge is an x86_64 compute-optimized instance featuring 48 vCPUs and 24 physical cores powered by an Intel Xeon 8375C processor running at 3.5 GHz. It is configured with 96.0 GB of DDR4 memory, providing a 2.0 GB per vCPU ratio, and operates on the Nitro hypervisor. The instance lacks local storage and GPU accelerators but offers a high baseline network bandwidth of 75 Gbps. Performance benchmarks indicate strong capabilities in CPU encryption, image processing, and prompt processing for small language models, while general multi-core and memory bandwidth benchmarks perform in the average range. This instance is designed for network-intensive and compute-bound workloads, such as software compilation, cryptographic tasks, and media processing, offering a balanced compute-to-network profile without the overhead of local storage.",
-  "og_description": "Amazon Web Services c6in.12xlarge is a compute-optimized instance with 48 vCPUs, 96 GB DDR4 RAM, and 75 Gbps network bandwidth, designed for network-intensive and cryptographic workloads.",
-  "meta_description": "Amazon Web Services c6in.12xlarge is a compute-optimized instance featuring 48 vCPUs, 96 GB RAM, and 75 Gbps network bandwidth.",
-  "tagline": "A network-optimized compute instance featuring dedicated Intel Xeon processors and high-speed baseline bandwidth for demanding cryptographic and compilation workloads.",
+  "description": "Amazon Web Services c6in.12xlarge is an x86_64 compute-optimized server running on the Nitro hypervisor. It features a 3.5 GHz Intel Xeon 8375C processor with 48 vCPUs (24 physical cores) and 96.0 GB of DDR4 memory, yielding a 1:2 vCPU-to-RAM ratio. The instance lacks local storage and GPUs but offers a high baseline network bandwidth of 75 Gbps. Benchmark data indicates average performance across standard CPU and memory tasks, with strong results in image processing and Passmark CPU encryption tests. The processor supports AVX-512 and AES instruction sets. This configuration is suited for network-intensive compute workloads, static web serving, and software compilation, offering a balanced tradeoff between high network throughput and dedicated compute resources without the added cost of local NVMe storage.",
+  "og_description": "Amazon Web Services c6in.12xlarge is a compute-optimized server featuring 48 vCPUs, 96 GB DDR4 RAM, and 75 Gbps network bandwidth, designed for network-intensive and CPU-bound workloads.",
+  "meta_description": "Amazon Web Services c6in.12xlarge is an x86_64 compute-optimized server with 48 vCPUs, 96 GB RAM, and 75 Gbps network bandwidth.",
+  "tagline": "An x86_64 compute-optimized server featuring high-speed networking and dedicated Intel Xeon processors for network-bound and CPU-intensive workloads.",
   "bullet_points": [
-    "48 vCPUs and 24 physical cores powered by an Intel Xeon 8375C processor at 3.5 GHz",
-    "96.0 GB of DDR4 memory providing a compute-optimized 2.0 GB per core ratio",
-    "High-speed baseline network bandwidth of 75 Gbps for network-heavy applications",
-    "Strong benchmark performance in CPU encryption, image processing, and small-model LLM prompt processing",
-    "No local storage or GPU hardware, relying entirely on network-attached storage",
-    "Suited for software compilation, cryptographic tasks, and network appliances"
+    "48 vCPUs and 24 physical cores powered by a 3.5 GHz Intel Xeon 8375C processor.",
+    "96.0 GB of DDR4 memory providing a 1:2 vCPU-to-RAM ratio.",
+    "75 Gbps baseline network bandwidth for high-throughput networking.",
+    "No local storage or GPU accelerators included.",
+    "Strong performance in encryption and image processing benchmarks.",
+    "Suited for network-intensive compute, software compilation, and web serving."
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

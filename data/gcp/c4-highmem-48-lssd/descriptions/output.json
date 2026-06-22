@@ -1,24 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c4-highmem-48-lssd is a memory-optimized and storage-equipped server instance. It features 48 vCPUs mapped to 24 physical cores of an Intel Xeon 6985P-C processor running at 2.3 GHz. The system is configured with 372 GB of RAM, providing approximately 7.75 GB of memory per core. Local storage consists of 2951 GB of NVMe SSD capacity distributed across 8 local SSDs. No dedicated GPU hardware is included.",
-    "In benchmark evaluations, the instance demonstrates strong single-core and multi-core capabilities. Single-core stress-ng performance and Geekbench single-core scores rank in the top 25% and top 10% respectively. Memory bandwidth is highly efficient, with small-block cached reads and large-block uncached reads placing in the top 25%, though large-block write bandwidth drops to the middle 50%. Computational tasks such as gzip compression and image processing achieve top-tier performance. For database operations, the server registers strong results, including top 25% performance in Passmark database tests and Redis SET operations.",
-    "While the server excels in memory-intensive tasks and local storage operations, its multi-core CPU performance under stress-ng sits in the middle 50%, representing a potential tradeoff for highly parallelized compute-bound workloads. Additionally, large-scale LLM inference using 70B models drops to average performance, though smaller model inference remains strong. The hardware configuration is suited for memory-intensive databases, local caching layers, software compilation, and data processing tasks requiring high local storage throughput and substantial memory capacity."
+    "Google Cloud Platform c4-highmem-48-lssd is a memory-optimized server instance featuring 48 vCPUs mapped to 24 physical cores of an Intel Xeon 6985P-C processor running at 2.3 GHz. The x86_64 architecture includes 372 GB of system memory, yielding 7.75 GB of RAM per core. For local storage, the instance is equipped with 2951 GB of NVMe SSD capacity distributed across 8 local SSDs. It does not include any GPU accelerators.",
+    "Benchmark data indicates strong single-core and memory performance. The instance achieves top-tier status in single-threaded gzip compression at 36.72 GB/sec, single-threaded bzip3 decompression at 15.53 GB/sec, and Geekbench single-core execution with a score of 2308.0. Multi-core performance is strong, as shown by a Geekbench multi-core score of 19141.0 and a Passmark CPU score of 70422.1. Memory bandwidth for small cached blocks is highly efficient at 3863.56 GB/sec, though large-block uncached read and write bandwidths drop to average levels of 178.52 GB/sec and 68.37 GB/sec, respectively.",
+    "The CPU features advanced instruction sets, including Intel Advanced Matrix Extensions and AVX-512. These instructions support local machine learning workloads; the server processes 3420.2 tokens/sec for small 135M LLM prompt processing and 243.0 tokens/sec for medium 7B models. However, text generation for large 70B models is limited to an average speed of 3.11 tokens/sec due to the lack of dedicated GPU acceleration. Database operations are highly efficient, with Redis SET operations reaching 88.12 million operations per second and Passmark database operations scoring 22860.29.",
+    "From a cost-efficiency perspective, the high memory-to-vCPU ratio combined with fast local NVMe storage provides a balanced resource density for memory-bound and I/O-intensive workloads without the premium cost of GPU hardware. This makes the instance suitable for large-scale database hosting, in-memory caching, software compilation, and local LLM inference tasks that fit within the 372 GB memory envelope."
   ],
-  "description": "Google Cloud Platform c4-highmem-48-lssd is a memory-optimized server configured with 48 vCPUs and 372 GB of RAM, powered by an Intel Xeon 6985P-C processor. It features 2951 GB of local NVMe SSD storage across 8 drives, with no GPU accelerators. The server delivers strong performance across multiple benchmarks, with single-core processing, image processing, and gzip compression reaching the top 10% to 25% of tested systems. Memory read bandwidth is highly efficient, though large-block write bandwidth and multi-core stress-ng performance sit in the middle 50%. This resource density makes the instance qualitatively cost-effective for memory-heavy workloads that benefit from fast local storage. It is suited for database operations, software compilation, and medium-scale language model inference.",
-  "og_description": "Google Cloud Platform c4-highmem-48-lssd features 48 vCPUs, 372 GB RAM, and 2951 GB NVMe SSD storage. It delivers strong single-core and database performance for memory-intensive workloads.",
-  "meta_description": "Google Cloud Platform c4-highmem-48-lssd is a memory-optimized server with 48 vCPUs, 372 GB RAM, and 2951 GB of local NVMe SSD storage.",
-  "tagline": "A memory-optimized x86_64 platform featuring 372 GB RAM and 2.9 TB of local NVMe SSD storage for data-intensive workloads.",
+  "description": "Google Cloud Platform c4-highmem-48-lssd is a memory-optimized server powered by an Intel Xeon 6985P-C processor with 48 vCPUs, 24 physical cores, and 372 GB of RAM. It features 2951 GB of local NVMe SSD storage across 8 drives, with no GPU accelerators. The x86_64 architecture supports advanced instruction sets like Intel AMX and AVX-512. Benchmarks show top-tier single-core performance, with a Geekbench single-core score of 2308.0 and single-threaded gzip compression of 36.72 GB/sec. Memory bandwidth for small cached blocks is strong at 3863.56 GB/sec, though large uncached blocks perform at average levels. The server excels in database operations, achieving 88.12 million Redis SET operations per second. This profile makes the instance highly suitable for in-memory databases, software compilation, and medium-scale LLM inference workloads.",
+  "og_description": "Google Cloud Platform c4-highmem-48-lssd is a memory-optimized server with 48 vCPUs, 372 GB RAM, and 2951 GB of local NVMe SSD storage, delivering strong database and single-core benchmark performance.",
+  "meta_description": "Google Cloud Platform c4-highmem-48-lssd features 48 vCPUs, 372 GB RAM, and 2951 GB NVMe SSD storage for memory-intensive database workloads.",
+  "tagline": "A memory-optimized server combining dedicated Intel Xeon processing, high-speed local NVMe storage, and advanced matrix extensions for intensive database workloads.",
   "bullet_points": [
-    "Intel Xeon 6985P-C processor with 48 vCPUs and 24 physical cores",
-    "372 GB of system memory providing 7.75 GB per core",
-    "2951 GB of local NVMe SSD storage across 8 drives",
-    "Top-tier single-core execution and image processing speeds",
-    "Strong database performance and high-bandwidth memory reads",
-    "Suited for memory-intensive databases and software compilation"
+    "48 vCPUs and 372 GB of RAM powered by an Intel Xeon 6985P-C processor.",
+    "2951 GB of high-speed local NVMe SSD storage across 8 drives.",
+    "Intel AMX and AVX-512 support for accelerated vector and matrix operations.",
+    "Top-tier single-core performance and strong cached memory bandwidth.",
+    "Optimized for in-memory databases, caching layers, and software compilation."
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

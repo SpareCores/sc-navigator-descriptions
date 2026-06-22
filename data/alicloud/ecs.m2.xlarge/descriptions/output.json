@@ -1,22 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.m2.xlarge is an x86_64 architecture virtual machine running on the KVM hypervisor. It features 8 dedicated vCPUs mapped directly to 8 physical cores, operating with a single thread per core configuration. The instance is equipped with 64.0 GB of system memory, yielding a memory-to-core ratio of 8.0 GB per core.",
-    "This server configuration does not include local storage or integrated GPU hardware, requiring external network-attached storage for persistent data. The absence of hyperthreading means each vCPU has exclusive access to a physical core, which prevents resource contention at the thread level but limits the total concurrent thread capacity compared to hyperthreaded alternatives. Additionally, the CPU does not expose advanced vector, matrix, or cryptographic instruction sets such as AVX-512 or AMX.",
-    "With a 1:8 vCPU-to-RAM ratio, the instance is structured for memory-optimized workloads. This resource density allows for qualitative cost efficiency in scenarios requiring significant memory capacity without the overhead of additional compute cores. Appropriate workloads include in-memory databases, caching layers, and memory-intensive data processing tasks that do not require local disk I/O or GPU acceleration."
+    "Alibaba Cloud ecs.m2.xlarge is an x86_64 architecture server instance powered by the KVM hypervisor. It features 8 dedicated physical cores with 8 vCPUs, meaning hyperthreading is disabled with a 1.0 thread-per-core configuration. The instance is equipped with 64.0 GB of system memory, providing a high memory-to-vCPU ratio of 8.0 GB per core.",
+    "This instance does not include local NVMe or SSD storage, requiring network-attached block storage for operating system and application data. It does not feature any GPU accelerators or complimentary public IPv4 addresses.",
+    "Due to its dedicated CPU allocation and high memory density, the ecs.m2.xlarge offers a stable resource profile for memory-intensive workloads. The absence of hyperthreading ensures predictable compute performance per core. This configuration is suitable for relational databases, in-memory caching layers, and enterprise applications that require a larger memory footprint relative to compute resources without the overhead of shared-core environments."
   ],
-  "description": "Alibaba Cloud ecs.m2.xlarge is an x86_64 memory-optimized virtual server featuring 8 dedicated vCPUs and 64.0 GB of RAM, running on the KVM hypervisor. The hardware configuration provides a 1:8 vCPU-to-RAM ratio with 8 physical cores and a single thread per core, ensuring dedicated execution resources without hyperthreading contention. This instance does not include local storage or GPU accelerators, necessitating network-attached storage for data persistence. The lack of advanced CPU instruction sets like AVX-512 or AMX limits its suitability for specialized vector math or machine learning acceleration. However, the high memory density per core offers qualitative cost efficiency for memory-bound applications. It is designed for workloads such as in-memory databases, caching systems, and memory-intensive enterprise applications.",
-  "og_description": "Alibaba Cloud ecs.m2.xlarge is a memory-optimized virtual server featuring 8 dedicated vCPUs, 64.0 GB of RAM, and no local storage, running on the KVM hypervisor with an x86_64 architecture.",
-  "meta_description": "Alibaba Cloud ecs.m2.xlarge is a memory-optimized server with 8 dedicated vCPUs, 64.0 GB RAM, and no local storage on the KVM hypervisor.",
-  "tagline": "A memory-optimized virtual server featuring dedicated single-threaded cores and high RAM density for memory-intensive workloads without local storage.",
+  "description": "Alibaba Cloud ecs.m2.xlarge is a memory-optimized virtual server instance built on the x86_64 architecture and managed via the KVM hypervisor. It delivers 8 dedicated vCPUs mapped directly to 8 physical cores, operating without hyperthreading to ensure consistent and predictable compute performance. The instance is provisioned with 64.0 GB of RAM, yielding a high memory-to-core ratio of 8.0 GB per vCPU. It does not include local storage or GPU hardware, relying entirely on network-attached storage. This hardware profile is designed for memory-intensive workloads, such as database hosting, caching layers, and enterprise applications, where a stable memory-to-CPU ratio is critical for operational efficiency.",
+  "og_description": "Alibaba Cloud ecs.m2.xlarge is a memory-optimized KVM instance featuring 8 dedicated x86_64 vCPUs, 64.0 GB of RAM, and no local storage, designed for database and memory-intensive enterprise workloads.",
+  "meta_description": "Alibaba Cloud ecs.m2.xlarge is a memory-optimized KVM instance with 8 dedicated x86_64 vCPUs and 64.0 GB of RAM for database workloads.",
+  "tagline": "A dedicated memory-optimized instance featuring an eight-to-one gigabyte-to-vCPU ratio for stable and predictable database and caching workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs mapped to 8 physical cores with single-thread execution",
-    "64.0 GB of system memory providing an 8.0 GB per core ratio",
-    "KVM hypervisor-based virtualization on x86_64 architecture",
-    "No local storage or GPU accelerators included in the base configuration",
-    "Suited for in-memory databases, caching layers, and memory-intensive processing"
+    "8 dedicated x86_64 vCPUs with no hyperthreading",
+    "64.0 GB of system memory providing 8.0 GB per core",
+    "KVM hypervisor virtualization with dedicated CPU allocation",
+    "No local storage or integrated GPU accelerators",
+    "Suitable for in-memory databases, caching, and enterprise applications"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services r5d.24xlarge is a memory-optimized instance built on the Nitro hypervisor. It features 96 vCPUs and 48 physical cores powered by an Intel Xeon 8259CL processor running at 3.1 GHz. The system is equipped with 768.0 GB of DDR4 memory operating at 3 GHz, providing a high memory-to-vCPU ratio of 8.0 GB per core. Additionally, it includes 3600 GB of local NVMe SSD instance storage and a baseline network bandwidth of 25 Gbps.",
-    "Benchmark data indicates strong multi-core processing and memory subsystem performance. The instance achieved a strong rating in stress-ng multi-core CPU performance and passmark CPU scores. Memory bandwidth is a notable strength, with read-only small block cached bandwidth reaching 4504.62 GB/sec and large block uncached write bandwidth at 98.64 GB/sec. Database operations are highly efficient, as demonstrated by a strong passmark database score of 21671.55 and 77.77 million operations per second in Redis SET benchmarks.",
-    "While multi-threaded and memory-bound tasks perform well, single-threaded operations show moderate results, with gzip compression rated as weak. LLM text generation is a significant bottleneck, with text generation on a medium model scoring in the bottom 10% at 5.49 tokens per second, reflecting the lack of dedicated GPU hardware. Given the high memory capacity, local NVMe storage, and strong database benchmarks, this instance is suited for large-scale databases, in-memory caching systems like Redis, and memory-intensive data processing workloads."
+    "Amazon Web Services r5d.24xlarge is a memory-optimized instance type built on the Nitro hypervisor. It features an x86_64 architecture powered by an Intel Xeon 8259CL processor running at 3.1 GHz. The system provides 96 vCPUs across 48 physical cores with hyperthreading enabled. It is equipped with 768.0 GB of DDR4 memory operating at 3 GHz, translating to 8.0 GB of RAM per physical core. Local storage is bundled, consisting of 3600 GB of NVMe SSD instance store volumes. Network connectivity delivers a baseline bandwidth of 25 Gbps.",
+    "Benchmark data reveals a distinct contrast between single-core and multi-core capabilities. The single-core CPU performance in stress-ng and single-threaded gzip compression are categorized in the bottom 25%. However, multi-core CPU performance in stress-ng, passmark CPU scores, and extended instruction tests fall into the top 25%. Memory bandwidth tests across both small and large blocks show strong performance in the top 25%, with read-only small block cached speeds reaching 4504.62 GB/sec. Redis SET operations and static web serving throughput also rank in the top 25%, while LLM inference speeds range from average to poor, with 7B model text generation falling into the bottom 10%.",
+    "From a cost-efficiency perspective, the r5d.24xlarge offers a high-density memory-to-vCPU ratio of 1:8 combined with large local NVMe storage, reducing the need for external storage attachments for high-throughput workloads. The primary tradeoff is the lower single-core performance relative to its strong multi-threaded and memory bandwidth capabilities. This profile makes the instance suitable for memory-intensive applications, large-scale database operations, caching layers like Redis, and multi-threaded data processing tasks that benefit from local NVMe instance storage."
   ],
-  "description": "Amazon Web Services r5d.24xlarge is a memory-optimized instance featuring 96 vCPUs and 48 physical Intel Xeon 8259CL cores running at 3.1 GHz. It is equipped with 768.0 GB of DDR4 memory and 3600 GB of local NVMe SSD storage, operating on the Nitro hypervisor with a 25 Gbps baseline network. Benchmarks show strong multi-core CPU performance, high memory bandwidth, and excellent database execution, with Redis SET operations reaching 77.77 million operations per second. However, single-threaded compression and LLM text generation performance are relatively weak due to the lack of hardware accelerators. This instance is designed for memory-intensive workloads, large databases, and high-throughput caching applications.",
-  "og_description": "Amazon Web Services r5d.24xlarge is a memory-optimized instance featuring 96 vCPUs, 768 GB DDR4 RAM, and 3600 GB local NVMe SSD storage, delivering strong multi-core CPU and database performance.",
-  "meta_description": "Amazon Web Services r5d.24xlarge is a memory-optimized instance with 96 vCPUs, 768 GB RAM, and 3600 GB NVMe SSD storage for database workloads.",
-  "tagline": "A memory-optimized server combining high-capacity DDR4 RAM with local NVMe SSD storage for demanding database and caching workloads.",
+  "description": "Amazon Web Services r5d.24xlarge is a memory-optimized instance featuring 96 vCPUs and 48 physical cores powered by an Intel Xeon 8259CL processor at 3.1 GHz. It is configured with 768.0 GB of DDR4 memory and 3600 GB of local NVMe SSD storage, operating on the Nitro hypervisor with a 25 Gbps baseline network speed. Performance benchmarks show a contrast between weak single-core execution and strong multi-core capabilities, with stress-ng multi-core, passmark CPU, and memory bandwidth tests all ranking in the top 25%. Redis SET operations and static web serving throughput are also highly rated. Conversely, LLM text generation performance is weak to poor. This resource density and high memory-to-vCPU ratio make the instance suitable for memory-intensive databases, caching layers, and high-throughput multi-threaded workloads requiring fast local storage.",
+  "og_description": "Amazon Web Services r5d.24xlarge is a memory-optimized instance with 96 vCPUs, 768 GB DDR4 RAM, and 3600 GB NVMe SSD storage, delivering strong multi-core and memory bandwidth performance.",
+  "meta_description": "Amazon Web Services r5d.24xlarge is a memory-optimized instance with 96 vCPUs, 768 GB RAM, and 3600 GB local NVMe SSD storage.",
+  "tagline": "A memory-optimized x86 platform featuring high-capacity local NVMe storage, dense DDR4 RAM, and strong multi-threaded processing capabilities.",
   "bullet_points": [
-    "96 vCPUs and 48 physical Intel Xeon cores at 3.1 GHz",
-    "768 GB of DDR4 memory with strong read and write bandwidth",
-    "3600 GB of local NVMe SSD instance storage",
-    "Strong multi-core CPU and database benchmark performance",
-    "Well-suited for large databases, Redis caching, and memory-intensive applications"
+    "96 vCPUs and 768.0 GB of DDR4 memory providing a 1:8 resource ratio",
+    "3600 GB of bundled local NVMe SSD instance storage",
+    "Strong multi-core CPU and memory bandwidth benchmark performance",
+    "Intel Xeon 8259CL processor running at 3.1 GHz on the Nitro hypervisor",
+    "Suited for memory-intensive databases, caching layers, and multi-threaded processing"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

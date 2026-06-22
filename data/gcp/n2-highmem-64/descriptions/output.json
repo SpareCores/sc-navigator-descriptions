@@ -1,21 +1,19 @@
 {
   "page": [
-    "Google Cloud Platform n2-highmem-64 is a memory-optimized virtual machine instance powered by an Intel Xeon processor with x86_64 architecture. It features 64 dedicated vCPUs mapped to 32 physical cores with hyperthreading enabled, operating at a base clock speed of 2.8 GHz. The processor configuration includes a 33 MB L3 cache, 1.0 MB L2 cache, and 32 KB L1d cache, with hardware support for AVX-512 vector and vector neural network instructions (VNNI) alongside AES cryptography.",
-    "This server is configured with 512.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per vCPU. It does not include bundled local NVMe storage or integrated GPUs, meaning all storage requirements must be met via network-attached persistent disks. There are no complimentary public IPv4 addresses included with this instance.",
-    "Benchmark results indicate strong multi-core processing capabilities, with stress-ng multi-core CPU performance and software compilation tasks placing in the top 25%. Extended CPU instruction tests and image processing also demonstrate strong performance. Conversely, memory bandwidth and database operations fall within the average range, while large-scale LLM text generation is weak, reflecting the lack of hardware acceleration.",
-    "Given its high memory density and dedicated compute resources, the n2-highmem-64 offers qualitative cost efficiency for memory-bound enterprise applications that do not require local SSD performance or GPU acceleration. It is highly suitable for large-scale databases, in-memory caching layers, software compilation pipelines, and enterprise-grade web serving workloads."
+    "Google Cloud Platform n2-highmem-64 is a memory-optimized virtual machine instance configured with 64 vCPUs and 512.0 GB of RAM. Powered by an Intel Xeon processor running at 2.8 GHz, this x86_64 architecture server features 32 physical cores with hyper-threading enabled, providing 2 threads per core. The processor includes 33 MB of L3 cache, 1.0 MB of L2 cache, and 32 KB of L1d cache. It supports advanced instruction sets such as AVX, AVX-512, AES cryptography, and BMI2. This instance does not include local storage or bundled GPUs.",
+    "Performance benchmarks position this instance in the average tier for most general compute and memory operations. It achieves a Geekbench multi-core score of 15685.0 and a Passmark CPU score of 44587.75. Notably, it demonstrates strong performance in specific workloads, scoring 40780.0 in software compilation with Clang and 14883.0 in image processing, both placing in the top 25% of benchmarks. Memory bandwidth is measured at 3253.46 GB/sec for cached small blocks, and 162.21 GB/sec for uncached large block reads.",
+    "For specialized tasks, the server processes Redis SET operations at 53.97 million operations per second and handles static web serving throughput at 36.1 GB/sec. Large-scale LLM inference reveals architectural limitations, with text generation for a 70B model dropping to a weak rating of 2.56 tokens per second, though smaller 135M models run at 193.61 tokens per second. This profile makes the n2-highmem-64 highly cost-efficient for memory-intensive workloads like database operations, software compilation, and image processing, while being less optimal for large-scale LLM text generation without GPU acceleration."
   ],
-  "description": "Google Cloud Platform n2-highmem-64 is a memory-optimized virtual machine featuring 64 dedicated vCPUs and 512.0 GB of RAM, powered by an Intel Xeon x86_64 processor running at 2.8 GHz. With 32 physical cores and hyperthreading, it delivers strong multi-core performance, particularly in software compilation and image processing benchmarks. The instance lacks local storage and GPU accelerators, relying entirely on network-attached storage. It is designed for memory-intensive workloads such as large databases, in-memory caching, and enterprise applications requiring a high memory-to-vCPU ratio of 8.0 GB per core.",
-  "og_description": "Google Cloud Platform n2-highmem-64 is a memory-optimized instance with 64 vCPUs, 512 GB RAM, and an Intel Xeon processor, delivering strong multi-core performance for memory-intensive enterprise workloads.",
-  "meta_description": "Google Cloud Platform n2-highmem-64 features 64 vCPUs, 512 GB RAM, and an Intel Xeon CPU, optimized for memory-intensive enterprise workloads.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated Intel Xeon processors and high memory density for demanding enterprise database and caching workloads.",
+  "description": "Google Cloud Platform n2-highmem-64 is an x86_64 memory-optimized server featuring 64 vCPUs and 512.0 GB of RAM, powered by a 2.8 GHz Intel Xeon processor with 32 physical cores. This instance does not include local storage or dedicated GPUs. Benchmark results indicate solid mid-range performance, with a Passmark CPU score of 44587.75 and a Geekbench multi-core score of 15685.0. It excels in software compilation and image processing, ranking in the top 25% for these workloads. However, it exhibits weaker performance in large-scale LLM text generation, achieving only 2.56 tokens per second on a 70B model. With a high memory-to-core ratio of 8.0 GB per vCPU, this instance is highly suited for memory-intensive applications, database operations, and parallel build systems.",
+  "og_description": "Google Cloud Platform n2-highmem-64 is a memory-optimized instance with 64 vCPUs, 512 GB RAM, and an Intel Xeon CPU. It delivers strong performance in software compilation and database operations.",
+  "meta_description": "Google Cloud Platform n2-highmem-64 is a memory-optimized server with 64 vCPUs and 512 GB RAM, ideal for databases and software compilation.",
+  "tagline": "A high-memory x86_64 server featuring 512 GB RAM and 64 vCPUs, optimized for memory-intensive workloads and database operations.",
   "bullet_points": [
-    "64 dedicated vCPUs and 512.0 GB of system memory.",
-    "Intel Xeon x86_64 processor operating at 2.8 GHz.",
-    "Strong multi-core CPU and software compilation performance.",
-    "High memory-to-vCPU ratio of 8.0 GB per core.",
-    "No bundled local storage or GPU accelerators.",
-    "Best suited for in-memory databases and enterprise applications."
+    "64 vCPUs and 512.0 GB of RAM providing a 1:8 core-to-memory ratio",
+    "Intel Xeon processor running at 2.8 GHz with 32 physical cores",
+    "Strong performance in software compilation and image processing workloads",
+    "Average performance across standard CPU and memory bandwidth benchmarks",
+    "Best suited for memory-intensive databases, build systems, and web serving"
   ],
   "categories": [
     "Memory Optimized",

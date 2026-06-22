@@ -1,22 +1,23 @@
 {
   "page": [
-    "UpCloud HICPU-8xCPU-12GB is a compute-optimized virtual server built on the KVM hypervisor. It features 8 shared vCPUs mapped to 8 physical cores of an AMD EPYC 7542 processor running at 2.0 GHz. The system is equipped with 12.0 GB of system memory, providing 1.5 GB of RAM per core, and includes a bundled 100 GB local SSD. Network connectivity is supported by one complimentary public IPv4 address.",
-    "Performance benchmarks place this instance consistently in the average tier for multi-core operations. The stress-ng multi-core CPU test scored 6278.51, and the Geekbench multi-core test reached 6669.0. However, single-core performance is a notable tradeoff, with stress-ng single-core performance scoring 788.68, placing it in the bottom 10% of tested servers. Memory bandwidth remains stable, measuring 41.28 GB/sec for large block read-only operations and 29.12 GB/sec for large block write operations.",
-    "This hardware profile is qualitatively cost-efficient for multi-threaded workloads that require high parallel compute capacity but have modest memory footprints. It is well-suited for tasks such as software compilation, static web serving, and multi-threaded decompression. It is less suitable for memory-intensive databases or single-threaded applications that depend heavily on high single-core clock speeds."
+    "UpCloud HICPU-8xCPU-12GB is an x86_64 virtual server running on the KVM hypervisor. It is powered by an AMD EPYC 7542 processor with a base clock speed of 2.0 GHz. The hardware configuration features 8 vCPUs mapped to 8 physical cores with a single thread per core, utilizing a shared CPU allocation model. The instance is equipped with 12.0 GB of system memory, which establishes a low memory-to-core ratio of 1.5 GB per core. Storage is provided via a bundled 100 GB local SSD, and the network configuration includes one complimentary public IPv4 address. No dedicated GPU hardware is included.",
+    "Benchmark data indicates a distinct performance profile between single-core and multi-core operations. The stress-ng single-core CPU performance is positioned in the bottom 10%, reflecting the limitations of the shared CPU model and the 2.0 GHz clock speed. Conversely, multi-core execution is more resilient, with the stress-ng multi-core benchmark and the Geekbench multi-core score both aligning with the middle 50% average. Memory bandwidth benchmarks also fall within the average tier, delivering 820.38 GB/sec for cached small-block reads and 41.28 GB/sec for uncached large-block reads.",
+    "The primary tradeoff of this configuration is its low memory density relative to its compute cores. With only 1.5 GB of RAM per core, the instance is constrained for memory-intensive applications, as demonstrated by weak performance in medium-model LLM inference. However, it maintains average throughput for lighter operations, achieving 11.58 million operations per second in Redis SET tests and 8.25 GB/sec in static web serving. This server is best suited for multi-threaded, compute-bound workloads with low memory footprints, such as software compilation, text processing, and basic web serving."
   ],
-  "description": "UpCloud HICPU-8xCPU-12GB is a compute-optimized virtual server utilizing the KVM hypervisor. It is configured with 8 shared vCPUs powered by an AMD EPYC 7542 processor clocked at 2.0 GHz, alongside 12.0 GB of RAM and a 100 GB local SSD. While single-core performance is limited, scoring in the bottom 10% on stress-ng benchmarks, its multi-core capabilities are competitive, achieving average tier results in Geekbench and PassMark tests. This server is qualitatively cost-efficient for parallelized workloads with low memory requirements, such as web serving, software compilation, and multi-threaded data processing.",
-  "og_description": "UpCloud HICPU-8xCPU-12GB is a compute-optimized KVM virtual server featuring 8 shared AMD EPYC vCPUs, 12.0 GB of RAM, and a 100 GB local SSD, delivering average multi-core benchmark performance.",
-  "meta_description": "UpCloud HICPU-8xCPU-12GB is a KVM virtual server with 8 shared AMD EPYC vCPUs, 12.0 GB RAM, and a 100 GB SSD, optimized for parallel compute workloads.",
-  "tagline": "A compute-focused virtual server offering eight shared AMD EPYC cores and local SSD storage for parallelized, low-memory workloads.",
+  "description": "UpCloud HICPU-8xCPU-12GB is an x86_64 virtual server featuring 8 shared AMD EPYC vCPUs, 12.0 GB of RAM, and a bundled 100 GB local SSD. Operating at 2.0 GHz, the instance offers a low memory-to-core ratio of 1.5 GB per core. Benchmark results show a clear tradeoff, with poor single-core CPU performance but average multi-core and memory bandwidth capabilities. This configuration is best suited for low-memory, multi-threaded workloads such as software compilation and static web serving.",
+  "og_description": "UpCloud HICPU-8xCPU-12GB is an x86_64 virtual server featuring 8 shared AMD EPYC vCPUs, 12.0 GB of RAM, and a 100 GB local SSD, offering average multi-core performance for compute-focused, low-memory workloads.",
+  "meta_description": "UpCloud HICPU-8xCPU-12GB is an x86_64 virtual server with 8 shared AMD EPYC vCPUs, 12.0 GB RAM, and a 100 GB SSD, suited for low-memory compute tasks.",
+  "tagline": "A shared-core virtual server balancing eight AMD EPYC vCPUs with a compact memory footprint for multi-threaded, compute-focused workloads.",
   "bullet_points": [
-    "8 shared AMD EPYC 7542 vCPUs running at 2.0 GHz",
-    "12.0 GB of system memory and 100 GB local SSD storage",
-    "Average multi-core performance in Geekbench and PassMark benchmarks",
-    "Lower single-core performance as a primary hardware tradeoff",
-    "Suitable for software compilation, web serving, and multi-threaded processing"
+    "8 shared AMD EPYC 7542 vCPUs at 2.0 GHz",
+    "12.0 GB system memory with 1.5 GB per core",
+    "Bundled 100 GB local SSD storage",
+    "Average multi-core and memory bandwidth benchmark performance",
+    "Constrained single-core performance and low memory-to-core ratio",
+    "Best suited for software compilation, static web serving, and text processing"
   ],
   "categories": [
     "Compute Optimized",
-    "General Purpose"
+    "Burstable & Budget"
   ]
 }
