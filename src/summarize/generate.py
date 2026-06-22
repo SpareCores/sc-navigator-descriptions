@@ -65,6 +65,7 @@ def main(n, max_minutes):
     )
 
     total = len(database.servers)
+    llm_calls = 0
     for i, server in enumerate(database.servers, start=1):
         if deadline is not None and monotonic() >= deadline:
             logger.info(
@@ -116,9 +117,12 @@ def main(n, max_minutes):
 
         logger.debug(f"Generating summary via LLM for server: {server.name}")
         summary = generate_summary(server_dict)
+        llm_calls += 1
         logger.info(f"Generated summary for server: {server.name}")
         with open(folder / "output.json", "w") as f:
             f.write(dumps(summary.model_dump(mode="json"), indent=2))
+
+    logger.info(f"Finished with {llm_calls} LLM calls across {total} server(s).")
 
 
 if __name__ == "__main__":
