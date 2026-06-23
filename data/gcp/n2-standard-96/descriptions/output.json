@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform n2-standard-96 is a general-purpose virtual machine instance based on the x86_64 architecture. It features 96 dedicated vCPUs mapped to 48 physical cores of an Intel Xeon processor running at 2.6 GHz, with hyperthreading enabled at 2.0 threads per core. The processor configuration includes 48 KB of L1d cache, 1 MB of L2 cache, and 54 MB of L3 cache. The system is equipped with 384.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per vCPU. This instance does not include local NVMe storage or bundled GPUs.",
-    "Benchmark data indicates a clear distinction between single-core and multi-core capabilities. While single-core performance metrics, such as stress-ng single-core and Geekbench single-core, fall into the average range, multi-core execution is strong, placing in the top 25% for stress-ng multi-core and Geekbench multi-core tests. Memory bandwidth is also strong, reaching 328.7 GB/sec for large-block read operations and 144.82 GB/sec for large-block write operations. However, workloads requiring high-capacity LLM inference show significant performance tradeoffs; text generation using a large 70B model is rated as poor, achieving only 2.34 tokens per second, whereas prompt processing on smaller models remains strong.",
-    "Given its balanced resource allocation and strong multi-threaded capabilities, this instance is suited for parallelized workloads such as software compilation, ray tracing, image processing, and static web serving. It also demonstrates strong performance in database operations and Redis SET operations. From a cost-efficiency perspective, the n2-standard-96 offers high resource density for multi-threaded applications that can leverage all 96 vCPUs, though the lack of local storage requires external block storage provisioning, which should be factored into the overall architectural design."
+    "Google Cloud Platform n2-standard-96 is a general-purpose server instance powered by an Intel Xeon processor with x86_64 architecture. It features 96 vCPUs mapped to 48 physical cores with hyperthreading enabled, running at a base clock speed of 2.6 GHz. The CPU configuration includes a 54 MB L3 cache, 1 MB L2 cache, and 48 KB L1d cache. The system is equipped with 384.0 GB of dedicated RAM, providing a balanced memory-to-core ratio of 4.0 GB per vCPU. This instance does not include local storage or integrated GPUs.",
+    "Benchmark data indicates strong multi-core processing capabilities, highlighted by high scores in multi-threaded stress-ng and Geekbench tests. The processor supports advanced instruction sets including AVX-512 and AVX512_VNNI, which contribute to strong performance in cryptography, software compilation, and ray tracing. Memory performance is a key strength, with high read and write bandwidths for both small cached and large uncached blocks. However, single-core performance remains average across standard tests, and LLM inference speeds for large models are poor, reflecting the lack of dedicated hardware accelerators.",
+    "Given its high resource density and dedicated CPU allocation, the n2-standard-96 offers qualitative cost efficiency for highly parallelized workloads that can leverage its 96 vCPUs and high memory bandwidth without requiring local SSDs or GPU acceleration. It is well-suited for large-scale database operations, high-throughput Redis deployments, static web serving, multi-threaded software compilation, and parallel data processing tasks."
   ],
-  "description": "Google Cloud Platform n2-standard-96 is an x86_64 general-purpose instance featuring 96 dedicated vCPUs and 384.0 GB of RAM, powered by an Intel Xeon processor running at 2.6 GHz. It provides 4.0 GB of memory per core and does not include local storage or GPUs. Benchmark results show average single-core performance but strong multi-core execution, placing in the top 25% for multi-core stress-ng, Geekbench, and PassMark tests. Memory bandwidth is also strong, with uncached reads reaching 328.7 GB/sec. However, the instance exhibits poor performance for large-scale LLM text generation, making it less suitable for heavy AI inference. It is highly effective for parallelized workloads, including software compilation, ray tracing, static web serving, and database operations.",
-  "og_description": "Google Cloud Platform n2-standard-96 is an x86_64 instance with 96 vCPUs and 384 GB RAM. It delivers strong multi-core performance and memory bandwidth, though single-core and LLM text generation are limited.",
-  "meta_description": "Google Cloud Platform n2-standard-96 is a general-purpose x86_64 instance with 96 vCPUs, 384 GB RAM, and strong multi-core benchmark performance.",
-  "tagline": "A balanced x86_64 virtual machine featuring 96 dedicated vCPUs and strong multi-core performance for parallelized workloads and database operations.",
+  "description": "Google Cloud Platform n2-standard-96 is a general-purpose server featuring 96 vCPUs and 384.0 GB of RAM, powered by an Intel Xeon x86_64 processor running at 2.6 GHz. It contains 48 physical cores with hyperthreading and a 54 MB L3 cache, but lacks local storage and GPU accelerators. Benchmarks show strong multi-core CPU performance, high memory bandwidth, and excellent throughput for database operations, Redis, and static web serving. Conversely, single-core performance is average, and large-scale LLM inference is limited. This instance is highly efficient for parallelized workloads, software compilation, and high-throughput web serving.",
+  "og_description": "Google Cloud Platform n2-standard-96 is a general-purpose server with 96 vCPUs, 384 GB RAM, and an Intel Xeon CPU. It delivers strong multi-core performance and memory bandwidth for databases and web serving.",
+  "meta_description": "Google Cloud Platform n2-standard-96 features 96 vCPUs, 384 GB RAM, and an Intel Xeon CPU, delivering strong multi-core and database performance.",
+  "tagline": "A high-core general-purpose instance delivering strong multi-threaded performance and high memory bandwidth for demanding enterprise workloads.",
   "bullet_points": [
-    "96 dedicated vCPUs and 384 GB of RAM on Intel Xeon architecture",
-    "Strong multi-core performance and high memory bandwidth",
-    "Average single-core execution and poor large-model LLM text generation",
-    "No local storage or integrated GPU accelerators included",
-    "Suited for software compilation, database operations, and static web serving"
+    "96 vCPUs and 384 GB RAM powered by an Intel Xeon 2.6 GHz processor",
+    "Strong multi-core CPU performance and high memory bandwidth",
+    "Excellent throughput for database operations and Redis deployments",
+    "Supports AVX-512 instruction sets for cryptography and compilation",
+    "No bundled local storage or GPU accelerators"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

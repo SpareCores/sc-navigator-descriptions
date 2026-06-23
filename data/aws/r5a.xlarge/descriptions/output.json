@@ -1,21 +1,22 @@
 {
   "page": [
-    "Amazon Web Services r5a.xlarge is a memory-optimized instance powered by the AWS Nitro hypervisor. It features an x86_64 architecture with an AMD EPYC 7571 processor operating at 2.5 GHz. The instance provides 4 dedicated vCPUs derived from 2 physical cores with hyper-threading enabled. The memory configuration consists of 32.0 GB of DDR4 RAM running at 3 GHz, yielding an 8.0 GB per core ratio. There is no local NVMe storage or GPU acceleration included, and the baseline network bandwidth is rated at 1 Gbps.",
-    "Benchmark results indicate that the r5a.xlarge exhibits lower-tier compute and memory performance. In stress-ng and Geekbench tests, both single-core and multi-core CPU performance fall into the bottom 10% category. Memory bandwidth tests show weak read-only performance in the bottom 25% and poor write performance in the bottom 10%. However, the processor demonstrates average performance in the PassMark CPU encryption test, supported by hardware-accelerated AES and SHA_NI instruction sets.",
-    "The primary tradeoff of the r5a.xlarge is its high memory-to-vCPU ratio paired with modest processing speeds. While it offers a cost-efficient entry point for memory-bound workloads that do not require high compute density, it is less suited for CPU-heavy tasks, as evidenced by poor scores in software compilation, image processing, and database operations. This instance is best suited for memory-intensive applications with low CPU utilization, such as caching layers, basic Redis deployments, or lightweight memory-bound background workers."
+    "Amazon Web Services r5a.xlarge is a memory-optimized instance powered by the AWS Nitro hypervisor. It features an x86_64 architecture with an AMD EPYC 7571 processor running at 2.5 GHz. The instance provides 4 dedicated vCPUs derived from 2 physical cores with hyper-threading enabled. It is equipped with 32.0 GB of DDR4 memory operating at 3 GHz, offering 8.0 GB of RAM per core. Cache specifications include 32 KB L1d, 0.5 MB L2, and 8 MB L3 cache. No local storage or GPUs are bundled with this instance, and baseline network bandwidth is rated at 1 Gbps.",
+    "Benchmark data indicates that the r5a.xlarge exhibits modest compute and memory performance. In stress-ng and Geekbench tests, both single-core and multi-core CPU performance fall into the bottom 10% category. Memory bandwidth tests show weak read-only performance, with cached small blocks reaching 154.15 GB/sec and uncached large blocks at 25.43 GB/sec, while large block write bandwidth is poor at 12.49 GB/sec. However, the processor performs at an average level in cryptographic operations, as demonstrated by the PassMark CPU encryption test score of 3238.05, aided by hardware-accelerated AES and SHA instructions.",
+    "From a cost-efficiency perspective, the r5a.xlarge offers a high memory-to-vCPU ratio (8:1) on AMD EPYC hardware, which typically provides a lower-cost alternative to comparable Intel-based memory-optimized instances. This makes it suitable for memory-intensive workloads that do not require high CPU performance, such as caching layers, medium-sized databases with low transaction rates, and general-purpose memory-intensive applications. It is less suitable for high-throughput database operations, intensive web serving, or complex computational tasks due to its lower CPU and memory write benchmarks."
   ],
-  "description": "Amazon Web Services r5a.xlarge is a memory-optimized instance featuring 4 dedicated vCPUs and 32.0 GB of DDR4 RAM. Powered by an AMD EPYC 7571 processor running at 2.5 GHz on the Nitro hypervisor, this instance provides an 8.0 GB memory-to-core ratio. It lacks local storage and GPU accelerators, and has a baseline network bandwidth of 1 Gbps. Performance benchmarks place the instance in the lower tiers, with stress-ng CPU and memory write bandwidth scoring in the bottom 10%, though it achieves average results in PassMark encryption tests due to hardware-accelerated AES and SHA_NI support. The r5a.xlarge represents a cost-efficient option for memory-intensive workloads with low compute demands, such as caching layers, Redis deployments, and lightweight memory-bound applications.",
-  "og_description": "Amazon Web Services r5a.xlarge is a memory-optimized instance with 4 vCPUs, 32.0 GB of DDR4 RAM, and an AMD EPYC 7571 processor, designed for memory-intensive workloads with low compute demands.",
-  "meta_description": "Amazon Web Services r5a.xlarge is a memory-optimized instance featuring 4 vCPUs, 32.0 GB of DDR4 RAM, and an AMD EPYC 7571 processor.",
-  "tagline": "A memory-optimized instance featuring a high RAM-to-vCPU ratio for memory-bound workloads with modest processing requirements.",
+  "description": "Amazon Web Services r5a.xlarge is a memory-optimized instance utilizing the AWS Nitro hypervisor and an x86_64 AMD EPYC 7571 processor. It delivers 4 dedicated vCPUs across 2 physical cores, paired with 32.0 GB of DDR4 memory running at 3 GHz. The instance does not include local storage or dedicated GPUs, and it operates with a baseline network bandwidth of 1 Gbps. Performance benchmarks indicate modest compute capabilities, with CPU and memory write speeds generally placing in the lower percentiles, though cryptographic performance remains average due to hardware-accelerated AES and SHA instructions. Given its high memory-to-vCPU ratio, the r5a.xlarge is qualitatively cost-effective for memory-intensive workloads that are not CPU-bound, such as caching layers, small-to-medium database deployments, and general-purpose memory-heavy applications.",
+  "og_description": "Amazon Web Services r5a.xlarge is a memory-optimized instance featuring 4 vCPUs, 32 GB of DDR4 RAM, and an AMD EPYC processor, designed for memory-intensive workloads with modest compute requirements.",
+  "meta_description": "Amazon Web Services r5a.xlarge is a memory-optimized instance featuring 4 vCPUs and 32 GB of DDR4 RAM, powered by an AMD EPYC 7571 processor.",
+  "tagline": "A memory-optimized instance offering a high RAM-to-vCPU ratio on AMD EPYC processors for cost-conscious, memory-intensive workloads.",
   "bullet_points": [
-    "AMD EPYC 7571 processor with 4 dedicated vCPUs and 2.5 GHz clock speed",
-    "32.0 GB of DDR4 RAM providing an 8.0 GB memory-to-core ratio",
-    "No local storage and 1 Gbps baseline network bandwidth",
-    "Hardware-accelerated AES and SHA_NI cryptography support",
-    "Best suited for memory-intensive workloads with low CPU utilization like caching"
+    "Features 4 dedicated vCPUs and 32.0 GB of DDR4 RAM",
+    "Powered by an AMD EPYC 7571 processor at 2.5 GHz",
+    "Delivers 1 Gbps baseline network bandwidth without local storage",
+    "Average cryptographic performance via hardware-accelerated AES and SHA",
+    "Best suited for memory-intensive caching and small-to-medium databases"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

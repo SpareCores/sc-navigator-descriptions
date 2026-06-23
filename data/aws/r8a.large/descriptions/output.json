@@ -1,22 +1,21 @@
 {
   "page": [
-    "Amazon Web Services r8a.large is a memory-optimized virtual machine instance powered by the AWS Nitro hypervisor. It features an AMD EPYC 9R45 processor utilizing the x86_64 architecture, configured with 2 dedicated physical cores and 2 vCPUs running at a clock speed of 4.5 GHz. The instance is equipped with 16.0 GB of DDR5 memory operating at 6 GHz, yielding a high memory-to-core ratio of 8.0 GB per core. It does not include local storage or dedicated GPU hardware, and provides a baseline network bandwidth of 1 Gbps.",
-    "Benchmark data reveals strong single-core performance, with stress-ng single-core CPU metrics, Geekbench single-core scores, and single-threaded gzip compression and bzip3 decompression rates all placing in the top 10% tier. Conversely, multi-core performance metrics, such as stress-ng multi-core and Geekbench multi-core scores, fall within the average range. Memory bandwidth tests for both small cached and large uncached blocks also demonstrate average tier performance. Weaknesses are observed in software compilation with Clang and ray tracing workloads, which rank in the bottom 25%.",
-    "From a cost-efficiency perspective, the r8a.large offers a dense DDR5 memory allocation per vCPU, making it suitable for memory-bound workloads that do not require massive parallel processing. However, the lack of local NVMe storage and the modest 1 Gbps baseline network bandwidth represent notable tradeoffs for data-intensive operations. This instance is suited for workloads such as medium-scale database operations, text processing, caching layers, and single-threaded data manipulation tasks."
+    "Amazon Web Services r8a.large is a memory-optimized instance powered by AMD EPYC 9R45 processors utilizing the x86_64 architecture. It features 2 dedicated physical cores and 2 vCPUs running at a clock speed of 4.5 GHz. The instance is equipped with 16.0 GB of DDR5 memory operating at 6 GHz, providing a high memory-to-vCPU ratio of 8.0 GB per core. It utilizes the AWS Nitro hypervisor, lacks local storage, and has a baseline network bandwidth of 1 Gbps.",
+    "Benchmark data reveals strong single-core capabilities, with stress-ng single-core performance, single-threaded gzip compression, and Geekbench single-core scores ranking in the top tier. However, multi-core and multi-threaded operations, such as multi-threaded bzip3 decompression and software compilation with Clang, fall into the average to weak categories due to the 2-vCPU hardware limit. Memory bandwidth and database operations, including Redis SET operations, perform in the average range.",
+    "The lack of local storage requires external network-attached storage, and the baseline network bandwidth is limited to 1 Gbps. The instance is qualitatively cost-efficient for memory-bound workloads that do not require high parallel processing power, offering high-speed DDR5 RAM and strong single-thread performance. It is best suited for memory-intensive applications, small database operations, caching layers, and lightweight text or web processing tasks."
   ],
-  "description": "Amazon Web Services r8a.large is a memory-optimized virtual machine instance featuring 2 dedicated vCPUs powered by an AMD EPYC 9R45 processor running at 4.5 GHz. Built on the x86_64 architecture and managed by the Nitro hypervisor, it includes 16.0 GB of high-speed DDR5 memory at 6 GHz, providing 8.0 GB of RAM per core. The instance lacks local storage and GPU accelerators, relying on a baseline network bandwidth of 1 Gbps. Benchmark results highlight top-tier single-core CPU and text processing performance, while multi-core execution and memory bandwidth remain in the average tier. Tradeoffs include weaker performance in software compilation and ray tracing. This hardware profile is suited for memory-sensitive, single-threaded workloads, text processing, and database operations that do not require local NVMe storage.",
-  "og_description": "Amazon Web Services r8a.large is a memory-optimized instance with 2 vCPUs, 16 GB DDR5 RAM, and an AMD EPYC 9R45 CPU, delivering top-tier single-core performance for memory-bound workloads.",
-  "meta_description": "Amazon Web Services r8a.large is a memory-optimized instance featuring 2 vCPUs, 16 GB DDR5 RAM, and an AMD EPYC 9R45 processor.",
-  "tagline": "A memory-optimized virtual instance featuring high-speed DDR5 RAM and strong single-core performance for memory-bound and text-processing workloads.",
+  "description": "Amazon Web Services r8a.large is a memory-optimized instance featuring 2 dedicated vCPUs powered by an AMD EPYC 9R45 processor running at 4.5 GHz. It includes 16.0 GB of high-speed DDR5 memory at 6 GHz, yielding an 8.0 GB per core ratio, but contains no local storage and offers a baseline network bandwidth of 1 Gbps. Built on the Nitro hypervisor, the instance delivers top-tier single-core performance, as evidenced by high single-threaded compression and Geekbench single-core benchmark scores. Conversely, multi-threaded tasks like software compilation and ray tracing show weaker relative performance due to the low core count. This instance provides a qualitatively cost-effective profile for memory-intensive workloads that rely on single-thread efficiency rather than massive parallelization, making it suitable for small database deployments, caching layers, and lightweight web serving.",
+  "og_description": "Amazon Web Services r8a.large is a memory-optimized instance with 2 vCPUs, 16.0 GB of DDR5 RAM, and an AMD EPYC 9R45 processor, delivering top-tier single-core performance for memory-bound workloads.",
+  "meta_description": "Amazon Web Services r8a.large is a memory-optimized instance featuring 2 vCPUs, 16.0 GB of DDR5 RAM, and an AMD EPYC 9R45 processor.",
+  "tagline": "A memory-optimized instance featuring high-speed DDR5 RAM and strong single-core performance for memory-intensive, low-parallelization workloads.",
   "bullet_points": [
-    "AMD EPYC 9R45 processor with 2 dedicated vCPUs at 4.5 GHz",
-    "16.0 GB of high-speed DDR5 memory (8.0 GB per core)",
-    "Top-tier single-core CPU and text processing benchmark results",
+    "Powered by AMD EPYC 9R45 processor at 4.5 GHz with 2 dedicated vCPUs",
+    "Equipped with 16.0 GB of DDR5 memory operating at 6 GHz",
+    "Top-tier single-core CPU and single-threaded compression performance",
     "No local storage and 1 Gbps baseline network bandwidth",
-    "Suited for database operations, caching, and single-threaded tasks"
+    "Suited for small databases, caching layers, and memory-bound tasks"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

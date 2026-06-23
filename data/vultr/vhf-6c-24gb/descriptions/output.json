@@ -1,23 +1,22 @@
 {
   "page": [
-    "Vultr vhf-6c-24gb is an x86_64 architecture virtual server belonging to the High Frequency Compute family. It features 6 shared Intel Skylake virtual cores operating at 2.0 GHz, with 1.0 thread per core. The system is equipped with 24.0 GB of system memory, providing 4.0 GB of RAM per core. Storage is bundled with a local 448 GB NVMe SSD, and the server includes one complimentary public IPv4 address. No GPU accelerators are present on this instance type.",
-    "Benchmark data indicates average performance across several standard compute metrics. The stress-ng single-core score is 1670.29, and the multi-core score is 9438.87, both falling within the middle 50% tier. Single-threaded gzip compression is a relative strength, scoring in the top 25% at 33.56 GB/sec. However, memory bandwidth exhibits notable bottlenecks; while small-block cached reads are average at 674.29 GB/sec, large-block uncached reads (26.11 GB/sec) and writes (13.1 GB/sec) fall into the bottom 25% and bottom 10% respectively.",
-    "Due to the shared CPU allocation and weak large-block memory bandwidth, this server exhibits performance limitations under heavy memory-bound or highly parallelized workloads, as seen in its lower-tier multi-threaded bzip3 decompression and database operation scores. It is also poorly suited for medium-sized LLM inference, where text generation drops to 4.88 tokens/sec. This configuration is best suited for general-purpose workloads, light web serving, single-threaded file processing, and development environments that benefit from local NVMe storage without requiring dedicated CPU resources."
+    "Vultr vhf-6c-24gb is an x86_64 architecture server belonging to the High Frequency Compute family. It features 6 shared Intel Core Skylake vCPUs running at 2.0 GHz, paired with 24.0 GB of system memory, which yields a 4.0 GB per core ratio. The hardware configuration includes a bundled 448 GB NVMe SSD for local storage and one complimentary public IPv4 address.",
+    "Performance benchmarks indicate average capabilities across standard compute tasks. The single-core and multi-core stress-ng tests score 1670.29 and 9438.87 respectively, placing them in the average tier. Single-threaded gzip compression is a notable strength at 33.56 GB/sec. However, memory bandwidth for large uncached blocks is weak to poor, with write speeds dropping to 13.1 GB/sec. Similarly, database operations and static web serving throughput fall into the weak category. Large-model LLM inference is poor, though small-model text generation achieves an average of 108.96 tokens/sec.",
+    "From a cost-efficiency perspective, this server offers a high-density allocation of NVMe storage and memory relative to its shared CPU resource class. Because the CPU allocation is shared, it is best suited for workloads that do not require sustained, dedicated CPU performance. Recommended workloads include general-purpose web serving, small-scale database operations, caching layers via Redis, which performs at an average of 7.25 million operations per second, and lightweight file compression tasks."
   ],
-  "description": "The Vultr vhf-6c-24gb is an x86_64 virtual server from the High Frequency Compute family, configured with 6 shared Intel Skylake vCPUs running at 2.0 GHz and 24.0 GB of RAM. It includes a local 448 GB NVMe SSD and one public IPv4 address, with no GPU acceleration. Performance benchmarks place this server in the middle tier for general compute, with a stress-ng multi-core score of 9438.87 and a strong single-threaded gzip compression rate of 33.56 GB/sec. However, it exhibits significant bottlenecks in large-block memory write bandwidth (13.1 GB/sec) and database operations. Given the shared CPU allocation and memory throughput constraints, this server is best suited for general-purpose applications, basic web serving, and development environments rather than memory-intensive databases or heavy multi-threaded processing.",
-  "og_description": "Vultr vhf-6c-24gb is an x86_64 server with 6 shared Intel vCPUs, 24 GB RAM, and a 448 GB NVMe SSD. It offers balanced general-purpose performance with some memory bandwidth limitations.",
-  "meta_description": "Vultr vhf-6c-24gb is an x86_64 server featuring 6 shared Intel vCPUs, 24 GB RAM, and 448 GB NVMe storage, suitable for general-purpose workloads.",
-  "tagline": "A shared-core virtual server combining moderate x86 compute, 24 GB of RAM, and local NVMe storage for general-purpose workloads.",
+  "description": "The Vultr vhf-6c-24gb is an x86_64 virtual server from the High Frequency Compute family, configured with 6 shared Intel Core Skylake vCPUs clocked at 2.0 GHz, 24.0 GB of RAM, and a bundled 448 GB NVMe SSD. It delivers average performance across standard compute benchmarks, with a stress-ng multi-core score of 9438.87 and strong single-threaded gzip compression at 33.56 GB/sec. However, it exhibits limitations in large-block memory bandwidth and database operations. Given its shared CPU architecture and balanced 1:4 vCPU-to-RAM ratio, this server provides a cost-effective option for workloads such as general-purpose web serving, Redis caching, and moderate file processing where dedicated CPU cores are not strictly required.",
+  "og_description": "Vultr vhf-6c-24gb is an x86_64 High Frequency Compute server featuring 6 shared Intel vCPUs, 24 GB RAM, and a 448 GB NVMe SSD, delivering balanced general-purpose performance for web serving and caching.",
+  "meta_description": "Vultr vhf-6c-24gb is an x86_64 server with 6 shared Intel vCPUs, 24 GB RAM, and 448 GB NVMe SSD, optimized for general-purpose workloads.",
+  "tagline": "A balanced shared-CPU server featuring fast NVMe storage and moderate memory capacity for general-purpose workloads and caching.",
   "bullet_points": [
-    "6 shared Intel Skylake vCPUs running at 2.0 GHz",
-    "24.0 GB of system memory (4.0 GB per core)",
-    "Bundled 448 GB local NVMe SSD storage",
+    "6 shared Intel Core Skylake vCPUs at 2.0 GHz",
+    "24.0 GB system memory with a 1:4 vCPU-to-RAM ratio",
+    "Bundled 448 GB NVMe SSD local storage",
     "Strong single-threaded gzip compression performance",
-    "Reduced performance in large-block memory writes and database operations",
-    "Best suited for general-purpose applications and development environments"
+    "Suitable for Redis caching and general-purpose web serving"
   ],
   "categories": [
     "General Purpose",
-    "Burstable & Budget"
+    "Compute Optimized"
   ]
 }

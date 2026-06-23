@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure M128 is a memory-optimized virtual machine from the MS family, running on the Microsoft Hyper-V hypervisor. It features 128 dedicated vCPUs mapped to 64 physical Intel Xeon 8280M cores with hyper-threading enabled. The processor operates at a base clock speed of 2.7 GHz and utilizes the x86_64 architecture, supported by 32 KB L1d cache, 1.0 MB L2 cache, and 38 MB L3 cache. It includes hardware flags such as AVX, AVX-512F, AES, and FMA.",
-    "The server is equipped with 2048.0 GB of RAM, providing a high memory-to-core ratio of 16.0 GB per physical core. For local storage, the instance includes a bundled capacity of 14,680 GB. There are no GPUs or complimentary public IPv4 addresses included with this configuration.",
-    "Benchmark data indicates highly polarized performance. Single-core performance is weak, with stress-ng single-core, Geekbench single-core, and single-threaded gzip and bzip3 compression scoring in the bottom 10% to 25%. However, multi-core and memory subsystem performance are highly robust. Multi-core stress-ng and PassMark CPU tests rank in the top 25%, while large-block uncached memory read and write bandwidth reach top-tier status in the top 10% at 426.47 GB/sec and 161.78 GB/sec, respectively. Redis SET operations also perform strongly, achieving 80.9 million operations per second.",
-    "Given the massive memory capacity and high local storage, the M128 offers high resource density for memory-bound and data-intensive workloads. The primary tradeoff is the lower single-threaded efficiency. It is highly suitable for large-scale relational databases, in-memory caching systems like Redis, software compilation, and high-throughput static web serving."
+    "Microsoft Azure M128 is a memory-optimized virtual machine from the MS family, running on the Microsoft Hyper-V hypervisor. It features 128 vCPUs mapped to 64 physical cores of an Intel Xeon 8280M processor architecture operating at a base frequency of 2.7 GHz. The system is equipped with 2048.0 GB of system memory, yielding 16.0 GB of RAM per core. For local storage, the instance includes a bundled 14680 GB capacity, though it does not provide complimentary public IPv4 addresses.",
+    "Benchmark evaluations reveal a distinct contrast between single-core and multi-core capabilities. Single-core performance is relatively weak, as evidenced by stress-ng single-core and Geekbench single-core scores falling into the bottom 25% and 10% respectively. Single-threaded tasks like gzip compression and bzip3 decompression also rank in the bottom 10%. Conversely, multi-threaded execution is highly robust; stress-ng multi-core, Passmark CPU, and bzip3 multi-threaded decompression all rank in the top 25%. Memory performance is a key strength, with uncached large-block read-only memory bandwidth reaching the top 10% tier at 426.47 GB/sec, and cached small-block read bandwidth placing in the top 25%.",
+    "Given its massive 2 TB memory footprint and 14.6 TB of bundled local storage, this server is designed for memory-intensive enterprise workloads. It is highly suitable for large-scale relational databases, in-memory caching layers like Redis, which achieved 80.9 million operations per second in testing, and heavy multi-threaded data processing. However, the hardware profile is less efficient for single-threaded applications or real-time LLM text generation, where performance is constrained. From a qualitative cost-efficiency perspective, the high resource density of RAM and local storage makes it a specialized asset for consolidating massive datasets that would otherwise require distributed clustering."
   ],
-  "description": "The Microsoft Azure M128 is a memory-optimized server from the MS family, powered by an Intel Xeon 8280M processor with 128 dedicated vCPUs running at 2.7 GHz. It features 2048.0 GB of RAM and 14,680 GB of bundled local storage, with no GPUs. While single-core benchmarks are weak, the server delivers strong multi-core performance and top-tier memory bandwidth, reaching 426.47 GB/sec for large-block uncached reads. This hardware profile provides high resource density for memory-intensive applications. The M128 is highly suited for large-scale in-memory databases, Redis caching, high-throughput web serving, and parallelized workloads like software compilation, though it presents a tradeoff in single-threaded processing efficiency.",
-  "og_description": "Microsoft Azure M128 is a memory-optimized server featuring 128 Intel Xeon vCPUs, 2048 GB RAM, and 14,680 GB local storage, delivering top-tier memory bandwidth for large-scale database workloads.",
-  "meta_description": "Microsoft Azure M128 is a memory-optimized server with 128 Intel Xeon vCPUs, 2 TB RAM, and 14.6 TB local storage, built for large-scale database workloads.",
-  "tagline": "A high-density memory-optimized instance featuring two terabytes of RAM and massive local storage for demanding database and caching workloads.",
+  "description": "The Microsoft Azure M128 is a memory-optimized virtual machine powered by an Intel Xeon 8280M processor with 128 vCPUs and 64 physical cores. It features 2048.0 GB of RAM and 14680 GB of bundled local storage, running on the Microsoft Hyper-V hypervisor. While single-core benchmarks and single-threaded operations like gzip compression perform poorly, the server excels in multi-threaded workloads, placing in the top 25% for multi-core stress-ng and Passmark CPU tests. Memory bandwidth is exceptionally strong, with large-block uncached read speeds reaching the top 10% tier. This hardware profile makes the M128 highly efficient for memory-intensive applications, large-scale databases, and high-throughput Redis operations, though it is less suited for workloads dependent on high single-core clock speeds or real-time LLM text generation.",
+  "og_description": "Microsoft Azure M128 is a memory-optimized server featuring 128 Intel Xeon vCPUs, 2048 GB of RAM, and 14680 GB of local storage, delivering top-tier memory bandwidth for large-scale database workloads.",
+  "meta_description": "Microsoft Azure M128 is a memory-optimized server with 128 vCPUs, 2 TB RAM, and 14.6 TB local storage, built for massive database and multi-threaded workloads.",
+  "tagline": "A high-capacity memory-optimized platform featuring two terabytes of RAM and massive local storage for demanding multi-threaded enterprise databases.",
   "bullet_points": [
-    "128 dedicated Intel Xeon vCPUs and 2048 GB of system memory",
-    "14,680 GB of bundled local storage capacity",
-    "Top-tier memory bandwidth reaching 426.47 GB/sec for uncached reads",
-    "Strong multi-core performance for parallel compilation and ray tracing",
-    "Optimized for large-scale databases, Redis caching, and high-throughput web serving"
+    "128 vCPUs and 64 physical cores powered by Intel Xeon 8280M processors",
+    "2048 GB of system memory delivering top-tier uncached read bandwidth",
+    "14680 GB of bundled local storage for high-capacity data hosting",
+    "Strong multi-core performance and high-throughput Redis operations",
+    "Optimized for large-scale databases, in-memory caching, and heavy ETL tasks",
+    "Lower efficiency for single-threaded applications and LLM text generation"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }
