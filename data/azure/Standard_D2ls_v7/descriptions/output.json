@@ -1,19 +1,20 @@
 {
   "page": [
-    "Microsoft Azure D2ls_v7 is an x86_64 architecture virtual machine belonging to the Dlsv7 server family. It is equipped with 2 dedicated vCPUs powered by an Intel processor and runs on the Microsoft Hyper-V hypervisor. The instance features 4.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per vCPU.",
-    "This server configuration does not include any local storage, meaning all storage requirements must be met via external Premium Storage, which the instance is capable of supporting. There are no integrated GPUs on this instance, and it does not include any complimentary public IPv4 addresses.",
-    "With a 1:2 vCPU-to-RAM ratio, the D2ls_v7 is positioned as a low-memory option within its family. This resource density makes it a cost-efficient choice for compute-focused workloads that do not require large memory footprints or local scratch space. It is suitable for lightweight web serving, microservices, basic CI/CD tasks, and entry-level utility workloads."
+    "Microsoft Azure D2ls_v7 is an x86_64 architecture virtual machine belonging to the Dlsv7 server family, running under the Microsoft Hyper-V hypervisor. The hardware configuration features 2 dedicated vCPUs mapped to a single physical Intel Xeon 6973P-C core with 2 threads. The processor is equipped with a 480 MB L3 cache, a 2 MB L2 cache, and a 48 KB L1d cache. System memory is limited to 4.0 GB, providing a low-memory ratio of 2.0 GB per vCPU. This server does not include any bundled local storage or integrated GPUs, though it is designated as Premium Storage capable.",
+    "Performance benchmarks reveal a notable contrast between single-core and multi-core capabilities. Single-core CPU performance via stress-ng is average at 2096.98, and single-threaded gzip compression is strong at 30.68 GB/sec. Conversely, multi-core CPU performance is poor at 2102.48, and the Passmark CPU score is weak at 3831.43. Memory bandwidth is also constrained, with write speeds for large blocks registering as poor at 11.59 GB/sec and read speeds classified as weak. Database operations and Redis SET operations also fall into the poor to weak categories.",
+    "From a qualitative cost-efficiency perspective, the D2ls_v7 offers a low-resource footprint with dedicated CPU allocation, making it a budget-conscious option for workloads that do not require large memory allocations or local storage. Due to its 1:2 vCPU-to-RAM ratio and weak multi-core and database benchmark results, it is poorly suited for memory-intensive databases or heavy multi-threaded processing. It is best utilized for lightweight single-threaded tasks, basic web serving, or small-scale utility workloads."
   ],
-  "description": "Microsoft Azure D2ls_v7 is an x86_64 virtual machine within the Dlsv7 server family, running on the Microsoft Hyper-V hypervisor. It features 2 dedicated vCPUs powered by an Intel processor and is configured with 4.0 GB of system memory, establishing a 2.0 GB per vCPU ratio. This instance does not include local storage or integrated GPUs, though it is Premium Storage capable for external disk attachments. Lacking complimentary public IPv4 addresses, the server is designed as a low-memory, compute-oriented resource. The hardware profile is optimized for workloads requiring dedicated CPU allocation without the overhead of large memory capacities. It is best suited for lightweight web serving, microservices, and basic utility tasks.",
-  "og_description": "Microsoft Azure D2ls_v7 is a low-memory virtual machine featuring 2 dedicated Intel vCPUs, 4.0 GB of RAM, and no local storage, optimized for lightweight compute workloads on Hyper-V.",
-  "meta_description": "Microsoft Azure D2ls_v7 is a low-memory virtual machine with 2 dedicated Intel vCPUs, 4.0 GB RAM, and support for Premium Storage.",
-  "tagline": "A low-memory, compute-oriented virtual machine with dedicated Intel processors and support for external premium storage.",
+  "description": "The Microsoft Azure D2ls_v7 is a low-memory, x86_64 architecture server from the Dlsv7 family, powered by a dedicated Intel Xeon 6973P-C processor. Running on Microsoft Hyper-V, it features 2 vCPUs, 4.0 GB of system memory, and a substantial 480 MB L3 cache. It does not include local storage or integrated GPUs. Benchmarks show average single-core CPU performance and strong single-threaded gzip compression, though multi-core performance, memory bandwidth, and database operations are weak to poor. This server is qualitatively cost-efficient for low-resource, dedicated compute tasks but is limited by its low memory-to-CPU ratio. It is best suited for lightweight, single-threaded applications, basic web serving, and small utility workloads rather than memory-intensive or highly parallelized databases.",
+  "og_description": "Microsoft Azure D2ls_v7 is a low-memory virtual machine featuring 2 dedicated Intel Xeon vCPUs, 4.0 GB of RAM, and no local storage, suitable for lightweight single-threaded workloads.",
+  "meta_description": "Microsoft Azure D2ls_v7 is a low-memory server with 2 dedicated Intel Xeon vCPUs, 4.0 GB RAM, and no local storage, optimized for light workloads.",
+  "tagline": "A low-memory, dedicated dual-vCPU instance featuring an Intel Xeon processor, designed for lightweight single-threaded tasks and basic utility workloads.",
   "bullet_points": [
-    "2 dedicated Intel vCPUs on x86_64 architecture",
-    "4.0 GB of system memory with a 2.0 GB per vCPU ratio",
-    "No local storage with support for external Premium Storage",
-    "Zero integrated graphics processing units",
-    "Optimized for lightweight web serving and microservices"
+    "2 dedicated vCPUs powered by an Intel Xeon 6973P-C processor",
+    "4.0 GB of system memory with a 1:2 vCPU-to-RAM ratio",
+    "No bundled local storage or integrated GPU resources",
+    "Strong single-threaded gzip compression performance",
+    "Weak multi-core, memory bandwidth, and database benchmark results",
+    "Best suited for lightweight single-threaded tasks and basic web serving"
   ],
   "categories": [
     "Compute Optimized",

@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c6a.2xlarge is a compute-optimized virtual server instance powered by the KVM hypervisor. It features 8 dedicated vCPUs mapped to 8 physical cores of an AMD EPYC 7H12 processor running at a base clock speed of 2.6 GHz. The instance is configured with 16.0 GB of system memory, providing a resource density of 2.0 GB per core. It does not include local storage or GPU accelerators, relying entirely on network-attached storage and a baseline network bandwidth of 2 Gbps.",
-    "The x86_64 architecture of the AMD EPYC processor supports several hardware-level instruction sets, including Advanced Vector Extensions (AVX), SHA Extensions (SHA_NI), Advanced Encryption Standard (AES), and Bit Manipulation Instruction Set 2 (BMI2). However, it lacks support for AVX-512 and Advanced Matrix Extensions (AMX). The CPU topology utilizes single-threaded physical cores with hyper-threading enabled, supported by a cache hierarchy consisting of 32 KB L1 data cache, 0.5 MB L2 cache, and 16 MB L3 cache.",
-    "Benchmark evaluations indicate a mixed performance profile. The instance demonstrates average performance in Geekbench single-core (1315.0) and multi-core (5025.0) tests, as well as in Passmark CPU (10249.39) and memory (2067.12) evaluations. It handles static web serving at 6.78 GB/sec and Redis SET operations at 7.44 million operations per second. However, raw computational throughput is limited, as shown by weak multi-core stress-ng results and lower uncached memory write bandwidth of 16.75 GB/sec.",
-    "From a qualitative cost-efficiency perspective, the dedicated core allocation offers predictable performance for compute-bound workloads without the overhead of shared-core resource contention. Given the 1:2 vCPU-to-RAM ratio and average performance across text processing, software compilation, and database operations, this instance is suited for moderate web serving, application servers, build systems, and distributed microservices that do not require massive memory footprints or local high-speed storage."
+    "Alibaba Cloud ecs.c6a.2xlarge is a compute-optimized virtual server instance powered by the KVM hypervisor. It features 8 dedicated physical cores on an AMD EPYC 7H12 processor running at 2.6 GHz, with a 1:1 thread-to-core ratio. The instance is equipped with 16.0 GB of system memory, providing 2.0 GB of RAM per core. It does not include local storage or GPU accelerators, relying entirely on network-attached storage and a baseline network bandwidth of 2 Gbps.",
+    "Benchmark evaluations indicate average performance across several standard workloads. The instance achieves average ratings in Geekbench single-core (1315.0) and multi-core (5025.0) tests, as well as in software compilation, ray tracing, and image processing. Cryptographic operations perform steadily, supported by hardware-accelerated AES and SHA instruction sets. However, raw computational throughput shows limitations, with stress-ng single-core and multi-core CPU tests scoring in the bottom 10% and 25% respectively. Memory bandwidth is average for cached small-block reads (395.92 GB/sec) but drops to weak levels for uncached large-block operations.",
+    "From a cost-efficiency perspective, the ecs.c6a.2xlarge offers a dedicated hardware profile suitable for entry-level compute-bound tasks without the overhead of bundled local storage or GPU hardware. Its balanced performance in static web serving (6.78 GB/sec) and Redis SET operations (7.44 million operations per second) makes it a viable option for web serving, lightweight database operations, and general-purpose utility workloads that require dedicated CPU allocation but do not demand extreme memory bandwidth or high-performance computing capabilities."
   ],
-  "description": "Alibaba Cloud ecs.c6a.2xlarge is a compute-optimized virtual server featuring 8 dedicated vCPUs and 16.0 GB of RAM, powered by an AMD EPYC 7H12 processor running at 2.6 GHz. Built on the KVM hypervisor, this x86_64 instance provides a dedicated core allocation with a 1:2 vCPU-to-RAM ratio, but lacks local storage and GPU accelerators. Performance benchmarks place the instance in the average tier for tasks like software compilation, database operations, and static web serving, though raw multi-core stress testing and uncached memory bandwidth show weaker results. Supported instruction sets include AVX, AES, and SHA_NI, while AVX-512 is absent. This instance is qualitatively cost-effective for workloads requiring dedicated CPU resources without high memory demands, making it suitable for web serving, microservices, and moderate build pipelines.",
-  "og_description": "Alibaba Cloud ecs.c6a.2xlarge is a compute-optimized server with 8 dedicated AMD EPYC vCPUs, 16 GB RAM, and a 2 Gbps network baseline, offering balanced mid-tier performance for web serving and microservices.",
-  "meta_description": "Alibaba Cloud ecs.c6a.2xlarge is an x86_64 compute-optimized server with 8 dedicated AMD EPYC vCPUs, 16 GB RAM, and KVM virtualization.",
-  "tagline": "A dedicated eight-core compute instance designed for moderate web serving, application hosting, and balanced multi-threaded processing workloads.",
+  "description": "Alibaba Cloud ecs.c6a.2xlarge is a compute-optimized virtual server instance featuring 8 dedicated physical cores powered by an AMD EPYC 7H12 processor running at 2.6 GHz. It is configured with 16.0 GB of RAM, yielding a 1:2 vCPU-to-RAM ratio, and contains no local storage or GPU accelerators. Operating on the KVM hypervisor, the instance delivers a baseline network bandwidth of 2 Gbps. Benchmark results show average performance in Geekbench single-core and multi-core tests, software compilation, and static web serving, though raw CPU stress tests and uncached memory bandwidth fall into lower percentiles. This instance is qualitatively cost-efficient for dedicated compute workloads that do not require local storage. It is best suited for web serving, Redis databases, and moderate computational tasks.",
+  "og_description": "Alibaba Cloud ecs.c6a.2xlarge is a compute-optimized instance with 8 dedicated AMD EPYC cores, 16 GB RAM, and 2 Gbps network bandwidth, delivering average performance for web serving and database tasks.",
+  "meta_description": "Alibaba Cloud ecs.c6a.2xlarge is a compute-optimized instance with 8 dedicated AMD EPYC cores, 16 GB RAM, and average web-serving performance.",
+  "tagline": "A dedicated AMD EPYC compute instance offering balanced memory bandwidth and steady performance for web serving and database workloads.",
   "bullet_points": [
-    "8 dedicated AMD EPYC 7H12 vCPUs at 2.6 GHz",
-    "16.0 GB of system memory providing 2.0 GB per core",
-    "2 Gbps baseline network bandwidth with no local storage",
-    "Supports AVX, AES, and SHA_NI instruction sets",
-    "Suited for web serving, microservices, and software compilation"
+    "8 dedicated AMD EPYC 7H12 physical cores running at 2.6 GHz",
+    "16.0 GB of system memory with a 1:2 vCPU-to-RAM ratio",
+    "No bundled local storage or GPU accelerators",
+    "2 Gbps baseline network bandwidth on KVM hypervisor",
+    "Average performance in static web serving and Redis operations",
+    "Suitable for web servers, software compilation, and moderate databases"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

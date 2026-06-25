@@ -1,24 +1,22 @@
 {
   "page": [
-    "Amazon Web Services x8g.metal-48xl is a bare-metal, memory-optimized server powered by 192 dedicated AWS Graviton Neoverse-V2 physical cores on an arm64 architecture. Operating at a clock speed of 2.7 GHz with 1.0 thread per core, this instance features a massive 3072.0 GB of DDR5 memory, translating to 16.0 GB of RAM per core. It does not include local storage or GPU accelerators, but provides a baseline network bandwidth of 50 Gbps.",
-    "Performance benchmarks highlight exceptional multi-core capabilities and memory throughput. The server achieves top-tier results in stress-ng multi-core CPU performance, multi-threaded bzip3 decompression, and software compilation with Clang. Its memory subsystem delivers top-tier read and write bandwidth, reaching 860.6 GB/sec for large-block reads and 409.74 GB/sec for large-block writes. Database operations and Redis SET operations also rank in the top tier, executing 355.04 million operations per second.",
-    "In contrast, single-core performance is moderate, with stress-ng single-core and Geekbench single-core scores falling into the average tier. LLM inference tasks show mixed results; while prompt processing for medium and large models is strong, text generation speeds are average to poor, with the small 135M model generating only 16.66 tokens per second. This profile indicates high resource density and cost efficiency for highly parallelized, memory-intensive workloads, though it presents a tradeoff for single-threaded or GPU-dependent tasks.",
-    "The x8g.metal-48xl is highly suited for large-scale in-memory databases, high-throughput web serving, massive parallel software compilation, and memory-intensive data processing pipelines."
+    "Amazon Web Services x8g.metal-48xl is a bare-metal, memory-intensive server powered by 192 dedicated physical cores of the arm64 AWS Neoverse-V2 processor running at 2.7 GHz. The system features 3072.0 GB of DDR5 memory, providing a high memory-to-core ratio of 16.0 GB per physical core. It lacks local storage and dedicated GPU hardware, relying entirely on network-attached storage and a baseline network bandwidth of 50 Gbps.",
+    "In benchmark testing, the server demonstrates top-tier multi-core capabilities, scoring in the top 10% for stress-ng multi-core CPU performance, bzip3 multi-threaded decompression, and software compilation with clang. Memory subsystem performance is also in the top tier, with uncached read memory bandwidth reaching 860.6 GB/sec and write bandwidth at 409.74 GB/sec. However, single-core metrics, such as stress-ng single-core CPU and Geekbench single-core scores, fall into the average tier. Additionally, while prompt processing for medium and large language models is strong, text generation speeds for smaller models are poor, landing in the bottom 10%.",
+    "From a cost-efficiency perspective, the arm64 architecture and high memory density offer a favorable profile for memory-bound workloads without the overhead of hyperthreading, as each of the 192 cores is dedicated. The primary tradeoffs include the complete absence of local NVMe storage and lack of GPU acceleration, which limits its utility for direct high-speed local disk operations or heavy parallel graphics processing. The server is highly optimized for large-scale database operations, in-memory caching systems like Redis, multi-threaded data decompression, and software compilation pipelines."
   ],
-  "description": "Amazon Web Services x8g.metal-48xl is a bare-metal, memory-optimized server featuring 192 dedicated AWS Graviton Neoverse-V2 physical cores on an arm64 architecture. Operating at 2.7 GHz, it is equipped with 3072.0 GB of DDR5 memory, providing 16.0 GB of RAM per core, alongside a 50 Gbps baseline network bandwidth. The server lacks local storage and GPU accelerators. Benchmarks indicate top-tier multi-core CPU performance, exceptional memory read/write bandwidth, and superior database and Redis operation speeds. However, single-core performance and LLM text generation speeds are average to poor. This hardware profile offers high resource density and qualitative cost efficiency for parallelized, memory-heavy workloads. It is highly suited for large-scale in-memory databases, high-throughput web serving, and intensive data processing pipelines.",
-  "og_description": "Amazon Web Services x8g.metal-48xl is a bare-metal, memory-optimized arm64 server featuring 192 dedicated Graviton Neoverse-V2 cores, 3 TB of DDR5 RAM, and 50 Gbps network bandwidth for high-throughput workloads.",
-  "meta_description": "Amazon Web Services x8g.metal-48xl is a bare-metal arm64 server with 192 dedicated Graviton cores, 3072 GB DDR5 RAM, and 50 Gbps network bandwidth.",
-  "tagline": "A bare-metal, memory-optimized arm64 platform delivering 192 dedicated cores and three terabytes of DDR5 RAM for massive parallel workloads.",
+  "description": "Amazon Web Services x8g.metal-48xl is a bare-metal, memory-optimized server featuring 192 dedicated physical arm64 cores powered by AWS Neoverse-V2 processors at 2.7 GHz. Equipped with 3072.0 GB of DDR5 memory, it delivers a high resource density of 16.0 GB of RAM per core. The server lacks local storage and GPU accelerators, relying on a 50 Gbps baseline network bandwidth. In benchmark evaluations, the instance excels in multi-core processing, memory bandwidth, and database operations, placing in the top 10% for Redis SET operations and multi-threaded decompression. Conversely, single-core performance and text generation for small language models remain average to poor. This profile makes the server highly efficient for memory-intensive workloads, including large-scale in-memory databases, software compilation, and multi-threaded data processing, though it presents tradeoffs for tasks requiring local high-speed storage or GPU acceleration.",
+  "og_description": "Amazon Web Services x8g.metal-48xl is a bare-metal arm64 server featuring 192 dedicated Neoverse-V2 cores, 3072 GB of DDR5 RAM, and 50 Gbps network bandwidth, optimized for memory-intensive database workloads.",
+  "meta_description": "Amazon Web Services x8g.metal-48xl is an arm64 bare-metal server with 192 dedicated cores and 3 TB of DDR5 RAM, built for memory-intensive workloads.",
+  "tagline": "A bare-metal arm64 platform delivering three terabytes of DDR5 memory and one hundred ninety-two dedicated cores for memory-intensive workloads.",
   "bullet_points": [
-    "192 dedicated AWS Graviton Neoverse-V2 physical cores on arm64 architecture",
+    "192 dedicated arm64 physical cores running at 2.7 GHz with no hyperthreading",
     "3072.0 GB of high-speed DDR5 memory providing 16.0 GB per core",
-    "Top-tier multi-core CPU performance and memory read/write bandwidth",
-    "50 Gbps baseline network bandwidth without local storage or GPUs",
-    "Best-fit for in-memory databases, Redis, and parallel data processing"
+    "Top-tier memory bandwidth and database performance, including Redis operations",
+    "50 Gbps baseline network bandwidth with no local storage or GPU hardware",
+    "Best suited for in-memory databases, software compilation, and multi-threaded data processing"
   ],
   "categories": [
     "Memory Optimized",
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

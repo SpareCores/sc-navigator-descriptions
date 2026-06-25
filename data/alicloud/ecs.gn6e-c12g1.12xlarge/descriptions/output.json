@@ -1,24 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.gn6e-c12g1.12xlarge is a GPU-accelerated server instance powered by the KVM hypervisor. It features 48 dedicated physical cores on an x86_64 architecture using Intel Xeon 8163 processors running at 2.5 GHz. The hardware configuration includes 368.0 GB of system memory, providing 7.67 GB per core. Acceleration is delivered via four NVIDIA Volta V100 GPUs, offering a combined total of 128 GB of VRAM. This instance does not include local storage and relies on external network-attached storage, while providing a baseline network bandwidth of 16 Gbps.",
-    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. Single-core CPU performance under stress-ng is weak, placing in the bottom 25% with a score of 1110.4, and single-threaded gzip compression is poor at 19.36 GB/sec. However, the 48 dedicated cores deliver average multi-core performance, with a stress-ng multi-core score of 35520.27 and multi-threaded bzip3 decompression reaching 147.7 GB/sec. Memory bandwidth is average, measuring 98.85 GB/sec for large block read-only operations and 47.39 GB/sec for large block write operations. Redis SET operations perform at an average rate of 33.18 million operations per second, and static web serving throughput is recorded at 23.02 GB/sec.",
-    "From a qualitative cost-efficiency perspective, this instance represents a high-density resource profile where the primary value lies in the bundled quad-GPU configuration and high memory capacity rather than raw single-core CPU speed. The tradeoff of lower single-threaded performance is offset by the parallel processing capabilities of the four NVIDIA V100 GPUs. This makes the instance suitable for workloads that can leverage GPU acceleration and multi-threaded CPU execution, such as deep learning training, parallel scientific computing, high-throughput web serving, and memory-intensive database operations, rather than single-threaded processing tasks."
+    "Alibaba Cloud ecs.gn6e-c12g1.12xlarge is a GPU-accelerated instance built on the KVM hypervisor. It features an Intel Xeon 8163 processor with 48 dedicated physical cores and 48 vCPUs running at a clock speed of 2.5 GHz. The system is equipped with 368.0 GB of RAM, which translates to 7.67 GB of memory per core.",
+    "The primary hardware highlight is the inclusion of four NVIDIA Volta V100 GPUs, delivering a combined 128 GB of VRAM. This instance does not include any local SSD or NVMe storage, meaning all storage requirements must be met through network-attached volumes. Network connectivity is supported by a baseline bandwidth of 16 Gbps.",
+    "Benchmark data shows a contrast between single-core and multi-core performance. Single-core CPU performance is weak, as reflected in stress-ng and single-threaded compression tests. However, multi-core performance is average, with a stress-ng multi-core score of 35,520.27 and a multi-threaded bzip3 decompression speed of 147.7 GB/sec. Memory bandwidth is stable, with large block reads at 98.85 GB/sec and writes at 47.39 GB/sec. Redis SET operations reach 33.18 million operations per second.",
+    "Given its hardware profile, this instance offers qualitative cost efficiency for workloads that can fully exploit its four GPUs and large memory capacity. It is not cost-effective for CPU-bound or single-threaded tasks. Recommended workloads include deep learning training, parallel scientific simulations, and GPU-accelerated rendering."
   ],
-  "description": "Alibaba Cloud ecs.gn6e-c12g1.12xlarge is a GPU-accelerated server instance featuring 48 dedicated Intel Xeon 8163 physical cores on an x86_64 architecture, running at 2.5 GHz. It is equipped with 368.0 GB of RAM and four NVIDIA Volta V100 GPUs providing a total of 128 GB of VRAM. The instance does not include local storage and offers a baseline network bandwidth of 16 Gbps. Benchmark data reveals average multi-core CPU performance and memory bandwidth, contrasted with weak single-core performance. Qualitatively, the instance offers high resource density for parallel computing, trading off single-threaded speed for GPU-driven acceleration. It is best suited for deep learning, parallel scientific workloads, and memory-intensive applications.",
-  "og_description": "Alibaba Cloud ecs.gn6e-c12g1.12xlarge is a GPU-accelerated instance with 48 Intel Xeon cores, 368 GB RAM, and four NVIDIA V100 GPUs, designed for parallel computing and deep learning workloads.",
-  "meta_description": "Alibaba Cloud ecs.gn6e-c12g1.12xlarge features 48 Intel Xeon cores, 368 GB RAM, and four NVIDIA V100 GPUs for GPU-accelerated parallel workloads.",
-  "tagline": "A quad-GPU accelerated platform featuring dedicated Intel Xeon processors and high memory capacity for parallelized, compute-intensive workloads.",
+  "description": "Alibaba Cloud ecs.gn6e-c12g1.12xlarge is a GPU-accelerated instance powered by an Intel Xeon 8163 processor with 48 dedicated physical cores and 368.0 GB of RAM. It features four NVIDIA Volta V100 GPUs with a total of 128 GB of VRAM, while lacking local storage. Network performance is rated at 16 Gbps baseline. Benchmarks reveal weak single-core CPU performance but average multi-core capabilities, including a stress-ng multi-core score of 35,520.27 and 33.18 million Redis SET operations per second. This instance is optimized for parallel computing, making it suitable for deep learning and scientific simulations.",
+  "og_description": "Alibaba Cloud ecs.gn6e-c12g1.12xlarge is a GPU-accelerated server featuring 48 Intel Xeon cores, 368 GB RAM, and four NVIDIA Volta V100 GPUs with 128 GB VRAM, optimized for parallel computing.",
+  "meta_description": "Alibaba Cloud ecs.gn6e-c12g1.12xlarge features 48 Intel Xeon cores, 368 GB RAM, and four NVIDIA V100 GPUs for parallel and GPU-accelerated workloads.",
+  "tagline": "A GPU-accelerated platform featuring four NVIDIA Volta V100 GPUs and 368 GB RAM for parallel computing and deep learning workloads.",
   "bullet_points": [
-    "Four NVIDIA Volta V100 GPUs providing 128 GB of total VRAM.",
-    "48 dedicated Intel Xeon 8163 physical cores running at 2.5 GHz.",
-    "368.0 GB of system memory with 7.67 GB per core.",
-    "16 Gbps baseline network bandwidth with no local storage.",
-    "Average multi-core performance but weak single-threaded execution.",
-    "Optimized for deep learning, parallel computing, and memory-intensive tasks."
+    "Four NVIDIA Volta V100 GPUs providing 128 GB of total VRAM",
+    "48 dedicated Intel Xeon physical cores running at 2.5 GHz",
+    "368.0 GB of system memory with 16 Gbps baseline network bandwidth",
+    "No local storage included, requiring network-attached storage",
+    "Best-fit workloads include deep learning training and parallel simulations"
   ],
   "categories": [
     "GPU Accelerated",
-    "Memory Optimized",
-    "Compute Optimized"
+    "Memory Optimized"
   ]
 }
