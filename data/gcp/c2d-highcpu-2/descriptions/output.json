@@ -1,22 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform c2d-highcpu-2 is an x86_64 architecture server powered by an AMD EPYC 7B13 processor. It features 2 dedicated vCPUs derived from 1 physical core with 2 threads per core. The instance is configured with 4.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per core. It does not include local storage or bundled GPU accelerators, and comes with zero complimentary public IPv4 addresses.",
-    "Benchmark data reveals a stark contrast between single-core and multi-core performance. The single-core CPU performance via stress-ng is strong, ranking in the top 25% with a score of 2921.98. However, multi-core performance is weak, scoring 2926.09 in stress-ng and 2013.0 in Geekbench. Memory performance is a notable bottleneck; the Passmark memory score and small-block read-only memory bandwidth of 136.6 GB/sec both rank in the bottom 10%. Similarly, database operations and Redis SET operations fall into the bottom 10% performance tier.",
-    "Given the low memory allocation of 4.0 GB and poor memory bandwidth, this server is not suited for memory-intensive applications or heavy database workloads. However, its dedicated CPU allocation and average single-threaded performance make it a cost-efficient option for lightweight, compute-bound tasks that do not require large memory footprints. Appropriate workloads include basic single-threaded processing, lightweight web serving, and small-scale background workers."
+    "Google Cloud Platform c2d-highcpu-2 is a compute-optimized virtual machine instance powered by an AMD EPYC 7B13 processor using the x86_64 architecture. It features 2 vCPUs mapped to 1 physical core with 2 threads per core, utilizing dedicated CPU allocation. The instance is configured with 4.0 GB of system memory, providing a resource density of 2.0 GB per core. It does not include local storage or bundled GPUs, and has zero complimentary public IPv4 addresses.",
+    "Performance benchmarks indicate strong single-core CPU capabilities, with stress-ng single-core performance ranking in the top 25%. However, multi-core scaling is limited, as evidenced by a weak multi-core stress-ng score in the bottom 25% and a weak Geekbench multi-core score. Memory performance is a notable bottleneck; the instance registers poor memory bandwidth for small cached blocks and weak bandwidth for large uncached blocks, leading to a poor PassMark memory score.",
+    "The hardware profile is optimized for workloads requiring dedicated CPU resources but minimal memory footprint. While single-threaded tasks like gzip compression and bzip3 decompression perform at average levels, database operations and Redis SET operations show poor throughput. This instance is qualitatively cost-efficient for lightweight compute-bound tasks, single-threaded processing, and basic web serving, but is poorly suited for memory-intensive databases, software compilation, or complex multi-threaded workloads."
   ],
-  "description": "Google Cloud Platform c2d-highcpu-2 is an x86_64 compute-optimized server featuring 2 dedicated vCPUs from a single physical AMD EPYC 7B13 core and 4.0 GB of RAM. It lacks local storage and GPU accelerators. Performance benchmarks show a strong single-core CPU capability, ranking in the top 25% on stress-ng, but multi-core performance and memory bandwidth are weak, with memory read-only bandwidth and database operations scoring in the bottom 10%. The 1:2 vCPU-to-RAM ratio makes this instance a cost-efficient choice for lightweight, compute-bound tasks that do not demand high memory capacity. It is best suited for single-threaded processing, basic text processing, and lightweight web serving. The server also features cryptographic acceleration via AES and SHA-NI flags, supporting secure operations despite its modest hardware footprint.",
-  "og_description": "Google Cloud Platform c2d-highcpu-2 is an x86_64 compute-optimized server featuring 2 dedicated AMD EPYC vCPUs and 4 GB of RAM, delivering strong single-core performance alongside highly constrained memory bandwidth.",
-  "meta_description": "Google Cloud Platform c2d-highcpu-2 features 2 dedicated AMD EPYC vCPUs and 4 GB RAM, optimized for lightweight, compute-bound workloads.",
-  "tagline": "A dedicated dual-vCPU compute instance delivering strong single-core performance and efficient processing for memory-light, single-threaded workloads and lightweight web serving.",
+  "description": "Google Cloud Platform c2d-highcpu-2 is an x86_64 compute-optimized virtual machine featuring 2 dedicated vCPUs powered by an AMD EPYC 7B13 processor, paired with 4.0 GB of RAM. This instance does not include local storage or GPU accelerators, focusing resources entirely on CPU-bound tasks. Benchmark results indicate strong single-core CPU performance, with stress-ng single-core metrics placing in the top 25%. However, multi-core scaling and memory bandwidth are limited, as shown by lower scores in multi-threaded benchmarks and memory tests. The instance is qualitatively cost-efficient for workloads that require dedicated CPU allocation but have low memory demands. It is best suited for single-threaded processing, lightweight web serving, and basic computational tasks.",
+  "og_description": "Google Cloud Platform c2d-highcpu-2 is an x86_64 compute-optimized instance featuring 2 dedicated AMD EPYC vCPUs and 4 GB of RAM. It delivers strong single-core performance with a compact memory footprint.",
+  "meta_description": "Google Cloud Platform c2d-highcpu-2 is an x86_64 compute-optimized instance featuring 2 dedicated AMD EPYC vCPUs, 4 GB of RAM, and no local storage.",
+  "tagline": "A dedicated dual-vCPU compute instance featuring strong single-core performance and a compact memory footprint for lightweight workloads.",
   "bullet_points": [
     "Powered by an AMD EPYC 7B13 processor with 2 dedicated vCPUs",
-    "Configured with 4.0 GB of system memory and no local storage",
-    "Strong single-core CPU performance ranking in the top 25%",
-    "Constrained memory bandwidth and database performance in the bottom 10%",
-    "Best suited for lightweight web serving and single-threaded processing"
+    "Configured with 4.0 GB of RAM and no local storage",
+    "Strong single-core CPU performance in the top 25%",
+    "Limited multi-core scaling and memory bandwidth",
+    "Best suited for single-threaded tasks and lightweight web serving"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

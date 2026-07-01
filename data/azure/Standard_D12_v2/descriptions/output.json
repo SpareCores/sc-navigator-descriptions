@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure D12_v2 is a virtual machine instance belonging to the Dv2-series, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated physical cores and 4 vCPUs powered by an Intel Xeon E5-2673 v4 processor operating at 2.3 GHz. The x86_64 architecture is supported by a CPU cache configuration consisting of 32 KB L1d, 0.25 MB L2, and a large 50 MB L3 cache. The instance is equipped with 28.0 GB of system memory, yielding 7.0 GB of RAM per core. Additionally, it includes 205 GB of local storage, while lacking any integrated GPU hardware.",
-    "Benchmark evaluations indicate that the D12_v2 exhibits modest processing capabilities. In CPU-intensive workloads, the instance scored 778.1 on stress-ng single-core and 3052.17 on multi-core tests, placing its raw compute performance in the lower percentiles. Memory bandwidth tests show a read-only small block cached speed of 260.62 GB/sec and a large block uncached speed of 35.99 GB/sec, both categorized as weak. However, the large block write bandwidth of 29.34 GB/sec and small-model LLM inference speeds, such as 399.48 tokens/sec for prompt processing and 87.48 tokens/sec for text generation with a 135M model, achieve average tier performance.",
-    "From a cost-efficiency perspective, the D12_v2 offers a high memory-to-vCPU ratio of 1:7 alongside bundled local storage, which provides reasonable resource density for legacy enterprise workloads. However, the aging Intel Xeon architecture presents a performance tradeoff, as demonstrated by poor single-threaded compression and weak database operation scores. Consequently, this instance is best suited for general-purpose workloads, moderate web serving, and lightweight database operations that require more memory than raw compute power, rather than high-performance computing or intensive data processing."
+    "Microsoft Azure D12_v2 is a Dv2-series virtual machine configured with 4 dedicated vCPUs powered by an Intel Xeon E5-2673 v4 processor running at 2.3 GHz. Built on the x86_64 architecture and managed via Microsoft Hyper-V, this instance features 4 physical cores with a single thread per core. It is equipped with 28.0 GB of system memory, providing a high memory-to-core ratio of 7.0 GB per vCPU, alongside 205 GB of local storage.",
+    "Benchmark data indicates that the D12_v2 exhibits limited processing capabilities. In stress-ng and Geekbench single-core testing, the instance scores in the bottom 10%, while multi-core performance falls into the bottom 25%. Memory bandwidth tests show weak read performance for both small and large blocks, though large block write bandwidth achieves an average rating. Cryptographic and compression workloads, such as gzip and bzip3 decompression, consistently rank in the lower percentiles.",
+    "The primary tradeoff of the D12_v2 is its older hardware generation, which results in lower computational efficiency compared to modern architectures. However, the generous memory allocation of 28.0 GB relative to its 4 vCPUs offers qualitative cost efficiency for memory-bound workloads that do not require high CPU throughput. This profile is suitable for legacy enterprise applications, lightweight database operations, basic web serving, and small-scale memory-intensive tasks."
   ],
-  "description": "Microsoft Azure D12_v2 is a Dv2-series virtual machine configured with 4 dedicated vCPUs on an Intel Xeon E5-2673 v4 processor running at 2.3 GHz. It features 28.0 GB of RAM, providing a high memory-to-core ratio of 7.0 GB per core, and includes 205 GB of local storage. Operating on the Microsoft Hyper-V hypervisor, this x86_64 instance delivers modest performance, with benchmarks showing weak to poor results in raw CPU compute, single-threaded decompression, and database operations. However, it maintains average performance in large-block memory write bandwidth and small-model LLM inference. Given its high memory density relative to its processing power, the D12_v2 is qualitatively cost-effective for legacy enterprise applications, moderate web serving, and general-purpose workloads that prioritize memory capacity over high-performance compute capabilities.",
-  "og_description": "Microsoft Azure D12_v2 is a Dv2-series virtual machine featuring 4 dedicated Intel Xeon vCPUs, 28 GB of RAM, and 205 GB of local storage, offering a high memory-to-core ratio for general-purpose enterprise workloads.",
-  "meta_description": "Microsoft Azure D12_v2 is a Dv2-series VM with 4 Intel Xeon vCPUs, 28 GB RAM, and 205 GB local storage, suited for memory-leaning general workloads.",
-  "tagline": "A dedicated four-core virtual machine featuring high memory density and local storage for balanced general-purpose and legacy enterprise workloads.",
+  "description": "Microsoft Azure D12_v2 is a Dv2-series virtual machine featuring 4 dedicated vCPUs powered by an Intel Xeon E5-2673 v4 processor running at 2.3 GHz. Utilizing the x86_64 architecture under Microsoft Hyper-V, the instance provides 28.0 GB of RAM and 205 GB of local storage. Performance benchmarks indicate that the server resides in the lower tiers for computational speed, with single-core and multi-core processing scores falling into the bottom 10% and 25% respectively. Memory read bandwidth is similarly constrained, though large block write bandwidth remains average. Given its high memory-to-vCPU ratio paired with modest CPU performance, the D12_v2 is best suited for memory-bound workloads with low CPU demands, such as small databases, basic web serving, and legacy enterprise applications.",
+  "og_description": "Microsoft Azure D12_v2 is a Dv2-series virtual machine with 4 Intel Xeon vCPUs, 28 GB of RAM, and 205 GB of local storage, offering a high memory-to-core ratio for legacy and memory-bound workloads.",
+  "meta_description": "Microsoft Azure D12_v2 features 4 Intel Xeon vCPUs, 28 GB of RAM, and 205 GB of local storage, designed for memory-bound legacy workloads.",
+  "tagline": "An x86 virtual machine featuring a high memory-to-vCPU ratio and integrated local storage for memory-bound legacy workloads.",
   "bullet_points": [
-    "4 dedicated Intel Xeon E5-2673 v4 vCPUs running at 2.3 GHz",
-    "28.0 GB of system memory providing 7.0 GB of RAM per core",
-    "205 GB of bundled local storage for temporary data needs",
-    "Average performance in large-block memory writes and small LLM inference",
-    "Best suited for general-purpose applications and moderate web serving"
+    "Features 4 dedicated Intel Xeon E5-2673 v4 vCPUs at 2.3 GHz",
+    "Equipped with 28.0 GB of RAM and 205 GB of local storage",
+    "High memory-to-core ratio of 7.0 GB per vCPU",
+    "Exhibits lower-tier CPU and memory read benchmark performance",
+    "Suited for legacy enterprise applications and small databases"
   ],
   "categories": [
-    "General Purpose",
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

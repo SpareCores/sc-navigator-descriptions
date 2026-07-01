@@ -1,22 +1,24 @@
 {
   "page": [
-    "Amazon Web Services x2iedn.32xlarge is a memory-optimized server instance powered by the Nitro hypervisor. It features 128 vCPUs across 64 physical cores with 2.0 threads per core, utilizing dedicated Intel Xeon 8375C processors running at 3.5 GHz. The x86_64 architecture is supported by 4096.0 GB of DDR4 memory operating at 3 GHz, which translates to 32.0 GB of memory per physical core. Local storage is provided via a 3800 GB NVMe SSD instance store volume, and the baseline network bandwidth is rated at 100 Gbps.",
-    "Benchmark data indicates strong multi-core and memory performance. The instance achieves a top-tier PassMark CPU score of 85629.49, with notable strengths in encryption and extended instructions. Multi-core performance is robust, as evidenced by a stress-ng multi-core score of 123925.38 and a Geekbench multi-core score of 16209.0. Memory bandwidth is also highly rated, reaching 302.32 GB/sec for large block read-only operations and 122.18 GB/sec for large block write operations. Database operations are highly efficient, with Redis SET operations reaching 106.84 million operations per second.",
-    "Despite its massive memory footprint and strong multi-core compute capabilities, single-core performance remains in the average tier, with a Geekbench single-core score of 1690.0. Additionally, while prompt processing for small and medium LLM models is strong, text generation for large 70B models is weak, yielding only 2.76 tokens per second due to the lack of dedicated GPU hardware. Given these characteristics, the x2iedn.32xlarge is highly suited for memory-intensive workloads, large-scale databases, enterprise applications, and high-throughput data processing, rather than GPU-dependent machine learning training or heavy single-threaded tasks."
+    "Amazon Web Services x2iedn.32xlarge is a memory-optimized server powered by the Intel Xeon 8375C processor. It features 128 virtual CPUs representing 64 physical cores with a dedicated allocation running at 3.5 GHz on the x86_64 architecture. The hardware configuration includes 4096 GB of DDR4 memory operating at 3 GHz, providing 32 GB of RAM per core. Local storage is provided by 3800 GB of NVMe SSD instance store volumes, and the system operates on the Nitro hypervisor with a baseline network bandwidth of 100 Gbps.",
+    "In benchmark testing, the x2iedn.32xlarge demonstrates strong multi-core capabilities, achieving top-tier results in Passmark CPU and encryption tests, as well as Geekbench ray tracing. Memory bandwidth is highly efficient, with read-only small and large block operations scoring in the top 25 percent. Redis SET operations and static web serving throughput are also strong. However, without dedicated GPU acceleration, large-scale LLM text generation performance remains weak, as shown by the bottom 25 percent score for 70B model text generation.",
+    "Given its massive memory-to-CPU ratio and high-speed local NVMe storage, this instance offers high resource density for memory-bound enterprise applications. It is qualitatively cost-efficient for workloads that require caching massive datasets in memory rather than relying on slower external storage. The server is highly suited for large-scale in-memory databases, high-throughput Redis deployments, heavy database operations, and memory-intensive enterprise applications."
   ],
-  "description": "Amazon Web Services x2iedn.32xlarge is a memory-optimized instance designed for resource-intensive enterprise workloads. Running on the Nitro hypervisor, it features 128 vCPUs powered by Intel Xeon 8375C processors at 3.5 GHz, paired with 4096.0 GB of DDR4 memory and a 3800 GB local NVMe SSD. The instance delivers strong multi-core performance, with a PassMark CPU score of 85629.49 and high memory read bandwidth of 302.32 GB/sec. It also features 100 Gbps baseline network bandwidth. While single-core performance and large-scale LLM text generation are limited, its massive memory-to-vCPU ratio and high-speed local storage make it highly efficient for large-scale databases, in-memory caching, and complex data processing.",
-  "og_description": "Amazon Web Services x2iedn.32xlarge is a memory-optimized instance featuring 128 vCPUs, 4096 GB DDR4 RAM, and 3800 GB NVMe SSD storage, designed for large databases and memory-intensive workloads.",
-  "meta_description": "Amazon Web Services x2iedn.32xlarge is a memory-optimized instance with 128 vCPUs, 4 TB DDR4 RAM, and 3.8 TB NVMe SSD local storage.",
-  "tagline": "A high-capacity memory-optimized platform featuring four terabytes of RAM and fast local NVMe storage for demanding database workloads.",
+  "description": "Amazon Web Services x2iedn.32xlarge is a memory-optimized server designed for memory-intensive enterprise workloads. Powered by an Intel Xeon 8375C processor with 128 vCPUs running at 3.5 GHz, it features 4096 GB of DDR4 RAM and 3800 GB of local NVMe SSD storage. Operating on the Nitro hypervisor, the instance delivers a baseline network bandwidth of 100 Gbps. Benchmark results show top-tier performance in Passmark CPU and encryption tests, alongside strong memory bandwidth and Redis throughput. However, the lack of hardware accelerators limits its efficiency for large-scale LLM text generation. This server is highly suited for in-memory databases, large-scale Redis deployments, and data-intensive enterprise applications requiring massive memory capacity and high-speed local storage.",
+  "og_description": "Amazon Web Services x2iedn.32xlarge is a memory-optimized server featuring 128 vCPUs, 4096 GB of DDR4 RAM, 3800 GB of local NVMe SSD storage, and 100 Gbps network bandwidth for enterprise databases.",
+  "meta_description": "Amazon Web Services x2iedn.32xlarge is a memory-optimized server with 128 vCPUs, 4 TB of DDR4 RAM, and 3.8 TB of local NVMe SSD storage.",
+  "tagline": "A high-density memory-optimized server with local NVMe storage and high-speed networking for massive in-memory databases and enterprise workloads.",
   "bullet_points": [
     "128 vCPUs powered by Intel Xeon 8375C processors at 3.5 GHz",
-    "4096 GB of DDR4 memory providing 32 GB per physical core",
+    "4096 GB of DDR4 memory providing 32 GB of RAM per core",
     "3800 GB of high-speed local NVMe SSD storage",
-    "100 Gbps baseline network bandwidth for high-throughput data transfer",
-    "Optimized for large-scale databases, in-memory caching, and data processing"
+    "100 Gbps baseline network bandwidth on the Nitro hypervisor",
+    "Top-tier performance in CPU encryption and memory bandwidth benchmarks",
+    "Optimized for in-memory databases, Redis, and heavy database operations"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

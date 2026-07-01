@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure DS15_v2 is a virtual machine instance belonging to the DSv2 family, running on the Microsoft Hyper-V hypervisor. It features 20 dedicated physical cores of an Intel Xeon 8370C x86_64 processor clocked at 2.8 GHz, with 1 thread per core. The memory configuration provides 140.0 GB of RAM, yielding 7.0 GB per core. Local storage is bundled with a capacity of 287 GB, and there are no GPUs or complimentary public IPv4 addresses included.",
-    "Benchmark data reveals a contrast between single-core and multi-core capabilities. Single-core performance is weak, as evidenced by stress-ng single-core CPU performance, gzip compression, and bzip3 decompression scores falling into the bottom 25%. Conversely, multi-core and memory-bound operations perform in the average tier. This includes stress-ng multi-core CPU performance, Geekbench multi-core scores, and Passmark database operations. Memory bandwidth tests for both small and large blocks also register in the middle 50%, alongside Redis SET operations which reach 29.2 million operations per second.",
-    "The qualitative cost efficiency of the DS15_v2 is defined by its high memory-to-vCPU ratio of 7.0 GB per core, making it a viable option for memory-intensive workloads that do not require top-tier single-threaded compute speeds. Tradeoffs include lower single-core efficiency and limited large-model LLM inference capabilities, with large-model prompt processing scoring in the bottom 25%. This instance is suited for multi-threaded applications, database operations, static web serving, and software compilation."
+    "Microsoft Azure DS15_v2 is a virtual machine instance belonging to the DSv2 family, powered by the Microsoft Hyper-V hypervisor. It features an x86_64 architecture with 20 dedicated physical cores and 20 vCPUs utilizing an Intel Xeon 8370C processor running at 2.8 GHz. The hardware configuration includes 140.0 GB of system memory, yielding 7.0 GB of RAM per core, alongside 287 GB of local storage. The processor is equipped with 48 MB of L3 cache and supports AVX, AVX512F, and AES instruction sets.",
+    "Performance benchmarks indicate that the DS15_v2 delivers average multi-core capabilities, as evidenced by a stress-ng multi-core CPU score of 25026.63 and a Geekbench multi-core score of 10945.0. Single-core performance is relatively weak, with stress-ng single-core scoring 1245.99 and single-threaded gzip compression reaching 20.76 GB/sec. Memory bandwidth is solid, measuring 1506.02 GB/sec for cached small-block reads and 156.51 GB/sec for uncached large-block reads. Database operations and web serving are stable, with Redis SET operations handling 29.2 million operations per second and static web serving throughput reaching 26.14 GB/sec.",
+    "The primary tradeoff of this instance lies in its single-threaded processing and text generation speeds, which fall into the lower performance tier, making it less suitable for latency-sensitive single-core tasks or real-time LLM text generation. However, its balanced memory-to-vCPU ratio and dedicated core allocation make it qualitatively cost-efficient for multi-threaded workloads. This server is best suited for general-purpose enterprise applications, relational databases, software compilation, and moderate-scale web serving."
   ],
-  "description": "Microsoft Azure DS15_v2 is an x86_64 virtual machine from the DSv2 family, powered by a 2.8 GHz Intel Xeon 8370C processor with 20 dedicated physical cores and 1 thread per core. It features 140.0 GB of RAM, providing a high memory-to-core ratio of 7.0 GB, alongside 287 GB of bundled local storage. While single-core benchmarks\u2014such as stress-ng single-core and single-threaded decompression\u2014fall into the bottom 25% tier, multi-core and memory performance occupy the middle 50% tier. This average performance is reflected in multi-threaded bzip3 decompression, Geekbench multi-core, and Passmark database operations. Lacking GPU acceleration, the instance is qualitatively cost-efficient for memory-heavy, multi-threaded workloads rather than single-threaded or heavy AI inference tasks. It is suited for database operations, static web serving, and software compilation.",
-  "og_description": "Microsoft Azure DS15_v2 is a DSv2-family virtual machine featuring 20 dedicated Intel Xeon cores, 140 GB of RAM, and 287 GB of local storage, suited for memory-intensive multi-threaded workloads.",
-  "meta_description": "Microsoft Azure DS15_v2 is a DSv2-family VM with 20 dedicated Intel Xeon cores, 140 GB RAM, and 287 GB local storage for multi-threaded workloads.",
-  "tagline": "A dedicated twenty-core x86_64 virtual machine featuring high memory density and bundled local storage for balanced multi-threaded workloads.",
+  "description": "Microsoft Azure DS15_v2 is a DSv2-family virtual machine configured with 20 dedicated vCPUs and 20 physical cores on an Intel Xeon 8370C processor running at 2.8 GHz. It features 140.0 GB of RAM (7.0 GB per core) and 287 GB of local storage. Operating on the Microsoft Hyper-V hypervisor, this x86_64 instance delivers average multi-core performance, highlighted by a Geekbench multi-core score of 10945.0 and a Redis SET throughput of 29.2 million operations per second. While single-threaded performance and LLM text generation speeds are relatively weak, its memory capacity and dedicated CPU allocation provide stable resource density. The DS15_v2 is well-suited for database operations, multi-threaded software compilation, and general-purpose enterprise workloads.",
+  "og_description": "Microsoft Azure DS15_v2 is a DSv2-family virtual machine featuring 20 dedicated Intel Xeon vCPUs, 140 GB of RAM, and 287 GB of local storage, optimized for database and multi-threaded workloads.",
+  "meta_description": "Microsoft Azure DS15_v2 is an x86_64 virtual machine with 20 dedicated Intel Xeon vCPUs, 140 GB of RAM, and 287 GB of local storage.",
+  "tagline": "A dedicated twenty-core x86_64 virtual machine featuring balanced memory capacity and local storage for multi-threaded enterprise workloads.",
   "bullet_points": [
-    "20 dedicated Intel Xeon 8370C physical cores running at 2.8 GHz",
-    "140.0 GB of RAM providing a high 7.0 GB per core ratio",
-    "287 GB of bundled local storage with no integrated GPUs",
-    "Average multi-core performance and memory bandwidth",
-    "Weak single-core CPU and single-threaded compression performance",
-    "Suited for database operations, web serving, and multi-threaded applications"
+    "20 dedicated Intel Xeon 8370C vCPUs running at 2.8 GHz",
+    "140.0 GB of system memory and 287 GB of local storage",
+    "Average multi-core performance with 10945.0 Geekbench score",
+    "Weak single-threaded execution and LLM text generation speeds",
+    "Suited for database operations, software compilation, and web serving"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

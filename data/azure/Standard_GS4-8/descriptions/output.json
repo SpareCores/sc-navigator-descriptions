@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure GS4-8 is a memory-optimized virtual machine running on the Microsoft Hyper-V hypervisor. It features an Intel Xeon E5-2698B v3 processor with 8 dedicated physical cores and 8 vCPUs operating at a clock speed of 2.0 GHz. The x86_64 architecture includes 40 MB of L3 cache, 32 KB of L1d cache, and 0.25 MB of L2 cache. The system is equipped with 224.0 GB of system memory, yielding a high resource density of 28.0 GB of RAM per core. Local storage consists of a 459 GB drive, and there are no bundled GPUs or complimentary public IPv4 addresses.",
-    "Benchmark data reveals distinct performance tradeoffs. Single-core CPU performance is limited, with stress-ng single-core and Geekbench single-core scores falling into the bottom 10% tier. Multi-core performance is also constrained, with a Geekbench multi-core score of 3433.0 and a passmark CPU score of 6589.06, both placing in the bottom 25%. However, memory subsystem performance is mixed; while large-block uncached read and write bandwidths are weak to poor, cached small-block read-only memory bandwidth reaches an average tier at 454.13 GB/sec. Database operations and Redis SET operations at 6.85 million operations per second also perform at an average level, alongside average multi-threaded bzip3 decompression and small-model LLM text generation.",
-    "From a qualitative cost-efficiency perspective, the GS4-8 offers a high memory-to-vCPU ratio, making it suitable for memory-bound workloads that do not require intense computational throughput. The high RAM density offsets the lower CPU performance for specific memory-resident tasks. Tradeoffs include weak cryptographic and compression speeds, as well as low static web serving throughput. This server is best suited for memory-intensive database operations, caching layers such as Redis, and lightweight text or prompt processing tasks that fit entirely within its 224.0 GB memory footprint."
+    "Microsoft Azure GS4-8 is a memory-optimized virtual machine running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by an Intel Xeon E5-2698B v3 processor operating at a base frequency of 2.0 GHz. The configuration provides 8 dedicated physical cores and 8 vCPUs with a 1.0 thread per core ratio, paired with a substantial 224.0 GB of system memory, yielding 28.0 GB of RAM per core. Local storage is bundled with a capacity of 459 GB, and there are no onboard GPUs.",
+    "Benchmark data indicates that the GS4-8 exhibits modest CPU performance, with single-core stress-ng and Geekbench scores falling into the bottom 10% tier, and multi-core performance categorized as weak. Memory performance is mixed; while small-block cached read bandwidth is average at 454.13 GB/sec, large-block uncached write bandwidth is poor at 13.09 GB/sec. However, the system maintains average performance for database operations, Redis SET operations at 6.85 million operations per second, and small-model LLM inference text generation.",
+    "From a cost-efficiency perspective, the GS4-8 offers a high density of memory relative to its compute resources, making it a viable option for memory-intensive workloads that do not require high-frequency CPU performance. The primary tradeoff is the older Intel Xeon v3 architecture, which lacks modern instruction sets like AVX-512 and exhibits weak single-threaded execution speeds.",
+    "This server is best suited for memory-bound applications, including medium-sized databases, caching layers such as Redis, and memory-intensive data processing tasks. It is less appropriate for compute-heavy workloads, compilation, or real-time rendering due to its lower CPU benchmarks."
   ],
-  "description": "Microsoft Azure GS4-8 is an x86_64 memory-optimized virtual machine powered by an Intel Xeon E5-2698B v3 processor. It features 8 dedicated physical cores, 8 vCPUs running at 2.0 GHz, 224.0 GB of RAM, and 459 GB of local storage. Operating on the Microsoft Hyper-V hypervisor, it lacks GPU acceleration. Benchmarks indicate weak single-core and multi-core CPU performance, with stress-ng and Geekbench scores in the lower percentiles. However, it maintains average performance in database operations, Redis SET operations at 6.85 million operations per second, and cached small-block memory bandwidth. The high memory-to-vCPU ratio of 28 GB per core makes it qualitatively cost-efficient for memory-heavy, compute-light workloads. It is best suited for memory-resident databases, caching layers, and basic text processing.",
-  "og_description": "Microsoft Azure GS4-8 is an x86_64 memory-optimized VM featuring an Intel Xeon E5-2698B v3 processor, 8 vCPUs, 224 GB of RAM, and 459 GB of local storage, designed for memory-intensive database workloads.",
-  "meta_description": "Microsoft Azure GS4-8 is an x86_64 memory-optimized VM with 8 Intel Xeon vCPUs, 224 GB of RAM, and 459 GB of local storage for memory-heavy workloads.",
-  "tagline": "A memory-heavy virtual machine featuring high RAM-to-core density and local storage for memory-resident databases and caching workloads.",
+  "description": "Microsoft Azure GS4-8 is an x86_64 memory-optimized server instance powered by an Intel Xeon E5-2698B v3 processor running at 2.0 GHz. It features 8 dedicated physical cores and a substantial 224.0 GB of RAM, translating to 28.0 GB of memory per core, alongside 459 GB of local storage. Operating under the Microsoft Hyper-V hypervisor, the instance lacks GPU acceleration. Benchmark results show poor single-core and weak multi-core CPU performance, though it maintains average throughput for database operations and Redis SET actions. This hardware profile presents a clear tradeoff: high memory density paired with older, slower compute capabilities. Consequently, the GS4-8 is best suited for memory-intensive workloads, caching layers, and database operations that do not demand high-frequency CPU processing.",
+  "og_description": "Microsoft Azure GS4-8 is an x86_64 memory-optimized server featuring 8 Intel Xeon vCPUs, 224 GB of RAM, and 459 GB of local storage, designed for memory-intensive database and caching workloads.",
+  "meta_description": "Microsoft Azure GS4-8 is an x86_64 memory-optimized server with 8 Intel Xeon vCPUs, 224 GB RAM, and 459 GB local storage for database workloads.",
+  "tagline": "A memory-dense virtual server featuring 224 GB of RAM and local storage, optimized for caching and memory-bound database workloads.",
   "bullet_points": [
-    "Intel Xeon E5-2698B v3 processor with 8 dedicated physical cores and 8 vCPUs.",
-    "High memory density of 224.0 GB RAM, providing 28.0 GB per core.",
-    "Includes 459 GB of local storage with no bundled GPU.",
-    "Average performance in database operations and Redis SET operations.",
-    "Weak single-core and multi-core computational benchmark results.",
-    "Best suited for memory-resident databases, caching layers, and lightweight text processing."
+    "Intel Xeon E5-2698B v3 processor with 8 dedicated vCPUs",
+    "High memory density of 224.0 GB RAM yielding 28.0 GB per core",
+    "Includes 459 GB of local storage with no GPU acceleration",
+    "Average performance in database and Redis SET operations",
+    "Best suited for memory-bound applications and caching layers"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

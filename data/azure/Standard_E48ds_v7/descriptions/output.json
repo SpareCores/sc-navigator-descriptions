@@ -1,23 +1,25 @@
 {
   "page": [
-    "Microsoft Azure E48ds_v7 is an Edsv7-family virtual machine running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated Intel Xeon 6973P-C processor with 48 vCPUs, 24 physical cores, and a clock speed of 4.2 GHz. The processor includes a 480 MB L3 cache and supports advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions (AMX) for accelerated vector and matrix operations.",
-    "The instance is equipped with 384.0 GB of RAM, yielding a high memory-to-vCPU ratio of 8.0 GB per core, which classifies it as a memory-optimized configuration. It includes 2835 GB of local storage and is Premium Storage capable. This resource density provides a balanced profile for memory-intensive workloads, offering high qualitative cost efficiency by consolidating large databases and enterprise applications onto a single node without requiring external storage overhead.",
-    "Benchmark results indicate strong performance in memory bandwidth for small cached blocks (3532.63 GB/sec) and top-tier single-threaded gzip compression (35.53 GB/sec). Multi-threaded bzip3 decompression and Passmark CPU scores are also strong, alongside high throughput in Redis SET operations (76.28 million operations/sec) and static web serving (61.11 GB/sec). While LLM prompt processing is strong for small and medium models, text generation for large 70B models is weak. This profile makes the server highly suitable for relational databases, in-memory caching layers like Redis, data compression pipelines, and general enterprise workloads."
+    "Microsoft Azure E48ds_v7 is an Edsv7-family virtual machine configured with 48 vCPUs and 384.0 GB of RAM, yielding a memory-to-vCPU ratio of 8.0 GB per core. It is powered by a dedicated Intel Xeon 6973P-C processor operating at 4.2 GHz on the x86_64 architecture, featuring 24 physical cores with hyper-threading enabled. The processor includes a 480 MB L3 cache and supports advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions (AMX) for tile and 8-bit integer operations.",
+    "This server includes 2835 GB of local storage and is capable of utilizing Premium Storage. In memory benchmarks, the system achieves a read-only cached small-block memory bandwidth of 3532.63 GB/sec, while large-block uncached read and write bandwidths reach 162.68 GB/sec and 66.17 GB/sec respectively. These metrics place its memory performance in the average tier.",
+    "Computational evaluations show strong performance in specific workloads, with a PassMark CPU score of 64146.76 and a single-threaded gzip compression rate of 35.53 GB/sec, placing it in the top 10% of tested servers. Multi-threaded bzip3 decompression reaches 272.18 GB/sec, categorized as strong. However, the system exhibits a clear tradeoff in large-scale machine learning tasks; while prompt processing for a 7B LLM model is strong at 214.51 tokens/sec, text generation for a 70B model drops to a weak 2.64 tokens/sec due to the lack of dedicated GPU hardware.",
+    "With its high memory density and local storage capacity, the E48ds_v7 offers qualitative cost efficiency for memory-intensive workloads that do not require GPU acceleration. It is suited for relational databases, in-memory caching systems like Redis\u2014where it processes 76.28 million SET operations per second\u2014and static web serving at 61.11 GB/sec."
   ],
-  "description": "Microsoft Azure E48ds_v7 is a memory-optimized virtual machine from the Edsv7 family, running on the Microsoft Hyper-V hypervisor. It features a dedicated Intel Xeon 6973P-C processor with 48 vCPUs, 24 physical cores, and a 4.2 GHz clock speed, backed by a 480 MB L3 cache. The server is configured with 384.0 GB of RAM (8.0 GB per core) and 2835 GB of local storage, with Premium Storage capability. Performance benchmarks show top-tier single-threaded gzip compression and strong results in small-block memory bandwidth, Passmark CPU tests, and Redis SET operations. However, LLM text generation for large models remains a performance bottleneck. This hardware profile is highly suited for memory-intensive applications, relational databases, in-memory caching, and data processing workloads.",
-  "og_description": "Microsoft Azure E48ds_v7 is a memory-optimized virtual machine featuring 48 vCPUs, 384 GB RAM, and 2835 GB of local storage, designed for database and memory-intensive enterprise workloads.",
-  "meta_description": "Microsoft Azure E48ds_v7 is a memory-optimized VM with 48 vCPUs, 384 GB RAM, and 2835 GB local storage, built for databases and caching.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated Intel Xeon processors, high-speed local storage, and strong database and caching performance.",
+  "description": "Microsoft Azure E48ds_v7 is an Edsv7-family virtual machine featuring 48 vCPUs and 384.0 GB of RAM, powered by a dedicated 4.2 GHz Intel Xeon 6973P-C processor with 24 physical cores. It includes 2835 GB of local storage and supports Premium Storage. The architecture features a 480 MB L3 cache and supports AVX-512 and Intel AMX instructions. Performance benchmarks indicate strong capabilities in database operations, with Redis SET operations reaching 76.28 million per second, and a top-tier single-threaded gzip compression speed of 35.53 GB/sec. However, without a GPU, it exhibits weak performance in large-scale LLM text generation, making it better suited for memory-optimized workloads, in-memory caching, static web serving, and relational databases rather than heavy AI model execution.",
+  "og_description": "Microsoft Azure E48ds_v7 is an Edsv7 virtual machine with 48 vCPUs, 384 GB RAM, and 2835 GB local storage. It features a 4.2 GHz Intel Xeon CPU and delivers strong database and memory-optimized performance.",
+  "meta_description": "Microsoft Azure E48ds_v7 is a memory-optimized VM featuring 48 vCPUs, 384 GB RAM, 2835 GB local storage, and a 4.2 GHz Intel Xeon processor.",
+  "tagline": "A memory-optimized virtual machine featuring dedicated Intel Xeon processing, substantial local storage, and advanced matrix extensions for enterprise workloads.",
   "bullet_points": [
-    "48 vCPUs and 384.0 GB of RAM for memory-intensive applications",
-    "Dedicated Intel Xeon 6973P-C processor running at 4.2 GHz",
+    "48 vCPUs and 384 GB RAM providing a 1:8 memory-to-vCPU ratio",
+    "Dedicated 4.2 GHz Intel Xeon 6973P-C processor with AMX and AVX-512",
     "2835 GB of local storage with Premium Storage capability",
-    "Strong performance in Redis SET operations and small-block memory bandwidth",
-    "Top-tier single-threaded gzip compression speeds",
-    "Best suited for relational databases, in-memory caching, and data pipelines"
+    "Strong database performance with 76.28 million Redis SET operations per second",
+    "Top-tier single-threaded gzip compression at 35.53 GB/sec",
+    "Suited for in-memory caching, relational databases, and static web serving"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

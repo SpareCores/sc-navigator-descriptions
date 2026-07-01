@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure G2 is a G-family virtual machine configured with 4 dedicated vCPUs and 56.0 GB of system memory, yielding a memory-to-vCPU ratio of 14.0 GB per core. The server is powered by an Intel Xeon E5-2698B v3 x86_64 processor running at 2.0 GHz, featuring 4 physical cores with 1.0 thread per core. The CPU cache configuration includes 32 KB of L1d cache, 0.25 MB of L2 cache, and 40 MB of L3 cache. This instance is provisioned via the Microsoft Hyper-V hypervisor and includes 786 GB of bundled local storage. No GPUs are included in this configuration.",
-    "Benchmark evaluations indicate that the G2 instance exhibits limited compute capabilities. The stress-ng single-core CPU performance falls into the bottom 10%, while multi-core CPU performance and Geekbench single-core and multi-core scores reside in the bottom 25%. Memory bandwidth tests, including both small-block cached and large-block uncached read/write operations, consistently rank in the bottom 25%. However, the system achieves average performance in single-threaded gzip compression and PassMark memory testing. For database operations, PassMark database tests and Redis SET operations both place in the bottom 25%, and static web serving throughput is similarly limited. Large language model inference speeds are average for small 135M models but drop to poor or weak tiers for medium 7B models.",
-    "From a cost-efficiency perspective, the G2 instance offers a high memory-to-vCPU ratio and substantial bundled local storage, but its older Intel Xeon processor architecture limits raw compute throughput per resource unit. This trade-off makes the instance less suitable for compute-intensive tasks, high-throughput web serving, or heavy database operations. Instead, the hardware profile is best aligned with memory-intensive workloads that require a large memory footprint and local storage capacity but have low CPU demands, such as caching layers, lightweight memory-bound data processing, or legacy enterprise applications."
+    "Microsoft Azure G2 is a memory-optimized virtual machine from the G family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated physical cores and 4 vCPUs powered by an Intel Xeon E5-2698B v3 x86_64 processor operating at 2.0 GHz. The hardware configuration includes 56.0 GB of system memory, providing a high memory-to-vCPU ratio of 14.0 GB per core. Additionally, the instance is equipped with 786 GB of local storage, while lacking any dedicated GPU accelerators.",
+    "Performance benchmarks indicate that the G2 server is constrained by its older CPU architecture. Single-core and multi-core CPU benchmarks, such as stress-ng and Geekbench, place the processor performance in the bottom 10% to 25% tier. Memory bandwidth tests for both small and large blocks also fall into the bottom 25% category, though the PassMark memory score achieves an average rating. Cryptographic and compression tasks, including AES and gzip, consistently register in the lower performance tier.",
+    "From a qualitative cost-efficiency perspective, the G2 offers a high density of memory and substantial local storage relative to its compute resources, making it suitable for memory-bound workloads that do not require high-frequency CPU performance. However, the tradeoff is lower compute efficiency per vCPU. This configuration is best suited for legacy database hosting, caching layers, basic web serving, or lightweight memory-intensive applications."
   ],
-  "description": "Microsoft Azure G2 is a G-family virtual machine featuring 4 dedicated Intel Xeon E5-2698B v3 vCPUs, 56.0 GB of memory, and 786 GB of bundled local storage. Operating on the Microsoft Hyper-V hypervisor, this x86_64 system provides a high memory-to-vCPU ratio of 14.0 GB per core. Benchmark data indicates limited compute and memory bandwidth capabilities, with stress-ng, Geekbench, and database operations generally scoring in the bottom 25%. However, it maintains average performance in single-threaded gzip compression and PassMark memory tests. Given the high memory capacity relative to its 4 vCPUs, the G2 is aligned with memory-intensive workloads with low CPU demands, such as caching layers, legacy enterprise applications, or lightweight memory-bound data processing.",
-  "og_description": "Microsoft Azure G2 is an x86_64 virtual machine featuring 4 dedicated Intel Xeon vCPUs, 56.0 GB of RAM, and 786 GB of local storage, designed for memory-intensive workloads with low CPU demands.",
-  "meta_description": "Microsoft Azure G2 is an x86_64 virtual machine with 4 dedicated Intel Xeon vCPUs, 56.0 GB of RAM, and 786 GB of bundled local storage.",
-  "tagline": "An x86_64 virtual machine featuring a high memory-to-vCPU ratio and substantial bundled local storage for memory-bound workloads.",
+  "description": "Microsoft Azure G2 is a memory-optimized virtual machine featuring 4 dedicated vCPUs on an Intel Xeon E5-2698B v3 x86_64 processor running at 2.0 GHz. It is equipped with 56.0 GB of RAM, yielding a high ratio of 14.0 GB per core, alongside 786 GB of local storage. Operating on the Microsoft Hyper-V hypervisor, the server lacks GPU acceleration. Benchmark data indicates weak overall CPU and memory bandwidth performance, with most compute-heavy and database operations scoring in the bottom 25%. However, its memory capacity and PassMark memory score remain average, and it achieves moderate performance in small-model LLM inference. This server is qualitatively cost-effective for memory-intensive workloads with low CPU demands, such as caching layers, legacy database hosting, and basic web serving.",
+  "og_description": "Microsoft Azure G2 is a memory-optimized virtual machine featuring 4 Intel Xeon vCPUs, 56 GB of RAM, and 786 GB of local storage, designed for memory-intensive legacy workloads and database hosting.",
+  "meta_description": "Microsoft Azure G2 is a memory-optimized virtual machine featuring 4 Intel Xeon vCPUs, 56 GB of RAM, and 786 GB of local storage for memory-intensive workloads.",
+  "tagline": "A memory-optimized virtual machine featuring generous RAM and local storage for workloads with moderate compute requirements.",
   "bullet_points": [
-    "4 dedicated Intel Xeon E5-2698B v3 physical cores",
+    "Intel Xeon E5-2698B v3 processor with 4 dedicated vCPUs",
     "56.0 GB of system memory providing 14.0 GB per core",
-    "786 GB of bundled local storage capacity",
-    "Average performance in single-threaded gzip compression and PassMark memory tests",
-    "Suited for memory-intensive workloads with low CPU utilization"
+    "786 GB of local storage capacity",
+    "Average performance in memory-bound and small-model LLM inference tasks",
+    "Suited for caching, legacy databases, and memory-heavy workloads"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

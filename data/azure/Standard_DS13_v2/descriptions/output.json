@@ -1,24 +1,22 @@
 {
   "page": [
-    "Microsoft Azure DS13_v2 is a DSv2-family virtual machine configured with 8 dedicated vCPUs and 8 physical cores powered by an Intel Xeon 8272CL x86_64 processor running at 2.6 GHz. The system features 56.0 GB of system memory, providing 7.0 GB of RAM per core. It includes 115 GB of local storage and operates on the Microsoft Hyper-V hypervisor. The processor architecture supports AVX and AVX-512 instruction sets, alongside AES cryptography acceleration, but lacks AVX-512 VNNI and AMX matrix extensions.",
-    "Benchmark data indicates a clear performance divergence between single-core and multi-core operations. Single-core performance is weak, falling into the bottom 25% for stress-ng single-core CPU tests, Geekbench single-core, and single-threaded gzip and bzip3 compression tasks. Conversely, multi-core performance is average, placing in the middle 50% for stress-ng multi-core, Geekbench multi-core, and Passmark CPU tests. Memory bandwidth is consistently average, with cached small-block reads reaching 720.03 GB/sec and uncached large-block reads at 76.69 GB/sec.",
-    "With 56.0 GB of RAM relative to 8 vCPUs, this server offers a high memory-to-vCPU ratio of 7:1, positioning it as a memory-dense resource. This profile is suitable for memory-intensive workloads such as database operations, Redis caching, and static web serving, where it achieves average benchmark throughput. However, the weak single-core performance presents a tradeoff for compute-bound or single-threaded tasks. It supports small-model LLM inference at average speeds, but medium-model inference drops to the bottom 25%, and it lacks GPU acceleration for larger AI workloads."
+    "Microsoft Azure DS13_v2 is a DSv2-family virtual machine configured with 8 dedicated physical cores on an x86_64 architecture. Powered by an Intel Xeon 8272CL processor running at 2.6 GHz, this server features 35 MB of L3 cache, 1.0 MB of L2 cache, and 32 KB of L1d cache. It supports advanced instruction sets including AVX, AVX-512 Foundation, AES cryptography, and FMA. The system is provisioned with 56.0 GB of system memory, yielding 7.0 GB of RAM per core, and includes 115 GB of local storage. Virtualization is managed via the Microsoft Hyper-V hypervisor.",
+    "Benchmark data reveals a clear distinction between single-core and multi-core capabilities. Single-core performance is relatively weak, falling into the bottom 25% for stress-ng, Geekbench, and single-threaded compression tasks like gzip and bzip3. However, multi-core execution scales to average levels, placing in the middle 50% for stress-ng multi-core, Geekbench multi-core, and PassMark CPU tests. Memory bandwidth is stable, with cached read-only small block speeds reaching 720.03 GB/sec and uncached large block read speeds at 76.69 GB/sec, both representing average tier performance.",
+    "From a resource density perspective, the DS13_v2 offers a high memory-to-vCPU ratio, making it a qualitatively cost-efficient option for workloads that require substantial memory capacity without demanding top-tier single-thread CPU speed. The primary tradeoff is the lower single-core processing power, which limits its suitability for latency-sensitive or single-threaded applications. However, with average multi-core performance, solid database operations, and steady Redis SET throughput of 11.85 million operations per second, this server is well-suited for memory-intensive workloads, database hosting, static web serving, and moderate multi-threaded processing tasks."
   ],
-  "description": "Microsoft Azure DS13_v2 is a DSv2-family virtual machine featuring 8 dedicated vCPUs powered by an Intel Xeon 8272CL x86_64 processor running at 2.6 GHz. It is equipped with 56.0 GB of system memory, yielding 7.0 GB per core, and includes 115 GB of local storage. Operating under Microsoft Hyper-V, the instance exhibits a performance profile characterized by weak single-core CPU execution but average multi-core and memory bandwidth capabilities. Specifically, multi-core benchmarks, Passmark memory tests, and Redis SET operations fall within the middle 50% tier. The high memory-to-vCPU ratio makes this server suitable for memory-dense workloads such as database operations, caching, and static web serving, though its weak single-threaded performance and lack of GPU acceleration limit its utility for intensive compute or large-scale AI inference tasks.",
-  "og_description": "Microsoft Azure DS13_v2 is an x86_64 virtual machine featuring 8 Intel Xeon vCPUs, 56 GB of RAM, and 115 GB of local storage, delivering average multi-core and database performance.",
-  "meta_description": "Microsoft Azure DS13_v2 features 8 Intel Xeon vCPUs, 56 GB of RAM, and 115 GB of local storage, optimized for memory-dense database workloads.",
-  "tagline": "An x86_64 virtual machine featuring a high memory-to-core ratio and 115 GB of local storage for database and caching workloads.",
+  "description": "Microsoft Azure DS13_v2 is an x86_64 virtual machine featuring 8 dedicated Intel Xeon 8272CL physical cores running at 2.6 GHz, paired with 56.0 GB of memory and 115 GB of local storage. Operating under Microsoft Hyper-V, this server provides a high memory-to-vCPU ratio of 7.0 GB per core. Performance benchmarks show weak single-core CPU execution, but average multi-core and memory bandwidth capabilities, with cached read-only memory bandwidth reaching 720.03 GB/sec. Supported instruction sets include AVX-512 and AES, which assist in cryptographic and vector calculations. Multi-threaded performance scales to average levels, as demonstrated by a Geekbench multi-core score of 5978.0 and a PassMark database operations score of 4601.14. The instance is qualitatively cost-efficient for memory-heavy workloads that do not require high single-threaded processing speeds, making it best suited for database hosting, Redis deployments, and static web serving.",
+  "og_description": "Microsoft Azure DS13_v2 is an x86_64 virtual server with 8 Intel Xeon cores, 56 GB RAM, and 115 GB local storage, delivering average multi-core performance for memory-intensive workloads.",
+  "meta_description": "Microsoft Azure DS13_v2 features 8 Intel Xeon cores, 56 GB RAM, and 115 GB local storage, optimized for memory-intensive and database workloads.",
+  "tagline": "An x86_64 virtual server offering high memory density and balanced multi-core performance for database and memory-intensive workloads.",
   "bullet_points": [
-    "Intel Xeon 8272CL processor with 8 dedicated vCPUs and 8 physical cores",
-    "56.0 GB of system memory providing 7.0 GB of RAM per core",
-    "115 GB of local storage bundled on Microsoft Hyper-V",
-    "Average multi-core, memory bandwidth, and database benchmark performance",
-    "Weak single-core and single-threaded execution speeds",
-    "Best suited for memory-dense databases, Redis caching, and static web serving"
+    "8 dedicated Intel Xeon 8272CL cores running at 2.6 GHz",
+    "56.0 GB of system memory providing 7.0 GB per core",
+    "115 GB of local storage with no bundled GPU",
+    "Average multi-core and memory bandwidth performance",
+    "Best suited for database hosting, Redis, and static web serving"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

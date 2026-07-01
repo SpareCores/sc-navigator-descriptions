@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure GS1 is a memory-optimized virtual machine belonging to the GS family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated Intel Xeon E5-2698B v3 processor. This processor provides 2 physical cores and 2 vCPUs operating at a base frequency of 2.0 GHz. The CPU configuration includes a 40 MB L3 cache, 32 KB L1d cache, and 0.25 MB L2 cache, with support for AVX, AES, BMI2, and FMA instruction sets.",
-    "The instance is equipped with 28.0 GB of system memory, yielding a high resource density of 14.0 GB of RAM per core. It also includes 57 GB of local storage. No GPU accelerators are present on this server type, and it does not include complimentary public IPv4 addresses.",
-    "Benchmark data indicates that the GS1 exhibits limited processing and memory throughput capabilities. In stress-ng CPU tests, both single-core and multi-core performance fall into the bottom 10% tier. Memory bandwidth tests show weak performance for small cached blocks and poor performance for large uncached blocks, with read speeds at 20.49 GB/sec and write speeds at 13.0 GB/sec. Similarly, database operations and static web serving throughput are positioned in the bottom 10% of benchmarks. However, single-threaded gzip compression achieves an average tier result at 23.85 GB/sec.",
-    "From a cost-efficiency perspective, the GS1 offers a high memory-to-vCPU ratio, making it suitable for memory-intensive workloads that do not require high compute performance. Due to its low CPU and memory bandwidth benchmark results, it is best suited for legacy database hosting, basic caching layers, or lightweight memory-bound applications rather than high-throughput web serving or intensive data processing."
+    "Microsoft Azure GS1 is a memory-optimized virtual machine powered by the Microsoft Hyper-V hypervisor. It features an x86_64 architecture with 2 dedicated physical cores and 2 vCPUs, utilizing an Intel Xeon E5-2698B v3 processor running at 2.0 GHz. The processor includes 40 MB of L3 cache, 32 KB of L1D cache, and 0.25 MB of L2 cache, with support for AVX, AES, BMI2, and FMA instruction sets. The server is equipped with 28.0 GB of system memory, providing a high memory-to-core ratio of 14.0 GB per core, alongside 57 GB of local storage. No GPUs are included in this configuration.",
+    "Performance benchmarks indicate that the GS1 is constrained in compute-heavy tasks. The single-core and multi-core stress-ng CPU benchmarks fall into the bottom 10%, and Geekbench multi-core scores are similarly positioned. Memory bandwidth tests show weak to poor performance, with read-only large block bandwidth at 20.49 GB/sec and write large block bandwidth at 13.0 GB/sec. However, single-threaded gzip compression achieves an average rating at 23.85 GB/sec. Redis SET operations perform at 3.03 million operations per second, which is classified as weak.",
+    "From a resource density perspective, the GS1 offers a high memory allocation relative to its low vCPU count, making it a specialized option for workloads requiring significant RAM without demanding high-performance compute. The primary tradeoff is the older Intel Xeon E5-2698B v3 architecture, which limits processing throughput and instruction execution speeds compared to newer hardware generations. This makes it a qualitatively cost-efficient choice specifically for legacy memory-bound tasks rather than compute-intensive applications.",
+    "Given these specifications and benchmark results, the Microsoft Azure GS1 is best suited for lightweight database hosting, caching layers, basic memory-bound data processing, and legacy enterprise applications that require a high memory footprint but minimal CPU processing power."
   ],
-  "description": "Microsoft Azure GS1 is an x86_64 memory-optimized virtual machine powered by a dedicated Intel Xeon E5-2698B v3 processor with 2 vCPUs and 2 physical cores running at 2.0 GHz. It features 28.0 GB of RAM, providing a high memory-to-core ratio of 14.0 GB per core, alongside 57 GB of local storage. Running on the Microsoft Hyper-V hypervisor, the instance lacks GPU acceleration. Benchmark results place its CPU and memory bandwidth performance largely in the lower tiers, with stress-ng and Passmark scores falling in the bottom 10%, though single-threaded gzip compression performs at an average level. Given its high memory capacity relative to compute resources, the GS1 is qualitatively cost-efficient for memory-heavy, low-compute workloads. It is suited for lightweight database hosting, basic caching, and memory-bound legacy applications.",
-  "og_description": "Microsoft Azure GS1 is an x86_64 memory-optimized virtual machine configured with 2 vCPUs, 28.0 GB of RAM, and 57 GB of local storage, designed for memory-intensive legacy workloads.",
-  "meta_description": "Microsoft Azure GS1 is an x86_64 memory-optimized virtual machine featuring 2 vCPUs, 28.0 GB of RAM, and 57 GB of local storage, running on Hyper-V.",
-  "tagline": "A memory-optimized virtual machine featuring a high memory-to-vCPU ratio and local storage for low-compute, memory-bound workloads.",
+  "description": "Microsoft Azure GS1 is a memory-optimized virtual machine featuring 2 dedicated vCPUs on an Intel Xeon E5-2698B v3 processor running at 2.0 GHz. Built on the x86_64 architecture and managed via Microsoft Hyper-V, it provides 28.0 GB of RAM (14.0 GB per core) and 57 GB of local storage, with no GPU acceleration. Benchmark data shows constrained compute capabilities, with stress-ng and Geekbench multi-core scores in the bottom 10%, though single-threaded gzip compression performs at an average level of 23.85 GB/sec. The server presents a clear tradeoff, offering high memory density relative to its low processing power. This configuration is qualitatively cost-efficient for memory-heavy, low-compute workloads. It is best suited for lightweight databases, caching layers, and legacy memory-bound applications.",
+  "og_description": "Microsoft Azure GS1 is a memory-optimized virtual machine featuring 2 vCPUs on an Intel Xeon E5-2698B v3 processor, 28.0 GB of RAM, and 57 GB of local storage, designed for memory-bound legacy workloads.",
+  "meta_description": "Microsoft Azure GS1 is a memory-optimized VM with 2 Intel Xeon vCPUs, 28.0 GB of RAM, and 57 GB of local storage, managed via Hyper-V.",
+  "tagline": "A memory-optimized virtual machine featuring high RAM-to-core density and local storage for low-compute, memory-bound legacy workloads.",
   "bullet_points": [
-    "Dedicated Intel Xeon E5-2698B v3 processor with 2 vCPUs",
+    "2 dedicated vCPUs on an Intel Xeon E5-2698B v3 processor",
     "28.0 GB of system memory providing 14.0 GB per core",
-    "57 GB of local storage capacity",
-    "Average single-threaded gzip compression performance",
-    "Suited for lightweight database hosting and basic caching layers"
+    "57 GB of local storage included",
+    "High memory-to-vCPU ratio for memory-bound applications",
+    "Best suited for lightweight databases, caching, and legacy workloads"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

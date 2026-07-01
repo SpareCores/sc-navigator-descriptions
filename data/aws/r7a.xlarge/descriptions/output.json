@@ -1,21 +1,23 @@
 {
   "page": [
-    "Amazon Web Services r7a.xlarge is a memory-optimized instance powered by the Nitro hypervisor. It features 4 dedicated physical cores and 4 vCPUs utilizing the x86_64 AMD EPYC 9R14 processor running at 3.7 GHz. The instance is equipped with 32.0 GB of DDR5 memory operating at 5 GHz, providing 8.0 GB of RAM per core. It does not include local storage or dedicated GPU hardware, and features a baseline network bandwidth of 2 Gbps.",
-    "Performance benchmarks indicate strong single-core capabilities, with stress-ng single-core CPU performance, Geekbench single-core scores, and single-threaded bzip3 decompression all ranking in the top 25 percent. Multi-core CPU performance, software compilation, and database operations fall within the average range. Memory bandwidth tests show average performance for cached small-block reads and large-block writes, though uncached large-block read bandwidth is relatively weak, placing in the bottom 25 percent.",
-    "The r7a.xlarge offers a high memory-to-vCPU ratio of 1 to 8, making it a resource-dense option for memory-bound workloads without the overhead of high vCPU counts. However, the lack of local storage and the 2 Gbps baseline network limit may present bottlenecks for data-intensive storage or high-throughput networking tasks. This instance is suited for memory-intensive applications such as in-memory databases, caching layers like Redis, text processing, and light LLM inference using small models."
+    "Amazon Web Services r7a.xlarge is a memory-optimized instance powered by the AWS Nitro hypervisor. It features an AMD EPYC 9R14 processor with 4 dedicated physical cores and 4 vCPUs running at a clock speed of 3.7 GHz. The CPU architecture is x86_64, equipped with 32 KB L1d cache, 1.0 MB L2 cache, and 16 MB L3 cache. It supports advanced instruction sets including AVX-512 (AVX512F, AVX512_VNNI, and AVX512_BF16) and cryptographic acceleration via AES and SHA_NI.",
+    "The instance is equipped with 32.0 GB of DDR5 memory operating at 5 GHz, yielding a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local instance storage, relying entirely on network-attached storage. Network connectivity is rated at a baseline bandwidth of 2 Gbps.",
+    "In benchmark testing, the r7a.xlarge demonstrates strong single-core capabilities, scoring in the top 25% for stress-ng single-core CPU performance, Geekbench single-core execution, and single-threaded bzip3 decompression. Multi-core performance, database operations, and Redis SET operations fall within the average range. However, a notable performance tradeoff is observed in memory bandwidth for large uncached blocks (256 MB), which registers in the bottom 25% at 37.49 GB/sec, alongside weaker performance in medium-sized (7B) LLM inference tasks.",
+    "Given its high DDR5 memory density relative to compute resources, the r7a.xlarge offers qualitative cost efficiency for memory-bound workloads that do not require local NVMe storage or high-speed baseline networking. It is well-suited for database operations, in-memory caching systems like Redis, text processing, and general-purpose memory-intensive applications."
   ],
-  "description": "Amazon Web Services r7a.xlarge is a memory-optimized instance featuring 4 dedicated physical cores powered by an AMD EPYC 9R14 processor running at 3.7 GHz. It is configured with 32.0 GB of high-speed 5 GHz DDR5 memory, yielding an 8.0 GB per core ratio, and operates on the Nitro hypervisor. The instance does not include local storage or GPUs, and it provides a baseline network bandwidth of 2 Gbps. Benchmark data highlights strong single-core CPU performance, text processing, and single-threaded decompression, while multi-core operations and database tasks perform at average levels. Uncached large-block memory read bandwidth represents a performance tradeoff, ranking in the bottom 25 percent. Given its high memory-to-vCPU density, the r7a.xlarge is well-suited for memory-intensive workloads such as in-memory databases, caching layers, and text processing applications.",
-  "og_description": "Amazon Web Services r7a.xlarge is a memory-optimized instance featuring 4 dedicated AMD EPYC vCPUs, 32.0 GB of DDR5 RAM, and a 2 Gbps baseline network, ideal for in-memory databases and caching.",
-  "meta_description": "Amazon Web Services r7a.xlarge is a memory-optimized instance with 4 AMD EPYC vCPUs, 32 GB of DDR5 RAM, and a 2 Gbps baseline network.",
-  "tagline": "A memory-optimized instance featuring dedicated AMD EPYC processors and high-speed DDR5 RAM for memory-intensive workloads and caching.",
+  "description": "Amazon Web Services r7a.xlarge is a memory-optimized instance built on the AWS Nitro System. It features an AMD EPYC 9R14 processor with 4 dedicated physical cores running at 3.7 GHz, paired with 32.0 GB of high-speed 5 GHz DDR5 memory. This configuration provides a high memory-to-vCPU ratio of 8.0 GB per core. The instance lacks local storage and has a baseline network bandwidth of 2 Gbps. Benchmark results show strong single-core CPU performance and text processing capabilities, though memory bandwidth for large uncached blocks is relatively weak. The r7a.xlarge is designed for memory-intensive workloads such as database operations, in-memory caching, and text processing.",
+  "og_description": "Amazon Web Services r7a.xlarge is a memory-optimized instance featuring 4 dedicated AMD EPYC cores, 32.0 GB of DDR5 RAM, and a 2 Gbps network baseline, designed for database and in-memory workloads.",
+  "meta_description": "Amazon Web Services r7a.xlarge is a memory-optimized instance with 4 AMD EPYC cores, 32.0 GB of DDR5 RAM, and Nitro hypervisor virtualization.",
+  "tagline": "A memory-optimized virtual server featuring dedicated AMD EPYC processors and high-speed DDR5 memory for memory-intensive workloads.",
   "bullet_points": [
-    "4 dedicated AMD EPYC 9R14 physical cores running at 3.7 GHz",
-    "32.0 GB of high-speed 5 GHz DDR5 memory",
-    "Strong single-core CPU and text processing benchmark performance",
-    "2 Gbps baseline network bandwidth with no local storage",
-    "Optimized for in-memory databases, caching, and text processing"
+    "Powered by a 4-core AMD EPYC 9R14 processor running at 3.7 GHz",
+    "Equipped with 32.0 GB of high-speed 5 GHz DDR5 memory",
+    "Delivers strong single-core CPU and text processing performance",
+    "Features a 2 Gbps baseline network bandwidth with no local storage",
+    "Optimized for database operations and in-memory caching"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

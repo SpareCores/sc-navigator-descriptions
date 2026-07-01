@@ -1,23 +1,22 @@
 {
   "page": [
-    "Vultr vc2-24c-96gb is a General Purpose virtual machine within the Cloud Compute family. It features 24 vCPUs powered by an Intel Xeon x86_64 processor running at 2.0 GHz. The hardware configuration includes 96.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. Storage is bundled with 1600 GB of local NVMe SSD capacity, and the instance includes one complimentary public IPv4 address.",
-    "The underlying Intel Xeon processor supports key instruction set extensions, including Advanced Vector Extensions (AVX and AVX512F), AES cryptography, and Bit Manipulation Instructions (BMI2). However, the CPU allocation is shared, which introduces potential resource contention tradeoffs compared to dedicated-core instances. This shared architecture is reflected in the stress-ng benchmark results, where the server achieved a single-core CPU performance score of 1451.3 and a multi-core CPU performance score of 32078.94, both placing within the average (middle 50%) tier.",
-    "From a qualitative cost-efficiency perspective, this instance offers high resource density, combining a large 1.6 TB NVMe storage allocation with substantial memory and core counts on a shared-resource model. This makes it a viable option for workloads that require significant storage capacity and memory but do not demand sustained, non-blocking CPU performance. Recommended workloads include general-purpose web serving, development environments, staging databases, and asynchronous task processing."
+    "Vultr vc2-24c-96gb is a Cloud Compute instance featuring 24 vCPUs and 96.0 GB of RAM, establishing a balanced 1:4 resource ratio. Powered by an Intel Xeon x86_64 processor running at 2.0 GHz, the system provides 24 physical cores with one thread per core under a shared CPU allocation model. The processor architecture includes 32 KB L1d cache, 4 MB L2 cache, and 16 MB L3 cache, alongside support for AVX, AVX512F, AES, and FMA instruction sets. Local storage is bundled with 1600 GB of NVMe SSD capacity, and the instance includes one complimentary public IPv4 address.",
+    "Benchmark results place this instance consistently in the average tier across most performance metrics. The stress-ng single-core CPU performance registers at 1451.3, while multi-core performance reaches 32078.94. Memory bandwidth tests show 2192.16 GB/sec for small block cached reads, dropping to 114.95 GB/sec for large block uncached reads and 55.93 GB/sec for large block writes. Single-threaded gzip compression is a relative bottleneck at 23.37 GB/sec, falling into the weak tier, though multi-threaded bzip3 decompression performs adequately at 98.25 GB/sec. Database and web serving capabilities are supported by a Redis SET throughput of 31.68 million operations per second and a static web serving throughput of 15.77 GB/sec.",
+    "Given its shared CPU allocation, the instance offers a cost-efficient path to high core counts and substantial memory density without the premium of dedicated hardware. However, the shared CPU model introduces potential performance variability under sustained heavy loads. This hardware profile is well-suited for multi-threaded applications, medium-sized database operations, static web serving, and lightweight machine learning tasks, as demonstrated by LLM inference speeds of 33.17 tokens per second for prompt processing on a 7B model."
   ],
-  "description": "The Vultr vc2-24c-96gb is a General Purpose virtual server from the Cloud Compute family, configured with 24 vCPUs and 96.0 GB of RAM, yielding a balanced 4.0 GB per core. Powered by an Intel Xeon x86_64 processor clocked at 2.0 GHz, this instance features a shared CPU allocation model. It comes bundled with 1600 GB of local NVMe SSD storage and one complimentary public IPv4 address. In benchmark testing, the server demonstrated average performance, scoring 1451.3 in stress-ng single-core and 32078.94 in stress-ng multi-core CPU tests. While the shared CPU architecture presents potential resource contention tradeoffs, the high storage and memory density provide qualitative cost efficiency for resource-heavy workloads. It is suitable for general-purpose applications, staging databases, development environments, and web serving.",
-  "og_description": "Vultr vc2-24c-96gb is a General Purpose server featuring 24 shared Intel Xeon vCPUs, 96 GB RAM, and 1600 GB NVMe SSD storage, delivering balanced performance for database staging and web serving.",
-  "meta_description": "Vultr vc2-24c-96gb is a General Purpose virtual server featuring 24 shared Intel Xeon vCPUs, 96 GB of RAM, and 1600 GB of local NVMe SSD storage.",
-  "tagline": "A balanced general-purpose virtual server offering high-capacity NVMe storage and substantial memory on a shared CPU architecture.",
+  "description": "Vultr vc2-24c-96gb is a Cloud Compute instance configured with 24 vCPUs, 96.0 GB of RAM, and 1600 GB of local NVMe SSD storage. Built on the x86_64 architecture with an Intel Xeon processor running at 2.0 GHz, this server operates on a shared CPU allocation model. Performance benchmarks generally fall within the average range, featuring a Passmark CPU score of 29089.76 and a Redis SET throughput of 31.68 million operations per second. While single-threaded gzip compression is relatively weak at 23.37 GB/sec, the instance delivers solid multi-threaded capabilities, as shown by a bzip3 decompression speed of 98.25 GB/sec. This resource configuration provides a cost-effective option for workloads requiring high memory capacity and multi-core processing, such as database operations, static web serving, and moderate multi-threaded application hosting, though users should consider the potential variability of shared CPU resources.",
+  "og_description": "Vultr vc2-24c-96gb is a Cloud Compute server featuring 24 vCPUs, 96 GB RAM, and 1600 GB NVMe SSD storage. It utilizes a shared Intel Xeon processor to deliver balanced, cost-effective multi-core performance.",
+  "meta_description": "Vultr vc2-24c-96gb is a Cloud Compute server with 24 vCPUs, 96 GB RAM, and 1600 GB NVMe storage, offering balanced shared-CPU performance.",
+  "tagline": "A balanced multi-core virtual server combining substantial memory and fast NVMe storage for diverse, non-dedicated computing workloads.",
   "bullet_points": [
-    "24 shared Intel Xeon vCPUs running at 2.0 GHz",
-    "96.0 GB of system memory (4.0 GB per core)",
-    "1600 GB of local NVMe SSD storage",
-    "Average CPU performance with stress-ng multi-core score of 32078.94",
-    "Suitable for general-purpose web serving and staging databases"
+    "24 Intel Xeon vCPUs on a shared CPU allocation model",
+    "96.0 GB of system memory paired with 1600 GB of local NVMe SSD storage",
+    "Average multi-core performance with a Passmark CPU score of 29089.76",
+    "Redis throughput of 31.68 million operations per second for caching workloads",
+    "Suited for static web serving, database operations, and multi-threaded applications"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database",
-    "Burstable & Budget"
+    "Storage & Database"
   ]
 }

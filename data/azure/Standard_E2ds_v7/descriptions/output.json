@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E2ds_v7 is a memory-optimized virtual machine belonging to the Edsv7 family, running on the Microsoft Hyper-V hypervisor. It features 2 dedicated vCPUs mapped to 1 physical Intel Xeon 6973P-C core with hyper-threading enabled, providing 2 threads per core. The processor operates at a clock speed of 4.2 GHz and includes a 480 MB L3 cache, 2 MB L2 cache, and 48 KB L1d cache. The system is equipped with 16.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. It also includes 118 GB of local storage and supports Premium Storage.",
-    "Benchmark results indicate a divergence between single-core and multi-core performance. The stress-ng single-core CPU test shows average performance with a score of 2215.58, whereas the multi-core CPU performance is categorized as weak at 2263.98. Memory bandwidth tests reveal weak read-only performance, measuring 168.1 GB/sec for small blocks and 22.92 GB/sec for large blocks, alongside a poor write performance of 12.15 GB/sec for large blocks. PassMark metrics align with these findings, showing a weak overall CPU score of 4263.53 but an average memory score of 1927.71.",
-    "The processor supports advanced instruction sets, including AVX-512 and Intel Advanced Matrix Extensions. In LLM inference benchmarks using a small 135M model, the server achieves an average text generation speed of 88.94 tokens/second, though prompt processing remains weak at 288.44 tokens/second. Redis SET operations reach 4.01 million operations/second, and static web serving throughput is measured at 4.95 GB/sec, both falling into the weak performance category.",
-    "Given its high memory-to-vCPU ratio and dedicated CPU allocation, the E2ds_v7 offers qualitative cost efficiency for memory-bound workloads that do not require massive parallel processing. The inclusion of 118 GB of local storage and Premium Storage capability makes it suitable for small-scale databases, caching layers, and lightweight enterprise applications. However, the single physical core limits its suitability for highly parallelized compute-intensive tasks."
+    "Microsoft Azure E2ds_v7 is a memory-optimized virtual machine belonging to the Edsv7 family, running on the Microsoft Hyper-V hypervisor. It features 2 dedicated vCPUs mapped to 1 physical Intel Xeon 6973P-C core with 2 threads per core, operating at a clock speed of 4.2 GHz. The x86_64 architecture processor includes a 480 MB L3 cache and supports advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions (AMX).",
+    "The instance is equipped with 16.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per vCPU. Storage is provided via a 118 GB local disk, and the server is premium storage capable. No GPU accelerators or complimentary public IPv4 addresses are included in this configuration.",
+    "In benchmark evaluations, the server exhibits average single-core CPU performance with a stress-ng score of 2215.58, though multi-core performance is weak at 2263.98 due to the 2-vCPU limit. Memory bandwidth tests show weak to poor performance, with large-block write speeds at 12.15 GB/sec. However, the system maintains average performance in PassMark memory tests and small-model LLM text generation. From a cost-efficiency perspective, the instance offers a high memory density relative to its compute footprint, making it a viable option for memory-bound workloads that do not require intensive multi-core processing.",
+    "This server is suited for small-scale databases, caching layers, memory-intensive enterprise applications, and light analytical workloads that benefit from a high RAM-to-vCPU ratio but do not demand high parallel processing power."
   ],
-  "description": "Microsoft Azure E2ds_v7 is a memory-optimized virtual machine from the Edsv7 family, configured with 2 dedicated vCPUs on a single physical Intel Xeon 6973P-C core operating at 4.2 GHz. It features 16.0 GB of RAM, 118 GB of local storage, and supports Premium Storage. While single-core CPU performance and PassMark memory scores are average, multi-core performance and uncached memory write bandwidth are weak. The processor supports advanced instruction sets like AVX-512 and Intel AMX, enabling average text generation speeds of 88.94 tokens/second on small LLM models. With a high memory-to-vCPU ratio of 8.0 GB per core, this server is qualitatively cost-efficient for memory-intensive, low-concurrency workloads such as small databases, caching systems, and lightweight enterprise applications.",
-  "og_description": "Microsoft Azure E2ds_v7 is a memory-optimized virtual machine featuring 2 dedicated Intel Xeon vCPUs, 16.0 GB of RAM, and 118 GB of local storage, designed for memory-bound workloads.",
-  "meta_description": "Microsoft Azure E2ds_v7 is a memory-optimized virtual machine with 2 dedicated Intel Xeon vCPUs, 16.0 GB of RAM, and 118 GB of local storage.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated Intel Xeon processing, high memory-to-core density, and integrated local storage for memory-bound workloads.",
+  "description": "Microsoft Azure E2ds_v7 is a memory-optimized virtual machine from the Edsv7 family, powered by a dedicated Intel Xeon 6973P-C processor. Operating on the x86_64 architecture with Microsoft Hyper-V, it provides 2 vCPUs (1 physical core) running at 4.2 GHz, backed by a 480 MB L3 cache and advanced instructions like AMX and AVX-512. The instance features 16.0 GB of RAM, offering a high 8.0 GB per vCPU ratio, alongside 118 GB of local storage. Benchmark data indicates average single-core CPU and memory performance, but weak multi-core and memory write bandwidth. This resource profile delivers qualitative cost efficiency for memory-heavy, low-compute tasks. It is best suited for small-scale databases, caching layers, and memory-bound enterprise applications.",
+  "og_description": "Microsoft Azure E2ds_v7 is a memory-optimized virtual machine featuring 2 vCPUs, 16.0 GB of RAM, and 118 GB of local storage, powered by a 4.2 GHz Intel Xeon processor for memory-bound workloads.",
+  "meta_description": "Microsoft Azure E2ds_v7 is a memory-optimized VM with 2 vCPUs, 16.0 GB RAM, and 118 GB local storage, running on a 4.2 GHz Intel Xeon processor.",
+  "tagline": "A memory-optimized virtual machine featuring high RAM-to-vCPU density and local storage for memory-bound enterprise workloads.",
   "bullet_points": [
-    "2 dedicated vCPUs powered by an Intel Xeon 6973P-C processor at 4.2 GHz",
-    "16.0 GB of RAM providing a high 8.0 GB per core memory allocation",
+    "2 dedicated vCPUs powered by a 4.2 GHz Intel Xeon 6973P-C processor",
+    "16.0 GB of RAM providing a high 8.0 GB per vCPU memory ratio",
     "118 GB of local storage with Premium Storage capability",
-    "Intel AMX and AVX-512 instruction set support for specialized workloads",
-    "Best suited for small-scale databases, caching layers, and memory-bound applications"
+    "Intel AMX and AVX-512 instruction set support",
+    "Best suited for small databases, caching layers, and memory-bound applications"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

@@ -1,21 +1,23 @@
 {
   "page": [
-    "Amazon Web Services c6g.8xlarge is a compute-optimized instance powered by the custom 64-bit ARM architecture. It features 32 dedicated physical cores using the AWS Neoverse-N1 processor running at 2.5 GHz, with 1.0 thread per core. The instance is equipped with 64.0 GB of system memory, providing a resource density of 2.0 GB per core. It operates on the AWS Nitro hypervisor, lacks local NVMe storage, and has a baseline network bandwidth of 12 Gbps.",
-    "Benchmark data shows average performance across most multi-core and compute-intensive workloads. The instance achieved a stress-ng multi-core CPU score of 48574.31 and a Geekbench multi-core score of 11649.0. Memory bandwidth tests indicate 1894.03 GB/sec for cached small blocks and 163.55 GB/sec for uncached large blocks. However, single-core performance is a notable tradeoff, with Geekbench single-core (958.0) and single-threaded gzip compression (20.33 GB/sec) falling into the bottom 25% of tested servers.",
-    "Given the dedicated ARMv8 core architecture and 1:2 memory-to-vCPU ratio, this instance is structured for multi-threaded, scale-out workloads rather than single-threaded speed. It is suited for tasks such as software compilation, static web serving, and database operations. The custom ARM architecture offers a cost-efficient alternative to x86-based instances for workloads optimized for multi-core scaling, though applications requiring high single-thread performance or x86 instruction sets are not suitable."
+    "Amazon Web Services c6g.8xlarge is a compute-optimized server powered by the AWS Graviton processor family. It features 32 dedicated physical cores on the ARMv8 Neoverse-N1 architecture running at 2.5 GHz, with no simultaneous multithreading, providing exactly one thread per core. The instance is equipped with 64.0 GB of memory, yielding a 2.0 GB per core ratio. It runs on the Nitro hypervisor, has a baseline network bandwidth of 12 Gbps, and does not include local storage or GPU accelerators.",
+    "Benchmark results place the c6g.8xlarge in the average tier for most multi-core and processing tasks. The stress-ng multi-core CPU performance score is 48574.31, and the Geekbench multi-core score is 11649.0. Single-core performance is relatively weaker, with a Geekbench single-core score of 958.0 and a weak rating in single-threaded gzip compression at 20.33 GB/sec. However, multi-threaded operations like bzip3 decompression at 62.05 GB/sec and software compilation with Clang at 25603.0 perform in the average range.",
+    "Memory performance shows a contrast between a high cached read-only bandwidth of 1894.03 GB/sec and a weaker Passmark memory score of 1816.8. The server lacks local storage, meaning all storage must be network-attached. The hardware configuration and benchmark profile make this server suitable for multi-threaded workloads such as software compilation, static web serving, which achieved 33.12 GB/sec in testing, and database operations like Redis SET, which reached 38.64 million operations per second."
   ],
-  "description": "Amazon Web Services c6g.8xlarge is a compute-optimized instance featuring 32 dedicated physical cores powered by the 64-bit ARM Neoverse-N1 processor running at 2.5 GHz. Operating on the AWS Nitro hypervisor, it includes 64.0 GB of system memory (2.0 GB per core) and a baseline network bandwidth of 12 Gbps, with no local storage. Benchmark results place its multi-core compute and memory bandwidth in the average tier, with a stress-ng multi-core score of 48574.31 and a static web serving throughput of 33.12 GB/sec. However, single-core performance is a key tradeoff, with Geekbench single-core scores falling in the bottom 25%. This instance is designed for multi-threaded workloads such as software compilation, static web serving, and database operations, offering qualitative cost efficiency for scale-out ARM-native applications.",
-  "og_description": "Amazon Web Services c6g.8xlarge is a compute-optimized ARM64 instance featuring 32 dedicated Neoverse-N1 cores, 64.0 GB of RAM, and 12 Gbps network bandwidth, suited for multi-threaded workloads.",
-  "meta_description": "Amazon Web Services c6g.8xlarge is an ARM64 compute-optimized instance with 32 dedicated cores, 64.0 GB RAM, and a 12 Gbps network baseline.",
-  "tagline": "A dedicated 32-core ARM64 compute instance designed for multi-threaded workloads, software compilation, and scale-out web serving.",
+  "description": "Amazon Web Services c6g.8xlarge is a compute-optimized server utilizing the ARMv8 Neoverse-N1 architecture with 32 dedicated physical cores running at 2.5 GHz. It features 64.0 GB of system memory, providing 2.0 GB per core, and operates on the Nitro hypervisor with 12 Gbps of baseline network bandwidth. The instance does not include local storage or GPU accelerators. Benchmark data indicates average multi-core performance, with a Geekbench multi-core score of 11649.0 and a stress-ng multi-core score of 48574.31, though single-core metrics like Geekbench single-core are weaker. The server demonstrates average capabilities in multi-threaded tasks such as software compilation, static web serving at 33.12 GB/sec, and Redis database operations. It is suited for multi-threaded applications, web serving, and containerized microservices that benefit from dedicated physical ARM cores without hyperthreading.",
+  "og_description": "Amazon Web Services c6g.8xlarge is an ARM64 compute-optimized server with 32 dedicated Graviton Neoverse-N1 cores, 64 GB RAM, and 12 Gbps network bandwidth, suited for multi-threaded workloads.",
+  "meta_description": "Amazon Web Services c6g.8xlarge is a compute-optimized ARM64 server featuring 32 dedicated physical cores, 64 GB RAM, and 12 Gbps network speed.",
+  "tagline": "An ARM64 compute-optimized server featuring thirty-two dedicated physical cores and sixty-four gigabytes of memory for multi-threaded workloads.",
   "bullet_points": [
-    "Powered by 32 dedicated AWS Neoverse-N1 ARM64 cores at 2.5 GHz",
-    "Equipped with 64.0 GB of system memory (2.0 GB per core)",
-    "Features a baseline network bandwidth of 12 Gbps on the Nitro hypervisor",
-    "Delivers average multi-core performance but exhibits weak single-core metrics",
-    "Suited for software compilation, database operations, and static web serving"
+    "32 dedicated physical ARMv8 Neoverse-N1 cores running at 2.5 GHz",
+    "64.0 GB of system memory providing 2.0 GB per core",
+    "12 Gbps baseline network bandwidth on the Nitro hypervisor",
+    "No local storage or GPU accelerators included",
+    "Average multi-core performance in software compilation and static web serving",
+    "Suited for multi-threaded applications, web serving, and Redis database operations"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

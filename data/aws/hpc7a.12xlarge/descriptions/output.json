@@ -1,24 +1,23 @@
 {
   "page": [
-    "Amazon Web Services hpc7a.12xlarge is an x86_64 architecture server optimized for high-performance computing workloads. It features 24 dedicated physical cores and 24 vCPUs powered by an AMD EPYC 9R14 processor running at 3.7 GHz. The system is equipped with 768.0 GB of high-speed 5 GHz DDR5 memory, yielding 32.0 GB of RAM per core. It operates on the Nitro hypervisor and includes advanced CPU instruction sets such as AVX-512, AVX512_VNNI, and AVX512_BF16, alongside cryptography extensions like AES and SHA_NI.",
-    "In benchmark testing, the server demonstrates strong memory and computational capabilities. Memory bandwidth performance is particularly notable, with uncached large-block read speeds reaching 635.15 GB/sec and write speeds reaching 377.27 GB/sec, both placing in the top 10% of tested systems. Stress-ng single-core and multi-core CPU tests, along with Geekbench and Passmark CPU evaluations, consistently rank in the top 25%. LLM inference benchmarks show strong prompt processing speeds of 2622.16 tokens/sec for small models and strong text generation speeds of 36.8 tokens/sec for medium models.",
-    "From a resource density perspective, the server offers high memory capacity and memory bandwidth per core, making it highly efficient for memory-bound parallel processing. Tradeoffs include the complete absence of local NVMe storage and dedicated GPU hardware, meaning all storage operations must rely on network-attached options. Network connectivity is supported by a baseline bandwidth of 150 Gbps, which facilitates rapid data transfer to compensate for the lack of local disks.",
-    "This hardware configuration is designed for memory-intensive computational workloads, large-scale simulations, molecular modeling, finite element analysis, and parallelized scientific computing. It is also configured for memory-bound database operations, software compilation, and CPU-based machine learning inference tasks that benefit from AVX-512 vector instructions."
+    "Amazon Web Services hpc7a.12xlarge is an x86_64 architecture server powered by an AMD EPYC 9R14 processor running at 3.7 GHz. It features 24 dedicated physical cores with a single thread per core, backed by 768.0 GB of DDR5 memory operating at 5 GHz, which yields 32.0 GB of RAM per core. The processor includes 32 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache, with support for AVX-512 vector instructions and cryptography acceleration via AES and SHA_NI. This instance does not include local storage or GPU hardware, relying entirely on network-attached storage, and provides a baseline network bandwidth of 150 Gbps.",
+    "In benchmark evaluations, the hpc7a.12xlarge demonstrates strong performance, placing in the top 25% for both single-core and multi-core stress-ng CPU tests, as well as Geekbench and PassMark CPU evaluations. Its memory subsystem shows exceptional capability, with large-block read and write memory bandwidth benchmarks reaching the top 10% tier, though small-block cached read bandwidth remains in the middle 50% range. Multi-threaded bzip3 decompression and PassMark database operations also rank in the top 25%, while web serving throughput and Redis SET operations perform in the middle 50% tier. For machine learning workloads, the instance achieves top 25% performance in text generation using medium-sized 7B LLM models, while prompt processing speeds for larger models fall into the middle 50% tier.",
+    "From a cost-efficiency perspective, the hpc7a.12xlarge offers a high density of DDR5 memory relative to its compute cores, making it highly efficient for memory-bound parallel workloads that do not require GPU acceleration. The absence of local NVMe storage represents a tradeoff, requiring external storage configuration for data-intensive operations. This server is designed for high-performance computing workloads, large-scale scientific simulations, memory-intensive database operations, and medium-scale LLM inference tasks."
   ],
-  "description": "Amazon Web Services hpc7a.12xlarge is an x86_64 server designed for high-performance computing, featuring 24 dedicated physical cores powered by an AMD EPYC 9R14 processor at 3.7 GHz. It is equipped with 768.0 GB of 5 GHz DDR5 memory, providing a high allocation of 32.0 GB per core. Operating on the Nitro hypervisor, the instance lacks local storage and GPUs, relying instead on a 150 Gbps baseline network bandwidth. Benchmark results show top-tier memory bandwidth, with large-block read speeds of 635.15 GB/sec and write speeds of 377.27 GB/sec placing in the top 10%. CPU performance in stress-ng and Geekbench tests consistently ranks in the top 25%. This server is suited for memory-bound parallel processing, scientific simulations, software compilation, and CPU-based machine learning inference.",
-  "og_description": "Amazon Web Services hpc7a.12xlarge is an x86_64 HPC server featuring 24 dedicated AMD EPYC cores, 768 GB of DDR5 RAM, 150 Gbps network bandwidth, and top-tier memory bandwidth performance.",
-  "meta_description": "Amazon Web Services hpc7a.12xlarge features 24 dedicated AMD EPYC cores, 768 GB DDR5 RAM, and 150 Gbps networking for memory-intensive workloads.",
-  "tagline": "A dedicated AMD EPYC compute node featuring massive DDR5 memory bandwidth and high-speed networking for parallel scientific workloads.",
+  "description": "Amazon Web Services hpc7a.12xlarge is an x86_64 high-performance computing server featuring 24 dedicated physical cores powered by an AMD EPYC 9R14 processor at 3.7 GHz. It is equipped with 768.0 GB of 5 GHz DDR5 memory, providing a high 32.0 GB of RAM per core, but lacks local storage and GPU hardware. The instance delivers 150 Gbps of baseline network bandwidth. Benchmark data shows strong CPU and memory performance, with large-block memory bandwidth reaching the top 10% tier and multi-core processing ranking in the top 25%. However, cached small-block memory reads and Redis operations perform in the average tier. This hardware profile is optimized for memory-intensive parallel computing, database operations, and scientific simulations that benefit from dedicated core allocation and high memory capacity without requiring local storage.",
+  "og_description": "Amazon Web Services hpc7a.12xlarge is an x86_64 server with 24 dedicated AMD EPYC cores, 768 GB of DDR5 RAM, and 150 Gbps network bandwidth, optimized for memory-intensive high-performance computing workloads.",
+  "meta_description": "Amazon Web Services hpc7a.12xlarge features 24 dedicated AMD EPYC cores, 768 GB DDR5 RAM, and 150 Gbps bandwidth for high-performance computing.",
+  "tagline": "A dedicated AMD EPYC server featuring high-speed DDR5 memory and 150 Gbps bandwidth for memory-intensive parallel computing workloads.",
   "bullet_points": [
-    "24 dedicated AMD EPYC 9R14 physical cores running at 3.7 GHz",
-    "768 GB of high-speed 5 GHz DDR5 memory providing 32 GB per core",
-    "Top-tier uncached memory read bandwidth of 635.15 GB/sec",
-    "150 Gbps baseline network bandwidth with no local storage",
-    "AVX-512 and vector neural network instructions enabled",
-    "Suited for scientific simulations, molecular modeling, and CPU-based inference"
+    "24 dedicated AMD EPYC physical cores running at 3.7 GHz with no hyperthreading.",
+    "768 GB of high-speed 5 GHz DDR5 memory providing 32 GB per core.",
+    "Top 10% tier performance in large-block memory read and write bandwidth.",
+    "150 Gbps baseline network bandwidth for high-throughput distributed workloads.",
+    "No local storage or GPU accelerators included.",
+    "Best suited for scientific simulations, database operations, and memory-bound parallel computing."
   ],
   "categories": [
-    "Compute Optimized",
-    "Memory Optimized"
+    "Memory Optimized",
+    "Compute Optimized"
   ]
 }
