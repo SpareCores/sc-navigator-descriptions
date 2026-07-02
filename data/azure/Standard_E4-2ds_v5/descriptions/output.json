@@ -1,23 +1,23 @@
 {
   "page": [
-    "The Microsoft Azure E4-2ds_v5 is a memory-optimized virtual machine powered by an Intel Xeon 8370C processor operating at 2.8 GHz. Built on the x86_64 architecture, this instance provides 2 dedicated vCPUs mapped to a single physical core with Hyper-Threading enabled. It features a substantial memory capacity of 32.0 GB, yielding a high resource density of 16.0 GB of RAM per core. Local storage is included with a 154 GB disk, and the instance is Premium Storage capable, running under the Microsoft Hyper-V hypervisor.",
-    "Benchmark data indicates moderate single-core capabilities, with stress-ng and Geekbench single-core tests placing the processor in the average performance tier. However, multi-core performance and memory bandwidth for large blocks fall into the lower tier due to the physical core limitation. Cryptographic and vector operations are supported via hardware-accelerated instruction sets including AVX-512 and AES-NI, which help offset the lower core count for specific mathematical and secure workloads.",
-    "This server configuration is qualitatively cost-effective for applications that demand a large memory footprint without requiring extensive parallel processing power. It is designed for workloads such as small-scale databases, caching layers, memory-bound enterprise applications, and lightweight web serving where memory capacity is the primary bottleneck."
+    "Microsoft Azure E4-2ds_v5 is a memory-optimized virtual machine belonging to the EDSv5 server family. It is powered by an Intel Xeon 8370C processor running at 2.8 GHz, utilizing the x86_64 architecture. The instance is configured with 1 physical core and 2 dedicated vCPUs via hyperthreading, providing 2 threads per core. It features 32.0 GB of system memory, yielding a high memory-to-core ratio of 16.0 GB per vCPU. Storage is bundled with a 154 GB local disk, and the instance is Premium Storage capable. It operates under the Microsoft Hyper-V hypervisor and does not include any GPU accelerators.",
+    "Performance benchmarks reveal a distinct contrast between single-core and multi-core capabilities. Single-core performance is moderate, with stress-ng single-core CPU and Geekbench single-core scores falling into the average category. However, multi-core performance is limited, with stress-ng multi-core and Geekbench multi-core scores ranking in the bottom 10%. Memory bandwidth is also constrained, with both read and write large-block uncached tests showing poor performance. Cryptographic and compression tasks perform at weak to average levels, as evidenced by Passmark CPU encryption and single-threaded gzip compression benchmarks.",
+    "The primary tradeoff of the E4-2ds_v5 is its high memory capacity relative to its limited processing power. While the 32.0 GB RAM allocation provides excellent resource density for memory-bound tasks, the dual-vCPU configuration restricts parallel processing efficiency, as shown by poor database operations and Redis SET benchmarks. From a qualitative cost-efficiency perspective, this server is suitable for workloads requiring a large memory footprint without intensive computational demands. Appropriate workloads include small-scale databases, caching layers, memory-intensive text processing, and lightweight web serving."
   ],
-  "description": "The Microsoft Azure E4-2ds_v5 is a memory-optimized virtual machine featuring an Intel Xeon 8370C processor with 2 dedicated vCPUs and 1 physical core running at 2.8 GHz. It is equipped with 32.0 GB of RAM, providing a high memory-to-vCPU ratio of 16.0 GB per core, alongside 154 GB of local storage. Running on the Microsoft Hyper-V hypervisor, this instance delivers average single-core CPU and memory benchmark performance, though its multi-core and memory bandwidth capabilities are constrained. This hardware profile makes the E4-2ds_v5 qualitatively cost-effective for memory-bound workloads that require a large memory footprint but modest parallel processing power, such as small databases, caching layers, and lightweight enterprise applications.",
-  "og_description": "Microsoft Azure E4-2ds_v5 is a memory-optimized instance featuring an Intel Xeon 8370C CPU, 2 vCPUs, 32 GB RAM, and 154 GB local storage, designed for memory-intensive workloads with modest compute needs.",
-  "meta_description": "Microsoft Azure E4-2ds_v5 features 2 vCPUs, 32 GB RAM, and 154 GB local storage, optimized for memory-intensive, low-compute workloads.",
-  "tagline": "A memory-optimized virtual machine featuring high memory density and local storage for workloads requiring modest compute and large memory footprints.",
+  "description": "Microsoft Azure E4-2ds_v5 is an x86_64 memory-optimized virtual machine from the EDSv5 family, running on the Microsoft Hyper-V hypervisor. It features an Intel Xeon 8370C processor with 1 physical core and 2 dedicated vCPUs, paired with 32.0 GB of RAM and a 154 GB local disk. While single-core benchmarks for CPU and text processing fall in the average range, multi-core performance and memory bandwidth are comparatively weak, ranking in the bottom 10%. This resource profile presents a clear tradeoff: high memory density alongside limited parallel processing power. Consequently, this instance is qualitatively cost-efficient for memory-heavy, low-compute workloads. It is best suited for small-scale databases, caching layers, and memory-intensive text processing applications that do not require high multi-threaded performance.",
+  "og_description": "Microsoft Azure E4-2ds_v5 is a memory-optimized virtual machine featuring an Intel Xeon 8370C processor, 2 dedicated vCPUs, 32.0 GB of RAM, and a 154 GB local disk, designed for memory-intensive workloads.",
+  "meta_description": "Microsoft Azure E4-2ds_v5 is a memory-optimized VM with 2 vCPUs, 32.0 GB RAM, and 154 GB local storage, suited for low-compute, memory-heavy workloads.",
+  "tagline": "A memory-optimized virtual machine offering high RAM-to-vCPU density and local storage for memory-bound, low-compute workloads.",
   "bullet_points": [
-    "Intel Xeon 8370C processor with 2 dedicated vCPUs",
-    "32.0 GB of RAM providing 16.0 GB per core",
-    "154 GB of local storage with Premium Storage capability",
-    "Average single-core CPU and memory benchmark performance",
-    "Suited for small databases, caching, and memory-bound tasks"
+    "Intel Xeon 8370C processor with 2 dedicated vCPUs and 1 physical core",
+    "High memory density with 32.0 GB RAM providing 16.0 GB per core",
+    "Bundled 154 GB local storage with Premium Storage capability",
+    "Average single-core CPU and text processing performance",
+    "Limited multi-core scaling and memory bandwidth",
+    "Suited for small databases, caching, and memory-bound applications"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

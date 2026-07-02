@@ -1,23 +1,25 @@
 {
   "page": [
-    "Vultr vhp-8c-16gb-amd is a High Performance family server featuring 8 vCPUs and 8 physical cores powered by an AMD EPYC-Rome processor. Operating at a clock speed of 2.0 GHz on the x86_64 architecture, the system allocates 16.0 GB of system memory, translating to 2.0 GB of RAM per core. The CPU features a shared allocation model and includes 16 MB of L3 cache, alongside support for AVX, AES, and SHA_NI instruction sets. Storage is bundled with a 350 GB NVMe SSD, and the instance includes one complimentary public IPv4 address.",
-    "Benchmark evaluations indicate strong single-core CPU performance, with stress-ng single-core testing placing in the top 25% at 2869.78. Multi-core performance is average, with a stress-ng multi-core score of 22445.91 and a PassMark CPU score of 16668.2. Memory bandwidth is consistent, registering 84.3 GB/sec for large-block read operations and 63.29 GB/sec for write operations. The server handles database operations and web serving reliably, achieving 13.03 million operations per second in Redis SET tests and 7.47 GB/sec in static web serving throughput. For machine learning tasks, LLM inference using a small 135M model reaches 192.4 tokens per second for text generation, though performance drops to a weak 16.77 tokens per second for prompt processing on a medium 7B model.",
-    "From a cost-efficiency perspective, the shared CPU allocation model allows Vultr to deliver a high core count and 350 GB of fast NVMe SSD storage at a lower price tier relative to dedicated-core alternatives. However, the shared CPU resource model represents a tradeoff, as performance may fluctuate depending on co-tenant activity, making it less suitable for sustained, latency-sensitive compute tasks. This server is well-suited for multi-threaded applications, web serving, development environments, and moderate database workloads that benefit from high local storage capacity and strong single-core burst capabilities without requiring dedicated CPU execution."
+    "Vultr vhp-8c-16gb-amd is a High Performance virtual server featuring 8 shared vCPUs powered by an AMD EPYC processor with an x86_64 architecture. The CPU configuration consists of 4 physical cores running at 2.0 GHz with 2 threads per core and a 16 MB L3 cache. The system is equipped with 16.0 GB of system memory, providing 2.0 GB of RAM per core, and includes 350 GB of local NVMe SSD storage. No GPU hardware is included in this configuration.",
+    "Benchmark data shows strong single-core CPU performance, with stress-ng single-core results placing in the top 25% of tested servers. Multi-core CPU performance, measured via stress-ng and PassMark CPU tests, falls within the average range. Memory bandwidth is average, reaching 923.27 GB/sec for cached small blocks and 84.3 GB/sec for uncached large blocks. The server demonstrates average performance in database operations, static web serving at 7.47 GB/sec, and Redis SET operations at 13.03 million operations per second. However, LLM inference on larger models is a bottleneck, with prompt processing on a 7B model scoring in the bottom 25%.",
+    "The server offers a high-density compute profile with a 1:2 vCPU-to-RAM ratio, making it a cost-efficient option for workloads that require substantial processing power and fast local storage without the overhead of dedicated CPU cores. The primary tradeoff is the shared CPU allocation, which may introduce performance variability under noisy-neighbor conditions, alongside the relatively low memory allocation of 2.0 GB per core.",
+    "This configuration is suitable for multi-threaded applications, static web serving, intermediate database operations, and lightweight background processing tasks. It is also appropriate for software compilation and basic text or image processing workloads that do not require massive memory footprints or dedicated GPU acceleration."
   ],
-  "description": "Vultr vhp-8c-16gb-amd is a High Performance virtual server featuring 8 shared AMD EPYC-Rome vCPUs, 16.0 GB of RAM, and a bundled 350 GB NVMe SSD. Operating on the x86_64 architecture at 2.0 GHz, this server delivers strong single-core CPU performance, scoring in the top 25% on stress-ng benchmarks, while multi-core and memory bandwidth metrics remain in the average tier. The shared CPU allocation model offers a cost-effective path to high core counts and fast local storage, though it introduces potential performance variability under sustained loads. This configuration is best suited for web serving, multi-threaded development tasks, and moderate database workloads.",
-  "og_description": "Vultr vhp-8c-16gb-amd is a High Performance server with 8 shared AMD EPYC vCPUs, 16 GB RAM, and 350 GB NVMe SSD storage, offering strong single-core performance for web serving and database workloads.",
-  "meta_description": "Vultr vhp-8c-16gb-amd features 8 shared AMD EPYC vCPUs, 16 GB RAM, and 350 GB NVMe storage, delivering strong single-core performance.",
-  "tagline": "A shared-core AMD EPYC server balancing high core counts and fast NVMe storage for cost-effective multi-threaded workloads.",
+  "description": "Vultr vhp-8c-16gb-amd is a High Performance virtual server featuring 8 shared AMD EPYC vCPUs (4 physical cores, 2 threads per core) running at 2.0 GHz, paired with 16.0 GB of RAM and 350 GB of local NVMe SSD storage. Built on the x86_64 architecture, this instance delivers strong single-core CPU performance, ranking in the top 25% of benchmarks, while multi-core and memory bandwidth metrics remain average. The 1:2 vCPU-to-RAM ratio provides a compute-leaning resource balance, though the shared CPU allocation presents a potential tradeoff in performance consistency. This server is well-suited for static web serving, Redis caching, moderate database workloads, and lightweight multi-threaded applications that benefit from fast local NVMe storage but do not require dedicated CPU resources or GPU acceleration.",
+  "og_description": "Vultr vhp-8c-16gb-amd is a High Performance server with 8 shared AMD EPYC vCPUs, 16 GB RAM, and 350 GB NVMe SSD, offering strong single-core performance for web serving and database workloads.",
+  "meta_description": "Vultr vhp-8c-16gb-amd features 8 shared AMD EPYC vCPUs, 16 GB RAM, and 350 GB NVMe storage, delivering strong single-core CPU performance.",
+  "tagline": "A compute-leaning virtual server combining strong single-core AMD EPYC performance with fast local NVMe storage for balanced web and database workloads.",
   "bullet_points": [
-    "8 shared AMD EPYC-Rome vCPUs running at 2.0 GHz",
-    "16.0 GB of system memory and 350 GB of bundled NVMe SSD storage",
-    "Strong single-core CPU performance ranking in the top 25% of benchmarks",
-    "Average multi-core execution, memory bandwidth, and database throughput",
-    "Cost-effective shared CPU model suitable for non-sustained peak workloads",
-    "Ideal for web serving, multi-threaded development, and moderate databases"
+    "8 shared AMD EPYC vCPUs and 16.0 GB of system memory",
+    "350 GB of high-speed local NVMe SSD storage",
+    "Strong single-core CPU performance placing in the top 25%",
+    "Average multi-core, memory bandwidth, and database performance",
+    "Shared CPU allocation presents potential performance variability",
+    "Suitable for static web serving, Redis, and moderate database tasks"
   ],
   "categories": [
     "Compute Optimized",
-    "Burstable & Budget"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

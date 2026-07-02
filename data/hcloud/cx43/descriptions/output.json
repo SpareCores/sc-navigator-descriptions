@@ -1,24 +1,23 @@
 {
   "page": [
-    "Hetzner Cloud cx43 is a virtualized server instance powered by the QEMU hypervisor, utilizing the x86_64 architecture. It features 8 shared vCPUs based on the AMD EPYC-Rome processor family, running at a base clock speed of 2.0 GHz. The hardware configuration includes 16.0 GB of system memory, providing approximately 1.95 GB of RAM per core. For local storage, the instance is equipped with a 160 GB SSD. It does not include any bundled GPUs or complimentary public IPv4 addresses.",
-    "Performance benchmarks indicate a strong single-core CPU capability, with stress-ng single-core performance ranking in the top 25% at 2548.38. Multi-core performance under stress-ng and Geekbench falls within the average range, scoring 20252.78 and 7324.0 respectively. Memory bandwidth is average, delivering 888.0 GB/sec for cached small blocks and 89.3 GB/sec for uncached large blocks. The instance exhibits weak single-threaded gzip compression performance at 23.39 GB/sec, but maintains average speeds for bzip3 decompression and static web serving throughput at 10.98 GB/sec. For lightweight machine learning, it processes 1073.74 tokens per second for prompt processing on a small 135M LLM, though performance drops to a weak 31.68 tokens per second on a medium 7B model.",
-    "Given its shared CPU allocation and 1:2 vCPU-to-RAM ratio, the cx43 offers a budget-friendly resource profile suitable for workloads that do not require dedicated CPU threads. The combination of strong single-core performance and average database operation metrics makes it well-suited for web serving, software compilation, and moderate database tasks. However, the shared CPU model and limited memory per core present a tradeoff for sustained high-compute or memory-intensive workloads."
+    "Hetzner Cloud cx43 is an x86_64 virtual server powered by the QEMU hypervisor and AMD EPYC processors running at 2.0 GHz. It features 8 shared vCPUs with a single thread per core and a 16 MB L3 cache. The hardware configuration includes 16.0 GB of system memory, providing approximately 1.95 GB of RAM per core, and is bundled with 160 GB of local SSD storage. No GPU resources are included in this instance type.",
+    "In benchmark evaluations, the cx43 demonstrates strong single-core CPU performance in stress-ng tests, placing in the top 25 percent. However, its multi-core CPU performance and Geekbench scores fall within the average range. Memory bandwidth is also moderate, with read-only large block speeds at 89.3 GB/sec and write speeds at 62.62 GB/sec. Single-threaded gzip compression represents a relative bottleneck, scoring in the bottom 25 percent, while bzip3 decompression and Redis SET operations perform at average tier levels.",
+    "Given its shared CPU allocation, the cx43 offers a resource-dense profile suitable for budget-conscious deployments that do not require dedicated CPU threads. The 1:2 vCPU-to-RAM ratio makes it a viable option for compute-focused workloads with moderate memory requirements. Recommended workloads include static web serving, software compilation, database operations, and lightweight text or image processing tasks where occasional CPU sharing does not impact baseline operations."
   ],
-  "description": "Hetzner Cloud cx43 is an x86_64 virtual server instance running on the QEMU hypervisor, featuring 8 shared AMD EPYC-Rome vCPUs clocked at 2.0 GHz and 16.0 GB of RAM. The instance includes 160 GB of local SSD storage but lacks dedicated GPUs and complimentary public IPv4 addresses. Benchmark data shows strong single-core CPU performance, while multi-core execution, memory bandwidth, and database operations remain in the average tier. With a 1:2 vCPU-to-RAM ratio and shared CPU allocation, the cx43 represents a budget-friendly option for workloads that can tolerate shared resources. It is best suited for general-purpose applications, static web serving, software compilation, and lightweight database operations.",
-  "og_description": "Hetzner Cloud cx43 is an x86_64 virtual server featuring 8 shared AMD EPYC-Rome vCPUs, 16 GB RAM, and 160 GB SSD storage, delivering strong single-core and average multi-core performance.",
-  "meta_description": "Hetzner Cloud cx43 is an x86_64 virtual server with 8 shared AMD EPYC vCPUs, 16 GB RAM, and 160 GB SSD storage, optimized for budget-friendly workloads.",
-  "tagline": "A budget-friendly virtual server featuring shared AMD EPYC processors and local SSD storage for balanced, general-purpose workloads.",
+  "description": "Hetzner Cloud cx43 is an x86_64 virtual server configured with 8 shared AMD EPYC vCPUs running at 2.0 GHz, 16.0 GB of RAM, and 160 GB of local SSD storage. Operating under the QEMU hypervisor, this instance delivers strong single-core CPU performance in stress-ng benchmarks, while its multi-core capabilities, memory bandwidth, and database operations align with average tier standards. The 1:2 vCPU-to-RAM ratio provides a balanced compute-focused environment without dedicated CPU guarantees. This makes the cx43 a cost-efficient option for workloads such as static web serving, software compilation, and moderate database operations where shared CPU resources are acceptable.",
+  "og_description": "Hetzner Cloud cx43 is an x86_64 virtual server featuring 8 shared AMD EPYC vCPUs, 16 GB of RAM, and 160 GB of SSD storage, delivering strong single-core and average multi-core performance.",
+  "meta_description": "Hetzner Cloud cx43 features 8 shared AMD EPYC vCPUs, 16 GB RAM, and 160 GB SSD storage, offering balanced performance for general compute workloads.",
+  "tagline": "An efficient shared-CPU virtual server featuring AMD EPYC processors and local SSD storage for balanced, budget-conscious compute workloads.",
   "bullet_points": [
-    "8 shared AMD EPYC-Rome vCPUs running at 2.0 GHz",
+    "8 shared AMD EPYC vCPUs running at 2.0 GHz",
     "16.0 GB of system memory and 160 GB of local SSD storage",
-    "Strong single-core CPU performance in the top 25% of benchmarks",
+    "Strong single-core CPU performance in benchmark testing",
     "Average multi-core, memory bandwidth, and database performance",
-    "No bundled GPUs or complimentary public IPv4 addresses",
-    "Best suited for web serving, software compilation, and budget-friendly workloads"
+    "Well-suited for static web serving, software compilation, and development environments"
   ],
   "categories": [
-    "Burstable & Budget",
     "Compute Optimized",
+    "Burstable & Budget",
     "General Purpose"
   ]
 }
