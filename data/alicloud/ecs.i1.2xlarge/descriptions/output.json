@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.i1.2xlarge is a general-purpose virtual machine instance powered by the KVM hypervisor. It features 8 dedicated vCPUs from an Intel Xeon E5-2682v4 processor running at 2.5 GHz, paired with 32.0 GB of system memory. The hardware configuration includes 446 GB of bundled local SSD storage and a baseline network bandwidth of 2 Gbps. The CPU architecture is x86_64, utilizing 8 physical cores with a single thread per core, supported by a 33 MB L3 cache.",
-    "In benchmark testing, the instance exhibits modest performance characteristics. Its stress-ng single-core and multi-core CPU metrics fall into the bottom 25% of tested servers, reflecting its older processor architecture. Memory read bandwidth is also relatively low, with small-block cached reads at 327.93 GB/sec and large-block uncached reads at 38.77 GB/sec. However, large-block memory write bandwidth performs at an average level of 35.61 GB/sec. Cryptographic and compression tasks show lower-tier performance, with gzip compression recording 18.95 GB/sec and Passmark CPU encryption scoring 2720.69.",
-    "The inclusion of 446 GB of local SSD storage provides a resource-dense storage option without requiring external network-attached volumes, offering qualitative cost efficiency for workloads that benefit from direct-attached storage. However, the trade-off is lower overall compute and memory performance compared to newer hardware generations. This instance is best suited for legacy general-purpose applications, basic web serving, lightweight database operations, and small-scale development or testing environments that require dedicated CPU cores and local SSD storage but do not demand high-throughput processing."
+    "Alibaba Cloud ecs.i1.2xlarge is an x86_64 architecture server instance powered by an Intel Xeon E5-2682v4 processor operating at 2.5 GHz. It features 8 dedicated physical cores with 1.0 thread per core, providing 8 vCPUs. The hardware configuration includes 32.0 GB of system memory, yielding 4.0 GB per core, alongside 446 GB of local SSD storage. Network performance is defined by a baseline bandwidth of 2 Gbps, and virtualization is managed via the KVM hypervisor.",
+    "Benchmark results indicate mixed performance profiles. The processor supports AVX and AVX512F instructions, achieving an average PassMark CPU score of 6992.14 and an average extended instructions score of 5859.32. However, raw compute performance is generally modest, with stress-ng single-core and multi-core metrics falling into the bottom 25% tier. Memory bandwidth is similarly constrained, with read-only large block speeds at 38.77 GB/sec, though large block write speeds reach an average tier of 35.61 GB/sec. For database workloads, Redis SET operations perform at an average rate of 5.89 million operations per second, while PassMark database operations score in the bottom 25% at 2207.87.",
+    "Given its dedicated CPU allocation and bundled 446 GB local SSD storage, the ecs.i1.2xlarge is positioned for workloads requiring persistent local storage and moderate compute resources. It is suitable for small-to-medium database hosting, basic web serving, and lightweight caching layers. However, its weak single-core performance and poor compression metrics make it less optimal for compute-heavy tasks or large-scale data processing. From a cost-efficiency perspective, it offers a balanced resource density of memory and local SSD storage on legacy Intel Xeon hardware, making it a viable option for storage-centric workloads that do not demand high-frequency CPU performance."
   ],
-  "description": "Alibaba Cloud ecs.i1.2xlarge is a general-purpose instance featuring 8 dedicated vCPUs on an Intel Xeon E5-2682v4 processor running at 2.5 GHz, 32.0 GB of RAM, and 446 GB of bundled local SSD storage. Operating on the KVM hypervisor with an x86_64 architecture, it provides a baseline network bandwidth of 2 Gbps. Benchmark results indicate modest performance, with stress-ng CPU and memory read bandwidth scores generally falling in the bottom 25% tier. However, the instance maintains average performance in large-block memory write bandwidth and small-model LLM inference. The primary advantage of this instance lies in its bundled local SSD storage, which offers qualitative cost efficiency for storage-reliant workloads. It is best suited for general-purpose applications, legacy web serving, and lightweight database operations that require dedicated cores and local storage without demanding high-performance compute.",
-  "og_description": "Alibaba Cloud ecs.i1.2xlarge is a general-purpose instance with 8 dedicated Intel Xeon vCPUs, 32 GB RAM, and 446 GB of bundled local SSD storage, suitable for legacy workloads and basic databases.",
-  "meta_description": "Alibaba Cloud ecs.i1.2xlarge features 8 dedicated Intel vCPUs, 32 GB RAM, and 446 GB local SSD storage for general-purpose workloads.",
-  "tagline": "A dedicated general-purpose instance featuring bundled local SSD storage and balanced memory configuration for legacy workloads.",
+  "description": "Alibaba Cloud ecs.i1.2xlarge is an x86_64 server instance powered by an Intel Xeon E5-2682v4 processor running at 2.5 GHz. It features 8 dedicated physical cores (8 vCPUs), 32.0 GB of RAM, and 446 GB of local SSD storage, operating on a KVM hypervisor with a 2 Gbps baseline network bandwidth. Performance benchmarks show a moderate profile, with an average PassMark CPU score of 6992.14 and Redis SET performance at 5.89 million operations per second, though stress-ng compute and memory read bandwidth metrics fall in the bottom 25%. The instance is best suited for workloads requiring dedicated vCPUs and local SSD storage, such as small-to-medium database hosting, caching layers, and general-purpose web serving, where high-frequency single-core performance is not a critical requirement.",
+  "og_description": "Alibaba Cloud ecs.i1.2xlarge is an x86_64 server with 8 dedicated Intel Xeon vCPUs, 32 GB RAM, and 446 GB local SSD storage, suitable for databases and general-purpose workloads.",
+  "meta_description": "Alibaba Cloud ecs.i1.2xlarge features 8 dedicated Intel Xeon vCPUs, 32 GB RAM, and 446 GB local SSD storage for database and general-purpose tasks.",
+  "tagline": "An x86_64 server featuring eight dedicated cores, balanced memory, and integrated local SSD storage for storage-reliant workloads.",
   "bullet_points": [
-    "8 dedicated Intel Xeon E5-2682v4 vCPUs running at 2.5 GHz",
-    "32.0 GB of system memory and 446 GB of bundled local SSD storage",
+    "8 dedicated Intel Xeon E5-2682v4 vCPUs at 2.5 GHz",
+    "32.0 GB of system memory with 4.0 GB per core",
+    "446 GB of bundled local SSD storage",
     "2 Gbps baseline network bandwidth on KVM hypervisor",
-    "Average performance in large-block memory write operations",
-    "Best suited for legacy general-purpose applications and lightweight databases"
+    "Average Redis SET performance of 5.89 million operations per second",
+    "Best suited for small-to-medium databases and web serving"
   ],
   "categories": [
-    "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

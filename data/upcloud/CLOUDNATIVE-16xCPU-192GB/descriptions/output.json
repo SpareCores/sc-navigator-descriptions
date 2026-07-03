@@ -1,22 +1,24 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-16xCPU-192GB is a memory-optimized virtual server hosted on the KVM hypervisor. It features 16 shared vCPUs mapped to 16 physical cores of an AMD EPYC 7542 processor running at 2.0 GHz. The system is equipped with 192.0 GB of RAM, yielding a high memory-to-core ratio of 12.0 GB per core. This configuration does not include any bundled local storage or complimentary public IPv4 addresses, and it lacks dedicated GPU hardware.",
-    "Performance benchmarks indicate a clear tradeoff between raw single-core compute and multi-threaded memory operations. The shared CPU allocation results in poor single-core performance, as evidenced by a stress-ng single-core score in the bottom 10 percent. However, multi-core benchmarks, such as the stress-ng multi-core test and Geekbench multi-core score, fall into the average tier. Memory bandwidth tests show stable read and write speeds, though the Passmark memory score is relatively weak, placing in the bottom 25 percent.",
-    "From a cost-efficiency perspective, this server offers high memory density on a shared-resource model, making it a viable option for memory-intensive workloads that do not require continuous, dedicated single-core CPU performance. Appropriate workloads include large-scale caching layers, database operations, multi-threaded text and image processing, and static web serving, where the 192.0 GB RAM capacity can be fully leveraged."
+    "UpCloud CLOUDNATIVE-16xCPU-192GB is a Cloud Native family server running on the KVM hypervisor. It features an x86_64 architecture powered by an AMD EPYC 7542 processor with 16 vCPUs and 16 physical cores. The CPU operates at a base clock speed of 2.0 GHz with a shared allocation model and 1.0 thread per core. The system is equipped with 192.0 GB of RAM, providing a high memory-to-core ratio of 12.0 GB per core. It does not include local storage or dedicated GPU hardware, but comes with one complimentary public IPv4 address.",
+    "Benchmark results indicate a clear performance profile. Single-core performance is a notable bottleneck, with stress-ng single-core CPU performance ranking in the bottom 10% and single-threaded bzip3 decompression in the bottom 25%. However, multi-core performance scales to average levels, as shown by stress-ng multi-core, Geekbench multi-core, and PassMark CPU scores falling into the middle 50%. Memory bandwidth tests for both small and large blocks also register in the average tier, though the PassMark memory score is weak, placing in the bottom 25%.",
+    "The primary tradeoff of this server lies in its shared CPU allocation and low single-core clock speed, which limits its suitability for single-threaded or latency-sensitive tasks. Qualitatively, the server offers high memory density relative to its CPU resources, making it a cost-efficient option for memory-intensive workloads that do not require dedicated, high-frequency CPU cores.",
+    "This configuration is suitable for multi-threaded, memory-heavy workloads such as database operations, caching layers like Redis, and moderate multi-threaded data processing. It is less suited for single-threaded applications, intensive text processing, or large-scale LLM text generation, where benchmarks show weak to poor performance."
   ],
-  "description": "UpCloud CLOUDNATIVE-16xCPU-192GB is a memory-optimized virtual server running on the KVM hypervisor. Powered by an AMD EPYC 7542 processor, it provides 16 shared vCPUs and 192.0 GB of RAM, translating to 12.0 GB of memory per core. The server does not include bundled local storage or a GPU. Benchmark data reveals a performance profile characterized by poor single-core CPU execution but average multi-core and database performance. This resource distribution makes the server highly cost-efficient for memory-heavy applications that can tolerate shared CPU allocation. It is well-suited for database operations, caching, and multi-threaded processing workloads.",
-  "og_description": "UpCloud CLOUDNATIVE-16xCPU-192GB is a memory-optimized KVM virtual server featuring 16 shared AMD EPYC vCPUs and 192 GB of RAM, designed for memory-intensive database and caching workloads.",
-  "meta_description": "UpCloud CLOUDNATIVE-16xCPU-192GB is a memory-optimized KVM virtual server featuring 16 shared AMD EPYC vCPUs and 192 GB of RAM.",
-  "tagline": "A memory-optimized virtual server with shared AMD EPYC processors, designed for memory-intensive workloads and database caching.",
+  "description": "UpCloud CLOUDNATIVE-16xCPU-192GB is a Cloud Native virtual server built on the KVM hypervisor, featuring 16 shared vCPUs powered by an AMD EPYC 7542 processor at 2.0 GHz. It is configured with 192.0 GB of RAM, yielding a high memory-to-core ratio of 12.0 GB per core, but lacks local storage and GPU accelerators. Benchmarks reveal a distinct performance split: single-core CPU performance and single-threaded decompression are weak, placing in the bottom 10% and 25% respectively, while multi-core CPU metrics, memory bandwidth, and database operations perform at average levels. This resource profile offers qualitative cost efficiency for memory-heavy, multi-threaded workloads that can tolerate shared CPU allocation. It is best suited for database hosting, Redis caching, and moderate multi-threaded data processing, rather than single-threaded or latency-critical applications.",
+  "og_description": "UpCloud CLOUDNATIVE-16xCPU-192GB is a KVM-based server with 16 shared AMD EPYC vCPUs and 192 GB RAM. It offers average multi-core performance but weak single-core speeds, suited for memory-heavy workloads.",
+  "meta_description": "UpCloud CLOUDNATIVE-16xCPU-192GB features 16 shared AMD EPYC vCPUs and 192 GB RAM, offering average multi-core performance for memory-heavy tasks.",
+  "tagline": "A high-memory virtual server with shared AMD EPYC cores, optimized for multi-threaded database operations and caching workloads.",
   "bullet_points": [
     "16 shared AMD EPYC 7542 vCPUs running at 2.0 GHz",
-    "192.0 GB of system memory providing 12.0 GB per core",
-    "KVM hypervisor architecture with no bundled local storage",
-    "Average multi-core and database benchmark performance",
-    "Suited for memory-intensive caching and database operations"
+    "192.0 GB of RAM providing 12.0 GB per core",
+    "Average multi-core CPU and memory bandwidth performance",
+    "Weak single-core performance and no local storage",
+    "Best suited for database operations and Redis caching"
   ],
   "categories": [
     "Memory Optimized",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "General Purpose"
   ]
 }
