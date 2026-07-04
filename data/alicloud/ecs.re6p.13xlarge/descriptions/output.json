@@ -1,20 +1,19 @@
 {
   "page": [
-    "Alibaba Cloud ecs.re6p.13xlarge is an x86_64 architecture server instance powered by an Intel Xeon 8269CY processor. Running on a KVM hypervisor, this instance features 52 dedicated physical cores with a 1.0 thread-per-core configuration, meaning hyperthreading is disabled to ensure dedicated compute resources per vCPU. It is equipped with 192.0 GB of system memory, providing approximately 3.69 GB of RAM per core.",
-    "This instance does not include local storage, requiring external block storage solutions for operating systems and data persistence. Network connectivity is supported by a baseline bandwidth of 12 Gbps. The absence of bundled local storage and GPU hardware makes this server specialized for non-graphical workloads that rely on network-attached storage.",
-    "From a cost-efficiency perspective, the dedicated core allocation provides predictable CPU performance without the resource contention typical of shared-core or hyperthreaded environments. The balanced memory-to-CPU ratio makes the ecs.re6p.13xlarge suitable for general-purpose enterprise workloads, multi-threaded application servers, batch processing, and database deployments that require consistent compute power."
+    "Alibaba Cloud ecs.re6p.13xlarge is an x86_64 architecture server instance powered by the Intel Xeon 8269CY processor. Running on the KVM hypervisor, this instance features 52 dedicated vCPUs mapped directly to 52 physical cores, with hyperthreading disabled at 1.0 thread per core. It is equipped with 192.0 GB of system memory, yielding approximately 3.69 GB of RAM per core. The instance does not include local storage or GPU hardware, requiring external network-attached storage for persistent data.",
+    "The instance provides a baseline network bandwidth of 12 Gbps. Because the 52 vCPUs are dedicated physical cores without hyperthreading, the instance offers highly predictable compute performance, eliminating resource contention issues typical of shared-thread architectures. This design makes it suitable for workloads sensitive to CPU cache thrashing or those that do not benefit from simultaneous multithreading.",
+    "In terms of resource density, the ecs.re6p.13xlarge balances a high physical core count with a moderate memory allocation, positioning it as a cost-efficient option for parallel processing tasks that require dedicated CPU execution units rather than massive memory footprints. However, the lack of local storage means all disk I/O relies on network-attached volumes, which may introduce latency tradeoffs for storage-heavy operations. This hardware profile is appropriate for parallel processing, batch processing, scientific simulations, and CPU-bound general-purpose workloads."
   ],
-  "description": "Alibaba Cloud ecs.re6p.13xlarge is an x86_64 server instance utilizing the KVM hypervisor and powered by an Intel Xeon 8269CY processor. It features 52 dedicated physical cores with a 1.0 thread-per-core ratio, ensuring dedicated CPU allocation without hyperthreading. The instance is configured with 192.0 GB of RAM, yielding 3.69 GB of memory per core, and provides a baseline network bandwidth of 12 Gbps. It contains no local storage or GPU hardware, necessitating network-attached storage solutions. This resource profile offers a balanced vCPU-to-RAM ratio, making it a cost-efficient option for workloads requiring predictable, non-shared compute resources. It is well-suited for general-purpose enterprise applications, batch processing, and multi-threaded workloads.",
-  "og_description": "Alibaba Cloud ecs.re6p.13xlarge is a KVM-based server with 52 dedicated Intel Xeon cores, 192 GB RAM, and 12 Gbps network bandwidth, designed for predictable general-purpose enterprise workloads.",
-  "meta_description": "Alibaba Cloud ecs.re6p.13xlarge features 52 dedicated Intel Xeon cores, 192 GB RAM, and 12 Gbps bandwidth for predictable enterprise workloads.",
-  "tagline": "A dedicated 52-core Intel Xeon server with 192 GB RAM and 12 Gbps bandwidth for predictable, non-hyperthreaded enterprise workloads.",
+  "description": "Alibaba Cloud ecs.re6p.13xlarge is an x86_64 server instance powered by an Intel Xeon 8269CY processor with 52 dedicated physical cores and 52 vCPUs, operating without hyperthreading. It features 192.0 GB of RAM, providing 3.69 GB of memory per core, and runs on the KVM hypervisor. The instance does not include local storage or GPU accelerators, relying instead on a baseline network bandwidth of 12 Gbps for external storage connectivity. By offering dedicated physical cores, the instance delivers highly predictable compute performance, making it a cost-efficient choice for workloads sensitive to simultaneous multithreading overhead. It is designed for parallel processing, batch processing, and general-purpose workloads requiring dedicated CPU execution.",
+  "og_description": "Alibaba Cloud ecs.re6p.13xlarge is an x86_64 server featuring 52 dedicated Intel Xeon physical cores, 192.0 GB of RAM, and 12 Gbps network bandwidth, optimized for predictable compute workloads.",
+  "meta_description": "Alibaba Cloud ecs.re6p.13xlarge is a KVM-based server with 52 dedicated Intel Xeon cores, 192.0 GB of RAM, and 12 Gbps network bandwidth.",
+  "tagline": "A dedicated physical core instance with balanced memory and high network throughput for predictable, compute-intensive workloads.",
   "bullet_points": [
-    "52 dedicated physical Intel Xeon 8269CY cores with no hyperthreading",
+    "52 dedicated Intel Xeon 8269CY physical cores with hyperthreading disabled",
     "192.0 GB of system memory providing 3.69 GB per core",
-    "12 Gbps baseline network bandwidth",
-    "KVM hypervisor architecture with dedicated CPU allocation",
-    "No local storage or GPU hardware included",
-    "Suited for general-purpose enterprise applications and batch processing"
+    "12 Gbps baseline network bandwidth for external storage and connectivity",
+    "KVM hypervisor architecture with no bundled local storage or GPUs",
+    "Optimized for parallel processing, batch workloads, and scientific simulations"
   ],
   "categories": [
     "General Purpose",
