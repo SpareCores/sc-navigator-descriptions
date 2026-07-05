@@ -1,21 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c2.medium is an x86_64 architecture server instance powered by the KVM hypervisor. It features 16 dedicated virtual CPUs mapped directly to 16 physical cores, operating with a single thread per core configuration. The instance is equipped with 16.0 GB of system memory, resulting in a resource density of 1.0 GB of RAM per core.",
-    "This instance does not include bundled local storage, meaning all storage requirements must be met via network-attached block storage. It contains no graphics processing units and does not provide complimentary public IPv4 addresses.",
-    "With a one-to-one ratio of vCPUs to memory, the ecs.c2.medium is tailored for compute-heavy workloads that do not require large memory footprints. The dedicated CPU allocation ensures consistent processing performance without resource contention. This hardware profile is suitable for compute-intensive tasks, batch processing, and highly parallelized workloads that fit within the 16.0 GB memory limit."
+    "Alibaba Cloud ecs.c2.medium is an x86_64 compute-optimized server instance built on the KVM hypervisor. It features 16 dedicated physical cores with 16 vCPUs, operating with a single thread per core configuration. The instance is equipped with 16.0 GB of system memory, yielding a low memory-to-core ratio of 1.0 GB per core. There is no bundled local storage or integrated GPU hardware.",
+    "The hardware profile presents specific architectural tradeoffs. With a 1:1 ratio of vCPUs to gigabytes of memory, this instance is designed for compute-heavy tasks that do not demand large memory capacities. Additionally, the CPU flags indicate a lack of advanced vector extensions, matrix extensions, and hardware-accelerated cryptography. The absence of hyperthreading means each of the 16 vCPUs maps directly to a dedicated physical core, ensuring consistent execution resources without resource sharing.",
+    "From a cost-efficiency perspective, the ecs.c2.medium offers high compute density relative to its memory footprint, making it a viable option for workloads where CPU processing power is the primary bottleneck. However, the lack of local storage requires external block storage attachment, and the absence of complimentary public IPv4 addresses should be factored into network deployment planning. Appropriate workloads include parallel CPU processing, batch computing, and lightweight web serving tasks that fit within the 16.0 GB memory limit."
   ],
-  "description": "Alibaba Cloud ecs.c2.medium is an x86_64 compute-focused server instance running on the KVM hypervisor. It features 16 dedicated vCPUs mapped to 16 physical cores with a single thread per core, paired with 16.0 GB of system memory. This configuration provides a 1.0 GB memory-per-core ratio, making it highly optimized for compute-bound tasks rather than memory-intensive applications. The instance does not include local storage or integrated GPUs, requiring external network storage for data persistence. With dedicated CPU allocation, it delivers predictable performance for parallel processing, batch workloads, and computational tasks that operate within its specific memory constraints.",
-  "og_description": "Alibaba Cloud ecs.c2.medium is a compute-optimized x86_64 server featuring 16 dedicated physical cores, 16.0 GB of RAM, and KVM virtualization, designed for parallel processing workloads without local storage.",
-  "meta_description": "Alibaba Cloud ecs.c2.medium is an x86_64 server with 16 dedicated vCPUs, 16.0 GB of RAM, and no local storage, optimized for compute-heavy workloads.",
-  "tagline": "A dedicated sixteen-core compute instance with a one-to-one ratio of processor cores to memory for parallelized computational workloads.",
+  "description": "Alibaba Cloud ecs.c2.medium is an x86_64 compute-optimized server instance running on the KVM hypervisor. It features 16 dedicated physical cores and 16 vCPUs with a single thread per core, paired with 16.0 GB of system memory. This configuration results in a low memory-to-core ratio of 1.0 GB per core. The instance does not include local storage, integrated GPUs, or complimentary public IPv4 addresses. Architecturally, the CPU lacks advanced vector extensions, matrix extensions, and hardware-accelerated cryptography. With a 1:1 CPU-to-RAM ratio and dedicated physical cores, this server is designed for compute-intensive tasks that require dedicated processing power without a large memory footprint. It is best utilized for batch processing, parallel CPU workloads, and basic web serving where memory requirements are minimal.",
+  "og_description": "Alibaba Cloud ecs.c2.medium is a compute-optimized x86_64 server featuring 16 dedicated physical cores, 16 GB of RAM, and no local storage, designed for memory-lean parallel processing.",
+  "meta_description": "Alibaba Cloud ecs.c2.medium is an x86_64 server with 16 dedicated vCPUs, 16 GB RAM, and no local storage, optimized for compute-heavy workloads.",
+  "tagline": "A dedicated 16-core compute instance with a 1:1 CPU-to-memory ratio, designed for parallel processing workloads requiring minimal memory overhead.",
   "bullet_points": [
-    "16 dedicated x86_64 physical cores with single-thread execution",
+    "16 dedicated physical cores and 16 vCPUs with single-thread execution",
     "16.0 GB of system memory providing 1.0 GB per core",
-    "KVM hypervisor virtualization with dedicated CPU allocation",
-    "No bundled local storage or integrated GPU resources",
-    "Designed for compute-intensive and parallel processing workloads"
+    "No local storage, requiring external block storage volumes",
+    "Absence of advanced CPU flags such as AVX-512, AMX, and AES",
+    "Best suited for parallel CPU-bound tasks and batch processing"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
