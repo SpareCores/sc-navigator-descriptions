@@ -1,20 +1,20 @@
 {
   "page": [
-    "Alibaba Cloud ecs.m1.medium is an x86_64 architecture virtual machine running on the KVM hypervisor. It features 4 dedicated physical cores with 1 thread per core, providing a total of 4 vCPUs. The server is configured with 16.0 GB of system memory, yielding a memory-to-core ratio of 4.0 GB per core.",
-    "This server type does not include local storage, meaning all storage requirements must be met via network-attached block storage. There are no integrated GPUs, and the instance does not come with complimentary public IPv4 addresses. Additionally, the CPU flags indicate a lack of advanced vector extensions (AVX, AVX-512), matrix extensions (AMX), cryptographic acceleration (AES, SHA_NI), and virtualization extensions (VMX, SVM).",
-    "From a cost-efficiency perspective, the dedicated CPU allocation provides predictable compute resources without the risk of noisy-neighbor CPU degradation, though the absence of modern instruction sets limits its efficiency for specialized mathematical or cryptographic workloads. The balanced 1:4 vCPU-to-RAM ratio makes the instance appropriate for general-purpose workloads such as lightweight web serving, application hosting, and basic database operations that do not require local NVMe storage or hardware acceleration."
+    "Alibaba Cloud ecs.m1.medium is a general-purpose virtual machine instance built on the KVM hypervisor and x86_64 CPU architecture. It features 4 dedicated vCPUs mapped directly to 4 physical cores with a single thread per core configuration. The instance is equipped with 16.0 GB of system memory, yielding a balanced memory-to-core ratio of 4.0 GB per vCPU. It does not include local storage or bundled GPUs, requiring external block storage for operating system and application data.",
+    "The underlying processor architecture for this instance lacks support for several modern instruction set extensions. Notably, there is no hardware acceleration for Advanced Vector Extensions (AVX, AVX-512), Advanced Matrix Extensions (AMX), or cryptography standards such as AES and SHA_NI. Additionally, instruction sets for advanced bit manipulation (BMI2, FMA) and virtualization extensions are unavailable. This profile limits the instance's efficiency for workloads relying heavily on vector math, hardware-based encryption, or nested virtualization.",
+    "Given its dedicated CPU allocation and balanced 1:4 resource ratio, the ecs.m1.medium is structured for standard general-purpose workloads. It is suitable for hosting basic web servers, application middle tiers, and lightweight database instances that do not require specialized hardware acceleration or local NVMe storage. From a qualitative cost-efficiency perspective, the instance provides dedicated compute resources without the overhead of hyperthreading, making it a predictable option for legacy applications and standard utility computing tasks."
   ],
-  "description": "Alibaba Cloud ecs.m1.medium is an x86_64 general-purpose virtual machine running on the KVM hypervisor. It is equipped with 4 dedicated physical CPU cores operating at 1 thread per core, providing 4 vCPUs alongside 16.0 GB of system memory. This configuration establishes a balanced 4.0 GB of memory per core. The instance features no local storage, requiring external network-attached storage, and contains no GPU hardware. CPU instruction set extensions such as AVX, AVX-512, AMX, and AES are not available on this hardware profile. With its dedicated CPU allocation, the server offers predictable compute performance for standard workloads. It is suitable for general-purpose applications, lightweight web serving, and utility databases that do not demand specialized hardware accelerators or local solid-state storage.",
-  "og_description": "Alibaba Cloud ecs.m1.medium is an x86_64 virtual machine featuring 4 dedicated physical cores, 16 GB of system memory, and no local storage, designed to run predictable general-purpose workloads on the KVM hypervisor.",
-  "meta_description": "Alibaba Cloud ecs.m1.medium is an x86_64 virtual machine with 4 dedicated vCPUs, 16 GB RAM, and KVM virtualization for general-purpose workloads.",
-  "tagline": "A general-purpose virtual machine featuring dedicated physical cores and a balanced memory-to-CPU ratio for predictable utility workloads.",
+  "description": "Alibaba Cloud ecs.m1.medium is a general-purpose instance featuring 4 dedicated vCPUs on 4 physical cores with a single thread per core configuration. Operating on the KVM hypervisor and x86_64 architecture, it provides 16.0 GB of system memory, establishing a balanced 1:4 vCPU-to-RAM ratio. The instance does not include local storage, integrated GPUs, or complimentary public IPv4 addresses. A key technical constraint is the absence of modern CPU instruction extensions, including AVX, AVX-512, AMX, and AES hardware acceleration. This resource profile makes the instance suitable for standard general-purpose workloads, such as application middle tiers, basic web serving, and lightweight databases. It offers predictable dedicated compute performance for legacy applications that do not require specialized hardware acceleration or high-speed local storage.",
+  "og_description": "Alibaba Cloud ecs.m1.medium is a general-purpose KVM virtual machine featuring 4 dedicated vCPUs, 16 GB of RAM, and no local storage. It is designed for standard workloads without advanced CPU instruction requirements.",
+  "meta_description": "Alibaba Cloud ecs.m1.medium is a general-purpose KVM virtual machine featuring 4 dedicated vCPUs, 16 GB of RAM, and no local storage for standard workloads.",
+  "tagline": "A dedicated general-purpose instance featuring a balanced memory-to-core ratio for standard workloads without specialized hardware acceleration requirements.",
   "bullet_points": [
-    "4 dedicated x86_64 physical cores with 1 thread per core",
-    "16.0 GB of system memory providing 4.0 GB per core",
-    "No local storage included, requiring network-attached volumes",
-    "KVM hypervisor virtualization with dedicated CPU allocation",
-    "Absence of GPU accelerators and advanced CPU instruction sets",
-    "Suited for general-purpose web serving and lightweight databases"
+    "4 dedicated vCPUs mapped to 4 physical cores with single-thread execution",
+    "16.0 GB of system memory providing a balanced 1:4 resource ratio",
+    "Built on the KVM hypervisor and x86_64 CPU architecture",
+    "No bundled local storage or integrated GPU accelerators",
+    "Lacks advanced CPU extensions such as AVX-512, AMX, and AES",
+    "Best suited for basic web serving, application tiers, and lightweight databases"
   ],
   "categories": [
     "General Purpose"
