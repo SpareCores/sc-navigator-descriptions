@@ -1,22 +1,23 @@
 {
   "page": [
-    "Vultr voc-c-2c-4gb-50s-amd is an entry-level virtual machine within the Optimized Cloud Compute family. It features 2 vCPUs mapped to a single physical AMD EPYC core with 2 threads per core, utilizing a shared CPU allocation model. The processor operates at a base clock speed of 2.0 GHz and is supported by 4.0 GB of system memory, yielding 2.0 GB of RAM per core. Local storage is bundled as a 50 GB NVMe SSD, and the instance includes a single complimentary public IPv4 address. No dedicated GPU hardware is present on this configuration.",
-    "Performance benchmarks reveal a highly polarized capability profile. The instance achieves top-tier single-core CPU performance in stress-ng testing, placing in the top 10% with a score of 3434.78. However, its multi-core stress-ng performance drops to average levels at 6819.14. Memory bandwidth is highly variable; small-block cached reads are weak at 326.91 GB/sec, while large-block uncached reads and writes perform at average levels of 70.08 GB/sec and 63.38 GB/sec respectively. Single-threaded compression and decompression tasks show strong results, with gzip compression reaching 32.16 GB/sec and bzip3 decompression at 14.65 GB/sec. Conversely, database operations, Redis SET performance, and static web serving throughput are weak to poor, with web serving limited to 2.49 GB/sec.",
-    "Given its shared CPU allocation and modest 4.0 GB memory capacity, this instance offers a cost-efficient entry point for workloads that require bursty single-core compute capabilities without demanding sustained multi-core execution or high memory density. The bundled NVMe storage provides fast local access, but the low memory-to-vCPU ratio and weak database performance make it less suitable for heavy database hosting or high-throughput web serving. It is best suited for lightweight background workers, single-threaded utility scripts, basic software compilation, or development environments."
+    "Vultr voc-c-2c-4gb-50s-amd is an instance in the Optimized Cloud Compute family, featuring an x86_64 AMD EPYC processor with 2 vCPUs derived from 1 physical core and 2 threads. The CPU operates at 2.0 GHz with a shared allocation model. It is equipped with 4.0 GB of system memory, providing 2.0 GB per core, and 50 GB of local NVMe SSD storage. The processor supports advanced instruction sets including AVX-512, AVX512_VNNI, AVX512_BF16, and SHA_NI cryptography extensions.",
+    "Benchmark results show a divergence between single-core and multi-core capabilities. The stress-ng single-core CPU performance is in the top tier, whereas multi-core performance falls into the average category. Single-threaded compression and decompression tasks perform strongly, with gzip compression and bzip3 decompression both placing in the top 25%. However, memory bandwidth for small cached blocks is weak, though large block read and write bandwidths maintain average levels. Passmark CPU, physics, and database operations scores are positioned in the bottom 25%.",
+    "Due to the shared CPU allocation, the instance exhibits lower performance in sustained multi-threaded workloads, as reflected in its weak Passmark database operations and Redis SET performance. Static web serving throughput is also limited, scoring in the bottom 10%. This server is best suited for lightweight, single-threaded applications, basic utility scripts, or development environments that benefit from fast single-core bursts and NVMe storage, rather than high-throughput database hosting or intensive web serving."
   ],
-  "description": "Vultr voc-c-2c-4gb-50s-amd is an entry-level instance in the Optimized Cloud Compute family, featuring 2 shared vCPUs from an AMD EPYC processor, 4.0 GB of RAM, and 50 GB of local NVMe SSD storage. Operating at 2.0 GHz, this x86_64 server delivers top-tier single-core CPU performance in stress-ng benchmarks, though its multi-core performance and database operations remain in the average to weak categories. Memory bandwidth is moderate for large blocks but weak for small cached blocks. With a 1:2 vCPU-to-RAM ratio and shared CPU allocation, this instance represents a budget-friendly option for workloads that prioritize single-threaded processing over sustained multi-core throughput. It is best suited for lightweight background tasks, basic software compilation, and development environments rather than high-traffic web serving or database hosting.",
-  "og_description": "Vultr voc-c-2c-4gb-50s-amd is a shared AMD EPYC instance with 2 vCPUs, 4.0 GB RAM, and 50 GB NVMe storage, offering strong single-core compute performance for lightweight workloads.",
-  "meta_description": "Vultr voc-c-2c-4gb-50s-amd is a shared AMD EPYC instance with 2 vCPUs, 4.0 GB RAM, and 50 GB NVMe SSD storage for lightweight workloads.",
-  "tagline": "A budget-friendly shared AMD EPYC instance featuring strong single-core performance and fast local NVMe storage for lightweight utility workloads.",
+  "description": "Vultr voc-c-2c-4gb-50s-amd is an entry-level instance in the Optimized Cloud Compute family, powered by an x86_64 AMD EPYC processor. It features 2 shared vCPUs, 4.0 GB of RAM, and 50 GB of local NVMe SSD storage. While its stress-ng single-core CPU performance ranks in the top tier, its shared CPU allocation limits multi-core and database performance, placing Passmark CPU and database scores in the bottom 25%. The instance supports advanced instructions like AVX-512 and SHA_NI, enabling strong single-threaded compression and decompression. However, weak small-block memory bandwidth and low static web serving throughput restrict its utility for high-concurrency environments. This server is best suited for lightweight, single-threaded workloads, development environments, and basic utility tasks where local NVMe storage is required without the need for dedicated CPU cores.",
+  "og_description": "Vultr voc-c-2c-4gb-50s-amd is a shared-CPU instance with 2 AMD EPYC vCPUs, 4.0 GB RAM, and 50 GB NVMe storage, offering strong single-core performance alongside average multi-core capabilities.",
+  "meta_description": "Vultr voc-c-2c-4gb-50s-amd features 2 shared AMD EPYC vCPUs, 4.0 GB RAM, and 50 GB NVMe storage, suitable for lightweight single-threaded workloads.",
+  "tagline": "A shared-CPU instance combining strong single-core burst performance with local NVMe storage for lightweight, single-threaded utility workloads.",
   "bullet_points": [
-    "2 shared vCPUs powered by an AMD EPYC processor at 2.0 GHz",
-    "4.0 GB of system memory and 50 GB of local NVMe SSD storage",
+    "AMD EPYC processor with 2 shared vCPUs and 4.0 GB RAM",
+    "50 GB of fast local NVMe SSD storage",
     "Top-tier single-core CPU performance in stress-ng benchmarks",
-    "Strong single-threaded gzip compression and bzip3 decompression speeds",
-    "Best suited for lightweight background tasks and development environments"
+    "Strong single-threaded gzip compression and bzip3 decompression",
+    "Best suited for lightweight utility tasks and development environments",
+    "Tradeoffs include weak database operations and low web serving throughput"
   ],
   "categories": [
-    "Burstable & Budget",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Burstable & Budget"
   ]
 }

@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E2d_v4 is a memory-optimized virtual machine belonging to the EDv4 family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated Intel Xeon 8272CL processor operating at 2.6 GHz. This configuration provides 2 vCPUs derived from 1 physical core with hyperthreading enabled, resulting in 2 threads per core. The processor includes 32 KB of L1d cache, 1.0 MB of L2 cache, and 35 MB of L3 cache, alongside support for AVX, AVX512F, and AVX512_VNNI instruction sets.",
-    "The server is equipped with 16.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per core. It also includes 77 GB of bundled local storage. There are no GPUs or complimentary public IPv4 addresses included with this instance type.",
-    "Performance benchmarks indicate a clear divergence between single-core and multi-core capabilities. Single-core performance is moderate, with stress-ng single-core CPU performance and Geekbench single-core scores falling in the average category. Conversely, multi-core and memory bandwidth metrics are limited. Multi-core CPU performance in stress-ng, Geekbench multi-core scores, and Passmark CPU scores all rank in the bottom 10%. Memory bandwidth tests show low throughput, with read-only large block bandwidth at 14.22 GB/sec and write large block bandwidth at 11.16 GB/sec. Database operations and Redis SET operations also register in the bottom 10% tier.",
-    "From a qualitative cost-efficiency perspective, the E2d_v4 offers a high memory-to-vCPU density suitable for memory-bound workloads that do not require intensive parallel processing. Due to the low multi-core and memory bandwidth performance, it is appropriate for lightweight database caching, small-scale web serving, single-threaded file processing, or basic memory-intensive development tasks rather than high-throughput parallel computing."
+    "Microsoft Azure E2d_v4 is an x86_64 architecture virtual machine belonging to the EDv4 server family. It is provisioned with 2 dedicated vCPUs derived from a single physical core of an Intel Xeon 8272CL processor running at 2.6 GHz. The CPU features hyper-threading with 2 threads per core and includes 32 KB L1d cache, 1.0 MB L2 cache, and 35 MB L3 cache. It supports hardware-assisted virtualization via Microsoft Hyper-V, alongside instruction sets such as AVX, AVX-512 (including AVX512F and AVX512_VNNI), AES, BMI2, ADX, and FMA.",
+    "The instance is configured with 16.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per vCPU. It includes 77 GB of local storage, but does not feature any GPU accelerators or complimentary public IPv4 addresses.",
+    "Benchmark evaluations indicate that the E2d_v4 exhibits limited computational and memory throughput. Its stress-ng single-core performance is categorized in the bottom 25%, while multi-core CPU performance, PassMark CPU scores, and Geekbench multi-core scores fall into the bottom 10%. Memory bandwidth tests for both small and large blocks also rank in the bottom 10%. However, single-threaded tasks show moderate capability, with gzip compression and bzip3 decompression achieving average performance in the middle 50% tier.",
+    "Due to its low multi-core processing capacity and poor database operation benchmarks, this server is not suited for high-throughput transactional databases or parallelized compute workloads. The high memory-to-vCPU ratio makes it qualitatively cost-efficient for memory-intensive but computationally light workloads, such as basic caching, lightweight web serving, or single-threaded text and image processing tasks that require a larger memory footprint than standard general-purpose instances."
   ],
-  "description": "Microsoft Azure E2d_v4 is an x86_64 memory-optimized virtual machine from the EDv4 family, running on Microsoft Hyper-V. It features a dedicated Intel Xeon 8272CL processor with 2 vCPUs and 2.6 GHz clock speed, 16.0 GB of RAM, and 77 GB of local storage. While single-core benchmarks fall in the average range, multi-core and memory bandwidth performance are positioned in the bottom 10%. The instance lacks GPU resources and complimentary public IPv4 addresses. Qualitatively, this server provides high memory density relative to its compute capacity, making it a cost-efficient option for memory-bound workloads with low parallel processing demands. It is appropriate for lightweight database caching, single-threaded processing, and small-scale web serving.",
-  "og_description": "Microsoft Azure E2d_v4 is an x86_64 memory-optimized virtual machine featuring 2 vCPUs, 16.0 GB of RAM, and 77 GB of local storage, suitable for memory-bound workloads with low parallel compute needs.",
-  "meta_description": "Microsoft Azure E2d_v4 is a memory-optimized VM with 2 vCPUs, 16.0 GB of RAM, and 77 GB of local storage, running on Intel Xeon processors.",
-  "tagline": "A memory-optimized virtual machine featuring a high memory-to-vCPU ratio and bundled local storage for lightweight, memory-bound workloads.",
+  "description": "Microsoft Azure E2d_v4 is an x86_64 virtual machine in the EDv4 family, running on Microsoft Hyper-V with a 2.6 GHz Intel Xeon 8272CL processor. It features 2 dedicated vCPUs and 16.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. The server includes 77 GB of local storage but lacks GPU acceleration. Performance benchmarks indicate limited processing power, with stress-ng multi-core, PassMark CPU, and memory bandwidth scores falling in the bottom 10%. However, single-threaded operations like gzip compression and bzip3 decompression perform at an average level. Given its high memory capacity relative to its low compute performance, the E2d_v4 is best suited for memory-intensive, low-compute workloads such as lightweight caching, single-threaded data processing, or basic web serving.",
+  "og_description": "Microsoft Azure E2d_v4 is an x86_64 virtual machine in the EDv4 family featuring 2 vCPUs, 16 GB RAM, and 77 GB local storage, suitable for memory-intensive but low-compute workloads.",
+  "meta_description": "Microsoft Azure E2d_v4 is an x86_64 virtual machine with 2 vCPUs, 16 GB RAM, and 77 GB local storage, running on Intel Xeon 8272CL processors.",
+  "tagline": "An x86_64 virtual machine offering a high memory-to-vCPU ratio and local storage for memory-intensive, low-compute workloads.",
   "bullet_points": [
-    "Intel Xeon 8272CL processor with 2 vCPUs and 2.6 GHz clock speed",
-    "16.0 GB of system memory providing a high 8.0 GB per core ratio",
-    "77 GB of bundled local storage for temporary data requirements",
-    "Average single-core performance contrasted with lower multi-core efficiency",
-    "Appropriate for lightweight database caching and single-threaded tasks"
+    "Intel Xeon 8272CL processor with 2 dedicated vCPUs and 16.0 GB RAM",
+    "77 GB of local storage included without GPU acceleration",
+    "High memory-to-vCPU ratio of 8.0 GB per core",
+    "Average performance in single-threaded compression and decompression tasks",
+    "Limited multi-core compute and memory bandwidth performance",
+    "Suited for lightweight caching, basic web serving, and single-threaded processing"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

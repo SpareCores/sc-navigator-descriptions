@@ -1,22 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c6g.xlarge is a compute-optimized instance powered by AWS Graviton processors. It features 4 dedicated physical cores built on the ARMv8 Neoverse-N1 architecture running at 2.5 GHz, with 1.0 thread per core and no hyper-threading. The instance is equipped with 8.0 GB of system memory, providing a resource density of 2.0 GB per core. It operates on the AWS Nitro hypervisor, lacks local storage, and provides a baseline network bandwidth of 1 Gbps.",
-    "Benchmark data indicates moderate CPU performance, with stress-ng single-core and multi-core tests scoring in the average range at 1519.79 and 6053.66 respectively. However, memory subsystem performance shows some limitations; the PassMark memory score is categorized as poor, and cached small-block read bandwidth is weak at 235.89 GB/sec, though uncached large-block read and write bandwidths maintain average ratings. Cryptographic and integer-heavy workloads show lower relative performance, as evidenced by a poor PassMark encryption score of 543.57 and weak results in single-threaded gzip compression and bzip3 decompression.",
-    "The arm64 architecture lacks x86-specific instruction sets such as AVX or AMX, which impacts vector and matrix math performance, resulting in weak Geekbench ray tracing and image processing scores. The instance is suited for workloads that benefit from dedicated physical cores without hyper-threading, such as distributed microservices, static web serving, and lightweight containerized applications. It is less suitable for memory-intensive databases, large language model inference, or heavy cryptographic processing due to its lower memory-to-core ratio and weak benchmark results in those areas."
+    "Amazon Web Services c6g.xlarge is a compute-optimized instance powered by custom AWS Graviton2 processors. It features 4 dedicated physical cores built on the 64-bit ARMv8 Neoverse-N1 architecture running at 2.5 GHz. The instance is equipped with 8.0 GB of system memory, providing a 2.0 GB per core ratio. It operates on the AWS Nitro hypervisor, lacks local storage, and provides a baseline network bandwidth of 1 Gbps.",
+    "Benchmark data indicates moderate CPU capabilities. The stress-ng single-core and multi-core tests yield average performance scores of 1519.79 and 6053.66 respectively. Memory bandwidth for large blocks is average, reaching 71.99 GB/sec for read-only operations and 35.14 GB/sec for write operations. However, the instance exhibits weaker performance in memory-bound tasks with small blocks and in Geekbench single-core and multi-core suites. Cryptographic operations are supported via hardware-accelerated AES, though Passmark encryption scores are relatively low.",
+    "From a cost-efficiency perspective, the ARM64 architecture delivers a high density of dedicated physical cores without hyperthreading, offering predictable compute performance for its resource class. Given the compute-to-memory ratio and lack of local storage, this instance is suited for distributed compute workloads, containerized microservices, static web serving, and basic database operations that do not require high-performance local disk access or massive memory footprints."
   ],
-  "description": "Amazon Web Services c6g.xlarge is a compute-optimized instance featuring 4 dedicated physical cores on the 64-bit ARMv8 Neoverse-N1 architecture. Running at 2.5 GHz on the AWS Nitro hypervisor, it provides 8.0 GB of system memory, translating to 2.0 GB per core, with no local storage and a baseline network bandwidth of 1 Gbps. Benchmark results show average CPU performance in stress-ng tests, but reveal weaknesses in memory bandwidth, cryptographic operations, and software compilation. Lacking x86 instruction sets like AVX, the instance relies on dedicated ARM cores for predictable execution. It is suited for lightweight multi-threaded applications, static web serving, and containerized microservices, but is constrained for memory-heavy databases or intensive mathematical computations.",
-  "og_description": "Amazon Web Services c6g.xlarge is an arm64 compute-optimized instance with 4 dedicated AWS Graviton cores, 8.0 GB of RAM, and 1 Gbps network bandwidth, suited for lightweight distributed workloads.",
-  "meta_description": "Amazon Web Services c6g.xlarge is an arm64 compute-optimized instance featuring 4 dedicated AWS Graviton cores, 8.0 GB of RAM, and 1 Gbps network speed.",
-  "tagline": "A dedicated arm64 compute instance featuring four physical cores and a balanced profile for lightweight distributed services and containerized workloads.",
+  "description": "Amazon Web Services c6g.xlarge is a compute-optimized instance featuring 4 dedicated physical cores powered by an AWS Graviton ARMv8 Neoverse-N1 processor running at 2.5 GHz. It is configured with 8.0 GB of memory, yielding a 2.0 GB per core ratio, and operates on the Nitro hypervisor with a baseline network bandwidth of 1 Gbps. The instance lacks local storage and dedicated GPU hardware. Benchmark results show average performance in stress-ng CPU tests and large-block memory bandwidth, alongside weaker metrics in Geekbench and single-threaded compression tasks. With hardware-accelerated AES cryptography and dedicated core allocation, the c6g.xlarge offers a cost-efficient, predictable compute profile for ARM-native applications. It is best suited for workloads such as containerized microservices, static web serving, and moderate database operations.",
+  "og_description": "Amazon Web Services c6g.xlarge is a compute-optimized instance featuring 4 dedicated ARM64 cores, 8.0 GB of memory, and a 1 Gbps baseline network speed on the Nitro hypervisor, suited for containerized microservices.",
+  "meta_description": "Amazon Web Services c6g.xlarge is a compute-optimized instance with 4 dedicated ARM64 cores, 8.0 GB of RAM, and a 1 Gbps baseline network speed.",
+  "tagline": "A dedicated ARM64 compute-optimized instance offering balanced multi-core performance and predictable resource allocation for containerized microservices.",
   "bullet_points": [
-    "4 dedicated ARMv8 Neoverse-N1 physical cores running at 2.5 GHz",
-    "8.0 GB of system memory providing 2.0 GB per core",
-    "1 Gbps baseline network bandwidth on the AWS Nitro hypervisor",
-    "Average multi-core CPU performance in stress-ng benchmarks",
-    "Weak performance in cryptographic, memory-intensive, and vector workloads",
-    "Suited for static web serving, microservices, and lightweight containerized tasks"
+    "4 dedicated ARM64 physical cores running at 2.5 GHz",
+    "8.0 GB of system memory (2.0 GB per core)",
+    "1 Gbps baseline network bandwidth on the Nitro hypervisor",
+    "Hardware-accelerated AES cryptography support",
+    "Best suited for containerized microservices and static web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

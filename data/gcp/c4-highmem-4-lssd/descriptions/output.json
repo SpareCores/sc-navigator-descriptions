@@ -1,23 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4-highmem-4-lssd is an x86_64 architecture server powered by an Intel Xeon 6985P-C processor. It features 4 dedicated vCPUs derived from 2 physical cores with hyper-threading enabled, operating at a base clock speed of 2.3 GHz. The system is equipped with 31.0 GB of system memory, yielding 7.75 GB of RAM per vCPU. Storage is provided via a bundled 137 GB local NVMe SSD, while no dedicated GPU hardware is included.",
-    "Benchmark data reveals a contrast between single-core and multi-core performance. The instance achieves top-tier results in single-threaded gzip compression at 35.55 GB/sec and Geekbench text processing. However, multi-core metrics, such as the Geekbench multi-core score of 4215.0 and stress-ng multi-core CPU performance, fall into the bottom 25%. Memory bandwidth is also constrained, with read-only large block bandwidth at 22.46 GB/sec and write large block bandwidth at 15.13 GB/sec, both ranking in the lower quartile.",
-    "This server configuration is suited for memory-intensive, single-threaded tasks or workloads that benefit from local NVMe storage, such as caching layers, lightweight database operations, and text processing. The high memory-to-vCPU ratio provides qualitative cost efficiency for applications requiring a substantial memory footprint without needing high parallel compute power. However, the weak multi-core scaling and lower memory bandwidth represent significant tradeoffs for highly parallelized workloads, heavy compilation, or large-scale database operations."
+    "Google Cloud Platform c4-highmem-4-lssd is a memory-optimized virtual machine instance featuring 4 vCPUs and 31 GB of RAM, yielding a high memory-to-vCPU ratio of nearly 8 GB per core. Powered by an Intel Xeon 6985P-C processor with an x86_64 architecture, the server allocates 2 physical cores with 2 threads per core at a base clock speed of 2.3 GHz. The CPU features a large 504 MB L3 cache and supports advanced instruction sets, including AVX-512 and Intel Advanced Matrix Extensions (AMX). This instance includes a bundled 137 GB local NVMe SSD for high-speed local storage, but does not include any GPU accelerators.",
+    "Benchmark data reveals a mix of single-core strength and multi-core or memory bandwidth limitations. The instance achieves top-tier performance in single-threaded gzip compression and text processing. However, multi-core CPU performance and multi-threaded decompression fall into the weak category, reflecting the physical limitation of its 2-core configuration. Memory performance is a notable bottleneck; while cached small-block reads are average, uncached large-block read bandwidth is poor, and the overall Passmark memory score is weak. Similarly, database operations and static web serving throughput are weak, though Redis SET operations maintain average performance.",
+    "From a cost-efficiency perspective, the c4-highmem-4-lssd provides a dense memory allocation and dedicated CPU resources with integrated high-speed local NVMe storage, reducing the need for external storage attachments for temporary data. However, the performance-per-resource tradeoff is highly specialized. It is best suited for memory-intensive workloads that do not require massive parallel processing, such as single-threaded text processing, lightweight caching layers, and moderate-scale database operations. It is less suitable for high-throughput web serving, heavy multi-threaded compilation, or memory-bandwidth-bound applications."
   ],
-  "description": "Google Cloud Platform c4-highmem-4-lssd is an x86_64 server configured with 4 dedicated vCPUs from an Intel Xeon 6985P-C processor running at 2.3 GHz, 31.0 GB of RAM, and a bundled 137 GB local NVMe SSD. It lacks a dedicated GPU. The instance exhibits strong single-core performance, achieving top-tier results in single-threaded gzip compression and text processing. Conversely, multi-core performance and memory bandwidth are limited, falling into the bottom 25% across several benchmarks, including Geekbench multi-core and stress-ng multi-core tests. This server offers a high memory-to-vCPU ratio of 7.75 GB per core, making it qualitatively cost-efficient for memory-bound workloads that do not require intensive parallel processing. It is suited for lightweight database operations, caching, and single-threaded text processing tasks.",
-  "og_description": "Google Cloud Platform c4-highmem-4-lssd features 4 dedicated Intel Xeon vCPUs, 31 GB RAM, and a 137 GB local NVMe SSD. It offers strong single-core performance but limited multi-core scaling.",
-  "meta_description": "Google Cloud Platform c4-highmem-4-lssd is an x86_64 server with 4 vCPUs, 31 GB RAM, and a 137 GB local NVMe SSD, optimized for memory-heavy tasks.",
-  "tagline": "A memory-dense virtual server featuring dedicated Intel Xeon processors and local NVMe SSD storage for single-threaded and memory-bound workloads.",
+  "description": "Google Cloud Platform c4-highmem-4-lssd is a memory-optimized instance featuring 4 vCPUs, 31 GB of RAM, and a bundled 137 GB local NVMe SSD. Powered by an Intel Xeon 6985P-C processor with 2 physical cores and a 504 MB L3 cache, it supports advanced instruction sets like AVX-512 and AMX. Benchmarks indicate strong single-threaded performance, particularly in text processing and gzip compression. However, multi-core CPU performance, memory bandwidth, and database operations are weak, representing a clear tradeoff for parallel workloads. This instance offers a cost-effective profile for memory-dense, single-threaded tasks and local caching, but is less suited for high-throughput web serving or memory-bandwidth-intensive applications.",
+  "og_description": "Google Cloud Platform c4-highmem-4-lssd is a memory-optimized instance with 4 vCPUs, 31 GB RAM, and a 137 GB local NVMe SSD, offering strong single-threaded performance but limited multi-core and memory bandwidth.",
+  "meta_description": "Google Cloud Platform c4-highmem-4-lssd is a memory-optimized instance featuring 4 vCPUs, 31 GB RAM, and a 137 GB local NVMe SSD.",
+  "tagline": "A memory-dense virtual server featuring dedicated Intel Xeon processing, integrated local NVMe storage, and strong single-threaded performance.",
   "bullet_points": [
-    "Intel Xeon 6985P-C processor with 4 dedicated vCPUs and 31 GB RAM",
-    "Bundled 137 GB local NVMe SSD for low-latency storage needs",
-    "Top-tier single-threaded performance in text processing and gzip compression",
-    "Lower multi-core performance and memory bandwidth relative to hardware class",
-    "Suited for caching, lightweight databases, and memory-intensive single-threaded tasks"
+    "Intel Xeon 6985P-C processor with 4 vCPUs and 31 GB RAM",
+    "Bundled 137 GB local NVMe SSD for high-speed temporary storage",
+    "Top-tier single-threaded text processing and gzip compression performance",
+    "Weak multi-core performance and uncached memory bandwidth tradeoffs",
+    "Best suited for memory-dense, single-threaded tasks and lightweight caching"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }
