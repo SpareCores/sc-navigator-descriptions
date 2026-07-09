@@ -1,21 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c7.xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 4 dedicated vCPUs mapped to 4 physical cores of an Intel Xeon 8369B processor running at 2.7 GHz on the x86_64 architecture. The hardware configuration includes 8.0 GB of system memory, providing 2.0 GB of RAM per core. No local storage or GPU accelerators are bundled with this instance type, and it offers a baseline network bandwidth of 3 Gbps.",
-    "Benchmark data indicates moderate single-core performance, with a stress-ng single-core CPU score of 1876.59 and a Passmark CPU encryption test score of 3632.98, both falling into the average category. However, multi-core and memory-intensive operations show limitations. The stress-ng multi-core CPU performance is 3865.79, and the Passmark CPU score is 5890.72, both classified as weak. Memory bandwidth tests show a weak read-only large block rate of 31.76 GB/sec, though the write large block rate of 25.49 GB/sec remains average.",
-    "Given the 1:2 vCPU-to-RAM ratio and dedicated CPU allocation, this instance is designed for compute-bound tasks that do not require massive memory footprints. It achieves average throughput in static web serving at 6.28 GB/sec and handles small-scale LLM inference at 107.71 tokens/sec for text generation. It is suitable for web serving, lightweight single-threaded processing, and basic computational tasks, though it faces performance trade-offs in multi-threaded decompression and high-throughput database operations."
+    "Alibaba Cloud ecs.c7.xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 4 dedicated vCPUs mapped to 4 physical cores with 1 thread per core, utilizing an Intel Xeon 8369B processor running at 2.7 GHz on the x86_64 architecture. The instance is configured with 8.0 GB of system memory, yielding a 1:2 vCPU-to-RAM ratio of 2.0 GB per core. It does not include local storage or GPU accelerators, and it provides a baseline network bandwidth of 3 Gbps.",
+    "Benchmark data reveals a mixture of average single-core capabilities and weaker multi-core scaling. The single-core stress-ng CPU performance and gzip compression are in the average tier, while multi-core stress-ng and bzip3 decompression fall into the weak and poor categories respectively. Memory bandwidth is also limited, with large block read and write speeds categorized as weak. However, the instance demonstrates average performance in cryptographic execution, static web serving throughput at 6.28 GB/sec, and small-model LLM inference, achieving 107.71 tokens/sec for text generation on a 135M model.",
+    "Given its hardware profile, the ecs.c7.xlarge offers a cost-efficient entry point for compute-bound workloads that do not require high memory density or local storage. The primary tradeoff is the low memory-to-vCPU ratio and weak multi-threaded scaling, which makes it less suitable for large databases or memory-intensive applications. It is best suited for single-threaded processing, lightweight web serving, basic cryptographic tasks, and small-scale machine learning inference."
   ],
-  "description": "Alibaba Cloud ecs.c7.xlarge is an x86_64 compute-optimized instance featuring 4 dedicated vCPUs and 4 physical cores powered by an Intel Xeon 8369B processor running at 2.7 GHz. Equipped with 8.0 GB of RAM and no local storage, this KVM-based instance provides a baseline network bandwidth of 3 Gbps. Performance benchmarks indicate average single-core capabilities, with a stress-ng single-core score of 1876.59 and static web serving throughput of 6.28 GB/sec, though multi-core and memory bandwidth metrics generally rank in the lower percentiles. The instance is suited for compute-focused workloads with low memory requirements, such as web serving, single-threaded data processing, and lightweight application hosting, offering a dedicated CPU resource profile without the overhead of bundled storage or GPUs.",
-  "og_description": "Alibaba Cloud ecs.c7.xlarge is a compute-optimized instance with 4 dedicated Intel Xeon vCPUs, 8.0 GB RAM, and 3 Gbps network bandwidth, suitable for web serving and light compute tasks.",
-  "meta_description": "Alibaba Cloud ecs.c7.xlarge features 4 dedicated Intel Xeon vCPUs, 8.0 GB RAM, and 3 Gbps network bandwidth for compute-focused workloads.",
-  "tagline": "A dedicated compute-optimized instance featuring Intel Xeon processors and a balanced profile for lightweight, CPU-bound workloads.",
+  "description": "Alibaba Cloud ecs.c7.xlarge is a compute-optimized instance featuring 4 dedicated vCPUs and 8.0 GB of RAM, powered by an Intel Xeon 8369B processor at 2.7 GHz on the x86_64 architecture. Operating under the KVM hypervisor, this instance provides a 1:2 vCPU-to-RAM ratio, 3 Gbps baseline network bandwidth, and no local storage or GPU accelerators. Performance benchmarks indicate average single-core CPU execution, static web serving throughput of 6.28 GB/sec, and capable small-model LLM inference. However, it exhibits weaker multi-core scaling and limited memory bandwidth. This resource profile makes the ecs.c7.xlarge a cost-efficient option for single-threaded applications, lightweight web servers, and basic cryptographic processing, while representing a clear tradeoff for memory-intensive database operations.",
+  "og_description": "Alibaba Cloud ecs.c7.xlarge is a compute-optimized instance with 4 dedicated Intel Xeon vCPUs, 8.0 GB of RAM, and 3 Gbps network bandwidth, suitable for single-threaded tasks and lightweight web serving.",
+  "meta_description": "Alibaba Cloud ecs.c7.xlarge is a compute-optimized instance featuring 4 Intel Xeon vCPUs, 8.0 GB of RAM, and a 3 Gbps baseline network speed.",
+  "tagline": "A compute-optimized virtual server featuring dedicated Intel Xeon processors and a balanced profile for single-threaded tasks and lightweight web serving.",
   "bullet_points": [
-    "4 dedicated vCPUs powered by an Intel Xeon 8369B processor at 2.7 GHz",
-    "8.0 GB of system memory providing a 1:2 vCPU-to-RAM ratio",
-    "3 Gbps baseline network bandwidth with no bundled local storage",
-    "Average performance in single-threaded compression and static web serving",
-    "Best suited for lightweight web serving and compute-bound applications"
+    "Powered by 4 dedicated Intel Xeon 8369B vCPUs at 2.7 GHz",
+    "Equipped with 8.0 GB of RAM and 3 Gbps baseline network bandwidth",
+    "No bundled local storage or GPU accelerators",
+    "Delivers average single-core CPU and static web serving performance",
+    "Best suited for single-threaded applications and lightweight web servers"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

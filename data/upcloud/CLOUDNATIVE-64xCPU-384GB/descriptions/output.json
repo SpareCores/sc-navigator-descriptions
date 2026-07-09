@@ -1,22 +1,23 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-64xCPU-384GB is a Cloud Native family virtual server running on the KVM hypervisor. It features an x86_64 architecture powered by an AMD EPYC 7542 processor with 64 vCPUs and 64 physical cores. The CPU operates at a base speed of 2.0 GHz with a shared allocation model. It is equipped with 384.0 GB of system memory, providing 6.0 GB of RAM per core. This server does not include local storage or dedicated GPU hardware, but it comes with one complimentary public IPv4 address.",
-    "Performance benchmarks indicate a clear distinction between single-core and multi-threaded capabilities. Single-core performance is relatively low, with stress-ng single-core and single-threaded compression tests scoring in the bottom 10% to 25%. However, multi-threaded execution is robust; the server achieves strong results in bzip3 multi-threaded decompression, Passmark CPU physics, and Passmark CPU encryption tests. Memory performance is also a highlight, with cached small-block read bandwidth and large-block write bandwidth both ranking in the top 25%. Static web serving, Redis SET operations, and Geekbench multi-core metrics consistently fall within the average range.",
-    "Given its shared CPU allocation and high resource density, this server offers a cost-effective option for highly parallelized workloads that do not require constant, dedicated single-core performance. The lack of bundled local storage means storage must be provisioned externally. It is well-suited for multi-threaded applications, software compilation, memory-intensive caching, and general-purpose web serving. It is less suitable for single-threaded tasks or real-time LLM text generation, where its single-core performance and shared CPU model present clear bottlenecks."
+    "UpCloud CLOUDNATIVE-64xCPU-384GB is a Cloud Native family virtual server running on the KVM hypervisor. It features 64 vCPUs mapped to 64 physical cores using the x86_64 architecture, powered by AMD EPYC 7542 processors running at 2.0 GHz. The CPU allocation is shared, and each physical core runs a single thread. The system is equipped with 384.0 GB of system memory, yielding a resource density of 6.0 GB of RAM per core. This server does not include local storage or dedicated GPU hardware, but it comes with one complimentary public IPv4 address.",
+    "Benchmark data reveals distinct performance tradeoffs. Single-core performance is a limitation, with stress-ng single-core CPU performance ranking in the bottom 10% and single-threaded gzip and bzip3 decompression falling into the bottom 25%. However, the massive core count compensates in parallel workloads, as evidenced by strong multi-threaded bzip3 decompression and a strong PassMark CPU score, both ranking in the top 25%. Memory performance is highly capable, with cached small-block read bandwidth and large-block write bandwidth scoring in the top 25%. Conversely, text processing and medium-model LLM text generation show weaker results, reflecting the lower single-core clock speed and shared CPU allocation.",
+    "From a cost-efficiency perspective, this server offers high resource density for multi-threaded workloads that do not require dedicated, non-shared CPU execution. The shared CPU model provides a massive pool of 64 cores and 384 GB of RAM at a lower qualitative cost tier than dedicated instances of similar scale. It is highly suited for highly parallelized tasks such as multi-threaded data decompression, Redis in-memory caching (where SET operations scored in the top 25%), software compilation, and general-purpose web serving. It is less suitable for single-threaded applications or real-time LLM text generation."
   ],
-  "description": "UpCloud CLOUDNATIVE-64xCPU-384GB is an x86_64 virtual server in the Cloud Native family, utilizing the KVM hypervisor. Powered by an AMD EPYC 7542 processor, it features 64 vCPUs and 64 physical cores under a shared CPU allocation model, paired with 384.0 GB of RAM. The server lacks local storage and GPU accelerators. Benchmarks show weak single-core performance but strong multi-threaded capabilities, particularly in memory bandwidth and encryption tests. This configuration is highly cost-effective for parallelized, memory-heavy workloads such as software compilation, multi-threaded data processing, and web serving, though it is bottlenecked on single-threaded tasks.",
-  "og_description": "UpCloud CLOUDNATIVE-64xCPU-384GB is an x86_64 virtual server featuring 64 AMD EPYC vCPUs and 384 GB RAM. It offers strong multi-threaded and memory performance but has weak single-core execution.",
-  "meta_description": "UpCloud CLOUDNATIVE-64xCPU-384GB is a KVM-based virtual server with 64 AMD EPYC vCPUs and 384 GB RAM, optimized for multi-threaded workloads.",
-  "tagline": "A high-capacity, multi-core virtual server optimized for parallel processing and memory-intensive workloads without local storage.",
+  "description": "The UpCloud CLOUDNATIVE-64xCPU-384GB is a Cloud Native virtual server featuring 64 AMD EPYC 7542 vCPUs on a shared allocation model, paired with 384.0 GB of RAM. Running on the KVM hypervisor with an x86_64 architecture, it lacks local storage and GPU accelerators but includes one public IPv4 address. Performance benchmarks highlight a clear tradeoff: single-core CPU execution and single-threaded decompression are weak, whereas multi-threaded operations, PassMark CPU metrics, and memory write bandwidth perform in the top 25%. This resource profile is highly cost-efficient for parallelized workloads that benefit from high memory capacity and core density without requiring dedicated CPU threads. It is best suited for multi-threaded data processing, Redis caching, software compilation, and general-purpose web serving.",
+  "og_description": "UpCloud CLOUDNATIVE-64xCPU-384GB is a KVM-based virtual server featuring 64 AMD EPYC vCPUs and 384 GB RAM, delivering strong multi-threaded and memory performance for parallel workloads.",
+  "meta_description": "UpCloud CLOUDNATIVE-64xCPU-384GB features 64 AMD EPYC vCPUs and 384 GB RAM, delivering strong multi-threaded performance for parallel workloads.",
+  "tagline": "A high-density, multi-core virtual server offering balanced memory bandwidth and parallel processing capabilities for memory-intensive, distributed workloads.",
   "bullet_points": [
-    "64 AMD EPYC vCPUs and 384 GB of system memory on x86_64 architecture",
-    "Shared CPU allocation model running on the KVM hypervisor",
-    "Strong multi-threaded performance and high memory bandwidth",
-    "No bundled local storage or GPU hardware included",
-    "Best suited for software compilation, web serving, and parallel data processing"
+    "64 AMD EPYC 7542 vCPUs on a shared allocation model",
+    "384.0 GB of system memory providing 6.0 GB per core",
+    "Strong multi-threaded decompression and PassMark CPU performance",
+    "High-speed memory write bandwidth and Redis SET operations",
+    "No local storage or GPU hardware included",
+    "Best suited for Redis caching, software compilation, and parallel data processing"
   ],
   "categories": [
     "General Purpose",
-    "Burstable & Budget"
+    "Memory Optimized"
   ]
 }

@@ -1,20 +1,21 @@
 {
   "page": [
-    "Amazon Web Services i8ge.metal-24xl is a storage-optimized bare-metal server powered by 96 dedicated physical cores of the 64-bit ARMv9 AWS Graviton architecture (Neoverse-V2) running at 2.8 GHz. The hardware configuration includes 768.0 GB of DDR5 memory, providing 8.0 GB of RAM per core. For local storage, the system features 60,000 GB of NVMe SSD capacity. Network connectivity is supported by a baseline bandwidth of 150 Gbps. No GPU accelerators are present on this instance type.",
-    "In benchmark testing, the server demonstrates top-tier performance in multi-core processing, including stress-ng multi-core, Geekbench multi-core, and bzip3 multi-threaded decompression. Memory subsystem performance is also in the top tier, with high read and write bandwidths across both small and large blocks. Database operations, Redis SET operations, and static web serving throughput also rank in the top ten percent. However, single-core performance is more moderate, with stress-ng single-core and Geekbench image processing scoring in the average tier.",
-    "While the server excels in multi-threaded tasks and database operations, it exhibits mixed results in language model inference. Text generation for a small 135M model ranks in the bottom ten percent, whereas text generation for medium 7B and large 70B models reaches the top twenty-five percent. Given the massive 60,000 GB local NVMe storage, high memory bandwidth, and top-tier multi-core capabilities, this server is configured for large-scale databases, high-throughput web serving, and data-intensive storage workloads."
+    "Amazon Web Services i8ge.metal-24xl is a storage-optimized bare-metal server powered by 96 dedicated physical cores of the ARMv9-based AWS Graviton Neoverse-V2 processor running at 2.8 GHz. The architecture features 2 MB of L2 cache per core and 36 MB of L3 cache, paired with 768 GB of DDR5 memory. For local storage, the instance is equipped with 60,000 GB of NVMe SSD capacity, alongside a baseline network bandwidth of 150 Gbps.",
+    "In benchmark evaluations, the server demonstrates top-tier multi-core CPU performance, particularly in stress-ng multi-core tests, PassMark database operations, and Redis SET operations, which reached 199.43 million operations per second. Memory bandwidth is exceptionally high, with read-only large block transfers reaching 481.78 GB/sec and write large block transfers at 217.96 GB/sec. Single-core performance is moderate to strong, as evidenced by Geekbench single-core and stress-ng single-core metrics.",
+    "The ARM64 architecture lacks x86-specific vector extensions like AVX or AMX, and the absence of dedicated GPUs limits its utility for heavy deep learning training, resulting in poor text generation speeds for smaller LLM models. However, the high density of physical cores, DDR5 memory, and massive local NVMe storage provides high qualitative cost efficiency for data-intensive workloads, avoiding the hyperthreading overhead of traditional virtualized instances.",
+    "This server is optimized for large-scale relational and non-relational databases, high-throughput Redis caching layers, massive data warehousing, software compilation, and high-velocity static web serving."
   ],
-  "description": "Amazon Web Services i8ge.metal-24xl is a storage-optimized bare-metal server featuring 96 dedicated physical cores on the 64-bit ARMv9 AWS Graviton architecture running at 2.8 GHz. It is equipped with 768.0 GB of DDR5 memory and 60,000 GB of local NVMe SSD storage, alongside a 150 Gbps baseline network bandwidth. Benchmarks show top-tier performance in multi-core processing, memory bandwidth, database operations, and static web serving. Conversely, single-core performance and small-model text generation benchmarks are average to poor. This resource density makes the server highly efficient for large-scale database systems, multi-threaded data processing, and high-throughput storage workloads.",
-  "og_description": "Amazon Web Services i8ge.metal-24xl is a storage-optimized bare-metal server with 96 ARMv9 Graviton cores, 768 GB DDR5 RAM, and 60,000 GB NVMe SSD storage, delivering top-tier multi-core and database performance.",
-  "meta_description": "Amazon Web Services i8ge.metal-24xl is a storage-optimized server with 96 ARMv9 cores, 768 GB DDR5 RAM, and 60,000 GB of local NVMe SSD storage.",
-  "tagline": "A storage-optimized bare-metal platform combining ninety-six ARMv9 cores with sixty terabytes of local NVMe SSD storage for data-intensive workloads.",
+  "description": "Amazon Web Services i8ge.metal-24xl is a storage-optimized bare-metal server featuring 96 dedicated physical cores of the ARMv9 AWS Graviton Neoverse-V2 processor running at 2.8 GHz. It is equipped with 768 GB of DDR5 memory, 60,000 GB of local NVMe SSD storage, and a 150 Gbps network interface. Benchmarks indicate top-tier multi-core CPU performance, exceptional memory bandwidth, and superior database operation throughput, including 199.43 million Redis SET operations per second. While the ARM64 architecture lacks AVX/AMX instructions and dedicated GPU hardware, it delivers high resource density and qualitative cost efficiency for massive data-intensive environments. This server is highly suited for large-scale databases, high-throughput caching systems, software compilation, and static web serving.",
+  "og_description": "Amazon Web Services i8ge.metal-24xl is a bare-metal server with 96 ARMv9 Graviton cores, 768 GB DDR5 RAM, 60 TB NVMe SSD storage, and 150 Gbps network bandwidth, optimized for high-throughput database workloads.",
+  "meta_description": "Amazon Web Services i8ge.metal-24xl is a bare-metal server featuring 96 ARMv9 Graviton cores, 768 GB DDR5 RAM, and 60 TB of local NVMe SSD storage.",
+  "tagline": "A bare-metal ARMv9 server delivering ninety-six dedicated cores, seventy-six8 gigabytes of DDR5 RAM, and sixty terabytes of local NVMe storage.",
   "bullet_points": [
-    "96 dedicated ARMv9 AWS Graviton physical cores running at 2.8 GHz",
-    "60,000 GB of high-speed local NVMe SSD storage",
-    "768 GB of DDR5 memory with top-tier read and write bandwidth",
-    "150 Gbps baseline network bandwidth",
-    "Top-tier multi-core, database, and static web serving benchmark performance",
-    "Best suited for large-scale databases and high-throughput storage workloads"
+    "96 dedicated ARMv9 AWS Graviton Neoverse-V2 physical cores at 2.8 GHz.",
+    "60,000 GB of high-speed local NVMe SSD storage.",
+    "768 GB of high-bandwidth DDR5 system memory.",
+    "150 Gbps baseline network bandwidth for high-throughput data transfer.",
+    "Top-tier performance in database operations, Redis caching, and multi-core processing.",
+    "Optimized for large-scale databases, data warehousing, and static web serving."
   ],
   "categories": [
     "Storage & Database",

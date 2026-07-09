@@ -1,21 +1,22 @@
 {
   "page": [
-    "Amazon Web Services m8gd.medium is a general-purpose instance powered by a single-core AWS Graviton processor. Built on the ARMv9 architecture with Neoverse-V2 cores, this instance features 1 dedicated vCPU operating at 2.8 GHz, backed by 4.0 GB of system memory. It includes 59 GB of local NVMe SSD instance storage and delivers a baseline network bandwidth of 1 Gbps. The instance runs on the AWS Nitro hypervisor.",
-    "In benchmark evaluations, the m8gd.medium demonstrates average single-core CPU performance, as evidenced by its stress-ng single-core score of 1693.28 and Geekbench single-core score of 1735.0. Single-threaded bzip3 decompression performance is strong at 14.02 GB/sec. However, due to its single-core configuration, multi-core benchmarks are poor, with a Geekbench multi-core score of 1738.0. Memory bandwidth is relatively weak, with uncached large-block read speeds at 30.15 GB/sec and write speeds at 11.64 GB/sec.",
-    "From a cost-efficiency perspective, the m8gd.medium offers a balanced entry-point resource profile for ARM-based workloads, combining dedicated CPU execution with high-speed local NVMe storage. The inclusion of bundled instance storage provides high-speed local scratch space without requiring external block storage. This instance is best suited for lightweight general-purpose workloads, single-threaded applications, basic web serving, and development or testing environments that benefit from ARM64 architecture and local SSD storage."
+    "Amazon Web Services m8gd.medium is a general-purpose instance powered by a dedicated 2.8 GHz AWS Graviton ARMv9 Neoverse-V2 processor. This single-core, single-threaded arm64 server features 4.0 GB of system memory and includes a bundled 59 GB NVMe SSD local instance store volume. Built on the AWS Nitro hypervisor, it provides a baseline network bandwidth of 1 Gbps.",
+    "Benchmark results indicate average single-core performance, with a Geekbench single-core score of 1735.0 and a stress-ng single-core CPU score of 1693.28. Single-threaded tasks like bzip3 decompression show strong performance at 14.02 GB/sec, while gzip compression performs at an average rate of 30.03 GB/sec. However, due to its single-core configuration, multi-core benchmarks are poor, matching the single-core results. Memory bandwidth is limited, with large-block read and write speeds categorized as weak and poor respectively.",
+    "The primary tradeoff of the m8gd.medium is its single-core limitation, which restricts its utility for parallel processing, software compilation, or heavy multi-threaded workloads. It is qualitatively cost-efficient for lightweight, single-threaded applications requiring fast local NVMe storage. Suitable workloads include basic web serving, simple database operations, text processing, and lightweight background tasks that do not require high network throughput or multi-core execution."
   ],
-  "description": "Amazon Web Services m8gd.medium is a general-purpose, ARM64-based instance powered by a single-core AWS Graviton Neoverse-V2 processor running at 2.8 GHz. It features 1 dedicated physical core, 4.0 GB of system memory, and 59 GB of local NVMe SSD instance storage. Operating on the AWS Nitro hypervisor, it provides a baseline network bandwidth of 1 Gbps. Benchmark data indicates average single-core CPU capabilities, highlighted by a Geekbench single-core score of 1735.0 and strong single-threaded bzip3 decompression performance of 14.02 GB/sec. However, multi-core and memory write bandwidth metrics are limited by its single-vCPU configuration. This instance is qualitatively cost-efficient for lightweight ARM64 development, single-threaded processing, and basic web serving workloads requiring fast local scratch space.",
-  "og_description": "Amazon Web Services m8gd.medium is a general-purpose ARM64 instance featuring 1 dedicated Graviton vCPU, 4.0 GB of RAM, and 59 GB of local NVMe SSD storage on the Nitro hypervisor.",
-  "meta_description": "Amazon Web Services m8gd.medium is a general-purpose ARM64 instance with 1 Graviton vCPU, 4.0 GB RAM, and 59 GB NVMe SSD storage.",
-  "tagline": "A single-core ARM64 instance featuring dedicated Graviton processing and local NVMe SSD storage for lightweight general-purpose workloads.",
+  "description": "Amazon Web Services m8gd.medium is a general-purpose, single-core arm64 server powered by a dedicated 2.8 GHz AWS Graviton ARMv9 Neoverse-V2 processor. It features 4.0 GB of memory, a 59 GB NVMe SSD local instance store, and a baseline network bandwidth of 1 Gbps. Operating on the Nitro hypervisor, the instance delivers average single-core performance, highlighted by a Geekbench single-core score of 1735.0 and strong single-threaded bzip3 decompression at 14.02 GB/sec. However, its single-core, single-threaded design results in poor multi-core and parallel processing capabilities, as reflected in its low multi-core benchmark scores. The local NVMe SSD provides fast storage access, making this instance qualitatively cost-efficient for lightweight, storage-dependent workloads. It is best suited for single-threaded applications, basic text processing, lightweight database operations, and low-traffic web serving.",
+  "og_description": "Amazon Web Services m8gd.medium is a single-core arm64 server with a 2.8 GHz AWS Graviton ARMv9 processor, 4.0 GB RAM, and a 59 GB NVMe SSD, offering average single-core performance for lightweight workloads.",
+  "meta_description": "Amazon Web Services m8gd.medium is a single-core arm64 server featuring a 2.8 GHz Graviton CPU, 4.0 GB RAM, and 59 GB of local NVMe SSD storage.",
+  "tagline": "A single-core ARMv9 server with dedicated processing and local NVMe SSD storage for lightweight, single-threaded workloads.",
   "bullet_points": [
-    "Single-core AWS Graviton Neoverse-V2 ARM64 processor running at 2.8 GHz",
+    "Single-core AWS Graviton ARMv9 Neoverse-V2 processor running at 2.8 GHz",
     "4.0 GB of system memory and 59 GB of local NVMe SSD instance storage",
-    "Dedicated CPU allocation on the AWS Nitro hypervisor with 1 Gbps baseline network bandwidth",
-    "Average single-core CPU performance and strong single-threaded decompression capabilities",
-    "Best suited for lightweight general-purpose applications, ARM64 development, and testing"
+    "Average single-core CPU performance and strong single-threaded decompression",
+    "Limited multi-core and parallel processing capabilities due to single-threaded design",
+    "Appropriate for lightweight databases, text processing, and basic web serving"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }
