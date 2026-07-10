@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure F2ads_v7 is an x86_64 architecture virtual machine belonging to the Fadsv7 server family. Powered by an AMD processor and managed via the Microsoft Hyper-V hypervisor, this instance features 2 dedicated vCPUs and 8.0 GB of system memory, yielding a balanced allocation of 4.0 GB of RAM per core.",
-    "The instance is equipped with 236 GB of local disk storage and is Premium Storage capable, allowing for high-performance external disk attachments. It does not include any integrated GPU hardware or complimentary public IPv4 addresses.",
-    "Given its balanced 1:4 vCPU-to-RAM ratio and dedicated CPU allocation, the F2ads_v7 offers a cost-effective entry point for workloads requiring predictable compute performance without the overhead of larger instances. The combination of dedicated AMD execution threads and local storage makes this server type suitable for general-purpose applications, lightweight databases, web serving, and development environments."
+    "Microsoft Azure F2ads_v7 is a general-purpose virtual machine belonging to the Fadsv7 family, running on the Microsoft Hyper-V hypervisor. It features 2 dedicated physical cores and 2 vCPUs powered by an AMD EPYC 9V45 processor with an x86_64 architecture and a clock speed of 4.5 GHz. The hardware configuration includes 8.0 GB of system memory, providing 4.0 GB of RAM per core, and a bundled 236 GB local storage drive. The instance is also Premium Storage capable but does not include any complimentary public IPv4 addresses or GPU accelerators.",
+    "Benchmark data highlights strong single-core capabilities, with stress-ng single-core CPU performance, single-threaded gzip compression, and single-threaded bzip3 decompression all placing in the top tier (top 10%). Multi-core performance is more moderate, with stress-ng multi-core CPU performance, PassMark CPU score, and PassMark database operations ranking in the average tier (middle 50%). Memory bandwidth is also average, measuring 429.84 GB/sec for small block cached reads and 52.62 GB/sec for large block uncached reads. However, multi-threaded bzip3 decompression and static web serving throughput are weaker, falling into the bottom 25% of tested hardware.",
+    "Given its high single-core clock speed of 4.5 GHz and dedicated CPU allocation, the F2ads_v7 offers a cost-efficient profile for workloads that require strong single-threaded performance without massive memory footprints. It is well-suited for lightweight database operations, Redis caching (achieving 7.2 million SET operations per second in benchmarks), basic web serving, and small-scale LLM inference tasks. However, its limited 2-core capacity and weak multi-threaded decompression performance make it less suitable for highly parallelized computing or heavy multi-threaded processing."
   ],
-  "description": "Microsoft Azure F2ads_v7 is an x86_64 virtual machine from the Fadsv7 family, featuring 2 dedicated vCPUs powered by an AMD processor and managed via Microsoft Hyper-V. It is configured with 8.0 GB of system memory, providing 4.0 GB of RAM per core, and includes 236 GB of local disk storage with Premium Storage compatibility. Lacking integrated GPUs, this instance offers a balanced resource profile for workloads that require dedicated compute resources and local storage capacity. It is well-suited for general-purpose applications, lightweight database hosting, web serving, and software development environments.",
-  "og_description": "Microsoft Azure F2ads_v7 is a virtual machine featuring 2 dedicated AMD vCPUs, 8.0 GB of RAM, and 236 GB of local storage, designed for general-purpose workloads and lightweight databases.",
-  "meta_description": "Microsoft Azure F2ads_v7 is a virtual machine with 2 dedicated AMD vCPUs, 8.0 GB of RAM, and 236 GB of local storage for general-purpose workloads.",
-  "tagline": "A balanced virtual machine with dedicated AMD processors, local storage, and Premium Storage support for general-purpose workloads.",
+  "description": "Microsoft Azure F2ads_v7 is a general-purpose virtual machine from the Fadsv7 family, powered by a 4.5 GHz AMD EPYC 9V45 processor. It features 2 dedicated vCPUs, 8.0 GB of RAM, and 236 GB of local storage, operating on the Microsoft Hyper-V hypervisor. Benchmarks indicate top-tier single-core performance, with stress-ng single-core CPU execution and single-threaded gzip compression scoring in the top 10%. Conversely, multi-core and memory bandwidth metrics generally fall into the average tier, while static web serving throughput and multi-threaded decompression are weaker. This virtual machine is qualitatively cost-efficient for workloads that prioritize single-threaded CPU speed over massive parallelization, such as lightweight database operations, Redis caching, and small-scale web serving.",
+  "og_description": "Microsoft Azure F2ads_v7 is a 2-vCPU virtual machine featuring a 4.5 GHz AMD EPYC processor, 8 GB RAM, and 236 GB local storage, delivering top-tier single-core performance for general-purpose workloads.",
+  "meta_description": "Microsoft Azure F2ads_v7 features 2 vCPUs, a 4.5 GHz AMD EPYC CPU, 8 GB RAM, and 236 GB local storage, optimized for single-core workloads.",
+  "tagline": "A dual-core virtual machine featuring a high-frequency AMD EPYC processor and local storage for single-thread intensive general-purpose workloads.",
   "bullet_points": [
-    "2 dedicated AMD vCPUs on x86_64 architecture",
-    "8.0 GB system memory with 4.0 GB per core",
-    "236 GB of local disk storage",
-    "Premium Storage capable for high-performance disk attachments",
-    "Suitable for general-purpose applications, web serving, and small databases"
+    "Powered by a 4.5 GHz AMD EPYC 9V45 processor with 2 dedicated vCPUs",
+    "Equipped with 8.0 GB of RAM and a 236 GB local storage disk",
+    "Delivers top-tier single-core CPU and single-threaded compression performance",
+    "Features average memory bandwidth and multi-core processing capabilities",
+    "Suitable for lightweight database operations, Redis caching, and basic web serving"
   ],
   "categories": [
     "General Purpose",
+    "Compute Optimized",
     "Storage & Database"
   ]
 }

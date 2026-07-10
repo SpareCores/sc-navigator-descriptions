@@ -1,20 +1,19 @@
 {
   "page": [
-    "Microsoft Azure D8als_v7 is an x86_64 architecture server instance belonging to the Dalsv7 family, running on the Microsoft Hyper-V hypervisor. It features 8 dedicated vCPUs powered by an AMD processor and is configured with 16.0 GB of system memory. This allocation results in a memory-to-core ratio of 2.0 GB per vCPU, positioning the instance in a lower-memory tier relative to standard general-purpose configurations.",
-    "The instance does not include bundled local storage, but it is premium storage capable, allowing users to attach external persistent storage volumes. It contains no integrated graphics processing units and does not include complimentary public IPv4 addresses.",
-    "The primary tradeoff of the D8als_v7 is its constrained memory capacity of 2.0 GB per core and the lack of local storage. However, this resource density provides qualitative cost efficiency for workloads that require dedicated CPU resources but do not demand large memory footprints or local scratch space. It avoids the higher costs associated with memory-heavy or storage-bundled instances.",
-    "This hardware profile is suitable for compute-focused workloads with low memory requirements, such as web serving, batch processing, microservices, and distributed compute nodes where memory utilization is predictable and low."
+    "Microsoft Azure D8als_v7 is a compute-optimized virtual machine belonging to the Dalsv7 family. It features 8 dedicated vCPUs mapped to 4 physical AMD EPYC 9V45 cores with 2 threads per core, operating at a clock speed of 4.5 GHz. The x86_64 architecture includes 32 MB of L3 cache, 1.0 MB of L2 cache, and 48 KB of L1d cache. It is equipped with 16.0 GB of system memory, yielding a resource density of 2.0 GB per core. The instance has no local storage but is Premium Storage capable, and it does not include any GPUs or complimentary public IPv4 addresses.",
+    "Benchmark results indicate top-tier single-core CPU performance, with stress-ng single-core and single-threaded gzip compression and bzip3 decompression scoring in the top 10%. Multi-core performance, including stress-ng multi-core and multi-threaded bzip3 decompression, falls into the average tier. Memory bandwidth is average, with read-only small block cached bandwidth at 889.23 GB/sec and large block uncached write bandwidth at 33.7 GB/sec. For language model workloads, the server achieves a strong rating for text generation with a small 135M model, but exhibits weak performance for prompt processing on medium 7B models.",
+    "From a cost-efficiency perspective, the D8als_v7 offers a high-frequency CPU profile with a lower memory-to-vCPU ratio, making it a resource-dense option for compute-heavy tasks that do not require massive memory footprints. The primary tradeoff is the low memory allocation of 2.0 GB per core and the complete absence of local storage. This virtual machine is suited for single-threaded applications, web serving, lightweight database operations, and small-scale machine learning inference tasks."
   ],
-  "description": "Microsoft Azure D8als_v7 is an x86_64 architecture virtual machine from the Dalsv7 server family, running on the Microsoft Hyper-V hypervisor. It is equipped with 8 dedicated vCPUs powered by an AMD processor and 16.0 GB of system memory, yielding a low memory-to-core ratio of 2.0 GB per vCPU. The instance does not include bundled local storage or integrated GPUs, though it is premium storage capable for external disk attachments. This resource configuration offers qualitative cost efficiency by reducing memory overhead expenses for CPU-bound tasks. The D8als_v7 is designed for workloads that require dedicated compute power without large memory footprints, such as web serving, batch processing, and microservices.",
-  "og_description": "Microsoft Azure D8als_v7 is an x86_64 virtual machine featuring 8 dedicated AMD vCPUs, 16.0 GB of RAM, and premium storage capability, optimized for low-memory compute workloads.",
-  "meta_description": "Microsoft Azure D8als_v7 is an x86_64 virtual machine with 8 dedicated AMD vCPUs and 16.0 GB of RAM, designed for low-memory compute workloads.",
-  "tagline": "A dedicated eight-core AMD compute instance with a low-memory footprint, designed for cost-efficient CPU-bound workloads and microservices.",
+  "description": "Microsoft Azure D8als_v7 is an x86_64 compute-optimized virtual machine from the Dalsv7 family, powered by an AMD EPYC 9V45 processor. It features 8 dedicated vCPUs across 4 physical cores with a high clock speed of 4.5 GHz, 32 MB of L3 cache, and 16.0 GB of system memory. The server lacks local storage but supports Premium Storage, and it contains no GPUs. Performance benchmarks show top-tier single-core CPU execution and single-threaded compression speeds, while multi-core operations and memory bandwidth remain in the average tier. Qualitatively, the server provides a cost-effective option for compute-intensive workloads that do not demand high memory density, given its 2.0 GB of RAM per core. It is well-suited for web serving, single-threaded applications, and lightweight database operations.",
+  "og_description": "Microsoft Azure D8als_v7 is an x86_64 compute-optimized virtual machine featuring 8 dedicated AMD EPYC vCPUs at 4.5 GHz, 16.0 GB of RAM, and no local storage, delivering top-tier single-core performance.",
+  "meta_description": "Microsoft Azure D8als_v7 is an x86_64 virtual machine with 8 AMD EPYC vCPUs, 16.0 GB of RAM, and top-tier single-core CPU performance.",
+  "tagline": "A high-frequency compute-optimized virtual machine featuring dedicated AMD processors and a low memory-to-core ratio for single-threaded workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an AMD processor",
-    "16.0 GB of system memory providing 2.0 GB per core",
-    "Premium storage capable with no bundled local storage",
-    "Runs on the Microsoft Hyper-V hypervisor",
-    "Suited for web serving, batch processing, and microservices"
+    "8 dedicated vCPUs powered by a 4.5 GHz AMD EPYC 9V45 processor",
+    "16.0 GB of system memory providing 2.0 GB of RAM per core",
+    "Top-tier single-core CPU and single-threaded compression performance",
+    "Premium Storage capable with no local storage or bundled GPUs",
+    "Best suited for single-threaded applications, web serving, and light databases"
   ],
   "categories": [
     "Compute Optimized",

@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure D2lds_v7 is a compute-optimized virtual machine from the Dldsv7 family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated Intel Xeon 6973P-C processor operating at 4.2 GHz. This configuration provides 2 vCPUs derived from 1 physical core with 2 threads. The hardware profile includes a low-memory allocation of 4.0 GB RAM, translating to 2.0 GB per core, alongside 118 GB of local storage with Premium Storage capabilities.",
-    "Performance benchmarks reveal a mixed capability profile. The processor demonstrates strong single-threaded performance, achieving top-tier results in gzip compression at 35.35 GB/sec and strong results in bzip3 decompression at 14.66 GB/sec. However, memory bandwidth is a notable bottleneck, with uncached read-only large block bandwidth at 24.65 GB/sec and write bandwidth at 12.55 GB/sec, both ranking in the lower tiers. This memory constraint is also reflected in weak Redis SET operations at 4.21 million operations per second and static web serving throughput at 4.9 GB/sec.",
-    "From a cost-efficiency perspective, the D2lds_v7 offers a resource-dense option for workloads that require dedicated high-frequency CPU cycles but have minimal memory requirements. The inclusion of 118 GB of local storage provides a built-in storage buffer without needing external attachments. This server is best suited for lightweight compute-heavy tasks, single-threaded file compression, basic web serving, or entry-level LLM text generation where memory capacity is not a limiting factor."
+    "Microsoft Azure D2lds_v7 is a compute-optimized virtual machine from the Dldsv7 family, running on the Microsoft Hyper-V hypervisor. It features 2 dedicated vCPUs mapped to 1 physical Intel Xeon 6973P-C core with hyper-threading operating at a clock speed of 4.2 GHz. The instance is configured with 4.0 GB of system memory, yielding a low memory-to-vCPU ratio of 2.0 GB per core. It includes 118 GB of local storage and supports Premium Storage, but does not include any GPUs or complimentary public IPv4 addresses.",
+    "Benchmark results show a stark contrast between single-threaded and multi-threaded capabilities. Single-core performance is relatively strong, with stress-ng single-core CPU performance rated as average and single-threaded gzip compression and bzip3 decompression scoring in the top 25%. However, multi-core and memory-intensive benchmarks are limited. The stress-ng multi-core performance is poor, and memory bandwidth is weak, with read-only large block bandwidth at 24.65 GB/sec and write large block bandwidth at 12.55 GB/sec. Passmark database operations and multi-core CPU scores are also weak to poor.",
+    "From a cost-efficiency perspective, the D2lds_v7 offers a low-cost entry point for workloads requiring high single-threaded clock speeds and local storage without the overhead of large memory allocations. The primary tradeoff is the highly constrained memory capacity of 4.0 GB and weak memory bandwidth, which limits its utility for memory-bound applications or concurrent multi-threaded processing.",
+    "This server is best suited for lightweight, single-threaded compute tasks, basic web serving, simple utility scripting, and development environments that benefit from high CPU clock speeds but do not require significant memory or multi-core scaling. It is not recommended for database hosting, heavy multi-threaded applications, or memory-intensive data processing."
   ],
-  "description": "Microsoft Azure D2lds_v7 is a compute-optimized virtual machine from the Dldsv7 family, featuring 2 vCPUs and 4.0 GB of RAM. Powered by a dedicated Intel Xeon 6973P-C processor running at 4.2 GHz, this x86_64 instance includes 118 GB of local storage and is Premium Storage capable. Benchmark data highlights strong single-threaded performance, with top-tier gzip compression at 35.35 GB/sec and strong bzip3 decompression. However, memory bandwidth is limited, with uncached write speeds at 12.55 GB/sec and read speeds at 24.65 GB/sec, which impacts memory-bound tasks like Redis SET operations. This resource profile makes the instance highly cost-efficient for CPU-heavy, low-memory workloads. It is best suited for lightweight compute tasks, single-threaded data compression, and basic web serving where memory capacity is not a limiting factor.",
-  "og_description": "Microsoft Azure D2lds_v7 is a compute-optimized virtual machine featuring 2 vCPUs, 4.0 GB RAM, and 118 GB local storage, powered by a 4.2 GHz Intel Xeon processor for high-speed single-threaded compression tasks.",
-  "meta_description": "Microsoft Azure D2lds_v7 is a compute-optimized VM with 2 vCPUs, 4.0 GB RAM, and a 4.2 GHz Intel Xeon CPU, ideal for low-memory, high-compute workloads.",
-  "tagline": "A low-memory, compute-focused virtual machine featuring high-frequency Intel Xeon processing and integrated local storage for efficient single-threaded workloads.",
+  "description": "Microsoft Azure D2lds_v7 is a compute-optimized virtual machine featuring 2 dedicated vCPUs powered by a 4.2 GHz Intel Xeon 6973P-C processor. It is configured with 4.0 GB of memory, 118 GB of local storage, and supports Premium Storage. While single-threaded performance is strong, evidenced by high gzip compression and bzip3 decompression speeds, multi-core and memory-bound performance is weak, with low memory bandwidth and poor multi-core stress-ng results. This resource profile makes the D2lds_v7 a cost-effective option for lightweight, single-threaded compute tasks, basic web serving, and development environments. However, its low memory-to-vCPU ratio and constrained memory bandwidth make it unsuitable for database hosting or memory-intensive workloads.",
+  "og_description": "Microsoft Azure D2lds_v7 is a compute-optimized VM with 2 vCPUs, a 4.2 GHz Intel Xeon CPU, 4 GB RAM, and 118 GB local storage, offering strong single-threaded but limited multi-core performance.",
+  "meta_description": "Microsoft Azure D2lds_v7 is a 2-vCPU compute-optimized VM with a 4.2 GHz Intel Xeon CPU, 4 GB RAM, and 118 GB local storage for lightweight workloads.",
+  "tagline": "A low-memory, compute-focused virtual machine featuring high single-core clock speeds and integrated local storage for lightweight processing tasks.",
   "bullet_points": [
-    "Dedicated Intel Xeon 6973P-C processor running at 4.2 GHz",
-    "2 vCPUs paired with a low-memory allocation of 4.0 GB RAM",
-    "118 GB of local storage with Premium Storage capability",
-    "Top-tier single-threaded gzip compression performance at 35.35 GB/sec",
-    "Best suited for lightweight compute, file compression, and basic web serving"
+    "2 dedicated vCPUs powered by a 4.2 GHz Intel Xeon 6973P-C processor",
+    "4.0 GB of system memory and 118 GB of local storage",
+    "Strong single-threaded performance in compression and decompression benchmarks",
+    "Constrained memory bandwidth and weak multi-core scaling performance",
+    "Best suited for lightweight web serving, utility scripts, and single-threaded tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

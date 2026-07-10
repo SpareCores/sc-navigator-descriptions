@@ -1,21 +1,22 @@
 {
   "page": [
-    "Microsoft Azure F2als_v7 is an x86_64 architecture virtual machine belonging to the Falsv7 server family. It is equipped with 2 dedicated vCPUs powered by an AMD processor and runs on the Microsoft Hyper-V hypervisor. The instance features 4.0 GB of system memory, yielding a memory-to-CPU ratio of 2.0 GB per core.",
-    "This server configuration does not include local storage, meaning it relies entirely on external storage solutions, though it is designated as Premium Storage capable. There are zero integrated GPUs and zero complimentary public IPv4 addresses included with this instance.",
-    "The F2als_v7 is a low-memory, compute-oriented configuration. The primary tradeoff is the limited memory capacity of 4.0 GB and the lack of local storage, which constrains its utility for memory-intensive applications or large-scale databases. It is designed for lightweight compute workloads, basic web serving, small containerized applications, and task-specific microservices that do not require high memory density or local disk space."
+    "Microsoft Azure F2als_v7 is a compute-focused virtual machine belonging to the Falsv7 server family. It features 2 dedicated vCPUs mapped to 2 physical cores of an AMD EPYC 9V45 processor, operating at a high base clock speed of 4.5 GHz. The x86_64 architecture includes 32 MB of L3 cache, 1.0 MB of L2 cache, and 48 KB of L1d cache per core. It is configured with 4.0 GB of system memory, yielding a low memory-to-vCPU ratio of 2.0 GB per core. This instance does not include local storage or GPUs, but it is capable of mounting Premium Storage.",
+    "In benchmark testing, the F2als_v7 demonstrates strong single-core performance. Stress-ng single-core CPU testing and single-threaded gzip compression both rank in the top tier (top 10%). Single-threaded bzip3 decompression also achieves top-tier performance. However, multi-threaded operations and memory-bound tasks show some limitations. Multi-core stress-ng performance and Passmark CPU scores fall into the average tier, while multi-threaded bzip3 decompression and Passmark memory scores are positioned in the weak tier (bottom 25%). Memory bandwidth remains average, with read-only large block speeds at 51.88 GB/sec and write speeds at 34.76 GB/sec.",
+    "From a cost-efficiency perspective, the F2als_v7 offers a high-frequency compute profile for workloads that do not require large memory footprints or local storage. The dedicated AMD EPYC cores provide predictable execution without the CPU credit limitations of burstable instances. This makes the server suitable for single-threaded processing tasks, lightweight web serving, and basic computational workloads. However, the 4.0 GB memory constraint and weak multi-threaded decompression performance make it less suitable for memory-intensive databases or heavy parallel processing."
   ],
-  "description": "Microsoft Azure F2als_v7 is an x86_64 virtual machine within the Falsv7 family, running on the Microsoft Hyper-V hypervisor. It features 2 dedicated vCPUs powered by an AMD processor and is configured with 4.0 GB of system memory, providing a resource density of 2.0 GB per core. This instance does not include local storage, though it is Premium Storage capable, and contains no integrated GPUs or complimentary public IPv4 addresses. The low memory-to-CPU ratio positions this server as a compute-focused option for workloads with minimal memory requirements. The primary tradeoffs include the lack of local storage and a constrained memory footprint, making it suitable for lightweight compute tasks, microservices, and small-scale web serving rather than memory-intensive databases or data-processing applications.",
-  "og_description": "Microsoft Azure F2als_v7 is a Hyper-V virtual machine featuring 2 dedicated AMD vCPUs, 4.0 GB of RAM, and no local storage, optimized for lightweight, low-memory compute workloads.",
-  "meta_description": "Microsoft Azure F2als_v7 is a Hyper-V virtual machine featuring 2 dedicated AMD vCPUs, 4.0 GB of RAM, and no local storage, designed for lightweight compute workloads.",
-  "tagline": "A dual-core, low-memory virtual machine with dedicated AMD processors designed for lightweight compute tasks and external storage configurations.",
+  "description": "Microsoft Azure F2als_v7 is a compute-focused virtual machine from the Falsv7 family, featuring 2 dedicated vCPUs powered by an AMD EPYC 9V45 processor running at 4.5 GHz. Built on the x86_64 architecture, it is equipped with 4.0 GB of system memory, providing a low memory-to-core ratio of 2.0 GB per vCPU. The instance does not include local storage or GPUs but supports Premium Storage. Benchmarks highlight top-tier single-core CPU performance and single-threaded compression speeds, though multi-threaded decompression and memory performance fall into lower tiers. Given its high clock speed and dedicated CPU allocation, the F2als_v7 is qualitatively cost-efficient for compute-bound, single-threaded tasks, lightweight web serving, and basic utility workloads that do not require extensive memory or local storage resources.",
+  "og_description": "Microsoft Azure F2als_v7 is a compute-focused virtual machine featuring 2 dedicated AMD EPYC 9V45 vCPUs at 4.5 GHz and 4.0 GB of RAM, delivering top-tier single-core performance for lightweight workloads.",
+  "meta_description": "Microsoft Azure F2als_v7 features 2 dedicated AMD EPYC vCPUs at 4.5 GHz and 4.0 GB RAM, delivering top-tier single-core performance.",
+  "tagline": "An AMD EPYC powered virtual machine with low memory capacity that delivers top tier single core performance for dedicated workloads.",
   "bullet_points": [
-    "2 dedicated AMD vCPUs on x86_64 architecture",
-    "4.0 GB of system memory providing 2.0 GB per core",
-    "No local storage with Premium Storage capability",
-    "Zero integrated GPUs and zero complimentary public IPv4 addresses",
-    "Suited for lightweight compute tasks and microservices"
+    "Two dedicated AMD EPYC 9V45 vCPUs operating at 4.5 GHz",
+    "4.0 GB of system memory with a 2.0 GB per core ratio",
+    "Top-tier single-core CPU and single-threaded compression performance",
+    "No bundled local storage, with support for Premium Storage",
+    "Best suited for single-threaded tasks and lightweight web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

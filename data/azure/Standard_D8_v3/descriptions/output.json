@@ -1,21 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D8_v3 is a general-purpose virtual machine belonging to the Dv3 family. It is powered by an Intel Xeon E5-2673 v4 processor operating at 2.3 GHz on the x86_64 architecture. The instance provides 8 vCPUs mapped to 4 physical cores with 2 threads per core, utilizing Microsoft Hyper-V virtualization. It features 32.0 GB of system memory, yielding a balanced 4.0 GB of RAM per core, and includes 205 GB of local storage.",
-    "In benchmark evaluations, the D8_v3 exhibits performance characteristics that lean toward the lower tiers of current cloud offerings. Its single-core CPU performance, measured via stress-ng and Geekbench, falls into the bottom 10%, while multi-core performance sits in the bottom 25%. Memory bandwidth tests show read-only speeds of 300.18 GB/sec for small cached blocks and 36.83 GB/sec for large uncached blocks, both ranking in the bottom 25%. Similarly, database operations and Redis SET performance are positioned in the bottom 25%. However, the server achieves average performance in LLM text generation for small 135M models, reaching 85.57 tokens per second.",
-    "From a cost-efficiency perspective, the D8_v3 represents an older hardware generation that offers a balanced resource density of compute and memory at a lower entry point compared to newer generations. The inclusion of 205 GB of local storage provides value for workloads requiring temporary disk space. Given its modest benchmark results, this instance is best suited for general-purpose workloads with low-to-moderate resource demands, such as basic web serving, development and testing environments, lightweight database operations, and small-scale text processing tasks."
+    "Microsoft Azure D8_v3 is a general-purpose virtual machine belonging to the Dv3 family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by an Intel Xeon E5-2673 v4 processor. This configuration provides 8 dedicated vCPUs derived from 4 physical cores with hyper-threading enabled (2.0 threads per core) running at a base clock speed of 2.3 GHz. The processor includes a 35 MB L3 cache and supports AVX, AES, and FMA instruction sets, though it lacks AVX-512 support.",
+    "The instance is equipped with 32.0 GB of system memory, yielding a balanced ratio of 4.0 GB of RAM per vCPU. Local storage is bundled with a capacity of 205 GB, while no complimentary public IPv4 addresses are included. No GPU hardware is present on this server type.",
+    "Benchmark data indicates that the D8_v3 exhibits lower-tier performance characteristics. Single-core CPU performance via stress-ng and Geekbench falls into the bottom 10%, while multi-core CPU metrics and PassMark CPU scores reside in the bottom 25%. Memory bandwidth tests, including read-only large block operations at 36.83 GB/sec and write operations at 21.43 GB/sec, also rank in the bottom 25%. However, the server demonstrates average performance in LLM text generation for small 135M models, achieving 85.57 tokens per second.",
+    "Given its older Intel Xeon hardware profile and lower relative benchmark scores, the D8_v3 represents a legacy general-purpose tier. It offers a qualitative trade-off of lower performance density for workloads that require moderate memory capacity and local storage without demanding high CPU throughput. Appropriate workloads include basic web serving, light database operations, and general-purpose utility tasks that do not rely on intensive parallel processing or high memory bandwidth."
   ],
-  "description": "Microsoft Azure D8_v3 is a general-purpose virtual machine from the Dv3 family, configured with 8 vCPUs and 32.0 GB of RAM. Powered by an Intel Xeon E5-2673 v4 processor running at 2.3 GHz, this x86_64 instance features 4 physical cores with hyper-threading and includes 205 GB of local storage. Benchmark data indicates that the D8_v3 generally delivers entry-level performance, with single-core CPU and multi-core CPU metrics placing in the bottom 10% and 25% respectively. Memory bandwidth and database operations also rank in the lower quartiles, though small-model LLM text generation achieves average speeds of 85.57 tokens per second. Given these performance trade-offs, the D8_v3 is best utilized for cost-conscious, moderate-demand workloads such as development environments, basic web serving, and lightweight database tasks where high-performance compute is not a primary requirement.",
-  "og_description": "Microsoft Azure D8_v3 is a general-purpose virtual machine featuring 8 Intel Xeon vCPUs, 32 GB of RAM, and 205 GB of local storage, suitable for moderate development and web serving workloads.",
-  "meta_description": "Microsoft Azure D8_v3 is a general-purpose VM with 8 Intel Xeon vCPUs, 32 GB RAM, and 205 GB local storage for moderate workloads.",
-  "tagline": "A balanced general-purpose virtual machine with dedicated Intel Xeon compute and local storage for moderate, cost-conscious workloads.",
+  "description": "The Microsoft Azure D8_v3 is a general-purpose virtual machine from the Dv3 family, utilizing the Microsoft Hyper-V hypervisor. It is configured with an Intel Xeon E5-2673 v4 processor featuring 8 vCPUs (4 physical cores with hyper-threading) running at 2.3 GHz, alongside 32.0 GB of RAM and 205 GB of local storage. Lacking GPU acceleration, its performance profile is characterized by lower-tier benchmark results, with single-core and multi-core CPU metrics generally falling into the bottom 10% and 25% respectively. Memory bandwidth and database operations also rank in the bottom 25%, though small-model LLM text generation achieves average tier speeds. This server is applicable for legacy general-purpose workloads, basic web serving, and light database tasks where moderate memory and local storage are required, but high computational throughput is not critical.",
+  "og_description": "Microsoft Azure D8_v3 is a general-purpose VM featuring 8 Intel Xeon vCPUs, 32 GB RAM, and 205 GB local storage, applicable for basic web serving and light database workloads.",
+  "meta_description": "Microsoft Azure D8_v3 is an 8-vCPU general-purpose VM with 32 GB RAM and 205 GB local storage, running on Intel Xeon E5-2673 v4 processors.",
+  "tagline": "An x86_64 general-purpose virtual machine with balanced memory-to-core ratios and local storage for standard utility workloads.",
   "bullet_points": [
-    "Features 8 vCPUs powered by an Intel Xeon E5-2673 v4 processor at 2.3 GHz",
-    "Equipped with 32.0 GB of RAM and 205 GB of local storage",
-    "Delivers entry-level single-core and multi-core CPU performance",
-    "Achieves average text generation speeds of 85.57 tokens/sec on small LLM models",
-    "Best suited for development environments, basic web serving, and light database tasks"
+    "Intel Xeon E5-2673 v4 processor with 8 vCPUs and 4 physical cores",
+    "32.0 GB of system memory providing 4.0 GB per vCPU",
+    "205 GB of bundled local storage capacity",
+    "Hyper-V hypervisor virtualization on x86_64 architecture",
+    "Appropriate for basic web serving, light database tasks, and general-purpose utility workloads"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

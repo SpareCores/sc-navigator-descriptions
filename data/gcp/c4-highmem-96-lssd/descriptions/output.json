@@ -1,23 +1,25 @@
 {
   "page": [
-    "Google Cloud Platform c4-highmem-96-lssd is a memory-optimized and storage-intensive server instance from the c4 family. It features 96 dedicated vCPUs mapped to 48 physical cores of an Intel Xeon 6985P-C processor operating at 2.3 GHz. The architecture is x86_64, supported by a massive L3 cache of 504 MB. It is equipped with 744 GB of system memory, yielding approximately 7.75 GB of RAM per core. For local storage, the instance bundles 16 local NVMe SSDs providing a total capacity of 6167 GB. No GPUs are included in this configuration.",
-    "Benchmark data indicates exceptional performance across multiple domains. The system achieves top-tier status in Passmark CPU scores, including extended instructions, encryption, and physics tests. Memory performance is highly competitive, with read-only small block cached bandwidth reaching 7676.9 GB/sec and large block uncached bandwidth at 356.43 GB/sec, both placing in the top 10% of tested hardware. Database operations are highly efficient, as demonstrated by top-tier results in Passmark database tests and Redis SET operations processing 170.8 million operations per second.",
-    "From a resource density perspective, the high memory-to-vCPU ratio combined with substantial local NVMe storage provides strong qualitative cost efficiency for workloads that require high-throughput local caching and massive memory footprints without the overhead of external storage. However, a tradeoff exists in LLM inference text generation, where performance drops to average levels for large models due to the lack of dedicated GPU acceleration. This server is highly suited for large-scale databases, high-throughput Redis deployments, software compilation, memory-bound data processing, and static web serving."
+    "Google Cloud Platform c4-highmem-96-lssd is a memory-optimized and storage-heavy server instance powered by an Intel Xeon 6985P-C processor. Built on the x86_64 architecture, this instance features 48 physical cores and 96 vCPUs with hyper-threading enabled. It provides 744 GB of dedicated RAM, equating to 7.75 GB of memory per core. The hardware configuration includes 16 local NVMe SSDs totaling 6167 GB of local storage, with no integrated GPUs.",
+    "The underlying Intel Xeon processor operates at a base frequency of 2.3 GHz and features a 504 MB L3 cache. It supports advanced instruction sets including Intel Advanced Vector Extensions (AVX, AVX512) and Advanced Matrix Extensions (AMX), which accelerate matrix multiplication and vector operations. Cryptographic acceleration is supported via AES, VAES, and SHA_NI instruction sets.",
+    "In benchmark evaluations, the instance demonstrates top-tier performance in memory bandwidth, database operations, and data decompression. It achieved top 10% rankings in PassMark database operations, Redis SET operations (170.8 million operations per second), and static web serving throughput (151.31 GB/sec). Multi-threaded bzip3 decompression and software compilation also rank in the top tier. However, single-core stress-ng performance and large-model LLM text generation fall into the average tier, indicating a tradeoff where the system is optimized for parallelized, memory-bound, and high-throughput database workloads rather than raw single-threaded compute.",
+    "The high density of both memory (744 GB) and local NVMe storage (6167 GB) makes this instance highly resource-dense. It is qualitatively cost-efficient for workloads requiring massive local scratch space and high memory capacity, eliminating the need to attach expensive external block storage. This profile is highly suited for large-scale relational databases, in-memory caching layers, data analytics pipelines, and high-throughput web serving."
   ],
-  "description": "Google Cloud Platform c4-highmem-96-lssd is a memory-optimized and storage-intensive server instance powered by an Intel Xeon 6985P-C processor. It features 96 dedicated vCPUs (48 physical cores) running at 2.3 GHz, 744 GB of RAM, and 6167 GB of local NVMe SSD storage across 16 drives. The x86_64 architecture includes advanced instruction sets like AVX-512 and AMX. Benchmarks show top-tier performance in memory bandwidth, database operations, and software compilation, alongside strong CPU execution. While highly efficient for memory-bound and high-I/O workloads, the lack of a GPU limits its efficiency for heavy LLM text generation. It is best suited for large-scale databases, in-memory caching, and intensive data processing.",
-  "og_description": "Google Cloud Platform c4-highmem-96-lssd is a memory-optimized server with 96 vCPUs, 744 GB RAM, and 6167 GB of local NVMe SSD storage, delivering top-tier database and memory bandwidth performance.",
-  "meta_description": "Google Cloud Platform c4-highmem-96-lssd features 96 vCPUs, 744 GB RAM, and 6167 GB NVMe SSD, optimized for high-performance database workloads.",
-  "tagline": "A high-memory, storage-dense server featuring dedicated Intel Xeon processors and local NVMe SSDs for demanding database and memory-bound workloads.",
+  "description": "Google Cloud Platform c4-highmem-96-lssd is a memory-optimized and storage-intensive server instance designed for high-throughput workloads. Powered by an Intel Xeon 6985P-C processor with 96 vCPUs and 48 physical cores, it features 744 GB of RAM and 6167 GB of local NVMe SSD storage across 16 drives. The x86_64 architecture supports advanced instruction sets like AVX-512 and Intel AMX. In benchmark testing, the instance delivers top-tier performance in memory bandwidth, database operations, and software compilation, achieving 170.8 million Redis SET operations per second. While single-core performance and large-model text generation are average, its massive memory-to-core ratio and local storage density provide excellent qualitative cost efficiency for data-intensive applications. It is highly suited for large databases, in-memory caches, and high-throughput data processing.",
+  "og_description": "Google Cloud Platform c4-highmem-96-lssd features 96 vCPUs, 744 GB RAM, and 6167 GB of local NVMe SSD storage, delivering top-tier database and memory bandwidth performance for enterprise workloads.",
+  "meta_description": "Google Cloud Platform c4-highmem-96-lssd is a memory-optimized server with 96 vCPUs, 744 GB RAM, and 6167 GB NVMe SSD storage for database workloads.",
+  "tagline": "A high-density memory and NVMe storage server optimized for demanding database operations, caching, and high-throughput data processing.",
   "bullet_points": [
-    "96 dedicated vCPUs powered by Intel Xeon 6985P-C processors with AMX and AVX-512 support.",
-    "744 GB of system memory delivering top-tier read-only bandwidth up to 7676.9 GB/sec.",
-    "6167 GB of high-speed local NVMe SSD storage across 16 bundled drives.",
-    "Top-tier database performance, processing 170.8 million Redis SET operations per second.",
-    "Optimal for large-scale databases, in-memory caching, and heavy software compilation."
+    "Intel Xeon 6985P-C processor with 96 vCPUs and 48 physical cores",
+    "744 GB of system memory providing 7.75 GB of RAM per core",
+    "6167 GB of local NVMe SSD storage across 16 bundled drives",
+    "Top-tier memory bandwidth and database operation benchmark performance",
+    "Intel AMX and AVX-512 instruction support for accelerated workloads",
+    "Best suited for large-scale databases, in-memory caches, and ETL pipelines"
   ],
   "categories": [
     "Memory Optimized",
     "Storage & Database",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

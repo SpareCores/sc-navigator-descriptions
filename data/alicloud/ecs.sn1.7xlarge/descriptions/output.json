@@ -1,21 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.sn1.7xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 32 dedicated physical cores on an x86_64 Intel Xeon 8163 processor operating at a base frequency of 2.5 GHz. The instance is configured with 64.0 GB of system memory, providing a resource density of 2.0 GB per core. It does not include local storage or dedicated GPU hardware, relying instead on network-attached storage and a baseline network bandwidth of 6 Gbps.",
-    "Benchmark data reveals a clear distinction between single-core and multi-core capabilities. Single-core performance is relatively weak, as evidenced by bottom 25% scores in stress-ng and Geekbench single-core tests, alongside a poor rating in single-threaded gzip compression. However, the 32 dedicated physical cores deliver average multi-core performance across stress-ng, PassMark, and Geekbench multi-core suites. Memory read bandwidth is average at 74.54 GB/sec for large blocks, though the overall PassMark memory score falls into the bottom 25%.",
-    "Given the 1:2 vCPU-to-RAM ratio, the ecs.sn1.7xlarge is structured for compute-bound workloads that do not require massive memory footprints. It is suitable for multi-threaded tasks such as software compilation, parallel text processing, and moderate database operations, where it achieves average performance. The lack of local storage and GPUs, combined with average multi-threaded efficiency, positions this instance as a standard compute resource for legacy multi-core applications, web serving, and basic parallel processing."
+    "Alibaba Cloud ecs.sn1.7xlarge is a compute-optimized instance powered by an Intel Xeon 8163 processor running at 2.5 GHz on the x86_64 architecture. It features 32 dedicated physical cores with 1 thread per core and is configured with 64.0 GB of system memory, yielding a 2.0 GB memory-to-core ratio. The instance operates on the KVM hypervisor, includes a 33 MB L3 cache, and supports AVX and AVX-512F vector extensions. It does not include local storage or GPU hardware, and it provides a baseline network bandwidth of 6 Gbps.",
+    "Benchmark data indicates a clear performance tradeoff. Single-core performance is weak, as shown by stress-ng and Geekbench single-core scores in the bottom 25%, and single-threaded gzip compression in the bottom 10%. However, the 32 dedicated cores deliver average multi-core performance in stress-ng, PassMark, and Geekbench multi-core tests. Memory bandwidth is average for both cached and uncached reads, though the overall PassMark memory score falls into the bottom 25%.",
+    "Given its hardware profile, the ecs.sn1.7xlarge is suited for multi-threaded workloads that can leverage parallel processing, such as software compilation, static web serving, and medium-sized LLM inference, where it achieves average performance. It is less suitable for single-threaded tasks or memory-intensive databases. From a qualitative cost-efficiency perspective, the instance offers a high density of dedicated physical cores, making it a viable option for parallelized compute tasks, provided the workload is not bottlenecked by single-core speed or local storage requirements."
   ],
-  "description": "Alibaba Cloud ecs.sn1.7xlarge is a compute-optimized instance featuring 32 dedicated physical cores powered by an Intel Xeon 8163 processor running at 2.5 GHz. Built on the x86_64 architecture and KVM hypervisor, it provides 64.0 GB of RAM, resulting in a 2.0 GB per core ratio. The instance lacks local storage and GPU accelerators, relying on a baseline network bandwidth of 6 Gbps. Performance benchmarks indicate weak single-core execution, but average multi-core capabilities in stress-ng, Geekbench, and PassMark tests. Memory bandwidth remains average for large block operations, though overall memory scores are weak. This hardware profile is best suited for parallelized, compute-bound workloads such as multi-threaded software compilation, web serving, and moderate database operations that benefit from dedicated physical cores without requiring high memory-to-CPU ratios.",
-  "og_description": "Alibaba Cloud ecs.sn1.7xlarge is a compute-optimized instance with 32 dedicated Intel Xeon cores, 64 GB RAM, and 6 Gbps network bandwidth, delivering average multi-core performance for parallel workloads.",
-  "meta_description": "Alibaba Cloud ecs.sn1.7xlarge is a compute-optimized instance featuring 32 dedicated Intel Xeon cores, 64 GB RAM, and average multi-core performance.",
-  "tagline": "A compute-optimized instance with thirty-two dedicated cores and a balanced multi-threaded profile for parallelized processing workloads.",
+  "description": "Alibaba Cloud ecs.sn1.7xlarge is a compute-optimized instance featuring 32 dedicated Intel Xeon 8163 physical cores running at 2.5 GHz, paired with 64.0 GB of RAM. Operating on the KVM hypervisor, this x86_64 server provides a 2.0 GB memory-per-core ratio, a 33 MB L3 cache, and a baseline network bandwidth of 6 Gbps, with no local storage or GPU accelerators. Performance benchmarks reveal a distinct tradeoff: single-core performance and single-threaded compression are weak, while multi-core capabilities, static web serving, and medium-model LLM inference achieve average tier results. This hardware profile makes the instance qualitatively cost-efficient for parallelized, multi-threaded workloads such as software compilation and web serving, whereas it is poorly suited for single-threaded operations or memory-heavy databases.",
+  "og_description": "Alibaba Cloud ecs.sn1.7xlarge is a compute-optimized instance with 32 dedicated Intel Xeon cores, 64 GB RAM, and 6 Gbps network speed, offering average multi-core performance for parallel workloads.",
+  "meta_description": "Alibaba Cloud ecs.sn1.7xlarge is a compute-optimized server with 32 dedicated Intel Xeon cores, 64 GB RAM, and average multi-core performance.",
+  "tagline": "A dedicated 32-core compute-optimized server delivering balanced multi-threaded performance for parallelized workloads without local storage.",
   "bullet_points": [
     "32 dedicated Intel Xeon 8163 physical cores at 2.5 GHz",
     "64.0 GB of system memory with a 2.0 GB per core ratio",
-    "6 Gbps baseline network bandwidth with no local storage",
-    "Average multi-core performance in stress-ng and Geekbench",
-    "Suitable for multi-threaded compilation and web serving"
+    "6 Gbps baseline network bandwidth with KVM virtualization",
+    "Average multi-core performance but weak single-core execution",
+    "Best suited for multi-threaded tasks, software compilation, and web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

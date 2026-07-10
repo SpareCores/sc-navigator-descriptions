@@ -1,19 +1,20 @@
 {
   "page": [
-    "Microsoft Azure D2ads_v7 is a general-purpose virtual machine belonging to the Dadsv7 server family. It is powered by an AMD processor utilizing the x86_64 CPU architecture. The instance features 2 dedicated vCPUs and 8.0 GB of system memory, yielding a resource density of 4.0 GB of RAM per core.",
-    "This server type includes 118 GB of local storage and is capable of utilizing Premium Storage. Virtualization is managed via the Microsoft Hyper-V hypervisor. The configuration does not include any graphics processing units or complimentary public IPv4 addresses.",
-    "From a qualitative cost-efficiency perspective, the D2ads_v7 offers a balanced entry-level hardware profile with dedicated CPU allocation and local disk space. This resource balance makes it suitable for general-purpose workloads, small-scale databases, web serving, and development environments that require dedicated compute resources without massive memory or GPU acceleration."
+    "Microsoft Azure D2ads_v7 is a general-purpose virtual machine belonging to the Dadsv7 family. It is powered by an AMD EPYC 9V45 processor with an x86_64 architecture, operating at a clock speed of 4.5 GHz. The instance features 2 dedicated vCPUs derived from 1 physical core with 2 threads per core. It is equipped with 8.0 GB of system memory, providing 4.0 GB of RAM per core. Local storage is bundled, offering 118 GB of capacity, and the instance is Premium Storage capable. The hypervisor utilized is Microsoft Hyper-V.",
+    "Benchmark data reveals a stark contrast between single-core and multi-core capabilities. In single-core stress-ng tests, the instance achieves top-tier performance in the top 10% with a score of 3763.18, and single-threaded gzip compression and bzip3 decompression also rank in the top 10%. However, multi-core CPU performance and PassMark CPU scores fall into the bottom 25%. Memory bandwidth for large blocks is average at 45.49 GB/sec for reads and 34.03 GB/sec for writes, while small-block cached read bandwidth is weak. Database operations, Redis SET performance, and static web serving throughput also rank in the bottom 25%.",
+    "From a qualitative cost-efficiency perspective, the D2ads_v7 offers a balanced resource density for entry-level workloads that require high single-threaded performance but do not demand heavy multi-core scaling. The inclusion of 118 GB of local storage provides value for workloads requiring fast local scratch space without incurring additional storage attachment costs. However, the primary tradeoff lies in its limited multi-threaded capacity and lower database transaction throughput, making it less suitable for heavy concurrent processing.",
+    "This instance is suited for lightweight applications, single-threaded batch processing, basic web serving, and development or testing environments. It can also support small-scale LLM text generation for 135M models, where it maintains average performance, but is constrained for larger models."
   ],
-  "description": "The Microsoft Azure D2ads_v7 is an x86_64 general-purpose virtual machine from the Dadsv7 server family, running on the Microsoft Hyper-V hypervisor. It features an AMD processor with 2 dedicated vCPUs and 8.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. For storage, the instance is equipped with 118 GB of local disk space and supports Premium Storage configurations. It does not include integrated GPU hardware or complimentary public IPv4 addresses. This server type is designed for entry-level general-purpose workloads, including web serving, small databases, and development environments, offering a qualitative balance of dedicated compute resources and local storage capacity.",
-  "og_description": "Microsoft Azure D2ads_v7 is an x86_64 general-purpose virtual machine featuring 2 dedicated AMD vCPUs, 8.0 GB of RAM, and 118 GB of local storage managed by the Microsoft Hyper-V hypervisor.",
-  "meta_description": "Microsoft Azure D2ads_v7 is an x86_64 general-purpose VM with 2 dedicated AMD vCPUs, 8.0 GB of RAM, and 118 GB of local storage.",
-  "tagline": "An x86_64 general-purpose virtual machine featuring dedicated AMD compute cores, balanced memory allocation, and integrated local storage.",
+  "description": "Microsoft Azure D2ads_v7 is a general-purpose virtual machine from the Dadsv7 family, powered by an AMD EPYC 9V45 processor running at 4.5 GHz. Built on the x86_64 architecture, it provides 2 dedicated vCPUs from a single physical core, 8.0 GB of RAM, and 118 GB of local storage. Benchmarks indicate exceptional single-core performance, with stress-ng single-core and single-threaded compression tests ranking in the top 10%. Conversely, multi-core CPU performance, database operations, and static web serving throughput fall into the bottom 25%. This resource profile presents a qualitative advantage for workloads requiring high single-threaded speed without heavy parallelization. The D2ads_v7 is suited for lightweight web serving, single-threaded batch processing, and development environments.",
+  "og_description": "Microsoft Azure D2ads_v7 is a general-purpose virtual machine featuring 2 vCPUs, 8.0 GB of RAM, and 118 GB of local storage, powered by an AMD EPYC 9V45 processor with strong single-core performance.",
+  "meta_description": "Microsoft Azure D2ads_v7 is an AMD-powered general-purpose virtual machine featuring 2 vCPUs, 8 GB RAM, and 118 GB of local storage.",
+  "tagline": "An AMD-powered virtual machine delivering strong single-threaded performance and integrated local storage for balanced, entry-level workloads.",
   "bullet_points": [
-    "2 dedicated AMD vCPUs on x86_64 architecture",
-    "8.0 GB of system memory providing 4.0 GB per core",
-    "118 GB of local storage with Premium Storage capability",
-    "Virtualization powered by Microsoft Hyper-V",
-    "Suited for web serving, development, and small databases"
+    "AMD EPYC 9V45 processor with 2 dedicated vCPUs and 8.0 GB RAM",
+    "118 GB of bundled local storage with Premium Storage capability",
+    "Top-tier single-core CPU and single-threaded compression performance",
+    "Lower performance scaling in multi-core and database benchmarks",
+    "Suited for single-threaded batch processing and lightweight web serving"
   ],
   "categories": [
     "General Purpose"

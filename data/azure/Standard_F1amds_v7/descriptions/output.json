@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure F1amds_v7 is a memory-intensive virtual machine belonging to the Famdsv7 server family. It features a single dedicated vCPU based on the x86_64 architecture and powered by an AMD processor. The server is provisioned with 8.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per vCPU. Virtualization is managed via the Microsoft Hyper-V hypervisor.",
-    "This instance includes 118 GB of local storage and is capable of utilizing Premium Storage. It does not include any complimentary public IPv4 addresses. There is no integrated GPU hardware, making it unsuitable for graphics-intensive or hardware-accelerated machine learning workloads.",
-    "From a cost-efficiency perspective, the F1amds_v7 offers a dense memory allocation relative to its single dedicated CPU core, which is advantageous for memory-bound workloads that do not require high parallel processing power. However, the single-core limitation represents a significant bottleneck for multi-threaded applications. This configuration is designed for lightweight database hosting, caching layers, and memory-intensive background tasks that operate within a single-threaded execution model."
+    "Microsoft Azure F1amds_v7 is a memory-intensive virtual machine belonging to the Famdsv7 family, running on the Microsoft Hyper-V hypervisor. It features a single dedicated AMD EPYC 9V45 processor core with x86_64 architecture, operating at a clock speed of 4.5 GHz. The instance is equipped with 8.0 GB of system memory, providing an 8:1 RAM-to-vCPU ratio. It also includes 118 GB of local storage and is premium storage capable, though it does not bundle any GPUs or complimentary public IPv4 addresses.",
+    "Due to its single-core configuration, the server exhibits highly polarized performance characteristics. In single-threaded workloads, the high-frequency AMD EPYC processor delivers top-tier performance, as evidenced by stress-ng single-core CPU benchmarks and single-threaded compression tests like gzip and bzip3, which rank in the top 10%. Conversely, multi-core and parallelized operations, such as stress-ng multi-core CPU performance, PassMark CPU scores, and database operations, fall into the bottom 25% due to the lack of additional execution threads. Memory bandwidth for large blocks is average, while small-block cached read bandwidth is relatively weak.",
+    "From a cost-efficiency perspective, the F1amds_v7 offers a resource-dense entry point for memory-intensive tasks that do not require massive parallel processing. The high single-core clock speed makes it highly efficient for single-threaded execution, lightweight LLM inference with small models, and basic memory-cached operations. However, the single vCPU limitation represents a significant tradeoff for multi-threaded applications, high-throughput web serving, or heavy database operations. This server is best suited for lightweight single-threaded applications, small-scale memory-cached services, and development or testing workloads requiring dedicated CPU allocation and local SSD storage."
   ],
-  "description": "Microsoft Azure F1amds_v7 is a memory-intensive virtual machine from the Famdsv7 family, featuring a single dedicated x86_64 AMD vCPU and 8.0 GB of system memory. This configuration provides a high memory-to-core ratio of 8.0 GB per vCPU, managed under the Microsoft Hyper-V hypervisor. The server comes equipped with 118 GB of local storage and supports Premium Storage, though it lacks integrated GPU hardware and complimentary public IPv4 addresses. Designed for workloads requiring more memory than compute power, this instance is suited for lightweight databases, caching systems, and memory-bound background processes that do not require multi-threaded CPU performance. The dedicated CPU allocation ensures consistent single-core execution without resource sharing.",
-  "og_description": "Microsoft Azure F1amds_v7 is a memory-intensive virtual machine featuring one dedicated AMD vCPU, 8.0 GB of RAM, and 118 GB of local storage, designed for lightweight database and caching workloads.",
-  "meta_description": "Microsoft Azure F1amds_v7 is a memory-intensive virtual machine featuring one dedicated AMD vCPU, 8.0 GB of RAM, and 118 GB of local storage.",
-  "tagline": "A single-core, memory-intensive virtual machine featuring dedicated AMD compute resources and integrated local storage for memory-bound workloads.",
+  "description": "Microsoft Azure F1amds_v7 is a memory-intensive virtual machine from the Famdsv7 family, powered by a single dedicated AMD EPYC 9V45 processor core operating at 4.5 GHz. Built on the x86_64 architecture and managed via Microsoft Hyper-V, this instance features 8.0 GB of RAM and 118 GB of local storage. Benchmark data highlights a stark contrast in performance: single-threaded execution, such as gzip compression and single-core stress tests, ranks in the top 10%, whereas multi-core operations and database throughput fall into the bottom 25% due to the single-vCPU constraint. This configuration provides a cost-effective, resource-dense option for memory-heavy, single-threaded tasks. It is best suited for lightweight memory-cached workloads, small-scale development environments, and single-threaded utility scripts requiring dedicated CPU resources and local storage.",
+  "og_description": "Microsoft Azure F1amds_v7 is a memory-intensive virtual machine featuring a single dedicated 4.5 GHz AMD EPYC core, 8.0 GB of RAM, and 118 GB of local storage, optimized for single-threaded workloads.",
+  "meta_description": "Microsoft Azure F1amds_v7 is a memory-intensive VM with 1 dedicated 4.5 GHz AMD EPYC core, 8.0 GB of RAM, and 118 GB of local storage.",
+  "tagline": "A single-core, memory-intensive virtual machine delivering high-frequency single-threaded performance and bundled local storage for dedicated, lightweight workloads.",
   "bullet_points": [
-    "Single dedicated AMD vCPU on x86_64 architecture",
-    "8.0 GB of system memory providing a high memory-to-core ratio",
-    "118 GB of local storage with Premium Storage capability",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Suited for lightweight databases, caching layers, and memory-intensive tasks"
+    "Single dedicated AMD EPYC 9V45 core running at 4.5 GHz",
+    "8.0 GB of RAM providing a high memory-to-vCPU ratio",
+    "118 GB of bundled local storage with premium storage capability",
+    "Top-tier single-threaded CPU and compression performance",
+    "Weak multi-threaded and database throughput due to single-vCPU limit",
+    "Best suited for lightweight memory-cached services and single-threaded tasks"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

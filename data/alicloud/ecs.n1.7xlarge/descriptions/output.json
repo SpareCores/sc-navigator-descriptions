@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.n1.7xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 32 dedicated x86_64 vCPUs based on an Intel Xeon 8163 processor running at 2.5 GHz. The hardware configuration includes 64.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. This instance does not include local storage or integrated GPU hardware, requiring external network-attached storage for persistent data.",
-    "Performance benchmarks indicate a clear distinction between single-core and multi-core execution. Single-core performance is relatively weak, as shown by stress-ng and poor single-threaded compression and decompression metrics. However, the 32 dedicated physical cores deliver average multi-core performance, supported by average memory bandwidth speeds for both cached and uncached operations. The instance achieves average throughput in database operations, Redis SET transactions, and static web serving.",
-    "From a cost-efficiency perspective, the ecs.n1.7xlarge provides a high density of dedicated compute cores relative to its memory footprint, making it a viable option for parallelizable workloads that do not require massive memory allocations. The lack of bundled local storage and GPUs represents a tradeoff that lowers baseline resource costs. This profile is suitable for multi-threaded workloads such as batch processing, web serving, and distributed database nodes."
+    "Alibaba Cloud ecs.n1.7xlarge is an x86_64 server instance powered by an Intel Xeon 8163 processor running at 2.5 GHz. It features 32 physical cores and 32 vCPUs under a dedicated CPU allocation model with 1.0 thread per core. The instance is configured with 64.0 GB of system memory, providing a resource density of 2.0 GB per core. It does not include local storage or dedicated GPU hardware, and operates on the KVM hypervisor.",
+    "Benchmark data reveals a clear distinction between single-core and multi-core capabilities. Single-core performance is weak, with stress-ng single-core CPU tests falling in the bottom 25% and single-threaded compression tasks scoring in the bottom 10%. However, multi-core execution scales to average levels, as demonstrated by stress-ng multi-core, bzip3 multi-threaded decompression, and PassMark CPU scores falling within the middle 50%. Memory bandwidth tests for both small and large blocks also register in the average tier, though the overall PassMark memory score remains in the bottom 25%.",
+    "The primary tradeoff of this instance is its low memory-to-vCPU ratio and weak single-threaded execution speed, which limits its utility for single-core intensive tasks. Qualitatively, the dedicated CPU allocation offers predictable multi-threaded compute resources, making it a cost-efficient option for parallelized workloads that do not require massive memory footprints or local storage. Suitable workloads include multi-threaded batch processing, static web serving, and Redis-based caching operations, where its average multi-core throughput and database operation performance can be fully utilized."
   ],
-  "description": "Alibaba Cloud ecs.n1.7xlarge is a compute-optimized virtual machine instance featuring 32 dedicated x86_64 vCPUs powered by an Intel Xeon 8163 processor at 2.5 GHz. It is equipped with 64.0 GB of memory, providing a 1:2 vCPU-to-RAM ratio, and contains no local storage or GPU hardware. While single-core performance and single-threaded compression metrics are weak, the instance delivers average multi-core CPU performance, memory bandwidth, and database operation throughput. This hardware profile offers a cost-efficient option for parallelized workloads that require high core density without massive memory overhead. It is well-suited for multi-threaded batch processing, static web serving, and distributed database nodes.",
-  "og_description": "Alibaba Cloud ecs.n1.7xlarge is a compute-optimized instance with 32 dedicated Intel Xeon vCPUs, 64 GB RAM, and no local storage, delivering average multi-core performance for parallel workloads.",
-  "meta_description": "Alibaba Cloud ecs.n1.7xlarge features 32 dedicated Intel Xeon vCPUs and 64 GB RAM, offering average multi-core performance for parallel workloads.",
-  "tagline": "A dedicated multi-core compute instance with a lean memory footprint, optimized for parallel processing and distributed workloads without local storage overhead.",
+  "description": "Alibaba Cloud ecs.n1.7xlarge is an x86_64 compute-optimized server instance utilizing a KVM hypervisor. It is equipped with an Intel Xeon 8163 processor operating at 2.5 GHz, delivering 32 physical cores and 32 vCPUs with a dedicated allocation. The instance features 64.0 GB of system memory, yielding 2.0 GB per core, and lacks local storage and GPU accelerators. Performance benchmarks indicate weak single-core execution, with single-threaded compression and stress-ng single-core tests scoring in the bottom 25% and 10% respectively. Conversely, multi-core performance, memory bandwidth, and database operations align with average mid-tier benchmarks. This hardware profile presents a tradeoff of lower memory density and weak single-thread speeds in exchange for predictable, dedicated multi-core compute. It is suited for parallelized workloads such as multi-threaded decompression, static web serving, and Redis caching.",
+  "og_description": "Alibaba Cloud ecs.n1.7xlarge is an x86_64 server with 32 dedicated Intel Xeon vCPUs and 64 GB RAM. It offers average multi-core performance but weak single-core speeds, suited for parallelized workloads.",
+  "meta_description": "Alibaba Cloud ecs.n1.7xlarge is a dedicated 32-vCPU Intel Xeon server with 64 GB RAM, delivering average multi-core and weak single-core performance.",
+  "tagline": "A dedicated thirty-two core compute instance offering balanced multi-threaded performance and low memory density for parallel processing workloads.",
   "bullet_points": [
-    "32 dedicated Intel Xeon 8163 vCPUs running at 2.5 GHz",
+    "Intel Xeon 8163 processor with 32 dedicated physical cores and vCPUs",
     "64.0 GB of system memory providing 2.0 GB per core",
-    "No bundled local storage or GPU hardware",
-    "Average multi-core CPU and memory bandwidth performance",
-    "Suited for multi-threaded batch processing and web serving"
+    "No local storage or GPU accelerators included",
+    "Average multi-core performance and memory bandwidth benchmarks",
+    "Weak single-core and single-threaded compression performance",
+    "Best suited for multi-threaded batch processing and static web serving"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
