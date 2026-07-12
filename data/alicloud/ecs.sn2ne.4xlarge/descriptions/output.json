@@ -1,20 +1,20 @@
 {
   "page": [
-    "Alibaba Cloud ecs.sn2ne.4xlarge is a general-purpose virtual machine instance powered by the KVM hypervisor. It features 16 dedicated physical cores utilizing the x86_64 architecture, specifically the Intel Xeon E5-2682v4 processor running at 2.5 GHz. The hardware configuration includes 64.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per core. This instance does not include local storage or GPU accelerators, relying instead on network-attached storage options and a baseline network bandwidth of 3 Gbps.",
-    "Benchmark data indicates a clear performance profile characterized by average multi-core capabilities and weaker single-threaded execution. The single-core CPU performance measured via stress-ng is categorized in the bottom 25%, and single-threaded compression tasks like gzip and bzip3 decompression fall into the bottom 10%. However, multi-threaded performance scales to average levels, as demonstrated by the stress-ng multi-core and bzip3 multi-threaded decompression benchmarks. Memory bandwidth remains consistently in the middle 50% tier for both cached small-block and uncached large-block read and write operations.",
-    "From a qualitative cost-efficiency perspective, the ecs.sn2ne.4xlarge offers a balanced resource density suitable for workloads that can leverage parallel processing rather than raw single-threaded speed. The dedicated CPU allocation ensures consistent performance without resource contention, though the lack of local storage and GPU hardware limits its utility for high-speed local database operations or heavy machine learning training. It is best suited for general-purpose workloads such as static web serving, Redis caching, and moderate multi-threaded application hosting."
+    "Alibaba Cloud ecs.sn2ne.4xlarge is a general-purpose virtual machine instance powered by the KVM hypervisor. It features 16 dedicated vCPUs mapped to 16 physical cores of an Intel Xeon E5-2682v4 processor running at 2.5 GHz. The instance is equipped with 64.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. It lacks local storage and dedicated GPU hardware, relying on network-attached storage and a baseline network bandwidth of 3 Gbps.",
+    "Benchmark data reveals a clear performance profile. Single-core performance is relatively weak, as evidenced by stress-ng single-core CPU tests and poor single-threaded gzip compression and bzip3 decompression results. However, the instance demonstrates average multi-core performance across stress-ng multi-core, Passmark CPU, and multi-threaded bzip3 decompression tests. Memory bandwidth is also average, reaching 655.24 GB/sec for cached reads and approximately 77.7 GB/sec for uncached reads.",
+    "Given its hardware profile, the ecs.sn2ne.4xlarge offers a cost-efficient option for workloads that can leverage multi-threaded execution rather than single-core speed. It is well-suited for static web serving, Redis caching, and database operations, where it achieves average performance metrics. It is less suitable for single-threaded tasks or medium-to-large language model inference, where performance drops to weak levels."
   ],
-  "description": "Alibaba Cloud ecs.sn2ne.4xlarge is a general-purpose instance featuring 16 dedicated physical cores on an Intel Xeon E5-2682v4 processor running at 2.5 GHz. Built on the x86_64 architecture and managed via the KVM hypervisor, it provides 64.0 GB of RAM, resulting in a balanced 4.0 GB per core ratio. The instance lacks local storage and GPU accelerators, utilizing a baseline network bandwidth of 3 Gbps. Performance benchmarks show weak single-core CPU execution and poor single-threaded compression speeds, but average multi-core scaling and memory bandwidth. It is qualitatively cost-efficient for parallelized workloads that do not require high single-thread performance. This instance is suited for general-purpose applications, static web serving, Redis operations, and moderate multi-threaded workloads.",
-  "og_description": "Alibaba Cloud ecs.sn2ne.4xlarge is a general-purpose instance with 16 dedicated Intel Xeon cores, 64 GB RAM, and 3 Gbps network bandwidth, delivering average multi-core performance for balanced workloads.",
-  "meta_description": "Alibaba Cloud ecs.sn2ne.4xlarge is a general-purpose instance featuring 16 dedicated Intel Xeon cores, 64 GB RAM, and KVM virtualization.",
-  "tagline": "A balanced general-purpose virtual machine offering dedicated multi-core processing and steady memory bandwidth for parallelized workloads.",
+  "description": "Alibaba Cloud ecs.sn2ne.4xlarge is a general-purpose instance featuring 16 dedicated vCPUs powered by an Intel Xeon E5-2682v4 processor running at 2.5 GHz, paired with 64.0 GB of RAM. Operating on the KVM hypervisor, this x86_64 instance does not include local storage or GPU accelerators, and it provides a baseline network bandwidth of 3 Gbps. Performance benchmarks indicate a notable tradeoff: single-core CPU execution and single-threaded compression tasks are weak, while multi-core operations, memory bandwidth, and database operations perform at average levels. Consequently, this instance is best suited for multi-threaded workloads, static web serving, Redis caching, and general-purpose database applications that do not require high single-thread performance.",
+  "og_description": "Alibaba Cloud ecs.sn2ne.4xlarge is a general-purpose instance with 16 dedicated Intel Xeon vCPUs, 64 GB RAM, and average multi-core performance, suitable for web serving and databases.",
+  "meta_description": "Alibaba Cloud ecs.sn2ne.4xlarge is a general-purpose instance with 16 dedicated vCPUs, 64 GB RAM, and average multi-core performance.",
+  "tagline": "A dedicated multi-core virtual server with balanced memory allocation, optimized for multi-threaded workloads, web serving, and database operations.",
   "bullet_points": [
-    "16 dedicated Intel Xeon E5-2682v4 physical cores at 2.5 GHz",
-    "64.0 GB of system memory with a balanced 1:4 vCPU-to-RAM ratio",
-    "3 Gbps baseline network bandwidth with no local storage or GPU",
-    "Average multi-core scaling and memory bandwidth performance",
-    "Weak single-core CPU and single-threaded compression speeds",
-    "Best suited for static web serving, Redis caching, and general-purpose hosting"
+    "16 dedicated Intel Xeon E5-2682v4 vCPUs and 64.0 GB of RAM",
+    "Average multi-core CPU and memory bandwidth performance",
+    "Weak single-core performance and single-threaded compression speeds",
+    "No local storage or GPU accelerators included",
+    "3 Gbps baseline network bandwidth",
+    "Best suited for static web serving, Redis caching, and databases"
   ],
   "categories": [
     "General Purpose"

@@ -1,21 +1,22 @@
 {
   "page": [
-    "Amazon Web Services r8g.xlarge is a memory-optimized instance powered by the custom 64-bit ARM architecture. It features 4 dedicated physical cores utilizing the AWS Neoverse-V2 processor running at 2.8 GHz. The instance is equipped with 32.0 GB of system memory, providing a high memory-to-vCPU ratio of 8.0 GB per core. It operates on the AWS Nitro hypervisor, lacks local NVMe storage, and has a baseline network bandwidth of 2 Gbps.",
-    "Benchmark results indicate strong memory performance, with a Passmark memory score in the top 25% and uncached large-block memory read bandwidth reaching 108.05 GB/sec. Single-threaded compression and decompression tasks also show strong performance, with gzip compression at 30.6 GB/sec. However, raw CPU compute and specialized instruction performance are weaker, as evidenced by a Passmark CPU score in the bottom 25% and poor performance in encryption tests. LLM inference speeds are also weak, generating 6.5 tokens per second on a medium 7B model.",
-    "The r8g.xlarge offers qualitative cost efficiency for memory-bound workloads due to its high resource density and efficient ARM-based architecture. It is well-suited for database operations, caching layers like Redis, and memory-intensive applications that do not require local storage or heavy floating-point computations."
+    "Amazon Web Services r8g.xlarge is a memory-optimized virtual machine instance powered by custom 64-bit ARM-based AWS Graviton processors. Specifically, it features the AWS Neoverse-V2 CPU running at 2.8 GHz with 4 dedicated physical cores and 4 vCPUs, utilizing a 1:1 thread-to-core ratio. The memory configuration consists of 32.0 GB of RAM, providing 8.0 GB of memory per core. The instance operates on the AWS Nitro hypervisor, lacks local storage, and has a baseline network bandwidth of 2 Gbps.",
+    "Benchmark results indicate strong memory performance, with a Passmark memory score in the top 25% and a read-only small block memory bandwidth of 462.02 GB/sec. Single-threaded bzip3 decompression also performs in the top 25% at 14.39 GB/sec. However, general CPU compute benchmarks show moderate to lower performance; the Passmark CPU score falls in the bottom 25%, and the CPU encryption test is in the bottom 10%. Redis SET operations average 8.53 million operations per second, and static web serving throughput reaches 10.25 GB/sec.",
+    "The r8g.xlarge offers a high memory-to-vCPU ratio, making it a resource-dense option for memory-intensive workloads without the overhead of high-frequency compute costs. The lack of local storage requires external network-attached storage, and the baseline network speed is limited to 2 Gbps. Given the strong memory bandwidth and average database performance, this instance is suited for caching layers like Redis, medium-sized databases, and memory-bound data processing tasks, while it is less optimal for heavy cryptographic operations or large-scale LLM inference."
   ],
-  "description": "The Amazon Web Services r8g.xlarge is an ARM-based, memory-optimized instance powered by the AWS Neoverse-V2 processor. It features 4 dedicated physical cores running at 2.8 GHz, 32.0 GB of RAM, and a baseline network bandwidth of 2 Gbps. Operating on the Nitro hypervisor, this instance does not include local storage or GPU accelerators. Benchmarks reveal strong memory performance and single-threaded compression speeds, though raw CPU compute and encryption capabilities are relatively weak. With 8.0 GB of memory per core, the r8g.xlarge is highly efficient for memory-intensive workloads such as database operations, caching layers, and general memory-bound applications.",
-  "og_description": "Amazon Web Services r8g.xlarge is an ARM-based memory-optimized instance featuring 4 dedicated Neoverse-V2 cores, 32 GB of RAM, and strong memory bandwidth performance for database and caching workloads.",
-  "meta_description": "Amazon Web Services r8g.xlarge is an ARM-based memory-optimized instance with 4 dedicated cores, 32 GB RAM, and strong memory bandwidth.",
-  "tagline": "An ARM-powered, memory-optimized instance offering high memory bandwidth and dedicated physical cores for memory-intensive database and caching workloads.",
+  "description": "Amazon Web Services r8g.xlarge is an ARM64 memory-optimized instance powered by the AWS Neoverse-V2 Graviton processor. It features 4 dedicated physical cores (4 vCPUs) running at 2.8 GHz, paired with 32.0 GB of RAM, yielding 8.0 GB of memory per core. Operating on the Nitro hypervisor, the instance lacks local storage and provides a baseline network bandwidth of 2 Gbps. Benchmarks show strong memory performance, with a Passmark memory score in the top 25% and a read-only small block memory bandwidth of 462.02 GB/sec. Conversely, CPU-bound tasks like encryption perform in the lower percentiles. With its high memory-to-vCPU ratio and average Redis throughput of 8.53 million operations per second, the r8g.xlarge is well-suited for memory-intensive workloads such as caching layers, database operations, and memory-bound data processing, offering a qualitative balance of high memory density and efficient ARM-based compute.",
+  "og_description": "Amazon Web Services r8g.xlarge is an ARM64 memory-optimized instance with 4 Graviton vCPUs, 32 GB RAM, and a Nitro hypervisor, delivering strong memory bandwidth for caching and database workloads.",
+  "meta_description": "Amazon Web Services r8g.xlarge is an ARM64 memory-optimized instance featuring 4 Graviton vCPUs, 32 GB RAM, and 2 Gbps baseline network bandwidth.",
+  "tagline": "An ARM-based, memory-optimized virtual server delivering high memory bandwidth and dedicated physical cores for memory-intensive caching and database workloads.",
   "bullet_points": [
-    "Powered by AWS Neoverse-V2 ARM64 processor with 4 dedicated physical cores",
-    "Equipped with 32.0 GB of RAM, delivering 8.0 GB of memory per core",
-    "Strong memory bandwidth and single-threaded compression performance",
-    "No local storage or GPU accelerators included",
-    "Best suited for database operations, Redis caching, and memory-bound workloads"
+    "Powered by AWS Graviton Neoverse-V2 ARM64 processor with 4 dedicated cores",
+    "Equipped with 32.0 GB of RAM, providing 8.0 GB of memory per core",
+    "Strong memory performance with Passmark memory score in the top 25%",
+    "No local storage and 2 Gbps baseline network bandwidth",
+    "Optimized for caching layers, database operations, and memory-bound tasks"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }
