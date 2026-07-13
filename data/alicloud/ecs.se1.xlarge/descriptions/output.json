@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.se1.xlarge is a memory-optimized virtual machine instance configured with 4 vCPUs and 32 GB of RAM. Powered by an Intel Xeon 8269CY processor running at 2.5 GHz, the instance features 4 physical cores with a single thread per core on a dedicated CPU allocation. The x86_64 architecture supports AVX and AVX-512F vector extensions. This instance does not include local storage or GPU accelerators, relying entirely on network-attached storage and a baseline network bandwidth of 1 Gbps.",
-    "Benchmark data indicates that the ecs.se1.xlarge delivers modest processing and memory throughput. In stress-ng testing, both single-core and multi-core CPU performance fall into the bottom 25% of evaluated servers. Memory bandwidth benchmarks show similar limitations, with read-only large block transfers scoring in the bottom 10% and write operations in the bottom 25%. File compression and decompression tasks, such as single-threaded gzip and multi-threaded bzip3, also register in the lower percentiles, reflecting constraints in raw execution speed and memory bus efficiency.",
-    "The primary tradeoff of the ecs.se1.xlarge is its high memory-to-vCPU ratio of 8 GB per core, contrasted against its lower-tier computational performance. While it provides a generous memory footprint for applications requiring larger datasets in RAM, the underlying Intel Xeon 8269CY processor and memory subsystem operate with lower throughput compared to newer hardware generations. From a qualitative cost-efficiency perspective, this instance serves as a budget-friendly option for memory-intensive workloads that do not demand high CPU performance or rapid data processing speeds.",
-    "Given its hardware profile and benchmark results, the ecs.se1.xlarge is suited for memory-bound applications with low CPU utilization. Appropriate workloads include caching layers, lightweight in-memory databases like Redis with moderate transaction rates, and basic web serving. It is less suitable for CPU-intensive tasks, high-throughput database operations, or real-time data processing due to its lower performance in computational and memory bandwidth benchmarks."
+    "Alibaba Cloud ecs.se1.xlarge is a memory-optimized virtual machine instance configured with 4 dedicated vCPUs and 32.0 GB of RAM. Powered by an Intel Xeon 8269CY processor running at 2.5 GHz, the instance features 4 physical cores with 1.0 thread per core. The CPU architecture is x86_64, utilizing the KVM hypervisor. Cache specifications include 32 KB of L1d cache, 1.0 MB of L2 cache, and 35 MB of L3 cache. This instance does not include local storage or dedicated GPU hardware, and it operates with a baseline network bandwidth of 1 Gbps.",
+    "Benchmark results place the performance of the ecs.se1.xlarge in the lower tiers. The stress-ng single-core and multi-core CPU tests scored 1100.49 and 2931.93 respectively, both falling into the bottom 25% category. Memory bandwidth tests show a read-only small block cached speed of 163.82 GB/sec, while uncached large-block read-only bandwidth drops to 20.19 GB/sec, which is in the bottom 10%. PassMark CPU and memory scores also rank in the bottom 25%, indicating limited computational and memory throughput compared to modern hardware profiles.",
+    "Given the high memory-to-vCPU ratio of 8.0 GB per core alongside weak computational and database operation benchmarks, such as the PassMark database score of 1073.82 in the bottom 10%, this instance presents a clear tradeoff. It provides a dense memory allocation but exhibits low processing efficiency. It is suitable for memory-intensive workloads that do not require high CPU throughput, such as caching layers, lightweight in-memory databases, or basic web serving where memory capacity is prioritized over raw computational speed."
   ],
-  "description": "Alibaba Cloud ecs.se1.xlarge is a memory-optimized instance featuring 4 vCPUs and 32 GB of RAM, powered by an Intel Xeon 8269CY processor at 2.5 GHz. Built on the x86_64 architecture with dedicated CPU allocation, it lacks local storage and GPU accelerators, utilizing a 1 Gbps baseline network bandwidth. Benchmark results place its CPU and memory performance in the lower percentiles, with stress-ng and memory bandwidth tests scoring in the bottom 25% and bottom 10% respectively. This highlights a clear tradeoff: a high memory-to-vCPU ratio of 8 GB per core paired with modest processing capabilities. Qualitatively, it offers a cost-effective solution for memory-heavy workloads that are not CPU-intensive. The instance is best suited for caching systems, small in-memory databases, and basic web serving.",
-  "og_description": "Alibaba Cloud ecs.se1.xlarge is a memory-optimized instance featuring 4 vCPUs, 32 GB RAM, and an Intel Xeon 8269CY CPU. It is designed for memory-intensive workloads with low CPU demand.",
-  "meta_description": "Alibaba Cloud ecs.se1.xlarge is a memory-optimized instance with 4 vCPUs and 32 GB RAM, powered by an Intel Xeon 8269CY processor.",
-  "tagline": "A memory-optimized virtual server featuring a high memory-to-vCPU ratio for memory-intensive workloads with moderate processing requirements.",
+  "description": "Alibaba Cloud ecs.se1.xlarge is a memory-optimized instance featuring 4 dedicated vCPUs and 32.0 GB of RAM, yielding an 8.0 GB per core ratio. Powered by an Intel Xeon 8269CY processor clocked at 2.5 GHz on the x86_64 architecture, it operates under the KVM hypervisor. The instance lacks local storage and GPU accelerators, relying on a 1 Gbps baseline network bandwidth. Performance benchmarks indicate significant limitations, with stress-ng CPU and PassMark memory scores falling into the bottom 25%, and large-block memory read bandwidth dropping to the bottom 10%. This hardware profile presents a tradeoff of high memory density against lower computational and memory throughput. It is best suited for memory-intensive, low-compute workloads such as caching, lightweight in-memory databases, or basic web serving.",
+  "og_description": "Alibaba Cloud ecs.se1.xlarge is a memory-optimized instance with 4 dedicated Intel Xeon vCPUs, 32 GB RAM, and 1 Gbps network bandwidth, showing lower-tier CPU and memory benchmark performance.",
+  "meta_description": "Alibaba Cloud ecs.se1.xlarge is a memory-optimized instance featuring 4 dedicated Intel Xeon vCPUs, 32 GB RAM, and no local storage.",
+  "tagline": "A memory-optimized virtual server featuring a high memory-to-core ratio for memory-intensive workloads with moderate computational requirements.",
   "bullet_points": [
-    "4 vCPUs and 32 GB RAM providing 8 GB of memory per core",
-    "Intel Xeon 8269CY processor with dedicated CPU allocation",
-    "No local storage and 1 Gbps baseline network bandwidth",
-    "Modest CPU and memory bandwidth benchmark performance",
-    "Suitable for caching layers and light in-memory databases"
+    "4 dedicated Intel Xeon vCPUs and 32.0 GB of RAM.",
+    "High memory-to-CPU ratio of 8.0 GB per core.",
+    "No local storage and no GPU accelerators.",
+    "1 Gbps baseline network bandwidth.",
+    "Lower-tier CPU and memory benchmark performance.",
+    "Suited for caching layers and lightweight in-memory databases."
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }
