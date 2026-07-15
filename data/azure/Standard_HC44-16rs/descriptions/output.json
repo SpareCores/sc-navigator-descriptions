@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure HC44-16rs is an x86_64 architecture server belonging to the HCS family, running on the Microsoft Hyper-V hypervisor. It features 16 dedicated physical cores and 16 vCPUs powered by an Intel Xeon 8168 processor operating at 2.7 GHz. The system is equipped with 352.0 GB of system memory, providing a high memory-to-core ratio of 22.0 GB per core. Local storage consists of a 717 GB volume, and the instance supports RDMA and Premium Storage. No GPUs are present on this configuration.",
-    "Benchmark results place the server in the average performance tier across multiple workloads. The single-core stress-ng CPU performance is measured at 1414.09, while the multi-core score reaches 22570.21. Memory bandwidth testing shows a read-only small block cached speed of 1631.16 GB/sec and an uncached large block read speed of 164.07 GB/sec. Database operations via Passmark score at 10797.1, and Redis SET operations achieve 26.41 million operations per second.",
-    "Large-scale language model inference represents a significant performance bottleneck for this hardware configuration. While prompt processing for a 135M model reaches 1054.81 tokens per second, text generation for a 7B model drops to a weak 7.44 tokens per second, and 70B model prompt processing is poor at 4.52 tokens per second. Given the high memory capacity, dedicated CPU allocation, and RDMA capabilities, this server is configured for memory-intensive workloads, database operations, and distributed scientific computing rather than heavy LLM text generation."
+    "Microsoft Azure HC44-16rs is a memory-optimized virtual machine belonging to the HCS family, running on the Microsoft Hyper-V hypervisor. It features 16 dedicated physical cores and 16 vCPUs powered by an Intel Xeon 8168 processor operating at 2.7 GHz. The x86_64 architecture includes support for AVX, AVX-512f, AES, and FMA instructions. This server is equipped with 352.0 GB of system memory, yielding a high memory-to-core ratio of 22.0 GB per core. Local storage consists of 717 GB, and the instance is both RDMA and Premium Storage capable.",
+    "In benchmark evaluations, the HC44-16rs demonstrates average performance across most standard compute and memory tasks. The Geekbench single-core score is 1170.0, while the multi-core score reaches 9639.0. Memory bandwidth tests show a read-only small block cached speed of 1631.16 GB/sec, which drops to 164.07 GB/sec for large uncached blocks. Database operations are supported by a Redis SET throughput of 26.41 million operations per second and a Passmark database score of 10797.1.",
+    "A key tradeoff of this configuration is its performance in sequential and AI-related tasks. Single-threaded gzip compression is weak at 23.76 GB/sec, and LLM inference speeds are limited, with a medium 7B model achieving only 7.44 tokens/sec for text generation and a large 70B model dropping to 4.52 tokens/sec for prompt processing. Given the high memory capacity, dedicated cores, and RDMA capabilities, this server is best suited for memory-intensive workloads, database hosting, and high-performance computing node configurations, rather than modern machine learning inference."
   ],
-  "description": "Microsoft Azure HC44-16rs is an x86_64 server in the HCS family, utilizing 16 dedicated physical cores and 16 vCPUs on an Intel Xeon 8168 processor running at 2.7 GHz. It features 352.0 GB of RAM, yielding 22.0 GB per core, alongside 717 GB of local storage and RDMA capability. Performance benchmarks indicate average capabilities, with a multi-core stress-ng score of 22570.21 and a Passmark database score of 10797.1. However, LLM text generation is weak, with a 7B model achieving only 7.44 tokens per second. This server is suited for memory-intensive applications, database operations, and distributed computing tasks.",
-  "og_description": "Microsoft Azure HC44-16rs is an x86_64 server featuring 16 dedicated Intel Xeon 8168 cores, 352 GB of RAM, and 717 GB of local storage, designed for memory-intensive workloads and database operations.",
-  "meta_description": "Microsoft Azure HC44-16rs is an x86_64 server with 16 dedicated Intel Xeon cores, 352 GB RAM, and RDMA support for memory-heavy workloads.",
-  "tagline": "A memory-dense x86_64 server featuring dedicated Intel Xeon cores, RDMA capabilities, and substantial local storage for memory-intensive enterprise workloads.",
+  "description": "Microsoft Azure HC44-16rs is a memory-optimized virtual machine from the HCS family, featuring 16 dedicated physical cores and 16 vCPUs powered by an Intel Xeon 8168 processor running at 2.7 GHz. It is equipped with 352.0 GB of RAM, providing a high ratio of 22.0 GB per core, alongside 717 GB of local storage. The instance supports RDMA and Premium Storage. Benchmarks indicate average performance across standard compute and memory tasks, with a Geekbench multi-core score of 9639.0 and a Redis SET throughput of 26.41 million operations per second. However, single-threaded compression and LLM inference speeds are weak, making this server less suitable for AI workloads. It is highly effective for memory-intensive applications, database hosting, and distributed high-performance computing tasks that leverage its dedicated resource allocation and RDMA capabilities.",
+  "og_description": "Microsoft Azure HC44-16rs is a memory-optimized virtual machine featuring 16 dedicated Intel Xeon cores, 352 GB of RAM, 717 GB of local storage, and RDMA capability for high-performance database and HPC workloads.",
+  "meta_description": "Microsoft Azure HC44-16rs is an HCS family virtual machine with 16 dedicated Intel cores, 352 GB RAM, and RDMA support for memory-intensive workloads.",
+  "tagline": "A memory-optimized virtual machine featuring dedicated Intel Xeon cores, high memory density, and RDMA capabilities for demanding database and computing workloads.",
   "bullet_points": [
-    "16 dedicated Intel Xeon 8168 cores running at 2.7 GHz",
-    "352 GB of system memory providing 22 GB per core",
-    "717 GB of local storage with RDMA and Premium Storage support",
-    "Average database performance with 10,797.1 Passmark score",
-    "Weak performance for large language model text generation",
-    "Suited for memory-intensive applications and database workloads"
+    "16 dedicated physical Intel Xeon 8168 cores with no hyperthreading.",
+    "352.0 GB of system memory providing 22.0 GB per core.",
+    "717 GB of local storage with Premium Storage and RDMA support.",
+    "Average multi-core performance with a Geekbench score of 9639.0.",
+    "Weak single-threaded compression and limited LLM inference capabilities.",
+    "Best suited for memory-intensive databases and high-performance computing."
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

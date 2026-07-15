@@ -1,22 +1,23 @@
 {
   "page": [
-    "Vultr vcg-a40-12c-60g-24vram is a Cloud GPU server configured with a fractional NVIDIA Ampere A40 GPU. This instance allocates 0.5 of a physical A40 GPU, providing 24 GB of dedicated VRAM. The system is powered by an Intel x86_64 processor with 12 shared vCPUs and is equipped with 60.0 GB of system memory, yielding a memory-to-core ratio of 5.0 GB per vCPU.",
-    "For local storage, the server includes a bundled 1110 GB NVMe SSD, offering high-speed read and write capabilities directly on the host. Network connectivity is supported by one complimentary public IPv4 address. Because the CPU allocation is shared, this instance is designed for workloads that require substantial GPU acceleration and memory capacity but do not demand constant, dedicated single-core CPU performance.",
-    "This hardware profile is qualitatively cost-efficient for projects needing significant GPU memory without the expense of a full, dedicated GPU card. The 24 GB of VRAM and 60.0 GB of system RAM make it suitable for mid-sized machine learning inference, data science workflows, 3D rendering, and video transcoding tasks where fractional GPU resources provide a balanced resource-to-cost ratio."
+    "Vultr vcg-a40-12c-60g-24vram is a virtual machine in the Cloud GPU family, featuring a fractionalized NVIDIA A40 GPU based on the Ampere architecture. This configuration provides 0.5 of a physical GPU, delivering 24 GB of dedicated VRAM. The host system is powered by an Intel Xeon x86_64 processor with 12 shared vCPUs mapped to 6 physical cores, operating at a base clock speed of 2.0 GHz. System memory totals 60.0 GB, yielding a resource density of 5.0 GB per vCPU. Local storage is bundled as a 1110 GB NVMe SSD, and the instance includes one complimentary public IPv4 address.",
+    "Benchmark results place this server in the average tier across most standard compute and memory operations. The stress-ng single-core CPU performance score is 1631.08, while the multi-core score reaches 20624.31. Memory bandwidth testing shows a read-only small block cached speed of 1186.32 GB/sec, which drops to 123.01 GB/sec for large uncached blocks, alongside a write speed of 53.08 GB/sec. For database workloads, the instance achieves 22.59 million operations per second in Redis SET tests and a Passmark database score of 5563.82.",
+    "The shared CPU allocation introduces potential performance variability under sustained compute-heavy workloads. This tradeoff is reflected in LLM inference benchmarks; while prompt processing for a small 135M model reaches 1048.4 tokens/sec, processing for a medium 7B model drops to a weak score of 23.45 tokens/sec, though text generation for the 7B model remains average at 9.43 tokens/sec. Given the 24 GB VRAM and 1110 GB NVMe storage, this instance is suitable for small-to-medium machine learning inference, data science prototyping, and database operations that benefit from GPU acceleration without requiring a full dedicated GPU."
   ],
-  "description": "Vultr vcg-a40-12c-60g-24vram is a Cloud GPU server designed for workloads requiring GPU acceleration with a balanced system resource profile. It features a fractional NVIDIA Ampere A40 GPU providing 24 GB of VRAM, paired with 12 shared Intel x86_64 vCPUs and 60.0 GB of system memory. Local storage is supported by a bundled 1110 GB NVMe SSD, and the instance includes one complimentary public IPv4 address. The shared CPU allocation and fractional GPU configuration offer a qualitatively cost-efficient entry point for GPU-accelerated tasks without the overhead of a full dedicated accelerator. This server is suited for machine learning inference, data processing, and rendering workloads that benefit from high VRAM and fast local NVMe storage.",
-  "og_description": "Vultr vcg-a40-12c-60g-24vram is a Cloud GPU server featuring a fractional NVIDIA Ampere A40 GPU with 24 GB VRAM, 12 shared Intel vCPUs, 60 GB of system memory, and a bundled 1110 GB NVMe SSD.",
-  "meta_description": "Vultr vcg-a40-12c-60g-24vram is a Cloud GPU server with a fractional NVIDIA A40 GPU, 24 GB VRAM, 12 shared Intel vCPUs, and 1110 GB NVMe SSD storage.",
-  "tagline": "A fractional GPU server featuring an NVIDIA A40 with twenty-four gigabytes of VRAM and fast local NVMe storage.",
+  "description": "Vultr vcg-a40-12c-60g-24vram is a Cloud GPU instance featuring a fractionalized NVIDIA A40 Ampere GPU with 24 GB of VRAM. It is configured with 12 shared Intel Xeon vCPUs (6 physical cores) running at 2.0 GHz, 60.0 GB of system memory, and 1110 GB of local NVMe SSD storage. Performance benchmarks generally fall within the average range, with a Passmark CPU score of 20613.93 and a Redis SET throughput of 22.59 million operations per second. However, the shared CPU architecture presents a tradeoff, as evidenced by a weak prompt processing speed of 23.45 tokens/sec on 7B LLM models, compared to an average 1048.4 tokens/sec on 135M models. This instance is designed for workloads such as small-to-medium machine learning inference, database operations, and GPU-accelerated data processing where a full physical GPU is not required.",
+  "og_description": "Vultr vcg-a40-12c-60g-24vram is a Cloud GPU server with a fractional NVIDIA A40 GPU (24 GB VRAM), 12 shared Intel Xeon vCPUs, 60 GB RAM, and 1110 GB NVMe storage for machine learning and database tasks.",
+  "meta_description": "Vultr vcg-a40-12c-60g-24vram features a fractional NVIDIA A40 GPU, 12 shared Intel Xeon vCPUs, 60 GB RAM, and 1110 GB NVMe SSD storage.",
+  "tagline": "A fractional GPU instance combining 24 GB VRAM, shared Intel Xeon processors, and local NVMe storage for balanced machine learning workloads.",
   "bullet_points": [
-    "Fractional NVIDIA Ampere A40 GPU with 24 GB VRAM",
-    "12 shared Intel x86_64 vCPUs with 60.0 GB system memory",
-    "Bundled 1110 GB local NVMe SSD storage",
-    "Includes one complimentary public IPv4 address",
-    "Suited for machine learning inference and data science tasks"
+    "Fractional NVIDIA A40 Ampere GPU with 24 GB of dedicated VRAM.",
+    "12 shared Intel Xeon vCPUs and 60.0 GB of system memory.",
+    "1110 GB of local NVMe SSD storage for fast data access.",
+    "Average performance in database operations and small-model LLM inference.",
+    "Suited for small-to-medium machine learning inference and data science."
   ],
   "categories": [
     "GPU Accelerated",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

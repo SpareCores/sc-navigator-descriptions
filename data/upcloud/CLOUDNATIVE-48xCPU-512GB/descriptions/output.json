@@ -1,23 +1,24 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-48xCPU-512GB is a memory-optimized virtual server built on the KVM hypervisor. It features 48 physical cores and 48 vCPUs powered by an AMD EPYC 7542 processor running at 2.0 GHz on the x86_64 architecture. The system is configured with a shared CPU allocation and contains 512.0 GB of system memory, yielding a high memory-to-core ratio of 10.67 GB per core. No local storage or GPU hardware is bundled with this instance, though it includes one complimentary public IPv4 address.",
-    "In benchmark testing, the server demonstrates strong multi-threaded and instruction-heavy capabilities, though single-core performance is limited. The Passmark CPU score is strong, placing in the top 25% with 58184.07, supported by strong results in extended instructions, encryption, and physics tests. Multi-threaded bzip3 decompression is also strong at 375.9 GB/sec. Conversely, stress-ng single-core CPU performance is poor, falling into the bottom 10%. Memory bandwidth and database operations perform in the average range, with Redis SET operations achieving 58.62 million operations per second and static web serving throughput reaching 26.19 GB/sec. Large-model LLM text generation is weak, with the 7B model generating 6.29 tokens per second.",
-    "Given the shared CPU allocation and high memory density, this server offers a cost-efficient profile for memory-intensive workloads that can tolerate shared CPU resources. The high memory capacity of 512.0 GB makes it suitable for large-scale caching layers, in-memory databases, and multi-threaded data processing tasks. However, the poor single-core performance and lack of local storage make it less suitable for latency-sensitive single-threaded applications or high-I/O storage-heavy workloads without external storage attachments."
+    "UpCloud CLOUDNATIVE-48xCPU-512GB is a Cloud Native family virtual server running on the KVM hypervisor. It features an x86_64 architecture powered by an AMD EPYC 7542 processor with 48 physical cores and 48 vCPUs, operating at a clock speed of 2.0 GHz. The CPU allocation is shared, and the processor includes 64 KB L1d cache, 0.5 MB L2 cache, and 16 MB L3 cache. The system is equipped with 512.0 GB of RAM, yielding a high memory-to-core ratio of 10.67 GB per core. This instance does not include local storage or dedicated GPU hardware, but it comes with one complimentary public IPv4 address.",
+    "Benchmark data reveals a contrast between single-core and multi-core capabilities. The single-core CPU performance measured by stress-ng falls into the bottom 10%, and single-threaded gzip compression and bzip3 decompression show average performance. However, multi-threaded operations leverage the 48-core architecture effectively, with bzip3 multi-threaded decompression and Passmark CPU metrics scoring in the top 25%. Memory bandwidth for both small and large blocks remains in the average tier, as does the Passmark memory score. Redis SET operations and static web serving throughput also perform within the middle 50% range.",
+    "The primary tradeoff of this server is its shared CPU allocation and low single-core speed, which limits its suitability for latency-sensitive or single-threaded workloads. For example, text generation using a medium 7B LLM model is poor, placing in the bottom 10%. Conversely, the large 512.0 GB memory capacity and strong multi-core performance make it qualitatively cost-efficient for memory-intensive, highly parallelized tasks. It is suited for large-scale database operations, multi-threaded data processing, and memory-heavy web serving workloads that do not require local NVMe storage."
   ],
-  "description": "The UpCloud CLOUDNATIVE-48xCPU-512GB is a KVM-based virtual server featuring 48 vCPUs and 48 physical cores powered by an AMD EPYC 7542 processor at 2.0 GHz. It is equipped with 512.0 GB of RAM, providing a high memory-to-core ratio of 10.67 GB, but lacks local storage and GPU accelerators. Performance benchmarks indicate strong multi-threaded capabilities, with a strong Passmark CPU score of 58184.07 and strong multi-threaded bzip3 decompression. However, single-core CPU performance is poor, scoring in the bottom 10% on stress-ng. Memory bandwidth, Redis SET operations, and static web serving remain in the average tier. This server is qualitatively cost-efficient for memory-heavy, multi-threaded workloads such as in-memory databases, caching, and data processing, provided they do not require dedicated CPU cores or high single-threaded performance.",
-  "og_description": "UpCloud CLOUDNATIVE-48xCPU-512GB is a KVM virtual server with 48 AMD EPYC vCPUs and 512 GB RAM. It offers strong multi-threaded performance but poor single-core speeds, suited for memory-heavy workloads.",
-  "meta_description": "UpCloud CLOUDNATIVE-48xCPU-512GB is a KVM virtual server with 48 AMD EPYC vCPUs and 512 GB RAM, optimized for memory-intensive, multi-threaded tasks.",
-  "tagline": "A high-capacity memory-optimized virtual server featuring forty-eight AMD EPYC cores for memory-intensive, multi-threaded data processing and caching workloads.",
+  "description": "The UpCloud CLOUDNATIVE-48xCPU-512GB is an x86_64 virtual server built on the KVM hypervisor, featuring 48 shared AMD EPYC 7542 cores running at 2.0 GHz and 512.0 GB of RAM. Lacking local storage and GPU accelerators, it provides a high memory-to-core ratio of 10.67 GB per core. Performance benchmarks show a clear tradeoff: single-core CPU performance is poor, ranking in the bottom 10%, whereas multi-threaded benchmarks like Passmark CPU tests and bzip3 decompression perform strongly in the top 25%. Memory bandwidth, static web serving, and database operations remain in the average tier. This profile makes the server qualitatively cost-efficient for memory-intensive, highly parallel workloads such as distributed caching, multi-threaded data processing, and large-scale database operations, while being less suitable for single-threaded or latency-critical applications.",
+  "og_description": "UpCloud CLOUDNATIVE-48xCPU-512GB is a KVM-based server with 48 shared AMD EPYC cores and 512 GB RAM. It offers strong multi-threaded performance but limited single-core speed and no local storage.",
+  "meta_description": "UpCloud CLOUDNATIVE-48xCPU-512GB features 48 AMD EPYC cores and 512 GB RAM, delivering strong multi-threaded performance for memory-heavy workloads.",
+  "tagline": "A high-capacity memory-optimized virtual server featuring forty-eight shared cores for parallelized, memory-intensive workloads without local storage requirements.",
   "bullet_points": [
-    "48 AMD EPYC 7542 vCPUs and 512 GB of system memory",
-    "High memory density of 10.67 GB per core on KVM hypervisor",
-    "Strong multi-threaded performance and Passmark CPU execution",
-    "Poor single-core performance and shared CPU allocation limits",
-    "No bundled local storage or GPU hardware included",
-    "Best suited for in-memory databases, caching, and multi-threaded processing"
+    "48 shared AMD EPYC 7542 cores running at 2.0 GHz",
+    "512.0 GB of system memory providing 10.67 GB per core",
+    "Strong multi-threaded performance, ranking in the top 25% for Passmark CPU tests",
+    "No local storage or GPU accelerators included",
+    "Poor single-core performance, making it less suitable for single-threaded tasks",
+    "Appropriate for memory-intensive database operations and parallel data processing"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Burstable & Budget"
   ]
 }

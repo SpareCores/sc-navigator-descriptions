@@ -1,21 +1,22 @@
 {
   "page": [
-    "Microsoft Azure D4ads_v6 is a general-purpose virtual machine powered by an AMD EPYC 9V74 processor based on the x86_64 architecture. Running on the Microsoft Hyper-V hypervisor, this instance provides 4 dedicated vCPUs mapped from 2 physical cores with hyper-threading enabled. The processor operates at a clock speed of 3.7 GHz and features 32 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. System memory totals 16.0 GB, yielding a balanced 4.0 GB of RAM per vCPU. Storage is supported by a 236 GB local disk with Premium Storage capabilities, while there are no bundled GPUs or complimentary public IPv4 addresses.",
-    "Benchmark data indicates strong single-core performance, with the stress-ng single-core test scoring 3079.47 and the Geekbench single-core test reaching 2101.0, both placing in the top 25%. Multi-core performance is moderate, as evidenced by a stress-ng multi-core score of 6156.76 and a Geekbench multi-core score of 4806.0. However, memory bandwidth is a notable bottleneck; read-only bandwidth for both small and large blocks falls into the bottom 25%, measuring 303.66 GB/sec and 37.93 GB/sec respectively. Similarly, multi-threaded bzip3 decompression and PassMark database operations show weaker performance profiles, placing in the lower quartile.",
-    "This server configuration is suited for workloads that benefit from high single-core CPU speeds but do not demand intensive memory throughput or massive multi-threaded scaling. Appropriate applications include static web serving, which achieved a throughput of 6.43 GB/sec, and lightweight Redis deployments, processing 5.92 million SET operations per second. The hardware profile offers a cost-efficient balance of dedicated compute and local storage for general-purpose tasks, though it is poorly suited for complex tasks like medium-scale LLM inference, where prompt processing speeds drop to 11.76 tokens/second."
+    "Microsoft Azure D4ads_v6 is a general-purpose virtual machine instance belonging to the Dadv6 family, powered by the Microsoft Hyper-V hypervisor. It features an x86_64 AMD EPYC 9V74 processor operating at 3.7 GHz, configured with 4 dedicated vCPUs derived from 2 physical cores with hyper-threading enabled. The hardware allocation includes 16.0 GB of system memory, yielding 4.0 GB of RAM per core. For local storage, the instance is equipped with a 236 GB local disk and is capable of utilizing Premium Storage. No GPU resources are included.",
+    "Benchmark data indicates strong single-core performance, with stress-ng single-core CPU and Geekbench single-core scores placing in the top 25%. Text processing performance is also strong. However, multi-core execution and memory write bandwidth fall into the average range. The instance exhibits performance trade-offs in memory read bandwidth, both cached and uncached, and multi-threaded bzip3 decompression, which rank in the bottom 25%. Database operations and software compilation tasks also show weaker relative performance, while LLM inference with a medium 7B model is poor to weak.",
+    "From a cost-efficiency perspective, the D4ads_v6 offers a balanced resource density of 4 GB RAM per vCPU alongside bundled local storage, making it a viable option for workloads requiring dedicated CPU allocation without the premium cost of memory-optimized hardware. The instance is best suited for general-purpose workloads, including static web serving, Redis caching, and moderate single-threaded processing tasks. It is less suitable for memory-bandwidth-intensive applications, large-scale database operations, or heavy multi-threaded compilation."
   ],
-  "description": "Microsoft Azure D4ads_v6 is an x86_64 general-purpose virtual machine featuring 4 dedicated vCPUs and 16.0 GB of RAM, powered by an AMD EPYC 9V74 processor running at 3.7 GHz. It includes a 236 GB local disk with Premium Storage capabilities but lacks a GPU. Benchmarks show strong single-core capabilities, with Geekbench single-core scores in the top 25%, though multi-core performance and memory read bandwidth are weaker, placing in the bottom 25%. This resource profile makes the instance suitable for general-purpose workloads such as static web serving, text processing, and lightweight database operations, offering a balanced compute-to-memory ratio for applications that do not require high memory throughput or heavy multi-threaded scaling.",
-  "og_description": "Microsoft Azure D4ads_v6 is an x86_64 general-purpose VM with 4 dedicated AMD EPYC vCPUs, 16 GB RAM, and a 236 GB local disk, delivering strong single-core performance with moderate memory bandwidth.",
-  "meta_description": "Microsoft Azure D4ads_v6 features 4 dedicated AMD EPYC vCPUs, 16 GB RAM, and 236 GB local storage, optimized for general-purpose workloads.",
-  "tagline": "A balanced general-purpose virtual machine featuring dedicated AMD EPYC compute, local storage, and strong single-core performance.",
+  "description": "Microsoft Azure D4ads_v6 is an x86_64 general-purpose virtual machine powered by an AMD EPYC 9V74 processor running at 3.7 GHz. It features 4 dedicated vCPUs, 16.0 GB of RAM, and 236 GB of local storage. Operating under the Microsoft Hyper-V hypervisor, this instance delivers strong single-core CPU and text processing performance, though its multi-core capabilities and memory read bandwidth are relatively weak. With a balanced 1:4 vCPU-to-RAM ratio and Premium Storage capability, the D4ads_v6 provides a cost-efficient profile for general-purpose workloads. It is well-suited for static web serving, Redis caching, and light single-threaded applications, but is less optimal for memory-bandwidth-heavy tasks or complex database operations.",
+  "og_description": "Microsoft Azure D4ads_v6 is a general-purpose VM featuring 4 dedicated AMD EPYC vCPUs, 16 GB RAM, and 236 GB local storage, delivering strong single-core performance for web serving and caching.",
+  "meta_description": "Microsoft Azure D4ads_v6 is a general-purpose VM with 4 AMD EPYC vCPUs, 16 GB RAM, and 236 GB local storage, optimized for web serving and caching.",
+  "tagline": "A balanced general-purpose virtual machine featuring dedicated AMD EPYC processing, integrated local storage, and strong single-core performance.",
   "bullet_points": [
-    "Powered by an AMD EPYC 9V74 processor running at 3.7 GHz",
-    "4 dedicated vCPUs with 16.0 GB of system memory",
-    "Includes 236 GB of local storage with Premium Storage capability",
-    "Strong single-core CPU and text processing benchmark results",
-    "Suited for static web serving, Redis, and general-purpose computing"
+    "Powered by a 3.7 GHz AMD EPYC 9V74 processor with 4 dedicated vCPUs.",
+    "Equipped with 16.0 GB of RAM and a 236 GB local storage disk.",
+    "Delivers strong single-core CPU and text processing benchmark performance.",
+    "Exhibits lower performance in memory read bandwidth and multi-threaded decompression.",
+    "Ideal for static web serving, Redis caching, and general-purpose applications."
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

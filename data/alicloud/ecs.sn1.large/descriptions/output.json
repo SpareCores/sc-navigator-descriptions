@@ -1,23 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.sn1.large is an x86_64 architecture virtual machine instance within the ecs.sn1 server family, running on the KVM hypervisor. It features 4 dedicated vCPUs mapped to 4 physical Intel Xeon 8269CY cores operating at a clock speed of 2.5 GHz. The system is equipped with 8.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per core. It does not include local storage or dedicated GPU hardware, and relies on a baseline network bandwidth of 1 Gbps.",
-    "The underlying Intel Xeon processor provides a 35 MB L3 cache, 1.0 MB L2 cache, and 32 KB L1d cache. Supported hardware instruction sets include AVX, AVX512F, AES, BMI2, ADX, and FMA, though newer extensions such as AVX512_VNNI and AMX are absent. In synthetic CPU benchmarks, the instance demonstrates performance in the bottom 25% tier, with a stress-ng single-core score of 1103.98 and a multi-core score of 2930.09. PassMark CPU testing yields a score of 3617.68, placing its raw computational capabilities in the lower performance bracket.",
-    "Memory performance is constrained, with PassMark memory testing scoring in the bottom 10% at 1241.98. Read-only memory bandwidth for large blocks is measured at 20.95 GB/sec, while write bandwidth for large blocks reaches 18.75 GB/sec. The lack of local storage requires reliance on network-attached volumes, which must share the baseline 1 Gbps network interface. This network limitation also impacts web serving throughput, which registers at 2.42 GB/sec in static web serving benchmarks.",
-    "Given the 1:2 vCPU-to-RAM ratio, the instance is structured for compute-oriented workloads that do not require large memory footprints. Benchmark results indicate weak performance across database operations (1099.9 on PassMark) and text processing (1179.0 on Geekbench). Redis SET operations reach 2.79 million operations per second, and small-model LLM inference (135M) achieves 60.86 tokens per second for text generation. The instance is suited for lightweight utility computing, basic web serving, or development environments where dedicated CPU cores are required without demanding high-throughput memory or storage performance."
+    "Alibaba Cloud ecs.sn1.large is an x86_64 compute-optimized virtual machine instance powered by the KVM hypervisor. It features 4 dedicated Intel Xeon 8269CY physical cores operating at 2.5 GHz, with 1.0 thread per core. The system is configured with 8.0 GB of system memory, providing a resource density of 2.0 GB per core. It does not include local storage or GPU accelerators, relying entirely on network-attached storage and a baseline network bandwidth of 1 Gbps.",
+    "Benchmark data indicates that the ecs.sn1.large sits in the lower performance tiers. Both single-core and multi-core stress-ng CPU benchmarks place the instance in the bottom 25%. Memory bandwidth performance is constrained, with large-block read operations falling into the bottom 10% at 20.95 GB/sec and write operations in the bottom 25% at 18.75 GB/sec. Similarly, Geekbench scores for single-core and multi-core are in the bottom 10%, reflecting limited computational throughput for intensive tasks.",
+    "From a cost-efficiency perspective, the ecs.sn1.large provides a dedicated CPU allocation at an entry-level hardware tier, making it a predictable option for workloads that require dedicated resources without the premium cost of high-performance instances. However, the tradeoffs include lower memory bandwidth and weak computational benchmarks. This makes the instance best suited for lightweight utility workloads, basic web serving, or small-scale development environments where high memory density and high-speed I/O are not required."
   ],
-  "description": "Alibaba Cloud ecs.sn1.large is an x86_64 compute-oriented instance featuring 4 dedicated vCPUs powered by an Intel Xeon 8269CY processor running at 2.5 GHz, paired with 8.0 GB of RAM. Operating on the KVM hypervisor, this instance lacks local storage and GPU accelerators, relying on a baseline network bandwidth of 1 Gbps. Benchmark evaluations place its performance in the lower tiers, with a PassMark CPU score of 3617.68 and a stress-ng multi-core score of 2930.09. Memory bandwidth is also limited, with large-block read speeds of 20.95 GB/sec. Given its 1:2 vCPU-to-RAM ratio and dedicated core allocation, the ecs.sn1.large is qualitatively positioned as a budget-friendly option for lightweight compute tasks, basic web serving, and development environments that do not require high memory capacity or rapid storage I/O.",
-  "og_description": "Alibaba Cloud ecs.sn1.large is a compute-oriented virtual server with 4 dedicated Intel Xeon vCPUs, 8.0 GB RAM, and 1 Gbps network bandwidth, showing entry-level performance in CPU and memory benchmarks.",
-  "meta_description": "Alibaba Cloud ecs.sn1.large features 4 dedicated Intel Xeon vCPUs and 8.0 GB RAM, offering entry-level compute performance on a KVM hypervisor.",
-  "tagline": "A dedicated four-core compute instance with a one-to-two processor-to-memory ratio, designed for entry-level utility workloads and basic web serving.",
+  "description": "Alibaba Cloud ecs.sn1.large is an x86_64 compute-optimized instance featuring 4 dedicated Intel Xeon 8269CY physical cores running at 2.5 GHz and 8.0 GB of RAM. Lacking local storage and GPU accelerators, it relies on network-attached storage and provides a baseline network bandwidth of 1 Gbps. Performance benchmarks position this instance in the lower tiers, with stress-ng CPU and Geekbench scores falling into the bottom 10% to 25%. Memory bandwidth is also limited, with large-block reads recorded at 20.95 GB/sec. Given these performance characteristics and the 1:2 vCPU-to-RAM ratio, the ecs.sn1.large is best suited for lightweight, non-intensive workloads such as basic web serving, minor utility tasks, and small-scale development or testing environments that do not demand high memory density or high-throughput I/O.",
+  "og_description": "Alibaba Cloud ecs.sn1.large is an x86_64 instance with 4 dedicated Intel Xeon cores, 8 GB RAM, and 1 Gbps network bandwidth, suited for lightweight utility and basic web serving workloads.",
+  "meta_description": "Alibaba Cloud ecs.sn1.large features 4 dedicated Intel Xeon cores and 8 GB RAM, offering a basic compute-optimized profile for light workloads.",
+  "tagline": "A dedicated four-core Intel Xeon virtual server with eight gigabytes of memory, designed for lightweight utility and development workloads.",
   "bullet_points": [
-    "4 dedicated Intel Xeon 8269CY vCPUs running at 2.5 GHz",
-    "8.0 GB of system memory with a 2.0 GB per core ratio",
-    "No local storage and 1 Gbps baseline network bandwidth",
-    "Supports AVX, AVX512F, and AES instruction sets",
-    "Designed for lightweight utility computing, basic web serving, and development tasks"
+    "4 dedicated Intel Xeon 8269CY physical cores at 2.5 GHz",
+    "8.0 GB of system memory providing 2.0 GB per core",
+    "1 Gbps baseline network bandwidth with no local storage",
+    "Dedicated CPU allocation via KVM hypervisor",
+    "Best suited for lightweight web serving and utility tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

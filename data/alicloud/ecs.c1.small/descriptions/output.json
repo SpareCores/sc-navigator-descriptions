@@ -1,21 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c1.small is an x86_64 architecture server instance within the ecs.c1 family, running on the KVM hypervisor. It features 8 dedicated vCPUs mapped to 8 physical cores with a single thread per core configuration. The instance is equipped with 8.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per core.",
-    "This server configuration does not include local storage or integrated GPU hardware. Network configurations do not bundle complimentary public IPv4 addresses.",
-    "With dedicated CPU allocation and a low memory-to-core ratio, the instance is structured for compute-bound tasks that do not require large memory footprints or local storage. It is suitable for workloads such as distributed compute nodes, batch processing, and lightweight web serving where dedicated CPU execution is required."
+    "Alibaba Cloud ecs.c1.small is an x86_64 architecture virtual machine instance within the ecs.c1 server family, running on the KVM hypervisor. The instance features 8 dedicated vCPUs mapped to 8 physical cores with a single thread per core, meaning hyperthreading is not active. It is configured with 8.0 GB of system memory, yielding a low memory-to-core ratio of 1.0 GB per vCPU.",
+    "This server type does not include local storage, requiring the attachment of external block storage for operating system and application data. It also lacks complimentary public IPv4 addresses. An analysis of the CPU flags reveals the absence of modern instruction set extensions, including Advanced Vector Extensions (AVX, AVX512), Advanced Matrix Extensions (AMX), and hardware-assisted cryptography (AES, SHA_NI), which limits its efficiency for vector math, deep learning, and cryptographic operations.",
+    "From a resource density perspective, the ecs.c1.small offers a compute-heavy profile relative to its memory capacity. This design makes it qualitatively cost-efficient for workloads that require dedicated CPU cores but have minimal memory requirements. Appropriate workloads include basic batch processing, legacy x86_64 applications, and distributed computing tasks that do not rely on modern instruction sets or local storage."
   ],
-  "description": "Alibaba Cloud ecs.c1.small is an x86_64 compute-focused server instance belonging to the ecs.c1 family. Operating on the KVM hypervisor, it provides 8 dedicated vCPUs across 8 physical cores with a single thread per core execution model. The hardware configuration includes 8.0 GB of system memory, resulting in a 1.0 GB per core memory allocation. This instance does not feature local storage or GPU accelerators, and it does not include complimentary public IPv4 addresses. Given the dedicated CPU allocation and low memory-to-core ratio, this server is designed for compute-intensive workloads with minimal memory requirements, such as batch processing, distributed computing tasks, and basic web serving.",
-  "og_description": "Alibaba Cloud ecs.c1.small is an x86_64 compute-focused server featuring 8 dedicated physical cores, 8.0 GB of RAM, and no local storage, optimized for dedicated CPU workloads on the KVM hypervisor.",
-  "meta_description": "Alibaba Cloud ecs.c1.small is an x86_64 server with 8 dedicated vCPUs, 8.0 GB of RAM, and no local storage, running on the KVM hypervisor.",
-  "tagline": "A dedicated x86_64 compute instance featuring eight physical cores and a one-to-one gigabyte-to-core memory ratio for processing-focused workloads.",
+  "description": "Alibaba Cloud ecs.c1.small is an x86_64 virtual machine in the ecs.c1 family, utilizing the KVM hypervisor. It provides 8 dedicated vCPUs across 8 physical cores with one thread per core, paired with 8.0 GB of system memory. This configuration results in a low memory-to-CPU ratio of 1.0 GB per core. The instance lacks local storage and complimentary public IPv4 addresses. Furthermore, the CPU lacks modern instruction sets such as AVX, AVX512, AMX, and AES cryptographic acceleration. Qualitatively, the dedicated CPU allocation offers predictable execution for non-vectorized tasks, though the lack of hardware-accelerated cryptography and vector extensions represents a significant tradeoff for modern workloads. This server is designed for compute-focused workloads with low memory footprints, such as basic batch processing and legacy x86_64 applications that do not require advanced vector or matrix operations.",
+  "og_description": "Alibaba Cloud ecs.c1.small is a KVM-based x86_64 server featuring 8 dedicated vCPUs, 8.0 GB of RAM, and no local storage, designed for compute-focused workloads with low memory requirements.",
+  "meta_description": "Alibaba Cloud ecs.c1.small is a KVM-based x86_64 server featuring 8 dedicated vCPUs, 8.0 GB of RAM, and no bundled local storage.",
+  "tagline": "A dedicated eight-core x86_64 compute instance with a low memory footprint and no local storage for basic processing workloads.",
   "bullet_points": [
-    "8 dedicated x86_64 vCPUs mapped to 8 physical cores",
+    "8 dedicated vCPUs mapped to 8 physical cores without hyperthreading",
     "8.0 GB of system memory providing 1.0 GB per core",
-    "KVM hypervisor virtualization with dedicated CPU allocation",
-    "Zero local storage and no integrated GPU accelerators",
-    "Designed for compute-bound workloads and batch processing"
+    "No local storage included, requiring external block storage",
+    "Absence of AVX, AVX512, AMX, and AES CPU instruction extensions",
+    "Suited for legacy x86_64 applications and low-memory batch processing"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E8s_v3 is an x86_64 architecture virtual machine belonging to the ESv3 family. It is powered by an Intel Xeon 8272CL processor running at 2.6 GHz, offering 8 vCPUs mapped to 4 physical cores with hyper-threading enabled. The memory configuration is 64.0 GB of RAM, yielding a high memory-to-vCPU ratio of 8.0 GB per core. It is equipped with 131 GB of local storage and supports Premium Storage. No GPUs are included in this configuration.",
-    "Performance benchmarks indicate a clear distinction between compute and memory capabilities. While raw CPU processing is relatively weak, with stress-ng single-core and multi-core scores in the bottom 25%, memory performance is more robust. Memory bandwidth tests show average tier results, reaching 365.1 GB/sec for cached small blocks and 42.29 GB/sec for uncached large blocks. Redis SET operations perform at an average level of 6.16 million operations per second, and PassMark database operations also fall into the average category.",
-    "The qualitative cost efficiency of the E8s_v3 is defined by its high memory density relative to its compute resources. It trades off high-speed CPU performance for a larger memory footprint, making it less suitable for compute-heavy tasks like image processing or LLM inference, but highly appropriate for memory-bound workloads. This server is best suited for relational databases, in-memory caching systems like Redis, and software compilation tasks."
+    "Microsoft Azure E8s_v3 is a memory-optimized virtual machine belonging to the ESv3 server family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated Intel Xeon 8272CL processor operating at 2.6 GHz. The hardware configuration includes 8 vCPUs (4 physical cores with hyper-threading enabled), 64.0 GB of system memory yielding 8.0 GB per core, and a 131 GB local storage volume. The CPU is equipped with a 50 MB L3 cache, 0.25 MB L2 cache, and 32 KB L1d cache, supporting instruction sets such as AVX, AVX-512, AES, and FMA.",
+    "Benchmark evaluations indicate moderate memory and database capabilities alongside weaker raw compute performance. The server achieved average tier results in Passmark CPU tests, Passmark memory scores, and database operations, with Redis SET operations reaching 6.16 million operations per second. Memory bandwidth tests also placed in the average category, with read-only small block cached speeds at 365.1 GB/sec and uncached large block read speeds at 42.29 GB/sec. However, raw processing benchmarks like stress-ng single-core and multi-core, Geekbench single-core and multi-core, and static web serving throughput fell into the bottom 25% tier. LLM inference performance is limited, with text generation on a 7B model classified as poor.",
+    "From a resource density perspective, the E8s_v3 offers a high memory-to-vCPU ratio, making it a qualitatively cost-efficient option for memory-bound workloads that do not demand intensive CPU performance. The inclusion of Premium Storage capability allows for high-throughput disk attachments. This virtual machine is best suited for relational databases, caching layers like Redis, memory-intensive data processing, and enterprise applications requiring a stable memory footprint without heavy computational overhead."
   ],
-  "description": "Microsoft Azure E8s_v3 is a memory-optimized virtual machine from the ESv3 family, powered by an Intel Xeon 8272CL processor. It features 8 vCPUs across 4 physical cores, 64.0 GB of RAM, and 131 GB of local storage with Premium Storage capability. Operating on the x86_64 architecture under Microsoft Hyper-V, this server provides a high memory-to-vCPU ratio of 8.0 GB per core. Benchmark data reveals a tradeoff: while single-core and multi-core CPU performance is positioned in the bottom 25%, memory bandwidth and database operations achieve average tier results, with Redis SET operations reaching 6.16 million operations per second. Consequently, the E8s_v3 is qualitatively cost-efficient for memory-intensive workloads rather than compute-heavy tasks. It is best suited for databases, in-memory caching, and software compilation.",
-  "og_description": "Microsoft Azure E8s_v3 is a memory-optimized server featuring 8 vCPUs, 64 GB RAM, and 131 GB local storage. It is powered by an Intel Xeon 8272CL processor under Microsoft Hyper-V virtualization.",
-  "meta_description": "Microsoft Azure E8s_v3 is an x86_64 memory-optimized server with 8 vCPUs, 64 GB RAM, and 131 GB local storage, running on an Intel Xeon processor.",
-  "tagline": "A memory-optimized virtual machine featuring a high RAM-to-vCPU ratio and local storage for memory-intensive database and caching workloads.",
+  "description": "Microsoft Azure E8s_v3 is a memory-optimized virtual machine from the ESv3 family, running on the Microsoft Hyper-V hypervisor. It is configured with an x86_64 Intel Xeon 8272CL processor operating at 2.6 GHz, delivering 8 vCPUs across 4 physical cores, 64.0 GB of RAM (8.0 GB per core), and 131 GB of local storage. While raw compute benchmarks like stress-ng and Geekbench single-core scores fall into the bottom 25%, its memory subsystem performs in the average tier, with uncached large-block read bandwidth at 42.29 GB/sec and Redis SET operations processing 6.16 million operations per second. Lacking a GPU, this server is not suited for heavy AI workloads but offers qualitative cost efficiency for memory-intensive tasks. It is best suited for database operations, caching layers, and memory-bound enterprise applications.",
+  "og_description": "Microsoft Azure E8s_v3 is a memory-optimized virtual machine featuring 8 Intel Xeon vCPUs, 64 GB RAM, and 131 GB local storage, designed for database operations and memory-bound workloads.",
+  "meta_description": "Microsoft Azure E8s_v3 is an Intel-powered, memory-optimized VM with 8 vCPUs, 64 GB RAM, and Premium Storage capability for database workloads.",
+  "tagline": "A memory-optimized virtual machine featuring a high RAM-to-core ratio and dedicated Intel Xeon processors for database and caching workloads.",
   "bullet_points": [
-    "Intel Xeon 8272CL processor with 8 vCPUs and 4 physical cores",
-    "64.0 GB of RAM providing a high 8.0 GB per core ratio",
-    "131 GB of local storage with Premium Storage capability",
-    "Average memory bandwidth and database performance",
-    "Best suited for databases, in-memory caching, and software compilation"
+    "8 vCPUs and 64.0 GB RAM providing a high 1:8 memory-to-core ratio",
+    "Intel Xeon 8272CL processor with 50 MB L3 cache and AVX-512 support",
+    "131 GB local storage with Premium Storage capability",
+    "Average-tier memory bandwidth and database performance, processing 6.16 million Redis SET operations per second",
+    "Best suited for relational databases, caching layers, and memory-intensive enterprise applications"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Storage & Database"
   ]
 }
