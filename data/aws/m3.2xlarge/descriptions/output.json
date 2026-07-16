@@ -1,22 +1,22 @@
 {
   "page": [
-    "Amazon Web Services m3.2xlarge is a general-purpose instance powered by an Intel Xeon E5-2670 v2 processor. This x86_64 architecture server features 8 dedicated vCPUs derived from 4 physical cores with hyper-threading enabled. The CPU operates at a clock speed of 2.5 GHz and includes a 25 MB L3 cache. It is equipped with 30.0 GB of system memory, providing 3.75 GB per core, and includes 160 GB of local NVMe SSD storage. Network connectivity is established with a baseline bandwidth of 1 Gbps.",
-    "Benchmark evaluations indicate a clear distinction between single-core and multi-core performance. Single-core performance is weak, as evidenced by a stress-ng single-core score of 1279.49 and a poor Geekbench single-core score of 710.0. However, multi-core performance scales to average levels, with a stress-ng multi-core score of 6709.91 and a Passmark CPU score of 7144.84. Memory bandwidth remains average, measuring 49.24 GB/sec for uncached large block reads and 35.54 GB/sec for uncached large block writes.",
-    "Given the hardware profile and benchmark results, the m3.2xlarge is suited for general-purpose workloads, static web serving, and moderate database operations. It achieves an average static web serving throughput of 6.7 GB/sec and average Passmark database operations. However, it exhibits limitations in modern compute-heavy tasks; single-threaded gzip compression and bzip3 decompression are weak, and LLM inference speeds for a medium 7B model are poor at 5.26 tokens/sec. The instance provides a balanced resource density for legacy or non-intensive applications but represents a tradeoff where single-threaded execution speed is sacrificed for multi-threaded capacity and local NVMe storage."
+    "Amazon Web Services m3.2xlarge is a general-purpose instance powered by the Xen hypervisor. It features an Intel Xeon E5-2670 v2 processor with an x86_64 architecture. The CPU configuration includes 8 vCPUs, derived from 4 physical cores with 2 threads per core, running at a clock speed of 2.5 GHz. The processor has 25 MB of L3 cache, 0.25 MB of L2 cache, and 32 KB of L1d cache. It supports AVX and AES instructions, but lacks AVX-512, AMX, and SHA-NI capabilities.",
+    "The instance is equipped with 30.0 GB of system memory, providing 3.75 GB per core. Local storage consists of a bundled 160 GB NVMe SSD, and the baseline network bandwidth is rated at 1 Gbps. No complimentary public IPv4 addresses are included, and there are no dedicated GPUs.",
+    "Performance benchmarks indicate a mix of average and weak results. The stress-ng multi-core CPU performance score of 6709.91 and PassMark CPU score of 7144.84 fall into the average tier, while single-core metrics, such as the Geekbench single-core score of 710.0, are rated as poor. Memory bandwidth remains average, with read-only small block cached bandwidth reaching 386.65 GB/sec and large block uncached write bandwidth at 35.54 GB/sec. However, database operations and Redis SET operations are weak, reflecting the older CPU architecture's limitations in modern instruction sets.",
+    "From a qualitative cost-efficiency perspective, the m3.2xlarge offers a balanced resource density of compute, memory, and local NVMe storage for legacy workloads, though its performance-per-resource ratio is lower than newer hardware generations. It is suitable for general-purpose workloads such as static web serving, where it achieves an average throughput of 6.7 GB/sec, software compilation, and basic multi-threaded applications that do not require advanced vector or matrix instruction sets."
   ],
-  "description": "Amazon Web Services m3.2xlarge is a general-purpose instance featuring an Intel Xeon E5-2670 v2 processor with 8 dedicated vCPUs and 30.0 GB of RAM. Operating on the x86_64 architecture under a Xen hypervisor, this server includes 160 GB of local NVMe SSD storage and a baseline network bandwidth of 1 Gbps. Performance benchmarks reveal a contrast between weak single-core execution, such as a Geekbench single-core score of 710.0, and average multi-core capabilities, demonstrated by a Passmark CPU score of 7144.84. Memory bandwidth is average, supporting uncached reads at 49.24 GB/sec. The instance is suited for general-purpose applications, static web serving, and moderate database operations, though it is less efficient for modern compute-intensive tasks like LLM inference or single-threaded compression due to its older CPU architecture.",
-  "og_description": "Amazon Web Services m3.2xlarge is a general-purpose instance with 8 dedicated Intel Xeon vCPUs, 30 GB RAM, and 160 GB NVMe SSD storage, delivering balanced multi-core performance for standard workloads.",
-  "meta_description": "Amazon Web Services m3.2xlarge is a general-purpose instance featuring 8 vCPUs, 30 GB RAM, and 160 GB NVMe SSD storage on a Xen hypervisor.",
-  "tagline": "A balanced general-purpose instance featuring dedicated Intel Xeon processors, local NVMe SSD storage, and stable multi-core performance for legacy workloads.",
+  "description": "Amazon Web Services m3.2xlarge is an x86_64 general-purpose instance running on the Xen hypervisor. It features an Intel Xeon E5-2670 v2 processor with 8 vCPUs (4 physical cores, 2 threads per core) operating at 2.5 GHz, supported by 30.0 GB of RAM and a bundled 160 GB NVMe SSD. Network performance is anchored by a 1 Gbps baseline bandwidth. Benchmark data shows average multi-core CPU performance and average memory bandwidth, though single-core performance is poor. Lacking AVX-512 and AMX instruction sets, this instance exhibits weak performance in modern database operations and cryptography tests. Qualitatively, it provides a balanced resource profile for legacy general-purpose applications, software compilation, and static web serving, but is less efficient for modern high-throughput or instruction-heavy workloads.",
+  "og_description": "Amazon Web Services m3.2xlarge is a general-purpose instance featuring an Intel Xeon E5-2670 v2 processor with 8 vCPUs, 30.0 GB of RAM, and a 160 GB NVMe SSD, suitable for legacy workloads and static web serving.",
+  "meta_description": "Amazon Web Services m3.2xlarge is an x86_64 general-purpose instance with 8 vCPUs, 30.0 GB of RAM, and a 160 GB NVMe SSD running on Xen.",
+  "tagline": "A balanced general-purpose instance combining legacy Intel Xeon processing, 30 GB of memory, and local NVMe SSD storage.",
   "bullet_points": [
-    "8 dedicated Intel Xeon vCPUs with hyper-threading at 2.5 GHz",
-    "30.0 GB of system memory and 160 GB of local NVMe SSD storage",
-    "Average multi-core performance suitable for static web serving and database operations",
-    "Weak single-core performance and limited instruction sets for modern heavy compute",
-    "1 Gbps baseline network bandwidth running on the Xen hypervisor"
+    "Intel Xeon E5-2670 v2 processor with 8 vCPUs and 30.0 GB of RAM.",
+    "Bundled 160 GB local NVMe SSD storage.",
+    "1 Gbps baseline network bandwidth.",
+    "Average multi-core CPU and memory bandwidth benchmark performance.",
+    "Suited for static web serving, software compilation, and legacy general-purpose workloads."
   ],
   "categories": [
-    "General Purpose",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

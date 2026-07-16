@@ -1,19 +1,20 @@
 {
   "page": [
-    "Microsoft Azure F8alds_v7 is an x86_64 architecture virtual machine from the Faldsv7 server family, running on the Microsoft Hyper-V hypervisor. The instance is configured with 8 dedicated vCPUs powered by AMD processors and 16.0 GB of system memory. This allocation provides a memory-to-core ratio of 2.0 GB per vCPU, positioning the server in the compute-optimized category with a low memory footprint relative to its processing cores.",
-    "For storage-related tasks, the server is equipped with 945 GB of local disk storage and is capable of utilizing Premium Storage. The inclusion of local storage alongside dedicated CPU resources provides a balance for workloads requiring fast local scratch space, though the low memory-to-vCPU ratio represents a clear tradeoff for memory-bound applications. No complimentary public IPv4 addresses are bundled with this instance type.",
-    "This hardware profile is structured for compute-bound tasks that do not require extensive memory capacity. Appropriate workloads include batch processing, web serving, distributed compute nodes, and applications utilizing local disk storage for temporary data caching."
+    "Microsoft Azure F8alds_v7 is a compute-optimized virtual machine belonging to the Faldsv7 family, running on the Microsoft Hyper-V hypervisor. It features 8 dedicated vCPUs mapped to 8 physical cores of an AMD EPYC 9V45 processor with an x86_64 architecture. The CPU operates at a clock speed of 4.5 GHz and includes 32 MB of L3 cache. The system is configured with 16.0 GB of RAM, yielding a low memory-to-core ratio of 2.0 GB per core. It includes 945 GB of local storage and is Premium Storage capable, though it does not bundle any GPUs or complimentary public IPv4 addresses.",
+    "Benchmark data reveals top-tier single-core performance, with stress-ng single-core CPU metrics, gzip compression, and bzip3 decompression all placing in the top 10% of tested systems. Multi-core performance, however, falls into the average range, as demonstrated by stress-ng multi-core and PassMark CPU scores. Memory bandwidth for both small cached blocks and large uncached blocks is average, alongside standard database operations and Redis SET throughput. For machine learning workloads, the server achieves top-tier text generation speeds on small 135M parameter models, but scales down to average performance for larger 7B parameter models.",
+    "From a cost-efficiency perspective, the F8alds_v7 offers high single-threaded compute density and fast local storage without the premium cost of high-memory configurations. The primary tradeoff is the low memory allocation of 2.0 GB per vCPU, which limits its suitability for memory-intensive databases or massive datasets. This server is best suited for compute-bound workloads that benefit from high clock speeds and local storage, such as single-threaded processing tasks, web serving, lightweight build systems, and small-scale machine learning inference."
   ],
-  "description": "Microsoft Azure F8alds_v7 is an x86_64 compute-optimized virtual machine from the Faldsv7 family, running on the Microsoft Hyper-V hypervisor. It features 8 dedicated vCPUs powered by AMD processors and 16.0 GB of system memory, resulting in a low memory-to-core ratio of 2.0 GB per vCPU. The instance is equipped with 945 GB of local disk storage and supports Premium Storage, offering a balance of dedicated compute power and local storage capacity. Because of the low memory-to-vCPU ratio, this server is designed for resource-dense, compute-bound workloads rather than memory-intensive applications. It does not include complimentary public IPv4 addresses. This configuration is suitable for batch processing, web serving, and distributed computing tasks where local storage and dedicated CPU allocation are required.",
-  "og_description": "Microsoft Azure F8alds_v7 is an x86_64 compute-optimized server featuring 8 dedicated AMD vCPUs, 16.0 GB of RAM, and 945 GB of local storage, designed for resource-dense compute workloads.",
-  "meta_description": "Microsoft Azure F8alds_v7 is an 8-vCPU compute-optimized server with 16.0 GB RAM and 945 GB local storage running on Hyper-V.",
-  "tagline": "An 8-vCPU compute-focused virtual machine featuring dedicated AMD processors, a low memory-to-core ratio, and 945 GB of local storage.",
+  "description": "Microsoft Azure F8alds_v7 is an x86_64 compute-optimized virtual machine powered by an 8-core AMD EPYC 9V45 processor running at 4.5 GHz. It features 16.0 GB of RAM, providing a low memory-to-core ratio of 2.0 GB per vCPU, and includes 945 GB of local storage. Operating on Microsoft Hyper-V, this server delivers top-tier single-core performance, with stress-ng single-core CPU, gzip compression, and bzip3 decompression benchmarks ranking in the top 10%. However, its multi-core performance and memory bandwidth remain in the average tier. The F8alds_v7 provides a cost-effective option for compute-heavy tasks that do not require large memory footprints, making it highly suitable for web serving, single-threaded batch processing, and lightweight machine learning inference.",
+  "og_description": "Microsoft Azure F8alds_v7 is an 8-core AMD EPYC compute-optimized server with 16 GB RAM and 945 GB local storage, delivering top-tier single-core performance for compute-bound workloads.",
+  "meta_description": "Microsoft Azure F8alds_v7 is an 8-core AMD EPYC compute-optimized server featuring 16 GB RAM, 945 GB local storage, and top-tier single-core speeds.",
+  "tagline": "A high-frequency compute-optimized server featuring dedicated AMD EPYC cores, fast local storage, and exceptional single-threaded performance.",
   "bullet_points": [
-    "8 dedicated vCPUs on x86_64 AMD architecture",
-    "16.0 GB of system memory providing 2.0 GB per core",
-    "945 GB of local disk storage with Premium Storage capability",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Configured for compute-bound workloads and batch processing"
+    "Powered by an 8-core AMD EPYC 9V45 processor running at 4.5 GHz",
+    "Equipped with 16.0 GB of RAM and 945 GB of local storage",
+    "Delivers top-tier single-core CPU and decompression performance",
+    "Features dedicated physical cores with no hyperthreading",
+    "Optimized for compute-bound workloads with low memory requirements",
+    "Suitable for web serving, batch processing, and light inference"
   ],
   "categories": [
     "Compute Optimized",

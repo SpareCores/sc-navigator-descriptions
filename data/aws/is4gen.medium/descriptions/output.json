@@ -1,22 +1,21 @@
 {
   "page": [
-    "Amazon Web Services is4gen.medium is a storage-optimized virtual machine powered by the AWS Nitro hypervisor and custom ARM64 architecture. It features a single dedicated AWS Graviton Neoverse-N1 physical core operating at 2.5 GHz. The hardware configuration includes 6.0 GB of system memory, establishing a one-to-six vCPU-to-memory ratio. A key hardware feature is the inclusion of 937 GB of local NVMe SSD storage, providing high-density local storage capacity relative to its single-core compute profile.",
-    "Performance benchmarks reflect the single-core constraint of this instance type. The Neoverse-N1 processor delivers an average stress-ng single-core CPU score of 1499.99, while multi-core and memory bandwidth metrics fall into lower performance tiers, with uncached large-block memory read bandwidth at 19.51 GB/sec and write bandwidth at 9.76 GB/sec. Cryptographic acceleration is supported via hardware AES, though advanced vector and matrix extensions are absent. Network connectivity is provisioned with a baseline bandwidth of 2 Gbps.",
-    "From a resource density and cost-efficiency perspective, the is4gen.medium offers a specialized tradeoff, pairing a low-compute ARM processor with a substantial 937 GB NVMe SSD. This makes it a highly qualitative choice for storage-heavy workloads that do not require intense CPU processing. Appropriate workloads include lightweight database nodes, distributed file system agents, localized log indexing, and basic storage caching applications where storage capacity and low latency are prioritized over raw compute throughput."
+    "Amazon Web Services is4gen.medium is a storage-optimized instance built on the AWS Nitro hypervisor. It features a single-core AWS Graviton Neoverse-N1 ARMv8 processor operating at a dedicated frequency of 2.5 GHz. The hardware configuration includes 1 vCPU, 1 physical core, and 6.0 GB of system memory. For local storage, the instance is equipped with a 937 GB NVMe SSD. It also provides a baseline network bandwidth of 2 Gbps.",
+    "Performance benchmarks show average single-core CPU capabilities, with a stress-ng single-core score of 1499.99 and a Geekbench single-core score of 940.0. However, due to the single-core limitation, multi-core benchmarks are poor, with a Geekbench multi-core score of 938.0. Memory bandwidth is also relatively low, measuring 59.32 GB/sec for small cached reads and dropping to 19.51 GB/sec for large uncached reads. Database operations on Redis reach 1.21 million SET operations per second, while static web serving throughput is recorded at 1.13 GB/sec.",
+    "From a qualitative cost-efficiency perspective, the is4gen.medium offers high local NVMe storage density relative to its single-vCPU compute footprint. This makes it a practical choice for storage-heavy workloads that do not demand high CPU or memory performance. The primary tradeoff is the limited processing power and memory bandwidth. This instance is best suited for lightweight databases, local caching, log indexing, and basic file-serving applications."
   ],
-  "description": "Amazon Web Services is4gen.medium is an ARM64 storage-optimized instance powered by a single dedicated AWS Graviton Neoverse-N1 core running at 2.5 GHz. It features 6.0 GB of RAM and a substantial 937 GB local NVMe SSD, managed via the AWS Nitro hypervisor. Network performance is rated at a 2 Gbps baseline. Benchmark results indicate average single-core CPU performance with a stress-ng score of 1499.99, but lower multi-core and memory bandwidth metrics, such as a large-block write speed of 9.76 GB/sec. This hardware profile presents a high storage-to-compute ratio, making it qualitatively cost-efficient for storage-dense, low-compute applications. It is best suited for lightweight database hosting, log collection, caching, and distributed storage nodes.",
-  "og_description": "Amazon Web Services is4gen.medium is an ARM64 storage-optimized instance featuring 1 Graviton vCPU, 6.0 GB of RAM, and 937 GB of local NVMe SSD storage, designed for storage-dense, low-compute workloads.",
-  "meta_description": "Amazon Web Services is4gen.medium is a storage-optimized ARM64 instance with 1 Graviton vCPU, 6.0 GB RAM, and a 937 GB local NVMe SSD.",
-  "tagline": "A storage-dense ARM64 virtual server featuring a high local NVMe capacity paired with a single dedicated processor core.",
+  "description": "Amazon Web Services is4gen.medium is a storage-optimized ARM64 instance featuring a single-core AWS Graviton Neoverse-N1 processor clocked at 2.5 GHz, 6.0 GB of system memory, and 937 GB of local NVMe SSD storage. Operating on the AWS Nitro hypervisor, it provides a baseline network bandwidth of 2 Gbps. While single-core CPU performance is average, multi-core and memory bandwidth benchmarks fall into lower percentiles due to the single vCPU limitation. This instance provides high storage density relative to its compute resources, making it qualitatively cost-effective for storage-centric workloads. It is best suited for lightweight databases, local caching, and log indexing tasks that require significant local SSD capacity without demanding high compute or memory throughput.",
+  "og_description": "Amazon Web Services is4gen.medium is a storage-optimized ARM64 instance featuring 1 vCPU, 6.0 GB RAM, and 937 GB of local NVMe SSD storage, designed for lightweight, storage-intensive workloads.",
+  "meta_description": "Amazon Web Services is4gen.medium is an ARM64 storage-optimized instance with 1 vCPU, 6 GB RAM, and 937 GB of local NVMe SSD storage.",
+  "tagline": "This storage-optimized ARM64 instance delivers high-capacity local NVMe SSD storage for lightweight database workloads requiring minimal compute and memory resources.",
   "bullet_points": [
-    "Single dedicated AWS Graviton Neoverse-N1 ARM64 core running at 2.5 GHz",
-    "937 GB of high-speed local NVMe SSD storage",
-    "6.0 GB of system memory providing a 1:6 vCPU-to-RAM ratio",
-    "2 Gbps baseline network bandwidth managed by the AWS Nitro hypervisor",
-    "Optimized for lightweight databases, log indexing, and storage caching"
+    "Powered by a single-core AWS Graviton Neoverse-N1 ARM64 processor at 2.5 GHz",
+    "Equipped with 937 GB of high-speed local NVMe SSD storage",
+    "Features 6.0 GB of system memory and 2 Gbps baseline network bandwidth",
+    "Delivers average single-core CPU performance with lower multi-core scaling",
+    "Optimized for lightweight databases, log indexing, and local caching workloads"
   ],
   "categories": [
-    "Storage & Database",
-    "Memory Optimized"
+    "Storage & Database"
   ]
 }
