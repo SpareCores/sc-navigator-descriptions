@@ -1,24 +1,22 @@
 {
   "page": [
-    "Microsoft Azure D32plds_v6 is an ARM-based virtual machine belonging to the Dpldsv6 server family, running on the Microsoft Hyper-V hypervisor. It features 32 dedicated physical cores and 32 vCPUs powered by a 3.4 GHz Microsoft Neoverse-N2 processor. The architecture is arm64, with a cache configuration consisting of 64 KB L1d, 1.0 MB L2, and 128 MB L3 cache. It lacks hyperthreading, meaning there is exactly one thread per core. The system is equipped with 64.0 GB of RAM, yielding a low memory-to-vCPU ratio of 2.0 GB per core. It includes 1890 GB of local storage and is Premium Storage capable, though it does not include complimentary public IPv4 addresses or dedicated GPU hardware.",
-    "Benchmark data indicates strong multi-core performance and exceptional memory throughput. The server achieved top-tier (top 10%) results in PassMark memory score, PassMark database operations, and large-block memory bandwidth (both read and write). Multi-core CPU performance via stress-ng and Geekbench is strong (top 25%), as is software compilation with Clang and static web serving throughput. However, single-core performance remains average (middle 50%) across stress-ng, Geekbench, and bzip3 decompression. Large LLM inference (70B model) prompt processing is a notable bottleneck, registering in the bottom 10%, though text generation for the same model is average.",
-    "From a resource density perspective, the D32plds_v6 offers a compute-heavy profile with a low memory allocation of 2.0 GB per vCPU, making it a cost-efficient option for workloads that require high parallel processing power without massive memory footprints. The inclusion of 1890 GB of local storage adds value for data-intensive tasks. The lack of x86 vector extensions (such as AVX or AMX) and dedicated GPUs limits its utility for advanced machine learning or heavy matrix multiplication. It is suited for multi-threaded applications, database operations, software compilation, static web serving, and redis caching."
+    "Microsoft Azure D32plds_v6 is an ARM-based virtual machine belonging to the Dpldsv6 family, running on the Microsoft Hyper-V hypervisor. It features 32 dedicated physical cores powered by a 3.4 GHz Microsoft ARM Neoverse-N2 processor. The CPU architecture includes a 128 MB L3 cache, 1.0 MB L2 cache, and 64 KB L1d cache per core, with single-threaded execution per core. The instance is equipped with 64.0 GB of system memory, yielding a 2.0 GB per core ratio, and includes 1890 GB of local storage.",
+    "Benchmark data indicates strong multi-core performance, with stress-ng multi-core and Geekbench multi-core scores placing in the top 25% tier. Memory subsystem performance is highly efficient; the Passmark memory score and large-block uncached memory read/write bandwidths (450.77 GB/sec read and 169.21 GB/sec write) rank in the top 10% tier. Database operations also perform in the top 10% tier, supported by strong Redis SET operations at 61.98 million operations per second and static web serving throughput of 53.68 GB/sec. However, large-scale LLM inference is a notable bottleneck, with prompt processing for a 70B model falling into the bottom 10% tier.",
+    "Given its 1:2 memory-to-vCPU ratio, the D32plds_v6 represents a compute-optimized profile with a low-memory footprint. The inclusion of 1890 GB of local storage and high-speed memory bandwidth provides qualitative cost efficiency for workloads requiring high-speed local data access without the overhead of external storage. This server is suited for multi-threaded applications, database operations, web serving, and software compilation, whereas it is less optimal for memory-intensive applications or large-scale AI model inference."
   ],
-  "description": "Microsoft Azure D32plds_v6 is an ARM-based virtual machine featuring 32 dedicated physical cores on a 3.4 GHz Microsoft Neoverse-N2 processor. Operating on the Microsoft Hyper-V hypervisor, this instance provides 64.0 GB of RAM, representing 2.0 GB per core, and 1890 GB of local storage. It lacks dedicated GPUs, hyperthreading, and x86 vector extensions. Performance benchmarks highlight top-tier memory bandwidth and database operations, alongside strong multi-core CPU execution, software compilation, and static web serving throughput. Conversely, single-core performance and large-model LLM prompt processing are average to poor. The low memory-to-core ratio presents a cost-efficient profile for compute-heavy, memory-light workloads. It is suited for multi-threaded database operations, software compilation, and web serving.",
-  "og_description": "Microsoft Azure D32plds_v6 is an ARM-based VM with 32 dedicated Neoverse-N2 cores, 64 GB RAM, and 1890 GB local storage, offering strong multi-core performance and top-tier database operations.",
-  "meta_description": "Microsoft Azure D32plds_v6 is an ARM-based VM with 32 vCPUs, 64 GB RAM, and 1890 GB local storage, optimized for multi-core compute workloads.",
-  "tagline": "An ARM-powered virtual machine featuring thirty-two dedicated cores, local storage, and high-bandwidth memory for parallelized database and compute workloads.",
+  "description": "Microsoft Azure D32plds_v6 is a compute-optimized, ARM-based virtual machine featuring 32 dedicated physical cores powered by a 3.4 GHz Microsoft Neoverse-N2 processor. It is configured with 64.0 GB of RAM (2.0 GB per core) and 1890 GB of local storage. Operating under Microsoft Hyper-V, this instance delivers strong multi-core CPU performance and top-tier memory bandwidth, with uncached large-block reads reaching 450.77 GB/sec. Benchmark results highlight exceptional database operation speeds and high static web serving throughput, placing it in the top 10% and top 25% tiers respectively. Conversely, its low memory-to-core ratio and poor large-model LLM prompt processing performance make it less suitable for memory-heavy or massive AI workloads. It is highly effective for multi-threaded tasks, web serving, and local database operations.",
+  "og_description": "Microsoft Azure D32plds_v6 is an ARM-based virtual machine featuring 32 dedicated Neoverse-N2 cores, 64 GB RAM, and 1890 GB local storage, delivering top-tier memory bandwidth and database performance.",
+  "meta_description": "Microsoft Azure D32plds_v6 is an ARM-based VM with 32 Neoverse-N2 cores, 64 GB RAM, and 1890 GB local storage, optimized for database and web workloads.",
+  "tagline": "An ARM-powered compute-optimized instance featuring high-speed memory bandwidth, substantial local storage, and strong multi-core performance for database and web workloads.",
   "bullet_points": [
-    "32 dedicated ARM64 Neoverse-N2 physical cores running at 3.4 GHz",
-    "64.0 GB system memory providing 2.0 GB per vCPU",
-    "1890 GB of local storage with Premium Storage capability",
-    "Top-tier memory bandwidth and database operation benchmarks",
-    "Strong multi-core performance for software compilation and web serving",
-    "Lacks hyperthreading, dedicated GPUs, and x86 vector extensions"
+    "32 dedicated ARM Neoverse-N2 physical cores operating at 3.4 GHz",
+    "64.0 GB of system memory and 1890 GB of local storage",
+    "Top-tier memory bandwidth and database operation benchmark performance",
+    "Strong multi-core CPU execution and static web serving throughput",
+    "Best suited for web serving, software compilation, and database workloads"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }
