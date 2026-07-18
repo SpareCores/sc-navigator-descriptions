@@ -1,20 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.gn5i-c2g1.large is an entry-level GPU-accelerated server instance powered by the KVM hypervisor. It features two dedicated x86_64 physical cores with one thread per core, providing a direct physical-to-virtual core mapping. The instance is equipped with 8.0 GB of system memory, yielding a memory-to-core ratio of 4.0 GB per core.",
-    "Acceleration is provided by a single NVIDIA P4 GPU with 8 GB of dedicated VRAM. This instance does not include any local storage, requiring users to rely entirely on network-attached storage options for operating system and data volumes. Network connectivity is limited to a baseline bandwidth of 1 Gbps.",
-    "The hardware profile presents clear tradeoffs, particularly the absence of local storage and the lack of advanced CPU instruction sets such as AVX-512, AMX, or hardware-accelerated cryptography. Given these constraints, the instance is designed for lightweight GPU workloads, such as entry-level inference, basic video transcoding, or development environments that require CUDA support without demanding high-throughput CPU or storage performance."
+    "Alibaba Cloud ecs.gn5i-c2g1.large is a GPU-accelerated virtual machine instance powered by the KVM hypervisor. It features an x86_64 CPU architecture with 2 dedicated physical cores and 2 vCPUs, operating at a 1.0 thread-per-core ratio. The system is equipped with 8.0 GB of system memory, providing 4.0 GB of RAM per core.",
+    "Acceleration is delivered via a single integrated NVIDIA P4 GPU with 8 GB of dedicated VRAM. This instance does not include any local storage, meaning all storage operations must rely on attached network volumes. Network connectivity is capped at a baseline bandwidth of 1 Gbps.",
+    "A key technical constraint of this instance is the absence of advanced CPU instruction sets. The processor lacks support for Advanced Vector Extensions (AVX, AVX512), Advanced Matrix Extensions (AMX), and hardware-accelerated cryptography instructions such as AES and SHA_NI. Hyper-threading is also disabled, limiting parallel execution to the two physical cores.",
+    "From a cost-efficiency perspective, the instance provides entry-level GPU acceleration paired with a modest compute and memory profile. It is designed for workloads that require GPU-assisted processing but do not demand high CPU core counts or large memory footprints. Suitable workloads include lightweight machine learning inference, basic video transcoding, and GPU-accelerated rendering tasks that fit within the 8 GB VRAM and 8 GB system memory boundaries."
   ],
-  "description": "Alibaba Cloud ecs.gn5i-c2g1.large is an entry-level GPU-accelerated instance featuring two dedicated x86_64 physical cores with a single thread per core. It is configured with 8.0 GB of system memory and a single NVIDIA P4 GPU containing 8 GB of VRAM. The instance operates on the KVM hypervisor and provides a baseline network bandwidth of 1 Gbps. Notably, the server lacks local storage, necessitating network-attached storage for all data persistence. Additionally, the CPU architecture lacks advanced instruction sets such as AVX-512, AMX, and cryptographic acceleration. This resource profile makes the instance suitable for lightweight GPU workloads, including basic model inference, legacy CUDA development, and simple media transcoding, where high-density compute or massive storage throughput is not required.",
-  "og_description": "Alibaba Cloud ecs.gn5i-c2g1.large is a KVM-based server with 2 dedicated x86_64 cores, 8 GB RAM, and one NVIDIA P4 GPU with 8 GB VRAM, designed for entry-level GPU workloads without local storage.",
-  "meta_description": "Alibaba Cloud ecs.gn5i-c2g1.large is a KVM instance with 2 dedicated cores, 8 GB RAM, and an NVIDIA P4 GPU, lacking local storage.",
-  "tagline": "An entry-level GPU instance featuring dedicated dual-core x86 architecture and an NVIDIA P4 accelerator for lightweight parallel computing tasks.",
+  "description": "Alibaba Cloud ecs.gn5i-c2g1.large is an entry-level GPU-accelerated instance featuring two dedicated x86_64 physical cores and 8.0 GB of system memory. It integrates a single NVIDIA P4 GPU with 8 GB of VRAM to accelerate parallel computing tasks. The instance operates on the KVM hypervisor and provides a baseline network bandwidth of 1 Gbps. Notably, it lacks local storage, requiring network-attached storage for data persistence. Additionally, the CPU configuration lacks support for advanced instruction sets such as AVX, AVX512, AMX, and hardware cryptography extensions like AES. With a modest 1:4 vCPU-to-RAM ratio and dedicated CPU allocation, this instance represents a low-density GPU option. It is suited for lightweight GPU workloads, including small-scale machine learning inference, basic media transcoding, and development environments requiring hardware acceleration without high CPU or memory overhead.",
+  "og_description": "Alibaba Cloud ecs.gn5i-c2g1.large is a GPU-accelerated instance with 2 vCPUs, 8 GB RAM, and one NVIDIA P4 GPU with 8 GB VRAM. It features dedicated CPU cores but lacks local storage and AVX instructions.",
+  "meta_description": "Alibaba Cloud ecs.gn5i-c2g1.large is a KVM-based instance featuring 2 vCPUs, 8 GB RAM, and an NVIDIA P4 GPU with 8 GB VRAM. Local storage is not included.",
+  "tagline": "An entry-level GPU-accelerated virtual machine featuring dedicated dual-core processing, eight gigabytes of system memory, and an integrated graphics accelerator.",
   "bullet_points": [
-    "Two dedicated x86_64 physical cores with single-thread execution",
-    "One NVIDIA P4 GPU with 8 GB of dedicated VRAM",
-    "8.0 GB of system memory providing 4.0 GB per core",
-    "No local storage, requiring network-attached storage solutions",
-    "1 Gbps baseline network bandwidth",
-    "Suited for lightweight GPU inference and CUDA development"
+    "Equipped with one NVIDIA P4 GPU featuring 8 GB of dedicated VRAM",
+    "Features 2 dedicated x86_64 physical cores with 8.0 GB of system memory",
+    "Provides a baseline network bandwidth of 1 Gbps",
+    "Lacks local storage, requiring network-attached storage volumes",
+    "Omits advanced CPU instruction sets including AVX, AVX512, and AMX",
+    "Suited for lightweight GPU inference, basic transcoding, and rendering"
   ],
   "categories": [
     "GPU Accelerated",

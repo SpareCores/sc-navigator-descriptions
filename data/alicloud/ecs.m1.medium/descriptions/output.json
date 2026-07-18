@@ -1,19 +1,19 @@
 {
   "page": [
-    "Alibaba Cloud ecs.m1.medium is a general-purpose virtual machine instance powered by the KVM hypervisor. It features an x86_64 CPU architecture with 4 dedicated vCPUs mapped directly to 4 physical cores, operating with a single thread per core. The instance is configured with 16.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per physical core.",
-    "This instance does not include bundled local storage, requiring external block storage volumes for operating system installation and data persistence. Additionally, the configuration does not include complimentary public IPv4 addresses, meaning network access must be configured via external elastic IP addresses or NAT gateways.",
-    "With its 1:4 vCPU-to-RAM ratio, the ecs.m1.medium is designed for balanced resource distribution. The dedicated CPU allocation ensures consistent processing performance without resource contention from other tenants. This profile is suitable for moderate workloads such as web serving, application servers, development environments, and small-scale databases that require predictable CPU performance but do not demand specialized GPU acceleration or high-speed local storage."
+    "Alibaba Cloud ecs.m1.medium is a general-purpose virtual machine instance powered by the KVM hypervisor. It features an x86_64 CPU architecture with 4 dedicated physical cores and 4 vCPUs, operating at a ratio of one thread per core. The instance is configured with 16.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per CPU core.",
+    "This instance type does not include local storage or bundled GPU hardware, requiring external block storage volumes for operating system deployment and data persistence. The dedicated CPU allocation ensures that compute resources are not shared with other tenants, offering predictable processing capabilities. However, the lack of hyperthreading and advanced vector extensions limits its suitability for highly parallelized or specialized cryptographic and matrix math workloads.",
+    "Given its balanced 1:4 CPU-to-memory ratio, the ecs.m1.medium is designed for general-purpose workloads. It is qualitatively positioned as a stable, entry-to-mid-tier resource for applications requiring consistent CPU performance without the high cost of memory-optimized or GPU-accelerated hardware. Appropriate workloads include standard web serving, application servers, microservices, and small-scale database hosting."
   ],
-  "description": "Alibaba Cloud ecs.m1.medium is a general-purpose virtual machine instance built on the KVM hypervisor and x86_64 CPU architecture. It features 4 dedicated vCPUs mapped to 4 physical cores with a single thread per core, ensuring predictable compute performance. The instance is equipped with 16.0 GB of system memory, establishing a balanced 1:4 vCPU-to-RAM ratio. It does not include local storage or complimentary public IPv4 addresses, requiring external block storage for data persistence. This hardware profile is designed for workloads requiring consistent CPU allocation without resource sharing, such as application hosting, web serving, and development environments.",
-  "og_description": "Alibaba Cloud ecs.m1.medium is a general-purpose KVM virtual machine featuring 4 dedicated x86_64 vCPUs, 16.0 GB of RAM, and no local storage, designed for predictable application workloads.",
-  "meta_description": "Alibaba Cloud ecs.m1.medium is a general-purpose KVM instance featuring 4 dedicated x86_64 vCPUs, 16.0 GB of RAM, and no local storage.",
-  "tagline": "A balanced virtual instance featuring dedicated compute cores and proportional memory for predictable general-purpose workloads.",
+  "description": "Alibaba Cloud ecs.m1.medium is a general-purpose virtual machine instance built on the KVM hypervisor and x86_64 CPU architecture. It features 4 dedicated vCPUs mapped to 4 physical cores with a single thread per core, ensuring predictable compute performance without resource sharing. The instance is equipped with 16.0 GB of system memory, establishing a balanced 1:4 vCPU-to-RAM ratio of 4.0 GB per core. It does not include local storage or integrated GPU hardware, meaning all storage requirements must be met via network-attached block storage. Lacking hyperthreading and advanced instruction sets, this instance is designed for workloads requiring consistent, non-burstable CPU performance. The ecs.m1.medium is qualitatively suited for general-purpose applications, including web serving, application hosting, microservices, and small-scale database deployments.",
+  "og_description": "Alibaba Cloud ecs.m1.medium is a general-purpose KVM virtual machine featuring 4 dedicated x86_64 vCPUs, 16.0 GB of RAM, and no local storage, designed for predictable web and application hosting.",
+  "meta_description": "Alibaba Cloud ecs.m1.medium is a general-purpose instance with 4 dedicated x86_64 vCPUs, 16.0 GB RAM, and no local storage, running on KVM.",
+  "tagline": "A dedicated four-core virtual machine with a balanced memory-to-CPU ratio for predictable general-purpose application hosting and web serving.",
   "bullet_points": [
-    "4 dedicated x86_64 vCPUs with 1.0 thread per core",
-    "16.0 GB of system memory providing a 1:4 resource ratio",
-    "KVM hypervisor virtualization with dedicated CPU allocation",
-    "No bundled local storage, requiring external block storage",
-    "Suitable for web serving, application hosting, and development environments"
+    "4 dedicated x86_64 vCPUs with single-thread physical cores",
+    "16.0 GB of system memory providing a balanced 1:4 resource ratio",
+    "KVM hypervisor-based virtualization with dedicated CPU allocation",
+    "No local storage or bundled GPU hardware included",
+    "Suited for web serving, application hosting, and microservices"
   ],
   "categories": [
     "General Purpose"
