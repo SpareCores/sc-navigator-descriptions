@@ -1,23 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c2.medium is an x86_64 architecture server instance within the ecs.c2 family, running on the KVM hypervisor. It features 16 vCPUs mapped directly to 16 physical cores with a dedicated CPU allocation and a 1.0 thread-per-core ratio, meaning hyperthreading is disabled. The instance is configured with 16.0 GB of system memory, providing a resource density of 1.0 GB of RAM per physical core.",
-    "This server type does not include any local storage or bundled GPU hardware, requiring external network-attached storage for operating system and application data. Additionally, the CPU configuration lacks support for advanced instruction sets such as Advanced Vector Extensions (AVX, AVX512), Advanced Matrix Extensions (AMX), and hardware-accelerated cryptography (AES). There are also zero complimentary public IPv4 addresses included with the instance.",
-    "Given the 1:1 ratio of memory to vCPUs and the dedicated physical core allocation, the ecs.c2.medium is structured for compute-bound workloads that do not require large memory footprints or advanced vector instruction sets. It is qualitatively suited for dedicated parallel processing tasks, basic batch processing, and lightweight compute-intensive utilities where CPU contention must be avoided but memory requirements remain minimal."
+    "Alibaba Cloud ecs.c2.medium is an x86_64 architecture virtual machine instance powered by the KVM hypervisor. It features 16 dedicated vCPUs mapped to 16 physical cores with a single thread per core configuration. The instance is equipped with 16.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per core. There is no bundled local storage or integrated GPU hardware on this instance type.",
+    "Operating with dedicated CPU allocation and a 1:1 thread-to-core ratio, the ecs.c2.medium is designed to provide consistent compute performance without the resource contention associated with hyperthreaded environments. The low memory-to-CPU ratio makes this instance a highly specialized hardware profile. From a qualitative cost-efficiency perspective, this configuration minimizes memory overhead expenses, making it suitable for workloads that require significant raw integer or floating-point processing power but have minimal memory footprints.",
+    "Due to the lack of local storage and the 16 GB memory limit, workloads must rely on network-attached storage. The instance is suited for compute-heavy tasks such as batch processing, distributed analytics worker nodes, high-performance computing tasks with low memory requirements, and CPU-bound microservices."
   ],
-  "description": "Alibaba Cloud ecs.c2.medium is an x86_64 compute-oriented server instance featuring 16 dedicated physical cores and 16 vCPUs with hyperthreading disabled. Running on the KVM hypervisor, it provides 16.0 GB of system memory, resulting in a low memory-to-core ratio of 1.0 GB per core. The instance lacks local storage, integrated GPUs, and complimentary public IPv4 addresses, requiring network-attached storage for deployment. Furthermore, the CPU architecture does not support advanced instruction sets like AVX, AVX512, AMX, or AES hardware cryptography. This hardware profile makes the ecs.c2.medium suitable for specialized, non-vectorized compute tasks, batch processing, and dedicated parallel workloads with low memory requirements.",
-  "og_description": "Alibaba Cloud ecs.c2.medium is an x86_64 server featuring 16 dedicated physical cores, 16 GB RAM, and no local storage, designed for compute-bound workloads with low memory requirements.",
-  "meta_description": "Alibaba Cloud ecs.c2.medium is an x86_64 server with 16 dedicated cores, 16 GB RAM, and no local storage, optimized for basic compute tasks.",
-  "tagline": "A dedicated 16-core compute instance with a 1:1 memory-to-core ratio and no local storage for specialized parallel workloads.",
+  "description": "Alibaba Cloud ecs.c2.medium is an x86_64 compute-optimized virtual machine instance running on the KVM hypervisor. It features 16 dedicated vCPUs mapped directly to 16 physical cores with a single thread per core, ensuring consistent processing performance without hyperthreading overhead. The instance is configured with 16.0 GB of system memory, providing a 1.0 GB per core ratio, and contains no local storage or GPU accelerators. This resource profile is highly specialized for compute-intensive tasks that do not require large memory allocations or local disk space. Qualitatively, the hardware configuration offers a cost-efficient option for raw processing power by eliminating excess memory capacity. It is best suited for workloads such as batch processing, CPU-bound microservices, and distributed computing worker nodes.",
+  "og_description": "Alibaba Cloud ecs.c2.medium is a compute-optimized KVM virtual server featuring 16 dedicated vCPUs, 16 GB of RAM, and no local storage, designed for high-compute workloads with low memory footprints.",
+  "meta_description": "Alibaba Cloud ecs.c2.medium is a KVM instance with 16 dedicated vCPUs, 16 GB RAM, and no local storage, optimized for compute-heavy workloads.",
+  "tagline": "A dedicated compute-optimized virtual server featuring a one-to-one physical core ratio and minimal memory overhead for processing-heavy workloads.",
   "bullet_points": [
-    "16 dedicated x86_64 physical cores with hyperthreading disabled",
-    "16.0 GB of system memory providing 1.0 GB per core",
-    "No local storage, requiring network-attached storage volumes",
-    "No integrated GPU accelerators or complimentary public IPv4 addresses",
-    "Lacks support for AVX, AVX512, AMX, and AES CPU instruction sets",
-    "Best suited for memory-light, compute-bound parallel processing tasks"
+    "16 dedicated vCPUs mapped to 16 physical cores with single-thread execution",
+    "16.0 GB of system memory providing a 1.0 GB per core ratio",
+    "KVM hypervisor architecture on the x86_64 platform",
+    "No bundled local storage or GPU accelerators",
+    "Optimized for batch processing and CPU-bound microservices"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

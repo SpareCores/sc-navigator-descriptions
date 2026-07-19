@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c1.small is an x86_64 architecture server instance within the ecs.c1 family, running on the KVM hypervisor. It features 8 dedicated physical cores and 8 vCPUs, meaning hyperthreading is disabled with a strict 1.0 thread per core ratio. The instance is configured with 8.0 GB of system memory, yielding a low memory-to-core ratio of 1.0 GB per core.",
-    "This instance does not include local storage or bundled GPU hardware, requiring external block storage for operating system and application data. Additionally, the CPU configuration lacks support for advanced instruction sets such as Advanced Vector Extensions (AVX, AVX512), Advanced Matrix Extensions (AMX), and hardware-accelerated cryptography (AES, SHA_NI), which limits its efficiency for vector math, machine learning, and cryptographic operations.",
-    "From a cost-efficiency perspective, the dedicated CPU allocation provides predictable compute performance without resource contention, though the low memory density relative to the core count represents a significant tradeoff for memory-bound applications. The instance is best suited for compute-heavy workloads with low memory footprints, such as batch processing, basic web serving, and lightweight computational tasks that do not rely on modern vector instruction sets."
+    "Alibaba Cloud ecs.c1.small is an x86_64 architecture server instance within the ecs.c1 family, running on the KVM hypervisor. It features 8 dedicated physical cores and 8 vCPUs with a single thread per core configuration. The instance is equipped with 8.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per CPU core.",
+    "This server type does not include local storage or GPU hardware, requiring external network-attached storage for boot volumes and data persistence. A key technical constraint of the ecs.c1.small is the absence of advanced CPU instruction sets; it lacks support for AVX, AVX-512, AMX, AES cryptography acceleration, and SHA extensions. This limits its efficiency for cryptographic operations, vector calculations, and machine learning workloads.",
+    "From a cost-efficiency perspective, the dedicated CPU allocation provides predictable compute performance without the risk of noisy-neighbor resource contention, though the low memory-to-CPU ratio represents a significant tradeoff for memory-intensive applications. The instance is architected for CPU-bound workloads with low memory footprints, such as basic batch processing, lightweight web serving, and simple computational tasks that do not rely on modern vector instruction sets."
   ],
-  "description": "Alibaba Cloud ecs.c1.small is an x86_64 compute-oriented server instance within the ecs.c1 family, utilizing the KVM hypervisor. It provides 8 dedicated physical cores and 8 vCPUs with hyperthreading disabled, paired with 8.0 GB of system memory. This configuration results in a low resource density of 1.0 GB of RAM per vCPU. The instance does not include local storage or GPU accelerators, and the CPU lacks support for advanced instruction sets like AVX, AVX512, AMX, and AES. Consequently, it is designed for workloads requiring dedicated CPU resources but minimal memory and storage overhead. Qualitative cost efficiency is defined by its dedicated compute allocation, though the lack of modern instruction sets and low memory capacity limits its utility for complex vector math or cryptography. It is best suited for basic batch processing, lightweight web serving, and legacy compute tasks.",
-  "og_description": "Alibaba Cloud ecs.c1.small is an x86_64 compute-oriented server featuring 8 dedicated vCPUs, 8.0 GB of RAM, and no local storage, designed for basic dedicated compute workloads.",
+  "description": "Alibaba Cloud ecs.c1.small is an x86_64 server instance in the ecs.c1 family, configured with 8 dedicated physical cores and 8 vCPUs. Running on the KVM hypervisor, it provides 8.0 GB of system memory, resulting in a low memory-to-core ratio of 1.0 GB per core. The instance features no local storage and no GPU accelerators, relying entirely on network-attached storage. A notable hardware limitation is the lack of advanced CPU instruction sets, including AVX, AVX-512, AMX, and AES cryptography extensions. This hardware profile makes the instance suitable for basic, non-vectorized CPU-bound workloads, batch processing, and lightweight web serving where memory requirements are minimal. The dedicated CPU allocation ensures consistent compute performance, though the low memory capacity and lack of modern instruction sets present clear tradeoffs for complex or data-intensive applications.",
+  "og_description": "Alibaba Cloud ecs.c1.small is an x86_64 server featuring 8 dedicated vCPUs, 8.0 GB of RAM, and no local storage, designed for basic CPU-bound workloads requiring consistent, non-burstable compute performance.",
   "meta_description": "Alibaba Cloud ecs.c1.small is an x86_64 server with 8 dedicated vCPUs, 8.0 GB of RAM, and no local storage, running on the KVM hypervisor.",
-  "tagline": "A dedicated compute instance featuring an equal ratio of physical cores to gigabytes of memory for basic non-vectorized workloads.",
+  "tagline": "A dedicated x86_64 compute instance featuring eight vCPUs and a lean memory profile for basic, non-vectorized processing workloads.",
   "bullet_points": [
-    "8 dedicated x86_64 vCPUs with hyperthreading disabled",
-    "8.0 GB of system memory providing 1.0 GB per core",
+    "8 dedicated physical x86_64 cores with single-thread configuration",
+    "8.0 GB of system memory providing 1.0 GB of RAM per core",
     "No local storage or GPU accelerators included",
-    "Lacks support for AVX, AVX512, AMX, and AES instructions",
-    "KVM hypervisor-based virtualization",
-    "Suited for lightweight batch processing and basic web serving"
+    "Absence of AVX, AVX-512, AMX, and AES hardware acceleration",
+    "Best suited for basic CPU-bound tasks and lightweight web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
