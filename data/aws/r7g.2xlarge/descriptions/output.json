@@ -1,23 +1,21 @@
 {
   "page": [
-    "Amazon Web Services r7g.2xlarge is a memory-optimized server instance powered by custom AWS Graviton3 processors. Built on the 64-bit ARMv8 architecture with Neoverse-V1 cores, this instance provides 8 dedicated physical cores and 8 vCPUs with a single thread per core. It features a 2.6 GHz clock speed, 64 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. The instance is equipped with 64.0 GB of system memory, yielding a high resource density of 8.0 GB of RAM per core. It operates on the AWS Nitro hypervisor, lacks local storage, and provides a baseline network bandwidth of 4 Gbps.",
-    "Benchmark data reveals strong memory performance, with a passmark memory score and read-only large-block memory bandwidth of 184.3 GB/sec both ranking in the top 25%. However, raw computational benchmarks present some tradeoffs. The passmark CPU score of 6073.06 and CPU encryption test of 1104.87 fall into the bottom 25%, reflecting weaker performance in cryptographic operations, which is also indicated by the lack of advanced vector and matrix extensions. Other processing metrics, such as stress-ng single-core and multi-core performance, fall within the average range.",
-    "Given the high memory-to-vCPU ratio and strong memory bandwidth, the r7g.2xlarge is designed for memory-intensive workloads. Passmark database operations average 8026.68, and Redis SET operations reach 13.53 million operations per second, indicating suitability for in-memory databases, caching layers, and data buffering. Conversely, poor performance in text generation for small LLM models and prompt processing for medium models suggests it is less suited for heavy machine learning inference. The ARM-based architecture offers qualitative cost efficiency by delivering high memory density and competitive memory throughput per resource unit compared to traditional x86 alternatives."
+    "Amazon Web Services r7g.2xlarge is a memory-optimized server instance powered by custom 64-bit ARM architecture. It features 8 dedicated physical cores utilizing the AWS Graviton3 processor family with Neoverse-V1 cores clocked at 2.6 GHz. The CPU allocation provides one thread per core with no hyperthreading. It is equipped with 64.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per core. The instance operates on the AWS Nitro hypervisor and does not include local storage or dedicated GPU hardware.",
+    "Benchmark results indicate strong memory performance, with a PassMark memory score in the top 25% and a read-only small-block memory bandwidth of 774.63 GB/sec. Large-block read and write bandwidths reach 184.3 GB/sec and 68.94 GB/sec respectively. CPU performance is moderate, with a PassMark CPU score of 6073.06, placing it in the bottom 25%. Multi-core stress-ng performance reaches 12242.92, while single-core performance sits at 1533.19. Cryptographic operations are supported via hardware AES acceleration, though the ARM architecture lacks x86-specific vector extensions like AVX.",
+    "Given its high memory density and strong memory bandwidth, the r7g.2xlarge is qualitatively cost-efficient for memory-bound workloads that do not require local NVMe storage or high-performance x86 vector instructions. It is well-suited for database operations, caching layers like Redis (achieving 13.53 million SET operations per second in testing), static web serving, and memory-intensive data processing. However, it exhibits lower performance in text generation for large language models, making it less optimal for heavy AI inference tasks."
   ],
-  "description": "Amazon Web Services r7g.2xlarge is an ARM64 memory-optimized server instance powered by an 8-core AWS Graviton3 processor running at 2.6 GHz. It features 64.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core, and runs on the Nitro hypervisor with 4 Gbps baseline network bandwidth. Local storage is not included. Performance benchmarks highlight strong memory capabilities, with large-block read-only memory bandwidth reaching 184.3 GB/sec, placing it in the top 25%. However, CPU-bound cryptographic and raw processing tests show weaker results, with the Passmark CPU score falling in the bottom 25%. This profile makes the instance highly efficient for memory-bound applications, such as Redis caching and database operations, while presenting tradeoffs for compute-heavy or cryptographic workloads.",
-  "og_description": "Amazon Web Services r7g.2xlarge is an ARM64 memory-optimized instance with 8 Graviton3 cores and 64 GB RAM, delivering strong memory bandwidth for database and caching workloads.",
-  "meta_description": "Amazon Web Services r7g.2xlarge is an ARM64 memory-optimized instance featuring 8 Graviton3 cores, 64 GB RAM, and 4 Gbps network bandwidth.",
-  "tagline": "An ARM-based memory-optimized instance delivering high memory bandwidth and dedicated cores for caching and database workloads.",
+  "description": "Amazon Web Services r7g.2xlarge is a memory-optimized instance featuring 8 dedicated physical ARM64 cores powered by AWS Graviton Neoverse-V1 processors running at 2.6 GHz. Built on the Nitro hypervisor, it delivers 64.0 GB of system memory, establishing a high 8.0 GB per core ratio. The instance lacks local storage and GPU accelerators, relying on a 4 Gbps baseline network bandwidth. Performance testing highlights a strong memory subsystem, with a PassMark memory score in the top 25% and a small-block read bandwidth of 774.63 GB/sec, though overall CPU compute benchmarks lean average to weak. This hardware profile makes the r7g.2xlarge highly suitable for memory-intensive applications, such as Redis caching, database operations, and static web serving, where high memory capacity and bandwidth are prioritized over raw floating-point compute power.",
+  "og_description": "Amazon Web Services r7g.2xlarge is a memory-optimized ARM64 instance with 8 dedicated Graviton cores, 64 GB RAM, and a 4 Gbps network baseline, ideal for memory-intensive database and caching workloads.",
+  "meta_description": "Amazon Web Services r7g.2xlarge is an ARM64 memory-optimized instance featuring 8 dedicated Graviton cores, 64 GB of RAM, and a 4 Gbps network baseline.",
+  "tagline": "A memory-optimized ARM64 virtual server featuring dedicated Graviton cores and high memory bandwidth for caching and database workloads.",
   "bullet_points": [
-    "8 dedicated AWS Graviton3 physical cores on ARM64 architecture",
-    "64.0 GB of RAM providing 8.0 GB of memory per core",
-    "Strong memory bandwidth performance ranking in the top 25%",
-    "No local storage and 4 Gbps baseline network bandwidth",
-    "Suited for in-memory databases, Redis caching, and memory-intensive tasks",
-    "Lower performance in cryptographic and raw CPU-bound benchmarks"
+    "8 dedicated ARM64 Graviton physical cores running at 2.6 GHz",
+    "64.0 GB of system memory providing 8.0 GB per core",
+    "Strong memory performance with 774.63 GB/sec cached read bandwidth",
+    "4 Gbps baseline network bandwidth with no local storage",
+    "Optimized for Redis caching, database operations, and web serving"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

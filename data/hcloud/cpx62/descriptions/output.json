@@ -1,23 +1,22 @@
 {
   "page": [
-    "Hetzner Cloud cpx62 is an x86_64 virtual server powered by an AMD EPYC processor. It features 16 shared vCPUs with a base clock speed of 2.0 GHz, 31.0 GB of system memory, and 640 GB of local SSD storage. The underlying virtualization is managed via QEMU. The CPU architecture supports advanced instruction sets including AVX, AVX512F, AVX512_VNNI, AVX512_BF16, AES, and SHA_NI, which accelerate cryptographic and vector-based calculations.",
-    "In benchmark evaluations, the server demonstrates strong single-core performance, scoring 3035.28 in stress-ng single-core tests and 1968.0 in Geekbench single-core metrics. Memory performance is also a highlight, with uncached large-block read bandwidth reaching 277.56 GB/sec and write bandwidth at 137.51 GB/sec, both placing in the top 25% of tested hardware. Multi-threaded decompression via bzip3 is highly efficient at 198.15 GB/sec. However, multi-core CPU performance and database operations fall into the average tier, likely due to the shared CPU allocation model.",
-    "The cpx62 offers a cost-effective hardware profile by utilizing shared CPU resources, making it highly resource-dense for workloads that do not require dedicated, sustained CPU cores. It is well-suited for multi-threaded applications, web serving, software compilation, and light LLM inference tasks, particularly where high memory bandwidth and local SSD storage are beneficial."
+    "Hetzner Cloud cpx62 is an x86_64 virtual machine running on the QEMU hypervisor. It features 16 vCPUs powered by AMD EPYC processors running at a base clock speed of 2.0 GHz. The CPU allocation is shared, with 16 physical cores and 1.0 thread per core. The system is equipped with 31.0 GB of system memory, providing approximately 1.95 GB of RAM per core. Local storage consists of a bundled 640 GB NVMe SSD, while no dedicated GPU hardware is included.",
+    "Performance benchmarks indicate strong single-core capabilities, with stress-ng single-core and Geekbench single-core scores placing in the top 25%. Multi-core performance, including stress-ng multi-core and Geekbench multi-core, falls within the average range. Memory performance is notable, with large-block read and write bandwidths, as well as the Passmark memory score, ranking in the top 25%. The server also demonstrates strong multi-threaded bzip3 decompression and strong text generation speeds for small and medium language models.",
+    "The shared CPU allocation presents a performance tradeoff, as resources are shared with other tenants, which may introduce variability under sustained multi-core loads. However, this shared architecture offers high resource density and qualitative cost efficiency for workloads that do not require dedicated CPU cores. Given the 1:2 vCPU-to-RAM ratio and strong single-core performance, this server is suited for web serving, software compilation, multi-threaded decompression tasks, and light LLM inference workloads."
   ],
-  "description": "Hetzner Cloud cpx62 is an x86_64 virtual server configured with 16 shared AMD EPYC vCPUs, 31.0 GB of RAM, and 640 GB of local SSD storage. Utilizing QEMU virtualization, this server supports advanced instruction sets such as AVX-512 and AES cryptography. Benchmarks indicate strong single-core processing and high uncached memory bandwidth, with read speeds reaching 277.56 GB/sec. While multi-core performance and database operations sit in the average tier due to the shared CPU allocation, the server provides high resource density. It is suitable for multi-threaded applications, web serving, software compilation, and small-scale language model inference.",
-  "og_description": "Hetzner Cloud cpx62 is an x86_64 virtual server featuring 16 shared AMD EPYC vCPUs, 31.0 GB of RAM, and 640 GB of local SSD storage, delivering strong single-core and memory bandwidth performance.",
-  "meta_description": "Hetzner Cloud cpx62 is an x86_64 virtual server with 16 shared AMD EPYC vCPUs, 31.0 GB of RAM, and 640 GB of local SSD storage.",
-  "tagline": "A budget-friendly virtual server combining sixteen shared cores, high memory bandwidth, and local SSD storage for multi-threaded workloads.",
+  "description": "Hetzner Cloud cpx62 is an x86_64 virtual machine featuring 16 shared AMD EPYC vCPUs clocked at 2.0 GHz, 31.0 GB of RAM, and a bundled 640 GB NVMe SSD. Operating on the QEMU hypervisor, this server delivers strong single-core CPU performance and high memory bandwidth for large blocks, both ranking in the top 25% of benchmarks. However, its shared CPU allocation introduces potential resource contention, making multi-core performance average. This configuration provides a cost-efficient option for workloads requiring high resource density without the need for dedicated CPU cores. It is well-suited for tasks such as web serving, software compilation, multi-threaded decompression, and small-scale language model inference.",
+  "og_description": "Hetzner Cloud cpx62 is an x86_64 virtual server with 16 shared AMD EPYC vCPUs, 31.0 GB RAM, and 640 GB NVMe storage, offering strong single-core performance and high memory bandwidth.",
+  "meta_description": "Hetzner Cloud cpx62 is an x86_64 server with 16 shared AMD EPYC vCPUs, 31.0 GB RAM, and 640 GB NVMe storage, optimized for cost-effective compute.",
+  "tagline": "A cost-efficient virtual server featuring shared AMD EPYC processors, high memory bandwidth, and fast NVMe storage for compute-focused workloads.",
   "bullet_points": [
     "16 shared AMD EPYC vCPUs and 31.0 GB of system memory",
-    "640 GB of local SSD storage for fast data access",
-    "Strong single-core CPU and uncached memory bandwidth performance",
-    "Supports AVX-512, vector, and cryptographic instruction sets",
+    "Bundled 640 GB NVMe SSD local storage",
+    "Strong single-core CPU and large-block memory bandwidth performance",
+    "Shared CPU allocation offering high resource density",
     "Suitable for web serving, software compilation, and light LLM inference"
   ],
   "categories": [
-    "Burstable & Budget",
     "Compute Optimized",
-    "General Purpose"
+    "Burstable & Budget"
   ]
 }
