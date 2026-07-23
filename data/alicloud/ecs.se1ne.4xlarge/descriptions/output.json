@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.se1ne.4xlarge is a memory-optimized instance built on the KVM hypervisor. It features 16 dedicated physical cores on an x86_64 Intel Xeon 8269CY processor running at 2.5 GHz. The instance is configured with 128.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or GPU accelerators, relying on network-attached storage and a baseline network bandwidth of 3 Gbps.",
-    "Benchmark data reveals a clear performance profile. Single-core performance is a notable bottleneck, with stress-ng single-core and Geekbench single-core scores falling into the weak and poor categories respectively. Single-threaded gzip compression also registers as poor. However, the instance leverages its 16 dedicated physical cores to achieve average multi-core performance, as demonstrated by stress-ng multi-core, Geekbench multi-core, and PassMark CPU benchmarks. Memory bandwidth for both small and large blocks remains in the average tier, though PassMark memory scores are weak.",
-    "From a cost-efficiency perspective, the ecs.se1ne.4xlarge offers a high density of memory relative to its compute resources, making it a viable option for memory-bound workloads that do not require high single-threaded CPU performance. The instance is suited for database operations, Redis SET operations, static web serving, and multi-threaded decompression tasks. It can also handle light LLM inference for small models, though performance drops to weak when processing prompts on medium-sized 7B models."
+    "Alibaba Cloud ecs.se1ne.4xlarge is a memory-optimized virtual server instance powered by the KVM hypervisor. It features 16 dedicated vCPUs mapped to 16 physical cores with a 1.0 thread-per-core configuration, utilizing the x86_64 architecture. The underlying processor is an Intel Xeon 8269CY running at 2.5 GHz with a 35 MB L3 cache. The instance is equipped with 128.0 GB of system memory, yielding an 8.0 GB RAM-to-vCPU ratio. It does not include local storage or dedicated GPU hardware, relying instead on network-attached storage and a baseline network bandwidth of 3 Gbps.",
+    "Benchmark data reveals a distinct performance profile characterized by a tradeoff between single-core and multi-core execution. Single-core performance is relatively weak, placing in the bottom 25% for stress-ng single-core and the bottom 10% for Geekbench single-core. Single-threaded tasks like gzip compression also show poor performance. Conversely, multi-core benchmarks, including stress-ng multi-core and Geekbench multi-core, achieve average performance within the middle 50% tier. Memory bandwidth tests demonstrate average read and write speeds, though the overall Passmark memory score falls into the bottom 25%.",
+    "Given its high memory density of 8.0 GB per core, the ecs.se1ne.4xlarge offers qualitative cost efficiency for memory-bound workloads that do not require high single-threaded CPU performance. It is well-suited for database operations, Redis caching, and multi-threaded text or image processing, where it delivers average throughput. It can also handle light LLM inference tasks for smaller models, though performance drops significantly on larger models. It is not recommended for compute-intensive, single-threaded applications or workloads requiring high-speed local storage."
   ],
-  "description": "Alibaba Cloud ecs.se1ne.4xlarge is a memory-optimized instance featuring 16 dedicated physical cores on an Intel Xeon 8269CY x86_64 processor running at 2.5 GHz. Equipped with 128.0 GB of RAM, it provides a high memory-to-core ratio of 8.0 GB per core. The instance lacks local storage and GPU accelerators, utilizing a baseline network bandwidth of 3 Gbps. Performance benchmarks indicate weak single-core capabilities, with poor single-threaded compression and Geekbench single-core scores. However, its multi-core execution, memory bandwidth, and database operations perform at an average level. This hardware profile is suited for memory-intensive workloads such as database operations, Redis caching, and multi-threaded data processing where single-thread execution speed is not the primary constraint.",
-  "og_description": "Alibaba Cloud ecs.se1ne.4xlarge is a memory-optimized instance with 16 dedicated Intel Xeon cores, 128 GB RAM, and 3 Gbps network bandwidth, delivering average multi-core and database performance.",
-  "meta_description": "Alibaba Cloud ecs.se1ne.4xlarge is a memory-optimized instance featuring 16 dedicated Intel Xeon cores, 128 GB RAM, and average multi-core performance.",
-  "tagline": "A memory-optimized instance featuring 16 dedicated cores and 128 GB RAM, balanced for multi-threaded workloads and database operations.",
+  "description": "Alibaba Cloud ecs.se1ne.4xlarge is a memory-optimized instance featuring 16 dedicated vCPUs and 128.0 GB of RAM, powered by an Intel Xeon 8269CY processor at 2.5 GHz. Built on the x86_64 architecture under the KVM hypervisor, this instance provides a high memory-to-vCPU ratio of 8.0 GB per core, though it lacks local storage and GPU accelerators. Performance benchmarks highlight a clear tradeoff: single-core performance is weak, ranking in the bottom 25%, whereas multi-core performance and memory bandwidth consistently reach average levels. With a 3 Gbps baseline network bandwidth, the instance is qualitatively cost-effective for memory-intensive, multi-threaded workloads such as database operations, Redis caching, and moderate data processing. It is less suitable for single-threaded or compute-heavy applications.",
+  "og_description": "Alibaba Cloud ecs.se1ne.4xlarge is a memory-optimized instance with 16 dedicated Intel Xeon vCPUs, 128 GB RAM, and average multi-core performance, making it suitable for database and caching workloads.",
+  "meta_description": "Alibaba Cloud ecs.se1ne.4xlarge is a memory-optimized instance with 16 vCPUs, 128 GB RAM, and average multi-core performance.",
+  "tagline": "A memory-optimized virtual server featuring a high RAM-to-core ratio, tailored for multi-threaded database operations and caching workloads.",
   "bullet_points": [
-    "16 dedicated physical Intel Xeon 8269CY cores at 2.5 GHz",
-    "128.0 GB of RAM providing a high 8.0 GB per core ratio",
-    "Average multi-core CPU and memory bandwidth performance",
-    "Weak single-core performance and single-threaded execution",
-    "No local storage or GPU accelerators included",
-    "Suited for database operations, Redis caching, and multi-threaded processing"
+    "16 dedicated Intel Xeon vCPUs and 128.0 GB of RAM",
+    "High memory density of 8.0 GB per core for memory-bound tasks",
+    "Average multi-core and memory bandwidth benchmark performance",
+    "Tradeoff of weak single-core and single-threaded execution",
+    "Best suited for database operations, Redis caching, and multi-threaded processing",
+    "No local storage or GPU accelerators included"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }
