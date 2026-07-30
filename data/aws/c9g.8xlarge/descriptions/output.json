@@ -1,22 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c9g.8xlarge is a compute-optimized server instance powered by custom AWS Graviton processors. This instance features 32 dedicated physical cores on the arm64 architecture, running at a clock speed of 2.8 GHz. With a 1.0 thread-per-core ratio, each vCPU maps to a dedicated physical core, eliminating resource contention from simultaneous multithreading.",
-    "The instance is configured with 64.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. Local storage is not bundled with this instance, meaning all storage requirements must be met via network-attached block storage. Network connectivity is supported by a baseline bandwidth of 17 Gbps, managed through the AWS Nitro hypervisor.",
-    "Operating on the arm64 architecture requires software compatibility verification, as legacy x86-64 binaries will not run natively. The lack of local storage and GPU acceleration limits its utility for heavy database caching or machine learning training. However, the high physical core count and dedicated CPU allocation make it suitable for compute-heavy workloads such as distributed analytics, batch processing, and containerized microservices."
+    "Amazon Web Services c9g.8xlarge is a compute-optimized server instance powered by AWS Graviton processors. It features 32 dedicated physical cores on the arm64 architecture, running at a clock speed of 3.3 GHz. The instance is equipped with 64.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per core. It operates on the AWS Nitro hypervisor, ensuring dedicated CPU allocation with exactly one thread per physical core.",
+    "This instance does not include local storage or integrated GPUs, meaning all storage requirements must be met via network-attached options. It provides a baseline network bandwidth of 17 Gbps. The arm64 CPU architecture requires compatible software builds, which represents a key operational tradeoff compared to traditional x86-64 environments. Additionally, the lack of hyperthreading means each of the 32 vCPUs maps directly to a dedicated physical core, providing predictable execution times for compute-bound tasks.",
+    "From a qualitative cost-efficiency perspective, the Graviton-based architecture is designed to deliver high resource density and compute throughput per unit of power compared to traditional architectures. The c9g.8xlarge is configured for workloads requiring high CPU-to-memory ratios, such as distributed analytics, batch processing, high-performance web serving, video encoding, and scientific modeling."
   ],
-  "description": "Amazon Web Services c9g.8xlarge is a compute-optimized instance featuring 32 dedicated physical cores powered by AWS Graviton processors on the arm64 architecture. Operating at 2.8 GHz with a 1.0 thread-per-core ratio, this instance provides dedicated CPU allocation without simultaneous multithreading. It is equipped with 64.0 GB of system memory, providing 2.0 GB of RAM per core, and relies on the AWS Nitro hypervisor. The instance does not include local storage or GPU hardware, requiring network-attached storage for data persistence. Network performance is supported by a baseline bandwidth of 17 Gbps. Given its high physical core density and compute-to-memory ratio, the c9g.8xlarge is designed for compute-intensive workloads such as batch processing, distributed analytics, and containerized web services that benefit from dedicated arm64 execution resources.",
-  "og_description": "Amazon Web Services c9g.8xlarge is an arm64 compute-optimized instance with 32 dedicated Graviton cores, 64 GB RAM, and 17 Gbps network bandwidth, running on the Nitro hypervisor.",
-  "meta_description": "Amazon Web Services c9g.8xlarge is an arm64 compute-optimized instance featuring 32 dedicated Graviton cores and 64 GB of RAM.",
-  "tagline": "An arm64 compute-optimized instance featuring thirty-two dedicated cores and sixty-four gigabytes of memory for intensive processing workloads.",
+  "description": "Amazon Web Services c9g.8xlarge is a compute-optimized instance built on the arm64 architecture and powered by AWS Graviton processors. Running on the Nitro hypervisor, it features 32 dedicated physical cores with a 3.3 GHz clock speed and a 1:1 thread-to-core ratio. The hardware configuration includes 64.0 GB of system memory, providing 2.0 GB of RAM per core. This instance does not include local storage or dedicated GPU hardware, relying instead on network-attached storage and delivering a baseline network bandwidth of 17 Gbps. The arm64 architecture offers high resource density and qualitative cost efficiency for compute-heavy workloads, though it requires compatible software compilation. It is designed for workloads such as batch processing, media encoding, scientific modeling, and distributed compute tasks.",
+  "og_description": "Amazon Web Services c9g.8xlarge is an arm64 compute-optimized instance featuring 32 dedicated Graviton physical cores, 64.0 GB of RAM, 17 Gbps network bandwidth, and no local storage.",
+  "meta_description": "Amazon Web Services c9g.8xlarge is a compute-optimized arm64 instance with 32 dedicated physical cores, 64.0 GB RAM, and 17 Gbps network speed.",
+  "tagline": "A dedicated arm64 compute-optimized instance featuring thirty-two physical cores and sixty-four gigabytes of memory for intensive processing workloads.",
   "bullet_points": [
-    "32 dedicated physical arm64 cores running at 2.8 GHz",
+    "32 dedicated physical arm64 cores running at 3.3 GHz",
     "64.0 GB of system memory providing 2.0 GB per core",
-    "17 Gbps baseline network bandwidth via Nitro hypervisor",
-    "No local storage or GPU acceleration included",
-    "Designed for batch processing and distributed analytics"
+    "17 Gbps baseline network bandwidth",
+    "No local storage or integrated GPU hardware",
+    "Built on the AWS Nitro hypervisor with dedicated CPU allocation",
+    "Suited for batch processing, media encoding, and distributed compute tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

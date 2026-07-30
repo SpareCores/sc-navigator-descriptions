@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services m9g.48xlarge is a general-purpose instance powered by the AWS Graviton processor family. It features 192 dedicated physical cores on the ARMv9 architecture using AWS Neoverse-V3 cores running at 2.8 GHz. The hardware configuration includes 768.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. It operates on the Nitro hypervisor and delivers a baseline network bandwidth of 100 Gbps. No local NVMe storage or dedicated GPUs are bundled with this instance type.",
-    "Benchmark data indicates top-tier multi-core performance, with a stress-ng multi-core score of 381,353.24 and a PassMark CPU score of 107,221.26. Memory bandwidth is highly efficient, reaching top-tier speeds of 27,574.84 GB/sec for cached small-block reads and 729.22 GB/sec for large-block reads. Single-core performance is moderate, with stress-ng single-core CPU performance scoring in the average tier.",
-    "The instance exhibits strong capabilities in database operations, achieving 507.16 million operations per second in Redis SET benchmarks and top-tier PassMark database performance. However, there are notable performance tradeoffs in specific workloads; while LLM prompt processing for a 7B model is top-tier at 368.62 tokens per second, text generation speeds for smaller models fall into the poor or average tiers. Given its high core density, balanced memory ratio, and 100 Gbps network baseline, this instance is highly suited for multi-threaded workloads, large-scale web serving, database operations, and parallel data decompression tasks."
+    "Amazon Web Services m9g.48xlarge is a general-purpose server instance powered by custom AWS Graviton processors. Built on the arm64 architecture, the instance features 192 dedicated physical cores utilizing the ARMv9 Neoverse-V3 model running at 3.3 GHz. It is equipped with 768.0 GB of system memory, providing a balanced ratio of 4.0 GB of RAM per core. The CPU cache configuration includes 64 KB of L1d cache, 2 MB of L2 cache, and 96 MB of L3 cache. This instance operates on the Nitro hypervisor and offers a baseline network bandwidth of 100 Gbps, though it does not include local NVMe storage or GPU accelerators.",
+    "Benchmark data indicates top-tier multi-core capabilities, with stress-ng multi-core performance scoring 381,353.24 and PassMark CPU score reaching 107,221.26, both placing in the top 10% of tested systems. Memory bandwidth is also in the top tier, registering 27,574.84 GB/sec for cached small blocks and 729.22 GB/sec for uncached large blocks. The instance demonstrates strong database and web serving capabilities, achieving 507.16 million operations per second in Redis SET benchmarks and 359.97 GB/sec in static web serving throughput. However, single-core performance is more moderate, with stress-ng single-core scoring 2,008.79, placing it in the middle 50%. Additionally, LLM text generation for a small 135M model is slow at 21.54 tokens/sec, representing a performance tradeoff for sequential text generation tasks.",
+    "From a cost-efficiency perspective, the m9g.48xlarge leverages the ARMv9 architecture to deliver high resource density and multi-threaded throughput without the premium associated with traditional x86 architectures. The absence of bundled local storage and GPUs reduces overhead for workloads that rely on network-attached storage or do not require hardware acceleration. This profile is suitable for large-scale multi-threaded applications, high-throughput database operations, static web serving, and multi-threaded decompression tasks."
   ],
-  "description": "Amazon Web Services m9g.48xlarge is a general-purpose instance featuring 192 dedicated physical ARMv9 cores powered by AWS Neoverse-V3 processors running at 2.8 GHz. It is equipped with 768.0 GB of RAM, providing a balanced 4.0 GB per core, and operates on the Nitro hypervisor with a 100 Gbps baseline network speed. The instance lacks local storage and dedicated GPUs. Benchmarks show top-tier multi-core CPU performance, exceptional memory bandwidth, and outstanding database operation speeds, though single-core performance and LLM text generation speeds are average to poor. Qualitatively, the high physical core density and balanced memory allocation offer excellent resource density for scale-out workloads without hyperthreading overhead. This resource profile makes the m9g.48xlarge highly efficient for high-density multi-threaded applications, Redis deployments, static web serving, and database workloads.",
-  "og_description": "Amazon Web Services m9g.48xlarge is a general-purpose instance featuring 192 dedicated ARMv9 cores, 768 GB RAM, and 100 Gbps network bandwidth, delivering top-tier multi-core and database performance.",
-  "meta_description": "Amazon Web Services m9g.48xlarge is an ARMv9 general-purpose instance with 192 dedicated cores, 768 GB RAM, and 100 Gbps network bandwidth.",
-  "tagline": "An ARMv9 general-purpose platform featuring 192 dedicated physical cores and 768 GB of RAM for highly parallelized enterprise workloads.",
+  "description": "Amazon Web Services m9g.48xlarge is a general-purpose server instance powered by the ARMv9-based AWS Graviton Neoverse-V3 processor. It features 192 dedicated physical cores running at 3.3 GHz, 768.0 GB of system memory, and a 100 Gbps baseline network interface, with no local storage or GPU hardware. Benchmarks show top-tier multi-core CPU and memory bandwidth performance, including a PassMark CPU score of 107,221.26 and Redis SET throughput of 507.16 million operations per second. However, single-core CPU performance and LLM text generation speeds are moderate to poor. This instance offers high resource density and qualitative cost efficiency for multi-threaded workloads, making it suitable for high-throughput database operations, static web serving, and large-scale parallel processing tasks.",
+  "og_description": "Amazon Web Services m9g.48xlarge is an arm64 general-purpose instance with 192 dedicated Graviton physical cores, 768 GB RAM, and 100 Gbps network bandwidth, delivering top-tier multi-core and database performance.",
+  "meta_description": "Amazon Web Services m9g.48xlarge is an arm64 instance featuring 192 dedicated Graviton cores, 768 GB RAM, and 100 Gbps network bandwidth.",
+  "tagline": "An arm64 general-purpose instance delivering 192 dedicated physical cores and high-bandwidth memory for demanding multi-threaded and database workloads.",
   "bullet_points": [
-    "192 dedicated physical ARMv9 cores running at 2.8 GHz",
-    "768.0 GB of system memory providing 4.0 GB per core",
-    "100 Gbps baseline network bandwidth on the Nitro hypervisor",
-    "Top-tier multi-core CPU, memory bandwidth, and database performance",
-    "Suited for Redis deployments, static web serving, and parallel decompression",
-    "No bundled local NVMe storage or dedicated GPU hardware"
+    "192 dedicated ARMv9 Neoverse-V3 physical cores running at 3.3 GHz",
+    "768.0 GB of system memory providing 4.0 GB of RAM per core",
+    "100 Gbps baseline network bandwidth with Nitro hypervisor integration",
+    "Top-tier multi-core CPU, memory bandwidth, and Redis database performance",
+    "No local storage or GPU accelerators included in the hardware profile",
+    "Suitable for high-throughput database operations and static web serving"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }
