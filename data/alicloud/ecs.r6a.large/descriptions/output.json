@@ -1,22 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.r6a.large is a memory-optimized virtual machine instance powered by the KVM hypervisor. It features 2 dedicated vCPUs on 2 physical cores utilizing the x86_64 architecture. The underlying processor is an AMD EPYC 7H12 running at a clock speed of 2.6 GHz, equipped with 32 KB L1d cache, 0.5 MB L2 cache, and 16 MB L3 cache. The instance is configured with 16.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per core. It does not include local storage or GPU accelerators, and it provides a baseline network bandwidth of 1 Gbps.",
-    "Benchmark data indicates that the instance delivers modest processing and memory throughput. In stress-ng single-core and multi-core CPU tests, performance falls within the bottom 10%. Memory bandwidth tests show read-only small block speeds of 99.72 GB/sec and large block write speeds of 14.89 GB/sec. Single-threaded gzip compression is measured at 23.59 GB/sec, while single-threaded bzip3 decompression achieves an average tier result of 8.92 GB/sec. Passmark CPU and database operations scores also rank in the bottom 10%, reflecting its positioning as a resource-dense rather than compute-intensive instance.",
-    "From a cost-efficiency perspective, the ecs.r6a.large offers a high memory allocation relative to its low vCPU count, making it a viable option for workloads that require a larger memory footprint without demanding high-performance compute cycles. Due to its lower CPU benchmark scores and lack of local storage, it is best suited for lightweight memory-bound applications, caching layers, small database operations, and basic web serving where memory capacity is prioritized over raw processing speed."
+    "Alibaba Cloud ecs.r6a.large is a memory-optimized virtual server featuring 2 dedicated vCPUs and 16.0 GB of RAM, yielding a high memory-to-vCPU ratio of 8.0 GB per core. The instance is powered by an AMD EPYC 7H12 processor running at 2.6 GHz on the x86_64 architecture, utilizing the KVM hypervisor. It does not include local storage or dedicated GPU hardware, and it provides a baseline network bandwidth of 1 Gbps.",
+    "Performance benchmarks place this instance in the lower tiers for compute and memory throughput. Single-core and multi-core CPU performance tests via stress-ng and PassMark rank in the bottom 10%. Memory bandwidth tests show weak to poor performance, with large block write speeds categorized in the bottom 25% and read speeds in the bottom 10%. Database operations, Redis SET operations, and static web serving throughput also align with the bottom 10% of benchmarked systems.",
+    "Given its hardware profile, the ecs.r6a.large offers a cost-efficient entry point for memory-intensive workloads that do not demand high CPU throughput. The dedicated AMD EPYC cores support instruction sets like AVX, AES, and SHA_NI, making it suitable for lightweight caching layers, small-scale database operations, or memory-bound utility tasks where raw processing speed is secondary to RAM capacity."
   ],
-  "description": "Alibaba Cloud ecs.r6a.large is a memory-optimized instance featuring 2 dedicated vCPUs and 16.0 GB of RAM, running on an AMD EPYC 7H12 processor at 2.6 GHz. Utilizing the x86_64 architecture and KVM hypervisor, this instance provides a high memory-to-core ratio of 8.0 GB per core but lacks local storage and GPU acceleration. Baseline network bandwidth is rated at 1 Gbps. Benchmark results place its CPU and memory read performance mostly in the bottom 10%, though single-threaded bzip3 decompression achieves average tier results. Qualitatively, this instance offers a cost-effective profile for memory-dense, low-compute workloads. It is best suited for lightweight caching, small database tasks, and memory-bound applications that do not require intensive processing power.",
-  "og_description": "Alibaba Cloud ecs.r6a.large is a memory-optimized virtual server featuring 2 dedicated AMD EPYC vCPUs, 16.0 GB of RAM, and a 1 Gbps baseline network speed, designed for memory-bound workloads.",
-  "meta_description": "Alibaba Cloud ecs.r6a.large is a memory-optimized virtual server featuring 2 AMD EPYC vCPUs, 16.0 GB of RAM, and 1 Gbps baseline network bandwidth.",
-  "tagline": "A memory-optimized virtual server featuring a high memory-to-core ratio for lightweight, memory-bound applications requiring dedicated AMD EPYC resources.",
+  "description": "Alibaba Cloud ecs.r6a.large is a memory-optimized virtual server configured with 2 dedicated AMD EPYC 7H12 vCPUs and 16.0 GB of RAM. Operating on the x86_64 architecture under the KVM hypervisor, this instance provides a high memory-to-vCPU ratio of 8.0 GB per core, though it lacks local storage and GPU accelerators. Baseline network performance is rated at 1 Gbps. Benchmark results indicate lower-tier compute and memory throughput, with stress-ng, PassMark, and Redis SET operations scoring in the bottom 10% to 25%. Consequently, this instance is best suited for lightweight, memory-bound workloads such as small caching nodes, basic database operations, or utility services that require a larger memory footprint without demanding high-frequency processing power.",
+  "og_description": "Alibaba Cloud ecs.r6a.large is a memory-optimized instance with 2 dedicated AMD EPYC vCPUs, 16 GB RAM, and 1 Gbps network bandwidth, designed for lightweight memory-bound workloads.",
+  "meta_description": "Alibaba Cloud ecs.r6a.large is a memory-optimized instance featuring 2 dedicated AMD EPYC vCPUs, 16 GB RAM, and a 1 Gbps baseline network speed.",
+  "tagline": "A memory-optimized virtual server featuring dedicated AMD EPYC processors and a high memory-to-core ratio for lightweight, memory-bound workloads.",
   "bullet_points": [
     "2 dedicated AMD EPYC 7H12 vCPUs running at 2.6 GHz",
-    "16.0 GB of system memory providing 8.0 GB per core",
-    "1 Gbps baseline network bandwidth with no local storage",
-    "KVM hypervisor utilizing x86_64 architecture",
-    "Best suited for lightweight caching and memory-bound workloads"
+    "16.0 GB of RAM providing a high 8.0 GB per core ratio",
+    "1 Gbps baseline network bandwidth with zero local storage",
+    "Supports AVX, AES, and SHA_NI hardware acceleration flags",
+    "Best suited for lightweight caching, small databases, and memory-bound utility tasks"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

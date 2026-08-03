@@ -1,22 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform h4d-standard-192 is an x86_64 architecture server instance featuring 192 dedicated virtual CPUs and 720.0 GB of system memory. This configuration yields a memory allocation of 3.75 GB per virtual core. The instance does not include any integrated GPUs, and local storage is not bundled, meaning all storage requirements must be met via network-attached volumes.",
-    "Operating on a dedicated CPU allocation model, the h4d-standard-192 provides predictable compute resources without resource contention. The lack of local NVMe storage and integrated GPU hardware represents a clear tradeoff, positioning this instance for workloads that rely heavily on external storage systems and CPU-bound processing. From a cost-efficiency perspective, the high density of dedicated vCPUs and balanced memory allocation offers a consolidated platform for large-scale deployments, reducing the overhead of managing multiple smaller instances.",
-    "This server type is designed for highly parallelized workloads that scale efficiently across a large number of CPU cores. Suitable applications include large-scale web serving, continuous integration and continuous delivery (CI/CD) pipelines, enterprise application hosting, and distributed data processing tasks that do not require local disk caching or GPU acceleration."
+    "Google Cloud Platform h4d-standard-192 is an x86_64 architecture server belonging to the h4d server family. It features 192 dedicated physical cores powered by AMD EPYC 9B45 processors, with a 1.0 thread-per-core configuration. The system is equipped with 720.0 GB of RAM, providing a resource density of 3.75 GB of memory per core. The CPU cache configuration includes 48 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. This instance does not include local storage or integrated GPU hardware, and it is provisioned with zero complimentary public IPv4 addresses.",
+    "In benchmark evaluations, the h4d-standard-192 demonstrates top-tier performance, placing in the top 10% across multiple categories. The dedicated AMD EPYC cores deliver a stress-ng multi-core CPU score of 655,072.06 and a single-core score of 3,461.39. Memory subsystem performance is characterized by a read-only large block bandwidth of 1,054.65 GB/sec and a write large block bandwidth of 427.73 GB/sec. Database and web operations are highly efficient, with Redis SET operations reaching 495.56 million operations per second and static web serving throughput measured at 187.5 GB/sec.",
+    "The lack of local NVMe storage and GPU accelerators represents a clear architectural tradeoff, requiring external block storage for persistent data and limiting its utility for direct hardware-accelerated machine learning training. However, the high density of 192 dedicated physical cores and top-tier memory bandwidth make this instance highly cost-efficient for compute-heavy, non-GPU workloads that require massive parallel processing. Appropriate workloads include large-scale database operations, high-throughput web serving, multi-threaded decompression tasks, and intensive CPU-bound simulations."
   ],
-  "description": "Google Cloud Platform h4d-standard-192 is an x86_64 architecture server configured with 192 dedicated vCPUs and 720.0 GB of system memory, providing 3.75 GB of RAM per core. This instance does not include local storage or integrated GPUs, requiring reliance on network-attached storage solutions. With its dedicated CPU allocation, the server ensures consistent compute performance for highly parallelized tasks. The resource profile is balanced, making it a qualitatively cost-effective option for consolidating large-scale workloads onto a single high-density node rather than distributing them across multiple smaller instances. The h4d-standard-192 is suited for enterprise application hosting, large-scale web serving, CI/CD pipelines, and distributed CPU-bound data processing workloads.",
-  "og_description": "Google Cloud Platform h4d-standard-192 is an x86_64 server with 192 dedicated vCPUs and 720.0 GB of RAM. It features no local storage or GPUs, making it ideal for large-scale CPU-bound workloads.",
-  "meta_description": "Google Cloud Platform h4d-standard-192 is an x86_64 server with 192 dedicated vCPUs and 720.0 GB of RAM, designed for large CPU-bound workloads.",
-  "tagline": "A high-density, dedicated x86_64 compute node featuring 192 vCPUs and 720 GB of RAM for large-scale parallel processing.",
+  "description": "Google Cloud Platform h4d-standard-192 is an x86_64 server from the h4d family, featuring 192 dedicated physical AMD EPYC 9B45 cores with a 1.0 thread-per-core configuration and 720.0 GB of RAM. Lacking local storage and GPU accelerators, this instance relies on external storage and is optimized for pure CPU-bound execution. Benchmark results place the server in the top 10% tier, highlighted by a stress-ng multi-core score of 655,072.06, a Redis SET performance of 495.56 million operations per second, and a static web serving throughput of 187.5 GB/sec. Memory read bandwidth reaches 1,054.65 GB/sec for large blocks. This configuration is highly efficient for large-scale database operations, high-throughput web serving, and parallelized CPU-bound workloads.",
+  "og_description": "Google Cloud Platform h4d-standard-192 features 192 dedicated AMD EPYC cores and 720 GB RAM. It delivers top-tier CPU and memory bandwidth performance for database and web serving workloads.",
+  "meta_description": "Google Cloud Platform h4d-standard-192 is an x86_64 server with 192 dedicated AMD EPYC cores, 720 GB RAM, and top-tier multi-core performance.",
+  "tagline": "A dedicated 192-core AMD EPYC server with high memory bandwidth, optimized for massive parallel processing and high-throughput database workloads.",
   "bullet_points": [
-    "192 dedicated x86_64 virtual CPUs for predictable compute performance",
-    "720.0 GB of system memory providing 3.75 GB of RAM per core",
-    "No bundled local storage, requiring network-attached storage volumes",
-    "Zero integrated GPUs, focusing entirely on CPU-bound operations",
-    "Suited for enterprise application hosting and large-scale web serving",
-    "Optimized for highly parallelized workloads and CI/CD pipelines"
+    "192 dedicated AMD EPYC 9B45 physical cores with 1.0 thread per core.",
+    "720.0 GB of system memory providing 3.75 GB per core.",
+    "Top-tier multi-core performance with a stress-ng score of 655,072.06.",
+    "High-speed memory bandwidth reaching 1,054.65 GB/sec for large blocks.",
+    "No local storage or GPU accelerators included in the base configuration.",
+    "Optimized for large-scale database operations and high-throughput web serving."
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

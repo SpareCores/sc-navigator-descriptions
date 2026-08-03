@@ -1,22 +1,24 @@
 {
   "page": [
-    "Amazon Web Services c5d.18xlarge is a compute-optimized instance powered by the Nitro hypervisor. It features an Intel Xeon 8124M processor with an x86_64 architecture, offering 72 vCPUs across 36 physical cores with hyper-threading enabled. The CPU operates at a clock speed of 3.4 GHz and includes 24 MB of L3 cache. The instance is equipped with 144.0 GB of DDR4 memory running at 3 GHz, providing a resource density of 2.0 GB of RAM per core. It also includes 1800 GB of local NVMe SSD storage and a baseline network bandwidth of 25 Gbps. No GPUs are present on this instance.",
-    "In benchmark evaluations, the c5d.18xlarge demonstrates strong multi-core CPU performance, as evidenced by its stress-ng multi-core score of 66669.07 and a Passmark CPU score of 49974.67. Memory read bandwidth is also strong, reaching 3706.44 GB/sec for cached small blocks and 209.03 GB/sec for uncached large blocks. Database operations and Redis SET operations perform strongly, with Redis achieving 61.64 million operations per second. However, text generation for large language models is a notable tradeoff, showing weak performance with 52.33 tokens per second on a small 135M model and 7.25 tokens per second on a medium 7B model.",
-    "From a cost-efficiency perspective, the c5d.18xlarge offers high compute density and fast local NVMe storage, making it highly efficient for workloads that require high-frequency CPU processing paired with low-latency local disk access. The lack of a GPU and the lower RAM-to-vCPU ratio of 2.0 GB per core represent clear tradeoffs, making it less suitable for memory-intensive databases or deep learning training. This instance is best suited for compute-heavy workloads, high-performance web serving, batch processing, distributed analytics, and high-throughput database operations."
+    "Amazon Web Services c5d.18xlarge is a compute-optimized instance powered by the Nitro hypervisor. It features an x86_64 Intel Xeon 8124M processor running at 3.4 GHz, delivering 72 vCPUs across 36 physical cores with hyperthreading enabled. The hardware configuration includes 144.0 GB of DDR4 memory operating at 3 GHz, providing a resource density of 2.0 GB of RAM per core. Local storage is bundled, consisting of an 1800 GB NVMe SSD instance store, while baseline network bandwidth is rated at 25 Gbps.",
+    "In benchmark evaluations, the instance demonstrates strong multi-core capabilities, scoring in the top 25% for stress-ng multi-core CPU performance, Passmark CPU, and Passmark CPU extended instructions. Read-only memory bandwidth for both small and large blocks also ranks in the top 25%. However, write operations for large blocks and single-core stress-ng performance fall into the middle 50% average tier. A notable performance tradeoff is observed in LLM text generation, where the instance scores in the bottom 25% for both small and medium models, though prompt processing remains in the average tier.",
+    "From a qualitative cost-efficiency perspective, the c5d.18xlarge offers high compute density and high-speed local NVMe storage, making it suitable for workloads requiring rapid scratch space and intensive CPU calculations without the overhead of network-attached storage. The strong Passmark database operations score indicates suitability for database hosting, batch processing, and multi-threaded computational tasks, whereas the weak text generation benchmarks suggest it is less optimal for real-time LLM inference."
   ],
-  "description": "Amazon Web Services c5d.18xlarge is a compute-optimized instance featuring 72 vCPUs and 36 physical cores powered by an Intel Xeon 8124M processor running at 3.4 GHz. Built on the Nitro hypervisor, it includes 144.0 GB of DDR4 memory, 1800 GB of local NVMe SSD storage, and a 25 Gbps baseline network speed. Benchmark data indicates strong multi-core CPU performance and high memory read bandwidth, alongside strong database and Redis SET operations. However, the instance exhibits weak performance in LLM text generation tasks due to the absence of GPU acceleration. With a resource density of 2.0 GB of RAM per core, the c5d.18xlarge provides a cost-efficient profile for high-compute workloads requiring fast local storage. It is highly suited for batch processing, high-throughput database operations, and distributed analytics.",
-  "og_description": "Amazon Web Services c5d.18xlarge is a compute-optimized instance with 72 vCPUs, 144 GB DDR4 RAM, and 1800 GB local NVMe SSD storage, delivering strong multi-core and database performance.",
-  "meta_description": "Amazon Web Services c5d.18xlarge is a compute-optimized instance with 72 vCPUs, 144 GB RAM, and 1800 GB NVMe SSD storage for high-compute workloads.",
-  "tagline": "A compute-optimized instance featuring high-frequency processors, fast local NVMe storage, and strong multi-core performance for demanding workloads.",
+  "description": "Amazon Web Services c5d.18xlarge is a compute-optimized instance featuring 72 vCPUs and 36 physical cores powered by an Intel Xeon 8124M processor running at 3.4 GHz. Built on the Nitro hypervisor, it includes 144.0 GB of DDR4 memory and a bundled 1800 GB NVMe SSD local instance store. The instance delivers strong multi-core CPU performance and high read-only memory bandwidth, placing in the top 25% of benchmarks, alongside strong database operations. However, it exhibits average single-core performance and weak LLM text generation speeds. With a 25 Gbps baseline network speed and high-speed local storage, this instance is designed for compute-intensive workloads, database operations, and multi-threaded batch processing that benefit from low-latency local scratch space.",
+  "og_description": "Amazon Web Services c5d.18xlarge is a compute-optimized instance with 72 vCPUs, 144 GB DDR4 RAM, and a bundled 1800 GB NVMe SSD, delivering strong multi-core performance and database processing capabilities.",
+  "meta_description": "Amazon Web Services c5d.18xlarge features 72 vCPUs, 144 GB RAM, and 1800 GB NVMe SSD storage, optimized for high-compute and database workloads.",
+  "tagline": "A compute-optimized x86_64 platform featuring seventy-two vCPUs, high-speed DDR4 memory, and bundled local NVMe SSD storage for intensive multi-threaded workloads.",
   "bullet_points": [
-    "72 vCPUs and 36 physical cores powered by Intel Xeon 8124M at 3.4 GHz",
-    "144.0 GB of DDR4 memory and 1800 GB of local NVMe SSD storage",
-    "Strong multi-core CPU and database benchmark performance",
-    "25 Gbps baseline network bandwidth via Nitro hypervisor",
-    "Best suited for batch processing, distributed analytics, and high-throughput databases"
+    "Intel Xeon 8124M processor with 72 vCPUs and 36 physical cores at 3.4 GHz",
+    "144.0 GB of DDR4 memory and 1800 GB of bundled local NVMe SSD storage",
+    "Strong multi-core CPU and read-only memory bandwidth benchmark performance",
+    "25 Gbps baseline network bandwidth powered by the Nitro hypervisor",
+    "Well-suited for database operations, batch processing, and compute-heavy workloads",
+    "Tradeoffs include weak LLM text generation speeds and average single-core performance"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

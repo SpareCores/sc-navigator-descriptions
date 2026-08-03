@@ -1,21 +1,24 @@
 {
   "page": [
-    "OVHcloud c3-4 is a compute-optimized server powered by an AMD EPYC x86_64 processor. It features 2 dedicated physical cores (2 vCPUs) running at 2.3 GHz with 1 thread per core, backed by 32 MB of L3 cache. The system is equipped with 4.0 GB of RAM, providing 2.0 GB per core, and includes 50 GB of local NVMe SSD storage. It runs on the KVM hypervisor and includes one complimentary public IPv4 address.",
-    "Benchmark results indicate strong single-core performance, with stress-ng single-core CPU performance ranking in the top tier (top 10%) and Geekbench single-core scoring in the top 25%. However, multi-core and memory-bound metrics show limitations. Geekbench multi-core, software compilation, and Passmark CPU scores fall into the bottom 25%. Memory bandwidth for small blocks is weak, though large block read and write speeds maintain average performance.",
-    "Given the 1:2 vCPU-to-RAM ratio and dedicated CPU allocation, this server offers predictable single-threaded execution but is constrained by its 4.0 GB memory capacity and weak multi-threaded scaling. It is best suited for lightweight single-threaded applications, text processing, and basic utility hosting rather than high-throughput web serving or memory-intensive database operations."
+    "OVHcloud c3-4 is a compute-optimized virtual server instance powered by the KVM hypervisor. It features 2 dedicated x86_64 vCPUs from the AMD EPYC processor family running at 2.3 GHz, with 2 physical cores and 1 thread per core. The hardware configuration includes 4.0 GB of system memory, providing 2.0 GB of RAM per core, and is bundled with 50 GB of local NVMe SSD storage. The instance also includes one complimentary public IPv4 address and has a baseline network bandwidth of 0 Gbps.",
+    "Benchmark data reveals strong single-core performance, with the stress-ng single-core CPU test scoring 3083.56 and the Geekbench single-core test reaching 1920.0, both placing in the top 25% of tested servers. Geekbench text processing also shows strong results at 2412.0. However, multi-core and memory-bound performance is significantly more limited. The Geekbench multi-core score of 3460.0 and the Passmark CPU score of 5442.44 fall into the bottom 25%, reflecting the physical core count limitation. Memory performance is also constrained, with a Passmark memory score of 1378.22 and a weak cached small-block read-only memory bandwidth of 294.72 GB/sec.",
+    "The primary tradeoff of the c3-4 instance is its low memory-to-CPU ratio of 2 GB per core and its weak multi-threaded scaling, as evidenced by a weak multi-threaded bzip3 decompression speed of 26.9 GB/sec and poor static web serving throughput of 2.57 GB/sec. From a qualitative cost-efficiency perspective, the dedicated AMD EPYC cores offer reliable, non-shared compute resources for workloads that require predictable single-thread execution without the overhead of shared-core environments, though it is less suited for memory-intensive or highly parallelized operations.",
+    "Given these performance characteristics, the OVHcloud c3-4 is best suited for single-threaded applications, lightweight text processing, simple utility scripts, and basic compute tasks that benefit from dedicated CPU allocation but do not demand high memory capacity or high-throughput web serving. It is not recommended for database operations, heavy multi-threaded compilation, or high-traffic web hosting."
   ],
-  "description": "The OVHcloud c3-4 is a compute-optimized server featuring an AMD EPYC x86_64 processor with 2 dedicated physical cores (2 vCPUs) running at 2.3 GHz. It is configured with 4.0 GB of RAM, 50 GB of local NVMe SSD storage, and operates on the KVM hypervisor. Benchmarks reveal a clear performance split: single-core capabilities are strong, with stress-ng single-core performance reaching the top 10% and Geekbench single-core in the top 25%. Conversely, multi-core performance, software compilation, and memory bandwidth for small blocks fall into the bottom 25%. With its dedicated CPU allocation and low memory-to-vCPU ratio, this instance is highly cost-efficient for predictable, single-threaded workloads and basic text processing, though it is poorly suited for high-throughput web serving or memory-heavy databases.",
-  "og_description": "OVHcloud c3-4 is a compute-optimized server featuring 2 dedicated AMD EPYC vCPUs, 4 GB RAM, and 50 GB NVMe SSD storage. It offers strong single-core performance but limited multi-core scaling.",
-  "meta_description": "OVHcloud c3-4 is a compute-optimized KVM server featuring 2 dedicated AMD EPYC vCPUs, 4 GB RAM, and 50 GB NVMe SSD storage for single-threaded workloads.",
-  "tagline": "A dedicated dual-core AMD EPYC server delivering strong single-threaded performance and local NVMe storage for lightweight compute workloads.",
+  "description": "The OVHcloud c3-4 is a compute-optimized virtual server featuring 2 dedicated AMD EPYC vCPUs running at 2.3 GHz, 4.0 GB of RAM, and 50 GB of local NVMe SSD storage. Operating on the KVM hypervisor with an x86_64 architecture, this instance delivers strong single-core performance, as evidenced by its top-tier stress-ng and Geekbench single-core benchmark results. However, with only 2.0 GB of memory per core, it exhibits clear tradeoffs in multi-core scaling and memory-bound operations, showing weaker results in multi-threaded decompression, database operations, and static web serving throughput. Qualitatively, the c3-4 provides a cost-efficient entry point for workloads requiring dedicated, predictable CPU resources rather than shared-core burstable performance. It is best suited for single-threaded applications, light text processing, and basic utility tasks that do not require extensive memory or high-throughput networking.",
+  "og_description": "OVHcloud c3-4 is a compute-optimized virtual server with 2 dedicated AMD EPYC vCPUs, 4 GB RAM, and 50 GB NVMe storage, offering strong single-core performance for lightweight dedicated workloads.",
+  "meta_description": "OVHcloud c3-4 is a compute-optimized KVM virtual server featuring 2 dedicated AMD EPYC vCPUs, 4 GB of RAM, and 50 GB of local NVMe SSD storage.",
+  "tagline": "A dedicated dual-core virtual server delivering strong single-threaded performance and local NVMe storage for lightweight compute workloads.",
   "bullet_points": [
-    "2 dedicated AMD EPYC physical cores (2 vCPUs) at 2.3 GHz",
-    "4.0 GB RAM and 50 GB local NVMe SSD storage",
-    "Top-tier single-core CPU performance in stress-ng benchmarks",
-    "KVM hypervisor with 1 complimentary public IPv4 address",
-    "Best suited for single-threaded tasks and basic text processing"
+    "Two dedicated AMD EPYC vCPUs at 2.3 GHz with 1 thread per core",
+    "4.0 GB of system memory and 50 GB of local NVMe SSD storage",
+    "Strong single-core CPU and text processing benchmark performance",
+    "KVM hypervisor-based virtualization with one public IPv4 address included",
+    "Best suited for single-threaded tasks and lightweight utility workloads",
+    "Limited multi-core scaling and memory bandwidth relative to larger instances"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

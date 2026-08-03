@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services r4.8xlarge is a memory-optimized fourth-generation instance configured with 32 vCPUs and 16 physical cores powered by an Intel Xeon E5-2686 v4 processor running at 2.3 GHz. The instance features 244.0 GB of DDR4 memory, yielding 7.62 GB of memory per core. It operates on the Xen hypervisor with an x86_64 architecture and includes a 45 MB L3 cache. Local storage is not bundled with this instance type, and it provides a baseline network bandwidth of 12 Gbps.",
-    "Benchmark data reveals a clear tradeoff between single-core and multi-core performance. Single-core metrics are low, with stress-ng single-core CPU performance and Geekbench single-core scores falling into the bottom 10%. Single-threaded gzip compression and bzip3 decompression are also weak, placing in the bottom 25%. Conversely, multi-core and memory performance are stable, with stress-ng multi-core, Geekbench multi-core, and Passmark CPU scores all ranking in the middle 50%. Memory bandwidth tests show average performance, reaching 61.25 GB/sec for large block uncached reads and 25.91 GB/sec for uncached writes.",
-    "Given its high memory-to-vCPU ratio and average multi-threaded capabilities, the r4.8xlarge is qualitatively cost-efficient for memory-intensive workloads that do not demand high single-thread processing speeds. It is well-suited for database operations, caching layers like Redis, and multi-threaded data processing. However, it is less suitable for single-threaded tasks or large-scale LLM inference, where its 70B model prompt processing speed is poor."
+    "Amazon Web Services r4.8xlarge is a memory-optimized fourth-generation server instance. It is powered by an Intel Xeon E5-2686 v4 processor running at 2.3 GHz, delivering 32 virtual CPUs across 16 physical cores with hyperthreading enabled. The system features 244.0 GB of system memory, providing a high memory-to-vCPU ratio of 7.62 GB per core. It operates on the Xen hypervisor with an x86_64 architecture and includes a 45 MB L3 cache. There is no local storage or GPU hardware bundled with this instance.",
+    "Benchmark data reveals a clear performance tradeoff between single-core and multi-core operations. Single-core performance is limited, with stress-ng single-core CPU and Geekbench single-core scores falling into the bottom 10% tier. Single-threaded tasks like gzip compression and bzip3 decompression also perform weakly. However, the instance leverages its 32 vCPUs to achieve average tier performance in multi-core benchmarks, including stress-ng multi-core, PassMark CPU, and multi-threaded bzip3 decompression. Memory bandwidth for both cached and uncached read/write operations remains consistently in the average tier.",
+    "This instance is qualitatively cost-efficient for memory-intensive workloads that do not require high single-threaded CPU performance. The high memory density makes it suitable for database operations, caching layers, and memory-bound enterprise applications. PassMark database operations and Redis SET operations both perform in the average tier, confirming its suitability for memory-heavy transactional workloads. It also supports moderate networking requirements with a baseline bandwidth of 12 Gbps."
   ],
-  "description": "Amazon Web Services r4.8xlarge is a memory-optimized instance featuring 32 vCPUs, 16 physical Intel Xeon E5-2686 v4 cores, and 244.0 GB of RAM. Running on the Xen hypervisor, this x86_64 server lacks local storage but delivers a baseline network bandwidth of 12 Gbps. Performance benchmarks indicate a significant tradeoff: single-core CPU execution and single-threaded compression are weak, placing in the bottom 10% and 25% respectively. However, multi-core operations, memory bandwidth, and database performance remain in the average tier. The instance achieves 19.71 million operations per second in Redis SET tests and 61.25 GB/sec in uncached large-block memory reads. This profile makes the r4.8xlarge qualitatively cost-effective for memory-heavy, multi-threaded workloads such as database hosting, caching layers, and general memory-intensive enterprise applications, while remaining less optimal for compute-bound or single-threaded tasks.",
-  "og_description": "Amazon Web Services r4.8xlarge is a memory-optimized instance with 32 vCPUs, 244 GB RAM, and a 12 Gbps network baseline. It offers average multi-core performance but exhibits weak single-core speeds.",
-  "meta_description": "Amazon Web Services r4.8xlarge is a memory-optimized instance featuring 32 vCPUs, 244 GB RAM, and average multi-core and memory performance.",
-  "tagline": "A memory-optimized virtual server featuring high memory capacity and balanced multi-core performance for database and caching workloads.",
+  "description": "Amazon Web Services r4.8xlarge is a memory-optimized fourth-generation instance featuring 32 vCPUs and 244.0 GB of RAM. Powered by an Intel Xeon E5-2686 v4 processor running at 2.3 GHz, this x86_64 architecture server utilizes the Xen hypervisor. It does not include local storage or GPU accelerators. Performance benchmarks show a distinct tradeoff: single-core performance is poor, ranking in the bottom 10%, whereas multi-core performance and memory bandwidth consistently reach average tiers. This resource profile makes the r4.8xlarge qualitatively cost-effective for memory-bound workloads rather than compute-intensive tasks. It is best suited for databases, Redis caching layers, and memory-intensive enterprise applications that benefit from its high memory-to-vCPU ratio and 12 Gbps baseline network bandwidth.",
+  "og_description": "Amazon Web Services r4.8xlarge is a memory-optimized server with 32 vCPUs, 244.0 GB of RAM, and an Intel Xeon processor, offering average multi-core performance for database and caching workloads.",
+  "meta_description": "Amazon Web Services r4.8xlarge is a memory-optimized instance with 32 vCPUs, 244.0 GB RAM, and an Intel Xeon CPU, ideal for database workloads.",
+  "tagline": "A memory-optimized server featuring high memory density and balanced multi-core performance for database and caching workloads.",
   "bullet_points": [
     "Intel Xeon E5-2686 v4 processor with 32 vCPUs and 16 physical cores",
     "244.0 GB of system memory optimized for memory-intensive applications",
     "12 Gbps baseline network bandwidth with Xen hypervisor virtualization",
-    "Average multi-core and memory bandwidth performance in benchmarks",
-    "Weak single-core and single-threaded execution speeds",
-    "Best suited for database hosting, Redis caching, and multi-threaded workloads"
+    "Average multi-core and memory bandwidth benchmark performance",
+    "Poor single-core performance presents a tradeoff for single-threaded tasks",
+    "Well-suited for databases, Redis caching, and memory-bound workloads"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

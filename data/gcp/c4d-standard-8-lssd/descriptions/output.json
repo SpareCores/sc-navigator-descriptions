@@ -1,21 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c4d-standard-8-lssd is an x86_64 architecture server instance within the c4d family. It is configured with 8 dedicated vCPUs and 31.0 GB of system memory, yielding approximately 3.88 GB of RAM per core. The instance configuration includes 1 local SSD as indicated by its basic description, while structured local storage size is listed as None. It does not feature any graphics processing units and provides zero complimentary public IPv4 addresses.",
-    "This instance relies on dedicated CPU allocation to ensure consistent compute performance without the resource contention typical of shared-core environments. While benchmark data for this specific configuration is currently unavailable, the hardware profile represents a balanced resource density. From a qualitative cost-efficiency perspective, the dedicated resource allocation and standard memory-to-vCPU ratio position this server as a stable option for workloads requiring predictable execution times without the premium cost of memory-optimized or GPU-accelerated hardware classes.",
-    "The c4d-standard-8-lssd is suited for general-purpose workloads, including medium-scale web serving, application servers, containerized microservices, and continuous integration and continuous delivery pipelines. The combination of 8 dedicated vCPUs and 31 GB of RAM provides sufficient capacity for multi-threaded application environments and moderate database operations that do not require extreme memory footprints."
+    "Google Cloud Platform c4d-standard-8-lssd is a general-purpose virtual machine instance powered by an x86_64 AMD EPYC 9B45 processor. It features 8 dedicated vCPUs mapped to 4 physical cores with multithreading enabled. The system is equipped with 31.0 GB of system memory, providing 3.88 GB of RAM per core. Storage is bundled with a single local NVMe SSD offering 68 GB of capacity. No GPU resources are included in this configuration.",
+    "Benchmark data indicates top-tier single-core CPU performance, with stress-ng single-core metrics, single-threaded gzip compression, and single-threaded bzip3 decompression all ranking in the top 10%. However, multi-core performance scales to average levels, as observed in multi-threaded stress-ng and bzip3 decompression benchmarks. Memory bandwidth remains in the middle tier, with read-only small block cached bandwidth measured at 843.94 GB/sec and uncached large block write bandwidth at 33.42 GB/sec.",
+    "This instance is well-suited for single-threaded processing tasks, lightweight database operations, and small-scale language model inference, where it achieves top-tier text generation speeds on 135M parameter models. Conversely, it exhibits weak performance in prompt processing for medium-sized 7B models, making it less suitable for larger LLM workloads. The dedicated AMD EPYC hardware profile offers high single-core efficiency, though the limited 68 GB local SSD capacity and lack of GPU acceleration restrict its use to general-purpose compute, web serving, and basic data compression pipelines."
   ],
-  "description": "Google Cloud Platform c4d-standard-8-lssd is an x86_64 architecture server instance configured with 8 dedicated vCPUs and 31.0 GB of RAM, providing 3.88 GB of memory per core. Part of the c4d server family, this instance features a dedicated CPU allocation to ensure consistent processing performance without resource sharing. The basic configuration includes 1 local SSD, though structured local storage size is listed as None, and the instance contains no GPU accelerators. Lacking specific benchmark data, its balanced resource profile offers a stable, qualitatively cost-effective option for standard business applications. The c4d-standard-8-lssd is suited for general-purpose workloads, such as web serving, containerized microservices, CI/CD pipelines, and moderate database tasks that benefit from dedicated compute resources and a balanced memory-to-vCPU ratio.",
-  "og_description": "Google Cloud Platform c4d-standard-8-lssd is an x86_64 server featuring 8 dedicated vCPUs, 31 GB of RAM, and 1 local SSD, designed for stable general-purpose workloads and web serving.",
-  "meta_description": "Google Cloud Platform c4d-standard-8-lssd is an x86_64 server with 8 dedicated vCPUs, 31 GB of RAM, and 1 local SSD for general-purpose workloads.",
-  "tagline": "A dedicated x86_64 compute instance offering eight vCPUs and balanced memory for reliable general-purpose and containerized workloads.",
+  "description": "Google Cloud Platform c4d-standard-8-lssd is an x86_64 general-purpose instance featuring an AMD EPYC 9B45 processor with 8 dedicated vCPUs, 4 physical cores, and 31.0 GB of RAM. It includes a 68 GB local NVMe SSD and lacks GPU acceleration. Performance benchmarks reveal top-tier single-core capabilities, particularly in single-threaded stress-ng, gzip compression, and bzip3 decompression. Multi-core performance, memory bandwidth, and database operations align with mid-tier averages. While the instance delivers top-tier text generation speeds for small 135M parameter models, it exhibits weak prompt processing performance for medium 7B models. This hardware profile is optimized for workloads requiring strong single-threaded CPU performance, such as web serving, lightweight database operations, and basic data compression, while presenting a balanced resource density for general-purpose computing tasks.",
+  "og_description": "Google Cloud Platform c4d-standard-8-lssd is an x86_64 instance with 8 vCPUs, 31 GB RAM, and a 68 GB local NVMe SSD, offering top-tier single-core performance and average multi-core capabilities.",
+  "meta_description": "Google Cloud Platform c4d-standard-8-lssd features 8 vCPUs, 31 GB RAM, and a 68 GB NVMe SSD, delivering top-tier single-core CPU performance.",
+  "tagline": "An x86_64 virtual machine featuring dedicated AMD EPYC cores and local NVMe storage, optimized for high-performance single-threaded workloads.",
   "bullet_points": [
-    "8 dedicated x86_64 vCPUs for consistent compute performance",
-    "31.0 GB of system memory providing 3.88 GB per core",
-    "Configured with 1 local SSD for localized storage needs",
-    "No GPU accelerators or complimentary public IPv4 addresses",
-    "Suited for web serving, CI/CD pipelines, and microservices"
+    "Powered by an AMD EPYC 9B45 processor with 8 dedicated vCPUs and 4 physical cores.",
+    "Equipped with 31.0 GB of RAM and a 68 GB local NVMe SSD.",
+    "Delivers top-tier single-core CPU and single-threaded compression performance.",
+    "Maintains average multi-core performance and memory bandwidth.",
+    "Suited for web serving, lightweight databases, and small-scale LLM text generation.",
+    "Weak performance on medium-sized 7B LLM prompt processing."
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

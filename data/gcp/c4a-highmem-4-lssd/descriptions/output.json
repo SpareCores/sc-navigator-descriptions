@@ -1,21 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c4a-highmem-4-lssd is an arm64-based server instance belonging to the c4a server family. It features 4 dedicated virtual CPUs and 32.0 GB of system memory, yielding a memory-to-core ratio of 8.0 GB per vCPU. The instance does not include any graphics processing units and has no complimentary public IPv4 addresses. Local storage is not configured for this instance.",
-    "Operating on the arm64 architecture, this instance is designed for workloads requiring a higher memory footprint relative to compute resources. The dedicated CPU allocation ensures consistent processing performance without resource contention from other tenants. From a qualitative cost-efficiency perspective, the arm64 architecture typically offers a favorable performance-per-watt ratio, making this memory-optimized configuration suitable for memory-intensive tasks that do not require x86-specific instruction sets.",
-    "The c4a-highmem-4-lssd instance is suited for workloads such as medium-sized databases, in-memory caching layers, data buffering, and lightweight enterprise applications that benefit from a 1:8 vCPU-to-RAM ratio."
+    "Google Cloud Platform c4a-highmem-4-lssd is an ARM-based, memory-optimized server instance powered by the c4a family. It features 4 dedicated physical cores utilizing the ARMv8 Neoverse-V2 architecture running at 3.0 GHz, with one thread per core. The instance is equipped with 32.0 GB of RAM, providing a high memory-to-core ratio of 8.0 GB per core. Additionally, it includes a bundled 402 GB NVMe SSD for fast local storage, while lacking any GPU hardware.",
+    "Benchmark results indicate a balanced performance profile with notable strengths in memory operations. The instance achieves a strong Passmark memory score and a strong single-threaded gzip compression rate of 32.26 GB/sec. However, raw compute benchmarks show limitations, with a weak Passmark CPU score and poor performance in CPU encryption tests. Memory bandwidth is measured at 494.32 GB/sec for cached reads and 102.77 GB/sec for uncached reads, while large-block write bandwidth is lower at 36.96 GB/sec.",
+    "Given its high memory density and bundled local NVMe storage, this instance offers qualitative cost efficiency for workloads requiring rapid data access without massive compute overhead. It is well-suited for database operations, caching layers like Redis (achieving 8.56 million SET operations per second), and static web serving. It is less suitable for cryptographic tasks or LLM inference, where it exhibits weak to poor processing speeds."
   ],
-  "description": "Google Cloud Platform c4a-highmem-4-lssd is an arm64-based server instance within the c4a family, configured with 4 dedicated vCPUs and 32.0 GB of RAM. This configuration provides a memory-to-core ratio of 8.0 GB per vCPU, positioning it as a memory-optimized resource. The instance does not feature any GPUs, local storage, or complimentary public IPv4 addresses. Utilizing dedicated CPU allocation, it delivers predictable execution for memory-bound applications. The arm64 architecture offers qualitative cost efficiency through optimized power consumption and resource density. This server is suited for workloads such as in-memory databases, caching layers, and data processing tasks that require a high memory-to-CPU ratio without the need for x86 instruction sets.",
-  "og_description": "Google Cloud Platform c4a-highmem-4-lssd is an arm64 server with 4 dedicated vCPUs and 32 GB RAM, offering a memory-optimized configuration for databases and caching workloads.",
-  "meta_description": "Google Cloud Platform c4a-highmem-4-lssd is an arm64 server featuring 4 dedicated vCPUs and 32 GB RAM for memory-optimized workloads.",
-  "tagline": "An arm64-based, memory-optimized virtual server featuring a high memory-to-CPU ratio for efficient data caching and database workloads.",
+  "description": "Google Cloud Platform c4a-highmem-4-lssd is an ARM-based, memory-optimized instance featuring 4 dedicated physical cores on the ARMv8 Neoverse-V2 architecture clocked at 3.0 GHz. It delivers 32.0 GB of RAM (8.0 GB per core) and includes a bundled 402 GB NVMe SSD for high-speed local storage. Performance benchmarks show strong memory capabilities, highlighted by a top-tier Passmark memory score and 32.26 GB/sec single-threaded gzip compression. However, the instance exhibits weak overall CPU performance and poor cryptographic execution. With an average of 8.56 million Redis SET operations per second and solid database benchmark results, this configuration is highly suitable for memory-intensive workloads, caching layers, and database operations that benefit from local SSD storage, while avoiding heavy compute or encryption-heavy tasks.",
+  "og_description": "Google Cloud Platform c4a-highmem-4-lssd is an ARM-based instance with 4 dedicated Neoverse-V2 cores, 32 GB RAM, and a 402 GB NVMe SSD, optimized for memory-intensive databases and caching.",
+  "meta_description": "Google Cloud Platform c4a-highmem-4-lssd features 4 ARM cores, 32 GB RAM, and a 402 GB NVMe SSD, ideal for database and caching workloads.",
+  "tagline": "An ARM-powered, memory-optimized instance featuring dedicated physical cores and bundled local NVMe storage for database and caching workloads.",
   "bullet_points": [
-    "Arm64 CPU architecture with 4 dedicated vCPUs",
-    "32.0 GB of system memory providing 8.0 GB per core",
-    "No integrated GPU or local storage allocation",
-    "Qualitative cost efficiency via arm64 power-to-performance ratio",
-    "Designed for in-memory caching, databases, and memory-intensive applications"
+    "4 dedicated ARMv8 Neoverse-V2 physical cores running at 3.0 GHz",
+    "32.0 GB of RAM providing a high 8.0 GB per core ratio",
+    "Bundled 402 GB local NVMe SSD storage",
+    "Strong memory performance and single-threaded gzip compression",
+    "Optimized for databases, Redis caching, and static web serving",
+    "Weaker performance in cryptographic and LLM inference tasks"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "Storage & Database"
   ]
 }

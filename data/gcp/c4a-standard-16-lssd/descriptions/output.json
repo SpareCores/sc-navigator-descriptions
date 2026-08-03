@@ -1,21 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c4a-standard-16-lssd is an arm64-based server instance featuring 16 dedicated virtual CPUs and 64.0 GB of system memory. This configuration provides a balanced resource allocation of 4.0 GB of RAM per vCPU core. The instance operates on a dedicated CPU allocation model, ensuring consistent processing capabilities without resource sharing. There are no graphics processing units included in this configuration, and local storage is specified as none. Additionally, the instance does not include complimentary public IPv4 addresses.",
-    "Operating on the arm64 architecture, this server family is designed for modern cloud-native workloads that benefit from high-density, energy-efficient ARM processors. Qualitatively, the arm64 architecture offers a cost-efficient profile for multi-threaded applications, providing a balance of compute power and memory capacity. Without local storage or GPU acceleration, this instance is suited for workloads relying on network-attached storage. Appropriate workloads include general-purpose web serving, application servers, microservices, containerized deployments, and distributed systems that require a balanced 1:4 vCPU-to-memory ratio."
+    "Google Cloud Platform c4a-standard-16-lssd is an Arm-based server instance powered by the Neoverse-V2 architecture. It features 16 dedicated physical cores with a single thread per core, eliminating hyperthreading overhead. The instance is configured with 64 GB of system memory, providing 4 GB of RAM per core. Storage is provided by 1608 GB of local NVMe SSD capacity, which is directly bundled with the instance.",
+    "Benchmark data indicates strong memory subsystem performance, with a PassMark memory score in the top tier and large-block read bandwidth reaching 314.24 GB/sec. Single-threaded and multi-threaded decompression tasks, such as bzip3, show strong performance, with multi-threaded decompression reaching 221.45 GB/sec. Database operations and static web serving throughput also rank in the strong tier, achieving 43.54 GB/sec in web serving. Standard compute benchmarks, including stress-ng and PassMark CPU tests, fall within the average range.",
+    "The c4a-standard-16-lssd offers a balanced resource density for Arm-native workloads, combining dedicated physical cores with high-speed local NVMe storage. The lack of simultaneous multithreading means each of the 16 vCPUs corresponds to a full physical core, which provides predictable execution times but limits the thread density compared to x86 hyperthreaded alternatives. The inclusion of local NVMe SSDs provides high-speed local scratch space without requiring network-attached storage overhead, enhancing qualitative cost efficiency for I/O-heavy tasks.",
+    "This server configuration is suited for database operations, static web serving, and data processing pipelines that benefit from high memory bandwidth and local NVMe storage. It is also applicable for Arm64 software compilation, containerized microservices, and lightweight LLM text generation tasks."
   ],
-  "description": "Google Cloud Platform c4a-standard-16-lssd is an arm64-based server instance configured with 16 dedicated vCPUs and 64.0 GB of RAM, establishing a balanced 1:4 vCPU-to-memory ratio of 4.0 GB per core. This instance features dedicated CPU allocation to deliver consistent performance for multi-threaded applications. It does not include integrated GPUs, local storage, or complimentary public IPv4 addresses. Built on ARM architecture, the c4a-standard-16-lssd offers a qualitatively cost-efficient profile for modern cloud-native deployments. It is well-suited for general-purpose workloads, including web serving, microservices, containerized applications, and distributed systems that utilize network-attached storage.",
-  "og_description": "Google Cloud Platform c4a-standard-16-lssd is an arm64 server with 16 dedicated vCPUs, 64 GB RAM, and no local storage, offering a balanced resource profile for general-purpose cloud workloads.",
-  "meta_description": "Google Cloud Platform c4a-standard-16-lssd is an arm64 server featuring 16 dedicated vCPUs and 64 GB RAM for balanced general-purpose workloads.",
-  "tagline": "An arm64-based virtual server offering sixteen dedicated cores and sixty-four gigabytes of memory for balanced, cost-efficient general-purpose workloads.",
+  "description": "Google Cloud Platform c4a-standard-16-lssd is an Arm64 server instance powered by 16 dedicated physical cores of the Neoverse-V2 architecture. It features 64 GB of RAM and 1608 GB of bundled local NVMe SSD storage. Lacking simultaneous multithreading, the instance provides predictable single-threaded execution per vCPU. Benchmarks show top-tier memory performance, with large-block read bandwidth reaching 314.24 GB/sec, alongside strong results in database operations, static web serving, and bzip3 decompression. Standard CPU compute metrics fall in the average range. This hardware profile makes the instance highly suitable for database hosting, static web serving, and data processing workloads that require fast local storage and high memory throughput without the overhead of hyperthreading.",
+  "og_description": "Google Cloud Platform c4a-standard-16-lssd is an Arm64 server with 16 dedicated Neoverse-V2 cores, 64 GB RAM, and 1608 GB local NVMe SSD, delivering top-tier memory and strong database performance.",
+  "meta_description": "Google Cloud Platform c4a-standard-16-lssd is an Arm64 server featuring 16 dedicated cores, 64 GB RAM, and 1608 GB of local NVMe SSD storage.",
+  "tagline": "An Arm64 server featuring dedicated physical cores, high-speed local NVMe storage, and top-tier memory bandwidth for data-intensive workloads.",
   "bullet_points": [
-    "16 dedicated vCPUs on arm64 architecture",
-    "64.0 GB of system memory with a 1:4 allocation ratio",
-    "No local storage or GPU accelerators included",
-    "Zero complimentary public IPv4 addresses",
-    "Designed for web serving, microservices, and containerized workloads"
+    "16 dedicated Arm64 Neoverse-V2 physical cores with one thread per core.",
+    "64 GB of system memory paired with 1608 GB of local NVMe SSD storage.",
+    "Top-tier memory performance with 314.24 GB/sec large-block read bandwidth.",
+    "Strong performance in database operations and static web serving.",
+    "Suited for database hosting, web serving, and Arm-native development."
   ],
   "categories": [
     "General Purpose",
-    "Compute Optimized"
+    "Storage & Database"
   ]
 }

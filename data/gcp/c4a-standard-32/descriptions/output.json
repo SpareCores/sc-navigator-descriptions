@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4a-standard-32 is a virtual machine instance belonging to the c4a server family. It is configured with 32 dedicated vCPUs utilizing the arm64 CPU architecture. The instance features 128.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per core. This hardware profile does not include any integrated GPUs or local NVMe SSD storage, meaning all storage requirements must be met through network-attached block storage.",
-    "The arm64 architecture of the c4a-standard-32 requires software workloads to be compiled specifically for ARM, which represents a key compatibility consideration compared to x86-based instances. The dedicated CPU allocation ensures consistent processing capabilities without resource contention from neighboring tenants. However, the lack of local storage and complimentary public IPv4 addresses means users must factor in additional network and storage resources when configuring this instance.",
-    "From a qualitative cost-efficiency perspective, the arm64 architecture typically offers a favorable resource-to-cost ratio for multi-threaded workloads that do not require specialized x86 instruction sets or hardware acceleration. The 1:4 vCPU-to-RAM ratio makes this instance appropriate for general-purpose workloads, web serving, containerized microservices, and distributed application nodes that benefit from dedicated processing cores and moderate memory density."
+    "Google Cloud Platform c4a-standard-32 is an arm64-based server instance powered by the Neoverse-V2 processor architecture. It features 32 dedicated physical cores with a 1.0 thread-per-core configuration, providing 32 vCPUs. The hardware configuration includes 128.0 GB of system memory, yielding a balanced allocation of 4.0 GB of RAM per core. Cache specifications consist of 64 KB L1d cache, 2 MB L2 cache, and an 80 MB L3 cache. This instance does not include local storage or integrated GPUs, and it is provisioned with zero complimentary public IPv4 addresses.",
+    "In benchmark evaluations, the c4a-standard-32 demonstrates strong memory subsystem performance. PassMark memory testing places the instance in the top tier, supported by uncached read bandwidth of 343.0 GB/sec and write bandwidth of 161.74 GB/sec. Database operations are highly efficient, with PassMark database testing scoring in the top tier and Redis SET operations reaching 68.8 million operations per second. Single-core and multi-core CPU performance, measured via stress-ng, falls within the average range, while single-threaded gzip compression and multi-threaded bzip3 decompression show strong throughput. For machine learning workloads, the server achieves average prompt processing speeds and strong text generation speeds of 31.42 tokens per second on medium 7B LLM models.",
+    "The arm64 architecture of the c4a-standard-32 offers a resource-dense profile that delivers high memory bandwidth and database processing efficiency relative to its hardware class. The lack of bundled local storage and GPUs makes it a specialized option for network-attached storage configurations. This instance is suited for memory-bound applications, database operations, static web serving, and medium-scale language model inference tasks where dedicated physical cores and high memory throughput are required."
   ],
-  "description": "Google Cloud Platform c4a-standard-32 is an arm64-based virtual machine instance within the c4a server family, featuring 32 dedicated vCPUs and 128.0 GB of system memory. This configuration establishes a balanced 1:4 vCPU-to-RAM ratio, providing 4.0 GB of memory per core. The instance does not include local storage or GPU accelerators, requiring reliance on network-attached storage solutions. Operating on the ARM architecture, it requires compatible software builds but offers a resource-dense profile for multi-threaded applications. The dedicated CPU allocation ensures predictable execution, making it suitable for general-purpose workloads, web serving, and containerized deployments where consistent processing power is required without the overhead of x86-specific instruction sets.",
-  "og_description": "Google Cloud Platform c4a-standard-32 is an arm64 virtual machine featuring 32 dedicated vCPUs and 128 GB RAM, offering a balanced 1:4 resource ratio for general-purpose and containerized workloads.",
-  "meta_description": "Google Cloud Platform c4a-standard-32 is an arm64 instance with 32 dedicated vCPUs and 128 GB RAM, designed for general-purpose workloads.",
-  "tagline": "An arm64 virtual machine featuring thirty-two dedicated cores and a balanced memory ratio for consistent general-purpose computing workloads.",
+  "description": "Google Cloud Platform c4a-standard-32 is an arm64 server instance featuring 32 dedicated physical cores on the Neoverse-V2 architecture and 128.0 GB of RAM. Lacking integrated GPUs and local storage, the instance relies on network-attached storage. It exhibits strong memory performance, with PassMark memory and database benchmarks scoring in the top tier, alongside a high uncached read bandwidth of 343.0 GB/sec and write bandwidth of 161.74 GB/sec. CPU compute benchmarks, including stress-ng, register in the average tier, while data decompression and Redis SET operations show strong throughput. The 1:4 vCPU-to-RAM ratio provides a balanced resource profile. This instance is suited for database workloads, static web serving, and medium-scale LLM inference tasks.",
+  "og_description": "Google Cloud Platform c4a-standard-32 is an arm64 server featuring 32 dedicated Neoverse-V2 cores and 128 GB RAM, delivering top-tier memory bandwidth and database performance for enterprise workloads.",
+  "meta_description": "Google Cloud Platform c4a-standard-32 is an arm64 server with 32 dedicated cores and 128 GB RAM, optimized for database and memory-bound workloads.",
+  "tagline": "An arm64 server featuring dedicated physical cores and high memory bandwidth for database operations and web serving workloads.",
   "bullet_points": [
-    "32 dedicated vCPUs built on arm64 architecture",
-    "128.0 GB of system memory providing 4.0 GB per core",
-    "No local storage or GPU accelerators included",
-    "Requires ARM-compatible software compilations",
-    "Best suited for web serving, microservices, and general-purpose applications"
+    "32 dedicated arm64 Neoverse-V2 physical cores with 128 GB RAM.",
+    "Top-tier memory performance with 343.0 GB/sec uncached read bandwidth.",
+    "Strong database execution, processing 68.8 million Redis SET operations per second.",
+    "No bundled local storage or integrated GPU accelerators.",
+    "Suited for database hosting, static web serving, and medium LLM inference."
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

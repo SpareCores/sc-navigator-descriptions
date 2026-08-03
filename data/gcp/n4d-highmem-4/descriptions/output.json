@@ -1,19 +1,20 @@
 {
   "page": [
-    "Google Cloud Platform n4d-highmem-4 is an x86_64 architecture virtual machine belonging to the n4d server family. It features 4 dedicated vCPUs and 32.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per core. This instance does not include local storage or bundled GPU hardware, and it is provisioned with zero complimentary public IPv4 addresses.",
-    "Operating with dedicated CPU allocation, the instance ensures consistent compute performance without resource sharing or burstable degradation. The high memory density relative to the vCPU count provides a cost-efficient profile for memory-bound workloads that do not require massive parallel processing power. By avoiding the overhead of bundled local NVMe storage or GPU accelerators, resource allocation remains focused on memory capacity.",
-    "The hardware configuration is suited for memory-intensive applications, small-scale databases, caching layers, and enterprise applications requiring a high RAM-to-vCPU ratio. It also supports lightweight data processing pipelines and backend services where memory capacity is the primary bottleneck rather than raw compute or disk I/O."
+    "Google Cloud Platform n4d-highmem-4 is an x86_64 architecture server powered by a dedicated AMD EPYC 9B45 processor. It features 4 vCPUs mapped to 2 physical cores with multithreading enabled. The instance is configured with 32 GB of system memory, yielding a high memory-to-vCPU ratio of 8 GB per core. It does not include local storage or integrated GPUs, and has zero complimentary public IPv4 addresses.",
+    "Performance benchmarks indicate strong single-core capabilities alongside moderate multi-core scaling. The single-core stress-ng CPU performance and single-threaded gzip compression and bzip3 decompression benchmarks rank in the top tier, placing in the top 10% of tested systems. Conversely, multi-threaded bzip3 decompression falls into the bottom 25%, highlighting a performance tradeoff when scaling parallel decompression tasks. Memory bandwidth and database operations, including Redis SET operations at 7.4 million operations per second, consistently register in the average range.",
+    "Given its high memory density relative to compute resources, the n4d-highmem-4 offers qualitative cost efficiency for memory-bound workloads that do not require massive parallel processing. It is well-suited for medium-scale database operations, caching layers, and memory-intensive web serving. However, its poor performance in medium-sized LLM inference tasks makes it unsuitable for modern AI generation workloads."
   ],
-  "description": "Google Cloud Platform n4d-highmem-4 is an x86_64 architecture virtual machine within the n4d server family, configured with 4 dedicated vCPUs and 32.0 GB of RAM. This configuration establishes a high memory-to-vCPU ratio of 8.0 GB per core, positioning it as a memory-optimized resource. The instance does not include local storage or integrated GPU hardware, and it is provisioned with zero complimentary public IPv4 addresses. With dedicated CPU allocation, it delivers stable, predictable performance without the resource contention typical of shared-core environments. This profile offers a cost-efficient solution for memory-bound workloads that do not demand extensive local storage or parallel GPU acceleration. It is suited for workloads such as small-scale databases, caching layers, and memory-intensive enterprise applications.",
-  "og_description": "Google Cloud Platform n4d-highmem-4 is an x86_64 virtual machine featuring 4 dedicated vCPUs and 32.0 GB of RAM, offering a high memory-to-core ratio for memory-intensive workloads without bundled local storage.",
-  "meta_description": "Google Cloud Platform n4d-highmem-4 is an x86_64 virtual machine with 4 dedicated vCPUs, 32.0 GB of RAM, and no bundled local storage.",
-  "tagline": "A memory-optimized virtual machine featuring four dedicated cores and thirty-two gigabytes of RAM for memory-intensive enterprise applications.",
+  "description": "The Google Cloud Platform n4d-highmem-4 is an x86_64 server configured with 4 vCPUs and 32 GB of RAM, utilizing a dedicated AMD EPYC 9B45 processor. With 8 GB of memory per vCPU, this instance is tailored for memory-intensive workloads. It lacks local storage and GPU accelerators. Benchmark data reveals exceptional single-core performance, with stress-ng single-core and single-threaded compression tests placing in the top 10%. However, multi-threaded decompression performance is relatively weak, landing in the bottom 25%. Overall memory bandwidth, Redis SET operations, and database benchmarks perform in the average tier. This server is best suited for memory-bound applications, caching layers, and moderate database operations where single-core efficiency is prioritized over massive parallel scaling.",
+  "og_description": "Google Cloud Platform n4d-highmem-4 is an x86_64 server with 4 vCPUs and 32 GB RAM, featuring an AMD EPYC 9B45 CPU. It offers top-tier single-core performance but average multi-core scaling.",
+  "meta_description": "Google Cloud Platform n4d-highmem-4 features 4 vCPUs, 32 GB RAM, and an AMD EPYC 9B45 CPU, delivering strong single-core performance for memory-bound tasks.",
+  "tagline": "An x86_64 server combining high memory density with top-tier single-core performance for memory-intensive and database workloads.",
   "bullet_points": [
-    "4 dedicated x86_64 vCPUs",
-    "32.0 GB of system memory yielding 8.0 GB per core",
-    "No bundled local storage or GPU accelerators",
-    "Zero complimentary public IPv4 addresses included",
-    "Suited for small-scale databases and caching layers"
+    "Powered by a dedicated AMD EPYC 9B45 processor with 4 vCPUs and 32 GB RAM.",
+    "High memory-to-vCPU ratio of 8 GB per core for memory-bound tasks.",
+    "Top-tier single-core CPU and single-threaded compression performance.",
+    "Average multi-core scaling, memory bandwidth, and database operations.",
+    "No bundled local storage or GPU accelerators.",
+    "Best suited for caching layers, databases, and memory-intensive web serving."
   ],
   "categories": [
     "Memory Optimized",

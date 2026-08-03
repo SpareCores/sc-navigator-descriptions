@@ -1,22 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c5n.4xlarge is a compute-optimized instance built on the Nitro hypervisor. It features 16 dedicated vCPUs powered by an Intel Xeon 8124M processor running at 3.4 GHz, with 8 physical cores and 2 threads per core. The instance is equipped with 42.0 GB of DDR4 memory operating at 3 GHz, yielding 2.62 GB of memory per core. It utilizes the x86_64 architecture and supports advanced instruction sets such as AVX and AVX-512F, alongside AES cryptography and BMI2. No local storage or GPUs are bundled with this instance type.",
-    "Benchmark data places the c5n.4xlarge in the average performance category across most metrics. It achieves a Geekbench single-core score of 1170.0 and a multi-core score of 7317.0. In stress-ng tests, single-core performance registers at 1407.28 and multi-core at 14808.85. The memory subsystem delivers a read-only small block cached bandwidth of 826.07 GB/sec and a large block uncached write bandwidth of 45.22 GB/sec. For specialized tasks, the instance processes Redis SET operations at 13.96 million operations per second and handles static web serving throughput at 11.58 GB/sec.",
-    "A key tradeoff is the lack of local NVMe storage, meaning all storage operations must rely on network-attached EBS volumes, though the instance is network-optimized with a baseline bandwidth of 15 Gbps. Additionally, while the instance handles smaller language models adequately, delivering 741.84 tokens per second for prompt processing on a 135M model, performance drops to a weak rating of 24.09 tokens per second for prompt processing on a medium 7B model, and it lacks the capacity for 70B models. This hardware profile is suited for compute-intensive workloads, network-bound applications, software compilation, and static web serving."
+    "Amazon Web Services c5n.4xlarge is a compute-optimized instance built on the Nitro hypervisor. It features an Intel Xeon 8124M processor with 16 vCPUs, consisting of 8 physical cores with 2 threads per core, running at a clock speed of 3.4 GHz. The instance is equipped with 42.0 GB of DDR4 memory operating at 3 GHz, providing 2.62 GB of memory per core. It does not include local storage or GPU accelerators, relying entirely on network-attached storage.",
+    "This instance type is optimized for network and EBS performance, delivering a baseline network bandwidth of 15 Gbps. The underlying Intel Xeon CPU supports Advanced Vector Extensions, including AVX and AVX-512F, along with cryptography acceleration via AES instructions. However, it lacks newer instruction sets such as AVX-512 VNNI, AVX VNNI, AVX-512 BF16, and AMX extensions.",
+    "Performance benchmarks show a distinct contrast between single-core and multi-core capabilities. The stress-ng single-core CPU performance is categorized as weak, placing in the bottom 25% with a score of 1407.28. Conversely, multi-core performance is average, with a stress-ng multi-core score of 14808.85 and a Geekbench multi-core score of 7317.0. Memory bandwidth is average, reaching 89.55 GB/sec for uncached large-block reads and 45.22 GB/sec for writes.",
+    "The c5n.4xlarge is suited for workloads that benefit from high network throughput and multi-threaded compute, such as static web serving and Redis operations. It can handle light LLM inference, processing 148.1 tokens/sec for a 135M model, but performance drops to a weak 24.09 tokens/sec for prompt processing on a 7B model. Given the lack of local storage and moderate single-core performance, it offers a balanced cost-to-performance ratio for network-bound, multi-threaded compute tasks rather than single-threaded or storage-heavy databases."
   ],
-  "description": "Amazon Web Services c5n.4xlarge is a compute-optimized instance utilizing the Nitro hypervisor and an x86_64 Intel Xeon 8124M processor. It provides 16 dedicated vCPUs running at 3.4 GHz, paired with 42.0 GB of DDR4 memory at 3 GHz. The instance lacks local storage and GPUs, relying on its 15 Gbps baseline network bandwidth for external storage and network operations. Benchmark results show average tier performance, with a Geekbench multi-core score of 7317.0 and a Passmark CPU score of 15733.02. It processes Redis SET operations at 13.96 million operations per second and delivers 11.58 GB/sec in static web serving. While efficient for compute-bound tasks, software compilation, and network-heavy applications, it exhibits weak performance on medium-sized LLM prompt processing.",
-  "og_description": "Amazon Web Services c5n.4xlarge is a compute-optimized instance featuring 16 dedicated Intel Xeon vCPUs, 42.0 GB of DDR4 RAM, and 15 Gbps baseline network bandwidth, suitable for network-bound and compute workloads.",
-  "meta_description": "Amazon Web Services c5n.4xlarge is a compute-optimized instance with 16 dedicated Intel Xeon vCPUs, 42 GB DDR4 RAM, and 15 Gbps baseline network bandwidth.",
-  "tagline": "A compute-optimized instance featuring dedicated Intel Xeon processors, high-speed DDR4 memory, and optimized network bandwidth for compute-heavy workloads.",
+  "description": "The Amazon Web Services c5n.4xlarge is an x86_64 compute-optimized instance powered by the Nitro hypervisor. It features an Intel Xeon 8124M processor running at 3.4 GHz with 16 vCPUs, 8 physical cores, and 42.0 GB of DDR4 memory. Designed for network-heavy workloads, it provides a 15 Gbps baseline network bandwidth but lacks local storage and GPU accelerators. Benchmark data indicates average multi-core performance, with a stress-ng multi-core score of 14808.85, alongside weak single-core performance. Memory bandwidth is moderate, reaching 89.55 GB/sec for large-block reads. This instance is suited for network-bound applications, multi-threaded processing, static web serving, and Redis deployments, though it is less efficient for single-threaded tasks or large-scale language model inference.",
+  "og_description": "Amazon Web Services c5n.4xlarge is a compute-optimized instance featuring 16 vCPUs, 42.0 GB of DDR4 RAM, and 15 Gbps network bandwidth, suited for network-bound and multi-threaded workloads.",
+  "meta_description": "Amazon Web Services c5n.4xlarge is a compute-optimized instance with 16 vCPUs, 42.0 GB of RAM, and 15 Gbps network bandwidth.",
+  "tagline": "A compute-optimized x86_64 instance featuring high network bandwidth and balanced multi-core performance for network-bound workloads.",
   "bullet_points": [
-    "16 dedicated vCPUs powered by an Intel Xeon 8124M processor at 3.4 GHz",
-    "42.0 GB of DDR4 memory operating at 3 GHz",
-    "15 Gbps baseline network bandwidth with no local storage",
-    "Average performance across CPU, memory, and database benchmarks",
-    "Suited for software compilation, static web serving, and network-bound tasks"
+    "Intel Xeon 8124M processor with 16 vCPUs and 42.0 GB of DDR4 RAM",
+    "15 Gbps baseline network bandwidth optimized for network-bound tasks",
+    "Average multi-core performance with weak single-core benchmark results",
+    "No local storage or GPU accelerators included",
+    "Well-suited for static web serving, Redis, and multi-threaded compute"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

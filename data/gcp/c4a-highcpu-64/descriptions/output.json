@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4a-highcpu-64 is a compute-optimized server instance featuring 64 dedicated vCPUs built on the arm64 CPU architecture. It is equipped with 128.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per vCPU. This configuration is designed for workloads requiring dense CPU resources relative to memory capacity.",
-    "This instance does not include local NVMe storage or integrated GPUs, meaning all storage requirements must be met via network-attached block storage. Additionally, the instance does not bundle complimentary public IPv4 addresses. These design choices prioritize raw compute density over local storage speed or graphics acceleration.",
-    "From a cost-efficiency perspective, the arm64 architecture provides a high density of dedicated physical resources per unit of energy and cost compared to traditional architectures. The c4a-highcpu-64 is engineered for compute-heavy workloads such as containerized microservices, web serving, distributed analytics, and compilation tasks that scale across multiple cores without requiring large memory footprints or local disk caching."
+    "Google Cloud Platform c4a-highcpu-64 is an arm64-based server instance powered by the Neoverse-V2 CPU architecture. It features 64 dedicated physical cores with 1.0 thread per core, providing 64 vCPUs. The instance is configured with 128.0 GB of system memory, yielding a compute-optimized ratio of 2.0 GB of RAM per core. The processor includes 64 KB of L1d cache, 2 MB of L2 cache, and 80 MB of L3 cache. It supports AES cryptography but lacks AVX, AVX512, and AMX extensions. This server does not include local storage or bundled GPUs.",
+    "Benchmark data indicates strong multi-core performance, with stress-ng multi-core CPU performance rated as strong and passmark CPU physics testing reaching top-tier levels. Memory performance is highly competitive, showing top-tier results in read-only small block cached bandwidth and large block write bandwidth. In application-specific workloads, the instance demonstrates top-tier performance in Redis SET operations, static web serving throughput, and PassMark database operations. Multi-threaded bzip3 decompression is also top tier, while single-core CPU performance and PassMark CPU encryption tests fall into the average category.",
+    "The c4a-highcpu-64 offers high resource density for compute-bound workloads, delivering strong multi-threaded efficiency and memory bandwidth. However, the lack of local storage and GPU accelerators limits its utility for tasks requiring high-speed local disk I/O or heavy graphics processing. The 2.0 GB per core memory allocation represents a tradeoff, prioritizing raw compute power over memory-intensive caching. This profile is highly suitable for high-throughput web serving, database operations, multi-threaded data decompression, and lightweight LLM inference tasks."
   ],
-  "description": "Google Cloud Platform c4a-highcpu-64 is a compute-optimized server instance featuring 64 dedicated vCPUs built on the arm64 architecture. It provides 128.0 GB of system memory, resulting in a resource density of 2.0 GB of RAM per vCPU. The instance does not include local storage or integrated GPUs, requiring reliance on network-attached storage for data persistence. This hardware profile is designed for CPU-intensive tasks that benefit from dedicated arm64 cores. Qualitatively, the arm64 architecture offers high resource density and cost efficiency for multi-core processing. It is suitable for workloads such as web serving, containerized applications, and distributed compute tasks that do not require massive memory allocations or local disk access.",
-  "og_description": "Google Cloud Platform c4a-highcpu-64 is an arm64-based compute-optimized server with 64 dedicated vCPUs, 128 GB RAM, and no local storage, designed for high-density multi-core workloads.",
-  "meta_description": "Google Cloud Platform c4a-highcpu-64 is an arm64 compute-optimized server with 64 dedicated vCPUs, 128 GB RAM, and no local storage.",
-  "tagline": "An arm64 compute-optimized instance featuring sixty-four dedicated vCPUs and a lean two gigabytes of memory per core.",
+  "description": "Google Cloud Platform c4a-highcpu-64 is an arm64 compute-optimized server featuring 64 dedicated physical cores on the Neoverse-V2 architecture and 128.0 GB of memory. Lacking local storage and GPU accelerators, it focuses on raw processing density with a 2.0 GB per core memory ratio. Benchmarks show top-tier performance in Redis SET operations, static web serving throughput, and multi-threaded bzip3 decompression, alongside strong multi-core CPU capabilities. Conversely, single-core CPU performance and encryption benchmarks remain average. The CPU supports AES cryptography but lacks AVX and AMX instruction sets. This instance is highly efficient for multi-threaded compute workloads, database operations, and high-throughput web serving where local storage is not required.",
+  "og_description": "Google Cloud Platform c4a-highcpu-64 is an arm64 server with 64 Neoverse-V2 cores and 128 GB RAM, delivering top-tier database, web serving, and multi-threaded decompression performance.",
+  "meta_description": "Google Cloud Platform c4a-highcpu-64 is an arm64 server with 64 dedicated cores and 128 GB RAM, optimized for high-throughput compute workloads.",
+  "tagline": "An arm64 compute-optimized instance featuring 64 dedicated cores, delivering top-tier memory bandwidth and high-throughput database performance.",
   "bullet_points": [
-    "64 dedicated vCPUs on arm64 architecture",
-    "128.0 GB of system memory (2.0 GB per core)",
-    "No local storage or integrated GPUs included",
-    "Zero complimentary public IPv4 addresses",
-    "Optimized for multi-threaded, CPU-heavy workloads"
+    "64 dedicated arm64 Neoverse-V2 physical cores with 128 GB RAM.",
+    "Top-tier performance in Redis SET operations and static web serving.",
+    "Strong multi-core CPU performance and high memory bandwidth.",
+    "No local storage or GPU accelerators included.",
+    "Best suited for database operations, web serving, and multi-threaded compute."
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

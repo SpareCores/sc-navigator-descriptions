@@ -1,23 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform n2-highcpu-16 is an x86_64 architecture server powered by an Intel Xeon processor running at 2.8 GHz. It features 16 dedicated vCPUs mapped to 8 physical cores with hyper-threading enabled. The system is configured with 16.0 GB of system memory, yielding a low memory-to-core ratio of 1.0 GB per vCPU. This instance does not include local storage or GPU accelerators.",
-    "Performance benchmarks place this instance in the middle tier for most compute and memory operations. It achieves average results in stress-ng single-core and multi-core tests, as well as in Geekbench and PassMark CPU evaluations. However, memory-intensive decompression tasks show limitations, with both single-threaded and multi-threaded bzip3 decompression benchmarks scoring in the bottom 25%. Conversely, the CPU's support for AVX-512 and cryptography instructions helps maintain steady throughput for static web serving and Redis operations.",
-    "Given its high vCPU count relative to memory, this server offers a cost-efficient profile for compute-bound workloads that do not require large memory footprints. It is suitable for tasks such as web serving, software compilation, and lightweight batch processing. It is less suited for memory-heavy databases or large-scale data analytics due to the 16 GB RAM limitation."
+    "Google Cloud Platform n2-highcpu-16 is an x86_64 architecture server powered by an Intel Xeon CPU running at 2.8 GHz. It features 16 dedicated vCPUs mapped to 8 physical cores with hyper-threading enabled. The system is equipped with 16.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. It does not include local storage or dedicated GPU hardware.",
+    "Benchmark results place the n2-highcpu-16 in the average tier for most multi-core and memory operations. The stress-ng multi-core CPU performance score is 14867.36, and the Geekbench multi-core score is 7164.0. However, single-core performance is relatively weak, with a stress-ng single-core score of 1408.59 and a bzip3 single-threaded decompression rate of 8.77 GB/sec. Memory bandwidth is measured at 82.43 GB/sec for large-block read-only operations and 42.68 GB/sec for large-block write operations.",
+    "The primary tradeoff of this configuration is its low memory-to-vCPU ratio, which limits its utility for memory-intensive databases or large-scale data processing. However, it supports advanced vector instructions like AVX-512, which assists in specific mathematical workloads. It achieves 14.12 million operations per second in Redis SET benchmarks and 12.3 GB/sec in static web serving throughput. This server is suited for compute-bound workloads with low memory footprints, such as software compilation, static web serving, and lightweight text or image processing."
   ],
-  "description": "Google Cloud Platform n2-highcpu-16 is an x86_64 compute-focused server featuring 16 dedicated vCPUs and 16.0 GB of RAM, powered by an Intel Xeon processor running at 2.8 GHz. Lacking local storage and GPU accelerators, this instance is designed for compute-heavy tasks that do not demand large memory capacities. Benchmark data indicates average performance across standard CPU and memory tests, including Geekbench and PassMark, though it exhibits weaker performance in bzip3 decompression tasks. The server's hardware profile makes it a qualitatively cost-efficient option for compute-bound workloads like software compilation, static web serving, and lightweight parallel processing, while its low memory-to-vCPU ratio of 1.0 GB per core represents a clear tradeoff for memory-intensive database applications.",
-  "og_description": "Google Cloud Platform n2-highcpu-16 is an x86_64 server with 16 dedicated Intel Xeon vCPUs and 16 GB of RAM, offering balanced compute performance for web serving and compilation without local storage.",
-  "meta_description": "Google Cloud Platform n2-highcpu-16 is an Intel Xeon server with 16 vCPUs and 16 GB RAM, optimized for compute-heavy, low-memory workloads.",
-  "tagline": "A compute-focused x86_64 server featuring sixteen dedicated vCPUs and a lean memory profile for efficient parallel processing workloads.",
+  "description": "Google Cloud Platform n2-highcpu-16 is an x86_64 compute-optimized server featuring 16 dedicated Intel Xeon vCPUs running at 2.8 GHz and 16.0 GB of RAM. Lacking local storage and GPUs, this instance provides a low memory-to-vCPU ratio of 1.0 GB per core. Benchmark data indicates average multi-core performance, with a Geekbench multi-core score of 7164.0 and a stress-ng multi-core score of 14867.36, though single-core performance remains in the lower tier. The hardware supports AVX-512 instructions, making it suitable for compute-bound tasks that do not require large memory footprints. It is appropriate for workloads such as software compilation, static web serving, and lightweight text or image processing.",
+  "og_description": "Google Cloud Platform n2-highcpu-16 is an x86_64 compute-optimized server with 16 Intel Xeon vCPUs, 16 GB RAM, and no local storage, delivering average multi-core benchmark performance.",
+  "meta_description": "Google Cloud Platform n2-highcpu-16 is an x86_64 compute-optimized server with 16 Intel Xeon vCPUs, 16 GB RAM, and average multi-core performance.",
+  "tagline": "An x86_64 compute-optimized configuration featuring sixteen dedicated vCPUs and sixteen gigabytes of memory for compute-bound workloads.",
   "bullet_points": [
-    "16 dedicated Intel Xeon vCPUs running at 2.8 GHz",
-    "16.0 GB of system memory (1.0 GB per vCPU)",
-    "No bundled local storage or GPU accelerators",
-    "Average performance in standard CPU and cryptography benchmarks",
-    "Weaker performance in single- and multi-threaded bzip3 decompression",
-    "Best suited for software compilation, web serving, and batch processing"
+    "16 dedicated x86_64 vCPUs powered by an Intel Xeon processor at 2.8 GHz",
+    "16.0 GB of system memory providing a 1:1 RAM-to-vCPU ratio",
+    "No bundled local storage or GPU hardware",
+    "Average multi-core performance with a Geekbench multi-core score of 7164.0",
+    "Support for AVX-512 vector instructions",
+    "Suited for software compilation, static web serving, and light text processing"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

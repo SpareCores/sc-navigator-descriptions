@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure L4as_v4 is a virtual machine instance from the Lasv4 family, powered by an AMD EPYC 9V74 processor with x86_64 architecture. It features 4 vCPUs mapped to 2 physical cores with multithreading enabled, operating at a clock speed of 3.7 GHz. The system is equipped with 32.0 GB of RAM, providing a high memory-to-core ratio of 8.0 GB per core. Local storage is bundled, offering 960 GB of Premium Storage capable capacity. The instance runs on the Microsoft Hyper-V hypervisor and does not include dedicated GPU hardware.",
-    "Benchmark data indicates strong single-core performance, with stress-ng single-core CPU and Geekbench single-core scores placing in the top 25%. However, multi-core performance is average, and memory bandwidth presents a notable bottleneck, with both small-block and large-block read-only memory bandwidth testing in the bottom 25%. This memory limitation is reflected in weak multi-threaded bzip3 decompression and software compilation benchmarks. Database operations also show weaker performance, with Passmark database operations scoring in the bottom 25%.",
-    "Given its high memory-to-vCPU ratio and bundled local storage, the L4as_v4 offers qualitative cost efficiency for memory-intensive workloads that do not require extreme multi-threaded throughput or high-speed memory reads. It is suitable for memory-optimized applications, single-threaded processing tasks, static web serving, and lightweight text processing. It is less suited for heavy database operations, complex software compilation, or medium-to-large language model inference due to memory bandwidth and multi-core scaling constraints."
+    "Microsoft Azure L4as_v4 is a virtual machine instance belonging to the Lasv4 server family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated AMD EPYC 9V74 processor with 4 vCPUs, 2 physical cores, and 2 threads per core. The processor operates at a clock speed of 3.7 GHz and includes 32 KB L1d, 1.0 MB L2, and 32 MB L3 cache. The system is equipped with 32.0 GB of system memory, providing 8.0 GB per core, and includes 960 GB of local storage with Premium Storage capability. No GPU accelerators or complimentary public IPv4 addresses are included.",
+    "Benchmark data indicates strong single-core performance, with stress-ng single-core CPU and Geekbench single-core scores placing in the top 25%. Multi-core performance is average, as shown by stress-ng multi-core and Geekbench multi-core scores. However, memory bandwidth is a notable bottleneck; both small-block and large-block read-only memory bandwidth tests fall into the bottom 25%. This memory constraint is reflected in weak performance for database operations and software compilation. Conversely, the instance demonstrates average throughput for static web serving, Redis SET operations, and single-threaded gzip compression.",
+    "The L4as_v4 offers a high memory-to-vCPU ratio of 1:8, making it a resource-dense option for memory-bound workloads that do not require massive parallel processing. While its single-core compute capabilities are strong, multi-threaded decompression and complex database operations are limited by the underlying memory bandwidth and physical core count. This instance is qualitatively cost-efficient for workloads requiring moderate compute paired with a larger memory footprint and local storage, such as caching layers, lightweight web serving, and small-scale text processing. It is less suitable for large-scale LLM inference or memory-intensive database queries."
   ],
-  "description": "Microsoft Azure L4as_v4 is a memory-optimized virtual machine from the Lasv4 family, featuring an AMD EPYC 9V74 processor with 4 vCPUs (2 physical cores) running at 3.7 GHz. It is configured with 32.0 GB of RAM and 960 GB of Premium Storage capable local storage, operating under the Microsoft Hyper-V hypervisor. While the instance delivers strong single-core CPU and text processing performance, benchmarks reveal tradeoffs, including weak read-only memory bandwidth and below-average multi-threaded scaling. Consequently, database operations and software compilation perform in the bottom 25%. This server is qualitatively cost-efficient for memory-intensive, single-threaded workloads, static web serving, and small-scale text processing, but is less optimal for high-throughput database systems or intensive multi-threaded computing.",
-  "og_description": "Microsoft Azure L4as_v4 is a memory-optimized instance featuring 4 AMD EPYC vCPUs, 32 GB RAM, and 960 GB local storage, delivering strong single-core performance alongside notable read-only memory bandwidth tradeoffs.",
-  "meta_description": "Microsoft Azure L4as_v4 is a memory-optimized instance with 4 AMD EPYC vCPUs, 32 GB RAM, and 960 GB local storage, managed via Hyper-V.",
-  "tagline": "A memory-optimized virtual machine featuring strong single-core performance, bundled local storage, and a high memory-to-vCPU ratio for targeted workloads.",
+  "description": "Microsoft Azure L4as_v4 is an x86_64 virtual machine from the Lasv4 family, powered by a dedicated 3.7 GHz AMD EPYC 9V74 processor. It features 4 vCPUs, 32.0 GB of RAM, and 960 GB of local storage with Premium Storage capability. The instance delivers strong single-core performance, ranking in the top 25% in stress-ng and Geekbench single-core benchmarks. However, multi-core performance and memory read bandwidth are weaker, with database operations and software compilation benchmarks falling into the bottom 25%. With a 1:8 vCPU-to-RAM ratio, this server is well-suited for memory-optimized workloads that benefit from high single-thread performance and local storage, such as Redis caching, static web serving, and text processing, while being less optimal for memory-bandwidth-heavy database tasks or large-scale multi-threaded operations.",
+  "og_description": "Microsoft Azure L4as_v4 is a memory-optimized virtual machine featuring a 4-vCPU AMD EPYC processor, 32 GB of RAM, and 960 GB of local storage, delivering strong single-core performance with some memory bandwidth limitations.",
+  "meta_description": "Microsoft Azure L4as_v4 is a 4-vCPU AMD EPYC virtual machine with 32 GB RAM and 960 GB local storage, optimized for memory-intensive, single-core workloads.",
+  "tagline": "A memory-optimized virtual machine combining strong single-core AMD EPYC performance with generous local storage for memory-dense workloads.",
   "bullet_points": [
-    "AMD EPYC 9V74 processor with 4 vCPUs and 3.7 GHz clock speed",
-    "32.0 GB RAM providing a high 8.0 GB per core memory ratio",
-    "960 GB of Premium Storage capable local storage",
-    "Strong single-core CPU and text processing benchmark results",
-    "Tradeoffs in read-only memory bandwidth and multi-threaded scaling",
-    "Best suited for memory-intensive, single-threaded tasks and static web serving"
+    "Dedicated AMD EPYC 9V74 processor running at 3.7 GHz",
+    "32 GB RAM providing a high 1:8 vCPU-to-memory ratio",
+    "960 GB of local storage with Premium Storage capability",
+    "Strong single-core CPU and text processing performance",
+    "Suitable for Redis caching, static web serving, and text processing",
+    "Limited by weak memory read bandwidth and multi-threaded scaling"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

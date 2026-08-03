@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4n-highcpu-8 is an x86_64 architecture server instance belonging to the c4n family. It features 8 dedicated vCPUs and 16.0 GB of system memory, resulting in a resource density of 2.0 GB of RAM per core. This compute-centric allocation ratio is designed for workloads requiring higher processing power relative to memory capacity.",
-    "This server configuration does not include bundled local storage, meaning all storage requirements must be met through external network-attached block storage options. There are no complimentary public IPv4 addresses included with this instance. The lack of integrated local storage and hardware accelerators, such as GPUs, represents a tradeoff, positioning this instance strictly for non-graphical, compute-focused tasks that rely on network-attached storage.",
-    "The qualitative cost profile of the c4n-highcpu-8 is aligned with compute-optimized workloads where paying for excess memory is inefficient. Appropriate workloads for this instance include compute-bound applications, batch processing, web serving, and lightweight containerized microservices that do not require local SSD performance or GPU acceleration."
+    "Google Cloud Platform c4n-highcpu-8 is a compute-optimized virtual machine instance featuring 8 vCPUs and 16 GB of RAM. Powered by an Intel Xeon 8581C processor built on the x86_64 architecture, this instance allocates 4 physical cores with hyper-threading enabled at a base clock speed of 2.3 GHz. The processor features a large 260 MB L3 cache alongside 2 MB L2 and 48 KB L1d caches. It lacks local storage and bundled GPUs, relying entirely on network-attached storage.",
+    "Benchmark data indicates strong single-threaded performance, with gzip compression reaching 34.94 GB/sec and single-threaded bzip3 decompression achieving a top-tier result of 15.23 GB/sec. Multi-core performance is moderate, with a stress-ng multi-core score of 8880.74 and a PassMark CPU score of 15831.29. Memory bandwidth is measured at 61.58 GB/sec for large-block read operations and 35.51 GB/sec for write operations. The instance demonstrates capable performance in small-scale AI workloads, processing 348.78 tokens/sec for text generation with a 135M parameter model, though performance drops significantly to 7.17 tokens/sec when generating text with a larger 7B parameter model.",
+    "From a cost-efficiency perspective, the c4n-highcpu-8 offers a dense compute-to-RAM ratio of 1:2, making it a resource-efficient choice for CPU-bound workloads that do not require massive memory footprints. The inclusion of Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX) provides hardware acceleration for cryptography and vector calculations without the cost of a dedicated GPU. This instance is well-suited for compute-heavy tasks such as single-threaded data compression, web serving, lightweight machine learning inference, and general-purpose batch processing."
   ],
-  "description": "Google Cloud Platform c4n-highcpu-8 is an x86_64 architecture server instance within the c4n family, configured with 8 dedicated vCPUs and 16.0 GB of RAM. This configuration provides a compute-optimized allocation of 2.0 GB of memory per core. The instance does not include bundled local storage or integrated GPUs, requiring reliance on network-attached storage for data persistence. This resource profile is designed for compute-heavy tasks that do not demand large memory footprints or local solid-state storage. It is qualitatively cost-efficient for workloads that prioritize raw processing power over memory capacity. Suitable workloads include batch processing, web serving, and containerized microservices.",
-  "og_description": "Google Cloud Platform c4n-highcpu-8 is an x86_64 compute-optimized server with 8 dedicated vCPUs and 16.0 GB of RAM, designed for processing-heavy workloads without local storage.",
-  "meta_description": "Google Cloud Platform c4n-highcpu-8 is an x86_64 compute-optimized server featuring 8 dedicated vCPUs, 16.0 GB of RAM, and no local storage.",
-  "tagline": "An x86_64 compute-optimized instance featuring eight dedicated vCPUs and a lean two gigabytes of memory per core.",
+  "description": "Google Cloud Platform c4n-highcpu-8 is a compute-optimized instance featuring 8 vCPUs and 16 GB of RAM, powered by an Intel Xeon 8581C x86_64 processor. It provides 4 physical cores with hyper-threading, a 2.3 GHz clock speed, and a 260 MB L3 cache. Lacking local storage and GPUs, the instance relies on network-attached resources. Benchmarks reveal top-tier single-threaded bzip3 decompression at 15.23 GB/sec and strong single-threaded gzip compression at 34.94 GB/sec. It also handles small-model LLM text generation efficiently at 348.78 tokens/sec, though larger models show a performance drop. The 1:2 vCPU-to-RAM ratio delivers qualitative cost efficiency for compute-intensive tasks. This instance is suited for web serving, data compression, and lightweight inference workloads.",
+  "og_description": "Google Cloud Platform c4n-highcpu-8 is a compute-optimized instance with 8 vCPUs, 16 GB RAM, and an Intel Xeon 8581C CPU. It delivers strong single-threaded compression and lightweight AI inference performance.",
+  "meta_description": "Google Cloud Platform c4n-highcpu-8 features 8 vCPUs, 16 GB RAM, and an Intel Xeon CPU, optimized for compute-heavy and single-threaded workloads.",
+  "tagline": "A compute-optimized instance featuring dedicated Intel Xeon cores, high-speed single-threaded decompression, and hardware-accelerated matrix operations for efficient batch processing.",
   "bullet_points": [
-    "8 dedicated x86_64 vCPUs for compute-focused workloads",
-    "16.0 GB of system memory providing 2.0 GB per core",
-    "No bundled local storage, requiring network-attached storage",
-    "Zero integrated GPUs or hardware accelerators",
-    "Suited for batch processing, web serving, and microservices"
+    "Powered by an 8-vCPU Intel Xeon 8581C processor with 16 GB of RAM",
+    "Features hardware-accelerated AVX-512 and Intel AMX instruction sets",
+    "Delivers top-tier single-threaded bzip3 decompression at 15.23 GB/sec",
+    "Optimized for compute-heavy workloads with a 1:2 vCPU-to-RAM ratio",
+    "Best suited for web serving, data compression, and small-scale LLM inference"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

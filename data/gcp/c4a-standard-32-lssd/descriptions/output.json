@@ -1,22 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4a-standard-32-lssd is an arm64-based server instance belonging to the c4a server family. It features 32 dedicated vCPUs and 128.0 GB of system memory, yielding a resource density of 4.0 GB of RAM per vCPU. The instance operates on a dedicated CPU allocation model, ensuring consistent processing capabilities without resource sharing. No GPU hardware is included in this configuration.",
-    "From a qualitative cost-efficiency perspective, the arm64 architecture provides a balanced resource profile for general-purpose and compute-aligned workloads, offering a high density of physical cores per resource unit. Because this instance lacks local storage and GPU acceleration, it represents a streamlined option for workloads that do not require high-speed local scratch space or hardware-accelerated parallel processing.",
-    "This server type is configured for workloads such as web serving, application hosting, containerized microservices, and general-purpose business applications. The 1:4 vCPU-to-RAM ratio supports multi-threaded execution paths, making it suitable for distributed systems, CI/CD pipelines, and moderate database hosting where external storage is utilized."
+    "Google Cloud Platform c4a-standard-32-lssd is an arm64-based server instance powered by a dedicated 32-core ARM Neoverse-V2 processor. Operating with one thread per physical core, the CPU features a cache configuration of 64 KB L1d, 2 MB L2, and 80 MB L3 cache. The system is equipped with 128.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per core. For high-speed local storage, the instance includes 2412 GB of NVMe SSD capacity distributed across six local SSDs. No GPU accelerators are present on this instance, and it does not include complimentary public IPv4 addresses.",
+    "Benchmark data indicates strong memory subsystem performance, with a Passmark memory score in the top tier (top 10%) and read-only small block memory bandwidth reaching 3959.92 GB/sec. Large block read and write bandwidths are also strong at 345.42 GB/sec and 163.3 GB/sec respectively. Computational performance is solid, with stress-ng multi-core CPU performance at 58106.37 and a Passmark CPU score of 29102.03, both falling in the average range. The instance demonstrates strong database capabilities, scoring in the top tier for Passmark database operations with 49685.86, and achieving a strong 69.35 million operations per second in Redis SET operations.",
+    "Given the combination of dedicated ARM cores, high memory bandwidth, and substantial local NVMe SSD storage, this instance is highly suited for database operations, high-throughput web serving, and data compression tasks. The presence of 2412 GB of local NVMe SSD storage makes it an efficient choice for workloads requiring low-latency storage access without the overhead of network-attached storage. While it lacks x86-specific instruction sets like AVX or AMX, its strong performance in database operations and memory-bound tasks offers a highly resource-dense profile for modern cloud-native applications."
   ],
-  "description": "Google Cloud Platform c4a-standard-32-lssd is an arm64-based server instance within the c4a family, featuring 32 dedicated vCPUs and 128.0 GB of RAM. Operating with a balanced 1:4 vCPU-to-RAM ratio of 4.0 GB per core, this instance provides dedicated CPU allocation without GPU accelerators or local storage. The arm64 architecture offers a resource-dense profile for general-purpose and compute-aligned workloads. It is suited for web serving, containerized microservices, application hosting, and CI/CD pipelines that rely on external storage solutions.",
-  "og_description": "Google Cloud Platform c4a-standard-32-lssd is an arm64 server with 32 dedicated vCPUs and 128 GB RAM. It offers a balanced 1:4 resource ratio for general-purpose workloads, web serving, and containerized applications.",
-  "meta_description": "Google Cloud Platform c4a-standard-32-lssd is an arm64 server featuring 32 dedicated vCPUs and 128 GB RAM for general-purpose and web serving workloads.",
-  "tagline": "An arm64-based virtual server featuring thirty-two dedicated vCPUs and a balanced memory profile for containerized workloads and web serving.",
+  "description": "Google Cloud Platform c4a-standard-32-lssd is an arm64 server instance featuring 32 dedicated physical cores powered by the ARM Neoverse-V2 processor. It is configured with 128.0 GB of RAM (4.0 GB per core) and 2412 GB of local NVMe SSD storage. The instance lacks GPU acceleration and x86-specific vector extensions but delivers top-tier memory performance, as evidenced by its top 10% Passmark memory score and strong memory bandwidth metrics. Benchmark results highlight its exceptional capability in database operations, scoring in the top tier for Passmark database tasks and achieving 69.35 million operations per second in Redis SET tests. With strong multi-threaded decompression and static web serving throughput, this instance is optimized for high-performance database deployments, web serving, and storage-intensive workloads requiring fast local I/O.",
+  "og_description": "Google Cloud Platform c4a-standard-32-lssd is an arm64 server with 32 dedicated Neoverse-V2 cores, 128 GB RAM, and 2412 GB local NVMe SSD, optimized for high-performance database and storage workloads.",
+  "meta_description": "Google Cloud Platform c4a-standard-32-lssd is an arm64 server with 32 dedicated cores, 128 GB RAM, and 2412 GB local NVMe SSD storage.",
+  "tagline": "An arm64 server combining dedicated Neoverse-V2 cores with high-speed local NVMe SSD storage for demanding database and memory-bound workloads.",
   "bullet_points": [
-    "Features 32 dedicated vCPUs on arm64 architecture",
-    "Equipped with 128.0 GB of RAM with 4.0 GB per core",
-    "Dedicated CPU allocation for consistent performance",
-    "Designed without local storage or GPU accelerators",
-    "Suited for web serving, containerized microservices, and CI/CD pipelines"
+    "Powered by 32 dedicated ARM Neoverse-V2 physical cores on an arm64 architecture.",
+    "Equipped with 128 GB RAM and 2412 GB of high-speed local NVMe SSD storage.",
+    "Top-tier performance in Passmark memory and database operations benchmarks.",
+    "Strong Redis SET performance reaching 69.35 million operations per second.",
+    "Well-suited for database deployments, web serving, and data compression workloads."
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

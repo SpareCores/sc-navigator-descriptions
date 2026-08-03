@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4d-highcpu-2 is an x86_64 architecture server instance belonging to the c4d server family. It features 2 dedicated vCPUs and 3.0 GB of system memory, yielding a memory-to-core ratio of 1.5 GB per vCPU. This instance does not include any local NVMe SSD storage or integrated GPU hardware, meaning all storage requirements must be met via network-attached block storage. Additionally, the instance does not come with complimentary public IPv4 addresses.",
-    "The hardware configuration of the c4d-highcpu-2 emphasizes compute resources over memory capacity, making it a specialized option within its class. With a low memory-to-vCPU ratio, the instance is designed for workloads that require dedicated CPU execution cycles but have minimal memory footprints. The lack of local storage and GPU accelerators represents a clear tradeoff, limiting its utility for data-intensive or graphics-heavy tasks. From a cost-efficiency perspective, the dedicated CPU allocation provides predictable performance without the resource contention typical of shared-core budget instances, offering a structured entry point for compute-focused tasks.",
-    "Given its specific resource profile, the c4d-highcpu-2 is suited for lightweight compute-bound workloads. Appropriate use cases include small-scale web serving, microservices, basic batch processing, and simple command-line utility execution. It is also applicable for lightweight CI/CD runner tasks and network proxies that do not demand significant memory or local disk caching."
+    "Google Cloud Platform c4d-highcpu-2 is an x86_64 architecture virtual machine instance powered by a dedicated AMD EPYC 9B45 processor. It features 2 vCPUs derived from 1 physical core with 2 threads per core. The hardware configuration includes 3.0 GB of system memory, providing a resource density of 1.5 GB of RAM per vCPU. The processor is equipped with 48 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. It supports advanced instruction sets including AVX-512, AVX_VNNI, and cryptographic acceleration via AES and SHA_NI. This instance does not include local storage or bundled GPUs, and it provides zero complimentary public IPv4 addresses.",
+    "Benchmark data indicates highly polarized performance characteristics. The instance excels in single-threaded execution, with stress-ng single-core CPU performance, single-threaded gzip compression, and single-threaded bzip3 decompression all ranking in the top tier. However, due to its low core count, multi-core CPU benchmarks such as stress-ng multi-core and Passmark CPU score fall into the weak category. Memory performance is also constrained, with Passmark memory scores ranking in the bottom 10% and small-block cached read bandwidth in the bottom 25%, though large-block uncached read and write bandwidths maintain average levels.",
+    "From a qualitative cost-efficiency perspective, the c4d-highcpu-2 offers a low-cost entry point into the compute-optimized c4d family, delivering high single-threaded performance without the expense of larger multi-core instances. The primary tradeoff is the highly restricted memory capacity of 3.0 GB, which limits its suitability for memory-intensive applications. This instance is best suited for lightweight, single-threaded compute tasks, basic static web serving, and simple utility scripts that benefit from high clock speeds but do not require significant memory or parallel processing capabilities."
   ],
-  "description": "Google Cloud Platform c4d-highcpu-2 is an x86_64 compute-optimized server instance within the c4d family, configured with 2 dedicated vCPUs and 3.0 GB of system memory. This configuration results in a low memory-to-core ratio of 1.5 GB per vCPU. The instance does not feature local storage or GPU accelerators, relying entirely on network-attached storage for data persistence. It also lacks complimentary public IPv4 addresses. Designed for workloads requiring dedicated CPU execution with minimal memory overhead, the c4d-highcpu-2 offers predictable compute performance. This resource profile makes it suitable for lightweight, compute-focused workloads such as microservices, small-scale web serving, basic batch processing, and simple CI/CD runner tasks where memory and local storage demands are low.",
-  "og_description": "Google Cloud Platform c4d-highcpu-2 is an x86_64 compute-optimized instance featuring 2 dedicated vCPUs, 3.0 GB of RAM, and no local storage, designed for lightweight compute-focused workloads.",
-  "meta_description": "Google Cloud Platform c4d-highcpu-2 is an x86_64 compute-optimized instance with 2 dedicated vCPUs and 3.0 GB of RAM, featuring no local storage.",
-  "tagline": "A dedicated compute-optimized instance featuring a low memory-to-core ratio for lightweight, CPU-focused workloads without local storage requirements.",
+  "description": "Google Cloud Platform c4d-highcpu-2 is an x86_64 compute-optimized instance featuring 2 vCPUs and 3.0 GB of RAM, powered by a dedicated AMD EPYC 9B45 processor. It lacks local storage and GPU accelerators. The instance demonstrates strong single-core performance, with stress-ng single-core CPU execution and single-threaded compression benchmarks ranking in the top 10%. Conversely, its multi-core performance and memory bandwidth are limited, with Passmark memory scores in the bottom 10%. This resource profile makes the instance a cost-efficient option for workloads that prioritize single-threaded CPU speed over memory capacity or parallel processing. It is best suited for lightweight web serving, single-threaded utility scripts, and basic background processing tasks.",
+  "og_description": "Google Cloud Platform c4d-highcpu-2 is an x86_64 compute-optimized instance with 2 vCPUs and 3 GB RAM. It features an AMD EPYC 9B45 CPU, delivering top-tier single-core performance for lightweight workloads.",
+  "meta_description": "Google Cloud Platform c4d-highcpu-2 is an x86_64 instance with 2 vCPUs and 3 GB RAM, offering strong single-core AMD EPYC performance.",
+  "tagline": "An entry-level compute-optimized instance featuring dedicated AMD EPYC processing, top-tier single-core performance, and a highly compact memory footprint.",
   "bullet_points": [
-    "Features 2 dedicated vCPUs on x86_64 architecture",
-    "Equipped with 3.0 GB of system memory (1.5 GB per vCPU)",
-    "No local storage or GPU accelerators included",
-    "Zero complimentary public IPv4 addresses provided",
-    "Suited for lightweight microservices, web serving, and basic batch processing"
+    "Powered by a dedicated AMD EPYC 9B45 processor with 2 vCPUs and 3.0 GB of RAM.",
+    "Top-tier single-core CPU performance and single-threaded compression speeds.",
+    "Constrained multi-core and memory performance due to low core count and 3.0 GB RAM limit.",
+    "No local storage or GPU accelerators included in the hardware profile.",
+    "Best suited for lightweight single-threaded tasks, basic web serving, and utility scripts."
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

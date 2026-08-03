@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4n-highcpu-4 is a compute-optimized virtual machine belonging to the c4n server family. It features 4 dedicated vCPUs based on the x86_64 CPU architecture and is equipped with 8.0 GB of system memory. This configuration yields a memory-to-core ratio of 2.0 GB per vCPU, prioritizing processing power over memory capacity.",
-    "This server type does not include local storage, requiring external block storage volumes for persistent data. It does not feature any integrated GPUs, making it unsuitable for hardware-accelerated graphics or parallel computing tasks. Additionally, the instance does not include complimentary public IPv4 addresses.",
-    "The c4n-highcpu-4 is designed for compute-bound workloads that require dedicated CPU resources but have modest memory footprints. Due to the 1:2 vCPU-to-RAM ratio, it is positioned for tasks such as web serving, batch processing, and lightweight containerized microservices. The lack of local storage and GPUs represents a clear tradeoff, optimizing the instance for cost-efficient compute density rather than storage-heavy or acceleration-dependent applications."
+    "Google Cloud Platform c4n-highcpu-4 is a compute-optimized virtual machine instance featuring 4 vCPUs and 8 GB of RAM. Powered by an Intel Xeon 8581C processor with an x86_64 architecture, the instance allocates 2 physical cores with hyper-threading enabled, resulting in 2 threads per core. The CPU operates at a base frequency of 2.3 GHz and includes a 260 MB L3 cache. This instance does not include local storage or bundled GPUs, and it offers zero complimentary public IPv4 addresses.",
+    "Benchmark results indicate strong single-threaded capabilities, with bzip3 single-threaded decompression reaching top-tier performance at 15.13 GB/sec and gzip single-threaded compression performing strongly at 34.85 GB/sec. However, multi-core scaling shows limitations; the stress-ng multi-core CPU performance and bzip3 multi-threaded decompression are categorized as weak. Memory performance is a notable bottleneck, with both cached and uncached memory bandwidth tests, as well as the PassMark memory score, falling into the bottom 25% tier.",
+    "The c4n-highcpu-4 instance is designed for compute-bound tasks that do not require substantial memory footprints, reflecting its low 2.0 GB of RAM per core allocation. It achieves average performance in Redis SET operations, static web serving, and small-to-medium LLM inference prompt processing. Given the weak multi-core and memory bandwidth metrics, this instance is best suited for single-threaded processing, lightweight web serving, and basic computational tasks rather than memory-intensive databases or highly parallelized workloads."
   ],
-  "description": "Google Cloud Platform c4n-highcpu-4 is an x86_64 compute-optimized server within the c4n family, configured with 4 dedicated vCPUs and 8.0 GB of RAM. This allocation provides a resource density of 2.0 GB of memory per core, prioritizing CPU allocation over memory capacity. The instance does not include local storage or integrated GPUs, requiring network-attached storage for data persistence and limiting its use to non-accelerated workloads. It also provides zero complimentary public IPv4 addresses. This hardware profile is designed for compute-bound tasks with low memory requirements, such as web serving, batch processing, and microservices. By omitting local disks and GPUs, the server offers a streamlined hardware profile focused on dedicated processing power.",
-  "og_description": "Google Cloud Platform c4n-highcpu-4 is an x86_64 compute-optimized server featuring 4 dedicated vCPUs and 8.0 GB of RAM, designed for compute-bound workloads without local storage or GPU requirements.",
-  "meta_description": "Google Cloud Platform c4n-highcpu-4 is an x86_64 compute-optimized server with 4 dedicated vCPUs, 8.0 GB of RAM, and no local storage.",
-  "tagline": "A compute-optimized x86_64 virtual machine featuring four dedicated vCPUs and a lean two gigabytes of memory per core.",
+  "description": "Google Cloud Platform c4n-highcpu-4 is an x86_64 compute-optimized instance configured with 4 dedicated vCPUs and 8 GB of RAM, powered by an Intel Xeon 8581C processor running at 2.3 GHz. It features 2 physical cores with hyper-threading and a 260 MB L3 cache, but lacks local storage and GPU accelerators. Performance benchmarks reveal a contrast between single-core and multi-core efficiency: single-threaded bzip3 decompression and gzip compression perform in the top tiers, whereas multi-core stress-ng and memory bandwidth metrics are weak. With a low memory-to-vCPU ratio of 2 GB per core, this instance is qualitatively cost-efficient for single-threaded compute tasks, lightweight web serving, and basic serialization workloads, but is less suitable for memory-intensive or highly parallelized database operations.",
+  "og_description": "Google Cloud Platform c4n-highcpu-4 is an x86_64 compute-optimized instance with 4 vCPUs, 8 GB RAM, and an Intel Xeon CPU, delivering strong single-threaded but weak multi-core performance.",
+  "meta_description": "Google Cloud Platform c4n-highcpu-4 is a compute-optimized instance with 4 vCPUs and 8 GB RAM, powered by an Intel Xeon 8581C processor.",
+  "tagline": "A compute-optimized virtual machine featuring strong single-threaded performance and dedicated Intel Xeon processing for lightweight, compute-bound workloads.",
   "bullet_points": [
-    "4 dedicated vCPUs on x86_64 architecture",
-    "8.0 GB of system memory providing 2.0 GB per core",
-    "No local storage or integrated GPUs",
-    "Zero complimentary public IPv4 addresses included",
-    "Designed for compute-bound, low-memory workloads like web serving and batch processing"
+    "4 dedicated vCPUs and 8 GB of RAM powered by an Intel Xeon 8581C processor",
+    "Strong single-threaded performance in gzip compression and bzip3 decompression",
+    "Weak multi-core scaling and low memory bandwidth limits parallel workloads",
+    "No local NVMe storage or GPU accelerators included",
+    "Best suited for single-threaded compute tasks, lightweight web serving, and basic serialization"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

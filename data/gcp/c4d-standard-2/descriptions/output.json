@@ -1,22 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4d-standard-2 is an x86_64 architecture server instance within the c4d family. It features 2 dedicated vCPUs and 7.0 GB of system memory, yielding a memory-to-core ratio of 3.5 GB per vCPU. This instance does not include local storage or integrated GPU hardware, requiring network-attached storage for persistent data.",
-    "Operating with dedicated CPU allocation, the instance provides predictable compute performance without the resource sharing typical of burstable tiers. The hardware profile represents an entry-level compute-focused configuration, offering a cost-effective option for workloads that require dedicated processing resources but do not demand large memory capacities or local storage performance.",
-    "Due to its 2 vCPUs and 7.0 GB memory capacity, this instance is suited for lightweight compute tasks, small-scale web serving, microservices, and basic utility workloads that benefit from dedicated CPU execution without the overhead of larger instance sizes."
+    "Google Cloud Platform c4d-standard-2 is a compute-oriented instance featuring 2 vCPUs and 7 GB of system memory, translating to 3.5 GB of RAM per core. Built on the x86_64 architecture, the server utilizes a dedicated AMD EPYC 9B45 processor with 1 physical core and 2 threads per core. The CPU cache configuration includes 48 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. The instance does not include local storage or bundled GPUs, and provides zero complimentary public IPv4 addresses.",
+    "Benchmark results reveal a stark contrast between single-core and multi-core capabilities. The instance achieves top-tier performance in single-core metrics, with stress-ng single-core CPU performance, single-threaded gzip compression, and single-threaded bzip3 decompression all placing in the top 10% of tested servers. However, multi-core performance is constrained by the dual-vCPU limit, resulting in weak ratings in the bottom 25% for stress-ng multi-core, PassMark CPU score, and PassMark database operations. Memory performance is mixed, with small-block read-only bandwidth ranking in the bottom 25%, while large-block read and write bandwidths maintain average tier standings.",
+    "From a cost-efficiency perspective, the c4d-standard-2 offers high single-threaded performance relative to its resource footprint, making it a viable option for workloads that do not scale across multiple threads. However, the lack of local NVMe storage and the low multi-core capacity present clear tradeoffs for database-heavy or highly parallelized applications, as reflected in the weak Redis SET and PassMark database operation scores. This instance is best suited for lightweight single-threaded tasks, basic static web serving, and low-concurrency applications that benefit from modern AMD EPYC architecture without requiring massive memory or parallel processing power."
   ],
-  "description": "Google Cloud Platform c4d-standard-2 is an entry-level, compute-focused server instance based on the x86_64 architecture. It is configured with 2 dedicated vCPUs and 7.0 GB of system memory, providing a resource density of 3.5 GB of RAM per core. This instance does not feature local storage or GPU accelerators, meaning all storage requirements must be met through network-attached options. With its dedicated CPU allocation, the c4d-standard-2 offers predictable processing performance without resource contention. This configuration represents a cost-efficient entry point for workloads requiring dedicated compute resources without the high memory overhead of general-purpose or memory-optimized tiers. It is suitable for lightweight web serving, microservices, and basic utility applications.",
-  "og_description": "Google Cloud Platform c4d-standard-2 is an x86_64 server featuring 2 dedicated vCPUs and 7.0 GB of RAM. It offers a cost-effective, compute-focused configuration without local storage or GPUs.",
-  "meta_description": "Google Cloud Platform c4d-standard-2 is an x86_64 server with 2 dedicated vCPUs and 7.0 GB of RAM, designed for lightweight compute workloads.",
-  "tagline": "A dedicated two-core compute instance with seven gigabytes of memory, designed for predictable, entry-level workloads without local storage or GPU overhead.",
+  "description": "Google Cloud Platform c4d-standard-2 is an x86_64 server configured with 2 vCPUs and 7 GB of RAM, powered by a dedicated AMD EPYC 9B45 processor. It features 1 physical core with 2 threads, supported by 32 MB of L3 cache, but lacks local storage and GPU accelerators. Performance benchmarks indicate exceptional single-core capabilities, with single-threaded compression and decompression tests ranking in the top 10%. Conversely, multi-core and database benchmarks, such as Redis SET operations and PassMark CPU scores, fall into the bottom 25% due to the limited core count. This instance provides a cost-efficient profile for single-threaded tasks and static web serving, though it presents clear tradeoffs for parallelized workloads or memory-intensive databases.",
+  "og_description": "Google Cloud Platform c4d-standard-2 is an x86_64 server with 2 vCPUs and 7 GB RAM, featuring a dedicated AMD EPYC 9B45 processor. It offers top-tier single-core performance but limited multi-core capacity.",
+  "meta_description": "Google Cloud Platform c4d-standard-2 is an x86_64 server with 2 vCPUs, 7 GB RAM, and a dedicated AMD EPYC CPU, optimized for single-threaded tasks.",
+  "tagline": "An entry-level dedicated AMD EPYC instance delivering top-tier single-core performance for lightweight, single-threaded workloads without local storage.",
   "bullet_points": [
-    "2 dedicated vCPUs on x86_64 architecture",
-    "7.0 GB of system memory yielding 3.5 GB per core",
-    "No bundled local storage or GPU accelerators",
-    "Predictable performance via dedicated CPU allocation",
-    "Suited for lightweight web serving, microservices, and utility tasks"
+    "Dedicated AMD EPYC 9B45 processor with 2 vCPUs and 7 GB RAM",
+    "Top-tier single-core CPU performance and single-threaded compression",
+    "No local storage or GPU accelerators included",
+    "Weak multi-core and database performance due to dual-vCPU limit",
+    "Best suited for lightweight single-threaded tasks and static web serving"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }
