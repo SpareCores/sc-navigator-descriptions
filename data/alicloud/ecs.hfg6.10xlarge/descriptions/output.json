@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.hfg6.10xlarge is an x86_64 architecture server instance powered by a dedicated Intel Xeon 8269CY processor operating at 3.1 GHz. It features 40 physical cores and 40 vCPUs, with 1.0 thread per core. The instance is equipped with 192.0 GB of system memory, providing 4.8 GB of RAM per core, and relies on the KVM hypervisor. Local storage is not bundled with this instance, and it provides a baseline network bandwidth of 12 Gbps.",
-    "Benchmark results place the instance in the average performance category across multiple tests. The stress-ng single-core CPU performance is recorded at 1438.99, while the multi-core performance reaches 38378.07. Memory bandwidth tests show 2133.36 GB/sec for cached small-block reads, dropping to 108.89 GB/sec for uncached large-block reads, and 48.09 GB/sec for large-block writes. The system achieves a Geekbench multi-core score of 12045.0 and a Passmark CPU score of 34691.95. For database operations, the instance handles 34.78 million Redis SET operations per second and a Passmark database score of 14249.04.",
-    "The lack of local storage requires external block storage attachments, which is a key architectural tradeoff to consider. From a qualitative cost-efficiency perspective, the dedicated CPU allocation and 4.8 GB RAM-per-core ratio offer a balanced resource density for workloads that require consistent CPU performance without the overhead of hyperthreading. The instance is suited for multi-threaded decompression tasks, as demonstrated by a bzip3 multi-threaded decompression speed of 166.28 GB/sec, as well as static web serving, software compilation, and moderate-sized language model inference."
+    "Alibaba Cloud ecs.hfg6.10xlarge is a KVM-hypervised virtual machine instance powered by an Intel Xeon 8269CY processor. This x86_64 architecture server features 40 dedicated physical cores running at a clock speed of 3.1 GHz, with 1.0 thread per core. It is equipped with 192.0 GB of system memory, providing a resource density of 4.8 GB per core. The instance does not include local storage or GPU accelerators, relying entirely on network-attached storage, and offers a baseline network bandwidth of 12 Gbps.",
+    "Benchmark evaluations place the ecs.hfg6.10xlarge in the average performance tier across multiple workloads. The Intel Xeon processor achieves a single-core stress-ng score of 1438.99 and a multi-core score of 38378.07, supported by AVX-512 vector extensions. Memory performance is characterized by a cached read bandwidth of 2133.36 GB/sec and an uncached large-block write speed of 48.09 GB/sec. In application-specific tests, the instance demonstrates strong database capabilities, achieving 34.78 million operations per second in Redis SET tests and a Passmark database score of 14249.04. It also handles light LLM inference, processing 56.94 prompt tokens per second on a 7B parameter model.",
+    "From a qualitative cost-efficiency perspective, the dedicated core allocation and high clock speed of 3.1 GHz deliver predictable compute performance without the resource contention typical of shared-core instances. However, the lack of bundled local storage and GPUs means users must factor in the cost of external block storage and avoid workloads requiring hardware acceleration. This resource profile makes the ecs.hfg6.10xlarge highly suitable for CPU-bound applications, software compilation, database operations, and static web serving."
   ],
-  "description": "Alibaba Cloud ecs.hfg6.10xlarge is an x86_64 server instance featuring a dedicated Intel Xeon 8269CY processor with 40 physical cores and 40 vCPUs running at 3.1 GHz. It is configured with 192.0 GB of RAM, yielding 4.8 GB per core, and operates on the KVM hypervisor with a baseline network bandwidth of 12 Gbps. This instance does not include local storage. Benchmark data indicates average tier performance, with a Passmark CPU score of 34691.95 and a multi-core Geekbench score of 12045.0. It demonstrates strong capabilities in memory-bound and database tasks, processing 34.78 million Redis SET operations per second. The 1:4.8 vCPU-to-RAM ratio and dedicated core allocation make it qualitatively cost-efficient for workloads requiring predictable compute resources without hyperthreading. It is suited for static web serving, multi-threaded decompression, software compilation, and medium-scale database operations.",
-  "og_description": "Alibaba Cloud ecs.hfg6.10xlarge is a dedicated Intel Xeon server with 40 vCPUs, 192 GB RAM, and 12 Gbps network bandwidth, delivering balanced compute and memory performance for enterprise workloads.",
-  "meta_description": "Alibaba Cloud ecs.hfg6.10xlarge features 40 dedicated Intel Xeon vCPUs, 192 GB RAM, and 12 Gbps network bandwidth on the KVM hypervisor.",
-  "tagline": "A dedicated forty-core Intel Xeon processor instance with balanced memory allocation and baseline twelve gigabit network bandwidth for enterprise workloads.",
+  "description": "Alibaba Cloud ecs.hfg6.10xlarge is a KVM-based virtual server powered by a 3.1 GHz Intel Xeon 8269CY processor with 40 dedicated physical cores on the x86_64 architecture. It features 192.0 GB of RAM, providing 4.8 GB per core, but lacks local storage and GPU accelerators. The instance delivers a baseline network bandwidth of 12 Gbps. Performance benchmarks indicate solid mid-range capabilities, with a multi-core stress-ng score of 38378.07 and a Redis SET throughput of 34.78 million operations per second. The dedicated CPU allocation ensures consistent performance for compute-heavy tasks. This server is well-suited for database operations, software compilation, static web serving, and general-purpose enterprise workloads that do not require local NVMe storage or GPU acceleration.",
+  "og_description": "Alibaba Cloud ecs.hfg6.10xlarge is a KVM virtual server with 40 dedicated Intel Xeon cores at 3.1 GHz, 192 GB RAM, and 12 Gbps network bandwidth, optimized for databases and compute workloads.",
+  "meta_description": "Alibaba Cloud ecs.hfg6.10xlarge features 40 dedicated Intel Xeon cores, 192 GB RAM, and 12 Gbps bandwidth for compute and database workloads.",
+  "tagline": "A dedicated forty-core Intel Xeon server with balanced memory and high clock speeds for predictable database and compute workloads.",
   "bullet_points": [
-    "Dedicated Intel Xeon 8269CY processor with 40 physical cores at 3.1 GHz.",
-    "192.0 GB of system memory providing 4.8 GB of RAM per core.",
-    "Baseline network bandwidth of 12 Gbps on KVM hypervisor.",
-    "No local storage included, requiring external block storage.",
-    "Processes 34.78 million Redis SET operations per second.",
-    "Suited for static web serving, software compilation, and database workloads."
+    "Powered by an Intel Xeon 8269CY processor with 40 dedicated physical cores at 3.1 GHz.",
+    "Equipped with 192.0 GB of system memory and 12 Gbps baseline network bandwidth.",
+    "Features AVX-512 instruction support for accelerated vector and cryptography operations.",
+    "Delivers 34.78 million operations per second in Redis SET benchmark tests.",
+    "Best suited for database operations, software compilation, and static web serving."
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }
