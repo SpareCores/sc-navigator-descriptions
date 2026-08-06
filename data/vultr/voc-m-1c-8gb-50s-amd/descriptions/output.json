@@ -1,24 +1,22 @@
 {
   "page": [
-    "Vultr voc-m-1c-8gb-50s-amd is an x86_64 architecture virtual server within the Optimized Cloud Compute family. It is configured with a single shared AMD EPYC vCPU running at 2.0 GHz, consisting of one physical core and one thread. The system is equipped with 8.0 GB of RAM, establishing a high 1:8 vCPU-to-memory ratio. Local storage is provided via a bundled 50 GB NVMe SSD, and the instance includes one complimentary public IPv4 address. No GPU hardware is present on this instance type.",
-    "Benchmark data indicates a significant divergence between single-core processing capabilities and memory subsystem throughput. The single-core stress-ng CPU test registers at 2896.39, placing the processor in the top 25% tier. Conversely, multi-core performance is limited by the single-vCPU allocation, scoring in the bottom 25%. Memory bandwidth is a primary bottleneck, with read-only small block cached bandwidth at 130.9 GB/sec and large block uncached bandwidth at 22.42 GB/sec, both falling into the bottom 10% of tested hardware. Passmark database operations and Redis SET operations also rank in the bottom 10%, reflecting the constraints of the shared CPU and memory architecture.",
-    "From a qualitative cost-efficiency perspective, this server offers a high memory allocation relative to its single shared vCPU, making it a resource-dense option for memory-bound workloads that do not require continuous, dedicated CPU performance. The primary tradeoff is the shared CPU allocation and constrained memory bandwidth, which limits its utility for high-throughput database operations or intensive multi-threaded processing.",
-    "This server configuration is suitable for lightweight, memory-intensive applications, small-scale single-threaded web serving, basic text processing, and low-concurrency development environments. It is less suited for high-traffic databases, parallel computing, or large-scale LLM inference."
+    "Vultr voc-m-1c-8gb-50s-amd is an Optimized Cloud Compute server featuring a dedicated AMD EPYC processor with 1 vCPU, consisting of 1 physical core and 1 thread, running at 2.0 GHz on the x86_64 architecture. The hardware configuration includes 8.0 GB of RAM, establishing a high memory-to-vCPU ratio of 8:1. Local storage is provided via a bundled 50 GB NVMe SSD, and the instance includes one complimentary public IPv4 address.",
+    "In benchmark evaluations, the single-core CPU performance is strong, with a stress-ng single-core score of 2896.39, placing it in the top 25% of tested instances. However, because it is a single-core configuration, its multi-core stress-ng score is identical and ranks in the bottom 25%. Memory bandwidth is relatively low, with read-only small block cached bandwidth at 130.9 GB/sec and large block uncached write bandwidth at 20.94 GB/sec. Passmark CPU and memory scores are also in the lower tiers, with a database operations score of 926.43 and a static web serving throughput of 1.44 GB/sec. Single-threaded gzip compression and bzip3 decompression perform at average levels, yielding 27.17 GB/sec and 11.19 GB/sec respectively.",
+    "This server offers a qualitative balance of dedicated AMD CPU resources and a high memory allocation relative to its single core, making it a cost-efficient option for workloads that require more memory than compute power. The primary tradeoff is the single-thread limitation, which restricts multi-threaded scaling and results in lower throughput for database operations and web serving. It is best suited for lightweight memory-bound tasks, single-threaded processing, basic caching, or small-scale development environments."
   ],
-  "description": "Vultr voc-m-1c-8gb-50s-amd is an x86_64 virtual server in the Optimized Cloud Compute family, featuring a single shared AMD EPYC vCPU clocked at 2.0 GHz and 8.0 GB of RAM. This 1:8 vCPU-to-memory ratio is paired with a bundled 50 GB NVMe SSD. Benchmark results show strong single-core CPU performance in stress-ng tests, but multi-core and memory bandwidth metrics fall into the lower percentiles, with uncached read bandwidth at 22.42 GB/sec. Database and Redis operations also show lower-tier performance due to the shared CPU and memory bottlenecks. Qualitatively, this instance provides a cost-effective entry point for memory-heavy, low-CPU workloads. It is best suited for lightweight web serving, single-threaded applications, and development environments requiring more memory than typical entry-level instances.",
-  "og_description": "Vultr voc-m-1c-8gb-50s-amd is a shared AMD EPYC server with 1 vCPU, 8 GB RAM, and 50 GB NVMe storage, offering strong single-core CPU performance alongside constrained memory bandwidth.",
-  "meta_description": "Vultr voc-m-1c-8gb-50s-amd features 1 shared AMD EPYC vCPU, 8 GB RAM, and 50 GB NVMe SSD, suitable for lightweight memory-intensive workloads.",
-  "tagline": "A shared-core virtual server combining a high memory-to-CPU ratio with NVMe storage for lightweight, memory-focused workloads.",
+  "description": "Vultr voc-m-1c-8gb-50s-amd is an Optimized Cloud Compute server configured with a dedicated AMD EPYC processor offering 1 vCPU, 8.0 GB of RAM, and a bundled 50 GB NVMe SSD. Operating on the x86_64 architecture at 2.0 GHz, this instance features a high 8:1 memory-to-core ratio. Benchmark data indicates strong single-core CPU performance, though multi-core capabilities and memory bandwidth are limited, with static web serving throughput at 1.44 GB/sec and database operations scoring in the lower percentiles. The server represents a cost-efficient option for memory-intensive, single-threaded workloads where high CPU core counts are unnecessary. It is best suited for lightweight caching, small-scale development, and memory-bound utility tasks.",
+  "og_description": "Vultr voc-m-1c-8gb-50s-amd is an Optimized Cloud Compute server featuring a dedicated 1-core AMD EPYC CPU, 8.0 GB of RAM, and 50 GB of NVMe SSD storage, designed for memory-optimized, single-threaded workloads.",
+  "meta_description": "Vultr voc-m-1c-8gb-50s-amd is a dedicated AMD EPYC server with 1 vCPU, 8.0 GB of RAM, and 50 GB NVMe SSD storage, optimized for memory-heavy, single-core tasks.",
+  "tagline": "A dedicated single-core AMD processor paired with a high memory-to-vCPU ratio and fast local NVMe SSD storage for lightweight workloads.",
   "bullet_points": [
-    "Single shared AMD EPYC vCPU clocked at 2.0 GHz",
-    "8.0 GB of system memory providing a 1:8 vCPU-to-RAM ratio",
-    "Bundled 50 GB NVMe SSD local storage",
-    "Strong single-core CPU performance in stress-ng benchmarks",
-    "Constrained memory bandwidth and multi-core throughput",
-    "Suited for lightweight web serving and memory-heavy development tasks"
+    "Dedicated AMD EPYC processor with 1 vCPU and 1 physical core",
+    "High memory density with 8.0 GB of RAM providing an 8:1 RAM-to-vCPU ratio",
+    "Bundled 50 GB local NVMe SSD storage",
+    "Strong single-core CPU performance in benchmark testing",
+    "Suited for lightweight memory-bound applications and caching"
   ],
   "categories": [
     "Memory Optimized",
-    "Burstable & Budget"
+    "General Purpose"
   ]
 }

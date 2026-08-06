@@ -1,22 +1,24 @@
 {
   "page": [
-    "Vultr voc-m-4c-32gb-400s-amd is an Optimized Cloud Compute instance featuring 4 vCPUs mapped to 2 physical AMD EPYC cores with 2 threads per core. Operating at 2.0 GHz on the x86_64 architecture, this shared CPU configuration is paired with 32.0 GB of system memory, yielding 8.0 GB of RAM per core. Local storage consists of a bundled 400 GB NVMe SSD, and the instance includes one complimentary public IPv4 address.",
-    "Benchmark results indicate top-tier single-core CPU performance in stress-ng tests, though multi-core CPU performance falls into the average tier. Memory write bandwidth for large uncached blocks is strong, as is single-threaded gzip compression and bzip3 decompression. However, multi-threaded bzip3 decompression and database operations are weak, and static web serving throughput is also in the bottom 25%. LLM inference speeds are average for small 135M models but poor for prompt processing on medium 7B models.",
-    "From a resource density perspective, this instance offers a high memory-to-vCPU ratio, making it qualitatively cost-efficient for memory-heavy workloads that do not require dedicated CPU cores. Given the shared CPU allocation and weak database and multi-threaded decompression benchmarks, it is best suited for memory-intensive applications with moderate parallel processing needs, such as caching layers, single-threaded data processing, and lightweight memory-bound services."
+    "Vultr voc-m-4c-32gb-400s-amd is a memory-optimized instance within the Optimized Cloud Compute family. It features 4 dedicated vCPUs mapped to 2 physical AMD EPYC cores with 2 threads per core, running at a base clock speed of 2.0 GHz. The system is built on the x86_64 architecture and includes 32.0 GB of system memory, yielding 8.0 GB of RAM per core. Storage is provided via a local 400 GB NVMe SSD, and the instance includes one complimentary public IPv4 address. No GPU accelerators are present.",
+    "Benchmark data indicates strong single-core capabilities but moderate multi-core scaling. In stress-ng single-core CPU testing, the AMD EPYC processor achieves top-tier performance, placing in the top 10%. However, multi-core CPU performance falls into the average tier. Memory performance is robust, with PassMark memory scores and large-block write bandwidth both ranking in the top 25%. Conversely, multi-threaded bzip3 decompression and PassMark database operations register in the bottom 25%, indicating potential bottlenecks under highly parallelized database workloads.",
+    "With its 1:8 vCPU-to-RAM ratio, this instance is configured for memory-intensive workloads that do not require massive parallel compute. It is suitable for in-memory caching, moderate Redis deployments, and single-threaded data processing tasks, supported by strong single-threaded gzip and bzip3 performance. However, poor prompt processing speeds for 7B LLM models and weak static web serving throughput suggest it is less optimal for heavy web serving or complex AI inference. The dedicated CPU allocation and generous memory allocation relative to vCPUs provide a stable resource profile for memory-bound applications."
   ],
-  "description": "Vultr voc-m-4c-32gb-400s-amd is an Optimized Cloud Compute instance configured with 4 shared vCPUs on an AMD EPYC x86_64 processor, 32.0 GB of RAM, and a 400 GB NVMe SSD. It features 2 physical cores with hyper-threading at 2.0 GHz. In benchmark testing, the instance delivers top-tier single-core CPU performance and strong memory write bandwidth, though its multi-core CPU and database operations benchmarks are average to weak. The high memory-to-vCPU ratio of 8.0 GB per core provides qualitative cost efficiency for memory-intensive workloads. It is suited for caching layers, single-threaded data processing, and memory-bound applications that do not require dedicated CPU resources.",
-  "og_description": "Vultr voc-m-4c-32gb-400s-amd is an Optimized Cloud Compute instance featuring 4 shared AMD EPYC vCPUs, 32 GB RAM, and a 400 GB NVMe SSD, offering strong single-core and memory write performance.",
-  "meta_description": "Vultr voc-m-4c-32gb-400s-amd is an AMD EPYC instance with 4 shared vCPUs, 32 GB RAM, and a 400 GB NVMe SSD for memory-intensive workloads.",
-  "tagline": "A memory-optimized virtual server featuring shared AMD EPYC processors, a high RAM-to-vCPU ratio, and integrated NVMe SSD storage.",
+  "description": "The Vultr voc-m-4c-32gb-400s-amd is a memory-optimized server from the Optimized Cloud Compute family, featuring 4 dedicated vCPUs powered by an AMD EPYC processor, 32.0 GB of RAM, and a 400 GB NVMe SSD. Operating on the x86_64 architecture, it delivers a high memory-to-vCPU ratio of 8.0 GB per core. Benchmark results show top-tier single-core CPU performance and strong memory write bandwidth, though multi-core scaling and database operations fall into average and weak categories respectively. This hardware profile makes the instance highly suitable for memory-bound workloads such as in-memory caching, Redis deployments, and single-threaded data processing, while its dedicated CPU allocation ensures consistent performance. It is less suited for highly parallelized database operations or intensive web serving due to lower multi-threaded efficiency.",
+  "og_description": "Vultr voc-m-4c-32gb-400s-amd is a memory-optimized server featuring 4 dedicated AMD EPYC vCPUs, 32 GB RAM, and 400 GB NVMe storage, delivering top-tier single-core performance for memory-bound workloads.",
+  "meta_description": "Vultr voc-m-4c-32gb-400s-amd is an AMD EPYC-powered server with 4 dedicated vCPUs, 32 GB RAM, and 400 GB NVMe SSD storage for memory-intensive tasks.",
+  "tagline": "A memory-optimized virtual server featuring dedicated AMD EPYC processors and high-speed NVMe storage for memory-intensive workloads.",
   "bullet_points": [
-    "4 shared vCPUs on AMD EPYC architecture with 2.0 GHz clock speed",
-    "32.0 GB of system memory providing 8.0 GB of RAM per core",
-    "Bundled 400 GB NVMe SSD local storage",
+    "4 dedicated vCPUs powered by AMD EPYC processors at 2.0 GHz",
+    "32.0 GB of system memory providing a high 1:8 vCPU-to-RAM ratio",
+    "400 GB of local NVMe SSD storage for fast read/write operations",
     "Top-tier single-core CPU performance and strong memory write bandwidth",
-    "Best suited for caching, single-threaded processing, and memory-bound workloads"
+    "Best suited for in-memory caching, Redis, and single-threaded processing",
+    "Tradeoffs include lower multi-threaded decompression and database performance"
   ],
   "categories": [
     "Memory Optimized",
+    "Storage & Database",
     "General Purpose"
   ]
 }
