@@ -1,19 +1,18 @@
 {
   "page": [
-    "Alibaba Cloud ecs.s3.medium is an x86_64 architecture server instance powered by the KVM hypervisor. It features 4 dedicated vCPUs mapped to 4 physical cores with a single thread per core, meaning hyperthreading is not enabled. The instance is configured with 4.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per CPU core.",
-    "This server type does not include any local NVMe or SSD storage, requiring external block storage volumes for the operating system and application data. It lacks GPU acceleration, containing zero graphics processing units, and does not include complimentary public IPv4 addresses.",
-    "A key technical tradeoff of the ecs.s3.medium is its highly constrained memory capacity relative to its processing cores, alongside the absence of advanced CPU instruction sets such as AVX, AVX512, AMX, or hardware-assisted cryptography and virtualization flags. This profile makes the instance unsuitable for memory-intensive databases, vector processing, or heavy virtualization. It is best suited for lightweight, compute-bound utility workloads, basic web serving, or task queue workers that require dedicated CPU allocation but have minimal memory footprints."
+    "Alibaba Cloud ecs.s3.medium is an x86_64 architecture virtual machine instance belonging to the ecs.s3 server family. It is configured with 4 vCPUs mapped to 4 physical cores with a single thread per core, utilizing dedicated CPU allocation under the KVM hypervisor. The instance is equipped with 4.0 GB of system memory, resulting in a resource density of 1.0 GB of RAM per core. It does not include local storage or bundled GPU hardware, requiring external block storage for operating system and application deployment.",
+    "This instance is designed for workloads requiring dedicated CPU resources but with minimal memory requirements. The 1:1 ratio of vCPUs to memory makes it suitable for compute-heavy tasks that do not maintain large in-memory datasets. Common deployments include lightweight web servers, distributed compute nodes, and basic batch processing tasks. Because it lacks local storage and integrated graphics processing units, it is not intended for database hosting or GPU-accelerated workloads."
   ],
-  "description": "Alibaba Cloud ecs.s3.medium is an x86_64 virtual server featuring 4 dedicated vCPUs across 4 physical cores with single-thread execution. It is equipped with 4.0 GB of system memory, providing a constrained 1.0 GB per core ratio, and contains no local storage or GPU hardware. Operating under the KVM hypervisor, this instance lacks advanced CPU instruction sets such as AVX, AVX-512, AMX, and hardware-assisted cryptography. The low memory-to-CPU ratio represents a significant hardware tradeoff, limiting its deployment to lightweight compute tasks, basic web serving, and simple utility workloads with minimal memory requirements. It offers a dedicated CPU allocation for workloads that require consistent processing performance without the overhead of shared-core resource contention.",
-  "og_description": "Alibaba Cloud ecs.s3.medium is an x86_64 server with 4 dedicated vCPUs, 4.0 GB RAM, and no local storage. It is designed for lightweight, compute-focused workloads with low memory requirements.",
-  "meta_description": "Alibaba Cloud ecs.s3.medium features 4 dedicated vCPUs, 4.0 GB RAM, and no local storage, optimized for basic, low-memory compute tasks.",
-  "tagline": "A dedicated four-core compute instance with a compact memory footprint, designed for lightweight utility workloads and basic processing tasks.",
+  "description": "Alibaba Cloud ecs.s3.medium is an x86_64 virtual machine instance from the ecs.s3 family, featuring 4 dedicated vCPUs across 4 physical cores and 4.0 GB of RAM. Operating on the KVM hypervisor, this server provides a 1:1 ratio of memory to vCPUs without hyperthreading. It contains no local storage or GPU accelerators, meaning all storage must be provisioned externally. The dedicated CPU allocation ensures consistent processing performance, making it a cost-efficient option for compute-focused workloads with low memory footprints, such as lightweight web serving, batch processing, and distributed computing nodes.",
+  "og_description": "Alibaba Cloud ecs.s3.medium is an x86_64 virtual machine featuring 4 dedicated vCPUs, 4.0 GB of RAM, and no local storage, running on the KVM hypervisor for compute-focused workloads.",
+  "meta_description": "Alibaba Cloud ecs.s3.medium is an x86_64 virtual machine with 4 dedicated vCPUs, 4.0 GB of RAM, and no local storage, running on the KVM hypervisor.",
+  "tagline": "A dedicated x86_64 compute instance featuring four vCPUs and four gigabytes of memory for low-memory processing workloads.",
   "bullet_points": [
-    "4 dedicated x86_64 vCPUs with single-thread physical cores",
+    "4 dedicated vCPUs on 4 physical cores with 1.0 thread per core",
     "4.0 GB of system memory providing 1.0 GB per core",
-    "No local storage or GPU accelerators included",
-    "KVM hypervisor-based virtualization with dedicated CPU allocation",
-    "Best suited for lightweight web serving and simple utility tasks"
+    "KVM hypervisor virtualization on x86_64 architecture",
+    "No integrated local storage or GPU hardware",
+    "Suited for lightweight web serving and batch processing"
   ],
   "categories": [
     "Compute Optimized",
