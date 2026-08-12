@@ -1,22 +1,24 @@
 {
   "page": [
-    "Alibaba Cloud ecs.gn6i-c16g1.4xlarge is an x86_64 architecture GPU-accelerated server instance powered by the KVM hypervisor. It features 16 dedicated physical cores on an Intel Xeon 8163 processor running at 2.5 GHz, paired with 62.0 GB of system memory. For acceleration, the instance includes a single NVIDIA T4 GPU from the Turing family, which provides 16 GB of dedicated VRAM. Local storage is not bundled with this instance, and network connectivity is rated at a baseline bandwidth of 6 Gbps.",
-    "Benchmark data indicates a clear contrast between CPU-bound tasks and GPU-accelerated workloads. Single-core CPU performance is weak, with stress-ng and Geekbench single-core scores falling into the bottom 25%, and single-threaded gzip compression registering in the bottom 10%. However, multi-core CPU performance and memory bandwidth benchmarks generally achieve average results. The primary strength of this instance lies in its GPU-driven capabilities. In LLM inference benchmarks, prompt processing speeds for both small and medium models rank in the top 10%, while text generation for the medium model is strong, placing in the top 25%.",
-    "Given the hardware profile, this instance offers a cost-effective entry point for GPU-accelerated workloads that do not require massive CPU compute or high-speed local storage. The combination of an NVIDIA T4 GPU and 16 vCPUs makes it suitable for machine learning inference, small-to-medium language model serving, and GPU-accelerated rendering. It is less suited for CPU-heavy single-threaded tasks or applications requiring high local disk I/O."
+    "Alibaba Cloud ecs.gn6i-c16g1.4xlarge is a GPU-accelerated virtual machine instance powered by the KVM hypervisor. It features 16 dedicated physical cores on an Intel Xeon 8163 processor running at 2.5 GHz with an x86_64 architecture. The system is equipped with 62.0 GB of system memory, providing 3.88 GB per core. Acceleration is delivered via a single NVIDIA T4 GPU from the Turing architecture family, which includes 16 GB of dedicated VRAM. This instance does not include local storage, relying instead on network-attached storage options, and provides a baseline network bandwidth of 6 Gbps.",
+    "Benchmark data highlights a clear contrast between single-core CPU performance and GPU-driven workloads. Single-core metrics are weak, with Geekbench single-core scoring 937.0 and stress-ng single-core performance falling into the bottom 25%. Single-threaded gzip compression is poor at 19.33 GB/sec. However, multi-core performance is average, with a Geekbench multi-core score of 5951.0 and a PassMark CPU score of 13056.17. The integrated NVIDIA T4 GPU delivers top-tier performance for prompt processing, achieving 8410.67 tokens/sec on a small 135M LLM and 1141.42 tokens/sec on a medium 7B LLM. Text generation on the 7B model is strong at 34.57 tokens/sec.",
+    "From a qualitative cost-efficiency perspective, the ecs.gn6i-c16g1.4xlarge offers a balanced entry point for GPU-accelerated workloads without the premium cost of newer-generation accelerators. The tradeoff involves lower CPU single-core speeds and a lack of local storage, which may bottleneck disk-heavy operations. This instance is suited for small to medium LLM inference, machine learning model deployment, image processing, and ray tracing workloads that leverage GPU acceleration, while general-purpose multi-threaded tasks like database operations and web serving run with average efficiency."
   ],
-  "description": "Alibaba Cloud ecs.gn6i-c16g1.4xlarge is a GPU-accelerated instance featuring 16 dedicated Intel Xeon 8163 physical cores running at 2.5 GHz, 62.0 GB of system memory, and a single NVIDIA T4 GPU with 16 GB of VRAM. Built on the KVM hypervisor with an x86_64 architecture, it does not include local storage and provides a baseline network bandwidth of 6 Gbps. Benchmarks reveal weak single-core CPU performance, but average multi-core and memory bandwidth capabilities. The instance excels in GPU-accelerated tasks, demonstrating top-tier prompt processing speeds for small and medium language models. This hardware profile makes the instance cost-effective for machine learning inference, medium-sized model text generation, and ray tracing workloads, while being less optimal for single-threaded CPU-bound applications.",
-  "og_description": "Alibaba Cloud ecs.gn6i-c16g1.4xlarge is a GPU-accelerated instance with 16 Intel Xeon cores, 62 GB RAM, and an NVIDIA T4 GPU, optimized for machine learning inference and model serving.",
-  "meta_description": "Alibaba Cloud ecs.gn6i-c16g1.4xlarge features 16 Intel Xeon cores, 62 GB RAM, and an NVIDIA T4 GPU for machine learning inference workloads.",
-  "tagline": "An accelerator-focused instance combining dedicated Intel Xeon processors with an NVIDIA T4 GPU for efficient machine learning inference.",
+  "description": "Alibaba Cloud ecs.gn6i-c16g1.4xlarge is a GPU-accelerated instance featuring 16 dedicated Intel Xeon 8163 vCPUs running at 2.5 GHz, 62.0 GB of RAM, and a single NVIDIA T4 GPU with 16 GB of VRAM. Built on the x86_64 architecture under the KVM hypervisor, it lacks local storage but provides a 6 Gbps baseline network bandwidth. Performance benchmarks indicate weak single-core CPU capabilities, with a Geekbench single-core score of 937.0. Conversely, multi-core and GPU-accelerated metrics are competitive; the instance achieves top-tier prompt processing speeds of 1141.42 tokens/sec for a medium 7B LLM and strong text generation at 34.57 tokens/sec. This hardware profile makes the instance qualitatively cost-effective for entry-level machine learning inference, ray tracing, and image processing, though it is constrained by lower single-threaded CPU performance and reliance on network storage.",
+  "og_description": "Alibaba Cloud ecs.gn6i-c16g1.4xlarge is a GPU-accelerated instance with 16 Intel Xeon vCPUs, 62 GB RAM, and an NVIDIA T4 GPU, offering strong LLM prompt processing but weak single-core CPU performance.",
+  "meta_description": "Alibaba Cloud ecs.gn6i-c16g1.4xlarge features 16 Intel vCPUs, 62 GB RAM, and an NVIDIA T4 GPU, delivering strong LLM inference and average multi-core performance.",
+  "tagline": "A GPU-accelerated virtual server balancing dedicated Intel Xeon processors with an NVIDIA T4 accelerator for efficient machine learning inference.",
   "bullet_points": [
-    "Intel Xeon 8163 processor with 16 dedicated physical cores and 62.0 GB RAM",
-    "Single NVIDIA T4 GPU with 16 GB VRAM for hardware acceleration",
-    "Top-tier prompt processing performance for small and medium language models",
-    "Baseline network bandwidth of 6 Gbps with KVM virtualization",
-    "Best suited for machine learning inference, text generation, and ray tracing"
+    "16 dedicated Intel Xeon 8163 vCPUs and 62.0 GB of system memory.",
+    "Single NVIDIA T4 GPU with 16 GB of VRAM for hardware acceleration.",
+    "Top-tier prompt processing speeds for small and medium language models.",
+    "Weak single-core CPU performance and poor single-threaded compression.",
+    "No local storage with a baseline network bandwidth of 6 Gbps.",
+    "Suited for machine learning inference, ray tracing, and image processing."
   ],
   "categories": [
     "GPU Accelerated",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

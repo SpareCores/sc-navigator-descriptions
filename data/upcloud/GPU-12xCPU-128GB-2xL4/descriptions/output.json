@@ -1,23 +1,24 @@
 {
   "page": [
-    "UpCloud GPU-12xCPU-128GB-2xL4 is a GPU-accelerated server instance configured with 12 vCPUs and 128.0 GB of system memory. The processing power is delivered by an AMD EPYC 9575F processor built on the x86_64 architecture, featuring 12 physical cores with a single thread per core under a shared CPU allocation model. The instance includes two NVIDIA L4 GPUs based on the Ada Lovelace architecture, providing a combined total of 48 GB of VRAM. There is no local storage bundled with this server type, and virtualization is managed via the KVM hypervisor.",
-    "Benchmark results indicate strong single-core performance, with stress-ng single-core CPU performance, single-threaded gzip compression, and single-threaded bzip3 decompression all placing in the top tier. Conversely, multi-core operations, including stress-ng multi-core CPU performance and multi-threaded bzip3 decompression, fall into the average tier. Memory bandwidth tests for both small and large blocks, along with PassMark CPU and memory scores, also align with average tier performance. For language model workloads, the server achieves top-tier text generation speeds of 349.81 tokens per second using a small 135M model, while prompt processing for the same model remains in the average tier.",
-    "The qualitative cost efficiency of this instance is defined by its high GPU-to-vCPU density, pairing 48 GB of VRAM with 128.0 GB of system memory. This resource distribution makes the instance suitable for workloads that require dedicated graphics acceleration but do not demand massive multi-core CPU scaling, such as small-scale LLM inference, machine learning model training, and data science tasks. A notable tradeoff is the shared CPU allocation and the absence of local storage, which requires external storage attachments for data-intensive applications."
+    "The UpCloud GPU-12xCPU-128GB-2xL4 is a KVM-hypervised virtual server configured with 12 shared vCPUs powered by an AMD EPYC 9575F processor on the x86_64 architecture. The CPU configuration features 12 physical cores with single-thread execution, supported by 64 KB L1d, 0.5 MB L2, and 16 MB L3 cache. System memory totals 128.0 GB, providing 10.67 GB of RAM per core. Graphics and parallel computing acceleration are delivered via two NVIDIA L4 GPUs based on the Ada Lovelace architecture, providing a combined 48 GB of VRAM. No local storage is bundled with this instance type.",
+    "Benchmark results indicate top-tier single-core CPU performance, with stress-ng single-core scoring 3942.28 and single-threaded gzip compression reaching 42.79 GB/sec. Multi-core performance is moderate, with a stress-ng multi-core score of 45719.52 and a PassMark CPU score of 35206.69, reflecting the shared CPU allocation model. Memory bandwidth is stable, recording 146.11 GB/sec for large-block read operations and 89.37 GB/sec for large-block write operations. For AI workloads, the system achieves a top-tier text generation speed of 349.81 tokens per second using a small 135M parameter LLM, while prompt processing operates at an average rate of 1842.33 tokens per second.",
+    "This server offers a specialized resource profile that balances high-capacity GPU acceleration and substantial memory density against a shared CPU allocation model. The absence of local storage requires external storage attachments, which should be factored into deployment architectures. Given the dual NVIDIA L4 GPUs and 128 GB of RAM, this configuration is highly suited for machine learning inference, small-scale LLM execution, data science pipelines, and GPU-accelerated rendering workloads that do not require dedicated, non-shared CPU cores."
   ],
-  "description": "UpCloud GPU-12xCPU-128GB-2xL4 is a GPU-accelerated server featuring 12 vCPUs powered by an AMD EPYC 9575F processor on the x86_64 architecture, paired with 128.0 GB of system memory. The hardware configuration includes two NVIDIA L4 Ada Lovelace GPUs delivering 48 GB of total VRAM, while local storage is absent. Operating under a KVM hypervisor with shared CPU allocation, the server exhibits top-tier single-core CPU performance, single-threaded compression, and small-model LLM text generation. However, multi-core CPU performance, memory bandwidth, and database operations remain in the average tier. This resource profile offers high GPU and memory density relative to its vCPU count, making it suitable for machine learning inference, data science, and GPU-accelerated workloads that do not require dedicated local storage or high multi-threaded CPU scaling.",
-  "og_description": "UpCloud GPU-12xCPU-128GB-2xL4 is a GPU-accelerated server with 12 AMD EPYC vCPUs, 128 GB RAM, and two NVIDIA L4 GPUs providing 48 GB VRAM. It features top-tier single-core performance and is built for machine learning.",
-  "meta_description": "UpCloud GPU-12xCPU-128GB-2xL4 is a KVM-based server featuring 12 AMD EPYC vCPUs, 128 GB RAM, and two NVIDIA L4 GPUs with 48 GB VRAM.",
-  "tagline": "A GPU-accelerated server combining dual NVIDIA L4 graphics processors with high memory capacity for machine learning and single-threaded workloads.",
+  "description": "The UpCloud GPU-12xCPU-128GB-2xL4 is a KVM-based virtual server designed for GPU-accelerated workloads. It features 12 shared vCPUs powered by an AMD EPYC 9575F processor, 128.0 GB of system memory, and two NVIDIA L4 GPUs with 48 GB of combined VRAM. The server does not include local storage. Benchmark data highlights top-tier single-core performance, with stress-ng single-core scoring 3942.28 and single-threaded gzip compression reaching 42.79 GB/sec. Multi-core CPU and memory bandwidth benchmarks perform in the average tier, influenced by the shared CPU allocation. For AI tasks, the server delivers top-tier text generation speeds of 349.81 tokens per second on small language models. This instance is optimized for machine learning inference, data science, and GPU-accelerated rendering where dedicated CPU cores are not a strict requirement.",
+  "og_description": "UpCloud GPU-12xCPU-128GB-2xL4 is a KVM virtual server featuring 12 shared AMD EPYC vCPUs, 128 GB RAM, and two NVIDIA L4 GPUs with 48 GB VRAM. It is optimized for machine learning and GPU rendering.",
+  "meta_description": "UpCloud GPU-12xCPU-128GB-2xL4 is a KVM server with 12 shared AMD EPYC vCPUs, 128 GB RAM, and two NVIDIA L4 GPUs. Ideal for AI inference and rendering.",
+  "tagline": "An accelerator-focused virtual server combining dual NVIDIA L4 GPUs and 128 GB of RAM for efficient parallel computing and AI inference.",
   "bullet_points": [
-    "Dual NVIDIA L4 Ada Lovelace GPUs with 48 GB total VRAM",
-    "12 vCPUs powered by AMD EPYC 9575F processors",
-    "128.0 GB of system memory with a 1:10.67 vCPU-to-RAM ratio",
-    "Top-tier single-core CPU and small-model LLM text generation performance",
-    "KVM hypervisor with shared CPU allocation and no local storage",
-    "Best suited for machine learning inference and data science workloads"
+    "Dual NVIDIA L4 Ada Lovelace GPUs providing 48 GB of total VRAM.",
+    "12 shared AMD EPYC 9575F vCPUs with top-tier single-core performance.",
+    "128 GB of system memory delivering 10.67 GB of RAM per core.",
+    "Top-tier text generation speeds for small-scale language model inference.",
+    "No bundled local storage, requiring external volume attachment.",
+    "Best suited for machine learning inference, data science, and GPU rendering."
   ],
   "categories": [
     "GPU Accelerated",
-    "Memory Optimized"
+    "Memory Optimized",
+    "Compute Optimized"
   ]
 }
