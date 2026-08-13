@@ -1,19 +1,20 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c1.large is an x86_64 architecture server instance belonging to the ecs.c1 family, running on the KVM hypervisor. It features 8 dedicated physical cores with 8 vCPUs, operating at a 1.0 thread-per-core ratio, which indicates that hyperthreading is disabled. The instance is equipped with 16.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core.",
-    "This server configuration does not include local storage or bundled GPUs, meaning all storage requirements must be met via external network-attached block storage. Additionally, the instance does not come with complimentary public IPv4 addresses. The lack of hardware accelerators and local NVMe storage limits its utility for workloads requiring high-speed local caching or parallelized graphics processing.",
-    "From a qualitative cost-efficiency perspective, the 1:2 vCPU-to-RAM ratio positions this instance as a compute-focused resource where CPU allocation is prioritized over memory capacity. This resource density is suitable for compute-bound workloads that do not demand large memory footprints, such as batch processing, web serving, and distributed microservices."
+    "Alibaba Cloud ecs.c1.large is a compute-optimized virtual machine instance built on the x86_64 architecture and managed via the KVM hypervisor. It features 8 dedicated vCPUs mapped directly to 8 physical cores, resulting in a configuration of 1.0 thread per core. The instance is equipped with 16.0 GB of system memory, providing a resource density of 2.0 GB of RAM per core.",
+    "This instance type does not include any local NVMe or SSD storage, requiring external block storage volumes for operating system and application data. Additionally, it does not bundle complimentary public IPv4 addresses. The CPU flags indicate a lack of modern instruction set extensions, such as Advanced Vector Extensions (AVX, AVX-512), Advanced Matrix Extensions (AMX), and hardware-accelerated cryptography (AES, SHA_NI), which limits its performance in specialized vector math, deep learning, and encryption workloads.",
+    "From a qualitative cost-efficiency perspective, the dedicated CPU allocation ensures predictable compute performance without resource contention, making it suitable for sustained workloads. However, the 1:2 RAM-to-vCPU ratio and the absence of hyperthreading mean it is tailored specifically for compute-bound tasks rather than memory-intensive applications. Appropriate workloads include web serving, batch processing, and lightweight compute tasks that do not rely on advanced vector instructions or local high-speed storage."
   ],
-  "description": "Alibaba Cloud ecs.c1.large is an x86_64 compute-focused server instance within the ecs.c1 family, virtualized via the KVM hypervisor. It features 8 dedicated vCPUs mapped to 8 physical cores, operating without hyperthreading at 1.0 thread per core. The hardware configuration includes 16.0 GB of system memory, establishing a 1:2 vCPU-to-RAM ratio with 2.0 GB of memory per core. This instance does not include local storage, integrated GPUs, or complimentary public IPv4 addresses, requiring external network-attached storage for data persistence. Qualitatively, the dedicated CPU allocation provides predictable compute performance, making it suitable for CPU-bound tasks with moderate memory requirements. Appropriate workloads include batch processing, web serving, and microservices that do not require hardware acceleration or high-speed local storage.",
-  "og_description": "Alibaba Cloud ecs.c1.large is an x86_64 compute-focused server featuring 8 dedicated physical cores, 16.0 GB of RAM, and no local storage, optimized for CPU-bound workloads under KVM virtualization.",
-  "meta_description": "Alibaba Cloud ecs.c1.large is an x86_64 server with 8 dedicated vCPUs, 16.0 GB of RAM, and no local storage, running on the KVM hypervisor.",
-  "tagline": "A dedicated eight-core x86_64 compute instance with a one-to-two processor-to-memory ratio and no local storage.",
+  "description": "Alibaba Cloud ecs.c1.large is an x86_64 compute-optimized instance featuring 8 dedicated vCPUs across 8 physical cores with a 1.0 thread-per-core configuration. It provides 16.0 GB of system memory, yielding a 2.0 GB RAM-per-core ratio. Operating under the KVM hypervisor, this instance does not include local storage or complimentary public IPv4 addresses. A key technical limitation is the absence of modern CPU instruction extensions, including AVX, AVX-512, AMX, and hardware-accelerated cryptography flags. Consequently, the instance is best suited for standard compute-bound workloads, batch processing, and basic web serving that require dedicated CPU resources but do not rely on specialized vector mathematics, high-speed local disk I/O, or large memory footprints.",
+  "og_description": "Alibaba Cloud ecs.c1.large is an x86_64 compute-optimized instance with 8 dedicated vCPUs, 16.0 GB RAM, and no local storage, running on the KVM hypervisor for predictable compute workloads.",
+  "meta_description": "Alibaba Cloud ecs.c1.large is a KVM-based x86_64 instance offering 8 dedicated vCPUs and 16.0 GB RAM for compute-focused workloads.",
+  "tagline": "A dedicated x86_64 compute instance featuring eight physical cores and a balanced two gigabytes of memory per core.",
   "bullet_points": [
-    "8 dedicated physical cores and 8 vCPUs on x86_64 architecture",
-    "16.0 GB of system memory providing 2.0 GB per core",
-    "No integrated GPUs or local storage included",
-    "KVM hypervisor virtualization with disabled hyperthreading",
-    "Best suited for CPU-bound workloads, batch processing, and web serving"
+    "8 dedicated vCPUs mapped to 8 physical cores with no hyperthreading",
+    "16.0 GB of system memory providing 2.0 GB of RAM per core",
+    "KVM hypervisor virtualization on x86_64 architecture",
+    "No local storage or complimentary public IPv4 addresses included",
+    "Lacks advanced CPU extensions such as AVX-512, AMX, and AES",
+    "Best suited for dedicated compute-bound tasks and basic web serving"
   ],
   "categories": [
     "Compute Optimized"
