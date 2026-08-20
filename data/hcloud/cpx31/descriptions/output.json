@@ -1,22 +1,22 @@
 {
   "page": [
-    "Hetzner Cloud cpx31 is an x86_64 virtual server powered by the QEMU hypervisor and AMD EPYC processors. This instance features 4 virtual CPUs with a shared allocation model, operating at a base clock speed of 2.0 GHz. The hardware configuration includes 8.0 GB of system memory, providing approximately 1.95 GB of RAM per core, alongside 160 GB of local NVMe SSD storage. The AMD EPYC processor is equipped with 32 KB of L1d cache, 0.5 MB of L2 cache, and 16 MB of L3 cache, supporting instruction sets such as AVX, AES, and SHA_NI.",
-    "Benchmark data reveals a clear performance profile characterized by strong single-core capabilities but constrained multi-core and memory throughput. The server achieves a strong single-core CPU performance score of 2681.88 in stress-ng, but its multi-core scaling is limited, resulting in a weak multi-core Geekbench score of 4053.0 and a weak multi-threaded bzip3 decompression speed of 26.07 GB/sec. This discrepancy is primarily a consequence of the shared CPU allocation model. Additionally, memory performance is relatively low, with a weak Passmark memory score of 1280.84, although cached small-block read bandwidth remains average at 387.44 GB/sec.",
-    "Given its shared resource architecture, the cpx31 offers a cost-efficient entry point for workloads that do not require continuous, dedicated CPU performance. It is well-suited for development environments, lightweight static web serving, and basic database operations, as reflected in its average Passmark database score of 2992.45. However, it is poorly suited for resource-intensive tasks like software compilation, ray tracing, or medium-scale LLM prompt processing, where it registers poor performance."
+    "Hetzner Cloud cpx31 is an x86_64 virtualized server powered by an AMD EPYC processor running at 2.0 GHz. It features 4 shared vCPUs mapped to 4 physical cores with 1 thread per core. The memory configuration consists of 8.0 GB of RAM, yielding approximately 1.95 GB per core. Local storage is bundled, providing 160 GB of NVMe SSD capacity. The CPU architecture includes hardware support for AVX, AES, SHA_NI, and BMI2, but lacks AVX-512 extensions. No public IPv4 addresses are included by default.",
+    "Benchmark evaluations indicate strong single-core CPU performance, placing in the top 25% in stress-ng tests. However, multi-core performance falls into the average range, and Geekbench multi-core scores are weak, landing in the bottom 25%. Memory bandwidth tests show average read and write speeds, though Passmark memory scores are weak. Database operations and static web serving throughput are average to weak, with Redis SET operations registering in the bottom 25%. LLM inference speeds are average for small 135M models but drop significantly for larger models.",
+    "Given its shared CPU allocation and 1:2 vCPU-to-RAM ratio, the cpx31 offers a cost-efficient profile for workloads that do not require dedicated, continuous CPU execution. It is suitable for entry-level web serving, lightweight database operations, basic software compilation, and general-purpose utility tasks where resource density and budget constraints are prioritized over sustained high-performance multi-core execution."
   ],
-  "description": "Hetzner Cloud cpx31 is an x86_64 virtual server configured with 4 shared AMD EPYC vCPUs running at 2.0 GHz, 8.0 GB of RAM, and 160 GB of local NVMe SSD storage. Operating under the QEMU hypervisor, this instance delivers strong single-core CPU performance, as demonstrated by its stress-ng single-core score of 2681.88. However, the shared CPU allocation model introduces performance tradeoffs, resulting in weak multi-core benchmark results, such as a Geekbench multi-core score of 4053.0 and lower memory performance. The server is qualitatively cost-efficient for budget-conscious deployments, making it suitable for development environments, light database tasks, and basic web serving. It is less optimal for sustained multi-threaded workloads, software compilation, or intensive data processing.",
-  "og_description": "Hetzner Cloud cpx31 is a shared AMD EPYC virtual server with 4 vCPUs, 8 GB RAM, and 160 GB NVMe SSD storage, offering strong single-core performance alongside budget-friendly shared resources.",
-  "meta_description": "Hetzner Cloud cpx31 is an AMD EPYC virtual server featuring 4 shared vCPUs, 8 GB RAM, and 160 GB NVMe SSD storage for budget-friendly workloads.",
-  "tagline": "A budget-friendly shared virtual server combining strong single-core AMD EPYC performance with local NVMe SSD storage for light workloads.",
+  "description": "Hetzner Cloud cpx31 is an x86_64 virtual server featuring 4 shared AMD EPYC vCPUs running at 2.0 GHz, 8.0 GB of RAM, and 160 GB of bundled NVMe SSD storage. Operating under QEMU virtualization, the processor supports AVX, AES, and SHA_NI instruction sets. Performance benchmarks show strong single-core capabilities in stress-ng tests, though multi-core performance and memory bandwidth remain average to weak. The server lacks complimentary public IPv4 addresses. With its shared CPU allocation and 1:2 memory-to-vCPU ratio, the cpx31 represents a cost-efficient option for workloads with variable CPU demands. It is best suited for lightweight database operations, basic web serving, and general-purpose development environments that benefit from fast local NVMe storage without requiring dedicated CPU cores.",
+  "og_description": "Hetzner Cloud cpx31 is an x86_64 virtual server with 4 shared AMD EPYC vCPUs, 8.0 GB of RAM, and 160 GB of NVMe SSD storage, delivering strong single-core and average multi-core performance.",
+  "meta_description": "Hetzner Cloud cpx31 is an x86_64 virtual server featuring 4 shared AMD EPYC vCPUs, 8.0 GB of RAM, and 160 GB of NVMe SSD storage.",
+  "tagline": "An x86_64 virtual server featuring shared AMD EPYC processors and local NVMe storage for budget-conscious, variable workloads.",
   "bullet_points": [
-    "4 shared AMD EPYC vCPUs operating at 2.0 GHz",
-    "8.0 GB of system memory and 160 GB of local NVMe SSD storage",
-    "Strong single-core performance suitable for bursty, single-threaded tasks",
-    "Shared CPU allocation model optimized for cost efficiency over sustained multi-core loads",
-    "Best suited for development environments, light databases, and basic web serving"
+    "4 shared AMD EPYC vCPUs at 2.0 GHz",
+    "8.0 GB RAM and 160 GB bundled NVMe SSD storage",
+    "Strong single-core CPU performance in stress-ng benchmarks",
+    "Average multi-core and memory bandwidth capabilities",
+    "Suitable for lightweight databases, basic web serving, and development"
   ],
   "categories": [
-    "Burstable & Budget",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Burstable & Budget"
   ]
 }

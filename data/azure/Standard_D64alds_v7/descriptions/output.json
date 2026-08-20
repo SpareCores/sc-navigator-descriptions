@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D64alds_v7 is an x86_64 server instance powered by a dedicated AMD EPYC 9V45 processor running at 4.5 GHz. It features 64 vCPUs derived from 32 physical cores with 2 threads per core, managed via the Microsoft Hyper-V hypervisor. The memory configuration consists of 128.0 GB of RAM, yielding a resource density of 2.0 GB per vCPU. This low-memory profile is paired with 3780 GB of local storage and premium storage capabilities, though it includes zero complimentary public IPv4 addresses.",
-    "In benchmark evaluations, the D64alds_v7 demonstrates strong compute and memory capabilities. Its single-core CPU performance via stress-ng, single-threaded gzip compression, and PassMark CPU score all rank in the top tier (top 10%). Multi-core stress-ng performance, PassMark CPU physics, and encryption tests fall within the strong top 25% tier. Memory bandwidth tests for both small cached blocks and large uncached blocks consistently register in the top 25%. For database workloads, PassMark database operations rank in the top 10%, complemented by strong top 25% performance in Redis SET operations and static web serving throughput.",
-    "The instance's hardware profile presents distinct architectural tradeoffs. While its high-frequency AMD EPYC processor delivers top-tier single-core execution and strong multi-threaded performance, the 1:2 vCPU-to-RAM ratio limits its suitability for memory-bound applications. Large-scale LLM inference benchmarks reflect this constraint, with prompt processing and text generation for a 70B model dropping to average (middle 50%) performance, whereas smaller 135M and 7B models achieve top-tier to strong execution speeds. Consequently, this server is highly optimized for compute-heavy tasks, local-storage-dependent databases, web serving, and moderate-scale machine learning inference rather than memory-intensive enterprise databases."
+    "Microsoft Azure D64alds_v7 is a compute-optimized virtual machine powered by an AMD EPYC 9V45 processor built on the x86_64 architecture. Running on the Microsoft Hyper-V hypervisor, this instance provides 64 dedicated vCPUs mapped to 32 physical cores with multithreading enabled. The CPU operates at a high clock speed of 4.5 GHz and features a cache hierarchy including 1.0 MB L2 cache and 32 MB L3 cache. It supports advanced vector and cryptographic instruction sets, including AVX-512, AVX_VNNI, AES, and SHA_NI.",
+    "This server is configured with 128.0 GB of system memory, yielding a low memory-to-core ratio of 2.0 GB per vCPU. It includes 3780 GB of local storage and is premium storage capable, making it suitable for workloads requiring high-speed local disk access. No GPU accelerators are included in this configuration, and it does not bundle complimentary public IPv4 addresses.",
+    "Benchmark data highlights top-tier performance in single-core CPU execution, gzip compression, and PassMark CPU and database operations. Multi-core performance, memory bandwidth reaching 205.53 GB/sec for uncached large-block reads, and Redis SET operations fall into the strong top 25% tier. Large-model LLM inference with 70B parameters drops to average performance, though smaller model inference achieves top-tier text generation speeds.",
+    "Given its high-frequency dedicated cores and substantial local storage, the D64alds_v7 offers strong resource density for compute-heavy and storage-reliant tasks. However, the low memory-to-vCPU ratio represents a tradeoff for memory-intensive applications. It is highly suited for high-throughput web serving, database operations, software compilation, and localized data processing tasks where raw CPU speed and local disk capacity are prioritized over massive RAM footprints."
   ],
-  "description": "Microsoft Azure D64alds_v7 is a compute-optimized x86_64 server instance powered by a dedicated AMD EPYC 9V45 processor running at 4.5 GHz. It features 64 vCPUs across 32 physical cores, 128.0 GB of RAM, and 3780 GB of local storage. Operating under the Microsoft Hyper-V hypervisor, this instance delivers top-tier single-core CPU performance and PassMark database operations, alongside strong multi-core and memory bandwidth capabilities. The 1:2 vCPU-to-RAM ratio represents a low-memory tradeoff, making it highly efficient for compute-intensive workloads rather than memory-heavy applications. Benchmark data shows top-tier performance in small-model LLM inference and single-threaded compression, but performance drops to average for large 70B LLM models. It supports premium storage and advanced vector extensions but includes zero complimentary public IPv4 addresses. This server is best suited for high-throughput web serving, local-storage-dependent databases, and compute-heavy batch processing.",
-  "og_description": "Microsoft Azure D64alds_v7 is a compute-optimized server featuring 64 vCPUs, 128 GB RAM, and 3780 GB local storage, powered by a 4.5 GHz AMD EPYC 9V45 processor for high-throughput database and web serving workloads.",
-  "meta_description": "Microsoft Azure D64alds_v7 is a 64-vCPU server with 128 GB RAM and 3780 GB local storage, powered by a 4.5 GHz AMD EPYC processor.",
-  "tagline": "A high-frequency, compute-focused server with dense local storage and top-tier single-core performance for demanding database and web workloads.",
+  "description": "Microsoft Azure D64alds_v7 is an x86_64 compute-optimized server powered by a dedicated AMD EPYC 9V45 processor running at 4.5 GHz. It features 64 vCPUs (32 physical cores), 128.0 GB of RAM, and 3780 GB of local storage. Operating on Microsoft Hyper-V, the instance lacks GPU acceleration but supports advanced instruction sets like AVX-512 and AES. Benchmarks indicate top-tier single-core CPU performance, database operations, and small-model LLM inference, alongside strong multi-core and memory bandwidth capabilities. With a low memory-to-core ratio of 2.0 GB per vCPU, this server represents a high-compute, storage-capable configuration. It is best suited for high-throughput web serving, database workloads, and compute-heavy tasks that benefit from fast local disk access rather than massive memory allocations.",
+  "og_description": "Microsoft Azure D64alds_v7 is an x86_64 compute-optimized server featuring 64 dedicated AMD EPYC vCPUs at 4.5 GHz, 128 GB RAM, and 3780 GB local storage, optimized for high-throughput database and compute workloads.",
+  "meta_description": "Microsoft Azure D64alds_v7 is a compute-optimized server with 64 AMD EPYC vCPUs, 128 GB RAM, and 3780 GB local storage for high-performance workloads.",
+  "tagline": "A high-frequency 64-vCPU compute instance featuring fast local storage and top-tier single-core performance for demanding database and processing workloads.",
   "bullet_points": [
-    "Powered by a dedicated 4.5 GHz AMD EPYC 9V45 processor with 64 vCPUs.",
-    "Equipped with 128.0 GB of RAM and 3780 GB of local storage.",
-    "Top-tier single-core CPU and database operation benchmark performance.",
-    "Strong memory bandwidth and multi-core processing capabilities.",
-    "Optimized for compute-heavy tasks, web serving, and local databases.",
-    "Tradeoff of a lower 1:2 vCPU-to-RAM ratio limits memory-bound workloads."
+    "64 dedicated AMD EPYC 9V45 vCPUs operating at 4.5 GHz",
+    "128.0 GB system memory with 2.0 GB per vCPU allocation",
+    "3780 GB of high-capacity local storage",
+    "Top-tier single-core CPU and database benchmark performance",
+    "Optimized for high-throughput web serving and database operations"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

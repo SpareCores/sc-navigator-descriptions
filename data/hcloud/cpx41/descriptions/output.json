@@ -1,23 +1,23 @@
 {
   "page": [
-    "Hetzner Cloud cpx41 is an x86_64 virtual server built on the QEMU hypervisor, featuring 8 shared vCPUs powered by AMD EPYC processors running at 2.0 GHz. The hardware configuration includes 16.0 GB of system memory, providing approximately 1.95 GB of RAM per core. Storage is provided by a local 240 GB NVMe SSD, while the instance does not include any dedicated GPUs or complimentary public IPv4 addresses.",
-    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. The shared CPU allocation results in poor single-core performance, with stress-ng single-core testing placing in the bottom 10% and single-threaded gzip compression in the bottom 25%. However, multi-core benchmarks, such as Geekbench multi-core and Passmark CPU, fall within the average range. Memory bandwidth and database operations also demonstrate average performance, with Redis SET operations achieving 15.11 million operations per second.",
-    "Given its shared CPU architecture and 1:2 RAM-to-vCPU ratio, the cpx41 offers a budget-friendly resource profile for workloads that do not require sustained, dedicated CPU performance. It is well-suited for horizontal scaling, development environments, static web serving, and lightweight database operations. However, it is less optimal for CPU-bound single-threaded tasks or large-scale LLM inference, as demonstrated by weak prompt processing speeds on 7B models."
+    "Hetzner Cloud cpx41 is an x86_64 virtual server powered by an AMD EPYC processor running at 2.0 GHz. It features 8 vCPUs mapped to 8 physical cores with a shared CPU allocation model. The system is equipped with 16.0 GB of system memory, providing approximately 1.95 GB of RAM per core. Local storage is bundled and consists of a 240 GB NVMe SSD, while the hypervisor layer is managed via QEMU. No complimentary public IPv4 addresses are included in this configuration.",
+    "Benchmark evaluations indicate that the cpx41 delivers average multi-core performance but exhibits weak single-core capabilities. In stress-ng testing, single-core CPU performance falls into the bottom 10%, whereas multi-core performance reaches the middle 50%. Memory bandwidth tests, including both cached small-block reads and uncached large-block reads or writes, consistently rank in the average tier. Similarly, Geekbench multi-core, software compilation, and ray tracing benchmarks place the server in the middle 50% performance bracket, though single-threaded gzip compression and text processing show weaker results.",
+    "From a resource density perspective, the cpx41 offers a compute-leaning hardware profile with a 1:2 vCPU-to-RAM ratio. Because it utilizes a shared CPU allocation model, users may experience performance variability depending on host node neighbors, which represents a tradeoff against dedicated-core instances. However, the inclusion of 240 GB of local NVMe SSD storage alongside 8 vCPUs provides a cost-efficient profile for multi-threaded workloads that do not require sustained, isolated CPU performance.",
+    "This server configuration is suitable for multi-threaded applications, static web serving, and basic database operations, as reflected in its average Redis SET operations and static web serving throughput benchmarks. It is also capable of handling light software compilation and small-scale LLM inference tasks. It is less suited for single-threaded, CPU-bound tasks or memory-intensive applications that demand a higher RAM-to-vCPU ratio."
   ],
-  "description": "Hetzner Cloud cpx41 is an x86_64 virtual server utilizing the QEMU hypervisor and powered by an AMD EPYC processor. It features 8 shared vCPUs running at 2.0 GHz, 16.0 GB of system memory, and a local 240 GB NVMe SSD, with no integrated GPU. Benchmark data reveals a contrast between single-core and multi-core performance; single-core stress-ng results fall in the bottom 10%, whereas multi-core metrics, such as Geekbench multi-core and Passmark CPU, achieve average ratings. Memory bandwidth and Redis SET operations also perform in the average tier. Due to its shared CPU allocation and 1:2 RAM-to-vCPU ratio, the cpx41 represents a cost-efficient option for budget-conscious deployments. It is best suited for workloads such as static web serving, software compilation, and development environments, while remaining less suitable for sustained single-threaded compute tasks.",
-  "og_description": "Hetzner Cloud cpx41 is an x86_64 virtual server featuring 8 shared AMD EPYC vCPUs, 16 GB RAM, and a 240 GB NVMe SSD. It delivers average multi-core performance suitable for budget-conscious web serving and development.",
-  "meta_description": "Hetzner Cloud cpx41 is an x86_64 virtual server with 8 shared AMD EPYC vCPUs, 16 GB RAM, and 240 GB NVMe storage, offering average multi-core performance.",
-  "tagline": "A budget-friendly virtual server with shared AMD EPYC processors and local NVMe storage for general development and web serving workloads.",
+  "description": "Hetzner Cloud cpx41 is an x86_64 virtual server featuring 8 shared AMD EPYC vCPUs running at 2.0 GHz, 16.0 GB of RAM, and 240 GB of local NVMe SSD storage. Operating under the QEMU hypervisor, this instance provides a 1:2 vCPU-to-RAM ratio. Benchmark data shows average multi-core performance, memory bandwidth, and database operations, though single-core performance is weak, landing in the bottom 10% in stress-ng tests. The shared CPU allocation introduces potential resource contention tradeoffs but offers a cost-efficient profile for multi-threaded workloads. The cpx41 is suited for static web serving, multi-threaded processing, light software compilation, and basic database operations.",
+  "og_description": "Hetzner Cloud cpx41 is an x86_64 virtual server featuring 8 shared AMD EPYC vCPUs, 16.0 GB of RAM, and 240 GB of local NVMe SSD storage, delivering average multi-core performance for general workloads.",
+  "meta_description": "Hetzner Cloud cpx41 is an x86_64 virtual server with 8 shared AMD EPYC vCPUs, 16.0 GB of RAM, and 240 GB of local NVMe SSD storage.",
+  "tagline": "A shared-core virtual server combining eight AMD EPYC vCPUs with local NVMe storage for balanced multi-threaded workloads.",
   "bullet_points": [
-    "8 shared AMD EPYC vCPUs running at 2.0 GHz",
-    "16.0 GB of system memory and 240 GB local NVMe SSD storage",
-    "Average multi-core performance in Geekbench and Passmark benchmarks",
-    "Poor single-core performance due to shared CPU resource allocation",
-    "Suitable for static web serving, software compilation, and development environments"
+    "8 shared AMD EPYC vCPUs and 16.0 GB of system memory",
+    "Bundled 240 GB local NVMe SSD storage",
+    "Average multi-core and memory bandwidth benchmark performance",
+    "Weak single-core CPU performance falling in the bottom 10%",
+    "Suitable for static web serving, light compilation, and multi-threaded tasks"
   ],
   "categories": [
-    "Burstable & Budget",
     "Compute Optimized",
-    "General Purpose"
+    "Burstable & Budget"
   ]
 }
