@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E4ds_v7 is a memory-optimized virtual machine from the Edsv7 family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated vCPUs mapped to 2 physical cores of an Intel Xeon 6973P-C x86_64 processor operating at 4.2 GHz. The hardware configuration includes 32.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per core. For local storage, the instance is equipped with a 236 GB local disk and supports Premium Storage. No GPU accelerators or complimentary public IPv4 addresses are included.",
-    "Performance benchmarks indicate strong single-threaded capabilities, with gzip compression reaching 34.96 GB/sec and bzip3 decompression at 14.44 GB/sec. However, multi-core and memory write performance are relatively constrained; stress-ng multi-core CPU performance and large-block memory write bandwidth are classified as weak. Passmark CPU and memory scores sit in the average tier, alongside redis SET operations at 7.86 million operations per second and static web serving throughput at 8.6 GB/sec. Large language model inference on a 7B model is limited, yielding a poor text generation speed of 5.18 tokens per second.",
-    "From a qualitative cost-efficiency perspective, the E4ds_v7 offers a dense memory allocation relative to its compute footprint, making it a viable option for workloads requiring significant RAM without the overhead of high vCPU counts. The inclusion of a 236 GB local disk and Premium Storage compatibility supports data-intensive operations. This server is best suited for memory-bound applications, single-threaded processing tasks, caching layers, and moderate database operations that benefit from the 32.0 GB memory capacity."
+    "Microsoft Azure E4ds_v7 is an x86_64 architecture server belonging to the Edsv7 family, virtualized via Microsoft Hyper-V. It features a dedicated Intel Xeon 6973P-C processor with 4 vCPUs, derived from 2 physical cores with hyper-threading enabled. The CPU operates at a clock speed of 4.2 GHz and includes a 480 MB L3 cache, alongside 48 KB L1d and 2 MB L2 caches. The hardware configuration includes 32.0 GB of system memory, yielding an 8.0 GB memory-to-vCPU ratio. Local storage is bundled with a 236 GB disk, and the instance is capable of utilizing Premium Storage. No GPUs are included in this configuration.",
+    "Performance benchmarks indicate strong single-threaded capabilities but reveal limitations in multi-threaded and memory-intensive operations. Single-threaded gzip compression at 34.96 GB/sec and bzip3 decompression at 14.44 GB/sec both rank in the strong category. However, the stress-ng multi-core CPU performance of 4533.06 and bzip3 multi-threaded decompression of 29.06 GB/sec are weak. Memory bandwidth benchmarks show a weak write speed of 22.41 GB/sec for large blocks and a weak read speed of 335.66 GB/sec for small cached blocks, though large block read bandwidth is average at 44.69 GB/sec. Passmark CPU and memory scores fall within the average range.",
+    "For specialized workloads, the server achieves an average static web serving throughput of 8.6 GB/sec and processes 7.86 million Redis SET operations per second. Large language model inference speeds are average for a small 135M model at 516.92 tokens per second for prompt processing, but drop to poor for a medium 7B model at 5.18 tokens per second during text generation. Given the 1:8 vCPU-to-RAM ratio and the inclusion of local storage, this server offers qualitative cost efficiency for memory-intensive applications that do not require high multi-core scaling. Appropriate workloads include caching layers, relational databases with moderate transaction volumes, and single-threaded data processing tasks."
   ],
-  "description": "Microsoft Azure E4ds_v7 is a memory-optimized virtual machine from the Edsv7 family, powered by an Intel Xeon 6973P-C x86_64 processor running at 4.2 GHz. It features 4 dedicated vCPUs across 2 physical cores, 32.0 GB of RAM, and a 236 GB local disk with Premium Storage capability. Benchmarks show strong single-threaded performance, with gzip compression at 34.96 GB/sec and bzip3 decompression at 14.44 GB/sec, though multi-core and memory write speeds are weaker. The instance provides a high memory-to-vCPU ratio of 8.0 GB per core, offering qualitative cost efficiency for memory-intensive workloads that do not require massive parallel compute. It is well-suited for caching layers, single-threaded data processing, and moderate database workloads.",
-  "og_description": "Microsoft Azure E4ds_v7 is a memory-optimized virtual machine featuring 4 vCPUs, 32 GB RAM, and a 236 GB local disk, powered by an Intel Xeon 6973P-C processor running at 4.2 GHz on Hyper-V.",
-  "meta_description": "Microsoft Azure E4ds_v7 is a memory-optimized VM with 4 vCPUs, 32 GB RAM, and a 236 GB local disk, powered by a 4.2 GHz Intel Xeon processor.",
-  "tagline": "A memory-optimized virtual machine featuring a high RAM-to-vCPU ratio, dedicated Intel Xeon processing, and local SSD storage.",
+  "description": "Microsoft Azure E4ds_v7 is an x86_64 memory-optimized server from the Edsv7 family, virtualized on Microsoft Hyper-V. It features a dedicated 4.2 GHz Intel Xeon 6973P-C processor with 4 vCPUs, 32.0 GB of RAM, and a 236 GB local storage disk. Single-threaded performance is strong, as evidenced by gzip compression and bzip3 decompression benchmarks. However, multi-core CPU scaling and memory write bandwidth are relatively weak. The server is suited for memory-bound workloads such as caching, moderate database operations, and single-threaded processing tasks that benefit from its 1:8 vCPU-to-RAM ratio and local storage capacity, rather than parallelized compute-heavy applications.",
+  "og_description": "Microsoft Azure E4ds_v7 is a memory-optimized server featuring 4 vCPUs, 32 GB RAM, and 236 GB local storage. It delivers strong single-threaded performance but exhibits weak multi-core scaling.",
+  "meta_description": "Microsoft Azure E4ds_v7 is a memory-optimized server with 4 vCPUs, 32 GB RAM, and 236 GB local storage, virtualized via Microsoft Hyper-V.",
+  "tagline": "A memory-optimized virtual server featuring a high RAM-to-vCPU ratio, local storage, and strong single-threaded processing capabilities.",
   "bullet_points": [
-    "Intel Xeon 6973P-C processor with 4 vCPUs and 4.2 GHz clock speed",
-    "32.0 GB of system memory providing 8.0 GB per core",
-    "236 GB local storage with Premium Storage capability",
-    "Strong single-threaded performance in compression and decompression benchmarks",
-    "Optimized for memory-bound workloads, caching, and database operations"
+    "Dedicated Intel Xeon 6973P-C processor running at 4.2 GHz",
+    "32.0 GB of RAM providing a high 1:8 vCPU-to-RAM ratio",
+    "Includes 236 GB of local storage and Premium Storage support",
+    "Strong single-threaded compression and decompression performance",
+    "Weak multi-core scaling and memory write bandwidth",
+    "Suited for caching, moderate database operations, and memory-bound tasks"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

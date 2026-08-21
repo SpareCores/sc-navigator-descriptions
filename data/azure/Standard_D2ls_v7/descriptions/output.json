@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure D2ls_v7 is an x86_64 architecture server instance belonging to the Dlsv7 family. It features 2 vCPUs mapped to 1 physical Intel Xeon 6973P-C core with hyper-threading enabled, providing 2 threads per core. The CPU operates at a high base clock speed of 4.2 GHz and is equipped with a large 480 MB L3 cache. It is configured with 4.0 GB of system memory, yielding a 1:2 vCPU-to-RAM ratio. There is no bundled local storage or GPU hardware, though the instance is Premium Storage capable and runs on the Microsoft Hyper-V hypervisor.",
-    "Performance benchmarks indicate a divergence between single-core and multi-core capabilities. The single-core stress-ng CPU performance and single-threaded compression tasks, such as gzip and bzip3, score in the average tier, aided by the 4.2 GHz clock speed and advanced instruction sets like AVX-512 and AMX. However, multi-core stress-ng performance, PassMark CPU scores, and database operations fall into the weak or poor categories, reflecting the physical limitations of the single core. Memory bandwidth is also constrained, with uncached large-block read and write speeds registering in the bottom 10% of benchmarks.",
-    "From a qualitative cost-efficiency perspective, the D2ls_v7 offers a low-entry-cost profile for workloads requiring high single-threaded CPU clock speeds without massive memory footprints. However, the low resource density of 4.0 GB RAM and the lack of local storage present a clear tradeoff for memory-intensive or highly parallelized applications. This instance is best suited for lightweight, single-threaded compute tasks, basic web serving, or small-scale development and testing environments that do not require high memory bandwidth or multi-core scaling."
+    "Microsoft Azure D2ls_v7 is an x86_64 architecture server instance belonging to the Dlsv7 server family. It is equipped with an Intel Xeon 6973P-C processor featuring 2 vCPUs, which are mapped to 1 physical core with 2 threads per core under a dedicated CPU allocation model. The processor operates at a clock speed of 4.2 GHz and includes a 480 MB L3 cache, 2 MB L2 cache, and 48 KB L1d cache. The instance is configured with 4.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per core. It does not include local storage or bundled GPUs, though it is capable of utilizing Premium Storage.",
+    "Benchmark evaluations indicate average single-core CPU performance, with a stress-ng single-core score of 2096.98. However, multi-core scaling is limited, as evidenced by a poor stress-ng multi-core score of 2102.48. Memory bandwidth is a notable constraint, with read-only small block cached bandwidth at 151.74 GB/sec and uncached large block read and write speeds at 22.83 GB/sec and 11.59 GB/sec respectively, all falling into the lower performance percentiles. Single-threaded compression tasks perform moderately, with gzip compression reaching 30.68 GB/sec. For database operations, the instance demonstrates weak performance, achieving 3.71 million operations per second in Redis SET benchmarks and a weak Passmark database score.",
+    "From a cost-efficiency perspective, the D2ls_v7 provides a dedicated compute resource at a low entry tier, but presents clear resource density tradeoffs. The low memory allocation of 4.0 GB and the lack of local storage limit its utility for memory-intensive or data-heavy applications. This instance is best suited for lightweight, compute-bound workloads that benefit from high single-core clock speeds but do not require large memory footprints, such as basic web serving, single-threaded utility scripts, or lightweight microservices."
   ],
-  "description": "The Microsoft Azure D2ls_v7 is an x86_64 compute-oriented server instance from the Dlsv7 family, featuring 2 vCPUs powered by a single physical Intel Xeon 6973P-C core running at 4.2 GHz. It is configured with 4.0 GB of RAM, representing a low-memory 1:2 vCPU-to-RAM ratio, and contains no local storage or GPU resources. While its high clock speed and advanced instruction sets deliver average single-core and single-threaded compression performance, its multi-core processing, memory bandwidth, and database operations benchmark in the weak to poor ranges. This resource profile makes the D2ls_v7 a qualitatively cost-effective option for lightweight, single-threaded compute workloads, basic static web serving, and small-scale development tasks, though it is poorly suited for memory-intensive or highly parallelized applications.",
-  "og_description": "Microsoft Azure D2ls_v7 is a low-memory, x86_64 server featuring 2 vCPUs on an Intel Xeon 6973P-C processor at 4.2 GHz, 4.0 GB of RAM, and no local storage, optimized for lightweight single-threaded workloads.",
-  "meta_description": "Microsoft Azure D2ls_v7 is a 2-vCPU, 4.0 GB RAM x86_64 server with a 4.2 GHz Intel Xeon processor, designed for lightweight single-threaded workloads.",
-  "tagline": "An x86 compute instance featuring a high clock speed processor for lightweight single threaded applications and basic development workloads.",
+  "description": "Microsoft Azure D2ls_v7 is an x86_64 compute-optimized server instance from the Dlsv7 family, powered by a 4.2 GHz Intel Xeon 6973P-C processor. It features 2 dedicated vCPUs derived from 1 physical core, 4.0 GB of system memory, and no local storage. Benchmark data shows average single-core CPU capabilities, with a stress-ng single-core score of 2096.98, but poor multi-core scaling and weak memory bandwidth. Advanced instruction sets like AVX-512 and AMX are supported. Given its low memory-to-core ratio of 2.0 GB per core and lack of bundled storage, this instance is best suited for lightweight, single-threaded compute tasks, basic web serving, and microservices rather than memory-intensive database workloads.",
+  "og_description": "Microsoft Azure D2ls_v7 is a compute-optimized server featuring 2 dedicated Intel Xeon vCPUs at 4.2 GHz, 4.0 GB of RAM, and no local storage, designed for lightweight single-threaded workloads.",
+  "meta_description": "Microsoft Azure D2ls_v7 is an Intel-based server with 2 vCPUs, 4.0 GB RAM, and no local storage, built for lightweight compute workloads.",
+  "tagline": "A dedicated dual-vCPU Intel compute instance with low memory density, designed for lightweight single-threaded processing and basic web serving.",
   "bullet_points": [
-    "2 vCPUs powered by a single physical Intel Xeon 6973P-C core at 4.2 GHz",
-    "4.0 GB of system memory with a low-memory 1:2 vCPU-to-RAM ratio",
-    "No bundled local storage or GPU, with support for Premium Storage",
-    "Average single-core CPU and single-threaded compression performance",
-    "Weak multi-core, database, and memory bandwidth benchmark results",
-    "Best suited for lightweight single-threaded tasks and basic web serving"
+    "Intel Xeon 6973P-C processor with 2 dedicated vCPUs running at 4.2 GHz",
+    "4.0 GB of system memory providing a 1:2 vCPU-to-RAM ratio",
+    "No local storage bundled, with support for external Premium Storage",
+    "Average single-core performance paired with weak multi-core scaling",
+    "Best suited for lightweight web serving, microservices, and single-threaded tasks"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
