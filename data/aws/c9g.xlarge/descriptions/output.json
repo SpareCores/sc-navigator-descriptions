@@ -1,20 +1,20 @@
 {
   "page": [
-    "Amazon Web Services c9g.xlarge is a compute-optimized server instance powered by custom AWS Graviton processors. Built on the arm64 architecture, this instance features 4 dedicated physical cores and 4 vCPUs, operating at a clock speed of 3.3 GHz with a 1.0 thread-per-core ratio. It is equipped with 8.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. The underlying virtualization is managed by the AWS Nitro hypervisor, ensuring dedicated CPU allocation without resource sharing.",
-    "The instance does not include local storage, requiring external block storage volumes for persistent data. Network connectivity is configured with a baseline bandwidth of 2 Gbps, and the instance does not include complimentary public IPv4 addresses. The lack of integrated local storage and the low memory-to-CPU ratio represent key architectural tradeoffs, positioning this instance specifically for compute-bound tasks rather than memory-intensive or high-I/O storage workloads.",
-    "From a cost-efficiency perspective, the arm64-based Graviton architecture offers a specialized hardware profile designed to deliver high compute density per unit of resource. This makes the c9g.xlarge suitable for workloads such as distributed analytics, batch processing, media encoding, and containerized microservices that require dedicated CPU cycles but have modest memory footprints."
+    "Amazon Web Services c9g.xlarge is a compute-optimized server instance powered by the custom AWS Neoverse-V3 processor. Built on the arm64 architecture, this instance features 4 dedicated physical cores and 4 vCPUs, operating at a clock speed of 3.3 GHz. The CPU design allocates one thread per core, ensuring dedicated execution resources without simultaneous multithreading. The processor cache configuration includes 64 KB of L1 data cache, 2 MB of L2 cache, and 48 MB of L3 cache.",
+    "The instance is provisioned with 8.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. It does not include local NVMe storage or bundled GPUs, relying entirely on network-attached storage options. Network connectivity is managed via the AWS Nitro hypervisor, delivering a baseline network bandwidth of 2 Gbps. The instance does not include complimentary public IPv4 addresses.",
+    "Hardware-level cryptographic acceleration is limited to AES support, with no support for advanced vector or matrix extensions such as AVX or AMX. The compute-focused resource ratio of 1 vCPU to 2 GB of RAM makes this instance class efficient for workloads requiring dedicated CPU cycles with moderate memory footprints. Typical deployments include web serving, microservices, containerized applications, and distributed compute tasks that benefit from the power efficiency of the Graviton arm64 architecture."
   ],
-  "description": "Amazon Web Services c9g.xlarge is an arm64-based, compute-optimized server instance powered by AWS Graviton processors. It features 4 dedicated physical cores and 4 vCPUs running at 3.3 GHz, managed by the AWS Nitro hypervisor. The instance is configured with 8.0 GB of system memory, providing a low memory-to-CPU ratio of 2.0 GB per core. It does not include local storage or complimentary public IPv4 addresses, and it operates with a baseline network bandwidth of 2 Gbps. This hardware profile represents a tradeoff that prioritizes dedicated compute resources over memory and storage capacity. The c9g.xlarge is designed for compute-bound workloads such as batch processing, containerized microservices, and media encoding.",
-  "og_description": "Amazon Web Services c9g.xlarge is an arm64 compute-optimized server with 4 dedicated Graviton vCPUs, 8.0 GB RAM, and a 2 Gbps network baseline, designed for compute-bound workloads.",
-  "meta_description": "Amazon Web Services c9g.xlarge is an arm64 compute-optimized server featuring 4 dedicated Graviton vCPUs, 8.0 GB RAM, and a 2 Gbps network baseline.",
-  "tagline": "An arm64 compute-optimized instance featuring dedicated Graviton processors and a low memory-to-core ratio for efficient batch processing.",
+  "description": "Amazon Web Services c9g.xlarge is a compute-optimized instance utilizing the arm64 architecture and powered by an AWS Neoverse-V3 processor. It features 4 dedicated physical cores and 4 vCPUs running at 3.3 GHz, with a single thread per core configuration. The instance is equipped with 8.0 GB of system memory, providing a ratio of 2.0 GB of RAM per core, and includes a 48 MB L3 cache. It does not feature local storage or GPU hardware. Network performance is anchored by a baseline bandwidth of 2 Gbps, managed through the Nitro hypervisor. Cryptographic support includes AES acceleration, though advanced vector and matrix extensions are absent. This hardware profile is designed for compute-bound tasks, microservices, and containerized workloads that require dedicated CPU resources with a moderate memory footprint.",
+  "og_description": "Amazon Web Services c9g.xlarge is an arm64 compute-optimized instance featuring 4 dedicated Neoverse-V3 cores at 3.3 GHz, 8.0 GB of memory, and 2 Gbps baseline network bandwidth.",
+  "meta_description": "Amazon Web Services c9g.xlarge is an arm64 compute-optimized instance with 4 dedicated Neoverse-V3 cores, 8.0 GB RAM, and 2 Gbps network speed.",
+  "tagline": "An arm64 compute-optimized instance featuring dedicated Neoverse-V3 cores and a balanced memory-to-CPU ratio for containerized workloads.",
   "bullet_points": [
-    "Powered by AWS Graviton arm64 processors running at 3.3 GHz",
-    "Features 4 dedicated physical cores and 4 vCPUs with no hyperthreading",
-    "Equipped with 8.0 GB of system memory (2.0 GB per core)",
-    "No local storage included, requiring external block storage",
-    "Configured with a baseline network bandwidth of 2 Gbps",
-    "Suited for batch processing, media encoding, and microservices"
+    "Powered by AWS Neoverse-V3 arm64 processor at 3.3 GHz",
+    "4 dedicated physical cores with 1.0 thread per core",
+    "8.0 GB of system memory (2.0 GB per core)",
+    "2 Gbps baseline network bandwidth via Nitro hypervisor",
+    "Hardware-accelerated AES cryptography support",
+    "Suited for containerized microservices and compute-bound workloads"
   ],
   "categories": [
     "Compute Optimized"

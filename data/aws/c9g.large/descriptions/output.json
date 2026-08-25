@@ -1,19 +1,20 @@
 {
   "page": [
-    "Amazon Web Services c9g.large is a compute-optimized server instance powered by AWS Graviton processors. It features an arm64 CPU architecture with 2 dedicated physical cores and 2 vCPUs, operating at a clock speed of 3.3 GHz with 1.0 thread per core. The instance is equipped with 4.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per core.",
-    "This instance runs on the AWS Nitro hypervisor. It does not include local storage, meaning storage must be attached externally, and it does not feature any integrated graphics processing units. The baseline network bandwidth is rated at 1 Gbps, and the instance includes zero complimentary public IPv4 addresses.",
-    "Given its dedicated ARM-based cores and a 1:2 vCPU-to-RAM ratio, the c9g.large offers a resource-dense profile tailored for compute-bound workloads that require consistent CPU performance without the overhead of multi-threading. The ARM64 architecture provides a cost-efficient alternative to traditional x86 architectures for compatible software. It is suited for workloads such as lightweight web serving, microservices, containerized applications, and basic CI/CD pipelines that benefit from dedicated compute resources."
+    "Amazon Web Services c9g.large is a compute-optimized virtual machine instance powered by custom AWS Graviton processors. Built on the arm64 architecture, this instance features 2 dedicated physical cores and 2 vCPUs utilizing the AWS Neoverse-V3 CPU model running at 3.3 GHz. The processor configuration includes 64 KB of L1 data cache, 2 MB of L2 cache, and 48 MB of L3 cache. It does not support hyperthreading, ensuring dedicated CPU allocation per vCPU via the AWS Nitro hypervisor.",
+    "The instance is equipped with 4.0 GB of system memory, providing a resource density of 2.0 GB of RAM per core. It does not include local NVMe storage or bundled GPUs, and it offers a baseline network bandwidth of 1 Gbps. Cryptographic acceleration is supported via hardware-assisted AES, though other advanced vector or matrix extensions are absent.",
+    "Benchmark data indicates moderate single-core performance, with a stress-ng single-core score of 2009.48, placing it in the average tier. Multi-core performance is relatively weak, with a stress-ng multi-core score of 4001.26, reflecting the low core count of this specific size. From a cost-efficiency perspective, the arm64 architecture and dedicated core allocation provide a predictable compute profile for lightweight workloads without the overhead of hyperthreading.",
+    "The c9g.large is suited for compute-focused workloads that require dedicated CPU resources but have low memory footprints. Appropriate use cases include lightweight web serving, microservices, containerized applications, and basic CI/CD pipeline tasks that benefit from single-threaded efficiency."
   ],
-  "description": "Amazon Web Services c9g.large is a compute-optimized instance featuring AWS Graviton processors built on the arm64 architecture. The server provides 2 dedicated physical cores and 2 vCPUs running at 3.3 GHz, paired with 4.0 GB of system memory. Operating on the AWS Nitro hypervisor, the instance does not include local storage or GPUs, relying instead on external storage configurations. It delivers a baseline network bandwidth of 1 Gbps. With its 1:2 vCPU-to-RAM ratio and dedicated CPU allocation, the c9g.large is designed for compute-intensive tasks that require consistent single-threaded performance. This hardware profile is suited for microservices, containerized applications, lightweight web serving, and CI/CD pipelines, offering a cost-efficient ARM-based resource allocation for workloads that do not require local storage or high memory capacity.",
-  "og_description": "Amazon Web Services c9g.large is a compute-optimized arm64 server featuring 2 dedicated Graviton CPU cores at 3.3 GHz, 4.0 GB of RAM, and 1 Gbps network bandwidth on the Nitro hypervisor.",
-  "meta_description": "Amazon Web Services c9g.large is a compute-optimized arm64 server with 2 dedicated Graviton cores, 4.0 GB RAM, and 1 Gbps network bandwidth.",
-  "tagline": "An arm64 compute-optimized instance featuring dedicated physical cores and a balanced resource profile for lightweight, CPU-bound workloads.",
+  "description": "Amazon Web Services c9g.large is a compute-optimized virtual machine instance powered by the arm64-based AWS Neoverse-V3 processor. It features 2 dedicated physical cores and 2 vCPUs running at 3.3 GHz, supported by the Nitro hypervisor. The hardware configuration includes 4.0 GB of system memory, yielding 2.0 GB of RAM per core, with no local storage or GPU accelerators. Network performance is rated at a baseline of 1 Gbps. In benchmark testing, the instance demonstrates average single-core performance with a stress-ng score of 2009.48, while multi-core performance is lower at 4001.26 due to the dual-core design. This instance offers a cost-efficient, predictable compute profile for lightweight, single-threaded workloads, microservices, and containerized applications.",
+  "og_description": "Amazon Web Services c9g.large is an arm64 compute-optimized instance with 2 dedicated Neoverse-V3 cores, 4.0 GB RAM, and 1 Gbps network bandwidth, suited for lightweight containerized workloads.",
+  "meta_description": "Amazon Web Services c9g.large is a compute-optimized arm64 instance featuring 2 dedicated Neoverse-V3 cores, 4.0 GB RAM, and 1 Gbps network speed.",
+  "tagline": "An arm64 compute-optimized instance featuring dedicated Neoverse-V3 cores and a balanced, low-memory profile for lightweight containerized workloads.",
   "bullet_points": [
-    "AWS Graviton arm64 processor with 2 dedicated physical cores",
-    "4.0 GB of system memory providing 2.0 GB per core",
-    "1 Gbps baseline network bandwidth on the Nitro hypervisor",
-    "No local storage or integrated GPUs included",
-    "Suited for microservices, containerized applications, and lightweight web serving"
+    "Powered by AWS Neoverse-V3 arm64 processors running at 3.3 GHz",
+    "Features 2 dedicated physical cores and 2 vCPUs with no hyperthreading",
+    "Equipped with 4.0 GB of system memory and 1 Gbps baseline network bandwidth",
+    "Delivers average single-core performance with a stress-ng score of 2009.48",
+    "Best suited for lightweight web serving, microservices, and containerized tasks"
   ],
   "categories": [
     "Compute Optimized"

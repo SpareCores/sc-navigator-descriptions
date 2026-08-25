@@ -1,21 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c9g.medium is a compute-optimized server instance featuring custom AWS Graviton processors built on the arm64 architecture. This instance provides 1 dedicated physical core and 1 vCPU running at a clock speed of 3.3 GHz. It is equipped with 2.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per core. The instance operates on the AWS Nitro hypervisor.",
-    "The c9g.medium instance does not include local NVMe SSD storage, requiring network-attached storage for persistent data. It features a baseline network bandwidth of 1 Gbps and does not include complimentary public IPv4 addresses. There are no onboard graphics processing units (GPUs), making it unsuitable for hardware-accelerated workloads.",
-    "From a cost-efficiency perspective, the arm64 architecture and dedicated single-core configuration offer a low-overhead entry point for compute-focused workloads that do not require large memory footprints. The 1:2 vCPU-to-RAM ratio positions this instance for lightweight compute tasks, microservices, single-threaded utility scripts, and basic containerized applications."
+    "Amazon Web Services c9g.medium is a compute-optimized instance powered by an AWS Graviton Neoverse-V3 processor. Built on the arm64 architecture, this instance features 1 dedicated physical core and 1 vCPU running at 3.3 GHz. It is equipped with 2.0 GB of system memory, providing a 1:2 vCPU-to-RAM ratio. The processor includes 64 KB of L1d cache, 2 MB of L2 cache, and 48 MB of L3 cache, with hardware support for AES cryptography. No local storage or GPU hardware is bundled with this instance type, and it relies on a baseline network bandwidth of 1 Gbps.",
+    "Benchmark data reveals distinct performance characteristics for the single-core configuration. In single-threaded tasks, the instance demonstrates strong capabilities, achieving a top-tier rating in bzip3 decompression at 16.83 GB/sec and a strong rating in gzip compression at 36.12 GB/sec. However, because the instance is limited to a single vCPU, its multi-core stress-ng performance is poor, matching its single-core score of 1991.89. Memory bandwidth is also a constraint, with uncached large-block read speeds at 38.46 GB/sec and write speeds at 13.36 GB/sec, both falling into the weak and poor benchmark categories respectively.",
+    "From a cost-efficiency perspective, the c9g.medium offers a low-cost entry point to dedicated AWS Graviton9 Arm64 compute resources without the CPU credit limitations of burstable instances. The primary tradeoff is the highly constrained resource envelope, specifically the 2.0 GB memory limit and the single-threaded bottleneck, which makes it unsuitable for memory-intensive or highly parallelized applications. This server is best aligned with lightweight single-threaded workloads, basic web serving, microservices, utility scripting, and software compilation tasks that do not require multi-core execution."
   ],
-  "description": "Amazon Web Services c9g.medium is a compute-optimized instance powered by custom AWS Graviton arm64 processors. Running on the Nitro hypervisor, the instance provides 1 dedicated physical core and 1 vCPU operating at 3.3 GHz. It features 2.0 GB of system memory, establishing a 1:2 vCPU-to-RAM ratio. The hardware configuration includes no local storage and no graphics processing units, relying entirely on network-attached storage. Network connectivity is provisioned with a baseline bandwidth of 1 Gbps, and no complimentary public IPv4 addresses are included. This instance offers a resource-efficient profile for lightweight, single-threaded compute tasks, microservices, and containerized utility workloads that require dedicated CPU allocation without the overhead of larger memory capacities.",
-  "og_description": "Amazon Web Services c9g.medium is a compute-optimized arm64 instance featuring 1 dedicated AWS Graviton core at 3.3 GHz, 2.0 GB of RAM, 1 Gbps network bandwidth, and no local storage.",
-  "meta_description": "Amazon Web Services c9g.medium is an arm64 compute-optimized instance with 1 dedicated Graviton vCPU, 2.0 GB RAM, and 1 Gbps network bandwidth.",
-  "tagline": "A dedicated single-core arm64 compute instance with a lean memory profile, designed for lightweight utility workloads and microservices.",
+  "description": "Amazon Web Services c9g.medium is an arm64 compute-optimized instance featuring a single dedicated AWS Graviton Neoverse-V3 physical core running at 3.3 GHz. It is configured with 2.0 GB of system memory, 48 MB of L3 cache, and a baseline network bandwidth of 1 Gbps, with no local storage or GPU accelerators. In benchmark testing, the instance exhibits strong single-threaded performance, notably in bzip3 decompression and gzip compression. However, its single-vCPU design limits multi-core efficiency, and memory write bandwidth is relatively weak. This server provides a cost-effective entry point for dedicated Arm64 compute, making it suitable for lightweight single-threaded applications, microservices, and basic utility scripting.",
+  "og_description": "Amazon Web Services c9g.medium is an arm64 compute-optimized instance featuring 1 dedicated AWS Graviton Neoverse-V3 core, 2.0 GB of RAM, and strong single-threaded decompression performance.",
+  "meta_description": "Amazon Web Services c9g.medium is an arm64 compute-optimized instance with 1 dedicated Graviton Neoverse-V3 core and 2.0 GB of RAM.",
+  "tagline": "A dedicated single-core Arm64 compute instance delivering strong single-threaded performance for lightweight utility workloads and microservices.",
   "bullet_points": [
-    "AWS Graviton arm64 processor with 1 dedicated physical core at 3.3 GHz",
-    "2.0 GB of system memory providing a 1:2 vCPU-to-RAM ratio",
-    "Nitro hypervisor integration with 1 Gbps baseline network bandwidth",
-    "No local storage or GPU resources included in the hardware profile",
-    "Suitable for lightweight microservices and single-threaded utility tasks"
+    "Single dedicated AWS Graviton Neoverse-V3 core running at 3.3 GHz",
+    "2.0 GB of system memory with a 1:2 vCPU-to-RAM ratio",
+    "Strong single-threaded performance in gzip and bzip3 benchmarks",
+    "No local storage and 1 Gbps baseline network bandwidth",
+    "Best suited for lightweight microservices, utility scripts, and single-threaded tasks"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
