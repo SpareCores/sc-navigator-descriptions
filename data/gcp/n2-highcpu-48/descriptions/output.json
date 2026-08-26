@@ -1,23 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform n2-highcpu-48 is an x86_64 architecture server powered by a dedicated Intel Xeon processor running at 2.8 GHz. It features 48 vCPUs mapped to 24 physical cores with hyper-threading enabled. The memory configuration consists of 48.0 GB of RAM, yielding a resource density of 1.0 GB of memory per vCPU. This instance does not include local storage or dedicated GPU hardware.",
-    "Benchmark results place the n2-highcpu-48 in the average performance tier across most metrics. It achieves a stress-ng single-core CPU score of 1410.49 and a multi-core score of 44617.16. Memory bandwidth tests show 2446.02 GB/sec for cached small blocks, dropping to 153.47 GB/sec for uncached large block reads. In application-specific tests, the server processes 41.27 million Redis SET operations per second and delivers a static web serving throughput of 29.33 GB/sec.",
-    "The primary tradeoff of the n2-highcpu-48 is its low memory-to-vCPU ratio. With only 1.0 GB of RAM per core, memory-bound workloads may experience bottlenecks, and LLM text generation on even small 135M models is relatively weak at 53.69 tokens/sec. However, for compute-heavy tasks that do not require large memory footprints, the server offers a cost-efficient allocation of dedicated CPU resources without the overhead of unused RAM or bundled local storage.",
-    "This server is configured for compute-intensive workloads such as software compilation, where it scores 30076.0 on the Geekbench Clang test, as well as ray tracing, image processing, and multi-threaded decompression. It is also recommended for static web serving and high-throughput database operations that fit within its 48 GB memory limit."
+    "Google Cloud Platform n2-highcpu-48 is a compute-optimized virtual machine instance based on the x86_64 architecture. It features 48 dedicated vCPUs mapped to 24 physical Intel Xeon processor cores running at a base clock speed of 2.8 GHz. The hardware configuration allocates 48.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. This instance does not include local storage or bundled GPU accelerators.",
+    "Performance benchmarks place this instance consistently in the average tier for most compute and memory tasks. The stress-ng multi-core CPU test registers a score of 44,617.16, while the single-core score is 1,410.49. Memory bandwidth tests show a read-only small block cached speed of 2,446.02 GB/sec, which drops to 153.47 GB/sec for uncached large blocks, alongside a write speed of 79.98 GB/sec. In application-specific benchmarks, the instance achieves 41.27 million operations per second on Redis SET operations and a static web serving throughput of 29.33 GB/sec. Single-threaded gzip compression is a relative bottleneck, scoring in the weak category at 23.8 GB/sec, and LLM text generation for a small 135M model is also weak at 53.69 tokens/sec.",
+    "From a cost-efficiency perspective, the n2-highcpu-48 offers a high density of dedicated compute cores relative to memory, making it a viable option for CPU-bound workloads where large memory footprints are not required. The absence of bundled local storage and GPUs means users only pay for raw CPU and memory capacity. This profile is suited for multi-threaded processing tasks, software compilation, ray tracing, and high-throughput web serving."
   ],
-  "description": "Google Cloud Platform n2-highcpu-48 is an x86_64 compute-optimized server featuring 48 vCPUs and 24 physical cores powered by a dedicated 2.8 GHz Intel Xeon processor. It is equipped with 48.0 GB of RAM, providing a 1.0 GB per vCPU ratio, and contains no bundled local storage or GPU accelerators. Benchmark data indicates average multi-core performance, with a stress-ng multi-core score of 44617.16 and a Geekbench multi-core score of 10859.0. The server demonstrates strong capabilities in software compilation and static web serving, achieving a throughput of 29.33 GB/sec. However, its low memory-to-CPU ratio presents a tradeoff for memory-intensive tasks, as evidenced by a weak text generation speed of 53.69 tokens/sec on small LLM models. This configuration is recommended for compute-heavy workloads such as multi-threaded decompression, software building, and web serving.",
-  "og_description": "Google Cloud Platform n2-highcpu-48 is an x86_64 compute-optimized server with 48 vCPUs, 48 GB RAM, and a dedicated 2.8 GHz Intel Xeon processor, delivering balanced multi-core performance for compute-heavy workloads.",
-  "meta_description": "Google Cloud Platform n2-highcpu-48 is an x86_64 server with 48 vCPUs and 48 GB RAM, optimized for compute-intensive workloads without local storage.",
-  "tagline": "A dedicated 48-vCPU compute-optimized instance featuring a one-to-one gigabyte-to-core ratio for CPU-heavy processing workloads without local storage overhead.",
+  "description": "The Google Cloud Platform n2-highcpu-48 is an x86_64 compute-optimized server instance featuring 48 dedicated vCPUs (24 physical Intel Xeon cores) running at 2.8 GHz and 48.0 GB of RAM. Designed for CPU-intensive tasks, it provides a 1.0 GB per core memory ratio and does not include local storage or GPU accelerators. Benchmark data places the instance in the average tier for most operations, with a multi-core stress-ng score of 44,617.16 and a Redis SET performance of 41.27 million operations per second. However, it exhibits weaker performance in single-threaded gzip compression and small-model LLM text generation. This instance is qualitatively cost-efficient for workloads requiring high compute density without large memory overhead, making it suitable for software compilation, multi-threaded data processing, and static web serving.",
+  "og_description": "Google Cloud Platform n2-highcpu-48 is an x86_64 compute-optimized instance with 48 dedicated Intel Xeon vCPUs, 48 GB of RAM, and no local storage, designed for high-throughput CPU-bound workloads.",
+  "meta_description": "Google Cloud Platform n2-highcpu-48 is an x86_64 compute-optimized instance featuring 48 dedicated Intel Xeon vCPUs, 48 GB of RAM, and no local storage.",
+  "tagline": "A dedicated forty-eight core compute-optimized instance designed for high-throughput processing, software compilation, and multi-threaded workloads without memory overhead.",
   "bullet_points": [
-    "48 vCPUs and 24 physical cores powered by a dedicated 2.8 GHz Intel Xeon processor",
-    "48.0 GB of RAM providing a lean 1.0 GB per vCPU ratio",
-    "No bundled local storage or GPU accelerators included",
-    "Average multi-core performance with a stress-ng multi-core score of 44617.16",
-    "Weak text generation performance on small language models due to memory constraints",
-    "Recommended for software compilation, multi-threaded decompression, and web serving"
+    "48 dedicated vCPUs powered by Intel Xeon processors at 2.8 GHz",
+    "48.0 GB of system memory providing a 1:1 vCPU-to-RAM ratio",
+    "No bundled local storage or GPU accelerators",
+    "Average multi-core performance with 44,617.16 stress-ng score",
+    "Suited for software compilation, ray tracing, and web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

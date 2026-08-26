@@ -1,25 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c4-standard-8-lssd is a general-purpose virtual machine instance powered by an Intel Xeon 6985P-C processor. This x86_64 architecture server features 8 dedicated vCPUs mapped to 4 physical cores with hyper-threading enabled. It is equipped with 30.0 GB of system memory, providing 3.75 GB of RAM per core. For local storage, the instance includes a bundled 137 GB NVMe SSD, offering low-latency local storage capabilities. No GPU accelerators are present on this server type.",
-    "The underlying Intel Xeon processor operates at a base speed of 2.3 GHz and features a large 504 MB L3 cache, alongside 2 MB L2 and 48 KB L1d caches. The CPU architecture supports advanced instruction sets, including Intel Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX) for tile and integer operations. In benchmark evaluations, the instance demonstrates top-tier performance in single-threaded gzip compression and text processing. General CPU performance, including multi-core stress-ng and Geekbench scores, falls within the average range.",
-    "While the server exhibits strong performance in text-based processing and small-model LLM text generation, it presents certain resource limitations. Uncached large-block memory read bandwidth and PassMark memory scores are positioned in the lower tier, indicating potential bottlenecks for memory-intensive workloads that bypass the cache. However, the integrated 137 GB NVMe SSD provides fast local storage, making the instance suitable for database operations, static web serving, and software compilation.",
-    "From a qualitative cost-efficiency perspective, the c4-standard-8-lssd offers a balanced resource density for general-purpose workloads that require dedicated CPU allocation and fast local scratch space without the overhead of external storage. It is well-suited for applications such as relational database hosting, web serving, text processing pipelines, and light machine learning inference using small models."
+    "Google Cloud Platform c4-standard-8-lssd is an x86_64 architecture server powered by a dedicated Intel Xeon 6985P-C processor. It features 8 vCPUs across 4 physical cores with hyper-threading enabled, operating at a base clock speed of 2.3 GHz. The system is equipped with 30.0 GB of system memory, providing 3.75 GB per core, and includes a single 137 GB local NVMe SSD for high-speed local storage. The processor includes advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions (AMX) for tile and INT8 operations.",
+    "Benchmark evaluations show average performance across most standard compute workloads, with a Geekbench single-core score of 1867.0 and a multi-core score of 7017.0. The server demonstrates strong performance in single-threaded gzip compression at 36.27 GB/sec and top-tier text processing capabilities, scoring 2961.0 in Geekbench text processing. However, memory subsystem limitations are evident; while cached small-block read bandwidth is average at 668.21 GB/sec, uncached large-block read bandwidth drops to a weak 29.93 GB/sec, and the overall Passmark memory score is categorized as weak.",
+    "This server configuration is suitable for general-purpose workloads, web serving, and lightweight database operations, supported by its local NVMe SSD and average Passmark database score of 3723.97. The inclusion of Intel AMX instructions enables efficient small-scale machine learning tasks, as reflected in the strong text generation speed of 277.66 tokens/sec for a 135M parameter LLM. The primary tradeoff is the weak uncached memory bandwidth, which may limit performance in memory-intensive applications or large-dataset processing that exceeds the 504 MB L3 cache."
   ],
-  "description": "Google Cloud Platform c4-standard-8-lssd is a general-purpose virtual machine configured with 8 dedicated vCPUs and 30.0 GB of RAM, powered by an Intel Xeon 6985P-C processor running at 2.3 GHz. The instance features a bundled 137 GB local NVMe SSD for low-latency storage, but lacks GPU acceleration. Its x86_64 architecture supports advanced instruction sets like AVX-512 and Intel AMX. Performance benchmarks highlight top-tier capabilities in single-threaded gzip compression and text processing, alongside strong text generation speeds for small LLM models. However, uncached large-block memory read bandwidth and overall memory benchmarks represent a performance tradeoff, landing in the lower tier. This server type provides a balanced resource profile, making it qualitatively cost-effective for database operations, static web serving, software compilation, and general-purpose workloads requiring dedicated CPU resources and fast local storage.",
-  "og_description": "Google Cloud Platform c4-standard-8-lssd is an 8-vCPU virtual machine with 30 GB RAM and a 137 GB local NVMe SSD, powered by an Intel Xeon 6985P-C processor for general-purpose workloads.",
-  "meta_description": "Google Cloud Platform c4-standard-8-lssd features 8 vCPUs, 30 GB RAM, and a 137 GB local NVMe SSD powered by an Intel Xeon 6985P-C processor.",
-  "tagline": "A dedicated eight-vCPU virtual machine featuring integrated local NVMe storage and advanced Intel matrix extensions for balanced general-purpose workloads.",
+  "description": "Google Cloud Platform c4-standard-8-lssd is an x86_64 server featuring 8 vCPUs from a dedicated Intel Xeon 6985P-C processor, 30.0 GB of RAM, and a 137 GB local NVMe SSD. Operating at 2.3 GHz, the processor supports AVX-512 and Intel AMX extensions. Benchmarks indicate average overall compute performance, highlighted by strong single-threaded gzip compression and top-tier text processing. However, uncached large-block memory read bandwidth is weak at 29.93 GB/sec, representing a key hardware tradeoff. This server is suited for general-purpose workloads, web serving, and database operations that benefit from local SSD storage, as well as small-scale AI inference tasks leveraging its hardware-accelerated matrix instructions.",
+  "og_description": "Google Cloud Platform c4-standard-8-lssd features 8 vCPUs, 30 GB RAM, and a 137 GB local NVMe SSD. Powered by an Intel Xeon processor, it offers balanced compute and storage for general-purpose workloads.",
+  "meta_description": "Google Cloud Platform c4-standard-8-lssd is an 8 vCPU, 30 GB RAM server with a 137 GB local NVMe SSD and an Intel Xeon 6985P-C processor.",
+  "tagline": "An x86_64 server with dedicated Intel Xeon processing, local NVMe storage, and hardware-accelerated matrix extensions for balanced workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs and 30 GB RAM powered by an Intel Xeon 6985P-C processor",
-    "Bundled 137 GB local NVMe SSD for low-latency storage operations",
-    "Supports Intel AVX-512 and AMX instruction sets for accelerated vector and matrix math",
-    "Top-tier performance in single-threaded gzip compression and text processing",
-    "Tradeoff in uncached large-block memory read bandwidth",
-    "Suitable for database hosting, static web serving, and software compilation"
+    "Dedicated Intel Xeon 6985P-C processor with 8 vCPUs and 30 GB RAM",
+    "Integrated 137 GB local NVMe SSD for low-latency storage needs",
+    "Intel AMX and AVX-512 support for accelerated vector and matrix operations",
+    "Strong single-threaded compression and top-tier text processing performance",
+    "Weak uncached memory bandwidth under large-block read operations",
+    "Suited for general-purpose computing, web serving, and database workloads"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Storage & Database"
   ]
 }

@@ -1,21 +1,23 @@
 {
   "page": [
-    "Amazon Web Services c9g.24xlarge is a compute-optimized server instance powered by custom AWS Graviton processors. Built on the arm64 architecture, this instance features 96 physical cores and 96 virtual CPUs operating at a clock speed of 3.3 GHz. The CPU allocation is fully dedicated with a 1.0 thread-per-core ratio, meaning hyperthreading is not utilized. The instance is provisioned with 192.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core.",
-    "This instance operates on the AWS Nitro hypervisor. It does not include local storage or integrated GPUs, requiring network-attached storage for persistent data. Network connectivity is supported by a baseline bandwidth of 50 Gbps. The instance does not bundle complimentary public IPv4 addresses.",
-    "From a cost-efficiency perspective, the arm64 architecture and dedicated core configuration offer high compute density per resource unit compared to traditional x86 architectures. The 1:2 vCPU-to-RAM ratio makes this instance profile appropriate for compute-bound workloads. Suitable applications include distributed analytics, batch processing, web serving, video encoding, and containerized microservices that require high CPU allocation without massive memory footprints."
+    "Amazon Web Services c9g.24xlarge is a compute-optimized instance powered by AWS Graviton processors. Built on the arm64 architecture, it features 96 dedicated physical cores utilizing the AWS Neoverse-V3 model running at 3.3 GHz. The CPU configuration includes 64 KB of L1d cache, 2 MB of L2 cache, and 96 MB of L3 cache, with a single thread per core. The instance is equipped with 192.0 GB of system memory, yielding a resource density of 2.0 GB per core. It operates on the AWS Nitro hypervisor, has no local storage, and provides a baseline network bandwidth of 50 Gbps.",
+    "In benchmark evaluations, the c9g.24xlarge demonstrates top-tier multi-core capabilities. The stress-ng multi-core CPU test registers at 192014.4, placing it in the top 10% of tested hardware, while single-core performance remains in the average tier. Memory bandwidth is highly efficient, with cached small-block read speeds reaching 13912.96 GB/sec and uncached large-block reads at 363.83 GB/sec. Multi-threaded bzip3 decompression achieves 1131.71 GB/sec, and Redis SET operations reach 269.45 million operations per second.",
+    "Given its high core density and arm64 architecture, the instance offers strong qualitative cost efficiency for highly parallelized workloads that do not require x86 instruction sets. The lack of local storage and GPU hardware means it is optimized purely for CPU-bound tasks. It is highly suited for high-throughput web serving, multi-threaded data compression, database operations, and medium-scale LLM inference prompt processing."
   ],
-  "description": "Amazon Web Services c9g.24xlarge is a compute-optimized instance built on the arm64 architecture and powered by AWS Graviton processors. It features 96 dedicated physical cores and 96 vCPUs running at 3.3 GHz, providing a 1:1 physical-to-virtual core ratio without hyperthreading. The system is equipped with 192.0 GB of memory, establishing a 2.0 GB per core allocation. Running on the AWS Nitro hypervisor, the instance delivers a baseline network bandwidth of 50 Gbps. It does not include local storage or dedicated GPU hardware. This hardware profile is designed for compute-intensive workloads such as batch processing, media encoding, scientific modeling, and distributed microservices that benefit from high-density arm64 processing and dedicated CPU resources.",
-  "og_description": "Amazon Web Services c9g.24xlarge is an arm64 compute-optimized instance featuring 96 dedicated Graviton cores, 192 GB of RAM, and 50 Gbps network bandwidth on the Nitro hypervisor.",
-  "meta_description": "Amazon Web Services c9g.24xlarge is an arm64 compute-optimized instance with 96 dedicated Graviton cores, 192 GB RAM, and 50 Gbps network bandwidth.",
-  "tagline": "An arm64 compute-optimized instance featuring ninety-six dedicated cores and fifty gigabits per second network bandwidth for intensive parallel workloads.",
+  "description": "Amazon Web Services c9g.24xlarge is an arm64 compute-optimized instance powered by 96 dedicated AWS Neoverse-V3 physical cores running at 3.3 GHz. Operating on the Nitro hypervisor, it features 192.0 GB of RAM, 96 MB of L3 cache, and a baseline network bandwidth of 50 Gbps, with no local storage or GPU accelerators. Benchmarks indicate top-tier multi-core performance, with stress-ng multi-core scoring 192014.4 and Redis SET operations reaching 269.45 million operations per second. Memory bandwidth is highly efficient, recording 363.83 GB/sec for large-block reads. This hardware profile delivers strong qualitative cost efficiency for parallelized, CPU-bound workloads. It is well-suited for high-throughput web serving, multi-threaded data compression, database operations, and medium-scale language model inference.",
+  "og_description": "Amazon Web Services c9g.24xlarge is an arm64 compute-optimized instance featuring 96 dedicated Neoverse-V3 cores, 192 GB RAM, and 50 Gbps network bandwidth, delivering top-tier multi-core performance.",
+  "meta_description": "Amazon Web Services c9g.24xlarge is an arm64 compute-optimized instance with 96 dedicated Neoverse-V3 cores, 192 GB RAM, and 50 Gbps network speed.",
+  "tagline": "A high-density arm64 compute-optimized platform delivering top-tier multi-threaded performance and high memory bandwidth for parallelized CPU workloads.",
   "bullet_points": [
-    "96 dedicated arm64 physical cores running at 3.3 GHz",
+    "96 dedicated AWS Neoverse-V3 arm64 physical cores running at 3.3 GHz",
     "192.0 GB of system memory providing 2.0 GB per core",
-    "50 Gbps baseline network bandwidth via AWS Nitro hypervisor",
-    "Zero local storage and no integrated GPU hardware",
-    "Designed for compute-bound workloads, batch processing, and microservices"
+    "50 Gbps baseline network bandwidth with Nitro hypervisor integration",
+    "Top-tier multi-core performance in stress-ng and Redis benchmarks",
+    "Optimized for high-throughput web serving and multi-threaded data compression",
+    "No local storage or GPU hardware, focusing resources on CPU-bound tasks"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

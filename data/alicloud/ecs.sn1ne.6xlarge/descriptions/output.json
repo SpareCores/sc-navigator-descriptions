@@ -1,21 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.sn1ne.6xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features an Intel Xeon E5-2682v4 processor running at 2.5 GHz on the x86_64 architecture. The instance provides 24 dedicated physical cores with a single thread per core, paired with 48.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. No local storage or GPU hardware is bundled with this instance type, and it features a baseline network bandwidth of 4 Gbps.",
-    "Performance benchmarks reveal a clear distinction between single-core and multi-core execution. Single-core metrics, such as stress-ng and Geekbench single-core tests, fall into the bottom 25% tier, and single-threaded gzip compression is in the bottom 10%. However, the 24 dedicated physical cores elevate multi-core performance to average levels, as demonstrated by stress-ng multi-core, Passmark CPU, and Geekbench multi-core benchmarks. Memory bandwidth and database operations also perform within the middle 50% range, indicating stable throughput for parallelized workloads despite the modest single-thread capabilities.",
-    "From a cost-efficiency perspective, this instance offers a high physical core density relative to its memory footprint, making it a viable option for parallel processing tasks that do not require massive memory allocations. It is suited for workloads such as multi-threaded software compilation, static web serving, Redis key-value stores, and moderate multi-threaded decompression tasks."
+    "Alibaba Cloud ecs.sn1ne.6xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 24 dedicated Intel Xeon E5-2682v4 physical cores operating at a base clock speed of 2.5 GHz on the x86_64 architecture. The system is equipped with 48.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. It does not include local storage or integrated GPU hardware, and it provides a baseline network bandwidth of 4 Gbps.",
+    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. Single-core performance, measured via stress-ng and Geekbench, falls into the lower 25% tier, with single-threaded gzip compression registering in the bottom 10%. Conversely, multi-core execution leverages the 24 dedicated cores effectively, achieving average tier results in stress-ng multi-core, Geekbench multi-core, and Passmark CPU tests. Memory bandwidth also performs within the average range, reaching 90.83 GB/sec for uncached large-block reads and 52.97 GB/sec for uncached large-block writes.",
+    "Given the 1:2 vCPU-to-RAM ratio and the lack of local storage, this instance is structured for compute-bound workloads that scale horizontally across multiple threads rather than those requiring high single-thread performance or massive memory footprints. It is suitable for multi-threaded batch processing, static web serving, and basic database operations. From a qualitative cost-efficiency perspective, the utilization of older Intel Xeon E5-2682v4 hardware offers a functional option for legacy x86_64 applications that benefit from dedicated core allocations without requiring modern instruction sets like AVX-512 VNNI or AMX."
   ],
-  "description": "Alibaba Cloud ecs.sn1ne.6xlarge is a compute-optimized instance featuring 24 dedicated physical cores on an Intel Xeon E5-2682v4 processor running at 2.5 GHz. Built on the x86_64 architecture with the KVM hypervisor, it provides 48.0 GB of RAM, translating to 2.0 GB per core, with no local storage or GPU accelerators. Network throughput is rated at a baseline of 4 Gbps. Benchmark data indicates a performance tradeoff: single-core performance and single-threaded compression are weak, while multi-core execution, memory bandwidth, and database operations achieve average, stable results. This resource profile makes the instance suitable for parallelized workloads, including multi-threaded software compilation, static web serving, and Redis operations, where multi-core scaling offsets the lower single-thread efficiency.",
-  "og_description": "Alibaba Cloud ecs.sn1ne.6xlarge is a compute-optimized instance with 24 dedicated Intel Xeon cores, 48 GB RAM, and a 4 Gbps network baseline, delivering average multi-core performance.",
-  "meta_description": "Alibaba Cloud ecs.sn1ne.6xlarge features 24 dedicated Intel Xeon cores and 48 GB RAM, delivering stable multi-core performance for parallel workloads.",
-  "tagline": "A dedicated multi-core compute instance offering balanced parallel processing and memory bandwidth for non-storage-intensive workloads.",
+  "description": "Alibaba Cloud ecs.sn1ne.6xlarge is a compute-optimized instance featuring 24 dedicated Intel Xeon E5-2682v4 physical cores running at 2.5 GHz on the x86_64 architecture. It is configured with 48.0 GB of RAM, providing a 2.0 GB per core ratio, and offers a baseline network bandwidth of 4 Gbps with no local storage or GPU accelerators. Benchmark data shows weak single-core performance, but average multi-core execution and memory bandwidth. This makes the instance suitable for multi-threaded workloads, static web serving, and database operations that can leverage its 24 dedicated cores. Qualitatively, it serves as a cost-effective option for legacy x86_64 applications that require dedicated CPU resources but do not depend on high single-thread speeds or modern instruction sets.",
+  "og_description": "Alibaba Cloud ecs.sn1ne.6xlarge is a compute-optimized instance with 24 dedicated Intel Xeon E5-2682v4 cores, 48.0 GB of RAM, and 4 Gbps network bandwidth, suitable for multi-threaded workloads.",
+  "meta_description": "Alibaba Cloud ecs.sn1ne.6xlarge features 24 dedicated Intel Xeon cores, 48.0 GB RAM, and 4 Gbps bandwidth for multi-threaded compute workloads.",
+  "tagline": "A dedicated 24-core compute-optimized instance designed for multi-threaded processing, static web serving, and legacy x86_64 workloads.",
   "bullet_points": [
     "24 dedicated Intel Xeon E5-2682v4 physical cores at 2.5 GHz",
-    "48.0 GB of system memory providing 2.0 GB per core",
+    "48.0 GB of RAM providing a compute-optimized 1:2 resource ratio",
     "4 Gbps baseline network bandwidth with no local storage",
-    "Average multi-core performance contrasted with weak single-core metrics",
-    "Suited for multi-threaded compilation, static web serving, and Redis"
+    "Average multi-core performance across CPU and memory benchmarks",
+    "Best suited for multi-threaded batch processing and static web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

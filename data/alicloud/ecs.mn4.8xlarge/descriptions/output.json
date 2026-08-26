@@ -1,21 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.mn4.8xlarge is a general-purpose virtual server instance based on the KVM hypervisor. It features 32 vCPUs and 32 physical cores powered by an Intel Xeon 8163 processor running at 2.5 GHz. The instance is configured with 128.0 GB of system memory, providing a balanced ratio of 4.0 GB of RAM per core. It operates on the x86_64 architecture and includes hardware-assisted instruction sets such as AVX, AVX-512F, AES, BMI2, and FMA. There is no local storage or GPU hardware bundled with this instance, and it features a baseline network bandwidth of 5 Gbps.",
-    "Benchmark results indicate a clear distinction between single-core and multi-core performance. Single-core metrics are generally weak, with stress-ng single-core performance and Geekbench single-core scores falling into the bottom 25%, while single-threaded gzip compression is poor, ranking in the bottom 10%. Conversely, multi-core performance is consistently average, with stress-ng multi-core, Geekbench multi-core, and Passmark CPU scores all positioning in the middle 50%. Memory bandwidth tests for both small and large blocks also register in the average tier, though the Passmark memory score is weak.",
-    "Given its shared CPU allocation and the performance profile, the ecs.mn4.8xlarge offers moderate resource density for multi-threaded workloads that do not require high single-core performance. It is suitable for tasks such as static web serving, software compilation, and database operations, which all achieved average benchmark ratings. However, it is less optimal for single-threaded processing or memory-intensive applications that require high memory throughput."
+    "Alibaba Cloud ecs.mn4.8xlarge is a general-purpose virtual machine instance configured within the KVM hypervisor. It features 32 vCPUs and 32 physical cores powered by an Intel Xeon 8163 processor running at 2.5 GHz. The instance is equipped with 128.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. It operates on a shared CPU allocation model and does not include local storage or dedicated GPU hardware. Network connectivity is supported by a baseline bandwidth of 5 Gbps.",
+    "In benchmark evaluations, the ecs.mn4.8xlarge demonstrates average multi-core processing capabilities, as evidenced by its mid-tier scores in multi-core stress-ng, Geekbench, and Passmark CPU tests. However, single-core performance is a notable tradeoff, with both stress-ng single-core and Geekbench single-core metrics falling into the bottom 25% of tested servers. Single-threaded operations, such as gzip compression, perform poorly, ranking in the bottom 10%. Conversely, multi-threaded tasks like bzip3 decompression and software compilation with Clang achieve average performance tiers.",
+    "The memory subsystem exhibits average read and write bandwidth for large uncached blocks, though the Passmark memory score is positioned in the lower 25%. For application workloads, the instance delivers average throughput in static web serving, Redis SET operations, and database operations. Large language model inference speeds for prompt processing and text generation using small and medium models also align with average performance tiers, though text generation on smaller models is relatively weak.",
+    "Given its shared CPU allocation and balanced resource distribution, the ecs.mn4.8xlarge offers a cost-efficient profile for multi-threaded workloads that do not require dedicated CPU pinning or high single-core performance. It is suited for general-purpose applications, multi-threaded data processing, static web serving, and moderate database operations."
   ],
-  "description": "Alibaba Cloud ecs.mn4.8xlarge is an x86_64 general-purpose server instance featuring 32 vCPUs and 128.0 GB of RAM, powered by an Intel Xeon 8163 processor running at 2.5 GHz. It operates on a shared CPU allocation model under the KVM hypervisor and provides a baseline network bandwidth of 5 Gbps, with no local storage or GPU resources. Performance benchmarks reveal a contrast between weak single-core capabilities, which fall in the bottom 25%, and average multi-core performance, which ranks in the middle 50% across stress-ng, Geekbench, and Passmark tests. Memory bandwidth and database operations also perform at average levels. This resource profile makes the instance suitable for multi-threaded workloads such as static web serving, software compilation, and moderate database operations, while it remains less efficient for single-threaded tasks.",
-  "og_description": "Alibaba Cloud ecs.mn4.8xlarge is a general-purpose instance with 32 vCPUs, 128 GB RAM, and an Intel Xeon processor, offering average multi-core performance and weak single-core speeds.",
-  "meta_description": "Alibaba Cloud ecs.mn4.8xlarge is a general-purpose instance with 32 vCPUs and 128 GB RAM, delivering average multi-core performance.",
-  "tagline": "A general-purpose virtual server offering balanced memory-to-CPU allocation and steady multi-core performance for parallelized workloads.",
+  "description": "Alibaba Cloud ecs.mn4.8xlarge is a general-purpose instance featuring 32 vCPUs and 128.0 GB of RAM, powered by an Intel Xeon 8163 processor at 2.5 GHz on a shared CPU allocation. Operating under the KVM hypervisor, this x86_64 server lacks local storage and GPU accelerators, relying on a 5 Gbps baseline network bandwidth. Benchmark data indicates a clear tradeoff: while multi-core performance, software compilation, and static web serving reach average tiers, single-core CPU performance and single-threaded compression are weak. The memory subsystem provides average read and write bandwidth, though overall memory scores skew lower. This resource profile makes the instance a qualitatively cost-effective option for multi-threaded workloads, moderate database operations, and general-purpose web serving where dedicated CPU execution is not strictly required.",
+  "og_description": "Alibaba Cloud ecs.mn4.8xlarge is a general-purpose instance with 32 vCPUs, 128 GB RAM, and an Intel Xeon 8163 CPU. It offers balanced multi-core performance for web serving and database workloads.",
+  "meta_description": "Alibaba Cloud ecs.mn4.8xlarge is a general-purpose instance featuring 32 vCPUs, 128 GB RAM, and an Intel Xeon processor on a shared CPU allocation.",
+  "tagline": "A balanced multi-core virtual server with shared CPU resources, designed for general-purpose workloads and moderate database operations.",
   "bullet_points": [
-    "32 vCPUs and 128.0 GB of RAM powered by an Intel Xeon 8163 CPU",
-    "Shared CPU allocation under the KVM hypervisor with 5 Gbps network bandwidth",
-    "Average multi-core performance across Geekbench and Passmark benchmarks",
-    "Weak single-core performance and single-threaded compression speeds",
-    "Well-suited for static web serving, software compilation, and database operations"
+    "32 Intel Xeon vCPUs and 128 GB of system memory",
+    "Shared CPU allocation on x86_64 architecture",
+    "5 Gbps baseline network bandwidth with no local storage",
+    "Average multi-core performance but weak single-core execution",
+    "Suited for general-purpose web serving and multi-threaded processing"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Burstable & Budget"
   ]
 }

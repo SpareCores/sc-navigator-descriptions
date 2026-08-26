@@ -1,25 +1,22 @@
 {
   "page": [
-    "Amazon Web Services r8i.96xlarge is a memory-optimized server instance powered by the Nitro hypervisor. It features 384 vCPUs and 192 physical cores from an Intel Xeon 6975P-C processor operating at 3.9 GHz. The system includes 3072.0 GB of DDR5 memory running at 7 GHz, providing 8.0 GB of RAM per core. It lacks local storage and dedicated GPUs, but provides a baseline network bandwidth of 100 Gbps.",
-    "In benchmark evaluations, the r8i.96xlarge demonstrates top-tier multi-core CPU performance, achieving high scores in stress-ng multi-core and PassMark CPU tests. Memory bandwidth is exceptionally strong, with uncached read speeds reaching 1125.32 GB/sec and cached read speeds at 30551.22 GB/sec. Database operations and Redis SET operations also rank in the top tier, alongside static web serving throughput. However, single-core performance and PassMark memory scores fall into the average range.",
-    "The instance presents specific architectural tradeoffs. While it excels at prompt processing for large language models, text generation speeds for smaller models are poor, registering at 34.24 tokens/sec. The absence of local storage means all storage operations must rely on network-attached alternatives, which may impact latency-sensitive I/O workloads. From a qualitative cost-efficiency perspective, the high density of DDR5 memory and massive vCPU count make it a resource-dense option for large-scale, memory-bound workloads that do not require local NVMe drives.",
-    "This server is suited for memory-intensive applications, including large-scale in-memory databases, high-throughput Redis deployments, and complex software compilation. It is also highly capable for multi-threaded data decompression, ray tracing, and LLM prompt processing tasks."
+    "Amazon Web Services r8i.96xlarge is a memory-optimized server instance powered by the Nitro hypervisor. It features 384 vCPUs and 192 physical cores with two threads per core, utilizing the x86_64 Intel Xeon 6975P-C processor running at 3.9 GHz. The system is equipped with 3072.0 GB of DDR5 memory operating at 7 GHz, providing 8.0 GB of RAM per physical core. It includes a 480 MB L3 cache and supports advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions for accelerated mathematical operations.",
+    "Benchmark data indicates top-tier multi-core CPU performance and memory bandwidth, with read-only cached memory bandwidth reaching 30,551.22 GB/sec and uncached large block reads at 1,125.32 GB/sec. The instance excels in parallel processing tasks, showing top-tier results in multi-threaded bzip3 decompression and Passmark database operations. However, single-core performance is moderate, placing in the middle 50% for stress-ng single-core tests. Additionally, while prompt processing for large language models is strong, text generation speeds are limited, and the instance lacks local NVMe storage, relying entirely on network-attached storage.",
+    "Given its massive memory footprint and high-density compute capabilities, the r8i.96xlarge offers high qualitative cost efficiency for memory-bound enterprise workloads that require substantial RAM without the overhead of multiple smaller instances. It is highly suited for large-scale in-memory databases, Redis deployments, heavy database operations, software compilation, and complex data-processing pipelines."
   ],
-  "description": "Amazon Web Services r8i.96xlarge is a memory-optimized server featuring 384 vCPUs and 192 physical cores powered by an Intel Xeon 6975P-C processor running at 3.9 GHz. It is equipped with 3072.0 GB of high-speed DDR5 memory and a 100 Gbps baseline network interface, though it lacks local storage and GPUs. Benchmarks show top-tier multi-core CPU performance, exceptional memory bandwidth, and superior database and Redis operation speeds. However, single-core performance is average, and text generation for small LLM models is relatively poor. This instance is highly resource-dense, offering qualitative cost efficiency for massive memory-bound workloads. It is best suited for in-memory databases, large-scale Redis deployments, software compilation, and multi-threaded data processing.",
-  "og_description": "Amazon Web Services r8i.96xlarge is a memory-optimized server with 384 vCPUs, 3072 GB DDR5 RAM, and 100 Gbps networking, delivering top-tier multi-core and database performance.",
-  "meta_description": "Amazon Web Services r8i.96xlarge features 384 vCPUs, 3 TB DDR5 RAM, and 100 Gbps networking for memory-intensive database and compute workloads.",
-  "tagline": "A high-density, memory-optimized platform featuring massive DDR5 capacity and exceptional multi-core processing power for enterprise-scale database workloads.",
+  "description": "Amazon Web Services r8i.96xlarge is a memory-optimized server instance powered by the Nitro hypervisor and an Intel Xeon 6975P-C processor. It delivers 384 vCPUs, 192 physical cores, and 3072.0 GB of DDR5 memory running at 7 GHz. Designed for memory-intensive applications, the instance achieves top-tier multi-core CPU performance and exceptional memory bandwidth, as demonstrated by its high throughput in database operations and Redis SET benchmarks. However, it lacks local storage and exhibits average single-core performance. It supports advanced vector and matrix extensions for accelerated mathematical computations. This instance is highly suited for large-scale in-memory databases, enterprise database operations, and heavy multi-threaded data processing workloads.",
+  "og_description": "Amazon Web Services r8i.96xlarge is a memory-optimized instance with 384 vCPUs, 3 TB of DDR5 RAM, and top-tier multi-core performance, designed for large-scale databases and memory-bound workloads.",
+  "meta_description": "Amazon Web Services r8i.96xlarge features 384 vCPUs, 3072 GB DDR5 RAM, and 100 Gbps network bandwidth for memory-intensive enterprise workloads.",
+  "tagline": "A high-density memory-optimized platform featuring three terabytes of DDR5 RAM and advanced matrix extensions for massive enterprise database workloads.",
   "bullet_points": [
-    "384 vCPUs and 192 physical cores via Intel Xeon 6975P-C processors.",
-    "3072.0 GB of high-speed DDR5 memory running at 7 GHz.",
-    "100 Gbps baseline network bandwidth for high-throughput data transfer.",
-    "Top-tier multi-core CPU, memory bandwidth, and Redis performance.",
-    "No local storage or dedicated GPU hardware included.",
-    "Ideal for in-memory databases, Redis deployments, and software compilation."
+    "Features 384 vCPUs and 3072.0 GB of high-speed DDR5 memory",
+    "Powered by Intel Xeon 6975P-C processors with AVX-512 and AMX support",
+    "Delivers top-tier multi-core performance and memory bandwidth",
+    "Provides 100 Gbps baseline network bandwidth with no local storage",
+    "Best suited for in-memory databases, Redis, and heavy database operations"
   ],
   "categories": [
     "Memory Optimized",
-    "Compute Optimized",
-    "Storage & Database"
+    "Compute Optimized"
   ]
 }
