@@ -1,22 +1,21 @@
 {
   "page": [
-    "Amazon Web Services c9g.metal-48xl is a bare-metal, compute-optimized server powered by AWS Graviton processors. It features 192 dedicated physical cores on the arm64 architecture, utilizing the AWS Neoverse-V3 model running at 3.3 GHz. The hardware configuration includes 384.0 GB of system memory, providing a resource density of 2.0 GB per core. It does not include local storage or dedicated GPU hardware, but features a baseline network bandwidth of 100 Gbps.",
-    "In multi-core processing and memory bandwidth benchmarks, the c9g.metal-48xl demonstrates top-tier performance. Multi-core stress-ng tests, PassMark CPU scores, and multi-threaded bzip3 decompression all rank in the top 10% of tested hardware. Memory bandwidth is exceptionally high, with read-only large block speeds reaching 726.85 GB/sec and write speeds at 339.15 GB/sec. However, single-core CPU performance is moderate, as shown by stress-ng single-core results in the middle 50%.",
-    "This bare-metal instance is highly efficient for parallelized, compute-heavy workloads that benefit from high core density and memory bandwidth without requiring GPU acceleration. It is well-suited for high-throughput database operations, static web serving, and multi-threaded data processing. While prompt processing for medium-sized language models is highly efficient at 384.03 tokens/sec, text generation speeds are significantly lower, making it less optimal for real-time LLM text generation."
+    "Amazon Web Services c9g.metal-48xl is a bare-metal, compute-optimized server powered by AWS Graviton processors. It features 192 dedicated physical cores on the arm64 architecture, utilizing the ARMv9 Neoverse-V3 model running at 3.3 GHz. The processor configuration includes 64 KB of L1d cache, 2 MB of L2 cache, and 96 MB of L3 cache. It is equipped with 384.0 GB of DDR5 memory, yielding a memory-to-core ratio of 2.0 GB per core. The server does not include local storage or dedicated GPU hardware, but it provides a baseline network bandwidth of 100 Gbps.",
+    "In benchmark testing, the c9g.metal-48xl demonstrates top-tier multi-core capabilities. The stress-ng multi-core CPU performance and PassMark CPU score both rank in the top 10% of tested servers. Memory bandwidth is also highly competitive, with read-only small block cached bandwidth reaching 27583.71 GB/sec and large block uncached read bandwidth at 726.85 GB/sec, both placing in the top 10%. Multi-threaded bzip3 decompression and static web serving throughput also achieve top-tier status. However, single-core stress-ng performance sits in the middle 50%, and text generation for a small 135M LLM model is relatively weak at 23.25 tokens/sec.",
+    "The hardware profile presents specific tradeoffs. While the 192 dedicated physical cores deliver exceptional parallel processing power, the lack of hyperthreading and the absence of AVX or AMX instruction sets may limit certain vector-heavy workloads. Additionally, the lack of local NVMe storage requires reliance on network-attached storage. This server is highly efficient for highly parallelized, compute-bound workloads such as multi-threaded decompression, static web serving, database operations, and Redis caching, where its top-tier multi-core and memory bandwidth capabilities can be fully utilized."
   ],
-  "description": "Amazon Web Services c9g.metal-48xl is a bare-metal, compute-optimized server featuring 192 dedicated physical cores on the arm64 architecture. Powered by AWS Neoverse-V3 processors running at 3.3 GHz, it provides 384.0 GB of system memory and a 100 Gbps baseline network bandwidth. The server lacks local storage and GPU accelerators. Benchmark data highlights top-tier multi-core CPU performance, exceptional memory bandwidth, and high throughput for database operations and static web serving. However, single-core performance and LLM text generation speeds are moderate. This instance is designed for highly parallelized, compute-intensive workloads, multi-threaded data processing, and high-throughput web serving where dedicated physical cores and high memory bandwidth are required.",
-  "og_description": "Amazon Web Services c9g.metal-48xl is a bare-metal, compute-optimized arm64 server featuring 192 dedicated physical cores, 384 GB of memory, and 100 Gbps network bandwidth for high-throughput workloads.",
-  "meta_description": "Amazon Web Services c9g.metal-48xl is a bare-metal arm64 server with 192 dedicated cores, 384 GB RAM, and 100 Gbps network bandwidth.",
-  "tagline": "A high-density bare-metal arm64 server delivering 192 dedicated physical cores and top-tier memory bandwidth for compute-intensive parallel workloads.",
+  "description": "Amazon Web Services c9g.metal-48xl is a bare-metal, compute-optimized server featuring 192 dedicated physical cores on the arm64 architecture. Powered by AWS Graviton Neoverse-V3 processors running at 3.3 GHz, it includes 384.0 GB of DDR5 memory, providing a 2.0 GB per core ratio. The server lacks local storage and dedicated GPUs but delivers a 100 Gbps baseline network bandwidth. Benchmark results place its multi-core CPU performance, memory bandwidth, and static web serving throughput in the top 10% tier. However, single-core performance is average, and it lacks AVX or AMX instruction sets. This instance is optimized for highly parallelized, compute-intensive workloads, including multi-threaded decompression, database operations, and high-throughput web serving.",
+  "og_description": "Amazon Web Services c9g.metal-48xl is a bare-metal, compute-optimized server with 192 dedicated arm64 cores, 384 GB DDR5 RAM, and 100 Gbps network bandwidth, delivering top-tier multi-core performance.",
+  "meta_description": "Amazon Web Services c9g.metal-48xl is a bare-metal server with 192 arm64 cores, 384 GB DDR5 RAM, and top-tier multi-core benchmark performance.",
+  "tagline": "A bare-metal, arm64 compute-optimized server featuring 192 dedicated physical cores and high-bandwidth DDR5 memory for parallel workloads.",
   "bullet_points": [
-    "192 dedicated physical arm64 cores powered by AWS Neoverse-V3 at 3.3 GHz",
-    "384.0 GB of system memory providing 2.0 GB per core",
-    "100 Gbps baseline network bandwidth with no local storage or GPU",
-    "Top-tier multi-core CPU performance and memory bandwidth benchmarks",
-    "Optimized for multi-threaded data processing, databases, and static web serving"
+    "192 dedicated physical arm64 cores utilizing AWS Graviton Neoverse-V3 processors.",
+    "384.0 GB of DDR5 memory providing 2.0 GB of RAM per core.",
+    "Top-tier multi-core CPU performance and memory bandwidth in benchmark testing.",
+    "100 Gbps baseline network bandwidth without local storage or GPUs.",
+    "Suited for highly parallelized workloads, database operations, and web serving."
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

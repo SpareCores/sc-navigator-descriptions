@@ -1,23 +1,23 @@
 {
   "page": [
-    "Vultr vhf-12c-48gb is a High Frequency Compute server configured with 12 shared Intel x86_64 vCPUs, derived from 6 physical cores with hyper-threading. The system features 48.0 GB of system memory, providing 4.0 GB of RAM per core, and includes 768 GB of local NVMe SSD storage. It operates with a CPU clock speed of 2.0 GHz, supported by a cache hierarchy of 32 KB L1d, 4 MB L2, and 16 MB L3 cache.",
-    "Benchmark data indicates strong single-threaded performance, with gzip compression reaching top-tier status at 41.11 GB/sec and bzip3 decompression scoring in the top 25% at 14.55 GB/sec. Passmark memory testing also ranks in the top 10%. However, memory bandwidth for large uncached blocks is a notable bottleneck, falling into the bottom 25% for both read (33.97 GB/sec) and write (18.41 GB/sec) operations. Similarly, while small-model LLM inference is average, medium-model prompt processing and text generation are weak, scoring in the bottom 25%.",
-    "From a qualitative cost-efficiency perspective, the server offers a high density of NVMe storage and memory relative to its shared CPU allocation. The shared CPU model introduces potential performance variability under sustained multi-tenant load, which is a key tradeoff. This configuration is suited for static web serving, database operations, and single-threaded compression tasks, but is less optimal for memory-bandwidth-intensive workloads or medium-to-large LLM inference."
+    "Vultr vhf-12c-48gb is an x86_64 architecture server within the High Frequency Compute family. It features 12 shared vCPUs mapped to 6 physical Intel CPU cores with 2 threads per core, operating at a clock speed of 2.0 GHz. The system is equipped with 48.0 GB of system memory, providing 4.0 GB of RAM per core. Local storage is bundled with a 768 GB NVMe SSD, and the configuration includes one complimentary public IPv4 address. No GPU accelerators are present on this instance type.",
+    "Benchmark results indicate strong single-core performance, with stress-ng single-core CPU metrics in the top 25% and single-threaded gzip compression achieving top-tier status in the top 10%. Multi-core CPU performance and PassMark CPU scores sit in the middle 50% average range. Memory performance shows a stark contrast: while the PassMark memory score ranks in the top 10% and cached small-block read bandwidth is average, large-block uncached read and write memory bandwidths fall into the bottom 25%.",
+    "Given its shared CPU allocation, this server offers a cost-efficient profile for workloads that require high single-threaded performance but do not demand continuous, dedicated multi-core execution. It is well-suited for tasks such as single-threaded file compression, general-purpose web serving, and moderate database operations. However, the weak uncached memory bandwidth and shared CPU resources make it less optimal for memory-intensive data processing or sustained multi-threaded workloads."
   ],
-  "description": "Vultr vhf-12c-48gb is a High Frequency Compute server featuring 12 shared Intel x86_64 vCPUs, 48.0 GB of RAM, and 768 GB of local NVMe SSD storage. Operating at 2.0 GHz, the processor includes AVX, AES, and FMA instruction sets. Benchmark results show top-tier single-threaded gzip compression at 41.11 GB/sec and a top-10% Passmark memory score. However, performance tradeoffs exist, particularly in large-block memory bandwidth and medium-model LLM inference, both of which fall into the bottom 25%. The shared CPU allocation also introduces potential resource contention. This server is suited for static web serving, database operations, and general-purpose workloads requiring high local storage capacity, while workloads requiring sustained, uncached memory throughput or heavy AI inference should be avoided.",
-  "og_description": "Vultr vhf-12c-48gb is a High Frequency Compute server with 12 shared Intel vCPUs, 48 GB RAM, and 768 GB NVMe storage, offering strong single-threaded compression but weak large-block memory bandwidth.",
-  "meta_description": "Vultr vhf-12c-48gb is a shared Intel server with 12 vCPUs, 48 GB RAM, and 768 GB NVMe SSD storage, suited for web serving and database workloads.",
-  "tagline": "A shared-core server combining high-capacity NVMe storage and balanced memory with strong single-threaded compression performance.",
+  "description": "Vultr vhf-12c-48gb is an x86_64 general-purpose server from the High Frequency Compute family, featuring 12 shared vCPUs across 6 physical Intel cores, 48.0 GB of RAM, and a 768 GB NVMe SSD. Operating at 2.0 GHz, the processor delivers strong single-core performance, highlighted by top-tier single-threaded gzip compression and top 25% stress-ng single-core results. However, multi-core performance and database operations remain average, while uncached memory bandwidth falls into the bottom 25%. This shared-CPU configuration provides a cost-effective resource density for workloads requiring high single-thread bursts, such as web serving, basic database tasks, and lightweight file processing, though it is less suited for sustained multi-threaded or memory-intensive applications.",
+  "og_description": "Vultr vhf-12c-48gb is an x86_64 general-purpose server featuring 12 shared Intel vCPUs, 48.0 GB RAM, and a 768 GB NVMe SSD, offering strong single-core performance for web serving and database tasks.",
+  "meta_description": "Vultr vhf-12c-48gb is an x86_64 general-purpose server with 12 shared Intel vCPUs, 48.0 GB RAM, and a 768 GB NVMe SSD for web and database workloads.",
+  "tagline": "A shared-CPU general-purpose server combining strong single-core performance with local NVMe storage for cost-effective web serving and database workloads.",
   "bullet_points": [
-    "12 shared Intel x86_64 vCPUs and 48.0 GB of system memory",
+    "12 shared Intel vCPUs and 48.0 GB of system memory",
     "768 GB of local NVMe SSD storage included",
-    "Top-tier single-threaded gzip compression and Passmark memory scores",
-    "Weak large-block memory bandwidth and medium LLM inference speeds",
-    "Suited for static web serving, database operations, and compression tasks"
+    "Strong single-core CPU and single-threaded compression performance",
+    "Average multi-core CPU and database operation benchmarks",
+    "Weak uncached memory bandwidth under large-block workloads",
+    "Suitable for web serving, lightweight databases, and file processing"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database",
     "Burstable & Budget"
   ]
 }

@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services c9g.48xlarge is a compute-optimized instance built on the AWS Nitro hypervisor. It features 192 dedicated physical cores using the 64-bit ARM architecture (arm64) powered by AWS Neoverse-V3 processors running at 3.3 GHz. The system provides 384.0 GB of system memory, yielding a resource density of 2.0 GB per core. Cache configuration includes 64 KB of L1 instruction/data cache, 2 MB of L2 cache per core, and 96 MB of shared L3 cache. The instance lacks local NVMe storage and dedicated GPU hardware, relying entirely on network-attached storage and featuring a baseline network bandwidth of 100 Gbps.",
-    "Benchmark data indicates top-tier multi-core capabilities. The multi-core stress-ng CPU benchmark scores 380,393.63, placing it in the top 10% of tested servers, while single-core performance remains in the average tier at 2,006.19. Memory bandwidth is highly efficient, with read-only small block cached transfers reaching 27,753.18 GB/sec and large block uncached writes at 340.16 GB/sec. Multi-threaded decompression via bzip3 scales to 1,910.26 GB/sec. For database workloads, the instance achieves 511.16 million operations per second on Redis SET benchmarks and scores 61,797.63 on PassMark database operations.",
-    "Tradeoffs are evident in LLM inference and single-threaded tasks. While prompt processing for a 7B model reaches a top-tier 383.91 tokens per second, text generation speeds drop to an average 10.1 tokens per second, and text generation for a small 135M model is poor at 12.87 tokens per second. The lack of local storage requires reliance on network storage, which may impact I/O-heavy operations. This instance is suited for highly parallelized, compute-bound workloads such as multi-threaded decompression, static web serving, high-throughput database operations, and CPU-based container orchestration."
+    "Amazon Web Services c9g.48xlarge is a compute-optimized server powered by the custom AWS Graviton9 Neoverse-V3 processor. Operating on the arm64 architecture at a clock speed of 3.3 GHz, this instance features 192 dedicated physical cores with a single thread per core. The memory configuration consists of 384.0 GB of RAM, yielding a resource density of 2.0 GB per core. It utilizes the AWS Nitro hypervisor, lacks local storage, and does not include integrated GPUs.",
+    "Benchmark results indicate top-tier multi-core performance, with a stress-ng multi-core score of 380393.63 and a PassMark CPU score of 106962.52. Memory bandwidth is highly efficient, reaching 729.09 GB/sec for large-block read-only operations and 340.16 GB/sec for large-block write operations. The server demonstrates strong capabilities in data processing, achieving 1910.26 GB/sec in multi-threaded bzip3 decompression and 511.16 million operations per second in Redis SET operations. However, single-core performance is moderate, with a stress-ng single-core score of 2006.19.",
+    "Equipped with a baseline network bandwidth of 100 Gbps, the c9g.48xlarge is designed for high-throughput network tasks. From a cost-efficiency perspective, the high density of dedicated ARMv9 physical cores provides substantial compute capacity per resource unit without hyperthreading overhead. This profile is highly suited for multi-threaded workloads, high-concurrency web serving, database operations, and prompt processing for medium-sized language models, though it is less optimal for tasks requiring local NVMe storage or GPU acceleration."
   ],
-  "description": "The Amazon Web Services c9g.48xlarge is an ARM-based, compute-optimized instance powered by 192 dedicated AWS Neoverse-V3 physical cores running at 3.3 GHz. Operating on the Nitro hypervisor, it features 384.0 GB of RAM, providing a 2.0 GB per core memory ratio, alongside a 100 Gbps baseline network bandwidth. It contains no local storage or GPU hardware. Benchmarks show top-tier multi-core CPU performance, high memory bandwidth, and strong database execution, with Redis SET operations reaching 511.16 million operations per second. However, single-core performance is average, and LLM text generation speeds are limited, with a 7B model generating 10.1 tokens per second. This instance is designed for highly parallelized, compute-intensive workloads, including multi-threaded data processing, static web serving, and high-throughput database operations.",
-  "og_description": "Amazon Web Services c9g.48xlarge is an arm64 compute-optimized instance with 192 dedicated Neoverse-V3 cores, 384 GB RAM, and 100 Gbps network bandwidth, delivering top-tier multi-core performance.",
-  "meta_description": "Amazon Web Services c9g.48xlarge features 192 dedicated ARM cores, 384 GB RAM, and 100 Gbps network speed for compute-intensive workloads.",
-  "tagline": "A dedicated 192-core ARM processor instance delivering top-tier multi-threaded compute and high-bandwidth memory performance for parallel workloads.",
+  "description": "Amazon Web Services c9g.48xlarge is a compute-optimized instance powered by 192 dedicated physical cores of the 3.3 GHz AWS Graviton Neoverse-V3 ARMv9 processor. Operating on the arm64 architecture, it features 384.0 GB of RAM and runs on the Nitro hypervisor. The instance lacks local storage and GPUs but provides a 100 Gbps baseline network bandwidth. Benchmarks show top-tier multi-core performance, with a stress-ng multi-core score of 380393.63 and exceptional memory bandwidth, alongside strong database and Redis performance. It is highly cost-efficient for parallelized, compute-heavy workloads. This server is best suited for high-concurrency web serving, multi-threaded data processing, database operations, and medium-model LLM prompt processing.",
+  "og_description": "Amazon Web Services c9g.48xlarge is a compute-optimized server featuring 192 dedicated ARMv9 cores, 384 GB of RAM, and 100 Gbps network bandwidth, delivering top-tier multi-core and database performance.",
+  "meta_description": "Amazon Web Services c9g.48xlarge is a compute-optimized arm64 server with 192 dedicated Graviton cores, 384 GB RAM, and 100 Gbps network bandwidth.",
+  "tagline": "A high-density ARMv9 compute instance delivering 192 dedicated cores and 100 Gbps networking for highly parallelized enterprise workloads.",
   "bullet_points": [
-    "192 dedicated AWS Neoverse-V3 ARM64 cores running at 3.3 GHz",
-    "384.0 GB of system memory providing 2.0 GB per core",
-    "100 Gbps baseline network bandwidth with Nitro hypervisor integration",
+    "192 dedicated ARMv9 Neoverse-V3 physical cores at 3.3 GHz",
+    "384.0 GB of RAM providing a 1:2 vCPU-to-memory ratio",
+    "100 Gbps baseline network bandwidth via the Nitro hypervisor",
     "Top-tier multi-core CPU and memory bandwidth benchmark results",
-    "No local storage or GPU accelerators included",
-    "Suited for multi-threaded decompression, database operations, and web serving"
+    "Optimized for multi-threaded data processing, Redis, and web serving",
+    "No local storage or GPU accelerators included"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
