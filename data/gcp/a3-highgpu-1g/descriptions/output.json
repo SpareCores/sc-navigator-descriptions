@@ -1,23 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform a3-highgpu-1g is an accelerator-optimized server configured with an Intel Xeon 8481C processor and a single NVIDIA H100 GPU. The CPU architecture is x86_64, featuring 26 vCPUs across 13 physical cores with dedicated allocation and a base clock speed of 2.7 GHz. The system includes 234 GB of RAM, providing 9.0 GB of memory per core. The bundled NVIDIA H100 GPU belongs to the Hopper family and features 80 GB of VRAM. Storage is provided via a local 804 GB NVMe SSD.",
-    "Benchmark results indicate strong performance in specific workloads. In single-threaded tasks, the server achieves a Geekbench single-core score of 2072.0 and a single-threaded gzip compression rate of 33.6 GB/sec, both placing in the top 25%. Text processing performance is in the top 10%, scoring 2808.0 on Geekbench. Multi-core performance is moderate, with a stress-ng multi-core score of 27427.61 and a Geekbench multi-core score of 14893.0, both falling within the average range. Large block memory write bandwidth is measured at 31.36 GB/sec.",
-    "For language model workloads, the server demonstrates a clear performance tradeoff based on model size. LLM inference text generation for a small 135M model reaches 348.05 tokens per second, placing it in the top 10% tier. However, text generation speed drops to 23.8 tokens per second for a medium 7B model, and falls to a lower-tier 2.49 tokens per second for a large 70B model. This indicates the single-GPU configuration is highly efficient for smaller models but faces resource constraints with very large models. From a resource density perspective, the single-GPU configuration provides a cost-efficient entry point for GPU-accelerated workloads, avoiding the higher resource overhead of multi-GPU nodes. The hardware profile is suited for machine learning inference of small to medium models, data processing, and GPU-accelerated compute tasks."
+    "Google Cloud Platform a3-highgpu-1g is an accelerator-optimized server configured with 26 vCPUs and 234 GB of RAM. The compute resources are powered by an Intel Xeon 8481C processor built on the x86_64 architecture, offering 13 physical cores with 2.0 threads per core and a clock speed of 2.7 GHz. The CPU features a 105 MB L3 cache and supports advanced instruction sets including AVX-512 and Intel Advanced Matrix Extensions (AMX). For acceleration, the server includes a single NVIDIA Hopper H100 GPU with 80 GB of VRAM, alongside a bundled 804 GB NVMe SSD for local storage.",
+    "Benchmark data reveals strong single-threaded performance, with Geekbench single-core scoring 2072.0 and single-threaded gzip compression reaching 33.6 GB/sec. Multi-core performance is moderate, with a Geekbench multi-core score of 14893.0 and a Passmark CPU score of 35694.46. Memory bandwidth tests show a read-only small block cached speed of 2213.07 GB/sec, which drops to 159.18 GB/sec for large uncached blocks. In LLM inference benchmarks, the server achieves a top-tier text generation speed of 348.05 tokens/sec for a small 135M model, but drops to an average of 23.8 tokens/sec for a medium 7B model, and a poor 2.49 tokens/sec for a large 70B model.",
+    "From a qualitative cost-efficiency perspective, the high density of specialized hardware, including the H100 GPU and AMX-enabled Intel Xeon processor, represents a significant resource commitment designed for specialized workloads rather than general-purpose computing. The primary tradeoff lies in the drop-off in LLM inference performance as model sizes scale up, indicating that while the single H100 GPU is highly efficient for smaller models, larger models exceed its optimal threshold. This server is suited for machine learning training and inference of small-to-medium models, data science pipelines, and accelerated database operations."
   ],
-  "description": "Google Cloud Platform a3-highgpu-1g is an accelerator-optimized server featuring an Intel Xeon 8481C processor with 26 dedicated vCPUs and 234 GB of RAM. It is equipped with a single NVIDIA H100 GPU from the Hopper family, providing 80 GB of VRAM, alongside an 804 GB local NVMe SSD. Benchmarks show strong single-core performance, with Geekbench single-core scores and single-threaded gzip compression rates in the top 25%, and text processing in the top 10%. For language model inference, the server delivers top-tier performance of 348.05 tokens per second on small 135M models, though performance decreases to 2.49 tokens per second for large 70B models. This server is designed for GPU-accelerated workloads, machine learning inference of small to medium models, and data processing tasks requiring dedicated CPU and high-speed local storage.",
-  "og_description": "Google Cloud Platform a3-highgpu-1g is an accelerator-optimized server with 26 vCPUs, 234 GB RAM, an 804 GB NVMe SSD, and one 80 GB NVIDIA H100 GPU, designed for machine learning and GPU compute.",
-  "meta_description": "Google Cloud Platform a3-highgpu-1g features 26 vCPUs, 234 GB RAM, and one 80 GB NVIDIA H100 GPU for accelerated machine learning workloads.",
-  "tagline": "An accelerator-optimized server featuring a dedicated Intel Xeon processor, local NVMe storage, and an NVIDIA H100 GPU with 80 GB VRAM.",
+  "description": "Google Cloud Platform a3-highgpu-1g is an accelerator-optimized server featuring an Intel Xeon 8481C processor with 26 vCPUs, 234 GB of RAM, and a dedicated NVIDIA Hopper H100 GPU with 80 GB of VRAM. It also includes 804 GB of local NVMe SSD storage. The CPU operates at 2.7 GHz and supports Intel Advanced Matrix Extensions (AMX) and AVX-512. Benchmarks indicate strong single-threaded capabilities, with a Geekbench single-core score of 2072.0 and a top-tier LLM text generation speed of 348.05 tokens/sec for small 135M models. However, performance scales down to 2.49 tokens/sec for large 70B models. This server is designed for machine learning inference of small-to-medium models, accelerated database operations, and data science workloads requiring dedicated GPU acceleration and high memory density.",
+  "og_description": "Google Cloud Platform a3-highgpu-1g is an accelerator-optimized server with 26 vCPUs, 234 GB RAM, an 804 GB NVMe SSD, and one NVIDIA H100 GPU with 80 GB VRAM for machine learning and database workloads.",
+  "meta_description": "Google Cloud Platform a3-highgpu-1g features 26 vCPUs, 234 GB RAM, an 804 GB NVMe SSD, and a dedicated 80 GB NVIDIA H100 GPU.",
+  "tagline": "An accelerator-optimized platform combining dedicated Intel Xeon processors, high-capacity system memory, and a single NVIDIA H100 GPU with local NVMe storage.",
   "bullet_points": [
-    "Dedicated Intel Xeon 8481C processor with 26 vCPUs and 234 GB RAM",
-    "Single NVIDIA H100 Hopper GPU with 80 GB VRAM",
-    "Bundled 804 GB local NVMe SSD storage",
-    "Top-tier text generation performance of 348.05 tokens/sec for small LLM models",
-    "Strong single-core performance and text processing capabilities",
-    "Suited for machine learning inference, data processing, and GPU-accelerated tasks"
+    "Equipped with 1 NVIDIA Hopper H100 GPU featuring 80 GB of dedicated VRAM.",
+    "Powered by an Intel Xeon 8481C CPU with 26 vCPUs and 234 GB of system memory.",
+    "Includes 804 GB of local NVMe SSD storage for low-latency data access.",
+    "Delivers top-tier text generation speeds of 348.05 tokens/sec for small LLM models.",
+    "Supports Intel Advanced Matrix Extensions (AMX) and AVX-512 instruction sets.",
+    "Suited for machine learning inference, data science, and database operations."
   ],
   "categories": [
     "GPU Accelerated",
-    "Compute Optimized"
+    "Memory Optimized",
+    "Storage & Database"
   ]
 }

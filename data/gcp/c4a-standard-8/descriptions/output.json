@@ -1,22 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c4a-standard-8 is an ARM-based virtual machine instance powered by the ARMv8 architecture. It features 8 dedicated physical cores utilizing the Neoverse-V2 processor model, running at a clock speed of 3.0 GHz. The instance is configured with 32.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per core. There is no bundled local storage or GPU acceleration included with this instance type. The CPU cache configuration includes 64 KB of L1 data cache, 2 MB of L2 cache, and 80 MB of L3 cache.",
-    "In benchmark evaluations, the c4a-standard-8 demonstrates strong memory performance, with its PassMark memory score reaching the top tier. Read-only memory bandwidth for large blocks is particularly strong at 198.51 GB/sec, while small-block cached reads average 984.48 GB/sec. Single-threaded compression and decompression tasks show strong results, with gzip compression reaching 32.3 GB/sec and bzip3 decompression at 14.14 GB/sec. However, cryptographic performance is a notable tradeoff, with the PassMark CPU encryption test scoring in the weak tier at 1665.96. Standard compute workloads, such as stress-ng single-core and multi-core tests, deliver average performance.",
-    "From a cost-efficiency perspective, the c4a-standard-8 offers a competitive resource density for ARM-native workloads, delivering top-tier memory performance and balanced compute without the overhead of hyperthreading. This makes it suitable for general-purpose workloads, including static web serving, database operations, and lightweight language model inference. It is designed for applications that benefit from high memory bandwidth and dedicated physical cores, though workloads heavily reliant on hardware-accelerated cryptography may experience performance limitations."
+    "Google Cloud Platform c4a-standard-8 is an arm64-based server instance featuring 8 dedicated vCPUs mapped to 8 physical cores with 1 thread per core. Powered by the 3.0 GHz ARMv8 Neoverse-V2 processor, this instance is equipped with 32.0 GB of RAM, providing 4.0 GB of memory per core. The CPU cache configuration includes 64 KB of L1D cache, 2 MB of L2 cache, and 80 MB of L3 cache. This instance does not include local storage or bundled GPUs.",
+    "In benchmark testing, the c4a-standard-8 demonstrates strong memory and compression performance. It achieves a top-tier PassMark memory score of 3082.2 and a strong read-only large-block memory bandwidth of 198.51 GB/sec. Single-threaded gzip compression at 32.3 GB/sec, single-threaded bzip3 decompression at 14.14 GB/sec, and Geekbench text processing at 2491.0 also rank in the strong tier. However, cryptographic performance is a notable tradeoff, with the PassMark CPU encryption test scoring in the weak tier at 1665.96. Other metrics, including Geekbench multi-core and Redis SET operations, fall within the average range.",
+    "From a cost-efficiency perspective, the c4a-standard-8 leverages the ARM Neoverse-V2 architecture to deliver high memory bandwidth and efficient single-threaded execution without the overhead of hyperthreading. This makes it a viable option for workloads that benefit from dedicated physical cores and high memory throughput. Recommended workloads include text processing, software compilation, static web serving, and lightweight database operations. It is less suited for heavy cryptographic tasks or large-scale LLM inference, as demonstrated by its weak prompt processing speed on 7B models."
   ],
-  "description": "Google Cloud Platform c4a-standard-8 is an ARM-based instance featuring 8 dedicated physical cores powered by the 3.0 GHz Neoverse-V2 processor. Equipped with 32.0 GB of RAM, this instance provides a balanced 4.0 GB of memory per core with no bundled local storage or GPU accelerators. Benchmark data highlights top-tier memory performance, with a strong large-block read bandwidth of 198.51 GB/sec and strong single-threaded gzip compression at 32.3 GB/sec. Standard compute benchmarks, including stress-ng and PassMark database operations, fall within the average range. However, cryptographic performance represents a tradeoff, scoring in the weak tier. This instance is optimized for general-purpose workloads, static web serving, and memory-bandwidth-sensitive applications that benefit from dedicated ARMv8 physical cores.",
-  "og_description": "Google Cloud Platform c4a-standard-8 is an ARM-based instance featuring 8 dedicated Neoverse-V2 cores, 32 GB RAM, and top-tier memory bandwidth, optimized for general-purpose and web serving workloads.",
-  "meta_description": "Google Cloud Platform c4a-standard-8 is an ARM-based instance with 8 dedicated Neoverse-V2 cores and 32 GB RAM, offering top-tier memory performance.",
-  "tagline": "An ARM-powered instance featuring dedicated physical cores and top-tier memory bandwidth for balanced general-purpose workloads.",
+  "description": "Google Cloud Platform c4a-standard-8 is an arm64 server instance featuring 8 dedicated physical cores powered by a 3.0 GHz ARMv8 Neoverse-V2 processor and 32.0 GB of RAM. Lacking local storage and GPUs, this instance delivers strong memory performance, highlighted by a top-tier PassMark memory score and 198.51 GB/sec large-block read bandwidth. It also excels in single-threaded compression and text processing. However, cryptographic operations represent a performance tradeoff, scoring in the weak tier. The c4a-standard-8 is well-suited for general-purpose workloads, software compilation, static web serving, and database operations that benefit from dedicated physical cores and high memory throughput, while being less optimal for intensive encryption tasks or large-scale language model inference.",
+  "og_description": "Google Cloud Platform c4a-standard-8 is an arm64 server with 8 dedicated Neoverse-V2 cores and 32 GB RAM, offering strong memory bandwidth and compression performance for general-purpose workloads.",
+  "meta_description": "Google Cloud Platform c4a-standard-8 is an arm64 server with 8 dedicated Neoverse-V2 cores and 32 GB RAM, optimized for memory-efficient general workloads.",
+  "tagline": "An arm64 server featuring dedicated Neoverse-V2 cores and high memory bandwidth for efficient general-purpose and text-processing workloads.",
   "bullet_points": [
-    "8 dedicated ARMv8 Neoverse-V2 physical cores running at 3.0 GHz",
-    "32.0 GB of system memory providing 4.0 GB per core",
-    "Top-tier memory performance with 198.51 GB/sec large-block read bandwidth",
-    "Strong single-threaded gzip compression and bzip3 decompression speeds",
-    "Weak cryptographic performance as a primary hardware tradeoff",
-    "Best suited for general-purpose applications, web serving, and database operations"
+    "8 dedicated arm64 physical cores powered by 3.0 GHz ARMv8 Neoverse-V2 processors",
+    "32.0 GB of RAM providing a balanced 4.0 GB per core ratio",
+    "Top-tier memory performance and strong large-block read bandwidth",
+    "Strong single-threaded compression and text processing capabilities",
+    "Tradeoff in cryptographic performance with weak encryption benchmark scores",
+    "Best suited for software compilation, static web serving, and database operations"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

@@ -1,22 +1,24 @@
 {
   "page": [
-    "Hetzner Cloud cpx52 is an x86_64 virtual server powered by the QEMU hypervisor. It features 12 shared AMD EPYC vCPUs running at 2.0 GHz, with 12 physical cores and 1 thread per core. The processor includes 32 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. It is equipped with 23.0 GB of system memory, providing approximately 1.95 GB of RAM per core. Local storage consists of a bundled 480 GB NVMe SSD, and the instance does not include any complimentary public IPv4 addresses.",
-    "In benchmark testing, the cpx52 demonstrates strong single-core CPU performance, with a stress-ng single-core score of 3041.68 and a Geekbench single-core score of 1947.0, both placing in the top 25%. Multi-core performance is average, with a stress-ng multi-core score of 36626.57 and a Geekbench multi-core score of 10098.0. Memory bandwidth is highly efficient for large blocks, achieving a strong 220.5 GB/sec read-only and 143.81 GB/sec write speed. For lightweight machine learning workloads, the server shows strong performance in LLM text generation, processing 304.2 tokens/sec on a small 135M model and 33.91 tokens/sec on a medium 7B model.",
-    "The shared CPU allocation presents a resource-density tradeoff, making the instance highly cost-efficient for workloads that do not require dedicated, sustained CPU performance. The 1:2 vCPU-to-RAM ratio aligns with compute-optimized profiles, while the integrated 480 GB NVMe SSD provides fast local storage without additional provisioning. This server is well-suited for web serving, software compilation, database operations, and moderate text or image processing tasks."
+    "Hetzner Cloud cpx52 is an x86_64 virtual machine powered by an AMD EPYC processor running under QEMU virtualization. It features 12 vCPUs with shared CPU allocation, operating at a base clock speed of 2.0 GHz. The hardware configuration includes 23.0 GB of system memory, providing approximately 1.95 GB of RAM per core. Storage is bundled locally, consisting of a 480 GB NVMe SSD. There are no dedicated GPUs.",
+    "Benchmark results indicate strong single-core performance, with stress-ng single-core CPU tests placing in the top 25%. Multi-core performance, including stress-ng multi-core and Geekbench multi-core tests, falls within the average range. Memory performance is a notable strength; the instance achieves strong ratings in large-block read (220.5 GB/sec) and write (143.81 GB/sec) bandwidth tests, alongside a strong Passmark memory score. Additionally, the processor supports advanced instruction sets such as AVX-512 (including VNNI and BF16) and cryptography standards like AES and SHA_NI, which contribute to strong performance in small-to-medium LLM inference tasks.",
+    "From a cost-efficiency perspective, the cpx52 offers a high density of vCPUs and NVMe storage relative to its resource tier. However, because the CPU allocation is shared, workloads may experience performance variability compared to dedicated thread instances. The 1.95 GB of RAM per core represents a lower memory-to-vCPU ratio, making it less suitable for memory-intensive databases but highly efficient for compute-bound tasks that do not require dedicated CPU guarantees.",
+    "This server is well-suited for multi-threaded applications, software compilation, web serving, and lightweight machine learning inference. It is also appropriate for general-purpose compute workloads, batch processing, and development environments that benefit from high core counts and fast local NVMe storage without requiring sustained 100% dedicated CPU utilization."
   ],
-  "description": "Hetzner Cloud cpx52 is an x86_64 virtual server featuring 12 shared AMD EPYC vCPUs running at 2.0 GHz, paired with 23.0 GB of RAM and a bundled 480 GB NVMe SSD. Operating under the QEMU hypervisor, its hardware configuration yields a compute-oriented 1:2 vCPU-to-RAM ratio. Benchmark results indicate strong single-core CPU performance, with a Geekbench single-core score of 1947.0, alongside strong large-block memory bandwidth of 220.5 GB/sec read and 143.81 GB/sec write. Multi-core performance and database operations remain in the average tier. Due to its shared CPU allocation, the cpx52 offers high resource density and cost efficiency for non-sustained compute workloads. It is suitable for web serving, software compilation, and lightweight machine learning inference.",
-  "og_description": "Hetzner Cloud cpx52 is an x86_64 virtual server with 12 shared AMD EPYC vCPUs, 23.0 GB RAM, and a 480 GB NVMe SSD, delivering strong single-core performance and cost-efficient compute capacity.",
-  "meta_description": "Hetzner Cloud cpx52 is an x86_64 server with 12 shared AMD EPYC vCPUs, 23.0 GB RAM, and a 480 GB NVMe SSD, optimized for cost-effective compute workloads.",
-  "tagline": "A cost-efficient virtual server featuring twelve shared AMD EPYC cores, fast NVMe storage, and strong single-core performance for compute-oriented workloads.",
+  "description": "Hetzner Cloud cpx52 is an x86_64 virtual server configured with 12 shared AMD EPYC vCPUs, 23.0 GB of RAM, and 480 GB of local NVMe SSD storage. Operating under QEMU virtualization, this instance delivers strong single-core CPU performance and high memory bandwidth, with large-block read speeds reaching 220.5 GB/sec and write speeds at 143.81 GB/sec. The AMD EPYC processor supports AVX-512 and SHA_NI instruction sets, enabling efficient execution of cryptography and small-scale LLM inference workloads. While the shared CPU allocation introduces potential performance variability, the server offers a cost-effective balance of high core counts and fast local storage. It is best suited for multi-threaded applications, software compilation, web serving, and general-purpose compute tasks that do not require dedicated CPU resources.",
+  "og_description": "Hetzner Cloud cpx52 is an x86_64 virtual server featuring 12 shared AMD EPYC vCPUs, 23 GB of RAM, and 480 GB of local NVMe SSD storage, delivering strong single-core and memory bandwidth performance.",
+  "meta_description": "Hetzner Cloud cpx52 is an x86_64 virtual server featuring 12 shared AMD EPYC vCPUs, 23 GB of RAM, and 480 GB of local NVMe SSD storage.",
+  "tagline": "An x86_64 virtual server featuring twelve shared AMD EPYC cores and fast local NVMe storage for compute-focused workloads.",
   "bullet_points": [
     "12 shared AMD EPYC vCPUs and 23.0 GB of system memory",
-    "Bundled 480 GB NVMe SSD local storage",
-    "Strong single-core CPU and large-block memory bandwidth benchmarks",
-    "Shared CPU allocation offering high qualitative cost efficiency",
-    "Appropriate for web serving, software compilation, and database operations"
+    "Bundled 480 GB local NVMe SSD storage",
+    "Strong single-core CPU and large-block memory bandwidth performance",
+    "Hardware support for AVX-512, vector, and cryptographic instructions",
+    "Optimal for software compilation, web serving, and light LLM inference"
   ],
   "categories": [
     "Compute Optimized",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "General Purpose"
   ]
 }
