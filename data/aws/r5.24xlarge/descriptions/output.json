@@ -1,23 +1,21 @@
 {
   "page": [
-    "Amazon Web Services r5.24xlarge is a memory-optimized instance built on the Nitro hypervisor. It features an x86_64 architecture powered by an Intel Xeon 8259CL processor running at 3.1 GHz. The system provides 96 virtual CPUs across 48 physical cores with hyperthreading enabled. It is equipped with 768.0 GB of DDR4 memory operating at 3 GHz, yielding 8.0 GB of RAM per physical core. This instance does not include local storage or dedicated GPU hardware, but it delivers a baseline network bandwidth of 25 Gbps.",
-    "Benchmark data indicates strong multi-core and memory performance. The instance achieves top-tier results in stress-ng multi-core CPU performance and Passmark CPU scores, alongside high memory bandwidth, reaching 4503.04 GB/sec for cached small-block reads and 220.3 GB/sec for uncached large-block reads. Redis SET operations perform exceptionally well at 74.62 million operations per second, and static web serving throughput is strong at 46.46 GB/sec. However, single-core performance is relatively weak, as evidenced by lower scores in single-threaded stress-ng and gzip compression tests. LLM text generation speeds are also limited, particularly for medium-sized models.",
-    "From a cost-efficiency perspective, the r5.24xlarge offers high memory density relative to its compute resources, making it a viable option for memory-intensive workloads that do not require local NVMe storage. The high memory bandwidth and strong multi-core capabilities make this instance well-suited for large-scale in-memory databases like Redis, high-throughput web serving, distributed caching, and enterprise database operations."
+    "Amazon Web Services r5.24xlarge is a memory-optimized instance built on the Nitro hypervisor. It features an Intel Xeon 8259CL processor with an x86_64 architecture, operating at a clock speed of 3.1 GHz. The instance provides 96 virtual CPUs across 48 physical cores with hyper-threading enabled, alongside 768.0 GB of DDR4 memory running at 3 GHz. This configuration yields 8.0 GB of RAM per physical core. Local storage is not included, meaning the instance relies entirely on network-attached storage, supported by a baseline network bandwidth of 25 Gbps.",
+    "Benchmark data highlights strong multi-core and memory subsystem performance. The instance achieves top-tier results in multi-core CPU stress tests and memory bandwidth, with read-only cached small block speeds reaching 4503.04 GB/sec and uncached large block writes at 98.33 GB/sec. Cryptographic and extended instruction processing are also highly efficient, as shown by strong Passmark CPU encryption scores. However, single-core performance is relatively weak, with stress-ng single-core and gzip compression benchmarks falling into the bottom 25%. LLM text generation is also a bottleneck, with the medium 7B model producing only 6.02 tokens per second.",
+    "Given its high memory-to-vCPU ratio and lack of local storage, the r5.24xlarge offers qualitative cost efficiency for workloads requiring massive RAM footprints without the overhead of local NVMe drives. It is well-suited for large-scale in-memory databases, caching layers like Redis, and memory-intensive enterprise applications. The instance is less optimal for single-threaded tasks or GPU-dependent machine learning workloads."
   ],
-  "description": "Amazon Web Services r5.24xlarge is a memory-optimized instance powered by an Intel Xeon 8259CL processor on the Nitro hypervisor. Utilizing the x86_64 architecture, it delivers 96 vCPUs across 48 physical cores and 768.0 GB of DDR4 memory. While it lacks local storage and GPU accelerators, it features a 25 Gbps baseline network speed. Performance benchmarks show strong multi-core CPU capabilities and exceptional memory bandwidth, with uncached large-block reads reaching 220.3 GB/sec and Redis SET operations exceeding 74 million operations per second. Conversely, single-core processing and LLM text generation speeds are weaker. This profile makes the instance highly efficient for memory-intensive, multi-threaded workloads such as in-memory databases, caching layers, and large-scale enterprise applications.",
-  "og_description": "Amazon Web Services r5.24xlarge is a memory-optimized instance featuring 96 vCPUs, 768 GB of DDR4 RAM, and a 25 Gbps network speed, delivering strong multi-core and memory bandwidth performance.",
-  "meta_description": "Amazon Web Services r5.24xlarge is a memory-optimized instance featuring 96 vCPUs, 768 GB of DDR4 RAM, and strong multi-core performance for enterprise databases.",
-  "tagline": "A high-density memory-optimized instance featuring ninety-six virtual cores and 768 GB of DDR4 RAM for demanding in-memory workloads.",
+  "description": "Amazon Web Services r5.24xlarge is a memory-optimized instance powered by the Nitro hypervisor and an Intel Xeon 8259CL processor. It features 96 vCPUs (48 physical cores) running at 3.1 GHz and 768.0 GB of DDR4 memory, providing a high memory-to-core ratio of 8.0 GB. The instance lacks local storage but delivers a baseline network bandwidth of 25 Gbps. Performance benchmarks indicate strong multi-core processing and exceptional memory bandwidth, with cached read speeds of 4503.04 GB/sec and high Redis throughput. Conversely, single-core execution and LLM text generation are weaker. This hardware profile is highly efficient for memory-intensive workloads, such as large-scale in-memory databases, caching layers, and enterprise applications, while avoiding the cost of bundled local storage.",
+  "og_description": "Amazon Web Services r5.24xlarge is a memory-optimized instance featuring 96 Intel Xeon vCPUs, 768 GB DDR4 RAM, and 25 Gbps network bandwidth, ideal for large in-memory databases and caching.",
+  "meta_description": "Amazon Web Services r5.24xlarge is a memory-optimized instance with 96 Intel Xeon vCPUs, 768 GB DDR4 RAM, and 25 Gbps network bandwidth.",
+  "tagline": "A high-capacity memory-optimized instance featuring ninety-six vCPUs and seven hundred sixty-eight gigabytes of RAM for demanding in-memory workloads.",
   "bullet_points": [
-    "96 vCPUs and 768.0 GB of DDR4 memory",
-    "Intel Xeon 8259CL processor running at 3.1 GHz",
-    "Strong memory bandwidth and multi-core performance",
-    "25 Gbps baseline network bandwidth",
-    "No local storage or GPU accelerators included",
-    "Best suited for in-memory databases and caching"
+    "Intel Xeon 8259CL processor with 96 vCPUs and 48 physical cores",
+    "768.0 GB of DDR4 memory with strong read and write bandwidth",
+    "25 Gbps baseline network bandwidth with no local storage",
+    "Excellent multi-core CPU and Redis database performance",
+    "Suited for large-scale in-memory databases and caching layers"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

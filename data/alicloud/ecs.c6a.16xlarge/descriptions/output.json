@@ -1,22 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c6a.16xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 64 dedicated physical cores on an x86_64 architecture, utilizing the AMD EPYC 7H12 processor running at a base clock speed of 2.6 GHz. The instance is equipped with 128.0 GB of system memory, providing a resource density of 2.0 GB per core. It does not include local storage or dedicated GPU hardware, relying instead on network-attached storage and a baseline network bandwidth of 16 Gbps.",
-    "Performance benchmarks reveal a distinct contrast between single-core and multi-threaded capabilities. Single-core CPU performance under stress-ng is categorized in the bottom 10 percent, and single-threaded gzip compression is weak. However, the instance demonstrates strong multi-threaded performance, with bzip3 multi-threaded decompression and Passmark CPU scores ranking in the top 25 percent. Passmark CPU encryption tests also show strong results, while memory bandwidth, database operations, and static web serving throughput remain consistently in the average range.",
-    "From a qualitative cost-efficiency perspective, the high physical core density and dedicated CPU allocation make this instance suitable for parallelized workloads that can offset the lower single-core performance. The lack of bundled local storage means storage costs are externalized to network volumes. This server type is best suited for multi-threaded applications, batch processing, cryptography-heavy tasks, and distributed web serving workloads that benefit from high core counts rather than high per-core clock speeds."
+    "Alibaba Cloud ecs.c6a.16xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 64 dedicated vCPUs mapped to 64 physical cores of an AMD EPYC 7H12 processor operating at 2.6 GHz on the x86_64 architecture. The instance is configured with 128.0 GB of system memory, yielding a compute-focused ratio of 2.0 GB of RAM per core. It does not include local storage or GPU accelerators, relying instead on network-attached storage and featuring a baseline network bandwidth of 16 Gbps.",
+    "Benchmark data reveals a contrast between single-core and multi-core performance. Single-core execution is modest, with stress-ng single-core performance scoring in the bottom 10% and single-threaded gzip compression in the bottom 25%. However, the 64 physical cores deliver robust parallel processing capabilities. The instance achieves strong results in multi-threaded bzip3 decompression, PassMark CPU encryption, and Geekbench ray tracing, all placing in the top 25%. Memory bandwidth remains stable, with both cached small-block and uncached large-block read/write operations scoring in the average range.",
+    "Given its high core density and 1:2 memory-to-vCPU ratio, the ecs.c6a.16xlarge offers qualitative cost efficiency for highly parallelized workloads that do not require massive per-core memory footprints. The absence of local storage and GPUs represents a tradeoff, making it a specialized choice for compute-heavy tasks. It is suitable for multi-threaded applications, software compilation, ray tracing, and parallel data decompression, while being less optimal for single-threaded tasks or memory-intensive database operations."
   ],
-  "description": "Alibaba Cloud ecs.c6a.16xlarge is a compute-optimized instance featuring 64 dedicated physical cores powered by an AMD EPYC 7H12 processor at 2.6 GHz. Built on x86_64 architecture and the KVM hypervisor, it provides 128.0 GB of RAM, resulting in a 2.0 GB per core ratio. The instance lacks local storage and GPU accelerators, but offers a 16 Gbps baseline network bandwidth. Benchmark data highlights a performance tradeoff: single-core CPU performance and single-threaded compression are weak, whereas multi-threaded operations, such as bzip3 decompression and Passmark CPU encryption, rank in the top 25 percent. Memory bandwidth, database operations, and static web serving throughput perform at average levels. This profile makes the instance highly efficient for parallelized workloads, cryptography, and multi-threaded batch processing, rather than single-threaded applications.",
-  "og_description": "Alibaba Cloud ecs.c6a.16xlarge is a compute-optimized instance with 64 AMD EPYC vCPUs, 128 GB RAM, and 16 Gbps network bandwidth, delivering strong multi-threaded and encryption performance.",
-  "meta_description": "Alibaba Cloud ecs.c6a.16xlarge is a compute-optimized instance featuring 64 AMD EPYC cores, 128 GB RAM, and strong multi-threaded performance.",
-  "tagline": "A compute-optimized instance featuring sixty-four dedicated AMD EPYC cores, delivering strong multi-threaded performance and high-density parallel processing.",
+  "description": "Alibaba Cloud ecs.c6a.16xlarge is a compute-optimized instance featuring 64 dedicated vCPUs powered by an AMD EPYC 7H12 processor at 2.6 GHz, paired with 128.0 GB of RAM. Operating on the x86_64 architecture under the KVM hypervisor, this instance provides a 1:2 memory-to-vCPU ratio and lacks local storage or GPU accelerators. While single-core benchmarks are modest, the instance excels in multi-threaded workloads, demonstrating strong performance in parallel decompression, ray tracing, and CPU encryption. With a baseline network bandwidth of 16 Gbps, it is qualitatively cost-efficient for parallelized compute tasks. This instance is suitable for multi-threaded applications, software compilation, and parallel processing workloads.",
+  "og_description": "Alibaba Cloud ecs.c6a.16xlarge is a compute-optimized instance with 64 dedicated AMD EPYC vCPUs, 128.0 GB of RAM, and 16 Gbps network bandwidth, delivering strong multi-threaded performance.",
+  "meta_description": "Alibaba Cloud ecs.c6a.16xlarge is a compute-optimized instance with 64 dedicated AMD EPYC vCPUs, 128.0 GB of RAM, and 16 Gbps network bandwidth.",
+  "tagline": "A compute-optimized instance featuring 64 dedicated AMD EPYC cores, delivering strong multi-threaded performance for parallel processing workloads.",
   "bullet_points": [
-    "64 dedicated AMD EPYC 7H12 physical cores on x86_64 architecture",
-    "128.0 GB of system memory providing 2.0 GB per core",
-    "Strong multi-threaded performance and high-speed CPU encryption",
-    "16 Gbps baseline network bandwidth with no bundled local storage",
-    "Optimized for parallel batch processing, cryptography, and multi-threaded workloads"
+    "Powered by a 64-core AMD EPYC 7H12 processor at 2.6 GHz",
+    "Configured with 128.0 GB of RAM (2.0 GB per core) and no local storage",
+    "Delivers strong multi-threaded performance in decompression and encryption benchmarks",
+    "Features 16 Gbps baseline network bandwidth under the KVM hypervisor",
+    "Suitable for parallelized compute tasks, software compilation, and ray tracing"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

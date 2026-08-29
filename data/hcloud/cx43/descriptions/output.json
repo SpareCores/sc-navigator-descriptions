@@ -1,24 +1,22 @@
 {
   "page": [
-    "Hetzner Cloud cx43 is an x86_64 virtual server powered by an AMD EPYC processor running at 2.0 GHz. It features 8 vCPUs with a shared CPU allocation, 8 physical cores, and 1.0 thread per core. The memory configuration consists of 16.0 GB of RAM, which equates to approximately 1.95 GB per core. Storage is provided via a 160 GB NVMe SSD, and the instance runs on the QEMU hypervisor. No complimentary public IPv4 addresses are included.",
-    "In benchmark evaluations, the cx43 demonstrates strong single-core CPU performance, with a stress-ng single-core score of 2548.38, placing it in the top 25%. However, its multi-core performance falls into the average range, with a stress-ng multi-core score of 20252.78 and a Geekbench multi-core score of 7324.0. Memory bandwidth is moderate, measuring 89.3 GB/sec for large-block read-only operations and 62.62 GB/sec for large-block write operations. Single-threaded gzip compression is a relative bottleneck, scoring in the bottom 25% at 23.39 GB/sec, while multi-threaded bzip3 decompression performs at an average level of 70.74 GB/sec.",
-    "The shared CPU allocation presents a potential tradeoff for workloads requiring sustained, predictable multi-core performance, as resource contention may occur. Despite this, the server maintains average performance across database operations (6708.71 on PassMark) and Redis SET operations (14.46 million operations per second). It is also capable of handling light LLM inference, processing 1073.74 tokens per second for a 135M model prompt, though performance drops to a weak 31.68 tokens per second for a 7B model prompt. This hardware profile is suited for general-purpose workloads, software compilation, static web serving, and development environments that benefit from a high vCPU-to-RAM ratio without requiring dedicated CPU threads."
+    "Hetzner Cloud cx43 is an x86_64 virtual server powered by an AMD EPYC processor running at 2.0 GHz. It features 8 shared vCPUs with 8 physical cores and 1.0 thread per core, provisioned via the QEMU hypervisor. The system is equipped with 16.0 GB of system memory, providing 1.95 GB of RAM per core. Local storage consists of a bundled 160 GB NVMe SSD, while there are zero complimentary public IPv4 addresses included. The processor supports AVX, AES, SHA_NI, BMI2, ADX, and FMA instruction sets, but lacks AVX-512 capabilities.",
+    "Benchmark evaluations indicate average overall performance across most workloads. The stress-ng single-core CPU test shows strong performance in the top 25% at 2548.38, while multi-core performance sits in the average range at 20252.78. Memory bandwidth is average, reaching 888.0 GB/sec for cached small blocks and 89.3 GB/sec for uncached large blocks. The server demonstrates weak performance in single-threaded gzip compression at 23.39 GB/sec and Geekbench text processing at 1233.0, but maintains average metrics in software compilation, ray tracing, and database operations.",
+    "Given its shared CPU allocation and 1:2 vCPU-to-RAM ratio, the cx43 offers a budget-friendly resource profile for workloads that do not require dedicated CPU cores. It is well-suited for static web serving, where it achieves an average throughput of 10.98 GB/sec, as well as Redis key-value stores, processing 14.46 million SET operations per second. The server can handle light LLM inference tasks for small 135M models, but struggles with larger 7B models. It is best deployed for general-purpose utility tasks, development environments, and moderate web serving."
   ],
-  "description": "Hetzner Cloud cx43 is an x86_64 virtual server configured with 8 shared AMD EPYC vCPUs running at 2.0 GHz, 16.0 GB of RAM, and 160 GB of local NVMe SSD storage. Operating on the QEMU hypervisor, this instance delivers strong single-core CPU performance, scoring 2548.38 in stress-ng tests, while maintaining average multi-core and memory bandwidth metrics. The shared CPU allocation introduces potential resource contention, making it less optimal for sustained high-load multi-threaded tasks, as reflected in its average Geekbench multi-core score of 7324.0. However, with solid database operations and static web serving throughput, the cx43 is a cost-efficient option for development environments, software compilation, and moderate web serving workloads that do not require dedicated CPU resources or public IPv4 addresses.",
-  "og_description": "Hetzner Cloud cx43 is an x86_64 virtual server featuring 8 shared AMD EPYC vCPUs, 16 GB RAM, and 160 GB NVMe SSD storage, delivering strong single-core and average multi-core performance.",
-  "meta_description": "Hetzner Cloud cx43 is an x86_64 virtual server with 8 shared AMD EPYC vCPUs, 16 GB RAM, and 160 GB NVMe SSD storage for general-purpose workloads.",
-  "tagline": "An x86_64 virtual server featuring shared AMD EPYC processors and NVMe storage for balanced development and web serving workloads.",
+  "description": "Hetzner Cloud cx43 is an x86_64 virtual server configured with 8 shared AMD EPYC vCPUs running at 2.0 GHz, 16.0 GB of RAM, and a bundled 160 GB NVMe SSD. Operating on the QEMU hypervisor, it provides a 1:2 vCPU-to-RAM ratio. Performance benchmarks place the server mostly in the average tier, highlighted by strong single-core stress-ng performance but weaker single-threaded gzip compression and text processing. It achieves average results in software compilation, database operations, and static web serving. Lacking dedicated CPU cores and public IPv4 addresses, this server represents a cost-efficient option for budget-conscious deployments. It is best suited for development environments, static web hosting, Redis caching, and lightweight utility workloads that do not require sustained, dedicated compute resources.",
+  "og_description": "Hetzner Cloud cx43 is an x86_64 virtual server featuring 8 shared AMD EPYC vCPUs, 16.0 GB of RAM, and a 160 GB NVMe SSD, offering balanced, budget-friendly performance for general utility workloads.",
+  "meta_description": "Hetzner Cloud cx43 is an x86_64 virtual server with 8 shared AMD EPYC vCPUs, 16.0 GB RAM, and 160 GB NVMe SSD storage, optimized for budget-friendly workloads.",
+  "tagline": "A budget-friendly virtual server featuring shared AMD EPYC processors and NVMe storage for development and light web serving workloads.",
   "bullet_points": [
-    "8 shared AMD EPYC vCPUs and 16.0 GB of system memory",
-    "160 GB of local NVMe SSD storage for low-latency I/O",
-    "Strong single-core CPU performance in stress-ng benchmarks",
-    "Average performance for database operations and static web serving",
-    "Suitable for software compilation, development, and light web hosting",
-    "Shared CPU allocation and no complimentary public IPv4 address"
+    "8 shared AMD EPYC vCPUs running at 2.0 GHz",
+    "16.0 GB of system memory and 160 GB NVMe SSD storage",
+    "Strong single-core CPU performance with average multi-core capabilities",
+    "Average static web serving throughput of 10.98 GB/sec",
+    "Ideal for development environments, Redis caching, and light utility tasks"
   ],
   "categories": [
-    "Compute Optimized",
     "Burstable & Budget",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

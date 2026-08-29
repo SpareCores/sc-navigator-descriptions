@@ -1,23 +1,22 @@
 {
   "page": [
-    "UpCloud STARTER-2xCPU-16GB is a virtual server instance built on the KVM hypervisor, featuring two shared vCPUs powered by an AMD EPYC 9575F processor running at 2.0 GHz. The x86_64 architecture includes 16 GB of system memory, providing a high memory-to-vCPU ratio of 8 GB per core. Local storage is bundled with 50 GB of SSD capacity. The CPU configuration consists of two physical cores with one thread per core, backed by 16 MB of L3 cache, and supports advanced instruction sets such as AVX-512, AVX_VNNI, and cryptographic acceleration via AES and SHA_NI.",
-    "Benchmark results indicate strong single-core execution capabilities, with stress-ng single-core CPU performance and single-threaded gzip compression both ranking in the top tier. However, multi-threaded scaling and overall system throughput show notable limitations. The multi-threaded bzip3 decompression, PassMark CPU score, and PassMark memory score fall into the bottom tier. Database operations and Redis SET performance are also constrained, reflecting the shared CPU allocation model. Memory bandwidth remains moderate, averaging 67.19 GB/sec for large-block read operations.",
-    "From a qualitative cost-efficiency perspective, this instance offers a high memory allocation relative to its compute resources, making it suitable for memory-intensive workloads that do not require sustained, high-performance multi-core processing. It is well-suited for lightweight web serving, development environments, small-scale caching, and basic LLM inference tasks using small models. It is less appropriate for heavy database operations or highly parallelized computing tasks due to its shared CPU allocation and lower multi-threaded benchmark scores."
+    "The UpCloud STARTER-2xCPU-16GB is a starter-class virtual server configured with 2 vCPUs and 16.0 GB of RAM, yielding a high memory-to-core ratio of 8.0 GB per core. Built on the KVM hypervisor, it utilizes x86_64 AMD EPYC 9575F processors running at 2.0 GHz. The CPU allocation is shared, and the hardware features 2 physical cores with 1.0 thread per core. Storage is bundled with a local 50 GB SSD, and the server includes one complimentary public IPv4 address.",
+    "Benchmark data reveals a stark contrast between single-core and multi-core capabilities. The server achieves top-tier performance in single-core metrics, including stress-ng single-core CPU performance, single-threaded gzip compression, single-threaded bzip3 decompression, and Geekbench single-core execution. However, due to its shared CPU allocation and low core count, multi-core and multi-threaded benchmarks fall into the weak category. This includes Geekbench multi-core, software compilation with Clang, ray tracing, and multi-threaded bzip3 decompression. Memory bandwidth remains average, with read-only small block cached speeds at 404.78 GB/sec and uncached large block write speeds at 46.3 GB/sec.",
+    "The primary tradeoff of this configuration is the shared CPU resource model, which limits sustained multi-threaded throughput and database operations, as evidenced by weak Passmark database and Redis SET performance. Qualitatively, the server offers high memory density at a starter-tier cost profile, making it cost-efficient for memory-heavy but compute-light workloads. It is best suited for lightweight background utilities, single-threaded text processing, small-scale LLM inference using small models, and basic memory-intensive caching that does not require sustained multi-core processing."
   ],
-  "description": "UpCloud STARTER-2xCPU-16GB is a KVM-based virtual server featuring two shared AMD EPYC 9575F vCPUs at 2.0 GHz, 16 GB of RAM, and 50 GB of local SSD storage. Built on the x86_64 architecture, it delivers strong single-core performance, with stress-ng single-core and single-threaded gzip compression benchmarks reaching the top tier. However, its shared CPU allocation leads to lower multi-threaded performance, with PassMark CPU, database operations, and Redis SET benchmarks falling into the bottom tier. This resource profile provides a high memory-to-vCPU ratio of 8 GB per core, offering qualitative cost efficiency for memory-heavy but compute-light workloads. It is best suited for development environments, lightweight caching, and small-scale web serving rather than intensive database or highly parallelized processing.",
-  "og_description": "UpCloud STARTER-2xCPU-16GB is a KVM virtual server with 2 shared AMD EPYC vCPUs, 16 GB RAM, and 50 GB SSD, offering strong single-core performance but limited multi-threaded scaling for budget-conscious workloads.",
-  "meta_description": "UpCloud STARTER-2xCPU-16GB is a KVM virtual server featuring 2 shared AMD EPYC vCPUs, 16 GB RAM, and 50 GB SSD storage for memory-focused workloads.",
-  "tagline": "A budget-friendly virtual server combining a high memory-to-vCPU ratio with strong single-core performance for lightweight, memory-focused workloads.",
+  "description": "The UpCloud STARTER-2xCPU-16GB is a KVM-based virtual server featuring 2 shared vCPUs on an AMD EPYC 9575F processor and 16.0 GB of RAM. It includes a bundled 50 GB local SSD and one public IPv4 address. Performance benchmarks show top-tier single-core execution, particularly in single-threaded compression and Geekbench single-core tests. However, its shared CPU allocation leads to weak multi-core and multi-threaded performance, including low scores in software compilation, database operations, and Redis throughput. With a high memory-to-core ratio of 8.0 GB per core, this server offers a cost-efficient profile for memory-intensive, low-compute workloads. It is best suited for single-threaded text processing, lightweight caching, and small-scale LLM inference.",
+  "og_description": "UpCloud STARTER-2xCPU-16GB is a KVM virtual server featuring 2 shared AMD EPYC vCPUs, 16 GB RAM, and a 50 GB SSD. It delivers top-tier single-core speeds but exhibits weak multi-core performance.",
+  "meta_description": "UpCloud STARTER-2xCPU-16GB is a KVM virtual server with 2 shared AMD EPYC vCPUs, 16 GB RAM, and a 50 GB SSD, optimized for memory-dense, low-compute tasks.",
+  "tagline": "A memory-dense starter server combining top-tier single-core performance with shared CPU resources for budget-conscious, low-compute workloads.",
   "bullet_points": [
-    "Two shared AMD EPYC 9575F vCPUs at 2.0 GHz",
-    "16 GB of system memory and 50 GB of local SSD storage",
+    "AMD EPYC 9575F processor with 2 shared vCPUs and 16.0 GB RAM",
+    "Bundled 50 GB local SSD storage and 1 public IPv4 address",
     "Top-tier single-core CPU and single-threaded compression performance",
-    "Lower multi-threaded scaling and database throughput due to shared CPU allocation",
-    "Appropriate for development environments, lightweight caching, and small-scale web serving"
+    "Weak multi-core, database, and multi-threaded decompression speeds",
+    "Best suited for single-threaded tasks, small LLM inference, and lightweight caching"
   ],
   "categories": [
     "Memory Optimized",
-    "Burstable & Budget",
-    "General Purpose"
+    "Burstable & Budget"
   ]
 }

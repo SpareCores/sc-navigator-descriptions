@@ -1,24 +1,23 @@
 {
   "page": [
-    "Vultr voc-m-2c-16gb-200s-amd is an instance within the Optimized Cloud Compute family, featuring an x86_64 architecture powered by an AMD EPYC processor. The server is configured with 2 dedicated vCPUs derived from 1 physical core with 2 threads, operating at a base clock speed of 2.0 GHz. It includes 16.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per vCPU. Local storage is provided via a bundled 200 GB NVMe SSD, and the instance includes a single complimentary public IPv4 address.",
-    "Benchmark data reveals a stark contrast between single-core and multi-core performance. The stress-ng single-core CPU test places this instance in the top tier (top 10%) with a score of 3135.07, whereas multi-core performance falls into the average category at 6221.86. Memory bandwidth for large blocks is average, measuring 73.36 GB/sec for read-only and 52.37 GB/sec for write operations, though small-block cached read bandwidth is relatively weak at 299.56 GB/sec. Passmark CPU tests consistently rank in the bottom 25%, reflecting limitations in extended instructions, encryption, and physics calculations.",
-    "This hardware profile presents specific performance tradeoffs. Database operations are a notable bottleneck, with Passmark database operations scoring in the bottom 10% and Redis SET operations performing in the bottom 25% at 4.84 million operations per second. Static web serving throughput is also low at 2.14 GB/sec. However, the instance handles lightweight text generation reasonably well, achieving an average 112.37 tokens/sec on a 135M LLM model, though it struggles with larger models. Given the generous 16 GB memory allocation relative to its 2 vCPUs, this instance is qualitatively cost-efficient for memory-bound workloads that do not require intensive parallel processing, such as caching layers, lightweight application servers, or memory-heavy development environments."
+    "Vultr voc-m-2c-16gb-200s-amd is an instance within the Optimized Cloud Compute family, featuring a dedicated AMD EPYC processor built on the x86_64 architecture. The server is configured with 2 vCPUs, derived from 1 physical core with 2 threads, operating at a clock speed of 2.0 GHz. It includes 16.0 GB of system memory, providing a high memory-to-core ratio of 8.0 GB per core. Storage is bundled with a 200 GB local NVMe SSD, and the instance includes one complimentary public IPv4 address. No GPU hardware is present on this configuration.",
+    "Performance benchmarks reveal a mixed profile. The single-core CPU performance is highly competitive, with stress-ng single-core benchmarks placing it in the top tier (top 10%). However, multi-core performance scales down, with stress-ng multi-core and Geekbench multi-core scores falling into the average and weak categories respectively. Memory performance is stable for large blocks, showing average read and write bandwidth, but exhibits weak performance for small-block cached reads.",
+    "The server exhibits notable bottlenecks in high-throughput and database workloads, with Passmark database operations and static web serving throughput both scoring in the poor category (bottom 10%). Similarly, Redis SET operations and Geekbench software compilation benchmarks are weak. Consequently, while the high memory capacity and strong single-core performance suit memory-intensive single-threaded tasks or lightweight caching, this instance is less optimal for heavy database operations, parallelized compilation, or high-throughput web serving."
   ],
-  "description": "Vultr voc-m-2c-16gb-200s-amd is an AMD EPYC-powered instance from the Optimized Cloud Compute family, featuring 2 dedicated vCPUs, 16.0 GB of RAM, and a 200 GB NVMe SSD. Operating on an x86_64 architecture at 2.0 GHz, it offers a high memory-to-core ratio of 8.0 GB per vCPU. Performance benchmarks show a strong single-core stress-ng result in the top 10%, contrasted by average multi-core and weak Passmark CPU scores. Memory bandwidth is average for large blocks but weak for cached small blocks. Significant performance bottlenecks exist in database operations and static web serving, both scoring in the bottom 10%. Consequently, this server is best suited for memory-intensive but compute-light applications, such as caching, staging environments, or lightweight memory-bound services, rather than high-throughput databases or intensive web serving.",
-  "og_description": "Vultr voc-m-2c-16gb-200s-amd is an AMD EPYC virtual server with 2 dedicated vCPUs, 16 GB RAM, and 200 GB NVMe SSD, offering strong single-core performance but limited database throughput.",
-  "meta_description": "Vultr voc-m-2c-16gb-200s-amd features 2 dedicated AMD EPYC vCPUs, 16 GB RAM, and 200 GB NVMe storage, optimized for memory-heavy, low-compute workloads.",
-  "tagline": "An AMD EPYC virtual server pairing dedicated dual-core compute with generous memory and NVMe storage for memory-bound workloads.",
+  "description": "Vultr voc-m-2c-16gb-200s-amd is an Optimized Cloud Compute instance featuring a dedicated AMD EPYC processor with 2 vCPUs (1 physical core, 2 threads) running at 2.0 GHz, paired with 16.0 GB of RAM and a 200 GB NVMe SSD. Architecturally, it offers a high memory-to-core ratio of 8.0 GB per core. Benchmark data indicates top-tier single-core CPU performance, though multi-core scaling and memory bandwidth for small cached blocks remain weak. The instance faces performance trade-offs, with poor results in database operations and static web serving throughput. Given these characteristics, the server is best suited for memory-intensive workloads that rely on single-threaded efficiency rather than highly parallelized database operations or high-throughput web serving.",
+  "og_description": "Vultr voc-m-2c-16gb-200s-amd is an AMD EPYC-powered instance with 2 dedicated vCPUs, 16 GB RAM, and 200 GB NVMe SSD, offering strong single-core performance but limited database and multi-core throughput.",
+  "meta_description": "Vultr voc-m-2c-16gb-200s-amd features 2 dedicated AMD EPYC vCPUs, 16 GB RAM, and 200 GB NVMe SSD, delivering top-tier single-core CPU performance.",
+  "tagline": "A memory-optimized virtual server combining dedicated AMD EPYC processing with local NVMe storage for single-thread intensive workloads.",
   "bullet_points": [
-    "Dual dedicated AMD EPYC vCPUs running at 2.0 GHz",
-    "16.0 GB of system memory providing 8.0 GB per vCPU",
-    "Bundled 200 GB NVMe SSD local storage",
+    "Dedicated AMD EPYC processor with 2 vCPUs and 2.0 GHz clock speed",
+    "16.0 GB of system memory providing a high 8.0 GB per core ratio",
+    "Bundled 200 GB local NVMe SSD storage",
     "Top-tier single-core CPU performance in stress-ng benchmarks",
-    "Underperforms in database operations and static web serving",
-    "Best suited for memory-intensive, low-concurrency applications"
+    "Underperforms in database operations and static web serving throughput",
+    "Best suited for memory-intensive, single-threaded applications"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose",
     "Storage & Database"
   ]
 }

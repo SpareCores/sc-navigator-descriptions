@@ -1,20 +1,20 @@
 {
   "page": [
-    "Alibaba Cloud ecs.r6a.2xlarge is a memory-optimized virtual machine instance powered by the KVM hypervisor. It features 8 dedicated vCPUs from an AMD EPYC 7H12 processor running at 2.6 GHz, with 8 physical cores and a single thread per core configuration. The system is equipped with 64.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or dedicated GPU hardware, and operates with a baseline network bandwidth of 2 Gbps.",
-    "Benchmark data reveals a clear tradeoff between raw compute power and memory capacity. The instance exhibits poor single-core CPU performance and weak multi-core CPU performance in stress-ng tests. Large-block uncached memory read and write bandwidths are also weak. However, cached small-block memory read bandwidth is average at 400.15 GB/sec. The instance maintains average performance in database operations, Redis SET operations at 7.13 million operations per second, static web serving throughput, and Passmark CPU tests.",
-    "Given its high memory density and average database and Redis performance, the ecs.r6a.2xlarge is qualitatively cost-efficient for memory-bound workloads that do not require intensive CPU processing. It is suited for in-memory caching, database operations, and web serving. It is less suitable for CPU-heavy tasks like physics simulations or multi-threaded decompression due to its weaker compute benchmark results."
+    "Alibaba Cloud ecs.r6a.2xlarge is a memory-optimized virtual machine instance powered by the KVM hypervisor. It features 8 dedicated vCPUs mapped to 8 physical cores on an AMD EPYC 7H12 processor running at 2.6 GHz. The x86_64 architecture includes 64.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per core. It does not include local storage or GPU accelerators, and it provides a baseline network bandwidth of 2 Gbps.",
+    "Benchmark evaluations indicate average performance across most standard workloads, though raw computational throughput shows some limitations. The instance achieves average ratings in Geekbench single-core and multi-core tests, as well as in Passmark CPU encryption and database operations. However, stress-ng single-core performance falls into the bottom 10%, and multi-core stress-ng results are in the bottom 25%. Memory bandwidth tests show average speeds for cached small-block reads but drop to the bottom 25% for uncached large-block reads and writes.",
+    "Given its high memory density relative to CPU resources, the ecs.r6a.2xlarge offers qualitative cost efficiency for memory-bound workloads that do not require intense, sustained CPU computation. The absence of bundled local storage and GPUs positions this instance specifically for memory-intensive applications. It is well-suited for database operations, Redis caching layers, and general-purpose memory-heavy tasks, while being less optimal for CPU-bound physics simulations or high-throughput uncached memory operations."
   ],
-  "description": "Alibaba Cloud ecs.r6a.2xlarge is a memory-optimized instance featuring 8 dedicated vCPUs powered by an AMD EPYC 7H12 processor at 2.6 GHz, paired with 64.0 GB of RAM. It lacks local storage and GPU accelerators, relying on a 2 Gbps baseline network bandwidth. Benchmark results indicate a performance tradeoff: while raw compute metrics in stress-ng and multi-threaded decompression are weak, the instance achieves average performance in cached memory bandwidth, Redis SET operations, and database workloads. This makes the instance a qualitatively cost-efficient choice for memory-intensive applications that do not demand high CPU performance, such as in-memory caching, database hosting, and static web serving.",
-  "og_description": "Alibaba Cloud ecs.r6a.2xlarge is a memory-optimized instance with 8 dedicated AMD EPYC vCPUs and 64 GB RAM. It offers average database and Redis performance, making it suitable for memory-bound workloads.",
-  "meta_description": "Alibaba Cloud ecs.r6a.2xlarge is a memory-optimized instance featuring 8 dedicated AMD EPYC vCPUs, 64 GB RAM, and a 2 Gbps baseline network speed.",
-  "tagline": "A memory-optimized virtual server with dedicated AMD processors, designed for memory-intensive workloads, database operations, and caching.",
+  "description": "Alibaba Cloud ecs.r6a.2xlarge is a memory-optimized instance featuring 8 dedicated vCPUs on an AMD EPYC 7H12 processor running at 2.6 GHz, paired with 64.0 GB of RAM. Operating on the KVM hypervisor with an x86_64 architecture, this server provides a high memory-to-core ratio of 8.0 GB per core, though it lacks local storage and GPU accelerators. Performance benchmarks show average results for Geekbench, Passmark database operations, and Redis SET transactions, alongside a baseline network bandwidth of 2 Gbps. However, raw CPU compute and uncached memory bandwidth benchmarks fall into the lower percentiles. This hardware profile makes the instance qualitatively cost-effective for memory-intensive workloads such as database caching and web serving, rather than compute-heavy tasks.",
+  "og_description": "Alibaba Cloud ecs.r6a.2xlarge is a memory-optimized instance with 8 AMD EPYC vCPUs, 64 GB RAM, and 2 Gbps network bandwidth, delivering balanced performance for database and caching workloads.",
+  "meta_description": "Alibaba Cloud ecs.r6a.2xlarge is a memory-optimized KVM instance featuring 8 AMD EPYC vCPUs, 64 GB RAM, and a 2 Gbps baseline network speed.",
+  "tagline": "An x86_64 memory-optimized virtual server featuring a high memory-to-core ratio for database operations and caching workloads.",
   "bullet_points": [
-    "8 dedicated AMD EPYC 7H12 vCPUs running at 2.6 GHz",
+    "AMD EPYC 7H12 processor with 8 dedicated vCPUs and physical cores",
     "64.0 GB of system memory providing 8.0 GB per core",
-    "Average performance in Redis SET and database operations",
-    "No local storage or GPU accelerators included",
-    "2 Gbps baseline network bandwidth",
-    "Best suited for in-memory caching and database hosting"
+    "KVM hypervisor architecture with 2 Gbps baseline network bandwidth",
+    "Average performance in database operations and Redis transactions",
+    "No bundled local storage or GPU accelerators",
+    "Suited for memory-intensive workloads, caching, and database hosting"
   ],
   "categories": [
     "Memory Optimized",

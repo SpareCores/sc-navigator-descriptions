@@ -1,20 +1,19 @@
 {
   "page": [
-    "Alibaba Cloud ecs.g8a.xlarge is a general-purpose virtual machine instance powered by the KVM hypervisor. It features 4 dedicated vCPUs based on the x86_64 AMD EPYC 9T24 processor architecture running at a clock speed of 2.7 GHz. The hardware configuration includes 16.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. This instance does not include local storage or dedicated GPU hardware, and it offers a baseline network bandwidth of 2 Gbps.",
-    "Performance benchmarks indicate strong single-core CPU capabilities, with stress-ng single-core performance scoring in the top 25%. However, multi-core scaling shows some limitations; stress-ng multi-core performance and PassMark CPU scores fall within the average range, while multi-threaded bzip3 decompression and database operations register in the bottom 25%. The CPU supports advanced instruction sets including AVX-512, AVX512_VNNI, and AVX512_BF16, alongside hardware-accelerated cryptography via AES and SHA_NI.",
-    "From a resource density perspective, the ecs.g8a.xlarge offers a standard general-purpose profile with dedicated CPU allocation, avoiding the performance variability of shared-core alternatives. Given its weak performance in high-throughput database operations, Redis SET operations, and static web serving, this instance is best suited for moderate general-purpose workloads, single-threaded application servers, and lightweight background processing tasks rather than high-concurrency databases or heavy web-serving environments."
+    "Alibaba Cloud ecs.g8a.xlarge is a general-purpose virtual machine instance powered by the KVM hypervisor. It features 4 dedicated physical cores on an x86_64 AMD EPYC 9T24 processor running at a base clock speed of 2.7 GHz. The instance is configured with 16.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. It does not include local storage or bundled GPUs, and it operates with a baseline network bandwidth of 2 Gbps.",
+    "Performance benchmarks reveal strong single-core CPU capabilities, with stress-ng single-core testing placing the instance in the top 25% of its class. However, multi-core and multi-threaded scaling present some limitations. The stress-ng multi-core CPU performance and PassMark CPU score fall within the average range, while multi-threaded bzip3 decompression and PassMark database operations register in the bottom 25%. Cryptographic execution is supported by hardware-accelerated instruction sets like AES and SHA_NI, yielding average results in PassMark encryption tests.",
+    "The lack of local storage requires reliance on external network-attached storage, which, combined with a baseline network bandwidth of 2 Gbps, may constrain high-throughput I/O workloads. This limitation is reflected in the weak static web serving throughput and lower Redis SET operations. Consequently, the instance is best suited for general-purpose workloads such as lightweight application servers, development environments, and moderate computational tasks that benefit from dedicated CPU allocation but do not demand intensive multi-threaded scaling or high-speed local storage."
   ],
-  "description": "Alibaba Cloud ecs.g8a.xlarge is a general-purpose instance featuring 4 dedicated vCPUs powered by an AMD EPYC 9T24 processor at 2.7 GHz, paired with 16.0 GB of RAM. Operating on the KVM hypervisor, this x86_64 instance lacks local storage and GPUs, relying on a baseline network bandwidth of 2 Gbps. Benchmark data shows strong single-core CPU performance, though multi-core scaling and database operations fall into the average and weak categories respectively. Supported instruction sets include AVX-512 and hardware-accelerated cryptography. This instance is best suited for moderate general-purpose workloads, single-threaded applications, and lightweight background tasks.",
-  "og_description": "Alibaba Cloud ecs.g8a.xlarge is a general-purpose KVM instance with 4 dedicated AMD EPYC vCPUs, 16 GB RAM, and 2 Gbps network bandwidth, delivering strong single-core but average multi-core performance.",
-  "meta_description": "Alibaba Cloud ecs.g8a.xlarge is a general-purpose KVM instance featuring 4 dedicated AMD EPYC vCPUs, 16 GB RAM, and 2 Gbps baseline network bandwidth.",
-  "tagline": "A dedicated AMD EPYC general-purpose instance delivering strong single-core performance and balanced memory-to-CPU resources for standard workloads.",
+  "description": "Alibaba Cloud ecs.g8a.xlarge is a general-purpose instance featuring 4 dedicated physical cores of an x86_64 AMD EPYC 9T24 processor clocked at 2.7 GHz, paired with 16.0 GB of RAM. Operating on the KVM hypervisor, this server offers a balanced 1:4 vCPU-to-memory ratio but lacks local storage and integrated GPUs. Benchmark data indicates strong single-core CPU performance, though multi-threaded scaling and database operations fall into the lower tiers. With a baseline network bandwidth of 2 Gbps, the instance is designed for workloads that require dedicated CPU resources without extreme I/O demands. It is best suited for general-purpose applications, lightweight web serving, and software development environments.",
+  "og_description": "Alibaba Cloud ecs.g8a.xlarge is a general-purpose instance featuring 4 dedicated AMD EPYC cores, 16 GB RAM, and 2 Gbps network bandwidth, offering strong single-core performance for balanced workloads.",
+  "meta_description": "Alibaba Cloud ecs.g8a.xlarge is a general-purpose KVM instance with 4 dedicated AMD EPYC cores, 16 GB RAM, and 2 Gbps baseline network bandwidth.",
+  "tagline": "A dedicated AMD EPYC instance featuring balanced compute and memory resources for general-purpose workloads without local storage requirements.",
   "bullet_points": [
-    "4 dedicated AMD EPYC 9T24 vCPUs running at 2.7 GHz",
-    "16.0 GB of system memory providing 4.0 GB per core",
-    "Strong single-core CPU performance in benchmark testing",
-    "Supports AVX-512, AVX512_VNNI, and hardware-accelerated cryptography",
-    "2 Gbps baseline network bandwidth with no local storage",
-    "Best suited for moderate general-purpose workloads and single-threaded applications"
+    "Powered by 4 dedicated AMD EPYC 9T24 CPU cores at 2.7 GHz",
+    "Configured with 16.0 GB of system memory and no local storage",
+    "Strong single-core CPU performance in stress-ng benchmarks",
+    "Baseline network bandwidth of 2 Gbps on KVM hypervisor",
+    "Suited for general-purpose applications and development environments"
   ],
   "categories": [
     "General Purpose"

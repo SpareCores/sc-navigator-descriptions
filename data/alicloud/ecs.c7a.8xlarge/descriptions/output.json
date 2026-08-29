@@ -1,21 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c7a.8xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 32 dedicated physical cores on an x86_64 AMD EPYC 7T83 processor running at a clock speed of 2.55 GHz. The instance is configured with 64.0 GB of system memory, providing a resource density of 2.0 GB per core. It does not include local storage or GPU accelerators, and it provides a baseline network bandwidth of 8 Gbps.",
-    "Benchmark data indicates strong single-core CPU performance, with a stress-ng single-core score of 2696.4 placing it in the top 25%. Passmark memory testing also shows strong performance with a score of 2772.5. Multi-core CPU performance, database operations, and static web serving throughput fall within the average range. However, a notable performance tradeoff is observed in memory write bandwidth for large blocks, which is classified in the bottom 25% at 18.87 GB/sec.",
-    "From a qualitative cost-efficiency perspective, the dedicated CPU allocation and high compute-to-memory ratio make this instance suitable for compute-bound workloads that do not require massive memory footprints or local storage. It is well-suited for tasks such as web serving, multi-threaded decompression, and small-to-medium scale language model inference, where its strong single-core execution and memory read capabilities can be leveraged effectively."
+    "Alibaba Cloud ecs.c7a.8xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 32 dedicated x86_64 vCPUs based on the AMD EPYC 7T83 processor, running at a base clock speed of 2.55 GHz. The instance is configured with 64.0 GB of system memory, providing a resource density of 2.0 GB of RAM per core. It does not include local storage or GPU accelerators, relying on network-attached storage and offering a baseline network bandwidth of 8 Gbps.",
+    "Performance benchmarks indicate strong single-core capabilities, with stress-ng single-core CPU performance and Passmark memory scores ranking in the top 25 percent. Multi-core CPU performance, static web serving throughput, and Geekbench scores fall within the average range. While memory read bandwidth is average, large-block memory write bandwidth is relatively weak, placing in the bottom 25 percent. For specialized workloads, the instance demonstrates strong performance in text generation for small language models, alongside average performance for medium-sized models.",
+    "Given its dedicated CPU allocation and 1:2 vCPU-to-RAM ratio, this instance offers high compute density. It is qualitatively cost-efficient for CPU-bound workloads that do not require local NVMe storage or GPU acceleration. The hardware profile is suitable for high-compute tasks such as software compilation, web serving, and moderate database operations."
   ],
-  "description": "Alibaba Cloud ecs.c7a.8xlarge is a compute-optimized instance featuring 32 dedicated physical cores powered by an AMD EPYC 7T83 processor at 2.55 GHz. It is equipped with 64.0 GB of RAM, resulting in a 2.0 GB per core ratio, and operates on the KVM hypervisor with an 8 Gbps baseline network bandwidth. The instance does not include local storage or GPU accelerators. Performance benchmarks show strong single-core CPU execution and memory scores, though large-block memory write bandwidth is a relative bottleneck. This hardware profile is suited for compute-intensive workloads, including web serving, multi-threaded decompression, and small-to-medium language model inference.",
-  "og_description": "Alibaba Cloud ecs.c7a.8xlarge is a compute-optimized instance featuring 32 dedicated AMD EPYC cores, 64 GB RAM, and 8 Gbps network bandwidth, delivering strong single-core performance for compute-bound workloads.",
-  "meta_description": "Alibaba Cloud ecs.c7a.8xlarge is a compute-optimized instance with 32 dedicated AMD EPYC cores, 64 GB RAM, and 8 Gbps baseline network bandwidth.",
-  "tagline": "A dedicated AMD EPYC compute-optimized instance delivering strong single-core performance and balanced memory read capabilities for compute-bound workloads.",
+  "description": "Alibaba Cloud ecs.c7a.8xlarge is a compute-optimized instance featuring 32 dedicated x86_64 vCPUs powered by an AMD EPYC 7T83 processor running at 2.55 GHz. It is equipped with 64.0 GB of system memory, yielding a 2.0 GB per core ratio, and does not include local storage or GPU hardware. Operating on the KVM hypervisor, the instance delivers 8 Gbps of baseline network bandwidth. Benchmark data shows strong single-core CPU and memory performance, though large-block memory write bandwidth is a relative bottleneck. This instance is suited for compute-intensive workloads such as software compilation, web serving, and small-scale language model inference where dedicated CPU resources are required without local storage dependencies.",
+  "og_description": "Alibaba Cloud ecs.c7a.8xlarge is a compute-optimized instance with 32 dedicated AMD EPYC vCPUs, 64 GB RAM, and 8 Gbps network bandwidth, delivering strong single-core and memory benchmark performance.",
+  "meta_description": "Alibaba Cloud ecs.c7a.8xlarge is a compute-optimized instance featuring 32 dedicated AMD EPYC vCPUs, 64 GB RAM, and KVM virtualization.",
+  "tagline": "A dedicated compute-optimized instance featuring thirty-two AMD EPYC cores and sixty-four gigabytes of RAM for CPU-intensive workloads.",
   "bullet_points": [
-    "32 dedicated physical AMD EPYC 7T83 cores running at 2.55 GHz",
+    "32 dedicated AMD EPYC 7T83 vCPUs running at 2.55 GHz",
     "64.0 GB of system memory providing 2.0 GB per core",
     "Strong single-core CPU and memory benchmark performance",
-    "8 Gbps baseline network bandwidth with no local storage bundled",
-    "Suited for web serving, decompression, and medium-scale LLM inference"
+    "8 Gbps baseline network bandwidth with zero local storage",
+    "Suitable for software compilation, web serving, and CPU-bound tasks"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

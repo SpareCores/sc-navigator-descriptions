@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure L48as_v4 is a storage-oriented virtual machine belonging to the Lasv4 server family. It is powered by an AMD EPYC 9V74 processor utilizing the x86_64 architecture, featuring 48 vCPUs across 24 physical cores with multithreading enabled. The CPU operates at a clock speed of 3.7 GHz and includes dedicated allocation. The hardware configuration is equipped with 384.0 GB of system memory, providing 8.0 GB of RAM per core. For local storage, the instance includes 11,519 GB of capacity and is Premium Storage capable, operating under the Microsoft Hyper-V hypervisor.",
-    "In benchmark evaluations, the L48as_v4 demonstrates strong CPU and memory performance, placing in the top 25% for both stress-ng single-core and multi-core tests. This processing capability is supported by AVX-512 vector extensions, including AVX512_VNNI and AVX512_BF16, which contribute to top-tier performance in small-model LLM prompt processing at 3,802.16 tokens per second. Memory performance is mixed; while cached small-block read bandwidth is in the top 25%, uncached large-block read and write bandwidths fall into the middle 50% tier.",
-    "The instance exhibits clear performance tradeoffs when handling larger computational models. While small-scale LLM inference is highly efficient, text generation using a large 70B model drops to a poor 2.53 tokens per second, placing it in the bottom 10%. Database operations and static web serving throughput also register in the average tier. Given the combination of 11.5 TB of local storage, 384 GB of RAM, and strong multi-threaded decompression capabilities, this server is configured for large-scale database hosting, data warehousing, and memory-intensive storage workloads rather than heavy LLM text generation."
+    "Microsoft Azure L48as_v4 is a member of the Lasv4 server family, utilizing Microsoft Hyper-V virtualization. It features 48 dedicated vCPUs powered by an AMD EPYC 9V74 processor with an x86_64 architecture, 24 physical cores, and 2 threads per core operating at 3.7 GHz. The system is equipped with 384.0 GB of system memory, translating to 8.0 GB of RAM per core. For local storage, the instance includes 11519 GB of Premium Storage capable capacity. No dedicated GPU hardware is present on this server type.",
+    "Benchmark results indicate strong performance in several areas, with stress-ng single-core and multi-core CPU metrics placing in the top 25%. The server also demonstrates strong capabilities in software compilation, ray tracing, image processing, and text processing via Geekbench, alongside high-throughput Redis SET operations reaching 70.18 million operations per second. However, performance tradeoffs are visible in uncached memory bandwidth read and write operations, which fall into the average category. Additionally, while LLM inference speeds for small 135M models are strong, text generation performance for large 70B models is poor, landing in the bottom 10%.",
+    "From a cost-efficiency perspective, the L48as_v4 offers a high density of local storage and memory relative to its vCPU count, making it a viable option for workloads requiring substantial local data caching without the overhead of external storage arrays. The hardware profile is optimized for large-scale database operations, memory-intensive applications, multi-threaded decompression tasks, and moderate-scale language model prompt processing."
   ],
-  "description": "The Microsoft Azure L48as_v4 is a storage-optimized virtual machine from the Lasv4 family, featuring 48 vCPUs and 24 physical cores powered by an AMD EPYC 9V74 processor running at 3.7 GHz. It is equipped with 384.0 GB of RAM and a substantial 11,519 GB of local storage. Benchmarks indicate strong CPU and memory performance, placing in the top 25% for stress-ng and Geekbench tests, alongside top-tier prompt processing speeds for small LLM models. However, uncached memory bandwidth and large-model text generation represent notable performance tradeoffs, with 70B model generation falling into the bottom 10%. This hardware profile is suited for large-scale database deployments, memory-intensive storage applications, and data warehousing workloads that benefit from high local storage capacity and dedicated compute resources.",
-  "og_description": "Microsoft Azure L48as_v4 is a storage-optimized server featuring 48 vCPUs, 384 GB RAM, and 11,519 GB of local storage, delivering strong CPU performance and high capacity for database workloads.",
-  "meta_description": "Microsoft Azure L48as_v4 is a storage-optimized server with 48 vCPUs, 384 GB RAM, and 11.5 TB local storage, designed for database and memory-intensive workloads.",
-  "tagline": "A storage-optimized virtual machine combining 48 AMD EPYC vCPUs, 384 GB RAM, and 11.5 TB of local storage for data-intensive workloads.",
+  "description": "The Microsoft Azure L48as_v4 is a Lasv4-family server featuring 48 dedicated vCPUs powered by an AMD EPYC 9V74 processor at 3.7 GHz, 384.0 GB of RAM, and 11519 GB of local storage. Operating on Microsoft Hyper-V, this x86_64 system delivers strong CPU and memory performance, with stress-ng and Geekbench scores placing in the top 25%. It excels at Redis operations, reaching 70.18 million operations per second, and multi-threaded decompression. However, uncached memory bandwidth remains average, and large-scale LLM text generation is a notable performance bottleneck, scoring in the bottom 10%. Given its high storage capacity and 8.0 GB of RAM per core, this server is highly efficient for storage-heavy databases, memory-intensive applications, and software compilation workloads.",
+  "og_description": "Microsoft Azure L48as_v4 is a Lasv4-family server with 48 AMD EPYC vCPUs, 384 GB RAM, and 11519 GB local storage, delivering strong multi-core CPU performance and high-throughput Redis operations.",
+  "meta_description": "Microsoft Azure L48as_v4 features 48 AMD EPYC vCPUs, 384 GB RAM, and 11519 GB local storage for database and memory-intensive workloads.",
+  "tagline": "An AMD EPYC platform combining forty-eight dedicated vCPUs with over eleven terabytes of local storage for data-intensive workloads.",
   "bullet_points": [
-    "Powered by a 48-vCPU AMD EPYC 9V74 processor running at 3.7 GHz",
-    "Equipped with 384 GB of RAM and 11,519 GB of local storage",
-    "Strong CPU and multi-threaded decompression performance in the top 25%",
-    "Top-tier prompt processing for small-scale LLM models",
-    "Performance tradeoffs in large-model text generation and uncached memory bandwidth",
-    "Suited for large-scale databases, data warehousing, and storage-heavy applications"
+    "48 dedicated AMD EPYC 9V74 vCPUs running at 3.7 GHz",
+    "384.0 GB of system memory providing 8.0 GB per core",
+    "11519 GB of local Premium Storage capable capacity",
+    "Strong multi-core CPU, software compilation, and Redis performance",
+    "Average uncached memory bandwidth and poor large-model LLM text generation",
+    "Suited for large-scale databases, caching layers, and multi-threaded processing"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

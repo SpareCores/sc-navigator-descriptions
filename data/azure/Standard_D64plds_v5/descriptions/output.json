@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D64plds_v5 is an ARM-based virtual machine instance powered by a 64-core Ampere Altra Neoverse-N1 processor running at 3.0 GHz. Operating on the Microsoft Hyper-V hypervisor, this instance features 64 dedicated physical cores with a single thread per core, eliminating hyperthreading resource contention. It is equipped with 128.0 GB of system memory, providing a 2.0 GB per vCPU ratio, and includes 2458 GB of local NVMe storage.",
-    "Benchmark data indicates strong multi-core performance, with stress-ng multi-core CPU tests and software compilation via Clang scoring in the top 25%. The architecture demonstrates high efficiency in memory-cached operations, achieving a small-block read bandwidth of 4384.56 GB/sec. Redis SET operations also perform in the top tier at 84.83 million operations per second. However, single-core CPU performance and large-block uncached memory write speeds remain in the average tier. Large-scale LLM prompt processing represents a performance bottleneck, scoring in the bottom 25% for a 70B model.",
-    "From a resource density perspective, the D64plds_v5 offers a cost-effective profile for multi-threaded, scale-out workloads that do not require high memory-to-core ratios. The inclusion of 2458 GB of local storage provides high-capacity scratch space without requiring external disk attachments. The primary tradeoff is the low memory allocation of 2.0 GB per core, which makes it less suitable for memory-intensive databases, alongside the lack of AVX or AMX vector extensions on the ARMv8 architecture. This instance is optimized for multi-threaded compute workloads, software compilation, Redis caching layers, web serving, and scale-out application tiers."
+    "Microsoft Azure D64plds_v5 is an ARM64-based virtual machine powered by an Ampere Neoverse-N1 processor. Running on the Microsoft Hyper-V hypervisor, this instance features 64 dedicated physical cores operating at 3.0 GHz with a single thread per core. The memory configuration consists of 128.0 GB of RAM, yielding a resource density of 2.0 GB per core. For local storage, the server includes 2458 GB of local disk capacity and is Premium Storage capable, though it does not feature any GPU acceleration.",
+    "Benchmark results show strong multi-core capabilities, with stress-ng multi-core CPU performance and Geekbench software compilation with Clang scoring in the top 25%. Cached small-block read-only memory bandwidth is also highly performant at 4384.56 GB/sec. However, single-core performance is a notable tradeoff, with Geekbench single-core and text processing benchmarks falling into the bottom 25%. Large-block uncached memory read and write speeds, static web serving throughput, and database operations perform in the average tier.",
+    "Given its ARM architecture and high physical core count, the D64plds_v5 offers a cost-efficient profile for multi-threaded workloads that benefit from dedicated physical cores without hyper-threading. The low memory-to-core ratio makes it less suitable for memory-intensive databases, but highly effective for scale-out compute tasks. Recommended workloads include multi-threaded software compilation, Redis key-value stores, web serving, and moderate-scale parallel processing tasks."
   ],
-  "description": "The Microsoft Azure D64plds_v5 is an ARM64-based virtual machine featuring 64 dedicated physical cores powered by an Ampere Neoverse-N1 processor running at 3.0 GHz. It is configured with 128.0 GB of RAM, yielding a compute-optimized 2.0 GB per core ratio, and includes 2458 GB of local storage. Operating under Microsoft Hyper-V, the instance delivers strong multi-core performance, particularly in software compilation and Redis SET operations, which rank in the top 25% of benchmarks. However, single-core execution and large-block memory writes perform at average levels, and the ARMv8 architecture lacks AVX/AMX instruction sets. With its high core density and bundled local storage, the D64plds_v5 is highly efficient for multi-threaded scale-out workloads, web serving, and compilation tasks, though its low memory-to-core ratio makes it less suitable for memory-heavy databases.",
-  "og_description": "Microsoft Azure D64plds_v5 is a 64-core ARM64 virtual machine featuring an Ampere Neoverse-N1 processor, 128 GB of RAM, and 2458 GB of local storage, optimized for multi-threaded scale-out workloads.",
-  "meta_description": "Microsoft Azure D64plds_v5 is a 64-core ARM64 instance with 128 GB RAM and 2458 GB local storage, built for multi-threaded compute workloads.",
-  "tagline": "An ARM64-based virtual machine featuring sixty-four dedicated cores and bundled local storage for highly parallelized, compute-focused workloads.",
+  "description": "Microsoft Azure D64plds_v5 is an ARM64-based virtual machine featuring 64 dedicated Ampere Neoverse-N1 physical cores running at 3.0 GHz. Equipped with 128.0 GB of RAM and 2458 GB of local storage, this instance operates on the Microsoft Hyper-V hypervisor. It delivers strong multi-core performance, particularly in software compilation and Redis operations, though single-core execution speeds represent a performance tradeoff. With its high physical core density and low memory-to-vCPU ratio, the D64plds_v5 provides a qualitatively cost-efficient platform for highly parallelized, compute-focused workloads. It is well-suited for multi-threaded software development, web serving, and scale-out application tiers.",
+  "og_description": "Microsoft Azure D64plds_v5 is an ARM64 virtual machine featuring 64 dedicated Ampere Neoverse-N1 cores, 128 GB RAM, and 2458 GB local storage, optimized for multi-threaded compute workloads.",
+  "meta_description": "Microsoft Azure D64plds_v5 is an ARM64 virtual machine with 64 dedicated Ampere cores, 128 GB RAM, and 2458 GB local storage for parallel workloads.",
+  "tagline": "A dedicated 64-core ARM64 virtual machine with local storage, optimized for highly parallelized compute and multi-threaded workloads.",
   "bullet_points": [
-    "64 dedicated physical ARM64 cores running at 3.0 GHz",
-    "128 GB of system memory and 2458 GB of bundled local storage",
+    "64 dedicated Ampere Neoverse-N1 ARM64 physical cores running at 3.0 GHz",
+    "128.0 GB of system memory providing 2.0 GB per core",
+    "2458 GB of local storage with Premium Storage capability",
     "Strong multi-core performance in software compilation and Redis operations",
-    "Low memory-to-core ratio of 2.0 GB per vCPU",
-    "Best suited for multi-threaded scale-out applications, web serving, and CI/CD pipelines"
+    "Best suited for multi-threaded compute, web serving, and parallel processing"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

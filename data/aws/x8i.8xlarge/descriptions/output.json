@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services x8i.8xlarge is a memory-optimized instance built on the AWS Nitro System. It features 32 vCPUs and 16 physical cores powered by an Intel Xeon 6975P-C processor operating at a clock speed of 3.9 GHz. The instance is equipped with 512.0 GB of DDR5 memory running at 7 GHz, providing a high resource density of 16.0 GB of RAM per core. It does not include local storage or dedicated GPU hardware, relying on network-attached storage and offering a baseline network bandwidth of 15 Gbps.",
-    "Performance benchmarks indicate strong processing capabilities, particularly in single-core and memory-bound operations. The instance achieves top-tier results in Geekbench single-core, image processing, and text processing tests. Multi-threaded performance is also robust, with strong ratings in bzip3 decompression and Passmark CPU benchmarks. For machine learning workloads, the processor's AVX-512 and AMX extensions support strong prompt processing and text generation speeds for small to medium language models, though performance drops to the bottom quartile for large-scale 70B model text generation due to the lack of dedicated GPU acceleration.",
-    "From a cost-efficiency perspective, the x8i.8xlarge offers a dense memory profile relative to its compute allocation, making it highly suitable for memory-heavy workloads without the overhead of excess vCPUs. The absence of bundled local storage means storage costs are decoupled, requiring network-attached storage. This configuration is optimized for large in-memory databases, memory-intensive data processing, enterprise applications, and caching layers."
+    "Amazon Web Services x8i.8xlarge is a memory-intensive server instance powered by the Nitro hypervisor. It features an Intel Xeon 6975P-C processor with 16 physical cores and 32 vCPUs operating at a clock speed of 3.9 GHz. The system is equipped with 512.0 GB of DDR5 memory running at 7 GHz, providing a high memory-to-core ratio of 16.0 GB per core. It lacks local storage and dedicated GPUs, relying entirely on network-attached storage and a baseline network bandwidth of 15 Gbps.",
+    "Benchmark data indicates strong performance in text and image processing, with Geekbench text processing scoring in the top 10% at 2903.0. Single-threaded gzip compression and bzip3 decompression also show strong results, reaching 34.34 GB/sec and 14.53 GB/sec respectively. Large-block memory bandwidth benchmarks show 160.44 GB/sec for read-only operations and 72.3 GB/sec for write operations. However, text generation for large 70B LLM models is a notable performance bottleneck, registering in the bottom 25% at 2.61 tokens/sec.",
+    "From a qualitative cost-efficiency perspective, the x8i.8xlarge offers high memory density and advanced instruction sets, including AVX-512 and Intel AMX for matrix operations, without the added expense of GPU hardware. This makes the instance suitable for memory-heavy workloads such as in-memory databases, large-scale text processing, and medium-scale LLM prompt processing, though it is less efficient for heavy LLM text generation tasks."
   ],
-  "description": "Amazon Web Services x8i.8xlarge is a memory-optimized instance featuring 32 vCPUs across 16 physical Intel Xeon 6975P-C cores running at 3.9 GHz, paired with 512.0 GB of high-speed 7 GHz DDR5 memory. Operating on the AWS Nitro hypervisor, this instance lacks local storage and GPUs but delivers a baseline network speed of 15 Gbps. Benchmarks show top-tier single-core, image, and text processing performance, alongside strong multi-threaded decompression and cryptography capabilities. The processor includes advanced vector and matrix extensions (AVX-512 and AMX), which accelerate workloads like small-scale machine learning inference and data compression. The high memory-to-vCPU ratio of 16 GB per core makes it highly cost-efficient for memory-bound workloads. It is best suited for in-memory databases, large-scale caching, and memory-intensive enterprise applications.",
-  "og_description": "Amazon Web Services x8i.8xlarge is a memory-optimized instance featuring 32 vCPUs, 512 GB of DDR5 RAM, and an Intel Xeon processor. It delivers top-tier single-core performance and is built for in-memory databases.",
-  "meta_description": "Amazon Web Services x8i.8xlarge is a memory-optimized instance featuring 32 vCPUs, 512 GB of DDR5 RAM, and an Intel Xeon processor running at 3.9 GHz.",
-  "tagline": "A memory-intensive x86 platform featuring high-speed DDR5 RAM and advanced Intel Xeon processing for demanding database and enterprise workloads.",
+  "description": "The Amazon Web Services x8i.8xlarge is a memory-intensive server utilizing the Nitro hypervisor and an Intel Xeon 6975P-C processor. It provides 32 vCPUs (16 physical cores) running at 3.9 GHz, paired with 512.0 GB of DDR5 memory at 7 GHz. The instance does not include local storage or GPUs, but features a 15 Gbps baseline network bandwidth. Performance benchmarks show top-tier results in text processing and strong capabilities in single-threaded compression and image processing. However, text generation for large 70B LLM models is weak, averaging 2.61 tokens/sec. With advanced instruction support like Intel AMX and AVX-512, this instance is qualitatively cost-efficient for memory-dense workloads, including in-memory databases, text processing pipelines, and medium-scale language model prompt processing.",
+  "og_description": "Amazon Web Services x8i.8xlarge is a memory-intensive server featuring 32 vCPUs, 512 GB of DDR5 RAM, and an Intel Xeon processor, delivering strong text processing and single-threaded compression performance.",
+  "meta_description": "Amazon Web Services x8i.8xlarge is a memory-intensive server with 32 vCPUs, 512 GB DDR5 RAM, and an Intel Xeon CPU, optimized for memory-heavy workloads.",
+  "tagline": "A memory-intensive x86_64 server featuring 512 GB of DDR5 RAM and advanced Intel Xeon processing for memory-dense enterprise workloads.",
   "bullet_points": [
     "32 vCPUs and 16 physical cores powered by an Intel Xeon 6975P-C processor at 3.9 GHz",
-    "512.0 GB of high-speed 7 GHz DDR5 memory providing 16.0 GB per core",
-    "Top-tier performance in single-core execution, image processing, and text processing benchmarks",
-    "15 Gbps baseline network bandwidth with Nitro hypervisor integration",
-    "Optimized for in-memory databases, caching layers, and memory-intensive enterprise applications"
+    "512.0 GB of high-speed DDR5 memory running at 7 GHz",
+    "Top-tier performance in text processing and strong single-threaded compression",
+    "Supports advanced instruction sets including Intel AMX and AVX-512",
+    "No local storage or GPU hardware, utilizing a 15 Gbps baseline network bandwidth",
+    "Best suited for in-memory databases, text processing, and medium-scale LLM prompt processing"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

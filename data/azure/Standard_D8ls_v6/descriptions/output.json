@@ -1,23 +1,23 @@
 {
   "page": [
-    "The Microsoft Azure D8ls_v6 is an x86_64 architecture server powered by an Intel Xeon 8573B processor running at 4.2 GHz. It features 8 dedicated vCPUs mapped to 4 physical cores with hyper-threading enabled, providing 2 threads per core. The memory configuration consists of 16.0 GB of RAM, yielding a resource density of 2.0 GB per vCPU. This server does not include local storage or bundled GPUs, though it is Premium Storage capable.",
-    "Benchmark data highlights strong single-core performance, with a Geekbench single-core score of 2178.0 placing it in the top 10% tier. Single-threaded gzip compression is also strong at 31.36 GB/sec, and Geekbench text processing scores reach 2723.0. Multi-core performance is moderate, with a Geekbench multi-core score of 8357.0 and a stress-ng multi-core CPU performance of 7969.36. For small language model inference using a 135M model, text generation reaches a strong 283.15 tokens/sec, though larger workloads like a 7B model drop to a weak 7.37 tokens/sec.",
-    "From a cost-efficiency perspective, the D8ls_v6 offers a compute-heavy profile with a lower memory-to-vCPU ratio, making it a resource-dense option for CPU-bound tasks that do not require massive memory footprints. The lack of local storage means users must rely on external Premium Storage, which introduces an architectural tradeoff.",
-    "This server is suited for compute-intensive workloads such as software compilation, web serving, single-threaded data processing, and lightweight machine learning inference. It is also appropriate for general-purpose applications with low memory requirements."
+    "Microsoft Azure D8ls_v6 is a compute-optimized virtual machine from the Dlsv6 family, running on the Microsoft Hyper-V hypervisor. It features 8 dedicated vCPUs mapped to 4 physical cores of an Intel Xeon 8573B processor operating at a clock speed of 4.2 GHz. The x86_64 architecture includes 16.0 GB of system memory, yielding a low-memory ratio of 2.0 GB per vCPU. The processor is equipped with a 260 MB L3 cache, 2 MB L2 cache, and 48 KB L1d cache, alongside advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions (AMX_TILE, AMX_INT8) for accelerated vector and matrix operations.",
+    "Benchmark evaluations indicate strong single-threaded performance, with Geekbench single-core scoring 2178.0 and single-threaded gzip compression reaching 31.36 GB/sec, both placing in the top 25% tier. Multi-core performance is average, with a stress-ng multi-core score of 7969.36 and a Geekbench multi-core score of 8357.0. Memory bandwidth tests show 620.96 GB/sec for cached small-block reads and 66.69 GB/sec for uncached large-block reads. For machine learning workloads, the server achieves a strong text generation speed of 283.15 tokens/sec on a small 135M LLM, but drops to a weak 7.37 tokens/sec for a medium 7B model.",
+    "The D8ls_v6 does not include local storage, requiring external Premium Storage attachment for persistent data. This design optimizes the instance for stateless workloads or environments where storage is decoupled from compute resources. Qualitatively, the low memory-to-vCPU ratio and lack of bundled local storage or public IPv4 addresses make this a cost-efficient option for compute-heavy tasks that do not require massive memory footprints. However, the 16 GB memory limit represents a clear tradeoff, rendering the instance unsuitable for large-scale in-memory databases or heavy LLM inference.",
+    "This server is best suited for compute-bound workloads such as web serving, where it demonstrates a static web serving throughput of 14.84 GB/sec. It is also well-suited for software compilation, as evidenced by a Geekbench clang compilation score of 9736.0, as well as lightweight serialization, deserialization, and small-scale machine learning inference."
   ],
-  "description": "The Microsoft Azure D8ls_v6 is an x86_64 compute-optimized server featuring an Intel Xeon 8573B processor with 8 dedicated vCPUs across 4 physical cores, operating at 4.2 GHz. It is configured with 16.0 GB of RAM (2.0 GB per vCPU) and lacks local storage, though it supports Premium Storage. Performance benchmarks show top-tier single-core capabilities, with a Geekbench single-core score of 2178.0 and strong single-threaded gzip compression at 31.36 GB/sec. Multi-core and memory bandwidth benchmarks generally align with mid-tier averages. This server is highly cost-efficient for compute-heavy, low-memory workloads such as software compilation, web serving, and lightweight text or language model processing, though it is constrained by its 1:2 memory-to-vCPU ratio and reliance on external storage.",
-  "og_description": "The Microsoft Azure D8ls_v6 is an x86_64 compute-optimized server featuring an Intel Xeon 8573B processor with 8 dedicated vCPUs, 16.0 GB of RAM, and top-tier single-core benchmark performance.",
-  "meta_description": "The Microsoft Azure D8ls_v6 is an x86_64 server featuring 8 dedicated Intel vCPUs, 16.0 GB of RAM, and strong single-core performance.",
-  "tagline": "A compute-optimized virtual server featuring high-frequency Intel processors and a low memory-to-core ratio for dedicated CPU workloads.",
+  "description": "The Microsoft Azure D8ls_v6 is an x86_64 compute-optimized virtual machine powered by an 8-vCPU Intel Xeon 8573B processor running at 4.2 GHz. It features 16.0 GB of RAM (2.0 GB per vCPU) and lacks local storage, though it is Premium Storage capable. The processor includes a 260 MB L3 cache and supports advanced instruction sets like AVX-512 and Intel AMX. Benchmarks show strong single-core performance, with Geekbench single-core scoring 2178.0 and gzip compression reaching 31.36 GB/sec. However, multi-core and memory bandwidth metrics remain in the average tier, and text generation for medium 7B LLMs is weak at 7.37 tokens/sec. This instance is qualitatively cost-efficient for compute-heavy, low-memory tasks, making it highly suitable for web serving, software compilation, and lightweight vector processing workloads.",
+  "og_description": "Microsoft Azure D8ls_v6 is an 8-vCPU compute-optimized virtual machine featuring an Intel Xeon 8573B processor, 16 GB of RAM, and advanced Intel AMX and AVX-512 instruction support.",
+  "meta_description": "Microsoft Azure D8ls_v6 is an 8-vCPU compute-optimized virtual machine featuring an Intel Xeon 8573B processor, 16 GB of RAM, and Premium Storage support.",
+  "tagline": "A high-frequency, low-memory compute instance featuring advanced matrix extensions and strong single-core performance for stateless workloads.",
   "bullet_points": [
-    "Intel Xeon 8573B processor running at 4.2 GHz",
-    "8 dedicated vCPUs with 16.0 GB of RAM (1:2 ratio)",
-    "Top-tier single-core performance in Geekbench testing",
-    "No local storage; Premium Storage capable",
-    "Best suited for software compilation, web serving, and lightweight inference"
+    "8 dedicated vCPUs powered by an Intel Xeon 8573B processor at 4.2 GHz",
+    "16.0 GB of system memory (2.0 GB per vCPU) optimized for compute-heavy tasks",
+    "Supports Intel AMX and AVX-512 instruction sets for accelerated vector math",
+    "Strong single-core performance in gzip compression and Geekbench testing",
+    "No bundled local storage, requiring external Premium Storage volumes",
+    "Best suited for web serving, software compilation, and lightweight inference"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

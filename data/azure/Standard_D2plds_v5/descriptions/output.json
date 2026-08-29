@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D2plds_v5 is an ARM64-based virtual machine belonging to the DPLDSv5 server family, running on the Microsoft Hyper-V hypervisor. It features 2 dedicated physical cores and 2 vCPUs powered by an Ampere Neoverse-N1 processor operating at 3.0 GHz. The hardware configuration includes 4.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. It is equipped with 77 GB of local storage and supports Premium Storage.",
-    "Performance benchmarks indicate that the server delivers moderate single-core capabilities but struggles with multi-core and memory-intensive workloads. The stress-ng single-core CPU performance is rated as average at 1821.98, and single-threaded gzip compression reaches an average of 24.16 GB/sec. However, multi-core stress-ng performance is weak at 3613.27, and Geekbench scores are low, with a single-core score of 1095.0 and a multi-core score of 2010.0. Memory bandwidth is also constrained, with uncached read and write speeds at 26.37 GB/sec and 16.5 GB/sec respectively, which limits data-heavy operations.",
-    "From a qualitative cost-efficiency perspective, the D2plds_v5 offers a low-cost entry point into ARM-based cloud computing, trading off high-performance memory and multi-threaded execution for dedicated, power-efficient CPU cores. This virtual machine is best suited for lightweight, single-threaded applications, basic web serving, simple text processing, and development or testing environments that do not require extensive memory or high-throughput database operations."
+    "Microsoft Azure D2plds_v5 is an ARM-based virtual machine instance belonging to the DPLDSv5 server family, running on the Microsoft Hyper-V hypervisor. It features 2 dedicated vCPUs mapped to 2 physical cores of an Ampere Neoverse-N1 processor based on the ARMv8 architecture. Operating at a clock speed of 3.0 GHz, the CPU provides 64 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. This instance is configured with 4.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per core.",
+    "For storage, the instance includes a 77 GB local disk and is capable of utilizing Premium Storage. It does not feature any bundled GPUs or complimentary public IPv4 addresses. Hardware-level cryptographic acceleration is supported via the AES instruction set, though other advanced vector and matrix extensions such as AVX or AMX are absent.",
+    "Benchmark evaluations indicate modest performance characteristics. Single-core CPU performance via stress-ng and single-threaded gzip compression both register in the average range. However, multi-core CPU performance, Geekbench scores, and memory bandwidth tests fall into the weak to poor categories, with uncached large-block memory read bandwidth measured at 26.37 GB/sec. Database operations and Redis SET performance are also positioned in the lower tiers, reflecting the resource-constrained nature of this low-memory profile.",
+    "This server type represents a cost-efficient option for workloads requiring dedicated ARM physical cores without high memory demands. It is best suited for lightweight applications, basic web serving, software compilation tasks, and development or testing environments that do not require extensive memory capacity or high-throughput parallel processing."
   ],
-  "description": "Microsoft Azure D2plds_v5 is an ARM64 virtual machine from the DPLDSv5 family, powered by a 2-core Ampere Neoverse-N1 processor running at 3.0 GHz. It features 4.0 GB of RAM, 77 GB of local storage, and runs on the Microsoft Hyper-V hypervisor. Benchmarks show average single-core performance, with a stress-ng single-core score of 1821.98 and gzip compression of 24.16 GB/sec, but weak multi-core and memory bandwidth results. With a 1:2 vCPU-to-RAM ratio, this server represents a low-cost, resource-constrained option. It is best suited for lightweight workloads, basic web serving, and simple single-threaded applications.",
-  "og_description": "Microsoft Azure D2plds_v5 is an ARM64 virtual machine featuring 2 dedicated Ampere Neoverse-N1 vCPUs, 4.0 GB of RAM, and 77 GB of local storage, designed for lightweight single-threaded workloads.",
-  "meta_description": "Microsoft Azure D2plds_v5 is an ARM64 virtual machine with 2 vCPUs, 4.0 GB RAM, and 77 GB local storage, optimized for basic single-threaded tasks.",
-  "tagline": "An ARM64 virtual machine with dedicated cores and local storage, optimized for lightweight, single-threaded utility workloads.",
+  "description": "Microsoft Azure D2plds_v5 is an ARM-based virtual machine instance within the DPLDSv5 family, powered by a 3.0 GHz Ampere Neoverse-N1 processor. It features 2 dedicated physical cores (2 vCPUs) with a 1.0 thread-per-core configuration, 4.0 GB of system memory, and a 77 GB local disk. Running on the Microsoft Hyper-V hypervisor, the instance supports Premium Storage and hardware-based AES cryptography, though it lacks advanced vector extensions and bundled GPUs. Benchmark results show average single-core CPU and compression performance, but weak multi-core execution and poor memory bandwidth. This low-memory, cost-efficient configuration is designed for lightweight workloads, including basic web serving, software compilation, and development environments that benefit from dedicated ARM architecture without requiring high memory density.",
+  "og_description": "Microsoft Azure D2plds_v5 is an ARM-based virtual machine featuring 2 dedicated Ampere Neoverse-N1 vCPUs, 4.0 GB of RAM, and a 77 GB local disk, designed for lightweight, cost-efficient workloads.",
+  "meta_description": "Microsoft Azure D2plds_v5 is an ARM-based instance with 2 dedicated vCPUs, 4.0 GB RAM, and 77 GB local storage for lightweight workloads.",
+  "tagline": "An entry-level, low-memory ARM instance featuring dedicated physical cores and local storage for lightweight workloads and development environments.",
   "bullet_points": [
-    "Powered by a 2-core Ampere Neoverse-N1 ARM64 processor running at 3.0 GHz",
-    "Includes 4.0 GB of system memory and 77 GB of local storage",
-    "Delivers average single-core CPU and single-threaded gzip compression performance",
-    "Shows weak multi-core scaling and constrained memory bandwidth in benchmarks",
-    "Suited for lightweight web serving, basic text processing, and development tasks"
+    "Powered by a 3.0 GHz Ampere Neoverse-N1 ARMv8 processor with 2 dedicated physical cores.",
+    "Equipped with 4.0 GB of RAM and a 77 GB local disk with Premium Storage capability.",
+    "Features hardware-accelerated AES cryptography but lacks AVX and AMX extensions.",
+    "Delivers average single-core CPU performance alongside lower-tier multi-core and memory bandwidth metrics.",
+    "Suitable for lightweight web serving, basic software compilation, and ARM-based development."
   ],
   "categories": [
     "Compute Optimized",
-    "General Purpose"
+    "Burstable & Budget"
   ]
 }

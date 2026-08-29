@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure F4-2amds_v7 is an x86_64 architecture server belonging to the Famdsv7 family. It features 2 dedicated vCPUs powered by an AMD EPYC 9V45 processor running at 4.5 GHz, with 2 physical cores and 1.0 thread per core. The hardware configuration includes 32.0 GB of system memory, yielding a high resource density of 16.0 GB of RAM per core. Local storage is provided via a 472 GB disk, and the instance is Premium Storage capable. Virtualization is managed via the Microsoft Hyper-V hypervisor.",
-    "In benchmark evaluations, the server demonstrates strong single-core capabilities. The stress-ng single-core CPU performance and single-threaded gzip compression and bzip3 decompression benchmarks all rank in the top tier (top 10%). However, multi-threaded performance is more limited, with stress-ng multi-core performance and PassMark CPU scores falling into the average category, while multi-threaded bzip3 decompression is weak (bottom 25%). Memory bandwidth benchmarks for both read and write operations are average, and static web serving throughput is weak at 5.52 GB/sec. For language model workloads, prompt processing for a medium 7B model is poor, though text generation for the same model remains average.",
-    "From a qualitative cost-efficiency perspective, the high memory-to-vCPU ratio provides a dense memory profile without the cost of additional unneeded CPU cores. This makes the server suitable for memory-intensive workloads that do not require massive parallel CPU scaling, such as small-to-medium database operations, caching layers like Redis, and single-threaded data processing tasks."
+    "Microsoft Azure F4-2amds_v7 is a memory-intensive virtual machine instance belonging to the Famdsv7 family, running on the Microsoft Hyper-V hypervisor. It features a dedicated AMD EPYC 9V45 processor with 2 vCPUs and 2 physical cores operating at a clock speed of 4.5 GHz. The server is equipped with 32.0 GB of system memory, yielding a high resource density of 16.0 GB of RAM per core. Additionally, it includes 472 GB of local storage and supports Premium Storage, though it does not bundle any GPUs or complimentary public IPv4 addresses.",
+    "Performance benchmarks reveal a strong contrast between single-core and multi-core capabilities. The instance achieves top-tier status in single-core CPU performance, single-threaded gzip compression, single-threaded bzip3 decompression, and Geekbench single-core and text processing tests, driven by its high 4.5 GHz clock speed. However, multi-core and multi-threaded operations, such as multi-threaded bzip3 decompression, software compilation with Clang, and ray tracing, fall into the weak category. Memory bandwidth and database operations, including Redis SET operations and Passmark database tests, perform in the average tier.",
+    "From a cost-efficiency perspective, the F4-2amds_v7 offers a high memory-to-vCPU ratio, making it a resource-dense option for memory-bound workloads that do not require massive parallel processing. The primary tradeoff is the limited multi-threaded scaling due to having only 2 physical cores, as evidenced by poor prompt processing speeds for medium LLM models. This server is best suited for memory-intensive, single-threaded or lightly threaded workloads, such as small-scale database operations, text processing, caching layers, and memory-optimized general-purpose applications."
   ],
-  "description": "Microsoft Azure F4-2amds_v7 is an x86_64 memory-intensive server in the Famdsv7 family, featuring 2 dedicated vCPUs on an AMD EPYC 9V45 processor running at 4.5 GHz. It is equipped with 32.0 GB of RAM, offering a high density of 16.0 GB per core, alongside 472 GB of local storage. Benchmarks show top-tier single-core CPU performance and single-threaded compression speeds, though multi-threaded decompression and static web serving throughput are weak. Memory bandwidth and database operations perform at average levels. This configuration provides a cost-efficient profile for memory-heavy workloads that do not require high multi-core scaling, making it suitable for database operations, caching, and single-threaded processing tasks.",
-  "og_description": "Microsoft Azure F4-2amds_v7 is a memory-intensive server with 2 dedicated AMD EPYC vCPUs, 32 GB RAM, and 472 GB local storage, delivering top-tier single-core speed but average multi-core performance.",
-  "meta_description": "Microsoft Azure F4-2amds_v7 is an x86_64 server with 2 AMD EPYC vCPUs, 32 GB RAM, and 472 GB local storage, optimized for memory-intensive workloads.",
-  "tagline": "A memory optimized virtual server delivering strong single core performance and local storage capacity for database and caching workloads.",
+  "description": "The Microsoft Azure F4-2amds_v7 is a memory-intensive virtual machine from the Famdsv7 family, powered by a dedicated AMD EPYC 9V45 processor with 2 vCPUs and 2 physical cores running at 4.5 GHz. It features 32.0 GB of RAM, providing a high ratio of 16.0 GB per core, alongside 472 GB of local storage. Benchmarks show top-tier single-core CPU performance, single-threaded compression, and text processing, though multi-threaded tasks like Clang compilation and ray tracing fall into lower tiers. With its high memory density and strong single-core speed, this instance is qualitatively cost-efficient for memory-bound workloads that do not require extensive parallelization. It is highly suited for database operations, caching, and text processing tasks.",
+  "og_description": "Microsoft Azure F4-2amds_v7 is a memory-intensive instance with 2 vCPUs, 32 GB RAM, and 472 GB local storage. It features an AMD EPYC processor at 4.5 GHz, delivering top-tier single-core performance.",
+  "meta_description": "Microsoft Azure F4-2amds_v7 is a memory-intensive virtual machine featuring 2 vCPUs, 32 GB RAM, and a 4.5 GHz AMD EPYC processor.",
+  "tagline": "A memory-intensive virtual machine featuring high single-core clock speeds and dense RAM allocation for memory-bound workloads.",
   "bullet_points": [
-    "2 dedicated AMD EPYC 9V45 vCPUs running at 4.5 GHz",
-    "32.0 GB of RAM providing 16.0 GB per core",
+    "Dedicated AMD EPYC 9V45 processor running at 4.5 GHz",
+    "32.0 GB of RAM providing a high 16.0 GB per core ratio",
     "472 GB of local storage with Premium Storage capability",
     "Top-tier single-core CPU and single-threaded compression performance",
-    "Weak multi-threaded decompression and static web serving throughput",
-    "Suited for database operations, caching, and single-threaded tasks"
+    "Suited for memory-intensive databases, caching, and text processing"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

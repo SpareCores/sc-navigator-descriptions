@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.r6a.xlarge is a memory-optimized virtual machine instance powered by the KVM hypervisor. It features 4 dedicated physical cores of an AMD EPYC 7H12 processor running at 2.6 GHz on the x86_64 architecture. The instance is configured with 32.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or GPU hardware, relying on network-attached storage and offering a baseline network bandwidth of 2 Gbps.",
-    "In benchmark evaluations, the processor exhibits modest compute capabilities. The stress-ng single-core and multi-core CPU tests place the instance in the bottom 10% of performance, with scores of 766.78 and 1533.17 respectively. Similarly, the PassMark CPU score of 5352.43 and physics test score of 499.76 fall into the bottom 25%. However, the CPU performs moderately in cryptographic operations, achieving an average PassMark encryption score of 4228.49, aided by hardware-accelerated AES and SHA_NI instruction sets.",
-    "Memory performance is mixed. While the cached small-block read bandwidth reaches 200.22 GB/sec, large-block uncached reads and writes drop to 29.06 GB/sec and 15.26 GB/sec, which are categorized as weak. The PassMark memory score of 2075.12 sits in the middle 50%. Single-threaded gzip compression and bzip3 decompression also show average performance, though multi-threaded bzip3 decompression and static web serving throughput remain relatively low.",
-    "Given the high memory density relative to compute power, this instance offers a cost-efficient profile for memory-bound workloads that do not require intense CPU processing. It is suited for caching layers, lightweight database operations, and memory-intensive enterprise applications that operate within a 2 Gbps network baseline."
+    "Alibaba Cloud ecs.r6a.xlarge is a memory-optimized virtual machine instance configured with 4 dedicated vCPUs and 32.0 GB of RAM, yielding a high memory-to-vCPU ratio of 8.0 GB per core. Powered by an AMD EPYC 7H12 processor running at 2.6 GHz on the x86_64 architecture, this KVM-hypervised instance features 4 physical cores with 1.0 thread per core. The CPU cache configuration includes 32 KB of L1d cache, 0.5 MB of L2 cache, and 16 MB of L3 cache. It does not include local storage or GPU accelerators, and it provides a baseline network bandwidth of 2 Gbps.",
+    "Benchmark evaluations indicate that the ecs.r6a.xlarge exhibits modest processing capabilities. Its single-core and multi-core CPU performance in stress-ng tests falls into the bottom 10%, and its multi-threaded bzip3 decompression is similarly positioned. Geekbench results show average single-core performance in the middle 50% but weak multi-core performance in the bottom 25%, which is also reflected in software compilation, ray tracing, and image processing tests. Memory bandwidth tests for both small and large blocks are categorized as weak, though the PassMark memory score and CPU encryption tests achieve average ratings.",
+    "The primary tradeoff of the ecs.r6a.xlarge is its high memory capacity relative to its lower-tier processing speeds and lack of local storage. While the 32.0 GB RAM allocation supports memory-intensive operations, the underlying AMD EPYC 7H12 processor limits its suitability for compute-heavy tasks. Consequently, this instance is best suited for memory-bound workloads that do not require high CPU throughput, such as caching layers, medium-sized databases with low transaction volumes, and lightweight enterprise applications."
   ],
-  "description": "Alibaba Cloud ecs.r6a.xlarge is a memory-optimized instance featuring 4 dedicated AMD EPYC 7H12 CPU cores running at 2.6 GHz and 32.0 GB of RAM. Operating on the x86_64 architecture under the KVM hypervisor, this instance provides a high memory-to-core ratio of 8.0 GB per core, though it lacks local storage and GPU accelerators. Benchmark data indicates modest compute performance, with stress-ng and PassMark CPU scores falling in the lower percentiles. However, it maintains average performance in cryptographic tasks and single-threaded compression. Memory bandwidth is moderate, with cached reads reaching 200.22 GB/sec. With a baseline network bandwidth of 2 Gbps, this instance is qualitatively cost-efficient for memory-heavy, compute-light workloads. It is best suited for caching systems, in-memory databases, and general memory-intensive applications.",
-  "og_description": "Alibaba Cloud ecs.r6a.xlarge is a memory-optimized instance with 4 dedicated AMD EPYC cores, 32 GB RAM, and a 2 Gbps network baseline, designed for memory-intensive workloads.",
-  "meta_description": "Alibaba Cloud ecs.r6a.xlarge is a memory-optimized instance featuring 4 AMD EPYC cores and 32 GB RAM, suitable for memory-bound workloads.",
-  "tagline": "A memory-optimized virtual server featuring dedicated AMD EPYC processors and high memory density for memory-bound enterprise workloads.",
+  "description": "Alibaba Cloud ecs.r6a.xlarge is a memory-optimized virtual machine instance featuring 4 dedicated vCPUs and 32.0 GB of RAM, powered by an AMD EPYC 7H12 processor running at 2.6 GHz. Built on the x86_64 architecture with KVM virtualization, it offers a high memory-to-core ratio of 8.0 GB per core but lacks local storage and GPU acceleration. Benchmark data reveals modest processing capabilities, with stress-ng CPU performance in the bottom 10% and weak multi-core Geekbench scores, though single-core Geekbench and PassMark memory scores reach average levels. With a baseline network bandwidth of 2 Gbps, this instance is designed for memory-intensive workloads that require substantial RAM but have moderate CPU demands, such as caching servers, memory-bound databases, and general-purpose enterprise applications. The instance features a 16 MB L3 cache and supports AES and SHA cryptography instructions.",
+  "og_description": "Alibaba Cloud ecs.r6a.xlarge is a memory-optimized instance with 4 vCPUs, 32 GB RAM, and an AMD EPYC 7H12 CPU, offering high memory density but modest processing performance for database workloads.",
+  "meta_description": "Alibaba Cloud ecs.r6a.xlarge is a memory-optimized instance featuring 4 vCPUs, 32 GB RAM, and an AMD EPYC 7H12 CPU with KVM virtualization.",
+  "tagline": "An x86_64 memory-optimized instance featuring 32 GB of RAM and dedicated AMD EPYC processing for memory-bound workloads.",
   "bullet_points": [
-    "4 dedicated AMD EPYC 7H12 CPU cores at 2.6 GHz",
-    "32.0 GB of system memory providing 8.0 GB per core",
-    "2 Gbps baseline network bandwidth with no local storage",
-    "Average performance in cryptographic and single-threaded compression tasks",
-    "Best suited for caching layers and memory-intensive applications"
+    "4 dedicated vCPUs powered by an AMD EPYC 7H12 processor at 2.6 GHz",
+    "32.0 GB of system memory providing a high 8.0 GB per-core ratio",
+    "No local storage and 2 Gbps baseline network bandwidth",
+    "Average single-core Geekbench and PassMark memory benchmark performance",
+    "Suited for memory-bound workloads, caching layers, and databases"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

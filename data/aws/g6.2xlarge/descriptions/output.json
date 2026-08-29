@@ -1,25 +1,24 @@
 {
   "page": [
-    "Amazon Web Services g6.2xlarge is a GPU-accelerated instance featuring an AMD EPYC 7R13 processor with 8 vCPUs (4 physical cores) running at 3.4 GHz on the x86_64 architecture. It is equipped with 32.0 GB of DDR4 memory operating at 3 GHz, providing 4.0 GB of RAM per core. The instance includes a dedicated NVIDIA Ada Lovelace L4 GPU with 22 GB of VRAM, alongside 450 GB of local NVMe SSD storage and a baseline network bandwidth of 5 Gbps.",
-    "Benchmark data shows strong single-core CPU performance in stress-ng tests and strong text processing in Geekbench, both ranking in the top 25%. Multi-core CPU performance, Geekbench multi-core, and Passmark CPU scores fall in the average range. Notably, the instance achieves top-tier performance in the top 10% for LLM inference speeds during both prompt processing and text generation using small (135M) and medium (7B) models.",
-    "A primary hardware tradeoff is memory bandwidth for large uncached blocks (256MB), where both read and write speeds rank in the weak category (bottom 25%). However, cached small-block read bandwidth remains average. From a qualitative cost-efficiency perspective, the inclusion of a dedicated 22 GB VRAM GPU and local NVMe storage on a mid-tier 8-vCPU footprint provides a dense resource profile for accelerated workloads without requiring larger, more expensive instance classes.",
-    "This instance is configured for graphics-intensive applications, machine learning inference (specifically small to medium LLM deployment), video transcoding, and database operations that benefit from local NVMe SSD storage."
+    "Amazon Web Services g6.2xlarge is a graphics-intensive virtual server powered by the Nitro hypervisor. It features an x86_64 AMD EPYC 7R13 processor operating at 3.4 GHz, delivering 8 vCPUs across 4 physical cores with dedicated allocation. The hardware configuration includes 32.0 GB of DDR4 memory running at 3 GHz, a single NVIDIA Ada Lovelace L4 GPU with 22 GB of VRAM, and 450 GB of local NVMe SSD storage. Network connectivity is provisioned with a baseline bandwidth of 5 Gbps.",
+    "In benchmark evaluations, the instance demonstrates top-tier performance in large language model inference, achieving top 10% results for both prompt processing and text generation using small and medium models. Single-core CPU performance via stress-ng is strong, placing in the top 25%. However, multi-core CPU execution, software compilation, and database operations fall within the average tier. A notable hardware bottleneck is its uncached memory bandwidth for large blocks, which registers in the bottom 25% for both read and write operations.",
+    "From a qualitative cost-efficiency perspective, the g6.2xlarge offers a balanced resource density by pairing dedicated AMD EPYC compute cores with a specialized Ada Lovelace GPU and local NVMe storage. This configuration avoids the higher expense of multi-GPU systems while providing the necessary hardware acceleration for specific workloads. It is appropriate for small-to-medium LLM inference, ray tracing, image processing, and graphics-intensive applications that require local high-speed storage but do not demand extreme uncached memory throughput or high baseline network bandwidth."
   ],
-  "description": "Amazon Web Services g6.2xlarge is a GPU-accelerated instance featuring an AMD EPYC 7R13 processor with 8 vCPUs, 32.0 GB of DDR4 memory, and a dedicated NVIDIA Ada Lovelace L4 GPU with 22 GB of VRAM. It includes 450 GB of local NVMe SSD storage and a 5 Gbps baseline network speed. Performance benchmarks indicate strong single-core CPU execution and top-tier LLM inference speeds for small and medium models, though large-block memory bandwidth is a notable bottleneck, scoring in the bottom 25%. Qualitatively, the g6.2xlarge offers a cost-efficient entry point for hardware-accelerated workloads by bundling dedicated GPU resources and fast local storage within a moderate 8-vCPU envelope. This profile is suited for machine learning inference, graphics rendering, and database workloads.",
-  "og_description": "Amazon Web Services g6.2xlarge is a GPU-accelerated instance featuring 8 vCPUs, 32 GB RAM, a 22 GB NVIDIA L4 GPU, and 450 GB NVMe SSD storage, delivering top-tier LLM inference performance.",
-  "meta_description": "Amazon Web Services g6.2xlarge is an 8-vCPU GPU instance with an NVIDIA L4 GPU, 32 GB RAM, and 450 GB NVMe SSD storage for accelerated workloads.",
-  "tagline": "An x86 virtual server featuring a dedicated NVIDIA L4 GPU, local NVMe storage, and top-tier small-to-medium LLM inference performance.",
+  "description": "Amazon Web Services g6.2xlarge is an x86_64 virtual server built on the Nitro hypervisor, featuring 8 vCPUs from an AMD EPYC 7R13 processor running at 3.4 GHz, 32.0 GB of DDR4 RAM, and 450 GB of local NVMe SSD storage. It includes a single NVIDIA Ada Lovelace L4 GPU with 22 GB of VRAM. Benchmarks indicate top-tier performance for LLM inference on small and medium models, alongside strong single-core CPU performance. However, uncached memory bandwidth for large blocks is a bottleneck, scoring in the bottom 25%. This instance provides a qualitatively cost-efficient profile for graphics-intensive tasks, ray tracing, and moderate machine learning inference workloads that benefit from dedicated GPU acceleration and local NVMe storage without requiring high baseline network speeds.",
+  "og_description": "Amazon Web Services g6.2xlarge is an x86_64 server featuring 8 vCPUs, 32 GB RAM, a 450 GB NVMe SSD, and an NVIDIA L4 GPU, delivering top-tier performance for small and medium LLM inference workloads.",
+  "meta_description": "Amazon Web Services g6.2xlarge is an x86_64 server with 8 vCPUs, 32 GB RAM, a 450 GB NVMe SSD, and an NVIDIA L4 GPU for graphics and LLM inference.",
+  "tagline": "An accelerator-equipped virtual server featuring dedicated AMD EPYC cores, local NVMe storage, and an NVIDIA L4 GPU for specialized workloads.",
   "bullet_points": [
-    "AMD EPYC 7R13 CPU with 8 vCPUs and 32 GB DDR4 RAM",
+    "AMD EPYC 7R13 processor with 8 vCPUs and 32 GB DDR4 RAM",
     "NVIDIA Ada Lovelace L4 GPU with 22 GB VRAM",
     "450 GB local NVMe SSD storage and 5 Gbps baseline network bandwidth",
-    "Top-tier benchmark results for small and medium LLM inference",
-    "Weak memory bandwidth performance for large uncached blocks",
-    "Suited for machine learning inference, graphics processing, and databases"
+    "Top-tier benchmark performance for small and medium LLM inference",
+    "Strong single-core CPU performance but weak uncached memory bandwidth",
+    "Suitable for graphics-intensive applications, ray tracing, and machine learning"
   ],
   "categories": [
     "GPU Accelerated",
-    "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

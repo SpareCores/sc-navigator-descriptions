@@ -1,21 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c7nex.xlarge is an x86_64 compute-optimized virtual machine instance powered by the KVM hypervisor. It features 4 dedicated Intel Xeon 8369B physical cores operating at a base clock speed of 2.7 GHz. The instance is configured with 8.0 GB of system memory, yielding a 2.0 GB per core ratio, and does not include local storage or dedicated GPU hardware. Network connectivity is supported by a 5 Gbps baseline bandwidth.",
-    "Performance benchmarks indicate average single-core capabilities but weaker multi-core scaling. The stress-ng single-core CPU performance is rated as average at 1841.49, while the multi-core CPU score of 3867.76 falls into the lower quartile. Memory bandwidth tests show weak throughput, with read-only large block speeds at 30.43 GB/sec and write speeds at 25.42 GB/sec. However, single-threaded tasks like gzip compression at 27.89 GB/sec and PassMark memory operations perform at average levels.",
-    "From a qualitative cost-efficiency perspective, the ecs.c7nex.xlarge offers dedicated CPU allocation without hyperthreading, which eliminates resource contention at the core level. However, the 1:2 vCPU-to-RAM ratio and the lack of local storage represent clear tradeoffs, requiring external block storage for persistent data. The instance is best suited for workloads that require dedicated CPU execution but have modest memory footprints, such as lightweight web serving, single-threaded batch processing, and basic cryptography tasks."
+    "Alibaba Cloud ecs.c7nex.xlarge is a compute-optimized virtual server instance powered by the KVM hypervisor. It features 4 dedicated vCPUs mapped to 4 physical cores of an Intel Xeon 8369B processor running at a clock speed of 2.7 GHz. The instance is equipped with 8.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per core. It does not include local storage or dedicated GPU hardware, and it provides a baseline network bandwidth of 5 Gbps. The underlying Intel Xeon architecture supports advanced instruction sets, including AVX, AVX-512F, AVX512_VNNI, AES, and SHA_NI, which accelerate cryptographic and vector-based calculations.",
+    "In benchmark evaluations, the instance demonstrates moderate single-core capabilities but exhibits limitations under multi-threaded workloads. Single-core stress-ng and Geekbench tests place the processor in the average performance tier, and single-threaded gzip compression and bzip3 decompression also achieve average marks. However, multi-core performance is relatively weak, as evidenced by lower scores in multi-threaded stress-ng, Geekbench multi-core, and bzip3 multi-threaded decompression. Memory bandwidth benchmarks for both small and large blocks fall into the lower performance brackets, though Passmark memory tests and static web serving throughput maintain average ratings.",
+    "From a cost-efficiency perspective, the ecs.c7nex.xlarge offers a dedicated hardware profile tailored for workloads that require predictable CPU allocation without the overhead of hyperthreading. Because it lacks local storage and has a low memory-to-vCPU ratio, it is best suited for compute-bound tasks that do not demand massive memory footprints or high-speed local disk I/O. Tradeoffs include weaker multi-core scaling and lower memory bandwidth, which may affect highly parallelized operations.",
+    "This instance is appropriate for workloads such as lightweight web serving, single-threaded batch processing, basic cryptography tasks, and utility applications that benefit from dedicated CPU resources but do not require extensive memory or local storage."
   ],
-  "description": "Alibaba Cloud ecs.c7nex.xlarge is an x86_64 compute-optimized instance featuring 4 dedicated Intel Xeon 8369B physical cores running at 2.7 GHz and 8.0 GB of system memory. Operating on the KVM hypervisor, this instance provides a 1:2 vCPU-to-RAM ratio with no bundled local storage or GPU accelerators. Network performance is anchored by a 5 Gbps baseline bandwidth. Benchmark data reveals average single-core CPU execution and memory performance, though multi-core scaling and memory bandwidth throughput are relatively weak. The dedicated core allocation ensures consistent compute performance without hyperthreading overhead. This configuration is qualitatively cost-efficient for compute-bound tasks with low memory requirements, making it suitable for lightweight web serving, single-threaded data processing, and basic cryptography workloads.",
-  "og_description": "Alibaba Cloud ecs.c7nex.xlarge is an x86_64 compute-optimized instance with 4 dedicated Intel Xeon cores, 8.0 GB of RAM, and a 5 Gbps network baseline, suitable for lightweight web serving and single-threaded tasks.",
-  "meta_description": "Alibaba Cloud ecs.c7nex.xlarge is a compute-optimized instance featuring 4 dedicated Intel Xeon cores, 8.0 GB of RAM, and a 5 Gbps network baseline.",
-  "tagline": "A compute-optimized virtual server featuring dedicated Intel Xeon cores and a balanced profile for lightweight, single-threaded processing workloads.",
+  "description": "Alibaba Cloud ecs.c7nex.xlarge is a compute-optimized virtual server featuring 4 dedicated vCPUs and 4 physical cores powered by an Intel Xeon 8369B processor running at 2.7 GHz. It is configured with 8.0 GB of system memory, 5 Gbps baseline network bandwidth, and no local storage or GPU resources. Operating on the KVM hypervisor, the instance supports AVX-512 and cryptographic instruction sets. Benchmarks indicate average single-core CPU performance and static web serving throughput, though multi-core scaling and memory bandwidth are relatively weak. This resource profile is qualitatively cost-effective for dedicated CPU tasks that do not require high memory density. It is best suited for lightweight web serving, single-threaded batch processing, and basic cryptographic workloads.",
+  "og_description": "Alibaba Cloud ecs.c7nex.xlarge is a compute-optimized instance with 4 dedicated Intel Xeon vCPUs, 8.0 GB RAM, and 5 Gbps network bandwidth, suitable for lightweight web serving and single-threaded workloads.",
+  "meta_description": "Alibaba Cloud ecs.c7nex.xlarge is a compute-optimized instance featuring 4 dedicated Intel Xeon vCPUs, 8.0 GB RAM, and 5 Gbps network bandwidth.",
+  "tagline": "A dedicated four-core compute-optimized virtual server designed for lightweight single-threaded workloads and basic web serving tasks without local storage.",
   "bullet_points": [
-    "4 dedicated Intel Xeon 8369B physical cores at 2.7 GHz",
-    "8.0 GB of system memory with a 1:2 vCPU-to-RAM ratio",
-    "5 Gbps baseline network bandwidth",
-    "No bundled local storage or GPU accelerators",
-    "Suitable for lightweight web serving and single-threaded batch processing"
+    "4 dedicated Intel Xeon vCPUs and 4 physical cores at 2.7 GHz",
+    "8.0 GB of system memory with a 2.0 GB per core ratio",
+    "5 Gbps baseline network bandwidth and KVM hypervisor integration",
+    "Supports AVX-512 and cryptographic instruction sets",
+    "Best suited for lightweight web serving and single-threaded batch processing"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
