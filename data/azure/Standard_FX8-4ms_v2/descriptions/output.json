@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure FX8-4ms_v2 is an x86_64 memory-intensive server instance powered by the Microsoft Hyper-V hypervisor. It features a dedicated Intel Xeon 8573C processor with 2 physical cores and 4 vCPUs, operating at a clock speed of 4.2 GHz. The CPU configuration includes a 260 MB L3 cache, 2 MB L2 cache, and 48 KB L1d cache. It is equipped with 168.0 GB of system memory, yielding an exceptionally high memory-to-core ratio of 42.0 GB per core. There is no local storage bundled with this instance, though it is Premium Storage capable, and it does not include any GPUs.",
-    "Performance benchmarks reveal strong single-core capabilities alongside moderate multi-core throughput. The instance achieves a top-tier Geekbench single-core score of 2351.0, supported by strong single-threaded performance in gzip compression at 34.8 GB/sec and bzip3 decompression at 14.37 GB/sec. However, multi-core performance is more constrained, with a weak stress-ng multi-core CPU score of 4441.07 and a weak bzip3 multi-threaded decompression rate of 28.49 GB/sec. Memory bandwidth is highly efficient for small, cached blocks at 345.37 GB/sec, but drops to a weaker 36.1 GB/sec for large, uncached blocks.",
-    "The hardware profile presents a clear tradeoff, offering massive memory capacity and high single-core clock speeds at the expense of parallel processing power due to the low core count. This makes the FX8-4ms_v2 highly cost-efficient for memory-bound applications that do not require massive multi-threaded CPU scaling. It is well-suited for large in-memory databases, caching layers like Redis, text processing, and single-threaded data manipulation tasks. Conversely, it is poorly suited for heavy multi-threaded workloads or large-scale LLM inference, as demonstrated by its poor text generation speed of 4.52 tokens/sec on a medium 7B model."
+    "Microsoft Azure FX8-4ms_v2 is a memory-intensive virtual machine powered by the Microsoft Hyper-V hypervisor. It features an x86_64 architecture with 4 dedicated vCPUs mapped to 2 physical Intel Xeon 8573C cores running at 4.2 GHz. The server is equipped with 168.0 GB of RAM, translating to an exceptionally high memory allocation of 42.0 GB per core. It does not include local storage or onboard GPUs, but it is premium storage capable.",
+    "Performance benchmarks highlight strong single-core capabilities, with the Geekbench single-core score and single-threaded text processing reaching top-tier status. Single-threaded compression tasks, such as gzip and bzip3, also demonstrate strong throughput. However, multi-core performance is relatively weak, as evidenced by lower stress-ng multi-core and multi-threaded bzip3 decompression scores. Memory bandwidth is average for cached small-block operations but drops to weak for large-block uncached read and write operations.",
+    "Given its high memory-to-vCPU ratio, this server offers qualitative cost efficiency for workloads that require massive memory footprints but do not demand heavy parallelized multi-core processing. It is well-suited for memory-intensive applications, single-threaded data processing, caching layers, and database operations that fit entirely within its 168.0 GB RAM. It is less optimal for highly parallelized compute tasks or large-scale LLM text generation."
   ],
-  "description": "Microsoft Azure FX8-4ms_v2 is a memory-intensive x86_64 server instance featuring 4 vCPUs powered by an Intel Xeon 8573C processor running at 4.2 GHz. It is equipped with 168.0 GB of RAM, providing an exceptional 42.0 GB of memory per core, but contains no local storage or GPUs. Benchmarks indicate top-tier single-core performance, with a Geekbench single-core score of 2351.0 and strong single-threaded compression speeds, though multi-core and large-block memory bandwidth benchmarks are relatively weak. This profile makes the instance highly cost-efficient for memory-bound, single-threaded, or low-concurrency workloads such as in-memory databases, caching layers, and text processing, while being less optimal for highly parallelized compute tasks.",
-  "og_description": "Microsoft Azure FX8-4ms_v2 is a memory-intensive server featuring 4 vCPUs on an Intel Xeon 8573C processor and 168.0 GB of RAM, delivering top-tier single-core performance for memory-bound workloads.",
-  "meta_description": "Microsoft Azure FX8-4ms_v2 is a memory-intensive server with 4 vCPUs, 168.0 GB RAM, and an Intel Xeon 8573C CPU, optimized for memory-heavy workloads.",
-  "tagline": "A memory-intensive server combining high single-core clock speeds with an exceptional memory-to-vCPU ratio for memory-bound workloads.",
+  "description": "Microsoft Azure FX8-4ms_v2 is a memory-intensive virtual machine built on the x86_64 architecture and managed via Microsoft Hyper-V. It features 4 dedicated vCPUs from 2 physical Intel Xeon 8573C cores operating at 4.2 GHz, paired with 168.0 GB of RAM, yielding a high 42.0 GB per core ratio. The server has no local storage or GPUs but supports premium external storage. Benchmarks indicate top-tier single-core performance, particularly in text processing and single-threaded compression, though multi-core and uncached memory bandwidth metrics are weaker. This profile makes the server qualitatively cost-efficient for memory-heavy, single-threaded workloads, such as in-memory databases, caching systems, and lightweight data processing, rather than highly parallelized compute tasks.",
+  "og_description": "Microsoft Azure FX8-4ms_v2 is a memory-intensive virtual machine featuring 4 dedicated Intel Xeon vCPUs and 168.0 GB of RAM, delivering top-tier single-core performance for memory-heavy workloads.",
+  "meta_description": "Microsoft Azure FX8-4ms_v2 is a memory-intensive VM with 4 Intel Xeon vCPUs, 168.0 GB RAM, and strong single-core performance.",
+  "tagline": "A memory-intensive virtual server featuring high RAM-to-core density and strong single-threaded performance for memory-bound workloads.",
   "bullet_points": [
-    "Intel Xeon 8573C processor with 4 vCPUs running at 4.2 GHz",
-    "168.0 GB of RAM providing 42.0 GB of memory per core",
-    "Top-tier single-core performance with a Geekbench score of 2351.0",
-    "No local storage or GPU accelerators included",
-    "Best suited for in-memory databases, caching layers, and text processing"
+    "4 dedicated vCPUs powered by Intel Xeon 8573C processors at 4.2 GHz",
+    "168.0 GB of RAM providing a high 42.0 GB per core ratio",
+    "Top-tier single-core performance in text processing and compression benchmarks",
+    "No local storage or GPUs, with support for premium external storage",
+    "Best suited for in-memory databases, caching, and single-threaded workloads"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

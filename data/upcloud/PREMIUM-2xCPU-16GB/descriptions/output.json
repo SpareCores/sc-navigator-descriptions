@@ -1,22 +1,23 @@
 {
   "page": [
-    "UpCloud PREMIUM-2xCPU-16GB is a KVM-based virtual server belonging to the Premium family. It features 2 shared vCPUs mapped to 2 physical cores of an AMD EPYC 9575F x86_64 processor running at 2.0 GHz. The processor includes 64 KB L1d cache, 0.5 MB L2 cache, and 16 MB L3 cache. The system is equipped with 16.0 GB of RAM, providing 8.0 GB of memory per core. Local storage consists of a bundled 150 GB SSD, and the server includes one complimentary public IPv4 address.",
-    "Benchmark data reveals highly polarized performance characteristics. The server achieves top-tier single-core CPU performance in stress-ng tests, alongside single-threaded gzip compression and bzip3 decompression. However, multi-threaded performance is significantly constrained, with multi-threaded bzip3 decompression and overall PassMark CPU scores falling into the weak bottom 25% category. Memory bandwidth is moderate, registering average speeds for both cached small-block reads and uncached large-block read/write operations. Database operations and Redis SET operations also perform in the bottom 25%, indicating potential bottlenecks under concurrent or highly transactional workloads, likely influenced by the shared CPU allocation.",
-    "Given its 1:8 vCPU-to-RAM ratio, this server offers a memory-optimized profile suitable for workloads requiring a larger memory footprint relative to compute power. It is well-suited for single-threaded processing tasks, lightweight web serving, and memory-intensive applications that do not demand sustained, multi-core CPU performance. The shared CPU allocation provides a cost-effective entry point for memory-heavy development environments, staging servers, or background tasks, though it presents a performance tradeoff for highly concurrent database or intensive multi-threaded computing workloads."
+    "UpCloud PREMIUM-2xCPU-16GB is an x86_64 architecture virtual server hosted on the KVM hypervisor. It features 2 shared vCPUs powered by an AMD EPYC 9575F processor running at 2.0 GHz, with 16.0 GB of system memory, providing a high memory-to-core ratio of 8.0 GB per vCPU. The hardware configuration includes a bundled 150 GB local SSD and one complimentary public IPv4 address. The processor supports advanced instruction sets such as AVX-512, AVX512_VNNI, and AVX512_BF16, along with cryptography acceleration via AES and SHA_NI, though it lacks AMX support.",
+    "Benchmark data reveals a stark contrast between single-core and multi-core performance. The server achieves top-tier single-core CPU performance in stress-ng and high single-threaded compression throughput, with gzip compression reaching 38.22 GB/sec. However, because the 2 vCPUs are shared, multi-core and multi-threaded workloads show significant degradation. Multi-threaded bzip3 decompression, Geekbench multi-core scores, and Passmark CPU scores all fall into the weak or bottom 25% category. Memory bandwidth remains average, with read-only small block cached speeds at 423.32 GB/sec and large block uncached speeds at 68.14 GB/sec.",
+    "Due to the shared CPU allocation, this server is less efficient for sustained parallel computing, software compilation, or database operations, which return poor to weak benchmark results. However, its generous 16.0 GB memory capacity relative to its 2 vCPUs offers qualitative cost efficiency for memory-intensive but CPU-bursty workloads. It is best suited for static web serving, single-threaded data processing, lightweight caching, and running small language model inference, where it maintains average performance."
   ],
-  "description": "UpCloud PREMIUM-2xCPU-16GB is a KVM-based virtual server featuring 2 shared vCPUs on an AMD EPYC 9575F x86_64 processor, 16.0 GB of RAM, and a bundled 150 GB SSD. With an 8.0 GB memory-per-core ratio, it aligns with memory-optimized profiles. Performance benchmarks show a stark contrast: single-core CPU execution and single-threaded compression achieve top-tier results, while multi-threaded operations, PassMark CPU scores, and Redis database transactions fall into the lower 25th percentile. This performance profile is shaped by the shared CPU allocation, which offers qualitative cost efficiency for memory-heavy workloads but introduces tradeoffs for concurrent processing. It is best suited for single-threaded applications, lightweight web serving, and memory-intensive development environments.",
-  "og_description": "UpCloud PREMIUM-2xCPU-16GB is a KVM virtual server with 2 shared AMD EPYC vCPUs, 16 GB RAM, and a 150 GB SSD, offering strong single-core performance but limited multi-threaded scaling.",
-  "meta_description": "UpCloud PREMIUM-2xCPU-16GB features 2 shared AMD EPYC vCPUs, 16 GB RAM, and 150 GB SSD storage, optimized for memory-intensive, single-threaded tasks.",
-  "tagline": "A memory-optimized virtual server combining strong single-threaded performance with a shared-core architecture for cost-efficient, memory-heavy workloads.",
+  "description": "The UpCloud PREMIUM-2xCPU-16GB is an x86_64 virtual server running on the KVM hypervisor, equipped with 2 shared AMD EPYC 9575F vCPUs at 2.0 GHz and 16.0 GB of RAM. It includes a bundled 150 GB local SSD and one public IPv4 address. While single-core CPU benchmarks and single-threaded compression tasks perform in the top tier, multi-threaded performance is limited by the shared CPU allocation, resulting in weaker multi-core Geekbench and Passmark scores. The server provides a high memory-to-core ratio of 8.0 GB per vCPU, making it qualitatively cost-efficient for memory-heavy workloads that do not require sustained multi-core processing. It is best suited for static web serving, single-threaded data processing, and small-scale model inference.",
+  "og_description": "UpCloud PREMIUM-2xCPU-16GB is an x86_64 KVM virtual server with 2 shared AMD EPYC vCPUs, 16 GB RAM, and a 150 GB SSD, delivering strong single-core speed but limited multi-threaded performance.",
+  "meta_description": "UpCloud PREMIUM-2xCPU-16GB is a KVM virtual server featuring 2 shared AMD EPYC vCPUs, 16 GB RAM, and 150 GB SSD storage for memory-heavy workloads.",
+  "tagline": "A memory-optimized virtual server featuring shared AMD EPYC processors and bundled SSD storage for single-threaded and memory-intensive workloads.",
   "bullet_points": [
-    "2 shared AMD EPYC 9575F vCPUs and 16.0 GB of system memory",
-    "Bundled 150 GB local SSD storage and one public IPv4 address",
+    "2 shared AMD EPYC 9575F vCPUs with 16.0 GB of system memory",
+    "Bundled 150 GB local SSD storage and 1 public IPv4 address",
     "Top-tier single-core CPU and single-threaded compression performance",
-    "Reduced multi-threaded scaling and lower database transaction throughput",
-    "Suitable for memory-heavy, single-threaded applications and web serving"
+    "Weaker multi-threaded performance due to shared CPU allocation",
+    "Best suited for static web serving, lightweight caching, and small model inference"
   ],
   "categories": [
     "Memory Optimized",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "General Purpose"
   ]
 }
