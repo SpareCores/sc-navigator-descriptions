@@ -1,21 +1,19 @@
 {
   "page": [
-    "Alibaba Cloud ecs.s2.large is an x86_64 architecture server instance powered by the KVM hypervisor. It features 2 dedicated vCPUs mapped directly to 2 physical cores, resulting in a 1.0 thread-per-core ratio with no hyperthreading enabled. The instance is configured with 4.0 GB of system memory, providing 2.0 GB of RAM per physical core.",
-    "This server type does not include local storage, meaning all storage must be provisioned via network-attached block storage. There are no integrated GPUs, and the instance does not come with complimentary public IPv4 addresses.",
-    "The underlying processor lacks support for advanced instruction sets, including Advanced Vector Extensions (AVX, AVX-512), Advanced Matrix Extensions (AMX), and cryptographic acceleration flags like AES or SHA_NI. The absence of these instruction sets limits its utility for vector-heavy calculations, machine learning inference, and hardware-accelerated encryption.",
-    "From a qualitative cost-efficiency perspective, the dedicated CPU allocation provides predictable compute performance for entry-level workloads without the risk of noisy-neighbor CPU degradation. Given the 1:2 vCPU-to-RAM ratio and lack of local storage or advanced CPU instructions, this instance is suited for lightweight web serving, basic proxying, small utility applications, or development environments that do not require intensive parallel processing or large memory footprints."
+    "Alibaba Cloud ecs.s2.large is an x86_64 architecture virtual machine instance within the ecs.s2 server family. It is configured with 2 dedicated vCPUs mapped to 2 physical cores, operating with a single thread per core. The instance features 4.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. It runs on the KVM hypervisor and does not include local storage or integrated GPU hardware.",
+    "The hardware profile exhibits a 1:2 vCPU-to-RAM ratio, aligning it with compute-focused resource distributions. Because the CPU allocation is dedicated rather than shared or burstable, the instance provides stable compute capacity without the performance degradation associated with CPU credit depletion. However, the lack of bundled local storage requires the attachment of external block storage volumes for operating system and application data.",
+    "This instance is designed for lightweight workloads requiring consistent CPU performance within a constrained memory footprint. Suitable use cases include small-scale web serving, microservices, lightweight proxy servers, and basic utility applications that do not demand high memory capacity or local disk I/O."
   ],
-  "description": "Alibaba Cloud ecs.s2.large is an x86_64 server instance running on the KVM hypervisor. It is equipped with 2 dedicated vCPUs across 2 physical cores, offering a 1.0 thread-per-core configuration without hyperthreading. The instance features 4.0 GB of system memory, yielding 2.0 GB of RAM per core, and contains no local storage or GPU hardware. The CPU architecture lacks advanced instruction sets such as AVX, AVX-512, AMX, and hardware-accelerated cryptography flags like AES. With its dedicated CPU allocation, the server provides stable, predictable performance for workloads that do not require burstable resources. The ecs.s2.large is designed for lightweight applications, basic web serving, utility tasks, and development environments that require a low-resource footprint and predictable compute execution.",
-  "og_description": "Alibaba Cloud ecs.s2.large is an x86_64 server featuring 2 dedicated vCPUs, 4.0 GB of RAM, and no local storage, running on the KVM hypervisor for predictable, entry-level compute workloads.",
-  "meta_description": "Alibaba Cloud ecs.s2.large is a KVM-based x86_64 server with 2 dedicated vCPUs, 4.0 GB of RAM, and no local storage or GPU accelerators.",
-  "tagline": "A dedicated dual-core x86_64 compute instance with four gigabytes of memory for predictable, entry-level utility workloads.",
+  "description": "Alibaba Cloud ecs.s2.large is an x86_64 virtual machine instance from the ecs.s2 family, running on the KVM hypervisor. It features 2 dedicated vCPUs across 2 physical cores with a single thread per core, paired with 4.0 GB of system memory. This configuration establishes a 1:2 vCPU-to-RAM ratio, prioritizing compute stability over memory capacity. The instance does not include bundled local storage or GPU accelerators, requiring external block storage for deployment. With dedicated CPU allocation, it avoids the performance fluctuations of shared-core or burstable models, offering a stable environment for lightweight workloads. It is suited for small-scale web serving, microservices, and utility applications requiring consistent, low-overhead compute resources.",
+  "og_description": "Alibaba Cloud ecs.s2.large is an x86_64 virtual machine featuring 2 dedicated vCPUs, 4.0 GB of RAM, and no local storage, running on the KVM hypervisor for stable, lightweight compute workloads.",
+  "meta_description": "Alibaba Cloud ecs.s2.large is a KVM-based x86_64 instance with 2 dedicated vCPUs and 4.0 GB of RAM, designed for stable, lightweight compute tasks.",
+  "tagline": "A dedicated two-core x86_64 virtual machine with a compute-leaning resource ratio for stable, low-overhead utility workloads.",
   "bullet_points": [
-    "2 dedicated vCPUs on 2 physical cores with no hyperthreading",
-    "4.0 GB of system memory providing 2.0 GB per core",
-    "KVM hypervisor on x86_64 architecture",
-    "No local storage or integrated GPU accelerators",
-    "Lacks AVX, AVX-512, AMX, and AES hardware instructions",
-    "Suited for lightweight web serving and development environments"
+    "2 dedicated vCPUs with single-thread-per-core execution",
+    "4.0 GB of system memory providing a 1:2 vCPU-to-RAM ratio",
+    "KVM hypervisor virtualization on x86_64 architecture",
+    "No bundled local storage, requiring external block storage",
+    "Suited for lightweight web serving, microservices, and utility tasks"
   ],
   "categories": [
     "Compute Optimized",
