@@ -1,23 +1,23 @@
 {
   "page": [
-    "Amazon Web Services c9g.16xlarge is a compute-optimized server instance powered by the custom AWS Graviton4 processor family, utilizing the ARMv9 Neoverse-V3 architecture. It features 64 dedicated physical cores and 64 vCPUs running at 3.3 GHz, with no hyperthreading. The memory configuration provides 128.0 GB of RAM, establishing a 2.0 GB per core ratio. The CPU cache hierarchy includes 64 KB of L1 data cache, 2 MB of L2 cache, and 48 MB of L3 cache. This instance operates on the Nitro hypervisor, lacks local storage, and delivers a baseline network bandwidth of 34 Gbps. No GPUs are present.",
-    "Benchmark data indicates strong multi-core and memory performance. The instance achieves top-tier results in Geekbench single-core and multi-core scores, software compilation with Clang, ray tracing, and text processing. Memory bandwidth tests show top-tier performance for cached small-block reads and strong performance for uncached large-block reads and writes. Multi-threaded bzip3 decompression, Redis SET operations, and static web serving throughput also rank in the top tier. However, single-core stress-ng performance and LLM inference speeds for 135M and 7B models fall into the average category.",
-    "From a resource density perspective, the c9g.16xlarge offers high compute density with 64 dedicated physical cores, making it efficient for parallelized workloads that benefit from a 1:1 physical-to-virtual core mapping. The lack of local storage requires external network-attached storage, which may introduce latency tradeoffs. The 2.0 GB per core memory allocation is optimized for compute-heavy tasks but may limit memory-bound applications.",
-    "This hardware profile is appropriate for highly parallelized compute-intensive workloads, including software compilation, multi-threaded decompression, static web serving, database operations, and physics simulations. It is less appropriate for memory-intensive databases or large-scale LLM inference due to the average single-core performance and moderate memory-to-core ratio."
+    "Amazon Web Services c9g.16xlarge is a compute-optimized server powered by the AWS Graviton Neoverse-V3 processor. It features 64 dedicated physical cores on the arm64 architecture, running at a clock speed of 3.3 GHz with no hyperthreading. The system is equipped with 128.0 GB of system memory, providing a resource density of 2.0 GB per core. It operates on the Nitro hypervisor and includes a baseline network bandwidth of 34 Gbps. There is no local storage or GPU hardware bundled with this instance type.",
+    "In benchmark evaluations, the c9g.16xlarge demonstrates top-tier multi-core CPU performance, as evidenced by its stress-ng multi-core and Geekbench multi-core scores, which rank in the top 10% of tested systems. Its memory subsystem also achieves top-tier results in small-block read-only memory bandwidth and PassMark memory tests. Single-core performance, however, sits in the average tier for stress-ng single-core CPU tests, indicating that the server's strength lies primarily in parallelized, multi-threaded execution.",
+    "The server is optimized for highly parallel workloads such as software compilation, database operations, and static web serving, where it achieves top-tier throughput. It is also suitable for multi-threaded decompression tasks. However, it exhibits average performance for large-model LLM inference and cryptographic operations, and the lack of local NVMe storage means storage-heavy database workloads must rely entirely on network-attached storage. The ARMv9 architecture offers qualitative cost efficiency by delivering high multi-core compute density and memory bandwidth per resource unit without the overhead of hyperthreading."
   ],
-  "description": "Amazon Web Services c9g.16xlarge is a compute-optimized server instance utilizing the ARMv9 Neoverse-V3 architecture with 64 dedicated physical cores and 64 vCPUs running at 3.3 GHz. It features 128.0 GB of RAM, yielding a 2.0 GB per core ratio, and operates on the Nitro hypervisor with 34 Gbps of baseline network bandwidth. The instance lacks local storage and GPU accelerators. Benchmark results show top-tier performance in software compilation, multi-threaded decompression, and static web serving, alongside strong multi-core CPU and memory bandwidth capabilities. Conversely, single-core stress-ng performance and LLM inference speeds for small and medium models remain in the average tier. This configuration is appropriate for parallelized compute workloads, database operations, and web serving, offering high compute density with a 1:1 physical-to-virtual core mapping, though memory-bound tasks are constrained by the 2.0 GB per core allocation.",
-  "og_description": "Amazon Web Services c9g.16xlarge is an ARMv9-based compute-optimized server with 64 dedicated physical cores, 128 GB RAM, and 34 Gbps bandwidth, delivering top-tier multi-core and software compilation performance.",
-  "meta_description": "Amazon Web Services c9g.16xlarge is a compute-optimized ARMv9 server featuring 64 dedicated cores, 128 GB RAM, and 34 Gbps baseline network bandwidth.",
-  "tagline": "An ARMv9-based compute-optimized instance delivering dedicated physical cores and top-tier multi-threaded performance for parallelized workloads and compilation.",
+  "description": "Amazon Web Services c9g.16xlarge is an arm64 compute-optimized server powered by 64 dedicated physical cores of the AWS Graviton Neoverse-V3 processor running at 3.3 GHz. Operating on the Nitro hypervisor, it features 128.0 GB of memory (2.0 GB per core) and a baseline network bandwidth of 34 Gbps, with no local storage or GPU hardware. Benchmarks place this server in the top 10% for multi-core CPU performance, software compilation, and database operations, though single-core CPU performance and cryptographic operations fall into the average tier. The instance provides high resource density and memory bandwidth for parallelized workloads. It is best suited for multi-threaded applications, software compilation, static web serving, and database operations that do not require local NVMe storage.",
+  "og_description": "Amazon Web Services c9g.16xlarge is an arm64 compute-optimized server with 64 dedicated Graviton Neoverse-V3 cores, 128 GB RAM, and 34 Gbps network bandwidth, delivering top-tier multi-core performance.",
+  "meta_description": "Amazon Web Services c9g.16xlarge is an arm64 compute-optimized server with 64 dedicated Graviton cores, 128 GB RAM, and 34 Gbps network bandwidth.",
+  "tagline": "An arm64 compute-optimized server featuring sixty-four dedicated physical cores and high memory bandwidth for parallelized workloads and database operations.",
   "bullet_points": [
-    "64 dedicated ARMv9 Neoverse-V3 physical cores running at 3.3 GHz",
-    "128.0 GB of RAM providing a compute-optimized 2.0 GB per core ratio",
-    "Top-tier performance in software compilation, decompression, and web serving",
-    "34 Gbps baseline network bandwidth on the AWS Nitro hypervisor",
-    "No local storage or GPU accelerators included in the hardware profile",
-    "Appropriate for parallelized compute workloads, database operations, and physics simulations"
+    "64 dedicated physical ARMv9 Neoverse-V3 cores running at 3.3 GHz",
+    "128.0 GB of system memory providing 2.0 GB per core",
+    "Top-tier multi-core CPU and memory bandwidth benchmark performance",
+    "34 Gbps baseline network bandwidth on the Nitro hypervisor",
+    "No local storage or GPU hardware included",
+    "Suited for software compilation, database operations, and static web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
