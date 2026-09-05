@@ -1,20 +1,19 @@
 {
   "page": [
-    "Alibaba Cloud ecs.s3.large is an x86_64 architecture server instance within the ecs.s3 family, utilizing the KVM hypervisor. This instance features 4 dedicated vCPUs mapped to 4 physical cores, resulting in a configuration of 1.0 thread per core. The system is equipped with 8.0 GB of system memory, providing a resource density of 2.0 GB of RAM per core. No local storage is bundled with this instance, and it includes zero complimentary public IPv4 addresses.",
-    "A key hardware characteristic of the ecs.s3.large is the absence of advanced CPU instruction sets. The processor does not support Advanced Vector Extensions (AVX, AVX-512), Advanced Matrix Extensions (AMX), or hardware-accelerated cryptography standards such as AES and SHA-NI. Additionally, virtualization extensions like VMX and SVM, and hyper-threading capabilities are unavailable. This lack of specialized instruction sets limits the instance's efficiency for vector math, deep learning, and cryptographic operations, positioning it instead for basic integer-based workloads.",
-    "From a qualitative cost-efficiency perspective, the dedicated CPU allocation provides predictable compute performance without the risk of resource contention found in shared-core environments. However, the 1:2 vCPU-to-RAM ratio and the lack of local storage require external block storage attachments for operational use. The ecs.s3.large is suitable for lightweight compute-focused workloads, basic web serving, and simple utility applications that do not rely on hardware-accelerated instruction sets or high memory footprints."
+    "Alibaba Cloud ecs.s3.large is an x86_64 architecture virtual machine instance within the ecs.s3 server family, running on the KVM hypervisor. It features 4 dedicated vCPUs mapped directly to 4 physical cores with a single thread per core, meaning hyperthreading is disabled. The instance is equipped with 8.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per vCPU.",
+    "This server configuration does not include local NVMe or SSD storage, requiring external block storage volumes for operating system and application data. It lacks dedicated GPU hardware, making it unsuitable for hardware-accelerated graphics or parallel computing tasks. Additionally, the instance does not come with complimentary public IPv4 addresses.",
+    "With dedicated CPU allocation and a 1:2 vCPU-to-RAM ratio, the ecs.s3.large is positioned for compute-focused workloads that do not require massive memory footprints. The lack of hyperthreading ensures predictable single-threaded performance per vCPU. Qualitatively, this resource density offers a cost-effective entry point for dedicated compute resources, making it suitable for lightweight web serving, batch processing, and basic application hosting."
   ],
-  "description": "Alibaba Cloud ecs.s3.large is an x86_64 architecture server instance within the ecs.s3 family, running on the KVM hypervisor. It features 4 dedicated vCPUs across 4 physical cores with 1.0 thread per core, paired with 8.0 GB of system memory. This configuration yields a 1:2 vCPU-to-RAM ratio of 2.0 GB per core. The instance does not include local storage, GPUs, or complimentary public IPv4 addresses. A key hardware constraint is the absence of advanced CPU flags, including AVX, AVX-512, AMX, AES, and SHA-NI, which limits its suitability for cryptographic or vector-heavy tasks. With dedicated CPU allocation, it offers predictable performance for basic integer-based processing. The ecs.s3.large is best suited for lightweight compute workloads, basic web serving, and utility applications that require dedicated CPU resources without demanding high memory capacity or specialized hardware acceleration.",
-  "og_description": "Alibaba Cloud ecs.s3.large is an x86_64 KVM-based server featuring 4 dedicated vCPUs, 8.0 GB of RAM, and no local storage. It lacks advanced CPU extensions like AVX and AES, making it suitable for basic compute tasks.",
-  "meta_description": "Alibaba Cloud ecs.s3.large is an x86_64 server with 4 dedicated vCPUs, 8.0 GB of RAM, and no local storage, designed for basic compute workloads.",
-  "tagline": "A dedicated four-core x86_64 compute instance with eight gigabytes of memory, designed for predictable, basic integer-based processing workloads.",
+  "description": "Alibaba Cloud ecs.s3.large is an x86_64 virtual machine instance within the ecs.s3 family, utilizing the KVM hypervisor. It is configured with 4 dedicated vCPUs across 4 physical cores, featuring a single thread per core and no hyperthreading. The system includes 8.0 GB of RAM, establishing a 2.0 GB per vCPU memory ratio. This instance does not feature local storage or GPU accelerators, relying entirely on network-attached storage for data persistence. With dedicated CPU allocation and a compute-oriented resource ratio, it provides predictable performance for workloads that require dedicated processing power without high memory demands. The ecs.s3.large is suitable for lightweight web servers, distributed microservices, and basic batch processing tasks.",
+  "og_description": "Alibaba Cloud ecs.s3.large is a KVM-based x86_64 virtual machine featuring 4 dedicated vCPUs, 8.0 GB of RAM, and no local storage, designed for predictable, compute-focused workloads.",
+  "meta_description": "Alibaba Cloud ecs.s3.large is a KVM-based x86_64 virtual machine featuring 4 dedicated vCPUs, 8.0 GB of RAM, and no local storage.",
+  "tagline": "An x86_64 virtual machine with dedicated vCPUs and a compute-focused resource ratio for predictable, lightweight workloads.",
   "bullet_points": [
-    "4 dedicated vCPUs and 4 physical cores on x86_64 architecture",
-    "8.0 GB of system memory providing 2.0 GB of RAM per core",
-    "KVM hypervisor with dedicated CPU allocation and no hyper-threading",
-    "No local storage or complimentary public IPv4 addresses included",
-    "Lacks advanced CPU extensions such as AVX, AMX, and AES",
-    "Best suited for lightweight compute tasks and basic web serving"
+    "4 dedicated vCPUs mapped to 4 physical cores with no hyperthreading",
+    "8.0 GB of system memory providing 2.0 GB per vCPU",
+    "No local storage, requiring external network-attached block storage",
+    "KVM hypervisor on x86_64 architecture with dedicated CPU allocation",
+    "Suitable for lightweight web serving, microservices, and batch processing"
   ],
   "categories": [
     "Compute Optimized",
