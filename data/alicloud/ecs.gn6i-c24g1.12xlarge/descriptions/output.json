@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.gn6i-c24g1.12xlarge is an x86_64 architecture server powered by an Intel Xeon 8163 processor. It features 48 dedicated physical cores running at 2.5 GHz, with 1.0 thread per core. The system is equipped with 186.0 GB of system memory, providing approximately 3.88 GB per core. For acceleration, it bundles two NVIDIA Turing T4 GPUs, delivering a total of 32 GB of VRAM. This instance does not include local storage and relies on network-attached storage, while offering a baseline network bandwidth of 15 Gbps.",
-    "Benchmark data reveals a clear contrast between single-core and multi-core performance. Single-core CPU performance via stress-ng is weak, placing in the bottom 25% with a score of 1104.08, and single-threaded gzip compression is poor at 19.19 GB/sec. However, the 48 dedicated cores elevate multi-core performance to average levels, with a stress-ng multi-core score of 35393.62 and a multi-threaded bzip3 decompression rate of 149.01 GB/sec. Memory bandwidth remains consistently average across both small cached blocks (1968.52 GB/sec) and large uncached blocks (98.26 GB/sec read, 44.08 GB/sec write).",
-    "The lack of local storage requires external storage configurations, which may impact I/O-heavy operations. Qualitatively, the server offers a balanced resource density for workloads that require GPU acceleration without needing the highest-tier tensor cores, making it a cost-efficient option for legacy deep learning inference, video transcoding, and moderate parallel computing. The system is well-suited for multi-threaded processing, static web serving (benchmarked at 22.34 GB/sec), and Redis database operations (33.17 million operations/sec), but is less optimal for single-threaded tasks."
+    "Alibaba Cloud ecs.gn6i-c24g1.12xlarge is a GPU-accelerated server instance designed for workloads requiring parallel processing capabilities. It features an Intel Xeon 8163 processor with 48 dedicated physical cores running at 2.5 GHz on the x86_64 architecture, paired with 186.0 GB of system memory. The instance is equipped with two NVIDIA T4 GPUs based on the Turing architecture, providing a total of 32 GB of VRAM. It does not include local storage, meaning all storage requirements must be met via network-attached options, supported by a baseline network bandwidth of 15 Gbps.",
+    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. Single-core CPU performance is relatively weak, as shown by a stress-ng single-core score of 1104.08 and a poor single-threaded gzip compression rate of 19.19 GB/sec. However, the 48 dedicated cores deliver average multi-core performance, with a stress-ng multi-core score of 35393.62 and a multi-threaded bzip3 decompression rate of 149.01 GB/sec. Memory read-only bandwidth for large blocks is measured at 98.26 GB/sec, while write bandwidth is 44.08 GB/sec.",
+    "This hardware configuration is qualitatively cost-efficient for workloads that can leverage the dual NVIDIA T4 GPUs for parallel computing without requiring high single-thread CPU performance or local NVMe storage. The instance is suited for workloads such as machine learning inference, video transcoding, and moderate parallel database operations, where multi-core processing and GPU acceleration offset the lower single-core efficiency."
   ],
-  "description": "Alibaba Cloud ecs.gn6i-c24g1.12xlarge is an x86_64 GPU-accelerated server featuring an Intel Xeon 8163 processor with 48 dedicated physical cores running at 2.5 GHz. It is equipped with 186.0 GB of system memory and bundles two NVIDIA Turing T4 GPUs with a total of 32 GB of VRAM. The instance does not include local storage and provides a 15 Gbps baseline network bandwidth. Performance benchmarks indicate weak single-core capabilities, with stress-ng single-core scores in the bottom 25%, but average multi-core performance, as shown by a stress-ng multi-core score of 35393.62. Memory bandwidth and Redis operations also perform at average levels. This server is qualitatively cost-efficient for GPU-accelerated workloads such as video transcoding, machine learning inference, and multi-threaded data processing, though it is constrained by the lack of local storage and lower single-threaded efficiency.",
-  "og_description": "Alibaba Cloud ecs.gn6i-c24g1.12xlarge is an x86_64 server with 48 dedicated Intel Xeon cores, 186 GB RAM, and two NVIDIA T4 GPUs providing 32 GB VRAM, optimized for GPU-accelerated workloads.",
-  "meta_description": "Alibaba Cloud ecs.gn6i-c24g1.12xlarge features 48 Intel Xeon cores, 186 GB RAM, and two NVIDIA T4 GPUs for GPU-accelerated and multi-threaded tasks.",
-  "tagline": "A GPU-accelerated server featuring dual NVIDIA T4 GPUs and 48 dedicated cores for parallel processing and machine learning inference.",
+  "description": "Alibaba Cloud ecs.gn6i-c24g1.12xlarge is a GPU-accelerated instance featuring 48 dedicated physical cores on an Intel Xeon 8163 processor running at 2.5 GHz, paired with 186.0 GB of system memory. The server is equipped with two NVIDIA T4 Turing GPUs delivering 32 GB of total VRAM, but lacks local storage, relying instead on network-attached storage over a 15 Gbps baseline network. Benchmark data shows weak single-core CPU performance, but average multi-core and memory bandwidth capabilities, with a stress-ng multi-core score of 35393.62. This profile makes the instance qualitatively cost-efficient for parallel computing tasks that do not depend on high single-threaded speeds. It is suited for workloads such as machine learning inference, video transcoding, and parallel data processing.",
+  "og_description": "Alibaba Cloud ecs.gn6i-c24g1.12xlarge is a GPU-accelerated server with 48 Intel Xeon cores, 186 GB RAM, and two NVIDIA T4 GPUs with 32 GB VRAM, optimized for parallel computing and machine learning inference.",
+  "meta_description": "Alibaba Cloud ecs.gn6i-c24g1.12xlarge features 48 Intel Xeon cores, 186 GB RAM, and dual NVIDIA T4 GPUs for parallel workloads.",
+  "tagline": "A GPU-accelerated server featuring dual graphics processors and dedicated multi-core architecture for parallel computing and machine learning inference.",
   "bullet_points": [
-    "Dual NVIDIA Turing T4 GPUs providing 32 GB of total VRAM.",
-    "48 dedicated Intel Xeon physical cores with 186 GB of system memory.",
-    "15 Gbps baseline network bandwidth with no local storage.",
-    "Average multi-core performance contrasted by weak single-core efficiency.",
-    "Suited for video transcoding, machine learning inference, and multi-threaded workloads."
+    "Dual NVIDIA T4 GPUs with 32 GB total VRAM for parallel processing.",
+    "48 dedicated Intel Xeon physical cores running at 2.5 GHz.",
+    "186.0 GB of system memory with average multi-core performance.",
+    "No local storage, requiring network-attached storage configurations.",
+    "15 Gbps baseline network bandwidth for data transfer.",
+    "Suited for machine learning inference and video transcoding."
   ],
   "categories": [
     "GPU Accelerated",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }
