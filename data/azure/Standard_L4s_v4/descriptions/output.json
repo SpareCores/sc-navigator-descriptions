@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure L4s_v4 is an x86_64 architecture server belonging to the Lsv4 family, running on the Microsoft Hyper-V hypervisor. It features a dedicated Intel Xeon 8573C processor with 4 vCPUs, 2 physical cores, and a high base clock speed of 4.2 GHz. The processor is equipped with a 260 MB L3 cache and supports advanced instruction sets including AVX-512 and Intel AMX for matrix operations. The server is configured with 32.0 GB of system memory, providing 8.0 GB of RAM per core, and includes 960 GB of local storage with Premium Storage capability.",
-    "Benchmark data indicates strong single-core performance, highlighted by a Geekbench single-core score of 2158.0 and high single-threaded gzip compression throughput of 31.48 GB/sec. However, multi-core scaling and memory bandwidth present notable tradeoffs. The server exhibits weaker performance in multi-core stress-ng tests and large-block memory bandwidth, which limits its efficiency for highly parallelized computing tasks or massive memory-bound operations. Database operations and static web serving throughput perform at average levels, while LLM inference speeds for larger models are weak to poor due to the lack of dedicated GPU acceleration.",
-    "From a cost-efficiency perspective, the L4s_v4 offers a balanced resource density for workloads requiring a combination of high single-core CPU speed, moderate memory capacity, and fast local storage without the premium cost of larger multi-socket systems. This hardware profile is well-suited for relational databases, text processing applications, single-threaded data manipulation, and general-purpose workloads that benefit from direct access to local SSD storage."
+    "Microsoft Azure L4s_v4 is a storage-oriented virtual machine from the Lsv4 family, running on the Microsoft Hyper-V hypervisor. It features a dedicated Intel Xeon 8573C processor with an x86_64 architecture, providing 4 vCPUs across 2 physical cores with hyper-threading enabled. The CPU operates at a high base frequency of 4.2 GHz and is equipped with a 260 MB L3 cache. It supports advanced instruction sets including AVX-512 and Intel AMX for deep learning operations. The instance is configured with 32.0 GB of system memory, yielding 8.0 GB per core, and includes 960 GB of local storage with Premium Storage capability.",
+    "Performance benchmarks reveal a strong single-core profile but moderate multi-core scaling. The instance achieves strong results in single-threaded tasks, such as Geekbench single-core and single-threaded gzip compression. However, multi-core performance is relatively weak, as shown by the stress-ng multi-core CPU score and a multi-threaded bzip3 decompression speed. Memory bandwidth is also a bottleneck, with uncached large-block read and write speeds falling into the bottom 25 percent. LLM inference performance is average for small models but drops significantly for medium 7B models.",
+    "From a qualitative cost-efficiency perspective, the L4s_v4 offers a balanced resource density for workloads requiring high-speed single-core execution combined with local NVMe-class storage, without the premium cost of massive multi-core nodes. The 960 GB local storage and 32.0 GB RAM make it well-suited for database operations, caching layers, and static web serving, where single-threaded efficiency and local storage speed outweigh massive parallel compute requirements. It is less suitable for highly parallelized workloads like software compilation, ray tracing, or large-scale LLM inference."
   ],
-  "description": "Microsoft Azure L4s_v4 is a storage-capable server from the Lsv4 family, powered by an Intel Xeon 8573C processor with 4 dedicated vCPUs, 2 physical cores, and a 4.2 GHz clock speed. Built on the x86_64 architecture under Microsoft Hyper-V, it features 32.0 GB of memory and 960 GB of local storage. Benchmarks show strong single-core capabilities, with high scores in single-threaded gzip compression and Geekbench single-core tests. However, it exhibits weaker multi-core scaling and memory bandwidth. This server is qualitatively cost-effective for workloads requiring high single-thread performance paired with local storage, making it suitable for databases, text processing, and general-purpose applications.",
-  "og_description": "Microsoft Azure L4s_v4 is a storage-optimized server featuring 4 dedicated Intel Xeon vCPUs at 4.2 GHz, 32 GB of RAM, and 960 GB of local storage, optimized for databases and single-threaded workloads.",
-  "meta_description": "Microsoft Azure L4s_v4 features 4 Intel Xeon vCPUs, 32 GB RAM, and 960 GB local storage, delivering strong single-core performance for databases.",
-  "tagline": "A storage-capable virtual server featuring high single-core clock speeds, dedicated Intel Xeon processing, and fast local solid-state storage.",
+  "description": "Microsoft Azure L4s_v4 is a storage-optimized virtual machine from the Lsv4 family, powered by a dedicated 4.2 GHz Intel Xeon 8573C processor. It features 4 vCPUs, 32.0 GB of RAM, and 960 GB of Premium Storage-capable local storage. Operating on the Microsoft Hyper-V hypervisor, the instance excels in single-core tasks, demonstrating strong performance in Geekbench single-core benchmarks and single-threaded gzip compression. However, it exhibits weaker multi-core scaling and lower memory bandwidth in large-block operations. With its high single-core clock speed and substantial local storage, the L4s_v4 is qualitatively cost-efficient for database operations, static web serving, and lightweight caching workloads that do not require extensive parallel processing or GPU acceleration.",
+  "og_description": "Microsoft Azure L4s_v4 is a storage-optimized VM featuring 4 vCPUs, 32 GB RAM, and 960 GB local storage. Powered by a 4.2 GHz Intel Xeon CPU, it delivers strong single-core performance for databases and web serving.",
+  "meta_description": "Microsoft Azure L4s_v4 is a storage-optimized VM with 4 vCPUs, 32 GB RAM, and 960 GB local storage, ideal for databases and single-core workloads.",
+  "tagline": "A storage-optimized virtual machine featuring high-frequency single-core performance and dedicated local storage for database and web serving workloads.",
   "bullet_points": [
-    "Dedicated Intel Xeon 8573C processor with 4 vCPUs and 4.2 GHz clock speed",
-    "32.0 GB of system memory and 960 GB of Premium Storage capable local storage",
-    "Strong single-core performance in text processing and gzip compression benchmarks",
-    "Weaker multi-core scaling and memory bandwidth under heavy parallel workloads",
-    "Suitable for relational databases, text processing, and local storage-bound applications"
+    "Dedicated Intel Xeon 8573C processor running at 4.2 GHz",
+    "960 GB of Premium Storage-capable local storage",
+    "32.0 GB of system memory (8.0 GB per vCPU)",
+    "Strong single-threaded performance in compression and text processing",
+    "Moderate multi-core scaling and uncached memory bandwidth",
+    "Best suited for database operations, static web serving, and caching"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }
