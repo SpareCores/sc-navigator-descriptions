@@ -1,20 +1,19 @@
 {
   "page": [
-    "Alibaba Cloud ecs.s3.medium is an x86_64 architecture server instance within the ecs.s3 family, running on the KVM hypervisor. It features 4 dedicated vCPUs mapped to 4 physical cores with 1.0 thread per core. The instance is configured with 4.0 GB of system memory, resulting in a resource density of 1.0 GB of RAM per vCPU.",
-    "This server configuration does not include local storage or integrated GPU hardware, requiring external network-attached storage for operating system and application data. Additionally, the processor flags for advanced instruction sets, including Advanced Vector Extensions (AVX, AVX512), Advanced Matrix Extensions (AMX), and hardware-accelerated cryptography (AES), are not available on this instance type, which limits its suitability for vector-heavy or cryptographic-intensive workloads.",
-    "From a cost-efficiency perspective, the ecs.s3.medium offers dedicated physical cores without hyperthreading, providing predictable CPU allocation for entry-level workloads. However, the low memory-to-vCPU ratio of 1:1 represents a tradeoff for memory-intensive applications. This instance is designed for lightweight compute tasks, basic web serving, and utility workloads that require dedicated CPU execution but have minimal memory and storage footprints."
+    "Alibaba Cloud ecs.s3.medium is an x86_64 architecture virtual machine instance powered by the KVM hypervisor. The instance features 4 dedicated vCPUs mapped directly to 4 physical cores with a single thread per core configuration. It is equipped with 4.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. This instance does not include local storage or bundled GPUs, requiring external block storage for operating system and application data.",
+    "With a 1:1 ratio of vCPUs to memory, this instance is configured for workloads that require dedicated processing power but have low memory footprints. The dedicated CPU allocation ensures consistent processing performance without the multi-tenant interference typical of shared-core or burstable instances. However, the lack of advanced vector extensions and cryptographic hardware acceleration limits its efficiency for complex mathematical modeling or heavy encryption tasks. From a cost-efficiency perspective, the hardware profile represents a lean compute-centric option, minimizing memory overhead costs for applications that do not require large in-memory datasets.",
+    "The ecs.s3.medium instance is suited for lightweight compute-focused workloads, such as basic web serving, microservices, lightweight batch processing, and simple utility servers. It is also appropriate for development and testing environments where dedicated CPU execution is required but memory demands remain minimal."
   ],
-  "description": "Alibaba Cloud ecs.s3.medium is an x86_64 virtual machine instance within the ecs.s3 family, managed via the KVM hypervisor. It provides 4 dedicated vCPUs across 4 physical cores with a 1.0 thread-per-core configuration, paired with 4.0 GB of system memory. This configuration yields a low memory-to-CPU ratio of 1.0 GB per core. The instance features no local storage and no GPU accelerators, relying entirely on network-attached storage. Processor flags for advanced vector, matrix, and cryptographic instructions are absent. Qualitatively, the ecs.s3.medium offers a cost-effective entry point for workloads requiring dedicated CPU allocation without hyperthreading, though it is constrained by its low memory capacity. It is suitable for lightweight compute tasks, basic web serving, and simple utility services with low memory requirements.",
-  "og_description": "Alibaba Cloud ecs.s3.medium is an x86_64 server with 4 dedicated vCPUs, 4.0 GB RAM, and no local storage, offering a cost-effective option for lightweight, compute-focused utility workloads.",
-  "meta_description": "Alibaba Cloud ecs.s3.medium is an x86_64 instance featuring 4 dedicated vCPUs and 4.0 GB RAM, designed for lightweight utility workloads.",
-  "tagline": "A dedicated four-core x86_64 virtual server with a one-to-one gigabyte-to-core ratio for entry-level compute tasks.",
+  "description": "Alibaba Cloud ecs.s3.medium is an x86_64 virtual machine instance running on the KVM hypervisor, featuring 4 dedicated vCPUs and 4.0 GB of system memory. With a strict one-to-one ratio of vCPUs to RAM and a single thread per core configuration, this instance is designed for compute-focused tasks with low memory requirements. It does not include local storage or integrated GPUs, relying entirely on network-attached storage. The dedicated CPU allocation provides stable, predictable performance, making it a cost-efficient choice for workloads that require consistent processing power without the overhead of large memory arrays. Suitable workloads include lightweight web servers, microservices, utility applications, and development environments that demand dedicated CPU execution but do not require advanced instruction sets like AVX-512.",
+  "og_description": "Alibaba Cloud ecs.s3.medium is a KVM-based x86_64 virtual machine featuring 4 dedicated vCPUs, 4.0 GB of RAM, and no local storage, designed for lightweight compute-focused workloads.",
+  "meta_description": "Alibaba Cloud ecs.s3.medium is a KVM-based x86_64 instance with 4 dedicated vCPUs and 4.0 GB of RAM, optimized for low-memory compute workloads.",
+  "tagline": "A dedicated compute instance featuring a lean one-to-one ratio of processing cores to memory for predictable, low-overhead workloads.",
   "bullet_points": [
-    "4 dedicated vCPUs on 4 physical cores with 1.0 thread per core",
-    "4.0 GB of system memory providing 1.0 GB per core",
-    "No local storage or GPU hardware included",
-    "KVM hypervisor on x86_64 architecture",
-    "Absence of AVX, AMX, and AES hardware acceleration flags",
-    "Best suited for lightweight web serving and basic utility workloads"
+    "4 dedicated x86_64 vCPUs with single thread per core configuration",
+    "4.0 GB of system memory providing 1.0 GB of RAM per vCPU",
+    "KVM hypervisor execution with dedicated CPU allocation",
+    "Zero local storage and no integrated GPU accelerators",
+    "Optimized for lightweight web serving, microservices, and utility tasks"
   ],
   "categories": [
     "Compute Optimized",
