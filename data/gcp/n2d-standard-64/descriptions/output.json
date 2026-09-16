@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform n2d-standard-64 is a general-purpose server instance powered by an AMD EPYC 7B13 processor using the x86_64 architecture. It features 64 vCPUs mapped to 32 physical cores with hyperthreading enabled, providing two threads per core. The system is equipped with 256 GB of RAM, yielding a balanced allocation of 4.0 GB of memory per core. This instance does not include local storage or bundled GPUs, and it comes with zero complimentary public IPv4 addresses.",
-    "Benchmark data indicates strong multi-core CPU capabilities, with stress-ng multi-core and Passmark CPU scores ranking in the top 25%. Cryptographic operations are highly efficient, supported by hardware-accelerated AES and SHA instruction sets, as reflected in strong Passmark CPU encryption and Redis SET operation benchmarks. Memory performance is mixed; small-block cached read bandwidth is highly competitive, whereas large-block uncached read and write bandwidths fall into the average tier.",
-    "While the instance delivers strong performance for multi-threaded tasks such as ray tracing, image processing, and database operations, it exhibits limitations under heavy memory-bound or large-scale AI workloads. For instance, LLM text generation using a large 70B model falls into the bottom 10% of performance. Given these characteristics, the instance is best suited for multi-threaded general-purpose workloads, enterprise database operations, and medium-scale web serving rather than large-scale LLM inference or storage-heavy applications."
+    "Google Cloud Platform n2d-standard-64 is a general-purpose server instance powered by an AMD EPYC 7B13 processor using the x86_64 architecture. It features 64 dedicated vCPUs mapped to 32 physical cores with multithreading enabled. The system is equipped with 256 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per vCPU. Cache specifications include 32 KB of L1 instruction/data cache, 0.5 MB of L2 cache, and 32 MB of L3 cache. This instance does not include local NVMe storage or dedicated GPU hardware.",
+    "Benchmark evaluations indicate strong multi-core and cryptographic capabilities. The instance achieves top-tier performance in stress-ng multi-core CPU tests and Passmark CPU scores, alongside strong results in database operations and Redis SET operations, which reach 63.14 million operations per second. Memory performance is mixed; while cached small-block read bandwidth is highly efficient at 4074.06 GB/sec, uncached large-block read and write speeds fall into the average tier. Cryptographic execution is supported by hardware-accelerated AES and VAES instruction sets, yielding strong Passmark encryption test results.",
+    "The lack of local storage and GPU acceleration introduces specific architectural tradeoffs. While the instance performs well in text generation for small language models, it exhibits poor performance for large-scale LLM text generation, dropping to 2.41 tokens per second on a 70B model. This profile makes the n2d-standard-64 highly suitable for general-purpose enterprise workloads, multi-threaded software compilation, database operations, and web serving, whereas deep learning training and large-scale model inference are better suited for GPU-accelerated alternatives."
   ],
-  "description": "Google Cloud Platform n2d-standard-64 is a general-purpose server configured with 64 vCPUs and 256 GB of RAM, powered by an AMD EPYC 7B13 processor on the x86_64 architecture. Featuring 32 physical cores with hyperthreading, it delivers strong multi-core processing and cryptographic performance, as evidenced by top-tier stress-ng and Passmark CPU encryption benchmarks. The instance lacks local storage and dedicated GPUs, relying entirely on network-attached storage. While cached memory bandwidth and Redis SET operations perform in the top 25%, large-block uncached memory transfers and large LLM text generation tasks show average to poor performance. This resource profile makes the instance highly suitable for multi-threaded enterprise workloads, database operations, and general-purpose compute tasks.",
-  "og_description": "Google Cloud Platform n2d-standard-64 is a general-purpose instance featuring 64 vCPUs, 256 GB RAM, and an AMD EPYC 7B13 CPU, delivering strong multi-core and cryptographic performance.",
-  "meta_description": "Google Cloud Platform n2d-standard-64 features 64 vCPUs, 256 GB RAM, and AMD EPYC processors for balanced general-purpose workloads.",
-  "tagline": "A balanced general-purpose compute instance featuring sixty-four virtual AMD EPYC cores and two hundred fifty-six gigabytes of memory.",
+  "description": "Google Cloud Platform n2d-standard-64 is a general-purpose server configured with 64 dedicated vCPUs and 256 GB of RAM, running on an AMD EPYC 7B13 x86_64 processor. It features 32 physical cores with multithreading, 32 MB of L3 cache, and lacks local storage or GPU accelerators. Performance benchmarks show strong multi-core processing, database operations, and Redis throughput, alongside high cached memory bandwidth. However, uncached memory operations and large-scale LLM text generation perform average to poor. This instance is qualitatively cost-efficient for balanced, compute-heavy enterprise workloads, multi-threaded compilation, and database hosting, but is not designed for GPU-dependent tasks or massive local storage requirements.",
+  "og_description": "Google Cloud Platform n2d-standard-64 is an x86_64 server with 64 dedicated AMD EPYC vCPUs and 256 GB RAM, delivering strong multi-core performance for databases and enterprise workloads.",
+  "meta_description": "Google Cloud Platform n2d-standard-64 features 64 AMD EPYC vCPUs and 256 GB RAM, optimized for multi-core workloads and database operations.",
+  "tagline": "A balanced multi-core server featuring dedicated AMD EPYC processors and high memory capacity for enterprise workloads and database operations.",
   "bullet_points": [
-    "64 vCPUs and 256 GB RAM powered by AMD EPYC 7B13 architecture",
-    "Strong multi-core CPU and cryptographic benchmark performance",
-    "No local storage or bundled GPU accelerators included",
-    "High-throughput cached memory bandwidth and Redis SET operations",
-    "Suited for database operations, enterprise applications, and general-purpose compute"
+    "Powered by an AMD EPYC 7B13 processor with 64 dedicated vCPUs and 32 physical cores.",
+    "Equipped with 256 GB of system memory, providing a balanced 4.0 GB of RAM per core.",
+    "Strong multi-core CPU performance and high database operation throughput.",
+    "Lacks local storage and GPU acceleration, limiting its suitability for large-scale AI training.",
+    "Best suited for enterprise applications, database hosting, and multi-threaded compilation."
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

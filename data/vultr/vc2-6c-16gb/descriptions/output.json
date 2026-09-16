@@ -1,23 +1,22 @@
 {
   "page": [
-    "Vultr vc2-6c-16gb is a Cloud Compute instance featuring 6 shared vCPUs mapped to 3 physical Intel Xeon cores on the x86_64 architecture. The processor operates at a clock speed of 2.0 GHz and includes 16 MB of L3 cache. It is equipped with 16.0 GB of system memory, yielding 2.67 GB per core, and includes 320 GB of local NVMe SSD storage. Network provisioning includes one complimentary public IPv4 address.",
-    "Benchmark data indicates a split between single-core and multi-core performance. Single-core stress-ng CPU performance is weak, falling into the bottom 25%, while multi-core performance reaches average levels. Memory read bandwidth is average at 407.68 GB/sec for small cached blocks and 48.31 GB/sec for large uncached blocks, but large block write bandwidth is weak at 18.72 GB/sec. Cryptographic and compression workloads show limitations, with single-threaded gzip and bzip3 decompression scores placing in the bottom 10%.",
-    "The shared CPU allocation presents a clear tradeoff, as resource contention can affect sustained single-core execution, as reflected in the low Geekbench single-core score of 796.0. However, the inclusion of 320 GB of local NVMe SSD storage provides a high storage-to-compute ratio for a budget-tier instance. This makes the configuration qualitatively cost-efficient for workloads requiring substantial local storage capacity without demanding continuous, high-performance CPU throughput.",
-    "This server configuration is suitable for multi-threaded applications that can tolerate shared CPU scheduling, such as basic web serving, Redis caching (achieving an average of 6.15 million SET operations per second), and light multi-threaded decompression tasks. It is less suited for heavy database operations, software compilation, or large-scale LLM inference, where benchmarks show weak or poor performance."
+    "Vultr vc2-6c-16gb is a Cloud Compute virtual server featuring 6 shared vCPUs mapped from 3 physical Intel Xeon cores on the x86_64 architecture. Operating at a clock speed of 2.0 GHz, the processor includes a cache configuration of 32 KB L1d, 4 MB L2, and 16 MB L3. The system is provisioned with 16.0 GB of system memory, yielding approximately 2.67 GB of RAM per core. Local storage is provided via a bundled 320 GB NVMe SSD, and the instance includes one complimentary public IPv4 address. No dedicated GPU hardware is present.",
+    "Performance benchmarks indicate moderate multi-core capabilities alongside weaker single-core metrics. The stress-ng multi-core test achieved a score of 6774.42, placing it in the average tier, whereas the single-core score of 1272.09 is classified as weak. Memory read bandwidth is average, reaching 407.68 GB/sec for small cached blocks and 48.31 GB/sec for larger uncached blocks, though large block write bandwidth drops to a weak 18.72 GB/sec. Cryptographic and compression tasks show limitations, with a weak Passmark encryption score of 1705.87 and poor single-threaded gzip compression performance of 18.3 GB/sec. However, the server demonstrates average efficiency in Redis SET operations, processing 6.15 million operations per second.",
+    "From a qualitative cost-efficiency perspective, the vc2-6c-16gb offers a high density of vCPUs and NVMe storage for budget-conscious deployments, though this is balanced against the shared CPU allocation which can introduce performance variability under sustained workloads. It is suited for workloads that benefit from multi-threading but do not require continuous, dedicated CPU performance, such as development environments, moderate web serving, and basic database operations. It is less suitable for heavy cryptographic tasks, intensive single-threaded computations, or large-scale LLM inference."
   ],
-  "description": "Vultr vc2-6c-16gb is a Cloud Compute instance configured with 6 shared vCPUs on an Intel Xeon x86_64 processor running at 2.0 GHz, paired with 16.0 GB of RAM and 320 GB of local NVMe SSD storage. Its hardware profile delivers a balanced resource density, though the shared CPU allocation introduces performance tradeoffs. Multi-core benchmarks, such as stress-ng and Geekbench ray tracing, achieve average tier results, whereas single-core processing and memory write speeds remain in the lower percentiles. The instance is qualitatively cost-efficient for storage-heavy, non-CPU-intensive workloads. It is best suited for multi-threaded applications, basic web serving, and Redis caching, but is less optimal for intensive database operations or software compilation.",
-  "og_description": "Vultr vc2-6c-16gb is a Cloud Compute instance with 6 shared Intel Xeon vCPUs, 16 GB RAM, and 320 GB NVMe storage, offering balanced multi-core performance and high storage capacity for budget-conscious workloads.",
-  "meta_description": "Vultr vc2-6c-16gb features 6 shared Intel Xeon vCPUs, 16 GB RAM, and 320 GB NVMe SSD storage, suitable for budget-friendly multi-threaded workloads.",
-  "tagline": "A budget-friendly shared-core instance combining six vCPUs with generous NVMe storage for multi-threaded workloads and caching.",
+  "description": "The Vultr vc2-6c-16gb is a Cloud Compute virtual server configured with 6 shared vCPUs from an Intel Xeon x86_64 processor running at 2.0 GHz, paired with 16.0 GB of RAM and a bundled 320 GB NVMe SSD. It features a cache hierarchy of 32 KB L1d, 4 MB L2, and 16 MB L3, and includes one public IPv4 address. Benchmark data shows average multi-core CPU performance (stress-ng score of 6774.42) and solid Redis SET throughput at 6.15 million operations per second, though single-core execution, large-block memory writes, and cryptographic operations are relatively weak. Given its shared CPU architecture, this instance offers a cost-effective resource profile for multi-threaded workloads with variable CPU demands. It is best suited for general-purpose applications, development environments, and moderate web serving rather than sustained, compute-intensive tasks.",
+  "og_description": "Vultr vc2-6c-16gb is a Cloud Compute server featuring 6 shared Intel Xeon vCPUs, 16.0 GB of RAM, and 320 GB of NVMe SSD storage, offering balanced multi-core performance for general-purpose workloads.",
+  "meta_description": "Vultr vc2-6c-16gb is a Cloud Compute server with 6 shared Intel Xeon vCPUs, 16.0 GB RAM, and a 320 GB NVMe SSD for general-purpose workloads.",
+  "tagline": "A shared-core virtual server offering six vCPUs, generous NVMe storage, and balanced multi-threaded performance for budget-conscious general workloads.",
   "bullet_points": [
     "6 shared Intel Xeon vCPUs and 16.0 GB of system memory",
-    "320 GB of local NVMe SSD storage included",
-    "Average multi-core CPU and cached memory read performance",
-    "Weak single-core execution and memory write speeds",
-    "Suitable for Redis caching and basic web serving"
+    "Bundled 320 GB local NVMe SSD storage",
+    "Average multi-core performance with 6774.42 stress-ng score",
+    "Processes 6.15 million Redis SET operations per second",
+    "Best suited for general-purpose web serving and development environments"
   ],
   "categories": [
-    "Burstable & Budget",
-    "General Purpose"
+    "General Purpose",
+    "Burstable & Budget"
   ]
 }

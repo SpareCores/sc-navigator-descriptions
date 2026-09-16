@@ -1,24 +1,23 @@
 {
   "page": [
-    "Amazon Web Services r8gd.4xlarge is a memory-optimized server powered by an AWS Graviton Neoverse-V2 processor built on the ARMv9 arm64 architecture. It features 16 dedicated physical cores running at 2.8 GHz, with a 1:1 thread-to-core ratio. The system is equipped with 128.0 GB of system memory, providing 8.0 GB of RAM per core. Local storage is provided via a bundled 950 GB NVMe SSD instance store volume, and network connectivity is supported by an 8 Gbps baseline bandwidth managed by the Nitro hypervisor.",
-    "In benchmark evaluations, the r8gd.4xlarge demonstrates top-tier memory performance, with its Passmark memory score placing in the top 10% of tested systems. Large-block uncached memory bandwidth is strong, reaching 296.76 GB/sec for read operations and 130.55 GB/sec for write operations. Multi-threaded bzip3 decompression and Geekbench multi-core performance also rank in the top 25%. However, the server exhibits performance trade-offs in large language model inference tasks, where text generation speeds for small and large models fall into the bottom 10% of benchmarks.",
-    "The qualitative cost efficiency of the r8gd.4xlarge is driven by its high memory-to-vCPU ratio and the inclusion of high-speed local NVMe storage, which reduces the need for external storage attachments for high-throughput workloads. This hardware profile is highly suited for memory-intensive applications, database operations, and data processing tasks such as multi-threaded decompression. It is less suited for heavy machine learning inference workloads due to its lower benchmarked token generation speeds."
+    "Amazon Web Services r8gd.4xlarge is a memory-optimized server instance powered by the AWS Graviton processor family. It features 16 dedicated physical cores based on the 64-bit ARMv9 Neoverse-V2 architecture, operating at a clock speed of 2.8 GHz. The processor configuration includes 64 KB of L1d cache, 2 MB of L2 cache, and 36 MB of L3 cache. The instance is equipped with 128.0 GB of system memory, providing a high memory-to-core ratio of 8.0 GB per core.",
+    "This instance runs on the AWS Nitro hypervisor and includes 950 GB of local NVMe SSD instance storage. It provides a baseline network bandwidth of 8 Gbps. The inclusion of local NVMe SSDs makes it suitable for applications requiring low-latency scratch space or high-speed local caching. No dedicated GPU hardware is included in this configuration.",
+    "In benchmark testing, the r8gd.4xlarge demonstrates strong memory performance, achieving a top-tier rating in the Passmark memory score and a strong rating for large-block uncached memory read and write bandwidth. Database operations also score in the top 25%. However, CPU-bound tasks like stress-ng and Geekbench single-core and multi-core tests fall into the average category. The instance exhibits poor performance in large language model inference tasks, particularly for text generation, making it less suitable for AI workloads.",
+    "From a cost-efficiency perspective, the ARM64 architecture combined with high memory density and integrated NVMe storage offers a balanced profile for memory-intensive workloads without the premium of x86 hardware. The server is highly suited for database operations, caching layers like Redis, memory-intensive data processing, and applications requiring high memory bandwidth alongside fast local storage."
   ],
-  "description": "Amazon Web Services r8gd.4xlarge is an arm64 memory-optimized server powered by a 16-core AWS Graviton Neoverse-V2 processor running at 2.8 GHz. It features 128.0 GB of RAM, a bundled 950 GB NVMe SSD instance store, and an 8 Gbps baseline network bandwidth managed by the Nitro hypervisor. Benchmarks show top-tier memory performance, with the Passmark memory score in the top 10% and large-block memory bandwidth in the top 25%. Multi-threaded bzip3 decompression and Geekbench multi-core scores are also strong. However, the server shows weak performance in LLM inference tasks, particularly in text generation. Given its high memory density and integrated high-speed local storage, the r8gd.4xlarge is highly efficient for database operations, memory-intensive data processing, and caching layers, while being less optimal for machine learning inference.",
-  "og_description": "Amazon Web Services r8gd.4xlarge is an arm64 memory-optimized server with 16 Graviton cores, 128 GB RAM, and a 950 GB NVMe SSD, delivering top-tier memory performance and strong database capabilities.",
-  "meta_description": "Amazon Web Services r8gd.4xlarge is an arm64 memory-optimized server featuring 16 Graviton cores, 128 GB RAM, and a 950 GB NVMe SSD.",
-  "tagline": "An arm64 memory-optimized platform featuring dedicated Graviton processing, high-speed local NVMe storage, and exceptional memory bandwidth for demanding database workloads.",
+  "description": "Amazon Web Services r8gd.4xlarge is a memory-optimized server powered by 16 dedicated ARMv9 Neoverse-V2 cores running at 2.8 GHz. It features 128.0 GB of system memory, yielding an 8.0 GB per core ratio, and includes 950 GB of local NVMe SSD storage. Operating on the AWS Nitro hypervisor, the instance delivers a baseline network bandwidth of 8 Gbps. Benchmark results highlight top-tier memory performance and strong database operations, though CPU-bound processing and LLM inference speeds remain average to poor. This hardware profile makes the r8gd.4xlarge highly efficient for memory-intensive workloads, caching layers, and database applications requiring fast local storage, while avoiding the higher costs associated with traditional x86 architectures.",
+  "og_description": "Amazon Web Services r8gd.4xlarge is a memory-optimized ARM64 server featuring 16 dedicated Graviton cores, 128 GB of RAM, and 950 GB of local NVMe SSD storage, designed for database and memory-intensive workloads.",
+  "meta_description": "Amazon Web Services r8gd.4xlarge is a memory-optimized ARM64 server with 16 dedicated cores, 128 GB RAM, and 950 GB local NVMe SSD storage.",
+  "tagline": "A memory-optimized ARM64 instance featuring high-density system memory and integrated local NVMe SSD storage for database and caching workloads.",
   "bullet_points": [
-    "Powered by 16 dedicated AWS Graviton Neoverse-V2 ARMv9 cores at 2.8 GHz.",
-    "Equipped with 128.0 GB of RAM, delivering top-tier memory benchmark performance.",
-    "Includes a 950 GB local NVMe SSD instance store volume for high-speed local storage.",
-    "Features 8 Gbps baseline network bandwidth managed by the AWS Nitro hypervisor.",
-    "Optimized for database operations, caching layers, and memory-intensive data processing.",
-    "Exhibits performance trade-offs in large language model text generation tasks."
+    "Powered by 16 dedicated ARMv9 Neoverse-V2 cores at 2.8 GHz",
+    "Equipped with 128.0 GB of RAM, offering 8.0 GB per core",
+    "Includes 950 GB of high-speed local NVMe SSD instance storage",
+    "Top-tier memory bandwidth and strong database benchmark performance",
+    "Best suited for memory-intensive databases, caching, and data processing"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }
