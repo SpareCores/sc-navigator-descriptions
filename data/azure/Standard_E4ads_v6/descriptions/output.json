@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E4ads_v6 is a memory-optimized virtual machine belonging to the Eadv6 server family. It is powered by an AMD EPYC 9V74 processor with an x86_64 architecture, running at a clock speed of 3.7 GHz. The instance features 4 dedicated vCPUs derived from 2 physical cores with multithreading enabled. It is equipped with 32.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per core. Local storage is bundled, providing 236 GB of local disk capacity, and the instance is capable of utilizing Premium Storage.",
-    "Performance benchmarks indicate strong single-core capabilities, with stress-ng single-core CPU and Geekbench single-core scores placing in the top 25%. However, multi-core scaling is more moderate, with stress-ng multi-core and Geekbench multi-core scores falling into the average range. Memory bandwidth presents a notable tradeoff; while write performance for large blocks is average, read-only memory bandwidth for both small and large blocks is weak, scoring in the bottom 25%. Cryptographic and integer operations perform steadily, supported by hardware flags like AES, VAES, and SHA_NI.",
-    "From a workload perspective, the E4ads_v6 is suited for memory-intensive tasks that do not require massive multi-core parallelism, such as caching layers, text processing, and moderate web serving. It achieves 5.91 million operations per second in Redis SET benchmarks and 6.59 GB/sec in static web serving. Conversely, it is less suited for heavy database operations or software compilation, where benchmarks show weaker performance. Qualitatively, the instance offers a resource-dense memory profile with dedicated CPU allocation, making it a cost-efficient choice for memory-bound workloads that can operate within a 4-vCPU envelope."
+    "Microsoft Azure E4ads_v6 is an x86_64 architecture virtual machine belonging to the Eadv6 server family. Powered by an AMD EPYC 9V74 processor running at 3.7 GHz, this instance features 4 dedicated vCPUs mapped from 2 physical cores with multithreading enabled. The hardware configuration includes 32.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per vCPU. Storage is bundled with a 236 GB local disk, and the instance is capable of utilizing Premium Storage. No GPU resources are included. The virtualization layer is managed by Microsoft Hyper-V.",
+    "Benchmark data reveals strong single-core performance, with stress-ng single-core and Geekbench single-core scores placing in the top 25%. Multi-core performance is average, as shown by the stress-ng multi-core and Geekbench multi-core scores. However, memory bandwidth is a notable bottleneck; both small-block cached and large-block uncached read-only memory bandwidth tests scored in the bottom 25%. This limitation is reflected in database operations and Redis SET benchmarks, which also placed in the bottom 25%. For lightweight language model tasks, the server achieves average prompt processing and text generation speeds with a 135M model, but performance drops significantly to the bottom 10% for prompt processing with a larger 7B model.",
+    "From a qualitative cost-efficiency perspective, the E4ads_v6 offers a dense memory allocation relative to its compute resources, making it a viable option for memory-bound workloads that do not require high memory bandwidth or massive parallel processing. The inclusion of a 236 GB local disk provides immediate storage capacity without requiring external attachments. Given the strong single-core performance alongside weak memory bandwidth and multi-threaded decompression, this server is best suited for memory-optimized applications, lightweight web serving, and text processing tasks rather than high-throughput database engines or intensive software compilation."
   ],
-  "description": "Microsoft Azure E4ads_v6 is a memory-optimized virtual machine from the Eadv6 family, built on the x86_64 architecture. It features an AMD EPYC 9V74 processor running at 3.7 GHz with 4 dedicated vCPUs (2 physical cores) and 32.0 GB of RAM, providing a high 8:1 memory-to-vCPU ratio. The instance includes 236 GB of local storage and is Premium Storage capable. Benchmark data shows strong single-core CPU performance, though multi-core scaling and read-only memory bandwidth are weaker. It performs average in cryptographic tasks and Redis SET operations, making it suitable for memory-intensive workloads like caching, text processing, and moderate web serving.",
-  "og_description": "Microsoft Azure E4ads_v6 is a memory-optimized VM featuring 4 dedicated AMD EPYC vCPUs, 32 GB RAM, and 236 GB local storage, delivering strong single-core performance for memory-intensive workloads.",
-  "meta_description": "Microsoft Azure E4ads_v6 is a memory-optimized VM with 4 AMD EPYC vCPUs, 32 GB RAM, and 236 GB local storage, ideal for memory-intensive workloads.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated AMD EPYC processors and local storage for memory-intensive workloads.",
+  "description": "Microsoft Azure E4ads_v6 is a memory-optimized virtual machine from the Eadv6 family, featuring 4 dedicated vCPUs and 32.0 GB of RAM. Powered by an AMD EPYC 9V74 processor running at 3.7 GHz on the x86_64 architecture, it includes a 236 GB local disk and supports Premium Storage. Benchmarks indicate strong single-core CPU performance, placing in the top 25% for stress-ng and Geekbench single-core tests. However, memory read bandwidth is a distinct bottleneck, scoring in the bottom 25% for both cached and uncached operations. This constraint impacts database operations and Redis SET performance, which also rank in the bottom 25%. Consequently, the E4ads_v6 is qualitatively cost-efficient for memory-heavy workloads with moderate throughput requirements, such as text processing, static web serving, and lightweight application hosting, rather than high-performance database systems.",
+  "og_description": "Microsoft Azure E4ads_v6 is an x86_64 virtual machine featuring 4 dedicated AMD EPYC vCPUs, 32.0 GB of RAM, and a 236 GB local disk, delivering strong single-core performance with limited memory bandwidth.",
+  "meta_description": "Microsoft Azure E4ads_v6 is a memory-optimized VM with 4 AMD EPYC vCPUs, 32.0 GB RAM, and a 236 GB local disk, managed via Microsoft Hyper-V.",
+  "tagline": "A memory-optimized virtual machine combining strong single-core AMD EPYC performance with dedicated local storage for memory-intensive workloads.",
   "bullet_points": [
-    "Powered by an AMD EPYC 9V74 processor running at 3.7 GHz",
-    "Equipped with 32.0 GB of RAM and 236 GB of local storage",
-    "Strong single-core CPU and text processing performance",
-    "Dedicated CPU allocation with 4 vCPUs and 2 physical cores",
-    "Best suited for memory-intensive workloads, caching, and web serving"
+    "Powered by a 3.7 GHz AMD EPYC 9V74 processor with 4 dedicated vCPUs.",
+    "Equipped with 32.0 GB of RAM, providing a high 8.0 GB per vCPU ratio.",
+    "Includes 236 GB of local storage with Premium Storage capability.",
+    "Delivers strong single-core CPU and text processing performance.",
+    "Exhibits lower memory read bandwidth and database throughput.",
+    "Suited for memory-optimized applications, static web serving, and text processing."
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

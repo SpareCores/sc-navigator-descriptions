@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.g8ae.8xlarge is a general-purpose virtual machine instance powered by the KVM hypervisor. It features 32 dedicated physical cores on an x86_64 AMD EPYC 9T34 processor running at a clock speed of 3.4 GHz. The system is equipped with 128.0 GB of RAM, providing a balanced allocation of 4.0 GB of memory per core. This instance does not include local storage or GPU accelerators, relying entirely on network-attached storage and a baseline network bandwidth of 20 Gbps.",
-    "Benchmark results show top-tier single-core CPU performance, with stress-ng single-core tests placing in the top 10%. Geekbench single-core and multi-core scores are strong, ranking in the top 25%, which is also reflected in strong image and text processing capabilities. Multi-core performance, memory bandwidth (99.54 GB/sec read and 56.0 GB/sec write for large uncached blocks), and database operations perform at average levels. The processor supports advanced instruction sets including AVX-512 (VNNI and BF16) and cryptographic acceleration via AES, VAES, and SHA_NI.",
-    "The dedicated CPU allocation ensures consistent performance without resource contention, making it a reliable choice for production environments. However, the lack of local storage means all disk I/O must go over the network, which may impact highly storage-intensive workloads. Given its balanced 1:4 CPU-to-RAM ratio and strong single-core capabilities, this instance is well-suited for general-purpose workloads, web serving, application servers, software compilation, and moderate database operations."
+    "Alibaba Cloud ecs.g8ae.8xlarge is an x86_64 architecture server powered by a dedicated AMD EPYC 9T34 processor running at 3.4 GHz. It features 32 physical cores and 32 vCPUs, operating with a 1.0 thread-per-core ratio. The instance is equipped with 128.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. It does not include local storage or integrated GPUs, relying on external network storage and a baseline network bandwidth of 20 Gbps.",
+    "Benchmark data indicates strong single-core performance, with stress-ng single-core and Geekbench single-core scores placing in the top 25%. Multi-core performance is more varied; Geekbench multi-core and image processing scores rank in the top 25%, while stress-ng multi-core, PassMark CPU, and software compilation benchmarks fall into the middle 50%. Cryptographic capabilities are strong, as evidenced by a top 25% PassMark CPU encryption score, supported by hardware-level AES and SHA instruction sets. Memory performance is also robust, with the PassMark memory score ranking in the top 25%, though raw memory read and write bandwidths remain in the middle 50%.",
+    "From a resource-density perspective, the dedicated CPU allocation with one thread per physical core ensures predictable execution times without noisy-neighbor issues from hyperthreading, though it limits the overall vCPU density per dollar compared to shared-core or SMT-enabled alternatives. The complete absence of local storage requires users to provision external block storage, introducing a dependency on network-attached storage performance.",
+    "This server is configured for general-purpose workloads, database operations, text processing, image processing, and static web serving. Its balanced memory-to-vCPU ratio and strong single-core performance make it suitable for applications requiring consistent CPU execution and moderate memory capacity."
   ],
-  "description": "Alibaba Cloud ecs.g8ae.8xlarge is an x86_64 general-purpose instance featuring 32 dedicated AMD EPYC 9T34 physical cores running at 3.4 GHz, paired with 128.0 GB of RAM. Operating on the KVM hypervisor, it delivers a balanced 4.0 GB of memory per core. The instance lacks local storage and GPU accelerators, relying on network-attached storage and a 20 Gbps baseline network bandwidth. Benchmark data highlights top-tier single-core CPU performance and strong Geekbench multi-core and memory scores. Supported instruction sets include AVX-512 and cryptographic extensions like AES and SHA_NI. This instance is optimized for workloads requiring dedicated compute resources and balanced memory, such as application servers, web serving, software compilation, and database operations.",
-  "og_description": "Alibaba Cloud ecs.g8ae.8xlarge is a general-purpose instance featuring 32 dedicated AMD EPYC cores, 128 GB RAM, and 20 Gbps network bandwidth, delivering top-tier single-core CPU performance.",
-  "meta_description": "Alibaba Cloud ecs.g8ae.8xlarge features 32 dedicated AMD EPYC cores and 128 GB RAM, delivering strong single-core performance for general-purpose workloads.",
-  "tagline": "A dedicated AMD EPYC instance delivering top-tier single-core performance and balanced memory for production workloads without local storage.",
+  "description": "Alibaba Cloud ecs.g8ae.8xlarge is an x86_64 general-purpose server equipped with 32 dedicated AMD EPYC 9T34 physical cores and vCPUs running at 3.4 GHz, alongside 128.0 GB of RAM. Lacking local storage and GPUs, it relies on a 20 Gbps baseline network bandwidth. Benchmarks reveal strong single-core and cryptographic capabilities, with Geekbench single-core and PassMark encryption scores in the top 25%, while multi-core performance and memory bandwidth largely fall in the middle 50%. The dedicated 1.0 thread-per-core configuration provides highly predictable compute performance, avoiding hyperthreading overhead, though the absence of local SSDs requires external block storage. This server is suited for database operations, image processing, text processing, and general-purpose web serving.",
+  "og_description": "Alibaba Cloud ecs.g8ae.8xlarge is an x86_64 general-purpose server with 32 dedicated AMD EPYC cores, 128.0 GB RAM, and 20 Gbps network bandwidth, showing strong single-core benchmark performance.",
+  "meta_description": "Alibaba Cloud ecs.g8ae.8xlarge is an x86_64 server with 32 dedicated AMD EPYC cores, 128.0 GB RAM, and 20 Gbps bandwidth, lacking local storage.",
+  "tagline": "A dedicated AMD EPYC server with balanced memory and strong single-core performance for predictable general-purpose workloads.",
   "bullet_points": [
     "32 dedicated AMD EPYC 9T34 physical cores running at 3.4 GHz",
-    "128.0 GB of RAM providing a balanced 1:4 vCPU-to-RAM ratio",
-    "Top-tier single-core CPU performance and strong cryptographic execution",
-    "20 Gbps baseline network bandwidth with no local storage",
-    "Ideal for web serving, application hosting, and software compilation"
+    "128.0 GB of system memory providing a balanced 4.0 GB per core",
+    "Strong single-core and cryptographic benchmark performance",
+    "No local storage or GPU, requiring external block storage",
+    "20 Gbps baseline network bandwidth for reliable connectivity",
+    "Suited for database operations, image processing, and web serving"
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }

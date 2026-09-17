@@ -1,24 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.gn5-c4g1.xlarge is a KVM-hypervised instance built on the x86_64 architecture. It features 4 dedicated physical cores powered by an Intel Xeon E5-2682 v4 processor running at 2.5 GHz, with a 40 MB L3 cache. The instance is equipped with 30.0 GB of system memory, providing 7.5 GB per core. For acceleration, it includes a single NVIDIA Pascal P100 GPU with 16 GB of VRAM. Storage is provided via a local 472 GB SSD, and network connectivity is rated at a baseline bandwidth of 3 Gbps.",
-    "Benchmark data reveals a clear divergence between CPU-bound tasks and GPU-accelerated workloads. The Intel Xeon CPU exhibits weak to poor performance across standard compute benchmarks, with stress-ng single-core and multi-core scores placing in the bottom 10% and 25% respectively. Memory bandwidth is also constrained, with large-block read and write speeds falling into the bottom 10%. Similarly, database operations and static web serving throughput register in the bottom 25%. However, the integrated NVIDIA P100 GPU delivers strong results in specific workloads, achieving top-tier performance in LLM inference prompt processing and text generation for medium 7B models.",
-    "From a cost-efficiency perspective, this instance represents a specialized hardware profile where value is concentrated in the bundled GPU and local SSD storage rather than raw CPU compute or memory speed. Users face a tradeoff: while the CPU and memory subsystem underperform relative to modern general-purpose instances, the presence of dedicated Pascal-generation GPU acceleration makes it a viable option for legacy machine learning workloads.",
-    "The ecs.gn5-c4g1.xlarge is suited for workloads that can offload processing to the GPU, such as small to medium-scale LLM inference, legacy deep learning model execution, and GPU-accelerated data processing. It is less suitable for CPU-heavy tasks, high-throughput database operations, or memory-intensive applications that do not leverage the GPU."
+    "Alibaba Cloud ecs.gn5-c4g1.xlarge is a GPU-accelerated virtual machine instance powered by the KVM hypervisor. It features an x86_64 architecture with 4 dedicated physical cores on an Intel Xeon E5-2682 v4 processor running at 2.5 GHz. The system is equipped with 30.0 GB of system memory, providing 7.5 GB per core, and includes a bundled local storage configuration of 472 GB SSD. Network connectivity is supported by a baseline bandwidth of 3 Gbps.",
+    "The instance integrates a single NVIDIA Pascal P100 GPU with 16 GB of VRAM. While synthetic CPU and memory benchmarks, such as stress-ng and PassMark, place the host processor and memory bandwidth in the lower performance tiers, the GPU acceleration delivers strong results for specific workloads. Notably, LLM inference benchmarks show top-tier performance for prompt processing with small and medium models, achieving 9863.53 tokens per second on a 135M model and 316.25 tokens per second on a 7B model.",
+    "Given the older Intel Xeon and NVIDIA Pascal hardware architecture, this instance represents a specialized option where GPU acceleration is required without the cost overhead of newer generation accelerators. The combination of dedicated CPU cores, local SSD storage, and dedicated VRAM makes it suitable for entry-level deep learning, LLM inference on smaller models, and GPU-assisted data processing tasks, though it is less optimal for CPU-heavy or high-memory-bandwidth database operations."
   ],
-  "description": "Alibaba Cloud ecs.gn5-c4g1.xlarge is a GPU-accelerated instance featuring 4 dedicated Intel Xeon E5-2682 v4 CPU cores running at 2.5 GHz, 30.0 GB of RAM, and a local 472 GB SSD. It includes a single NVIDIA Pascal P100 GPU with 16 GB of VRAM and provides a baseline network bandwidth of 3 Gbps. Benchmark results show a significant performance split: while CPU compute, memory bandwidth, and database operations score in the bottom 10% to 25%, the instance achieves top-tier performance in LLM inference prompt processing and text generation for medium 7B models. This hardware profile presents a clear tradeoff, offering cost-effective access to dedicated GPU acceleration and local SSD storage at the expense of CPU and memory subsystem speed. It is best suited for GPU-bound workloads such as medium-scale LLM inference and legacy machine learning tasks.",
-  "og_description": "Alibaba Cloud ecs.gn5-c4g1.xlarge is a GPU-accelerated instance with 4 Intel Xeon vCPUs, 30 GB RAM, a 472 GB SSD, and an NVIDIA P100 GPU, optimized for medium-scale LLM inference workloads.",
-  "meta_description": "Alibaba Cloud ecs.gn5-c4g1.xlarge features 4 vCPUs, 30 GB RAM, a 472 GB SSD, and an NVIDIA P100 GPU for accelerated machine learning workloads.",
-  "tagline": "An accelerated virtual server pairing dedicated Intel Xeon processors with an NVIDIA Pascal GPU and local SSD storage.",
+  "description": "Alibaba Cloud ecs.gn5-c4g1.xlarge is a GPU-accelerated instance featuring 4 dedicated Intel Xeon E5-2682 v4 vCPUs, 30.0 GB of RAM, and a 472 GB local SSD. It includes a single NVIDIA Pascal P100 GPU with 16 GB of VRAM. While general CPU and memory bandwidth benchmarks rank in the lower tiers, the instance excels in GPU-driven tasks, demonstrating top-tier performance in LLM inference prompt processing for small and medium models. This hardware profile provides a cost-effective entry point for GPU-accelerated workloads, making it well-suited for machine learning inference, model prototyping, and GPU-assisted data processing.",
+  "og_description": "Alibaba Cloud ecs.gn5-c4g1.xlarge is a GPU-accelerated instance featuring 4 Intel Xeon vCPUs, 30 GB RAM, a 472 GB local SSD, and an NVIDIA Pascal P100 GPU with 16 GB VRAM for entry-level AI workloads.",
+  "meta_description": "Alibaba Cloud ecs.gn5-c4g1.xlarge features 4 vCPUs, 30 GB RAM, a 472 GB SSD, and an NVIDIA P100 GPU with 16 GB VRAM for GPU-accelerated workloads.",
+  "tagline": "A GPU-accelerated virtual server featuring dedicated Intel Xeon processors, local SSD storage, and an NVIDIA Pascal P100 graphics card.",
   "bullet_points": [
-    "4 dedicated Intel Xeon E5-2682 v4 physical cores at 2.5 GHz",
-    "1x NVIDIA Pascal P100 GPU with 16 GB VRAM",
-    "30.0 GB system memory and 472 GB local SSD storage",
-    "Top-tier performance in medium 7B LLM inference benchmarks",
-    "Constrained CPU and memory bandwidth performance",
-    "Suited for GPU-accelerated machine learning and inference tasks"
+    "Features 4 dedicated Intel Xeon E5-2682 v4 vCPUs and 30.0 GB of system memory",
+    "Equipped with one NVIDIA Pascal P100 GPU providing 16 GB of dedicated VRAM",
+    "Includes 472 GB of local SSD storage and a 3 Gbps baseline network bandwidth",
+    "Delivers top-tier prompt processing speeds for small and medium LLM inference models",
+    "Suited for entry-level machine learning, model prototyping, and GPU-assisted data tasks"
   ],
   "categories": [
     "GPU Accelerated",
-    "General Purpose"
+    "Storage & Database"
   ]
 }
