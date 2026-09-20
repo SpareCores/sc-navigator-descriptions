@@ -1,23 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c4.2xlarge is an x86_64 compute-optimized virtual machine instance powered by the KVM hypervisor. It features 8 dedicated Intel Xeon 8369HB physical cores operating at 3.2 GHz with 1 thread per core. The instance is configured with 16.0 GB of system memory, providing a 2.0 GB memory-to-core ratio. It does not include local storage or dedicated GPU hardware, and it provides a baseline network bandwidth of 3 Gbps.",
-    "Benchmark data shows average performance across standard compute tasks. The instance achieves a stress-ng single-core CPU score of 1575.79 and a multi-core score of 8310.78. Memory performance is mixed; while cached small-block read bandwidth is average at 464.83 GB/sec, uncached large-block read bandwidth drops to a weak 37.74 GB/sec. Passmark memory and database operations scores also fall into the bottom 25% tier. For specialized workloads, the CPU supports AVX-512 and vector neural network instructions (VNNI), enabling average performance in lightweight LLM inference but poor performance for larger models like the 7B parameter model.",
-    "Given its dedicated CPU allocation and 1:2 RAM-to-vCPU ratio, this instance offers a compute-focused resource density. The lack of bundled local storage requires external block storage attachment, which represents a key architectural tradeoff. The instance is suited for compute-bound workloads with low memory footprints, such as static web serving, software compilation, and lightweight text or image processing, whereas memory-intensive databases or large-scale AI inference are constrained by the memory bandwidth and capacity."
+    "Alibaba Cloud ecs.c4.2xlarge is an x86_64 architecture virtual machine powered by the KVM hypervisor. It features an Intel Xeon 8369HB processor operating at 3.2 GHz, delivering 8 dedicated physical cores and 8 vCPUs with a 1.0 thread-per-core configuration. The system is equipped with 16.0 GB of system memory, providing a 2.0 GB per core ratio. It includes a 33 MB L3 cache, 1.0 MB L2 cache, and 32 KB L1d cache. The CPU supports advanced instruction sets including AVX-512F, AVX-512_VNNI, AVX-512_BF16, and AES cryptography. This instance does not include local storage or GPU accelerators, and it provides a baseline network bandwidth of 3 Gbps.",
+    "Performance benchmarks position this instance in the average tier for most compute tasks. It achieves a stress-ng multi-core CPU score of 8310.78 and a Geekbench multi-core score of 4720.0. However, memory-bound operations reveal notable performance tradeoffs. While cached small-block memory reads reach 464.83 GB/sec, large-block uncached memory reads drop to a weak 37.74 GB/sec, which is reflected in a lower PassMark memory score of 1525.1. Database operations and physics simulations also fall into the bottom 25% of benchmarks. Furthermore, while small LLM inference is handled adequately, medium 7B LLM inference is poor, yielding only 5.16 tokens/sec for text generation.",
+    "From a cost-efficiency perspective, the ecs.c4.2xlarge offers a dedicated compute profile with a 1:2 vCPU-to-RAM ratio, making it a resource-dense option for compute-bound tasks that do not require massive memory footprints or local storage. It is well-suited for workloads such as static web serving, software compilation, and lightweight text or image processing. It is less suitable for memory-intensive databases, large-scale physics simulations, or complex machine learning inference due to the identified memory bandwidth bottlenecks and lack of GPU acceleration."
   ],
-  "description": "Alibaba Cloud ecs.c4.2xlarge is an x86_64 compute-optimized instance featuring 8 dedicated Intel Xeon 8369HB physical cores running at 3.2 GHz and 16.0 GB of RAM. Operating on the KVM hypervisor, this instance provides a 1:2 vCPU-to-RAM ratio, 3 Gbps baseline network bandwidth, and no local storage or GPU accelerators. Benchmark results indicate average performance in general compute tasks, software compilation, and static web serving, alongside average single-core and multi-core stress-ng scores. However, memory performance is a notable tradeoff, with uncached large-block read bandwidth and database operations falling into the bottom 25% tier. The CPU supports AVX-512 and VNNI, which assists with lightweight vector calculations, though larger model inference remains poor. This instance is suited for compute-bound workloads with moderate memory requirements, such as web serving, compilation, and basic image processing.",
-  "og_description": "Alibaba Cloud ecs.c4.2xlarge is an x86_64 compute-optimized instance with 8 dedicated Intel Xeon cores, 16 GB RAM, and 3 Gbps network bandwidth, suited for web serving and compilation.",
-  "meta_description": "Alibaba Cloud ecs.c4.2xlarge is an x86_64 compute-optimized instance with 8 dedicated Intel Xeon cores, 16 GB RAM, and KVM virtualization.",
-  "tagline": "A dedicated eight-core compute-optimized instance with a two-to-one vCPU-to-RAM ratio, designed for CPU-bound workloads and static web serving.",
+  "description": "Alibaba Cloud ecs.c4.2xlarge is an x86_64 compute-optimized instance featuring 8 dedicated Intel Xeon 8369HB physical cores running at 3.2 GHz and 16.0 GB of RAM. Operating on the KVM hypervisor, it includes a 33 MB L3 cache and supports AVX-512 and AES instruction sets. The instance lacks local storage and GPU accelerators, relying on a 3 Gbps baseline network bandwidth. Benchmark data shows average performance in multi-core compute tasks, such as software compilation and static web serving, but reveals limitations in memory-intensive workloads. Uncached large-block memory reads and database operations perform in the bottom 25%, and medium LLM inference is poor. Consequently, this instance is best suited for dedicated, compute-heavy tasks like web serving and light image processing, rather than memory-heavy databases or advanced machine learning workloads.",
+  "og_description": "Alibaba Cloud ecs.c4.2xlarge is an x86_64 compute-optimized instance with 8 dedicated Intel Xeon cores, 16 GB RAM, and 3 Gbps network bandwidth, suitable for web serving and compilation workloads.",
+  "meta_description": "Alibaba Cloud ecs.c4.2xlarge is an 8-vCPU, 16 GB RAM compute-optimized instance powered by Intel Xeon processors on the KVM hypervisor.",
+  "tagline": "A dedicated eight-core compute instance designed for web serving, software compilation, and lightweight processing workloads without local storage.",
   "bullet_points": [
-    "8 dedicated Intel Xeon 8369HB physical cores at 3.2 GHz.",
-    "16.0 GB system memory with a 2.0 GB per core ratio.",
-    "3 Gbps baseline network bandwidth and no local storage.",
-    "AVX-512 and VNNI support for vector and cryptography tasks.",
-    "Average performance in software compilation and static web serving.",
-    "Weak uncached memory bandwidth and database operation benchmarks."
+    "8 dedicated Intel Xeon 8369HB physical cores running at 3.2 GHz",
+    "16.0 GB of system memory with a compute-optimized 1:2 vCPU-to-RAM ratio",
+    "Supports AVX-512 and AES instruction sets for accelerated vector operations",
+    "No local storage or GPU accelerators with 3 Gbps baseline network bandwidth",
+    "Best suited for static web serving, software compilation, and light image processing",
+    "Tradeoffs include weak uncached memory bandwidth and poor medium LLM inference"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
