@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.n4.8xlarge is an x86_64 architecture server instance powered by an Intel Xeon 8163 processor running at 2.5 GHz. It features 32 physical cores and 32 vCPUs under a shared CPU allocation model, utilizing the KVM hypervisor. The instance is configured with 64.0 GB of system memory, providing a resource density of 2.0 GB of RAM per core. No local storage is bundled with this instance, and it does not include any GPU accelerators. Network connectivity is supported by a baseline bandwidth of 5 Gbps.",
-    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. Single-core performance is consistently low, with stress-ng, gzip compression, and Geekbench single-core scores falling into the bottom 10% of tested hardware. However, multi-core performance scales to average levels, as demonstrated by stress-ng multi-core, Geekbench multi-core, and Passmark CPU scores. Memory bandwidth tests also show average performance for both cached small-block and uncached large-block read/write operations, though the Passmark memory score is positioned in the bottom 25%.",
-    "From a workload perspective, the ecs.n4.8xlarge is suited for multi-threaded applications that can leverage its 32 vCPUs to overcome its weak single-core performance. It achieves average throughput in static web serving, Redis SET operations, and small-to-medium LLM inference tasks. Given its shared CPU allocation and lack of local storage, it represents a cost-efficient option for non-critical multi-threaded processing, basic web serving, and parallelized offline tasks where peak single-core performance is not a strict requirement."
+    "Alibaba Cloud ecs.n4.8xlarge is an x86_64 architecture server powered by an Intel Xeon 8163 processor running at 2.5 GHz. It features 32 virtual CPUs mapped to 16 physical cores with hyper-threading enabled, utilizing a shared CPU allocation model. The system is equipped with 64.0 GB of RAM, providing 2.0 GB of memory per core. There is no local storage bundled with this instance, and network connectivity is rated at a baseline bandwidth of 5 Gbps.",
+    "Benchmark data indicates a clear contrast between single-core and multi-core performance. Single-core metrics, including stress-ng and Geekbench single-core tests, fall into the bottom 10% tier, and single-threaded compression tasks like gzip and bzip3 are similarly positioned. However, multi-core performance scales to average levels, as demonstrated by stress-ng multi-core, Geekbench multi-core, and multi-threaded bzip3 decompression tests. Memory bandwidth for both cached and uncached reads and writes remains in the average range, though the Passmark memory score is weak.",
+    "Given its shared CPU allocation and 1:2 vCPU-to-RAM ratio, the ecs.n4.8xlarge offers a resource-dense configuration for multi-threaded workloads that do not require sustained peak single-core performance. It is qualitatively cost-efficient for parallelized tasks such as multi-threaded software compilation, image processing, and basic web serving. The lack of local storage and GPUs makes it suitable for workloads reliant on network-attached storage, such as distributed database operations, static web serving, and moderate-scale LLM inference."
   ],
-  "description": "Alibaba Cloud ecs.n4.8xlarge is an x86_64 server instance equipped with 32 vCPUs and 64.0 GB of RAM, powered by an Intel Xeon 8163 processor at 2.5 GHz. Operating on a shared CPU allocation model under the KVM hypervisor, this instance lacks local storage and GPU acceleration, relying on a 5 Gbps baseline network bandwidth. Benchmark data reveals a significant contrast in performance: single-core metrics for CPU and compression tasks fall into the bottom 10%, whereas multi-core benchmarks, including Geekbench and Passmark CPU tests, reach average tiers. Memory bandwidth remains average, though overall memory performance scores are weak. This hardware profile makes the instance suitable for parallelized workloads, static web serving, and Redis operations that benefit from multi-threaded execution but do not require high single-core speed or dedicated CPU resources.",
-  "og_description": "Alibaba Cloud ecs.n4.8xlarge is a 32-vCPU, 64.0 GB RAM x86_64 server powered by an Intel Xeon 8163 CPU. It features shared CPU allocation, 5 Gbps network bandwidth, and average multi-core benchmark performance.",
-  "meta_description": "Alibaba Cloud ecs.n4.8xlarge is an x86_64 server with 32 vCPUs, 64.0 GB RAM, and a shared Intel Xeon 8163 CPU, offering average multi-core performance.",
-  "tagline": "A shared-CPU x86_64 instance offering thirty-two vCPUs and sixty-four gigabytes of memory for parallelized, multi-threaded workloads.",
+  "description": "Alibaba Cloud ecs.n4.8xlarge is an x86_64 compute-optimized server featuring 32 vCPUs and 64.0 GB of RAM, powered by an Intel Xeon 8163 processor at 2.5 GHz. Operating on a shared CPU allocation model, this KVM-based instance provides 2.0 GB of memory per core and lacks local storage, relying instead on network-attached storage with a 5 Gbps baseline bandwidth. Performance benchmarks reveal weak single-core capabilities, placing in the bottom 10%, but average multi-core performance across stress-ng, Geekbench, and multi-threaded decompression tests. This resource profile makes the instance qualitatively cost-effective for parallelized, multi-threaded workloads that can tolerate shared CPU resources. It is best suited for tasks such as static web serving, software compilation, and database operations.",
+  "og_description": "Alibaba Cloud ecs.n4.8xlarge is an x86_64 server featuring 32 shared vCPUs, 64 GB RAM, and a 5 Gbps baseline bandwidth. It offers average multi-core performance but weak single-core speeds.",
+  "meta_description": "Alibaba Cloud ecs.n4.8xlarge is an x86_64 server with 32 shared vCPUs and 64 GB RAM, delivering average multi-core performance for parallelized workloads.",
+  "tagline": "A shared-CPU instance with thirty-two virtual cores and sixty-four gigabytes of memory for parallelized, network-dependent workloads.",
   "bullet_points": [
-    "Intel Xeon 8163 processor with 32 vCPUs and 64.0 GB of RAM",
-    "Shared CPU allocation model utilizing the KVM hypervisor",
-    "Baseline network bandwidth of 5 Gbps with no bundled local storage",
-    "Average multi-core performance contrasted with weak single-core metrics",
-    "Suitable for static web serving, Redis operations, and multi-threaded tasks"
+    "Intel Xeon 8163 processor with 32 shared vCPUs and 16 physical cores",
+    "64.0 GB of system memory providing 2.0 GB per core",
+    "No local storage, requiring network-attached storage volumes",
+    "5 Gbps baseline network bandwidth",
+    "Average multi-core performance contrasting with weak single-core metrics",
+    "Suitable for static web serving, software compilation, and database operations"
   ],
   "categories": [
     "Compute Optimized",
-    "General Purpose"
+    "Burstable & Budget"
   ]
 }

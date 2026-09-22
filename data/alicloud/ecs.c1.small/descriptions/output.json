@@ -1,20 +1,19 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c1.small is an x86_64 architecture server instance within the ecs.c1 family, running on the KVM hypervisor. It features 8 dedicated physical cores and 8 vCPUs, operating with a 1.0 thread-per-core configuration, which indicates that hyperthreading is disabled. The instance is equipped with 8.0 GB of system memory, yielding a low memory-to-core ratio of 1.0 GB per core.",
-    "This server configuration does not include local storage, meaning all storage requirements must be met through external network-attached block storage. There are no graphics processing units (GPUs) bundled with this instance, and it does not include any complimentary public IPv4 addresses.",
-    "From a hardware capability perspective, the processor flags indicate an absence of advanced vector and matrix extensions such as AVX, AVX-512, and AMX, as well as a lack of hardware-accelerated cryptography features like AES or SHA_NI. This lack of specialized instruction sets, combined with the low memory density of 1 GB per vCPU, represents a significant tradeoff for workloads requiring vector math, machine learning inference, or heavy cryptographic operations.",
-    "Given the dedicated CPU cores and low memory-to-CPU ratio, the ecs.c1.small is structured for compute-bound tasks that do not demand large memory footprints or advanced instruction sets. Suitable workloads include basic computational modeling, batch processing, lightweight web serving, and legacy application hosting where dedicated CPU execution is required but memory usage remains minimal."
+    "Alibaba Cloud ecs.c1.small is an x86_64 architecture virtual server instance within the ecs.c1 server family, running on the KVM hypervisor. It features 8 dedicated virtual CPUs (vCPUs) paired with 8.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. The instance does not include local storage or integrated GPU hardware, requiring external block storage volumes for operating system deployment and data persistence.",
+    "With dedicated CPU allocation, the instance provides predictable compute performance without the resource contention typical of shared-core environments. The low memory-to-CPU ratio positions this instance as a compute-focused resource where CPU execution capacity is prioritized over large memory footprints. From a qualitative cost-efficiency perspective, this configuration is suitable for workloads requiring parallel CPU processing but minimal memory overhead, avoiding the expense of unutilized RAM.",
+    "Due to the 8 vCPUs and 8.0 GB memory configuration, the ecs.c1.small is designed for compute-heavy tasks that do not demand high memory capacity. Suitable workloads include batch processing, distributed compute nodes, lightweight web servers, and CPU-bound microservices."
   ],
-  "description": "Alibaba Cloud ecs.c1.small is an x86_64 compute-focused server instance featuring 8 dedicated physical cores and 8 vCPUs with hyperthreading disabled. It is configured with 8.0 GB of RAM, providing a low memory-to-core ratio of 1.0 GB per core. The instance includes no local storage, requiring external block storage, and has no integrated GPU resources or complimentary public IPv4 addresses. Lacking advanced CPU instruction sets such as AVX, AVX-512, AMX, and AES, this instance presents a clear tradeoff for modern vector-heavy or cryptographic workloads. It is qualitatively positioned as a budget-friendly option for dedicated compute resources where memory requirements are minimal. The ecs.c1.small is best suited for legacy applications, basic batch processing, and lightweight compute tasks that require dedicated CPU allocation without high memory overhead.",
-  "og_description": "Alibaba Cloud ecs.c1.small is an x86_64 server with 8 dedicated cores, 8 GB RAM, and no local storage. It is designed for compute-bound workloads with low memory requirements.",
-  "meta_description": "Alibaba Cloud ecs.c1.small is an x86_64 server featuring 8 dedicated cores, 8 GB RAM, and no local storage, optimized for basic compute tasks.",
-  "tagline": "A dedicated eight-core compute instance with minimal memory overhead and no local storage for basic processing workloads.",
+  "description": "Alibaba Cloud ecs.c1.small is an x86_64 virtual server instance belonging to the ecs.c1 family, utilizing the KVM hypervisor. It is configured with 8 dedicated vCPUs and 8.0 GB of system memory, resulting in a 1.0 GB memory-per-core ratio. This instance does not include local storage or GPU accelerators, requiring network-attached storage for its operations. The dedicated CPU allocation ensures consistent processing performance without resource sharing. Given its low memory-to-CPU ratio, the ecs.c1.small is qualitatively cost-effective for compute-intensive tasks that require parallel processing but have low memory footprints. It is suited for workloads such as batch processing, distributed compute tasks, and lightweight web serving.",
+  "og_description": "Alibaba Cloud ecs.c1.small is a KVM-based x86_64 virtual server featuring 8 dedicated vCPUs, 8.0 GB of system memory, and no local storage, designed specifically for compute-focused workloads.",
+  "meta_description": "Alibaba Cloud ecs.c1.small is a KVM-based x86_64 virtual server with 8 dedicated vCPUs and 8.0 GB of RAM, optimized for compute-focused workloads.",
+  "tagline": "A dedicated x86_64 virtual server featuring eight vCPUs and eight gigabytes of memory for compute-focused parallel processing workloads.",
   "bullet_points": [
-    "8 dedicated x86_64 physical cores with hyperthreading disabled",
-    "8.0 GB of system memory providing 1.0 GB per core",
-    "No local storage included, requiring external block volumes",
-    "Absence of advanced CPU extensions like AVX-512 and AMX",
-    "Best suited for lightweight batch processing and legacy compute tasks"
+    "8 dedicated x86_64 vCPUs for predictable compute performance",
+    "8.0 GB of system memory providing a 1:1 vCPU-to-RAM ratio",
+    "KVM hypervisor virtualization with dedicated CPU allocation",
+    "No local storage or integrated GPU hardware included",
+    "Designed for batch processing and compute-heavy microservices"
   ],
   "categories": [
     "Compute Optimized"

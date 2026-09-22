@@ -1,24 +1,23 @@
 {
   "page": [
-    "Amazon Web Services g4ad.2xlarge is a GPU-accelerated instance featuring an AMD EPYC 7R32 processor with 8 vCPUs and 4 physical cores running at 3.0 GHz. The instance is equipped with 32.0 GB of DDR4 memory operating at 3 GHz, providing 4.0 GB of RAM per core. Graphics acceleration is delivered via a single AMD Radeon Pro Navi V520 GPU with 8 GB of VRAM. Local storage consists of a 300 GB NVMe SSD instance store volume, and baseline network bandwidth is rated at 4 Gbps.",
-    "Benchmark results indicate average performance across several standard workloads, though CPU-bound tasks show some limitations. The instance achieves average scores in Geekbench single-core and multi-core tests, as well as in ray tracing, image processing, and software compilation. However, stress-ng single-core CPU performance falls into the bottom 10%, and multi-core performance is in the bottom 25%. Memory bandwidth for large blocks is also weak, falling in the bottom 25% for both read and write operations, whereas small block cached reads perform in the middle 50%.",
-    "The g4ad.2xlarge offers a balanced resource profile for graphics-intensive applications that benefit from AMD GPU acceleration and local NVMe storage, such as game streaming, remote workstations, and basic image processing. However, the weak multi-threaded decompression and poor raw CPU stress performance make it less suitable for heavy compute-bound or large-scale LLM inference tasks, where 7B model inference speeds drop to weak or poor levels. It represents a specialized hardware profile where cost efficiency is driven by the integration of a budget-friendly AMD GPU and local NVMe storage rather than raw CPU compute power."
+    "Amazon Web Services g4ad.2xlarge is a GPU-accelerated instance designed for graphics-intensive workloads. It features an AMD EPYC 7R32 processor with 8 vCPUs, 4 physical cores, and 2 threads per core running at 3.0 GHz on the x86_64 architecture. The hardware configuration includes 32.0 GB of DDR4 memory, a single AMD Radeon Pro Navi V520 GPU with 8 GB of VRAM, and 300 GB of local NVMe SSD storage. Networking is supported by a baseline bandwidth of 4 Gbps, managed via the AWS Nitro hypervisor.",
+    "Benchmark data indicates a mix of average and weak performance profiles. The instance achieves average ratings in Geekbench single-core and multi-core tests, as well as average performance in ray tracing and image processing. However, raw CPU compute is limited, with stress-ng single-core performance scoring in the bottom 10% and multi-core in the bottom 25%. Large-block memory bandwidth is also weak, registering 36.32 GB/sec for read-only and 22.69 GB/sec for write operations. For language model inference, the instance handles small 135M models at average speeds but struggles with medium 7B models, dropping to a weak 8.39 tokens/sec.",
+    "From a qualitative cost-efficiency perspective, the g4ad.2xlarge offers a balanced entry point for GPU-accelerated tasks by bundling dedicated AMD graphics hardware with local NVMe storage. The primary tradeoff lies in its CPU and memory bandwidth limitations, which restrict its utility for heavy multi-threaded CPU computing or large-scale database operations, as evidenced by its weak Redis SET performance of 7.43 million operations per second. This instance is best suited for workloads such as moderate graphics rendering, remote workstation hosting, image processing, software compilation, and light machine learning inference on smaller models."
   ],
-  "description": "Amazon Web Services g4ad.2xlarge is a GPU-accelerated instance designed for graphics-intensive workloads. It features an AMD EPYC 7R32 processor with 8 vCPUs, 4 physical cores, and 32.0 GB of DDR4 memory. The instance includes a dedicated AMD Radeon Pro Navi V520 GPU with 8 GB of VRAM and a 300 GB NVMe SSD local instance store. Performance benchmarks show average results for Geekbench ray tracing, image processing, and software compilation, though raw CPU stress-ng performance is weak to poor. Large-block memory bandwidth is also limited, falling in the bottom 25%. This instance is suited for remote workstations, game streaming, and moderate graphics processing where local NVMe storage and AMD GPU acceleration are required, but it is less optimal for heavy compute-bound tasks or large language model inference.",
-  "og_description": "Amazon Web Services g4ad.2xlarge is an x86_64 instance featuring an AMD EPYC CPU, 32 GB RAM, a 300 GB NVMe SSD, and an AMD Radeon Pro Navi V520 GPU with 8 GB VRAM for graphics-intensive workloads.",
-  "meta_description": "Amazon Web Services g4ad.2xlarge features 8 vCPUs, 32 GB RAM, a 300 GB NVMe SSD, and an AMD Radeon Pro Navi V520 GPU for graphics-focused workloads.",
-  "tagline": "A GPU-accelerated instance featuring AMD Radeon graphics, dedicated EPYC processor cores, and local NVMe SSD storage for graphics-intensive workloads.",
+  "description": "Amazon Web Services g4ad.2xlarge is a GPU-accelerated instance featuring an AMD EPYC 7R32 processor with 8 vCPUs, 32.0 GB of DDR4 memory, and a dedicated AMD Radeon Pro Navi V520 GPU with 8 GB of VRAM. It includes 300 GB of local NVMe SSD storage and runs on the Nitro hypervisor with a 4 Gbps baseline network bandwidth. Benchmarks show average performance in Geekbench ray tracing, image processing, and software compilation, though raw CPU compute and large-block memory bandwidth are relatively weak. Qualitatively, the instance provides a cost-effective option for graphics-intensive tasks that benefit from dedicated GPU and local NVMe storage without requiring high-end CPU performance. It is well-suited for remote workstations, moderate graphics rendering, image processing, and light machine learning inference.",
+  "og_description": "Amazon Web Services g4ad.2xlarge is a GPU-accelerated instance featuring 8 vCPUs, 32 GB RAM, a 300 GB NVMe SSD, and an AMD Radeon Pro Navi V520 GPU with 8 GB VRAM for graphics-intensive workloads.",
+  "meta_description": "Amazon Web Services g4ad.2xlarge is a GPU-accelerated instance with 8 vCPUs, 32 GB RAM, and an AMD Radeon Pro Navi V520 GPU for graphics workloads.",
+  "tagline": "An AMD-powered instance featuring dedicated Radeon graphics and local NVMe storage for graphics-intensive applications and light GPU workloads.",
   "bullet_points": [
-    "AMD EPYC 7R32 processor with 8 vCPUs and 32 GB DDR4 RAM",
+    "AMD EPYC 7R32 processor with 8 vCPUs and 32 GB DDR4 memory",
     "Dedicated AMD Radeon Pro Navi V520 GPU with 8 GB VRAM",
-    "300 GB local NVMe SSD instance store volume",
-    "Average performance in ray tracing and image processing benchmarks",
-    "Weak raw CPU stress-test and large-block memory bandwidth performance",
-    "Suited for remote workstations, game streaming, and graphics rendering"
+    "300 GB of local NVMe SSD storage for low-latency data access",
+    "Average performance in ray tracing, image processing, and software compilation",
+    "Best suited for remote workstations, moderate graphics rendering, and light model inference"
   ],
   "categories": [
     "GPU Accelerated",
-    "Storage & Database",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

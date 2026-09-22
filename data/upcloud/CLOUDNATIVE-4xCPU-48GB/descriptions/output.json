@@ -1,20 +1,19 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-4xCPU-48GB is a memory-optimized virtual server running on the KVM hypervisor. It features 4 shared vCPUs powered by an AMD EPYC 7542 processor running at 2.0 GHz, with 4 physical cores and 1 thread per core. The server is equipped with 48.0 GB of RAM, providing a high memory-to-core ratio of 12.0 GB per core. It does not include local storage or dedicated GPU hardware, but comes with one complimentary public IPv4 address.",
-    "Benchmark results indicate a mix of strong single-core performance and weaker multi-core and memory throughput. The Geekbench single-core score of 2114.0 and text processing score of 2438.0 are strong, placing in the top 25%. However, the stress-ng single-core performance is in the bottom 10% at 787.09, and multi-core performance is weak at 3134.25. Memory bandwidth for large blocks is also weak, with read speeds at 35.68 GB/sec and write speeds at 25.08 GB/sec. Redis SET operations perform at an average rate of 5.93 million operations per second, while static web serving throughput is weak at 3.61 GB/sec.",
-    "Due to its shared CPU allocation, this server exhibits lower multi-core efficiency and is not suited for sustained high-compute workloads or large-scale LLM inference, as shown by the poor 7B model prompt processing speed of 14.45 tokens/sec. However, the generous 48.0 GB memory capacity offers qualitative cost efficiency for memory-intensive workloads that do not require dedicated CPU resources. It is well-suited for caching layers, memory-heavy text processing, software compilation, and lightweight database operations where high memory capacity is prioritized over raw multi-core compute power."
+    "UpCloud CLOUDNATIVE-4xCPU-48GB is a memory-optimized virtual server built on the KVM hypervisor. It features 4 shared vCPUs mapped to 4 physical cores of an AMD EPYC 7542 processor running at 2.0 GHz. The system is equipped with 48.0 GB of system memory, yielding a high memory-to-core ratio of 12.0 GB per vCPU. No local storage or dedicated GPU hardware is bundled with this instance type, though it includes one complimentary public IPv4 address.",
+    "Performance benchmarks indicate a clear tradeoff between compute power and memory capacity. The shared AMD EPYC processor delivers poor single-core performance, scoring 787.09 in stress-ng tests, and weak multi-core performance at 3134.25. Memory bandwidth is average for small cached blocks at 411.75 GB/sec, but drops to a weak 35.68 GB/sec for large uncached blocks. Passmark CPU tests show average capabilities in extended instructions and encryption, while database operations and Redis SET throughput remain in the lower performance tier.",
+    "Given its shared CPU architecture and high memory density, this server offers qualitative cost efficiency for memory-intensive workloads that do not require sustained, high-performance compute. It is well-suited for caching layers, lightweight database replicas, and memory-heavy background processing. However, it is less optimal for CPU-bound tasks, high-throughput web serving, or large-scale LLM inference."
   ],
-  "description": "UpCloud CLOUDNATIVE-4xCPU-48GB is a memory-optimized virtual server utilizing the KVM hypervisor. It features 4 shared vCPUs on an AMD EPYC 7542 processor clocked at 2.0 GHz, paired with 48.0 GB of system memory, yielding a high 12.0 GB per core ratio. The server lacks local storage and GPU accelerators but includes one public IPv4 address. Performance benchmarks show a contrast between strong Geekbench single-core and text processing scores, and weak multi-core and large-block memory bandwidth results. This shared-CPU configuration is qualitatively cost-efficient for memory-dense workloads that do not demand sustained, dedicated compute power. It is best suited for memory-intensive tasks such as caching, text processing, and software compilation.",
-  "og_description": "UpCloud CLOUDNATIVE-4xCPU-48GB is a memory-optimized KVM server with 4 shared AMD EPYC vCPUs and 48.0 GB of RAM. It offers strong single-core performance for memory-dense, non-compute-intensive workloads.",
-  "meta_description": "UpCloud CLOUDNATIVE-4xCPU-48GB is a memory-optimized KVM server featuring 4 shared AMD EPYC vCPUs, 48.0 GB of RAM, and no local storage.",
-  "tagline": "A memory-dense virtual server featuring shared AMD EPYC processors, designed for memory-intensive workloads requiring minimal sustained compute resources.",
+  "description": "UpCloud CLOUDNATIVE-4xCPU-48GB is a memory-optimized virtual server utilizing the KVM hypervisor. It features 4 shared vCPUs powered by an AMD EPYC 7542 processor running at 2.0 GHz, paired with 48.0 GB of RAM. This configuration provides a high memory-to-core ratio of 12.0 GB per vCPU, though it lacks local storage and GPU accelerators. Benchmark results reveal a performance profile characterized by weak multi-core compute and database operations, alongside average small-block memory bandwidth and single-threaded decompression. Due to the shared CPU allocation, this instance is best suited for memory-intensive, low-compute workloads such as caching, data buffering, and lightweight database hosting where memory capacity is prioritized over raw processing speed.",
+  "og_description": "UpCloud CLOUDNATIVE-4xCPU-48GB is a memory-optimized KVM virtual server featuring 4 shared AMD EPYC vCPUs and 48.0 GB of RAM, designed for memory-intensive workloads with moderate compute needs.",
+  "meta_description": "UpCloud CLOUDNATIVE-4xCPU-48GB is a KVM virtual server with 4 shared AMD EPYC vCPUs and 48.0 GB of RAM, optimized for memory-heavy workloads.",
+  "tagline": "A memory-dense virtual server featuring a high memory-to-core ratio for memory-intensive workloads with moderate compute requirements.",
   "bullet_points": [
-    "4 shared AMD EPYC 7542 vCPUs at 2.0 GHz",
-    "48.0 GB of RAM providing 12.0 GB per core",
-    "Strong Geekbench single-core and text processing performance",
-    "No local storage or GPU accelerators included",
-    "One complimentary public IPv4 address",
-    "Best suited for caching, text processing, and memory-heavy development tasks"
+    "4 shared AMD EPYC 7542 vCPUs running at 2.0 GHz",
+    "48.0 GB of system memory providing 12.0 GB per core",
+    "KVM hypervisor architecture with no bundled local storage",
+    "High memory-to-core ratio suitable for caching and buffering",
+    "Moderate performance profile optimized for budget-conscious deployments"
   ],
   "categories": [
     "Memory Optimized",

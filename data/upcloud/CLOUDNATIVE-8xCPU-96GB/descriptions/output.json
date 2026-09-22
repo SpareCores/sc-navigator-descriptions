@@ -1,22 +1,24 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-8xCPU-96GB is a Cloud Native virtual server running on the KVM hypervisor. It features an x86_64 architecture powered by an AMD EPYC 7542 processor with 8 vCPUs and 8 physical cores, operating at a clock speed of 2.0 GHz. The CPU allocation is shared, and each core is configured with a single thread. The system is equipped with 96.0 GB of memory, yielding a high resource density of 12.0 GB of RAM per core. There is no local storage bundled with this instance, and it does not include any GPU accelerators. It comes with one complimentary public IPv4 address.",
-    "In benchmark evaluations, this server exhibits a clear tradeoff between single-core and multi-core capabilities. The stress-ng single-core CPU performance is positioned in the bottom 10%, indicating limited raw speed per thread, which is further reflected in the weak bottom 25% performance for medium-sized 7B LLM inference. However, multi-core benchmarks, including stress-ng multi-core, Geekbench multi-core, and Passmark CPU tests, consistently fall within the middle 50% average tier. Memory bandwidth tests, such as large-block read and write operations, also register average performance, alongside standard database operations and static web serving throughput.",
-    "From a qualitative cost-efficiency perspective, the server offers high memory density relative to its compute resources, making it a viable option for memory-intensive workloads that do not require dedicated CPU pinning or high single-threaded performance. The shared CPU model reduces overall infrastructure costs while providing a substantial 96.0 GB memory pool. This configuration is suitable for memory-heavy applications, caching layers, database operations, and general-purpose workloads that benefit from large memory capacities but can tolerate shared CPU cycles."
+    "UpCloud CLOUDNATIVE-8xCPU-96GB is a Cloud Native family virtual server running on the KVM hypervisor. It features an x86_64 architecture powered by an AMD EPYC 7542 processor operating at 2.0 GHz. The configuration includes 8 vCPUs mapped to 8 physical cores with 1.0 thread per core under a shared CPU allocation model. It is equipped with 96.0 GB of system memory, yielding a high memory-to-core ratio of 12.0 GB per core. This server does not include local storage or dedicated GPU hardware, but it comes with one complimentary public IPv4 address.",
+    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. The single-core CPU performance measured via stress-ng is in the bottom 10% at 778.19, reflecting the shared CPU allocation and moderate clock speed. However, multi-core performance scales to average levels with a stress-ng score of 6248.71 and a PassMark CPU score of 15683.81. Memory bandwidth is stable, recording 829.52 GB/sec for cached small blocks and 56.72 GB/sec for uncached large blocks. Database operations and Redis SET performance both rank in the average tier, with Redis achieving 11.95 million operations per second.",
+    "The primary tradeoff of this server lies in its shared CPU model, which limits single-threaded execution speeds but offers high memory density. This makes the configuration qualitatively cost-efficient for workloads requiring substantial RAM without demanding constant, dedicated single-core CPU performance. It is well-suited for memory-intensive applications, caching layers, database operations, and moderate multi-threaded processing such as static web serving or lightweight LLM inference using small models."
   ],
-  "description": "UpCloud CLOUDNATIVE-8xCPU-96GB is an x86_64 virtual server built on the KVM hypervisor, featuring 8 shared AMD EPYC 7542 vCPUs and 96.0 GB of RAM. Lacking local storage and GPU accelerators, this instance provides a high memory-to-vCPU ratio of 12.0 GB per core. Performance benchmarks reveal a distinct tradeoff: single-core CPU performance is limited, ranking in the bottom 10%, whereas multi-core execution, memory bandwidth, and database operations consistently achieve average mid-tier results. Qualitatively, this shared-CPU configuration offers a cost-efficient profile for memory-intensive deployments. It is best suited for workloads such as caching layers, database operations, and general-purpose applications that require substantial memory capacity but do not demand sustained, dedicated single-core compute performance.",
-  "og_description": "UpCloud CLOUDNATIVE-8xCPU-96GB is an x86_64 KVM server with 8 shared AMD EPYC vCPUs and 96.0 GB of RAM. It offers high memory density with average multi-core performance for database and caching workloads.",
-  "meta_description": "UpCloud CLOUDNATIVE-8xCPU-96GB is an x86_64 KVM server featuring 8 shared AMD EPYC vCPUs, 96.0 GB of RAM, and average multi-core performance.",
-  "tagline": "A memory-dense virtual server with shared AMD EPYC processors, offering balanced multi-core performance for memory-intensive workloads without local storage.",
+  "description": "UpCloud CLOUDNATIVE-8xCPU-96GB is a memory-dense virtual server built on the KVM hypervisor and powered by an AMD EPYC 7542 processor. Operating on the x86_64 architecture, it provides 8 vCPUs across 8 physical cores with a shared CPU allocation model, paired with 96.0 GB of RAM. The server lacks local storage and GPU accelerators but includes one public IPv4 address. Benchmark data shows a contrast between lower-tier single-core performance and average-tier multi-core and memory bandwidth capabilities, with Redis operations reaching 11.95 million operations per second. This resource profile offers a qualitatively cost-effective solution for memory-heavy workloads that do not require dedicated CPU cores. It is best suited for database operations, caching layers, and multi-threaded web serving.",
+  "og_description": "UpCloud CLOUDNATIVE-8xCPU-96GB is a KVM-based virtual server featuring 8 shared AMD EPYC vCPUs and 96 GB of RAM. It delivers high memory density and average multi-core performance for database and caching workloads.",
+  "meta_description": "UpCloud CLOUDNATIVE-8xCPU-96GB is a KVM virtual server with 8 shared AMD EPYC vCPUs and 96 GB RAM, optimized for memory-intensive workloads.",
+  "tagline": "A memory-dense virtual server featuring shared AMD EPYC processors and ninety-six gigabytes of RAM for memory-intensive workloads.",
   "bullet_points": [
-    "8 shared AMD EPYC 7542 vCPUs on KVM hypervisor",
-    "96.0 GB of system memory providing 12.0 GB per core",
-    "Average multi-core, memory bandwidth, and database performance",
+    "8 shared AMD EPYC 7542 vCPUs at 2.0 GHz",
+    "96.0 GB of system memory (12.0 GB per core)",
+    "KVM hypervisor on x86_64 architecture",
     "No local storage or GPU accelerators included",
-    "Best suited for memory-intensive workloads and caching layers"
+    "Average-tier multi-core and memory bandwidth performance",
+    "Suited for databases, caching layers, and web serving"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Burstable & Budget"
   ]
 }

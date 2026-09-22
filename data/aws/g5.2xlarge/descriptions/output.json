@@ -1,25 +1,24 @@
 {
   "page": [
-    "Amazon Web Services g5.2xlarge is a GPU-accelerated virtual machine instance powered by the AWS Nitro hypervisor. It features an AMD EPYC 7R32 processor with an x86_64 architecture, providing 8 dedicated vCPUs across 4 physical cores with hyperthreading enabled. The CPU operates at a clock speed of 3.3 GHz and includes 16 MB of L3 cache. System memory consists of 32 GB of DDR4 RAM running at 3 GHz, translating to 4 GB of memory per core.",
-    "The instance is equipped with a single NVIDIA Ampere A10G GPU featuring 22 GB of dedicated VRAM, making it tailored for graphics-intensive and machine learning workloads. Local storage is provided via a 450 GB NVMe SSD. Network connectivity is rated at a baseline bandwidth of 5 Gbps. No complimentary public IPv4 addresses are included with this instance type.",
-    "Benchmark data reveals a clear performance trade-off. While the CPU performance is relatively modest, with stress-ng single-core and multi-core benchmarks scoring in the bottom 10% and 25% respectively, the GPU-accelerated capabilities are highly competitive. LLM inference benchmarks for both small (135M) and medium (7B) models place this instance in the top 10% for prompt processing and text generation. General compute tasks, such as Geekbench compilation, image processing, and Redis SET operations, perform in the average tier.",
-    "From a cost-efficiency perspective, the g5.2xlarge offers a balanced entry point for GPU-accelerated workloads, trading off raw CPU performance for high-density graphics and AI inference capabilities. It is highly suited for workloads such as low-to-medium parameter LLM inference, real-time ray tracing, image processing, and graphics-heavy applications. It is less optimal for CPU-bound high-performance computing or memory-intensive database operations that do not leverage the GPU."
+    "Amazon Web Services g5.2xlarge is a GPU-accelerated virtual machine instance powered by the AWS Nitro hypervisor. It features an x86_64 AMD EPYC 7R32 processor operating at 3.3 GHz, providing 8 dedicated vCPUs across 4 physical cores with hyper-threading. The system is equipped with 32.0 GB of DDR4 memory running at 3 GHz, delivering 4.0 GB of RAM per core. For hardware acceleration, the instance includes a single NVIDIA Ampere A10G GPU with 22 GB of dedicated VRAM. Local storage is provided via a 450 GB NVMe SSD, and the baseline network bandwidth is rated at 5 Gbps.",
+    "Benchmark data reveals a distinct contrast between CPU-bound tasks and GPU-accelerated workloads. The CPU exhibits poor single-core performance in stress-ng benchmarks and weak multi-core performance in stress-ng and bzip3 multi-threaded decompression. Memory bandwidth for large blocks is also weak, falling into the bottom 25% for both read and write operations. However, the instance excels in LLM inference benchmarks, achieving top-tier performance for both prompt processing and text generation using small and medium models. General computing benchmarks, such as Geekbench and Passmark CPU tests, consistently register in the average range.",
+    "From a cost-efficiency perspective, the g5.2xlarge offers a specialized hardware profile where the primary value resides in the bundled NVIDIA A10G GPU and local NVMe storage rather than raw CPU compute density. This resource distribution makes it highly suitable for workloads that offload processing to the GPU, such as machine learning inference, graphics rendering, and ray tracing. Conversely, it represents a poor tradeoff for CPU-heavy tasks, database operations like Redis SET, or memory-intensive applications that do not leverage the graphics accelerator."
   ],
-  "description": "Amazon Web Services g5.2xlarge is a GPU-accelerated instance designed for graphics-intensive and machine learning workloads. Powered by the AWS Nitro hypervisor, it features an AMD EPYC 7R32 CPU with 8 dedicated vCPUs, 32 GB of DDR4 RAM, and a 450 GB local NVMe SSD. The hardware profile is highlighted by a single NVIDIA Ampere A10G GPU with 22 GB of VRAM. While synthetic CPU benchmarks show modest performance, with stress-ng scores falling in the lower tiers, the instance excels in GPU-driven tasks. Notably, LLM inference benchmarks for 135M and 7B models rank in the top 10% for both prompt processing and text generation. This instance is highly suited for machine learning inference, ray tracing, and image processing workloads, offering a cost-effective balance of GPU acceleration and local NVMe storage.",
-  "og_description": "Amazon Web Services g5.2xlarge is a GPU-accelerated instance featuring an AMD EPYC CPU, 32 GB RAM, a 450 GB NVMe SSD, and an NVIDIA Ampere A10G GPU with 22 GB VRAM, optimized for machine learning inference.",
-  "meta_description": "Amazon Web Services g5.2xlarge features an AMD EPYC CPU, 32 GB RAM, and an NVIDIA A10G GPU, delivering top-tier performance for LLM inference.",
-  "tagline": "A GPU-accelerated instance combining dedicated AMD EPYC processing, local NVMe storage, and NVIDIA Ampere graphics for efficient machine learning inference.",
+  "description": "Amazon Web Services g5.2xlarge is a GPU-accelerated instance featuring an x86_64 AMD EPYC 7R32 processor with 8 dedicated vCPUs, 32.0 GB of DDR4 RAM, and a 450 GB local NVMe SSD. It includes a single NVIDIA Ampere A10G GPU with 22 GB of VRAM. While CPU-bound benchmarks indicate weak multi-core and poor single-core performance, the instance delivers top-tier results in LLM inference for small and medium models. Memory bandwidth and database operations perform in the average to weak range. Consequently, the g5.2xlarge is optimized for GPU-centric workloads such as machine learning inference, ray tracing, and graphics-intensive applications, whereas it is less efficient for CPU-heavy or memory-bound tasks.",
+  "og_description": "Amazon Web Services g5.2xlarge is a GPU-accelerated instance featuring 8 AMD EPYC vCPUs, 32 GB RAM, a 450 GB NVMe SSD, and an NVIDIA Ampere A10G GPU with 22 GB VRAM, optimized for machine learning inference.",
+  "meta_description": "Amazon Web Services g5.2xlarge features 8 AMD EPYC vCPUs, 32 GB RAM, and an NVIDIA A10G GPU, delivering top-tier performance for LLM inference.",
+  "tagline": "A GPU-accelerated virtual server featuring dedicated AMD EPYC processors, local NVMe storage, and an NVIDIA Ampere GPU for machine learning inference.",
   "bullet_points": [
-    "Equipped with one NVIDIA Ampere A10G GPU with 22 GB VRAM",
-    "Features 8 dedicated AMD EPYC vCPUs and 32 GB DDR4 RAM",
-    "Includes 450 GB of local NVMe SSD storage",
-    "Delivers top-tier LLM inference speeds for 135M and 7B models",
-    "Provides 5 Gbps baseline network bandwidth",
-    "Best suited for machine learning inference, ray tracing, and graphics tasks"
+    "NVIDIA Ampere A10G GPU with 22 GB VRAM for hardware acceleration",
+    "8 dedicated AMD EPYC 7R32 vCPUs and 32 GB DDR4 memory",
+    "450 GB local NVMe SSD storage and 5 Gbps baseline network bandwidth",
+    "Top-tier benchmark performance for small and medium LLM inference",
+    "Weak CPU-only performance and large-block memory bandwidth",
+    "Suited for graphics rendering, ray tracing, and machine learning workloads"
   ],
   "categories": [
     "GPU Accelerated",
-    "Storage & Database",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

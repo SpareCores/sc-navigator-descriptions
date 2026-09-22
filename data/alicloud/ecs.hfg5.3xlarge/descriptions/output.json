@@ -1,22 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.hfg5.3xlarge is an x86_64 architecture server instance powered by a dedicated Intel Xeon 6149 processor running at 3.1 GHz. It features 12 physical cores and 12 vCPUs with a single thread per core configuration. The instance is equipped with 48.0 GB of system memory, providing a resource density of 4.0 GB per core. It does not include local storage or dedicated GPU hardware, relying on network-attached storage and a baseline network bandwidth of 2 Gbps.",
-    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. Single-core performance is categorized as weak, as demonstrated by stress-ng single-core and Geekbench single-core metrics. However, multi-core execution scales to average levels, supported by a Passmark CPU score of 11929.55 and a multi-threaded bzip3 decompression rate of 50.24 GB/sec. Memory bandwidth remains average, with cached read speeds reaching 603.79 GB/sec and uncached large block reads at 56.31 GB/sec, though the Passmark memory score is positioned in the lower tier.",
-    "This hardware profile is suited for workloads that benefit from dedicated physical cores and multi-threaded processing without requiring local SSD storage or GPU acceleration. It handles static web serving at an average rate of 6.37 GB/sec and supports Redis SET operations up to 10.75 million operations per second. While small-model LLM inference runs at average speeds, medium-model inference performance is weak. The instance represents a balanced general-purpose option where dedicated compute resources are required, but single-threaded speed is not the primary bottleneck."
+    "Alibaba Cloud ecs.hfg5.3xlarge is a general-purpose server instance powered by the x86_64 architecture. It features 12 dedicated vCPUs derived from 6 physical Intel Xeon 6149 cores running at a clock speed of 3.1 GHz. The processor includes hyper-threading, a 22 MB L3 cache, and supports instruction sets such as AVX, AVX-512F, AES, and FMA. The instance is configured with 48.0 GB of RAM, providing a balanced 4.0 GB of memory per core. It does not include local storage or dedicated GPU hardware, relying on network-attached storage and baseline network bandwidth of 2 Gbps under a KVM hypervisor.",
+    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. Single-core performance, measured via stress-ng and Geekbench, falls into the bottom 25%, indicating weaker single-threaded execution. However, multi-core benchmarks, including multi-threaded bzip3 decompression and Geekbench multi-core tests, reach average tiers. Memory bandwidth tests show average read and write speeds for uncached large blocks, though the Passmark memory score is positioned in the lower tier. Database operations, Redis SET operations, and static web serving throughput all perform within the average range.",
+    "Given its balanced 1:4 vCPU-to-RAM ratio and average multi-core performance, this instance is suited for general-purpose workloads such as static web serving, moderate database operations, and basic multi-threaded processing. It is less suitable for single-thread intensive applications or heavy LLM inference, as demonstrated by weak performance on 7B parameter models. The dedicated CPU allocation offers stable performance, making it a reliable option for workloads requiring consistent compute resources without the overhead of GPU or local storage requirements."
   ],
-  "description": "Alibaba Cloud ecs.hfg5.3xlarge is an x86_64 general-purpose server instance featuring 12 dedicated physical cores and 12 vCPUs powered by an Intel Xeon 6149 processor clocked at 3.1 GHz. It is configured with 48.0 GB of RAM, yielding 4.0 GB of memory per core, and lacks local storage and GPU accelerators. Baseline network bandwidth is rated at 2 Gbps. Benchmark data shows weak single-core performance but average multi-core capabilities, with a Passmark CPU score of 11929.55 and multi-threaded bzip3 decompression of 50.24 GB/sec. Memory bandwidth is average, though Passmark memory performance is weak. This instance is suited for multi-threaded workloads, static web serving, and database operations like Redis, where dedicated CPU allocation is preferred over high single-threaded speeds or local storage.",
-  "og_description": "Alibaba Cloud ecs.hfg5.3xlarge is an x86_64 server with 12 dedicated Intel Xeon cores, 48 GB RAM, and 2 Gbps network bandwidth, delivering average multi-core performance for general-purpose workloads.",
-  "meta_description": "Alibaba Cloud ecs.hfg5.3xlarge is a general-purpose server with 12 dedicated Intel Xeon cores, 48 GB RAM, and average multi-core performance.",
-  "tagline": "A dedicated twelve-core x86_64 server with balanced memory density, optimized for multi-threaded workloads and network-based services without local storage.",
+  "description": "Alibaba Cloud ecs.hfg5.3xlarge is a general-purpose instance featuring 12 dedicated vCPUs and 48.0 GB of RAM, powered by an Intel Xeon 6149 processor running at 3.1 GHz. Built on the x86_64 architecture under a KVM hypervisor, this server offers a balanced 1:4 vCPU-to-RAM ratio but lacks local storage and GPU accelerators. Benchmark data reveals a contrast between weak single-core performance and average multi-core execution. Memory bandwidth and database operations, including Redis SET transactions, perform at average levels, while single-threaded tasks and larger LLM inference workloads show limitations. With a baseline network bandwidth of 2 Gbps, this instance is best suited for general-purpose applications, static web serving, and moderate multi-threaded database workloads where dedicated CPU allocation is required but local storage is not a necessity.",
+  "og_description": "Alibaba Cloud ecs.hfg5.3xlarge is a general-purpose server featuring 12 dedicated Intel Xeon vCPUs, 48 GB of RAM, and a 2 Gbps network baseline, delivering average multi-core and database performance.",
+  "meta_description": "Alibaba Cloud ecs.hfg5.3xlarge is a general-purpose instance with 12 dedicated Intel Xeon vCPUs, 48 GB RAM, and average multi-core performance.",
+  "tagline": "A dedicated x86_64 compute instance offering a balanced memory-to-vCPU ratio and reliable multi-core performance for general-purpose workloads.",
   "bullet_points": [
-    "12 dedicated physical Intel Xeon cores running at 3.1 GHz",
-    "48.0 GB of system memory with 4.0 GB per core density",
-    "No local storage or GPU accelerators included",
-    "Average multi-core performance and memory bandwidth",
-    "Suitable for static web serving, Redis, and multi-threaded applications"
+    "12 dedicated vCPUs on Intel Xeon 6149 processors at 3.1 GHz",
+    "48.0 GB of system memory with a balanced 1:4 vCPU-to-RAM ratio",
+    "Average multi-core CPU and database operation performance",
+    "No local storage or GPU hardware included",
+    "Best suited for static web serving and moderate multi-threaded workloads"
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }
