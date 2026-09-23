@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform e2-micro is a burstable, budget-friendly virtual machine instance belonging to the e2 family. It features an x86_64 architecture powered by an Intel Xeon processor running at 2.2 GHz. The instance is configured with 2 vCPUs allocated from a shared physical core, specifically utilizing an eighth of a physical core with hyper-threading enabled at 2 threads per core. It is equipped with 1.0 GB of system memory, providing 0.5 GB of RAM per core, and does not include any local storage or bundled GPUs.",
-    "Performance benchmarks place this instance in the bottom 10% across all evaluated categories. The stress-ng single-core and multi-core CPU tests yielded scores of 132.9 and 171.0, respectively. Memory bandwidth is highly constrained, with cached small-block read speeds reaching 9.73 GB/sec, while uncached large-block read and write speeds drop to 0.1 GB/sec and 1.33 GB/sec. Passmark CPU and memory scores also fall into the lowest tier, reflecting the shared-core resource limits, while static web serving throughput is measured at 0.17 GB/sec.",
-    "From a cost-efficiency perspective, the e2-micro is designed as a low-cost entry point for workloads with minimal resource demands. The shared-core CPU allocation and low memory density make it unsuitable for database operations, data science, or high-throughput web serving. Instead, this instance is best suited for lightweight background tasks, basic development environments, simple cron jobs, or low-traffic utility services that can tolerate variable CPU performance and low memory availability."
+    "Google Cloud Platform e2-micro is a shared-core virtual machine belonging to the e2 server family. It features an x86_64 architecture powered by an Intel Xeon processor running at 2.2 GHz. The instance is configured with 2 vCPUs allocated from a 1/8 shared physical core, supporting hyperthreading with 2 threads per core. It includes 1.0 GB of system memory, providing 0.5 GB of RAM per core, and does not include any local storage or dedicated GPU hardware.",
+    "Benchmark results place the e2-micro in the bottom 10% across all tested performance categories. The stress-ng single-core and multi-core CPU tests yielded scores of 132.9 and 171.0, respectively. Memory performance is highly constrained, with a read-only small block cached bandwidth of 9.73 GB/sec, which drops to 0.1 GB/sec for large uncached blocks. Database and transactional operations are similarly limited, as demonstrated by a PassMark database score of 57.19 and a Redis SET throughput of 0.2 million operations per second. Static web serving throughput is measured at 0.17 GB/sec.",
+    "Due to its shared-core resource allocation and low memory capacity, this instance offers a highly cost-efficient profile for minimal, non-resource-intensive tasks. It is designed for workloads that do not require sustained CPU performance or high memory bandwidth. Suitable applications include lightweight utility scripts, basic microservices, development environments, or low-traffic static web serving."
   ],
-  "description": "Google Cloud Platform e2-micro is a budget-friendly, shared-core virtual machine instance designed for low-demand workloads. Built on the x86_64 architecture, it features an Intel Xeon processor running at 2.2 GHz with 2 vCPUs sharing an eighth of a physical core. The instance is equipped with 1.0 GB of system memory, lacks local storage, and does not include a GPU. Performance benchmarks, including stress-ng and Passmark tests, consistently rank in the bottom 10%, with a static web serving throughput of 0.17 GB/sec and highly constrained memory bandwidth. Given its shared-core CPU allocation and low memory density, the e2-micro offers a highly cost-efficient profile for lightweight tasks. It is best suited for basic development environments, simple cron jobs, and low-traffic utility services that do not require sustained high performance.",
-  "og_description": "Google Cloud Platform e2-micro is a budget-friendly shared-core instance featuring 2 vCPUs, 1 GB of RAM, and an Intel Xeon processor, designed for lightweight utility tasks and basic development environments.",
-  "meta_description": "Google Cloud Platform e2-micro is a shared-core instance with 2 vCPUs and 1 GB RAM, ideal for low-demand utility workloads and basic development.",
-  "tagline": "A budget-friendly, shared-core virtual machine designed for lightweight utility tasks, basic development environments, and low-demand background services.",
+  "description": "Google Cloud Platform e2-micro is a shared-core virtual machine designed for low-intensity workloads. Built on the x86_64 architecture with an Intel Xeon processor running at 2.2 GHz, it provides 2 vCPUs sharing an eighth of a physical core, paired with 1.0 GB of RAM. The instance does not include local storage or GPU accelerators. Performance benchmarks place the e2-micro in the bottom 10% of tested servers, with a stress-ng multi-core score of 171.0 and a cached memory read bandwidth of 9.73 GB/sec. Transactional throughput is limited, yielding 0.2 million operations per second in Redis SET tests. Given these hardware constraints, the e2-micro is a highly cost-efficient option for lightweight utility tasks, development sandboxes, and low-traffic static web hosting where sustained computational performance is not required.",
+  "og_description": "Google Cloud Platform e2-micro is a shared-core virtual machine featuring 2 vCPUs on an Intel Xeon processor and 1.0 GB of RAM, designed for low-resource utility workloads and basic development tasks.",
+  "meta_description": "Google Cloud Platform e2-micro is a shared-core virtual machine with 2 vCPUs and 1.0 GB of RAM, optimized for lightweight utility workloads.",
+  "tagline": "A shared-core virtual machine designed for low-intensity utility workloads, development sandboxes, and highly constrained budget applications.",
   "bullet_points": [
     "Shared-core architecture with 2 vCPUs utilizing 1/8 of a physical Intel Xeon core",
-    "1.0 GB of system memory providing a highly economical, low-density resource profile",
-    "No local storage or GPU resources included, minimizing baseline infrastructure overhead",
-    "Benchmark results place CPU and memory performance in the bottom 10% tier",
-    "Best suited for lightweight background tasks, cron jobs, and low-traffic utility services"
+    "1.0 GB of system memory providing 0.5 GB of RAM per core",
+    "No bundled local storage or GPU accelerators",
+    "Highly constrained benchmark performance suitable for non-intensive tasks",
+    "Best suited for lightweight utility scripts, microservices, and static web serving"
   ],
   "categories": [
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "General Purpose"
   ]
 }

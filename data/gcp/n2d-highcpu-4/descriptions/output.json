@@ -1,22 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform n2d-highcpu-4 is a compute-focused virtual machine instance based on the x86_64 architecture. It features 4 dedicated vCPUs mapped to 2 physical cores of an AMD EPYC 7B13 processor, supporting 2 threads per core. The instance is configured with 4.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. No local storage or GPUs are bundled with this instance type, and it includes zero complimentary public IPv4 addresses.",
-    "Performance benchmarks reveal a distinct contrast between single-core and multi-core execution. The AMD EPYC 7B13 processor delivers strong single-core CPU performance in stress-ng testing, placing in the top 25%. However, multi-core CPU performance falls into the bottom 25%. Memory performance is mixed; while cached small-block read bandwidth is weak, uncached large-block read and write bandwidths maintain average tier performance at 43.63 GB/sec and 30.48 GB/sec respectively. Passmark memory testing ranks in the bottom 10%, indicating potential bottlenecks for memory-intensive operations.",
-    "Given the low memory-to-vCPU ratio and weak multi-threaded decompression and compilation benchmarks, this instance is not suited for memory-heavy databases or massive parallel build pipelines. Instead, its strong single-core performance makes it highly cost-efficient for lightweight, compute-bound tasks that do not require large memory footprints. Appropriate workloads include single-threaded processing, basic web serving, and lightweight text processing."
+    "Google Cloud Platform n2d-highcpu-4 is a compute-optimized virtual machine instance powered by the AMD EPYC 7B13 processor. Utilizing the x86_64 architecture, this server provides 4 dedicated vCPUs mapped to 2 physical cores with 2 threads per core. It features 4.0 GB of system memory, resulting in a low memory-to-vCPU ratio of 1.0 GB per core. The processor includes 32 KB of L1d cache, 0.5 MB of L2 cache, and 32 MB of L3 cache, with support for AVX, AES, VAES, and SHA_NI instruction sets. No local storage or GPUs are bundled with this instance.",
+    "Performance benchmarks reveal strong single-core capabilities but limited multi-core and memory scaling. The single-core stress-ng CPU performance ranks in the top 25%, and single-threaded gzip compression and bzip3 decompression scores fall in the middle 50%. However, multi-core performance is constrained, with stress-ng multi-core, Geekbench multi-core, and Passmark CPU scores landing in the bottom 25%. Memory bandwidth for large uncached blocks is average, but small-block cached read bandwidth and overall Passmark memory scores are weak to poor, reflecting the low memory density.",
+    "This hardware profile offers a cost-effective option for workloads requiring dedicated CPU resources without high memory demands. Due to the 1 GB of RAM per vCPU constraint, it is poorly suited for memory-intensive databases or large-scale multi-threaded compilation. It is best utilized for lightweight single-threaded tasks, basic web serving, text processing, or small-scale LLM text generation where memory footprint is minimal."
   ],
-  "description": "Google Cloud Platform n2d-highcpu-4 is an x86_64 compute-focused virtual machine featuring 4 dedicated vCPUs powered by an AMD EPYC 7B13 processor with 2 physical cores. It is equipped with 4.0 GB of system memory, providing 1.0 GB of RAM per core, and does not include local storage or integrated GPUs. Benchmarks indicate strong single-core CPU performance, ranking in the top 25% in stress-ng tests, though multi-core performance and memory bandwidth benchmarks generally fall into the lower quartiles. This resource profile makes the instance highly cost-efficient for workloads that prioritize single-threaded CPU execution over memory capacity. It is best suited for lightweight compute tasks, basic web serving, and single-threaded data processing applications that do not require large memory allocations.",
-  "og_description": "Google Cloud Platform n2d-highcpu-4 is an x86_64 instance with 4 vCPUs and 4 GB RAM. Powered by an AMD EPYC 7B13 CPU, it offers strong single-core performance for compute-bound, low-memory workloads.",
-  "meta_description": "Google Cloud Platform n2d-highcpu-4 features 4 vCPUs and 4 GB RAM, delivering strong single-core AMD EPYC performance for low-memory compute tasks.",
-  "tagline": "A compute-focused virtual machine delivering strong single-core performance with a lean memory profile for efficient, lightweight processing workloads.",
+  "description": "Google Cloud Platform n2d-highcpu-4 is an x86_64 compute-optimized instance featuring 4 dedicated vCPUs and 4.0 GB of RAM, powered by an AMD EPYC 7B13 processor. With 2 physical cores and 2 threads per core, it provides a low memory-to-core ratio of 1.0 GB. The server lacks bundled local storage and GPUs. Benchmark data indicates strong single-core CPU performance, ranking in the top 25% for stress-ng single-core tests, while multi-core and memory-bound benchmarks, such as Passmark memory and multi-threaded bzip3 decompression, perform in the lower percentiles. This resource profile is highly cost-efficient for CPU-bound tasks with small memory footprints. It is best suited for lightweight single-threaded applications, basic text processing, and small-scale web serving, but is not recommended for memory-intensive database operations or heavy multi-threaded compilation.",
+  "og_description": "Google Cloud Platform n2d-highcpu-4 is a compute-optimized instance with 4 vCPUs and 4 GB RAM, powered by an AMD EPYC 7B13 CPU. It offers strong single-core performance for lightweight, CPU-bound workloads.",
+  "meta_description": "Google Cloud Platform n2d-highcpu-4 is a compute-optimized instance featuring 4 vCPUs, 4 GB RAM, and an AMD EPYC 7B13 CPU for lightweight workloads.",
+  "tagline": "A compute-focused virtual server with dedicated AMD EPYC cores, optimized for lightweight single-threaded tasks and low-memory workloads.",
   "bullet_points": [
-    "Powered by an AMD EPYC 7B13 processor with 4 dedicated vCPUs and 2 physical cores",
-    "Configured with 4.0 GB of system memory (1.0 GB per vCPU) and no local storage",
-    "Strong single-core CPU performance, ranking in the top 25% of stress-ng benchmarks",
-    "No bundled GPUs or complimentary public IPv4 addresses",
-    "Best suited for lightweight compute tasks, single-threaded processing, and basic web serving"
+    "Powered by an AMD EPYC 7B13 processor with 4 dedicated vCPUs and 2 physical cores.",
+    "Configured with 4.0 GB of RAM, providing a 1.0 GB per core memory allocation.",
+    "Strong single-core CPU performance, ranking in the top 25% of benchmarks.",
+    "No bundled local storage or GPU accelerators.",
+    "Best suited for lightweight single-threaded tasks, text processing, and basic web serving."
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

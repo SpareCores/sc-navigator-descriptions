@@ -1,21 +1,23 @@
 {
   "page": [
-    "Amazon Web Services c6g.medium is a compute-optimized virtual server instance powered by the AWS Nitro hypervisor. It features a single dedicated physical core and vCPU based on the 64-bit ARMv8 architecture, specifically utilizing the AWS Graviton2 Neoverse-N1 processor running at 2.5 GHz. The processor includes 64 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. It is equipped with 2.0 GB of system memory, resulting in a 2.0 GB per core ratio. This instance does not include local storage or dedicated GPU hardware, and has a baseline network bandwidth of 0 Gbps.",
-    "Benchmark data indicates that the single-core performance of the c6g.medium is moderate, with a stress-ng single-core CPU score of 1493.38, placing it in the middle 50% tier. However, due to its single-core configuration, its multi-core performance is limited, matching the single-core score of 1493.38 and falling into the bottom 10% tier. Memory bandwidth tests show 59.29 GB/sec for cached small blocks and 19.65 GB/sec for uncached large blocks. Other metrics, such as a Geekbench single-core score of 934.0, a Passmark CPU score of 660.71, and a static web serving throughput of 1.11 GB/sec, also fall within the bottom 10% of tested hardware.",
-    "From a qualitative cost-efficiency perspective, the c6g.medium offers a low-cost entry point into the ARM64 ecosystem with dedicated CPU allocation, avoiding the CPU credit limitations of burstable instances. The primary tradeoff is the strict resource constraint of a single vCPU and 2.0 GB of RAM, which limits its utility for multi-threaded tasks, large-scale databases, or memory-intensive applications. This instance is suited for lightweight single-threaded workloads, basic static web serving, simple utility scripting, and software compilation testing within ARM64 environments."
+    "Amazon Web Services c6g.medium is a compute-optimized instance powered by a custom AWS Graviton processor. It features a single dedicated physical core and vCPU based on the ARMv8 64-bit architecture (Neoverse-N1) running at 2.5 GHz. The instance is equipped with 2.0 GB of system memory, yielding a 1:2 vCPU-to-RAM ratio. It includes 64 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. This instance does not include local storage or dedicated GPU hardware, and it operates on the AWS Nitro hypervisor.",
+    "In benchmark evaluations, the c6g.medium demonstrates moderate single-core performance but sits in the lower tier for multi-core and memory-intensive workloads due to its single-core limitation. The stress-ng single-core CPU performance registers at 1493.38, which is in the average range. However, multi-core metrics, memory bandwidth (such as 19.65 GB/sec read and 9.83 GB/sec write for large blocks), and Geekbench scores fall into the lower decile. Cryptographic operations benefit from hardware-accelerated AES support, though other advanced vector and matrix extensions are absent.",
+    "From a cost-efficiency perspective, this instance offers an entry-level entry point into the ARM64 ecosystem on AWS, providing dedicated CPU resources without the variable performance of burstable instances. It is best suited for lightweight, single-threaded workloads, basic web serving, simple task queue processing, or development and testing environments optimized for ARM architectures."
   ],
-  "description": "Amazon Web Services c6g.medium is a compute-optimized virtual server powered by a single dedicated ARM64 AWS Graviton2 Neoverse-N1 core running at 2.5 GHz. It features 2.0 GB of system memory, 32 MB of L3 cache, and operates on the Nitro hypervisor. The instance lacks local storage, integrated GPUs, and baseline network bandwidth. Performance benchmarks show average single-core CPU execution with a stress-ng score of 1493.38, though multi-core and memory bandwidth metrics fall into the lower percentiles due to the single-core constraint. Qualitatively, the c6g.medium provides a cost-efficient, dedicated-resource entry point for ARM64 development. It is best suited for lightweight single-threaded applications, basic static web serving, and simple utility scripts.",
-  "og_description": "Amazon Web Services c6g.medium is a compute-optimized ARM64 virtual server featuring a single dedicated 2.5 GHz Graviton2 core, 2.0 GB of RAM, and Nitro hypervisor virtualization.",
-  "meta_description": "Amazon Web Services c6g.medium is a compute-optimized ARM64 instance with 1 dedicated vCPU, 2.0 GB of RAM, and Nitro hypervisor virtualization.",
-  "tagline": "A dedicated single-core ARM64 virtual server designed for lightweight compute tasks and cost-efficient entry-level development workloads.",
+  "description": "Amazon Web Services c6g.medium is a compute-optimized instance featuring a single dedicated ARM64 vCPU powered by an AWS Graviton Neoverse-N1 processor running at 2.5 GHz. It is configured with 2.0 GB of system memory, 32 MB of L3 cache, and operates on the AWS Nitro hypervisor. The instance does not include local storage or GPU accelerators. In benchmark testing, the c6g.medium delivers average single-core CPU performance, though its single-core design limits multi-core and memory bandwidth capabilities to the lower tier. It supports hardware-accelerated AES cryptography but lacks advanced vector extensions. This instance provides a cost-efficient, dedicated resource profile for lightweight ARM64 workloads, making it suitable for basic web serving, simple background tasks, and software development or testing environments.",
+  "og_description": "Amazon Web Services c6g.medium is a compute-optimized ARM64 instance featuring one dedicated Graviton vCPU, 2.0 GB of RAM, and Nitro hypervisor virtualization for lightweight workloads.",
+  "meta_description": "Amazon Web Services c6g.medium is a compute-optimized ARM64 instance featuring one dedicated Graviton vCPU, 2.0 GB of RAM, and Nitro hypervisor virtualization.",
+  "tagline": "An entry-level, single-core ARM64 instance offering dedicated compute resources and hardware-accelerated cryptography for lightweight workloads.",
   "bullet_points": [
-    "Single dedicated AWS Graviton2 Neoverse-N1 ARM64 core running at 2.5 GHz",
+    "Single dedicated AWS Graviton Neoverse-N1 ARM64 core running at 2.5 GHz",
     "2.0 GB of system memory with a 1:2 vCPU-to-RAM ratio",
     "Average single-core CPU performance in stress-ng benchmarks",
-    "No local storage, integrated GPU, or baseline network bandwidth",
-    "Suited for lightweight single-threaded tasks and ARM64 development"
+    "Hardware-accelerated AES cryptography support",
+    "No local storage or GPU accelerators included",
+    "Best suited for lightweight web serving and ARM64 development tasks"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

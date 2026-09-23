@@ -1,22 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform n2d-highcpu-8 is a compute-optimized virtual machine instance powered by an AMD EPYC 7B13 processor using the x86_64 architecture. It features 8 dedicated vCPUs mapped to 4 physical cores with multithreading enabled. The instance is configured with 8.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. It does not include bundled local storage or integrated GPU hardware.",
-    "Performance benchmarks indicate strong single-core CPU capabilities, placing in the top 25% for stress-ng single-core tests. Multi-core CPU performance, Passmark CPU scores, and Geekbench multi-core metrics fall within the average tier. Memory performance is a notable tradeoff; while cached small-block read bandwidth is average, the Passmark memory score and multi-threaded bzip3 decompression are categorized in the bottom 25%, reflecting the low memory-to-core ratio.",
-    "Due to its high compute-to-memory ratio, this instance is qualitatively cost-efficient for CPU-bound workloads that do not require large memory footprints. It is suitable for tasks such as web serving, software compilation, and lightweight batch processing. However, it is poorly suited for memory-intensive databases or large-scale data analytics due to the 8.0 GB memory constraint."
+    "Google Cloud Platform n2d-highcpu-8 is a compute-optimized virtual machine instance based on the x86_64 architecture. It features 8 vCPUs mapped to 4 physical cores of an AMD EPYC 7B13 processor, utilizing simultaneous multithreading with 2 threads per core. The instance is configured with 8.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. It does not include local storage or bundled GPUs, and does not provide complimentary public IPv4 addresses.",
+    "Performance benchmarks indicate strong single-core CPU performance, with stress-ng single-core tests placing in the top 25% of evaluated hardware. Multi-core CPU performance and Geekbench scores fall within the average range, including software compilation, ray tracing, and text processing workloads. Memory bandwidth is moderate, registering 508.47 GB/sec for cached small-block reads and approximately 61.75 GB/sec for uncached large-block reads. However, the instance exhibits weaker performance in multi-threaded bzip3 decompression and PassMark memory tests, which rank in the bottom 25%, highlighting a potential bottleneck for memory-intensive parallel operations.",
+    "From a cost-efficiency perspective, the n2d-highcpu-8 offers a dedicated hardware profile tailored for compute-heavy tasks that do not require large memory footprints. The 1:1 vCPU-to-RAM ratio makes it a practical choice for workloads such as static web serving, where it achieves a throughput of 7.56 GB/sec, and Redis key-value operations, processing 7.98 million SET operations per second. It is also suitable for lightweight machine learning tasks, demonstrating average performance in small-model LLM inference, as well as general-purpose compute tasks like software compilation and image processing."
   ],
-  "description": "Google Cloud Platform n2d-highcpu-8 is an x86_64 compute-optimized virtual machine featuring 8 dedicated vCPUs and 8.0 GB of RAM, powered by an AMD EPYC 7B13 processor. With a resource density of 1.0 GB of RAM per vCPU, this instance is designed for CPU-bound workloads. Benchmark data shows strong single-core CPU performance, placing in the top 25% in stress-ng tests, while multi-core performance and web serving throughput remain in the average tier. However, memory performance is a key tradeoff, with Passmark memory scores and multi-threaded decompression benchmarks falling into the bottom 25%. Lacking bundled local storage and GPU accelerators, this instance is qualitatively cost-efficient for dedicated processing tasks. It is best suited for web serving, software compilation, and lightweight batch processing where compute requirements outweigh memory needs.",
-  "og_description": "Google Cloud Platform n2d-highcpu-8 is an x86_64 virtual server with 8 vCPUs and 8 GB RAM, powered by an AMD EPYC 7B13 CPU. It offers strong single-core performance but features limited memory capacity.",
-  "meta_description": "Google Cloud Platform n2d-highcpu-8 is an x86_64 instance with 8 vCPUs and 8 GB RAM, featuring an AMD EPYC 7B13 CPU for compute-focused workloads.",
-  "tagline": "An x86_64 compute-focused instance featuring dedicated AMD EPYC processing power with a lean memory footprint for CPU-bound workloads.",
+  "description": "Google Cloud Platform n2d-highcpu-8 is an x86_64 compute-optimized instance featuring 8 vCPUs and 8.0 GB of RAM, powered by an AMD EPYC 7B13 processor with 4 physical cores. This instance provides a dedicated CPU allocation with a 1:1 vCPU-to-RAM ratio, omitting local storage and GPU accelerators. Benchmark results show strong single-core CPU performance, while multi-core processing, memory bandwidth, and software compilation fall in the average tier. Conversely, multi-threaded decompression and memory-intensive benchmarks show weaker relative performance. The qualitative cost profile favors compute-dense workloads over memory-heavy operations. It is best suited for static web serving, Redis database operations, software compilation, and lightweight CPU-based inference tasks.",
+  "og_description": "Google Cloud Platform n2d-highcpu-8 is an x86_64 compute-optimized instance with 8 vCPUs, 8 GB RAM, and an AMD EPYC 7B13 CPU, delivering strong single-core performance for compute-focused workloads.",
+  "meta_description": "Google Cloud Platform n2d-highcpu-8 is an x86_64 compute-optimized instance featuring 8 vCPUs, 8 GB RAM, and an AMD EPYC 7B13 processor.",
+  "tagline": "An x86_64 compute-optimized virtual machine featuring dedicated AMD EPYC processors and a balanced 1:1 vCPU-to-RAM ratio for compute-heavy workloads.",
   "bullet_points": [
-    "Powered by an AMD EPYC 7B13 processor with 8 dedicated vCPUs and 4 physical cores.",
-    "Configured with 8.0 GB of RAM, providing a 1:1 GB vCPU-to-memory ratio.",
-    "Delivers strong single-core CPU performance, ranking in the top 25% of benchmarks.",
-    "Tradeoffs include weak memory benchmark scores and no bundled local storage.",
-    "Best suited for web serving, software compilation, and lightweight batch processing."
+    "Powered by an AMD EPYC 7B13 processor with 8 vCPUs and 4 physical cores.",
+    "Configured with 8.0 GB of RAM, establishing a 1:1 vCPU-to-RAM ratio.",
+    "Strong single-core CPU performance ranking in the top 25% of benchmarks.",
+    "No local storage or GPU accelerators included in the hardware profile.",
+    "Optimized for static web serving, Redis operations, and software compilation."
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
