@@ -1,24 +1,23 @@
 {
   "page": [
-    "Amazon Web Services i2.2xlarge is a storage-optimized second-generation instance utilizing the Xen hypervisor. It is powered by an Intel Xeon E5-2670 v2 processor with an x86_64 architecture, operating at a clock speed of 2.5 GHz. The instance features 8 dedicated vCPUs derived from 4 physical cores with hyper-threading enabled. Memory capacity is 61.0 GB, providing 7.62 GB per core. Local storage consists of a bundled 1600 GB NVMe SSD, and the baseline network bandwidth is 1 Gbps.",
-    "Benchmark results indicate average performance in several areas alongside notable limitations. The stress-ng single-core and multi-core CPU tests score in the average range at 1619.98 and 7138.99 respectively. However, Geekbench scores are poor, with a single-core score of 529.0 and a multi-core score of 2015.0. Memory bandwidth is mixed; read-only large block bandwidth is average at 40.1 GB/sec, whereas write large block bandwidth is weak at 19.3 GB/sec. Cryptographic performance is stable, with a PassMark CPU encryption score of 3694.94, which is in the average tier.",
-    "The primary tradeoff of the i2.2xlarge is its older processor architecture, which lacks AVX-512 and AMX instructions, resulting in poor performance for modern workloads like LLM text generation and Redis SET operations. However, the inclusion of 1600 GB of local NVMe SSD storage and 61.0 GB of RAM makes it suitable for legacy database operations, static web serving averaging 7.59 GB/sec throughput, and workloads requiring high local storage capacity without demanding state-of-the-art CPU compute."
+    "Amazon Web Services i2.2xlarge is a storage-optimized virtual server running on the Xen hypervisor. It features 8 vCPUs mapped to 4 physical cores of an Intel Xeon E5-2670 v2 processor operating at 2.5 GHz. The x86_64 architecture includes 25 MB of L3 cache and supports AVX and AES instructions, though it lacks newer instruction sets like AVX-512 and AMX. The instance is equipped with 61.0 GB of system memory, providing 7.62 GB per core, and includes 1600 GB of local NVMe SSD storage. Network connectivity is limited to a baseline bandwidth of 1 Gbps.",
+    "Benchmarks indicate that the i2.2xlarge delivers mixed performance. Its CPU capabilities are moderate, with stress-ng single-core and multi-core performance falling into the average category, and a PassMark CPU score of 8839.65. However, Geekbench scores are low, with single-core and multi-core results categorized as poor. Memory performance is also variable; while large-block read bandwidth is average at 40.1 GB/sec, write bandwidth and small-block cached read bandwidth are weak. The local NVMe SSD storage supports database operations, yielding an average PassMark database score of 3356.02, though Redis SET operations are weak at 3.05 million operations per second.",
+    "From a cost-efficiency perspective, the i2.2xlarge offers a high density of local NVMe SSD storage and memory relative to its compute resources, making it suitable for workloads that require local data persistence without demanding high-performance modern CPU instructions. Given the baseline network speed of 1 Gbps and weak single-threaded decompression and compilation benchmarks, this instance is best utilized for legacy database hosting, basic web serving, and localized data processing tasks rather than high-throughput networking or intensive compute workloads."
   ],
-  "description": "Amazon Web Services i2.2xlarge is a storage-optimized second-generation instance running on the Xen hypervisor. It features an Intel Xeon E5-2670 v2 x86_64 processor with 8 dedicated vCPUs, 4 physical cores, and a 2.5 GHz clock speed. The hardware configuration includes 61.0 GB of memory, a bundled 1600 GB NVMe SSD, and a baseline network speed of 1 Gbps. Performance benchmarks show average CPU capabilities, with a PassMark CPU score of 8839.65, but weak memory write bandwidth of 19.3 GB/sec and poor Geekbench scores. The lack of modern instruction sets like AVX-512 limits its utility for advanced computational tasks, such as LLM inference. However, with its substantial local NVMe storage and average database operation performance, the instance is suited for legacy database hosting, static web serving, and storage-heavy workloads that do not require high-performance compute.",
-  "og_description": "Amazon Web Services i2.2xlarge is a storage-optimized instance featuring 8 vCPUs, 61.0 GB of RAM, and a 1600 GB NVMe SSD, designed for legacy database hosting and static web serving.",
-  "meta_description": "Amazon Web Services i2.2xlarge is a storage-optimized instance with 8 vCPUs, 61.0 GB RAM, and a 1600 GB NVMe SSD for database and storage workloads.",
-  "tagline": "A storage-optimized instance featuring dedicated Intel Xeon processors, substantial memory, and a bundled local NVMe SSD for data-intensive workloads.",
+  "description": "Amazon Web Services i2.2xlarge is a storage-optimized instance featuring 8 vCPUs and 4 physical cores powered by an Intel Xeon E5-2670 v2 processor running at 2.5 GHz. Built on the x86_64 architecture and Xen hypervisor, it is equipped with 61.0 GB of RAM and 1600 GB of local NVMe SSD storage. Performance benchmarks show average results for stress-ng CPU tests and PassMark database operations, though Geekbench scores and memory write bandwidth are weak. The instance provides a baseline network bandwidth of 1 Gbps. Given its high storage-to-vCPU ratio and moderate compute capabilities, the i2.2xlarge is suited for database hosting, localized data processing, and static web serving workloads that benefit from local NVMe storage but do not require high-speed network throughput or advanced CPU instruction sets.",
+  "og_description": "Amazon Web Services i2.2xlarge is a storage-optimized instance with 8 vCPUs, 61 GB RAM, and 1600 GB of local NVMe SSD storage, suited for database hosting and localized data processing.",
+  "meta_description": "Amazon Web Services i2.2xlarge is a storage-optimized instance featuring 8 vCPUs, 61 GB RAM, and 1600 GB of local NVMe SSD storage.",
+  "tagline": "A storage-optimized virtual server featuring dedicated Intel Xeon cores, balanced memory capacity, and high-capacity local NVMe SSD storage.",
   "bullet_points": [
-    "Intel Xeon E5-2670 v2 processor with 8 dedicated vCPUs and 61.0 GB RAM.",
-    "Bundled 1600 GB local NVMe SSD storage for high-capacity local data needs.",
-    "Average performance in static web serving and PassMark database operations.",
-    "Xen hypervisor-based architecture with a baseline network bandwidth of 1 Gbps.",
-    "Weaknesses in memory write bandwidth and modern CPU instruction sets.",
-    "Suited for legacy databases, static web serving, and storage-centric tasks."
+    "Intel Xeon E5-2670 v2 processor with 8 vCPUs and 4 physical cores",
+    "61.0 GB of system memory and 1600 GB of local NVMe SSD storage",
+    "Xen hypervisor virtualization on x86_64 architecture",
+    "1 Gbps baseline network bandwidth",
+    "Average performance in PassMark database and stress-ng CPU benchmarks",
+    "Appropriate for legacy database hosting and localized data processing"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

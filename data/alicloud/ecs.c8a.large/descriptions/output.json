@@ -1,23 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c8a.large is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 2 dedicated vCPUs mapped from a single physical AMD EPYC 9T24 core with 2 threads per core, running at a base clock speed of 2.7 GHz. The instance is equipped with 4.0 GB of system memory, yielding a 2.0 GB per core ratio. It does not include local storage or dedicated GPU hardware, relying entirely on network-attached storage and a baseline network bandwidth of 2 Gbps.",
-    "The underlying x86_64 architecture supports advanced instruction sets, including AVX-512 (Foundation, VNNI, and BF16) for vector and deep learning workloads, alongside hardware-accelerated cryptography via AES, VAES, and SHA_NI. The CPU cache hierarchy consists of a 32 KB L1 data cache, a 1.0 MB L2 cache, and a 32 MB L3 cache, which assists in handling instruction-heavy tasks.",
-    "Benchmark results demonstrate a clear divergence between single-core and multi-core capabilities. The instance achieves strong single-core CPU performance in stress-ng tests, placing in the top 25%. However, due to its low core count, multi-core performance in stress-ng and Geekbench falls into the bottom 25%. Memory performance is also constrained, with read-only small block bandwidth and database operations scoring in the bottom 10%. Static web serving throughput and Redis SET operations also show poor relative performance.",
-    "Given its dedicated CPU allocation and strong single-thread performance, the ecs.c8a.large offers qualitative cost efficiency for workloads that require consistent CPU performance without massive parallelization. It is best suited for lightweight compute tasks, single-threaded applications, basic text processing, and utility services. It is less suitable for memory-intensive databases, high-throughput web serving, or highly parallelized compilation tasks."
+    "Alibaba Cloud ecs.c8a.large is a compute-optimized virtual server instance powered by the KVM hypervisor. It features a dedicated AMD EPYC 9T24 processor built on the x86_64 architecture, operating at a clock speed of 2.7 GHz. The instance is configured with 2 vCPUs derived from 1 physical core with 2 threads per core. It includes 4.0 GB of system memory, providing 2.0 GB of RAM per core. No local storage or GPU hardware is bundled with this instance type, and it offers a baseline network bandwidth of 2 Gbps.",
+    "Benchmark results indicate strong single-core CPU performance, with stress-ng single-core tests placing in the top 25% at 3059.78. However, multi-core scaling is limited due to the 2-vCPU configuration, resulting in a weak multi-core CPU performance rating in stress-ng (3062.79) and Geekbench (2433.0). Memory performance is mixed; while large-block write bandwidth is average at 27.53 GB/sec, cached small-block read bandwidth is poor at 150.55 GB/sec. Single-threaded compression and decompression tasks perform at average levels, but database operations and static web serving throughput are relatively weak, with web serving throughput measured at 2.79 GB/sec.",
+    "Given its dedicated CPU allocation and 1:2 vCPU-to-RAM ratio, the ecs.c8a.large offers a cost-efficient entry point for compute-focused workloads that require dedicated CPU execution but have low memory footprints. The lack of local storage and modest network bandwidth make it less suitable for high-throughput database operations or heavy web serving. It is best suited for lightweight, single-threaded compute tasks, basic text processing, software compilation, and general-purpose utility workloads that do not demand extensive memory or high multi-threaded concurrency."
   ],
-  "description": "Alibaba Cloud ecs.c8a.large is a compute-optimized instance featuring 2 dedicated vCPUs from a single physical AMD EPYC 9T24 core running at 2.7 GHz, paired with 4.0 GB of RAM. Operating on the KVM hypervisor with an x86_64 architecture, it supports AVX-512 and cryptographic instruction sets. The instance lacks local storage and GPU accelerators, relying on a 2 Gbps baseline network. Performance benchmarks indicate strong single-core CPU execution, though multi-core scaling and memory bandwidth are limited, placing in the lower percentiles. This resource profile makes the instance qualitatively cost-effective for dedicated single-threaded processing, lightweight utility services, and basic text processing workloads, while rendering it less optimal for memory-bound databases or high-throughput web serving.",
-  "og_description": "Alibaba Cloud ecs.c8a.large is a compute-optimized instance featuring 2 dedicated AMD EPYC vCPUs, 4.0 GB RAM, and a 2 Gbps network baseline, delivering strong single-core performance for lightweight workloads.",
-  "meta_description": "Alibaba Cloud ecs.c8a.large is a compute-optimized instance with 2 dedicated AMD EPYC vCPUs and 4.0 GB RAM, suited for single-threaded tasks.",
-  "tagline": "A dedicated dual-vCPU compute instance delivering strong single-core performance and advanced vector instructions for lightweight, thread-specific workloads.",
+  "description": "Alibaba Cloud ecs.c8a.large is an x86_64 compute-optimized instance featuring a dedicated AMD EPYC 9T24 processor running at 2.7 GHz. It provides 2 vCPUs from a single physical core, 4.0 GB of RAM, and a baseline network bandwidth of 2 Gbps, with no local storage or GPU accelerators. Benchmarks reveal strong single-core CPU performance, though multi-core capabilities and memory read bandwidth are relatively weak. The instance delivers average performance in single-threaded compression and text processing, but shows lower efficiency in database operations and static web serving. Given its dedicated CPU allocation and 1:2 RAM-to-vCPU ratio, this instance is a cost-effective choice for lightweight compute tasks, software compilation, and basic text processing workloads that require dedicated processing power without high memory or storage demands.",
+  "og_description": "Alibaba Cloud ecs.c8a.large is a dedicated AMD EPYC 9T24 instance with 2 vCPUs and 4.0 GB of RAM. It offers strong single-core CPU performance for lightweight, compute-focused workloads.",
+  "meta_description": "Alibaba Cloud ecs.c8a.large is a dedicated AMD EPYC 9T24 instance with 2 vCPUs and 4.0 GB of RAM, optimized for lightweight compute workloads.",
+  "tagline": "A dedicated dual-vCPU compute instance featuring strong single-core performance and a compact memory footprint for lightweight processing workloads.",
   "bullet_points": [
-    "Powered by a 2.7 GHz AMD EPYC 9T24 processor with 2 dedicated vCPUs",
-    "Equipped with 4.0 GB of system memory and a 2 Gbps baseline network",
-    "Supports AVX-512 vector instructions and hardware-accelerated cryptography",
-    "Delivers strong single-core CPU performance in benchmark testing",
-    "Lacks local storage and dedicated GPU hardware",
-    "Best suited for lightweight single-threaded applications and utility services"
+    "Dedicated AMD EPYC 9T24 processor with 2 vCPUs and 4.0 GB of RAM",
+    "Strong single-core CPU performance in stress-ng benchmarks",
+    "Baseline network bandwidth of 2 Gbps with KVM virtualization",
+    "No bundled local storage or GPU accelerators",
+    "Best suited for lightweight single-threaded compute and text processing"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
