@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E8-4ds_v6 is an Edsv6-family virtual machine configured with 4 dedicated vCPUs and 64.0 GB of RAM, yielding a high memory-to-vCPU ratio of 16 GB per vCPU. Powered by an Intel Xeon 8573C processor running at 4.2 GHz on the x86_64 architecture, this instance features 2 physical cores with hyper-threading enabled. The processor includes a 260 MB L3 cache and supports advanced instruction sets such as AVX-512, AVX-VNNI, and Intel Advanced Matrix Extensions. The virtual machine is managed via the Microsoft Hyper-V hypervisor and includes 472 GB of local storage.",
-    "Benchmark data indicates strong single-core performance, with a Geekbench single-core score of 2170.0 and a single-threaded gzip compression rate of 31.35 GB/sec. However, multi-core and memory bandwidth metrics show some limitations. The stress-ng multi-core CPU performance is registered at 3990.17, and the multi-threaded bzip3 decompression speed is 26.15 GB/sec, both falling into the lower performance tiers. Large-block memory read bandwidth is measured at 37.14 GB/sec, while write bandwidth is 25.89 GB/sec. For database operations, the instance achieves a PassMark database score of 2890.86 and handles 5.71 million Redis SET operations per second.",
-    "Given the high memory density relative to compute resources, the E8-4ds_v6 is structured for memory-intensive workloads that do not require massive parallel CPU scaling. The inclusion of 472 GB of local storage and Premium Storage capability makes it suitable for relational databases, caching layers, and memory-bound data processing. While single-threaded execution is highly efficient, the lower multi-core scaling and moderate memory bandwidth suggest it is less optimal for heavy multi-threaded compilation or large-scale LLM inference, where text generation for a 7B model reaches only 4.5 tokens per second."
+    "Microsoft Azure E8-4ds_v6 is an x86_64 architecture server belonging to the Edsv6 family, virtualized via Microsoft Hyper-V. It features 4 dedicated vCPUs derived from 2 physical cores of an Intel Xeon 8573C processor running at 4.2 GHz. The memory configuration is 64.0 GB, yielding a high resource density of 16.0 GB per core. Local storage is bundled with a 472 GB local disk, and the instance is Premium Storage capable. No GPUs are present on this configuration.",
+    "Benchmark data reveals strong single-core and single-threaded capabilities. The server achieves a strong Geekbench single-core score of 2170.0 and a single-threaded gzip compression speed of 31.35 GB/sec. However, multi-core and memory bandwidth metrics show limitations. The stress-ng multi-core CPU performance is weak at 3990.17, and memory bandwidth read-only tests for both small and large blocks fall into the bottom 25% tier. Large block memory write bandwidth is average at 25.89 GB/sec.",
+    "Given the high memory-to-vCPU ratio, this server is positioned for memory-intensive workloads that do not require massive parallel CPU scaling. It is suitable for database operations, caching layers, and text processing, supported by an average Passmark database score of 2890.86 and a strong Geekbench text processing score of 2554.0. Conversely, it is less suited for multi-threaded compilation, ray tracing, or medium-to-large LLM inference, where it registers weak to poor performance. The qualitative cost efficiency is characterized by high memory density relative to the compute footprint, making it a specialized option for memory-bound tasks."
   ],
-  "description": "Microsoft Azure E8-4ds_v6 is a memory-optimized virtual machine featuring 4 dedicated vCPUs and 64.0 GB of RAM, running on an Intel Xeon 8573C processor at 4.2 GHz. Built on the x86_64 architecture with Microsoft Hyper-V, it provides 472 GB of local storage and supports Premium Storage. The hardware includes advanced instruction sets like AVX-512 and Intel AMX. Benchmarks show strong single-core capabilities, including a Geekbench single-core score of 2170.0 and high single-threaded gzip compression. However, multi-core performance and memory read bandwidth are relatively weak, as evidenced by a multi-core stress-ng score of 3990.17. With a high 16 GB RAM-to-vCPU ratio, this instance is qualitatively cost-effective for memory-bound applications, caching systems, and database workloads that require high memory capacity relative to compute power, rather than highly parallelized CPU processing.",
-  "og_description": "Microsoft Azure E8-4ds_v6 is a memory-optimized VM featuring 4 Intel Xeon vCPUs, 64 GB RAM, and 472 GB local storage. It offers strong single-core performance for database and memory-intensive workloads.",
-  "meta_description": "Microsoft Azure E8-4ds_v6 is a memory-optimized VM with 4 Intel Xeon vCPUs, 64 GB RAM, and 472 GB local storage, ideal for database workloads.",
-  "tagline": "A memory-optimized virtual machine featuring high RAM-to-vCPU density and local storage for memory-bound database and caching workloads.",
+  "description": "Microsoft Azure E8-4ds_v6 is an x86_64 memory-optimized server in the Edsv6 family, running on Microsoft Hyper-V. It features 4 dedicated vCPUs from 2 physical cores of an Intel Xeon 8573C processor clocked at 4.2 GHz, paired with 64.0 GB of RAM and a 472 GB local disk. The hardware profile delivers strong single-core performance, highlighted by a Geekbench single-core score of 2170.0 and a single-threaded gzip compression speed of 31.35 GB/sec. However, multi-core scaling and memory read bandwidth are weak, as evidenced by a stress-ng multi-core score of 3990.17. With 16.0 GB of RAM per core, this server offers high memory density relative to its compute footprint. It is best suited for memory-intensive workloads, database operations, and text processing, rather than highly parallelized compute tasks or large-scale language model inference.",
+  "og_description": "Microsoft Azure E8-4ds_v6 is an x86_64 memory-optimized server featuring 4 vCPUs, 64 GB RAM, and 472 GB local storage, delivering strong single-core performance for database and memory-bound workloads.",
+  "meta_description": "Microsoft Azure E8-4ds_v6 is an x86_64 memory-optimized server with 4 Intel Xeon vCPUs, 64 GB RAM, and a 472 GB local disk for database workloads.",
+  "tagline": "An Intel-powered, memory-optimized virtual server featuring high RAM-to-vCPU density and local storage for memory-bound database workloads.",
   "bullet_points": [
-    "Intel Xeon 8573C processor with 4 dedicated vCPUs running at 4.2 GHz",
-    "64.0 GB of RAM providing a high 16:1 RAM-to-vCPU ratio",
-    "472 GB of local storage with Premium Storage capability",
-    "Strong single-core performance with a Geekbench score of 2170.0",
-    "Supports Intel AMX and AVX-512 instruction sets",
-    "Best suited for relational databases, caching layers, and memory-bound applications"
+    "Intel Xeon 8573C processor with 4 dedicated vCPUs and 2 physical cores.",
+    "64.0 GB of RAM providing a high 16.0 GB per core memory density.",
+    "472 GB of bundled local storage with Premium Storage capability.",
+    "Strong single-core performance with a Geekbench single-core score of 2170.0.",
+    "Weak multi-core scaling and memory read bandwidth under heavy parallel loads.",
+    "Suited for database operations, caching, and memory-intensive applications."
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

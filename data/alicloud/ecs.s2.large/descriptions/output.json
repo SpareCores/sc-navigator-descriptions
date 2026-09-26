@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.s2.large is an x86_64 architecture virtual machine instance belonging to the ecs.s2 server family. It is configured with 2 dedicated vCPUs and 4.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per vCPU. The instance runs on the KVM hypervisor and does not include any local NVMe or SSD storage, meaning all storage must be attached externally.",
-    "This instance does not feature GPU acceleration, and its CPU lacks advanced instruction sets such as Advanced Vector Extensions (AVX, AVX-512), Advanced Matrix Extensions (AMX), or specialized cryptographic and virtualization flags. From a cost-efficiency perspective, the dedicated CPU allocation provides predictable compute resources without the performance variability associated with shared-core or burstable instances, making it a stable entry-level option for workloads requiring consistent but modest CPU performance.",
-    "Given its 1:2 vCPU-to-RAM ratio and lack of local storage, the ecs.s2.large is suited for lightweight applications, basic web serving, small microservices, and development or testing environments that do not require heavy memory footprints, high-performance computing, or local storage IOPS."
+    "Alibaba Cloud ecs.s2.large is an entry-level virtual machine instance belonging to the ecs.s2 server family. Built on the x86_64 CPU architecture and managed via the KVM hypervisor, this instance features 2 dedicated vCPUs and 4.0 GB of system memory, yielding a memory-to-core ratio of 2.0 GB per vCPU. The instance does not include any local storage, meaning all storage requirements must be met through external block storage volumes. Additionally, there are no integrated GPUs, and the instance does not come with complimentary public IPv4 addresses.",
+    "The hardware profile of the ecs.s2.large presents several technical constraints. CPU instruction set extensions such as Advanced Vector Extensions (AVX, AVX-512), Advanced Matrix Extensions (AMX), and cryptographic acceleration (AES, SHA_NI) are unavailable on this instance type. This lack of specialized instruction sets limits its efficiency for vector math, machine learning inference, and hardware-accelerated encryption tasks. The 4.0 GB memory capacity also restricts the instance to lightweight processes, as memory-intensive applications may encounter resource exhaustion.",
+    "From a cost-efficiency perspective, the ecs.s2.large is positioned as a budget-friendly option for workloads with low resource demands. Because it utilizes dedicated CPU allocation rather than a burstable model, it provides predictable, albeit modest, compute performance. This makes the instance suitable for basic utility workloads, lightweight web serving, development and testing environments, small-scale databases, and simple background tasks that do not require high memory density, local storage, or hardware acceleration."
   ],
-  "description": "Alibaba Cloud ecs.s2.large is an entry-level virtual machine instance within the ecs.s2 family, built on the x86_64 architecture and managed via the KVM hypervisor. It features 2 dedicated vCPUs and 4.0 GB of system memory, providing a 2.0 GB memory-per-core ratio. The instance does not include local storage or GPU hardware, and its processor lacks advanced instruction sets like AVX-512, AMX, or specialized cryptographic acceleration. With dedicated CPU allocation, it avoids the resource contention typical of burstable instances, offering predictable performance for modest workloads. This hardware profile makes the ecs.s2.large suitable for lightweight web serving, microservices, and development or testing environments that require consistent compute resources without high memory or storage demands.",
-  "og_description": "Alibaba Cloud ecs.s2.large is an x86_64 virtual server featuring 2 dedicated vCPUs, 4.0 GB of RAM, and KVM virtualization, designed for predictable entry-level workloads without local storage.",
-  "meta_description": "Alibaba Cloud ecs.s2.large is a KVM-based virtual server with 2 dedicated vCPUs and 4.0 GB of RAM, designed for lightweight, consistent workloads.",
-  "tagline": "A dedicated dual-core virtual server with a balanced compute-to-memory ratio for predictable, entry-level application hosting.",
+  "description": "Alibaba Cloud ecs.s2.large is an entry-level virtual machine within the ecs.s2 family, featuring 2 dedicated x86_64 vCPUs and 4.0 GB of system memory. Operating on the KVM hypervisor, this instance provides a resource density of 2.0 GB of RAM per vCPU. It does not include local storage or integrated GPUs, and lacks advanced CPU instruction extensions such as AVX, AVX-512, AMX, and AES. Consequently, it is not designed for high-performance computing, cryptography, or memory-intensive tasks. Instead, the ecs.s2.large offers a cost-effective, predictable compute profile for lightweight workloads, including basic web serving, development environments, and small utility applications.",
+  "og_description": "Alibaba Cloud ecs.s2.large is an entry-level KVM-based instance with 2 dedicated x86_64 vCPUs, 4.0 GB RAM, and no local storage, designed for lightweight utility workloads and basic web serving.",
+  "meta_description": "Alibaba Cloud ecs.s2.large is a KVM-based instance featuring 2 dedicated x86_64 vCPUs, 4.0 GB RAM, and no local storage for entry-level workloads.",
+  "tagline": "An entry-level virtual machine with dedicated dual-core compute and four gigabytes of memory for lightweight utility workloads.",
   "bullet_points": [
-    "2 dedicated x86_64 vCPUs for predictable compute performance",
+    "2 dedicated x86_64 vCPUs with KVM hypervisor management",
     "4.0 GB of system memory providing 2.0 GB per core",
-    "KVM hypervisor-based virtualization",
-    "No local storage or GPU acceleration included",
-    "Suited for lightweight web serving, microservices, and development environments"
+    "Zero local storage, requiring external block storage volumes",
+    "No integrated GPUs or advanced CPU instruction extensions like AVX or AES",
+    "Best suited for lightweight web serving, development, and utility tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Burstable & Budget"
   ]
 }
