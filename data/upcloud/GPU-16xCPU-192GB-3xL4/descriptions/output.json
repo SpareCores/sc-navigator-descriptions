@@ -1,20 +1,19 @@
 {
   "page": [
-    "UpCloud GPU-16xCPU-192GB-3xL4 is a GPU-accelerated virtual server configured on the KVM hypervisor. It features an x86_64 CPU architecture with 16 vCPUs and 192.0 GB of system memory, yielding a ratio of 12.0 GB of RAM per core. The server is equipped with three NVIDIA Ada Lovelace L4 GPUs, providing a combined total of 72 GB of VRAM.",
-    "This server type utilizes a shared CPU allocation model, which may introduce resource contention compared to dedicated CPU instances. Additionally, the instance does not include local storage, requiring external storage attachments for data persistence. It includes one complimentary public IPv4 address.",
-    "The high density of GPU accelerators and memory relative to the shared CPU allocation positions this instance for workloads that are heavily dependent on GPU parallel processing rather than sustained, high-performance CPU execution. This hardware profile is suitable for machine learning inference, data science jobs, and GPU-accelerated rendering tasks where the shared CPU model and lack of local storage do not bottleneck operations."
+    "UpCloud GPU-16xCPU-192GB-3xL4 is a GPU-accelerated virtual server configured on the KVM hypervisor. It features an x86_64 CPU architecture with 16 shared vCPUs and 192.0 GB of system memory, yielding 12.0 GB of RAM per core. The server is equipped with three NVIDIA L4 GPUs based on the Ada Lovelace architecture, providing a total of 72 GB of VRAM. No local storage is bundled with this instance, requiring external storage attachment for data persistence.",
+    "The hardware profile presents specific architectural tradeoffs. While the provision of three NVIDIA L4 GPUs offers substantial parallel processing capabilities and a large VRAM pool, the 16 vCPUs use a shared allocation model. This shared CPU configuration may introduce resource contention under sustained, non-GPU compute loads, making the instance less optimal for CPU-bound tasks. However, this resource distribution provides a cost-efficient entry point for multi-GPU workloads, as users do not pay for dedicated high-core-count CPU allocations when the primary bottleneck is GPU memory or parallel execution.",
+    "This server configuration is designed for workloads that heavily leverage GPU acceleration and require significant system memory but have moderate CPU demands. Suitable use cases include machine learning model inference, medium-scale deep learning training, parallel data processing, and GPU-accelerated rendering tasks."
   ],
-  "description": "UpCloud GPU-16xCPU-192GB-3xL4 is an x86_64 GPU-accelerated virtual server running on the KVM hypervisor. The hardware configuration includes 16 vCPUs with a shared CPU allocation and 192.0 GB of system memory, providing 12.0 GB of RAM per core. Acceleration is delivered via three NVIDIA Ada Lovelace L4 GPUs with a combined total of 72 GB of VRAM. Notably, this server type does not include local storage, and it comes with one complimentary public IPv4 address. The shared CPU allocation and absence of local storage represent key architectural tradeoffs. This configuration is designed for workloads that prioritize GPU-driven parallel processing and high memory capacity over dedicated CPU performance, making it suitable for machine learning inference, data science tasks, and rendering workloads.",
-  "og_description": "UpCloud GPU-16xCPU-192GB-3xL4 is a KVM-based virtual server featuring 16 shared x86_64 vCPUs, 192 GB of system memory, and three NVIDIA Ada Lovelace L4 GPUs providing a combined total of 72 GB of VRAM.",
-  "meta_description": "UpCloud GPU-16xCPU-192GB-3xL4 is a KVM virtual server configured with 16 shared x86_64 vCPUs, 192 GB of RAM, and three NVIDIA Ada Lovelace L4 GPUs.",
-  "tagline": "A GPU-accelerated virtual server featuring three NVIDIA L4 GPUs, 192 GB of RAM, and a shared CPU allocation.",
+  "description": "UpCloud GPU-16xCPU-192GB-3xL4 is a GPU-accelerated virtual server running on the KVM hypervisor with an x86_64 architecture. It features 16 shared vCPUs, 192.0 GB of system memory, and three NVIDIA L4 GPUs from the Ada Lovelace family, delivering a total of 72 GB of VRAM. The instance does not include local storage, meaning storage must be provisioned separately. The shared CPU allocation presents a tradeoff, as it may limit sustained CPU-bound performance, but it offers a cost-efficient structure for workloads that primarily depend on multi-GPU parallel processing and high memory capacity. This server is configured for workloads such as machine learning inference, data science pipelines, and GPU-accelerated rendering.",
+  "og_description": "UpCloud GPU-16xCPU-192GB-3xL4 is a KVM-based virtual server featuring 16 shared vCPUs, 192 GB RAM, and three NVIDIA L4 GPUs with 72 GB total VRAM, designed for GPU-accelerated workloads.",
+  "meta_description": "UpCloud GPU-16xCPU-192GB-3xL4 is a KVM virtual server with 16 shared vCPUs, 192 GB RAM, and three NVIDIA L4 GPUs with 72 GB VRAM.",
+  "tagline": "A multi-GPU virtual server featuring three NVIDIA L4 accelerators and high memory capacity for parallel computing workloads.",
   "bullet_points": [
-    "Three NVIDIA Ada Lovelace L4 GPUs with 72 GB total VRAM",
-    "16 vCPUs on x86_64 architecture with shared CPU allocation",
-    "192.0 GB of system memory providing 12.0 GB per core",
-    "No local storage included, requiring external storage solutions",
-    "KVM hypervisor virtualization with one public IPv4 address",
-    "Suited for machine learning inference and GPU-accelerated data science"
+    "Three NVIDIA L4 Ada Lovelace GPUs with 72 GB total VRAM",
+    "16 shared x86_64 vCPUs on KVM hypervisor",
+    "192.0 GB of system memory (12.0 GB per core)",
+    "No bundled local storage, requiring external storage volumes",
+    "Designed for machine learning inference and GPU-accelerated data processing"
   ],
   "categories": [
     "GPU Accelerated",

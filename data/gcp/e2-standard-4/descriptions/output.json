@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform e2-standard-4 is a general-purpose virtual machine instance belonging to the E2 machine family. It features 4 vCPUs mapped to 2 physical cores with 2 threads per core, utilizing an x86_64 Intel Xeon processor running at 2.2 GHz. The instance is configured with 16.0 GB of system memory, providing 4.0 GB of RAM per vCPU. It does not include bundled local storage or GPU accelerators, and it offers zero complimentary public IPv4 addresses.",
-    "Performance benchmarks position this instance in the lower tier for compute-heavy workloads. Single-core and multi-core CPU tests via stress-ng and Geekbench register in the bottom 10% to 25% of tested hardware. Memory bandwidth benchmarks show read-only small block cached speeds at 161.16 GB/sec and uncached large block write speeds at 20.93 GB/sec, both falling into the bottom 25%. Similarly, software compilation, image processing, and text processing benchmarks demonstrate weak to poor performance profiles.",
-    "Despite lower raw compute and memory throughput, the instance maintains average performance for specific tasks, such as text generation using a small 135M LLM model, which achieves 104.71 tokens per second. Static web serving throughput reaches 4.19 GB/sec, and Redis SET operations perform at 4.02 million operations per second. This profile suggests a cost-efficient resource density for workloads that do not require high-frequency processing or intensive memory bandwidth. Appropriate workloads include general-purpose web serving, basic database operations, and lightweight application hosting."
+    "Google Cloud Platform e2-standard-4 is a general-purpose virtual machine instance based on the x86_64 architecture. It features 4 virtual CPUs mapped to 2 physical Intel Xeon cores with hyper-threading enabled, providing 2 threads per core. The instance is configured with 16.0 GB of system memory, maintaining a balanced ratio of 4.0 GB of RAM per vCPU. It does not include local storage or dedicated GPU hardware, meaning all storage must be attached over the network.",
+    "Benchmark results place the e2-standard-4 in the lower performance tiers. In stress-ng CPU testing, both single-core and multi-core performance fall within the bottom 25 percent. Similarly, Geekbench scores are low, with single-core and multi-core results in the bottom 10 percent, alongside poor software compilation and image processing speeds. Memory bandwidth is also limited, measuring 24.13 GB/sec for large block read-only operations. However, the instance demonstrates average performance in LLM text generation for small 135M models, achieving 104.71 tokens per second.",
+    "From a cost-efficiency perspective, the e2-standard-4 offers a low-cost entry point for workloads requiring a balanced memory-to-vCPU ratio without demanding high-performance compute. The trade-off is lower raw processing power and memory throughput. This profile makes the instance suitable for lightweight web serving, basic database operations, and small-scale development or testing environments that do not require intensive CPU or disk I/O."
   ],
-  "description": "Google Cloud Platform e2-standard-4 is a general-purpose virtual machine configured with 4 vCPUs and 16.0 GB of RAM. Powered by an x86_64 Intel Xeon processor running at 2.2 GHz, this instance features 2 physical cores and 2 threads per core. It does not include local storage or GPU accelerators. Performance benchmarks indicate that the instance generally performs in the bottom 10% to 25% for compute and memory bandwidth tasks, such as software compilation and stress-ng tests. However, it maintains average performance for text generation with small language models, alongside steady throughput for static web serving and Redis operations. This hardware profile offers a balanced, cost-efficient resource density suitable for lightweight workloads, including general-purpose web hosting, development environments, and basic database operations.",
-  "og_description": "Google Cloud Platform e2-standard-4 is a general-purpose instance with 4 vCPUs, 16 GB RAM, and an Intel Xeon processor, offering a cost-efficient profile for basic web serving and database tasks.",
-  "meta_description": "Google Cloud Platform e2-standard-4 is an x86_64 general-purpose instance featuring 4 vCPUs, 16 GB RAM, and an Intel Xeon processor.",
-  "tagline": "A balanced general-purpose virtual machine offering four vCPUs and sixteen gigabytes of memory for lightweight web serving and development workloads.",
+  "description": "Google Cloud Platform e2-standard-4 is an x86_64 general-purpose instance featuring 4 vCPUs, 2 physical Intel Xeon cores, and 16.0 GB of RAM. It contains no local storage or GPU accelerators. Performance benchmarks consistently place this instance in the lower tiers, with stress-ng and Geekbench scores falling in the bottom 10% to 25%. Memory bandwidth is limited, though text generation for small LLM models reaches average speeds. Given its low-cost profile and balanced resource distribution, the e2-standard-4 is suited for lightweight workloads such as basic web serving, small database operations, and development environments where high-compute performance is not required.",
+  "og_description": "Google Cloud Platform e2-standard-4 is an x86_64 general-purpose instance with 4 vCPUs, 16 GB RAM, and Intel Xeon processors, offering budget-friendly hosting for lightweight workloads.",
+  "meta_description": "Google Cloud Platform e2-standard-4 is an x86_64 general-purpose instance with 4 vCPUs, 16 GB RAM, and Intel Xeon processors.",
+  "tagline": "A budget-friendly, general-purpose virtual machine with balanced memory and compute resources for lightweight, non-intensive workloads.",
   "bullet_points": [
-    "4 vCPUs and 16.0 GB of system memory on an x86_64 Intel Xeon processor",
-    "No bundled local storage or GPU accelerators",
-    "Average performance of 104.71 tokens per second for small-model text generation",
-    "Suitable for lightweight database operations and static web serving",
-    "Cost-efficient resource density for non-intensive general-purpose workloads"
+    "Features 4 vCPUs and 16.0 GB of system memory on Intel Xeon processors",
+    "Lacks local storage and GPU accelerators, relying on network-attached storage",
+    "Delivers entry-level performance, with most CPU and memory benchmarks in the bottom 25%",
+    "Achieves average text generation speeds of 104.71 tokens/sec on small LLM models",
+    "Suited for lightweight web serving, small databases, and development environments"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Burstable & Budget"
   ]
 }
