@@ -1,22 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform e2-highmem-4 is an x86_64 architecture server instance within the E2 family, configured with 4 vCPUs and 32.0 GB of system memory. The processing power is delivered by an Intel Xeon CPU operating at 2.2 GHz, featuring 2 physical cores with hyper-threading enabled and a dedicated CPU allocation. The processor includes a 55 MB L3 cache and supports instruction sets such as AVX, AES cryptography, and FMA, though it lacks AVX-512 capabilities. No local storage or GPUs are bundled with this instance.",
-    "Performance benchmarks position this instance primarily in the lower tiers for compute-heavy workloads. Single-core and multi-core CPU tests via stress-ng and Geekbench register in the bottom 10% to 25% of tested hardware. Similarly, data compression and decompression speeds are weak, with static web serving throughput limited to 2.66 GB/sec. However, memory performance is more balanced; the Passmark memory score ranks in the average range, although large-block uncached memory read and write bandwidths remain in the bottom 25%.",
-    "From a cost-efficiency perspective, the e2-highmem-4 offers a high memory-to-vCPU ratio of 8 GB per core, making it a resource-dense option for memory-bound workloads that do not require intense CPU performance. The tradeoff is clear: while memory capacity and baseline memory operations are adequate, raw computational throughput and storage speed are limited. This configuration is best suited for memory-intensive, low-compute workloads such as caching layers, small databases, and lightweight text generation tasks."
+    "Google Cloud Platform e2-highmem-4 is a memory-optimized virtual machine instance from the E2 family. It features 4 vCPUs mapped to 2 physical cores of an Intel Xeon x86_64 processor running at 2.2 GHz. The instance is equipped with 32.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per vCPU. It does not include local storage or bundled GPUs, and has zero complimentary public IPv4 addresses.",
+    "Benchmark evaluations indicate that the instance is optimized for memory capacity rather than raw compute speed. The Passmark memory score is in the average tier, and the LLM text generation speed for a small 135M model also registers in the average range at 102.59 tokens per second. However, CPU-bound benchmarks are consistently positioned in the lower tiers. The stress-ng single-core and multi-core CPU metrics fall in the bottom 25%, while Geekbench single-core and multi-core scores are in the bottom 10%. Similarly, static web serving throughput is limited to 2.66 GB/sec, and Redis SET operations reach 2.61 million operations per second, both placing in the lower performance brackets.",
+    "The e2-highmem-4 offers a qualitative cost-efficiency advantage for workloads that require a larger memory footprint but have modest CPU demands. Because memory is prioritized over compute power, users avoid paying for high-performance CPU architectures when their applications are primarily memory-bound. The primary tradeoff is the weak single-threaded and multi-threaded processing capability, as evidenced by poor compression and decompression speeds. This hardware profile is best suited for memory-intensive tasks with low CPU utilization, such as caching layers, small database operations, and lightweight background workers."
   ],
-  "description": "Google Cloud Platform e2-highmem-4 is an x86_64 memory-optimized server instance featuring 4 vCPUs and 32.0 GB of RAM, powered by an Intel Xeon processor running at 2.2 GHz. With 2 physical cores and hyper-threading, it provides a dedicated CPU allocation alongside a 55 MB L3 cache, though it lacks local storage and GPU accelerators. Benchmark results indicate weak computational performance, with CPU and compression tests scoring in the bottom 10% to 25%. However, its memory subsystem performs in the average tier, offering a high memory-to-vCPU ratio of 8 GB per core. This makes the instance a cost-efficient option for memory-bound workloads that do not demand high CPU throughput, such as small database hosting, caching layers, and basic text generation tasks.",
-  "og_description": "Google Cloud Platform e2-highmem-4 is an x86_64 instance with 4 vCPUs and 32 GB RAM. It features an Intel Xeon CPU and offers a high memory-to-vCPU ratio for memory-bound workloads.",
-  "meta_description": "Google Cloud Platform e2-highmem-4 is an x86_64 instance with 4 vCPUs and 32 GB RAM, designed for memory-intensive, low-compute workloads.",
-  "tagline": "An efficient x86_64 instance featuring a high memory-to-vCPU ratio for memory-bound workloads requiring moderate computational power.",
+  "description": "Google Cloud Platform e2-highmem-4 is a memory-optimized virtual machine instance featuring 4 vCPUs and 32.0 GB of RAM, powered by an Intel Xeon x86_64 processor running at 2.2 GHz. This instance does not include local storage or dedicated GPUs, and provides zero complimentary public IPv4 addresses. Benchmark data highlights a clear performance tradeoff: while the Passmark memory score and small-model LLM text generation speeds fall in the average tier, CPU-centric performance is weak, with stress-ng and Geekbench scores placing in the bottom 10% to 25%. This configuration provides a cost-effective option for memory-heavy workloads that do not require intensive compute resources. It is best suited for memory-intensive tasks with low CPU utilization, such as caching layers, small database operations, and lightweight background workers.",
+  "og_description": "Google Cloud Platform e2-highmem-4 is a memory-optimized virtual machine with 4 vCPUs and 32 GB of RAM. It delivers average memory performance alongside weaker CPU capabilities for cost-conscious, memory-heavy workloads.",
+  "meta_description": "Google Cloud Platform e2-highmem-4 is a memory-optimized virtual machine instance featuring 4 vCPUs, 32 GB of RAM, and an Intel Xeon x86_64 processor.",
+  "tagline": "A memory-optimized virtual machine balancing a high memory-to-vCPU ratio with cost-efficient, moderate compute performance for memory-bound workloads.",
   "bullet_points": [
-    "4 vCPUs and 32.0 GB RAM providing 8.0 GB of memory per core",
-    "Intel Xeon processor at 2.2 GHz with dedicated CPU allocation",
-    "Average-tier memory performance suitable for caching and databases",
-    "No bundled local storage or GPU accelerators",
-    "Best suited for memory-intensive, low-compute workloads"
+    "4 vCPUs and 32.0 GB of RAM providing an 8.0 GB per vCPU ratio",
+    "Intel Xeon x86_64 processor running at 2.2 GHz",
+    "Average memory performance and small-model LLM text generation",
+    "No local storage or bundled GPU accelerators",
+    "Suited for memory-intensive workloads with low CPU requirements"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

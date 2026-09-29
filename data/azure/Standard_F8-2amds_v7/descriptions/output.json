@@ -1,24 +1,22 @@
 {
   "page": [
-    "Microsoft Azure F8-2amds_v7 is a memory-intensive virtual machine belonging to the Famdsv7 family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated AMD EPYC 9V45 processor with 2 physical cores and 2 vCPUs operating at a clock speed of 4.5 GHz. The hardware configuration includes 64.0 GB of RAM, yielding a high memory-to-core ratio of 32.0 GB per core. Local storage is bundled with a 945 GB local disk, and the server is premium storage capable. No GPUs are present in this configuration.",
-    "Benchmark data highlights strong single-core capabilities, with stress-ng single-core CPU performance, geekbench single-core score, and single-threaded gzip compression all ranking in the top tier. However, multi-threaded and multi-core scaling is limited due to the 2-vCPU hardware constraint. Multi-core stress-ng performance, Geekbench multi-core scores, and memory bandwidth metrics fall into the average tier. Tradeoffs are evident in highly parallelized tasks, where bzip3 multi-threaded decompression, software compilation with clang, and static web serving throughput register in the weak tier.",
-    "From a cost-efficiency perspective, the F8-2amds_v7 offers high resource density for memory-bound applications that do not require massive parallel processing. The combination of a fast 4.5 GHz single-core speed and 64.0 GB of RAM makes it suitable for memory-intensive workloads with low thread concurrency. Recommended workloads include database operations, caching layers such as Redis, text processing, and lightweight memory-heavy data processing. It is less suitable for highly parallelized compute tasks, ray tracing, or large-scale web serving."
+    "Microsoft Azure F8-2amds_v7 is a memory-optimized virtual machine belonging to the Famdsv7 server family. It is powered by an AMD EPYC 9V45 processor with an x86_64 architecture, featuring 2 dedicated physical cores and 2 vCPUs running at a clock speed of 4.5 GHz. The CPU configuration includes 48 KB L1D cache, 1.0 MB L2 cache, and 32 MB L3 cache. This instance is equipped with 64.0 GB of system memory, yielding a high memory-to-core ratio of 32.0 GB per core. It includes a 945 GB local storage disk and is Premium Storage capable, but does not include any GPUs or complimentary public IPv4 addresses.",
+    "Benchmark data highlights strong single-core performance, with stress-ng single-core CPU, geekbench single-core, and single-threaded gzip compression and bzip3 decompression scores all placing in the top tier (top 10%). However, multi-core and multi-threaded performance scales down, with stress-ng multi-core, geekbench multi-core, and passmark memory scores falling into the average category. Multi-threaded bzip3 decompression, clang software compilation, and ray tracing benchmarks are relatively weak, placing in the bottom 25%. Memory bandwidth is moderate, measuring 402.64 GB/sec for cached small blocks and 52.38 GB/sec for uncached large blocks.",
+    "Given the high memory-to-vCPU ratio and strong single-core execution, this server is well-suited for memory-intensive workloads that do not require massive parallelization. Appropriate use cases include database operations, caching layers like Redis (which achieves 6.72 million operations per second), and text processing. It is less optimal for highly parallelized tasks, software compilation, or medium-to-large language model inference, where prompt processing speeds drop significantly."
   ],
-  "description": "The Microsoft Azure F8-2amds_v7 is a memory-intensive virtual machine from the Famdsv7 family, utilizing Microsoft Hyper-V virtualization. It is equipped with a dedicated AMD EPYC 9V45 processor featuring 2 vCPUs and 2 physical cores running at 4.5 GHz, paired with 64.0 GB of RAM and a 945 GB local disk. This configuration delivers top-tier single-core CPU and single-threaded compression performance, though its multi-core and multi-threaded capabilities remain average to weak due to the low core count. The server provides high memory density per core, making it a qualitatively cost-effective choice for memory-bound workloads that do not require extensive parallelization. It is best suited for database operations, caching systems, text processing, and memory-heavy applications with low concurrency requirements.",
-  "og_description": "Microsoft Azure F8-2amds_v7 is a memory-intensive virtual server featuring 2 AMD EPYC vCPUs at 4.5 GHz, 64 GB of RAM, and 945 GB of local storage, optimized for memory-bound workloads with strong single-core performance.",
-  "meta_description": "Microsoft Azure F8-2amds_v7 is a memory-intensive server with 2 AMD EPYC vCPUs, 64 GB RAM, and 945 GB local storage, built for memory-heavy workloads.",
-  "tagline": "A memory-intensive virtual server combining high-frequency single-core AMD performance with dense memory allocation and local storage for specialized database workloads.",
+  "description": "Microsoft Azure F8-2amds_v7 is a memory-optimized virtual machine from the Famdsv7 family, featuring 2 dedicated vCPUs powered by an AMD EPYC 9V45 processor running at 4.5 GHz. Built on the x86_64 architecture, it provides 64.0 GB of RAM, translating to an exceptional 32.0 GB of memory per core. The server includes 945 GB of local storage and is Premium Storage capable, though it lacks GPU accelerators. Benchmarks show outstanding single-core performance, with stress-ng and Geekbench single-core scores in the top 10%, alongside strong single-threaded compression capabilities. However, multi-core scaling and parallelized tasks like software compilation fall into average or weak tiers. This hardware profile is highly cost-efficient for memory-heavy, single-threaded workloads, database operations, and caching systems like Redis, but is less suited for highly parallelized computing or large-scale AI inference.",
+  "og_description": "Microsoft Azure F8-2amds_v7 is a memory-optimized virtual machine featuring 2 vCPUs, 64 GB RAM, and 945 GB local storage, delivering top-tier single-core performance for database and caching workloads.",
+  "meta_description": "Microsoft Azure F8-2amds_v7 is a memory-optimized VM with 2 AMD EPYC vCPUs, 64 GB RAM, and 945 GB local storage for database and caching workloads.",
+  "tagline": "A memory-intensive virtual machine featuring exceptional single-core performance and a high memory-to-vCPU ratio for caching and database workloads.",
   "bullet_points": [
-    "Dedicated AMD EPYC 9V45 processor with 2 vCPUs running at 4.5 GHz.",
-    "64.0 GB of RAM providing a high 32.0 GB per core memory density.",
-    "Bundled 945 GB local storage with Premium Storage capability.",
-    "Top-tier single-core CPU and single-threaded compression performance.",
-    "Average to weak multi-threaded scaling due to the dual-core configuration.",
-    "Best suited for database operations, caching, and memory-heavy text processing."
+    "Powered by a 4.5 GHz AMD EPYC 9V45 processor with 2 dedicated vCPUs",
+    "Equipped with 64.0 GB of RAM, providing 32.0 GB of memory per core",
+    "Includes 945 GB of local storage with Premium Storage capability",
+    "Top-tier single-core CPU and single-threaded compression performance",
+    "Best suited for memory-intensive databases, Redis caching, and text processing"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }
