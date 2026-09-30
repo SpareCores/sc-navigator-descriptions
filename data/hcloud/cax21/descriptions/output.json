@@ -1,22 +1,23 @@
 {
   "page": [
-    "Hetzner Cloud cax21 is an arm64-based virtual server powered by the Ampere Altra Neoverse-N1 processor. It features 4 shared vCPUs (4 physical cores) running at a clock speed of 2.0 GHz. The hardware configuration includes 8.0 GB of system memory, providing approximately 1.95 GB of RAM per core. Local storage is provided via an 80 GB NVMe SSD, and the instance operates under a QEMU hypervisor. No public IPv4 addresses are included by default, and there are no dedicated GPU resources.",
-    "Performance benchmarks indicate moderate capabilities. Single-core and multi-core CPU performance via stress-ng fall into the average category, with scores of 1805.19 and 7235.85 respectively. However, memory performance is a notable bottleneck; the passmark memory score is poor, and memory bandwidth tests for both small and large blocks are weak, peaking at 38.95 GB/sec for uncached large block reads. Cryptographic performance is also limited, as shown by a poor passmark encryption score of 646.59, though basic AES instructions are supported. Database operations on Passmark show average performance, while Redis SET operations reach 5.16 million operations per second.",
-    "Given its shared CPU allocation and weak memory bandwidth, the cax21 is best suited for lightweight, non-memory-intensive workloads. These include basic web serving, development environments, and simple database operations. It is not recommended for memory-bound tasks, heavy cryptography, or LLM inference, where it exhibits poor performance. From a cost-efficiency perspective, the arm64 architecture offers a low-cost entry point for multi-core testing and lightweight utility hosting, balancing resource density against shared-core performance tradeoffs."
+    "Hetzner Cloud cax21 is an arm64-based virtual server powered by the Ampere Altra Neoverse-N1 processor. It features 4 shared vCPUs running at 2.0 GHz, with 4 physical cores and a single thread per core. The instance is equipped with 8.0 GB of RAM, providing approximately 1.95 GB of memory per core. Local storage is bundled, consisting of an 80 GB NVMe SSD. No complimentary public IPv4 addresses are included with this server configuration.",
+    "Benchmark data indicates average performance for standard CPU tasks but highlights some limitations in memory bandwidth and specialized workloads. Single-core and multi-core CPU performance via stress-ng falls into the average category, with scores of 1777.99 and 7055.54 respectively. However, memory bandwidth is mixed; while large block read and write speeds are average at 45.11 GB/sec and 26.08 GB/sec, small block cached reads are weak at 275.77 GB/sec. Geekbench scores are generally weak, including a single-core score of 1005.0 and a multi-core score of 3335.0. Cryptographic and image processing tasks show poor performance, as evidenced by a Passmark encryption score of 637.38 and Geekbench image processing at 1893.0.",
+    "From a cost-efficiency perspective, the cax21 offers a resource-dense entry point into ARM-based cloud computing, utilizing shared CPU resources to maintain a low hardware-class profile. The primary tradeoff is the shared CPU allocation, which can introduce performance variability under sustained high loads. Additionally, the weak memory performance and lack of advanced vector or matrix extensions limit its suitability for intensive mathematical or AI workloads, such as LLM inference where prompt processing on a small 135M model registers a poor 169.73 tokens/sec.",
+    "This server is best suited for lightweight, scale-out workloads that benefit from ARM architecture. Appropriate use cases include basic web serving, development and testing environments, lightweight database operations, and simple utility scripting. It is less suitable for memory-intensive applications, heavy cryptography, or machine learning tasks."
   ],
-  "description": "Hetzner Cloud cax21 is an arm64 virtual server featuring 4 shared vCPUs powered by an Ampere Altra Neoverse-N1 processor running at 2.0 GHz. It is equipped with 8.0 GB of RAM, an 80 GB NVMe SSD, and runs on the QEMU hypervisor. Benchmark data shows average CPU performance in stress-ng tests, but reveals limitations in memory bandwidth and cryptographic operations, which both rank in the weak to poor categories. With a 1:2 vCPU-to-RAM ratio, this instance offers a cost-effective entry point for arm64 development, basic web serving, and lightweight database tasks. However, it is less suitable for memory-intensive workloads or high-throughput applications due to shared CPU allocation and restricted memory performance.",
-  "og_description": "Hetzner Cloud cax21 is an arm64 virtual server with 4 shared Ampere Altra vCPUs, 8 GB RAM, and an 80 GB NVMe SSD, offering a cost-effective platform for lightweight web serving and development.",
-  "meta_description": "Hetzner Cloud cax21 is an arm64 virtual server featuring 4 shared Ampere Altra vCPUs, 8 GB RAM, and an 80 GB NVMe SSD for basic workloads.",
-  "tagline": "An arm64 virtual server with shared Ampere Altra cores and NVMe storage, designed for lightweight development and basic web utility workloads.",
+  "description": "Hetzner Cloud cax21 is an arm64 virtual server featuring 4 shared vCPUs powered by an Ampere Altra Neoverse-N1 processor running at 2.0 GHz. It is configured with 8.0 GB of RAM and 80 GB of local NVMe SSD storage. Benchmarks show average performance in general CPU execution, with stress-ng single-core and multi-core scores of 1777.99 and 7055.54, though memory bandwidth and cryptographic operations perform weakly. The shared CPU allocation presents a tradeoff in performance consistency, making it a highly cost-efficient option for budget-conscious deployments rather than high-performance computing. The cax21 is best suited for lightweight web serving, development environments, and basic database operations.",
+  "og_description": "Hetzner Cloud cax21 is an arm64 virtual server featuring 4 shared Ampere Altra vCPUs, 8.0 GB of RAM, and 80 GB of NVMe SSD storage, offering a budget-friendly option for lightweight workloads.",
+  "meta_description": "Hetzner Cloud cax21 is an arm64 virtual server with 4 shared Ampere Altra vCPUs, 8.0 GB RAM, and 80 GB NVMe SSD storage for budget-friendly workloads.",
+  "tagline": "An entry-level ARM-based virtual server featuring shared Ampere Altra cores and local NVMe storage for budget-conscious development and lightweight hosting.",
   "bullet_points": [
-    "Ampere Altra Neoverse-N1 arm64 architecture with 4 shared vCPUs",
-    "8.0 GB system memory and 80 GB local NVMe SSD storage",
-    "Average CPU performance in stress-ng benchmarks",
-    "Weak memory bandwidth and poor cryptographic performance",
-    "Suitable for lightweight web serving, basic databases, and arm64 development"
+    "Powered by a 4-core Ampere Altra Neoverse-N1 ARM processor at 2.0 GHz",
+    "Equipped with 8.0 GB RAM and 80 GB of local NVMe SSD storage",
+    "Shared CPU allocation optimized for budget-friendly resource density",
+    "Average performance in standard multi-core CPU benchmarks",
+    "Best suited for lightweight web serving, testing, and basic database tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "Compute Optimized"
   ]
 }

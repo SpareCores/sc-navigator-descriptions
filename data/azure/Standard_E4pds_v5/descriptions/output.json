@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E4pds_v5 is an ARM-based virtual machine belonging to the EPDSv5 server family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated physical cores and 4 vCPUs powered by an Ampere Altra ARMv8 Neoverse-N1 processor operating at 3.0 GHz. The hardware configuration includes 32.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per vCPU. Storage is supported by a 154 GB local disk, and the instance is capable of utilizing Premium Storage.",
-    "Benchmark results indicate average performance in compute-intensive workloads, with stress-ng single-core and multi-core CPU tests scoring 1822.68 and 7252.56 respectively. However, memory and decompression performance show notable limitations. The PassMark memory score of 1809.89 and the small-block cached read-only memory bandwidth of 283.12 GB/sec are classified as weak. Bzip3 decompression single-threaded performance is poor at 7.4 GB/sec, and multi-threaded decompression is weak at 23.19 GB/sec. Additionally, LLM inference speeds for a small 135M model are poor, processing 151.9 tokens per second for prompts and 41.41 tokens per second for text generation.",
-    "From a cost-efficiency perspective, the E4pds_v5 offers a high memory density relative to its vCPU count, making it a viable option for memory-bound workloads that do not require high-performance x86 vector extensions or advanced matrix instructions. PassMark database operations scored an average of 2892.68, suggesting suitability for moderate database hosting, caching layers, and memory-intensive applications. However, the weak Redis SET performance of 4.99 million operations per second and weak static web serving throughput of 5.19 GB/sec indicate it is less optimal for high-throughput web serving or real-time key-value stores."
+    "Microsoft Azure E4pds_v5 is an ARM-based virtual machine belonging to the EPDSv5 family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated physical cores powered by an Ampere Altra ARMv8 Neoverse-N1 processor operating at 3.0 GHz. The system is equipped with 32.0 GB of RAM, providing a high memory-to-core ratio of 8.0 GB per vCPU. Storage is bundled as a 154 GB local disk, and the instance is Premium Storage capable.",
+    "Performance benchmarks indicate average capabilities for standard workloads. The stress-ng single-core and multi-core CPU tests place the server in the middle 50% tier. Large-block memory bandwidth read and write operations also perform at average levels, alongside single-threaded gzip compression and PassMark database operations. However, the server exhibits weaker performance in Geekbench single-core and multi-core suites, bzip3 decompression, and Redis SET operations. Cryptographic performance is particularly limited, with the PassMark CPU encryption test scoring in the bottom 10%, and LLM inference tasks also registering in the poor performance tier.",
+    "From a qualitative cost-efficiency perspective, the E4pds_v5 offers a dense memory profile on an ARM architecture, making it a viable option for memory-intensive workloads that do not require high-performance vector or matrix extensions. Given its 1:8 vCPU-to-RAM ratio and local storage, this server is suitable for relational databases, caching layers, and memory-optimized general-purpose applications that benefit from dedicated physical cores and local disk caching without requiring heavy cryptographic or mathematical computation."
   ],
-  "description": "Microsoft Azure E4pds_v5 is an ARM-based virtual machine from the EPDSv5 family, utilizing a 4-core Ampere Altra Neoverse-N1 processor running at 3.0 GHz. It features 32.0 GB of RAM, providing a high 8.0 GB per vCPU ratio, alongside a 154 GB local disk with Premium Storage capabilities. Benchmarks show average CPU performance in stress-ng tests, but reveal weaknesses in memory bandwidth, bzip3 decompression, and LLM inference. PassMark database operations perform at an average level, while Redis SET operations and static web serving throughput remain weak. This instance is qualitatively cost-efficient for memory-intensive workloads requiring a high RAM-to-vCPU ratio without demanding extreme computational throughput, making it suitable for moderate database hosting, caching, and general memory-optimized applications.",
-  "og_description": "Microsoft Azure E4pds_v5 is an ARM-based virtual machine featuring 4 vCPUs, 32 GB of RAM, and a 154 GB local disk, designed for memory-optimized workloads requiring moderate database performance.",
-  "meta_description": "Microsoft Azure E4pds_v5 is an ARM-based virtual machine with 4 vCPUs, 32 GB RAM, and 154 GB local storage, optimized for memory-intensive workloads.",
-  "tagline": "An ARM-powered virtual machine offering high memory density and local storage for memory-intensive workloads and moderate database operations.",
+  "description": "Microsoft Azure E4pds_v5 is an ARM-based virtual machine from the EPDSv5 family, utilizing Microsoft Hyper-V virtualization. It features 4 dedicated physical cores powered by a 3.0 GHz Ampere Altra ARMv8 Neoverse-N1 processor, paired with 32.0 GB of RAM and a 154 GB local disk. The server delivers average performance in stress-ng CPU benchmarks, large-block memory bandwidth, and database operations, though it shows weaker results in cryptographic tasks, Redis SET operations, and LLM inference. With a high memory-to-core ratio of 8.0 GB per vCPU and Premium Storage capability, this instance offers a cost-efficient profile for memory-intensive workloads. It is best suited for database hosting, caching layers, and general-purpose applications that require dedicated ARM resources and local storage without intensive mathematical or cryptographic demands.",
+  "og_description": "Microsoft Azure E4pds_v5 is an ARM-based virtual machine featuring 4 dedicated Ampere Neoverse-N1 cores, 32 GB of RAM, and 154 GB of local storage, optimized for memory-intensive database workloads.",
+  "meta_description": "Microsoft Azure E4pds_v5 is an ARM-based virtual machine with 4 dedicated cores, 32 GB RAM, and 154 GB local storage for memory-intensive workloads.",
+  "tagline": "An ARM-powered virtual machine featuring a high memory-to-core ratio and local storage for memory-intensive database and caching workloads.",
   "bullet_points": [
-    "Powered by a 4-core Ampere Altra Neoverse-N1 ARM processor at 3.0 GHz",
-    "Equipped with 32.0 GB of RAM, providing 8.0 GB per vCPU",
-    "Includes 154 GB of local disk storage with Premium Storage support",
-    "Delivers average performance in database operations and CPU stress tests",
-    "Exhibits lower performance in memory bandwidth and decompression tasks",
-    "Best suited for memory-bound workloads, caching, and moderate databases"
+    "Powered by a 3.0 GHz Ampere Altra ARMv8 Neoverse-N1 processor with 4 dedicated physical cores",
+    "Equipped with 32.0 GB of RAM, offering a high 8.0 GB per vCPU memory allocation",
+    "Includes 154 GB of local disk storage and supports Premium Storage",
+    "Delivers average performance in database operations and large-block memory bandwidth",
+    "Best suited for memory-optimized workloads, relational databases, and caching layers"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

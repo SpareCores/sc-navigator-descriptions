@@ -1,21 +1,22 @@
 {
   "page": [
-    "OVHcloud r3-16 is a memory-optimized server instance built on the KVM hypervisor. It features an x86_64 architecture powered by an AMD EPYC processor running at 2.3 GHz. The configuration includes 2 dedicated physical cores and 2 vCPUs with 1.0 thread per core, backed by 16.0 GB of RAM, which yields a high memory-to-core ratio of 8.0 GB per core. Local storage is provided via a bundled 50 GB NVMe SSD, and the instance includes one complimentary public IPv4 address.",
-    "Performance benchmarks show a mix of capabilities. The AMD EPYC processor delivers strong single-core CPU performance in stress-ng tests, placing in the top 25%. However, multi-core performance in stress-ng and Geekbench is weaker, falling into the middle 50% and bottom 25% respectively, which is expected given the dual-core configuration. Memory bandwidth tests for large uncached blocks, both read and write, score in the average range, though cached small-block reads are weak.",
-    "The server exhibits notable performance trade-offs in highly parallelized or I/O-heavy workloads. Static web serving throughput is poor, ranking in the bottom 10%, and database operations under Passmark and Redis SET operations are weak. LLM inference speeds are also limited, with poor prompt processing for 7B models. Consequently, this instance is best suited for memory-sensitive but compute-light workloads, such as small-scale caching layers, lightweight memory-intensive applications, or basic text processing tasks that benefit from dedicated cores."
+    "OVHcloud r3-16 is a memory-optimized virtual server instance built on the KVM hypervisor. It features 2 dedicated physical cores and 2 vCPUs powered by an AMD EPYC processor running at a clock speed of 2.3 GHz. The x86_64 architecture CPU includes 32 KB of L1d cache, 0.5 MB of L2 cache, and 32 MB of L3 cache. The instance is equipped with 16.0 GB of system memory, yielding an 8.0 GB per core ratio. Local storage consists of a 50 GB NVMe SSD, and the network configuration lists a baseline bandwidth of 0 Gbps. It includes one complimentary public IPv4 address.",
+    "Benchmark data reveals distinct performance characteristics for this hardware profile. In CPU testing, the instance achieves a strong single-core stress-ng score of 3075.26, placing it in the top 25%, while its multi-core stress-ng performance of 6106.15 falls in the average middle 50% range. Memory bandwidth tests show average performance for large block reads (61.8 GB/sec) and writes (41.98 GB/sec), though small block cached reads are weak at 294.09 GB/sec. Geekbench testing yields an average single-core score of 1899.0 and a weak multi-core score of 3412.0. Database and web serving metrics are lower, with static web serving throughput registering at a poor 2.54 GB/sec and Redis SET operations performing at a weak 4.9 million operations per second.",
+    "From a qualitative cost-efficiency perspective, the r3-16 offers a high memory-to-vCPU ratio (1:8) on dedicated AMD EPYC hardware, making it a viable option for memory-bound workloads that do not require intensive multi-threaded processing. However, tradeoffs include weak multi-core scaling, lower database operation scores, and limited network baseline bandwidth. This instance is suited for lightweight memory-intensive tasks, small-scale caching layers, basic text processing, or low-concurrency applications requiring dedicated CPU cores and moderate NVMe storage."
   ],
-  "description": "OVHcloud r3-16 is a memory-optimized virtual server running on the KVM hypervisor. Powered by an x86_64 AMD EPYC processor operating at 2.3 GHz, it provides 2 dedicated physical cores and 16.0 GB of system memory, establishing a high 8.0 GB of RAM per core ratio. Storage is supported by a bundled 50 GB NVMe SSD. Benchmark data indicates strong single-core CPU performance, though multi-core execution and memory bandwidth for small cached blocks are weaker. Due to low static web serving throughput and weak database operation scores, this instance is not optimal for high-traffic web hosting or heavy database workloads. Instead, it is best suited for memory-intensive, low-concurrency applications, lightweight caching, and basic text processing tasks that require dedicated CPU resources without massive parallel processing needs.",
-  "og_description": "OVHcloud r3-16 is a memory-optimized KVM server featuring 2 dedicated AMD EPYC vCPUs, 16 GB RAM, and a 50 GB NVMe SSD, delivering strong single-core performance for memory-sensitive, low-concurrency workloads.",
-  "meta_description": "OVHcloud r3-16 is a memory-optimized KVM server with 2 AMD EPYC vCPUs, 16 GB RAM, and a 50 GB NVMe SSD, built for memory-intensive workloads.",
-  "tagline": "A memory-optimized virtual server featuring dedicated AMD EPYC cores and NVMe storage for memory-sensitive, low-concurrency workloads.",
+  "description": "OVHcloud r3-16 is a memory-optimized KVM virtual server featuring 2 dedicated AMD EPYC vCPUs running at 2.3 GHz, 16.0 GB of RAM, and a 50 GB NVMe SSD. Built on the x86_64 architecture, it delivers a high 8.0 GB of memory per core. In benchmarks, the server demonstrates strong single-core CPU performance, ranking in the top 25% for stress-ng single-core tests, though its multi-core performance and memory bandwidth remain average. Tradeoffs include weak multi-core Geekbench scores, low database operation metrics, and a baseline network bandwidth of 0 Gbps. This instance is suited for memory-bound workloads with low parallel processing demands, such as lightweight caching, basic text processing, and small-scale database operations.",
+  "og_description": "OVHcloud r3-16 is a memory-optimized KVM server with 2 dedicated AMD EPYC vCPUs, 16 GB RAM, and a 50 GB NVMe SSD, offering strong single-core performance for memory-bound workloads.",
+  "meta_description": "OVHcloud r3-16 is a memory-optimized KVM server featuring 2 dedicated AMD EPYC vCPUs, 16 GB RAM, and 50 GB of NVMe SSD storage.",
+  "tagline": "A memory-optimized virtual server featuring dedicated AMD EPYC cores and NVMe storage for memory-bound workloads with low parallel processing needs.",
   "bullet_points": [
-    "Powered by 2 dedicated AMD EPYC cores at 2.3 GHz",
-    "Equipped with 16.0 GB of RAM and a 50 GB NVMe SSD",
-    "Strong single-core CPU performance in benchmark testing",
-    "Includes one complimentary public IPv4 address",
-    "Best suited for lightweight caching and memory-intensive applications"
+    "2 dedicated AMD EPYC vCPUs at 2.3 GHz",
+    "16.0 GB RAM providing an 8.0 GB per core ratio",
+    "50 GB local NVMe SSD storage",
+    "Strong single-core CPU performance in stress-ng benchmarks",
+    "Suited for lightweight caching and memory-bound applications"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

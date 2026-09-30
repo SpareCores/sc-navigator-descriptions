@@ -1,23 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform n2d-standard-224 is a general-purpose server powered by AMD EPYC 7B13 processors utilizing the x86_64 architecture. It features 224 vCPUs mapped to 112 physical cores with hyper-threading enabled. The system is equipped with 896 GB of system memory, providing a balanced allocation of 4 GB of RAM per core. This configuration does not include local NVMe storage or dedicated GPU hardware, meaning all storage requirements must be met via network-attached volumes.",
-    "Benchmark data highlights top-tier multi-core performance, with stress-ng multi-core CPU and Passmark CPU scores ranking in the top 10% of tested instances. Memory performance is also strong, with cached small-block read bandwidth reaching 12,510.38 GB/sec and Passmark memory scores placing in the top 10%. However, single-core performance is more moderate, with Geekbench single-core and text processing benchmarks falling into the average tier.",
-    "The server exhibits a clear performance tradeoff when handling large-scale machine learning tasks. While prompt processing for small LLM models is strong at 3,433.2 tokens/sec, text generation for large 70B models is weak, dropping to 2.56 tokens/sec due to the lack of hardware GPU acceleration. Consequently, this instance is best suited for highly parallelized, non-GPU workloads such as large-scale Redis deployments, software compilation, database operations, and static web serving."
+    "Google Cloud Platform n2d-standard-224 is a general-purpose server instance powered by the AMD EPYC 7B13 processor. Utilizing the x86_64 architecture, this instance features 224 vCPUs mapped to 112 physical cores with multithreading enabled. It is equipped with 896 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per vCPU. The instance does not include local storage or dedicated GPU hardware.",
+    "Benchmark data indicates top-tier multi-core CPU performance, with stress-ng multi-core and Passmark CPU scores ranking in the top 10% of tested systems. Memory performance is also highly competitive; the instance achieves top-tier read-only small block memory bandwidth of 12510.38 GB/sec and strong large-block read and write bandwidth. For database workloads, it demonstrates high throughput, executing 187.57 million operations per second in Redis SET benchmarks.",
+    "While the instance excels in highly parallelized tasks such as software compilation and ray tracing, single-core performance is moderate, placing in the top 25% for stress-ng single-core tests. Additionally, without GPU acceleration, large language model inference is a notable bottleneck, with text generation for a 70B model falling into the bottom 25% at 2.56 tokens per second. Consequently, this instance is optimized for large-scale general-purpose workloads, high-throughput web serving, database operations, and multi-threaded CPU tasks rather than heavy LLM text generation."
   ],
-  "description": "Google Cloud Platform n2d-standard-224 is an x86_64 general-purpose server configured with 224 vCPUs across 112 physical AMD EPYC 7B13 cores and 896 GB of RAM. Lacking local storage and GPU accelerators, it relies entirely on network-attached storage. The instance delivers top-tier multi-core CPU and memory performance, as demonstrated by stress-ng and Passmark benchmarks ranking in the top 10%. It also excels in high-throughput operations, achieving 187.57 million Redis SET operations per second. However, single-core metrics and large LLM text generation speeds are average to weak, reflecting a clear tradeoff for single-threaded or AI-heavy workloads. This server is highly effective for massive parallel processing, database operations, software compilation, and high-volume web serving where high core density and memory bandwidth are required.",
-  "og_description": "Google Cloud Platform n2d-standard-224 is an x86_64 server with 224 vCPUs, 896 GB RAM, and AMD EPYC processors, delivering top-tier multi-core performance for parallel workloads.",
-  "meta_description": "Google Cloud Platform n2d-standard-224 features 224 vCPUs and 896 GB RAM, offering top-tier multi-core CPU and memory bandwidth performance.",
-  "tagline": "A high-density, multi-core x86 platform delivering exceptional parallel processing power and memory bandwidth for enterprise-scale workloads.",
+  "description": "Google Cloud Platform n2d-standard-224 is a general-purpose server instance configured with 224 vCPUs and 896 GB of RAM, powered by an AMD EPYC 7B13 processor on the x86_64 architecture. Featuring 112 physical cores with multithreading, it delivers a balanced 4.0 GB of memory per vCPU. The instance lacks local storage and GPU accelerators. In benchmark evaluations, it demonstrates top-tier multi-core CPU and memory bandwidth performance, alongside strong database throughput, achieving 187.57 million operations per second in Redis SET tests. However, single-core performance is moderate, and the lack of a GPU results in weak text generation speeds for large language models. This instance is best suited for highly parallelized workloads, including software compilation, database management, and high-throughput static web serving.",
+  "og_description": "Google Cloud Platform n2d-standard-224 is an x86_64 server with 224 vCPUs and 896 GB RAM. Powered by AMD EPYC 7B13, it delivers top-tier multi-core performance for databases and parallel workloads.",
+  "meta_description": "Google Cloud Platform n2d-standard-224 features 224 vCPUs, 896 GB RAM, and AMD EPYC processors, optimized for high-throughput parallel workloads.",
+  "tagline": "A high-core-density x86_64 platform delivering balanced memory and top-tier multi-core processing power for demanding parallel workloads and database operations.",
   "bullet_points": [
-    "Powered by AMD EPYC 7B13 processors with 224 vCPUs and 112 physical cores.",
-    "Equipped with 896 GB of system memory with no local storage or GPUs.",
-    "Top-tier multi-core CPU and memory bandwidth performance in benchmark testing.",
-    "Exceptional throughput for Redis operations and static web serving.",
-    "Weak text generation speeds for large LLM models due to lack of GPU acceleration.",
-    "Best suited for database operations, software compilation, and parallelized workloads."
+    "Powered by AMD EPYC 7B13 processor with 224 vCPUs and 112 physical cores",
+    "Equipped with 896 GB of RAM, providing a balanced 4.0 GB per vCPU",
+    "Top-tier multi-core CPU performance and memory bandwidth in benchmark testing",
+    "High database throughput, achieving 187.57 million operations per second in Redis",
+    "Lacks local storage and GPU acceleration, resulting in weak large LLM text generation",
+    "Optimized for software compilation, database operations, and static web serving"
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }
