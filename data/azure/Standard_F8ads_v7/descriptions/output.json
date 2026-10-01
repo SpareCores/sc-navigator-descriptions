@@ -1,22 +1,25 @@
 {
   "page": [
-    "Microsoft Azure F8ads_v7 is an x86_64 architecture server instance belonging to the Fadsv7 family, powered by an AMD EPYC 9V45 processor. It features 8 dedicated physical cores and 8 vCPUs running at a clock speed of 4.5 GHz. The hardware configuration includes 32.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. For local storage, the instance is equipped with 945 GB of local disk capacity and is Premium Storage capable, operating under the Microsoft Hyper-V hypervisor.",
-    "Performance benchmarks highlight exceptional single-core capabilities. The server achieves top-tier status in stress-ng single-core CPU performance, single-threaded gzip compression, and single-threaded bzip3 decompression. Multi-core performance, including stress-ng multi-core and multi-threaded bzip3 decompression, falls within the average range. Memory bandwidth tests for both small and large blocks, along with PassMark CPU and database operations, also demonstrate average tier performance.",
-    "In terms of specialized workloads, the F8ads_v7 shows strong capabilities in lightweight machine learning tasks, scoring in the top tier for text generation and strong tier for prompt processing using a small 135M LLM model. However, performance scales down to average levels for medium 7B LLM models. Given its high clock speed and balanced memory-to-CPU ratio, this instance offers a qualitatively cost-efficient profile for single-threaded execution, lightweight web serving, and general-purpose applications requiring fast sequential processing and local storage."
+    "Microsoft Azure F8ads_v7 is an x86_64 server instance powered by an AMD EPYC 9V45 processor running at 4.5 GHz. It features 8 dedicated physical cores with 1.0 thread per core, providing a direct mapping of vCPUs to physical cores without hyperthreading. The system is equipped with 32.0 GB of RAM, yielding 4.0 GB of memory per core. Local storage is bundled with a 945 GB NVMe SSD, and the instance is Premium Storage capable. The hypervisor layer is managed by Microsoft Hyper-V.",
+    "In benchmark evaluations, the F8ads_v7 demonstrates top-tier single-core performance. The stress-ng single-core CPU test, single-threaded gzip compression, and single-threaded bzip3 decompression all rank in the top 10% of tested servers. Multi-core performance, including stress-ng multi-core and PassMark CPU tests, falls within the average range. Memory bandwidth and database operations, such as Redis SET operations, also perform at average levels. For machine learning workloads, text generation using a small 135M model achieves top-tier speeds, while prompt processing and larger model inference remain in the average tier.",
+    "From a qualitative cost-efficiency perspective, the F8ads_v7 offers high single-core compute density and dedicated physical resources, which reduces virtualization overhead. The inclusion of a 945 GB local NVMe SSD provides high-speed local storage without requiring separate storage attachments, though the 1:4 vCPU-to-RAM ratio may limit memory-bound workloads. The lack of hyperthreading means users get full physical cores, which benefits compute-bound tasks but limits the total concurrent thread count compared to hyperthreaded alternatives.",
+    "This server configuration is suited for workloads requiring strong single-threaded performance and fast local storage. Appropriate use cases include relational databases, web serving, single-threaded data processing pipelines, and lightweight language model inference."
   ],
-  "description": "Microsoft Azure F8ads_v7 is an x86_64 general-purpose server instance from the Fadsv7 family, featuring an AMD EPYC 9V45 processor with 8 dedicated physical cores and 8 vCPUs operating at 4.5 GHz. It is equipped with 32.0 GB of RAM, providing 4.0 GB per core, and includes 945 GB of local storage with Premium Storage capability. Benchmark data indicates top-tier single-core CPU performance and single-threaded compression speeds, alongside average multi-core and memory bandwidth results. The instance also demonstrates strong performance in lightweight LLM inference. This hardware profile makes the F8ads_v7 highly suitable for workloads that benefit from high clock speeds and fast single-threaded execution, such as web serving, database operations, and lightweight machine learning tasks, offering a balanced resource density without the cost of dedicated GPU hardware.",
-  "og_description": "Microsoft Azure F8ads_v7 is an 8-vCPU server featuring a 4.5 GHz AMD EPYC processor, 32 GB RAM, and 945 GB local storage, delivering top-tier single-core performance for general-purpose workloads.",
-  "meta_description": "Microsoft Azure F8ads_v7 is an 8-vCPU server with a 4.5 GHz AMD EPYC CPU, 32 GB RAM, and 945 GB local storage, optimized for single-core workloads.",
-  "tagline": "A high-frequency eight-core server featuring dedicated AMD EPYC processing and fast local storage for single-threaded and general-purpose workloads.",
+  "description": "Microsoft Azure F8ads_v7 is an x86_64 virtual machine powered by an AMD EPYC 9V45 processor with 8 dedicated physical cores operating at 4.5 GHz. It features 32.0 GB of RAM and a bundled 945 GB local NVMe SSD, running on the Microsoft Hyper-V hypervisor. The instance exhibits top-tier single-core performance, as evidenced by high scores in single-threaded compression and single-core stress tests, while multi-core and memory bandwidth benchmarks perform in the average tier. With a balanced 1:4 vCPU-to-RAM ratio and dedicated physical cores, this server offers a solid balance of compute power and local storage capacity. It is well-suited for database operations, web serving, and single-threaded processing tasks that benefit from dedicated CPU resources and fast local NVMe storage.",
+  "og_description": "Microsoft Azure F8ads_v7 is an x86_64 server with 8 dedicated AMD EPYC cores at 4.5 GHz, 32 GB RAM, and a 945 GB NVMe SSD, delivering top-tier single-core performance for databases and web serving.",
+  "meta_description": "Microsoft Azure F8ads_v7 features 8 dedicated AMD EPYC cores, 32 GB RAM, and a 945 GB NVMe SSD, offering top-tier single-core performance.",
+  "tagline": "An x86_64 server featuring dedicated AMD EPYC cores, a bundled NVMe SSD, and top-tier single-core processing performance.",
   "bullet_points": [
-    "AMD EPYC 9V45 processor with 8 dedicated cores running at 4.5 GHz",
-    "32.0 GB of system memory and 945 GB of local storage",
+    "8 dedicated AMD EPYC 9V45 physical cores running at 4.5 GHz",
+    "32.0 GB of system memory providing 4.0 GB per core",
+    "Bundled 945 GB local NVMe SSD storage",
     "Top-tier single-core CPU and single-threaded compression performance",
-    "Strong execution speeds for lightweight LLM inference tasks",
-    "Well-suited for web serving, database operations, and general-purpose computing"
+    "Average multi-core and memory bandwidth benchmark results",
+    "Suited for databases, web serving, and single-threaded data processing"
   ],
   "categories": [
     "General Purpose",
+    "Storage & Database",
     "Compute Optimized"
   ]
 }

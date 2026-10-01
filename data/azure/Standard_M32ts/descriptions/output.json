@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure M32ts is an x86_64 architecture server within the MS family, virtualized via Microsoft Hyper-V. It features a dedicated Intel Xeon 8280M processor running at 2.7 GHz, delivering 32 vCPUs across 16 physical cores with hyper-threading enabled. The processor includes 32 KB L1d cache, 1.0 MB L2 cache, and a 38 MB L3 cache, supporting advanced instruction sets such as AVX, AVX-512F, AES, BMI2, ADX, and FMA.",
-    "The instance is equipped with 192.0 GB of system memory, providing 6.0 GB of RAM per core. It includes 1049 GB of local storage and is Premium Storage capable, though it does not bundle any complimentary public IPv4 addresses or GPU hardware.",
-    "Performance benchmarks indicate a clear tradeoff between single-core and multi-core capabilities. Single-core execution, including stress-ng, Geekbench, and single-threaded compression tasks, falls into the bottom 10% tier. Conversely, multi-core performance, memory bandwidth (both cached and uncached), and database operations consistently register in the middle 50% tier. Redis SET operations reach 20.68 million operations per second, and static web serving throughput achieves 17.69 GB/sec.",
-    "This hardware profile is qualitatively cost-efficient for workloads that benefit from high memory density and multi-threaded execution rather than raw single-core speed. It is appropriate for database operations, multi-threaded decompression, static web serving, and moderate LLM inference tasks using small to medium models, while being less optimal for single-threaded applications or large-scale LLM inference."
+    "Microsoft Azure M32ts is an x86_64 architecture server belonging to the MS family, virtualized via Microsoft Hyper-V. It features 32 dedicated vCPUs derived from 16 physical Intel Xeon 8280M cores operating at 2.7 GHz, with hyper-threading enabled. The system is equipped with 192.0 GB of system memory, yielding 6.0 GB of RAM per core. Local storage is provided by a bundled 1049 GB SSD, and the instance supports Premium Storage configurations. No GPUs are included in this configuration.",
+    "Benchmark data reveals a distinct performance profile. Single-core processing capabilities, including stress-ng single-core CPU tests, Geekbench single-core scores, and single-threaded compression/decompression, consistently fall into the bottom 10% tier. Conversely, multi-core performance scales to average levels, as demonstrated by stress-ng multi-core, Passmark CPU, and multi-threaded bzip3 decompression benchmarks. Memory bandwidth for both cached small blocks and uncached large blocks remains within the middle 50% tier.",
+    "Given its hardware profile, the M32ts offers a qualitative balance of high memory capacity and moderate multi-threaded compute density. It is suited for workloads such as database operations, Redis deployments, and static web serving, where its average performance in these specific benchmarks aligns with resource requirements. However, it is less suitable for single-threaded tasks or large-scale LLM inference, where prompt processing for 70B models registers in the bottom 10%."
   ],
-  "description": "Microsoft Azure M32ts is an x86_64 server in the MS family, powered by a dedicated Intel Xeon 8280M processor with 32 vCPUs and 16 physical cores running at 2.7 GHz. It features 192.0 GB of RAM (6.0 GB per core) and 1049 GB of local storage with Premium Storage capability, virtualized via Microsoft Hyper-V. Benchmark data reveals a distinct performance tradeoff: single-core CPU execution and single-threaded compression fall into the bottom 10% tier, whereas multi-core operations, memory bandwidth, and database performance consistently rank in the middle 50% tier. With Redis SET operations reaching 20.68 million operations per second and static web serving throughput at 17.69 GB/sec, this server is qualitatively cost-efficient for memory-intensive, multi-threaded workloads. It is configured for database hosting, multi-threaded data processing, and web serving, rather than single-threaded applications.",
-  "og_description": "Microsoft Azure M32ts is an x86_64 server featuring 32 vCPUs, 192 GB RAM, and 1049 GB local storage. It offers balanced multi-core performance and is optimized for database and memory-intensive workloads.",
-  "meta_description": "Microsoft Azure M32ts is an x86_64 server with 32 vCPUs, 192 GB RAM, and 1049 GB storage, optimized for multi-threaded database workloads.",
-  "tagline": "A dedicated 32-vCPU Intel Xeon server with 192 GB RAM and local storage, configured for multi-threaded database and web workloads.",
+  "description": "Microsoft Azure M32ts is an x86_64 server in the MS family, powered by 32 dedicated vCPUs from an Intel Xeon 8280M processor running at 2.7 GHz. It features 192.0 GB of RAM, a 1049 GB local SSD, and supports Premium Storage. While single-core benchmarks for this Hyper-V virtualized instance rank in the bottom 10%, its multi-core and memory bandwidth performance consistently reach average tiers. This makes the server qualitatively cost-efficient for memory-intensive workloads that do not rely heavily on single-threaded execution speed. It is best suited for database operations, Redis caching, and static web serving.",
+  "og_description": "Microsoft Azure M32ts is an MS family server with 32 Intel Xeon vCPUs, 192 GB RAM, and a 1049 GB local SSD. It offers average multi-core performance, making it suitable for database operations and caching.",
+  "meta_description": "Microsoft Azure M32ts is an MS family server featuring 32 Intel vCPUs, 192 GB RAM, and a 1049 GB local SSD, optimized for database and memory-intensive tasks.",
+  "tagline": "A memory-optimized virtual server featuring dedicated Intel Xeon processors and local SSD storage for balanced multi-threaded database workloads.",
   "bullet_points": [
-    "Intel Xeon 8280M processor with 32 vCPUs and 16 physical cores",
-    "192.0 GB system memory providing 6.0 GB of RAM per core",
-    "1049 GB local storage with Premium Storage capability",
-    "Average multi-core, memory bandwidth, and database performance",
-    "Appropriate for database operations, web serving, and multi-threaded workloads"
+    "32 dedicated vCPUs powered by Intel Xeon 8280M processors at 2.7 GHz",
+    "192.0 GB of system memory providing 6.0 GB of RAM per core",
+    "Bundled 1049 GB local SSD with Premium Storage capability",
+    "Average multi-core and memory bandwidth benchmark performance",
+    "Poor single-core execution speeds across compression and synthetic tests",
+    "Well-suited for database operations, Redis caching, and web serving"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

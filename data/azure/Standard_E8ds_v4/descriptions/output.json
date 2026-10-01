@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E8ds_v4 is a memory-optimized virtual machine belonging to the EDSv4 family, running on the Microsoft Hyper-V hypervisor. It features 8 dedicated vCPUs mapped to 4 physical cores of an Intel Xeon 8272CL processor operating at 2.6 GHz. The x86_64 architecture includes 32 KB L1d cache, 1.0 MB L2 cache, and 35 MB L3 cache. It is equipped with 64.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. The instance includes 307 GB of local storage and supports Premium Storage. No GPUs are included.",
-    "Benchmark data positions the E8ds_v4 in the average performance tier for most compute and memory operations. The stress-ng single-core CPU score is 1411.59, and the multi-core score is 7443.73. Memory bandwidth tests show 415.23 GB/sec for cached small-block reads and 49.8 GB/sec for uncached large-block reads. In database and web serving tests, the instance achieves 7.09 million operations per second on Redis SET operations and 7.32 GB/sec static web serving throughput. However, multi-threaded bzip3 decompression is weak at 28.2 GB/sec, and medium-sized 7B LLM inference is poor, processing prompts at 14.31 tokens per second.",
-    "From a cost-efficiency perspective, the E8ds_v4 offers a high density of memory relative to its vCPU count, making it a viable option for workloads requiring substantial RAM without the cost of additional compute cores. The inclusion of 307 GB of local storage provides a resource-dense profile for data-heavy applications. This server is suitable for memory-intensive workloads, relational databases, caching layers like Redis, and moderate data processing tasks."
+    "Microsoft Azure E8ds_v4 is an x86_64 memory-optimized virtual machine running on the Microsoft Hyper-V hypervisor. It features 8 dedicated vCPUs mapped from 4 physical Intel Xeon 8272CL cores with hyper-threading enabled. The processor operates at a base clock speed of 2.6 GHz and includes a 35 MB L3 cache. The system is configured with 64.0 GB of RAM, yielding a high memory-to-vCPU ratio of 8.0 GB per core. Local storage is provided via a 307 GB SSD, and the instance is capable of utilizing Premium Storage.",
+    "Benchmark results place the E8ds_v4 consistently in the average performance tier across most compute and memory operations. The instance achieved a Geekbench single-core score of 1287.0 and a multi-core score of 4964.0. Memory bandwidth tests show a read-only small block cached speed of 415.23 GB/sec, which drops to 49.8 GB/sec for large uncached blocks. Database operations are supported by a Redis SET throughput of 7.09 million operations per second and a Passmark database score of 2774.19.",
+    "While the instance handles standard workloads reliably, it exhibits performance limitations under heavy parallel processing and modern AI workloads. Multi-threaded bzip3 decompression falls into the bottom 25% of benchmarks at 28.2 GB/sec. Furthermore, LLM inference speeds for a medium 7B model are weak to poor, processing only 14.31 prompt tokens per second and 6.81 text generation tokens per second. Consequently, this server is appropriate for memory-intensive enterprise applications, relational databases, and web serving, rather than complex parallel computing or large-scale machine learning inference."
   ],
-  "description": "Microsoft Azure E8ds_v4 is an x86_64 memory-optimized virtual machine powered by an Intel Xeon 8272CL processor running at 2.6 GHz. It provides 8 dedicated vCPUs across 4 physical cores, 64.0 GB of RAM, and 307 GB of local storage. Operating under the Microsoft Hyper-V hypervisor, this instance delivers a high memory-to-vCPU ratio of 8.0 GB per core. Benchmark results place the server in the average tier for most operations, with a Redis SET throughput of 7.09 million operations per second and a static web serving throughput of 7.32 GB/sec. However, it exhibits weaker performance in multi-threaded decompression and medium-scale LLM inference. The high memory density and local storage capacity make this instance cost-efficient for memory-bound applications. It is best suited for relational databases, in-memory caching, and enterprise applications requiring substantial memory capacity.",
-  "og_description": "Microsoft Azure E8ds_v4 is a memory-optimized virtual machine featuring 8 vCPUs, 64 GB of RAM, and 307 GB of local storage, delivering average performance for database and caching workloads.",
-  "meta_description": "Microsoft Azure E8ds_v4 is an 8-vCPU memory-optimized VM with 64 GB RAM and 307 GB local storage, running on Intel Xeon processors.",
-  "tagline": "An x86_64 memory-optimized instance featuring high RAM-to-vCPU density and local storage for database and caching workloads.",
+  "description": "Microsoft Azure E8ds_v4 is an x86_64 memory-optimized virtual machine featuring 8 dedicated vCPUs and 64.0 GB of RAM, powered by an Intel Xeon 8272CL processor running at 2.6 GHz. Built on the Microsoft Hyper-V hypervisor, it includes a 307 GB local SSD and supports Premium Storage. Benchmark data indicates average performance across standard operations, with a Geekbench multi-core score of 4964.0 and a Redis SET throughput of 7.09 million operations per second. However, the instance exhibits performance limitations in multi-threaded decompression and medium-sized LLM inference tasks. Given its high memory-to-vCPU ratio of 8.0 GB per core and dedicated local storage, the E8ds_v4 is appropriate for memory-intensive workloads, database management, and static web serving, offering a balanced resource density for enterprise applications without the overhead of accelerated hardware.",
+  "og_description": "Microsoft Azure E8ds_v4 is an x86_64 memory-optimized server with 8 vCPUs, 64 GB RAM, and a 307 GB local SSD, delivering average benchmark performance for databases and web serving.",
+  "meta_description": "Microsoft Azure E8ds_v4 is an 8-vCPU memory-optimized server with 64 GB RAM and a 307 GB local SSD, running on Intel Xeon processors.",
+  "tagline": "An x86_64 memory-optimized virtual machine with dedicated Intel Xeon cores and local SSD storage for database and enterprise workloads.",
   "bullet_points": [
-    "Intel Xeon 8272CL processor with 8 dedicated vCPUs and 4 physical cores",
-    "64.0 GB of RAM providing a high 8.0 GB per core memory-to-vCPU ratio",
-    "307 GB of local storage with Premium Storage capability",
-    "Average performance in Redis SET operations and static web serving",
-    "Suited for relational databases, in-memory caching, and data processing"
+    "8 dedicated vCPUs powered by an Intel Xeon 8272CL processor at 2.6 GHz",
+    "64.0 GB of system memory providing 8.0 GB of RAM per core",
+    "307 GB local SSD storage with Premium Storage compatibility",
+    "Average performance in database operations and static web serving",
+    "Performance limitations in multi-threaded decompression and LLM inference",
+    "Appropriate for memory-intensive applications and relational databases"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

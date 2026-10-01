@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure L4s_v4 is a virtual machine instance from the Lsv4 family, running on the Microsoft Hyper-V hypervisor. It features a dedicated Intel Xeon 8573C x86_64 processor with 4 vCPUs, derived from 2 physical cores with hyper-threading. The CPU operates at a clock speed of 4.2 GHz and includes a 260 MB L3 cache. It is equipped with 32.0 GB of system memory, providing 8.0 GB of RAM per core. The instance includes 960 GB of local storage and is Premium Storage capable. No GPU accelerators are present.",
-    "Benchmark results show strong single-core performance, with a Geekbench single-core score of 2158.0 and a single-threaded gzip compression rate of 31.48 GB/sec. However, multi-core and memory bandwidth metrics are less competitive. The stress-ng multi-core CPU performance of 3990.37 and the uncached memory bandwidth read-only large block speed of 36.35 GB/sec fall into the bottom 25% of tested hardware. Similarly, multi-threaded bzip3 decompression and software compilation with clang are relatively weak.",
-    "From a qualitative cost-efficiency perspective, the L4s_v4 offers a high memory-to-vCPU ratio of 1:8 and substantial local storage capacity, making it a viable option for memory-bound workloads that do not require massive parallel processing. The hardware features advanced instruction sets such as AVX-512 and Intel AMX for matrix operations, which support average-tier performance in small-scale LLM inference. However, the low multi-core scaling and limited memory bandwidth make it less suitable for heavy multi-threaded compute, large-scale database operations, or medium-to-large LLM inference. Appropriate workloads include single-threaded applications, lightweight database operations, text processing, and static web serving."
+    "Microsoft Azure L4s_v4 is an x86_64 architecture server belonging to the Lsv4 family, running on the Microsoft Hyper-V hypervisor. It features a dedicated Intel Xeon 8573C processor with 4 vCPUs, derived from 2 physical cores with hyper-threading. The CPU operates at a clock speed of 4.2 GHz and includes a 260 MB L3 cache. It is equipped with 32.0 GB of system memory, providing 8.0 GB per core. Local storage is bundled, consisting of a 960 GB NVMe SSD, and the instance is Premium Storage capable.",
+    "Benchmark data indicates strong single-core performance, with a Geekbench single-core score of 2158.0 and a strong single-threaded gzip compression rate of 31.48 GB/sec. However, multi-core and memory bandwidth metrics show limitations. The stress-ng multi-core CPU performance is categorized as weak at 3990.37, and large-block memory bandwidth reads and writes are also weak, measuring 36.35 GB/sec and 25.49 GB/sec respectively. Redis SET operations perform weakly at 5.68 million operations per second, while static web serving throughput is average at 7.76 GB/sec.",
+    "The L4s_v4 offers a high local storage-to-vCPU ratio and dedicated compute resources, making it qualitatively cost-efficient for workloads requiring fast local NVMe storage without massive multi-core scaling. Tradeoffs include lower multi-threaded efficiency and constrained memory bandwidth. This hardware profile is suited for database operations, text processing, and single-threaded tasks, but is less optimal for memory-bandwidth-intensive applications or medium-to-large language model inference."
   ],
-  "description": "Microsoft Azure L4s_v4 is an x86_64 virtual machine from the Lsv4 family, powered by a dedicated 4.2 GHz Intel Xeon 8573C processor with 4 vCPUs and 32.0 GB of memory. It features 960 GB of local storage and is Premium Storage capable, but lacks a GPU. Single-core performance is strong, as evidenced by a Geekbench single-core score of 2158.0 and high single-threaded gzip compression speeds. However, multi-core scaling and memory bandwidth are relatively weak, with stress-ng multi-core and uncached memory read/write speeds falling into the bottom 25%. The instance is qualitatively cost-efficient for memory-intensive, single-threaded tasks or small-scale database operations. It is suited for workloads such as text processing, static web serving, and lightweight applications that benefit from its 1:8 vCPU-to-RAM ratio and local storage capacity rather than heavy parallel computation.",
-  "og_description": "Microsoft Azure L4s_v4 is a memory-optimized virtual machine featuring a 4.2 GHz Intel Xeon processor, 4 vCPUs, 32 GB RAM, and 960 GB of local storage, delivering strong single-core performance for targeted workloads.",
-  "meta_description": "Microsoft Azure L4s_v4 is an x86_64 virtual machine with 4 vCPUs, 32 GB RAM, and 960 GB local storage, optimized for memory-intensive workloads.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated Intel Xeon processing, substantial local storage, and strong single-core performance for targeted workloads.",
+  "description": "Microsoft Azure L4s_v4 is an x86_64 server in the Lsv4 family, powered by a dedicated 4.2 GHz Intel Xeon 8573C processor with 4 vCPUs and a 260 MB L3 cache. It features 32.0 GB of RAM and a bundled 960 GB NVMe SSD. Benchmarks show strong single-core capabilities, including a Geekbench single-core score of 2158.0 and strong single-threaded gzip compression. However, multi-core performance and memory bandwidth are relatively weak, with large-block uncached reads at 36.35 GB/sec. This resource configuration provides qualitative cost efficiency for storage-centric workloads that do not require high multi-threaded scaling. It is suited for database operations, text processing, and lightweight web serving, while being less effective for memory-intensive tasks or complex LLM inference.",
+  "og_description": "Microsoft Azure L4s_v4 is an x86_64 server featuring 4 vCPUs, 32 GB RAM, and a 960 GB NVMe SSD. It offers strong single-core performance but exhibits weak multi-core and memory bandwidth metrics.",
+  "meta_description": "Microsoft Azure L4s_v4 is an x86_64 server with 4 vCPUs, 32 GB RAM, and a 960 GB NVMe SSD, optimized for storage and database workloads.",
+  "tagline": "An x86_64 storage-optimized instance featuring dedicated high-frequency Intel Xeon processing, bundled NVMe SSD storage, and strong single-core performance.",
   "bullet_points": [
     "Dedicated Intel Xeon 8573C processor running at 4.2 GHz",
-    "32.0 GB of system memory providing an 8.0 GB per core ratio",
-    "960 GB of local storage with Premium Storage capability",
-    "Strong single-core execution in text processing and gzip compression",
-    "Lower multi-core scaling and memory bandwidth performance",
-    "Suited for lightweight databases, static web serving, and single-threaded tasks"
+    "Bundled 960 GB local NVMe SSD storage",
+    "32.0 GB of system memory providing 8.0 GB per vCPU",
+    "Strong single-core and text processing benchmark results",
+    "Weak multi-core scaling and memory bandwidth performance",
+    "Suited for database operations and single-threaded workloads"
   ],
   "categories": [
-    "Memory Optimized",
     "Storage & Database",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

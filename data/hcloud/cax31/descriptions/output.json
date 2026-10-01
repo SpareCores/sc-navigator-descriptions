@@ -1,22 +1,23 @@
 {
   "page": [
-    "Hetzner Cloud cax31 is an ARM64-based virtual server powered by the Ampere Altra Neoverse-N1 processor. It features 8 shared vCPUs (8 physical cores) running at 2.0 GHz, paired with 16.0 GB of RAM, yielding approximately 1.95 GB of memory per core. Local storage is provided via a 160 GB NVMe SSD, and the instance runs on the QEMU hypervisor. No complimentary public IPv4 addresses are included with this configuration.",
-    "Performance benchmarks indicate average multi-core capabilities, with a stress-ng multi-core score of 14164.78 and a Geekbench multi-core score of 5619.0. Single-core performance is weaker, as shown by a Geekbench single-core score of 1029.0 and a PassMark CPU score of 6028.96. Memory bandwidth is measured at 553.72 GB/sec for cached small blocks and drops to 75.87 GB/sec for uncached large blocks. The server demonstrates average throughput for static web serving at 7.92 GB/sec and handles Redis SET operations at 9.74 million operations per second.",
-    "Given its shared CPU allocation and ARM64 architecture, the cax31 offers a highly cost-efficient profile for resource-dense deployments that do not require dedicated CPU threads. However, single-threaded execution and complex tasks like image processing or text processing are relatively weak. It is best suited for lightweight multi-threaded workloads, static web serving, software compilation, and basic database operations."
+    "Hetzner Cloud cax31 is an arm64-based virtual server powered by an Ampere Altra Neoverse-N1 processor. It features 8 vCPUs mapped to 8 physical cores with a 2.0 GHz clock speed, operating under a shared CPU allocation model via the QEMU hypervisor. The system is equipped with 16.0 GB of RAM, yielding approximately 1.95 GB of memory per core, and includes 160 GB of local NVMe SSD storage.",
+    "Benchmark results indicate a mix of average and weak performance tiers. The server achieves average multi-core performance, with a stress-ng multi-core score of 14164.78 and a Geekbench multi-core score of 5619.0. Memory bandwidth is solid, reaching 553.72 GB/sec for cached small-block reads and 75.87 GB/sec for large-block reads. However, single-core capabilities are relatively weak, as evidenced by a Geekbench single-core score of 1029.0 and a weak Passmark CPU score of 6028.96. Cryptographic and decompression workloads show lower efficiency, with a weak Passmark CPU encryption test result of 1273.14 and a weak bzip3 decompression rate.",
+    "The cax31 offers a cost-efficient entry point into ARM-based cloud computing, providing a high physical core count and fast local NVMe storage relative to its resource tier. The primary tradeoff is the shared CPU allocation, which can introduce performance variability under sustained multi-tenant load. Additionally, the lack of advanced vector extensions (AVX) and hardware virtualization support limits its utility for nested virtualization or heavy vector-based mathematical modeling.",
+    "This server is well-suited for multi-threaded applications that benefit from parallel execution on physical cores without requiring sustained peak single-core performance. Appropriate workloads include static web serving, where it achieves an average throughput of 7.92 GB/sec, Redis caching layers (9.74 million SET operations per second), software compilation, and lightweight database operations. It is less suitable for complex LLM inference or single-threaded, compute-heavy tasks."
   ],
-  "description": "Hetzner Cloud cax31 is an ARM64-based virtual server featuring 8 shared vCPUs powered by an Ampere Altra Neoverse-N1 processor running at 2.0 GHz. It is equipped with 16.0 GB of RAM (1.95 GB per core) and 160 GB of local NVMe SSD storage. Operating under the QEMU hypervisor, this instance delivers average multi-core performance, as evidenced by a Geekbench multi-core score of 5619.0 and a stress-ng multi-core score of 14164.78. However, single-core performance remains weak, with a Geekbench single-core score of 1029.0. The server excels in memory bandwidth for cached small blocks (553.72 GB/sec) and handles static web serving at 7.92 GB/sec. Given its shared CPU allocation, the cax31 provides a highly cost-efficient option for multi-threaded workloads, software compilation, static web serving, and lightweight database operations that can leverage the ARM64 architecture without requiring dedicated CPU resources.",
-  "og_description": "Hetzner Cloud cax31 is an ARM64 virtual server with 8 shared Ampere Altra vCPUs, 16 GB RAM, and 160 GB NVMe SSD storage, offering cost-efficient multi-core performance for web serving and compilation.",
-  "meta_description": "Hetzner Cloud cax31 is an ARM64 virtual server featuring 8 shared Ampere Altra vCPUs, 16 GB RAM, and 160 GB NVMe SSD storage.",
-  "tagline": "An efficient ARM64 virtual server with shared Ampere Altra cores and NVMe storage for cost-effective multi-threaded workloads.",
+  "description": "Hetzner Cloud cax31 is an arm64 virtual server configured with 8 physical cores on an Ampere Altra Neoverse-N1 processor running at 2.0 GHz. Utilizing the QEMU hypervisor with a shared CPU allocation, the instance is equipped with 16.0 GB of RAM and 160 GB of local NVMe SSD storage. Performance benchmarks reveal average multi-core capabilities, with a Geekbench multi-core score of 5619.0 and a static web serving throughput of 7.92 GB/sec, contrasted by weaker single-core and cryptographic execution. The server provides a cost-efficient option for parallelized workloads, though the shared CPU model presents a tradeoff for sustained peak performance. It is best suited for multi-threaded applications, static web serving, software compilation, and Redis deployments.",
+  "og_description": "Hetzner Cloud cax31 is an arm64 virtual server featuring 8 Ampere Altra cores, 16 GB RAM, and 160 GB NVMe SSD storage, delivering reliable multi-core performance for web serving and compilation.",
+  "meta_description": "Hetzner Cloud cax31 is an arm64 virtual server with 8 Ampere Altra cores, 16 GB RAM, and 160 GB NVMe SSD storage for multi-threaded workloads.",
+  "tagline": "An arm64 virtual server featuring eight physical cores and local NVMe storage, optimized for cost-effective multi-threaded workloads and web serving.",
   "bullet_points": [
-    "8 shared Ampere Altra Neoverse-N1 ARM64 vCPUs at 2.0 GHz",
-    "16.0 GB RAM and 160 GB local NVMe SSD storage",
-    "Average multi-core performance for software compilation and web serving",
-    "Weaker single-core performance and shared CPU resource allocation",
-    "Suitable for lightweight database operations and static web hosting"
+    "8 physical Ampere Altra Neoverse-N1 arm64 cores at 2.0 GHz",
+    "16.0 GB RAM and 160 GB of local NVMe SSD storage",
+    "Average multi-core performance and 7.92 GB/sec static web serving throughput",
+    "Shared CPU allocation model via QEMU hypervisor",
+    "Best suited for software compilation, Redis, and multi-threaded applications"
   ],
   "categories": [
-    "Burstable & Budget",
-    "General Purpose"
+    "Compute Optimized",
+    "Burstable & Budget"
   ]
 }

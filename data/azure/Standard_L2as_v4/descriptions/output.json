@@ -1,23 +1,22 @@
 {
   "page": [
-    "Microsoft Azure L2as_v4 is a virtual machine instance belonging to the Lasv4 family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated AMD EPYC 9V74 processor. This configuration provides 2 vCPUs derived from 1 physical core with 2 threads per core, operating at a clock speed of 3.7 GHz. The instance is equipped with 16.0 GB of system memory, translating to 8.0 GB per core, and includes 480 GB of local storage with Premium Storage capability. No GPU accelerators are included.",
-    "Performance benchmarks reveal a distinct contrast between single-core and multi-core capabilities. The single-core CPU performance is strong, placing in the top 25% for both stress-ng and Geekbench single-core tests. However, due to the limited physical core count, multi-core CPU performance falls into the bottom 25%. Memory read bandwidth is a notable bottleneck, scoring in the bottom 10% for small cached blocks and the bottom 25% for large uncached blocks, though write bandwidth remains average.",
-    "Given these performance characteristics, the L2as_v4 is suited for workloads that benefit from high single-thread performance but do not require massive parallel processing. While it features a 1:8 vCPU-to-RAM ratio and local storage, its database performance is constrained, as indicated by poor database operation scores and weak Redis SET throughput. Consequently, it is best utilized for light database caching, single-threaded file processing, or low-traffic web serving where single-core speed is prioritized over multi-threaded throughput."
+    "Microsoft Azure L2as_v4 is an x86_64 server instance belonging to the Lasv4 family, powered by a dedicated AMD EPYC 9V74 processor. It features 2 vCPUs mapped to 1 physical core with 2 threads per core, operating at a clock speed of 3.7 GHz. The processor includes 32 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, alongside support for advanced instruction sets such as AVX-512 (including VNNI and BF16) and cryptographic acceleration via AES and SHA_NI. The instance is equipped with 16.0 GB of system memory, yielding 8.0 GB of RAM per core.",
+    "For local storage, the L2as_v4 includes a bundled 480 GB NVMe SSD and is Premium Storage capable. Benchmark data reveals a distinct asymmetry between single-core and multi-core performance. Single-core execution is strong, as evidenced by a stress-ng single-core CPU score of 3077.27 and a Geekbench single-core score of 2034.0, both placing in the top 25%. However, multi-core performance is weak, with the stress-ng multi-core metric matching the single-core score at 3077.27, and Geekbench multi-core scoring at 2584.0. Memory bandwidth also exhibits constraints, with read-only small block cached bandwidth scoring in the bottom 10% at 151.28 GB/sec, while large block write bandwidth remains average at 27.68 GB/sec.",
+    "Given its high memory-to-vCPU ratio of 1:8 and dedicated AMD EPYC hardware, the L2as_v4 offers a resource-dense configuration for memory-bound workloads that do not require high parallel CPU scaling. The inclusion of local NVMe SSD storage provides fast local scratch space, though database operations scored poorly in Passmark benchmarks. This server is best suited for lightweight memory-optimized tasks, single-threaded applications, basic text processing, and small-scale web serving where single-core performance is prioritized over multi-threaded throughput."
   ],
-  "description": "Microsoft Azure L2as_v4 is an x86_64 virtual machine from the Lasv4 family, powered by a dedicated 3.7 GHz AMD EPYC 9V74 processor. It features 2 vCPUs, 1 physical core, 16.0 GB of RAM, and 480 GB of local storage with Premium Storage capabilities. Operating on the Microsoft Hyper-V hypervisor, this instance delivers strong single-core CPU performance, ranking in the top 25% of benchmarks. However, its multi-core performance and memory read bandwidth are limited, placing in the bottom 25% and bottom 10% respectively. The server offers a qualitative balance of high single-thread speed and moderate memory capacity. It is best suited for workloads prioritizing single-core processing over heavy parallelization, such as light web serving, single-threaded data processing, and basic database tasks.",
-  "og_description": "Microsoft Azure L2as_v4 is a virtual machine featuring a 3.7 GHz AMD EPYC 9V74 processor, 2 vCPUs, 16.0 GB of RAM, and 480 GB of local storage, offering strong single-core but limited multi-core performance.",
-  "meta_description": "Microsoft Azure L2as_v4 is a virtual machine with 2 vCPUs, 16.0 GB of RAM, and 480 GB of local storage, powered by a 3.7 GHz AMD EPYC processor.",
-  "tagline": "A dual-vCPU virtual machine featuring dedicated AMD EPYC processing, 16 GB of RAM, and local storage for single-thread intensive workloads.",
+  "description": "The Microsoft Azure L2as_v4 is a memory-optimized, x86_64 virtual machine from the Lasv4 family, powered by a dedicated AMD EPYC 9V74 processor running at 3.7 GHz. It features 2 vCPUs (1 physical core, 2 threads), 16.0 GB of RAM, and a bundled 480 GB NVMe SSD with Premium Storage capability. Benchmark results indicate strong single-core performance, with stress-ng single-core and Geekbench single-core scores ranking in the top 25%. Conversely, multi-core performance and memory read bandwidth are weak, reflecting the single-core physical limitation. This instance is qualitatively cost-efficient for memory-dense, low-concurrency workloads. It is best suited for single-threaded applications, lightweight memory-intensive tasks, and basic text processing.",
+  "og_description": "Microsoft Azure L2as_v4 is a memory-optimized virtual machine featuring a 3.7 GHz AMD EPYC processor, 2 vCPUs, 16 GB of RAM, and a 480 GB NVMe SSD, delivering strong single-core performance.",
+  "meta_description": "Microsoft Azure L2as_v4 is a memory-optimized VM with 2 vCPUs, 16 GB RAM, and a 480 GB NVMe SSD, powered by a 3.7 GHz AMD EPYC CPU.",
+  "tagline": "A memory-dense virtual instance featuring dedicated AMD EPYC processing, fast local NVMe storage, and strong single-core performance for lightweight workloads.",
   "bullet_points": [
-    "Dedicated AMD EPYC 9V74 processor running at 3.7 GHz",
-    "16.0 GB of system memory paired with 480 GB of local storage",
-    "Strong single-core CPU performance ranking in the top 25%",
-    "Limited multi-core scaling and memory read bandwidth",
-    "Well-suited for single-threaded processing and light database tasks"
+    "Dedicated AMD EPYC 9V74 processor operating at 3.7 GHz",
+    "16.0 GB of RAM providing a high 1:8 vCPU-to-memory ratio",
+    "Bundled 480 GB NVMe SSD with Premium Storage capability",
+    "Strong single-core CPU performance in benchmark testing",
+    "Best suited for single-threaded applications and memory-dense workloads"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

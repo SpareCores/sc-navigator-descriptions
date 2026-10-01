@@ -1,24 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E64a_v4 is an x86_64 architecture server belonging to the EAv4 family. It features 64 dedicated vCPUs mapped to 32 physical cores of an AMD EPYC 7452 processor operating at 3.525 GHz. The system is equipped with 512.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. It also includes 1638 GB of bundled local storage and runs on the Microsoft Hyper-V hypervisor.",
-    "Benchmark results indicate a clear contrast between single-core and multi-core performance. The single-core CPU performance measured by stress-ng falls in the bottom 10%, and LLM text generation for medium models is similarly positioned. However, multi-threaded capabilities are more robust, with bzip3 multi-threaded decompression and the PassMark CPU score ranking in the top 25%. Memory performance is also strong, as evidenced by the PassMark memory score, though uncached large-block memory read and write bandwidths remain in the middle 50% tier.",
-    "From a qualitative cost-efficiency perspective, the E64a_v4 offers high memory density and bundled local storage, reducing the need for external storage attachments for certain workloads. The primary tradeoff is the lower single-core execution speed, which makes it less suitable for single-threaded tasks. However, the high core count and substantial memory capacity provide a balanced resource density for multi-threaded applications.",
-    "This server configuration is suited for memory-intensive workloads such as relational databases, in-memory caching systems like Redis, multi-threaded data decompression, and enterprise applications requiring large memory footprints alongside local scratch storage. It is less suited for latency-sensitive single-threaded processing or large-scale LLM inference."
+    "Microsoft Azure E64a_v4 is a memory-optimized virtual machine belonging to the EAv4 family, running on the Microsoft Hyper-V hypervisor. It features 64 dedicated vCPUs mapped to 32 physical cores of an AMD EPYC 7452 processor, operating at a clock speed of 3.525 GHz. The x86_64 architecture includes 32 KB L1d cache, 0.5 MB L2 cache, and 32 MB L3 cache. It is equipped with 512.0 GB of system memory, yielding 8.0 GB of RAM per core. Local storage is bundled with a 1638 GB SSD, while no complimentary public IPv4 addresses are included.",
+    "Benchmark results indicate a clear contrast between single-core and multi-threaded capabilities. Single-core performance is relatively weak, with stress-ng single-core CPU performance scoring in the bottom 10%. However, multi-core and parallel execution metrics are robust; the Passmark CPU score and Passmark CPU encryption test both rank in the top 25%. Multi-threaded bzip3 decompression also performs strongly in the top 25%. Memory performance is solid, with the Passmark memory score placing in the top 25%, and uncached large-block memory read bandwidth reaching 106.39 GB/sec. Large-model LLM inference is a notable bottleneck, with text generation on a medium 7B model scoring in the bottom 10%.",
+    "Given its high memory-to-vCPU ratio of 1:8 and bundled 1.6 TB local SSD, this server offers high resource density for memory-bound applications without requiring external storage attachments for scratch space. This hardware profile is highly cost-efficient for workloads that demand substantial memory footprints but do not require top-tier single-core CPU speeds. The E64a_v4 is well-suited for relational databases, in-memory caching systems, multi-threaded data decompression, and enterprise application hosting."
   ],
-  "description": "Microsoft Azure E64a_v4 is an x86_64 memory-optimized server from the EAv4 family, powered by an AMD EPYC 7452 processor running at 3.525 GHz. It features 64 dedicated vCPUs, 512.0 GB of RAM (8.0 GB per core), and 1638 GB of bundled local storage. While single-core benchmarks, such as stress-ng, rank in the bottom 10%, its multi-threaded performance is robust, with PassMark CPU and memory scores placing in the top 25%. This high memory density and bundled storage make it qualitatively cost-efficient for workloads requiring large memory footprints without the overhead of external storage. The server is suited for database operations, in-memory caching, and multi-threaded data processing, though it presents a tradeoff in single-threaded execution speed.",
-  "og_description": "Microsoft Azure E64a_v4 is a memory-optimized server with 64 AMD EPYC vCPUs, 512 GB RAM, and 1638 GB local storage, delivering strong multi-threaded and memory performance for database workloads.",
-  "meta_description": "Microsoft Azure E64a_v4 is an x86_64 memory-optimized server featuring 64 AMD EPYC vCPUs, 512 GB RAM, and 1638 GB of bundled local storage.",
-  "tagline": "A memory-optimized x86_64 configuration featuring high memory density, bundled local storage, and strong multi-threaded performance for database workloads.",
+  "description": "The Microsoft Azure E64a_v4 is a memory-optimized virtual machine powered by an AMD EPYC 7452 processor with 64 dedicated vCPUs and 32 physical cores. Operating at 3.525 GHz, this x86_64 server is equipped with 512.0 GB of RAM, providing a high 1:8 vCPU-to-memory ratio, and includes a 1638 GB local SSD. While single-core benchmarks like stress-ng place in the bottom 10%, its multi-threaded capabilities are robust, with Passmark CPU and memory scores ranking in the top 25%. The server delivers strong multi-threaded decompression and encryption performance, though it exhibits weak results in large-model LLM inference. This configuration is highly suitable for memory-intensive workloads, including large databases, in-memory analytics, and enterprise applications requiring substantial local storage.",
+  "og_description": "Microsoft Azure E64a_v4 is a memory-optimized server featuring 64 dedicated AMD EPYC vCPUs, 512 GB of RAM, and a 1638 GB local SSD, designed for memory-intensive database and enterprise workloads.",
+  "meta_description": "Microsoft Azure E64a_v4 is a memory-optimized server with 64 AMD EPYC vCPUs, 512 GB RAM, and a 1638 GB local SSD for database workloads.",
+  "tagline": "A memory-optimized virtual server featuring sixty-four dedicated AMD cores, half a terabyte of RAM, and integrated local SSD storage.",
   "bullet_points": [
-    "64 dedicated vCPUs powered by an AMD EPYC 7452 processor at 3.525 GHz.",
-    "512.0 GB of RAM providing a high 8.0 GB per core memory allocation.",
-    "1638 GB of bundled local storage for high-capacity scratch space.",
-    "Strong multi-threaded performance, ranking in the top 25% for PassMark CPU and memory benchmarks.",
-    "Suited for memory-intensive databases, caching, and multi-threaded data processing."
+    "64 dedicated AMD EPYC 7452 vCPUs and 512 GB of system memory",
+    "Bundled 1638 GB local SSD storage for fast scratch space",
+    "Strong multi-threaded performance and memory bandwidth in the top 25%",
+    "Slower single-core CPU speeds and weak large-model LLM inference",
+    "Designed for memory-intensive databases and enterprise applications"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

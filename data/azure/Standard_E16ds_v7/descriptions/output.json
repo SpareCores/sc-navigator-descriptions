@@ -1,24 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E16ds_v7 is an Edsv7-family virtual machine running on the Microsoft Hyper-V hypervisor. It features 16 dedicated x86_64 vCPUs powered by an Intel Xeon 6973P-C processor with a base clock speed of 4.2 GHz. The physical layout consists of 8 physical cores with 2 threads per core. The processor includes an L3 cache of 480 MB, alongside L1d and L2 caches of 48 KB and 2 MB respectively. It supports advanced instruction sets including AVX-512, Intel AMX (Advanced Matrix Extensions), and cryptographic acceleration via AES and SHA_NI.",
-    "This server configuration includes 128.0 GB of system memory, yielding a memory-to-vCPU ratio of 8.0 GB per core, which positions it within the memory-optimized class. Local storage is provided via a bundled 945 GB local disk, and the instance is Premium Storage capable. No public IPv4 addresses are included by default, and there are no onboard GPUs.",
-    "Benchmark data indicates average performance across most standard compute and memory tasks, with specific top-tier results in single-threaded operations. The stress-ng single-core and multi-core CPU performance tests fall within the average category, as do the PassMark CPU and memory scores. However, single-threaded gzip compression (36.52 GB/sec) and single-threaded bzip3 decompression (15.37 GB/sec) reach top-tier levels. Large-block memory bandwidth is measured at 136.15 GB/sec for read operations and 56.03 GB/sec for write operations. In LLM inference tests using a small 135M model, text generation achieves a top-tier speed of 343.48 tokens/sec.",
-    "From a qualitative cost-efficiency perspective, the E16ds_v7 offers high memory density and a large L3 cache relative to its 16 vCPUs, making it a viable option for memory-bound workloads without paying for excess compute cores. The combination of 128 GB RAM, 945 GB of local storage, and average database operation benchmarks makes this instance suitable for relational databases, in-memory caching systems like Redis, and data processing pipelines."
+    "Microsoft Azure E16ds_v7 is a memory-optimized virtual machine from the Edsv7 family, running on the Microsoft Hyper-V hypervisor. It features 16 dedicated vCPUs mapped to 8 physical cores of an Intel Xeon 6973P-C processor operating at 4.2 GHz. The x86_64 architecture includes a 480 MB L3 cache, 2 MB L2 cache, and 48 KB L1d cache. It is equipped with 128.0 GB of RAM, yielding a high memory-to-vCPU ratio of 8.0 GB per core. Local storage is bundled, consisting of a 945 GB NVMe SSD, and the instance is premium storage capable.",
+    "Benchmark data shows average performance across most compute and memory metrics, with specific top-tier capabilities in compression and lightweight inference. The single-threaded gzip compression reaches 36.52 GB/sec, and single-threaded bzip3 decompression achieves 15.37 GB/sec, both placing in the top 10% tier. For LLM inference, text generation using a small 135M model performs at a top-tier rate of 343.48 tokens/sec. Other benchmarks, such as stress-ng multi-core CPU performance and Passmark database operations, fall within the average range.",
+    "Given its high memory density of 8 GB per vCPU and integrated 945 GB NVMe SSD, the E16ds_v7 offers a balanced cost-to-resource profile for memory-intensive workloads without requiring separate storage attachments. It is well-suited for relational databases, in-memory caching systems like Redis, data analytics, and memory-heavy enterprise applications. The inclusion of advanced instruction sets like AVX-512 and Intel AMX also supports specialized vector and matrix operations."
   ],
-  "description": "Microsoft Azure E16ds_v7 is an Edsv7-family virtual machine featuring 16 dedicated x86_64 vCPUs powered by an Intel Xeon 6973P-C processor running at 4.2 GHz. It is equipped with 128.0 GB of RAM, establishing a high 8.0 GB per core memory-to-vCPU ratio, and includes a 945 GB local disk. Operating on the Microsoft Hyper-V hypervisor, the CPU features a large 480 MB L3 cache and supports advanced instruction sets like AVX-512 and Intel AMX. Benchmark results place its general compute, database operations, and memory bandwidth in the average tier, while single-threaded gzip compression and small-model LLM text generation reach top-tier performance. Lacking a GPU, this server is designed for memory-intensive workloads, database management, and structured data processing where high memory capacity and local storage are prioritized over raw parallel compute.",
-  "og_description": "Microsoft Azure E16ds_v7 is an Edsv7-family virtual machine with 16 dedicated Intel Xeon vCPUs, 128 GB RAM, and a 945 GB local disk, optimized for memory-intensive database and data processing workloads.",
-  "meta_description": "Microsoft Azure E16ds_v7 is an Edsv7 VM featuring 16 Intel Xeon vCPUs, 128 GB RAM, and 945 GB local storage for memory-intensive workloads.",
-  "tagline": "An x86_64 virtual machine featuring high memory density, dedicated Intel Xeon processing, and local storage for memory-intensive workloads.",
+  "description": "Microsoft Azure E16ds_v7 is a memory-optimized virtual machine powered by an Intel Xeon 6973P-C processor running at 4.2 GHz. Built on the x86_64 architecture with Microsoft Hyper-V, it provides 16 dedicated vCPUs (8 physical cores) and 128.0 GB of RAM, establishing a high 8.0 GB per core memory-to-vCPU ratio. The server includes 945 GB of local NVMe SSD storage and is premium storage capable. Performance benchmarks indicate average multi-core processing and database operations, but highlight top-tier single-threaded compression speeds, such as gzip compression at 36.52 GB/sec, and fast text generation for small LLM models. This hardware configuration is highly suitable for memory-intensive workloads, including relational databases, in-memory caching, and data analytics.",
+  "og_description": "Microsoft Azure E16ds_v7 is a memory-optimized VM featuring 16 dedicated Intel Xeon vCPUs, 128 GB of RAM, and a 945 GB local NVMe SSD, delivering top-tier compression performance for database and analytical workloads.",
+  "meta_description": "Microsoft Azure E16ds_v7 is an Intel-powered, memory-optimized VM with 16 vCPUs, 128 GB RAM, and 945 GB NVMe SSD storage for database workloads.",
+  "tagline": "A memory-optimized virtual machine featuring dedicated Intel Xeon processors, high-speed NVMe storage, and exceptional single-threaded compression performance.",
   "bullet_points": [
-    "16 dedicated x86_64 vCPUs powered by an Intel Xeon 6973P-C processor at 4.2 GHz",
-    "128.0 GB of RAM providing a high 8.0 GB per core memory-to-vCPU ratio",
-    "945 GB of bundled local storage with Premium Storage capability",
-    "Top-tier single-threaded gzip compression and small-model LLM text generation",
-    "Suited for relational databases, in-memory caching, and data processing"
+    "16 dedicated vCPUs and 128 GB of RAM providing a high 8 GB per core ratio",
+    "945 GB of integrated local NVMe SSD storage with premium storage support",
+    "Intel Xeon 6973P-C processor running at 4.2 GHz with 480 MB L3 cache",
+    "Top-tier single-threaded gzip compression and bzip3 decompression performance",
+    "Optimized for relational databases, in-memory caching, and data analytics"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E16-8as_v4 is an x86_64 architecture server belonging to the EASv4 family. It is powered by an AMD EPYC 7763 processor running at 3.525 GHz, configured with 4 physical cores and 8 virtual CPUs (vCPUs) via Microsoft Hyper-V virtualization. The server features a dedicated CPU allocation and is equipped with 128.0 GB of system memory, providing a high memory-to-vCPU ratio of 16.0 GB per core. It includes 262 GB of local storage and is Premium Storage capable.",
-    "Performance benchmarks indicate a split profile. While raw CPU compute metrics from stress-ng show poor single-core and weak multi-core performance, real-world execution tests present a more balanced average capability. Geekbench single-core and multi-core scores, software compilation, and ray tracing all fall within the average category. Memory bandwidth for small cached blocks is average, though large-block uncached read and write operations are weak. Database operations, Redis SET operations, and static web serving throughput consistently perform in the middle tier. Large LLM inference is highly constrained, with medium model prompt processing and text generation scoring in the bottom tier.",
-    "From a resource allocation perspective, this server offers high qualitative cost efficiency for memory-intensive workloads that do not demand proportional CPU scaling. By pairing 128 GB of RAM with 8 vCPUs, users avoid paying for unneeded compute capacity while securing a large memory footprint. The primary tradeoff is the weak raw multi-core processing power and lower uncached memory bandwidth, which makes it less suitable for heavy parallel compute tasks or large-scale machine learning.",
-    "The E16-8as_v4 is best suited for memory-bound applications such as relational databases, caching layers like Redis, medium-scale web serving, and software compilation tasks. It is also appropriate for enterprise applications requiring significant RAM but moderate CPU utilization."
+    "Microsoft Azure E16-8as_v4 is a memory-optimized virtual machine belonging to the EASv4 server family. Running on the Microsoft Hyper-V hypervisor, this instance features a dedicated AMD EPYC 7763 processor with an x86_64 architecture. It is configured with 8 vCPUs, 4 physical cores, and 2 threads per core, operating at a clock speed of 3.525 GHz. The processor includes 32 KB of L1d cache, 0.5 MB of L2 cache, and 32 MB of L3 cache. The system is equipped with 128.0 GB of RAM, providing a high memory-to-core ratio of 16.0 GB per core. Local storage consists of a 262 GB SSD, and the instance is Premium Storage capable. No GPUs or complimentary public IPv4 addresses are included.",
+    "Benchmark data reveals a clear tradeoff between memory capacity and raw computational throughput. The instance exhibits poor single-core CPU performance, with a stress-ng score of 763.78, and weak multi-core CPU performance at 3060.15. Large-block memory bandwidth is also weak, measuring 39.27 GB/sec for read-only and 22.62 GB/sec for write operations. However, small-block cached read-only memory bandwidth is average at 515.14 GB/sec. General processing benchmarks, such as Geekbench (single-core 1604.0, multi-core 6375.0) and Passmark (CPU score 11895.86, memory score 2670.25), consistently fall within the average range. LLM inference performance is average for small 135M models but drops to poor for medium 7B models.",
+    "From a cost-efficiency perspective, the E16-8as_v4 offers high memory density relative to its compute resources, making it a viable option for workloads that require large memory footprints without demanding intensive CPU performance. It is well-suited for database operations, caching layers, static web serving, and memory-bound applications. The presence of a 262 GB local SSD provides fast temporary storage, supporting workloads like relational databases and medium-scale data processing that benefit from high memory-to-vCPU ratios."
   ],
-  "description": "The Microsoft Azure E16-8as_v4 is an x86_64 memory-optimized server from the EASv4 family, powered by an AMD EPYC 7763 processor running at 3.525 GHz. It features 8 dedicated vCPUs (4 physical cores) and a substantial 128.0 GB of RAM, yielding a high 16.0 GB per core ratio. The server includes 262 GB of local storage and supports Premium Storage. Benchmark data reveals average performance across Geekbench, software compilation, and Redis SET operations, though raw CPU stress tests and uncached memory bandwidth are weak. This configuration offers excellent qualitative cost efficiency for memory-heavy workloads that do not require intensive CPU scaling. It is highly suited for database hosting, caching layers, and general-purpose enterprise applications with large memory footprints.",
-  "og_description": "Microsoft Azure E16-8as_v4 is an EASv4-family server featuring an AMD EPYC 7763 processor with 8 vCPUs, 128 GB RAM, and 262 GB local storage, optimized for memory-intensive enterprise workloads.",
-  "meta_description": "Microsoft Azure E16-8as_v4 is an x86_64 server with 8 vCPUs, 128 GB RAM, and 262 GB local storage, designed for memory-intensive workloads.",
-  "tagline": "A memory-dense virtual server featuring dedicated AMD EPYC processing and 128 GB of RAM for memory-bound enterprise workloads.",
+  "description": "Microsoft Azure E16-8as_v4 is an x86_64 memory-optimized virtual machine powered by a dedicated AMD EPYC 7763 processor. Operating on Microsoft Hyper-V, it features 8 vCPUs, 4 physical cores, 128.0 GB of RAM, and a 262 GB local SSD. While its memory-to-core ratio is high at 16.0 GB per core, benchmark results indicate a performance tradeoff, with poor single-core and weak multi-core CPU scores on stress-ng. Conversely, it delivers average performance in general computing tasks, including Geekbench, Passmark, and small-model LLM inference. This hardware profile makes the instance highly cost-efficient for memory-intensive, compute-light workloads such as database operations, caching layers, and static web serving.",
+  "og_description": "Microsoft Azure E16-8as_v4 is a memory-optimized VM featuring 8 vCPUs, 128 GB RAM, and a 262 GB SSD. Powered by an AMD EPYC 7763 CPU, it is designed for memory-intensive, compute-light workloads.",
+  "meta_description": "Microsoft Azure E16-8as_v4 is an AMD-powered memory-optimized VM with 8 vCPUs, 128 GB RAM, and a 262 GB SSD, ideal for database workloads.",
+  "tagline": "A memory-optimized virtual machine featuring high RAM density and local SSD storage for memory-bound database and caching workloads.",
   "bullet_points": [
-    "Powered by AMD EPYC 7763 processor at 3.525 GHz",
-    "128.0 GB of system memory providing 16.0 GB per core",
-    "262 GB local storage with Premium Storage capability",
-    "Average performance in database and Redis operations",
-    "Optimized for memory-bound workloads with moderate CPU needs"
+    "Dedicated AMD EPYC 7763 processor with 8 vCPUs and 4 physical cores",
+    "128.0 GB of RAM providing a high 16.0 GB per core memory density",
+    "262 GB local SSD storage with Premium Storage capability",
+    "Average performance in database operations, web serving, and software compilation",
+    "Tradeoffs include weak multi-core CPU performance and large-block memory bandwidth",
+    "Best suited for memory-intensive databases, caching, and static web serving"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

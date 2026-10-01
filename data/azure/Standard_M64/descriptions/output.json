@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure M64 is a memory-optimized server instance belonging to the MS family, running on the Microsoft Hyper-V hypervisor. It features 64 dedicated vCPUs mapped to 32 physical Intel Xeon 8280M cores with hyper-threading enabled. The processor operates at a base clock speed of 2.7 GHz and includes 38 MB of L3 cache. This instance is equipped with 1024.0 GB of RAM, providing a high memory-to-vCPU ratio of 16.0 GB per core, alongside 7340 GB of local storage.",
-    "Benchmark data reveals a distinct performance profile characterized by a tradeoff between single-core and multi-core capabilities. Single-core CPU performance is positioned in the bottom 10% across stress-ng, gzip compression, and Geekbench tests. Conversely, multi-core CPU performance, PassMark CPU scores, and multi-threaded bzip3 decompression fall within the middle 50% average. Memory bandwidth tests show strong performance in the top 25% for large-block uncached read operations, while small-block cached reads and large-block writes remain average.",
-    "Given its massive 1 TB memory capacity and 7.3 TB local storage, the M64 is designed for memory-intensive workloads rather than compute-bound single-threaded tasks. It is qualitatively cost-efficient for large-scale database deployments, in-memory caching layers, and enterprise resource planning systems that require high memory density and substantial local storage. However, for workloads dependent on high single-core throughput or GPU acceleration, other instance families may offer better resource-to-performance alignment."
+    "Microsoft Azure M64 is a memory-optimized virtual machine powered by the Microsoft Hyper-V hypervisor. It features 64 dedicated vCPUs mapped to 32 physical cores of an Intel Xeon 8280M processor operating at 2.7 GHz. The x86_64 architecture includes 32 KB L1d cache, 1.0 MB L2 cache, and 38 MB L3 cache, with hardware support for AVX, AVX-512F, AES, and FMA instructions. The server is equipped with 1024.0 GB of RAM, yielding a high memory-to-core ratio of 16.0 GB per core. Additionally, it includes 7340 GB of local SSD storage.",
+    "Benchmark data reveals a clear performance profile. Single-core performance is relatively weak, with stress-ng single-core, Geekbench single-core, and single-threaded compression/decompression tasks scoring in the bottom 10%. However, multi-core execution scales to average levels, as shown by stress-ng multi-core, Geekbench multi-core, and Passmark CPU scores. Memory performance is a notable strength; while small-block cached read bandwidth is average, large-block uncached read bandwidth is strong, placing in the top 25%. Database operations, Redis SET performance, and static web serving throughput consistently register in the middle 50%. Large-model LLM text generation is poor, though prompt processing speeds remain average for small and medium models.",
+    "Given its massive 1 TB memory capacity and bundled 7.3 TB local SSD, the M64 offers high resource density for memory-bound workloads. The qualitative cost efficiency is centered on its specialized memory-to-vCPU ratio rather than raw single-core compute power. This makes it highly suitable for large-scale relational databases, in-memory caching layers, enterprise resource planning systems, and data-intensive ETL pipelines that require a substantial memory footprint and local scratch space but do not demand ultra-high single-threaded CPU speeds."
   ],
-  "description": "Microsoft Azure M64 is an x86_64 memory-optimized server instance powered by an Intel Xeon 8280M processor running on Microsoft Hyper-V. It delivers 64 dedicated vCPUs across 32 physical cores at 2.7 GHz, paired with 1024.0 GB of RAM and 7340 GB of local storage. Benchmark data highlights a significant tradeoff: single-core CPU performance is in the bottom 10%, whereas multi-core performance and database operations sit in the average middle 50% range. Large-block uncached memory read bandwidth is strong, placing in the top 25%. With 16.0 GB of memory per core and substantial local storage, this instance is structured for memory-heavy and storage-reliant workloads. It is best suited for large-scale databases, in-memory data stores, and enterprise applications that prioritize high memory capacity and local storage over raw single-threaded compute speed.",
-  "og_description": "Microsoft Azure M64 is a memory-optimized server with 64 vCPUs, 1024 GB RAM, and 7340 GB local storage, offering strong large-block memory read bandwidth but lower single-core performance.",
-  "meta_description": "Microsoft Azure M64 is a memory-optimized server featuring 64 vCPUs, 1 TB RAM, and 7.3 TB local storage for memory-intensive database workloads.",
-  "tagline": "A memory-optimized server featuring one terabyte of RAM and seven terabytes of local storage for memory-intensive database workloads.",
+  "description": "Microsoft Azure M64 is a memory-optimized server featuring 64 dedicated vCPUs and 32 physical cores powered by an Intel Xeon 8280M processor running at 2.7 GHz. Built on the x86_64 architecture, it provides 1024.0 GB of RAM (16.0 GB per core) and 7340 GB of local SSD storage. While single-core benchmarks for this virtual machine fall in the bottom 10%, its multi-core performance and database operations align with the middle 50% of tested systems. Notably, uncached large-block memory read bandwidth is strong, ranking in the top 25%. The server's high memory density and substantial local storage make it a solid choice for memory-intensive workloads, such as large databases, in-memory caching, and data-heavy enterprise applications, where memory capacity is prioritized over single-threaded compute speed.",
+  "og_description": "Microsoft Azure M64 is a memory-optimized server featuring 64 dedicated Intel Xeon vCPUs, 1024 GB of RAM, and 7340 GB of local SSD storage, designed for memory-intensive database workloads.",
+  "meta_description": "Microsoft Azure M64 is an x86_64 server with 64 dedicated Intel Xeon vCPUs, 1024 GB RAM, and 7340 GB local SSD storage for memory-heavy workloads.",
+  "tagline": "A memory-optimized virtual server with one terabyte of RAM and seven terabytes of local SSD storage for data-intensive enterprise workloads.",
   "bullet_points": [
     "64 dedicated vCPUs powered by Intel Xeon 8280M processors at 2.7 GHz",
-    "1024.0 GB of RAM providing 16.0 GB of memory per core",
-    "7340 GB of local storage for large-scale data caching",
-    "Strong uncached memory read bandwidth in the top 25% of benchmarks",
-    "Optimized for large-scale databases, in-memory stores, and enterprise applications"
+    "1024.0 GB of system memory providing 16.0 GB per core",
+    "7340 GB of bundled local SSD storage",
+    "Strong uncached large-block memory read bandwidth in the top 25%",
+    "Best suited for large databases, in-memory caching, and enterprise ERP systems"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

@@ -1,23 +1,25 @@
 {
   "page": [
-    "Microsoft Azure D64ds_v6 is a general-purpose virtual machine belonging to the Ddsv6 family, running on the Microsoft Hyper-V hypervisor. It features 64 dedicated vCPUs mapped to 32 physical cores of an Intel Xeon 8573C processor operating at 4.2 GHz. The system is equipped with 256.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. Local storage is bundled, offering 3780 GB of local disk capacity, and the instance is capable of utilizing Premium Storage.",
-    "Benchmark results indicate strong performance across multiple domains. The server achieves top-tier status in static web serving throughput. It registers strong performance in Geekbench single-core and multi-core tests, Passmark CPU metrics, and Redis SET operations. However, a notable performance tradeoff is observed in the Passmark memory score, which falls into the bottom 25%, contrasting with its strong cached memory bandwidth performance.",
-    "Given its hardware profile and benchmark results, this server is suited for database operations, web serving, and software compilation. The presence of Advanced Matrix Extensions and Advanced Vector Extensions supports workloads like LLM inference, where it demonstrates strong prompt processing speeds. The high local storage capacity combined with a balanced CPU-to-RAM ratio provides solid resource density for general-purpose workloads requiring fast local disk access."
+    "Microsoft Azure D64ds_v6 is a Ddsv6-family virtual machine running on the Microsoft Hyper-V hypervisor. It features an Intel Xeon 8573C x86_64 processor with 64 dedicated vCPUs, derived from 32 physical cores with hyper-threading enabled. Operating at a clock speed of 4.2 GHz, the CPU includes a 260 MB L3 cache, 2 MB L2 cache, and 48 KB L1d cache. The processor supports advanced instruction sets, including Intel Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX) for tile and INT8 operations, alongside hardware-accelerated cryptography via AES, VAES, and SHA_NI.",
+    "The server is equipped with 256.0 GB of system memory, providing a balanced allocation of 4.0 GB per core. For local storage, it includes a 3780 GB NVMe SSD, offering high-capacity, low-latency storage directly attached to the instance. This hardware configuration does not include any GPU accelerators. The balanced ratio of compute resources to memory positions this instance within the general-purpose category, with the integrated NVMe storage enhancing its utility for data-intensive operations.",
+    "Benchmark data indicates strong performance across several domains, though with notable tradeoffs. The instance achieves top-tier status in static web serving throughput, placing in the top 10% of tested systems. It also demonstrates strong performance in Geekbench single-core and multi-core tests, Passmark CPU tests, software compilation, and Redis SET operations. However, memory performance presents a bottleneck; while small-block cached read bandwidth is strong, the Passmark memory score falls into the bottom 25%, indicating potential limitations under memory-intensive workloads that exceed cache limits.",
+    "Given these characteristics, the D64ds_v6 is suited for high-throughput static web serving, database operations, and software development pipelines such as Clang compilation. The presence of AMX and AVX-512 instructions enables strong performance in CPU-based LLM inference for small to medium models, though text generation for larger 70B models drops to average levels. The combination of 64 vCPUs and 3780 GB of local NVMe storage makes it highly capable for relational databases, caching layers, and general-purpose enterprise workloads requiring local scratch space."
   ],
-  "description": "Microsoft Azure D64ds_v6 is an x86_64 general-purpose virtual machine from the Ddsv6 family, running on the Microsoft Hyper-V hypervisor. It is powered by a 4.2 GHz Intel Xeon 8573C processor with 64 dedicated vCPUs, 32 physical cores, and 256.0 GB of memory. The instance includes 3780 GB of local storage and supports Premium Storage. Benchmarks show top-tier performance in static web serving throughput and strong results in database operations, software compilation, and LLM inference, aided by Intel Advanced Matrix Extensions. However, Passmark memory benchmarks indicate a performance tradeoff, ranking in the bottom 25% despite strong cached memory bandwidth. This instance is suited for database hosting, web serving, and general-purpose enterprise workloads requiring substantial local storage.",
-  "og_description": "Microsoft Azure D64ds_v6 is a general-purpose virtual machine featuring 64 vCPUs, 256 GB RAM, and 3780 GB of local storage, delivering strong database, web serving, and software compilation performance.",
-  "meta_description": "Microsoft Azure D64ds_v6 is a 64-vCPU general-purpose VM with 256 GB RAM and 3780 GB local storage, optimized for databases and web serving.",
-  "tagline": "A balanced general-purpose virtual machine featuring dedicated Intel Xeon processors, high-capacity local storage, and strong web serving throughput.",
+  "description": "Microsoft Azure D64ds_v6 is a general-purpose virtual machine featuring 64 dedicated vCPUs and 256.0 GB of RAM, powered by an Intel Xeon 8573C processor running at 4.2 GHz. It includes 3780 GB of local NVMe SSD storage and operates on the Microsoft Hyper-V hypervisor. The CPU supports advanced instruction sets such as AVX-512 and Intel AMX. In benchmark testing, the instance delivers top-tier static web serving throughput and strong performance in software compilation, database operations, and CPU-based LLM inference. However, a key tradeoff is its memory performance, with Passmark memory scores falling into the bottom 25%. This server is well-suited for high-throughput web serving, database hosting, and general-purpose enterprise workloads requiring fast local storage.",
+  "og_description": "Microsoft Azure D64ds_v6 is a general-purpose server with 64 Intel Xeon vCPUs, 256 GB RAM, and 3780 GB NVMe SSD storage, delivering top-tier web serving and strong database performance.",
+  "meta_description": "Microsoft Azure D64ds_v6 features 64 Intel Xeon vCPUs, 256 GB RAM, and 3780 GB NVMe SSD storage, optimized for databases and high-throughput web serving.",
+  "tagline": "A balanced general-purpose server combining 64 dedicated Intel vCPUs with high-capacity local NVMe storage for demanding database and web workloads.",
   "bullet_points": [
-    "64 dedicated vCPUs powered by a 4.2 GHz Intel Xeon 8573C processor.",
-    "256.0 GB of system memory paired with 3780 GB of local disk storage.",
-    "Top-tier performance in static web serving throughput benchmarks.",
-    "Strong performance in database operations and Redis SET execution.",
-    "Tradeoff in Passmark memory score, which ranks in the bottom 25%.",
-    "Suited for database hosting, web serving, and software compilation."
+    "64 dedicated Intel Xeon vCPUs operating at 4.2 GHz with 256 GB of system memory",
+    "3780 GB of local NVMe SSD storage for high-speed, low-latency data access",
+    "Top-tier static web serving throughput and strong database operation benchmarks",
+    "Intel AMX and AVX-512 support for accelerated CPU-based LLM inference",
+    "Lower-tier memory performance in Passmark benchmarks as a notable tradeoff",
+    "Suited for relational databases, web serving, and software compilation pipelines"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

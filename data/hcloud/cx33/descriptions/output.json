@@ -1,22 +1,22 @@
 {
   "page": [
-    "Hetzner Cloud cx33 is an x86_64 virtual server instance running on the QEMU hypervisor. It is configured with 4 shared AMD EPYC vCPUs operating at a base frequency of 2.0 GHz, backed by 4 physical cores with 1.0 thread per core. The instance is equipped with 8.0 GB of system memory, yielding approximately 1.95 GB of RAM per core. Local storage is provided by an 80 GB NVMe SSD. This server does not include any dedicated GPU hardware or complimentary public IPv4 addresses.",
-    "Performance benchmarks indicate a split capability profile. The single-core stress-ng CPU performance is strong, scoring 2672.38 and placing in the top 25%. Conversely, multi-core performance is more moderate, with a stress-ng multi-core score of 10641.52 and a Geekbench multi-core score of 4291.0, which falls into the bottom 25%. Memory performance is also mixed; while cached small-block read bandwidth is average at 470.59 GB/sec, the PassMark memory score of 1766.43 is weak.",
-    "Due to its shared CPU allocation and 1:2 vCPU-to-RAM ratio, the cx33 represents a highly cost-efficient option for workloads that do not require sustained, dedicated CPU resources. It is well-suited for lightweight web serving, basic Redis caching, and small-scale development environments. However, it is less optimal for intensive multi-threaded compilation or memory-heavy database operations due to its lower multi-core and memory benchmark ratings."
+    "Hetzner Cloud cx33 is an x86_64 virtual server powered by the QEMU hypervisor. It features 4 shared vCPUs mapped to 4 physical AMD EPYC cores running at 2.0 GHz. The processor includes 32 KB of L1d cache, 4 MB of L2 cache, and 16 MB of L3 cache, with hardware support for AVX, AES, SHA_NI, BMI2, ADX, and FMA instructions. The system is configured with 8.0 GB of RAM, providing 1.95 GB of memory per core, and includes 80 GB of local NVMe SSD storage. No GPUs or complimentary public IPv4 addresses are included.",
+    "In benchmark evaluations, the cx33 demonstrates strong single-core CPU performance in stress-ng, placing in the top 25% with a score of 2672.38. However, its multi-core performance is more moderate, with stress-ng multi-core and Geekbench multi-core scores falling into the average and weak categories respectively. Memory bandwidth tests show average read and write speeds, though Passmark memory performance is weak. The server handles Redis SET operations at an average rate of 7.84 million operations per second, but exhibits weak performance in static web serving throughput and software compilation. For machine learning workloads, prompt processing for a small 135M LLM model is average, whereas prompt processing for a medium 7B model is poor.",
+    "The shared CPU allocation presents a performance tradeoff, as resource contention may affect multi-threaded workloads, as reflected in the lower Geekbench multi-core and software compilation scores. From a qualitative cost-efficiency perspective, the cx33 offers a dense allocation of 4 vCPUs and NVMe storage on a shared hardware class, making it a viable option for workloads that require strong single-core burst capability rather than sustained multi-core execution. Appropriate workloads include lightweight database operations, basic text processing, single-threaded applications, and development environments that do not require dedicated CPU resources."
   ],
-  "description": "Hetzner Cloud cx33 is an x86_64 virtual server configured with 4 shared AMD EPYC vCPUs running at 2.0 GHz, 8.0 GB of RAM, and an 80 GB NVMe SSD. Operating under the QEMU hypervisor, this instance features a 1:2 vCPU-to-RAM ratio and lacks dedicated GPU resources or complimentary public IPv4 addresses. Performance benchmarks reveal strong single-core capabilities, with a stress-ng single-core score in the top 25%, contrasted by weaker multi-core and memory performance, as evidenced by a Geekbench multi-core score of 4291.0. This resource profile makes the cx33 a cost-efficient option for lightweight workloads such as basic web serving, Redis caching, and small-scale development tasks, while it remains less optimal for intensive multi-threaded compilation or memory-heavy database operations.",
-  "og_description": "Hetzner Cloud cx33 is an x86_64 virtual server featuring 4 shared AMD EPYC vCPUs, 8.0 GB of RAM, and 80 GB of NVMe SSD storage. It delivers strong single-core CPU performance for budget-friendly workloads.",
-  "meta_description": "Hetzner Cloud cx33 is an x86_64 virtual server featuring 4 shared AMD EPYC vCPUs, 8.0 GB of RAM, and 80 GB of local NVMe SSD storage.",
-  "tagline": "A budget-friendly virtual server with shared AMD EPYC processors and NVMe storage, optimized for single-core workloads.",
+  "description": "Hetzner Cloud cx33 is an x86_64 virtual server featuring 4 shared AMD EPYC vCPUs running at 2.0 GHz, 8.0 GB of RAM, and 80 GB of local NVMe SSD storage. Operating under the QEMU hypervisor, its processor supports AVX, AES, and SHA_NI instructions. Benchmarks indicate strong single-core CPU performance, though multi-core capabilities and memory performance are weaker due to the shared CPU allocation. The server is qualitatively cost-efficient for workloads requiring single-threaded processing power rather than sustained multi-threaded execution. It is best suited for lightweight database operations, text processing, and development environments.",
+  "og_description": "Hetzner Cloud cx33 is an x86_64 virtual server with 4 shared AMD EPYC vCPUs, 8.0 GB of RAM, and 80 GB of NVMe SSD storage, delivering strong single-core performance for lightweight workloads.",
+  "meta_description": "Hetzner Cloud cx33 is an x86_64 virtual server featuring 4 shared AMD EPYC vCPUs, 8.0 GB RAM, and 80 GB of local NVMe SSD storage under QEMU.",
+  "tagline": "A budget-friendly virtual server featuring shared AMD EPYC processors and local NVMe storage for single-threaded and development workloads.",
   "bullet_points": [
-    "4 shared AMD EPYC vCPUs at 2.0 GHz",
-    "8.0 GB of system memory and 80 GB NVMe SSD",
-    "Strong single-core CPU performance in benchmarks",
-    "Shared CPU allocation suitable for burstable workloads",
-    "Best suited for lightweight web serving and development environments"
+    "4 shared AMD EPYC vCPUs running at 2.0 GHz",
+    "8.0 GB of system memory and 80 GB of local NVMe SSD storage",
+    "Strong single-core CPU performance in benchmark testing",
+    "Shared CPU allocation suitable for non-sustained multi-core workloads",
+    "Well-suited for lightweight databases, text processing, and development environments"
   ],
   "categories": [
-    "Burstable & Budget",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Burstable & Budget"
   ]
 }

@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E4ads_v7 is an x86_64 architecture virtual machine belonging to the Eadsv7 server family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated vCPUs derived from an AMD EPYC 9V45 processor with 2 physical cores and 2 threads per core, operating at a clock speed of 4.5 GHz. The processor includes 32 MB of L3 cache, 1.0 MB of L2 cache, and 48 KB of L1d cache. The system is equipped with 32.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per vCPU. Storage is provided via a 236 GB local disk, and the instance is capable of utilizing Premium Storage. No GPU hardware is present.",
-    "Benchmark data indicates strong single-core capabilities. The E4ads_v7 achieves top-tier results in single-core CPU performance via stress-ng, as well as single-threaded gzip compression and bzip3 decompression. However, multi-threaded scaling presents a clear tradeoff. Multi-core CPU performance in stress-ng and PassMark CPU tests falls into the average category, while multi-threaded bzip3 decompression is weak. Memory bandwidth tests show average performance, with read-only cached small blocks reaching 450.1 GB/sec and uncached large blocks reaching 46.8 GB/sec. Database operations, Redis SET operations, and static web serving throughput also align with average tier expectations.",
-    "With 8.0 GB of RAM per vCPU, the E4ads_v7 is positioned as a memory-optimized instance suitable for memory-intensive workloads that do not require massive parallelization. It is well-suited for relational databases, caching layers like Redis, and single-threaded data processing tasks. Conversely, it is poorly suited for medium-sized large language model inference, where prompt processing speeds fall into the bottom 10%. From a qualitative cost-efficiency perspective, the instance offers a high density of memory relative to its vCPU count, making it a resource-efficient choice for workloads constrained by memory capacity rather than raw multi-core compute power."
+    "Microsoft Azure E4ads_v7 is a memory-optimized virtual machine powered by the AMD EPYC 9V45 processor, utilizing the x86_64 architecture. It features 4 dedicated vCPUs mapped to 2 physical cores with multithreading enabled, operating at a high base clock speed of 4.5 GHz. The processor includes 32 MB of L3 cache and supports advanced instruction sets such as AVX-512, AVX_VNNI, and AVX512_BF16, alongside hardware-accelerated cryptography via AES and SHA_NI.",
+    "This server is configured with 32.0 GB of system memory, providing a high memory-to-vCPU ratio of 8.0 GB per vCPU. Storage is supported by a bundled 236 GB local NVMe SSD, and the instance is capable of utilizing Premium Storage. There are no GPUs or complimentary public IPv4 addresses included in this configuration, which runs on the Microsoft Hyper-V hypervisor.",
+    "Benchmark results indicate top-tier single-core performance, with stress-ng single-core CPU metrics, single-threaded gzip compression, and single-threaded bzip3 decompression all placing in the top 10%. However, multi-threaded scaling shows some limitations; multi-core stress-ng performance and passmark CPU scores fall into the average tier, while multi-threaded bzip3 decompression is positioned in the bottom 25%. Memory bandwidth and database operations, including Redis SET performance, consistently register in the average range. LLM inference performance is average for small 135M models but drops to poor or weak tiers for medium 7B models.",
+    "Given its high memory density and dedicated high-frequency AMD EPYC cores, the E4ads_v7 offers strong qualitative cost efficiency for workloads that require substantial memory per core without requiring massive multi-threaded scaling. It is highly suitable for memory-intensive applications, relational databases, caching layers like Redis, and single-threaded data processing tasks."
   ],
-  "description": "Microsoft Azure E4ads_v7 is an x86_64 memory-optimized virtual machine from the Eadsv7 family, powered by a 4.5 GHz AMD EPYC 9V45 processor. It features 4 dedicated vCPUs, 32.0 GB of RAM, and a 236 GB local disk with Premium Storage capability. Operating under the Microsoft Hyper-V hypervisor, the instance delivers top-tier single-core CPU performance and single-threaded compression speeds. However, multi-threaded scaling is moderate, with average multi-core stress-ng results and weak multi-threaded decompression. Memory bandwidth and database operations perform in the average tier, while medium LLM inference performance is poor. Given its high memory-to-vCPU ratio of 8.0 GB per core, the E4ads_v7 is qualitatively cost-efficient for memory-bound workloads. It is best suited for relational databases, caching layers, and single-threaded data processing, rather than parallelized compute or AI inference tasks.",
-  "og_description": "Microsoft Azure E4ads_v7 is an x86_64 memory-optimized VM featuring a 4.5 GHz AMD EPYC CPU, 4 vCPUs, 32 GB RAM, and 236 GB local storage, delivering strong single-core performance for databases.",
-  "meta_description": "Microsoft Azure E4ads_v7 is a memory-optimized VM with 4 AMD EPYC vCPUs, 32 GB RAM, and 236 GB local storage, ideal for database workloads.",
-  "tagline": "A memory-optimized virtual machine featuring high single-core clock speeds and dedicated local storage for memory-intensive database workloads.",
+  "description": "The Microsoft Azure E4ads_v7 is a memory-optimized virtual machine featuring 4 dedicated vCPUs and 32.0 GB of RAM, powered by an AMD EPYC 9V45 processor running at 4.5 GHz. Built on the x86_64 architecture, it includes a 236 GB local NVMe SSD and supports Premium Storage. Benchmarks reveal top-tier single-core performance, with single-threaded compression and decompression tests ranking in the top 10%, while multi-core and memory bandwidth metrics remain in the average tier. This server is highly suited for memory-bound workloads, database operations, caching layers, and single-threaded data processing tasks where a high memory-to-vCPU ratio is required.",
+  "og_description": "Microsoft Azure E4ads_v7 is a memory-optimized virtual machine featuring 4 dedicated AMD EPYC vCPUs, 32 GB of RAM, and a 236 GB local NVMe SSD, delivering top-tier single-core performance.",
+  "meta_description": "Microsoft Azure E4ads_v7 is a memory-optimized VM with 4 AMD EPYC vCPUs, 32 GB RAM, and a 236 GB local NVMe SSD for database and caching workloads.",
+  "tagline": "A memory-optimized virtual machine with dedicated high-frequency AMD processors and fast local NVMe storage for database and caching workloads.",
   "bullet_points": [
-    "Powered by a 4.5 GHz AMD EPYC 9V45 processor with 4 dedicated vCPUs.",
-    "Equipped with 32.0 GB of RAM, providing a high 8.0 GB per vCPU ratio.",
-    "Includes 236 GB of local storage with Premium Storage capability.",
-    "Delivers top-tier single-core CPU and single-threaded compression performance.",
-    "Exhibits moderate multi-threaded scaling and weak medium-model LLM inference.",
-    "Optimized for relational databases, caching layers, and memory-bound applications."
+    "Powered by a 4.5 GHz AMD EPYC 9V45 processor with 4 dedicated vCPUs",
+    "Equipped with 32.0 GB of RAM, offering a high 8.0 GB per vCPU ratio",
+    "Includes a 236 GB local NVMe SSD with Premium Storage capability",
+    "Delivers top-tier single-core CPU and single-threaded compression performance",
+    "Best suited for memory-intensive applications, caching layers, and databases"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

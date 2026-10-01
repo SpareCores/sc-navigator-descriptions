@@ -1,24 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E32ds_v5 is a memory-optimized virtual machine belonging to the EDSv5 server family. It is powered by an Intel Xeon 8370C x86_64 processor operating at 2.8 GHz, featuring 32 dedicated vCPUs mapped from 16 physical cores with hyper-threading enabled. The system is equipped with 256.0 GB of RAM, yielding a high memory-to-vCPU ratio of 8.0 GB per core. For local storage, it includes a 1229 GB local disk and supports Premium Storage. It runs on the Microsoft Hyper-V hypervisor.",
-    "Benchmark evaluations show average performance across most compute and memory metrics. The instance achieved a stress-ng single-core score of 1900.09 and a multi-core score of 31080.73. Memory bandwidth tests recorded 1678.79 GB/sec for small cached blocks, dropping to 143.87 GB/sec for large uncached reads and 67.31 GB/sec for large uncached writes. In database operations, the server processed 15337.83 operations per second on PassMark and handled 31.13 million operations per second in Redis SET tests.",
-    "While the server demonstrates strong performance in small-model LLM text generation at 278.54 tokens per second, it exhibits a clear tradeoff in larger AI workloads, dropping to a weak 6.67 tokens per second for 70B model prompt processing, with no data available for 70B text generation. This indicates it is not optimized for large-scale AI inference. However, its high memory density and local storage make it highly cost-efficient for memory-bound workloads without requiring expensive GPU resources. It is best suited for database hosting, software compilation, static web serving, and memory-intensive enterprise applications."
+    "Microsoft Azure E32ds_v5 is a memory-optimized server instance belonging to the EDSv5 family. It is powered by an Intel Xeon 8370C processor utilizing the x86_64 architecture. The server features 32 dedicated virtual CPUs, mapped from 16 physical cores with hyper-threading enabled at 2 threads per core. The base clock speed of the processor is 2.8 GHz, supported by 48 KB of L1 data cache, 1 MB of L2 cache, and 48 MB of L3 cache. The hardware configuration includes 256.0 GB of RAM, yielding a memory-to-core ratio of 8.0 GB per vCPU. Local storage is provided via a bundled 1229 GB SSD, and the instance is Premium Storage capable.",
+    "Benchmark evaluations show average performance across most standard compute and memory tasks. The stress-ng single-core CPU score is 1900.09, while the multi-core score reaches 31080.73. Memory bandwidth tests indicate a read-only small block cached speed of 1678.79 GB/sec, which drops to 143.87 GB/sec for uncached large blocks, and a large block write speed of 67.31 GB/sec. In database operations, the server achieves an average PassMark database score of 15337.83 and processes 31.13 million Redis SET operations per second. For language model workloads, text generation using a small 135M model is strong at 278.54 tokens per second, but performance drops to an average of 19.99 tokens per second for a medium 7B model, and prompt processing for a large 70B model is weak at 6.67 tokens per second.",
+    "From a cost-efficiency perspective, the E32ds_v5 offers a high memory-to-vCPU density and bundled local SSD storage, reducing the need for external storage attachments for temporary data. However, the lack of a dedicated GPU limits its utility for heavy machine learning training or large-scale LLM inference. The server is best suited for memory-intensive workloads, database hosting, software compilation, and static web serving."
   ],
-  "description": "Microsoft Azure E32ds_v5 is a memory-optimized virtual machine from the EDSv5 family, featuring 32 dedicated vCPUs and 16 physical cores powered by an Intel Xeon 8370C x86_64 processor running at 2.8 GHz. It is configured with 256.0 GB of RAM, providing a high 8.0 GB per core memory density, alongside a 1229 GB local disk with Premium Storage capabilities. Under benchmark testing, the server delivers solid mid-range performance, achieving 31.13 million operations per second in Redis SET tests and 15337.83 in PassMark database operations. While it shows strong text generation speeds for small 135M LLM models, performance drops significantly on larger 70B models, highlighting a tradeoff in heavy AI workloads. This server is highly cost-efficient for memory-intensive applications, making it an appropriate fit for database hosting, caching layers, software compilation, and enterprise web serving.",
-  "og_description": "Microsoft Azure E32ds_v5 is a memory-optimized virtual machine featuring 32 Intel Xeon vCPUs, 256 GB RAM, and 1229 GB of local storage, delivering balanced database and caching performance.",
-  "meta_description": "Microsoft Azure E32ds_v5 is an Intel-powered, memory-optimized virtual machine featuring 32 vCPUs, 256 GB RAM, and a 1229 GB local storage disk.",
-  "tagline": "An Intel-powered, memory-optimized virtual machine with high memory density and local storage for demanding database and caching workloads.",
+  "description": "Microsoft Azure E32ds_v5 is a memory-optimized server from the EDSv5 family, featuring 32 dedicated vCPUs on an Intel Xeon 8370C x86_64 processor running at 2.8 GHz. It is equipped with 256.0 GB of RAM and a bundled 1229 GB local SSD. Benchmark results place this instance in the average tier for general compute, with a stress-ng multi-core score of 31080.73 and a PassMark database score of 15337.83. It demonstrates strong text generation performance for small LLM models at 278.54 tokens per second, though large model processing is weak. The high memory-to-vCPU ratio of 8.0 GB per core makes it qualitatively cost-efficient for memory-heavy workloads without requiring GPU acceleration. This server is suited for database operations, software compilation, and memory-intensive enterprise applications.",
+  "og_description": "Microsoft Azure E32ds_v5 is an x86_64 memory-optimized server featuring 32 vCPUs, 256 GB RAM, and a 1229 GB local SSD, designed for database operations and memory-intensive workloads.",
+  "meta_description": "Microsoft Azure E32ds_v5 is a memory-optimized server with 32 Intel Xeon vCPUs, 256 GB RAM, and a 1229 GB local SSD for database workloads.",
+  "tagline": "An x86_64 server featuring high memory density, bundled local SSD storage, and dedicated Intel Xeon processing for database workloads.",
   "bullet_points": [
-    "32 dedicated vCPUs and 16 physical cores powered by an Intel Xeon 8370C processor",
-    "256.0 GB of system memory providing a high 8.0 GB per core resource density",
-    "1229 GB of local storage with Premium Storage capability",
-    "Delivers 31.13 million operations per second in Redis SET benchmarks",
-    "Optimized for database hosting, caching layers, and software compilation",
-    "Tradeoff in large-scale AI workloads with weak performance on 70B LLM models"
+    "Intel Xeon 8370C processor with 32 dedicated vCPUs and 2.8 GHz clock speed",
+    "256.0 GB of RAM providing a high 8.0 GB per vCPU memory ratio",
+    "Bundled 1229 GB local SSD storage with Premium Storage capability",
+    "Strong text generation performance of 278.54 tokens/sec on small LLM models",
+    "Suited for database hosting, software compilation, and memory-intensive applications"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

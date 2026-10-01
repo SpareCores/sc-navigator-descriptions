@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D32alds_v7 is an x86_64 architecture server belonging to the Daldsv7 family. It features 32 dedicated virtual CPUs mapped to 16 physical cores of an AMD EPYC 9V45 processor, operating at a clock speed of 4.5 GHz. The system is equipped with 64.0 GB of system memory, yielding a low-memory allocation of 2.0 GB per core. Local storage is bundled, providing 1890 GB of local disk capacity with Premium Storage capability. The virtualization is managed via Microsoft Hyper-V.",
-    "Benchmark results indicate top-tier single-core performance. The stress-ng single-core CPU test and single-threaded gzip compression both rank in the top 10% tier. Multi-threaded performance is also competitive, with the passmark CPU score and bzip3 multi-threaded decompression ranking in the top 25% tier. However, multi-core stress-ng CPU performance and database operations fall into the average tier, reflecting the constraints of the 2.0 GB per core memory allocation on highly parallel, memory-intensive tasks.",
-    "This server offers high compute density and fast clock speeds, making it qualitatively cost-efficient for compute-bound workloads that do not require large memory footprints. The 1890 GB of local storage provides high-speed local scratch space, though the low memory-to-vCPU ratio represents a tradeoff for memory-heavy databases. Appropriate workloads include single-threaded processing tasks, web serving, and lightweight machine learning inference, as demonstrated by its top-tier text generation speed on small models."
+    "Microsoft Azure D32alds_v7 is an x86_64 architecture server belonging to the Daldsv7 family, powered by a dedicated AMD EPYC 9V45 processor. It features 32 vCPUs derived from 16 physical cores with hyper-threading enabled, running at a clock speed of 4.5 GHz. The hardware configuration includes 64.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. Storage is bundled with a local 1890 GB NVMe SSD, and the instance is Premium Storage capable. No GPU accelerators are present on this instance type.",
+    "Benchmark data highlights strong single-core performance, with stress-ng single-core CPU testing and gzip compression placing in the top 10% tier. Multi-core performance is moderate, with stress-ng multi-core CPU metrics and Redis SET operations scoring in the average range. Cryptographic and vector instruction capabilities are supported via AVX-512 and VAES flags, contributing to strong PassMark CPU encryption and extended instruction scores. Memory bandwidth remains average, measuring 107.09 GB/sec for large block reads.",
+    "From a resource allocation perspective, this server offers a high-compute, low-memory profile. The 1:2 vCPU-to-RAM ratio makes it a cost-efficient choice for compute-heavy workloads that do not require massive memory footprints, avoiding the premium associated with memory-optimized instances. However, the low memory density represents a clear tradeoff, potentially limiting its suitability for large in-memory databases. The inclusion of a fast 1890 GB local NVMe SSD offsets this by providing high-speed local scratch space.",
+    "The D32alds_v7 is suited for compute-intensive tasks, single-threaded applications requiring high clock speeds, web serving, and moderate database operations. It is also capable of handling small-scale LLM inference, as demonstrated by top-tier text generation speeds on smaller models, though performance scales down to average on larger 7B models due to memory constraints."
   ],
-  "description": "Microsoft Azure D32alds_v7 is an x86_64 compute-optimized server from the Daldsv7 family, powered by a 32-vCPU AMD EPYC 9V45 processor running at 4.5 GHz. It features a dedicated CPU allocation across 16 physical cores, paired with 64.0 GB of memory and 1890 GB of local storage. Operating under Microsoft Hyper-V, this server exhibits top-tier single-core performance, with stress-ng single-core and single-threaded gzip compression benchmarks placing in the top 10%. While multi-core processing and memory bandwidth sit in the average tier, the instance delivers strong performance in static web serving and small-model LLM text generation. The low memory-to-vCPU ratio of 2.0 GB per core makes it a qualitatively cost-efficient choice for compute-heavy, memory-light workloads such as web serving, file compression, and lightweight inference tasks.",
-  "og_description": "Microsoft Azure D32alds_v7 is a 32-vCPU AMD EPYC server with 64 GB RAM and 1890 GB local storage, delivering top-tier single-core performance for compute-intensive, low-memory workloads.",
-  "meta_description": "Microsoft Azure D32alds_v7 is a 32-vCPU AMD EPYC server featuring 64 GB RAM, 1890 GB local storage, and top-tier single-core performance.",
-  "tagline": "A compute-dense AMD EPYC server featuring high clock speeds, local storage, and a low memory-to-core ratio for compute-bound workloads.",
+  "description": "Microsoft Azure D32alds_v7 is an x86_64 server from the Daldsv7 family, equipped with a dedicated 32-vCPU AMD EPYC 9V45 processor running at 4.5 GHz and 64.0 GB of RAM. This compute-optimized configuration features a 1:2 RAM-to-vCPU ratio and includes a local 1890 GB NVMe SSD. Benchmark results show top-tier single-core CPU performance and gzip compression, alongside strong multi-threaded decompression and static web serving throughput. However, multi-core CPU performance and memory bandwidth sit in the average tier. The low memory density of 2.0 GB per core represents a tradeoff, making it highly cost-efficient for compute-heavy tasks but less suitable for memory-intensive applications. It is well-suited for web serving, compute-intensive processing, and small-scale LLM inference.",
+  "og_description": "Microsoft Azure D32alds_v7 is a 32-vCPU AMD EPYC-powered server with 64 GB RAM and a local 1890 GB NVMe SSD, offering top-tier single-core performance for compute-heavy workloads.",
+  "meta_description": "Microsoft Azure D32alds_v7 is a 32-vCPU AMD EPYC server with 64 GB RAM and a 1890 GB NVMe SSD, optimized for compute-heavy workloads.",
+  "tagline": "A compute-optimized x86 server featuring a high-frequency AMD EPYC processor, fast local NVMe storage, and strong single-core performance.",
   "bullet_points": [
-    "32 dedicated vCPUs powered by an AMD EPYC 9V45 processor at 4.5 GHz",
-    "64.0 GB system memory providing a 2.0 GB per core ratio",
-    "1890 GB of local storage with Premium Storage capabilities",
-    "Top-tier single-core CPU and single-threaded compression performance",
-    "Suited for web serving, file compression, and lightweight model inference"
+    "Dedicated 32-vCPU AMD EPYC 9V45 processor running at 4.5 GHz",
+    "Bundled 1890 GB local NVMe SSD for high-speed scratch storage",
+    "Top-tier single-core CPU and compression performance",
+    "Low memory-to-vCPU ratio optimized for compute-heavy tasks",
+    "Best suited for web serving, batch processing, and small-scale LLM inference"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }
