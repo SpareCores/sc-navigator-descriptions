@@ -1,22 +1,24 @@
 {
   "page": [
-    "Amazon Web Services m7gd.metal is a bare-metal, general-purpose server powered by 64 dedicated physical cores of the 64-bit ARMv8 AWS Graviton Neoverse-V1 processor architecture running at 2.6 GHz. The hardware configuration features 256 GB of high-speed DDR5 memory, providing 4.0 GB of RAM per core, alongside 3800 GB of local NVMe SSD instance storage. Network performance is supported by a baseline bandwidth of 30 Gbps.",
-    "Benchmark evaluations demonstrate strong multi-core performance, with stress-ng multi-core scoring 98066.33 and Geekbench multi-core reaching a top-tier score of 21018.0. Memory bandwidth is highly efficient, registering a top-tier PassMark memory score and strong read-only large block bandwidth of 254.06 GB/sec. The server excels in software compilation, scoring 59722.0 in Geekbench clang compilation, and shows strong database capabilities with 103.12 million operations per second in Redis SET tests. However, single-core performance is average, and text generation for small LLM models is a notable bottleneck, scoring in the poor tier at 28.18 tokens per second.",
-    "From a cost-efficiency perspective, the bare-metal architecture eliminates virtualization overhead, maximizing resource density for multi-threaded workloads. The inclusion of 3800 GB of local NVMe SSD storage bundled directly with the instance provides high-speed, low-latency data access without the added cost of external block storage. This makes the server highly suitable for multi-threaded applications, software compilation pipelines, static web serving, and high-throughput database operations."
+    "Amazon Web Services m7gd.metal is a bare-metal, general-purpose server powered by 64 dedicated AWS Graviton Neoverse-V1 physical cores using the arm64 architecture. Operating at 2.6 GHz with a single thread per core, the processor features 32 MB of L3 cache, 1.0 MB of L2 cache per core, and 64 KB of L1d cache. The system is equipped with 256.0 GB of DDR5 memory, providing a balanced 4.0 GB of RAM per core. For local storage, it includes a bundled 3800 GB NVMe SSD instance store, and it supports a baseline network bandwidth of 30 Gbps.",
+    "Benchmark results show strong multi-core and memory performance. The server achieves top-tier results in Geekbench multi-core testing, software compilation with Clang, and Passmark memory scoring. Multi-core CPU performance under stress-ng and memory bandwidth tests\u2014both cached small block and uncached large block\u2014rank in the top 25%. Database operations, Redis SET operations, and static web serving throughput also demonstrate strong performance. Single-core benchmarks, such as Geekbench single-core and stress-ng single-core, fall into the average tier, while LLM text generation on small models represents a performance bottleneck.",
+    "The m7gd.metal offers high resource density and qualitative cost-efficiency by combining dedicated ARM physical cores with high-speed DDR5 memory and a large local NVMe SSD. This hardware profile is suited for multi-threaded workloads, software compilation, database hosting, Redis caching layers, and high-throughput static web serving. However, the lack of a GPU and average single-core performance represent clear tradeoffs for intensive single-threaded tasks or heavy LLM text generation."
   ],
-  "description": "Amazon Web Services m7gd.metal is a bare-metal, general-purpose server powered by 64 dedicated physical cores of the 64-bit ARMv8 AWS Graviton Neoverse-V1 processor architecture running at 2.6 GHz. The hardware configuration features 256 GB of high-speed DDR5 memory, providing 4.0 GB of RAM per core, alongside 3800 GB of local NVMe SSD instance storage. Network performance is supported by a baseline bandwidth of 30 Gbps. Benchmark evaluations demonstrate strong multi-core performance, with stress-ng multi-core scoring 98066.33 and Geekbench multi-core reaching a top-tier score of 21018.0. Memory bandwidth is highly efficient, registering a top-tier PassMark memory score and strong read-only large block bandwidth of 254.06 GB/sec. The server excels in software compilation, scoring 59722.0 in Geekbench clang compilation, and shows strong database capabilities with 103.12 million operations per second in Redis SET tests. However, single-core performance is average, and text generation for small LLM models is a notable bottleneck, scoring in the poor tier at 28.18 tokens per second.",
-  "og_description": "Amazon Web Services m7gd.metal is a bare-metal server featuring 64 dedicated ARMv8 Graviton cores, 256 GB DDR5 RAM, and 3800 GB local NVMe SSD storage, delivering top-tier multi-core and memory performance.",
-  "meta_description": "Amazon Web Services m7gd.metal is a bare-metal server with 64 ARMv8 Graviton cores, 256 GB DDR5 RAM, and 3800 GB local NVMe SSD storage.",
-  "tagline": "A bare-metal ARMv8 platform combining dedicated physical cores with high-speed DDR5 memory and integrated local NVMe SSD storage.",
+  "description": "Amazon Web Services m7gd.metal is a bare-metal, general-purpose server featuring 64 dedicated AWS Graviton Neoverse-V1 ARM64 physical cores running at 2.6 GHz. It is equipped with 256.0 GB of DDR5 memory and a bundled 3800 GB local NVMe SSD instance store, supported by a 30 Gbps baseline network bandwidth. The server delivers top-tier performance in multi-core processing, software compilation with Clang, and Passmark memory benchmarks, alongside strong database and static web serving capabilities. Single-core performance and LLM text generation speeds are average to poor, highlighting a clear tradeoff for single-threaded workloads. This server is suited for multi-threaded applications, software development pipelines, database operations, and high-throughput web serving.",
+  "og_description": "Amazon Web Services m7gd.metal is a bare-metal ARM64 server featuring 64 dedicated Graviton cores, 256 GB DDR5 RAM, and a 3.8 TB local NVMe SSD, suited for multi-threaded workloads and databases.",
+  "meta_description": "Amazon Web Services m7gd.metal is an ARM64 bare-metal server with 64 Graviton cores, 256 GB DDR5 RAM, and 3.8 TB of local NVMe SSD storage.",
+  "tagline": "A bare-metal ARM64 platform combining dedicated physical cores, high-speed DDR5 memory, and fast local NVMe storage for demanding multi-threaded workloads.",
   "bullet_points": [
-    "64 dedicated physical ARMv8 Graviton Neoverse-V1 cores running at 2.6 GHz",
-    "256 GB of high-performance DDR5 memory and 3800 GB of local NVMe SSD storage",
-    "Top-tier multi-core performance and memory bandwidth benchmarks",
-    "30 Gbps baseline network bandwidth for high-throughput workloads",
-    "Best suited for software compilation, databases, and static web serving"
+    "64 dedicated AWS Graviton Neoverse-V1 ARM64 physical cores at 2.6 GHz.",
+    "256.0 GB of high-speed DDR5 memory (4.0 GB per core).",
+    "Bundled 3800 GB local NVMe SSD instance store.",
+    "Top-tier multi-core CPU and software compilation performance.",
+    "Strong database, Redis, and static web serving throughput.",
+    "Suited for multi-threaded applications, databases, and CI/CD pipelines."
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

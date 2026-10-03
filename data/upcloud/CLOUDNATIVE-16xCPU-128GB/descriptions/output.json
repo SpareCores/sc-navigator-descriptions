@@ -1,25 +1,24 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-16xCPU-128GB is a Cloud Native family server running on the KVM hypervisor. It features an x86_64 architecture powered by an AMD EPYC 9575F processor operating at 2.0 GHz. The system is configured with 16 vCPUs mapped to 16 physical cores with a shared CPU allocation model. It includes 128.0 GB of system memory, yielding 8.0 GB of RAM per core. No local storage or GPU hardware is bundled with this instance, though it includes one complimentary public IPv4 address.",
-    "Benchmark data reveals a mixed performance profile. In stress-ng single-core CPU testing, the server achieves a top-tier score of 3417.88, placing it in the top 10 percent of tested instances. However, multi-core performance in stress-ng is average at 45259.32. Geekbench testing mirrors this moderate multi-core capability, with a single-core score of 1812.0 and a multi-core score of 4526.0. Software compilation and ray tracing workloads perform in the average tier, while image processing and text processing benchmarks show weak to poor performance, scoring 2526.0 and 1132.0 respectively.",
-    "The primary architectural tradeoff of this server is its shared CPU allocation, which can introduce resource contention under sustained multi-threaded workloads, explaining the drop from top-tier single-core performance to average multi-core results. The lack of integrated local storage requires external storage provisioning. From a qualitative cost-efficiency perspective, the high memory-to-vCPU ratio of 8.0 GB per core provides a dense memory footprint suitable for memory-intensive tasks that do not require dedicated, continuous CPU execution.",
-    "This server configuration is suited for memory-optimized workloads that can tolerate shared CPU resources, such as caching layers, in-memory databases, and moderate software compilation tasks. It is less appropriate for intensive text or image processing applications due to lower benchmark results in those specific areas."
+    "UpCloud CLOUDNATIVE-16xCPU-128GB is a memory-optimized virtual server powered by the KVM hypervisor. It features an x86_64 architecture utilizing an AMD EPYC 9575F processor with 16 vCPUs and 16 physical cores. The CPU operates at a base speed of 2.0 GHz with a shared allocation model. The system is equipped with 128.0 GB of RAM, providing a high memory-to-core ratio of 8.0 GB per core. No local storage or GPU hardware is bundled with this instance, though it includes one complimentary public IPv4 address.",
+    "Performance benchmarks indicate a strong single-core capability, with stress-ng single-core CPU performance ranking in the top tier (top 10%). However, multi-core performance and memory bandwidth generally fall into the average category. For instance, stress-ng multi-core CPU performance and Geekbench multi-core scores are within the middle 50% range. Memory-intensive operations show some limitations, with the PassMark memory score and Geekbench image processing benchmarks performing in the weak (bottom 25%) tier, and single-threaded text processing and bzip3 decompression scoring in the poor (bottom 10%) tier.",
+    "From a cost-efficiency perspective, the shared CPU allocation model offers a more economical entry point for workloads requiring substantial memory capacity without needing dedicated, continuous CPU execution. This resource profile is well-suited for memory-intensive but CPU-burstable workloads, such as database operations, caching layers like Redis, static web serving, and moderate multi-threaded data processing tasks. It is less suitable for sustained high-performance computing, heavy text processing, or large-scale LLM inference."
   ],
-  "description": "UpCloud CLOUDNATIVE-16xCPU-128GB is a KVM-based server from the Cloud Native family, featuring 16 vCPUs on 16 physical cores with a shared CPU allocation. Powered by an AMD EPYC 9575F x86_64 processor running at 2.0 GHz, it provides 128.0 GB of RAM, translating to 8.0 GB per core. The instance includes no local storage or GPU accelerators. Performance benchmarks show a top-tier single-core stress-ng score of 3417.88, though multi-core performance and Geekbench metrics remain average. Notably, image and text processing benchmarks are weak to poor. The shared CPU model presents a tradeoff for sustained multi-threaded tasks, but the high memory density offers qualitative cost efficiency for memory-heavy workloads. This server is best suited for in-memory databases, caching layers, and general-purpose workloads that do not require dedicated CPU resources or local storage.",
-  "og_description": "UpCloud CLOUDNATIVE-16xCPU-128GB is a KVM server with 16 shared vCPUs, 128 GB RAM, and an AMD EPYC 9575F CPU, offering top-tier single-core performance but average multi-core capabilities.",
-  "meta_description": "UpCloud CLOUDNATIVE-16xCPU-128GB is a KVM server featuring 16 shared AMD EPYC vCPUs and 128 GB RAM, suited for memory-intensive workloads.",
-  "tagline": "A memory-dense virtual server featuring shared AMD EPYC processors, optimized for memory-intensive workloads without local storage requirements.",
+  "description": "UpCloud CLOUDNATIVE-16xCPU-128GB is a memory-optimized virtual server built on the KVM hypervisor. It features 16 shared vCPUs powered by an AMD EPYC 9575F processor running at 2.0 GHz, paired with 128.0 GB of RAM. This configuration delivers a high memory-to-core ratio of 8.0 GB per core, though it lacks local storage and GPU accelerators. Benchmark data shows top-tier single-core CPU performance, while multi-core execution, memory bandwidth, and database operations remain average. Conversely, memory-intensive benchmarks and text processing show weaker results. Given its shared CPU model, this server offers a cost-effective solution for memory-heavy workloads that do not require dedicated compute resources. It is best suited for database hosting, caching layers, and static web serving.",
+  "og_description": "UpCloud CLOUDNATIVE-16xCPU-128GB is a KVM-based virtual server featuring 16 shared AMD EPYC vCPUs and 128 GB RAM, offering strong single-core performance for memory-intensive workloads.",
+  "meta_description": "UpCloud CLOUDNATIVE-16xCPU-128GB is a KVM virtual server with 16 shared AMD EPYC vCPUs and 128 GB RAM, optimized for memory-heavy workloads.",
+  "tagline": "A memory-optimized virtual server featuring shared AMD EPYC processors and high memory density for database and caching workloads.",
   "bullet_points": [
-    "16 shared vCPUs powered by an AMD EPYC 9575F processor at 2.0 GHz",
-    "128.0 GB of system memory providing 8.0 GB of RAM per core",
+    "16 shared AMD EPYC 9575F vCPUs with x86_64 architecture",
+    "128.0 GB of RAM providing 8.0 GB per core",
     "Top-tier single-core CPU performance in stress-ng benchmarks",
-    "No integrated local storage or GPU hardware",
-    "Shared CPU allocation model suited for burstable or non-continuous workloads",
-    "Appropriate for in-memory databases, caching, and software compilation"
+    "Shared CPU allocation for qualitative cost efficiency in memory-heavy tasks",
+    "No local storage or GPU accelerators included",
+    "Best suited for database operations, Redis caching, and static web serving"
   ],
   "categories": [
     "Memory Optimized",
-    "Burstable & Budget",
-    "General Purpose"
+    "General Purpose",
+    "Burstable & Budget"
   ]
 }

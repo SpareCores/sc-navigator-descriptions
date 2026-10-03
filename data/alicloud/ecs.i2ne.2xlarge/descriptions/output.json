@@ -1,23 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.i2ne.2xlarge is an x86_64 architecture server powered by a dedicated Intel Xeon 8163 processor running at 2.5 GHz. It features 8 vCPUs derived from 4 physical cores with hyper-threading enabled, paired with 64.0 GB of RAM, yielding 8.0 GB of memory per core. A key hardware feature is the inclusion of 1919 GB of local SSD storage, alongside a baseline network bandwidth of 2 Gbps.",
-    "Performance benchmarks indicate a moderate to weak processing profile. The server scored in the bottom 25% for both single-core and multi-core CPU performance in stress-ng and Geekbench tests. Memory bandwidth tests show average performance for large-block uncached reads and writes, though cached small-block reads remain in the bottom 25%. Redis SET operations and small model LLM inference achieved average tier results, while larger model processing and compression tasks fell into the lower percentiles.",
-    "From a cost-efficiency perspective, the server provides high local storage density and dedicated memory resources, making it a viable option for workloads requiring significant local disk space without demanding top-tier CPU compute. The hardware configuration is best suited for local database hosting, caching layers, and storage-intensive applications that benefit from the bundled 1919 GB SSD and 64 GB memory capacity."
+    "Alibaba Cloud ecs.i2ne.2xlarge is a KVM-hypervised virtual machine built on the x86_64 architecture. It features an Intel Xeon 8163 processor running at 2.5 GHz, providing 8 dedicated vCPUs across 4 physical cores with hyper-threading enabled. The hardware configuration includes 64.0 GB of system memory, yielding 8.0 GB of RAM per core. A key hardware feature is the inclusion of 1919 GB of local SSD storage, while network connectivity is rated at a baseline bandwidth of 2 Gbps. No GPU accelerators are present on this instance type.",
+    "Performance benchmarks indicate a mixed profile. The processor's raw computational capacity is modest, with stress-ng single-core and multi-core CPU tests placing in the bottom 25 percent. Similarly, Geekbench single-core and multi-core scores fall within the weak category. However, memory bandwidth for large, uncached blocks registers in the average range, whereas cached small-block memory bandwidth is weak. Cryptographic and compression tasks show lower performance, with gzip compression ranking in the bottom 10 percent and Passmark CPU encryption in the bottom 25 percent. For LLM inference, the server achieves average speeds on small 135M models but drops to poor performance on medium 7B models.",
+    "From a cost-efficiency perspective, the ecs.i2ne.2xlarge offers a high density of local SSD storage and a generous memory-to-vCPU ratio of 1:8, making it a viable option for workloads requiring substantial local scratch space or caching without demanding top-tier CPU performance. Given the weak CPU and database operation benchmarks, it is less suited for heavy computational tasks or high-throughput transactional databases. Instead, it is best aligned with workloads such as read-heavy caching layers, local file processing, moderate database replicas, or general-purpose applications that benefit from large local storage and memory capacity."
   ],
-  "description": "Alibaba Cloud ecs.i2ne.2xlarge is an x86_64 server configured with 8 dedicated vCPUs from an Intel Xeon 8163 processor operating at 2.5 GHz, 64.0 GB of RAM, and a bundled 1919 GB local SSD. Running on the KVM hypervisor, it delivers a baseline network bandwidth of 2 Gbps. Benchmark results indicate modest CPU capabilities, with stress-ng and Geekbench scores placing it in the bottom 25% for compute performance. However, it maintains average performance in uncached memory bandwidth and Redis SET operations. Given its high local storage capacity and 1:8 vCPU-to-RAM ratio, this server offers qualitative cost efficiency for storage-heavy deployments. It is best suited for databases, caching systems, and general-purpose workloads requiring substantial local SSD capacity.",
-  "og_description": "Alibaba Cloud ecs.i2ne.2xlarge is an x86_64 server featuring 8 dedicated Intel Xeon vCPUs, 64 GB RAM, and a bundled 1919 GB local SSD, making it suitable for storage-intensive database workloads.",
-  "meta_description": "Alibaba Cloud ecs.i2ne.2xlarge is an x86_64 server with 8 dedicated Intel Xeon vCPUs, 64 GB RAM, and a bundled 1919 GB local SSD.",
-  "tagline": "An x86_64 server featuring dedicated Intel Xeon processors, 64 GB of RAM, and a high-capacity bundled local SSD.",
+  "description": "Alibaba Cloud ecs.i2ne.2xlarge is an x86_64 virtual server powered by an Intel Xeon 8163 processor with 8 dedicated vCPUs, 4 physical cores, and 64.0 GB of RAM. It features a bundled 1919 GB local SSD and a 2 Gbps baseline network bandwidth. Benchmark data shows weak single-core and multi-core CPU performance, alongside average uncached memory bandwidth. The server's strength lies in its high local storage capacity and 1:8 memory-to-vCPU ratio, rather than raw computational speed. Consequently, this instance is best suited for workloads that require significant local storage and memory capacity, such as read-heavy caching, local file processing, and moderate database operations, while avoiding CPU-intensive tasks.",
+  "og_description": "Alibaba Cloud ecs.i2ne.2xlarge is an x86_64 server featuring 8 dedicated Intel Xeon vCPUs, 64 GB of RAM, and a bundled 1919 GB local SSD, designed for storage-heavy and memory-intensive workloads.",
+  "meta_description": "Alibaba Cloud ecs.i2ne.2xlarge is an x86_64 server with 8 dedicated vCPUs, 64 GB RAM, and 1919 GB local SSD storage for memory and storage workloads.",
+  "tagline": "A dedicated x86_64 virtual server combining a 1919 GB local SSD and 64 GB RAM for storage-centric workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an Intel Xeon 8163 processor at 2.5 GHz",
-    "64.0 GB of system memory providing 8.0 GB per core",
+    "Intel Xeon 8163 processor with 8 dedicated vCPUs and 4 physical cores",
+    "64.0 GB of system memory providing an 8.0 GB per core ratio",
     "Bundled 1919 GB local SSD storage for high-capacity local data access",
-    "Baseline network bandwidth of 2 Gbps on a KVM hypervisor",
-    "Best suited for database hosting, caching, and storage-heavy workloads"
+    "2 Gbps baseline network bandwidth",
+    "Average performance in uncached memory bandwidth and small LLM inference",
+    "Best suited for local file processing, caching, and moderate database workloads"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }
