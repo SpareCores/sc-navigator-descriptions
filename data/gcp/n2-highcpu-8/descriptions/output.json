@@ -1,22 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform n2-highcpu-8 is an x86_64 architecture server powered by an Intel Xeon processor running at 2.8 GHz. It features 8 dedicated vCPUs mapped to 4 physical cores with hyper-threading enabled. The system is configured with 8.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. It does not include local storage or dedicated GPU hardware.",
-    "Benchmark results indicate average multi-core performance, with a stress-ng multi-core score of 7430.34 and a PassMark CPU score of 8305.34. Memory bandwidth is moderate, reaching 412.9 GB/sec for small cached blocks and approximately 48.32 GB/sec for uncached large block reads. However, single-core performance is relatively weak, as evidenced by a Geekbench single-core score of 1138.0 and a single-threaded gzip compression rate of 23.65 GB/sec. The processor supports AVX-512 vector instructions, which aids in extended instruction tests and cryptographic operations.",
-    "Given the 1:1 ratio of vCPUs to memory, this server is designed for compute-bound tasks that do not require large memory footprints. It offers qualitative cost efficiency for parallelizable workloads like software compilation and static web serving, which achieved a throughput of 6.62 GB/sec. It is less suitable for memory-intensive databases, large-scale LLM inference, or memory-heavy data processing due to its low memory allocation and weak single-core performance."
+    "Google Cloud Platform n2-highcpu-8 is an x86_64 architecture server powered by an Intel Xeon processor running at 2.8 GHz. It features 8 dedicated vCPUs derived from 4 physical cores with hyper-threading enabled, providing 2 threads per core. The hardware configuration includes 8.0 GB of system memory, resulting in a low memory-to-core ratio of 1.0 GB per vCPU. Cache specifications include 32 KB L1d, 1.0 MB L2, and 33 MB L3 cache. This server does not include bundled local storage or integrated GPUs.",
+    "Benchmark data reveals a clear performance profile. The server exhibits weak single-core performance, with stress-ng single-core, Geekbench single-core, and single-threaded compression/decompression tests scoring in the bottom 25%. However, multi-core performance scales to average levels in stress-ng multi-core, Passmark CPU, and software compilation benchmarks. Memory bandwidth remains average for both small and large block read/write operations, though the Passmark memory score falls into the bottom 25%. The system supports advanced instruction sets including AVX-512 and AES cryptography, which helps maintain average performance in encryption and database operations.",
+    "From a cost-efficiency perspective, the n2-highcpu-8 offers a high density of dedicated compute resources relative to its memory footprint, making it a viable option for CPU-bound workloads that do not require large memory allocations. It is suited for tasks such as static web serving, software compilation, and lightweight database operations, where multi-core scaling can compensate for weaker single-core execution. It is also capable of handling small-scale language model inference tasks, achieving average token generation speeds for 135M parameter models."
   ],
-  "description": "The Google Cloud Platform n2-highcpu-8 is an x86_64 compute-optimized server featuring an Intel Xeon processor with 8 dedicated vCPUs and 8.0 GB of RAM. Lacking local storage and GPU accelerators, this instance provides a lean 1.0 GB of memory per vCPU. Performance benchmarks show average multi-core capabilities, with a PassMark CPU score of 8305.34 and a static web serving throughput of 6.62 GB/sec, though single-core performance remains in the lower tier. Supported by AVX-512 instruction sets, it handles parallel processing and cryptography efficiently. This server is best suited for compute-bound, low-memory workloads such as software compilation, text processing, and static web serving.",
-  "og_description": "Google Cloud Platform n2-highcpu-8 is an x86_64 server with 8 Intel Xeon vCPUs and 8 GB RAM. It delivers average multi-core performance for compute-bound, low-memory workloads.",
-  "meta_description": "Google Cloud Platform n2-highcpu-8 features 8 Intel Xeon vCPUs and 8 GB RAM, offering balanced multi-core performance for compute-heavy tasks.",
-  "tagline": "A compute-focused virtual server with dedicated Intel Xeon processors, optimized for parallel workloads requiring minimal memory overhead.",
+  "description": "Google Cloud Platform n2-highcpu-8 is an x86_64 server featuring 8 dedicated vCPUs from 4 physical Intel Xeon cores running at 2.8 GHz, paired with 8.0 GB of memory. It does not include bundled local storage or GPUs. The server exhibits a distinct performance profile, with weak single-core execution in Geekbench and stress-ng benchmarks, but average multi-core performance in software compilation, Passmark CPU, and database operations. Memory bandwidth is average, though overall memory performance scores are weak. With a low memory-to-vCPU ratio of 1.0 GB per core, this instance is structured for compute-heavy workloads with minimal memory requirements. It is suited for static web serving, multi-threaded software compilation, and small-scale language model inference.",
+  "og_description": "Google Cloud Platform n2-highcpu-8 is an x86_64 server with 8 dedicated Intel Xeon vCPUs and 8 GB RAM. It offers average multi-core performance but weak single-core execution and no local storage.",
+  "meta_description": "Google Cloud Platform n2-highcpu-8 features 8 Intel Xeon vCPUs and 8 GB RAM, delivering average multi-core performance for compute-bound tasks.",
+  "tagline": "A compute-dense, x86_64 server featuring eight dedicated vCPUs and a lean memory profile for multi-threaded, CPU-bound workloads.",
   "bullet_points": [
-    "8 dedicated Intel Xeon vCPUs and 8.0 GB of RAM",
-    "AVX-512 instruction support for cryptography and vector math",
-    "Average multi-core performance and static web serving throughput",
-    "No bundled local storage or GPU acceleration",
-    "Best suited for software compilation, text processing, and web serving"
+    "8 dedicated Intel Xeon vCPUs and 8.0 GB of system memory",
+    "No bundled local storage or GPU accelerators",
+    "Average multi-core performance in software compilation and database operations",
+    "Weak single-core performance across synthetic and compression benchmarks",
+    "Suited for static web serving, multi-threaded compilation, and light database tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

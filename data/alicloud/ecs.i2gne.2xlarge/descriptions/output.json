@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.i2gne.2xlarge is an x86_64 architecture server powered by an Intel Xeon 8163 processor running at 2.5 GHz. It features 8 dedicated vCPUs derived from 4 physical cores with hyper-threading enabled. The hardware configuration includes 32.0 GB of system memory, providing 4.0 GB per core, and a bundled 959 GB local SSD storage volume. Network connectivity is defined by a baseline bandwidth of 2 Gbps, and virtualization is managed via the KVM hypervisor.",
-    "Benchmark evaluations indicate that the ecs.i2gne.2xlarge exhibits modest performance characteristics. Single-core and multi-core CPU performance tests, such as stress-ng and Geekbench, place the instance in the bottom 25% tier. Similarly, memory read bandwidth and database operations are weak, with Redis SET operations and Passmark database tests scoring in the lower quartile. However, the server achieves average results in Passmark CPU score, extended instructions, and large-block memory write bandwidth. Small-scale LLM inference with a 135M model also performs at an average level, though scaling to a 7B model drops performance to the bottom 10%.",
-    "From a qualitative cost-efficiency perspective, the inclusion of a nearly 1 TB local SSD offers a high storage-to-compute density, making it appropriate for workloads requiring local data caching or temporary storage without the overhead of external block storage. Given the weak CPU and memory bandwidth benchmarks, this instance is appropriate for moderate database workloads, local file processing, static web serving, and general-purpose applications that do not demand high-frequency compute or intensive memory throughput."
+    "Alibaba Cloud ecs.i2gne.2xlarge is an x86_64 architecture server powered by an Intel Xeon 8163 processor running at 2.5 GHz. It features 8 dedicated vCPUs mapped to 4 physical cores with hyper-threading enabled, and is provisioned with 32.0 GB of system memory, yielding 4.0 GB per core. The instance includes 959 GB of bundled local SSD storage and a baseline network bandwidth of 2 Gbps, operating on a KVM hypervisor.",
+    "Benchmark data indicates that the compute performance of the Intel Xeon 8163 processor on this instance is generally positioned in the lower tiers. Single-core and multi-core stress-ng tests, alongside Geekbench single-core and multi-core evaluations, place the instance in the bottom 25% of tested hardware. Similarly, single-threaded compression and decompression tasks show poor performance, falling into the bottom 10%. However, the Passmark CPU score and extended instructions test achieve average ratings within the middle 50%.",
+    "Memory subsystem performance is mixed. Read-only memory bandwidth for both small and large blocks is weak, ranking in the bottom 25%, whereas large-block write bandwidth reaches average levels. Database operations on Passmark are weak, but Redis SET operations demonstrate average throughput at 6.1 million operations per second. For lightweight machine learning workloads, LLM inference using a small 135M model achieves average speeds, though performance drops to poor levels when scaling to a medium 7B model.",
+    "From a cost-efficiency perspective, the ecs.i2gne.2xlarge offers a high local SSD storage capacity relative to its compute profile, making it appropriate for workloads requiring substantial local data caching without demanding high-performance CPU throughput. Given the weak CPU and memory read benchmarks, this instance is recommended for moderate general-purpose workloads, local file caching, static web serving, or lightweight database operations where storage capacity is prioritized over high-speed processing."
   ],
-  "description": "Alibaba Cloud ecs.i2gne.2xlarge is an x86_64 server featuring 8 dedicated vCPUs from an Intel Xeon 8163 processor at 2.5 GHz, 32.0 GB of RAM, and a bundled 959 GB local SSD. Operating on the KVM hypervisor, it provides a baseline network bandwidth of 2 Gbps. Performance benchmarks generally fall into the lower tiers, with single-core and multi-core CPU tests, memory read bandwidth, and database operations scoring in the bottom 25%. However, it maintains average performance in Passmark CPU scores, large-block memory write bandwidth, and small-model LLM inference. The primary trade-off is its modest compute and memory speed relative to its substantial local SSD storage. This configuration is appropriate for workloads requiring significant local storage capacity alongside moderate compute needs, such as local file processing, static web serving, and basic database operations.",
-  "og_description": "Alibaba Cloud ecs.i2gne.2xlarge features 8 dedicated Intel Xeon vCPUs, 32 GB RAM, and a 959 GB local SSD. It offers moderate compute performance with substantial bundled local storage.",
-  "meta_description": "Alibaba Cloud ecs.i2gne.2xlarge is an 8 vCPU, 32 GB RAM server with a bundled 959 GB local SSD, suitable for storage-centric moderate workloads.",
-  "tagline": "An x86 server combining dedicated Intel Xeon processors with a bundled one-terabyte local SSD for storage-reliant workloads.",
+  "description": "Alibaba Cloud ecs.i2gne.2xlarge is an x86_64 general-purpose server featuring 8 dedicated vCPUs from an Intel Xeon 8163 processor running at 2.5 GHz, 32.0 GB of RAM, and 959 GB of bundled local SSD storage. It operates on a KVM hypervisor and provides a baseline network bandwidth of 2 Gbps. Performance benchmarks indicate that the instance generally resides in the lower performance tiers, with weak single-core and multi-core CPU scores, and weak memory read bandwidth. However, it maintains average ratings in Passmark CPU tests, large-block memory write bandwidth, and Redis SET operations. Given its high local storage capacity relative to its compute profile, the ecs.i2gne.2xlarge is qualitatively cost-efficient for storage-centric workloads that do not require intensive processing. It is recommended for moderate general-purpose applications, local data caching, and lightweight database operations.",
+  "og_description": "Alibaba Cloud ecs.i2gne.2xlarge is an x86_64 server with 8 dedicated Intel Xeon vCPUs, 32 GB RAM, and 959 GB local SSD storage, offering moderate general-purpose performance with high local storage capacity.",
+  "meta_description": "Alibaba Cloud ecs.i2gne.2xlarge is an x86_64 server with 8 dedicated Intel vCPUs, 32 GB RAM, and 959 GB local SSD storage for general-purpose workloads.",
+  "tagline": "An x86_64 general-purpose server featuring dedicated Intel Xeon processors and a substantial 959 GB of bundled local SSD storage.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an Intel Xeon 8163 processor at 2.5 GHz",
-    "Bundled 959 GB local SSD storage for high-density local data access",
-    "32.0 GB of system memory providing 4.0 GB per core",
-    "Average performance in Passmark CPU and large-block memory write benchmarks",
-    "Appropriate for moderate database operations, local file processing, and static web serving"
+    "8 dedicated vCPUs powered by an Intel Xeon 8163 processor at 2.5 GHz.",
+    "32.0 GB of system memory paired with 959 GB of bundled local SSD storage.",
+    "Baseline network bandwidth of 2 Gbps on a KVM hypervisor.",
+    "Average performance in Redis SET operations and Passmark CPU tests.",
+    "Recommended for moderate general-purpose applications and local data caching."
   ],
   "categories": [
-    "Storage & Database",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }
