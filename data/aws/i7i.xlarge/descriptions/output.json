@@ -1,24 +1,22 @@
 {
   "page": [
-    "Amazon Web Services i7i.xlarge is a storage-optimized server instance powered by the Nitro hypervisor. It features an x86_64 architecture with an Intel Xeon 8559C processor operating at 3.2 GHz. This configuration provides 4 dedicated vCPUs across 2 physical cores, with 2 threads per core. The processor includes a 320 MB L3 cache and supports advanced instruction sets such as AVX-512 and Intel AMX (Advanced Matrix Extensions).",
-    "The instance is equipped with 32.0 GB of DDR5 memory operating at 6 GHz, yielding 8.0 GB of RAM per core. For local storage, it bundles a 937 GB NVMe SSD, while network connectivity is supported by a baseline bandwidth of 2 Gbps. No GPUs are included in this configuration.",
-    "Benchmark results show a contrast between single-core and multi-core performance. The single-core Geekbench score is in the top tier at 2299.0, and single-threaded compression tasks like gzip and bzip3 decompression perform strongly. However, multi-core CPU performance under stress-ng is weak at 4390.87, and memory bandwidth for read-only large blocks is also weak at 33.73 GB/sec. Passmark database operations and Redis SET operations both fall into the average category.",
-    "Given the high-speed DDR5 memory and local NVMe SSD storage, this instance offers a balanced profile for storage-heavy workloads, though multi-core scaling is limited by the 4 vCPU count. It is qualitatively cost-efficient for workloads requiring high single-thread performance and fast local storage access rather than massive parallel compute. Appropriate workloads include database operations, text processing, static web serving, and small-to-medium language model prompt processing."
+    "Amazon Web Services i7i.xlarge is a storage-optimized server instance powered by an Intel Xeon 8559C processor with an x86_64 architecture. It features 4 virtual CPUs mapped to 2 physical cores with hyperthreading enabled, running at a clock speed of 3.2 GHz. The CPU includes a 320 MB L3 cache and supports advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions (AMX). The instance is equipped with 32.0 GB of DDR5 memory operating at 6 GHz, providing 8.0 GB of RAM per core. Local storage is bundled, consisting of a 937 GB NVMe SSD, and the baseline network bandwidth is rated at 2 Gbps.",
+    "Benchmark data reveals a strong contrast between single-core and multi-core performance. The i7i.xlarge achieves a top-tier Geekbench single-core score of 2299.0 and strong single-threaded performance in gzip compression (34.34 GB/sec) and bzip3 decompression (14.1 GB/sec). However, multi-core and memory read bandwidth benchmarks fall into the lower tiers. The stress-ng multi-core CPU performance (4390.87) and memory bandwidth read-only small block (343.61 GB/sec) are categorized as weak. Redis SET operations also show lower-tier throughput at 6.18 million operations per second, while static web serving throughput (8.15 GB/sec) and LLM inference speeds for small models remain average.",
+    "From a cost-efficiency perspective, the i7i.xlarge offers high resource density by bundling a substantial 937 GB NVMe SSD and 32.0 GB of high-speed DDR5 memory with a 4-vCPU footprint. This configuration avoids the need for external storage attachments for high-throughput local data access, though the lower multi-core scaling and read bandwidth present a tradeoff for highly parallelized compute tasks. The instance is best suited for workloads requiring high single-threaded performance and fast local storage, such as relational databases, local caching layers, text processing, and moderate web serving."
   ],
-  "description": "Amazon Web Services i7i.xlarge is a storage-optimized instance featuring 4 dedicated vCPUs from an Intel Xeon 8559C processor running at 3.2 GHz, paired with 32.0 GB of DDR5 memory and a 937 GB local NVMe SSD. Operating on the Nitro hypervisor, this x86_64 server delivers top-tier single-core performance, as evidenced by a Geekbench score of 2299.0 and strong single-threaded compression speeds. However, multi-core processing and read-only memory bandwidth are relatively weak. With average performance in database operations, Redis SET operations, and static web serving, the i7i.xlarge is best suited for localized database workloads, text processing, and applications that benefit from high single-thread efficiency and fast local storage without requiring extensive multi-core scaling.",
-  "og_description": "Amazon Web Services i7i.xlarge is a storage-optimized server with 4 vCPUs, 32 GB DDR5 RAM, and a 937 GB NVMe SSD, delivering top-tier single-core performance but weaker multi-core scaling.",
-  "meta_description": "Amazon Web Services i7i.xlarge is a storage-optimized server with 4 vCPUs, 32 GB DDR5 RAM, and a 937 GB NVMe SSD, ideal for database workloads.",
-  "tagline": "A storage-optimized server featuring high-speed DDR5 memory, local NVMe SSD storage, and exceptional single-core performance for database and text processing workloads.",
+  "description": "Amazon Web Services i7i.xlarge is a storage-optimized instance featuring an Intel Xeon 8559C processor with 4 vCPUs, 2 physical cores, and a 3.2 GHz clock speed. Built on the x86_64 architecture, it includes 32.0 GB of DDR5 memory and a bundled 937 GB local NVMe SSD. Performance benchmarks highlight exceptional single-core capabilities, with a top-tier Geekbench single-core score of 2299.0 and strong single-threaded compression speeds. However, multi-core scaling and memory read bandwidth are relatively weak, as evidenced by lower-tier stress-ng multi-core and Redis SET operation results. With a baseline network bandwidth of 2 Gbps and no complimentary public IPv4 addresses, this Nitro-based instance offers a high-density storage-to-vCPU ratio. It is highly suitable for database operations, text processing, and workloads that benefit from fast local storage and strong single-threaded CPU execution.",
+  "og_description": "Amazon Web Services i7i.xlarge is a storage-optimized instance featuring 4 vCPUs, 32 GB DDR5 RAM, and a 937 GB NVMe SSD, delivering top-tier single-core performance alongside moderate multi-core capabilities.",
+  "meta_description": "Amazon Web Services i7i.xlarge is a storage-optimized instance with 4 vCPUs, 32 GB DDR5 memory, and a bundled 937 GB local NVMe SSD.",
+  "tagline": "A storage-optimized instance combining high-speed local NVMe storage with strong single-core processing and dense DDR5 memory for database workloads.",
   "bullet_points": [
-    "Intel Xeon 8559C processor with 4 dedicated vCPUs and 320 MB L3 cache",
-    "32.0 GB of DDR5 memory and a 937 GB local NVMe SSD",
-    "Top-tier single-core performance and strong single-threaded compression",
-    "Average performance for database operations, Redis, and static web serving",
-    "Best suited for storage-intensive workloads, text processing, and small LLM inference"
+    "Powered by a 3.2 GHz Intel Xeon 8559C processor with 4 vCPUs and 320 MB L3 cache.",
+    "Equipped with 32.0 GB of high-speed 6 GHz DDR5 memory and a bundled 937 GB local NVMe SSD.",
+    "Delivers top-tier single-core performance, highlighted by a Geekbench score of 2299.0.",
+    "Exhibits lower-tier multi-core scaling and memory read bandwidth in benchmark testing.",
+    "Optimized for local database operations, text processing, and single-threaded workloads."
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

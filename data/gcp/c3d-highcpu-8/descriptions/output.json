@@ -1,22 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c3d-highcpu-8 is a compute-optimized virtual machine instance powered by an AMD EPYC 9B14 processor utilizing the x86_64 architecture. It features 8 dedicated vCPUs mapped to 4 physical cores with multithreading enabled at 2 threads per core. The system is equipped with 16 GB of RAM, providing a resource density of 2.0 GB of memory per core. The processor includes a cache hierarchy consisting of 32 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. It supports advanced instruction sets such as AVX-512, AVX512_VNNI, and AVX512_BF16, alongside cryptographic acceleration via AES and SHA_NI. This instance does not include local storage or bundled GPUs.",
-    "Benchmark data indicates strong single-core CPU performance, placing in the top 25% for stress-ng single-core tests and showing strong results in Geekbench text processing. However, multi-core CPU performance and memory bandwidth present distinct tradeoffs. While cached memory read bandwidth is average at 566.42 GB/sec, uncached large-block memory read and write bandwidths are weak and poor, respectively, with write speeds dropping to 13.83 GB/sec. Standard operations like Redis SET, static web serving, and software compilation with Clang perform within average parameters. LLM inference speeds are average for small models but drop to weak levels during prompt processing for medium 7B models.",
-    "From a qualitative cost-efficiency perspective, the c3d-highcpu-8 offers a compute-heavy profile with a low memory-to-vCPU ratio, making it a cost-effective choice for CPU-bound tasks that do not require massive memory footprints. The absence of local storage and public IPv4 addresses means external storage and networking configurations must be factored into the overall architecture. This instance is best suited for workloads such as web serving, text processing, software compilation, and moderate computational tasks that benefit from dedicated AMD EPYC cores and AVX-512 instructions."
+    "Google Cloud Platform c3d-highcpu-8 is a compute-optimized virtual machine powered by an x86_64 AMD EPYC 9B14 processor. It features 8 vCPUs mapped to 4 physical cores with multithreading enabled, delivering dedicated CPU allocation. The instance is configured with 16 GB of system memory, yielding a resource density of 2.0 GB of RAM per vCPU. It does not include local storage or onboard GPUs, and comes with zero complimentary public IPv4 addresses.",
+    "Benchmark evaluations reveal strong single-core performance, with stress-ng single-core CPU and Geekbench text processing scores placing in the top 25%. Multi-core operations, static web serving throughput at 11.2 GB/sec, and software compilation align with mid-range averages. However, memory bandwidth presents a notable bottleneck; while cached small-block reads are average, uncached large-block read and write bandwidths fall into the weak and poor categories respectively, indicating potential performance degradation during memory-intensive, out-of-cache operations.",
+    "From a qualitative cost-efficiency perspective, the c3d-highcpu-8 offers a dense compute-to-RAM ratio suitable for CPU-bound tasks that do not require massive memory footprints. The inclusion of advanced instruction sets such as AVX-512 and cryptography acceleration enhances its utility for specific mathematical and secure workloads. This profile is well-suited for workloads such as web serving, text processing, lightweight build compilation, and moderate computational tasks, though it is less optimal for memory-bound databases or large-scale LLM inference."
   ],
-  "description": "Google Cloud Platform c3d-highcpu-8 is an x86_64 compute-optimized instance featuring 8 dedicated vCPUs and 16 GB of RAM, powered by an AMD EPYC 9B14 processor. It provides 4 physical cores with 2 threads per core, supported by a 32 MB L3 cache and AVX-512 instruction sets. The instance lacks local storage and bundled GPUs. Performance benchmarks show strong single-core CPU execution and text processing capabilities, though multi-core performance remains average. A key hardware tradeoff is the memory subsystem, where uncached large-block write bandwidth is poor, despite average cached read speeds. Qualitatively, this instance delivers high compute density relative to its memory footprint, making it cost-efficient for CPU-bound workloads. It is highly suitable for web serving, software compilation, text processing, and moderate computational tasks that do not require large memory allocations or local NVMe storage.",
-  "og_description": "Google Cloud Platform c3d-highcpu-8 is an x86_64 compute-optimized instance with 8 dedicated AMD EPYC vCPUs, 16 GB RAM, and strong single-core performance, suitable for web serving and text processing.",
-  "meta_description": "Google Cloud Platform c3d-highcpu-8 is an x86_64 compute-optimized instance featuring 8 AMD EPYC vCPUs, 16 GB RAM, and strong single-core performance.",
-  "tagline": "A compute-optimized x86_64 instance featuring dedicated AMD EPYC processors and AVX-512 support for CPU-bound workloads and text processing.",
+  "description": "Google Cloud Platform c3d-highcpu-8 is an x86_64 compute-optimized instance featuring 8 vCPUs and 16 GB of RAM, powered by an AMD EPYC 9B14 processor with dedicated CPU allocation. It provides 4 physical cores with multithreading, 32 MB of L3 cache, and lacks local storage or GPU accelerators. Performance benchmarks show strong single-core capabilities, particularly in text processing and stress-ng tests, while multi-core execution and web serving throughput remain average. A key hardware tradeoff is its memory subsystem, which exhibits poor uncached large-block write bandwidth. Given its 2.0 GB of RAM per vCPU ratio and support for AVX-512 and cryptographic instructions, this instance is best suited for compute-bound workloads, text processing, and web serving rather than memory-intensive applications.",
+  "og_description": "Google Cloud Platform c3d-highcpu-8 is an x86_64 compute-optimized instance featuring 8 vCPUs, 16 GB of RAM, and an AMD EPYC 9B14 processor, designed for dedicated compute-bound workloads.",
+  "meta_description": "Google Cloud Platform c3d-highcpu-8 is an x86_64 compute-optimized instance with 8 vCPUs, 16 GB RAM, and an AMD EPYC 9B14 processor.",
+  "tagline": "A compute-optimized virtual machine featuring dedicated AMD EPYC processors, tailored for CPU-intensive tasks and text processing workloads.",
   "bullet_points": [
-    "Powered by AMD EPYC 9B14 processor with 8 dedicated vCPUs and 16 GB RAM.",
-    "Strong single-core CPU and text processing benchmark performance.",
-    "Supports AVX-512, AVX512_VNNI, and AVX512_BF16 instruction sets.",
-    "Tradeoff of lower uncached large-block memory write bandwidth.",
-    "No bundled local storage or GPU accelerators.",
-    "Best suited for web serving, software compilation, and CPU-bound tasks."
+    "Powered by an AMD EPYC 9B14 processor with 8 vCPUs and 16 GB RAM",
+    "Dedicated CPU allocation with 4 physical cores and multithreading",
+    "Strong single-core CPU and text processing benchmark performance",
+    "Supports AVX-512, AVX512_VNNI, and SHA_NI instruction sets",
+    "Tradeoff of lower uncached memory write bandwidth",
+    "Best suited for web serving, text processing, and light compilation"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
