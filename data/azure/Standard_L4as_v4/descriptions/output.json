@@ -1,24 +1,22 @@
 {
   "page": [
-    "Microsoft Azure L4as_v4 is a memory-optimized virtual machine from the Lasv4 family, powered by a dedicated AMD EPYC 9V74 processor. Operating on the Microsoft Hyper-V hypervisor, this x86_64 server features 4 vCPUs derived from 2 physical cores with multithreading enabled. It is equipped with 32.0 GB of system memory, providing a high resource density of 8.0 GB per core. For local storage, the instance includes a bundled 960 GB NVMe SSD and is Premium Storage capable. No GPU accelerators or complimentary public IPv4 addresses are included.",
-    "Performance benchmarks indicate strong single-core capabilities, with stress-ng single-core CPU and Geekbench single-core scores placing in the top 25%. Text processing performance is also strong. However, multi-core performance and overall CPU metrics, such as the Passmark CPU score and Geekbench multi-core score, fall into the average category. Memory write bandwidth is average, but read-only memory bandwidth for both small and large blocks is weak, landing in the bottom 25%. Database operations, Redis SET performance, and multi-threaded decompression also show weak benchmark results. Large-model LLM inference is poor, though small-model inference and static web serving throughput remain average.",
-    "From a cost-efficiency perspective, the L4as_v4 offers a high memory-to-vCPU ratio and fast local NVMe storage without the premium cost of larger multi-core instances. The primary tradeoff is the moderate multi-core scaling and weak memory read bandwidth, which limits its effectiveness for memory-bound parallel computing or heavy database write operations. This profile makes the server well-suited for memory-intensive but moderately threaded workloads, such as caching layers, light database hosting, text processing, and static web serving."
+    "Microsoft Azure L4as_v4 is a virtual machine instance from the Lasv4 family, powered by an AMD EPYC 9V74 processor. Operating on the x86_64 architecture, it features 4 dedicated vCPUs mapped to 2 physical cores with 2 threads per core, running at a clock speed of 3.7 GHz. The instance is equipped with 32.0 GB of system memory, providing 8.0 GB of RAM per core. For local storage, it includes a bundled 960 GB NVMe SSD and is Premium Storage capable, managed under the Microsoft Hyper-V hypervisor.",
+    "Benchmark data indicates strong single-core performance, with stress-ng single-core CPU and Geekbench single-core scores placing in the top 25 percent. However, multi-core scaling is moderate, as shown by average multi-core CPU and Geekbench multi-core results. A notable bottleneck exists in memory read bandwidth, where both small-block cached and large-block uncached read operations score in the bottom 25 percent. Similarly, multi-threaded bzip3 decompression and software compilation with Clang show weaker performance. In contrast, write operations and Redis SET performance remain average, with Redis achieving 5.97 million operations per second.",
+    "With its 1:8 vCPU-to-RAM ratio and integrated 960 GB NVMe SSD, the L4as_v4 offers high resource density for workloads requiring local storage speed and moderate memory capacity without the cost of scaling up vCPU counts. It is well-suited for database operations, caching layers like Redis, and static web serving. However, it is poorly suited for large-scale parallel processing, software compilation, or medium-to-large language model inference due to memory bandwidth constraints and weak multi-threaded scaling."
   ],
-  "description": "Microsoft Azure L4as_v4 is a memory-optimized virtual machine from the Lasv4 family, featuring a dedicated AMD EPYC 9V74 processor with 4 vCPUs, 2 physical cores, and 32.0 GB of RAM. It includes a bundled 960 GB NVMe SSD and is Premium Storage capable, operating on the Microsoft Hyper-V hypervisor. Benchmarks show strong single-core CPU and text processing performance, though multi-core scaling and memory read bandwidth are weak. With a high memory-to-vCPU ratio of 8.0 GB per core, this instance offers a cost-efficient profile for memory-intensive workloads that do not require massive parallel processing. It is best suited for light database hosting, caching layers, text processing, and static web serving.",
-  "og_description": "Microsoft Azure L4as_v4 is a memory-optimized VM featuring a 4-vCPU AMD EPYC 9V74 processor, 32 GB RAM, and a 960 GB NVMe SSD, delivering strong single-core performance for memory-intensive workloads.",
-  "meta_description": "Microsoft Azure L4as_v4 is a 4-vCPU AMD EPYC virtual machine with 32 GB RAM and a 960 GB NVMe SSD, optimized for memory-intensive workloads.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated AMD EPYC processing and high-speed local NVMe storage for memory-intensive workloads.",
+  "description": "Microsoft Azure L4as_v4 is an x86_64 virtual machine from the Lasv4 family, powered by a 3.7 GHz AMD EPYC 9V74 processor with 4 dedicated vCPUs and 32.0 GB of RAM. It features a bundled 960 GB NVMe SSD and is Premium Storage capable. Performance benchmarks indicate strong single-core CPU and text processing capabilities, alongside average multi-core and Redis SET performance. However, the instance exhibits weak memory read bandwidth and below-average multi-threaded decompression speeds. Given its high memory-to-vCPU ratio and fast local storage, the L4as_v4 provides a cost-efficient profile for database operations, caching, and static web serving, while being less optimal for memory-bandwidth-intensive tasks or software compilation.",
+  "og_description": "Microsoft Azure L4as_v4 is an x86_64 virtual machine featuring a 3.7 GHz AMD EPYC processor, 4 dedicated vCPUs, 32 GB RAM, and a 960 GB NVMe SSD, optimized for database, caching, and static web serving workloads.",
+  "meta_description": "Microsoft Azure L4as_v4 is a 4-vCPU virtual machine with an AMD EPYC processor, 32 GB RAM, and a 960 GB NVMe SSD, suited for databases and caching.",
+  "tagline": "An AMD-powered virtual machine featuring dedicated compute, high memory density, and fast local NVMe storage for database and caching workloads.",
   "bullet_points": [
-    "Dedicated AMD EPYC 9V74 processor with 4 vCPUs and 2 physical cores",
-    "32.0 GB of system memory providing 8.0 GB per core",
-    "Bundled 960 GB NVMe SSD with Premium Storage capability",
+    "Powered by a 3.7 GHz AMD EPYC 9V74 processor with 4 dedicated vCPUs",
+    "Bundled with 32.0 GB of RAM and a 960 GB local NVMe SSD",
     "Strong single-core CPU and text processing benchmark performance",
-    "Weak memory read bandwidth and moderate multi-core scaling",
-    "Suitable for caching layers, light databases, and static web serving"
+    "Weak memory read bandwidth and multi-threaded decompression speeds",
+    "Best suited for database operations, Redis caching, and static web serving"
   ],
   "categories": [
-    "Memory Optimized",
     "Storage & Database",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

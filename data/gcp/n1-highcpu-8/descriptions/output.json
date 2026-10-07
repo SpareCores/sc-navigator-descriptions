@@ -1,21 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform n1-highcpu-8 is an x86_64 architecture server instance within the n1 family, configured with 8 dedicated vCPUs and 7.0 GB of system memory. The processing power is delivered by an Intel Xeon CPU operating at 2.3 GHz, featuring 4 physical cores with hyper-threading enabled to support 2 threads per core. The processor includes a 45 MB L3 cache, 0.25 MB L2 cache, and 32 KB L1d cache. It supports AVX, AES, BMI2, and FMA instruction sets, though it lacks AVX-512 extensions. This instance does not include local NVMe storage or bundled GPUs, and it comes with zero complimentary public IPv4 addresses.",
-    "Benchmark results indicate that the n1-highcpu-8 delivers modest performance across various workloads. In CPU-intensive evaluations, the instance achieved a Passmark CPU score of 6786.78 and a Geekbench multi-core score of 3557.0, both placing in the weak to average ranges. Single-core performance is relatively low, with a Geekbench single-core score of 914.0 and a stress-ng single-core result of 1109.79. Memory bandwidth tests show average performance for large blocks, reaching 47.28 GB/sec for read operations and 34.7 GB/sec for write operations, though small-block cached reads are weaker at 325.55 GB/sec.",
-    "With a low memory-to-vCPU ratio of less than 1 GB per core, this instance is designed for compute-heavy tasks that do not require large memory footprints. It demonstrates average performance in specific workloads like Geekbench ray tracing and small-model LLM text generation. However, it performs poorly in memory-bound or text-heavy operations, as evidenced by a weak Passmark database score of 2431.16 and a static web serving throughput of 5.09 GB/sec. The n1-highcpu-8 is best suited for parallelizable, compute-bound workloads with low memory requirements, such as basic software compilation, ray tracing, or lightweight batch processing."
+    "Google Cloud Platform n1-highcpu-8 is a compute-optimized virtual machine instance from the legacy n1 family. It features 8 dedicated vCPUs mapped to 4 physical cores of an Intel Xeon processor running at 2.3 GHz. The architecture is x86_64, supporting Hyper-Threading with 2 threads per core. The instance is configured with 7.0 GB of system memory, yielding a low memory-to-core ratio of approximately 0.9 GB per vCPU. It does not include bundled local storage or integrated GPU hardware, and it offers zero complimentary public IPv4 addresses.",
+    "Benchmark evaluations indicate that the instance delivers modest processing capabilities. In single-core and multi-core CPU tests via stress-ng, performance falls within the bottom 25%. Similarly, Geekbench single-core and multi-core scores are positioned in the poor and weak categories respectively. However, the instance demonstrates average performance in specific workloads, such as Geekbench ray tracing and Passmark CPU scores, which sit in the middle 50%. Large-block memory bandwidth read and write operations also achieve average tier results, whereas small-block cached reads are weak.",
+    "The primary tradeoff of the n1-highcpu-8 is its highly constrained memory allocation relative to its compute cores, which limits its utility for memory-intensive applications. From a cost-efficiency perspective, the instance offers a dense allocation of dedicated vCPUs within an older hardware class, making it a viable option for compute-bound tasks that do not require large memory footprints. Suitable workloads include parallelizable CPU tasks, basic software compilation, ray tracing, and lightweight text or image processing pipelines that fit comfortably within the 7.0 GB memory limit."
   ],
-  "description": "Google Cloud Platform n1-highcpu-8 is an x86_64 compute-optimized server instance featuring 8 dedicated vCPUs and 7.0 GB of RAM, powered by an Intel Xeon processor running at 2.3 GHz. The hardware configuration includes 4 physical cores with hyper-threading, a 45 MB L3 cache, and supports AVX, AES, and FMA instruction sets. It does not include local storage or GPUs. Performance benchmarks place this instance in the weak to average tiers, with a Passmark CPU score of 6786.78 and a Geekbench multi-core score of 3557.0. Large-block memory bandwidth is moderate, reaching 47.28 GB/sec for reads. Due to its low memory-to-vCPU ratio of approximately 0.9 GB per core, the n1-highcpu-8 is best suited for compute-bound tasks with minimal memory footprints, such as software compilation, ray tracing, and lightweight parallel processing.",
-  "og_description": "Google Cloud Platform n1-highcpu-8 is an x86_64 compute-optimized instance with 8 dedicated Intel Xeon vCPUs, 7.0 GB RAM, and no local storage, delivering moderate performance for compute-bound tasks.",
-  "meta_description": "Google Cloud Platform n1-highcpu-8 is an x86_64 instance with 8 Intel Xeon vCPUs and 7.0 GB RAM, designed for low-memory compute workloads.",
-  "tagline": "An x86_64 compute-focused instance featuring eight dedicated vCPUs and low memory allocation for parallelized, compute-bound workloads.",
+  "description": "Google Cloud Platform n1-highcpu-8 is an x86_64 compute-optimized virtual machine featuring 8 dedicated vCPUs and 7.0 GB of system memory. Powered by an Intel Xeon processor running at 2.3 GHz across 4 physical cores, this instance lacks bundled local storage and GPU accelerators. Benchmark data reveals weak single-core and multi-core CPU performance, placing it in the bottom 25% for stress-ng and Geekbench tests. However, it achieves average performance in Passmark CPU scores, ray tracing, and large-block memory bandwidth. The primary tradeoff is a low memory-to-core ratio of 0.9 GB per vCPU, which limits its suitability for memory-heavy applications. This instance is best suited for parallelized, compute-bound workloads with small memory footprints, such as basic software compilation, ray tracing, and lightweight image processing.",
+  "og_description": "Google Cloud Platform n1-highcpu-8 is an x86_64 virtual server with 8 dedicated Intel Xeon vCPUs and 7.0 GB of RAM, designed for compute-bound workloads with low memory requirements.",
+  "meta_description": "Google Cloud Platform n1-highcpu-8 features 8 dedicated Intel Xeon vCPUs and 7.0 GB RAM for compute-bound tasks with low memory footprints.",
+  "tagline": "A dedicated multi-core compute instance featuring a low memory-to-CPU ratio for parallelized workloads with minimal memory requirements.",
   "bullet_points": [
-    "8 dedicated Intel Xeon vCPUs and 7.0 GB of system memory.",
-    "Low memory-to-vCPU ratio of approximately 0.9 GB per core.",
-    "No bundled local NVMe storage or GPU accelerators.",
-    "Average performance in ray tracing and large-block memory bandwidth.",
-    "Best suited for lightweight parallel processing and software compilation."
+    "8 dedicated vCPUs and 4 physical cores on an Intel Xeon 2.3 GHz processor",
+    "7.0 GB of system memory, providing 0.9 GB of RAM per vCPU",
+    "No bundled local storage or GPU acceleration",
+    "Average performance in ray tracing and large-block memory bandwidth",
+    "Weak single-core and multi-core CPU benchmark results",
+    "Best suited for parallelized compute tasks with low memory footprints"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
