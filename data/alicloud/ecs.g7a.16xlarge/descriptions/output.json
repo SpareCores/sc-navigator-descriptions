@@ -1,21 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.g7a.16xlarge is a general-purpose virtual machine instance powered by the KVM hypervisor. It features an x86_64 architecture with a dedicated AMD EPYC 7T83 processor running at 2.55 GHz. The instance is configured with 64 vCPUs, derived from 32 physical cores with 2 threads per core, and is paired with 256.0 GB of system memory, yielding a balanced 4.0 GB of RAM per core. This instance does not include local storage or integrated GPUs, relying instead on network-attached storage and a baseline network bandwidth of 16 Gbps.",
-    "Benchmark data indicates strong multi-core processing capabilities, with stress-ng multi-core CPU performance and PassMark CPU scores placing in the top 25%. The AMD EPYC processor demonstrates high efficiency in parallelized workloads, as evidenced by strong results in multi-threaded bzip3 decompression, software compilation with Clang, ray tracing, and image processing. Cryptographic operations are highly optimized, supported by hardware-accelerated AES and SHA instruction sets. However, single-threaded performance and large-block memory bandwidth operations fall into the average tier, representing a potential bottleneck for memory-bound sequential tasks.",
-    "From a cost-efficiency perspective, the ecs.g7a.16xlarge offers high resource density for enterprise applications that require dedicated CPU allocation without the added cost of bundled local storage. It is highly suitable for database operations, as demonstrated by strong PassMark database and Redis SET performance, as well as medium-scale LLM inference and parallelized build systems. The lack of local storage means workloads requiring high-speed local caching must utilize network storage, which may impact overall I/O latency."
+    "Alibaba Cloud ecs.g7a.16xlarge is a general-purpose instance powered by the x86_64 architecture. It features 64 dedicated vCPUs mapped to 32 physical cores of an AMD EPYC 7T83 processor running at 2.55 GHz. The system is equipped with 256.0 GB of RAM, providing a balanced 4.0 GB of memory per core. This instance does not include local storage or dedicated GPU hardware, relying entirely on network-attached storage and a baseline network bandwidth of 16 Gbps.",
+    "Benchmark results show strong multi-core and single-core CPU performance, placing in the top 25% of tested systems. The instance demonstrates high efficiency in software compilation with Clang, ray tracing, and image processing. Memory performance is mixed; while cached small-block read-only memory bandwidth is highly competitive, uncached large-block read and write speeds fall into the average tier. Cryptographic and database operations also rank in the top 25%, alongside strong text generation speeds for small language models.",
+    "The absence of local NVMe storage represents a key tradeoff, requiring reliance on network storage for I/O-heavy operations. Qualitatively, the dedicated AMD EPYC hardware offers a balanced resource density for enterprise workloads without the premium cost of specialized memory-optimized or GPU-accelerated instances. The instance is suitable for multi-threaded applications, software compilation pipelines, database operations, and moderate LLM inference tasks."
   ],
-  "description": "Alibaba Cloud ecs.g7a.16xlarge is a general-purpose, KVM-hypervised instance featuring a dedicated AMD EPYC 7T83 processor with 64 vCPUs and 256.0 GB of RAM. Operating on an x86_64 architecture at 2.55 GHz, it delivers a balanced 1:4 vCPU-to-RAM ratio. The instance does not include local storage or GPUs, relying on a 16 Gbps baseline network bandwidth. Benchmark results show strong multi-core CPU performance, database operations, and Redis throughput, though single-threaded tasks and large-block memory bandwidth remain in the average tier. This profile makes the instance highly efficient for multi-threaded enterprise workloads, database hosting, and software compilation, offering a solid balance of compute and memory resources.",
-  "og_description": "Alibaba Cloud ecs.g7a.16xlarge is a general-purpose instance with 64 vCPUs, 256 GB RAM, and a 2.55 GHz AMD EPYC processor, optimized for multi-threaded enterprise workloads and database operations.",
-  "meta_description": "Alibaba Cloud ecs.g7a.16xlarge is a general-purpose instance featuring 64 vCPUs, 256 GB RAM, and a dedicated AMD EPYC processor.",
-  "tagline": "A dedicated AMD EPYC platform delivering balanced compute and memory resources for demanding multi-threaded enterprise workloads.",
+  "description": "Alibaba Cloud ecs.g7a.16xlarge is a general-purpose instance featuring 64 dedicated vCPUs and 256.0 GB of RAM, powered by an AMD EPYC 7T83 processor running at 2.55 GHz. Built on the x86_64 architecture, it delivers strong multi-core CPU performance, ranking in the top 25% for software compilation, ray tracing, and database operations. The instance lacks local storage and dedicated GPUs, relying on network-attached storage and a 16 Gbps baseline network bandwidth. While cached memory bandwidth is highly competitive, uncached large-block memory operations perform at average levels. This resource configuration provides balanced compute-to-memory density, making it a viable option for enterprise workloads, multi-threaded applications, and database hosting.",
+  "og_description": "Alibaba Cloud ecs.g7a.16xlarge is a general-purpose instance featuring 64 dedicated AMD EPYC vCPUs, 256 GB RAM, and a 16 Gbps network baseline, delivering strong multi-core and database performance.",
+  "meta_description": "Alibaba Cloud ecs.g7a.16xlarge is a general-purpose instance with 64 AMD EPYC vCPUs, 256 GB RAM, and strong multi-core benchmark performance.",
+  "tagline": "A dedicated AMD EPYC platform delivering balanced compute and memory resources for enterprise applications and multi-threaded workloads.",
   "bullet_points": [
-    "Dedicated AMD EPYC 7T83 processor with 64 vCPUs and 256 GB RAM",
-    "Strong multi-core CPU, database, and Redis performance",
-    "16 Gbps baseline network bandwidth with no local storage",
-    "Optimized for software compilation, ray tracing, and image processing",
-    "Best suited for enterprise databases and parallelized workloads"
+    "64 dedicated vCPUs powered by AMD EPYC 7T83 processors at 2.55 GHz",
+    "256.0 GB of system memory providing a balanced 4.0 GB per core ratio",
+    "Strong multi-core CPU performance, software compilation, and database operations",
+    "No local storage or GPU hardware, utilizing network-attached storage",
+    "16 Gbps baseline network bandwidth for standard data transfer needs"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }
