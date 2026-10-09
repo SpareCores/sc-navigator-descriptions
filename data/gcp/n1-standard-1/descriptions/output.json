@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform n1-standard-1 is a general-purpose virtual machine instance belonging to the n1 server family. It features a single dedicated vCPU mapped to an Intel Xeon processor running at 2.3 GHz on the x86_64 architecture. The instance is equipped with 4.0 GB of system memory, providing a memory-to-vCPU ratio of 4:1. It does not include local storage or bundled GPU accelerators, and it offers zero complimentary public IPv4 addresses.",
-    "Benchmark evaluations place the performance of the n1-standard-1 in the lower tiers. The single-core and multi-core CPU performance, measured via stress-ng, yields a score of 1088.79, categorizing it in the bottom 25% and 10% respectively. Memory bandwidth tests show 80.25 GB/sec for cached small blocks and drop to 10.68 GB/sec for uncached large blocks. Other performance metrics, such as a Geekbench single-core score of 895.0 and a Passmark CPU score of 1262.29, reflect limited processing capabilities.",
-    "Due to its entry-level hardware profile and lower-tier benchmark results, the n1-standard-1 is suited for lightweight, non-resource-intensive workloads. These include basic static web serving, which achieves a throughput of 1.21 GB/sec, small Redis database instances handling up to 1.29 million SET operations per second, and minor text or image processing tasks. It is not designed for demanding database operations, large-scale LLM inference, or multi-threaded applications."
+    "Google Cloud Platform n1-standard-1 is an entry-level general-purpose virtual machine instance. It is equipped with 1 dedicated vCPU mapped to 1 physical core and 1 thread, running on an x86_64 Intel Xeon processor clocked at 2.3 GHz. The instance features 4.0 GB of system memory, providing 3.75 GB of RAM per core. It does not include bundled local storage or integrated GPU hardware, and it comes with zero complimentary public IPv4 addresses. The processor supports AVX, AES, BMI2, and FMA instruction sets, but lacks AVX-512 capabilities.",
+    "Benchmark evaluations place the performance of this instance in the lower tier. The stress-ng single-core and multi-core CPU metrics both register at 1088.79, reflecting its single-threaded limitation. Memory bandwidth tests show 80.25 GB/sec for cached small blocks, dropping to 10.68 GB/sec read and 9.71 GB/sec write for uncached large blocks. Geekbench scores are similarly constrained, with a single-core score of 895.0 and a multi-core score of 898.0. Static web serving throughput is measured at 1.21 GB/sec, and small-model LLM inference using a 135M model yields 96.03 tokens/sec for prompt processing and 41.77 tokens/sec for text generation.",
+    "Given its single-core configuration and low benchmark scores, the instance presents clear performance tradeoffs, particularly for multi-threaded or memory-intensive applications. From a qualitative cost-efficiency perspective, it serves as a low-cost entry point for workloads that do not require high resource density or rapid processing speeds. It is best suited for lightweight tasks such as basic development environments, low-traffic static web serving, simple testing, and minor background scripting."
   ],
-  "description": "Google Cloud Platform n1-standard-1 is an entry-level general-purpose instance featuring 1 dedicated vCPU on an Intel Xeon 2.3 GHz processor and 4.0 GB of RAM. Operating on the x86_64 architecture, this instance does not include local storage or GPU accelerators. Benchmark data indicates limited performance, with stress-ng CPU scores and memory bandwidth metrics placing the instance in the bottom 10% to 25% of tested hardware. Consequently, the n1-standard-1 is best suited for low-intensity workloads such as lightweight static web serving, small Redis deployments, basic text processing, and development or testing environments that do not require high computational throughput or memory capacity.",
-  "og_description": "Google Cloud Platform n1-standard-1 is a general-purpose instance with 1 dedicated Intel Xeon vCPU, 4.0 GB RAM, and no local storage, designed for lightweight workloads and basic web serving.",
-  "meta_description": "Google Cloud Platform n1-standard-1 features 1 dedicated Intel Xeon vCPU and 4.0 GB RAM, offering entry-level performance for basic workloads.",
-  "tagline": "An entry-level, single-core virtual machine with dedicated resources for lightweight utility workloads and basic development environments.",
+  "description": "Google Cloud Platform n1-standard-1 is an entry-level general-purpose virtual machine featuring 1 dedicated vCPU on an x86_64 Intel Xeon processor clocked at 2.3 GHz, paired with 4.0 GB of RAM. This instance does not include local storage or GPU accelerators. Performance benchmarks place the server in the lower tier, with a Geekbench single-core score of 895.0 and a multi-core score of 898.0. Memory bandwidth is limited, reaching 10.68 GB/sec for uncached large block reads. Static web serving throughput is recorded at 1.21 GB/sec. Due to these hardware constraints, the instance offers a low-cost entry point with clear performance tradeoffs. It is best suited for lightweight workloads such as basic software development, low-traffic web serving, simple testing, and minor background tasks.",
+  "og_description": "Google Cloud Platform n1-standard-1 is a general-purpose instance with 1 vCPU, 4.0 GB RAM, and an Intel Xeon processor, designed for lightweight workloads and basic development environments.",
+  "meta_description": "Google Cloud Platform n1-standard-1 is a 1 vCPU, 4.0 GB RAM general-purpose instance for lightweight workloads and basic testing.",
+  "tagline": "A low-cost, single-core virtual machine with balanced memory for basic development, testing, and lightweight background tasks.",
   "bullet_points": [
-    "1 dedicated Intel Xeon vCPU running at 2.3 GHz",
-    "4.0 GB of system memory with no local storage",
-    "Suited for lightweight static web serving and small Redis instances",
-    "Entry-level performance profile verified by benchmark testing",
-    "Designed for non-intensive development and testing workloads"
+    "Single dedicated vCPU on a 2.3 GHz Intel Xeon x86_64 processor",
+    "4.0 GB of system memory with no bundled local storage",
+    "Lower-tier benchmark performance suitable for non-intensive tasks",
+    "Static web serving throughput of 1.21 GB/sec",
+    "Best suited for basic development, testing, and low-traffic applications"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Burstable & Budget"
   ]
 }
