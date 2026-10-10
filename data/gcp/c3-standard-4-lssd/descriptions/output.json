@@ -1,22 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c3-standard-4-lssd is a general-purpose virtual machine belonging to the c3 server family. It features 4 dedicated vCPUs mapped to 2 physical cores of an Intel Xeon 8481C processor operating at 2.7 GHz. The system is equipped with 16 GB of RAM, providing a 4.0 GB per core ratio, and includes a bundled 402 GB local NVMe SSD. The x86_64 architecture supports advanced instruction sets, including Intel Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX) for deep learning and matrix operations, alongside cryptographic acceleration via AES and SHA_NI.",
-    "Benchmark results indicate a performance profile that is generally average in single-threaded tasks but weaker in multi-threaded and memory-intensive workloads. The single-core stress-ng and Geekbench scores fall into the average category, as does single-threaded gzip compression and bzip3 decompression. However, multi-core performance is weak, as demonstrated by the stress-ng multi-core and Geekbench multi-core benchmarks. Memory bandwidth is also limited, with both read and write large-block tests registering in the weak category. Static web serving throughput remains average at 6.5 GB/sec.",
-    "The inclusion of a 402 GB local NVMe SSD provides high-speed local storage, which offsets the weaker memory bandwidth and multi-core processing constraints for workloads requiring fast disk access. From a qualitative cost-efficiency perspective, this instance offers a balanced resource density for workloads that do not fully saturate multi-threaded CPU capacity but benefit from dedicated compute resources and local storage. Appropriate workloads include static web serving, lightweight database operations, text processing, and single-threaded utility tasks."
+    "Google Cloud Platform c3-standard-4-lssd is a general-purpose cloud instance built on dedicated Intel Xeon 8481C processors operating at a base clock speed of 2.7 GHz. Built on x86_64 architecture, the instance provides 4 vCPUs across 2 physical cores with 2 threads per core, backed by 105 MB of L3 cache. It incorporates advanced vector and matrix acceleration instructions, including Intel AVX-512, VNNI, and AMX tile operations.",
+    "The instance comes equipped with 16.0 GB of memory, representing a ratio of 4.0 GB of RAM per vCPU. Hardware features include 402 GB of direct-attached local NVMe SSD storage for low-latency host-level disk I/O. The node does not include dedicated GPU accelerators or complimentary public IPv4 network addresses.",
+    "Benchmark results demonstrate moderate single-threaded performance, with average scores across stress-ng single-core tests, Geekbench single-core execution, and gzip single-threaded compression. Multi-threaded compute benchmarks and memory bandwidth metrics reflect lower percentile performance under parallel workloads, as seen in bzip3 multi-threaded decompression and PassMark multi-core evaluations. Static web serving throughput reaches 6.5 GB/sec, while Redis SET operations achieve 4.23 million operations per second.",
+    "Given its balance of 16 GB RAM and bundled local NVMe SSD storage, c3-standard-4-lssd provides qualitative efficiency for I/O-sensitive workloads that do not require dense parallel core counts. Recommended workloads include static web serving, local caching layers, light database nodes, and general staging environments."
   ],
-  "description": "Google Cloud Platform c3-standard-4-lssd is a general-purpose instance featuring 4 dedicated vCPUs from an Intel Xeon 8481C processor running at 2.7 GHz, 16 GB of RAM, and a bundled 402 GB local NVMe SSD. Built on the x86_64 architecture, it supports advanced instruction sets like AVX-512 and AMX. Performance benchmarks reveal average single-core execution and static web serving throughput of 6.5 GB/sec, contrasted with weak multi-core scaling and memory bandwidth. The local NVMe SSD provides fast local storage, making this configuration suitable for workloads such as static web serving, text processing, and lightweight database operations that require dedicated CPU allocation without demanding high multi-threaded compute density.",
-  "og_description": "Google Cloud Platform c3-standard-4-lssd features 4 dedicated Intel Xeon vCPUs, 16 GB RAM, and a 402 GB local NVMe SSD, offering average single-core performance and weak multi-core scaling.",
-  "meta_description": "Google Cloud Platform c3-standard-4-lssd is a 4 vCPU, 16 GB RAM instance with a 402 GB local NVMe SSD, suitable for static web serving and text processing.",
-  "tagline": "A general-purpose instance featuring dedicated Intel Xeon processors, 16 GB of RAM, and a bundled 402 GB local NVMe SSD.",
+  "description": "Google Cloud Platform c3-standard-4-lssd is a general-purpose instance featuring 4 vCPUs powered by 2 physical Intel Xeon 8481C cores running at 2.7 GHz. Operating on x86_64 architecture, the system includes 105 MB of L3 cache, Intel AVX-512, and AMX instruction support. Memory capacity is provisioned at 16.0 GB RAM alongside a bundled 402 GB local NVMe SSD. Benchmark testing indicates average single-core CPU throughput and strong static web serving capacity of 6.5 GB/sec, while multi-threaded compute and uncached memory bandwidth fall into lower performance tiers. The configuration offers qualitative resource balance for local storage-dependent, moderate-concurrency application profiles including web servers, caching nodes, and lightweight databases.",
+  "og_description": "Google Cloud Platform c3-standard-4-lssd features 4 vCPUs on Intel Xeon 8481C processors, 16 GB RAM, and a bundled 402 GB local NVMe SSD. It delivers reliable single-core performance for local storage workloads.",
+  "meta_description": "Google Cloud Platform c3-standard-4-lssd offers 4 vCPUs, 16 GB RAM, and 402 GB local NVMe SSD storage powered by Intel Xeon processors.",
+  "tagline": "A balanced compute instance featuring dedicated Intel Xeon cores, 16 GB RAM, and high-speed local NVMe SSD storage for core workloads.",
   "bullet_points": [
-    "4 dedicated vCPUs powered by an Intel Xeon 8481C processor at 2.7 GHz",
-    "16 GB of system memory paired with a 402 GB local NVMe SSD",
-    "Supports Intel AVX-512 and Advanced Matrix Extensions (AMX)",
-    "Average single-core performance and 6.5 GB/sec static web serving throughput",
-    "Best suited for static web serving, text processing, and lightweight database tasks"
+    "Powered by 4 vCPUs across 2 physical Intel Xeon 8481C cores with 105 MB L3 cache",
+    "Provisioned with 16.0 GB system RAM and a bundled 402 GB local NVMe SSD",
+    "Supports Intel AVX-512 and AMX matrix instruction extensions",
+    "Delivers average single-threaded CPU and 6.5 GB/sec static web serving benchmark rates",
+    "Suited for static web serving, local caching, and lightweight database applications"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

@@ -1,23 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c2d-highmem-2 is a memory-optimized virtual machine instance featuring 2 vCPUs and 16 GB of RAM. Powered by a dedicated AMD EPYC 7B13 processor built on the x86_64 architecture, this instance allocates one physical core with two threads. The processor includes 32 KB of L1d cache, 0.5 MB of L2 cache, and 32 MB of L3 cache. It supports hardware-assisted virtualization, AES and SHA cryptography extensions, and AVX vector instructions, though it lacks AVX-512 and AMX capabilities. This instance does not include local storage or bundled GPUs, and it comes with zero complimentary public IPv4 addresses.",
-    "Performance benchmarks reveal a stark contrast between single-core and multi-core capabilities. The instance demonstrates strong single-core CPU performance in stress-ng tests, placing in the top 25%. However, its multi-core CPU performance and overall PassMark CPU scores fall into the bottom 25%, reflecting the limitations of its dual-vCPU configuration. Memory performance is mixed; while the PassMark memory score is average, memory bandwidth tests for both small and large blocks rank in the bottom 10% and 25% respectively. Similarly, complex multi-threaded or resource-heavy tasks, such as software compilation, ray tracing, and database operations, show poor performance, landing in the bottom 10%.",
-    "From a cost-efficiency perspective, the c2d-highmem-2 offers a high memory-to-vCPU ratio of 8 GB per vCPU without the overhead of larger multi-core instances, making it a viable option for memory-sensitive workloads that do not require heavy parallel processing. It is appropriate for single-threaded applications, basic text processing, lightweight web serving, and small-scale LLM text generation. However, it is not recommended for database-heavy operations, parallel compilation, or memory-bandwidth-bound tasks due to documented performance bottlenecks in those areas."
+    "Google Cloud Platform c2d-highmem-2 is a memory-optimized cloud server instance configured with 2 vCPUs and 16.0 GB of RAM, yielding an 8.0 GB RAM allocation per vCPU. Built on x86_64 architecture using an AMD EPYC 7B13 processor, it consists of 1 physical core supporting 2 threads with dedicated CPU allocation. Cache specifications include 32 KB L1d, 0.5 MB L2, and 32 MB L3 cache. This instance type contains no integrated GPU accelerators and offers no local NVMe storage.",
+    "In benchmark evaluations, the instance demonstrates strong single-core CPU throughput, reaching 2923.78 on stress-ng single-core tests. However, overall multi-core and memory bandwidth metrics reflect hardware limits inherent to a single physical core, placing multi-core CPU score and uncached memory bandwidth in lower performance tiers. Single-threaded text decompression and compression tasks show average performance, while specialized database and compilation scores remain low.",
+    "The high memory-to-vCPU ratio provides qualitative resource efficiency for memory-sensitive execution environments that do not require extensive parallel processing power. Tradeoffs include limited multi-core concurrency and lack of included block storage. This instance is best suited for lightweight caching services, memory-bound single-threaded applications, and small-scale data processing workloads."
   ],
-  "description": "Google Cloud Platform c2d-highmem-2 is a memory-optimized instance featuring 2 vCPUs and 16 GB of RAM, driven by a dedicated AMD EPYC 7B13 processor. With an x86_64 architecture, it provides one physical core and two threads, supported by a 32 MB L3 cache. The instance lacks bundled GPUs and local storage. Benchmark data highlights strong single-core CPU performance, though multi-core execution and memory bandwidth are relatively weak. It achieves average results in single-threaded compression and text processing, but performs poorly in database operations and software compilation. This profile makes the c2d-highmem-2 a cost-efficient choice for memory-intensive, single-threaded workloads, lightweight web serving, and basic text processing, while remaining less suitable for highly parallelized or database-heavy applications.",
-  "og_description": "Google Cloud Platform c2d-highmem-2 is a memory-optimized instance with 2 vCPUs, 16 GB RAM, and an AMD EPYC 7B13 CPU, offering strong single-core performance for memory-intensive, low-thread workloads.",
-  "meta_description": "Google Cloud Platform c2d-highmem-2 is a memory-optimized VM with 2 vCPUs and 16 GB RAM, powered by an AMD EPYC 7B13 CPU for single-threaded tasks.",
-  "tagline": "A dual-vCPU instance with a high memory-to-core ratio, delivering strong single-core execution for memory-sensitive, low-concurrency workloads.",
+  "description": "Google Cloud Platform c2d-highmem-2 is a memory-optimized server powered by an x86_64 AMD EPYC 7B13 processor with 2 vCPUs across 1 physical core and 16.0 GB of RAM. The instance provides dedicated CPU allocation, 32 MB of L3 cache, and a high 8.0 GB RAM per vCPU ratio, while lacking bundled local storage and GPU hardware. Benchmarks highlight strong single-core CPU execution, paired with average text generation and decompression rates. Conversely, multi-threaded performance, uncached memory bandwidth, and database transaction throughput fall into lower tiers due to the single physical core footprint. This server offers cost-effective memory density for workloads requiring significant RAM with modest parallel processing demands, making it well fitted for lightweight caching layers, single-threaded batch processing, and memory-bound background tasks.",
+  "og_description": "Google Cloud Platform c2d-highmem-2 features 2 vCPUs powered by an AMD EPYC 7B13 CPU, 16 GB RAM, and dedicated host resources without local storage, tailored for single-threaded memory tasks.",
+  "meta_description": "Google Cloud Platform c2d-highmem-2 offers 2 vCPUs and 16 GB RAM on AMD EPYC 7B13 hardware, optimized for memory-heavy single-threaded tasks.",
+  "tagline": "A high-memory compute instance providing 16 GB RAM across two dedicated vCPUs for memory-bound, single-core processing tasks.",
   "bullet_points": [
-    "Dedicated AMD EPYC 7B13 processor with 2 vCPUs and 16 GB RAM",
-    "Strong single-core CPU performance in stress-ng benchmarks",
-    "High memory-to-vCPU ratio of 8 GB per core",
-    "No bundled local storage or GPU accelerators",
-    "Appropriate for single-threaded applications, text processing, and light web serving",
-    "Not recommended for database operations and parallel software compilation"
+    "Powered by a dedicated 2 vCPU AMD EPYC 7B13 processor with 32 MB L3 cache",
+    "Equipped with 16.0 GB RAM offering an 8.0 GB per vCPU memory allocation",
+    "Strong single-core CPU performance alongside lower multi-core benchmark ratings",
+    "Includes no attached local SSD storage or dedicated GPU accelerators",
+    "Suited for lightweight memory-bound workloads, caching, and single-threaded execution"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

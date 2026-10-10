@@ -1,22 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c3d-standard-8 is a general-purpose virtual machine instance featuring 8 vCPUs and 32 GB of RAM, yielding a balanced 1:4 resource ratio. Powered by an AMD EPYC 9B14 processor utilizing the x86_64 architecture, the instance allocates 4 physical cores with 2 threads per core under a dedicated CPU allocation model. The processor configuration includes 32 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. It supports advanced instruction sets such as AVX-512 (including VNNI and BF16) and cryptographic acceleration via AES, VAES, and SHA_NI. This instance does not include local storage or bundled GPUs.",
-    "Benchmark evaluations show strong single-core CPU performance, placing in the top 25% of tested systems. Multi-core CPU performance, software compilation, and database operations fall within the average range. While cached small-block memory read bandwidth is average at 565.97 GB/sec, uncached large-block memory read and write bandwidths are weak, measuring 37.36 GB/sec and 14.86 GB/sec respectively. LLM inference capabilities are average for small 135M models but drop to weak or poor performance levels when executing medium 7B models.",
-    "From a cost-efficiency perspective, the c3d-standard-8 offers a balanced hardware profile suitable for mainstream workloads without the premium cost of specialized memory or compute-optimized instances. Given its dedicated CPU allocation and balanced resource density, this instance is well-suited for general-purpose applications, software compilation, static web serving, and moderate database operations."
+    "Google Cloud Platform c3d-standard-8 is a compute-oriented virtual machine powered by an AMD EPYC 9B14 x86_64 processor. The configuration includes 8 vCPUs mapped across 4 physical cores with simultaneous multithreading, along with 32 GB of system memory, providing a 1:4 vCPU-to-RAM ratio. Cache resources consist of 32 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. Instruction set extensions include AVX-512 variants such as VNNI and BF16, alongside AES, SHA_NI, and FMA. This instance features dedicated CPU allocation, includes no attached local storage, and contains no discrete GPU accelerators.",
+    "Benchmark evaluations demonstrate strong single-core processing capabilities, positioning its single-thread stress-ng throughput in the top quartile of tested instances. Multi-core compute performance, Geekbench scores, PassMark CPU ratings, and web serving throughput of 10.45 GB/sec fall within average bounds. However, memory subsystem tests indicate lower uncached memory bandwidth, reaching 37.36 GB/sec read and 14.86 GB/sec write for 256MB blocks. Additionally, medium LLM inference tasks show limited throughput, making the instance less suitable for memory-bandwidth-intensive AI execution.",
+    "From a cost-efficiency perspective, the instance provides solid compute density for general-purpose application hosting and single-thread intensive tasks without paying for specialized acceleration or built-in NVMe storage. It is well-aligned with web serving, software compilation, database key-value operations such as Redis, and general CI/CD pipeline execution."
   ],
-  "description": "Google Cloud Platform c3d-standard-8 is a general-purpose virtual machine featuring 8 vCPUs and 32 GB of RAM, powered by an AMD EPYC 9B14 processor on the x86_64 architecture. It provides 4 physical cores with 2 threads per core under a dedicated allocation model, supported by 32 MB of L3 cache and AVX-512 instruction sets. The instance does not include local storage or GPUs. Benchmarks indicate strong single-core CPU performance, alongside average multi-core execution, software compilation, and static web serving. However, uncached large-block memory bandwidth and medium-model LLM inference speeds represent notable performance tradeoffs, registering as weak to poor. This configuration offers balanced resource density and qualitative cost efficiency for standard enterprise workloads. It is best suited for general-purpose computing, software development, static web serving, and moderate database operations.",
-  "og_description": "Google Cloud Platform c3d-standard-8 is an x86_64 general-purpose instance with 8 vCPUs, 32 GB RAM, and an AMD EPYC 9B14 CPU, offering strong single-core performance for standard enterprise workloads.",
-  "meta_description": "Google Cloud Platform c3d-standard-8 is an x86_64 general-purpose instance with 8 vCPUs, 32 GB RAM, and an AMD EPYC 9B14 CPU.",
-  "tagline": "An x86_64 general-purpose virtual machine featuring dedicated AMD EPYC processing, balanced memory allocation, and strong single-core performance.",
+  "description": "Google Cloud Platform c3d-standard-8 is a compute-focused instance powered by a 4-core AMD EPYC 9B14 processor providing 8 dedicated vCPUs and 32 GB of RAM. Featuring advanced instruction support including AVX-512, AES, and SHA_NI, it lacks local storage and GPU hardware. Synthetic benchmarks highlight strong single-core CPU performance, ranking in the top quartile, alongside average multi-core execution, PassMark CPU, and static web serving capabilities reaching 10.45 GB/sec. A notable hardware tradeoff is lower uncached large-block memory bandwidth, which constrains performance in memory-bound applications like medium-scale LLM inference. Financially efficient as a balanced compute node without bundled storage costs, c3d-standard-8 is best suited for general web serving, Redis key-value workloads, software compilation, and standard application hosting.",
+  "og_description": "Google Cloud Platform c3d-standard-8 offers 8 vCPUs powered by AMD EPYC 9B14 processors and 32 GB memory, delivering solid single-threaded CPU speed for general compute tasks.",
+  "meta_description": "Google Cloud Platform c3d-standard-8 features 8 AMD EPYC vCPUs, 32 GB RAM, and high single-core performance for general compute workloads.",
+  "tagline": "An AMD EPYC-powered instance featuring 8 vCPUs and 32 GB RAM, delivering strong single-core CPU speed for balanced compute workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs and 32 GB RAM powered by an AMD EPYC 9B14 processor",
-    "Strong single-core CPU performance (top 25% in stress-ng benchmarks)",
-    "Supports AVX-512 instruction sets and cryptographic hardware acceleration",
-    "No bundled local storage or GPU accelerators",
-    "Tradeoffs include weak uncached large-block memory bandwidth",
-    "Suited for general-purpose computing, software compilation, and web serving"
+    "8 vCPUs and 32 GB RAM powered by AMD EPYC 9B14 processor",
+    "Strong single-core CPU performance ranking in top quartile",
+    "Hardware support for AVX-512, AES, SHA_NI, and VNNI instructions",
+    "No attached local NVMe storage or discrete GPU accelerators",
+    "Reduced uncached memory bandwidth affecting large-memory operations",
+    "Optimal fit for web serving, Redis caching, CI/CD, and general app hosting"
   ],
   "categories": [
+    "Compute Optimized",
     "General Purpose"
   ]
 }

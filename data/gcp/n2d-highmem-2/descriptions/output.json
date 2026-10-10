@@ -1,22 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform n2d-highmem-2 is a memory-optimized virtual machine instance powered by an AMD EPYC 7B13 processor. It features 2 vCPUs mapped to 1 physical core with 2 threads per core, utilizing the x86_64 architecture. The instance is configured with 16 GB of system memory, yielding a high memory-to-vCPU ratio of 8 GB per core. It does not include local storage or dedicated GPU hardware, and provides zero complimentary public IPv4 addresses.",
-    "Performance benchmarks reveal a stark contrast between single-core and multi-core capabilities. The AMD EPYC processor delivers strong single-core CPU performance, ranking in the top 25% in stress-ng tests. However, multi-core performance is weak, falling into the bottom 25%. Memory bandwidth is also limited, with read-only small block cached bandwidth scoring in the bottom 10% at 126.54 GB/sec, and uncached large block read and write speeds categorized as weak. Single-threaded tasks like gzip compression and bzip3 decompression perform at average levels, while multi-core tasks, database operations, and static web serving throughput show poor relative performance.",
-    "From a cost-efficiency perspective, the n2d-highmem-2 offers a specialized resource profile that prioritizes memory capacity over raw compute density. It is best suited for memory-bound workloads that do not require high parallel processing power, such as lightweight caching layers, small-scale memory-intensive applications, or single-threaded data processing tasks. The lack of local storage and low multi-core performance make it less suitable for heavy database operations, parallel software compilation, or high-throughput web serving."
+    "Google Cloud Platform n2d-highmem-2 is a memory-optimized virtual machine configured with 2 vCPUs, 1 physical core across 2 threads, and 16.0 GB of memory. It runs on x86_64 architecture using AMD EPYC 7B13 processors equipped with 32 MB L3 cache, 0.5 MB L2 cache, and 32 KB L1d cache. The instance features dedicated CPU allocation and supports instruction extensions including AVX, AES, VAES, SHA_NI, FMA, and BMI2, though it lacks AVX-512 support. Local storage is omitted, and no GPU hardware or complimentary public IPv4 addresses are attached.",
+    "Benchmark testing indicates a distinct separation between single-core and multi-threaded performance. Single-core processing is strong, ranking in the top tier of stress-ng CPU tests alongside average single-threaded compression and text processing results. However, total multi-core execution and memory bandwidth are limited by the single physical core layout, placing multi-core Geekbench, software compilation, and Redis throughput in lower performance brackets. Qualitatively, the high RAM-to-vCPU ratio offers efficient resource utilization for applications needing elevated memory capacity without requiring extra compute overhead.",
+    "With its 8 GB RAM per vCPU profile, n2d-highmem-2 fits memory-intensive tasks with low concurrency needs. Recommended applications include lightweight in-memory caching services, background queue workers, text manipulation routines, and web microservices demanding moderate operational memory footprints."
   ],
-  "description": "Google Cloud Platform n2d-highmem-2 is a memory-optimized virtual machine featuring 2 vCPUs and 16 GB of RAM, powered by an AMD EPYC 7B13 processor on the x86_64 architecture. The instance allocates 8 GB of memory per core across a single physical core with two threads. It does not include local storage or GPU accelerators. Benchmark data indicates strong single-core CPU performance, though multi-core execution, database operations, and memory bandwidth are relatively weak. Single-threaded compression tasks perform at average levels. Given its high memory-to-vCPU ratio and dedicated CPU allocation, this instance provides a cost-effective profile for memory-bound, low-concurrency workloads. It is best suited for lightweight caching, single-threaded data processing, and small-scale applications requiring a larger memory footprint without the need for high parallel compute power.",
-  "og_description": "Google Cloud Platform n2d-highmem-2 is a memory-optimized instance with 2 vCPUs, 16 GB RAM, and an AMD EPYC 7B13 CPU. It offers strong single-core performance for memory-bound, low-concurrency workloads.",
-  "meta_description": "Google Cloud Platform n2d-highmem-2 is an x86_64 memory-optimized instance with 2 vCPUs and 16 GB RAM, powered by an AMD EPYC 7B13 processor.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated AMD EPYC processing and a high memory-to-core ratio for low-concurrency, memory-bound workloads.",
+  "description": "Google Cloud Platform n2d-highmem-2 is a memory-optimized x86_64 instance featuring 2 dedicated vCPUs derived from a single physical core on AMD EPYC 7B13 processors, paired with 16.0 GB of RAM. Designed with an 8 GB memory-per-core ratio, the server provides 32 MB of L3 cache and supports AVX, AES, VAES, and SHA_NI instruction sets while omitting local SSD storage and GPU acceleration. Benchmarks show strong single-core CPU execution, achieving competitive stress-ng single-threaded scores and balanced text processing. Conversely, multi-threaded throughput, memory bandwidth, and compilation speed reflect the physical single-core limit. Qualitatively, n2d-highmem-2 provides cost efficiency by delivering ample RAM capacity for memory-bound tasks without forcing scale-up of compute resources. It is best suited for small in-memory caches, background queue processing, single-threaded data manipulation, and lightweight microservices requiring elevated RAM allocations.",
+  "og_description": "Google Cloud Platform n2d-highmem-2 is a memory-optimized instance with 2 vCPUs and 16 GB RAM powered by AMD EPYC 7B13 processors, designed for memory-intensive workloads with light parallel processing demands.",
+  "meta_description": "Google Cloud Platform n2d-highmem-2 is a memory-optimized instance featuring 2 vCPUs, 16 GB RAM, and AMD EPYC 7B13 processors.",
+  "tagline": "An x86 memory-optimized virtual machine pairing dual dedicated vCPUs on AMD EPYC processors with 16 GB of memory for memory-heavy low-thread workloads.",
   "bullet_points": [
-    "Powered by AMD EPYC 7B13 processor with 2 vCPUs and 16 GB RAM",
-    "High memory-to-vCPU ratio of 8 GB per core on x86_64 architecture",
-    "Strong single-core CPU performance but weak multi-core scaling",
-    "No bundled local storage or dedicated GPU hardware",
-    "Best suited for lightweight caching and single-threaded data processing"
+    "Powered by AMD EPYC 7B13 CPU with 2 vCPUs and 1 physical core",
+    "Equipped with 16.0 GB RAM for an 8:1 memory-to-vCPU allocation ratio",
+    "Strong single-core CPU benchmark scores in stress-ng evaluations",
+    "Lacks local NVMe block storage and GPU hardware acceleration",
+    "Optimal for small in-memory caching, queue workers, and low-concurrency services"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

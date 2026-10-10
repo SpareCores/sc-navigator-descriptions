@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform e2-highmem-2 is a memory-optimized virtual machine instance configured with 2 vCPUs and 16.0 GB of system memory. The underlying hardware features an x86_64 architecture powered by an Intel Xeon processor operating at 2.2 GHz. This configuration provides 1 physical core with 2 threads per core, utilizing a dedicated CPU allocation. The processor includes 32 KB of L1d cache, 0.5 MB of L2 cache, and 16 MB of L3 cache, with support for AVX, AES, BMI2, ADX, and FMA instruction sets. No local storage or GPUs are bundled with this instance type, and it includes zero complimentary public IPv4 addresses.",
-    "Benchmark data indicates that the e2-highmem-2 resides in lower performance tiers for compute and memory throughput. The single-core stress-ng performance is measured at 1101.98, while the multi-core score is 1451.88, both falling into the bottom 25% and 10% respectively. Memory bandwidth is also constrained, with read-only small block cached transfers reaching 80.53 GB/sec and uncached large block transfers dropping to 12.0 GB/sec read and 10.51 GB/sec write. Geekbench evaluations reflect similar trends, yielding a single-core score of 841.0 and a multi-core score of 1028.0.",
-    "Given its high memory-to-vCPU ratio of 8.0 GB per core alongside modest processing capabilities, the instance represents a qualitatively cost-efficient option for memory-bound workloads that do not require high CPU performance. It is suitable for small-scale database operations, lightweight caching layers, text processing, and basic web serving where memory capacity is prioritized over raw computational throughput."
+    "Google Cloud Platform e2-highmem-2 is a memory-optimized cloud server powered by an Intel Xeon x86_64 processor operating at 2.2 GHz. The instance features 2 virtual CPUs derived from a single physical core with hyperthreading enabled, paired with 16.0 GB of system memory, providing a high memory-to-vCPU ratio of 8.0 GB per vCPU. The processor features 16 MB of L3 cache, 0.5 MB of L2 cache, and supports x86 instruction extensions including AVX, AES, BMI2, ADX, and FMA. It lacks dedicated local NVMe storage and discrete GPU accelerators.",
+    "Synthetic compute and memory benchmarks indicate limited processing throughput suitable primarily for light workloads. Single-core performance evaluated via stress-ng achieved 1101.98, while multi-core stress-ng reached 1451.88. Geekbench scores recorded 841.0 for single-core and 1028.0 for multi-core tasks. Uncached 256MB memory bandwidth yielded 12.0 GB/sec for read operations and 10.51 GB/sec for write operations, with a PassMark memory rating of 1468.27.",
+    "Application-level performance testing shows Redis SET throughput reaching 1.33 million operations per second and static web serving throughput at 1.43 GB/sec. Small 135M parameter LLM text generation attained 61.66 tokens per second. The resource profile provides favorable cost efficiency for workloads requiring moderate RAM density without heavy CPU demand, though low compute and memory bandwidth cap high-concurrency capability. Workload suitability includes lightweight cache servers, small in-memory databases, background worker nodes, and basic web applications."
   ],
-  "description": "Google Cloud Platform e2-highmem-2 is a memory-optimized instance featuring 2 vCPUs and 16.0 GB of RAM, delivering a high memory-to-vCPU ratio of 8.0 GB per core. Built on the x86_64 architecture, it utilizes an Intel Xeon processor running at 2.2 GHz with 1 physical core and 2 threads. The instance does not include local storage or GPU accelerators. Benchmark results position this server in the lower performance tiers, with a stress-ng single-core score of 1101.98 and a multi-core score of 1451.88. Memory bandwidth is measured at 12.0 GB/sec for large block reads and 10.51 GB/sec for writes. This hardware profile is qualitatively cost-efficient for memory-sensitive workloads with low CPU demands, such as small database operations, basic caching, and lightweight text processing.",
-  "og_description": "Google Cloud Platform e2-highmem-2 is an x86_64 memory-optimized instance with 2 vCPUs, 16 GB RAM, and an Intel Xeon processor, designed for memory-sensitive workloads with modest CPU requirements.",
-  "meta_description": "Google Cloud Platform e2-highmem-2 is an x86_64 instance offering 2 vCPUs and 16 GB RAM, suitable for low-compute, memory-prioritized workloads.",
-  "tagline": "A memory-optimized virtual server featuring a high RAM-to-vCPU ratio for lightweight, memory-sensitive workloads without local storage or GPU requirements.",
+  "description": "Google Cloud Platform e2-highmem-2 is a memory-optimized virtual machine featuring an Intel Xeon x86_64 CPU running at 2.2 GHz with 2 vCPUs across 1 physical core and 16.0 GB of memory. Delivering 8.0 GB of RAM per virtual core and 16 MB of L3 cache, this instance caters to memory-centric applications that demand low compute overhead. Benchmark evaluations reflect modest processing capacity, recording a Geekbench multi-core score of 1028.0, an uncached memory read bandwidth of 12.0 GB/sec, and Redis SET throughput of 1.33 million operations per second. The instance includes no local storage or GPU hardware. The high ratio of memory relative to vCPU allocation delivers qualitative resource efficiency for light memory-bound services without paying for unneeded CPU cores. Recommended workloads encompass small in-memory key-value stores, lightweight databases, staging environments, and low-traffic web applications.",
+  "og_description": "Google Cloud Platform e2-highmem-2 is a memory-optimized instance featuring 2 vCPUs, 16.0 GB RAM, and an Intel Xeon processor, engineered for low-compute, memory-centric services and small cache nodes.",
+  "meta_description": "Google Cloud Platform e2-highmem-2 offers 2 vCPUs and 16.0 GB RAM powered by Intel Xeon CPUs for lightweight memory-bound workloads.",
+  "tagline": "An entry-level memory-optimized virtual machine offering sixteen gigabytes of RAM paired with two virtual cores for lightweight memory-centric background applications.",
   "bullet_points": [
-    "2 vCPUs and 16.0 GB of RAM on x86_64 Intel Xeon architecture",
-    "High memory allocation of 8.0 GB per core",
-    "No bundled local storage or GPU accelerators",
-    "Dedicated CPU allocation with 2.2 GHz clock speed",
-    "Best suited for small databases, caching, and light text processing"
+    "Configured with 2 vCPUs across 1 physical core and 16.0 GB RAM (8.0 GB per core).",
+    "Powered by a 2.2 GHz Intel Xeon x86_64 processor with 16 MB L3 cache.",
+    "Delivers 1.33 million Redis SET operations per second and 12.0 GB/sec uncached memory read bandwidth.",
+    "Lacks attached local NVMe storage and discrete GPU acceleration hardware.",
+    "Well suited for lightweight in-memory caches, small databases, and background tasks."
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

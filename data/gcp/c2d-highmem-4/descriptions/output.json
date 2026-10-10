@@ -1,22 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c2d-highmem-4 is a memory-optimized virtual machine instance featuring 4 vCPUs and 32 GB of RAM, yielding a high memory-to-core ratio of 8 GB per vCPU. Powered by an x86_64 AMD EPYC 7B13 processor, the instance allocates 2 physical cores with 2 threads per core on a dedicated basis. The CPU features 32 MB of L3 cache, 0.5 MB of L2 cache, and 32 KB of L1d cache. It supports hardware-accelerated instructions including AVX, AES, VAES, SHA_NI, BMI2, ADX, and FMA. This instance does not include local storage or bundled GPUs, and provides zero complimentary public IPv4 addresses.",
-    "Performance benchmarks indicate a divergence between single-core and multi-core capabilities. The instance demonstrates strong single-core CPU performance in stress-ng tests, placing in the top 25%. However, multi-core CPU performance and multi-threaded bzip3 decompression fall into the bottom 25%. Memory bandwidth tests show average performance for large-block read and write operations, but small-block cached reads are weak. Geekbench results mirror this trend, with average single-core and text processing scores, but weak multi-core, software compilation, and ray tracing metrics.",
-    "From a qualitative cost-efficiency perspective, the c2d-highmem-4 offers a dense memory allocation relative to its compute footprint, making it suitable for memory-bound workloads that do not require intensive parallel processing. The lack of local NVMe storage and weak multi-core scaling are notable tradeoffs. This instance is best suited for workloads such as small-scale databases, memory-cached web serving, text processing, and lightweight single-threaded applications where RAM capacity is prioritized over high-density multi-core compute."
+    "Google Cloud Platform c2d-highmem-4 is an x86_64 server instance powered by an AMD EPYC 7B13 processor. It features 4 dedicated vCPUs mapped across 2 physical cores with hyperthreading active. The instance provides 32.0 GB of RAM, offering a high memory-to-vCPU ratio of 8.0 GB per vCPU. Hardware features include 32 MB of L3 cache, standard AVX vector extensions, and hardware-accelerated AES cryptography instructions, while lacking AVX-512 support. The instance does not include integrated GPUs or local NVMe storage.",
+    "In benchmark tests, the instance demonstrates strong single-core compute performance, placing in the top quartile of single-thread stress-ng evaluations with a score of 2922.28. However, due to its low core count of 4 vCPUs, overall multi-core throughput is limited, placing in the bottom quartile for multi-core stress-ng, Geekbench multi-core, PassMark CPU, and parallel software compilation tests. Memory read and write bandwidth tests on large 256 MB blocks yield average performance levels, while small cached block read bandwidth remains weak.",
+    "Given its 32 GB memory capacity paired with modest multi-threaded processing power, the c2d-highmem-4 provides high memory density per vCPU without forcing higher core-count allocation. This makes it efficient for memory-bound workloads that do not require massive parallel execution, such as in-memory caching, specialized data analytics buffers, memory-intensive staging servers, and lightweight single-threaded processing tasks."
   ],
-  "description": "Google Cloud Platform c2d-highmem-4 is an x86_64 memory-optimized instance configured with 4 vCPUs and 32 GB of RAM, utilizing a dedicated AMD EPYC 7B13 processor with 2 physical cores and hyper-threading. It features a high memory-to-vCPU ratio of 8 GB per core, supported by a 32 MB L3 cache and instruction sets like AVX and AES. The instance does not include local storage or integrated GPUs. Benchmark data reveals strong single-core CPU performance, though multi-core execution and memory bandwidth for small cached blocks are relatively weak. Large-block memory transfers and single-threaded decompression show average performance. Given its high memory density and moderate compute capabilities, the c2d-highmem-4 is qualitatively cost-efficient for memory-sensitive, low-concurrency workloads, making it a suitable fit for small databases, text processing, and memory-cached applications.",
-  "og_description": "Google Cloud Platform c2d-highmem-4 is an x86_64 memory-optimized instance with 4 vCPUs, 32 GB RAM, and a dedicated AMD EPYC 7B13 CPU, designed for memory-intensive workloads without local storage.",
-  "meta_description": "Google Cloud Platform c2d-highmem-4 is an x86_64 memory-optimized instance featuring 4 vCPUs, 32 GB RAM, and a dedicated AMD EPYC 7B13 CPU.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated AMD EPYC processing and high memory density for memory-bound, single-core prioritized workloads.",
+  "description": "Google Cloud Platform c2d-highmem-4 is an x86_64 instance featuring 4 dedicated vCPUs derived from 2 physical AMD EPYC 7B13 cores. Outfitted with 32.0 GB of system memory, it delivers a high memory allocation of 8.0 GB per vCPU. The hardware incorporates 32 MB of L3 cache alongside AES, SHA, and standard AVX instruction sets, though it lacks local storage or discrete GPU acceleration. Benchmark evaluations highlight strong single-core CPU execution alongside average memory bandwidth performance, though total multi-threaded throughput is constrained by the 4 vCPU configuration. The instance offers resource efficiency for memory-heavy applications requiring minimal core scaling. It fits memory-intensive background tasks, lightweight database caching, and single-threaded data transformation jobs.",
+  "og_description": "Google Cloud Platform c2d-highmem-4 is an x86_64 server instance with 4 AMD EPYC 7B13 vCPUs and 32 GB RAM, delivering high memory capacity per core and strong single-thread execution for memory-bound tasks.",
+  "meta_description": "Google Cloud Platform c2d-highmem-4 features 4 AMD EPYC 7B13 vCPUs and 32 GB RAM, offering strong single-core performance for memory-heavy workloads.",
+  "tagline": "A high-memory x86 instance offering four dedicated vCPUs and strong single-threaded execution for memory-bound applications.",
   "bullet_points": [
-    "4 vCPUs and 32 GB RAM providing a high 8 GB per vCPU ratio",
-    "Dedicated AMD EPYC 7B13 processor with 2 physical cores",
-    "Strong single-core CPU performance in stress-ng benchmarks",
-    "No bundled local storage or GPU accelerators",
-    "Best suited for memory-cached applications and small databases"
+    "4 dedicated x86_64 vCPUs powered by an AMD EPYC 7B13 processor",
+    "32 GB RAM providing an 8.0 GB per vCPU memory allocation",
+    "Strong single-core CPU benchmark results with top-quartile execution",
+    "Average uncached memory bandwidth performance across 256 MB blocks",
+    "Suited for memory-bound applications, lightweight caching, and single-threaded data tasks"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

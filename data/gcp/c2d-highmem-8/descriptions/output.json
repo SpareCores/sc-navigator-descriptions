@@ -1,23 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c2d-highmem-8 is a memory-optimized server instance from the c2d family. It features 8 dedicated vCPUs mapped to 4 physical AMD EPYC 7B13 cores with 2 threads per core on the x86_64 architecture. The hardware includes 64.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per vCPU. It does not include bundled local storage or GPUs, and provides zero complimentary public IPv4 addresses.",
-    "In performance testing, the instance demonstrates strong single-core CPU capabilities, scoring in the top 25% on stress-ng single-core benchmarks. Multi-core performance, memory bandwidth, and general compute workloads fall consistently in the middle 50% tier. Specifically, memory bandwidth reaches 553.05 GB/sec for cached small blocks and 62.15 GB/sec for uncached large blocks. Cryptographic and compression tasks, such as Passmark encryption and bzip3 decompression, also perform within the average range.",
-    "While the instance handles small-scale LLM inference efficiently, processing medium 7B models reveals a bottleneck, with prompt processing speeds dropping into the bottom 25% tier. This indicates a performance tradeoff for larger machine learning tasks. Given its high memory allocation relative to compute cores, this instance is well-suited for memory-intensive workloads such as database operations, web serving, software compilation, and moderate data processing tasks that do not require local NVMe storage or GPU acceleration."
+    "Google Cloud Platform c2d-highmem-8 is a memory-optimized compute instance powered by a dedicated AMD EPYC 7B13 processor built on x86_64 architecture. It features 8 vCPUs across 4 physical cores with hyperthreading enabled at 2 threads per core. The system offers 64.0 GB of system RAM, maintaining a high memory ratio of 8.0 GB per vCPU. Hardware cache specifications include 32 KB L1d, 0.5 MB L2, and 32 MB L3 cache. Supported instruction set extensions cover AVX, AES, VAES, SHA-NI, BMI2, ADX, and FMA. This instance configuration omits local storage and contains no GPU accelerators.",
+    "In benchmark evaluations, the c2d-highmem-8 demonstrates strong single-core CPU performance in stress-ng tests, ranking in the top 25 percent. Multi-core performance across stress-ng, Geekbench (multi-core score of 6622.0), and PassMark CPU tests falls within the average range. Uncached memory bandwidth reaches 62.15 GB/sec for large-block reads and 39.95 GB/sec for writes. Specialized benchmark results show static web serving throughput of 10.63 GB/sec and Redis SET performance at 8.97 million operations per second. LLM prompt processing performance is average for small 135M models at 607.92 tokens/sec, but drops to weak relative performance for 7B models at 18.65 tokens/sec.",
+    "The 1:8 vCPU-to-RAM ratio combined with strong single-threaded CPU throughput renders this server suitable for memory-intensive enterprise tasks, in-memory caching, database management, web serving, and software compilation. Tradeoffs include the total absence of local NVMe SSD storage, requiring reliance on network storage for persistence, as well as limited efficacy for medium-to-large language model inference due to missing GPU hardware."
   ],
-  "description": "Google Cloud Platform c2d-highmem-8 is an x86_64 memory-optimized server featuring 8 dedicated vCPUs and 64.0 GB of RAM, powered by an AMD EPYC 7B13 processor. It provides a high memory-to-core ratio of 8.0 GB per vCPU without bundled local storage or GPUs. Benchmark results show strong single-core CPU performance in the top 25%, while multi-core execution, memory bandwidth, and compression tasks consistently rank in the average tier. A key performance tradeoff is observed in medium-sized LLM prompt processing, which falls into the bottom 25%. This instance is best suited for memory-intensive workloads, database operations, software compilation, and static web serving.",
-  "og_description": "Google Cloud Platform c2d-highmem-8 is an x86_64 memory-optimized server with 8 dedicated AMD EPYC vCPUs and 64 GB RAM, offering strong single-core performance and average multi-core capabilities.",
-  "meta_description": "Google Cloud Platform c2d-highmem-8 features 8 dedicated AMD EPYC vCPUs, 64 GB RAM, and strong single-core performance for memory-intensive workloads.",
-  "tagline": "An AMD-powered server offering a high memory-to-core ratio and strong single-core performance for memory-intensive workloads.",
+  "description": "Google Cloud Platform c2d-highmem-8 is an x86_64 compute instance equipped with 8 dedicated vCPUs, 4 physical AMD EPYC 7B13 cores, and 64.0 GB of RAM. Operating with a memory-to-core ratio of 8.0 GB per vCPU, it features 32 MB L3 cache alongside instruction extensions like AVX, AES, and FMA. Benchmark results highlight strong single-core CPU throughput alongside average multi-core CPU and memory bandwidth performance. In practical application tests, it delivers 10.63 GB/sec static web serving throughput and 8.97 million Redis SET operations per second. The server lacks attached local storage and GPU accelerators, relying on persistent remote storage solutions. These hardware specifications position the instance for memory-heavy enterprise tasks, in-memory caching layers, software compilation, and moderate data analytics workloads.",
+  "og_description": "Google Cloud Platform c2d-highmem-8 features 8 dedicated AMD EPYC vCPUs and 64 GB RAM. It provides strong single-core performance and balanced memory bandwidth for memory-intensive workloads.",
+  "meta_description": "Google Cloud Platform c2d-highmem-8 offers 8 AMD EPYC vCPUs, 64 GB RAM, and strong single-core compute performance without local storage.",
+  "tagline": "Memory-rich compute instance with 8 vCPUs and 64 GB RAM delivering strong single-core performance for memory-bound workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an AMD EPYC 7B13 processor",
-    "64.0 GB of system memory providing 8.0 GB per vCPU",
-    "Strong single-core CPU performance ranking in the top 25%",
-    "Average memory bandwidth and multi-core processing capabilities",
-    "No bundled local storage or GPU accelerators",
-    "Suited for database operations, software compilation, and web serving"
+    "8 vCPUs across 4 physical AMD EPYC 7B13 cores with dedicated allocation",
+    "64.0 GB total memory providing an 8.0 GB memory-to-vCPU ratio",
+    "Strong single-core CPU performance in stress-ng benchmark evaluations",
+    "Average memory bandwidth with 62.15 GB/sec uncached large-block read speed",
+    "No integrated local storage or GPU acceleration present",
+    "Suited for in-memory databases, web serving, software builds, and caching"
   ],
   "categories": [
     "Memory Optimized",
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
