@@ -15,7 +15,7 @@ The descriptions are generated using the Gemini 3.5 Flash model utilizing
 The repository is updated via the following Python script:
 
 ```shell
-python src/summarize/generate.py
+python -m src.summarize.generate
 ```
 
 All utilized inputs (including server and benchmark details, user and system
