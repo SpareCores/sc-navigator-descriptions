@@ -180,13 +180,14 @@ def _server_spec_dict(server, price) -> dict:
             if server.memory_speed
             else None
         ),
-        "gpu_count": server.gpu_count,
-        "gpu_manufacturer": server.gpu_manufacturer,
-        "gpu_family": server.gpu_family,
-        "gpu_model": server.gpu_model,
+        # TODO rename internal GPU fields to accelerator as well when needed
+        "gpu_count": server.accelerator_count,
+        "gpu_manufacturer": server.accelerator_manufacturer,
+        "gpu_family": server.accelerator_family,
+        "gpu_model": server.accelerator_model,
         "gpu_vram_total": (
-            str(round(server.gpu_memory_total / 1024)) + " GB"
-            if server.gpu_memory_total
+            str(round(server.accelerator_memory_total / 1024)) + " GB"
+            if server.accelerator_memory_total
             else None
         ),
         "local_storage_size": (
