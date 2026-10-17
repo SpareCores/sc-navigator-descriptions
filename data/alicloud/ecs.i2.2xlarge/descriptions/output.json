@@ -1,24 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.i2.2xlarge is an x86_64 architecture server instance powered by a dedicated Intel Xeon 8163 processor. This CPU features 4 physical cores and 8 vCPUs with hyper-threading enabled, operating at a clock speed of 2.5 GHz. The processor is equipped with a 33 MB L3 cache and supports AVX and AVX-512 instructions. The instance is configured with 64.0 GB of system memory, providing a ratio of 8.0 GB per core. It includes 1919 GB of local SSD storage and a baseline network bandwidth of 2 Gbps.",
-    "Benchmark evaluations indicate that the ecs.i2.2xlarge exhibits modest computational performance. Single-core and multi-core CPU tests, including stress-ng and Geekbench, place the instance in the bottom 25% of tested hardware. Memory read bandwidth is also relatively low, though large-block memory write performance reaches average levels. Cryptographic and compression tasks, such as single-threaded gzip compression, perform poorly, ranking in the bottom 10%. However, the instance achieves average scores in Passmark CPU and extended instruction tests, alongside moderate performance in small-scale LLM inference tasks.",
-    "From a cost-efficiency perspective, the ecs.i2.2xlarge offers a high density of local SSD storage and memory relative to its processing power. The primary tradeoff is the older Intel Xeon architecture, which limits raw CPU throughput and memory bandwidth compared to newer generations. This makes the instance less suitable for compute-heavy workloads, but highly resource-dense for scenarios requiring significant local storage capacity and moderate memory footprints without demanding high-frequency CPU performance.",
-    "The hardware configuration of the ecs.i2.2xlarge makes it appropriate for storage-centric and database workloads that benefit from local SSD capacity, such as relational databases, NoSQL stores, and caching layers. It is also suitable for general-purpose applications, moderate web serving, and lightweight data processing tasks that do not require intensive multi-threaded CPU calculations."
+    "Alibaba Cloud ecs.i2.2xlarge is an x86_64 storage-focused virtual instance running on KVM. Powered by an Intel Xeon 8163 processor clocked at 2.5 GHz, it offers 8 vCPUs across 4 physical cores with simultaneous multithreading. The hardware configuration includes 64.0 GB of memory, providing an 8.0 GB per vCPU ratio, alongside 1919 GB of local SSD storage and a baseline network throughput of 2 Gbps. The processor features a 33 MB L3 cache and supports AVX, AVX-512F, AES, and FMA instruction sets.",
+    "In synthetic CPU benchmarks, the ecs.i2.2xlarge records a PassMark CPU score of 6991.89 and a stress-ng multi-core CPU score of 5883.4, reflecting modest raw processing capability typical of older Intel Xeon architectures. Memory write bandwidth for large blocks reaches 35.45 GB/sec, while uncached read bandwidth measures 39.23 GB/sec. Application benchmarks indicate solid operational throughput for memory-resident workloads, achieving 6.06 million operations per second on Redis SET operations, while small model (135M parameter) prompt processing reaches 442.93 tokens per second.",
+    "The instance trades raw CPU performance for high local SSD storage density and elevated RAM allocations per core. While single-threaded compression and modern medium-scale LLM inference show performance constraints, the combination of 1919 GB local SSD storage and 64.0 GB memory makes this instance cost-effective for localized caching, transactional databases, log processing, and I/O-intensive data workloads."
   ],
-  "description": "Alibaba Cloud ecs.i2.2xlarge is an x86_64 server instance featuring a dedicated 2.5 GHz Intel Xeon 8163 processor with 8 vCPUs and 4 physical cores. It is equipped with 64.0 GB of RAM and a substantial 1919 GB local SSD, alongside a baseline network bandwidth of 2 Gbps. Performance benchmarks indicate modest CPU and memory read capabilities, generally placing in the bottom 25%, though it maintains average performance in large-block memory writes and Passmark CPU tests. Given its high storage-to-vCPU ratio, this instance offers a resource-dense profile for storage-heavy workloads. It is best suited for databases, local caching, and general-purpose applications requiring significant local storage capacity rather than high-performance compute.",
-  "og_description": "Alibaba Cloud ecs.i2.2xlarge is an x86_64 server with 8 vCPUs, 64 GB RAM, and 1919 GB local SSD. It offers modest CPU performance but provides high storage density for databases and caching.",
-  "meta_description": "Alibaba Cloud ecs.i2.2xlarge features 8 vCPUs, 64 GB RAM, and 1919 GB local SSD, offering a storage-dense profile for databases and general workloads.",
-  "tagline": "A storage-dense virtual server featuring dedicated Intel Xeon processors, 64 GB of RAM, and a 1.9 TB local SSD.",
+  "description": "Alibaba Cloud ecs.i2.2xlarge is a storage-focused instance equipped with 8 vCPUs across 4 physical cores, 64.0 GB of memory, and 1919 GB of direct-attached SSD local storage. Driven by an Intel Xeon 8163 processor at 2.5 GHz with AVX-512 support, the system provides an 8.0 GB RAM per vCPU ratio and 2 Gbps baseline network bandwidth. Benchmarks show a PassMark CPU score of 6991.89 and Redis SET throughput of 6.06 million operations per second, alongside large block memory write bandwidth of 35.45 GB/sec. While CPU compute and single-threaded compression scores remain modest relative to newer architectures, the inclusion of dedicated local SSD storage paired with a high memory allocation delivers balanced resource density for localized database engines, memory caching systems, log indexing, and I/O-sensitive transactional processing tasks.",
+  "og_description": "Alibaba Cloud ecs.i2.2xlarge provides 8 vCPUs, 64 GB RAM, and 1919 GB local SSD storage on Intel Xeon hardware, delivering balanced resource density for database and local caching workloads.",
+  "meta_description": "Alibaba Cloud ecs.i2.2xlarge offers 8 vCPUs, 64 GB RAM, and 1919 GB SSD storage powered by Intel Xeon CPUs for storage-bound cloud workloads.",
+  "tagline": "High-density storage instance offering bundled local SSD capacity paired with 64 GB RAM for I/O-heavy databases and memory-tier caching.",
   "bullet_points": [
-    "Dedicated Intel Xeon 8163 processor with 8 vCPUs and 4 physical cores",
-    "Equipped with 64.0 GB of RAM and 1919 GB of local SSD storage",
-    "Delivers 2 Gbps baseline network bandwidth",
-    "Demonstrates average performance in large-block memory writes and Passmark CPU tests",
-    "Well-suited for local databases, caching layers, and storage-heavy applications"
+    "Powered by Intel Xeon 8163 processor with 8 vCPUs and 2.5 GHz clock speed",
+    "Includes 64.0 GB memory providing an 8.0 GB RAM per vCPU ratio",
+    "Bundled with 1919 GB of local SSD storage and 2 Gbps network bandwidth",
+    "Achieves 6.06 million operations per second on Redis SET benchmarks",
+    "Designed for localized database systems, in-memory caching, and log indexing workloads"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }
