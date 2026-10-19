@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E64s_v5 is an ESv5-family virtual machine configured with 64 vCPUs and 512.0 GB of RAM, yielding an 8.0 GB memory-to-core ratio. Powered by an Intel Xeon 8370C processor operating at 2.8 GHz, this x86_64 architecture server features 32 physical cores with hyper-threading enabled. The CPU allocation is fully dedicated, supported by a cache hierarchy of 48 KB L1d, 1 MB L2, and 48 MB L3 cache. It lacks local storage and GPUs, relying instead on external Premium Storage options.",
-    "Benchmark data indicates strong multi-core performance, with a stress-ng multi-core score of 62,152.98 and a Geekbench multi-core score of 16,533.0. Large-block memory bandwidth is highly efficient, reaching 296.85 GB/sec for read-only operations and 136.92 GB/sec for write operations. Single-core performance remains moderate, as evidenced by a Geekbench single-core score of 1,674.0 and a stress-ng single-core score of 1,899.89. The system excels in multi-threaded decompression and software compilation, but exhibits a clear bottleneck in large-scale LLM text generation, dropping to 2.73 tokens/sec on a 70B model.",
-    "Given its high memory density of 8 GB per vCPU and dedicated compute resources, the E64s_v5 offers a cost-efficient profile for memory-intensive enterprise workloads without the overhead of local NVMe drives. It is highly suited for large-scale database operations, high-throughput static web serving, and memory-bound multi-threaded applications. However, the lack of local storage requires external disk provisioning, and the absence of GPU acceleration makes it unsuitable for heavy deep learning training or real-time large language model inference."
+    "Microsoft Azure E64s_v5 is a memory-optimized instance powered by an Intel Xeon Platinum 8370C processor running at 2.8 GHz. It features 64 vCPUs built on 32 physical cores with hyperthreading and dedicated CPU allocation. The instance is equipped with 512 GB of RAM, yielding an 8 GB per vCPU memory ratio. Hardware instruction sets include AVX-512, VNNI, AES, and SHA_NI acceleration. There is no local instance storage included, though it supports attached Premium Storage.",
+    "Benchmark evaluation reveals high multi-core performance and strong memory bandwidth. In multi-threaded CPU suites like PassMark and stress-ng, as well as multi-core Geekbench, the instance places in the top quartile. Large-block memory throughput reaches 296.85 GB/sec for uncached reads and 136.92 GB/sec for writes. Database operations, Redis SET workloads processing 62.15 million operations per second, and static web serving tests all register in the top 25 percent performance band. Single-core processing across Geekbench and compression tasks yields average performance.",
+    "LLM inference testing shows moderate throughput for small and medium parameters, while large 70B model text generation falls into the bottom 25 percent due to the lack of dedicated GPU hardware. Cost efficiency is driven by high memory density and strong multi-core scalability, offering solid value for memory-bound and multi-threaded enterprise workloads without paying for unneeded local ephemeral disks. Ideal applications include large in-memory databases, Redis caches, enterprise database operations, software compilation, and heavy web serving."
   ],
-  "description": "The Microsoft Azure E64s_v5 is a memory-optimized virtual machine from the ESv5 family, featuring 64 dedicated vCPUs and 512.0 GB of RAM. Powered by an Intel Xeon 8370C processor running at 2.8 GHz, this x86_64 server delivers strong multi-core performance, as demonstrated by a multi-core Geekbench score of 16,533.0 and a Passmark CPU score of 60,927.22. While it lacks local storage and GPU hardware, it provides high memory bandwidth, reaching 296.85 GB/sec for large-block reads. Tradeoffs include average single-core speeds and weak performance in large-scale LLM text generation. This configuration is highly efficient for memory-intensive enterprise applications, database operations, and multi-threaded software compilation.",
-  "og_description": "Microsoft Azure E64s_v5 is an ESv5-family virtual machine featuring 64 dedicated Intel Xeon vCPUs and 512 GB of RAM. It delivers strong multi-core performance and high memory bandwidth for enterprise databases.",
-  "meta_description": "Microsoft Azure E64s_v5 is an Intel-powered, memory-optimized VM with 64 vCPUs and 512 GB RAM, designed for databases and multi-threaded workloads.",
-  "tagline": "A high-density, memory-optimized virtual server featuring dedicated Intel Xeon processors for demanding database and multi-threaded enterprise workloads.",
+  "description": "Microsoft Azure E64s_v5 is a memory-optimized cloud server powered by a 32-core Intel Xeon 8370C processor operating at 2.8 GHz, supplying 64 dedicated vCPUs and 512 GB of RAM. Designed without local storage, it relies on attached Premium Storage capabilities. Hardware acceleration features include AVX-512, VNNI, and cryptographic extensions. Benchmarks demonstrate strong multi-core processing power, memory bandwidth, and high throughput in Redis SET operations and enterprise database tasks, placing in the top quartile among tested servers. Single-threaded benchmarks and LLM processing fall within average tiers, with large-model text generation constrained by CPU-only execution. The 8 GB per vCPU ratio makes the instance cost-effective for memory-intensive enterprise tasks. It is well suited for large in-memory caching systems, relational databases, software compilation, and high-concurrency web applications.",
+  "og_description": "Microsoft Azure E64s_v5 features 64 vCPUs and 512 GB RAM on an Intel Xeon 8370C CPU. It delivers top-quartile multi-core CPU, memory bandwidth, and database performance for enterprise applications.",
+  "meta_description": "Microsoft Azure E64s_v5 offers 64 vCPUs and 512 GB RAM on an Intel Xeon CPU, delivering top-quartile multi-threaded and database performance.",
+  "tagline": "High-density memory instance with 64 vCPUs and 512 GB RAM, optimized for enterprise databases, in-memory caching, and multi-core workloads.",
   "bullet_points": [
-    "64 dedicated vCPUs and 512 GB RAM on Intel Xeon 8370C architecture",
-    "Strong multi-core processing and high-speed large-block memory bandwidth",
-    "No local storage, optimized for external Premium Storage integration",
-    "Excellent performance in database operations and software compilation",
-    "Weak performance for large-scale LLM text generation due to lack of GPU"
+    "Intel Xeon 8370C processor with 64 vCPUs and 32 physical cores",
+    "512 GB system memory providing an 8 GB per vCPU ratio",
+    "Top-quartile multi-core CPU and memory bandwidth benchmark results",
+    "High throughput for Redis SET operations and database processing",
+    "No local ephemeral disk, relying on attached Premium Storage",
+    "Suited for in-memory databases, Redis caching, and heavy web serving"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Storage & Database"
   ]
 }
