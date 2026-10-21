@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure L4aos_v4 is a virtual machine belonging to the Laosv4 family, running on the Microsoft Hyper-V hypervisor. It features a dedicated AMD EPYC 9V74 processor with an x86_64 architecture, operating at a clock speed of 3.7 GHz. The configuration includes 4 virtual CPUs derived from 2 physical cores with 2 threads per core. Memory capacity is 32.0 GB, yielding 8.0 GB of RAM per core. The instance is equipped with 2880 GB of local NVMe SSD storage and is Premium Storage capable, though it does not include any complimentary public IPv4 addresses or dedicated GPU hardware.",
-    "Benchmark evaluations reveal strong single-core performance, with stress-ng single-core CPU performance and Geekbench single-core scores placing in the top 25%. However, multi-core performance is average, as shown by stress-ng multi-core and Geekbench multi-core scores. Memory bandwidth presents a notable tradeoff, with read-only bandwidth for both small and large blocks scoring in the bottom 25%, while large block write bandwidth remains average. Cryptographic and compression tasks, such as Gzip compression and Passmark encryption tests, perform in the middle 50%. Database operations and static web serving throughput are weaker, falling into the bottom 25%.",
-    "From a qualitative cost-efficiency perspective, the L4aos_v4 offers high local storage density and a generous memory-to-vCPU ratio of 1:8, making it a resource-dense option for workloads requiring substantial local NVMe capacity without the need for high-end multi-core compute. Given the strong single-core performance but weaker database and web serving benchmarks, this instance is best suited for single-threaded processing tasks, local file caching, lightweight analytical workloads, and memory-bound applications that can leverage the 2880 GB local NVMe SSD."
+    "Microsoft Azure L4aos_v4 is a storage and memory-dense cloud server configuration built on the x86_64 architecture using Microsoft Hyper-V virtualization. Powered by a 3.7 GHz AMD EPYC 9V74 processor, this instance provides 4 dedicated vCPUs across 2 physical cores with Hyper-Threading enabled. The system includes 32.0 GB of system memory, yielding 8.0 GB per core, alongside a bundled 2880 GB local NVMe SSD storage volume. No GPU accelerators or complimentary public IPv4 addresses are included in this instance profile. Instruction set capabilities include AVX, AVX-512, AES, VAES, SHA_NI, BMI2, FMA, and SVM virtualization support.",
+    "Benchmark results indicate strong single-core processing performance, with a Geekbench single-core score of 2071.0 and a stress-ng single-core result of 3078.28. Multi-core performance aligns with expected scaling for a 4-vCPU system, achieving an average Geekbench multi-core score of 4736.0 and an average stress-ng multi-core score of 6154.66. Operational tests demonstrate average Redis SET throughput of 6.17 million operations per second and steady LLM prompt processing for small 135M models at 462.72 tokens per second. Performance trade-offs appear in memory bandwidth metrics, where small-block cached read speeds measure 303.46 GB/sec and uncached read speeds measure 36.73 GB/sec, alongside weak static web serving throughput of 6.28 GB/sec.",
+    "The L4aos_v4 architecture provides strong hardware cost efficiency by pairing substantial local NVMe storage capacity directly with a high memory-to-vCPU ratio. This eliminates the need for attached network storage blocks when managing localized data pipelines. Primary workload fits include local database servers, caching nodes, intermediate data staging environments, and single-thread intensive applications requiring quick access to high-capacity local disk space."
   ],
-  "description": "Microsoft Azure L4aos_v4 is an x86_64 virtual machine in the Laosv4 family, powered by a dedicated AMD EPYC 9V74 processor running at 3.7 GHz. It features 4 vCPUs, 32.0 GB of RAM, and a substantial 2880 GB local NVMe SSD. While single-core benchmarks like stress-ng and Geekbench single-core place in the top 25%, multi-core performance and memory write bandwidth remain average. Conversely, memory read bandwidth, database operations, and static web serving throughput fall into the bottom 25%. This resource profile offers high storage density and a 1:8 memory-to-vCPU ratio, presenting a qualitative advantage for storage-heavy and memory-bound tasks. The L4aos_v4 is best suited for single-threaded processing, local caching, and lightweight analytical workloads that benefit from large local NVMe storage.",
-  "og_description": "Microsoft Azure L4aos_v4 is an x86_64 VM featuring a 3.7 GHz AMD EPYC CPU, 4 vCPUs, 32 GB RAM, and 2880 GB NVMe SSD. It delivers strong single-core performance but weaker database and memory read speeds.",
-  "meta_description": "Microsoft Azure L4aos_v4 is an x86_64 VM with 4 vCPUs, 32 GB RAM, and 2880 GB NVMe SSD, offering strong single-core CPU performance.",
-  "tagline": "An x86_64 virtual machine combining strong single-core CPU performance with a dense 2880 GB local NVMe SSD and 32 GB RAM.",
+  "description": "Microsoft Azure L4aos_v4 is a storage and memory-dense cloud server built on x86_64 architecture and Hyper-V virtualization. It features 4 dedicated vCPUs across 2 physical cores of an AMD EPYC 9V74 processor running at 3.7 GHz, paired with 32 GB of RAM and 2880 GB of direct-attached local NVMe SSD storage. Hardware benchmarks show strong single-core CPU compute and text processing, complemented by average multi-core performance and average Redis operation throughput. Tested memory bandwidth on uncached reads and static web serving throughput register on the lower end. With an 8 GB RAM per vCPU allocation and extensive local SSD capacity bundled into the hardware profile, the instance provides clear resource density efficiency for localized database engines, memory-bound caching systems, and processing workloads requiring significant local storage performance without relying on network-attached storage volumes.",
+  "og_description": "Microsoft Azure L4aos_v4 features 4 vCPUs on an AMD EPYC 9V74 processor, 32 GB RAM, and 2880 GB local NVMe SSD storage, offering strong single-core speed for database and caching workloads.",
+  "meta_description": "Microsoft Azure L4aos_v4 provides 4 AMD EPYC 9V74 vCPUs, 32 GB RAM, and 2880 GB NVMe SSD storage for storage and memory-heavy workloads.",
+  "tagline": "A memory-dense and storage-rich instance featuring dedicated AMD EPYC cores and high local NVMe SSD capacity for disk-intensive workloads.",
   "bullet_points": [
-    "Dedicated AMD EPYC 9V74 processor with 4 vCPUs and 3.7 GHz clock speed",
-    "Generous 32.0 GB memory capacity providing 8.0 GB of RAM per core",
-    "Massive 2880 GB local NVMe SSD storage with Premium Storage capability",
-    "Strong single-core performance in stress-ng and Geekbench benchmarks",
-    "Weaker memory read bandwidth and database operation throughput",
-    "Best suited for single-threaded tasks, local caching, and storage-heavy workloads"
+    "4 dedicated vCPUs powered by an AMD EPYC 9V74 processor at 3.7 GHz",
+    "32 GB system memory providing an 8 GB per vCPU resource ratio",
+    "2880 GB direct-attached NVMe SSD local storage capability",
+    "Strong single-core CPU compute and text processing benchmark results",
+    "Average performance in multi-core tasks and Redis operation metrics",
+    "Suitable for local databases, caching tiers, and storage-bound workflows"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }
