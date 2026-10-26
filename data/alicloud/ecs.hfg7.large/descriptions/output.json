@@ -1,21 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.hfg7.large is a general-purpose virtual machine instance powered by the KVM hypervisor and built on the x86_64 architecture. It features an Intel Xeon 8369HB processor operating at a clock speed of 3.3 GHz. The instance is configured with 2 vCPUs derived from 1 physical core with hyper-threading enabled, providing a dedicated CPU allocation. It is equipped with 8.0 GB of system memory, yielding 4.0 GB of RAM per core. This instance does not include local storage or GPU accelerators, and it operates with a baseline network bandwidth of 1 Gbps.",
-    "Benchmark data indicates a clear divergence between single-core and multi-core capabilities. The instance achieves average tier performance in single-core metrics, such as the stress-ng single-core CPU test and Geekbench single-core evaluations. Single-threaded compression and decompression tasks also perform in the average range. However, multi-core performance is constrained, with stress-ng multi-core, Geekbench multi-core, and Passmark CPU scores falling into the bottom 10% tier. Memory bandwidth is similarly limited, with both cached and uncached read/write operations registering in the lower percentiles.",
-    "From a cost-efficiency perspective, the ecs.hfg7.large offers dedicated CPU resources at a low-density entry point, making it suitable for workloads where CPU sharing is undesirable but overall resource demands are modest. Due to the poor multi-core scaling, low memory bandwidth, and lack of local storage, it is not suited for database operations, heavy multi-threaded compilation, or high-throughput web serving. Appropriate workloads are limited to light single-threaded applications, basic text processing, and low-traffic general-purpose tasks."
+    "Alibaba Cloud ecs.hfg7.large is a general-purpose KVM-based virtual machine instance powered by a dedicated 3.3 GHz Intel Xeon 8369HB processor. It features 1 physical core with hyperthreading enabled, presenting 2 vCPUs, along with 8.0 GB of system memory, yielding 4.0 GB per vCPU. The instance includes 33 MB of L3 cache, support for AVX-512 vector instruction extensions including VNNI and BF16, and a baseline network bandwidth of 1 Gbps. It includes no attached local storage or GPU acceleration.",
+    "Benchmark results highlight a distinct trade-off between single-threaded clock speed and multi-threaded scaling. Single-core stress-ng tests and single-threaded compression benchmarks fall into average performance tiers, driven by the 3.3 GHz clock frequency. However, because the configuration relies on a single physical core divided across 2 vCPUs, multi-core benchmarks like PassMark CPU, Geekbench multi-core, and stress-ng multi-core demonstrate lower throughput. Memory bandwidth write speed is measured at 13.17 GB/sec, while uncached memory read speed reaches 15.65 GB/sec.",
+    "From a hardware efficiency standpoint, the ecs.hfg7.large offers a balanced vCPU-to-memory footprint for workloads that do not demand high parallel processing density or extreme memory throughput. Tasks requiring intense local storage operations or heavy database concurrency are constrained by the absence of local NVMe storage and lower memory bandwidth. Recommended workload fits include lightweight web microservices, single-threaded batch processing, utility nodes, and basic background tasks."
   ],
-  "description": "Alibaba Cloud ecs.hfg7.large is a general-purpose instance featuring 2 vCPUs and 8.0 GB of RAM, powered by an Intel Xeon 8369HB processor running at 3.3 GHz. Utilizing the KVM hypervisor on an x86_64 architecture, it provides a dedicated CPU allocation with 1 physical core and 2 threads. The instance lacks local storage and GPU acceleration, relying on a 1 Gbps baseline network. Performance benchmarks show average single-core execution, but multi-core and memory bandwidth metrics fall into the lower percentiles. Consequently, this instance is best suited for light, single-threaded workloads, basic text processing, and development environments requiring dedicated CPU resources without high multi-threaded or memory throughput demands.",
-  "og_description": "Alibaba Cloud ecs.hfg7.large is a general-purpose instance with 2 vCPUs, 8.0 GB RAM, and an Intel Xeon 3.3 GHz CPU, offering dedicated single-core performance for light workloads.",
-  "meta_description": "Alibaba Cloud ecs.hfg7.large features 2 vCPUs, 8.0 GB RAM, and an Intel Xeon CPU, delivering dedicated single-core performance for light workloads.",
-  "tagline": "A dedicated dual-vCPU instance delivering stable single-core performance for entry-level workloads requiring dedicated compute resources.",
+  "description": "Alibaba Cloud ecs.hfg7.large is a dedicated general-purpose virtual instance equipped with a 3.3 GHz Intel Xeon 8369HB CPU, featuring 1 physical core, 2 vCPUs, and 8.0 GB of RAM. Running on KVM virtualization, this configuration includes 33 MB of L3 cache and supports advanced instruction sets such as AVX-512, though it omits local storage and onboard GPU hardware. Baseline network performance is capped at 1 Gbps. Benchmarks highlight a distinct trade-off: single-core CPU execution and single-threaded compression achieve average performance, but multi-core throughput, memory bandwidth, and database transaction speeds score in lower percentiles due to thread contention across a single physical core. The instance provides resource efficiency for lightweight, single-threaded compute workloads, basic web services, and entry-level background processing rather than data-intensive or highly parallelized applications.",
+  "og_description": "Alibaba Cloud ecs.hfg7.large is a KVM instance featuring a 3.3 GHz Intel Xeon CPU, 2 vCPUs, 8 GB RAM, and 1 Gbps networking, offering reliable single-core speed for lightweight computing tasks.",
+  "meta_description": "Alibaba Cloud ecs.hfg7.large offers 2 vCPUs, 8 GB RAM, and a 3.3 GHz Intel Xeon processor designed for lightweight single-threaded computing workloads.",
+  "tagline": "A lightweight compute configuration combining a 3.3 GHz Intel Xeon processor with 8 GB RAM for single-threaded tasks without local storage.",
   "bullet_points": [
-    "Powered by an Intel Xeon 8369HB processor at 3.3 GHz",
-    "Dedicated CPU allocation with 2 vCPUs and 8.0 GB RAM",
-    "Average performance in single-core and single-threaded tasks",
-    "No local storage and 1 Gbps baseline network bandwidth",
-    "Best suited for light single-threaded applications and basic text processing"
+    "Powered by a 3.3 GHz Intel Xeon 8369HB CPU with 1 physical core and 2 vCPUs",
+    "Includes 8.0 GB of RAM with a 4.0 GB per vCPU ratio and 1 Gbps baseline network",
+    "Supports AVX-512 instruction sets including VNNI and BF16 for vector operations",
+    "Average single-core benchmark performance balanced by lower multi-threaded execution speeds",
+    "Lacks local NVMe storage and dedicated GPU acceleration",
+    "Well-suited for light web services, single-threaded processing, and basic utility workloads"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }
