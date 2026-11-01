@@ -1,21 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.ic5.16xlarge is an x86_64 architecture server powered by dedicated Intel Xeon 8163 processors. It features 64 virtual CPUs mapped to 32 physical cores with hyper-threading enabled, running at a clock speed of 2.5 GHz. The system is equipped with 64.0 GB of system memory, yielding a low memory-to-vCPU ratio of 1.0 GB per core. This instance does not include local storage or dedicated GPU hardware, relying instead on network-attached storage and a baseline network bandwidth of 20 Gbps.",
-    "Performance benchmarks indicate a distinct contrast between single-core and multi-core capabilities. Single-core performance is relatively weak, as shown by stress-ng and Geekbench single-core tests falling into the bottom 25%. However, multi-core execution scales effectively, achieving average tier results in stress-ng multi-core, Geekbench multi-core, and PassMark CPU tests. Notably, multi-threaded bzip3 decompression performs in the top 25%, demonstrating strong parallel processing efficiency. Memory bandwidth and static web serving throughput both register in the average tier.",
-    "The primary tradeoff of the ecs.ic5.16xlarge is its highly skewed resource allocation, offering massive parallel compute capacity but very limited memory per core. This makes it a cost-efficient option for compute-heavy workloads that do not require large memory footprints. It is well-suited for highly parallelizable tasks such as multi-threaded decompression, batch processing, and moderate web serving, but is poorly suited for memory-intensive databases or single-threaded applications."
+    "Alibaba Cloud ecs.ic5.16xlarge is a compute-focused x86_64 instance featuring 64 vCPUs across 32 physical Intel Xeon 8163 cores operating at a base clock speed of 2.5 GHz. The configuration allocates 1.0 GB of RAM per vCPU for a total memory capacity of 64.0 GB. Built on KVM hypervisor architecture, this server includes 20 Gbps baseline network bandwidth, zero local SSD storage, and no GPU accelerators. The CPU instruction set includes AVX, AVX-512 (F and VNNI), AES, FMA, and BMI2 capabilities.",
+    "Performance data indicates a distinct trade-off between single-threaded execution and parallel multi-core performance. Single-core benchmarks yield lower relative results, including a Geekbench single-core score of 1022.0 and a single-threaded gzip compression speed of 19.05 GB/sec. Conversely, multi-threaded throughput is stronger, evidenced by a multi-threaded bzip3 decompression rate of 205.34 GB/sec and a multi-core stress-ng score of 47218.85. Uncached memory read bandwidth reaches 119.27 GB/sec, while static web serving throughput measures 30.13 GB/sec.",
+    "The 1:1 ratio of vCPUs to RAM gigabytes provides high core density for tasks that are not constrained by memory capacity. This hardware layout offers qualitative cost efficiency for highly parallel compute workloads. The instance fits tasks such as software compilation, batch processing, parallel data compression, web serving, and concurrent execution pipelines."
   ],
-  "description": "Alibaba Cloud ecs.ic5.16xlarge is an x86_64 compute-focused server featuring 64 dedicated vCPUs from an Intel Xeon 8163 processor running at 2.5 GHz, paired with 64.0 GB of RAM. Lacking local storage and GPUs, this KVM-hypervised instance delivers a baseline network bandwidth of 20 Gbps. Benchmarks reveal weak single-core performance but average multi-core capabilities, highlighted by strong multi-threaded bzip3 decompression. With a low memory-to-vCPU ratio of 1.0 GB per core, this server is highly optimized for parallelized, compute-intensive tasks that do not demand large memory footprints, such as batch processing, multi-threaded compilation, and distributed web serving.",
-  "og_description": "Alibaba Cloud ecs.ic5.16xlarge is a compute-focused x86_64 server with 64 dedicated Intel Xeon vCPUs and 64 GB RAM. It offers strong multi-threaded performance for parallel batch workloads.",
-  "meta_description": "Alibaba Cloud ecs.ic5.16xlarge features 64 dedicated Intel Xeon vCPUs, 64 GB RAM, and 20 Gbps network bandwidth for parallel compute workloads.",
-  "tagline": "A high-core, compute-focused virtual server designed for highly parallelized workloads requiring minimal memory overhead per virtual CPU.",
+  "description": "Alibaba Cloud ecs.ic5.16xlarge is a compute-focused x86_64 instance equipped with 64 vCPUs across 32 physical Intel Xeon 8163 cores running at 2.5 GHz, paired with 64.0 GB of system memory. Operating on KVM virtualization with 20 Gbps baseline network bandwidth, the instance includes no local storage or GPUs, relying entirely on network-attached storage. Built-in instruction support covers AVX-512 and AES. Benchmarks highlight lower single-core throughput alongside robust multi-core execution, achieving 205.34 GB/sec in multi-threaded bzip3 decompression and a multi-core stress-ng result of 47218.85. The high vCPU density relative to memory offers qualitative cost efficiency for core-bound parallel workloads. This instance fits multi-threaded batch jobs, software compilation, parallel data transformation, and high-concurrency web serving.",
+  "og_description": "Alibaba Cloud ecs.ic5.16xlarge features 64 vCPUs, 32 Intel Xeon physical cores, and 64 GB RAM. It provides strong multi-core scaling for compute-heavy parallel workloads needing 20 Gbps networking.",
+  "meta_description": "Alibaba Cloud ecs.ic5.16xlarge offers 64 vCPUs, 64 GB RAM, and 20 Gbps networking powered by Intel Xeon CPUs for parallel batch computing.",
+  "tagline": "High-density 64-vCPU instance delivering strong multi-threaded execution and 20 Gbps networking for core-intensive parallel computing workloads.",
   "bullet_points": [
-    "64 dedicated vCPUs powered by Intel Xeon 8163 processors at 2.5 GHz",
-    "64.0 GB of system memory providing a 1:1 vCPU-to-RAM ratio",
-    "20 Gbps baseline network bandwidth with no local storage",
-    "Strong multi-threaded performance, particularly in parallel decompression tasks",
-    "Optimized for parallel compute workloads, batch processing, and web serving"
+    "Powered by 32 physical Intel Xeon 8163 cores (64 vCPUs) at 2.5 GHz with AVX-512 support",
+    "Configured with 64.0 GB RAM (1.0 GB per vCPU) and 20 Gbps baseline networking",
+    "Strong multi-threaded decompression rate reaching 205.34 GB/sec in bzip3 benchmarks",
+    "Requires external network storage with zero local disk storage bundled",
+    "Fits parallel batch processing, software compilation, and concurrent web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
