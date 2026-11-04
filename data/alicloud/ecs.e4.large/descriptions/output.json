@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.e4.large is an x86_64 architecture virtual machine powered by the KVM hypervisor. It features an Intel Xeon E5-2682 v4 processor running at 2.5 GHz, configured with 2 shared vCPUs derived from 1 physical core with hyper-threading enabled. The system is equipped with 16.0 GB of system memory, yielding 8.0 GB of RAM per core. It does not include local storage or dedicated GPU hardware, and the baseline network bandwidth is rated at 0 Gbps.",
-    "Benchmark results indicate that the ecs.e4.large sits in the lower performance tiers. Both single-core and multi-core stress-ng CPU tests place the instance in the bottom 10% of benchmarked servers. Memory bandwidth performance is similarly constrained, with large-block read and write speeds falling into the bottom 10%, while small-block cached reads are slightly higher but remain in the bottom 25%. Computational tasks such as gzip compression and bzip3 decompression register in the bottom 25% and bottom 10% respectively. Database operations, Redis SET performance, and static web serving throughput also rank in the bottom 10%.",
-    "Given the shared CPU allocation and lower benchmark scores, the ecs.e4.large presents a tradeoff between high memory capacity and processing throughput. The 1:8 vCPU-to-RAM ratio offers a cost-efficient profile for memory-intensive workloads that do not require sustained, high-performance CPU execution. This server is best suited for lightweight database caching, development environments, basic web serving, or background tasks that benefit from a larger memory footprint but can tolerate shared CPU resources and low baseline network throughput."
+    "Alibaba Cloud ecs.e4.large is an entry-level shared-core virtual server instance within the ecs.e4 instance family. Powered by an Intel Xeon E5-2682 v4 processor running at 2.5 GHz on x86_64 architecture, this instance features 1 physical core presenting 2 shared vCPUs via hyperthreading. It comes equipped with 16.0 GB of memory, yielding an 8.0 GB per vCPU ratio. The instance includes no dedicated local storage, lacks bundled GPU accelerators, and provides no baseline public network bandwidth.",
+    "Under synthetic CPU benchmarks, the shared vCPU design yields constrained performance, placing in the bottom 10 percent for stress-ng single-core (945.88) and multi-core (1857.99) tests, as well as PassMark CPU scores (2538.35). Memory performance shows uncached read speeds of 14.95 GB/sec and write speeds of 11.46 GB/sec. Despite including hardware instruction flags such as AVX, AES, BMI2, and FMA, operational execution rates remain reduced due to shared hardware resource allocation.",
+    "The primary operational advantage of the ecs.e4.large lies in its high RAM capacity relative to its vCPU count, delivering qualitative cost efficiency for memory-leaning workloads that require minimal compute. However, shared core topology introduces resource contention risks during sustained processor utilization spikes. Application benchmark performance reflects this profile, with static web serving throughput measuring 2.31 GB/sec. This instance is best suited for non-critical development, background caching nodes, light database staging, and low-traffic web services."
   ],
-  "description": "Alibaba Cloud ecs.e4.large is an x86_64 virtual server running on the KVM hypervisor, equipped with an Intel Xeon E5-2682 v4 processor. It features 2 shared vCPUs from 1 physical core, 16.0 GB of RAM, and no local storage or dedicated GPU. Performance benchmarks place this instance in the lower tiers, with stress-ng CPU performance, large-block memory bandwidth, and database operations ranking in the bottom 10%. The server offers a high memory-to-vCPU ratio of 1:8, presenting a qualitative tradeoff between memory capacity and shared CPU performance. It is best suited for memory-oriented, non-CPU-intensive workloads such as lightweight caching, development environments, and basic web serving.",
-  "og_description": "Alibaba Cloud ecs.e4.large is a KVM-based virtual server featuring 2 shared vCPUs on an Intel Xeon E5-2682 v4 processor, 16.0 GB of RAM, and no local storage, designed for memory-oriented workloads.",
-  "meta_description": "Alibaba Cloud ecs.e4.large is a KVM virtual server with 2 shared Intel Xeon vCPUs, 16.0 GB of RAM, and no local storage, suited for basic memory tasks.",
-  "tagline": "A shared-CPU virtual server offering a high memory-to-core ratio for lightweight, memory-dependent workloads without intensive processing requirements.",
+  "description": "Alibaba Cloud ecs.e4.large is a shared-core virtual machine instance configured with 2 shared vCPUs and 16.0 GB of RAM on x86_64 architecture. Built around an Intel Xeon E5-2682 v4 processor at 2.5 GHz, it features 1 physical core with 2 threads per core, offering an 8.0 GB per vCPU memory allocation. The instance includes no local disk storage, bundled GPUs, or baseline public networking bandwidth. Benchmark results place its processor and memory throughput in the lower 10th percentile, with stress-ng single-core scoring 945.88 and PassMark CPU at 2538.35. While hardware-accelerated instructions like AVX, AES, and FMA are supported, performance is limited by shared resource contention. The ecs.e4.large offers cost-effective memory density for low-intensity applications, making it suitable for staging environments, lightweight memory caching, and low-traffic web services where sustained compute performance is not required.",
+  "og_description": "Alibaba Cloud ecs.e4.large is a shared-core virtual instance featuring 2 vCPUs, 16 GB RAM, and an Intel Xeon E5-2682 v4 processor, designed for budget-conscious, memory-leaning workloads.",
+  "meta_description": "Alibaba Cloud ecs.e4.large is a shared 2 vCPU, 16 GB RAM server on Intel Xeon E5-2682 v4 processors for low-concurrency tasks.",
+  "tagline": "An entry-level shared-core server providing 16 GB of memory and Intel Xeon execution for light caching and staging workloads.",
   "bullet_points": [
-    "Intel Xeon E5-2682 v4 processor with 2 shared vCPUs and 16.0 GB of RAM",
-    "High memory-to-vCPU ratio of 8.0 GB per core",
-    "KVM hypervisor architecture with no bundled local storage or GPU",
-    "Suited for lightweight database caching and development environments",
-    "Best for workloads requiring memory capacity over sustained CPU performance"
+    "2 shared vCPUs powered by an Intel Xeon E5-2682 v4 processor at 2.5 GHz",
+    "16.0 GB RAM providing an 8.0 GB per vCPU allocation",
+    "Shared hardware architecture on KVM hypervisor without local disk storage",
+    "Hardware support for AVX, AES, BMI2, and FMA instruction sets",
+    "Suitable for development, staging environments, and lightweight caching"
   ],
   "categories": [
-    "Memory Optimized",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "Memory Optimized"
   ]
 }
