@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.e4.large is an entry-level shared-core virtual server instance within the ecs.e4 instance family. Powered by an Intel Xeon E5-2682 v4 processor running at 2.5 GHz on x86_64 architecture, this instance features 1 physical core presenting 2 shared vCPUs via hyperthreading. It comes equipped with 16.0 GB of memory, yielding an 8.0 GB per vCPU ratio. The instance includes no dedicated local storage, lacks bundled GPU accelerators, and provides no baseline public network bandwidth.",
-    "Under synthetic CPU benchmarks, the shared vCPU design yields constrained performance, placing in the bottom 10 percent for stress-ng single-core (945.88) and multi-core (1857.99) tests, as well as PassMark CPU scores (2538.35). Memory performance shows uncached read speeds of 14.95 GB/sec and write speeds of 11.46 GB/sec. Despite including hardware instruction flags such as AVX, AES, BMI2, and FMA, operational execution rates remain reduced due to shared hardware resource allocation.",
-    "The primary operational advantage of the ecs.e4.large lies in its high RAM capacity relative to its vCPU count, delivering qualitative cost efficiency for memory-leaning workloads that require minimal compute. However, shared core topology introduces resource contention risks during sustained processor utilization spikes. Application benchmark performance reflects this profile, with static web serving throughput measuring 2.31 GB/sec. This instance is best suited for non-critical development, background caching nodes, light database staging, and low-traffic web services."
+    "Alibaba Cloud ecs.e4.large is a shared-core virtual server built on x86_64 architecture using the KVM hypervisor. The hardware profile comprises 2 vCPUs powered by a single physical Intel Xeon E5-2682 v4 processor running at 2.5 GHz with two threads per core. System memory totals 16.0 GB, allocating 8.0 GB of RAM per vCPU. The CPU subsystem includes 32 KB of L1 data cache, 0.25 MB of L2 cache, and 40 MB of L3 cache, with instruction support for AVX, AES, FMA, and BMI2. The instance contains no local disk storage and operates with a 0 Gbps baseline network bandwidth specification.",
+    "Performance benchmarks reflect the constrained nature of the shared CPU environment. In synthetic compute evaluations, stress-ng yields 945.88 for single-core and 1857.99 for multi-core performance, placing it in low comparative percentiles. PassMark CPU testing logs a total score of 2538.35 with an extended instructions rating of 1978.53. Memory throughput measures 164.27 GB/sec for small cached blocks, declining to 14.95 GB/sec for uncached reads and 11.46 GB/sec for uncached writes. Application-level tests demonstrate 2.53 million operations per second in Redis SET operations and a static web serving throughput of 2.31 GB/sec.",
+    "The configuration delivers high memory density relative to compute resources, prioritizing cost efficiency for workloads with low CPU utilization demands. The lack of dedicated CPU allocation and local disk storage presents a trade-off, restricting execution speeds during sustained parallel tasks. Recommended workload fits include non-production staging environments, small-scale caching layers, internal utility tools, and low-traffic web serving where memory availability takes precedence over processor throughput."
   ],
-  "description": "Alibaba Cloud ecs.e4.large is a shared-core virtual machine instance configured with 2 shared vCPUs and 16.0 GB of RAM on x86_64 architecture. Built around an Intel Xeon E5-2682 v4 processor at 2.5 GHz, it features 1 physical core with 2 threads per core, offering an 8.0 GB per vCPU memory allocation. The instance includes no local disk storage, bundled GPUs, or baseline public networking bandwidth. Benchmark results place its processor and memory throughput in the lower 10th percentile, with stress-ng single-core scoring 945.88 and PassMark CPU at 2538.35. While hardware-accelerated instructions like AVX, AES, and FMA are supported, performance is limited by shared resource contention. The ecs.e4.large offers cost-effective memory density for low-intensity applications, making it suitable for staging environments, lightweight memory caching, and low-traffic web services where sustained compute performance is not required.",
-  "og_description": "Alibaba Cloud ecs.e4.large is a shared-core virtual instance featuring 2 vCPUs, 16 GB RAM, and an Intel Xeon E5-2682 v4 processor, designed for budget-conscious, memory-leaning workloads.",
-  "meta_description": "Alibaba Cloud ecs.e4.large is a shared 2 vCPU, 16 GB RAM server on Intel Xeon E5-2682 v4 processors for low-concurrency tasks.",
-  "tagline": "An entry-level shared-core server providing 16 GB of memory and Intel Xeon execution for light caching and staging workloads.",
+  "description": "Alibaba Cloud ecs.e4.large is an entry-level virtual server instance driven by a shared Intel Xeon E5-2682 v4 processor running at 2.5 GHz. Configured with 2 vCPUs across a single physical core with hyperthreading and KVM virtualization, it provides 16.0 GB of RAM, yielding an 8.0 GB per vCPU allocation. The hardware features 40 MB of L3 cache, basic AVX instruction support, no bundled local storage, and zero baseline network bandwidth. Benchmark evaluations place the instance in low performance tiers across compute and memory metrics, recording a stress-ng single-core score of 945.88 and uncached memory write speed of 11.46 GB/sec. Application tests show modest output, such as 2.53 million Redis SET operations per second and 2.31 GB/sec static web serving throughput. Designed with cost efficiency for memory-heavy, compute-light requirements, ecs.e4.large is best suited for non-production environments, staging servers, lightweight caching layers, or low-throughput internal web applications.",
+  "og_description": "Alibaba Cloud ecs.e4.large features 2 shared vCPUs on an Intel Xeon E5-2682 v4 processor, 16.0 GB RAM, and no local storage, designed for cost-sensitive, memory-leaning lightweight workloads.",
+  "meta_description": "Alibaba Cloud ecs.e4.large is a shared 2-vCPU instance with 16.0 GB RAM and Intel Xeon E5-2682 v4 compute, tailored for light, memory-oriented utility tasks.",
+  "tagline": "A shared-core instance providing 16 GB RAM for cost-effective hosting of low-concurrency, memory-oriented utility applications.",
   "bullet_points": [
-    "2 shared vCPUs powered by an Intel Xeon E5-2682 v4 processor at 2.5 GHz",
-    "16.0 GB RAM providing an 8.0 GB per vCPU allocation",
-    "Shared hardware architecture on KVM hypervisor without local disk storage",
-    "Hardware support for AVX, AES, BMI2, and FMA instruction sets",
-    "Suitable for development, staging environments, and lightweight caching"
+    "Shared Intel Xeon E5-2682 v4 processor (2 vCPUs, 1 physical core at 2.5 GHz)",
+    "16.0 GB RAM memory capacity providing 8.0 GB per vCPU",
+    "KVM hypervisor architecture with x86_64 AVX and AES extension support",
+    "No integrated local storage and 0 Gbps baseline network bandwidth",
+    "Low compute and memory benchmark throughput under stress workloads",
+    "Best suited for staging environments, lightweight caching, and low-traffic web servers"
   ],
   "categories": [
-    "Burstable & Budget",
-    "Memory Optimized"
+    "Memory Optimized",
+    "Burstable & Budget"
   ]
 }
