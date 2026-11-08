@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.ic5.2xlarge is an x86_64 architecture server instance powered by an Intel Xeon 8163 processor running at 2.5 GHz. It features 8 dedicated vCPUs mapped from 4 physical cores with hyper-threading enabled. The system is equipped with 8.0 GB of system memory, yielding a low memory-to-vCPU ratio of 1.0 GB per core. This instance does not include local storage or GPU accelerators, relying on network-attached storage and featuring a baseline network bandwidth of 2 Gbps.",
-    "Benchmark data indicates that the ecs.ic5.2xlarge delivers modest performance across most workloads. In CPU-intensive tests, the instance registers in the bottom 25% for stress-ng single-core and multi-core performance, though its Passmark CPU score and extended instructions test reach average levels. Memory bandwidth performance is mixed, with small-block read operations scoring in the bottom 25%, while large-block read and write operations achieve average tier results. Single-threaded gzip compression is a notable bottleneck, falling into the bottom 10% of tested systems.",
-    "The primary tradeoff of this instance is its highly constrained memory capacity relative to its compute resources. With only 1.0 GB of RAM per vCPU, it is poorly suited for memory-intensive databases, large-scale caching, or complex multi-threaded applications, as evidenced by weak scores in Redis SET operations and Passmark database tests. However, the dedicated CPU allocation provides predictable compute cycles. This profile makes the instance qualitatively cost-efficient for lightweight, compute-bound tasks with small memory footprints, such as basic batch processing, utility scripting, and small-scale LLM inference using highly compressed models."
+    "Alibaba Cloud ecs.ic5.2xlarge is an x86_64 compute-oriented instance powered by an Intel Xeon 8163 processor operating at a base frequency of 2.5 GHz. Built on a KVM hypervisor with dedicated CPU allocation, it features 4 physical cores supporting hyperthreading to provide 8 vCPUs. The instance is configured with 8.0 GB of system memory, yielding a 1.0 GB per vCPU ratio. Local storage is absent, and network baseline throughput is capped at 2 Gbps. Hardware vector extension capabilities include AVX-512 and AVX512_VNNI alongside AES cryptography acceleration.",
+    "Benchmark evaluations reveal average execution efficiency in synthetic multi-core workloads, reflected by a PassMark CPU score of 7018.44 and an extended instructions score of 6069.7. Uncached large-block memory read and write bandwidth reach 39.9 GB/sec and 32.58 GB/sec respectively. Single-core processing performance is limited, with Geekbench single-core scoring 996.0 and stress-ng single-core reaching 1106.2. High-density web serving throughput yields 5.94 GB/sec, while small 135M LLM inference generation reaches 116.45 tokens/sec.",
+    "With a dedicated vCPU allocation paired with a low 1.0 GB memory per core ratio, the server emphasizes compute core availability over memory capacity. This architectural profile provides qualitative cost efficiency for CPU-bound tasks that do not require high memory density per thread. The primary tradeoff is the strict 8.0 GB RAM limitation, which restricts application scale for memory-intensive databases or large cached datasets.",
+    "Alibaba Cloud ecs.ic5.2xlarge is suitable for lightweight multi-threaded batch jobs, software compilation, CI/CD runner pipelines, and utility compute tasks operating within a low memory footprint."
   ],
-  "description": "Alibaba Cloud ecs.ic5.2xlarge is an x86_64 server instance featuring 8 dedicated vCPUs and 8.0 GB of memory, powered by an Intel Xeon 8163 processor at 2.5 GHz. Lacking local storage and GPU acceleration, it relies on network storage and provides a 2 Gbps baseline network bandwidth. The instance exhibits a highly constrained 1:1 RAM-to-vCPU ratio, which presents a significant tradeoff for memory-heavy applications. Benchmark results place its CPU and memory performance mostly in the weak to average categories, with notable bottlenecks in single-threaded compression and database operations. However, its dedicated CPU allocation offers predictable execution for lightweight compute tasks. The ecs.ic5.2xlarge is best suited for low-memory, compute-focused workloads such as basic batch processing, utility scripting, and small-scale model inference.",
-  "og_description": "Alibaba Cloud ecs.ic5.2xlarge is an x86_64 server with 8 dedicated Intel Xeon vCPUs and 8 GB RAM. It is designed for low-memory compute tasks, offering 2 Gbps network bandwidth and no local storage.",
-  "meta_description": "Alibaba Cloud ecs.ic5.2xlarge features 8 dedicated Intel Xeon vCPUs, 8 GB RAM, and 2 Gbps network bandwidth for low-memory compute workloads.",
-  "tagline": "A dedicated Intel Xeon compute instance with a highly streamlined memory profile for lightweight, CPU-focused processing tasks.",
+  "description": "Alibaba Cloud ecs.ic5.2xlarge is an x86_64 instance featuring an Intel Xeon 8163 processor clocked at 2.5 GHz, delivering 8 vCPUs across 4 physical cores via dedicated KVM hypervisor allocation. Equipped with 8.0 GB of RAM, 2 Gbps baseline network bandwidth, and no local disk storage, the server offers a 1:1 memory-to-vCPU ratio. Hardware instruction capabilities include AVX-512 and AES acceleration. Benchmark results indicate moderate performance in multi-core extended instruction tests, alongside average uncached memory read and write bandwidths of 39.9 GB/sec and 32.58 GB/sec. However, single-thread processing speeds remain constrained. The low memory density provides an economical option for CPU-bound applications with modest memory requirements, such as lightweight multi-threaded compute tasks, targeted CI/CD pipelines, and small model inference execution.",
+  "og_description": "Alibaba Cloud ecs.ic5.2xlarge is an 8 vCPU, 8 GB RAM instance powered by an Intel Xeon 8163 CPU. It features 2 Gbps network bandwidth and AVX-512 support for multi-threaded compute workloads.",
+  "meta_description": "Alibaba Cloud ecs.ic5.2xlarge is an Intel Xeon 8163 instance featuring 8 vCPUs, 8 GB RAM, and 2 Gbps network throughput for compute workloads.",
+  "tagline": "Dedicated eight vCPU instance delivering balanced multi-core instruction processing with a low memory footprint for targeted compute tasks.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an Intel Xeon 8163 processor",
-    "8.0 GB of system memory providing a 1:1 RAM-to-vCPU ratio",
-    "2 Gbps baseline network bandwidth with no local storage included",
-    "Average performance in large-block memory bandwidth and Passmark CPU tests",
-    "Suited for lightweight batch processing and low-memory utility workloads"
+    "Powered by an Intel Xeon 8163 processor with 8 dedicated vCPUs across 4 physical cores",
+    "Configured with 8.0 GB RAM for a lean 1.0 GB per vCPU resource ratio",
+    "Hardware acceleration supporting AVX-512, AVX512_VNNI, and AES instructions",
+    "Baseline network bandwidth of 2 Gbps without bundled local storage",
+    "Suitable for lightweight multi-threaded execution, CI/CD builds, and small model inference"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

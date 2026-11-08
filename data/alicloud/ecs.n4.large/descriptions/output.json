@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.n4.large is an entry-level virtual machine instance within the ecs.n4 server family. It is built on the KVM hypervisor and runs on the x86_64 architecture. The hardware configuration features an Intel Xeon 8163 processor operating at 2.5 GHz, providing 2 vCPUs derived from 1 physical core with hyper-threading enabled. The CPU allocation is shared, which introduces potential resource contention. It is equipped with 4.0 GB of system memory, resulting in a memory-to-core ratio of 2.0 GB per core. No local storage or dedicated GPU hardware is bundled with this instance, and the baseline network bandwidth is rated at 0 Gbps.",
-    "Benchmark data indicates that the ecs.n4.large operates in the lower tiers of performance. Single-core CPU performance via stress-ng is measured at 1107.98, placing it in the bottom 25%, while multi-core performance drops to the bottom 10% with a score of 2199.5. Memory bandwidth tests show a similar trend, with uncached large-block read speeds at 17.08 GB/sec and write speeds at 14.55 GB/sec. Computational workloads such as software compilation with clang and image processing fall into the bottom 10% of tested servers. The shared CPU allocation and lack of baseline network bandwidth represent significant performance tradeoffs.",
-    "Given its shared CPU model and modest resource allocation, this instance is positioned as a budget-friendly option for non-critical workloads. It is suitable for low-traffic static web serving, basic text processing, and lightweight development or testing environments. It is not designed for database operations, large-scale LLM inference, or memory-intensive applications, as demonstrated by its low passmark database score of 565.0 and poor multi-core performance."
+    "Alibaba Cloud ecs.n4.large is an entry-level virtual server powered by a shared Intel Xeon 8163 processor running at 2.5 GHz on x86_64 architecture. The server provides 2 vCPUs derived from 1 physical core with 2 threads per core, alongside 4.0 GB of memory (2.0 GB per core). It features 33 MB of L3 cache, 1.0 MB L2 cache, and supports AVX, AVX512F, and AES instruction sets. KVM hypervisor virtualizes the underlying hardware, which has 0 Gbps baseline network bandwidth, no local storage, and zero included public IPv4 addresses.",
+    "In benchmark evaluations, the ecs.n4.large demonstrates lower-tier computational and memory throughput due to its shared CPU allocation model. Single-core performance registered a stress-ng score of 1107.98 and a Geekbench score of 957.0, while multi-core stress-ng reached 2199.5. Memory tests yielded 17.08 GB/sec uncached read and 14.55 GB/sec uncached write bandwidth. PassMark CPU and memory scores were 2677.34 and 974.98 respectively. Redis SET operations reached 3.0 million operations per second, and static web serving throughput reached 1.82 GB/sec.",
+    "Given its shared CPU resources, lack of bundled local storage, and minimal network baseline, the instance delivers a low resource footprint focused on qualitative cost efficiency. It is best suited for basic general-purpose tasks, lightweight web serving, low-concurrency background utilities, and small dev/test environments where dedicated processor allocation is not required."
   ],
-  "description": "Alibaba Cloud ecs.n4.large is a shared-CPU virtual machine instance within the ecs.n4 family, running on the KVM hypervisor. It features an Intel Xeon 8163 processor operating at 2.5 GHz with 2 vCPUs and 4.0 GB of system memory. The instance does not include local storage, dedicated GPUs, or baseline network bandwidth. Benchmark results place this server consistently in the lower performance tiers, with stress-ng multi-core CPU performance and uncached memory read bandwidth falling into the bottom 10% of tested hardware. Given its shared resource model and low performance profile, the ecs.n4.large is a budget-oriented option suitable for lightweight workloads such as basic text processing, minor development tasks, and low-volume static web serving. It is not suited for database hosting, intensive computation, or memory-heavy applications.",
-  "og_description": "Alibaba Cloud ecs.n4.large is a shared-CPU instance with 2 vCPUs, 4.0 GB RAM, and an Intel Xeon 8163 processor. It offers entry-level performance for basic, budget-conscious workloads.",
-  "meta_description": "Alibaba Cloud ecs.n4.large is a shared-CPU virtual machine with 2 vCPUs and 4.0 GB RAM, designed for entry-level, budget-friendly workloads.",
-  "tagline": "A budget-friendly, shared-CPU virtual instance with modest memory and processing capabilities for entry-level development and basic hosting tasks.",
+  "description": "Alibaba Cloud ecs.n4.large is an entry-level instance configured with 2 shared vCPUs on a single physical Intel Xeon 8163 core clocked at 2.5 GHz, paired with 4.0 GB of memory. Operating on x86_64 architecture under KVM virtualization, it includes 33 MB L3 cache and supports AVX-512 extensions. The instance features no local storage, zero dedicated baseline network bandwidth, and no GPU hardware. Performance metrics reflect its budget orientation, with a single-core Geekbench score of 957.0, a multi-core stress-ng result of 2199.5, and uncached memory read bandwidth of 17.08 GB/sec. Redis SET throughput reaches 3.0 million operations per second, while static web serving throughput achieves 1.82 GB/sec. Due to shared CPU allocation and modest resource density, the ecs.n4.large provides basic cost efficiency suited for low-concurrency web serving, light utility workloads, and simple development environments.",
+  "og_description": "Alibaba Cloud ecs.n4.large features 2 shared vCPUs on an Intel Xeon 8163 processor, 4.0 GB RAM, zero local storage, and KVM virtualization, offering basic compute for light workloads.",
+  "meta_description": "Alibaba Cloud ecs.n4.large is a shared instance with 2 vCPUs, 4.0 GB RAM, and no local storage, designed for light workloads.",
+  "tagline": "An entry-level shared instance offering two vCPUs and four gigabytes of memory for basic compute tasks and lightweight applications.",
   "bullet_points": [
-    "Intel Xeon 8163 processor with 2 vCPUs and 4.0 GB RAM",
-    "Shared CPU allocation on the KVM hypervisor",
-    "No bundled local storage or baseline network bandwidth",
-    "Low-tier benchmark performance across CPU and memory tests",
-    "Suited for lightweight text processing and static web serving"
+    "2 shared vCPUs driven by 1 physical Intel Xeon 8163 core at 2.5 GHz",
+    "4.0 GB total system memory with 33 MB L3 cache",
+    "Shared CPU allocation using KVM virtualization without local storage",
+    "AVX-512 and AES vector and security instruction set support",
+    "Suitable for lightweight web serving, simple utility tasks, and development environments"
   ],
   "categories": [
     "Burstable & Budget",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
