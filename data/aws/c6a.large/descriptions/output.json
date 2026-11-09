@@ -1,23 +1,21 @@
 {
   "page": [
-    "Amazon Web Services c6a.large is a compute-optimized virtual server powered by the AWS Nitro hypervisor. It features an x86_64 architecture utilizing a dedicated AMD EPYC 7R13 processor running at 3.6 GHz. The instance is configured with 2 vCPUs, which correspond to 1 physical core with 2 threads per core. It includes 4.0 GB of DDR4 memory running at 3 GHz, yielding 2.0 GB of memory per core. No local storage or GPU hardware is bundled with this instance type, and it provides a baseline network bandwidth of 1 Gbps.",
-    "Benchmark data indicates strong single-core CPU performance, with stress-ng single-core tests placing in the top 25% at 2985.49. However, multi-core CPU performance is weak, scoring in the bottom 25% at 2985.49. Memory bandwidth is a notable constraint, with read-only small block cached memory bandwidth registering in the bottom 10% at 141.64 GB/sec, and uncached large block write bandwidth in the bottom 25% at 21.1 GB/sec. Single-threaded tasks like gzip compression and bzip3 decompression show average performance, while complex multi-core operations such as software compilation, ray tracing, and database operations score in the bottom 10%.",
-    "From a resource density perspective, the c6a.large offers a compute-focused hardware profile with a 1:2 vCPU-to-RAM ratio, making it a cost-efficient entry point for compute-bound workloads that do not require massive memory footprints. The primary tradeoff is the limited 4.0 GB memory capacity and weak multi-core scaling, which restricts its utility for memory-intensive databases or heavy parallel processing. This instance is best suited for lightweight single-threaded applications, basic web serving, simple text processing, and small-scale development or testing environments."
+    "Amazon Web Services c6a.large is an AMD-based compute-optimized instance built on the AWS Nitro hypervisor platform. It features a single physical AMD EPYC 7R13 processor operating at 3.6 GHz with 2 dedicated vCPUs across 2 threads per core. The host provides 4.0 GB of DDR4 RAM running at 3 GHz, representing a standard 1:2 ratio of vCPU to memory, and contains no local NVMe or SSD storage. The CPU includes 32 KB L1d, 0.5 MB L2, and 4 MB L3 cache allocations alongside cryptographic and vector hardware features like AES, VAES, SHA_NI, and AVX. Network connectivity provides a baseline bandwidth of 1 Gbps without complimentary public IPv4 addresses.",
+    "Benchmark testing demonstrates strong single-core execution capability, with stress-ng single-core performance scoring 2985.49, placing the instance in the top 25% of evaluated servers. However, due to its low hardware resource count of 2 vCPUs, multi-core and parallel execution benchmarks show lower relative output. Stress-ng multi-core, Geekbench multi-core, and Passmark CPU scores rank in the bottom 25% or lower. Memory bandwidth metrics recorded 30.34 GB/sec for uncached large-block reads and 21.1 GB/sec for large-block writes, positioning memory system throughput in the lower quartiles.",
+    "The qualitative efficiency profile of the c6a.large highlights high per-core execution speeds in small-footprint environments. Because memory bandwidth and overall core count are limited, it provides high execution speed for non-parallel tasks without incurring costs for unneeded system memory or storage capacity. Appropriate workloads include lightweight web serving, single-threaded text processing, basic data compression tasks, and minor single-threaded compilation processes."
   ],
-  "description": "Amazon Web Services c6a.large is a compute-optimized instance featuring 2 vCPUs and 4.0 GB of DDR4 memory, running on a dedicated 3.6 GHz AMD EPYC 7R13 processor. Built on the AWS Nitro hypervisor, this x86_64 server does not include local storage or GPU accelerators, and delivers a baseline network bandwidth of 1 Gbps. Performance benchmarks show strong single-core CPU capabilities, though multi-core performance and memory bandwidth are relatively weak, placing in the bottom 25% and 10% respectively. The 1:2 vCPU-to-RAM ratio provides a cost-efficient profile for compute-focused tasks with low memory requirements. It is best suited for lightweight single-threaded applications, basic web serving, and text processing workloads.",
-  "og_description": "Amazon Web Services c6a.large is a compute-optimized virtual server featuring 2 vCPUs, 4.0 GB of DDR4 RAM, and a 3.6 GHz AMD EPYC processor, designed for lightweight single-threaded workloads.",
-  "meta_description": "Amazon Web Services c6a.large is a compute-optimized server with 2 vCPUs, 4.0 GB DDR4 RAM, and a 3.6 GHz AMD EPYC CPU on the Nitro hypervisor.",
-  "tagline": "An entry-level compute-optimized x86_64 virtual server featuring dedicated AMD EPYC processing and a balanced, low-memory hardware profile.",
+  "description": "Amazon Web Services c6a.large is a compute-optimized instance powered by a 3.6 GHz AMD EPYC 7R13 processor on the AWS Nitro hypervisor. Configured with 1 physical core delivering 2 vCPUs, 4.0 GB of DDR4 system memory, and a 1 Gbps baseline network interface, it operates without local storage. Hardware support includes AVX, AES, and VAES vector and cryptographic capabilities. Benchmark data shows strong single-core CPU execution, achieving top 25% performance in single-threaded stress tests. However, overall multi-core throughput and memory bandwidth remain in lower baseline tiers due to the 2 vCPU resource limit. This instance is suitable for lightweight single-threaded compute workloads, small-scale web serving, and basic text processing where high single-core frequency is required without high memory capacity.",
+  "og_description": "Amazon Web Services c6a.large features 2 vCPUs powered by a 3.6 GHz AMD EPYC 7R13 processor with 4 GB DDR4 RAM. It offers strong single-core performance for lightweight compute tasks.",
+  "meta_description": "Amazon Web Services c6a.large is a compute-optimized instance with 2 vCPUs on a 3.6 GHz AMD EPYC processor and 4 GB DDR4 memory.",
+  "tagline": "A compact x86_64 compute-optimized instance delivering strong single-core frequency and basic memory density for single-threaded workload processing.",
   "bullet_points": [
-    "Dedicated AMD EPYC 7R13 processor running at 3.6 GHz",
-    "2 vCPUs and 4.0 GB of DDR4 memory with a 1:2 resource ratio",
-    "Strong single-core CPU performance in the top 25% of benchmarks",
-    "No local storage or GPU accelerators included",
-    "1 Gbps baseline network bandwidth on the AWS Nitro hypervisor",
-    "Suited for lightweight single-threaded tasks and basic web serving"
+    "2 dedicated vCPUs powered by a 3.6 GHz AMD EPYC 7R13 processor",
+    "4.0 GB of DDR4 system memory at 3 GHz without local storage",
+    "Top 25% performance in single-core stress-ng CPU benchmarks",
+    "1 Gbps baseline network bandwidth managed by AWS Nitro hypervisor",
+    "Fit for lightweight web serving, text processing, and single-threaded tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
