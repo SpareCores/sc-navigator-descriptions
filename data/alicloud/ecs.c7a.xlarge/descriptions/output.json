@@ -1,21 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c7a.xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 4 dedicated vCPUs mapped to 2 physical AMD EPYC 7T83 cores running at a base frequency of 2.55 GHz on the x86_64 architecture. The instance is configured with 8.0 GB of system memory, yielding a resource density of 2.0 GB per core. It does not include local storage or bundled GPUs, and provides a baseline network bandwidth of 2 Gbps.",
-    "Benchmark evaluations reveal a distinct performance profile. The instance demonstrates strong single-core CPU performance in stress-ng tests, placing in the top 25%. However, multi-core performance metrics, such as the stress-ng multi-core test and Geekbench multi-core score, fall into the bottom 25%. Memory bandwidth is a notable bottleneck, with both read and write operations on large blocks scoring in the bottom 25%. Single-threaded tasks like gzip compression and bzip3 decompression show average performance, whereas multi-threaded bzip3 decompression drops to the bottom 10%.",
-    "Given its compute-to-memory ratio of 1:2 and dedicated CPU allocation, the ecs.c7a.xlarge offers an entry-level compute-focused profile. It is qualitatively cost-efficient for workloads that require dedicated CPU execution but have low memory footprints. Due to weak database, redis, and multi-core performance, it is less suited for heavy database operations or high-throughput web serving. Appropriate workloads include single-threaded processing tasks, basic text processing, and lightweight single-core compute utilities."
+    "Alibaba Cloud ecs.c7a.xlarge is a compute-optimized virtual server instance running on the KVM hypervisor and x86_64 architecture. Powered by an AMD EPYC 7T83 processor operating at a base clock speed of 2.55 GHz, the instance features 4 dedicated virtual CPUs derived from 2 physical cores with 2 threads per core. System memory is allocated at 8.0 GB of RAM, establishing a 1:2 vCPU-to-memory ratio with 2.0 GB per vCPU. The processor cache configuration comprises 32 KB of L1 data cache per core, 0.5 MB of L2 cache per core, and 32 MB of shared L3 cache. Supported instruction extensions include AVX, AES, VAES, SHA_NI, BMI2, ADX, and FMA, whereas AVX-512 extensions are absent.",
+    "The instance does not include local NVMe storage and relies entirely on network-attached block storage options. Network connectivity provides a baseline bandwidth of 2 Gbps, and no complimentary public IPv4 addresses are included. Performance benchmarks indicate reliable single-core capability, with average results in stress-ng single-core tests, single-threaded Gzip compression, and single-core Geekbench tasks. In contrast, multi-threaded scaling and memory throughput show limitations, placing multi-core stress-ng results, multi-threaded bzip3 decompression, and uncached memory bandwidth in the lower performance tiers.",
+    "From a qualitative architectural perspective, the server offers dedicated CPU allocation suited for lightweight compute tasks that do not demand extensive RAM capacity or raw disk IOPS. The 8.0 GB memory boundary limits resource-intensive applications, but the instance provides reliable baseline execution for microservices, single-threaded utilities, basic text processing, and light web serving."
   ],
-  "description": "Alibaba Cloud ecs.c7a.xlarge is a compute-optimized instance featuring 4 dedicated vCPUs and 8.0 GB of RAM, powered by an AMD EPYC 7T83 processor at 2.55 GHz on the x86_64 architecture. Operating under the KVM hypervisor, this instance does not include local storage or GPUs, and delivers a baseline network bandwidth of 2 Gbps. Benchmark data indicates strong single-core CPU performance, ranking in the top 25% for stress-ng single-core tests. However, it exhibits weak multi-core and memory bandwidth performance, with multi-core Geekbench and passmark database operations falling into the bottom 25%. This hardware profile is qualitatively cost-efficient for compute-focused tasks with low memory requirements. It is best suited for single-threaded applications, basic text processing, and lightweight utility workloads rather than memory-intensive databases or high-throughput web serving.",
-  "og_description": "Alibaba Cloud ecs.c7a.xlarge is a compute-optimized instance with 4 dedicated AMD EPYC vCPUs, 8.0 GB RAM, and 2 Gbps network bandwidth, showing strong single-core performance but weak multi-core and memory bandwidth.",
-  "meta_description": "Alibaba Cloud ecs.c7a.xlarge is a compute-optimized instance with 4 dedicated AMD EPYC vCPUs, 8.0 GB RAM, and 2 Gbps network bandwidth.",
-  "tagline": "A compute-focused virtual instance featuring dedicated AMD EPYC cores and a 1:2 memory-to-CPU ratio for single-threaded workloads.",
+  "description": "Alibaba Cloud ecs.c7a.xlarge is a compute-optimized instance powered by an AMD EPYC 7T83 processor operating at 2.55 GHz on the KVM hypervisor. It delivers 4 dedicated vCPUs from 2 physical cores, 8.0 GB of RAM, and 32 MB of L3 cache, establishing a 1:2 vCPU-to-memory ratio. Built without bundled local storage, the instance uses network storage and provides 2 Gbps of baseline network bandwidth. Supported instruction sets include standard AVX, AES, VAES, and SHA_NI hardware acceleration. Benchmark data demonstrates steady single-core execution across general compute and compression tasks, though multi-core scaling and memory bandwidth fall into lower performance brackets. This profile makes the instance appropriate for lightweight single-threaded processing, small microservices, and basic web utilities.",
+  "og_description": "Alibaba Cloud ecs.c7a.xlarge features 4 dedicated vCPUs, 8.0 GB RAM, and AMD EPYC 7T83 processors. It provides balanced single-core execution and 2 Gbps baseline networking for light compute workloads.",
+  "meta_description": "Alibaba Cloud ecs.c7a.xlarge is a compute-optimized instance featuring 4 dedicated vCPUs, 8.0 GB RAM, AMD EPYC CPUs, and 2 Gbps baseline network bandwidth.",
+  "tagline": "A 4-vCPU compute instance featuring AMD EPYC processing, dedicated cores, and balanced single-threaded performance for light workloads.",
   "bullet_points": [
-    "Powered by 4 dedicated vCPUs on AMD EPYC 7T83 processors",
-    "Equipped with 8.0 GB of system memory and no local storage",
-    "Delivers strong single-core CPU performance in benchmark testing",
-    "Features 2 Gbps baseline network bandwidth under KVM virtualization",
-    "Suited for single-threaded processing and lightweight text processing tasks"
+    "4 dedicated vCPUs powered by an AMD EPYC 7T83 processor at 2.55 GHz",
+    "8.0 GB total system memory with a 1:2 vCPU-to-RAM ratio",
+    "Baseline network throughput of 2 Gbps without local storage attached",
+    "Hardware instruction support for AES, VAES, SHA-NI, and standard AVX",
+    "Average single-core benchmark performance with limited multi-core scaling",
+    "Suitable for light microservices, single-threaded processing, and basic web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
