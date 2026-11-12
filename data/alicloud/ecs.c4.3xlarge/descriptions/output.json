@@ -1,23 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c4.3xlarge is a compute-optimized virtual server instance powered by the KVM hypervisor. It features a dedicated Intel Xeon E5-2667 v4 processor operating at 3.2 GHz, delivering 12 virtual CPUs across 6 physical cores with hyper-threading enabled. The instance is configured with 24.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per vCPU. It does not include local storage or dedicated GPU hardware, relying entirely on network-attached storage and network-based resources. Baseline network bandwidth is rated at 4 Gbps.",
-    "Benchmark data indicates average multi-core processing capabilities, with a stress-ng multi-core CPU score of 8624.76 and a Geekbench multi-core score of 5654.0. However, single-core performance is relatively weak, as evidenced by a stress-ng single-core score of 1149.99. Memory performance shows a clear asymmetry: while cached small-block read bandwidth is average at 620.37 GB/sec, large-block uncached write bandwidth is weak at 24.54 GB/sec. The instance handles lightweight workloads like Redis SET operations (9.94 million operations per second) and static web serving (9.12 GB/sec) with average efficiency, but struggles with more demanding tasks, showing weak performance in medium 7B LLM inference.",
-    "Given its compute-oriented vCPU-to-RAM ratio of 1:2, the ecs.c4.3xlarge offers a balanced entry point for compute-bound workloads that do not require massive memory footprints or local storage. The absence of bundled local storage and GPUs makes it a cost-efficient option for stateless applications, web serving, software compilation, and moderate database operations. It is best suited for multi-threaded applications, CI/CD pipelines, and general-purpose web servers that can leverage its 12 dedicated vCPUs without hitting memory or storage bottlenecks."
+    "Alibaba Cloud ecs.c4.3xlarge is a compute-optimized server instance based on the KVM hypervisor. Powered by an Intel Xeon E5-2667 v4 processor operating at 3.2 GHz, it offers 6 physical cores and 12 vCPUs via hyperthreading. The hardware allocation includes 24.0 GB of RAM, yielding a 1:2 memory-to-vCPU ratio, along with a 25 MB L3 cache. The instance does not include bundled local storage or GPU accelerators, relying on network-attached storage and providing a baseline network bandwidth of 4 Gbps. Instruction extensions supported include AVX, AES, BMI2, ADX, and FMA.",
+    "Benchmarking highlights average performance across multi-core processor tests, such as a Passmark CPU score of 11610.14 and a Geekbench multi-core score of 5654.0. Cached memory read throughput is high at 620.37 GB/sec, though uncached memory write operations drop to 24.54 GB/sec, placing it in the bottom performance quartile for memory write operations. Single-core execution on stress-ng also registers in the lower 25th percentile at 1149.99. Mid-sized LLM text generation is constrained, achieving 6.95 tokens/sec on 7B parameter models.",
+    "The 1:2 RAM-to-vCPU allocation delivers qualitative resource efficiency for CPU-heavy tasks that do not require high memory footprints or fast local scratch disks. Given its 4 Gbps network capacity and steady multi-core results in static web serving (9.12 GB/sec) and Redis SET execution (9.94 million ops/sec), ecs.c4.3xlarge is suitable for application web serving, software compilation, batch processing, and general multi-threaded compute workloads."
   ],
-  "description": "Alibaba Cloud ecs.c4.3xlarge is a compute-optimized virtual server powered by a dedicated Intel Xeon E5-2667 v4 processor running at 3.2 GHz. It features 12 vCPUs, 24.0 GB of RAM, and a 4 Gbps baseline network bandwidth, with no local storage or GPU accelerators. Benchmarks show average multi-core performance, with a stress-ng multi-core score of 8624.76 and a Geekbench multi-core score of 5654.0, though single-core performance and large-block memory write speeds are weak. With a 1:2 vCPU-to-RAM ratio, this KVM-based instance is a cost-effective choice for stateless, compute-focused workloads. It is well-suited for multi-threaded applications, software compilation, static web serving, and moderate database operations.",
-  "og_description": "Alibaba Cloud ecs.c4.3xlarge is a compute-optimized instance with 12 vCPUs, 24 GB RAM, and an Intel Xeon E5-2667 v4 CPU, delivering average multi-core performance for stateless web serving and compilation.",
-  "meta_description": "Alibaba Cloud ecs.c4.3xlarge is a KVM-based compute-optimized instance featuring 12 vCPUs, 24 GB RAM, and an Intel Xeon E5-2667 v4 processor.",
-  "tagline": "A compute-optimized virtual server featuring twelve dedicated vCPUs and twenty-four gigabytes of memory for stateless, multi-threaded workloads.",
+  "description": "Alibaba Cloud ecs.c4.3xlarge is a compute-optimized virtual server powered by a 3.2 GHz Intel Xeon E5-2667 v4 processor. Configured with 12 vCPUs across 6 physical cores with hyperthreading, 24.0 GB of RAM, and no integrated local storage or GPU accelerators, it provides a 1:2 memory-to-vCPU ratio. Network connectivity is delivered at a baseline speed of 4 Gbps. Multi-core performance metrics, such as Geekbench multi-core scores and Passmark CPU benchmarks, sit in the average performance tier, while stress-ng single-core execution and uncached memory write throughput register in the lower performance quartile. The instance exhibits efficient processing for multi-threaded applications and web serving workloads, though performance drops under memory-write heavy or large LLM inference tasks. Overall, ecs.c4.3xlarge offers a balanced resource layout for moderate compute jobs, compilation tasks, and general web infrastructure without local disk dependencies.",
+  "og_description": "Alibaba Cloud ecs.c4.3xlarge features 12 vCPUs via an Intel Xeon E5-2667 v4 CPU, 24 GB RAM, and a 4 Gbps network baseline. It delivers average multi-core compute for general application serving.",
+  "meta_description": "Alibaba Cloud ecs.c4.3xlarge is a compute instance with 12 vCPUs, 24 GB RAM, and 4 Gbps network baseline powered by Intel Xeon E5-2667 v4 processors.",
+  "tagline": "Compute-focused x86 instance featuring 12 dedicated vCPUs, 24 GB RAM, and balanced multi-core processing for general application workloads.",
   "bullet_points": [
-    "Dedicated Intel Xeon E5-2667 v4 processor with 12 vCPUs and 6 physical cores",
-    "24.0 GB of system memory providing a compute-optimized 1:2 vCPU-to-RAM ratio",
-    "Baseline network bandwidth of 4 Gbps with no local storage or GPU accelerators",
-    "Average multi-core performance suitable for software compilation and static web serving",
-    "Weak single-core and large-block memory write speeds",
-    "Best suited for stateless applications, CI/CD pipelines, and moderate database operations"
+    "Powered by 6-core Intel Xeon E5-2667 v4 CPU at 3.2 GHz with 12 vCPUs",
+    "Configured with 24 GB RAM offering a 1:2 memory-to-vCPU ratio",
+    "Features 4 Gbps baseline network bandwidth without local disk storage or GPU",
+    "Demonstrates average multi-core processing and Redis execution performance",
+    "Suited for software compilation, web serving, and general compute tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
