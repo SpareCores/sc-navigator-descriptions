@@ -1,22 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c5.large is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features an x86_64 architecture with an Intel Xeon 8163 processor operating at a base frequency of 2.5 GHz. The instance is configured with 2 vCPUs derived from 1 physical core with Hyper-Threading enabled, providing dedicated CPU allocation. It is equipped with 4.0 GB of system memory, yielding a 1:2 vCPU-to-RAM ratio, and contains no local storage or GPU hardware. Network connectivity is limited to a baseline bandwidth of 1 Gbps.",
-    "Benchmark evaluations place the ecs.c5.large in the lower performance tiers. In stress-ng testing, the single-core CPU performance scored 1101.79, while multi-core performance reached 1461.5, indicating limited processing throughput. Memory bandwidth is similarly constrained, with uncached read and write speeds for large blocks measuring 10.04 GB/sec and 9.48 GB/sec respectively. Computational workloads such as Geekbench single-core (941.0) and multi-core (1114.0) reflect weak to poor performance relative to modern cloud hardware.",
-    "The primary tradeoff of the ecs.c5.large is its low resource density and lack of bundled local storage, which requires external block storage attachment. However, its dedicated CPU allocation ensures consistent, non-burstable performance, making it a qualitatively cost-efficient option for lightweight, predictable workloads. It is best suited for basic web serving, small-scale Redis caching, lightweight background processing, and simple utility tasks that do not require high memory capacity or intensive parallel processing."
+    "Alibaba Cloud ecs.c5.large is an entry-level compute-optimized instance built on x86_64 architecture. It features a single physical Intel Xeon 8163 core supporting hyper-threading to provide 2 virtual CPUs running at a base clock speed of 2.5 GHz. The instance is equipped with 4.0 GB of RAM, yielding 2.0 GB per vCPU, alongside a 33 MB L3 cache. It supports instruction set extensions including AVX-512, AES, FMA, and BMI2. The server provides no local ephemeral storage and relies entirely on external network-attached storage, while maintaining a baseline network bandwidth of 1 Gbps under KVM virtualization.",
+    "Benchmark measurements place the relative CPU performance of ecs.c5.large in lower tiers. In synthetic evaluations, it recorded a single-core stress-ng CPU score of 1101.79 and a multi-core score of 1461.5. PassMark returned a CPU rating of 1823.49, while Geekbench 6 registered a single-core score of 941.0 and a multi-core score of 1114.0. Uncached memory bandwidth tests measured 10.04 GB/sec for reads and 9.48 GB/sec for writes. Application tests achieved 1.51 million operations per second in Redis SET workloads and 1.29 GB/sec in static web serving throughput.",
+    "Featuring a strict 1:2 vCPU-to-RAM ratio, ecs.c5.large delivers low resource overhead for execution tasks that do not require substantial memory footprints. The absence of local disk drives and modest memory capacity define clear operating limits. The instance is best suited for entry-level microservices, low-traffic static web servers, lightweight utility scripts, and basic background task runners."
   ],
-  "description": "Alibaba Cloud ecs.c5.large is a compute-optimized virtual machine instance built on the KVM hypervisor and powered by an Intel Xeon 8163 processor. Operating on the x86_64 architecture, it provides 2 vCPUs from a single physical core with Hyper-Threading, 4.0 GB of system memory, and a baseline network bandwidth of 1 Gbps. The instance does not include local storage or GPU accelerators. Benchmark data indicates modest performance, with a stress-ng single-core score of 1101.79 and a multi-core score of 1461.5, alongside uncached memory read speeds of 10.04 GB/sec. Given its dedicated CPU allocation and 1:2 vCPU-to-RAM ratio, the ecs.c5.large offers a predictable, entry-level compute profile. It is best suited for lightweight workloads such as basic web serving, small-scale Redis operations, and simple background utility tasks.",
-  "og_description": "Alibaba Cloud ecs.c5.large is a compute-optimized instance featuring 2 vCPUs, 4.0 GB of RAM, and an Intel Xeon 8163 processor, designed for entry-level dedicated workloads without local storage.",
-  "meta_description": "Alibaba Cloud ecs.c5.large is an entry-level compute-optimized instance with 2 vCPUs, 4.0 GB RAM, and an Intel Xeon 8163 CPU.",
-  "tagline": "A dedicated dual-vCPU compute instance with a balanced memory footprint for lightweight, predictable utility workloads.",
+  "description": "Alibaba Cloud ecs.c5.large is a compute-optimized server equipped with 2 vCPUs derived from 1 physical Intel Xeon 8163 core running at 2.5 GHz. Built on x86_64 architecture with KVM virtualization, it includes 4.0 GB of RAM, a 33 MB L3 cache, and instruction support for AVX-512 and AES. The instance features no bundled local storage and operates with a 1 Gbps network baseline. Performance testing reflects its lightweight hardware profile, producing a PassMark CPU score of 1823.49, a Geekbench multi-core score of 1114.0, and a Redis SET throughput of 1.51 million operations per second. With a 1:2 vCPU-to-RAM ratio, ecs.c5.large offers low resource overhead for light compute workloads. It is best suited for basic microservices, lightweight web servers, background task runners, and small utility instances requiring dedicated CPU resources.",
+  "og_description": "Alibaba Cloud ecs.c5.large is a compute-optimized instance featuring 2 vCPUs on an Intel Xeon 8163 processor, 4.0 GB of RAM, and 1 Gbps network bandwidth for lightweight dedicated compute tasks.",
+  "meta_description": "Alibaba Cloud ecs.c5.large features 2 vCPUs, an Intel Xeon 8163 CPU, 4.0 GB RAM, and a 1 Gbps network baseline for basic compute workloads.",
+  "tagline": "An entry-level compute instance with dual vCPUs, 4 GB RAM, and dedicated execution suited for basic lightweight utility workloads.",
   "bullet_points": [
-    "Intel Xeon 8163 processor with 2 vCPUs and 4.0 GB RAM",
-    "Dedicated CPU allocation with Hyper-Threading enabled",
-    "No local storage or GPU accelerators included",
-    "1 Gbps baseline network bandwidth",
-    "Suited for basic web serving and lightweight Redis caching"
+    "2 vCPUs backed by 1 physical Intel Xeon 8163 core at 2.5 GHz",
+    "4.0 GB RAM with a 1:2 vCPU-to-memory ratio",
+    "No bundled local storage, requiring network block storage",
+    "1 Gbps baseline network bandwidth managed via KVM hypervisor",
+    "Suited for basic microservices, lightweight web serving, and background utilities"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
