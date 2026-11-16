@@ -1,22 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c6r.xlarge is an ARM64-based virtual machine instance powered by a dedicated 4-core Ampere Altra processor running at 2.8 GHz. The instance is configured with 8.0 GB of system memory, providing a resource density of 2.0 GB per vCPU. It operates on a KVM hypervisor and does not include local storage or dedicated GPU hardware. Network connectivity is supported by a baseline bandwidth of 1 Gbps, and the instance does not come with complimentary public IPv4 addresses.",
-    "Benchmark evaluations indicate average performance for compute-intensive tasks, with stress-ng single-core and multi-core CPU tests scoring 1824.29 and 7275.05 respectively. Memory bandwidth tests demonstrate average throughput for large block operations, reaching 55.26 GB/sec for read-only and 31.38 GB/sec for write operations. However, small block cached memory read bandwidth is weaker at 283.44 GB/sec. The instance exhibits weak performance in Geekbench single-core and multi-core tests, as well as in Passmark CPU tests. Cryptographic operations represent a notable bottleneck, with the Passmark CPU encryption test registering a poor score of 649.93.",
-    "Given its dedicated ARM64 architecture and 1:2 vCPU-to-RAM ratio, the ecs.c6r.xlarge offers a cost-efficient entry point for ARM-native development, testing, and lightweight multi-threaded applications. It is suited for workloads such as static web serving, where it achieves a throughput of 5.91 GB/sec, and database operations, which score in the average range. The instance is also capable of handling small-scale language model inference, delivering 99.43 tokens/sec for text generation with a 135M model. It is less suitable for memory-intensive applications or heavy cryptographic processing."
+    "Alibaba Cloud ecs.c6r.xlarge is a compute-optimized instance provisioned on the KVM hypervisor. It features 4 dedicated arm64 vCPUs powered by an Ampere Altra processor operating at 2.8 GHz, paired with 8.0 GB of system memory, yielding a 2.0 GB per vCPU ratio. The instance does not include local disk storage or discrete GPUs, relying on attached block storage, and provides a baseline network bandwidth of 1 Gbps with no complimentary public IPv4 addresses. Hardware capabilities include ARM AES encryption instructions, while x86-specific vector and matrix extensions are absent.",
+    "Benchmark evaluations highlight mixed performance characteristics across different operational profiles. The instance demonstrates average performance in stress-ng single-core and multi-core CPU tests, as well as large-block uncached memory read and write bandwidth. PassMark database operations and text generation throughput for small 135M parameter LLM models also perform in the middle benchmark tier. In contrast, single-threaded workloads including Geekbench processing, gzip compression, bzip3 decompression, and Redis SET throughput fall into lower performance brackets, with PassMark CPU encryption ranking in the lowest percentile tier.",
+    "The instance delivers dedicated ARM processing resources suitable for cost-aware deployment of scaling microservices and ARM-native pipelines. Due to the absence of bundled local storage and modest single-core throughput, Alibaba Cloud ecs.c6r.xlarge is best deployed for containerized workloads, ARM build servers, light web application tiers, and basic database operations."
   ],
-  "description": "Alibaba Cloud ecs.c6r.xlarge is an ARM64-based compute-optimized instance featuring 4 dedicated vCPUs powered by an Ampere Altra processor running at 2.8 GHz. Equipped with 8.0 GB of RAM and operating on a KVM hypervisor, this instance does not include local storage or GPU accelerators. It provides a baseline network bandwidth of 1 Gbps. Performance benchmarks place the instance in the average tier for multi-core CPU tasks and large-block memory bandwidth, though it exhibits weaker results in single-core processing, small-block memory reads, and cryptographic operations. The ecs.c6r.xlarge is qualitatively cost-efficient for ARM-native development, static web serving, and moderate database operations, but is not recommended for memory-heavy or cryptographically intensive workloads.",
-  "og_description": "Alibaba Cloud ecs.c6r.xlarge is an ARM64 instance with 4 dedicated Ampere Altra vCPUs, 8.0 GB RAM, and 1 Gbps network bandwidth, optimized for lightweight ARM-native workloads and web serving.",
-  "meta_description": "Alibaba Cloud ecs.c6r.xlarge is an ARM64 compute-optimized instance with 4 dedicated Ampere Altra vCPUs, 8.0 GB RAM, and KVM virtualization.",
-  "tagline": "A dedicated ARM64 compute-optimized virtual server designed for lightweight multi-threaded applications, static web serving, and cost-efficient software development.",
+  "description": "Alibaba Cloud ecs.c6r.xlarge is a compute-optimized server instance running on a KVM hypervisor. Powered by a 4-vCPU dedicated Ampere Altra arm64 processor clocked at 2.8 GHz, it is equipped with 8.0 GB of RAM, offering a 2.0 GB per vCPU allocation ratio. The server lacks local storage and discrete GPUs, operating with a 1 Gbps baseline network bandwidth. Benchmark results demonstrate average multi-core CPU throughput in stress-ng testing, standard uncached memory bandwidth, and average PassMark database operation rates. Conversely, single-core processing tasks, including Geekbench benchmarks, compression workloads, and PassMark encryption tests, yield lower performance scores. This instance provides uniform ARM execution suited for containerized microservices, ARM native software development, micro-benchmarks, and standard database tasks.",
+  "og_description": "Alibaba Cloud ecs.c6r.xlarge is a compute-optimized arm64 instance with 4 dedicated Ampere Altra vCPUs at 2.8 GHz, 8 GB RAM, and 1 Gbps baseline network speed for containerized and general compute workloads.",
+  "meta_description": "Alibaba Cloud ecs.c6r.xlarge is a compute-optimized instance featuring 4 arm64 Ampere Altra vCPUs, 8 GB RAM, and 1 Gbps network bandwidth.",
+  "tagline": "A compute-optimized ARM64 cloud instance providing four dedicated 2.8 GHz cores and eight gigabytes of RAM for cloud workloads.",
   "bullet_points": [
-    "Powered by 4 dedicated Ampere Altra ARM64 vCPUs at 2.8 GHz",
-    "Configured with 8.0 GB of system memory and 1 Gbps baseline network bandwidth",
-    "Average performance in multi-core CPU benchmarks and large-block memory transfers",
-    "No local storage or GPU hardware included",
-    "Best suited for ARM-native development, static web serving, and moderate database tasks"
+    "Powered by 4 dedicated 2.8 GHz Ampere Altra arm64 vCPUs",
+    "Includes 8.0 GB RAM with a 2.0 GB per vCPU ratio",
+    "Baseline network bandwidth of 1 Gbps without included local storage",
+    "Average stress-ng multi-core CPU and PassMark database operation performance",
+    "Suited for containerized workloads, microservices, and native ARM development"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
