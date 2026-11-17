@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c7.6xlarge is a compute-optimized virtual server instance powered by the KVM hypervisor. It features 24 dedicated vCPUs mapped to 12 physical Intel Xeon 8369B cores running at 2.7 GHz. The system architecture is x86_64, supported by 48 GB of RAM, which yields a compute-focused memory-to-vCPU ratio of 2.0 GB per vCPU. This instance does not include local storage or dedicated GPU hardware, relying instead on external storage solutions and network-attached volumes. Network connectivity is established with a baseline bandwidth of 12 Gbps.",
-    "Benchmark data places the ecs.c7.6xlarge in the average performance tier across most standardized tests. The Intel Xeon processor achieves a single-core stress-ng score of 1884.19 and a multi-core score of 23298.44. In memory performance, it registers a read-only small block cached bandwidth of 1259.99 GB/sec and a large block uncached write bandwidth of 63.06 GB/sec. Notably, the instance demonstrates strong performance in text generation for small language models, reaching 298.93 tokens per second, while maintaining average speeds of 15.37 tokens per second for medium parameter models.",
-    "The primary tradeoff of the ecs.c7.6xlarge is its lack of local SSD storage and GPU acceleration, which limits its utility for heavy data-science training or high-IOPS local database workloads. However, its dedicated CPU allocation and AVX-512 instruction support provide stable, predictable performance for compute-bound tasks. From a cost-efficiency perspective, the 1:2 vCPU-to-RAM ratio offers a resource-dense configuration for workloads that require high processing power without the overhead of excess memory. This makes the instance suitable for web serving, software compilation, multi-threaded decompression, and CPU-based inference tasks."
+    "Alibaba Cloud ecs.c7.6xlarge is a compute-optimized virtual machine powered by a dedicated 2.7 GHz Intel Xeon 8369B processor under the KVM hypervisor. The instance features 24 vCPUs across 12 physical cores with 2 threads per core, combined with 48.0 GB of RAM (2.0 GB per vCPU) and 48 MB of L3 cache. It incorporates instruction set extensions including AVX-512, AVX-512 VNNI, AES, VAES, and SHA_NI. Network connectivity is delivered via a 12 Gbps baseline bandwidth. Local disk storage is not included, requiring network-attached storage for persistent volume requirements.",
+    "Synthetic benchmark evaluations demonstrate balanced compute performance. Multi-core execution achieves a Passmark CPU score of 29,354.86 and a Geekbench multi-core score of 11,562.0. Memory bandwidth reaches 129.31 GB/sec for uncached large-block reads and 63.06 GB/sec for uncached large-block writes. Application tests record 23.57 million Redis SET operations per second and a multi-threaded bzip3 decompression rate of 123.27 GB/sec. Small-scale LLM text generation using a 135M parameter model reaches 298.93 tokens per second, reflecting strong execution efficiency for light inference tasks.",
+    "The 1:2 memory-to-vCPU allocation prioritizes CPU processing density over large RAM buffers, making memory-intensive in-memory data grids less suitable. Furthermore, reliance on remote block storage introduces network latency dependency for I/O operations. The server is well suited for software compilation, web serving clusters, microservices, batch compute pipelines, and small model AI text generation."
   ],
-  "description": "Alibaba Cloud ecs.c7.6xlarge is a compute-optimized virtual server instance utilizing the KVM hypervisor and x86_64 architecture. It is equipped with 24 dedicated vCPUs from an Intel Xeon 8369B processor running at 2.7 GHz, paired with 48 GB of RAM. This configuration establishes a compute-focused 2.0 GB of memory per vCPU. The instance lacks local storage and GPU hardware, but features a baseline network bandwidth of 12 Gbps. Benchmark results indicate average performance across CPU and memory tests, with a notable strength in text generation for small language models, achieving 298.93 tokens per second. The lack of local storage represents a tradeoff, requiring network-attached volumes. This instance is qualitatively cost-efficient for compute-heavy workloads, making it well-suited for software compilation, web serving, and multi-threaded data processing.",
-  "og_description": "Alibaba Cloud ecs.c7.6xlarge is a compute-optimized instance with 24 dedicated Intel Xeon vCPUs, 48 GB RAM, and 12 Gbps network bandwidth, suitable for web serving and compilation.",
-  "meta_description": "Alibaba Cloud ecs.c7.6xlarge is a compute-optimized instance featuring 24 dedicated Intel Xeon vCPUs, 48 GB RAM, and 12 Gbps network bandwidth.",
-  "tagline": "A compute-optimized virtual server featuring dedicated Intel Xeon processors and a balanced memory-to-CPU ratio for high-throughput processing.",
+  "description": "Alibaba Cloud ecs.c7.6xlarge is a compute-optimized instance equipped with 24 dedicated vCPUs on a 2.7 GHz Intel Xeon 8369B processor, 48.0 GB of RAM, and a 12 Gbps baseline network interface. Featuring a 1:2 memory-to-vCPU ratio (2.0 GB per vCPU) and a 48 MB L3 cache, it supports hardware vector and cryptographic instructions including AVX-512 and VNNI. The instance does not bundle local disk storage. Performance testing indicates consistent middle-tier scores, including a Passmark CPU rating of 29,354.86, a Geekbench multi-core score of 11,562.0, and 23.57 million Redis SET operations per second. Small LLM model text generation achieves 298.93 tokens per second. The instance is suited for software compilation, web server fleets, batch data processing, and small-scale model inference.",
+  "og_description": "Alibaba Cloud ecs.c7.6xlarge is a compute-optimized server featuring 24 vCPUs on an Intel Xeon 8369B CPU, 48 GB RAM, and a 12 Gbps baseline network for compile, web, and batch processing workloads.",
+  "meta_description": "Alibaba Cloud ecs.c7.6xlarge features 24 vCPUs Intel Xeon CPU, 48 GB RAM, and 12 Gbps network bandwidth for compute-focused cloud workloads.",
+  "tagline": "Compute-optimized server featuring 24 vCPUs, 48 GB RAM, AVX-512 support, and 12 Gbps network throughput for general processing tasks.",
   "bullet_points": [
-    "24 dedicated vCPUs powered by Intel Xeon 8369B processors at 2.7 GHz",
-    "48 GB of system memory providing a 2.0 GB per vCPU ratio",
-    "12 Gbps baseline network bandwidth for reliable data transfer",
-    "No local storage or GPU accelerators included in the base configuration",
-    "Strong performance in text generation for small language models",
-    "Optimized for software compilation, web serving, and multi-threaded decompression"
+    "24 dedicated vCPUs powered by an Intel Xeon 8369B processor at 2.7 GHz",
+    "48 GB RAM configured with a 1:2 memory-to-vCPU ratio (2.0 GB per vCPU)",
+    "12 Gbps baseline network bandwidth without local disk storage",
+    "Hardware acceleration via AVX-512, AVX-512 VNNI, and cryptographic extensions",
+    "23.57 million Redis SET operations per second and 298.93 tokens/sec on 135M LLM text generation",
+    "Optimized for software compilation, web serving, microservices, and batch compute workloads"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

@@ -1,23 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c7.2xlarge is a compute-optimized virtual machine instance powered by the KVM hypervisor. It features 8 dedicated vCPUs mapped to 4 physical Intel Xeon 8369B cores running at 2.7 GHz on the x86_64 architecture. The instance is configured with 16.0 GB of system memory, yielding a 2.0 GB per core allocation. It includes no local storage or GPU accelerators, relying entirely on network-attached storage, and provides a baseline network bandwidth of 5 Gbps.",
-    "Performance benchmarks indicate solid compute capabilities, with average ratings in stress-ng single-core and multi-core tests. The CPU supports advanced vector extensions and cryptographic acceleration, which assist in workloads like bzip3 decompression and static web serving, both scoring in the average tier. However, memory performance presents a bottleneck; while cached small-block reads reach 418.63 GB/sec, uncached large-block reads and writes drop to 21.36 GB/sec and 23.88 GB/sec respectively, placing them in the poor and weak performance brackets.",
-    "Given its compute-to-memory ratio of 1:2 and dedicated CPU allocation, this instance is qualitatively cost-efficient for CPU-bound tasks that do not require massive memory footprints or local storage. It is well-suited for web serving, software compilation, and light text or image processing. It is less suitable for large-scale database operations or medium-to-large language model inference, where its memory bandwidth and capacity limitations result in poor performance."
+    "Alibaba Cloud ecs.c7.2xlarge is a compute-optimized instance hosted on the KVM hypervisor. It is powered by an Intel Xeon 8369B processor operating at 2.7 GHz, providing 8 dedicated vCPUs distributed across 4 physical cores with 2 threads per core. The server includes 16.0 GB of memory (2.0 GB per core), 48 MB of L3 cache, and extended instruction set support including AVX-512, AVX512_VNNI, AES, and SHA_NI. It operates without local disk storage or GPU hardware, and provides a baseline network bandwidth of 5 Gbps.",
+    "Benchmark evaluations indicate consistent average performance across standard single-core and multi-core CPU workloads, including stress-ng, Geekbench, and PassMark tests. Static web serving throughput and Redis operations also perform within middle-tier expectations. However, hardware benchmarks reveal a tradeoff in memory subsystem efficiency: while small cached memory reads are baseline, uncached memory bandwidth falls into lower percentiles, contributing to weak overall PassMark memory scores and reduced performance during medium 7B model LLM inference.",
+    "Given its 1:2 vCPU-to-RAM resource ratio, the ecs.c7.2xlarge offers dedicated compute allocation suitable for processing tasks that do not depend heavily on high memory bandwidth per core. The server fits workloads such as web application serving, software compilation, bzip3 data decompression, and moderate database operations. Workloads bound by uncached memory throughput or large LLM context windows may encounter execution bottlenecks on this profile."
   ],
-  "description": "Alibaba Cloud ecs.c7.2xlarge is a compute-optimized instance featuring 8 dedicated vCPUs and 16.0 GB of RAM, powered by an Intel Xeon 8369B processor at 2.7 GHz. Built on the x86_64 architecture and KVM hypervisor, it lacks local storage and GPU accelerators, relying on a 5 Gbps baseline network bandwidth. Benchmark data shows average CPU performance in single-core and multi-core stress tests, alongside average web serving and software compilation capabilities. However, uncached memory bandwidth is a notable bottleneck, scoring in the weak to poor ranges. This instance is best suited for compute-bound workloads such as web serving, software compilation, and lightweight data processing, rather than memory-intensive databases or large-scale AI inference.",
-  "og_description": "Alibaba Cloud ecs.c7.2xlarge is a compute-optimized instance with 8 dedicated Intel Xeon vCPUs, 16.0 GB RAM, and 5 Gbps network bandwidth, suitable for web serving and compilation.",
-  "meta_description": "Alibaba Cloud ecs.c7.2xlarge is a compute-optimized instance featuring 8 dedicated Intel Xeon vCPUs, 16.0 GB RAM, and 5 Gbps network bandwidth.",
-  "tagline": "A dedicated compute-optimized instance with balanced CPU performance and moderate memory for web serving and compilation workloads.",
+  "description": "Alibaba Cloud ecs.c7.2xlarge is a compute-optimized server instance powered by an Intel Xeon 8369B processor running at 2.7 GHz. Built on x86_64 architecture with KVM virtualization, it features 8 dedicated vCPUs across 4 physical cores, 16.0 GB of RAM (2.0 GB per core), 48 MB of L3 cache, and a 5 Gbps baseline network bandwidth. The instance lacks local storage and GPU accelerators, relying on network-attached volumes. Benchmarks demonstrate steady average performance in single-core and multi-core CPU operations, software compilation, web serving, and Redis execution. However, uncached memory bandwidth and 7B model LLM inference score in lower performance percentiles, marking a key hardware tradeoff. This configuration fits CPU-focused tasks, web serving, and build jobs rather than memory-bandwidth-heavy applications.",
+  "og_description": "Alibaba Cloud ecs.c7.2xlarge is a compute-optimized server featuring 8 vCPUs on an Intel Xeon 8369B processor, 16 GB RAM, 5 Gbps network bandwidth, and average CPU benchmark performance.",
+  "meta_description": "Alibaba Cloud ecs.c7.2xlarge is a compute-optimized instance with 8 vCPUs, 16 GB RAM, Intel Xeon 8369B CPU, and 5 Gbps network bandwidth.",
+  "tagline": "Compute-focused 8-vCPU instance featuring Intel Xeon architecture, 16 GB memory, 5 Gbps networking, and steady multi-core benchmark throughput.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an Intel Xeon 8369B processor at 2.7 GHz",
-    "16.0 GB of system memory providing a 2.0 GB per core ratio",
-    "5 Gbps baseline network bandwidth with no local storage or GPU",
-    "Average performance in software compilation, web serving, and decompression",
-    "Weak uncached memory bandwidth performance under large-block workloads",
-    "Best suited for web serving, light image processing, and CPU-bound applications"
+    "Powered by an 8-vCPU Intel Xeon 8369B processor running at 2.7 GHz with 48 MB L3 cache",
+    "Configured with 16.0 GB system memory (2.0 GB per vCPU) and 5 Gbps baseline network speed",
+    "Contains no local storage disks and zero GPU hardware accelerators",
+    "Delivers average benchmark results for multi-core CPU tasks, Redis, and web serving",
+    "Shows performance bottlenecks in uncached memory bandwidth and 7B parameter LLM inference",
+    "Appropriate for web serving, build automation, and general compute workloads"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
