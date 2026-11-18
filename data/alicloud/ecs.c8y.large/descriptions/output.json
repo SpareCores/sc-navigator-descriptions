@@ -1,23 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c8y.large is an arm64-based virtual machine instance powered by the custom Alibaba YiTian710 processor from the Yitian family. It features 2 dedicated physical cores and 2 vCPUs running at a clock speed of 2.75 GHz, with no hyperthreading. The instance is equipped with 4.0 GB of system memory, providing 2.0 GB per core. It does not include local storage or dedicated GPU hardware, and operates on a KVM hypervisor with a baseline network bandwidth of 2 Gbps.",
-    "Benchmark evaluations indicate average single-core performance, with a stress-ng single-core score of 1814.78 and a Geekbench single-core score of 1423.0. However, multi-core and specialized workloads show limitations. The multi-core CPU performance is weak, scoring 3598.07 in stress-ng and 2555.0 in Geekbench. Cryptographic and vector instruction sets are limited, resulting in poor Passmark CPU encryption and extended instruction test scores. Memory bandwidth is average for uncached large blocks at 39.5 GB/sec but weak for cached small blocks and write operations.",
-    "Given its 1:2 vCPU-to-RAM ratio, the instance offers a compute-oriented resource density. Qualitatively, it represents a cost-efficient entry point for arm64 architecture testing and lightweight single-threaded tasks, though it presents clear performance tradeoffs in multi-threaded processing, image rendering, and database operations. It is best suited for lightweight web serving, basic text processing, single-threaded utility scripts, and software compilation tasks that do not require high memory capacity or parallel processing power."
+    "Alibaba Cloud ecs.c8y.large is an entry-level compute-optimized instance built on the ARM-based Alibaba Yitian 710 architecture under a KVM hypervisor. It features 2 dedicated physical cores running at 2.75 GHz with 1 thread per core, accompanied by 4.0 GB of RAM (2.0 GB per vCPU), a 64 MB L3 cache, and a 2 Gbps baseline network capacity. The server relies on network storage, containing no attached local SSD storage, and operates without dedicated GPU hardware accelerators.",
+    "Performance data indicates solid single-core efficiency, with single-threaded stress-ng scores reaching 1814.78 and single-core gzip compression achieving 28.49 GB/sec. However, compute throughput is limited by its core count, resulting in lower scores on multi-core stress-ng (3598.07) and Geekbench (2555.0) tests. The platform supports hardware AES instructions but lacks x86 extended instruction sets such as AVX or AMX, which contributes to lower performance in vector-heavy tasks, ray tracing, and extended instruction benchmarks. Large-block memory reads perform adequately at 39.5 GB/sec, while large-block memory writes show lower throughput at 15.07 GB/sec.",
+    "From a qualitative standpoint, the instance delivers predictable execution for lightweight single-threaded workloads on ARM architecture, though memory-dense and high-concurrency tasks are constrained by the 4.0 GB RAM total. Alibaba Cloud ecs.c8y.large is appropriate for basic web serving, modest microservices, light software compilation, and utility tasks that do not require extensive parallel processing."
   ],
-  "description": "Alibaba Cloud ecs.c8y.large is an arm64 virtual server powered by a 2.75 GHz Alibaba YiTian710 processor. It features 2 dedicated vCPUs, 2 physical cores, and 4.0 GB of RAM, running on a KVM hypervisor with 2 Gbps of baseline network bandwidth. The instance does not include local storage or GPU accelerators. Benchmark data shows average single-core CPU and text processing capabilities, but weak multi-core scaling, memory write speeds, and database performance. Cryptographic and vector instruction performance is also limited. Qualitatively, this instance provides a cost-effective entry point for arm64 development and testing. It is best suited for lightweight single-threaded workloads, basic web serving, and simple text processing tasks where high memory capacity and parallel compute scaling are not required.",
-  "og_description": "Alibaba Cloud ecs.c8y.large is an arm64 virtual server with 2 vCPUs, 4.0 GB RAM, and a 2.75 GHz YiTian710 processor, offering entry-level compute performance for lightweight single-threaded workloads.",
-  "meta_description": "Alibaba Cloud ecs.c8y.large is an arm64 virtual server featuring 2 vCPUs, 4.0 GB RAM, and a 2.75 GHz YiTian710 processor on a KVM hypervisor.",
-  "tagline": "An entry-level arm64 virtual server featuring dedicated custom silicon for lightweight single-threaded workloads and basic utility tasks.",
+  "description": "Alibaba Cloud ecs.c8y.large is an arm64 compute instance powered by a 2.75 GHz Alibaba Yitian 710 processor. It is configured with 2 dedicated physical CPU cores, 4.0 GB of RAM, a 64 MB L3 cache, and 2 Gbps baseline network bandwidth, with zero local SSD storage or GPU acceleration. Performance evaluation highlights strong single-threaded output, including solid results in single-core CPU stress and compression benchmarks. However, multi-core scaling, memory write throughput, and extended instruction processing are limited by the two-core configuration and lack of AVX vector extensions. Given its compact RAM allocation and predictable single-thread execution, Alibaba Cloud ecs.c8y.large is suitable for lightweight web serving, simple microservices, basic build environments, and background processing tasks.",
+  "og_description": "Alibaba Cloud ecs.c8y.large is an arm64 instance with 2 Yitian 710 cores, 4 GB RAM, and 2 Gbps networking. It delivers consistent single-threaded compute for light microservices and utilities.",
+  "meta_description": "Alibaba Cloud ecs.c8y.large is an ARM-based compute instance with 2 Yitian 710 cores, 4 GB RAM, and 2 Gbps network bandwidth.",
+  "tagline": "An arm64 compute instance featuring two dedicated Yitian 710 cores and 4 GB RAM for lightweight services and microservices.",
   "bullet_points": [
-    "Powered by a 2.75 GHz Alibaba YiTian710 arm64 processor",
-    "2 dedicated vCPUs and 4.0 GB of system memory",
-    "KVM hypervisor with 2 Gbps baseline network bandwidth",
-    "Average single-core CPU and text processing benchmark performance",
-    "No bundled local storage or GPU hardware",
-    "Best suited for lightweight web serving and arm64 development testing"
+    "Powered by 2 dedicated Alibaba Yitian 710 arm64 cores running at 2.75 GHz",
+    "Configured with 4.0 GB memory (2.0 GB per core) and 64 MB L3 cache",
+    "Features 2 Gbps baseline network bandwidth without local SSD storage",
+    "Solid single-thread compute performance paired with modest multi-core capacity",
+    "Optimal for lightweight microservices, small web servers, and basic background tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
