@@ -112,8 +112,6 @@ def main(n, max_minutes):
             f.write(system_prompt)
         with open(folder / "user_prompt.md", "w") as f:
             f.write(user_prompt)
-        with open(folder / "hashes.json", "w") as f:
-            f.write(dumps(hashes, indent=2))
 
         logger.debug(f"Generating summary via LLM for server: {server.name}")
         summary = generate_summary(server_dict)
@@ -121,6 +119,9 @@ def main(n, max_minutes):
         logger.info(f"Generated summary for server: {server.name}")
         with open(folder / "output.json", "w") as f:
             f.write(dumps(summary.model_dump(mode="json"), indent=2))
+        # written last, so a failed LLM call is retried on the next run
+        with open(folder / "hashes.json", "w") as f:
+            f.write(dumps(hashes, indent=2))
 
     logger.info(f"Finished with {llm_calls} LLM calls across {total} server(s).")
 
