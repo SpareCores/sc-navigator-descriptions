@@ -3,42 +3,17 @@ Helper functions for building server payloads and calling the LLM.
 """
 
 import logging
-import warnings
 from functools import cache
 from json import dumps
 
 import numpy as np
+from instructor.v2.core.errors import InstructorRetryException
 
 from . import config, database
 from .config import INTERESTING_BENCHMARKS, INTERESTING_CPU_FLAGS, MODEL_CONFIG
 from .models import ServerSummary
 
 logger = logging.getLogger(__name__)
-_validation_failures: list[Exception] = []
-
-
-def _log_parse_error(error: Exception) -> None:
-    attempt = len(_validation_failures) + 1
-    _validation_failures.append(error)
-    logger.warning(
-        "LLM response validation failed (attempt %d of %d): %s",
-        attempt,
-        MODEL_CONFIG["max_retries"],
-        error,
-    )
-
-
-def _log_last_attempt(error: Exception) -> None:
-    logger.error(
-        "LLM response validation failed on final attempt (%d of %d): %s",
-        len(_validation_failures),
-        MODEL_CONFIG["max_retries"],
-        error,
-    )
-
-
-config.client.on("parse:error", _log_parse_error)
-config.client.on("completion:last_attempt", _log_last_attempt)
 
 
 def _categorized_cpu_flags(server_flags) -> dict:
@@ -226,34 +201,45 @@ def build_server_payload(server, price) -> dict:
 
 
 def generate_summary(server_dict: dict) -> ServerSummary:
-    """Call LLM to produce ServerSummary from server payload."""
-    _validation_failures.clear()
-    with warnings.catch_warnings():
-        # google-genai pydantic types warn when serializing reask contents
-        warnings.filterwarnings(
-            "ignore",
-            message="Pydantic serializer warnings:",
-            category=UserWarning,
-            module="pydantic.main",
-        )
-        summary = config.client.create(
-            response_model=ServerSummary,
-            messages=[
-                {"role": "system", "content": config.system_prompt},
-                {
-                    "role": "user",
-                    "content": config.user_prompt + dumps(server_dict, indent=2),
+    """Call LLM to produce ServerSummary from server payload.
+
+    Retries are handled here instead of by instructor, because instructor's
+    Gemini reask sends the validation error as a model turn, which the API
+    rejects with "Requests ending with a model turn are not supported".
+
+    TODO: drop this manual retry loop and go back to instructor's own
+    `max_retries` once instructor 1.18 is released, which includes the fix
+    for https://github.com/567-labs/instructor/issues/2631
+    """
+    messages = [
+        {"role": "system", "content": config.system_prompt},
+        {"role": "user", "content": config.user_prompt + dumps(server_dict, indent=2)},
+    ]
+    max_attempts = MODEL_CONFIG["max_retries"]
+    for attempt in range(1, max_attempts + 1):
+        try:
+            return config.client.create(
+                response_model=ServerSummary,
+                messages=messages,
+                generation_config={
+                    "temperature": MODEL_CONFIG["temperature"],
+                    "top_p": MODEL_CONFIG["top_p"],
                 },
-            ],
-            generation_config={
-                "temperature": MODEL_CONFIG["temperature"],
-                "top_p": MODEL_CONFIG["top_p"],
-            },
-            max_retries=MODEL_CONFIG["max_retries"],
-        )
-    if _validation_failures:
-        logger.debug(
-            "LLM response validated after %d failed attempt(s)",
-            len(_validation_failures),
-        )
-    return summary
+                max_retries=1,
+            )
+        except InstructorRetryException as e:
+            error = e.failed_attempts[-1].exception if e.failed_attempts else e
+            logger.warning(
+                "LLM call failed (attempt %d of %d): %s", attempt, max_attempts, error
+            )
+            if attempt == max_attempts:
+                raise
+            if e.last_completion is not None and e.last_completion.text:
+                messages.append({"role": "model", "content": e.last_completion.text})
+                messages.append(
+                    {
+                        "role": "user",
+                        "content": f"Your previous response failed validation:\n{error}\n"
+                        "Fix these errors and respond again.",
+                    }
+                )
