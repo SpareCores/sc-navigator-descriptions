@@ -225,7 +225,7 @@ def generate_summary(server_dict: dict) -> ServerSummary:
                     "temperature": MODEL_CONFIG["temperature"],
                     "top_p": MODEL_CONFIG["top_p"],
                 },
-                max_retries=1,
+                max_retries=0,  # a single attempt, retries are handled by this loop
             )
         except InstructorRetryException as e:
             error = e.failed_attempts[-1].exception if e.failed_attempts else e
