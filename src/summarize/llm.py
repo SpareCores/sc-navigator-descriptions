@@ -92,7 +92,7 @@ def list_batches() -> list:
     ]
 
 
-def submit_batch(requests: dict[str, dict]) -> None:
+def submit_batch(requests: dict[str, dict]):
     """Upload the requests (keyed by an id) as JSONL and start a batch job."""
     with TemporaryDirectory() as tmp:
         path = Path(tmp) / "requests.jsonl"
@@ -109,7 +109,7 @@ def submit_batch(requests: dict[str, dict]) -> None:
         src=uploaded.name,
         config={"display_name": BATCH_PREFIX},
     )
-    logger.info(f"Submitted batch job {job.name} with {len(requests)} request(s)")
+    return job
 
 
 def batch_results(job) -> dict[str, str | None]:

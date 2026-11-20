@@ -149,6 +149,7 @@ def main(n, status, sync):
         logger.info(f"Saved {saved} description(s)")
         return
 
+    retried = set()
     for job in jobs:
         if job.state in llm.BATCH_DONE_OK:
             results = llm.batch_results(job)
@@ -156,9 +157,13 @@ def main(n, status, sync):
             # results for servers that changed since submitting the job are
             # skipped, and failed ones stay outdated to be submitted again below
             for key, text in results.items():
-                if key in outdated and save(outdated[key], text):
+                if key not in outdated:
+                    continue
+                if save(outdated[key], text):
                     del outdated[key]
                     saved += 1
+                else:
+                    retried.add(key)
             logger.info(
                 f"Saved {saved} description(s) from {len(results)} result(s) "
                 f"of batch job {job.name}"
@@ -168,11 +173,15 @@ def main(n, status, sync):
         llm.delete_batch(job)
 
     if outdated:
-        llm.submit_batch(
+        job = llm.submit_batch(
             {
                 key: llm.build_request(server["input"])
                 for key, server in outdated.items()
             }
+        )
+        logger.info(
+            f"Submitted batch job {job.name} with {len(outdated)} request(s): "
+            f"{len(retried)} retried, {len(outdated) - len(retried)} new"
         )
 
 
