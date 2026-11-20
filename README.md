@@ -2,7 +2,7 @@
 
 This repository contains AI-assisted descriptions of the Spare Cores Navigator database records.
 
-The descriptions are generated using the Gemini 3.5 Flash model utilizing
+The descriptions are generated using the Gemini 3.8 Flash model utilizing
 
 - a low temperature,
 - strictly constrained system and user prompts, and
@@ -17,6 +17,12 @@ The repository is updated via the following Python script:
 ```shell
 python -m src.summarize.generate
 ```
+
+It uses the Gemini Batch API, which can take hours to complete, so each run
+collects the results of the finished batch jobs, then submits a new batch job
+with all outdated descriptions if no other job is in progress. It runs hourly
+via GitHub Actions. Use `--sync` to call the API directly instead, e.g. with
+`-n 5` for a quick test on the first 5 servers.
 
 All utilized inputs (including server and benchmark details, user and system
 prompts, and model configuration) are stored in the repository for

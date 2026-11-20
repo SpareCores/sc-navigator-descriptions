@@ -1,19 +1,13 @@
 """
-Helper functions for building server payloads and calling the LLM.
+Helper functions for building server payloads.
 """
 
-import logging
 from functools import cache
-from json import dumps
 
 import numpy as np
-from instructor.v2.core.errors import InstructorRetryException
 
-from . import config, database
-from .config import INTERESTING_BENCHMARKS, INTERESTING_CPU_FLAGS, MODEL_CONFIG
-from .models import ServerSummary
-
-logger = logging.getLogger(__name__)
+from . import database
+from .config import INTERESTING_BENCHMARKS, INTERESTING_CPU_FLAGS
 
 
 def _categorized_cpu_flags(server_flags) -> dict:
@@ -198,48 +192,3 @@ def build_server_payload(server, price) -> dict:
             "category": category,
         }
     return {k: v for k, v in server_dict.items() if v is not None}
-
-
-def generate_summary(server_dict: dict) -> ServerSummary:
-    """Call LLM to produce ServerSummary from server payload.
-
-    Retries are handled here instead of by instructor, because instructor's
-    Gemini reask sends the validation error as a model turn, which the API
-    rejects with "Requests ending with a model turn are not supported".
-
-    TODO: drop this manual retry loop and go back to instructor's own
-    `max_retries` once instructor 1.18 is released, which includes the fix
-    for https://github.com/567-labs/instructor/issues/2631
-    """
-    messages = [
-        {"role": "system", "content": config.system_prompt},
-        {"role": "user", "content": config.user_prompt + dumps(server_dict, indent=2)},
-    ]
-    max_attempts = MODEL_CONFIG["max_retries"]
-    for attempt in range(1, max_attempts + 1):
-        try:
-            return config.client.create(
-                response_model=ServerSummary,
-                messages=messages,
-                generation_config={
-                    "temperature": MODEL_CONFIG["temperature"],
-                    "top_p": MODEL_CONFIG["top_p"],
-                },
-                max_retries=0,  # a single attempt, retries are handled by this loop
-            )
-        except InstructorRetryException as e:
-            error = e.failed_attempts[-1].exception if e.failed_attempts else e
-            logger.warning(
-                "LLM call failed (attempt %d of %d): %s", attempt, max_attempts, error
-            )
-            if attempt == max_attempts:
-                raise
-            if e.last_completion is not None and e.last_completion.text:
-                messages.append({"role": "model", "content": e.last_completion.text})
-                messages.append(
-                    {
-                        "role": "user",
-                        "content": f"Your previous response failed validation:\n{error}\n"
-                        "Fix these errors and respond again.",
-                    }
-                )

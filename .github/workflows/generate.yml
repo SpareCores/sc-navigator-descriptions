@@ -3,7 +3,12 @@ name: Generate descriptions
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * *"
+    # hourly, to collect finished batch jobs and submit new ones
+    - cron: "17 * * * *"
+
+concurrency:
+  group: generate-descriptions
+  cancel-in-progress: false
 
 jobs:
   generate:
@@ -30,16 +35,18 @@ jobs:
           uv pip install -r requirements.txt
 
       - name: Generate descriptions
-        continue-on-error: true
-        run: uv run python -m src.summarize.generate --max-minutes 300
+        run: uv run python -m src.summarize.generate
 
+      # commit what was saved even if the script failed later, but still fail the job
       - name: Count described instances
+        if: ${{ !cancelled() }}
         id: count
         run: |
           count=$(git status --porcelain --untracked-files=all | grep -c '/output\.json$' || true)
           echo "count=$count" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push changes
+        if: ${{ !cancelled() }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Describe ${{ steps.count.outputs.count }} server instance(s)"
