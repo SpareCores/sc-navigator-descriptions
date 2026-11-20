@@ -1,22 +1,21 @@
 {
   "page": [
-    "Microsoft Azure E4-2s_v6 is an x86_64 memory-optimized virtual machine belonging to the Esv6 server family. It features 2 dedicated vCPUs mapped to 1 physical Intel Xeon 8573C core running at 4.2 GHz with hyper-threading enabled. The system is equipped with 32.0 GB of RAM, yielding a high memory-to-core ratio of 16.0 GB per core. It does not include local storage or integrated GPUs, but it is Premium Storage capable.",
-    "Benchmark results show a divergence between single-core and multi-core performance. The single-core Geekbench score is strong at 2146.0, and single-threaded gzip compression and bzip3 decompression perform at average levels. However, multi-core benchmarks are limited by the 2-vCPU configuration, with stress-ng multi-core performance and Geekbench multi-core scores categorized as poor and weak respectively. Memory bandwidth tests also show weak to poor performance, with large-block read-only bandwidth at 21.51 GB/sec and write bandwidth at 14.37 GB/sec.",
-    "Given the high memory allocation relative to the limited compute capacity, this server is configured for memory-bound workloads that do not require high parallel processing power. It is suitable for small-scale database operations, caching layers, and lightweight text processing. The lack of local storage and weak multi-threaded performance represent clear tradeoffs, making it less suitable for intensive compilation, ray tracing, or large-scale LLM inference. Qualitatively, it offers high memory density per vCPU, providing a cost-efficient option for memory-heavy applications that would otherwise require provisioning larger, more expensive compute instances."
+    "Microsoft Azure E4-2s_v6 is a memory-optimized virtual machine featuring a constrained core configuration. It provides 2 dedicated vCPUs derived from 1 physical core of an Intel Xeon 8573C processor operating at 4.2 GHz on the x86_64 architecture. The platform includes advanced instruction support such as AVX-512, AMX, and SHA-NI alongside 260 MB of L3 cache. Memory allocation is set at 32.0 GB, yielding a high ratio of 16.0 GB per vCPU. The instance does not bundle local ephemeral storage or GPU acceleration, requiring network-attached storage for filesystem persistence.",
+    "Benchmark evaluations reflect the single-core focus of the underlying hardware. The processor delivers strong single-threaded throughput, reaching a Geekbench single-core score of 2146.0. However, multi-core capacity is fundamentally constrained by the two-thread ceiling, reflected in a Geekbench multi-core score of 2638.0 and a stress-ng multi-core measurement of 1992.69. Large-block uncached memory operations register at 21.51 GB/sec for read bandwidth and 14.37 GB/sec for write bandwidth, while cached read operations reach 154.9 GB/sec.",
+    "From an architectural standpoint, the instance offers qualitative cost efficiency for memory-bound applications subject to per-core software licensing. By restricting execution to 2 vCPUs over 32.0 GB of RAM, it avoids unnecessary licensing fees while providing high memory headroom. The primary tradeoff lies in constrained computational parallelism and the absence of bundled local disks. Best-fit workloads include memory-heavy relational databases, in-memory key-value caches such as Redis, and lightweight ETL pipeline tasks."
   ],
-  "description": "Microsoft Azure E4-2s_v6 is an x86_64 memory-optimized virtual machine from the Esv6 family. It features 2 dedicated vCPUs powered by a single physical Intel Xeon 8573C core running at 4.2 GHz, paired with 32.0 GB of RAM. This configuration provides a high memory-to-core ratio of 16.0 GB per core. The server lacks local storage and integrated GPUs, relying on external Premium Storage. Performance benchmarks reveal a strong single-core Geekbench score of 2146.0, though multi-core and memory bandwidth metrics are weak to poor due to the limited 2-vCPU allocation. This server is suited for memory-intensive, low-compute workloads such as small database operations, caching, and basic text processing, offering a qualitative advantage in memory density without the cost of unneeded CPU cores.",
-  "og_description": "Microsoft Azure E4-2s_v6 is a memory-optimized VM featuring 2 dedicated Intel Xeon vCPUs and 32 GB of RAM. It is designed for memory-intensive, low-compute workloads requiring high memory-to-core ratios.",
-  "meta_description": "Microsoft Azure E4-2s_v6 is an Intel-powered, memory-optimized VM with 2 vCPUs and 32 GB RAM, designed for memory-heavy, low-compute workloads.",
-  "tagline": "A memory-optimized virtual machine featuring a high memory-to-core ratio for memory-intensive workloads requiring minimal parallel compute capacity.",
+  "description": "Microsoft Azure E4-2s_v6 is a memory-optimized virtual machine configured with 2 dedicated vCPUs backed by 1 physical core of an Intel Xeon 8573C processor running at 4.2 GHz. The instance delivers 32.0 GB of system memory, providing a high ratio of 16.0 GB per vCPU, with no bundled local storage or hardware accelerators. In benchmark testing, the high CPU clock speed produces strong single-core performance, marked by a Geekbench single-core score of 2146.0. Conversely, overall compute capacity is restricted by the two-thread limit, as seen in a Geekbench multi-core score of 2638.0. Large-block uncached memory read bandwidth measures 21.51 GB/sec and write bandwidth is 14.37 GB/sec. This configuration is structurally suited for core-licensed database deployments, in-memory caching systems, and lightweight data-processing tasks that demand high memory capacity relative to compute threads.",
+  "og_description": "Microsoft Azure E4-2s_v6 is a memory-optimized VM providing 2 vCPUs from an Intel Xeon 8573C CPU and 32 GB RAM. It targets memory-heavy applications requiring minimal core footprint without local storage.",
+  "meta_description": "Microsoft Azure E4-2s_v6 is a memory-optimized VM offering 2 vCPUs from an Intel Xeon 8573C processor and 32 GB RAM with no local storage.",
+  "tagline": "High memory density virtual instance pairing thirty-two gigabytes of RAM with two dedicated vCPUs for core-constrained in-memory workloads.",
   "bullet_points": [
-    "Intel Xeon 8573C processor running at 4.2 GHz",
-    "32.0 GB of RAM providing 16.0 GB per core",
-    "Strong single-core performance paired with weak multi-core scaling",
-    "No local storage, requiring external Premium Storage",
-    "Suited for small database operations, caching, and text processing"
+    "2 dedicated vCPUs from 1 physical Intel Xeon 8573C core at 4.2 GHz",
+    "32.0 GB total system memory providing 16.0 GB per vCPU",
+    "Strong single-thread performance paired with constrained multi-core throughput",
+    "No bundled local storage or integrated GPU accelerators",
+    "Tailored for in-memory caches, core-licensed databases, and lightweight ETL"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

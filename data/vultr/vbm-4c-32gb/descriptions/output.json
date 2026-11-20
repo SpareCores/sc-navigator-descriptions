@@ -1,21 +1,23 @@
 {
   "page": [
-    "Vultr vbm-4c-32gb is a bare metal server belonging to the Bare Metal SSD family. It features an Intel Xeon 1270 processor with 4 physical cores and 8 vCPUs utilizing the x86_64 architecture. The CPU operates at a clock speed of 3.8 GHz with dedicated allocation, supported by 32.0 GB of system memory, which equates to 4.0 GB per core. Local storage consists of a 480 GB SSD, and the configuration includes one complimentary public IPv4 address. There are no GPUs bundled with this server.",
-    "Benchmark data indicates average performance across most standard compute tasks. The single-core and multi-core stress-ng CPU benchmarks fall into the middle 50% tier, as do the Geekbench single-core and multi-core scores. While the PassMark memory score is in the top 10% tier, memory bandwidth tests reveal a significant performance tradeoff: read-only small block cached bandwidth is average at 494.72 GB/sec, but large block uncached read and write bandwidths drop to the bottom 25% tier at 31.11 GB/sec and 14.73 GB/sec, respectively. Similarly, LLM inference performance is average for small 135M models but drops to poor for medium 7B models.",
-    "From a cost-efficiency perspective, the dedicated bare metal resources provide predictable compute performance without virtualization overhead. Given the balanced 1:4 vCPU-to-RAM ratio and average database operations benchmark of 3949.12 on PassMark, this server is suited for general-purpose workloads, static web serving, software compilation, and lightweight database operations. It is less suitable for memory-intensive large-block data processing or medium-to-large LLM inference tasks."
+    "The Vultr vbm-4c-32gb is a dedicated bare metal server belonging to the Bare Metal SSD family. It runs on a dedicated 4-core, 8-thread Intel Xeon E3-1270 processor built on x86_64 architecture with a base clock speed of 3.8 GHz. The CPU features 8 MB of L3 cache, 0.25 MB of L2 cache, and supports AVX, AES-NI, and BMI2 instruction sets, though it lacks newer vector extensions like AVX-512 or AMX. The instance is bundled with 32.0 GB of memory (4.0 GB per core) and a 480 GB local SSD. It includes no hardware GPUs and comes with one complimentary public IPv4 address.",
+    "Benchmark results place the processing capabilities of the vbm-4c-32gb in the middle range across general compute tasks, yielding a Geekbench single-core score of 1509.0, a multi-core score of 5137.0, and a PassMark CPU score of 9737.8. In PassMark memory testing, the server achieves a top-tier score of 3192.31, supported by high cached memory bandwidth of 494.72 GB/sec. However, raw uncached large-block read (31.11 GB/sec) and write (14.73 GB/sec) bandwidth tests reflect lower performance tiers, and the PassMark physics score of 717.17 falls into the lower 25th percentile.",
+    "Without GPU acceleration, the platform shows severe constraints in compute-heavy AI tasks; medium model (7B) inference registers just 16.42 tokens/sec for prompt processing and 6.87 tokens/sec for generation. Conversely, it handles lightweight and I/O-centric server workloads efficiently, processing 8.08 million Redis SET operations per second and maintaining 7.05 GB/sec static web serving throughput.",
+    "The Vultr vbm-4c-32gb serves as a dedicated single-tenant host balancing 4 dedicated CPU cores against 32 GB of RAM. It is suited for workloads requiring single-tenant isolation without hypervisor overhead, including standalone web applications, mid-sized relational databases, caching layers, and continuous integration pipelines."
   ],
-  "description": "Vultr vbm-4c-32gb is a bare metal server in the Bare Metal SSD family, powered by an Intel Xeon 1270 x86_64 processor with 4 physical cores, 8 vCPUs, and a 3.8 GHz clock speed. It features 32.0 GB of RAM and a 480 GB local SSD, with no GPU acceleration. Performance benchmarks place this server in the middle tier for most compute and database operations, including a PassMark CPU score of 9737.8 and static web serving throughput of 7.05 GB/sec. While its PassMark memory score ranks in the top 10%, uncached large-block memory bandwidth is a notable tradeoff, falling into the bottom 25%. This server provides dedicated, non-virtualized hardware resources, making it a viable option for general-purpose workloads, static web serving, software compilation, and moderate database operations that do not require massive memory bandwidth.",
-  "og_description": "Vultr vbm-4c-32gb is a bare metal server featuring an Intel Xeon 1270 CPU with 8 vCPUs, 32 GB RAM, and a 480 GB SSD. It delivers average compute performance and is suited for general-purpose workloads.",
-  "meta_description": "Vultr vbm-4c-32gb is a bare metal server with an Intel Xeon 1270 CPU, 8 vCPUs, 32 GB RAM, and 480 GB SSD, designed for general-purpose workloads.",
-  "tagline": "A dedicated bare metal server with balanced compute and memory resources for general-purpose workloads and static web serving.",
+  "description": "The Vultr vbm-4c-32gb is a bare metal server powered by a dedicated 4-core, 8-thread Intel Xeon 1270 processor running at 3.8 GHz on the x86_64 architecture. Configured with 32.0 GB of RAM and 480 GB of local SSD storage, it excludes GPU acceleration and operates without virtualization overhead. Benchmark metrics show reliable performance in general CPU and memory evaluation, recording a PassMark CPU score of 9737.8, a Geekbench multi-core score of 5137.0, and a high-tier PassMark memory score of 3192.31. Memory throughput shows weakness in large-block uncached read and write benchmarks, and LLM inference tasks are constrained by the absence of hardware accelerators. With steady static web throughput of 7.05 GB/sec and 8.08 million Redis SET operations per second, this server is suitable for dedicated web hosting, relational databases, and caching infrastructure.",
+  "og_description": "Vultr vbm-4c-32gb is a bare metal server with a 4-core 3.8 GHz Intel Xeon CPU, 32 GB RAM, and 480 GB SSD storage, offering dedicated hardware for web hosting and caching workloads.",
+  "meta_description": "Vultr vbm-4c-32gb bare metal server features a 4-core Intel Xeon 1270 CPU, 32 GB RAM, and a 480 GB SSD for dedicated single-tenant workloads.",
+  "tagline": "Dedicated bare metal server offering quad-core Intel Xeon compute, 32 GB memory, and bundled local SSD storage.",
   "bullet_points": [
-    "Intel Xeon 1270 processor with 4 physical cores, 8 vCPUs, and 3.8 GHz clock speed",
-    "32.0 GB of system memory and a local 480 GB SSD",
-    "Top-tier PassMark memory score contrasted by lower uncached large-block bandwidth",
-    "Average performance for software compilation, static web serving, and database operations",
-    "Suited for general-purpose applications, web serving, and lightweight databases"
+    "Dedicated 4-core, 8-thread Intel Xeon 1270 processor clocked at 3.8 GHz",
+    "32.0 GB system memory (4.0 GB per core) with top-tier PassMark memory scores",
+    "Integrated 480 GB local SSD storage without GPU acceleration",
+    "Delivers 8.08 million Redis SET ops/sec and 7.05 GB/sec static web serving throughput",
+    "Well suited for isolated web serving, database hosting, and caching tiers"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

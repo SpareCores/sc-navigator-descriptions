@@ -1,22 +1,23 @@
 {
   "page": [
-    "OVHcloud r2-30 is a memory-optimized virtual server instance running on the KVM hypervisor. It features an x86_64 architecture powered by a dedicated Intel processor based on the Haswell microarchitecture with 2 physical cores and 2 vCPUs running at 2.2 GHz. The system is equipped with 30.0 GB of RAM, providing a high memory-to-core ratio of 15.0 GB per core. Local storage consists of a bundled 50 GB SSD, and the instance includes one complimentary public IPv4 address.",
-    "Benchmark results indicate that the r2-30 sits in the lower performance tiers. Both single-core and multi-core CPU benchmarks, such as stress-ng and Geekbench, place the instance in the bottom 10% of tested hardware. Memory bandwidth tests show weak to poor performance, with cached small-block reads reaching 175.97 GB/sec and uncached large-block reads and writes falling into the bottom 10% at 7.81 GB/sec and 10.54 GB/sec respectively. Database and caching operations, such as Redis SET, perform in the bottom 25% with 2.93 million operations per second.",
-    "From a cost-efficiency perspective, the r2-30 offers a high memory capacity relative to its compute resources, making it a budget-friendly option for memory-bound workloads that do not require high CPU performance. The trade-off is the older Intel Haswell CPU architecture and lower overall processing throughput. This instance is best suited for workloads such as lightweight database hosting, caching layers, memory-intensive background workers, or basic web serving where memory capacity is prioritized over raw computational speed."
+    "OVHcloud r2-30 is a memory-optimized virtual instance built on the KVM hypervisor. The instance is powered by an x86_64 Intel Haswell-generation processor running at a baseline clock rate of 2.2 GHz. The compute allocation consists of two dedicated physical cores mapped to two vCPUs with single-threaded execution at one thread per core. Cache configuration includes 32 KB of L1 data cache, 4 MB of L2 cache, and 16 MB of shared L3 cache. Instruction set extensions include AVX, AES, BMI2, and FMA, while newer instructions like AVX-512 are not present.",
+    "The server delivers a prominent memory allocation of 30.0 GB of RAM, amounting to 15.0 GB per vCPU. Storage is bundled as a local 50 GB SSD volume. The instance includes no GPU acceleration hardware. Baseline network bandwidth is reported at 0 Gbps, and no complimentary public IPv4 addresses are provisioned by default.",
+    "Empirical benchmark results demonstrate that computational throughput is limited by the dual-core topology and legacy CPU architecture. Synthetic compute scores placed the system in the lower percentiles, with multi-core Geekbench scoring 1760.0 and stress-ng multi-core reaching 1680.04. Memory bandwidth metrics indicate high throughput for cached 16 KB read blocks at 175.97 GB/sec, dropping to 7.81 GB/sec for uncached 256 MB reads and 10.54 GB/sec for writes. In workload-specific benchmarks, the server achieved 2.93 million Redis SET operations per second and 2.49 GB/sec in static web serving throughput.",
+    "From an infrastructure perspective, r2-30 delivers cost-efficient RAM capacity for applications requiring large working sets with modest compute demands. The system is suited for in-memory key-value stores such as Redis, caching layers, small database read replicas, and light ETL pipelines where memory density takes priority over processing speed."
   ],
-  "description": "OVHcloud r2-30 is a memory-optimized virtual server instance running on the KVM hypervisor. It features an x86_64 Intel Haswell processor with 2 dedicated physical cores running at 2.2 GHz, paired with 30.0 GB of RAM and a bundled 50 GB SSD. The instance provides a high memory-to-core ratio of 15.0 GB per core, though its overall performance profile is modest. Benchmark results place both its single-core and multi-core CPU performance in the bottom 10%, while memory bandwidth and database operations rank in the bottom 10% to 25%. This server represents a budget-friendly option for memory-heavy workloads that do not demand high CPU throughput. It is best suited for lightweight databases, caching layers, and memory-intensive background tasks.",
-  "og_description": "OVHcloud r2-30 is a memory-optimized KVM instance featuring 2 dedicated Intel Haswell vCPUs, 30 GB of RAM, and a 50 GB SSD, designed for budget-friendly, memory-intensive workloads with modest CPU requirements.",
-  "meta_description": "OVHcloud r2-30 is a memory-optimized KVM instance with 2 Intel vCPUs, 30 GB RAM, and a 50 GB SSD, ideal for lightweight, memory-heavy workloads.",
-  "tagline": "A budget-friendly virtual server offering high memory density relative to compute resources for memory-bound, low-CPU workloads.",
+  "description": "OVHcloud r2-30 is a memory-optimized cloud server offering a dedicated dual-core Intel Haswell processor clocked at 2.2 GHz alongside 30 GB of RAM and 50 GB of local SSD storage. Hosted on the KVM hypervisor, each of the two vCPUs corresponds to a dedicated physical core without hyperthreading. The server emphasizes memory density, delivering 15 GB of RAM per core, but shows constrained computational throughput due to its dual-core topology and older processor microarchitecture. Benchmark evaluations place multi-core CPU metrics, including Geekbench (1760.0) and stress-ng (1680.04), within the bottom decile of tested systems, while uncached memory bandwidth reaches 7.81 GB/sec read and 10.54 GB/sec write. With no GPU acceleration and bundled local storage, r2-30 is designed for memory-intensive but compute-light applications such as dedicated Redis caching, memory-mapped data ingestion, and small transactional databases.",
+  "og_description": "OVHcloud r2-30 is a memory-optimized cloud server with 2 dedicated Intel Haswell vCPUs at 2.2 GHz, 30 GB of RAM, and 50 GB of SSD storage, designed for RAM-heavy, low-compute workloads.",
+  "meta_description": "OVHcloud r2-30 is a memory-optimized virtual machine featuring 2 dedicated Intel vCPUs, 30 GB of RAM, and 50 GB of local SSD storage.",
+  "tagline": "A dual-core virtual server pairing 30 GB of system RAM with local SSD storage for memory-intensive caching and lightweight database services.",
   "bullet_points": [
-    "2 dedicated Intel Haswell vCPUs running at 2.2 GHz",
-    "30.0 GB of RAM providing 15.0 GB per core",
-    "Bundled 50 GB local SSD storage",
-    "High memory-to-vCPU ratio for budget-conscious deployments",
-    "Best suited for lightweight databases, caching, and memory-heavy background tasks"
+    "2 dedicated Intel Haswell vCPUs at 2.2 GHz with one thread per core",
+    "30 GB system memory providing 15 GB per dedicated vCPU core",
+    "50 GB local SSD storage with zero discrete GPU accelerators",
+    "Tailored for Redis caching layers and memory-centric database replicas",
+    "Benchmark results show constrained compute performance alongside stable cached memory throughput"
   ],
   "categories": [
     "Memory Optimized",
-    "Burstable & Budget"
+    "Storage & Database"
   ]
 }

@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D2alds_v6 is an x86_64 architecture server belonging to the Daldv6 family. It features 2 vCPUs mapped to 1 physical AMD EPYC 9V74 core with 2 threads per core under Microsoft Hyper-V virtualization. The CPU operates at a clock speed of 3.7 GHz, supported by 32 KB L1d, 1.0 MB L2, and 32 MB L3 cache. It is configured with 4.0 GB of system memory, yielding a 2.0 GB per core ratio.",
-    "The server includes 118 GB of local NVMe SSD storage and is Premium Storage capable. In benchmark testing, the single-core performance is strong, with a stress-ng single-core score of 3078.68 and a Geekbench single-core score of 2078.0. However, multi-core performance is weak, as evidenced by a Geekbench multi-core score of 2615.0 and a weak stress-ng multi-core result. Memory performance is also limited, with read-only small block bandwidth landing in the bottom 10% at 151.2 GB/sec, while large block write bandwidth is average at 27.75 GB/sec.",
-    "Given its low memory-to-vCPU ratio and dedicated CPU allocation, this instance offers a cost-effective entry point for compute tasks that do not require large memory footprints. It is suitable for lightweight single-threaded applications, basic web serving, and simple text processing. It is less suited for memory-intensive database operations or multi-threaded compilation tasks due to its poor database operation benchmarks and weak multi-core scaling."
+    "Microsoft Azure D2alds_v6 is an entry-level general purpose virtual machine powered by an AMD EPYC 9V74 processor based on the x86_64 architecture. The instance provides 2 dedicated vCPUs derived from a single physical core running 2 threads at 3.7 GHz. System hardware includes 4.0 GB of memory (2.0 GB per core), 32 MB of L3 cache, and a bundled 118 GB local NVMe SSD. The processor supports advanced instruction sets including AVX-512 (with VNNI and BF16 support), AES, VAES, and SHA-NI cryptographic acceleration. It operates on the Microsoft Hyper-V hypervisor without discrete GPU acceleration.",
+    "Benchmark evaluation highlights robust single-core processing capabilities, placing in the top 25% for both stress-ng single-core performance (3078.68) and Geekbench single-core score (2078.0). Single-threaded decompression with bzip3 (13.49 GB/sec) and gzip compression (29.24 GB/sec) reach average tier throughput. Conversely, total multi-threaded compute remains constrained by the 2-vCPU ceiling, reflected in bottom-quartile metrics across Geekbench multi-core (2615.0), PassMark CPU score (3829.46), and Clang software compilation (2807.0).",
+    "Memory subsystem testing reveals low overall capacity and throughput, with PassMark memory scoring in the bottom 25% (1333.2) and cached read bandwidth ranking in the lowest 10% (151.2 GB/sec). Large-block write performance maintains average levels at 27.75 GB/sec, while read-only large blocks yield 37.16 GB/sec. Application testing displays moderate output for low-footprint workloads, such as LLM text generation on a 135M parameter model at 100.32 tokens/sec, but struggles under heavy concurrent operations, recording 2.96 million Redis SET operations per second and 3.44 GB/sec static web serving throughput.",
+    "Azure D2alds_v6 offers high per-thread execution efficiency within a cost-conscious, low-memory footprint. The integrated 118 GB NVMe SSD provides localized scratch space, though memory-intensive database engines and parallel batch processing are restricted by the 4.0 GB RAM pool. The instance is suitable for single-threaded microservices, lightweight web utilities, low-scale container hosts, and background automation tasks."
   ],
-  "description": "Microsoft Azure D2alds_v6 is an x86_64 server from the Daldv6 family, powered by a 3.7 GHz AMD EPYC 9V74 processor. It features 2 dedicated vCPUs (1 physical core, 2 threads) and 4.0 GB of system memory, establishing a compute-oriented 1:2 resource ratio. The instance includes 118 GB of local NVMe SSD storage and supports Premium Storage. Performance benchmarks reveal strong single-core capabilities, highlighted by a stress-ng single-core score of 3078.68 and a Geekbench single-core score of 2078.0. Conversely, multi-core performance and memory read bandwidth are weak, with database operations scoring in the bottom 10%. This server is qualitatively cost-efficient for lightweight, single-threaded workloads, basic text processing, and small-scale web serving, but it is not recommended for memory-heavy databases or intensive multi-threaded tasks.",
-  "og_description": "Microsoft Azure D2alds_v6 is an x86_64 server featuring 2 vCPUs on an AMD EPYC 9V74 processor, 4.0 GB of RAM, and 118 GB of local NVMe SSD storage, offering strong single-core performance for lightweight workloads.",
-  "meta_description": "Microsoft Azure D2alds_v6 features 2 vCPUs, 4.0 GB RAM, and 118 GB NVMe SSD storage, delivering strong single-core performance for lightweight workloads.",
-  "tagline": "A low-memory, compute-oriented instance featuring dedicated AMD EPYC performance and fast local NVMe SSD storage for single-threaded workloads.",
+  "description": "Microsoft Azure D2alds_v6 is a general purpose instance featuring 2 dedicated vCPUs and 1 physical core powered by an AMD EPYC 9V74 processor at 3.7 GHz. Built on the x86_64 architecture with Hyper-V virtualization, it includes 4.0 GB of memory and a bundled 118 GB local NVMe SSD. The CPU supports modern vector and cryptographic instruction sets, including AVX-512, VAES, and SHA-NI. Benchmark results demonstrate strong single-core CPU throughput in the upper 25%, balanced against entry-level multi-core and memory subsystem capacity due to its dual-thread configuration. With no GPU hardware, it represents an efficient low-resource profile for single-threaded utilities, microservices, light web hosting, and auxiliary tasks requiring high per-core execution speeds coupled with fast temporary local NVMe storage.",
+  "og_description": "Microsoft Azure D2alds_v6 features 2 vCPUs on an AMD EPYC 9V74 at 3.7 GHz, 4.0 GB RAM, and a 118 GB NVMe SSD. It delivers strong single-core CPU benchmarks for lightweight services.",
+  "meta_description": "Microsoft Azure D2alds_v6 features 2 vCPUs on an AMD EPYC 9V74, 4.0 GB RAM, and a 118 GB NVMe SSD. Designed for lightweight compute and microservices.",
+  "tagline": "Two-core AMD EPYC system featuring strong single-thread execution, integrated NVMe local storage, and a low-memory profile.",
   "bullet_points": [
-    "Powered by a 3.7 GHz AMD EPYC 9V74 processor with 2 dedicated vCPUs.",
-    "Equipped with 4.0 GB of system memory and 118 GB of local NVMe SSD storage.",
-    "Delivers strong single-core performance in stress-ng and Geekbench benchmarks.",
-    "Exhibits weak multi-core scaling and low memory read bandwidth.",
-    "Best suited for lightweight single-threaded applications and basic text processing."
+    "2 dedicated vCPUs (1 physical core, 2 threads) on AMD EPYC 9V74 at 3.7 GHz",
+    "4.0 GB system RAM alongside a bundled 118 GB local NVMe SSD",
+    "Hardware support for AVX-512 (VNNI/BF16), AES, and SHA-NI instructions",
+    "Strong single-core benchmark performance counterbalanced by limited total multi-core scale",
+    "Well-suited for lightweight microservices, single-threaded processing, and basic web utilities"
   ],
   "categories": [
-    "Compute Optimized",
-    "Burstable & Budget"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

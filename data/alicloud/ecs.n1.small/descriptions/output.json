@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.n1.small is an entry-level virtual machine instance powered by the KVM hypervisor. It features a single dedicated vCPU from an Intel Xeon 8269CY processor running at 2.5 GHz on the x86_64 architecture. The hardware configuration includes 2.0 GB of system memory, with no bundled local storage or GPU resources. The CPU supports several instruction set extensions, including AVX, AVX512F, and AVX512_VNNI, alongside AES cryptography acceleration.",
-    "In benchmark evaluations, the instance demonstrates performance characteristics that place it in the lower tier of cloud resources. Stress-ng single-core and multi-core CPU tests yielded a score of 1026.39, while the Passmark CPU score reached 1291.58. Memory performance is similarly constrained, with a read-only small block bandwidth of 76.38 GB/sec and an uncached large block read bandwidth of 8.4 GB/sec. Database operations and web serving throughput are modest, with Redis SET operations executing at 1.35 million operations per second and static web serving throughput reaching 0.91 GB/sec.",
-    "Given its minimal resource footprint and lower-tier benchmark results, this instance represents a highly cost-efficient option for workloads with low resource demands. It is best suited for lightweight utility tasks, basic web serving, development environments, and simple background processes that do not require high computational throughput or local storage."
+    "Alibaba Cloud ecs.n1.small is an entry-level virtual server instance within the shared family architecture, provisioned on the KVM hypervisor. It is configured with a single dedicated x86_64 vCPU running on an Intel Xeon 8269CY processor clocked at 2.5 GHz, supported by 32 KB of L1 data cache, 1.0 MB of L2 cache, and 35 MB of shared L3 cache. The CPU exposes AVX, AVX-512F, AVX-512 VNNI, and AES instructions. The system includes 2.0 GB of system memory, yielding a 1:2 vCPU-to-RAM ratio. It does not bundle any local storage or dedicated GPU hardware, requiring workloads to rely on remote cloud storage options.",
+    "Across benchmark evaluations, the ecs.n1.small ranks in the bottom 10 percent of recorded systems. The single vCPU architecture limits both single-core and multi-core stress-ng throughput to a score of 1026.39, while the PassMark CPU test recorded an aggregate score of 1291.58. Memory subsystem benchmarks show a cached read bandwidth of 76.38 GB/sec on small 16 KB blocks, dropping to 8.4 GB/sec on uncached 256 MB reads and 6.9 GB/sec on large block writes, leading to a PassMark memory score of 673.93. Application-level metrics reflect these throughput constraints, achieving 1.35 million operations per second on Redis SET tasks and a static web serving rate of 0.91 GB/sec.",
+    "Given its minimal compute footprint and lack of bundled local storage, the instance prioritizes low entry cost over raw processing capacity. The single vCPU and 2.0 GB memory envelope limit concurrency and prohibit intensive computational or memory-heavy applications. Alibaba Cloud ecs.n1.small is functionally suitable for lightweight background processing, low-traffic test environments, small utility scripts, or basic monitoring agents that operate within strict resource boundaries."
   ],
-  "description": "Alibaba Cloud ecs.n1.small is an entry-level, KVM-based virtual server configured with a single dedicated Intel Xeon 8269CY vCPU running at 2.5 GHz and 2.0 GB of RAM. It features an x86_64 architecture with support for AVX-512 instructions, but does not include local storage or GPU accelerators. Benchmark results place this instance in the lower performance tier, with a Passmark CPU score of 1291.58 and a static web serving throughput of 0.91 GB/sec. Due to its limited resource allocation and low-tier performance profile, it offers a highly cost-effective solution for lightweight workloads. It is best suited for basic web serving, development sandboxes, and simple background utility tasks.",
-  "og_description": "Alibaba Cloud ecs.n1.small is an entry-level virtual server featuring 1 dedicated Intel Xeon vCPU, 2.0 GB of RAM, and no local storage, designed for lightweight utility workloads.",
-  "meta_description": "Alibaba Cloud ecs.n1.small is an entry-level KVM instance with 1 Intel Xeon vCPU and 2.0 GB RAM, ideal for basic utility tasks.",
-  "tagline": "A minimal, budget-friendly virtual server with a single dedicated processor and two gigabytes of memory for basic utility workloads.",
+  "description": "Alibaba Cloud ecs.n1.small is an entry-level virtual instance configured with 1 vCPU and 2.0 GB of RAM on an x86_64 Intel Xeon 8269CY processor clocked at 2.5 GHz. Operating under the KVM hypervisor with a 1:2 vCPU-to-RAM ratio, the instance includes no local storage and zero GPU accelerators, relying entirely on networked storage volumes. In benchmark assessments, it consistently ranks within the bottom 10 percent of evaluated systems, achieving a PassMark CPU score of 1291.58, an uncached memory read bandwidth of 8.4 GB/sec, and 1.35 million Redis SET operations per second. With minimal resource density, the instance trades high throughput for cost-conscious hardware allocation. It is best applied to lightweight development, continuous integration workers, entry-level web testing, and low-throughput utility jobs.",
+  "og_description": "Alibaba Cloud ecs.n1.small is a 1 vCPU, 2.0 GB RAM virtual server powered by a 2.5 GHz Intel Xeon 8269CY CPU. It features no local disk and delivers entry-tier baseline throughput.",
+  "meta_description": "Alibaba Cloud ecs.n1.small is an entry-tier x86_64 instance featuring 1 vCPU, 2.0 GB RAM, and an Intel Xeon 8269CY CPU for light test and utility workloads.",
+  "tagline": "A single-core, low-memory x86 instance designed for basic utility tasks, test environments, and low-intensity background workloads.",
   "bullet_points": [
-    "Single dedicated Intel Xeon 8269CY vCPU clocked at 2.5 GHz",
-    "2.0 GB of system memory with no bundled local storage",
-    "Supports AVX-512 and AES hardware-accelerated instructions",
-    "KVM hypervisor-based virtualization on x86_64 architecture",
-    "Suited for lightweight background tasks, basic web serving, and testing"
+    "1 dedicated vCPU (Intel Xeon 8269CY at 2.5 GHz) with x86_64 architecture",
+    "2.0 GB system RAM providing a 1:2 compute-to-memory allocation",
+    "Zero integrated local disk storage and zero GPU accelerators",
+    "PassMark CPU score of 1291.58 and 8.4 GB/sec uncached memory read bandwidth",
+    "Tailored for lightweight dev/test instances, monitoring agents, and low-volume scripts"
   ],
   "categories": [
-    "Burstable & Budget",
-    "General Purpose"
+    "Compute Optimized",
+    "Burstable & Budget"
   ]
 }

@@ -1,21 +1,24 @@
 {
   "page": [
-    "Microsoft Azure EC2es_v6 is an x86_64 architecture server instance belonging to the ECEV6 family. It features 2 dedicated vCPUs powered by an Intel processor and runs on the Microsoft Hyper-V hypervisor. The instance is configured with 16.0 GB of system memory, yielding a memory-to-core ratio of 8.0 GB per vCPU.",
-    "This server does not include local storage, requiring the use of remote storage volumes, though it is designated as Premium Storage capable. There are no integrated GPUs or complimentary public IPv4 addresses included with this configuration. The lack of local storage and hardware accelerators represents a tradeoff, focusing the resource allocation entirely on memory capacity and dedicated compute cores.",
-    "From a qualitative cost-efficiency perspective, the high memory-to-vCPU ratio provides a dense memory profile without the added cost of higher vCPU counts. This makes the instance appropriate for memory-intensive workloads that do not require high parallel processing power, such as small-scale databases, caching layers, and lightweight enterprise applications."
+    "Microsoft Azure EC2es_v6 is a memory-optimized virtual machine instance powered by Microsoft Hyper-V virtualization. The instance provides 2 dedicated vCPUs derived from a single physical Intel Xeon TDX core running at 4.2 GHz with 2 threads per core on an x86_64 architecture. Cache resources include 48 KB of L1 data cache, 2 MB of L2 cache, and access to 260 MB of L3 cache. Instruction set extensions include AVX-512, AMX (amx_tile and amx_int8), VAES, and SHA-NI for vector math, AI matrix acceleration, and cryptographic operations.",
+    "Memory capacity is configured at 16.0 GB RAM, delivering an 8.0 GB per vCPU ratio aligned with standard memory-optimized cloud baselines. The instance lacks bundled local storage and GPUs, requiring reliance on remote managed disk volumes such as Azure Premium Storage for persistent workloads. Network operations do not include complimentary public IPv4 addresses.",
+    "Benchmark results highlight strong single-thread execution coupled with modest overall parallel capacity due to the 2-vCPU ceiling. The instance achieved a Geekbench single-core score of 1943.0, placing in the top quartile, and a stress-ng single-core score of 1904.76. Multi-core performance is constrained, yielding a Geekbench multi-core score of 2182.0 and a stress-ng multi-core score of 1962.27. Memory-focused tests returned a PassMark memory score of 1687.6, while Redis SET throughput reached 2.58 million operations per second.",
+    "Because the configuration trades total parallel compute capacity for high RAM density per core, it offers cost-efficient scaling for low-concurrency, memory-heavy workloads. The profile is well suited for dedicated in-memory caching tiers, small enterprise relational databases, lightweight staging environments, and single-threaded data processing applications that require substantial memory headroom without massive compute scaling."
   ],
-  "description": "Microsoft Azure EC2es_v6 is a memory-optimized server instance from the ECEV6 family, utilizing the x86_64 architecture. Powered by an Intel processor and managed via the Microsoft Hyper-V hypervisor, it provides 2 dedicated vCPUs and 16.0 GB of system memory, establishing an 8.0 GB memory-to-core ratio. The instance does not feature local storage, relying instead on remote storage options with Premium Storage capability. It lacks integrated GPUs and complimentary public IPv4 addresses. This hardware profile is designed for memory-intensive workloads that require a low vCPU count, such as small databases, caching systems, and memory-bound enterprise applications, offering a qualitative balance of high memory density relative to compute resources.",
-  "og_description": "Microsoft Azure EC2es_v6 is a memory-optimized x86_64 server featuring 2 dedicated Intel vCPUs, 16.0 GB of RAM, and Premium Storage capability, running on the Microsoft Hyper-V hypervisor.",
-  "meta_description": "Microsoft Azure EC2es_v6 is a memory-optimized server with 2 dedicated Intel vCPUs, 16.0 GB of RAM, and Premium Storage capability.",
-  "tagline": "A memory-optimized x86_64 virtual machine featuring two dedicated cores, sixteen gigabytes of RAM, and premium remote storage support.",
+  "description": "Microsoft Azure EC2es_v6 is a memory-optimized virtual machine featuring 2 dedicated vCPUs from a single physical Intel Xeon TDX core clocked at 4.2 GHz on the x86_64 architecture. It provides 16.0 GB of system memory, yielding an 8:1 memory-to-vCPU ratio suited for workloads requiring substantial RAM per core. The processor includes hardware acceleration flags including AVX-512, AMX matrix extensions, and cryptographic acceleration. There is no bundled local storage or integrated GPU, necessitating attached remote storage volumes. Benchmark data demonstrates strong single-core CPU throughput, while overall multi-threaded capacity remains limited by the two-thread total. In memory benchmarks, Redis SET performance achieved 2.58 million operations per second alongside modest PassMark memory results. Azure EC2es_v6 is technically suited for small database engines, in-memory key-value caches, lightweight analytics tasks, and background job runners that require moderate compute paired with generous memory allocations.",
+  "og_description": "Microsoft Azure EC2es_v6 is a memory-optimized virtual machine featuring 2 vCPUs on a 4.2 GHz Intel Xeon TDX processor, 16 GB RAM, advanced AMX and AVX-512 support, and remote storage integration.",
+  "meta_description": "Microsoft Azure EC2es_v6 is a memory-optimized VM providing 2 vCPUs on an Intel Xeon TDX processor, 16 GB of RAM, and hardware acceleration support.",
+  "tagline": "Two vCPUs paired with sixteen gigabytes of RAM and Intel AMX acceleration for lightweight, memory-dense workloads.",
   "bullet_points": [
-    "Two dedicated Intel vCPUs on x86_64 architecture",
-    "16.0 GB of system memory providing 8.0 GB per core",
-    "Premium Storage capable with no local disk storage",
-    "Managed via the Microsoft Hyper-V hypervisor",
-    "Suited for small-scale databases and caching layers"
+    "2 dedicated vCPUs on 1 physical Intel Xeon TDX core running at 4.2 GHz",
+    "16.0 GB total RAM offering an 8 GB per vCPU allocation",
+    "Advanced instruction support including Intel AMX, AVX-512, and VAES",
+    "Zero bundled local disk storage, supporting remote block storage volumes",
+    "No integrated GPU accelerator hardware",
+    "Well suited for small databases, Redis cache instances, and memory-heavy jobs"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

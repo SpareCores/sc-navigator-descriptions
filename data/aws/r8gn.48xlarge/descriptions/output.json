@@ -1,23 +1,24 @@
 {
   "page": [
-    "Amazon Web Services r8gn.48xlarge is a memory-optimized server instance powered by the AWS Nitro hypervisor. It features 192 dedicated physical cores on the ARMv9 arm64 architecture, utilizing the AWS Neoverse-V2 processor running at 2.7 GHz. The system is equipped with 1536.0 GB of RAM, providing a resource density of 8.0 GB of memory per core. There is no local storage or GPU hardware bundled with this instance type. Network connectivity is supported by a baseline bandwidth of 300 Gbps.",
-    "Benchmark data indicates top-tier multi-core and memory performance. The instance achieves top 10% placement in multi-core CPU performance via stress-ng and multi-threaded bzip3 decompression. Memory bandwidth is exceptionally high, with cached read-only small block speeds reaching 21332.83 GB/sec and uncached large block read speeds at 961.55 GB/sec. Database operations and Redis SET operations also rank in the top 10%, with Redis handling 362.1 million operations per second. However, single-core performance is more moderate, with stress-ng single-core and Geekbench single-core scores falling into the average category.",
-    "The r8gn.48xlarge offers high qualitative cost efficiency for memory-intensive workloads due to its high memory-to-vCPU ratio and the power efficiency of the Graviton ARM architecture. The lack of local storage requires reliance on network-attached storage, which should be factored into architectural designs. This instance is highly suited for large-scale in-memory databases, high-throughput web serving, software compilation, and memory-bound data processing tasks."
+    "Amazon Web Services r8gn.48xlarge is a memory-optimized instance built on the AWS Nitro System and powered by the ARMv9 architecture. It features AWS Graviton Neoverse-V2 processors offering 192 physical cores and 192 dedicated vCPUs with a 1:1 thread-to-core configuration operating at 2.7 GHz. The system provides 1536.0 GB of system memory, matching an 8:1 memory-to-vCPU ratio with 8.0 GB per core. Network bandwidth reaches a baseline of 600 Gbps, while local storage is absent, requiring external EBS volumes for persistent storage. Hardware accelerators such as GPUs are not included.",
+    "Benchmark results show top-tier multi-threaded and memory throughput. The stress-ng multi-core test reached 314,153.46, placing it in the top 10 percent of evaluated instances, while single-core performance remained average at 1,642.88. Memory bandwidth tests demonstrated 961.55 GB/sec for uncached large-block reads and 483.73 GB/sec for uncached writes, ranking in the top 10 percent alongside a PassMark memory score of 3,377.92. Cache-level reads scored 21,332.83 GB/sec across its 64 KB L1d, 2 MB L2, and 36 MB L3 cache design. Redis SET throughput achieved 362.1 million operations per second, complemented by 47,235.19 operations in PassMark database tests.",
+    "The hardware configuration trades single-threaded peak clock speeds for extreme core density, high aggregate memory bandwidth, and 600 Gbps network capacity. In qualitative cost-efficiency terms, the Graviton ARMv9 architecture delivers massive multi-core throughput and high RAM density per compute unit compared to conventional x86 instances, making it cost effective for scale-up in-memory tasks despite the premium scale of a 48xlarge footprint.",
+    "The r8gn.48xlarge is suited for massive in-memory databases like Redis, enterprise-scale relational database engines, real-time analytics, and heavy ETL pipelines. Its high network throughput and multi-threaded scaling also support large-scale distributed caching layers and high-volume software compilation clusters."
   ],
-  "description": "Amazon Web Services r8gn.48xlarge is a memory-optimized server instance built on the AWS Nitro hypervisor and powered by 192 dedicated ARMv9 Neoverse-V2 cores running at 2.7 GHz. It features 1536.0 GB of RAM, yielding 8.0 GB of memory per core, with no local storage or GPU accelerators. The instance delivers top-tier performance in multi-core processing, memory bandwidth, and database operations, as evidenced by its high Redis throughput of 362.1 million operations per second and 300 Gbps baseline network bandwidth. However, single-core performance remains average. Given its high memory density and efficient ARM architecture, the r8gn.48xlarge is highly cost-efficient for memory-bound workloads. It is best suited for large-scale in-memory databases, high-throughput web serving, and intensive multi-threaded data processing tasks.",
-  "og_description": "Amazon Web Services r8gn.48xlarge is a memory-optimized ARM64 server featuring 192 dedicated Neoverse-V2 cores, 1536 GB of RAM, and 300 Gbps network bandwidth for high-throughput database workloads.",
-  "meta_description": "Amazon Web Services r8gn.48xlarge is a memory-optimized ARM64 server with 192 dedicated cores, 1536 GB RAM, and 300 Gbps network bandwidth.",
-  "tagline": "A high-density ARM64 memory-optimized instance delivering exceptional memory bandwidth and multi-core performance for demanding database and enterprise workloads.",
+  "description": "Amazon Web Services r8gn.48xlarge is an ARMv9 memory-optimized instance running on the AWS Nitro hypervisor. It integrates 192 dedicated physical cores powered by AWS Graviton Neoverse-V2 processors at 2.7 GHz and 1536.0 GB of memory, equating to 8.0 GB per core. The instance lacks local storage and discrete GPUs, relying on a 600 Gbps baseline network capability for detached storage and high-speed interconnects. In benchmark assessments, it delivers top-tier multi-threaded compute and memory bandwidth, reaching 314,153.46 in stress-ng multi-core execution, 961.55 GB/sec in uncached read bandwidth, and 362.1 million Redis SET operations per second, contrasted by average single-core performance. This profile offers efficient high-density scale-up compute for in-memory databases, real-time analytics, and enterprise data processing.",
+  "og_description": "Amazon Web Services r8gn.48xlarge provides 192 ARMv9 Graviton Neoverse-V2 cores, 1536 GB RAM, and 600 Gbps networking, optimized for massive in-memory databases and high-bandwidth analytics.",
+  "meta_description": "Amazon Web Services r8gn.48xlarge features 192 ARMv9 Graviton cores, 1536 GB RAM, and 600 Gbps networking for large in-memory databases and analytics.",
+  "tagline": "High-density ARMv9 instance pairing 192 physical cores with 1.5 TB memory and 600 Gbps networking for in-memory workloads.",
   "bullet_points": [
-    "Powered by 192 dedicated ARMv9 Neoverse-V2 cores at 2.7 GHz",
-    "Equipped with 1536.0 GB of RAM providing 8.0 GB per core",
-    "Delivers high-speed 300 Gbps baseline network bandwidth",
-    "Top-tier performance in multi-core processing and Redis database operations",
-    "No local storage or GPU accelerators included",
-    "Optimized for in-memory databases, web serving, and software compilation"
+    "192 dedicated AWS Graviton Neoverse-V2 ARMv9 cores at 2.7 GHz",
+    "1536.0 GB system memory (8.0 GB per core allocation)",
+    "600 Gbps baseline network throughput for extreme interconnect needs",
+    "No local storage included; EBS-backed architecture",
+    "Top-tier memory read bandwidth of 961.55 GB/sec and 362.1M Redis SET ops/sec",
+    "Best fit for in-memory databases, real-time analytics, and heavy multi-threaded ETL"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

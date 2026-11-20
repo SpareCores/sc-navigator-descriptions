@@ -1,23 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.u0.c1m8.xlarge is a memory-optimized virtual machine instance powered by the KVM hypervisor. It features 4 dedicated vCPUs derived from 2 physical cores of an Intel Xeon 8163 processor running at 2.5 GHz. The instance is equipped with 32.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or GPU accelerators, relying entirely on network-attached storage and featuring a baseline network bandwidth of 2 Gbps.",
-    "Performance benchmarks position this instance in the lower tiers of modern cloud hardware. The Intel Xeon 8163 CPU delivers single-core and multi-core stress-ng scores that fall within the bottom 25% of tested servers. Memory performance is similarly constrained, with large-block read bandwidth recorded at 19.83 GB/sec and write bandwidth at 18.72 GB/sec. These metrics indicate that while the instance offers a generous memory capacity, memory throughput and computational speeds are limited by the older processor architecture.",
-    "From a cost-efficiency perspective, the ecs.u0.c1m8.xlarge provides a high density of memory relative to its vCPU count, making it a viable option for memory-intensive workloads that do not require high-performance compute. However, the tradeoff is evident in its lower processing speeds, as demonstrated by poor performance in database operations, static web serving, and software compilation.",
-    "This instance is best suited for lightweight memory-bound workloads. Appropriate applications include small-scale Redis caching, basic database hosting with modest transaction volumes, and simple background data processing tasks that benefit from 32 GB of RAM but do not demand high CPU throughput."
+    "Alibaba Cloud ecs.u0.c1m8.xlarge is a memory-optimized virtual machine provisioned via the KVM hypervisor. It is configured with 4 dedicated x86_64 vCPUs derived from 2 physical cores on an Intel Xeon 8163 processor clocked at 2.5 GHz. The CPU features 32 KB of L1d cache, 1.0 MB of L2 cache, and 33 MB of L3 cache, supporting standard instructions such as AVX, AVX-512F, AES, BMI2, and FMA. Hardware acceleration is absent, with 0 GPUs included. The instance incorporates 32.0 GB of system memory, yielding an 8:1 RAM-to-vCPU allocation ratio of 8.0 GB per vCPU, while offering no bundled local storage and a baseline network bandwidth of 2 Gbps without complimentary public IPv4 addresses.",
+    "Benchmark measurements indicate modest computational and memory throughput capabilities relative to peer instances. Synthetic evaluation shows a Geekbench single-core score of 915.0 and multi-core score of 1993.0, both placing in the bottom 10%. PassMark results follow a similar pattern with a CPU score of 3551.12 and a memory score of 1512.31. Uncached memory bandwidth reaches 19.83 GB/sec for large-block reads and 18.72 GB/sec for writes. Workload-specific metrics show Redis achieving 2.92 million SET operations per second, static web serving throughput reaching 2.25 GB/sec, and compression speeds of 18.97 GB/sec for gzip and 13.02 GB/sec for multi-threaded bzip3 decompression.",
+    "The primary operational tradeoff of the ecs.u0.c1m8.xlarge is the balance between low per-core execution speeds and an expanded memory footprint. While the older Intel Xeon 8163 microarchitecture yields weaker raw computing throughput, the high 8 GB per vCPU ratio makes it cost-efficient for memory-dense tasks that do not saturate processing units. The instance is suitable for lightweight in-memory caching, staging databases, test-environment analytics, and low-traffic background jobs that require substantial memory allocation without high compute demand."
   ],
-  "description": "Alibaba Cloud ecs.u0.c1m8.xlarge is a memory-optimized virtual machine instance featuring 4 dedicated vCPUs and 32.0 GB of RAM. Powered by an Intel Xeon 8163 processor running at 2.5 GHz, this KVM-based instance provides a high memory-to-vCPU ratio of 8.0 GB per core. It contains no local storage or GPU hardware, and offers a baseline network bandwidth of 2 Gbps. Benchmark results place its computational and memory bandwidth performance in the lower percentiles, with weak single-core and multi-core CPU scores. Consequently, this server represents a budget-friendly option for memory-intensive tasks that do not require high processing speeds. It is best suited for lightweight caching, small database operations, and basic memory-bound background tasks.",
-  "og_description": "Alibaba Cloud ecs.u0.c1m8.xlarge is a memory-optimized instance with 4 dedicated vCPUs, 32 GB RAM, and an Intel Xeon 8163 CPU, offering a cost-effective solution for lightweight memory-bound workloads.",
-  "meta_description": "Alibaba Cloud ecs.u0.c1m8.xlarge is a KVM-based instance with 4 vCPUs, 32 GB RAM, and an Intel Xeon CPU, designed for lightweight memory-bound tasks.",
-  "tagline": "A budget-friendly, memory-optimized virtual server featuring a high memory-to-vCPU ratio for lightweight caching and basic database workloads.",
+  "description": "Alibaba Cloud ecs.u0.c1m8.xlarge is a memory-optimized instance operating on the KVM hypervisor. Powered by an Intel Xeon 8163 processor at 2.5 GHz, it provides 4 dedicated x86_64 vCPUs across 2 physical cores, accompanied by 32.0 GB of system memory for an 8:1 RAM-to-vCPU ratio. It features no local storage, no GPUs, and baseline network throughput of 2 Gbps. Computational benchmarks reflect legacy hardware constraints, recording a Geekbench single-core score of 915.0 and multi-core score of 1993.0, along with a PassMark CPU score of 3551.12. Large-block uncached memory read bandwidth reaches 19.83 GB/sec, while Redis achieves 2.92 million SET operations per second. The server offers a cost-efficient resource density profile suited for memory-intensive yet computationally lightweight workloads, such as intermediate caching, non-critical database deployments, and staging environments.",
+  "og_description": "Alibaba Cloud ecs.u0.c1m8.xlarge is a memory-optimized instance featuring 4 dedicated vCPUs, 32 GB RAM, 2 Gbps network bandwidth, and an Intel Xeon 8163 processor suited for caching and lightweight workloads.",
+  "meta_description": "Alibaba Cloud ecs.u0.c1m8.xlarge offers 4 dedicated vCPUs, 32 GB RAM, and 2 Gbps network bandwidth on an Intel Xeon 8163 processor for memory-dense tasks.",
+  "tagline": "A high-capacity memory-optimized server providing four dedicated vCPUs and thirty-two gigabytes of RAM for low-compute, memory-bound utility applications.",
   "bullet_points": [
-    "4 dedicated vCPUs and 32.0 GB of system memory",
-    "Intel Xeon 8163 processor running at 2.5 GHz",
-    "High memory-to-vCPU ratio of 8.0 GB per core",
-    "No local storage and 2 Gbps baseline network bandwidth",
-    "Best suited for lightweight caching and small database operations"
+    "4 dedicated x86_64 vCPUs (2 physical cores, 2.5 GHz Intel Xeon 8163)",
+    "32.0 GB total RAM providing an 8:1 memory-to-vCPU ratio",
+    "2 Gbps baseline network bandwidth with 0 included public IPv4 addresses",
+    "No bundled local storage and 0 hardware accelerators",
+    "Well suited for in-memory caching, dev-test environments, and low-compute databases"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

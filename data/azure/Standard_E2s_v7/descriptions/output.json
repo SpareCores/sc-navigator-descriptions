@@ -1,24 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E2s_v7 is a memory-optimized virtual machine belonging to the Esv7 server family. It is powered by a dedicated Intel Xeon 6973P-C processor built on the x86_64 architecture, operating at a clock speed of 4.2 GHz. The configuration includes 2 vCPUs derived from 1 physical core with hyper-threading enabled, supported by a large 480 MB L3 cache. The server is equipped with 16.0 GB of RAM, yielding a high memory-to-core ratio of 8.0 GB per vCPU. It does not include local storage or GPU hardware, though it is premium storage capable.",
-    "Performance benchmarks indicate a stark contrast between single-core and multi-core capabilities. The E2s_v7 demonstrates top-tier single-core performance, placing in the top 10% of Geekbench single-core tests and showing strong single-threaded compression and decompression speeds. Conversely, multi-core performance is weak, with stress-ng multi-core and Geekbench multi-core benchmarks placing in the bottom 10% and 25% respectively. Memory bandwidth tests also show lower efficiency, particularly for large uncached read and write operations.",
-    "From a qualitative cost-efficiency perspective, the E2s_v7 provides a dense memory profile relative to its low vCPU count. This makes it an efficient choice for workloads that are constrained by memory capacity rather than parallel processing power, allowing users to avoid paying for unneeded CPU cores. The lack of bundled local storage and GPU accelerators further streamlines the hardware profile for pure memory-bound tasks.",
-    "The Microsoft Azure E2s_v7 is best suited for memory-intensive, single-threaded, or lightly threaded applications. Recommended workloads include caching layers, lightweight database operations, text processing, and basic web serving where high memory capacity and strong single-core execution are prioritized over multi-threaded throughput."
+    "Microsoft Azure E2s_v7 is an entry-level memory-optimized virtual machine provisioned via the Microsoft Hyper-V hypervisor. The instance features two vCPUs across a single dedicated physical core with two execution threads, running on an Intel Xeon 6973P-C processor with a 4.2 GHz clock speed and an x86_64 architecture. The CPU subsystem includes 48 KB of L1 data cache, 2 MB of L2 cache, and a large 480 MB L3 cache. It incorporates advanced vector and matrix acceleration instructions including AVX-512, AMX-TILE, and AMX-INT8, along with hardware-assisted cryptographic instructions such as AES, VAES, and SHA-NI.",
+    "The VM is configured with 16.0 GB of system memory, providing an 8.0 GB per vCPU ratio aligned with standard memory-optimized profiles. It lacks bundled local storage and GPUs, requiring remote storage volumes such as Azure Premium Storage for data persistence. In synthetic workloads, the instance achieves top-decile single-core throughput, reflected in a Geekbench single-core score of 2222.0 and high single-threaded decompression rates with bzip3 and gzip. Multi-threaded benchmark scores\u2014such as a multi-core Geekbench score of 2827.0 and stress-ng multi-core metric of 2201.38\u2014are constrained by the two-vCPU allocation.",
+    "Memory bandwidth tests show 22.5 GB/sec for uncached large-block reads and 11.72 GB/sec for writes, while PassMark memory performance places in the middle quartile. Text processing performance is robust, but database operations and static web serving throughput (4.81 GB/sec) reflect the hardware bounds of a dual-vCPU ceiling. As a result, the E2s_v7 provides balanced resource efficiency for memory-dependent tasks that require modest overall compute capacity, serving as a functional host for small-scale caching layers, light Redis deployments, staging databases, and entry-level enterprise application tiers."
   ],
-  "description": "Microsoft Azure E2s_v7 is a memory-optimized virtual machine from the Esv7 family, featuring a dedicated 2-vCPU Intel Xeon 6973P-C processor running at 4.2 GHz. Built on the x86_64 architecture, it provides 16.0 GB of RAM and a substantial 480 MB L3 cache, but lacks local storage and GPU accelerators. Benchmarks reveal top-tier single-core performance, with Geekbench single-core scores in the top 10% and strong single-threaded compression speeds. However, multi-core performance and uncached memory bandwidth are relatively weak. This hardware profile offers a cost-efficient option for memory-bound workloads that do not require massive parallel processing, making it highly suitable for lightweight database operations, caching, text processing, and single-threaded applications.",
-  "og_description": "Microsoft Azure E2s_v7 is a memory-optimized virtual machine featuring a 2-vCPU Intel Xeon processor, 16.0 GB of RAM, and a 480 MB L3 cache, delivering strong single-core performance for memory-bound workloads.",
-  "meta_description": "Microsoft Azure E2s_v7 is a memory-optimized VM with 2 vCPUs, 16.0 GB of RAM, and an Intel Xeon processor, optimized for single-threaded, memory-bound tasks.",
-  "tagline": "A memory-optimized virtual machine featuring high single-core performance, a massive L3 cache, and an 8:1 memory-to-vCPU ratio for memory-bound workloads.",
+  "description": "Microsoft Azure E2s_v7 is an entry-level memory-optimized instance featuring 2 dedicated vCPUs derived from a single physical core on an Intel Xeon 6973P-C processor clocked at 4.2 GHz. Built on x86_64 architecture with Hyper-V virtualization, the instance includes 16.0 GB of RAM (8.0 GB per vCPU) and a 480 MB L3 cache, with hardware support for AVX-512 and AMX instructions. It carries no local ephemeral storage or integrated GPUs, relying instead on network-attached Premium Storage. Benchmark results demonstrate top-tier single-core performance, though multi-threaded scores and uncached memory bandwidth reflect the constraints of its two-thread design. With its balanced single-thread capability and generous memory-to-core ratio, the E2s_v7 is well suited for running lightweight database servers, small-footprint in-memory caches, background batch processing, and low-concurrency enterprise services.",
+  "og_description": "Microsoft Azure E2s_v7 is a memory-optimized virtual machine featuring 2 vCPUs on an Intel Xeon 6973P-C processor at 4.2 GHz, 16.0 GB RAM, support for AMX and AVX-512, and no local disk.",
+  "meta_description": "Microsoft Azure E2s_v7 offers 2 vCPUs on an Intel Xeon 6973P-C processor, 16.0 GB RAM, AVX-512 and AMX extensions, and Premium Storage capability.",
+  "tagline": "An entry memory-optimized profile pairing two high-frequency dedicated virtual cores with generous RAM for caching and small databases.",
   "bullet_points": [
-    "Intel Xeon 6973P-C processor with 2 vCPUs and 4.2 GHz clock speed",
-    "16.0 GB of RAM providing an 8:1 memory-to-vCPU ratio",
-    "Large 480 MB L3 cache and advanced vector/matrix instruction support",
-    "Top-tier single-core performance in Geekbench and compression tests",
-    "No local storage or GPU accelerators included",
-    "Best suited for memory-bound, single-threaded workloads and caching"
+    "Dual vCPUs running on a single dedicated physical Intel Xeon 6973P-C core at 4.2 GHz",
+    "16.0 GB system memory delivering an 8.0 GB per vCPU allocation",
+    "Hardware support for AVX-512, AMX-TILE, and AMX-INT8 acceleration instructions",
+    "Top-decile single-thread processing performance balanced against a dual-vCPU ceiling",
+    "No bundled local disk, utilizing network-attached Azure Premium Storage",
+    "Suited for small in-memory caching nodes, development databases, and light enterprise workloads"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

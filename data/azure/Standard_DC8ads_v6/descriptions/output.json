@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure DC8ads_v6 is a virtual machine instance belonging to the DCadsv6 family, powered by AMD processors. It features 8 dedicated vCPUs utilizing the x86_64 architecture and is managed via the Microsoft Hyper-V hypervisor. The instance is equipped with 32.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per core.",
-    "For local storage requirements, the DC8ads_v6 includes a 307 GB local SSD. Additionally, the instance is Premium Storage capable, allowing for integration with high-performance external storage volumes. It does not include complimentary public IPv4 addresses or onboard GPU hardware.",
-    "From a qualitative cost-efficiency perspective, the dedicated CPU allocation and balanced memory-to-core ratio position this instance as a stable option for workloads requiring consistent compute performance without resource sharing. The hardware configuration is suitable for general-purpose workloads, including web serving, application hosting, and moderate database operations that benefit from local SSD caching."
+    "Microsoft Azure DC8ads_v6 is a general purpose virtual machine instance running on Microsoft Hyper-V. It is powered by an AMD EPYC 9V74 processor based on the x86_64 architecture, configured with 4 physical cores and 2 threads per core to deliver 8 dedicated vCPUs. The CPU features 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, alongside vector acceleration support including AVX, AVX-512F, AVX-512 VNNI, and AVX-512 BF16. Cryptographic acceleration is also enabled via AES, VAES, and SHA-NI instruction sets.",
+    "The instance is equipped with 32.0 GB of system memory, matching the standard 1:4 vCPU-to-memory ratio at 4.0 GB per vCPU. Storage includes an integrated local SSD of 322 GB, and the instance is Premium Storage capable for external block storage needs. No physical GPU accelerators are bundled with this instance type, and no complimentary public IPv4 addresses are assigned by default.",
+    "Benchmark results demonstrate strong single-core compute performance, with stress-ng recording a score of 3022.67, situating the instance in the top 25%. Multi-core performance across stress-ng (12053.56) and Geekbench (6824.0) places it consistently within the middle 50% tier. PassMark testing records a CPU mark of 13997.18, with encryption achieving 8919.32 and database operations reaching 3628.22. Memory performance is verified by an in-memory Redis throughput of 10.12 million SET operations per second, scoring 2252.77 on the PassMark memory suite.",
+    "Balancing dedicated AMD compute resources, local high-speed SSD capacity, and balanced memory allocation, the DC8ads_v6 offers efficient resource utilization for common operational footprints. It is appropriate for general-purpose workloads, caching layers, mid-sized relational and in-memory databases, backend microservices, and continuous integration pipelines."
   ],
-  "description": "Microsoft Azure DC8ads_v6 is a general-purpose virtual machine instance from the DCadsv6 family, powered by AMD processors on the x86_64 architecture. Managed by the Microsoft Hyper-V hypervisor, it provides 8 dedicated vCPUs and 32.0 GB of system memory, yielding a balanced 4.0 GB of RAM per core. The instance features 307 GB of local SSD storage and supports Premium Storage for external disk expansion. It does not include integrated GPUs or complimentary public IPv4 addresses. With its dedicated CPU allocation and balanced resource profile, the DC8ads_v6 offers stable, predictable performance for general-purpose applications. It is well-suited for workloads such as web serving, application hosting, and moderate database operations that utilize local SSD storage.",
-  "og_description": "Microsoft Azure DC8ads_v6 is an 8-vCPU virtual machine featuring 32 GB of RAM and a 307 GB local SSD. Powered by AMD processors, it is designed for general-purpose workloads and application hosting.",
-  "meta_description": "Microsoft Azure DC8ads_v6 is an 8-vCPU virtual machine with 32 GB RAM and 307 GB local SSD storage, designed for general-purpose workloads.",
-  "tagline": "An 8-vCPU virtual machine featuring dedicated AMD processors, 32 GB of RAM, and 307 GB of local SSD storage.",
+  "description": "Microsoft Azure DC8ads_v6 is a general-purpose virtual machine equipped with an AMD EPYC 9V74 processor offering 8 dedicated vCPUs across 4 physical cores, alongside 32.0 GB of RAM and a 322 GB local SSD. Built on the x86_64 architecture and managed via Microsoft Hyper-V, the CPU features a 32 MB L3 cache and supports AVX-512 and cryptographic instruction extensions. It contains no dedicated GPU hardware. Benchmark evaluations indicate top-quartile stress-ng single-core execution alongside mid-tier multi-core and memory performance, exemplified by 10.12 million Redis SET operations per second and a Geekbench multi-core rating of 6824.0. The standard 1:4 core-to-memory ratio and bundled high-speed local disk position the DC8ads_v6 effectively for microservices, enterprise applications, CI/CD workloads, and database systems requiring localized scratch space.",
+  "og_description": "Microsoft Azure DC8ads_v6 provides 8 dedicated vCPUs via an AMD EPYC 9V74 processor, 32 GB RAM, and a 322 GB local SSD. It offers balanced general-purpose compute and strong single-core speeds.",
+  "meta_description": "Microsoft Azure DC8ads_v6 features 8 dedicated AMD EPYC vCPUs, 32 GB RAM, and a 322 GB local SSD, providing balanced performance for general-purpose workloads.",
+  "tagline": "Balanced eight-vCPU AMD EPYC performance featuring direct local SSD storage and AVX-512 acceleration for general enterprise workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs on x86_64 AMD architecture",
-    "32.0 GB of system memory (4.0 GB per core)",
-    "307 GB of local SSD storage",
-    "Premium Storage capable for external disk expansion",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Suited for web serving, application hosting, and moderate databases"
+    "AMD EPYC 9V74 processor with 8 dedicated vCPUs (4 physical cores, 2 threads per core)",
+    "32.0 GB system RAM with 4.0 GB per vCPU allocation",
+    "Bundled 322 GB local SSD with Premium Storage support",
+    "Hardware-level AVX-512, VAES, and SHA-NI cryptographic acceleration",
+    "No integrated GPU accelerator; standard zero complimentary public IPv4 configuration",
+    "Well-suited for databases, caching layers, backend APIs, and CI/CD pipelines"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

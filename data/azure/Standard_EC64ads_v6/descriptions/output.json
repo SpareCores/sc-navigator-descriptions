@@ -1,19 +1,21 @@
 {
   "page": [
-    "Microsoft Azure EC64ads_v6 is an ECadsv6-family virtual machine configured with 64 dedicated vCPUs utilizing an x86_64 AMD processor. The architecture runs on the Microsoft Hyper-V hypervisor. It features 512.0 GB of system memory, providing a ratio of 8.0 GB of RAM per virtual core.",
-    "This server type includes 2458 GB of local SSD storage and is capable of utilizing Premium Storage. It does not include any complimentary public IPv4 addresses. There are no dedicated GPUs present on this instance.",
-    "From a resource density perspective, the 1:8 vCPU-to-RAM ratio positions this instance as a memory-optimized resource. The inclusion of local SSD storage provides a consolidated hardware profile for workloads requiring high memory capacity alongside local scratch space. Appropriate workloads include memory-intensive databases, large-scale enterprise applications, and data processing tasks that fit within a 512.0 GB memory footprint."
+    "Microsoft Azure EC64ads_v6 is a memory-optimized virtual machine built on the x86_64 architecture and powered by an AMD EPYC 9V74 processor. The configuration provides 64 dedicated vCPUs mapped across 32 physical cores with simultaneous multithreading enabled. The memory subsystem delivers 512 GB of RAM, maintaining an 8 GB per vCPU ratio. Integrated instruction set extensions include AVX-512 with VNNI and bfloat16 support, alongside accelerated cryptographic instruction sets such as AES, VAES, and SHA-NI.",
+    "Local ephemeral capacity is provided by a bundled 2577 GB solid-state drive, complemented by support for remote Premium Storage volumes. In synthetic benchmarks, the instance demonstrates upper-quartile execution capabilities, posting a stress-ng single-core score of 3023.56 and a multi-core score of 96142.57. Memory and caching operations exhibit robust throughput under write pressure, logging 80.06 million operations per second in Redis SET workload testing.",
+    "From an architectural standpoint, the combination of a high memory-to-core ratio and direct-attached NVMe-class storage optimizes data-intensive execution by lowering the latency of scratch operations. Tradeoffs include the absence of dedicated GPU acceleration and the ephemeral lifecycle of the integrated local SSD, which requires deliberate persistence design for stateful applications.",
+    "Microsoft Azure EC64ads_v6 fits large in-memory databases, distributed caching layers, real-time analytics engines, and enterprise enterprise resource planning (ERP) workloads requiring substantial physical memory and dense CPU concurrency."
   ],
-  "description": "Microsoft Azure EC64ads_v6 is an x86_64 virtual machine from the ECadsv6 family, running on the Microsoft Hyper-V hypervisor. It features 64 dedicated vCPUs powered by an AMD processor and is equipped with 512.0 GB of system memory, establishing an 8.0 GB memory-to-core ratio. The instance includes 2458 GB of local SSD storage and supports Premium Storage configurations. No GPUs are bundled with this server, and it comes with zero complimentary public IPv4 addresses. Given its high memory-to-CPU ratio and substantial local storage, this server is designed for memory-optimized workloads and database hosting. It offers a balanced resource density for enterprise applications and data processing tasks requiring significant RAM and fast local storage access.",
-  "og_description": "Microsoft Azure EC64ads_v6 is an x86_64 virtual machine featuring 64 dedicated AMD vCPUs, 512.0 GB of RAM, and 2458 GB of local SSD storage, optimized for memory-intensive enterprise workloads.",
-  "meta_description": "Microsoft Azure EC64ads_v6 is a memory-optimized virtual machine with 64 dedicated AMD vCPUs, 512.0 GB of RAM, and 2458 GB of local SSD storage.",
-  "tagline": "An x86_64 memory-optimized virtual machine featuring sixty-four dedicated AMD cores, half a terabyte of RAM, and local SSD storage.",
+  "description": "Microsoft Azure EC64ads_v6 is a memory-optimized instance engineered for data-heavy enterprise applications. Powered by an AMD EPYC 9V74 processor on the x86_64 architecture, it delivers 64 dedicated vCPUs across 32 physical cores alongside 512 GB of RAM, establishing an 8 GB per vCPU allocation. The hardware profile includes 2577 GB of local solid-state storage and support for Premium Storage tiers, coupled with hardware vector extensions including AVX-512. Benchmark results reflect upper-quartile processing capacity, achieving 96142.57 on stress-ng multi-core tests and 80.06 million operations per second in Redis SET evaluations. The instance lacks specialized GPU acceleration, focusing resource efficiency instead on high memory density and rapid local scratch storage. Microsoft Azure EC64ads_v6 is suited for in-memory databases, large-scale caching, transaction processing, and memory-intensive analytics workloads.",
+  "og_description": "Microsoft Azure EC64ads_v6 features 64 AMD EPYC 9V74 vCPUs, 512 GB RAM, and a 2577 GB local SSD. It delivers top-tier performance for in-memory databases, distributed caching, and big data analytics.",
+  "meta_description": "Microsoft Azure EC64ads_v6 provides 64 AMD EPYC vCPUs, 512 GB RAM, and a 2577 GB local SSD, optimized for in-memory databases and enterprise caching.",
+  "tagline": "High-density memory architecture delivering dedicated 64 vCPU computing, integrated fast local storage, and high-throughput memory caching.",
   "bullet_points": [
-    "64 dedicated vCPUs powered by AMD x86_64 architecture",
-    "512.0 GB of system memory providing an 8.0 GB per-core ratio",
-    "2458 GB of integrated local SSD storage",
-    "Premium Storage capable for flexible disk configurations",
-    "Designed for memory-intensive databases and enterprise applications"
+    "64 dedicated vCPUs powered by AMD EPYC 9V74 processors",
+    "512 GB system memory providing an 8 GB per vCPU ratio",
+    "2577 GB integrated local solid-state drive",
+    "Hardware-accelerated AVX-512, VAES, and SHA-NI instruction sets",
+    "High-throughput caching achieving 80.06 million Redis SET operations per second",
+    "Suited for in-memory databases, distributed caches, and data analytics"
   ],
   "categories": [
     "Memory Optimized",

@@ -1,21 +1,24 @@
 {
   "page": [
-    "Amazon Web Services r6a.12xlarge is a memory-optimized server instance powered by the AMD EPYC 7R13 processor. Built on the x86_64 architecture, this instance features 48 virtual CPUs mapped to 24 physical cores with hyperthreading enabled. It operates at a clock speed of 3.6 GHz and includes 384.0 GB of DDR4 memory running at 3 GHz, providing a high memory-to-vCPU ratio of 8.0 GB per core. The instance runs on the AWS Nitro hypervisor and does not include local storage or dedicated GPU hardware.",
-    "Benchmark data indicates strong computational and memory performance. The instance achieves top-tier results in stress-ng single-core and multi-core CPU tests, as well as the Passmark CPU and memory benchmarks. Cryptographic capabilities are supported by hardware-accelerated instructions like AES, VAES, and SHA_NI, leading to strong performance in Passmark encryption tests. Memory bandwidth tests for uncached large-block reads and writes fall within the average range, while cached small-block operations and Redis SET operations demonstrate stable, mid-range throughput.",
-    "The r6a.12xlarge offers qualitative cost efficiency for memory-intensive workloads by utilizing AMD EPYC processors, which deliver high resource density compared to alternative architectures. However, the lack of local NVMe storage requires reliance on network-attached storage, which may impact I/O-heavy workloads. With a baseline network bandwidth of 19 Gbps, this instance is well-suited for large-scale databases, in-memory caches, data analytics, and memory-bound enterprise applications."
+    "Amazon Web Services r6a.12xlarge is a memory-optimized instance built on the AWS Nitro System. It is powered by AMD EPYC 7R13 x86_64 processors operating at up to 3.6 GHz, providing 48 dedicated vCPUs across 24 physical cores with multithreading enabled. The CPU cache architecture includes 32 KB L1 data cache, 0.5 MB L2 cache, and 32 MB L3 cache. Memory capacity totals 384.0 GB of DDR4 RAM running at 3 GHz, delivering an 8:1 memory-to-vCPU ratio. Network performance is anchored by a baseline bandwidth of 19 Gbps. The instance does not include integrated GPUs or local storage, necessitating external network-attached storage solutions.",
+    "Benchmark results highlight strong computational and cryptographic capability. In synthetic CPU testing, the instance achieved top-tier ratings with a stress-ng multi-core score of 71,805.19 and a PassMark CPU score of 54,507.49, accompanied by strong PassMark encryption throughput at 56,930.71. Geekbench multi-core performance measured 14,544.0, with strong showings in ray tracing and image processing. Memory throughput exhibits 66.98 GB/sec uncached read and 31.99 GB/sec uncached write bandwidth, landing in the middle 50% tier alongside an average Redis SET performance of 50.51 million operations per second.",
+    "The 1:8 core-to-memory balance delivers high resource density for enterprise workloads requiring extensive in-memory footprint relative to CPU overhead. However, the absence of local NVMe storage and AVX-512 instruction support presents explicit architectural tradeoffs, requiring dependence on external storage networks and standard AVX vector execution. In LLM benchmarks, the instance yields 274.72 tokens per second for small-model generation, declining to 16.24 tokens per second on 7B parameter models.",
+    "Amazon Web Services r6a.12xlarge is configured for large memory-resident workloads, including distributed in-memory caches, enterprise relational databases, medium-scale machine learning inference, and broad enterprise memory-intensive applications."
   ],
-  "description": "Amazon Web Services r6a.12xlarge is a memory-optimized instance featuring 48 vCPUs and 24 physical cores powered by an AMD EPYC 7R13 processor running at 3.6 GHz. Built on the x86_64 architecture and the AWS Nitro hypervisor, it delivers 384.0 GB of DDR4 memory with a high ratio of 8.0 GB per core. The instance lacks local storage and dedicated GPUs, relying instead on network-attached storage and a baseline network bandwidth of 19 Gbps. Benchmark results show strong performance in stress-ng CPU tests, Passmark memory evaluations, and cryptographic operations, alongside average memory bandwidth for large-block transfers. This configuration provides qualitative cost efficiency for memory-intensive tasks, making it highly suitable for large-scale databases, in-memory caching, and enterprise applications.",
-  "og_description": "Amazon Web Services r6a.12xlarge is a memory-optimized instance featuring 48 vCPUs, 384 GB DDR4 RAM, and an AMD EPYC processor, delivering strong CPU and memory benchmark performance for databases.",
-  "meta_description": "Amazon Web Services r6a.12xlarge is a memory-optimized instance with 48 vCPUs, 384 GB DDR4 RAM, and AMD EPYC processors for enterprise workloads.",
-  "tagline": "A memory-optimized x86_64 server featuring high memory density and strong multi-core processing for demanding database and enterprise workloads.",
+  "description": "Amazon Web Services r6a.12xlarge is a memory-optimized instance featuring 48 dedicated vCPUs across 24 physical AMD EPYC 7R13 cores, 384.0 GB of DDR4 memory, and a 19 Gbps baseline network capacity on the Nitro hypervisor. Operating without local disk storage or GPUs, it provides an 8:1 memory-to-vCPU ratio suited for large in-memory workloads. Benchmark testing shows strong multi-core processing with a stress-ng score of 71,805.19 and PassMark score of 54,507.49, alongside solid cryptographic capability. Uncached memory read bandwidth reaches 66.98 GB/sec, while Redis throughput averages 50.51 million operations per second. The instance provides resource-dense memory capacity, trading off specialized vector extensions like AVX-512 and integrated disks, making it suitable for in-memory caches, enterprise databases, and memory-bound computing.",
+  "og_description": "Amazon Web Services r6a.12xlarge features 48 vCPUs on AMD EPYC 7R13, 384 GB DDR4 RAM, and 19 Gbps networking. It delivers high-density memory performance for caching and databases.",
+  "meta_description": "Amazon Web Services r6a.12xlarge offers 48 vCPUs, 384 GB DDR4 RAM, and 19 Gbps networking on AMD EPYC 7R13 for memory-intensive enterprise workloads.",
+  "tagline": "High-density AMD EPYC processing paired with an expansive 384 GB memory footprint for demanding memory-bound workloads.",
   "bullet_points": [
-    "Powered by 48 vCPUs and 24 physical cores via AMD EPYC 7R13 processors",
-    "Equipped with 384.0 GB of DDR4 memory at an 8.0 GB per core ratio",
-    "Strong benchmark performance in CPU, memory, and cryptographic tests",
-    "Features 19 Gbps baseline network bandwidth on the AWS Nitro hypervisor",
-    "Optimized for in-memory databases, caching layers, and data analytics"
+    "48 vCPUs (24 physical cores) via AMD EPYC 7R13 processor at 3.6 GHz",
+    "384.0 GB DDR4 memory yielding an 8:1 memory-to-core allocation",
+    "19 Gbps baseline network bandwidth running on AWS Nitro System",
+    "No integrated local storage or GPUs; relies on network volumes",
+    "Strong multi-core compute and PassMark CPU encryption performance",
+    "Suited for in-memory databases, distributed caches, and data processing"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "Compute Optimized"
   ]
 }

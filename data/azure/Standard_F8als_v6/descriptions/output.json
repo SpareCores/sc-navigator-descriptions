@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure F8als_v6 is an x86_64 server instance belonging to the Falsv6 family. It features 8 dedicated vCPUs mapped to 8 physical AMD EPYC 9V74 cores running at a clock speed of 3.7 GHz. The system is configured with 16.0 GB of system memory, yielding a low memory-to-core ratio of 2.0 GB per core. It does not include local storage or integrated GPUs, though it is premium storage capable. The hypervisor layer is managed by Microsoft Hyper-V.",
-    "Benchmark results indicate strong single-core performance, with stress-ng single-core CPU and Geekbench single-core scores placing in the top 25%. Text processing and text generation for small LLM models also demonstrate strong performance. Multi-core performance, including stress-ng multi-core, Geekbench multi-core, and Passmark CPU scores, falls within the average range. A notable performance tradeoff is observed in memory bandwidth, where read-only large block operations are weak, placing in the bottom 25%, while small block cached reads and large block writes remain average.",
-    "Given its compute-focused hardware profile with dedicated AMD EPYC cores and a lower memory allocation, this instance provides qualitative cost efficiency for CPU-bound tasks that do not require massive memory footprints. It is well-suited for workloads such as software compilation, text processing, web serving, and lightweight machine learning inference. However, its lack of local storage and lower memory-to-core ratio make it less suitable for memory-intensive databases or large-scale data processing."
+    "Microsoft Azure F8als_v6 is a compute-optimized virtual machine built on the Microsoft Hyper-V hypervisor. The instance is powered by an AMD EPYC 9V74 processor running at 3.7 GHz on the x86_64 architecture. It provides 8 dedicated vCPUs mapped to 8 physical cores without multithreading (1 thread per core). Cache specifications include 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. Advanced vector instructions including AVX-512 (AVX512F, AVX512_VNNI, and AVX512_BF16) and cryptographic acceleration flags such as AES, VAES, and SHA_NI are available.",
+    "Hardware allocations provide 16.0 GB of system memory, matching a 1:2 vCPU-to-RAM ratio of 2.0 GB per core. The server includes no local storage and no dedicated hardware GPUs. In benchmark evaluations, the instance demonstrates strong single-core performance, scoring 3080.89 in single-core stress-ng tests and 2106.0 in single-core Geekbench. Multi-core performance aligns with expected midrange metrics for an 8-core footprint, recording 24620.07 on stress-ng and 10749.0 on Geekbench.",
+    "Memory-intensive tasks reveal potential tradeoffs. Potentially uncached large-block read bandwidth tests at 37.09 GB/sec fall into the lower quartile, while cached small-block reads reach 1186.62 GB/sec. Text processing and lightweight LLM text generation perform strongly, yielding 310.16 tokens/sec on 135M parameter models. Medium model (7B) text generation achieves 8.93 tokens/sec. The instance is cost efficient for compute-bound pipelines that require dedicated physical execution threads and vector extensions without paying for unneeded memory capacity. Workload fit includes continuous integration builds, Clang compilation, web serving, batch encoding, and compute-focused microservices."
   ],
-  "description": "The Microsoft Azure F8als_v6 is an x86_64 compute-optimized server instance powered by 8 dedicated AMD EPYC 9V74 physical cores running at 3.7 GHz. It features 16.0 GB of system memory, resulting in a low memory-to-core ratio of 2.0 GB per core, and lacks local storage and integrated GPUs. Operating on Microsoft Hyper-V, the instance delivers strong single-core CPU and text processing performance, placing in the top 25% of benchmarks. However, multi-core execution and memory write bandwidth are average, and large-block uncached memory reads are weak. This resource profile offers qualitative cost efficiency for CPU-heavy, low-memory workloads. It is best suited for tasks such as software compilation, text processing, and lightweight web serving.",
-  "og_description": "Microsoft Azure F8als_v6 is an x86_64 compute-optimized server with 8 dedicated AMD EPYC cores at 3.7 GHz and 16 GB RAM. It delivers strong single-core performance for CPU-bound workloads.",
-  "meta_description": "Microsoft Azure F8als_v6 is an x86_64 compute-optimized server featuring 8 dedicated AMD EPYC cores, 16 GB RAM, and strong single-core performance.",
-  "tagline": "A compute-focused virtual machine featuring dedicated high-frequency processors and a lean memory profile for efficient single-core and text processing workloads.",
+  "description": "Microsoft Azure F8als_v6 is a compute-optimized virtual machine featuring 8 dedicated vCPUs on 8 physical cores powered by a 3.7 GHz AMD EPYC 9V74 processor. Based on the x86_64 architecture and running under Hyper-V, the instance includes AVX-512 vector support (including VNNI and BF16) and cryptographic acceleration via VAES and SHA_NI. It is configured with 16.0 GB of RAM (2.0 GB per vCPU), no bundled local storage, and zero GPUs. Benchmark profiles show strong single-core performance with a Geekbench single-core score of 2106.0 and stress-ng score of 3080.89, alongside mid-range multi-threaded execution. Memory bandwidth on large uncached blocks is relatively constrained at 37.09 GB/sec. F8als_v6 provides resource efficiency for compute-centric workloads with moderate memory requirements, such as code compilation, CI/CD runners, batch processing, and high-throughput web serving.",
+  "og_description": "Microsoft Azure F8als_v6 is a compute-optimized VM with 8 dedicated AMD EPYC 9V74 cores, 16 GB RAM, and AVX-512 support. It delivers strong single-core performance for compute workloads.",
+  "meta_description": "Microsoft Azure F8als_v6 features 8 dedicated AMD EPYC cores, 16 GB RAM, and AVX-512 support, optimized for compute-heavy workloads without local storage.",
+  "tagline": "Dedicated AMD EPYC compute power featuring a 1:2 memory ratio and strong single-core execution for compute-bound applications.",
   "bullet_points": [
-    "8 dedicated AMD EPYC 9V74 cores running at 3.7 GHz",
-    "16.0 GB of system memory with a 2.0 GB per core ratio",
-    "Strong single-core CPU and text processing benchmark performance",
-    "No local storage with premium storage capability",
-    "Optimized for software compilation, text processing, and web serving"
+    "8 dedicated physical cores via AMD EPYC 9V74 processor at 3.7 GHz",
+    "16.0 GB system memory (2.0 GB per vCPU)",
+    "AVX-512 extensions including VNNI and BF16 instruction sets",
+    "No bundled local storage or integrated GPUs",
+    "Strong single-core performance profiles across Geekbench and stress-ng",
+    "Suited for CI/CD pipelines, code compilation, and web serving"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

@@ -1,23 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.t5-c1m1.4xlarge is a burstable virtual machine instance powered by the KVM hypervisor. It features an x86_64 architecture with an Intel Xeon 8163 processor operating at 2.5 GHz. The hardware configuration includes 16 vCPUs derived from 8 physical cores with hyper-threading enabled, alongside 16.0 GB of system memory, resulting in a 1.0 GB per core allocation. This instance does not include local storage or dedicated GPU hardware, and it provides a baseline network bandwidth of 1 Gbps.",
-    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. Single-core performance is relatively weak, with stress-ng and Geekbench single-core scores falling into the bottom 25% and 10% respectively, and single-threaded gzip compression rated as poor. However, multi-core performance is average, as demonstrated by stress-ng multi-core, Geekbench multi-core, and Passmark CPU tests. Memory bandwidth remains average for both read and write operations, though the overall Passmark memory score is weak. The instance handles static web serving, Redis SET operations, and small-model LLM prompt processing at average speeds, but struggles with larger 7B LLM models.",
-    "Due to its burstable CPU allocation and low memory-to-vCPU ratio, this instance offers a cost-effective option for workloads with variable CPU utilization. It is designed for scenarios that experience periodic traffic spikes rather than sustained high-intensity processing. Suitable workloads include static web serving, software compilation, multi-threaded testing environments, and lightweight database operations that can leverage the 16 vCPUs during burst periods without exhausting CPU credits."
+    "Alibaba Cloud ecs.t5-c1m1.4xlarge is an x86_64 burstable virtual machine belonging to the shared instance family. The instance is powered by an Intel Xeon 8163 processor operating at a base clock speed of 2.5 GHz, providing 16 virtual CPUs across 8 physical cores with simultaneous multithreading enabled. The instance includes 16.0 GB of system memory, establishing a 1:1 memory-to-vCPU allocation ratio. This instance configuration does not include local storage disks and provides zero discrete GPUs, relying on remote block storage and maintaining a baseline network bandwidth of 1 Gbps.",
+    "Performance benchmarks reflect the architectural characteristics of the burstable CPU allocation and low memory density. Single-threaded metrics fall in the lower percentiles, as demonstrated by a single-core Geekbench score of 836.0, a stress-ng single-core rating of 1066.99, and weak single-threaded compression throughput. In contrast, parallel execution scales into average tiers, evidenced by a multi-core Geekbench score of 6235.0 and a PassMark CPU score of 16295.73. Memory throughput measures 99.9 GB/sec for large uncached reads and 57.76 GB/sec for writes, enabling standard multi-threaded throughput for operations such as Redis SET caching and static web delivery.",
+    "By delivering a high core count with a lean memory profile, ecs.t5-c1m1.4xlarge provides qualitative cost efficiency for compute-parallel workloads that experience intermittent utilization rather than continuous peak load. The primary limitation is the burstable resource model, which restricts suitability for sustained full-capacity compute or memory-heavy databases. Recommended workloads include multi-threaded software compilation, periodic batch processing, staging infrastructure, and horizontally distributed test runners."
   ],
-  "description": "Alibaba Cloud ecs.t5-c1m1.4xlarge is a burstable x86_64 virtual server featuring 16 vCPUs and 16.0 GB of RAM, powered by an Intel Xeon 8163 processor running at 2.5 GHz. Operating on the KVM hypervisor, this instance does not include local storage or GPU accelerators, and delivers a baseline network bandwidth of 1 Gbps. Benchmark data reveals weak single-core performance but average multi-core capabilities, making it highly suitable for multi-threaded tasks that do not require sustained maximum CPU utilization. With a low memory-to-core ratio of 1.0 GB per vCPU, this burstable instance represents a budget-friendly option for variable workloads. It is best suited for static web serving, software compilation, and development or testing environments that experience periodic processing spikes.",
-  "og_description": "Alibaba Cloud ecs.t5-c1m1.4xlarge is a burstable virtual server with 16 vCPUs, 16 GB RAM, and an Intel Xeon processor, offering cost-effective multi-core performance for variable workloads.",
-  "meta_description": "Alibaba Cloud ecs.t5-c1m1.4xlarge is a burstable x86_64 instance with 16 vCPUs and 16 GB RAM, ideal for variable multi-threaded workloads.",
-  "tagline": "A burstable multi-core virtual server designed for cost-effective handling of variable workloads and periodic processing spikes.",
+  "description": "Alibaba Cloud ecs.t5-c1m1.4xlarge is a burstable virtual machine configured with 16 vCPUs and 16.0 GB of RAM on an Intel Xeon 8163 processor running at 2.5 GHz. Built on x86_64 architecture with KVM virtualization, it provides an allocation of 1.0 GB of memory per core. The server contains no integrated local storage and no GPU hardware, operating with a baseline network bandwidth of 1 Gbps. Benchmark results demonstrate weak single-thread performance, reflected in a Geekbench single-core score of 836.0 and single-threaded compression bottlenecks. Conversely, multi-threaded benchmarks reach average tiers, with a PassMark CPU score of 16295.73 and a multi-core Geekbench score of 6235.0. This burstable configuration delivers qualitative cost efficiency for intermittent, parallel workloads requiring high core concurrency. It is well-matched for distributed build jobs, low-traffic web serving, microservice staging, and bursty background batch tasks.",
+  "og_description": "Alibaba Cloud ecs.t5-c1m1.4xlarge features 16 burstable vCPUs, 16 GB RAM, and an Intel Xeon 8163 processor at 2.5 GHz. It offers moderate multi-core throughput for bursty, budget-conscious parallel workloads.",
+  "meta_description": "Alibaba Cloud ecs.t5-c1m1.4xlarge features 16 burstable vCPUs and 16 GB RAM on an Intel Xeon 8163 CPU, designed for bursty, multi-core tasks.",
+  "tagline": "A burstable, high-vCPU instance with low memory density tailored for cost-effective execution of intermittent multi-threaded jobs and development environments.",
   "bullet_points": [
-    "16 vCPUs and 16.0 GB RAM powered by an Intel Xeon 8163 processor",
-    "Burstable CPU allocation suitable for variable and spikey workloads",
-    "Average multi-core performance in Geekbench and stress-ng benchmarks",
-    "No local storage or GPU hardware included",
-    "1 Gbps baseline network bandwidth",
-    "Best suited for static web serving, software compilation, and testing"
+    "16 burstable vCPUs across 8 physical cores on an Intel Xeon 8163 processor",
+    "16.0 GB of total memory providing 1.0 GB of RAM per vCPU",
+    "Zero integrated local storage disks and zero discrete GPU hardware",
+    "1 Gbps baseline network bandwidth allocation",
+    "Favorable multi-core parallel scaling paired with constrained single-threaded throughput",
+    "Suitable for CI/CD compilation, test environments, and non-continuous batch processing"
   ],
   "categories": [
     "Burstable & Budget",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

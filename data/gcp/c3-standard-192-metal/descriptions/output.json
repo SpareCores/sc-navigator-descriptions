@@ -1,22 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c3-standard-192-metal is a bare-metal, compute-optimized server. It features 192 vCPUs across 96 physical Intel Xeon 8481C cores running at 4.0 GHz on the x86_64 architecture. The system is equipped with 768 GB of DDR5 memory operating at 5 GHz, providing 4.0 GB of RAM per core. This bare-metal instance does not include local NVMe storage or dedicated GPUs.",
-    "Benchmark results show top-tier multi-core CPU performance, with stress-ng multi-core and PassMark CPU scores ranking in the top 10%. The Intel Xeon processors support advanced instruction sets, including AVX-512 and Intel Advanced Matrix Extensions (AMX) for deep learning. Memory bandwidth is exceptionally high, with read-only cached small block speeds reaching 13,143.3 GB/sec and uncached large block reads at 466.69 GB/sec. However, single-core performance is more moderate, with stress-ng single-core and Geekbench text processing scoring in the average and bottom 25% tiers respectively.",
-    "Given its bare-metal architecture and high resource density, this server offers high qualitative cost efficiency for workloads that require direct hardware access without hypervisor overhead. It is highly suited for high-throughput database operations, Redis deployments, and static web serving, all of which achieved top-tier benchmark results. Additionally, the inclusion of AMX instructions enables strong performance in CPU-based LLM inference and software compilation tasks."
+    "Google Cloud Platform c3-standard-192-metal is a bare-metal server configuration based on the x86_64 architecture. It provides 192 dedicated virtual CPUs across 96 physical cores powered by Intel Xeon 8481C processors running at a base clock speed of 4.0 GHz, supported by 105 MB of L3 cache. Memory provisioning comprises 768 GB of DDR5 RAM operating at 5 GHz, delivering a balanced 1:4 vCPU-to-memory ratio (4.0 GB per vCPU). The instance runs directly on bare metal without a hypervisor layer and does not include integrated GPUs or local NVMe storage.",
+    "Benchmark results demonstrate exceptional multi-core performance and parallel memory bandwidth. In stress-ng testing, multi-core throughput registered 160,623.56, placing it in the top tier alongside a PassMark CPU score of 123,975.15. Advanced instruction handling is reinforced by hardware acceleration features, including AMX (tile and int8) and AVX-512 (vnni and bf16), reflected in top-tier ratings for extended instructions (187,284.0) and encryption tests (164,812.22). Memory subsystems deliver 466.69 GB/sec read bandwidth and 202.24 GB/sec write bandwidth on large 256MB blocks, paired with strong caching performance.",
+    "While aggregate computing capabilities rank in the upper decile, single-core benchmarks yield more moderate results. Single-threaded stress-ng throughput (2,017.09) and Geekbench single-core performance (2,133.0) place within average to strong brackets, and Geekbench text processing falls into lower percentiles (1,424.0). Storage reliance requires network-attached volumes because zero local block storage is included, which must be planned into deployment architectures requiring continuous high-IOPS disk persistence.",
+    "The qualitative hardware density offers high operational efficiency for parallel applications capable of saturating 192 threads and 768 GB of memory. It serves extensive in-memory databases, evidenced by 182.38 million Redis SET operations per second and high-throughput web processing (140.64 GB/sec). The profile is ideally targeted at large-scale parallel compilation, CPU-based LLM inference, intensive database operations, and high-concurrency microservice architectures."
   ],
-  "description": "Google Cloud Platform c3-standard-192-metal is a bare-metal, compute-optimized server powered by 192 vCPUs (96 physical Intel Xeon 8481C cores) running at 4.0 GHz on the x86_64 architecture. It features 768 GB of high-speed 5 GHz DDR5 memory, though it lacks local storage and dedicated GPUs. Benchmarks indicate top-tier multi-core CPU performance and memory bandwidth, alongside exceptional throughput for database operations, Redis SET operations, and static web serving. The processor supports advanced instruction sets like AVX-512 and Intel AMX, which drive strong performance in CPU-based LLM inference and software compilation. This bare-metal instance is highly efficient for high-density compute workloads, large-scale database hosting, and high-throughput web serving where direct hardware access is required.",
-  "og_description": "Google Cloud Platform c3-standard-192-metal is a bare-metal compute-optimized server featuring 192 vCPUs, 768 GB of DDR5 RAM, and top-tier multi-core performance for databases and web serving.",
-  "meta_description": "Google Cloud Platform c3-standard-192-metal is a bare-metal server with 192 vCPUs and 768 GB DDR5 RAM, optimized for high-throughput compute workloads.",
-  "tagline": "A high-density bare-metal server delivering exceptional multi-core performance and DDR5 memory bandwidth for demanding enterprise workloads.",
+  "description": "Google Cloud Platform c3-standard-192-metal is a high-density bare-metal server driven by dual-socket Intel Xeon 8481C processors on the x86_64 architecture. It features 192 dedicated vCPUs (96 physical cores) clocked at 4.0 GHz with 105 MB of L3 cache, complemented by 768 GB of DDR5 memory providing a 1:4 core-to-memory ratio. The platform contains no bundled GPUs and relies entirely on remote storage, as local disk is absent. Empirical testing highlights top-tier multi-threaded processing, evidenced by 160,623.56 in stress-ng and 123,975.15 in PassMark CPU, backed by AMX and AVX-512 vector acceleration. High-capacity memory bandwidth supports 466.69 GB/sec read speeds and up to 182.38 million Redis SET operations per second. While single-thread speeds remain in middle tiers, its immense parallel resource profile makes it well-suited for distributed container orchestration, large-scale software compilation, in-memory caching platforms, and CPU-driven batch inference workloads.",
+  "og_description": "Google Cloud Platform c3-standard-192-metal features 192 vCPUs on Intel Xeon 8481C processors, 768 GB DDR5 RAM, and top-tier multi-core computing performance for large-scale enterprise workloads.",
+  "meta_description": "Google Cloud Platform c3-standard-192-metal delivers 192 vCPUs, 768 GB DDR5 memory, Intel AMX acceleration, and bare-metal multi-threaded compute density.",
+  "tagline": "Bare-metal 192-vCPU computing platform delivering 768 GB of DDR5 memory and hardware-accelerated parallel execution without hypervisor overhead.",
   "bullet_points": [
-    "192 vCPUs and 96 physical Intel Xeon cores running at 4.0 GHz",
-    "768 GB of high-speed 5 GHz DDR5 memory",
-    "Top-tier multi-core CPU performance and memory bandwidth",
-    "Intel AMX and AVX-512 support for accelerated vector and matrix operations",
-    "Optimized for high-throughput databases, Redis, and static web serving"
+    "Bare-metal Intel Xeon 8481C platform with 96 physical cores and 192 threads at 4.0 GHz",
+    "768 GB high-speed DDR5 memory delivering up to 466.69 GB/sec read bandwidth",
+    "Integrated hardware acceleration including AVX-512, AMX Tile, and AMX INT8",
+    "Zero bundled local disk storage, requiring external cloud block storage attachments",
+    "Top-tier performance in multi-threaded computation, Redis operations, and static throughput",
+    "Fitted for large in-memory databases, concurrent builds, and parallel data workloads"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

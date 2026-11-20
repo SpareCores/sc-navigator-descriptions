@@ -1,24 +1,22 @@
 {
   "page": [
-    "Amazon Web Services r8i.xlarge is a memory-optimized instance powered by the Nitro hypervisor. It features an Intel Xeon 6975P-C processor with 4 vCPUs, 2 physical cores, and 2 threads per core, running at a clock speed of 3.9 GHz. The instance is equipped with 32.0 GB of DDR5 memory operating at 7 GHz, providing 8.0 GB of RAM per core. It does not include local storage or dedicated GPUs, and it offers a baseline network bandwidth of 2 Gbps.",
-    "The underlying x86_64 architecture supports advanced instruction sets, including Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX). In benchmark testing, the instance demonstrates average single-core performance, with a stress-ng single-core score of 2109.87 and a Geekbench single-core score of 1890.0. However, multi-core performance is relatively weak, as shown by a Geekbench multi-core score of 4363.0 and a stress-ng multi-core score of 4286.46. Single-threaded gzip compression is a notable strength, registering at 33.41 GB/sec.",
-    "Despite its memory-optimized classification and DDR5 memory generation, the instance exhibits weak memory bandwidth in large-block read and write tests, measuring 31.47 GB/sec and 17.95 GB/sec respectively. Passmark memory and database operations scores also fall into the lower tier. For workloads involving Redis, the instance achieves an average throughput of 7.49 million SET operations per second. Small-model LLM inference runs at average speeds, but text generation for 7B models drops to a poor 4.56 tokens per second.",
-    "From a cost-efficiency perspective, the r8i.xlarge provides a high memory-to-vCPU ratio on modern DDR5 hardware, making it suitable for memory-bound workloads that do not require high multi-core compute density. Appropriate workloads include single-threaded data processing, text processing, caching layers like Redis, and lightweight web serving."
+    "Amazon Web Services r8i.xlarge is a memory-optimized instance powered by the AWS Nitro System and Intel Xeon 6975P-C processors. Operating on the x86_64 architecture at clock speeds up to 3.9 GHz, the instance provides 4 dedicated virtual CPUs mapped across 2 physical cores with 2 threads per core. The hardware configuration features an extensive 480 MB L3 cache alongside 32.0 GB of DDR5 system memory clocked at 7 GHz, establishing an 8.0 GB per-vCPU ratio. The instance includes 2 Gbps of baseline network bandwidth, does not provision integrated local storage, and includes zero hardware acceleration GPUs.",
+    "Benchmark evaluation shows balanced single-thread compute efficiency offset by constrained aggregate throughput. The instance achieves competitive results in single-threaded tasks, scoring 1890.0 in Geekbench single-core and 33.41 GB/sec in gzip compression, alongside strong text processing performance at 2742.0. However, multi-core scaling is naturally restricted by the 2 physical core count, registering 4363.0 in Geekbench multi-core and 4286.46 in stress-ng multi-core testing. Uncached memory bandwidth reaches 31.47 GB/sec for reads and 17.95 GB/sec for writes, reflecting standard tier memory throughput.",
+    "From a cost-efficiency perspective, the r8i.xlarge provides economical access to DDR5 memory capacity and modern Intel instruction sets, including AVX-512 and AMX matrix extensions, without requiring large core allocations. Because there is no bundled local NVMe storage, workloads rely exclusively on remote EBS storage volumes. The profile fits in-memory caching solutions like Redis, which sustained 7.49 million SET operations per second, intermediate relational database servers, memory-bound data filtering, and single-threaded data compression tasks."
   ],
-  "description": "Amazon Web Services r8i.xlarge is a memory-optimized instance featuring 4 vCPUs and 32.0 GB of DDR5 RAM. Powered by an Intel Xeon 6975P-C processor running at 3.9 GHz, it utilizes the Nitro hypervisor and supports advanced instruction sets like AVX-512 and AMX. The instance lacks local storage and GPUs, relying on a 2 Gbps baseline network bandwidth. Benchmark data reveals average single-core CPU performance, with strong single-threaded gzip compression and text processing capabilities. However, multi-core performance and large-block memory bandwidth are relatively weak. Qualitatively, the r8i.xlarge offers a high memory-to-vCPU ratio on modern hardware, making it suitable for memory-intensive, single-threaded tasks, caching layers such as Redis, and lightweight database operations where high multi-core compute density is not required.",
-  "og_description": "Amazon Web Services r8i.xlarge is a memory-optimized instance with 4 vCPUs, 32 GB of DDR5 RAM, and an Intel Xeon processor, suitable for memory-intensive workloads and caching.",
-  "meta_description": "Amazon Web Services r8i.xlarge is a memory-optimized instance featuring 4 vCPUs, 32 GB of DDR5 RAM, and an Intel Xeon processor.",
-  "tagline": "A memory-optimized instance featuring DDR5 RAM and Intel Xeon processors, designed for memory-bound workloads and caching applications.",
+  "description": "Amazon Web Services r8i.xlarge is a memory-optimized virtual machine featuring 4 vCPUs across 2 physical cores powered by an Intel Xeon 6975P-C processor on x86_64 architecture at 3.9 GHz. Managed through the Nitro hypervisor, the server delivers 32.0 GB of high-speed DDR5 memory (8.0 GB per vCPU) backed by a 480 MB L3 cache. It operates with a 2 Gbps baseline network interface, has no local instance storage, and includes no GPUs. Benchmark metrics demonstrate capable single-core execution, marked by 33.41 GB/sec gzip compression throughput and a 1890.0 Geekbench single-core score, while multi-core compute throughput reflects the 2-core boundary. In-memory execution is steady, demonstrated by 7.49 million Redis SET operations per second. The instance provides resource-efficient memory capacity for memory-resident key-value stores, intermediate transactional databases, lightweight web serving, and compression-intensive applications.",
+  "og_description": "Amazon Web Services r8i.xlarge is a memory-optimized instance with 4 vCPUs, 32 GB DDR5 RAM, and a 3.9 GHz Intel Xeon processor, built for in-memory databases, Redis caches, and memory-heavy workloads.",
+  "meta_description": "Amazon Web Services r8i.xlarge offers 4 vCPUs, 32 GB DDR5 RAM, and Intel Xeon hardware optimized for in-memory caching and database workloads.",
+  "tagline": "Memory-optimized compute featuring high-capacity DDR5 RAM and Intel Xeon processing for caching and memory-intensive enterprise tasks.",
   "bullet_points": [
-    "Intel Xeon 6975P-C processor with 4 vCPUs and 3.9 GHz clock speed",
-    "32.0 GB of DDR5 memory providing an 8.0 GB per core ratio",
-    "Supports AVX-512 and Intel AMX instruction sets",
-    "Strong single-threaded gzip compression and text processing performance",
-    "Weak multi-core performance and large-block memory bandwidth",
-    "Best suited for caching layers, Redis, and memory-bound applications"
+    "Intel Xeon 6975P-C processor running at up to 3.9 GHz with x86_64 architecture",
+    "4 vCPUs across 2 physical cores paired with 32.0 GB of DDR5 memory",
+    "Large 480 MB shared L3 cache with AVX-512 and AMX accelerator support",
+    "2 Gbps baseline network bandwidth with Nitro hypervisor management",
+    "No bundled local storage, requiring network-attached storage configuration",
+    "Optimized for Redis caches, in-memory processing, and intermediate databases"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

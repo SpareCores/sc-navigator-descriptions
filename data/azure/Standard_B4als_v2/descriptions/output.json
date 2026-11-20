@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure B4als_v2 is a burstable virtual machine belonging to the Basv2 server family. It features an x86_64 architecture powered by an AMD EPYC 7763 processor running at 3.525 GHz. The configuration includes 4 vCPUs mapped to 2 physical cores with 2 threads per core, and 8.0 GB of system memory, yielding 2.0 GB of RAM per core. This server does not include local storage or integrated GPUs, but it is premium storage capable.",
-    "Benchmark results indicate a clear performance asymmetry. The single-core CPU performance is strong, placing in the top 25% on stress-ng single-core tests, and average on Geekbench single-core and single-threaded compression tasks. However, multi-core performance is weak, falling into the bottom 25% for stress-ng multi-core, Geekbench multi-core, and PassMark CPU tests. Memory performance is also constrained, with PassMark memory scores and multi-threaded bzip3 decompression falling into the bottom 10% of tested systems.",
-    "The burstable CPU allocation model offers a cost-efficient profile for workloads with variable resource demands, allowing users to pay for lower baseline performance while retaining the ability to burst during peak activity. The primary tradeoff is the limited 8.0 GB memory capacity and weak multi-threaded scaling. This server is best suited for lightweight workloads such as low-traffic web serving, basic text processing, microservices, and development or testing environments that do not require sustained multi-core compute or high memory bandwidth."
+    "Microsoft Azure B4als_v2 is a burstable virtual machine within the Basv2 series, built on the x86_64 architecture. The instance allocates 4 vCPUs derived from 2 physical cores of an AMD EPYC 7763 processor running at 3.525 GHz, supported by simultaneous multithreading. Hardware cache resources include 32 KB of L1 data cache, 0.5 MB of L2 cache, and 32 MB of shared L3 cache. Memory is provisioned at 8.0 GB, yielding a 1:2 vCPU-to-RAM ratio of 2.0 GB per vCPU. The instance contains no bundled local storage and includes zero dedicated GPUs.",
+    "Benchmark results highlight solid single-threaded performance contrasted with constrained multithreaded capacity. In stress-ng, single-core CPU throughput ranks in the top 25% with 2702.08, while multi-core execution falls into the bottom 25% at 5400.67. Similarly, Geekbench returns a moderate single-core score of 1567.0 but drops to a weaker 3594.0 in multi-core metrics. Memory subsystem tests reflect constrained throughput, with PassMark memory testing ranking in the lowest 10% and uncached large-block write bandwidth registering 24.24 GB/sec.",
+    "Application-level benchmarks further delineate the performance envelope. Redis operations deliver 4.15 million SET operations per second, and static web serving achieves 5.11 GB/sec throughput, both falling into the lower quartile of tested cloud instances. Small-scale model inference achieves 138.81 tokens per second on 135M parameter models for text generation, though prompt processing remains relatively slow at 362.01 tokens per second.",
+    "By employing burstable CPU allocation and low memory density without bundled local disks, the B4als_v2 maintains an economical profile for variable compute demands. The architectural tradeoff pairs capable burst single-core execution with limited sustained aggregate compute and memory throughput. The server is well suited for low-traffic web applications, development environments, staging systems, and small background task queues with intermittent processing cycles."
   ],
-  "description": "Microsoft Azure B4als_v2 is a burstable virtual machine from the Basv2 family, featuring an AMD EPYC 7763 processor with 4 vCPUs across 2 physical cores, running at 3.525 GHz on an x86_64 architecture. It is configured with 8.0 GB of RAM, lacks local storage, and has no GPU. Performance benchmarks reveal a strong single-core CPU capability, ranking in the top 25% on stress-ng, but multi-core and memory performance are weak, falling into the bottom 25% and 10% respectively. This resource profile makes the server a cost-efficient option for workloads with variable CPU utilization. It is best suited for lightweight applications, development environments, and low-traffic web serving.",
-  "og_description": "Microsoft Azure B4als_v2 is a burstable virtual machine featuring an AMD EPYC 7763 processor with 4 vCPUs and 8.0 GB of RAM, offering strong single-core performance for lightweight workloads.",
-  "meta_description": "Microsoft Azure B4als_v2 is a burstable VM with 4 vCPUs, 8.0 GB RAM, and an AMD EPYC 7763 CPU, designed for cost-efficient, variable workloads.",
-  "tagline": "A burstable, cost-efficient virtual machine featuring strong single-core performance and 8 GB of memory for variable, lightweight workloads.",
+  "description": "Microsoft Azure B4als_v2 is a burstable virtual machine equipped with 4 vCPUs and 8.0 GB of RAM, powered by a 2-core, 4-thread AMD EPYC 7763 processor operating at 3.525 GHz on x86_64 architecture. The server includes no GPUs and relies entirely on remote storage, provisioning zero local disk capacity. Benchmarks reveal strong single-thread compute capabilities, evidenced by an upper-quartile stress-ng single-core result, paired with bottom-quartile multi-core and memory subsystem throughput under sustained execution. Redis throughput reaches 4.15 million SET operations per second, while static web serving throughput measures 5.11 GB/sec. This configuration offers an economical resource footprint designed for burst-oriented workloads with moderate memory requirements, such as development servers, small-scale staging environments, intermittent batch jobs, and low-traffic web serving.",
+  "og_description": "Microsoft Azure B4als_v2 provides 4 burstable vCPUs via an AMD EPYC 7763 processor, 8.0 GB of RAM, and no local storage, suited for intermittent workloads and dev environments.",
+  "meta_description": "Microsoft Azure B4als_v2 features 4 burstable AMD EPYC 7763 vCPUs, 8.0 GB RAM, and no local storage for cost-efficient development workloads.",
+  "tagline": "Economical burstable compute featuring AMD EPYC processing and balanced entry-level memory for intermittent execution and low-traffic services.",
   "bullet_points": [
-    "AMD EPYC 7763 processor with 4 vCPUs and 2 physical cores",
-    "8.0 GB of system memory with no local storage included",
-    "Burstable CPU allocation for cost-efficient handling of variable workloads",
-    "Strong single-core performance contrasted with weak multi-core scaling",
-    "Best suited for lightweight web serving, microservices, and development environments"
+    "4 burstable vCPUs backed by 2 AMD EPYC 7763 physical cores at 3.525 GHz",
+    "8.0 GB system memory with 2.0 GB allocation per vCPU",
+    "No bundled local storage and zero GPU accelerators",
+    "Strong single-core compute counterbalanced by constrained multi-core scaling",
+    "Targeted for staging environments, development instances, and small web servers"
   ],
   "categories": [
     "Burstable & Budget",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

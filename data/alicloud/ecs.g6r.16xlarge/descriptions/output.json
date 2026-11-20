@@ -1,23 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.g6r.16xlarge is an arm64-based general-purpose server instance powered by a 64-core Ampere Altra processor running at 2.8 GHz. It features 256 GB of system memory, providing a balanced 4 GB of RAM per vCPU. Built on the KVM hypervisor, this instance allocates dedicated CPU resources without hyperthreading, ensuring consistent compute performance. It does not include local storage or GPU accelerators, relying entirely on network-attached storage and offering a baseline network bandwidth of 16 Gbps.",
-    "Benchmark data indicates strong multi-core performance, with a stress-ng multi-core score of 114,463.22 and a multi-threaded bzip3 decompression speed of 413.03 GB/sec. Single-core performance is moderate, as shown by a stress-ng single-core score of 1,790.0 and a weaker single-threaded bzip3 decompression rate of 8.01 GB/sec. Memory performance is highly efficient for small cached blocks, reaching a read-only bandwidth of 4,547.11 GB/sec, while uncached large-block read and write speeds average 174.2 GB/sec and 77.47 GB/sec respectively. The instance also demonstrates high efficiency in Redis SET operations, achieving 82.33 million operations per second.",
-    "From a cost-efficiency perspective, the ecs.g6r.16xlarge leverages the ARM architecture to deliver high core density and strong multi-threaded performance at a lower resource-overhead profile compared to traditional x86 alternatives. However, workloads requiring advanced vector extensions (AVX) or specialized hardware acceleration will face limitations due to the lack of AVX support and dedicated GPUs. This instance is highly suited for multi-threaded applications, Redis caching layers, static web serving, and moderate scale-out workloads such as containerized microservices and distributed data processing."
+    "Alibaba Cloud ecs.g6r.16xlarge is a general-purpose virtual instance based on the 64-bit ARM architecture. Running on the KVM hypervisor, it is configured with 64 dedicated Ampere Altra vCPUs clocked at 2.8 GHz and 256.0 GB of system memory, establishing a 1:4 vCPU-to-memory ratio (4.0 GB per core). The instance includes no integrated GPU hardware and provides no local storage, relying on external network volumes alongside a baseline network bandwidth of 16 Gbps.",
+    "Benchmark evaluations indicate strong multi-threaded execution and memory cache throughput. The instance achieved 114463.22 on the stress-ng multi-core benchmark and 413.03 GB/sec in multi-threaded bzip3 decompression, both falling into the top quartile of tested machines. Small-block cached read memory bandwidth reached 4547.11 GB/sec, supporting high-throughput key-value processing as reflected by 82.33 million operations per second in Redis SET testing. Conversely, single-core metrics are moderate, with single-core stress-ng scoring 1790.0 and single-threaded bzip3 decompression recording 8.01 GB/sec.",
+    "The hardware configuration provides high physical core density and predictable CPU scheduling without hyperthreading contention. Tradeoffs include lower single-threaded processing speeds compared to high-clock x86 architectures and the lack of bundled local NVMe storage. The instance is structured for multi-threaded, parallelized cloud workloads such as in-memory caching tiers, container orchestration nodes, backend web services, and distributed microservices."
   ],
-  "description": "Alibaba Cloud ecs.g6r.16xlarge is an arm64 general-purpose instance powered by a 64-core Ampere Altra processor clocked at 2.8 GHz, paired with 256 GB of RAM. Operating on a KVM hypervisor with dedicated CPU allocation, this server offers a balanced 4 GB of memory per core but lacks local storage and GPU accelerators. It features a 16 Gbps baseline network bandwidth. Performance benchmarks highlight strong multi-core capabilities, including a multi-threaded bzip3 decompression rate of 413.03 GB/sec and 82.33 million Redis SET operations per second, though single-core performance remains average. Additionally, it delivers a static web serving throughput of 33.73 GB/sec and handles medium-sized 7B LLM inference at 21.03 text generation tokens per second. The ARM-based architecture provides a cost-efficient profile for highly parallelized workloads, making this instance well-suited for multi-threaded applications, web serving, Redis caching, and containerized microservices.",
-  "og_description": "Alibaba Cloud ecs.g6r.16xlarge is an arm64 server featuring 64 dedicated Ampere Altra cores, 256 GB RAM, and 16 Gbps bandwidth, optimized for multi-threaded workloads and Redis caching.",
-  "meta_description": "Alibaba Cloud ecs.g6r.16xlarge is a 64-core arm64 general-purpose server with 256 GB RAM, delivering strong multi-threaded performance and 16 Gbps network bandwidth.",
-  "tagline": "An arm64-powered general-purpose instance delivering high multi-core density and strong memory bandwidth for parallelized workloads and caching layers.",
+  "description": "Alibaba Cloud ecs.g6r.16xlarge is a general-purpose server based on the arm64 architecture, powered by Ampere Altra processors running at 2.8 GHz. It is provisioned with 64 dedicated vCPUs and 256.0 GB of RAM, offering a balanced 1:4 compute-to-memory ratio. Operating on KVM, the instance features a 16 Gbps baseline network bandwidth, zero local disk storage, and no GPU accelerators. Performance metrics show top-tier multi-core compute and cache throughput, marked by strong results in stress-ng multi-core tests, multi-threaded bzip3 decompression, and Redis SET throughput reaching 82.33 million operations per second. Single-core performance and uncached memory bandwidth remain in average tiers. The platform provides consistent parallel compute density, suiting container clusters, Redis caching nodes, and multi-threaded enterprise application backends.",
+  "og_description": "Alibaba Cloud ecs.g6r.16xlarge is a general-purpose arm64 server powered by 64 dedicated Ampere Altra vCPUs, 256 GB RAM, and 16 Gbps networking, suited for multi-threaded workloads and caching.",
+  "meta_description": "Alibaba Cloud ecs.g6r.16xlarge is an arm64 instance featuring 64 dedicated Ampere Altra vCPUs at 2.8 GHz, 256 GB RAM, and a 16 Gbps network baseline.",
+  "tagline": "High-density ARM architecture delivering 64 dedicated cores and balanced memory for scalable parallel computing and high-throughput memory caching.",
   "bullet_points": [
-    "64 dedicated Ampere Altra arm64 cores running at 2.8 GHz",
-    "256 GB of system memory providing a balanced 1:4 vCPU-to-RAM ratio",
-    "Strong multi-threaded performance with 413.03 GB/sec bzip3 decompression",
-    "High-throughput Redis performance reaching 82.33 million operations per second",
-    "16 Gbps baseline network bandwidth with KVM virtualization",
-    "Optimized for multi-threaded applications, web serving, and caching layers"
+    "64 dedicated Ampere Altra arm64 vCPUs running at 2.8 GHz",
+    "256.0 GB system memory (4.0 GB per dedicated vCPU)",
+    "16 Gbps baseline network bandwidth on KVM hypervisor",
+    "No bundled local storage and zero GPU accelerators",
+    "High multi-threaded scaling for Redis and parallel container workloads"
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }

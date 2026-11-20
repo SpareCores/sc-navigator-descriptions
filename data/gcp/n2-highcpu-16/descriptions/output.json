@@ -1,22 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform n2-highcpu-16 is an x86_64 architecture server powered by an Intel Xeon CPU running at 2.8 GHz. It features 16 dedicated vCPUs mapped to 8 physical cores with hyper-threading enabled. The system is equipped with 16.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. It does not include local storage or dedicated GPU hardware.",
-    "Benchmark results place the n2-highcpu-16 in the average tier for most multi-core and memory operations. The stress-ng multi-core CPU performance score is 14867.36, and the Geekbench multi-core score is 7164.0. However, single-core performance is relatively weak, with a stress-ng single-core score of 1408.59 and a bzip3 single-threaded decompression rate of 8.77 GB/sec. Memory bandwidth is measured at 82.43 GB/sec for large-block read-only operations and 42.68 GB/sec for large-block write operations.",
-    "The primary tradeoff of this configuration is its low memory-to-vCPU ratio, which limits its utility for memory-intensive databases or large-scale data processing. However, it supports advanced vector instructions like AVX-512, which assists in specific mathematical workloads. It achieves 14.12 million operations per second in Redis SET benchmarks and 12.3 GB/sec in static web serving throughput. This server is suited for compute-bound workloads with low memory footprints, such as software compilation, static web serving, and lightweight text or image processing."
+    "Google Cloud Platform n2-highcpu-16 is a compute-focused instance powered by an Intel Xeon processor running at 2.8 GHz. Built on the x86_64 architecture, it delivers 16 vCPUs across 8 physical cores with 2 threads per core, accompanied by 33 MB of L3 cache, 1.0 MB of L2 cache, and 32 KB of L1 data cache. Memory is provisioned at 16.0 GB, yielding a 1:1 gigabyte-to-vCPU ratio. The instance includes hardware instruction set extensions such as AVX, AVX-512F, AVX-512 VNNI, and AES, which assist vector math and cryptographic operations. It includes zero bundled local storage and no dedicated hardware accelerators.",
+    "Benchmark results demonstrate consistent middle-tier multi-threaded compute and throughput. The instance achieves a PassMark CPU score of 15418.2 and a Geekbench multi-core score of 7164.0, while Geekbench software compilation reaches 12321.0. Read-only large-block memory bandwidth settles at 82.43 GB/sec with write bandwidth at 42.68 GB/sec. Workload-specific tests show strong transactional throughput, processing 14.12 million Redis SET operations per second and maintaining 12.3 GB/sec of static web serving throughput. However, single-core processing shows limitations: stress-ng single-core performance and bzip3 decompression metrics both score within the lower 25 percent tier.",
+    "The 1.0 GB of memory per vCPU provides a lean configuration where raw core count takes precedence over memory footprint. Because bundled local storage is absent, external network disks must be attached, introducing an I/O dependency for disk-heavy tasks. Cost efficiency is driven by high parallel processing capacity per core allocation rather than raw single-threaded performance or memory density. The instance is suited for parallelized compilation, lightweight web serving, batch processing, and CPU-bound microservices that do not demand extensive working memory."
   ],
-  "description": "Google Cloud Platform n2-highcpu-16 is an x86_64 compute-optimized server featuring 16 dedicated Intel Xeon vCPUs running at 2.8 GHz and 16.0 GB of RAM. Lacking local storage and GPUs, this instance provides a low memory-to-vCPU ratio of 1.0 GB per core. Benchmark data indicates average multi-core performance, with a Geekbench multi-core score of 7164.0 and a stress-ng multi-core score of 14867.36, though single-core performance remains in the lower tier. The hardware supports AVX-512 instructions, making it suitable for compute-bound tasks that do not require large memory footprints. It is appropriate for workloads such as software compilation, static web serving, and lightweight text or image processing.",
-  "og_description": "Google Cloud Platform n2-highcpu-16 is an x86_64 compute-optimized server with 16 Intel Xeon vCPUs, 16 GB RAM, and no local storage, delivering average multi-core benchmark performance.",
-  "meta_description": "Google Cloud Platform n2-highcpu-16 is an x86_64 compute-optimized server with 16 Intel Xeon vCPUs, 16 GB RAM, and average multi-core performance.",
-  "tagline": "An x86_64 compute-optimized configuration featuring sixteen dedicated vCPUs and sixteen gigabytes of memory for compute-bound workloads.",
+  "description": "Google Cloud Platform n2-highcpu-16 is a compute-skewed virtual machine configured with 16 vCPUs across 8 physical Intel Xeon cores at 2.8 GHz and 16.0 GB of system memory. Operating on the x86_64 architecture, it supports AVX-512 vector and VNNI instructions. The instance contains no bundled local storage and no GPU hardware, requiring persistent network disks for persistent storage. Benchmark data indicates solid mid-range multi-threaded performance, recording a Geekbench multi-core score of 7164.0, a PassMark CPU score of 15418.2, and 14.12 million Redis SET operations per second. Conversely, single-thread stress tests and bzip3 decompression register in the lower performance quartile. The 1:1 memory-to-vCPU ratio creates an efficient environment for parallel execution that minimizes memory footprint, making it appropriate for distributed compilation, static web serving fleets, batch transcoding, and microservice workloads.",
+  "og_description": "Google Cloud Platform n2-highcpu-16 offers 16 vCPUs on Intel Xeon hardware at 2.8 GHz with 16 GB RAM. Featuring AVX-512 and zero bundled storage, it handles parallelized compute-bound tasks.",
+  "meta_description": "Google Cloud Platform n2-highcpu-16 features 16 vCPUs, 16 GB RAM, Intel Xeon 2.8 GHz processing, and AVX-512 support for compute-focused workloads.",
+  "tagline": "Compute-focused x86 configuration balancing sixteen dedicated vCPUs with a lean memory footprint for parallel batch processing and compiled application workloads.",
   "bullet_points": [
-    "16 dedicated x86_64 vCPUs powered by an Intel Xeon processor at 2.8 GHz",
-    "16.0 GB of system memory providing a 1:1 RAM-to-vCPU ratio",
-    "No bundled local storage or GPU hardware",
-    "Average multi-core performance with a Geekbench multi-core score of 7164.0",
-    "Support for AVX-512 vector instructions",
-    "Suited for software compilation, static web serving, and light text processing"
+    "16 vCPUs across 8 physical Intel Xeon cores clocked at 2.8 GHz",
+    "16.0 GB system memory providing a 1:1 GB-per-vCPU ratio",
+    "AVX-512, AVX-512 VNNI, and AES instruction set extensions",
+    "Requires external persistent storage due to zero bundled local disks",
+    "Suited for distributed compilation, batch processing, and web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

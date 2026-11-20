@@ -1,21 +1,22 @@
 {
   "page": [
-    "Microsoft Azure D2ds_v5 is a general-purpose virtual machine belonging to the DDSv5 server family. It is powered by an Intel Xeon 8370C processor running at 2.8 GHz, configured with 2 vCPUs mapped to 1 physical core with hyper-threading enabled. The system includes 8.0 GB of system memory, providing 4.0 GB of RAM per core. Local storage is provided by a bundled 77 GB SSD, and the instance is capable of utilizing Premium Storage. It operates on the Microsoft Hyper-V hypervisor with an x86_64 architecture.",
-    "Benchmark data reveals a clear performance profile. Single-core performance is moderate, with a stress-ng single-core score of 1889.99 and a Geekbench single-core score of 1581.0, both falling into the average range. However, multi-core and memory subsystem performance are limited. The stress-ng multi-core score of 1932.99 and Geekbench multi-core score of 1866.0 are positioned in the lower tier. Memory bandwidth is also constrained, with large-block read-only bandwidth at 14.72 GB/sec and write bandwidth at 13.46 GB/sec.",
-    "Given its hardware profile, the D2ds_v5 offers a cost-effective entry point for workloads that do not require high parallel processing power or massive memory bandwidth. The primary tradeoff is the low multi-core scaling and constrained memory throughput, which limits its utility for heavy database operations or complex multi-threaded tasks. It is best suited for lightweight general-purpose workloads, basic single-threaded applications, small-scale web serving, and simple utility tasks that benefit from dedicated CPU allocation and local SSD storage."
+    "Microsoft Azure D2ds_v5 is a general-purpose virtual machine based on the x86_64 architecture, running under the Microsoft Hyper-V hypervisor. The instance allocates 2 vCPUs derived from a single physical core on a dedicated 2.8 GHz Intel Xeon Platinum 8370C processor. It features 8.0 GB of system memory, providing a standard 1:4 CPU-to-memory ratio of 4.0 GB per vCPU. Hardware instruction set support includes AVX, AVX-512 (F and VNNI), AES, VAES, and SHA-NI. The instance includes an 81 GB local SSD for high-speed temporary storage and contains no dedicated GPUs.",
+    "Benchmark evaluations highlight the constraints of its two-thread, single-core configuration. While single-threaded tests yield mid-tier performance\u2014such as a Geekbench single-core score of 1581.0, gzip compression throughput of 28.16 GB/sec, and a stress-ng single-core rating of 1889.99\u2014multi-threaded workloads place in the lowest percentiles. Geekbench multi-core achieved 1866.0, PassMark CPU reached 2986.33, and stress-ng multi-core logged 1932.99, all placing in the bottom 10%. Memory bandwidth tests show 14.72 GB/sec for large uncached reads and 13.46 GB/sec for writes.",
+    "With its 81 GB bundled local SSD and solid single-thread performance, the D2ds_v5 offers standard entry-tier efficiency for small footprints that benefit from local scratch space without paying for multi-core density. However, overall throughput remains limited for parallel computing. It is suited for basic web serving, small databases, developer testing, continuous integration build agents, and microservices with moderate traffic."
   ],
-  "description": "Microsoft Azure D2ds_v5 is a general-purpose virtual machine from the DDSv5 family, featuring an Intel Xeon 8370C processor clocked at 2.8 GHz. It is configured with 2 vCPUs (1 physical core with hyper-threading), 8.0 GB of RAM, and a bundled 77 GB local SSD. Operating on Microsoft Hyper-V, this x86_64 instance delivers average single-core performance, as evidenced by a Geekbench single-core score of 1581.0 and a stress-ng single-core score of 1889.99. However, multi-core and memory bandwidth benchmarks fall into the lower tier, with a multi-core Geekbench score of 1866.0 and large-block read bandwidth of 14.72 GB/sec. This resource profile makes the instance a cost-effective option for lightweight, single-threaded applications, basic web serving, and small utility workloads that require dedicated CPU allocation and local SSD storage but do not demand high multi-threaded throughput.",
-  "og_description": "Microsoft Azure D2ds_v5 is a general-purpose virtual machine featuring 2 vCPUs, 8 GB RAM, and a 77 GB local SSD. It is powered by an Intel Xeon 8370C processor on the Hyper-V hypervisor.",
-  "meta_description": "Microsoft Azure D2ds_v5 is a general-purpose VM with 2 vCPUs, 8 GB RAM, and a 77 GB local SSD, powered by an Intel Xeon 8370C processor.",
-  "tagline": "An entry-level general-purpose instance featuring dedicated Intel Xeon processing, balanced memory, and local SSD storage for lightweight workloads.",
+  "description": "Microsoft Azure D2ds_v5 is a general-purpose instance powered by an Intel Xeon Platinum 8370C processor running at 2.8 GHz on the x86_64 architecture. It provides 2 vCPUs backed by 1 dedicated physical core, 8.0 GB of memory (4.0 GB per vCPU), and an 81 GB local SSD, with no hardware GPU acceleration. Benchmark profiles indicate competitive single-core execution\u2014scoring 1581.0 in Geekbench single-core and 1889.99 in stress-ng\u2014but low multi-threaded and memory throughput due to the dual-thread ceiling. PassMark CPU reached 2986.33, while Redis SET operations peaked at 1.93 million operations per second. The server offers cost-effective compute capacity for low-scale environments needing fast local scratch disks, making it suitable for lightweight web applications, microservices, background processing tasks, and testing environments.",
+  "og_description": "Microsoft Azure D2ds_v5 is a general-purpose VM featuring 2 vCPUs from an Intel Xeon 8370C core, 8.0 GB RAM, and an 81 GB local SSD, suitable for lightweight workloads and microservices.",
+  "meta_description": "Microsoft Azure D2ds_v5 provides 2 vCPUs on an Intel Xeon 8370C CPU, 8.0 GB RAM, and an 81 GB local SSD for balanced, lightweight general-purpose workloads.",
+  "tagline": "A dual-vCPU general-purpose compute instance equipped with 8 GB RAM and bundled local SSD scratch storage.",
   "bullet_points": [
-    "Intel Xeon 8370C processor with 2 vCPUs and 8.0 GB RAM",
-    "Bundled 77 GB local SSD storage with Premium Storage capability",
-    "Average single-core performance suitable for single-threaded tasks",
-    "Constrained multi-core and memory bandwidth performance",
-    "Designed for lightweight web serving and basic utility workloads"
+    "Powered by an Intel Xeon Platinum 8370C processor at 2.8 GHz (2 vCPUs, 1 physical core)",
+    "Includes 8.0 GB of RAM matching a standard 1:4 CPU-to-memory general-purpose ratio",
+    "Bundled with 81 GB of local SSD temporary storage",
+    "Supports AVX-512, VAES, and SHA-NI instruction sets",
+    "Best fit for microservices, lightweight web servers, CI/CD test runners, and dev environments"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

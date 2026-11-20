@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E128-64as_v7 is an x86_64 architecture server belonging to the Easv7 family. It features a dedicated AMD EPYC 9V45 processor operating at 4.5 GHz, configured with 32 physical cores and 64 virtual CPUs via hyper-threading. The system is equipped with 1024.0 GB of RAM, yielding a high memory-to-vCPU ratio of 16.0 GB per core. It does not include local storage, relying instead on external Premium Storage, and contains no GPUs.",
-    "Benchmark data indicates top-tier single-core and multi-core CPU performance, with the AMD processor achieving top 10% scores in Geekbench and Passmark CPU tests. Memory performance is highly competitive, with read-only cached bandwidth reaching 6708.98 GB/sec and uncached write bandwidth at 133.05 GB/sec. The server demonstrates strong capabilities in database operations, software compilation, and text processing. However, for large-scale AI tasks, such as LLM inference on a 70B parameter model, performance drops to average levels, reflecting the lack of dedicated GPU hardware.",
-    "Given its massive memory allocation relative to compute cores, this server offers high resource density for memory-bound workloads without the added cost of bundled local storage or accelerators. It is highly suited for large-scale databases, in-memory caching systems like Redis, enterprise applications, and memory-intensive data processing pipelines."
+    "Microsoft Azure E128-64as_v7 is a memory-optimized virtual machine instance running on Microsoft Hyper-V. It features a constrained-core configuration designed for high-memory footprints relative to processing capacity. Powered by an x86_64 AMD EPYC 9V45 processor clocked at 4.5 GHz, the instance provides 64 dedicated vCPUs mapped across 32 physical cores with 2 threads per core. Each physical core has access to 48 KB of L1 data cache and 1.0 MB of L2 cache, supported by a 32 MB L3 cache. Instruction set extensions include AVX, AVX-512 (with VNNI and BF16 support), AES, VAES, and SHA-NI.",
+    "The primary resource focus of the instance is its massive memory capacity. It is equipped with 1024.0 GB of RAM, resulting in a high ratio of 16.0 GB per vCPU. Benchmark results reflect this design: PassMark memory testing ranks in the top 10% with a score of 2981.55, and memory bandwidth reaches 203.18 GB/sec read and 133.05 GB/sec write on 256MB uncached blocks. Single-core processing is similarly robust, with a Geekbench single-core score of 2882.0 and stress-ng single-core performance of 3612.96, both landing in the top 10% tier. Multi-core Geekbench performance achieves 26844.0, while PassMark database operations record 36965.7.",
+    "Hardware tradeoffs are evident in storage and accelerator support. The E128-64as_v7 includes no local storage and no GPUs, requiring network-attached storage architectures for persistence. Cost efficiency is optimized for software licensing models that charge per vCPU while demanding vast memory tables. With half the vCPUs of a full 128-vCPU instance profile yet preserving the full 1024 GB RAM footprint, it offers an economical compute-to-memory structure for licensed enterprise software. This configuration aligns directly with in-memory caching platforms such as Redis, large-scale relational databases, and enterprise data processing tasks."
   ],
-  "description": "Microsoft Azure E128-64as_v7 is a memory-optimized server from the Easv7 family, powered by a dedicated 4.5 GHz AMD EPYC 9V45 processor. It features 64 vCPUs (32 physical cores) and a substantial 1024.0 GB of RAM, providing 16.0 GB of memory per core. The instance does not include local storage or GPUs, relying on external Premium Storage. Performance benchmarks place this server in the top tier for single-core and multi-core operations, database tasks, and memory bandwidth. It is highly efficient for memory-intensive workloads, though it exhibits average performance on large-scale LLM inference due to the absence of hardware accelerators. This profile makes it an excellent fit for large databases, in-memory caching, and complex software compilation.",
-  "og_description": "Microsoft Azure E128-64as_v7 is a memory-optimized server featuring 64 vCPUs, 1024 GB RAM, and a 4.5 GHz AMD EPYC processor, delivering top-tier database and memory performance without local storage.",
-  "meta_description": "Microsoft Azure E128-64as_v7 is a memory-optimized server with 64 vCPUs, 1024 GB RAM, and a 4.5 GHz AMD EPYC CPU, built for database workloads.",
-  "tagline": "A memory-optimized server featuring a high-frequency AMD EPYC processor and one terabyte of RAM for demanding database workloads.",
+  "description": "Microsoft Azure E128-64as_v7 is a memory-optimized instance featuring 64 dedicated vCPUs (32 physical cores) powered by an AMD EPYC 9V45 processor operating at 4.5 GHz. Built on Microsoft Hyper-V, the instance provides an extensive 1024.0 GB of RAM, yielding a high 16.0 GB of memory per core. It incorporates instruction extensions including AVX-512, VAES, and SHA-NI. In benchmark testing, the instance achieves top-tier results in single-core compute (2882.0 Geekbench single-core), PassMark database operations (36965.7), and memory benchmarking (2981.55). It features no local disk storage and zero GPUs, relying on external storage setups. The constrained CPU-to-memory ratio is structured to optimize software licensing costs while supporting massive in-memory footprints. The instance fits large in-memory databases, enterprise caching layers like Redis, and memory-intensive analytics workloads.",
+  "og_description": "Microsoft Azure E128-64as_v7 is a memory-optimized VM providing 64 dedicated vCPUs on an AMD EPYC 9V45 CPU, paired with 1024 GB RAM for large in-memory database and caching workloads.",
+  "meta_description": "Microsoft Azure E128-64as_v7 offers 64 vCPUs via AMD EPYC 9V45 and 1024 GB RAM. Ideal for high-memory databases and enterprise caching layers.",
+  "tagline": "Memory-optimized architecture offering 1024 GB RAM across 64 dedicated AMD EPYC vCPUs for data-dense and in-memory operational workloads.",
   "bullet_points": [
-    "Dedicated AMD EPYC 9V45 processor with 64 vCPUs and 32 physical cores.",
-    "1024.0 GB of RAM providing a high 16.0 GB per core memory ratio.",
-    "Top-tier performance in database operations and memory bandwidth benchmarks.",
-    "No bundled local storage, requiring external Premium Storage solutions.",
-    "Optimal for in-memory databases, caching, and memory-intensive enterprise applications."
+    "64 dedicated vCPUs powered by a 4.5 GHz AMD EPYC 9V45 processor",
+    "1024.0 GB total system RAM providing 16.0 GB per vCPU",
+    "Advanced vector execution via AVX-512 with VNNI and BF16 extensions",
+    "Top-tier memory benchmark performance and database operation scores",
+    "No bundled local storage or GPUs, requiring remote storage arrays",
+    "Well suited for in-memory databases, Redis caches, and licensed software"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

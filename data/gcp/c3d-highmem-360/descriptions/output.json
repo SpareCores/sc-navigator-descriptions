@@ -1,23 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c3d-highmem-360 is a memory-optimized server instance powered by AMD EPYC 9B14 processors. It features 360 vCPUs mapped to 180 physical cores with hyperthreading enabled, running on the x86_64 architecture. The instance is equipped with 2880.0 GB of dedicated system memory, providing a memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or bundled GPU accelerators, meaning all storage requirements must be met via network-attached options.",
-    "In benchmark evaluations, the instance demonstrates top-tier multi-core CPU performance and exceptional memory bandwidth, with read-only cached small block transfers reaching 26966.77 GB/sec and uncached large block writes at 353.41 GB/sec. Its computational capabilities are supported by advanced instruction sets including AVX-512 (VNNI and BF16) and cryptographic acceleration via VAES and SHA_NI. Single-core performance is strong, though multi-threaded execution represents its primary strength, as evidenced by top-decile scores in Passmark CPU tests, software compilation, and ray tracing.",
-    "The hardware profile delivers high resource density, making it qualitatively cost-efficient for workloads that scale horizontally across massive memory footprints without requiring local NVMe drives. It achieves top-tier throughput in database operations, Redis SET operations at 412.12 million operations per second, and static web serving. Additionally, the platform shows strong efficiency in large language model inference, particularly for prompt processing across small, medium, and large models.",
-    "This server is best suited for memory-intensive enterprise workloads, large-scale in-memory databases, Redis caching tiers, heavy software compilation pipelines, and CPU-based LLM inference tasks."
+    "Google Cloud Platform c3d-highmem-360 is an enterprise-scale, memory-optimized instance based on the x86_64 architecture. The server is powered by dedicated AMD EPYC 9B14 processors providing 180 physical cores and 360 virtual CPUs with simultaneous multithreading. It features an extensive 2880 GB RAM allocation, representing an 8 GB per vCPU ratio. Hardware acceleration flags include AVX-512 vector support (including VNNI and BF16) and cryptographic acceleration such as VAES and SHA-NI. The instance contains no bundled local NVMe storage and includes zero GPUs, necessitating external network-attached storage for persistent disk needs.",
+    "Benchmark testing demonstrates top-tier multi-threaded throughput and memory bandwidth. The instance achieved a stress-ng multi-core metric of 554,400.26 and a PassMark CPU score of 156,943.64, complemented by a large-block uncached memory read bandwidth of 709.69 GB/sec. In application benchmarks, it delivered 412.12 million operations per second in Redis SET workloads and scored 68,792.0 in Clang software compilation. CPU-based machine learning inference is also notable, generating 4,232.2 tokens per second in prompt processing on small 135M parameter models and 309.04 tokens per second on medium 7B parameter models.",
+    "From a cost-efficiency standpoint, the c3d-highmem-360 delivers massive resource consolidation within a single system image, reducing operational overhead associated with multi-node clusters. The primary trade-off is the absence of local NVMe disks, meaning high-I/O workloads will rely heavily on network storage interfaces. Additionally, the instance requires high sustained utilization of its 360 vCPUs and nearly 3 TB of memory to maximize return on resources.",
+    "This server type is engineered for heavy, memory-bound enterprise deployments. Key workload targets include large-scale in-memory databases, distributed caching layers such as Redis, enterprise enterprise resource planning platforms, large dataset analytical processing, and CPU-driven language model inference."
   ],
-  "description": "Google Cloud Platform c3d-highmem-360 is a memory-optimized server instance designed for resource-intensive enterprise workloads. Powered by AMD EPYC 9B14 processors on the x86_64 architecture, it delivers 360 vCPUs across 180 physical cores and is equipped with 2880.0 GB of system memory, yielding 8.0 GB of RAM per vCPU. The instance does not include local storage or GPU accelerators. In benchmark testing, the server achieves top-tier multi-core CPU performance and exceptional memory bandwidth, with uncached large block reads reaching 709.69 GB/sec. It also demonstrates top-decile results in database operations, Redis SET operations, and prompt processing for large language models. This configuration is highly suited for large-scale in-memory databases, high-throughput web serving, heavy software compilation, and memory-bound data processing tasks.",
-  "og_description": "Google Cloud Platform c3d-highmem-360 is a memory-optimized server featuring 360 vCPUs, 2880 GB of RAM, and AMD EPYC 9B14 processors, delivering top-tier multi-core performance and memory bandwidth.",
-  "meta_description": "Google Cloud Platform c3d-highmem-360 is a memory-optimized server with 360 vCPUs and 2880 GB RAM, powered by AMD EPYC processors.",
-  "tagline": "A high-density memory-optimized instance featuring 360 vCPUs and 2880 GB of RAM for memory-intensive enterprise workloads.",
+  "description": "Google Cloud Platform c3d-highmem-360 is an ultra-dense, memory-optimized instance powered by dedicated AMD EPYC 9B14 processors. Built on the x86_64 architecture, it delivers 180 physical cores, 360 vCPUs, and 2880 GB of system memory, yielding an 8 GB memory-to-vCPU ratio. The configuration features AVX-512 instruction support, zero discrete GPUs, and no integrated local storage, requiring network-attached block volumes. Benchmark results place this machine in the top tier for multi-core computation, uncached memory bandwidth reaching 709.69 GB/sec, and high-frequency in-memory database execution, as evidenced by over 412 million Redis SET operations per second. While demanding disciplined resource saturation to remain cost-effective, its dense configuration removes clustering overhead for massive datasets. The c3d-highmem-360 is structured primarily for large in-memory databases, distributed caching systems, heavy multi-threaded software builds, and high-capacity CPU model inference.",
+  "og_description": "Google Cloud Platform c3d-highmem-360 provides 360 dedicated AMD EPYC vCPUs and 2880 GB RAM. Designed for large in-memory databases, heavy data processing, and enterprise workloads.",
+  "meta_description": "Google Cloud Platform c3d-highmem-360 features 360 vCPUs, 2880 GB of memory, and dedicated AMD EPYC 9B14 processors for memory-intensive workloads.",
+  "tagline": "A high-density compute and memory configuration delivering 360 dedicated AMD EPYC vCPUs and nearly three terabytes of system memory for demanding enterprise workloads.",
   "bullet_points": [
-    "Powered by AMD EPYC 9B14 processors with 360 vCPUs and 180 physical cores",
-    "Equipped with 2880 GB of system memory, providing 8.0 GB of RAM per core",
-    "Top-tier memory bandwidth and multi-core CPU benchmark performance",
-    "Optimized for in-memory databases, Redis deployments, and static web serving",
-    "Supports advanced instruction sets including AVX-512 and cryptographic acceleration",
-    "No local storage or GPU accelerators included in the base configuration"
+    "360 dedicated AMD EPYC 9B14 vCPUs across 180 physical cores",
+    "2880 GB total system RAM providing 8 GB per virtual core",
+    "Comprehensive AVX-512, VNNI, BF16, and VAES instruction set support",
+    "Zero integrated GPUs and zero local disks; relies on external block storage",
+    "Optimized for large-scale in-memory databases, caching, and CPU-based inference"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

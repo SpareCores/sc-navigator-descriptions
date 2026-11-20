@@ -1,21 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D96pls_v6 is an ARM-based virtual machine belonging to the Dplsv6 server family, running on the Microsoft Hyper-V hypervisor. It features 96 dedicated physical cores powered by the Microsoft Neoverse-N2 ARM processor, operating at a clock speed of 3.4 GHz. The system is configured with 192.0 GB of memory, yielding a low memory-to-core ratio of 2.0 GB per core. It does not include local storage or onboard GPUs, but it is premium storage capable.",
-    "Performance benchmarks highlight exceptional multi-core capabilities, placing the server in the top tier for multi-core CPU performance, multi-threaded bzip3 decompression, and Geekbench multi-core execution. The dedicated physical core architecture, combined with a 128 MB L3 cache, enables high memory bandwidth, with read-only cached small block speeds reaching top-tier levels. However, single-core performance is more moderate, scoring in the average tier for single-core stress-ng and Geekbench tests.",
-    "The 1:2 vCPU-to-RAM ratio represents a clear tradeoff, prioritizing raw compute density over memory capacity. This makes the D96pls_v6 highly cost-efficient for compute-heavy, memory-lean workloads. It is highly suited for multi-threaded tasks such as software compilation, static web serving, database operations, and medium-to-large scale LLM inference text generation, where its top-tier multi-threaded performance can be fully leveraged."
+    "Microsoft Azure D96pls_v6 is an ARM-based virtual machine configured with 96 dedicated physical cores and 96 vCPUs running at 3.4 GHz on the ARM Neoverse-N2 architecture. It features 192.0 GB of system memory, providing a 1:2 core-to-memory ratio of 2.0 GB per vCPU, backed by 128 MB of shared L3 cache. The instance lacks bundled local storage and includes zero integrated GPUs, relying on remote network-attached storage architectures.",
+    "Benchmark results demonstrate exceptional multi-threaded performance due to the 96 independent physical execution cores. The platform achieves top-tier results in multi-core stress-ng tests, multi-threaded bzip3 decompression, and Clang software compilation. High memory throughput is confirmed by top-tier uncached memory bandwidth exceeding 464 GB/sec for reads and 205 GB/sec for writes. Single-core execution in Geekbench and stress-ng falls within the average middle tier, reflecting standard per-core ARM Neoverse-N2 throughput rather than extreme burst frequencies.",
+    "With its 1:2 memory configuration, the instance trades per-core memory volume for dense, parallelized compute capacity. The dedicated single-threaded core structure avoids hyper-threading contention, translating into top-tier operational metrics in Redis key-value workloads and high-throughput static web serving. The absence of local disk devices requires provisioning remote persistent storage for stateful workloads.",
+    "The D96pls_v6 is suited for horizontally scaled multithreaded applications, microservices compilation clusters, distributed key-value caches, and parallel batch data processing that do not require high per-core RAM allocations or attached GPU acceleration."
   ],
-  "description": "Microsoft Azure D96pls_v6 is an ARM-based virtual machine from the Dplsv6 family, featuring 96 dedicated physical cores powered by Microsoft Neoverse-N2 processors running at 3.4 GHz. Configured with 192.0 GB of RAM, it maintains a compute-focused 1:2 memory-to-core ratio. The server lacks local storage and GPUs but supports premium external storage. Benchmarks reveal top-tier multi-core performance, outstanding memory bandwidth, and excellent multi-threaded execution, contrasting with average single-core performance. This resource density makes it highly cost-efficient for compute-intensive, memory-lean workloads. It is optimized for software compilation, static web serving, database operations, and multi-threaded processing tasks.",
-  "og_description": "Microsoft Azure D96pls_v6 is an ARM-based virtual machine featuring 96 dedicated physical cores and 192.0 GB of RAM. It delivers top-tier multi-core performance and memory bandwidth for compute-intensive workloads.",
-  "meta_description": "Microsoft Azure D96pls_v6 is an ARM-based virtual machine with 96 dedicated physical cores, 192.0 GB of RAM, and top-tier multi-core performance.",
-  "tagline": "An ARM-powered virtual machine delivering high multi-core compute density and top-tier memory bandwidth for compute-intensive, memory-lean workloads.",
+  "description": "Microsoft Azure D96pls_v6 is a high-density, ARM-based cloud instance powered by 96 dedicated physical cores of the ARM Neoverse-N2 processor running at 3.4 GHz. Operating without hardware simultaneous multithreading, it pairs 96 vCPUs with 192.0 GB of RAM, allocating 2.0 GB per core alongside a 128 MB L3 cache. The instance contains no integrated GPUs and includes no bundled local storage, requiring network-attached storage volumes. Benchmark testing highlights top-tier multi-threaded compute capability and high memory bandwidth, achieving exceptional results in Clang software compilation, static web serving throughput, and Redis operational benchmarks. In contrast, single-core compute performance remains in the average tier. With its 1:2 core-to-memory ratio, the D96pls_v6 provides high compute density, making it effective for parallel software compilation, containerized microservices, batch processing, and high-throughput key-value storage systems.",
+  "og_description": "Microsoft Azure D96pls_v6 features 96 ARM Neoverse-N2 cores at 3.4 GHz, 192 GB RAM, and no local storage, delivering top-tier multi-threaded compute and memory bandwidth for scale-out parallel workloads.",
+  "meta_description": "Microsoft Azure D96pls_v6 provides 96 ARM Neoverse-N2 cores, 192 GB memory, and high parallel compute performance without local storage or GPUs.",
+  "tagline": "High-density 96-core ARM Neoverse compute profile offering high memory bandwidth and multi-threaded throughput for scalable parallel workloads.",
   "bullet_points": [
-    "96 dedicated physical cores powered by Microsoft Neoverse-N2 ARM processors at 3.4 GHz",
-    "192.0 GB of RAM providing a compute-optimized 1:2 memory-to-core ratio",
-    "Top-tier multi-core CPU performance and memory bandwidth benchmarks",
-    "Premium storage capable configuration with no local storage or onboard GPUs",
-    "Optimized for software compilation, static web serving, and database operations"
+    "96 dedicated physical ARM Neoverse-N2 vCPUs clocked at 3.4 GHz without multithreading contention",
+    "192.0 GB system memory providing a dense 1:2 vCPU-to-RAM ratio of 2.0 GB per core",
+    "No bundled local storage devices, requiring attached remote block storage",
+    "Top-tier multi-threaded performance in compilation, decompression, and stress testing benchmarks",
+    "High-throughput network serving and Redis execution exceeding 170 million operations per second",
+    "Suited for CI/CD compilation pipelines, parallel compute nodes, and containerized scale-out clusters"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

@@ -1,22 +1,22 @@
 {
   "page": [
-    "OVHcloud r2-15 is a memory-optimized virtual server instance powered by the KVM hypervisor. It features an x86_64 architecture utilizing an Intel Haswell processor with 2 dedicated physical cores and 2 vCPUs, operating at a base clock speed of 2.2 GHz. The system is equipped with 15.0 GB of RAM, providing a memory allocation of 7.5 GB per core. Local storage is provided via a bundled 50 GB SSD, and the instance includes one complimentary public IPv4 address.",
-    "Benchmark results indicate that the r2-15 is positioned at the lower tier of compute and memory performance. The Intel Haswell processor achieves a single-core stress-ng score of 1098.99 and a multi-core score of 2095.09, placing it in the bottom 25% and 10% respectively. Memory bandwidth tests show a read-only large block speed of 22.28 GB/sec and a write large block speed of 15.09 GB/sec. Database operations under Passmark score 1436.35, while Redis SET operations reach 3.07 million operations per second, reflecting moderate throughput for memory-reliant tasks despite the legacy CPU architecture.",
-    "The primary tradeoff of the r2-15 is its reliance on older Intel Haswell hardware, which lacks modern instruction sets like AVX-512 and AMX, resulting in poor performance for compute-heavy tasks such as software compilation and image processing. However, the dedicated CPU allocation and 15.0 GB memory capacity offer a stable, cost-efficient resource profile for memory-intensive workloads that do not require high CPU throughput. This instance is best suited for lightweight database hosting, caching layers like Redis, basic web serving, and memory-bound utility tasks."
+    "OVHcloud r2-15 is a memory-optimized virtual machine instance powered by a KVM hypervisor on an x86_64 architecture. The server provides 2 dedicated physical cores and 2 virtual CPUs clocked at 2.2 GHz using legacy Intel Haswell-generation processors with disabled TSX. The processor configuration is paired with 32 KB of L1 data cache, 4 MB of L2 cache, and 16 MB of L3 cache. Cryptographic hardware acceleration is supported via AES, alongside AVX and BMI2 instruction sets, though modern vector extensions such as AVX-512 and AMX are absent.",
+    "Hardware allocation includes 15.0 GB of system memory, delivering a memory density of 7.5 GB per core. Local storage is provided through a bundled 50 GB SSD, while the configuration does not include a GPU or complimentary public IPv4 addresses, and lists a 0 Gbps baseline network bandwidth. Memory benchmarks record large-block sequential read throughput of 22.28 GB/sec and write bandwidth of 15.09 GB/sec, placing memory operations within the bottom 10% to 25% of tested configurations.",
+    "Computational benchmarks reflect the older microarchitecture of the underlying host. The instance achieved a Geekbench multi-core score of 1783.0 and a single-core score of 1018.0, with PassMark CPU overall scoring 3050.61. In workload-specific tests, Redis SET operations reached 3.07 million operations per second, while static web serving throughput reached 2.73 GB/sec. Small 135M model LLM inference yielded 181.17 tokens per second for prompt processing and 60.67 tokens per second for text generation.",
+    "The r2-15 configuration provides a dedicated compute profile prioritizing RAM capacity over raw CPU execution speed. It is functional for memory-centric operational workloads that do not demand high multi-threaded compute, such as lightweight in-memory caching tiers, development databases, and mid-sized memory-resident worker processes."
   ],
-  "description": "OVHcloud r2-15 is a memory-optimized virtual server running on the KVM hypervisor. It features an x86_64 Intel Haswell processor with 2 dedicated physical cores, 2 vCPUs, and a clock speed of 2.2 GHz. The hardware configuration includes 15.0 GB of RAM, a 50 GB SSD, and one complimentary public IPv4 address. Performance benchmarks place the instance in the lower tier, with a single-core stress-ng score of 1098.99 and a multi-core score of 2095.09. Large block memory read bandwidth is recorded at 22.28 GB/sec, and Redis SET operations reach 3.07 million operations per second. Lacking modern instruction sets like AVX-512, the r2-15 represents a cost-efficient option for memory-bound workloads that do not demand high compute performance. It is best suited for lightweight database hosting, caching layers, and basic web serving.",
-  "og_description": "OVHcloud r2-15 is a memory-optimized virtual server featuring 2 dedicated Intel Haswell vCPUs, 15 GB of RAM, and a 50 GB SSD, designed specifically for lightweight memory-bound workloads and caching.",
-  "meta_description": "OVHcloud r2-15 is a memory-optimized KVM instance with 2 vCPUs, 15 GB RAM, and a 50 GB SSD, suitable for basic caching and database hosting.",
-  "tagline": "A dedicated dual-core virtual server with fifteen gigabytes of memory and local solid-state storage for memory-bound workloads.",
+  "description": "OVHcloud r2-15 is a memory-optimized virtual server running on the KVM hypervisor with an x86_64 architecture. It is equipped with 2 dedicated Intel Haswell physical cores running at 2.2 GHz, 15.0 GB of RAM, and a bundled 50 GB SSD for local storage, with no GPU hardware included. The architecture provides 7.5 GB of RAM per vCPU, favoring memory allocation over computational throughput. Benchmark performance indicates lower-tier compute and memory bandwidth, scoring 1018.0 in Geekbench single-core and 1783.0 in Geekbench multi-core, with Redis throughput reaching 3.07 million operations per second. Hardware cost efficiency is driven by the density of dedicated memory relative to core count rather than raw compute speed. OVHcloud r2-15 is suited for memory-intensive services with modest CPU demands, including small in-memory key-value stores, staging databases, and RAM-bound background processing jobs.",
+  "og_description": "OVHcloud r2-15 is a memory-optimized cloud server providing 2 dedicated Intel Haswell cores, 15.0 GB of RAM, and a 50 GB local SSD, tailored for memory-bound workloads requiring modest compute capacity.",
+  "meta_description": "OVHcloud r2-15 is a memory-optimized instance featuring 2 dedicated 2.2 GHz Intel cores, 15 GB RAM, and a 50 GB SSD for memory-centric workloads.",
+  "tagline": "Dedicated dual-core configuration delivering high memory density and bundled solid-state storage for memory-sensitive, moderate-compute workloads.",
   "bullet_points": [
-    "Intel Haswell architecture with 2 dedicated physical cores and 2 vCPUs",
-    "15.0 GB of system memory providing 7.5 GB per core",
-    "Bundled 50 GB local SSD storage and one public IPv4 address",
-    "Redis performance of 3.07 million SET operations per second",
-    "Suitable for lightweight caching, basic database hosting, and web serving"
+    "2 dedicated 2.2 GHz Intel Haswell physical cores without hyperthreading",
+    "15.0 GB of system memory providing 7.5 GB per vCPU",
+    "Bundled 50 GB local SSD storage volume",
+    "Redis performance reaching 3.07 million SET operations per second",
+    "Suited for caching layers, staging databases, and memory-intensive background tasks"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

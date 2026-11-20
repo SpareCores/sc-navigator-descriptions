@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure L32s_v4 is an Lsv4-family virtual machine running on the Microsoft Hyper-V hypervisor. It features a dedicated Intel Xeon 8573C processor with 32 vCPUs, 16 physical cores, and a clock speed of 4.2 GHz. The x86_64 architecture CPU includes a 260 MB L3 cache and supports Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX). The system is equipped with 256.0 GB of system memory, providing 8.0 GB per core, and includes 7679 GB of local NVMe SSD storage.",
-    "Benchmark results indicate strong performance in memory bandwidth, with large-block read-only operations reaching 197.62 GB/sec. The server demonstrates top-tier performance in image processing with a Geekbench score of 18415.0 and small-model LLM text generation at 392.66 tokens/sec. Single-threaded gzip compression and multi-threaded bzip3 decompression are also strong. However, text generation for large 70B LLM models is a notable performance bottleneck, registering a weak score of 2.78 tokens/sec.",
-    "The L32s_v4 offers high resource density by combining a high-frequency CPU with a substantial local NVMe SSD storage capacity and a 1:8 vCPU-to-RAM ratio. This configuration provides qualitative cost efficiency for workloads that require high-speed local scratch space and large memory footprints without the overhead of external storage. It is highly suited for large-scale databases, data warehousing, big data analytics, and memory-intensive applications that benefit from rapid local storage I/O."
+    "Microsoft Azure L32s_v4 is a storage-optimized virtual machine driven by the Microsoft Hyper-V hypervisor. The instance features an Intel Xeon 8573C x86_64 processor delivering 32 vCPUs across 16 physical cores with multithreading enabled at clock speeds up to 4.2 GHz. The hardware architecture incorporates 260 MB of L3 cache alongside support for advanced instruction sets including AVX-512 and Intel Advanced Matrix Extensions (AMX). Complementing the compute resources, the instance allocates 256.0 GB of system memory, representing a ratio of 8.0 GB per vCPU, and bundles 7679 GB of high-speed local NVMe SSD storage.",
+    "Benchmark results show balanced compute output and strong memory-bound bandwidth. The server registers a Geekbench single-core score of 2147.0 and a multi-core score of 18442.0, both placing in the top 25 percent tier. Uncached memory read bandwidth over large 256 MB blocks reaches 197.62 GB/sec, supporting fast throughput for memory-intensive routines. The integrated AMX instructions and large memory pool also support high-throughput execution for small CPU-based language models, delivering 392.66 tokens/sec for text generation on 135M parameter models. However, execution speed slows considerably on 70B parameter models down to 2.78 tokens/sec due to the absence of dedicated GPU hardware.",
+    "Cost efficiency is centered around dense local I/O and large RAM capacity on a single node. The bundled 7679 GB NVMe storage eliminates separate block storage attachment costs for data-heavy pipelines. While write bandwidth on large memory blocks is average at 86.34 GB/sec, decompression and static web serving throughput remain strong at 209.27 GB/sec and 56.27 GB/sec respectively. Microsoft Azure L32s_v4 is well suited for high-transaction relational databases, distributed NoSQL datastores, real-time analytics engines, and high-throughput data ingestion workloads."
   ],
-  "description": "Microsoft Azure L32s_v4 is an Lsv4-family virtual machine powered by a dedicated 32-vCPU Intel Xeon 8573C processor operating at 4.2 GHz. It features 256.0 GB of RAM and 7679 GB of local NVMe SSD storage. Operating on the Microsoft Hyper-V hypervisor, this server delivers strong performance in memory bandwidth, image processing, and small-model LLM text generation. However, it exhibits weak performance in large-model LLM text generation. The high-density combination of high-speed local storage and memory makes it qualitatively cost-efficient for data-intensive workloads. It is best suited for databases, big data analytics, and memory-intensive applications requiring rapid local storage access.",
-  "og_description": "Microsoft Azure L32s_v4 is an Lsv4-family virtual machine featuring 32 vCPUs, 256 GB RAM, and 7679 GB of local NVMe SSD storage, optimized for high-performance database and memory-intensive workloads.",
-  "meta_description": "Microsoft Azure L32s_v4 is an Lsv4-family VM with 32 vCPUs, 256 GB RAM, and 7679 GB local NVMe SSD storage, optimized for databases and analytics.",
-  "tagline": "A high-frequency virtual machine combining massive local NVMe SSD storage with dense memory for demanding database and analytical workloads.",
+  "description": "Microsoft Azure L32s_v4 is a storage-optimized virtual machine powered by a 4.2 GHz Intel Xeon 8573C processor with 32 vCPUs and 16 physical cores. Built on the x86_64 architecture with Microsoft Hyper-V, it features 260 MB of L3 cache, AVX-512, and AMX support. The system bundles 256.0 GB of memory alongside 7679 GB of high-speed local NVMe SSD storage, providing an 8.0 GB per vCPU memory density without discrete GPUs. In synthetic testing, it achieves strong Geekbench scores of 2147.0 single-core and 18442.0 multi-core, as well as uncached large-block read bandwidth of 197.62 GB/sec. Static web throughput reaches 56.27 GB/sec, and multi-threaded bzip3 decompression hits 209.27 GB/sec. This configuration offers solid resource density for transaction-heavy databases, NoSQL clusters, search indexing, and real-time big data pipelines requiring dense local NVMe storage.",
+  "og_description": "Microsoft Azure L32s_v4 is a storage-optimized instance providing 32 vCPUs on an Intel Xeon 8573C processor, 256.0 GB of RAM, and 7679 GB of local NVMe SSD storage for intensive database workloads.",
+  "meta_description": "Microsoft Azure L32s_v4 features 32 vCPUs, 256.0 GB RAM, and 7679 GB local NVMe SSD storage on an Intel Xeon processor for high-throughput database workloads.",
+  "tagline": "Storage-focused instance combining 32 dedicated vCPUs, 256 GB system memory, and 7679 GB of high-throughput local NVMe storage for enterprise database workloads.",
   "bullet_points": [
-    "32 vCPUs and 16 physical cores powered by an Intel Xeon 8573C processor at 4.2 GHz",
-    "7679 GB of high-speed local NVMe SSD storage for intensive I/O operations",
-    "256.0 GB of system memory providing a high 8.0 GB per core ratio",
-    "Strong performance in large-block memory bandwidth and image processing benchmarks",
-    "Tradeoff of weak text generation speeds for large-scale 70B LLM models",
-    "Best suited for large-scale databases, big data analytics, and memory-intensive workloads"
+    "32 vCPUs and 16 physical cores via Intel Xeon 8573C processor reaching up to 4.2 GHz",
+    "256.0 GB system RAM providing an 8.0 GB per vCPU allocation ratio",
+    "Bundled 7679 GB local NVMe SSD storage for low-latency I/O operations",
+    "Hardware support for AVX-512 and Intel Advanced Matrix Extensions (AMX)",
+    "Strong uncached read memory bandwidth measuring 197.62 GB/sec",
+    "Optimized for high-transaction databases, NoSQL stores, and big data search engines"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

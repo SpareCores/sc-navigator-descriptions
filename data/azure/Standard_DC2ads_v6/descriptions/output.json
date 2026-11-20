@@ -1,19 +1,20 @@
 {
   "page": [
-    "Microsoft Azure DC2ads_v6 is a virtual machine instance belonging to the DCadsv6 server family. It features an x86_64 AMD processor with 2 dedicated virtual CPUs and is managed via the Microsoft Hyper-V hypervisor. The system is equipped with 8.0 GB of system memory, providing a resource density of 4.0 GB of RAM per core.",
-    "This instance includes 77 GB of local SSD storage and is capable of utilizing Premium Storage options. It does not feature integrated GPU hardware, and it does not include complimentary public IPv4 addresses.",
-    "With its balanced 1:4 vCPU-to-RAM ratio, the DC2ads_v6 is classified as a general-purpose server. It is designed for workloads that require dedicated CPU resources and moderate memory capacity without the need for hardware acceleration. Suitable workloads include lightweight web serving, small databases, and general-purpose application hosting."
+    "Microsoft Azure DC2ads_v6 is a general-purpose virtual machine built on the AMD EPYC 9V74 processor, operating under the Microsoft Hyper-V hypervisor. The instance is configured with two vCPUs mapped to a single physical core with two threads, providing dedicated CPU resource allocation. System memory totals 8.0 GB, yielding a standard general-purpose ratio of 4.0 GB per vCPU. Hardware features include an L1 data cache of 32 KB, 1.0 MB of L2 cache, and 32 MB of L3 cache, alongside support for advanced instruction sets including AVX-512 vector extensions (VNNI and BF16) and hardware cryptographic acceleration via AES and SHA-NI.",
+    "Local ephemeral storage is bundled with the instance, providing 81 GB of direct-attached solid-state drive (SSD) capacity. The instance is also capable of attaching Premium Storage volumes for external persistent workloads. No discrete GPU acceleration is included. Network connectivity does not include complimentary public IPv4 addresses, requiring dedicated Azure networking configurations for public egress and ingress.",
+    "Benchmark results demonstrate strong single-thread execution, with stress-ng single-core CPU throughput ranking in the upper 25 percent and Geekbench single-core performance scoring at 1898.0 points. Because the instance relies on a single dual-threaded physical core, multi-core benchmarks scale predictably lower across industry-wide comparisons. PassMark CPU tests reached 3737.03 points, while multi-core stress-ng registered at bottom-quartile thresholds. Memory throughput within PassMark scored 1738.85 points, and Redis SET throughput recorded 2.67 million operations per second.",
+    "Given its compact 2-vCPU hardware footprint and bundled SSD storage, the DC2ads_v6 offers efficient resource utilization for low-concurrency workloads without incurring unnecessary resource overhead. The server fits microservices, baseline web servers, development environments, and low-volume staging platforms where single-thread responsiveness and fast local scratch storage are prioritized over heavy parallel throughput."
   ],
-  "description": "Microsoft Azure DC2ads_v6 is a general-purpose virtual machine from the DCadsv6 family, powered by an x86_64 AMD processor. Running on the Microsoft Hyper-V hypervisor, this instance provides 2 dedicated vCPUs and 8.0 GB of system memory, establishing a balanced 4.0 GB of RAM per core. For storage, it features 77 GB of local SSD capacity and supports Premium Storage configurations. It does not include a GPU or complimentary public IPv4 addresses. The balanced resource allocation makes this instance suitable for entry-level general-purpose workloads, lightweight web servers, and small database applications requiring dedicated CPU execution.",
-  "og_description": "Microsoft Azure DC2ads_v6 is a general-purpose virtual machine featuring 2 dedicated AMD vCPUs, 8.0 GB of RAM, and 77 GB of local SSD storage under the Microsoft Hyper-V hypervisor.",
-  "meta_description": "Microsoft Azure DC2ads_v6 is a general-purpose virtual machine with 2 dedicated AMD vCPUs, 8.0 GB of RAM, and 77 GB of local SSD storage.",
-  "tagline": "A balanced general-purpose virtual machine featuring dedicated AMD processors, local SSD storage, and support for premium storage configurations.",
+  "description": "Microsoft Azure DC2ads_v6 is a general-purpose virtual machine powered by an AMD EPYC 9V74 processor on the Microsoft Hyper-V hypervisor. The hardware configuration includes 2 dedicated vCPUs derived from 1 physical core with 2 threads per core, 8.0 GB of system memory, and 81 GB of bundled local SSD storage. It supports modern execution instructions such as AVX-512 and cryptographic accelerators like VAES and SHA-NI. Synthetic benchmarks demonstrate strong single-core CPU performance alongside modest multi-core capacity, consistent with its compact core count. With 4.0 GB of RAM per vCPU, this instance offers a balanced and cost-efficient hardware profile for entry-tier enterprise deployments. It is suited for lightweight web serving, application microservices, development pipelines, and basic utility workloads that do not demand extensive parallel compute or specialized GPU acceleration.",
+  "og_description": "Microsoft Azure DC2ads_v6 is a general-purpose virtual machine equipped with 2 vCPUs from an AMD EPYC 9V74 processor, 8 GB of RAM, and 81 GB of local SSD storage for small-scale enterprise services.",
+  "meta_description": "Microsoft Azure DC2ads_v6 provides 2 vCPUs via an AMD EPYC 9V74 processor, 8 GB RAM, and an 81 GB local SSD for lightweight workloads.",
+  "tagline": "Dual vCPU AMD EPYC compute instance offering balanced memory density alongside fast local solid-state storage for baseline enterprise application tiers.",
   "bullet_points": [
-    "2 dedicated x86_64 AMD virtual CPUs",
-    "8.0 GB of system memory with 4.0 GB per core",
-    "77 GB of local SSD storage with Premium Storage capability",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Suited for lightweight web serving and small databases"
+    "Powered by AMD EPYC 9V74 processor with 2 dedicated vCPUs on 1 physical core",
+    "Balanced memory profile featuring 8.0 GB RAM (4.0 GB per vCPU)",
+    "Bundled 81 GB local solid-state disk for high-speed scratch storage",
+    "Hardware support for AVX-512 extensions and cryptographic instructions",
+    "Recommended for lightweight web services, microservices, and development environments"
   ],
   "categories": [
     "General Purpose"

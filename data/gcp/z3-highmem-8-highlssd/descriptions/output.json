@@ -1,22 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform z3-highmem-8-highlssd is a memory-optimized and storage-focused server instance belonging to the z3 family. It features 8 vCPUs mapped to 4 physical cores of an Intel Xeon 8481C processor running at 2.7 GHz. The architecture is x86_64 with hyper-threading enabled, providing 2 threads per core. This instance is equipped with 64 GB of dedicated system memory, translating to a high memory-to-core ratio of 8.0 GB per vCPU. Storage is bundled with a single local NVMe SSD providing 3221 GB of capacity, while no dedicated GPU hardware is present.",
-    "Benchmark evaluations place the z3-highmem-8-highlssd consistently in the average performance tier across most compute and memory operations. The Intel Xeon processor delivers a single-core Geekbench score of 1694.0 and a multi-core score of 6517.0, supported by a 105 MB L3 cache and advanced instruction sets including AVX-512 and Intel AMX. Memory bandwidth tests show read speeds of 544.21 GB/sec for small cached blocks and 53.42 GB/sec for large uncached blocks, alongside a write speed of 33.03 GB/sec. Database operations under Passmark score at 3908.44, and the system processes Redis SET operations at a rate of 8.92 million operations per second.",
-    "The hardware profile offers high resource density by combining a substantial 3221 GB local NVMe SSD with 64 GB of RAM, making it qualitatively cost-efficient for workloads requiring high-speed local scratch space and large memory footprints without the overhead of external storage. However, performance tradeoffs exist in complex computational tasks. While the instance handles prompt processing for a medium 7B LLM model at 55.98 tokens per second, text generation for the same model drops to a weak tier at 7.36 tokens per second, and large 70B models are unsupported. This server is configured for memory-intensive and storage-heavy workloads such as database hosting, caching layers, data processing, and localized file serving."
+    "Google Cloud Platform z3-highmem-8-highlssd is a storage-optimized instance built on the x86_64 architecture. It provides 8 dedicated vCPUs mapped across 4 physical cores of an Intel Xeon 8481C processor clocked at 2.7 GHz, accompanied by 64 GB of RAM, equating to an 8:1 memory-to-vCPU ratio. The processor integrates advanced feature sets including AVX-512, AMX (tile and int8), and hardware cryptography extensions (AES, VAES, SHA-NI). Memory subsystem tests demonstrate 544.21 GB/sec cached read throughput, alongside uncached large-block read and write bandwidth of 53.42 GB/sec and 33.03 GB/sec respectively.",
+    "A major characteristic of this instance is the bundled local storage provision of 3,221 GB NVMe SSD. In benchmark evaluations, the instance records a multi-core Geekbench score of 6,517.0, a single-core score of 1,694.0, and a multi-core stress-ng rating of 6,644.94. Key workload execution markers include 8.92 million operations per second on Redis SET operations, 12.63 GB/sec static web serving throughput, and 3,908.44 operations on PassMark database testing. For machine learning tasks relying strictly on CPU resources, prompt processing achieves 55.98 tokens per second on a medium 7B model, though text generation is limited to 7.36 tokens per second.",
+    "From an infrastructure and cost efficiency perspective, z3-highmem-8-highlssd targets applications requiring coupled high-capacity, low-latency NVMe disk space alongside substantial memory per core. The absence of a dedicated GPU reduces suitability for heavy matrix-multiplication or generative model hosting, but the combination of AMX support, high memory density, and local NVMe storage makes it appropriate for distributed NoSQL databases, transactional engines, caching layers, and high-throughput data ingestion pipelines."
   ],
-  "description": "Google Cloud Platform z3-highmem-8-highlssd is an x86_64 server instance configured with 8 vCPUs, 64 GB of RAM, and a 3221 GB local NVMe SSD. Powered by an Intel Xeon 8481C processor running at 2.7 GHz, it features 4 physical cores with hyper-threading and a 105 MB L3 cache. The instance delivers average performance across standard benchmarks, including a Geekbench multi-core score of 6517.0 and a Redis SET throughput of 8.92 million operations per second. It supports advanced instruction sets like AVX-512 and Intel AMX. While memory bandwidth and database operations perform in the middle tier, text generation for medium 7B LLM models is a notable bottleneck, scoring in the bottom 25% at 7.36 tokens per second. This server is designed for memory-optimized and storage-intensive workloads, such as database hosting, caching, and data processing.",
-  "og_description": "Google Cloud Platform z3-highmem-8-highlssd is an x86_64 server featuring 8 vCPUs, 64 GB RAM, and a 3221 GB local NVMe SSD. It is powered by an Intel Xeon 8481C processor for memory and storage-intensive workloads.",
-  "meta_description": "Google Cloud Platform z3-highmem-8-highlssd is an x86_64 server with 8 vCPUs, 64 GB RAM, and a 3221 GB local NVMe SSD for memory-intensive workloads.",
-  "tagline": "A memory-optimized server featuring an Intel Xeon processor, 64 GB of RAM, and 3.2 TB of high-speed local NVMe storage.",
+  "description": "Google Cloud Platform z3-highmem-8-highlssd is a storage-optimized instance delivering 8 dedicated vCPUs (4 physical cores) via an Intel Xeon 8481C processor running at 2.7 GHz, paired with 64 GB of memory and a bundled 3,221 GB local NVMe SSD. Operating on an x86_64 architecture with AVX-512 and AMX instructions, it delivers balanced performance including 8.92 million Redis SET operations per second, a Geekbench multi-core score of 6,517.0, and static web serving throughput of 12.63 GB/sec. With zero GPUs and an 8:1 memory-to-vCPU ratio, the server provides significant resource density for memory-bound and storage-intensive operational tasks. It is well matched for transactional databases, in-memory caches, data processing pipelines, and local NVMe-intensive backend services.",
+  "og_description": "Google Cloud Platform z3-highmem-8-highlssd features 8 vCPUs on an Intel Xeon 8481C, 64 GB RAM, and a bundled 3,221 GB local NVMe SSD, optimized for data-intensive storage and caching workloads.",
+  "meta_description": "Google Cloud Platform z3-highmem-8-highlssd provides 8 vCPUs, 64 GB RAM, and 3,221 GB NVMe local SSD storage for storage-optimized and database workloads.",
+  "tagline": "Dedicated Intel Xeon compute, high memory density, and high-capacity bundled NVMe SSD storage for intensive database operations.",
   "bullet_points": [
-    "Intel Xeon 8481C processor with 8 vCPUs and 4 physical cores",
-    "64 GB of dedicated RAM providing 8 GB per core",
-    "Integrated 3221 GB local NVMe SSD storage",
-    "Intel AMX and AVX-512 instruction set support",
-    "Suited for database hosting, caching, and memory-intensive applications"
+    "Intel Xeon 8481C processor providing 8 dedicated vCPUs across 4 physical cores at 2.7 GHz",
+    "64 GB total memory with an 8:1 memory-to-core allocation ratio",
+    "Bundled 3,221 GB local NVMe SSD storage",
+    "Supports Intel AMX and AVX-512 vector instructions",
+    "Demonstrated throughput of 8.92M Redis SET ops/sec and 12.63 GB/sec static web serving",
+    "Targeted for high-performance databases, caching layers, and storage-heavy backend pipelines"
   ],
   "categories": [
+    "Storage & Database",
     "Memory Optimized",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

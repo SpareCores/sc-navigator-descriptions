@@ -1,20 +1,19 @@
 {
   "page": [
-    "Alibaba Cloud ecs.u0.c1m1.3xlarge is an x86_64 architecture server instance powered by the KVM hypervisor. It features 12 dedicated physical cores and 12 vCPUs, operating with a single thread per core configuration. The instance is provisioned with 12.0 GB of system memory, yielding a strict 1.0 GB of RAM per core ratio. It does not include local storage or GPU hardware, relying entirely on network-attached storage for boot and data volumes. Network connectivity is supported by a baseline bandwidth of 2 Gbps.",
-    "The hardware profile presents a distinct tradeoff, offering high dedicated CPU core density alongside a constrained memory footprint. With a 1:1 vCPU-to-RAM ratio, this instance is structured for workloads that require parallel processing power without substantial memory overhead. From a resource density perspective, the dedicated CPU allocation ensures consistent compute performance, avoiding the resource contention typical of shared-core environments. However, the lack of local storage and the modest 2 Gbps network baseline require careful architecture planning for I/O-heavy operations.",
-    "This server type is suited for compute-bound tasks with low memory requirements. Appropriate workloads include parallel batch processing, lightweight web serving, distributed compute nodes, and basic CPU-bound utility services. It is less suitable for database hosting, large-scale data analytics, or memory-intensive applications due to the 12 GB memory limitation."
+    "Alibaba Cloud ecs.u0.c1m1.3xlarge is a compute-oriented virtual server within the ecs.u0 family, provisioned on a KVM hypervisor utilizing the x86_64 CPU architecture. The instance features 12 dedicated vCPUs accompanied by 12.0 GB of system memory, yielding a strict 1:1 ratio of 1.0 GB of RAM per vCPU. Hardware acceleration is absent, with zero GPUs provisioned on the host.",
+    "Local storage is not bundled with this configuration, necessitating the deployment of external network-attached volumes for operating system disks and persistent file storage. Network capability includes a baseline network bandwidth of 2 Gbps. The instance provides zero complimentary public IPv4 addresses by default, requiring secondary assignment for external routing.",
+    "The low memory-to-vCPU allocation delivers high compute thread concurrency at the expense of memory density. This resource profile optimizes cost efficiency for workloads that demand substantial parallel processing power without heavy per-thread RAM overhead. Primary workload fits include CPU-bound batch tasks, compilation pipelines, continuous integration testing agents, and lightweight distributed microservices."
   ],
-  "description": "Alibaba Cloud ecs.u0.c1m1.3xlarge is an x86_64 compute-focused server instance running on the KVM hypervisor. It features 12 dedicated physical cores and 12 vCPUs with a single thread per core, paired with 12.0 GB of system memory. This configuration establishes a strict 1:1 ratio of vCPUs to gigabytes of RAM, highlighting a design optimized for parallel compute tasks with minimal memory requirements. The instance does not include local storage or GPU accelerators, relying on external network storage, and provides a baseline network bandwidth of 2 Gbps. This resource profile offers a cost-effective option for dedicated CPU processing where memory capacity is not a bottleneck. It is best suited for batch processing, lightweight web servers, and distributed compute nodes.",
-  "og_description": "Alibaba Cloud ecs.u0.c1m1.3xlarge is an x86_64 KVM instance featuring 12 dedicated physical cores, 12 GB of RAM, and a 2 Gbps network baseline, designed for compute-heavy workloads with low memory requirements.",
-  "meta_description": "Alibaba Cloud ecs.u0.c1m1.3xlarge is an x86_64 KVM server with 12 dedicated cores, 12 GB RAM, and no local storage, optimized for low-memory compute tasks.",
-  "tagline": "A dedicated twelve-core compute instance with a lean memory footprint, optimized for parallel processing tasks without local storage overhead.",
+  "description": "Alibaba Cloud ecs.u0.c1m1.3xlarge is an x86_64 compute-oriented virtual server operating on a KVM hypervisor. The instance features 12 dedicated vCPUs and 12.0 GB of system memory, establishing a focused 1:1 vCPU-to-memory allocation of 1.0 GB per core. The hardware configuration provides a baseline network throughput of 2 Gbps and includes no complimentary public IPv4 addresses. There are zero GPUs, and no local disk storage is bundled, requiring complete reliance on remote network-attached block storage for all operational and operating system data needs. With its dedicated core allocation and low per-core RAM density, the instance trades overall memory capacity for concurrent execution threads. This makes the configuration an efficient hardware fit for CPU-bound distributed processing, lightweight batch computational pipelines, continuous integration runners, and microservices that require multi-core concurrency without demanding large in-memory data structures.",
+  "og_description": "Alibaba Cloud ecs.u0.c1m1.3xlarge provides 12 dedicated x86_64 vCPUs and 12.0 GB RAM on a KVM hypervisor, featuring 2 Gbps baseline network bandwidth, zero GPUs, and no bundled local storage.",
+  "meta_description": "Alibaba Cloud ecs.u0.c1m1.3xlarge features 12 dedicated x86_64 vCPUs, 12 GB RAM, 2 Gbps baseline networking, zero GPUs, and no bundled local storage.",
+  "tagline": "Dedicated twelve-core compute instance featuring a 1:1 vCPU-to-memory ratio and baseline two-gigabit networking for memory-lean, concurrent processing workloads.",
   "bullet_points": [
-    "12 dedicated physical cores and 12 vCPUs on x86_64 architecture",
-    "12.0 GB of system memory providing a 1:1 vCPU-to-RAM ratio",
-    "KVM hypervisor-backed virtualization with dedicated CPU allocation",
-    "No bundled local storage or GPU hardware",
-    "2 Gbps baseline network bandwidth",
-    "Best suited for parallel batch processing and lightweight web serving"
+    "12 dedicated x86_64 vCPUs on a KVM hypervisor",
+    "12.0 GB system memory (1.0 GB RAM per vCPU)",
+    "2 Gbps baseline network throughput",
+    "Zero GPUs and no bundled local storage",
+    "Best fit for multi-threaded batch jobs and CI/CD runners"
   ],
   "categories": [
     "Compute Optimized"

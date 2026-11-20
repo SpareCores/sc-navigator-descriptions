@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure HB120-16rs_v3 is an x86_64 architecture server belonging to the HBv3 server family. It features 16 dedicated vCPUs managed via the Microsoft Hyper-V hypervisor. The system is equipped with an Intel processor and provides a substantial memory capacity of 456.0 GB, yielding 28.5 GB of RAM per core.",
-    "For storage-intensive workloads, the server includes 2412 GB of local NVMe SSD storage and is Premium Storage capable. It is also RDMA (Remote Direct Memory Access) capable, facilitating high-throughput, low-latency networking. No complimentary public IPv4 addresses are included with this instance.",
-    "Given the high memory-to-vCPU ratio of 28.5 GB per core and dedicated CPU allocation, this server offers a specialized hardware profile. It is qualitatively cost-efficient for memory-bound tasks and large-scale database operations that require high-speed local NVMe storage without the overhead of excessive vCPU licensing costs. Appropriate workloads include memory-intensive databases, in-memory analytics, and high-performance computing tasks requiring RDMA."
+    "Microsoft Azure HB120-16rs_v3 is a specialized high-performance computing virtual machine configured under Microsoft Hyper-V. Built on an x86_64 Intel processor architecture, the server provisions 16 dedicated vCPUs with dedicated physical resource allocation. It offers an asymmetrical compute-to-memory footprint featuring 456 GB of system RAM, yielding a high memory density of 28.5 GB per vCPU. Fast local scratch space is provided via a bundled 2435 GB NVMe solid-state drive, complemented by Premium Storage compatibility. The configuration includes zero GPUs and zero complimentary public IPv4 addresses.",
+    "Belonging to the HBv3 family within Azure HPC offerings, this configuration supports Remote Direct Memory Access (RDMA) networking. RDMA enables low-latency, high-throughput node-to-node communication across clustered environments, offloading communication overhead from the CPU cores. While the underlying host platform is designed around 120 vCPUs, this specific instance exposes only 16 cores, directing the balance of host memory and IO bandwidth toward this smaller execution pool.",
+    "The primary trade-off of this configuration is lower total compute parallelism compared to full-socket instances, counterbalanced by elevated per-core memory bandwidth and capacity. From an infrastructure cost perspective, this profile provides high cost efficiency for workloads governed by per-core software licensing models, allowing organizations to avoid licensing unneeded vCPUs while accessing enterprise-grade memory scale and high-speed NVMe storage. The HB120-16rs_v3 is suited for memory-bound simulation modeling, large in-memory database engines, high-volume ETL processing, and compute-restricted scientific analytics."
   ],
-  "description": "Microsoft Azure HB120-16rs_v3 is an x86_64 architecture server within the HBv3 family, running on the Microsoft Hyper-V hypervisor. It features 16 dedicated vCPUs powered by an Intel processor, paired with 456.0 GB of system memory, which translates to an exceptionally high allocation of 28.5 GB of RAM per core. The server is equipped with 2412 GB of local NVMe SSD storage and supports Premium Storage. Additionally, it is RDMA capable, enabling low-latency networking for clustered environments. With no integrated GPUs, this server is designed for memory-intensive and storage-heavy workloads. The high memory-to-vCPU ratio and dedicated CPU allocation make it qualitatively cost-efficient for resource-dense applications. It is highly suitable for large-scale databases, in-memory data processing, and high-performance computing workloads that benefit from RDMA and fast local storage.",
-  "og_description": "Microsoft Azure HB120-16rs_v3 is an x86_64 server in the HBv3 family featuring 16 dedicated vCPUs, 456 GB of memory, 2412 GB of local NVMe SSD storage, and RDMA capabilities for high-performance workloads.",
-  "meta_description": "Microsoft Azure HB120-16rs_v3 is an x86_64 server with 16 dedicated vCPUs, 456 GB RAM, and 2412 GB local NVMe SSD storage, optimized for memory-heavy tasks.",
-  "tagline": "A memory-optimized, RDMA-capable virtual server featuring dedicated processors and high-capacity local NVMe SSD storage for demanding data workloads.",
+  "description": "Microsoft Azure HB120-16rs_v3 is a high-performance computing virtual machine designed for memory-intensive computational tasks. Operating under Microsoft Hyper-V, the server provides 16 dedicated x86_64 vCPUs backed by an Intel processor. A core feature of this instance is its exceptional memory density, delivering 456 GB of system RAM, which translates to 28.5 GB per vCPU. Hardware capabilities also include 2435 GB of integrated NVMe SSD local storage and support for RDMA networking alongside Azure Premium Storage. The server operates without discrete GPU accelerators and includes no complimentary public IPv4 addresses. By concentrating massive memory allocation across a reduced core count, the instance maximizes cost efficiency for licenses billed on a per-core basis while avoiding resource contention. The HB120-16rs_v3 is well matched for large-footprint in-memory databases, memory-bound high-performance computing simulations, data analysis, and advanced ETL pipelines requiring substantial per-thread memory capacity.",
+  "og_description": "Microsoft Azure HB120-16rs_v3 is a high-performance computing instance offering 16 dedicated x86_64 vCPUs, 456 GB memory, 2435 GB NVMe SSD local storage, and RDMA networking capability for memory-bound workloads.",
+  "meta_description": "Microsoft Azure HB120-16rs_v3 is a high-performance computing instance featuring 16 dedicated x86_64 vCPUs, 456 GB RAM, RDMA networking, and 2435 GB NVMe SSD storage.",
+  "tagline": "High-memory compute profile delivering dedicated x86 cores, extensive per-core RAM density, fast local NVMe storage, and RDMA networking support.",
   "bullet_points": [
-    "16 dedicated x86_64 vCPUs on Microsoft Hyper-V hypervisor",
-    "456.0 GB of system memory providing 28.5 GB per core",
-    "2412 GB of high-speed local NVMe SSD storage",
-    "RDMA and Premium Storage capabilities enabled",
-    "Best suited for memory-intensive databases and in-memory analytics"
+    "16 dedicated x86_64 vCPUs managed by Microsoft Hyper-V",
+    "456 GB total system memory providing 28.5 GB RAM per core",
+    "2435 GB integrated NVMe SSD local storage",
+    "RDMA network interconnect and Premium Storage capability",
+    "Optimized for memory-bound simulations, large in-memory databases, and ETL workloads"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

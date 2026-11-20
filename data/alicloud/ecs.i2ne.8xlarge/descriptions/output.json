@@ -1,23 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.i2ne.8xlarge is an x86_64 architecture server powered by an Intel Xeon 8163 processor running at 2.5 GHz. It features 32 dedicated vCPUs derived from 16 physical cores with hyper-threading enabled. The system is equipped with 256.0 GB of RAM, providing 8.0 GB of memory per core. A key hardware feature is its bundled local storage, consisting of 7679 GB of SSD capacity. Network connectivity is supported by a baseline bandwidth of 10 Gbps.",
-    "Benchmark data indicates a clear division between single-core and multi-core capabilities. Single-core CPU performance, measured via stress-ng and Geekbench, falls into the bottom 25% tier, and single-threaded operations like gzip compression are weak. However, multi-core performance scales to average levels, as shown by stress-ng multi-core, PassMark CPU, and multi-threaded bzip3 decompression tests. Memory bandwidth for both read and write operations on large blocks remains in the average tier, though the PassMark memory score is relatively weak.",
-    "Given the high density of local SSD storage paired with 256 GB of RAM, this instance offers a specialized hardware profile where storage capacity and memory volume are prioritized over raw single-core compute speed. This makes it a qualitatively cost-efficient option for workloads that require large local data footprints without needing high-frequency CPU cores. Appropriate workloads include relational and non-relational databases, caching layers like Redis, static web serving, and general-purpose multi-threaded applications."
+    "Alibaba Cloud ecs.i2ne.8xlarge is a storage and memory-optimized virtual machine delivered via KVM virtualization. It features 32 dedicated vCPUs across 16 physical cores and 32 threads, driven by a 2.5 GHz Intel Xeon 8163 processor based on the x86_64 architecture. The platform includes a 33 MB L3 cache, support for AVX and AVX-512 extensions, 256 GB of system memory delivering 8 GB per vCPU, and a baseline network bandwidth of 10 Gbps. A core characteristic of this configuration is its integrated 7679 GB local SSD storage, eliminating the reliance on remote network volumes for primary data operations.",
+    "Benchmark outcomes show distinct multi-threaded and local throughput advantages counterbalanced by lower single-core execution metrics. Synthetic evaluation places single-core performance in lower percentiles, evidenced by a Geekbench single-core score of 946.0 and stress-ng single-core rating of 1106.68. In contrast, multi-threaded tasks achieve mid-tier outcomes, registering 23463.4 in multi-core stress-ng, 8432.0 in Geekbench multi-core, and 23.13 million operations per second in Redis SET operations. Memory throughput achieves 77.33 GB/sec uncached large-block reads and 46.98 GB/sec writes, supporting steady memory-bound and multi-core computation.",
+    "Hardware tradeoffs center around processor generation versus dense onboard capacity. While the older Intel Xeon architecture exhibits lower clock frequency and reduced single-thread compression efficiency, it balances this by coupling 256 GB of system RAM directly with 7679 GB of high-capacity local SSD storage. This resource density makes the instance cost-effective for I/O-heavy applications where external network storage latency and remote egress overhead present operational bottlenecks.",
+    "Appropriate deployment scenarios include persistent transactional databases, distributed NoSQL datastores, Redis caching clusters with local replication, static web delivery engines, and large-scale extract, transform, load pipelines that process massive datasets locally."
   ],
-  "description": "Alibaba Cloud ecs.i2ne.8xlarge is an x86_64 server featuring 32 dedicated vCPUs from an Intel Xeon 8163 processor, 256.0 GB of RAM, and a substantial 7679 GB of bundled local SSD storage. Operating on a KVM hypervisor, it provides a baseline network bandwidth of 10 Gbps. Performance benchmarks show a contrast between weak single-core execution and average multi-core processing capabilities. Memory read and write bandwidths remain in the average tier, while database and Redis SET operations also demonstrate average throughput. Lacking a GPU, this instance is not designed for hardware-accelerated tasks. Instead, its high storage-to-vCPU ratio and large memory footprint make it highly suitable for storage-intensive and database workloads, such as large-scale caching, data indexing, and relational databases that benefit from massive local SSD capacity and moderate multi-threaded compute power.",
-  "og_description": "Alibaba Cloud ecs.i2ne.8xlarge is an x86_64 server with 32 dedicated Intel Xeon vCPUs, 256 GB RAM, and 7679 GB of local SSD storage, offering average multi-core performance for database and storage workloads.",
-  "meta_description": "Alibaba Cloud ecs.i2ne.8xlarge features 32 dedicated vCPUs, 256 GB RAM, and 7.6 TB of local SSD storage for database and memory-intensive workloads.",
-  "tagline": "A dedicated multi-core server featuring massive local SSD storage and balanced memory capacity for data-intensive and database workloads.",
+  "description": "Alibaba Cloud ecs.i2ne.8xlarge is an x86_64 storage-oriented instance equipped with 32 dedicated vCPUs from an Intel Xeon 8163 processor clocked at 2.5 GHz, 256 GB of RAM, and 7679 GB of integrated local SSD storage. It provides a 10 Gbps baseline network bandwidth without discrete GPUs. While single-threaded computational metrics reflect lower baseline clock speeds, multi-threaded performance is consistent across parallel workloads, evidenced by 23.13 million operations per second on Redis SET benchmarks and solid multi-core stress execution. The pairing of an 8:1 memory-to-core ratio with expansive local storage reduces reliance on networked block storage. This instance is suited for heavy transactional databases, distributed data processing, in-memory caching systems, and high-throughput static data serving.",
+  "og_description": "Alibaba Cloud ecs.i2ne.8xlarge is a storage and memory-heavy instance offering 32 vCPUs on Intel Xeon 8163 processors, 256 GB of RAM, and 7679 GB of bundled local SSD storage for data-intensive workloads.",
+  "meta_description": "Alibaba Cloud ecs.i2ne.8xlarge is a storage-focused instance featuring 32 vCPUs, 256 GB of RAM, 10 Gbps networking, and 7679 GB of bundled local SSD storage.",
+  "tagline": "Storage and memory focused instance with 32 dedicated vCPUs, large memory capacity, and expansive high-speed local solid-state drives.",
   "bullet_points": [
-    "32 dedicated Intel Xeon vCPUs and 256 GB of system memory",
-    "Bundled 7679 GB local SSD storage for high-capacity local data needs",
+    "32 dedicated vCPUs driven by a 2.5 GHz Intel Xeon 8163 processor",
+    "256 GB system memory delivering an 8 GB per vCPU ratio",
+    "7679 GB integrated local solid-state drive storage",
     "10 Gbps baseline network bandwidth",
-    "Average multi-core and database benchmark performance",
-    "Well-suited for relational databases, caching, and storage-heavy workloads"
+    "Tailored for transactional databases, distributed storage, and caching clusters"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

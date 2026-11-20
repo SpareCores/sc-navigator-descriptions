@@ -1,22 +1,24 @@
 {
   "page": [
-    "Amazon Web Services i3en.12xlarge is a storage-optimized instance built on the AWS Nitro hypervisor. It features 48 vCPUs and 24 physical cores powered by an Intel Xeon 8259CL processor running at 3.1 GHz. The hardware configuration includes 384.0 GB of DDR4 memory operating at 3 GHz, providing 8.0 GB of RAM per core. A key differentiator of this instance is its bundled local storage, consisting of 30,000 GB of NVMe SSD capacity, alongside a baseline network bandwidth of 50 Gbps.",
-    "Benchmark data indicates that the i3en.12xlarge delivers average multi-core CPU and memory bandwidth performance. In multi-threaded tasks, such as bzip3 decompression and Geekbench multi-core tests, the instance sits firmly in the middle tier of tested hardware. However, single-core performance is a notable tradeoff, with stress-ng single-core CPU performance and single-threaded gzip compression scoring in the bottom 25%. Memory read and write bandwidth tests for large blocks also demonstrate average performance, aligning with its DDR4 architecture.",
-    "From a cost-efficiency perspective, the i3en.12xlarge offers high resource density, particularly regarding local NVMe storage capacity relative to the compute and memory footprint. This makes it highly suitable for storage-intensive workloads that require high-speed local access to large datasets. Optimal workloads include large-scale databases, NoSQL data stores, distributed file systems, and data warehousing applications. It is less suited for single-threaded compute-bound applications due to its weaker single-core performance."
+    "Amazon Web Services i3en.12xlarge is an x86_64 storage-optimized instance running on the AWS Nitro System. It is powered by an Intel Xeon 8259CL processor operating at 3.1 GHz, delivering 24 physical cores and 48 vCPUs with hyper-threading enabled. Memory capacity is substantial at 384.0 GB of DDR4 RAM running at 3 GHz, maintaining an 8.0 GB RAM per vCPU ratio. A key architectural characteristic is the inclusion of 30,000 GB of high-speed local NVMe SSD storage paired with a 50 Gbps baseline network bandwidth. The system does not feature dedicated GPUs.",
+    "Benchmark results show balanced aggregate multi-core throughput alongside modest single-thread metrics. Stress-ng single-core performance scores 1379.2, placing it in the lower 25% bracket, while multi-core stress testing reaches 40663.15 in the middle 50% percentile. Memory bandwidth reflects 110.43 GB/sec for uncached large-block reads and 49.34 GB/sec for writes. Database operations in PassMark register at 15612.36, and the instance achieves 38.4 million operations per second in Redis SET operations, bolstered by the high memory and fast bus speeds.",
+    "From a cost-efficiency perspective, the i3en.12xlarge delivers dense local NVMe storage combined with a balanced compute and memory allocation, eliminating the need to provision expensive external block storage arrays for high-throughput applications. A tradeoff exists in per-core compute performance, as older architecture yields weaker single-thread execution and slower compression tasks, such as single-threaded gzip at 23.58 GB/sec.",
+    "This server profile is structured for high-capacity, I/O-intensive workloads requiring rapid access to massive local storage. It serves distributed file systems, data warehousing, large relational or NoSQL databases, search indexing clusters, and high-throughput data processing applications."
   ],
-  "description": "Amazon Web Services i3en.12xlarge is a storage-optimized instance designed for high-capacity local storage and memory-intensive workloads. Powered by an Intel Xeon 8259CL processor with 48 vCPUs and 24 physical cores, it features 384.0 GB of DDR4 RAM and 30,000 GB of local NVMe SSD storage. Operating on the AWS Nitro hypervisor, the instance provides a baseline network bandwidth of 50 Gbps. Benchmark results show average multi-core CPU and memory bandwidth performance, though single-core performance is relatively weak, placing in the bottom 25%. This hardware profile offers strong qualitative cost efficiency for storage-heavy deployments, making it highly suitable for large-scale databases, NoSQL data stores, and distributed file systems that benefit from massive local NVMe capacity and high network throughput.",
-  "og_description": "Amazon Web Services i3en.12xlarge is a storage-optimized instance featuring 48 vCPUs, 384 GB DDR4 RAM, 30 TB of local NVMe SSD storage, and 50 Gbps network bandwidth on the Nitro hypervisor.",
-  "meta_description": "Amazon Web Services i3en.12xlarge is a storage-optimized instance with 48 vCPUs, 384 GB RAM, and 30 TB of local NVMe SSD storage.",
-  "tagline": "A storage-optimized virtual server featuring thirty terabytes of local NVMe SSD storage and fifty gigabits per second baseline network bandwidth.",
+  "description": "Amazon Web Services i3en.12xlarge is a storage-optimized instance powered by a 24-core, 48-vCPU Intel Xeon 8259CL processor clocked at 3.1 GHz on the Nitro hypervisor. Configured with 384.0 GB of DDR4 RAM and 30,000 GB of local NVMe SSD storage, it is designed for storage-heavy workloads requiring fast I/O and substantial memory capacity. Baseline network throughput reaches 50 Gbps, while no GPUs are included. Performance testing demonstrates mid-range multi-core capability with a PassMark CPU score of 34713.28 and robust memory operation processing, including 38.4 million Redis SET operations per second. However, single-core execution is lower, marked by a stress-ng single-core score of 1379.2. Economically, the server provides extreme local NVMe density without external block storage overhead. It is well suited for distributed NoSQL databases, search indexing engines, data warehousing, and high-throughput transactional systems.",
+  "og_description": "Amazon Web Services i3en.12xlarge features 48 vCPUs, 384 GB DDR4 RAM, 30 TB NVMe SSD storage, and 50 Gbps network bandwidth, built for storage-intensive and high-throughput database workloads.",
+  "meta_description": "Amazon Web Services i3en.12xlarge delivers 48 vCPUs, 384 GB RAM, 30 TB local NVMe storage, and 50 Gbps networking for data-intensive storage workloads.",
+  "tagline": "High-density local NVMe storage instance with 48 vCPUs, 384 GB memory, and 50 Gbps networking for massive I/O workloads.",
   "bullet_points": [
-    "30,000 GB of high-speed local NVMe SSD storage",
-    "48 vCPUs and 24 physical cores via Intel Xeon 8259CL CPU",
-    "384.0 GB of DDR4 system memory",
-    "50 Gbps baseline network bandwidth on the Nitro hypervisor",
-    "Best suited for large-scale databases, NoSQL stores, and distributed file systems"
+    "Intel Xeon 8259CL processor with 24 physical cores and 48 vCPUs at 3.1 GHz",
+    "384.0 GB DDR4 memory providing an 8.0 GB RAM per vCPU allocation",
+    "30,000 GB of direct-attached high-speed local NVMe SSD storage",
+    "50 Gbps baseline networking throughput on the AWS Nitro System",
+    "Tailored for distributed databases, data warehousing, and search indexing"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

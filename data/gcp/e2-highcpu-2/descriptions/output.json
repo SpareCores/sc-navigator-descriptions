@@ -1,22 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform e2-highcpu-2 is an entry-level compute-focused instance within the E2 family. It features 2 virtual CPUs powered by an Intel Xeon x86_64 processor operating at 2.2 GHz, backed by 1 physical core with 2 threads per core under dedicated CPU allocation. The server includes 2.0 GB of system memory, providing a 1.0 GB per vCPU ratio, with no bundled local SSD storage or attached GPU accelerators.",
-    "Performance benchmarks indicate entry-tier baseline capabilities. Synthetic CPU testing yields a stress-ng single-core score of 1105.98 and a multi-core score of 1452.89, alongside a Geekbench multi-core score of 1073.0 and a PassMark CPU score of 1664.25. Uncached memory write bandwidth sits at 11.11 GB/sec, while static web serving throughput measures 1.39 GB/sec. These scores reflect modest multi-threading and memory bandwidth constraints suited primarily for light execution overhead.",
-    "From a cost-efficiency perspective, the instance offers an economical hardware profile for small-scale workloads where low memory overhead is acceptable. Due to its limited 2.0 GB memory capacity and baseline CPU throughput, the instance is appropriate for lightweight microservices, basic web serving, simple utility scripts, or modest development and testing tasks."
+    "Google Cloud Platform e2-highcpu-2 is a general-purpose compute instance configured with a compute-leaning resource ratio. It provides 2 dedicated vCPUs derived from a single physical core across two hardware threads on an Intel Xeon x86_64 processor clocked at 2.2 GHz. The CPU cache architecture comprises 32 KB of L1 data cache, 0.5 MB of L2 cache, and a shared 16 MB L3 cache. Instruction set support includes AVX, AES, BMI2, ADX, and FMA, while advanced vector extensions such as AVX-512 and matrix engines like AMX are absent.",
+    "System memory is limited to 2.0 GB of RAM, yielding an allocation of 1.0 GB per vCPU. The instance does not include bundled local storage or integrated GPU hardware, requiring workloads to rely on remote block storage for persistence. Network connectivity provides zero complimentary public IPv4 addresses, necessitating network address translation or provisioned IP configurations for public internet egress.",
+    "Benchmark results situate the e2-highcpu-2 in the entry-level performance tier. Compute testing records a Geekbench single-core score of 906.0 and a multi-core score of 1073.0, alongside a PassMark CPU score of 1664.25. Memory bandwidth reaches 13.03 GB/sec for uncached 256 MB reads and 11.11 GB/sec for writes. Application-level metrics demonstrate 1.34 million operations per second in Redis SET tests and 1.39 GB/sec of static web serving throughput.",
+    "Due to its restricted 2.0 GB memory footprint and baseline compute capacity, the instance is positioned as an economical option for lightweight services rather than resource-heavy pipelines. It is suited for basic web serving, lightweight microservices, testing environments, and non-memory-intensive batch processing."
   ],
-  "description": "Google Cloud Platform e2-highcpu-2 is a budget-focused compute-oriented instance powered by a 2.2 GHz Intel Xeon x86_64 processor. Configured with 2 vCPUs across 1 physical core with multithreading, it delivers 2.0 GB of RAM (1.0 GB per vCPU) with no attached local storage or GPU hardware. In benchmark testing, the server demonstrates entry-level performance, achieving a PassMark CPU score of 1664.25, a Geekbench multi-core score of 1073.0, and static web serving throughput of 1.39 GB/sec. Memory read and write bandwidths reach 13.03 GB/sec and 11.11 GB/sec respectively. Given its tight 2.0 GB RAM overhead and moderate processing ceiling, e2-highcpu-2 provides a cost-effective environment for low-concurrency web hosting, lightweight background microservices, basic utility automation, and early-stage software testing workloads where resource demands remain low.",
-  "og_description": "Google Cloud Platform e2-highcpu-2 features 2 x86_64 vCPUs, 2.0 GB RAM, and a 2.2 GHz Intel Xeon CPU. Designed for low-overhead compute tasks, it provides a cost-effective option for basic web serving.",
-  "meta_description": "Google Cloud Platform e2-highcpu-2 offers 2 x86_64 vCPUs and 2.0 GB RAM on Intel Xeon hardware for lightweight compute workloads and basic microservices.",
-  "tagline": "An entry-level x86_64 compute configuration providing dual vCPUs and 2 GB memory for lightweight background tasks and basic web serving.",
+  "description": "Google Cloud Platform e2-highcpu-2 is an entry-level virtual machine offering 2 dedicated vCPUs from a single physical Intel Xeon core at 2.2 GHz paired with 2.0 GB of system memory. Operating on the x86_64 architecture, the processor features 16 MB of L3 cache with hardware support for AVX, AES, and bit manipulation instructions, but omits AVX-512 extensions. The instance includes no bundled local storage, no hardware GPU accelerators, and zero complimentary public IPv4 addresses. Benchmark performance places the instance in the lower percentiles, producing a Geekbench multi-core score of 1073.0, uncached memory read bandwidth of 13.03 GB/sec, and 1.34 million Redis SET operations per second. With an allocation of 1.0 GB RAM per vCPU, the instance delivers a low-cost profile suited for lightweight application hosting, staging tasks, and basic background worker jobs.",
+  "og_description": "Google Cloud Platform e2-highcpu-2 provides 2 dedicated Intel Xeon vCPUs, 2.0 GB RAM, and no local storage, offering an entry-level compute-skewed environment for lightweight services.",
+  "meta_description": "Google Cloud Platform e2-highcpu-2 offers 2 dedicated Intel Xeon vCPUs, 2.0 GB RAM, and no bundled storage, designed for lightweight web and background tasks.",
+  "tagline": "A lightweight dual-vCPU entry profile delivering dedicated compute resources and low memory capacity for cost-sensitive background processes and staging tasks.",
   "bullet_points": [
-    "Dual vCPUs running on a 2.2 GHz Intel Xeon x86_64 processor",
-    "2.0 GB system memory allocation yielding 1.0 GB per vCPU",
-    "No bundled local NVMe SSD storage or hardware GPU acceleration",
-    "Dedicated CPU allocation across 1 physical core with hyperthreading",
-    "Best suited for basic web serving, light utility scripts, and low-concurrency microservices"
+    "2 dedicated vCPUs powered by a 2.2 GHz Intel Xeon x86_64 processor",
+    "2.0 GB total system memory (1.0 GB per vCPU allocation)",
+    "No bundled local storage and no GPU acceleration",
+    "Hardware support for AVX, AES, BMI2, and FMA instructions",
+    "Best suited for small microservices, lightweight web servers, and development sandboxes"
   ],
   "categories": [
     "Compute Optimized",
+    "General Purpose",
     "Burstable & Budget"
   ]
 }

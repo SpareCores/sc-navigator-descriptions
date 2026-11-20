@@ -1,22 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform n2-highmem-2 is a memory-optimized instance featuring 2 virtual CPUs mapped to 1 physical core on an Intel Xeon processor running at 2.8 GHz with hyper-threading. Built on x86_64 architecture, it is configured with 16.0 GB of memory, delivering a high RAM-to-vCPU ratio of 8.0 GB per virtual core. The processor includes 33 MB of L3 cache, 1.0 MB of L2 cache, and 32 KB of L1d cache, alongside hardware instruction extensions such as AVX-512, AES, and FMA. This instance type includes no local NVMe storage or discrete GPUs.",
-    "In performance benchmarks, the single-core execution on the n2-highmem-2 demonstrates moderate capability, recording a stress-ng single-core score of 1827.69. However, multi-core and memory bandwidth metrics reflect significant compute constraints due to its single-physical-core topology. The instance achieves a PassMark CPU score of 2164.15 and a Geekbench multi-core score of 1321.0. Large-block memory read bandwidth measures 13.86 GB/sec and write bandwidth reaches 11.77 GB/sec. Application benchmarks show Redis SET performance at 1.67 million operations per second and static web serving throughput at 1.61 GB/sec.",
-    "The server hardware profile offers a cost-effective memory allocation relative to its low vCPU count, making it suited for workloads that require moderate memory footprints without demanding high CPU concurrency. The main tradeoff lies in limited multi-core processing throughput and low overall memory bandwidth under heavy loads. The n2-highmem-2 is best suited for light database caching, small in-memory stores, background memory-bound task queues, and low-traffic web serving applications."
+    "Google Cloud Platform n2-highmem-2 is a memory-oriented virtual machine configuration within the general-purpose N2 series. It provides 2 vCPUs derived from a single physical Intel Xeon core running at a base clock speed of 2.8 GHz with hyperthreading enabled. The configuration is paired with 16.0 GB of system memory, yielding an elevated allocation ratio of 8.0 GB of RAM per vCPU. The underlying x86_64 processor includes support for instruction set extensions such as AVX-512F and AVX-512 VNNI, alongside hardware-accelerated AES cryptography and 33 MB of shared L3 cache. There are no integrated GPUs and no local storage drives attached by default.",
+    "Benchmark measurements reflect the constraints of its two-thread, single-core CPU footprint. In synthetic evaluation, stress-ng registers a single-core score of 1827.69 in the middle tier, whereas multi-core throughput scores 1875.88 in the lower tier due to thread contention over a single core. Geekbench records single-core and multi-core ratings of 1099.0 and 1321.0 respectively. Memory bandwidth tests yield 13.86 GB/sec for uncached read operations and 11.77 GB/sec for write operations on large data blocks. In application scenarios, the instance achieves 1.67 million Redis SET operations per second and 1.61 GB/sec of static web serving throughput.",
+    "Cost efficiency is focused around memory-heavy footprints that do not require substantial parallel computing power. Compared to standard balanced configurations, the 1:8 core-to-RAM ratio prevents overprovisioning vCPUs when only memory footprint matters. The primary tradeoff lies in raw computation: CPU-bound, multi-threaded pipelines will experience significant execution bottlenecks on a single hyperthreaded physical core.",
+    "Google Cloud Platform n2-highmem-2 is appropriate for lightweight in-memory caching layers, modest database instances, microservices with medium memory usage, and background ETL or data ingestion jobs with moderate processing requirements."
   ],
-  "description": "Google Cloud Platform n2-highmem-2 is a memory-optimized cloud server equipped with 2 vCPUs across 1 physical Intel Xeon core operating at 2.8 GHz and 16.0 GB of RAM. Featuring an x86_64 architecture with 33 MB L3 cache, it supports AVX-512 and AES instructions. The server includes no local NVMe storage or GPU resources. In benchmark tests, single-core CPU performance reaches 1827.69 in stress-ng, while multi-core scores remain lower with a Geekbench multi-core result of 1321.0. Uncached large-block memory read and write speeds are 13.86 GB/sec and 11.77 GB/sec respectively. Application testing indicates 1.67 million Redis SET operations per second and 1.61 GB/sec static web throughput. The instance provides strong memory density per core, making it effective for light in-memory caching, low-concurrency database tasks, and memory-dependent background processes.",
-  "og_description": "Google Cloud Platform n2-highmem-2 is a memory-optimized instance with 2 vCPUs, 16 GB RAM, and Intel Xeon processors. It suits light in-memory workloads, caching, and low-concurrency tasks without local storage.",
-  "meta_description": "Google Cloud Platform n2-highmem-2 features 2 vCPUs, 16 GB RAM, and Intel Xeon CPUs. Designed for memory-dependent tasks requiring low compute.",
-  "tagline": "A memory-optimized x86 server providing sixteen gigabytes of RAM per two vCPUs for light caching and memory-bound workloads.",
+  "description": "Google Cloud Platform n2-highmem-2 is a memory-dense virtual machine featuring 2 vCPUs backed by a single physical Intel Xeon core operating at 2.8 GHz and 16.0 GB of RAM. With an elevated allocation of 8.0 GB of memory per vCPU, it is configured for applications requiring substantial memory without extensive parallel processing capabilities. The x86_64 CPU supports advanced instruction sets including AVX-512 and AES, accompanied by a 33 MB L3 cache. The instance includes no integrated GPUs or local storage. In benchmark evaluations, it demonstrates moderate single-core capacity with a stress-ng score of 1827.69, while multi-core processing remains constrained by the single-core topology, scoring 1875.88. Large-block memory bandwidth reaches 13.86 GB/sec for uncached reads. This server is suited for lightweight in-memory databases, key-value stores, intermediate caching servers, and memory-sensitive background workloads.",
+  "og_description": "Google Cloud Platform n2-highmem-2 features 2 vCPUs on a 2.8 GHz Intel Xeon core, 16 GB RAM, and AVX-512 support. Designed for memory-focused cloud workloads without local disks or GPUs.",
+  "meta_description": "Google Cloud Platform n2-highmem-2 provides 2 vCPUs, 16 GB RAM, and a 2.8 GHz Intel Xeon core for memory-intensive, low-compute workloads.",
+  "tagline": "A dual-thread Intel Xeon cloud instance offering sixteen gigabytes of system memory for low-compute, memory-centric application workloads.",
   "bullet_points": [
-    "2 dedicated vCPUs backed by 1 physical Intel Xeon core at 2.8 GHz",
-    "16.0 GB RAM delivering an 8.0 GB per vCPU memory allocation",
-    "Instruction support including AVX-512, AES, and FMA extensions",
-    "Zero local NVMe storage and no discrete GPU acceleration",
-    "1.67 million Redis SET operations per second in memory benchmarks",
-    "Best suited for in-memory caching, task queues, and light databases"
+    "2 vCPUs across 1 physical Intel Xeon core operating at 2.8 GHz",
+    "16.0 GB RAM delivering an 8:1 memory-to-vCPU ratio",
+    "CPU instruction support for AVX-512, AVX-512 VNNI, and AES",
+    "No bundled local storage or integrated GPU hardware",
+    "Suited for in-memory caches, small databases, and memory-heavy microservices"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

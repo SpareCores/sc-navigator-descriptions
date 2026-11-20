@@ -1,19 +1,20 @@
 {
   "page": [
-    "Google Cloud Platform c4n-highcpu-24 is a compute-optimized virtual machine instance belonging to the c4n server family. It is configured with 24 dedicated vCPUs built on the x86_64 architecture and paired with 48.0 GB of system memory. This allocation provides a resource density of 2.0 GB of RAM per virtual core, prioritizing raw processing capacity over memory volume.",
-    "This server type does not include local storage, meaning all storage requirements must be met through attached network storage volumes. There are no integrated GPUs or complimentary public IPv4 addresses bundled with this instance. The lack of local storage and hardware accelerators represents a design tradeoff that optimizes the instance for pure CPU-bound workloads rather than data-intensive storage operations or parallelized graphics processing.",
-    "From a cost-efficiency perspective, the c4n-highcpu-24 offers a high density of dedicated compute resources relative to its memory footprint, making it a viable option for workloads that require significant CPU cycles without the overhead of excess RAM. It is suited for compute-heavy tasks such as high-performance web serving, batch processing, continuous integration and continuous delivery pipelines, and distributed compute workloads."
+    "Google Cloud Platform c4n-highcpu-24 is a network-optimized virtual machine instance engineered for compute-heavy workloads requiring dedicated processing power. Built on the x86_64 CPU architecture, the instance provides 24 dedicated virtual central processing units paired with 48 GB of system memory, establishing a compute-dense ratio of 2 GB of memory per vCPU core.",
+    "The hardware configuration does not include local disk storage, requiring persistence to be managed through network-attached block storage volumes. Accelerators are omitted entirely, with zero physical or virtual GPUs provisioned on the host. In addition, the instance includes no complimentary public IPv4 addresses, necessitating either secondary network addressing or NAT gateways for external internet egress.",
+    "From an architectural standpoint, allocating 2 GB per core aligns the server with high-throughput compute tasks rather than memory-heavy or caching footprints. While benchmark metrics are unavailable for this profile, dedicated vCPU scheduling ensures predictable execution by isolating execution threads from multi-tenant CPU oversubscription. Deployments requiring local scratch disks must balance network block storage latency tradeoffs against CPU processing speeds.",
+    "Cost efficiency is tied directly to its lean resource allocation, maximizing dedicated compute density without carrying the overhead costs of attached local NVMe drives, auxiliary GPUs, or excess memory. Google Cloud Platform c4n-highcpu-24 is best suited for compute-bound network applications, distributed microservices, CI/CD code compilation, media transcode pipelines, and batch computing tasks."
   ],
-  "description": "Google Cloud Platform c4n-highcpu-24 is a compute-optimized virtual machine instance from the c4n family, featuring 24 dedicated vCPUs on the x86_64 architecture and 48.0 GB of system memory. With a ratio of 2.0 GB of RAM per core, this instance is designed to prioritize processing power over memory capacity. It does not include local storage, requiring external network storage solutions, and contains zero GPUs. The absence of local storage and hardware accelerators focuses the hardware profile entirely on CPU-bound tasks. This resource distribution makes the instance qualitatively cost-efficient for workloads requiring high CPU density without the added expense of unneeded memory. It is suited for applications such as batch processing, continuous integration and continuous delivery pipelines, and compute-heavy web serving.",
-  "og_description": "Google Cloud Platform c4n-highcpu-24 is a compute-optimized instance featuring 24 dedicated x86_64 vCPUs and 48 GB of RAM, designed for CPU-heavy workloads without local storage.",
-  "meta_description": "Google Cloud Platform c4n-highcpu-24 is a compute-optimized instance with 24 dedicated x86_64 vCPUs, 48 GB RAM, and no local storage.",
-  "tagline": "A compute-optimized virtual machine featuring dedicated processing cores and a lean memory profile for CPU-intensive workloads.",
+  "description": "Google Cloud Platform c4n-highcpu-24 is a compute-focused, network-optimized virtual machine built on the x86_64 CPU architecture. It features 24 dedicated vCPUs and 48 GB of RAM, maintaining a lean compute-optimized ratio of 2 GB of memory per virtual processor. The instance does not include integrated local storage or hardware GPU accelerators, necessitating remote block volumes for persistent data storage. It also provisions zero complimentary public IPv4 addresses. With fully dedicated vCPU allocation, it offers consistent execution by avoiding shared-core contention. Cost efficiency stems from this streamlined footprint, directing resources purely toward multi-core processing without unneeded memory overhead or specialized accelerator attachments. Google Cloud Platform c4n-highcpu-24 is suitable for parallel batch processing, distributed network services, software compilation, and CPU-bound containerized workloads.",
+  "og_description": "Google Cloud Platform c4n-highcpu-24 is a network-optimized instance featuring 24 dedicated x86_64 vCPUs, 48 GB of system memory, zero bundled local storage, and no GPU hardware accelerators.",
+  "meta_description": "Google Cloud Platform c4n-highcpu-24 delivers 24 dedicated x86_64 vCPUs and 48 GB RAM for compute-focused and network-oriented batch workloads.",
+  "tagline": "A high-density x86 server profile delivering 24 dedicated vCPUs with a compact two-gigabyte per core memory allocation.",
   "bullet_points": [
-    "24 dedicated vCPUs utilizing x86_64 architecture",
-    "48.0 GB of system memory providing 2.0 GB per core",
-    "No local storage included, requiring network-attached storage",
-    "Zero integrated GPUs for a pure CPU-focused hardware profile",
-    "Suited for batch processing, CI/CD pipelines, and web serving"
+    "24 dedicated x86_64 virtual processing cores",
+    "48 GB total system RAM (2 GB per vCPU ratio)",
+    "No bundled local disk storage (network-attached storage required)",
+    "Zero integrated GPUs or hardware accelerator units",
+    "Optimized for batch processing, CI/CD compilation, and network services"
   ],
   "categories": [
     "Compute Optimized"

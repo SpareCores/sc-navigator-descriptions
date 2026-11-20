@@ -1,0 +1,22 @@
+{
+  "page": [
+    "OVHcloud r3-512-flex is a memory-optimized cloud server instance powered by KVM virtualization. The instance provides 64 dedicated physical cores on an AMD EPYC x86_64 processor clocked at 2.3 GHz, configured with 1 thread per core without hyperthreading. It features a cache architecture with 32 KB L1 data cache, 0.5 MB L2 cache, and 32 MB L3 cache. Memory provisioning is substantial, offering 512.0 GB of RAM at an allocation ratio of 8.0 GB per core. Local storage is limited to a 50 GB NVMe SSD, and networking capabilities include a 20 Gbps baseline network bandwidth without complimentary public IPv4 addresses included. No dedicated GPUs are present.",
+    "Benchmark data demonstrates top-tier multi-threaded processing and in-memory operations. In stress-ng testing, multi-core CPU performance scored 194,787.36 (top 10%), while single-core performance reached 3,078.07 (top 25%). Memory throughput is exceptionally high for cached workloads, achieving 8,253.44 GB/sec for small block cached reads, alongside 154.26 GB/sec for uncached large reads and 99.66 GB/sec for large writes. Data compression shows notable scaling, with single-threaded bzip3 decompression at 13.36 GB/sec rising to 764.93 GB/sec in multi-threaded execution (top 10%). For caching applications, the instance recorded 124.5 million Redis SET operations per second, supported by a static web serving throughput of 51.81 GB/sec. CPU-based LLM inference benchmarks delivered 3,778.07 tokens/sec for 135M model prompt processing and 212.35 tokens/sec on 7B model prompt processing.",
+    "From a cost-efficiency and resource allocation perspective, the r3-512-flex offers high memory capacity and dedicated compute density relative to its footprint. However, the 50 GB local NVMe disk acts as an operational bottleneck, intended primarily for operating system execution rather than local persistent storage, requiring external or attached network storage for disk-heavy applications. The lack of complimentary public IPv4 addresses also requires network-level planning. Consequently, this server is best fitted for massive in-memory databases like Redis, extensive caching layers, real-time analytics engines, and heavy multi-threaded ETL pipelines that operate predominantly in RAM."
+  ],
+  "description": "OVHcloud r3-512-flex is a memory-optimized instance featuring 64 dedicated physical cores on an AMD EPYC x86_64 processor running at 2.3 GHz without hyperthreading. It is equipped with 512.0 GB of RAM, giving an 8.0 GB per core ratio, along with a 50 GB local NVMe SSD and a 20 Gbps network baseline. Synthetic testing indicates top-tier multi-core computing (194,787.36 in stress-ng) and high cached memory throughput (8,253.44 GB/sec). Redis benchmark performance peaks at 124.5 million SET operations per second, with multi-threaded bzip3 decompression achieving 764.93 GB/sec. A notable hardware tradeoff is the compact 50 GB local disk, which requires decoupled external storage for large datasets. Without hardware GPU acceleration, this configuration is best suited for memory-bound tasks including distributed in-memory databases, large-scale caching nodes, real-time stream processing, and high-concurrency ETL workloads.",
+  "og_description": "OVHcloud r3-512-flex features 64 dedicated AMD EPYC cores, 512 GB RAM, 50 GB NVMe storage, and 20 Gbps bandwidth, designed for heavy in-memory databases and large multi-threaded workloads.",
+  "meta_description": "OVHcloud r3-512-flex is a memory-optimized instance featuring 64 dedicated AMD EPYC cores, 512 GB RAM, 50 GB NVMe storage, and 20 Gbps baseline networking.",
+  "tagline": "A 64-core dedicated AMD EPYC server with 512 GB RAM, fast caching bandwidth, and high-throughput multi-core processing.",
+  "bullet_points": [
+    "64 dedicated AMD EPYC physical cores (x86_64, 2.3 GHz, 1 thread/core)",
+    "512.0 GB system RAM providing 8.0 GB per core density",
+    "50 GB local NVMe SSD and 20 Gbps baseline network bandwidth",
+    "Delivers 124.5M Redis SET ops/sec and 194k+ stress-ng multi-core score",
+    "Best suited for in-memory databases, large-scale caching, and multi-core ETL"
+  ],
+  "categories": [
+    "Memory Optimized",
+    "Compute Optimized"
+  ]
+}

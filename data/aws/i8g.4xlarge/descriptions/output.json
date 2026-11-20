@@ -1,24 +1,23 @@
 {
   "page": [
-    "Amazon Web Services i8g.4xlarge is a storage-optimized server powered by custom AWS Graviton Neoverse-V2 processors built on the arm64 architecture. It features 16 dedicated physical cores and 16 vCPUs running at 2.8 GHz, paired with 128.0 GB of system memory, which provides 8.0 GB of RAM per core. The instance is equipped with 3750 GB of bundled local NVMe SSD storage and a baseline network bandwidth of 9 Gbps, running on the AWS Nitro hypervisor.",
-    "Benchmark data highlights strong memory performance, with a Passmark memory score in the top 10% and uncached large-block memory read bandwidth reaching 296.95 GB/sec, placing it in the top 25%. Multi-threaded bzip3 decompression and Passmark database operations also rank in the top 25%, demonstrating efficient data processing capabilities. However, CPU-based LLM inference performance is limited, with text generation on a medium 7B model averaging 16.71 tokens/sec and large 70B models dropping to 2.29 tokens/sec.",
-    "The arm64 architecture and dedicated core allocation provide high resource density and qualitative cost efficiency for I/O-intensive operations. The combination of high-capacity local NVMe storage and strong memory bandwidth makes this instance highly suitable for transactional databases, caching layers, data indexing, and high-throughput storage workloads."
+    "Amazon Web Services i8g.4xlarge is a storage-optimized virtual instance built on the AWS Nitro architecture. Powered by 64-bit arm64 AWS Graviton Neoverse-V2 processors running at 2.8 GHz, the configuration supplies 16 dedicated physical cores with one thread per core, avoiding hyperthreading resource contention. The processor integrates 64 KB L1 data cache and 2 MB L2 cache per core alongside 36 MB of shared L3 cache. Memory capacity is provisioned at 128.0 GB, yielding a high ratio of 8.0 GB of RAM per vCPU. Storage architecture features a dedicated 3,750 GB local NVMe SSD, delivering high-density non-volatile capacity directly attached to the host. Network interfaces provide a baseline throughput of 9 Gbps, and no discrete GPUs are present.",
+    "Benchmark evaluations highlight strong performance across the memory subsystem and storage operations. In uncached large-block evaluations, memory read bandwidth reaches 296.95 GB/sec and write bandwidth achieves 130.36 GB/sec, placing memory throughput in the upper quartile, alongside a top-tier PassMark memory score of 3,336.33. Multi-core scaling is demonstrated by a multi-core Geekbench score of 15,908.0 and PassMark database operational metrics of 24,105.77. Parallel throughput extends to data decompression, where multi-threaded bzip3 achieves 202.88 GB/sec. Tradeoffs appear in raw single-core execution and generative AI workloads; lacking dedicated tensor accelerators or AVX instructions, text generation performance on large language models remains constrained.",
+    "By bundling significant local NVMe capacity with generous memory per core on energy-efficient Arm architecture, the i8g.4xlarge offers a favorable cost-efficiency profile for I/O-intensive workloads without relying on external network-attached volumes. It is suited for transactional relational databases, high-capacity NoSQL clusters, in-memory data stores like Redis, search indexing, and real-time log ingestion systems."
   ],
-  "description": "Amazon Web Services i8g.4xlarge is an arm64 storage-optimized instance powered by a 16-core AWS Graviton Neoverse-V2 processor running at 2.8 GHz. It features 128.0 GB of RAM, 3750 GB of bundled local NVMe SSD storage, and a baseline network bandwidth of 9 Gbps. Operating on the Nitro hypervisor, the instance delivers strong memory performance, with uncached large-block memory read bandwidth of 296.95 GB/sec and a top-tier Passmark memory score. Database operations and multi-threaded decompression benchmarks also rank in the top 25%. While CPU-based machine learning inference is a performance bottleneck, the server's high-capacity local storage and strong memory throughput offer excellent qualitative cost efficiency for data-intensive applications. It is highly suited for database hosting, caching layers, and high-throughput storage workloads.",
-  "og_description": "Amazon Web Services i8g.4xlarge is an arm64 storage-optimized instance featuring 16 Graviton cores, 128 GB RAM, and 3750 GB of local NVMe SSD storage, delivering top-tier memory bandwidth and database performance.",
-  "meta_description": "Amazon Web Services i8g.4xlarge is an arm64 storage-optimized instance with 16 Graviton cores, 128 GB RAM, and 3750 GB of local NVMe SSD storage.",
-  "tagline": "An arm64 storage-optimized platform combining dedicated Graviton cores, high-capacity local NVMe SSDs, and top-tier memory bandwidth for database workloads.",
+  "description": "Amazon Web Services i8g.4xlarge is a storage-optimized instance running on the AWS Nitro hypervisor, featuring 16 dedicated arm64 AWS Neoverse-V2 cores clocked at 2.8 GHz without hyperthreading. It couples 128.0 GB of memory, providing an 8.0 GB per vCPU allocation, with a bundled 3,750 GB local NVMe solid-state drive and 9 Gbps baseline network throughput. The instance includes no GPU acceleration. Benchmarks reflect exceptional memory subsystem performance, achieving top-tier PassMark memory scores and strong uncached read and write bandwidth exceeding 296 GB/sec and 130 GB/sec, respectively. Multi-core performance is robust, with high ratings in database operations and parallel decompression, though LLM token generation remains constrained by the absence of dedicated matrix accelerators. Offering high storage density alongside substantial RAM per core, i8g.4xlarge represents a cost-efficient deployment profile for high-throughput relational and NoSQL databases, in-memory caches, search engines, and real-time analytics pipelines requiring low-latency local NVMe I/O.",
+  "og_description": "Amazon Web Services i8g.4xlarge is an arm64 storage-optimized instance featuring 16 dedicated AWS Graviton Neoverse-V2 cores, 128 GB RAM, and a bundled 3,750 GB NVMe SSD for I/O-intensive database systems.",
+  "meta_description": "Amazon Web Services i8g.4xlarge provides 16 arm64 Neoverse-V2 cores, 128 GB memory, and 3,750 GB NVMe SSD storage for high-throughput database workloads.",
+  "tagline": "Arm-based storage-optimized infrastructure delivering high-capacity NVMe SSD storage and massive memory bandwidth for I/O-heavy database workloads and real-time data streaming.",
   "bullet_points": [
     "16 dedicated AWS Graviton Neoverse-V2 arm64 cores running at 2.8 GHz",
-    "128.0 GB of system memory with top-tier Passmark memory performance",
-    "3750 GB of bundled local NVMe SSD storage for high-speed I/O",
-    "9 Gbps baseline network bandwidth powered by the Nitro hypervisor",
-    "Strong database operations and multi-threaded decompression benchmarks",
-    "Optimized for transactional databases, caching layers, and storage workloads"
+    "128.0 GB system RAM providing an 8.0 GB per core allocation ratio",
+    "Bundled 3,750 GB high-throughput local NVMe SSD storage",
+    "Top-tier memory bandwidth and upper-quartile database benchmark throughput",
+    "9 Gbps baseline network bandwidth governed by the AWS Nitro hypervisor",
+    "Targeted at NoSQL databases, transactional engines, in-memory caching, and data pipelines"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

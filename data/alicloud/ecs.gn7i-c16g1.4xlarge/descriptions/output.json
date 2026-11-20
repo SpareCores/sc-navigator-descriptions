@@ -1,23 +1,24 @@
 {
   "page": [
-    "Alibaba Cloud ecs.gn7i-c16g1.4xlarge is a GPU-accelerated server instance powered by the KVM hypervisor. It features 16 dedicated vCPUs derived from an Intel Xeon 8369B processor running at 2.9 GHz, with 8 physical cores and 2 threads per core. The instance is equipped with 60.0 GB of system memory, providing 3.75 GB per core. Acceleration is delivered via a single NVIDIA Ampere A10 GPU with 24 GB of VRAM.",
-    "This server configuration does not include local NVMe or SSD storage, meaning all storage requirements must be met through network-attached block storage. Network connectivity is supported by a baseline bandwidth of 16 Gbps. The CPU architecture is x86_64, supporting advanced instruction sets such as AVX-512, including AVX512F and AVX512_VNNI, and cryptographic acceleration via AES and SHA_NI.",
-    "In benchmark testing, the instance demonstrates average-tier performance across standard CPU and memory operations, with a Geekbench single-core score of 1584.0 and a multi-core score of 9350.0. However, its GPU-accelerated capabilities place it in the top tier for large language model inference. Specifically, prompt processing for a 7B parameter model reaches 2480.56 tokens per second, while text generation for the same model achieves 90.39 tokens per second.",
-    "From a qualitative cost-efficiency perspective, the inclusion of a dedicated enterprise-grade GPU alongside moderate CPU and memory resources makes this instance a specialized option for workloads that require hardware acceleration without the overhead of massive system memory. It is suited for small-to-medium LLM inference, ray tracing, image processing, and GPU-accelerated machine learning workloads, though the lack of local storage requires careful architecture for data-intensive pipelines."
+    "Alibaba Cloud ecs.gn7i-c16g1.4xlarge is an accelerated virtual instance within the Compute Optimized with GPU family. It couples dedicated Intel Xeon 8369B compute resources with hardware acceleration from NVIDIA. The instance allocates 16 vCPUs derived from 8 physical cores running at a base clock frequency of 2.9 GHz on the x86_64 architecture, supported by 48 MB of L3 cache and vector extensions including AVX-512 and VNNI. System memory measures 60.0 GiB, providing 3.75 GiB per vCPU.",
+    "Hardware acceleration is driven by an onboard NVIDIA A10 GPU built on the Ampere architecture, equipped with 24 GiB of dedicated VRAM. The instance does not include local ephemeral storage, relying entirely on network-attached storage options, and features a baseline network throughput of 16 Gbps. Standard benchmarks position general compute, memory bandwidth, and decompression workloads within the middle tier, with a PassMark CPU score of 21,025.87 and Geekbench multi-core score of 9,350.0.",
+    "In AI model deployment benchmarks, the Ampere-based accelerator registers top-tier inference speeds for small to medium models. Text generation reaches 460.73 tokens per second on a 135M parameter model and 90.39 tokens per second on a 7B parameter model, with prompt processing exceeding 2,480 tokens per second for 7B parameters. The 24 GiB VRAM footprint imposes a constraint on hosting larger architectures such as 70B parameter models without distributed parallelism or extreme quantization.",
+    "The ecs.gn7i-c16g1.4xlarge provides a balanced hardware cost-efficiency profile for accelerated computing, avoiding the higher resource premiums of flagship training accelerators. It is technically appropriate for mid-scale deep learning inference, real-time computer vision, AI-assisted video transcoding, and GPU-accelerated graphics rendering or virtual workstations."
   ],
-  "description": "Alibaba Cloud ecs.gn7i-c16g1.4xlarge is a GPU-accelerated instance featuring 16 dedicated vCPUs from an Intel Xeon 8369B processor running at 2.9 GHz, paired with 60.0 GB of system memory. Hardware acceleration is provided by a single NVIDIA Ampere A10 GPU with 24 GB of VRAM. While the instance lacks local storage, it delivers a baseline network bandwidth of 16 Gbps. In benchmark evaluations, the server exhibits average-tier performance for general CPU and memory tasks, but achieves top-tier results in LLM inference, processing 2480.56 tokens per second for a 7B model. This configuration represents a balanced hardware profile for workloads requiring dedicated GPU acceleration without excessive system memory overhead. It is suited for medium-scale machine learning inference, ray tracing, and image processing tasks.",
-  "og_description": "Alibaba Cloud ecs.gn7i-c16g1.4xlarge is a GPU-accelerated server with 16 Intel Xeon vCPUs, 60 GB RAM, and an NVIDIA A10 GPU with 24 GB VRAM, delivering top-tier performance for LLM inference.",
-  "meta_description": "Alibaba Cloud ecs.gn7i-c16g1.4xlarge features 16 vCPUs, 60 GB RAM, and an NVIDIA A10 GPU, delivering top-tier performance for LLM inference.",
-  "tagline": "A GPU-accelerated server combining dedicated Intel Xeon processors with an NVIDIA Ampere A10 GPU for efficient machine learning inference.",
+  "description": "Alibaba Cloud ecs.gn7i-c16g1.4xlarge is a GPU-accelerated compute instance featuring 16 dedicated vCPUs from an Intel Xeon 8369B processor running at 2.9 GHz, 60.0 GiB of RAM, and a single NVIDIA A10 GPU with 24 GiB of VRAM. Operating over the x86_64 architecture with 16 Gbps baseline network bandwidth and no integrated local storage, this instance is tailored for accelerated processing tasks. Standard benchmarks report balanced general-purpose CPU and memory throughput, while deep learning evaluations showcase top-tier performance for small- to mid-scale inference, clocking over 90 tokens per second during 7B model text generation. The 24 GiB VRAM configuration makes it cost-efficient for specialized workloads that do not demand large cluster allocations, such as AI model serving, real-time video processing, graphics virtualization, and machine learning inference pipelines.",
+  "og_description": "Alibaba Cloud ecs.gn7i-c16g1.4xlarge features 16 vCPUs, 60 GiB RAM, and an NVIDIA A10 GPU with 24 GiB VRAM, engineered for efficient deep learning inference and graphics workloads.",
+  "meta_description": "Alibaba Cloud ecs.gn7i-c16g1.4xlarge features 16 vCPUs, 60 GiB RAM, and an NVIDIA A10 GPU (24 GiB) for mid-tier AI inference and graphics processing.",
+  "tagline": "Dedicated Intel Xeon compute paired with NVIDIA Ampere A10 acceleration for high-efficiency AI inference and visual workloads.",
   "bullet_points": [
-    "16 dedicated Intel Xeon vCPUs and 60 GB of system memory.",
-    "NVIDIA Ampere A10 GPU with 24 GB of VRAM.",
-    "Top-tier performance for small and medium LLM inference workloads.",
-    "16 Gbps baseline network bandwidth with no local storage.",
-    "Supports AVX-512 and cryptographic hardware acceleration."
+    "Intel Xeon 8369B processor delivering 16 dedicated vCPUs at 2.9 GHz",
+    "Single NVIDIA A10 GPU with 24 GiB of high-speed VRAM",
+    "60.0 GiB system memory with 16 Gbps baseline networking",
+    "Zero bundled local disk storage, utilizing network-attached volumes",
+    "Top-tier inference performance on small and 7B parameter language models",
+    "Well suited for AI model inference, real-time rendering, and video processing"
   ],
   "categories": [
     "GPU Accelerated",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

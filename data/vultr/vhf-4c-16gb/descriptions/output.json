@@ -1,22 +1,24 @@
 {
   "page": [
-    "Vultr vhf-4c-16gb is a virtual machine within the High Frequency Compute family, featuring 4 shared vCPUs mapped to 2 physical Intel cores with hyper-threading enabled. Operating on the x86_64 architecture at a clock speed of 2.0 GHz, the processor includes 16 MB of L3 cache and supports AVX, AES, and FMA instruction sets. The system is equipped with 16.0 GB of system memory, providing 4.0 GB per core, and includes a bundled 384 GB NVMe SSD for local storage alongside one complimentary public IPv4 address.",
-    "Performance benchmarks place this instance primarily in the average to weak tiers. Single-core and multi-core CPU tests via stress-ng yield average results, as do Geekbench single-core and Passmark CPU evaluations. However, multi-core scaling is limited, with Geekbench multi-core and software compilation benchmarks falling into the bottom 25%. Memory performance shows a stark contrast: while small-block cached read bandwidth is average at 497.33 GB/sec, large-block uncached read and write bandwidths are weak, indicating potential bottlenecks during memory-intensive operations.",
-    "Database operations, static web serving, and cryptography tasks perform in the lower quartile, reflecting the shared CPU allocation and memory bandwidth constraints. Large language model inference is highly constrained, with medium-sized models achieving poor generation speeds. Consequently, this server is best suited for general-purpose workloads with moderate resource demands, such as light web serving, text processing, and basic development environments, rather than high-throughput databases or intensive parallel computing."
+    "The Vultr vhf-4c-16gb is an instance within the High Frequency Compute series configured with 4 shared vCPUs mapped to 2 physical cores on an Intel x86_64 architecture operating at 2.0 GHz. The system provides 16.0 GB of system memory, matching a standard 1:4 vCPU-to-RAM ratio at 4.0 GB per vCPU. Hardware resources also include 384 GB of local NVMe SSD storage and a single complimentary public IPv4 address, with no hardware GPU acceleration provisioned.",
+    "Benchmark results demonstrate balanced mid-tier compute capabilities alongside certain I/O limitations. General compute execution aligns with the median tier, evidenced by a Geekbench multi-core score of 4781.0, single-core score of 1625.0, and a PassMark CPU score of 7697.28. Synthetic compiler and algorithmic benchmarks reflect stable mid-range performance, such as 7042.0 in Clang compilation and 6644.0 in ray tracing. Cached memory bandwidth reaches 497.33 GB/sec in small 16 KB blocks.",
+    "Performance constraints emerge in heavy memory throughput and specific scale-intensive workloads. Uncached large-block read operations drop to 35.47 GB/sec, while write operations reach 17.49 GB/sec. Data processing tasks like single-threaded gzip compression at 22.91 GB/sec and multi-threaded bzip3 decompression at 23.47 GB/sec sit in lower benchmark percentiles. Similarly, I/O-sensitive operations such as Redis SET (6.0 million operations/sec), PassMark database operations (2003.37), and static web serving (5.46 GB/sec) trail higher-tier architectures.",
+    "From a cost-efficiency perspective, the shared-vCPU model provides a practical entry point for balanced multi-threaded tasks that do not require dedicated core tenancy. The inclusion of bundled 384 GB NVMe storage offers local density without attached block storage overhead. The configuration functions best for standard application hosting, development environments, CI/CD runners, and staging workloads where occasional shared-thread contention does not impact operational requirements."
   ],
-  "description": "Vultr vhf-4c-16gb is a High Frequency Compute instance featuring 4 shared x86_64 vCPUs on an Intel processor with a 2.0 GHz clock speed, 2 physical cores, and hyper-threading. It is equipped with 16.0 GB of RAM and a bundled 384 GB NVMe SSD. Benchmark data indicates average single-core CPU performance and small-block cached memory bandwidth, but reveals weaknesses in multi-core scaling, large-block uncached memory operations, and database tasks. The shared CPU allocation limits its suitability for high-throughput workloads. This configuration is best aligned with general-purpose applications, text processing, and light web serving where sustained multi-core compute and high memory bandwidth are not critical.",
-  "og_description": "Vultr vhf-4c-16gb is a High Frequency Compute instance with 4 shared Intel vCPUs, 16 GB RAM, and 384 GB NVMe storage, offering balanced general-purpose performance with some multi-core and memory bandwidth limitations.",
-  "meta_description": "Vultr vhf-4c-16gb features 4 shared Intel vCPUs, 16 GB RAM, and 384 GB NVMe storage, suitable for general-purpose workloads with moderate resource demands.",
-  "tagline": "A shared-CPU virtual machine featuring balanced memory and bundled NVMe storage, optimized for moderate general-purpose workloads and light web serving.",
+  "description": "The Vultr vhf-4c-16gb is a High Frequency Compute instance delivering 4 shared vCPUs derived from 2 physical Intel x86_64 cores clocked at 2.0 GHz. It features 16.0 GB of RAM, adhering to a 1:4 vCPU-to-memory ratio, coupled with 384 GB of bundled local NVMe SSD storage and one public IPv4 address. Benchmarking reflects consistent mid-tier performance across general processing, recording 4781.0 in Geekbench multi-core and 7697.28 in PassMark CPU tests. While small-block cached memory bandwidth is robust at 497.33 GB/sec, large uncached read and write bandwidths measure lower at 35.47 GB/sec and 17.49 GB/sec. Consequently, throughput-heavy tasks such as high-volume Redis operations, large-scale compression, and high-concurrency static web serving show measurable baseline constraints. This hardware footprint is suitable for general-purpose application workloads, software builds, and development servers requiring local NVMe storage.",
+  "og_description": "Vultr vhf-4c-16gb features 4 shared Intel x86_64 vCPUs, 16.0 GB RAM, and 384 GB local NVMe storage, delivering balanced mid-tier compute performance for web applications and build pipelines.",
+  "meta_description": "Vultr vhf-4c-16gb provides 4 shared vCPUs, 16.0 GB RAM, and 384 GB NVMe SSD storage, offering balanced mid-range compute performance for standard server workloads.",
+  "tagline": "Shared four-vCPU architecture with balanced memory capacity and integrated NVMe storage for general compute tasks, staging systems, and development environments.",
   "bullet_points": [
-    "4 shared Intel vCPUs on x86_64 architecture with hyper-threading",
-    "16.0 GB of system memory paired with 384 GB of local NVMe SSD storage",
-    "Average single-core CPU and small-block cached memory performance",
-    "Reduced efficiency in large-block uncached memory transfers and multi-core scaling",
-    "Best suited for general-purpose tasks, text processing, and light web serving"
+    "4 shared vCPUs across 2 physical Intel x86_64 cores running at 2.0 GHz",
+    "16.0 GB system memory providing a balanced 1:4 compute-to-RAM ratio",
+    "384 GB local NVMe SSD storage bundled with one public IPv4 address",
+    "Mid-range compute ratings across PassMark (7697.28) and Geekbench (4781.0 multi-core)",
+    "Suitable for general-purpose web applications, CI/CD runners, and development staging"
   ],
   "categories": [
     "General Purpose",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "Storage & Database"
   ]
 }

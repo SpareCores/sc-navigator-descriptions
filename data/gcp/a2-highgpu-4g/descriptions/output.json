@@ -1,23 +1,25 @@
 {
   "page": [
-    "Google Cloud Platform a2-highgpu-4g is an accelerator-optimized server configured with 48 vCPUs and 24 physical cores powered by an Intel Xeon processor running at 2.2 GHz on the x86_64 architecture. The system features 340.0 GB of dedicated system memory, providing 7.08 GB of RAM per core, and includes a 38 MB L3 cache. This configuration integrates four NVIDIA Ampere A100 GPUs with a combined total of 160 GB of VRAM. No local storage is bundled with this instance type.",
-    "Benchmark data reveals a clear performance divergence between CPU-bound tasks and GPU-accelerated workloads. Single-core CPU performance is categorized as weak, falling in the bottom 25% for stress-ng, geekbench, and single-threaded compression tests. Multi-core CPU performance, memory bandwidth, and database operations register in the average tier. Conversely, the server achieves top-tier performance in large language model inference benchmarks, specifically in prompt processing across 135M, 7B, and 70B models, as well as text generation for 7B and 70B models, placing it in the top 10% of tested systems.",
-    "From a qualitative cost-efficiency perspective, the high density of GPU resources and VRAM relative to the CPU profile makes this server a specialized option where the primary value resides in hardware acceleration rather than raw single-core CPU speed. The hardware configuration is tailored for workloads that offload computation to GPUs, such as deep learning, large language model inference, and parallel data processing, while general-purpose tasks or single-threaded applications will experience resource underutilization."
+    "Google Cloud Platform a2-highgpu-4g is an accelerator-optimized virtual machine tailored for demanding parallel compute workloads. It is equipped with four NVIDIA Ampere A100 GPUs providing a combined total of 160 GB of VRAM. The host system is powered by an x86_64 Intel Xeon processor clocked at 2.2 GHz, supplying 48 dedicated vCPUs across 24 physical cores with multithreading enabled. System memory totals 340 GB of RAM, offering roughly 7.08 GB of memory per vCPU. The CPU features 38 MB of L3 cache along with instruction set support for AVX, AVX-512F, AVX-512 VNNI, and cryptographic AES extensions. Local instance storage is not included, requiring external persistent disks or network-attached volumes for data persistence.",
+    "Benchmark results demonstrate top-tier execution in machine learning and tensor operations driven by the quad-A100 GPU array. In large language model inference, the instance achieves top 10% performance across prompt processing and generation phases, processing 2725.85 tokens per second on medium 7B models and sustaining 449.76 tokens per second during prompt ingestion for large 70B parameter models. Text generation throughput remains robust at 108.33 tokens per second on 7B models and 19.59 tokens per second on 70B models.",
+    "By contrast, general-purpose CPU metrics demonstrate moderate to low performance characteristics. Single-core tests reflect lower relative speed, evidenced by bottom-quartile ratings in Geekbench single-core (1062.0), single-core stress-ng (1201.28), and single-threaded gzip compression (20.47 GB/sec). However, multi-core benchmarks scale to mid-tier performance, with a PassMark CPU score of 31203.01 and a multi-core Geekbench score of 10469.0. Memory bandwidth remains balanced for a large host, measuring 109.83 GB/sec on large uncached read operations.",
+    "Given its specialized accelerator density, the a2-highgpu-4g offers high resource efficiency for workloads that can fully exploit its GPU memory and multi-device parallelism. It is an effective platform for distributed deep learning training, large language model deployment, high-performance computing, and parallel data science pipelines, whereas standard web serving or CPU-bound single-thread tasks are economically mismatched."
   ],
-  "description": "Google Cloud Platform a2-highgpu-4g is an accelerator-optimized server featuring 48 vCPUs, 24 physical Intel Xeon cores, and 340.0 GB of RAM. The hardware configuration is defined by its integration of four NVIDIA Ampere A100 GPUs with 160 GB of total VRAM, while offering no local storage. Benchmark results indicate a significant performance tradeoff: single-core CPU execution is weak, falling in the bottom 25%, whereas multi-core CPU and memory bandwidth benchmarks perform in the average tier. However, the server excels in GPU-driven tasks, achieving top-tier results in the top 10% for large language model inference prompt processing and text generation across medium and large models. This server is structured for workloads that heavily leverage GPU acceleration, such as deep learning and LLM inference, rather than CPU-bound or single-threaded applications.",
-  "og_description": "Google Cloud Platform a2-highgpu-4g features 48 vCPUs, 340GB RAM, and 4 NVIDIA A100 GPUs with 160GB VRAM. It delivers top-tier LLM inference performance despite weak single-core CPU benchmarks.",
-  "meta_description": "Google Cloud Platform a2-highgpu-4g features 48 vCPUs, 340GB RAM, and 4 NVIDIA A100 GPUs, delivering top-tier LLM inference performance.",
-  "tagline": "An accelerator-optimized configuration pairing four dedicated GPUs with massive memory for high-throughput parallel computing and large language model inference.",
+  "description": "Google Cloud Platform a2-highgpu-4g is an accelerator-optimized instance configured with four NVIDIA Ampere A100 GPUs delivering 160 GB of total VRAM. The host platform features 48 dedicated Intel Xeon vCPUs running at 2.2 GHz across 24 physical cores, paired with 340 GB of RAM and 38 MB of L3 cache. Local storage is not provided, requiring network-attached storage solutions. Benchmark measurements highlight top-tier performance for deep learning and LLM inference, reaching 2725.85 tokens per second for prompt processing on 7B models and sustained generation on 70B models. While single-thread CPU benchmarks fall into the lower quartile, multi-threaded metrics and memory throughput remain consistently in the middle tier. This instance is best matched with distributed deep learning training, LLM serving, and high-performance computing workloads.",
+  "og_description": "Google Cloud Platform a2-highgpu-4g features 4 NVIDIA A100 GPUs with 160 GB VRAM, 48 Intel Xeon vCPUs, and 340 GB RAM, delivering top-tier performance for distributed AI training and LLM inference.",
+  "meta_description": "Google Cloud Platform a2-highgpu-4g provides 4 NVIDIA A100 GPUs (160 GB VRAM), 48 Intel Xeon vCPUs, and 340 GB RAM for intensive deep learning workloads.",
+  "tagline": "Quad NVIDIA A100 GPUs with 160 GB VRAM and 48 vCPUs optimized for demanding deep learning and inference workloads.",
   "bullet_points": [
-    "Four NVIDIA Ampere A100 GPUs with 160 GB total VRAM",
-    "48 vCPUs and 24 physical Intel Xeon cores on x86_64 architecture",
-    "340.0 GB of system memory with no bundled local storage",
-    "Top-tier performance in large language model inference and prompt processing",
-    "Weak single-core CPU performance offset by high parallel GPU capacity",
-    "Suited for deep learning, LLM deployment, and GPU-accelerated workloads"
+    "Four NVIDIA Ampere A100 GPUs providing 160 GB total VRAM",
+    "48 dedicated Intel Xeon vCPUs (24 physical cores) at 2.2 GHz",
+    "340 GB system memory (7.08 GB RAM per vCPU)",
+    "Top-tier performance in multi-model LLM prompt processing and text generation",
+    "No integrated local storage; requires persistent network storage",
+    "Ideal for deep learning model training, AI inference, and scientific computing"
   ],
   "categories": [
     "GPU Accelerated",
-    "Memory Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

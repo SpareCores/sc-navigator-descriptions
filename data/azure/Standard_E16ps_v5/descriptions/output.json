@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E16ps_v5 is an ARM-based virtual machine belonging to the EPSv5 server family. It is powered by an Ampere Neoverse-N1 processor with 16 dedicated physical cores operating at a clock speed of 3.0 GHz. The architecture is arm64, utilizing the ARMv8 instruction set. The server features 128.0 GB of RAM, providing a memory-to-core ratio of 8.0 GB per vCPU. It does not include local storage or GPUs, but it is Premium Storage capable.",
-    "Benchmark data indicates average performance across most compute and memory operations. The stress-ng single-core CPU performance is 1822.6, while the multi-core score reaches 28894.58. Memory bandwidth is measured at 1127.15 GB/sec for cached small-block reads, and 127.65 GB/sec for uncached large-block reads. However, single-threaded tasks show some limitations, with a weak Geekbench single-core score of 1116.0 and a weak single-threaded bzip3 decompression speed of 8.81 GB/sec.",
-    "Given its 1:8 vCPU-to-RAM ratio, this server is classified as memory-optimized, offering high resource density for memory-intensive applications without the added cost of bundled local storage or GPU hardware. It is appropriate for database operations, as evidenced by a Passmark database score of 10911.19 and Redis SET performance of 22.74 million operations per second. Other fitting workloads include static web serving, software compilation, and multi-threaded data processing."
+    "Microsoft Azure E16ps_v5 is a memory-optimized virtual machine driven by the ARM64 architecture. It provides 16 dedicated physical cores and 16 vCPUs powered by an Ampere ARMv8 Neoverse-N1 processor operating at 3.0 GHz, configured with 1 thread per core. The instance is paired with 128.0 GB of system memory, establishing an 8:1 memory-to-core ratio with 8.0 GB per vCPU. Hardware caches include 64 KB of L1 data cache per core, 1.0 MB of L2 cache, and a shared 32 MB L3 cache. There are no onboard GPUs and no bundled local storage disks, requiring remote network storage for persistent or temporary files.",
+    "Benchmark results demonstrate consistent mid-tier throughput across multi-threaded and memory-bound operations. The instance achieved 28,894.58 on stress-ng multi-core testing, a PassMark CPU score of 11,570.19, and a Geekbench multi-core rating of 9,647.0. Large-block memory bandwidth delivers 127.65 GB/sec for reads and 67.48 GB/sec for writes. In application benchmarks, the server registers 22.74 million Redis SET operations per second and 19.04 GB/sec in static web serving throughput.",
+    "The primary architectural tradeoff lies in single-threaded performance and legacy instruction support. The Geekbench single-core score of 1,116.0, PassMark encryption score of 2,606.46, and single-threaded bzip3 decompression of 8.81 GB/sec fall into the lower quartile. The processor also lacks x86-specific vector or matrix extensions like AVX-512 and AMX, and prompt processing for small and medium LLM models shows lower throughput (19.08 tokens/sec on 7B models).",
+    "Because of its high 8 GB per vCPU resource density and predictable single-threaded core isolation, Azure E16ps_v5 is architecturally well suited for memory-intensive workloads that scale horizontally across cores. Primary workload fits include in-memory databases like Redis, mid-sized relational database management systems, data caching layers, and web application serving tiers that do not rely on local high-speed disk storage."
   ],
-  "description": "The Microsoft Azure E16ps_v5 is an ARM-based virtual machine from the EPSv5 family, featuring 16 dedicated physical cores on an Ampere Neoverse-N1 processor running at 3.0 GHz. It is equipped with 128.0 GB of RAM, establishing a memory-to-core ratio of 8.0 GB per vCPU. This server does not include local storage or GPUs but supports Premium Storage. Performance benchmarks place the instance in the average tier for multi-core processing, memory bandwidth, and database operations, though single-threaded performance is relatively weak. With its high memory density and dedicated ARM cores, the E16ps_v5 is configured for memory-intensive workloads, database management, static web serving, and multi-threaded applications where local disk storage is not required.",
-  "og_description": "Microsoft Azure E16ps_v5 is an ARM-based virtual machine featuring 16 dedicated Ampere Neoverse-N1 cores and 128 GB of RAM. It is optimized for memory-intensive workloads and database operations.",
-  "meta_description": "Microsoft Azure E16ps_v5 is an ARM-based virtual machine with 16 dedicated cores and 128 GB of RAM, optimized for memory-intensive workloads.",
-  "tagline": "An ARM-powered, memory-optimized virtual machine featuring sixteen dedicated cores and high memory density for database and multi-threaded workloads.",
+  "description": "Microsoft Azure E16ps_v5 is a memory-optimized virtual machine featuring 16 dedicated ARM64 vCPUs on an Ampere Neoverse-N1 processor clocked at 3.0 GHz, coupled with 128.0 GB of RAM. Operating without simultaneous multithreading (1 thread per core), the instance yields an 8:1 memory-to-vCPU ratio. It contains no onboard GPUs and provides no local storage, relying on attached storage volumes. Multi-threaded benchmark testing reflects solid middle-tier performance, highlighted by 22.74 million Redis SET operations per second, a multi-core Geekbench score of 9,647.0, and 127.65 GB/sec uncached memory read bandwidth. Conversely, single-thread metrics and instruction sets without x86 vector extensions represent measurable performance tradeoffs. Given its dedicated core layout and dense memory allocation, the E16ps_v5 fits in-memory caching systems, distributed databases, and general memory-intensive applications.",
+  "og_description": "Microsoft Azure E16ps_v5 is an ARM64 memory-optimized VM providing 16 dedicated Ampere Neoverse-N1 vCPUs, 128 GB RAM, and high memory bandwidth, well suited for in-memory databases and caching layers.",
+  "meta_description": "Microsoft Azure E16ps_v5 features 16 ARM64 vCPUs, 128 GB RAM, and Ampere Neoverse-N1 cores for memory-intensive enterprise and database workloads.",
+  "tagline": "Dedicated ARM64 architecture offering an 8-to-1 memory-to-core ratio for predictable caching and in-memory database operations.",
   "bullet_points": [
-    "16 dedicated Ampere Neoverse-N1 ARM64 cores at 3.0 GHz",
-    "128.0 GB of RAM providing a high 8.0 GB per vCPU ratio",
-    "No local storage or GPU, optimized for external Premium Storage",
-    "Strong multi-threaded performance and high memory bandwidth",
-    "Suited for database operations, static web serving, and caching"
+    "16 dedicated ARM64 cores via 3.0 GHz Ampere Neoverse-N1 processor",
+    "128.0 GB total RAM providing an 8:1 memory-to-core ratio",
+    "127.65 GB/sec large-block read memory bandwidth",
+    "No bundled local storage or integrated GPU hardware",
+    "Achieves 22.74 million Redis SET operations per second",
+    "Targeted for in-memory databases, caching, and memory-heavy web servers"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

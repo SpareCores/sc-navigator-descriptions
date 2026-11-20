@@ -1,21 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.re6p.xlarge is a general-purpose virtual machine instance based on the KVM hypervisor. It features an x86_64 architecture powered by an Intel Xeon 8269CY processor operating at 2.5 GHz. The instance is configured with 4 dedicated vCPUs, derived from 2 physical cores with hyper-threading enabled. It includes 16.0 GB of system memory, yielding 4.0 GB of RAM per core. No local storage is bundled with this instance, and it lacks GPU acceleration. Network connectivity is rated at a baseline bandwidth of 2 Gbps.",
-    "In benchmark testing, the processor performance of the ecs.re6p.xlarge falls into the lower tier. The stress-ng single-core CPU test yielded a score of 1317.6, placing it in the bottom 25% of tested instances. Similarly, the stress-ng multi-core CPU test recorded a score of 3505.41, which also ranks in the bottom 25%. Despite these lower compute scores, the Intel Xeon processor supports advanced instruction sets, including AVX, AVX-512 Foundation, and AVX-512 Vector Neural Network Instructions (VNNI), alongside AES cryptography and Intel bit manipulation extensions.",
-    "From a resource density perspective, this instance offers a balanced 1:4 vCPU-to-RAM ratio, making it a standard option for workloads that do not require high-performance compute or local disk storage. Given the weak benchmark results, it is best utilized for low-intensity general-purpose workloads, basic web serving, lightweight application hosting, or development and testing environments where CPU throughput is not a primary constraint."
+    "Alibaba Cloud ecs.re6p.xlarge is a virtualization instance powered by an Intel Xeon 8269CY processor based on the x86_64 architecture. The host allocates 4 dedicated vCPUs across 2 physical cores operating at a base frequency of 2.5 GHz with hyperthreading enabled. Memory configuration totals 16.0 GB of RAM, establishing a 1:4 ratio of vCPUs to system memory. The processor subsystem includes 32 KB of L1 data cache, 1.0 MB of L2 cache, and 35 MB of shared L3 cache, with hardware instruction support for AVX-512 and AVX-512 VNNI vector operations.",
+    "Storage and connectivity rely strictly on attached infrastructure, as the instance includes no local disk storage. Operating systems and application data must be hosted on external block storage volumes. Network connectivity is rated at a 2 Gbps baseline bandwidth, with no complimentary public IPv4 addresses included. In addition, the configuration contains no discrete GPU acceleration, directing all computational demands to the host CPU cores.",
+    "Synthetic benchmarking via stress-ng reveals measured values of 1317.6 for single-core execution and 3505.41 for multi-core throughput, both aligning with the bottom quartile of contemporary cloud performance tiers. Consequently, the hardware profile is suited for moderate general-purpose workloads rather than high-performance computing. Common operational use cases include lightweight web application hosting, mid-tier microservices, development environments, and small relational databases with modest query intensity."
   ],
-  "description": "Alibaba Cloud ecs.re6p.xlarge is an x86_64 general-purpose instance featuring 4 dedicated vCPUs and 16.0 GB of RAM, powered by an Intel Xeon 8269CY processor running at 2.5 GHz. Operating on the KVM hypervisor, this instance provides a balanced 1:4 vCPU-to-RAM ratio but does not include local storage or GPU hardware. In performance evaluations, the instance demonstrates limited compute capabilities, with both stress-ng single-core and multi-core benchmarks scoring in the bottom 25% tier. However, the CPU supports advanced instruction sets such as AVX-512 VNNI and AES cryptography. With a baseline network bandwidth of 2 Gbps, this instance is positioned for low-intensity workloads, including basic web serving, development environments, and lightweight application hosting where high-performance CPU throughput is not required.",
-  "og_description": "Alibaba Cloud ecs.re6p.xlarge is a general-purpose instance featuring 4 vCPUs, 16 GB RAM, and an Intel Xeon 8269CY processor, showing lower-tier CPU benchmark performance for basic workloads.",
-  "meta_description": "Alibaba Cloud ecs.re6p.xlarge is a general-purpose instance with 4 vCPUs, 16 GB RAM, and an Intel Xeon CPU, designed for low-intensity workloads.",
-  "tagline": "A dedicated x86_64 compute instance with a balanced memory-to-CPU ratio, designed for low-intensity general-purpose workloads and development environments.",
+  "description": "Alibaba Cloud ecs.re6p.xlarge is a virtualization instance configured with 4 dedicated vCPUs derived from 2 physical cores of an Intel Xeon 8269CY processor running at 2.5 GHz on the x86_64 architecture. The server provides 16.0 GB of system memory, yielding a 1:4 compute-to-memory ratio with 4.0 GB per vCPU. Hardware capabilities include 35 MB of L3 cache alongside support for AVX-512 and AVX-512 VNNI instruction sets. The instance includes no local storage or discrete GPU accelerators, operating with external network storage and a 2 Gbps baseline network bandwidth profile. Benchmark results in stress-ng yield scores of 1317.6 in single-core and 3505.41 in multi-core testing, positioning its compute throughput within the lower performance quartile. As a result, ecs.re6p.xlarge provides balanced capacity for moderate operational tasks, small transactional databases, light web services, and background batch processing jobs that prioritize balanced resource distribution over intensive compute cycles.",
+  "og_description": "Alibaba Cloud ecs.re6p.xlarge is a dedicated virtual server offering 4 vCPUs on an Intel Xeon 8269CY processor, 16 GB RAM, and 2 Gbps network bandwidth for balanced general-purpose cloud workloads.",
+  "meta_description": "Alibaba Cloud ecs.re6p.xlarge features 4 vCPUs with an Intel Xeon 8269CY processor, 16 GB RAM, and 2 Gbps networking for general-purpose workloads.",
+  "tagline": "A dedicated four-vCPU x86 virtual server configured with balanced memory capacity and AVX-512 vector support for standard cloud operations.",
   "bullet_points": [
-    "Intel Xeon 8269CY processor with 4 dedicated vCPUs and 16.0 GB RAM",
-    "Supports AVX-512 Foundation and AVX-512 VNNI instruction sets",
-    "Baseline network bandwidth of 2 Gbps on KVM hypervisor",
-    "No local storage or GPU hardware included",
-    "Best suited for low-intensity web serving and development environments"
+    "4 dedicated vCPUs powered by an Intel Xeon 8269CY processor clocked at 2.5 GHz",
+    "16.0 GB total system RAM providing 4.0 GB per vCPU",
+    "Hardware vector acceleration via AVX-512 and AVX-512 VNNI extensions",
+    "2 Gbps baseline network bandwidth with zero complimentary public IPv4 addresses",
+    "Requires external cloud block storage due to absence of local disks",
+    "Suited for mid-tier web serving, microservices, and small database workloads"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Memory Optimized"
   ]
 }

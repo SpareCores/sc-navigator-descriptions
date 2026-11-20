@@ -1,21 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D2ds_v4 is a general-purpose virtual machine belonging to the DDSv4 family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by an Intel Xeon 8272CL processor operating at 2.6 GHz. The instance is configured with 2 dedicated vCPUs derived from 1 physical core with hyper-threading enabled. It includes 8.0 GB of system memory, yielding 4.0 GB per core, and comes bundled with 77 GB of local SSD storage. The CPU features a 35 MB L3 cache and supports advanced instruction sets such as AVX-512 and AVX512_VNNI.",
-    "Performance benchmarks indicate moderate single-core capabilities but limited multi-core and memory throughput. Single-core tests, such as stress-ng and Geekbench, place the processor in the average tier, supported by solid single-threaded gzip compression and bzip3 decompression rates. However, multi-core performance in Geekbench and stress-ng falls into the lower tier, reflecting the physical single-core limitation. Memory bandwidth tests for both cached and uncached read/write operations show lower-tier throughput, and database operations or Redis SET benchmarks also register in the bottom tier.",
-    "From a cost-efficiency perspective, the D2ds_v4 offers a balanced resource profile for entry-level workloads without the premium cost of high-density memory or compute-optimized tiers. The inclusion of local SSD storage provides a cost-effective option for workloads requiring temporary storage. Due to its performance profile, this server is best suited for lightweight general-purpose workloads, basic web serving, single-threaded applications, development environments, and low-traffic utility services that do not demand high multi-core scaling or intensive memory bandwidth."
+    "Microsoft Azure D2ds_v4 is a general-purpose virtual machine deployed on Microsoft Hyper-V. It is powered by an x86_64 Intel Xeon Platinum 8272CL processor operating at 2.6 GHz. The instance configuration allocates 2 vCPUs derived from a single physical core with hyper-threading enabled. Compute resources are coupled with 8.0 GB of memory (4.0 GB per core) and an included 81 GB local SSD temporary disk. No graphics processing units or complimentary public IPv4 addresses are provisioned with this instance.",
+    "Benchmark results highlight solid single-threaded performance alongside constrained multi-threaded capacity. The system achieves average tier results in single-core evaluations, including a Geekbench single-core score of 1186.0 and stress-ng single-core performance of 1564.29, supported by instruction extensions like AVX-512 and VNNI. Single-threaded gzip compression (23.98 GB/sec) and bzip3 decompression (9.28 GB/sec) also settle within the middle 50% percentile.",
+    "Conversely, multi-core metrics and overall throughput place in the lower performance brackets due to the physical limit of one dual-threaded core. The Geekbench multi-core score (1413.0), PassMark CPU score (2212.97), and stress-ng multi-core metric (1598.88) consistently rank in the bottom 10%. Memory bandwidth tests show 11.82 GB/sec read and 9.21 GB/sec write for large uncached blocks, and operational workloads like Redis SET operations reach 1.8 million operations per second, representing the bottom tier of cloud server benchmarks.",
+    "Given its balanced 1:4 CPU-to-memory ratio and bundled high-speed local temporary SSD storage, the D2ds_v4 offers an entry-level compute footprint. It fits low-concurrency workloads such as development or test environments, lightweight web hosting, microservices, small background workers, and simple caching layers that do not demand high multi-threaded compute or extensive memory throughput."
   ],
-  "description": "The Microsoft Azure D2ds_v4 is an entry-level, general-purpose virtual machine from the DDSv4 family, running on the Microsoft Hyper-V hypervisor. It is equipped with an Intel Xeon 8272CL processor running at 2.6 GHz, providing 2 dedicated vCPUs from a single physical core with hyper-threading. The hardware configuration includes 8.0 GB of RAM and a bundled 77 GB local SSD. Benchmark data shows average single-core CPU performance, but multi-core scaling and memory bandwidth are limited, placing them in the lower performance tiers. Consequently, this instance is qualitatively cost-effective for basic, non-intensive tasks. It is best suited for lightweight general-purpose workloads, development environments, single-threaded applications, and low-traffic web serving.",
-  "og_description": "Microsoft Azure D2ds_v4 is a general-purpose virtual machine featuring 2 vCPUs, 8.0 GB of RAM, and 77 GB of local SSD storage, suitable for lightweight workloads and development environments.",
-  "meta_description": "Microsoft Azure D2ds_v4 is a general-purpose VM with 2 vCPUs, 8 GB RAM, and 77 GB local SSD, ideal for basic single-threaded tasks.",
-  "tagline": "A balanced entry-level virtual machine with dedicated Intel processing and local SSD storage for lightweight general-purpose workloads.",
+  "description": "Microsoft Azure D2ds_v4 is a general-purpose virtual machine powered by an Intel Xeon Platinum 8272CL processor at 2.6 GHz, running under Microsoft Hyper-V. The system is provisioned with 2 vCPUs across 1 physical core, 8.0 GB of RAM, and an integrated 81 GB local SSD, without GPU acceleration. Benchmark profiles indicate capable single-threaded execution, ranking in the middle tier for single-core tasks like gzip compression and Geekbench single-core tests. However, overall multi-core processing, memory throughput, and static web serving rank in the bottom 10% relative to broader cloud hardware benchmarks due to the single-core hardware ceiling. The D2ds_v4 offers an efficient balance of compute, RAM, and fast local temporary storage for small-scale web servers, lightweight microservices, and development environments.",
+  "og_description": "Microsoft Azure D2ds_v4 is a general-purpose VM offering 2 vCPUs on an Intel Xeon 8272CL processor, 8.0 GB RAM, and an 81 GB local SSD for lightweight workloads and microservices.",
+  "meta_description": "Microsoft Azure D2ds_v4 features 2 vCPUs, an Intel Xeon 8272CL CPU, 8.0 GB RAM, and an 81 GB local SSD, tailored for entry-level general-purpose workloads.",
+  "tagline": "Compact dual-vCPU general-purpose compute balanced with 8 GB RAM and integrated fast local SSD storage.",
   "bullet_points": [
-    "Intel Xeon 8272CL processor with 2 dedicated vCPUs and 8.0 GB RAM",
-    "Bundled 77 GB local SSD storage with Premium Storage capability",
-    "Average single-core CPU performance for single-threaded tasks",
-    "Limited multi-core scaling and memory bandwidth under heavy loads",
-    "Best suited for development environments and low-traffic web serving"
+    "2 vCPUs on 1 physical Intel Xeon 8272CL core running at 2.6 GHz",
+    "8.0 GB dedicated system memory (4.0 GB per vCPU ratio)",
+    "81 GB bundled local SSD storage for fast temporary I/O",
+    "Hardware support for AVX-512 and cryptographic AES acceleration",
+    "Tailored for lightweight web serving, microservices, and dev/test setups"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

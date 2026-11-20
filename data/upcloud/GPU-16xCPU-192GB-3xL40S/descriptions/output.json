@@ -1,23 +1,24 @@
 {
   "page": [
-    "UpCloud GPU-16xCPU-192GB-3xL40S is a GPU-accelerated virtual server configured with 16 vCPUs and 192 GB of system memory, running on the KVM hypervisor. The processing power is delivered by an AMD EPYC 9575F processor using the x86_64 architecture, featuring 16 physical cores with one thread per core on a shared CPU allocation model. Acceleration is provided by three NVIDIA L40S GPUs from the Ada Lovelace architecture, delivering a combined 144 GB of VRAM. This instance does not include local storage.",
-    "Benchmark results indicate top-tier single-core CPU performance, with Geekbench single-core scores and stress-ng single-core metrics placing in the top 10%. Multi-core performance is strong, ranking in the top 25%. Memory performance is characterized by top-tier large-block write bandwidth of 203.06 GB/sec and strong read bandwidth. In LLM inference benchmarks, the system achieves top-tier performance for both prompt processing and text generation using small and medium models, processing 6015.0 tokens per second for medium model prompts.",
-    "Given the shared CPU allocation and the absence of local storage, this server type offers a specialized hardware profile that prioritizes high-density GPU resources over dedicated CPU cores. This makes it a qualitatively cost-effective option for workloads that are heavily dependent on GPU acceleration rather than sustained, exclusive CPU execution. Recommended workloads include large language model inference, image processing, and parallelized data science tasks that leverage the 144 GB of total VRAM."
+    "UpCloud GPU-16xCPU-192GB-3xL40S is a GPU-accelerated virtual machine designed for high-throughput parallel compute and machine learning tasks. It is provisioned on the KVM hypervisor using an x86_64 AMD EPYC 9575F processor running at 2.0 GHz. The instance is allocated 16 shared vCPUs mapped across 16 physical cores with a 1.0 thread-per-core ratio, alongside 192.0 GB of system memory, providing 12.0 GB of RAM per vCPU. Hardware acceleration is provided by 3 NVIDIA L40S Ada Lovelace GPUs supplying a combined 144 GB of VRAM. The server includes one complimentary public IPv4 address and provides no bundled local storage, requiring network-attached block volumes for persistent data.",
+    "Benchmark results demonstrate strong compute and memory subsystem performance. In single-core testing, the AMD CPU delivers top-tier results with a stress-ng single-core score of 4184.96 and a Geekbench single-core score of 2922.0. Multi-core performance remains strong, scoring 66959.75 in stress-ng and 20598.0 in Geekbench. The memory architecture exhibits top-tier write throughput at 203.06 GB/sec on large 256 MB blocks, accompanied by strong read speeds reaching 305.74 GB/sec uncached and 3766.69 GB/sec cached. Advanced instruction support includes AVX-512 extensions (AVX-512F, AVX-512_VNNI, and AVX-512_BF16), boosting data compression and cryptographic operations, as reflected in single-threaded gzip throughput of 44.95 GB/sec.",
+    "The 3 NVIDIA L40S GPUs deliver top-tier performance for artificial intelligence workloads. In large language model benchmarks, the configuration achieves 13764.25 tokens/sec for prompt processing and 489.84 tokens/sec for text generation on a 135M model, alongside 6015.0 tokens/sec prompt processing and 129.4 tokens/sec text generation on a 7B model. These metrics highlight high density for real-time inference across multiple medium-sized models simultaneously.",
+    "Workloads best suited for this instance include distributed AI model inference, computer vision pipelines, image processing, and rendering. The combination of 144 GB of GPU memory, high single-core CPU speeds, and 192 GB of host RAM offers substantial capacity for data ingestion, though workloads requiring extensive local disk I/O must account for the absence of integrated local storage."
   ],
-  "description": "UpCloud GPU-16xCPU-192GB-3xL40S is a GPU-accelerated virtual server featuring 16 vCPUs, 192 GB of system memory, and three NVIDIA L40S GPUs with 144 GB of total VRAM. Powered by an AMD EPYC 9575F processor on the x86_64 architecture, the instance utilizes a shared CPU allocation model under the KVM hypervisor. It does not include local storage. Performance benchmarks show top-tier single-core CPU execution and large-block memory write bandwidth, alongside strong multi-core capabilities. The server excels in LLM inference, demonstrating top-tier prompt processing and text generation speeds for small and medium models. This hardware profile is qualitatively cost-effective for GPU-heavy workloads, making it highly suitable for machine learning inference, image processing, and data science tasks that require substantial VRAM without requiring dedicated local storage.",
-  "og_description": "UpCloud GPU-16xCPU-192GB-3xL40S is a GPU-accelerated server featuring 16 AMD EPYC vCPUs, 192 GB RAM, and three NVIDIA L40S GPUs with 144 GB VRAM, optimized for high-performance LLM inference and parallel computing.",
-  "meta_description": "UpCloud GPU-16xCPU-192GB-3xL40S is a KVM-based server with 16 AMD EPYC vCPUs, 192 GB RAM, and three NVIDIA L40S GPUs providing 144 GB VRAM.",
-  "tagline": "A high-density GPU acceleration platform featuring three Ada Lovelace GPUs and substantial system memory for parallel computing and model inference.",
+  "description": "UpCloud GPU-16xCPU-192GB-3xL40S is a GPU-accelerated server powered by an AMD EPYC 9575F processor with 16 vCPUs (16 physical cores), 192.0 GB of RAM, and 3 NVIDIA L40S GPUs delivering 144 GB of aggregate VRAM. Operating on the KVM hypervisor with x86_64 architecture and AVX-512 support, the system features top-tier single-core performance alongside robust uncached memory write bandwidth of 203.06 GB/sec. The triple-L40S configuration delivers top-tier LLM inference speeds, reaching 6015.0 prompt tokens/sec and 129.4 generation tokens/sec on 7B models. With no bundled local storage, persistent disks must be externally attached. This configuration is built for AI inference, batch computer vision workloads, and parallel processing.",
+  "og_description": "UpCloud GPU-16xCPU-192GB-3xL40S features 16 vCPUs via an AMD EPYC 9575F, 192 GB RAM, and 3 NVIDIA L40S GPUs with 144 GB VRAM, delivering top-tier performance for AI inference and parallel compute.",
+  "meta_description": "UpCloud GPU-16xCPU-192GB-3xL40S features 16 AMD vCPUs, 192 GB RAM, and 3 NVIDIA L40S GPUs (144 GB VRAM) for high-performance AI inference workloads.",
+  "tagline": "Triple NVIDIA L40S acceleration combined with 16 AMD EPYC cores and 192 GB RAM for demanding inference workloads.",
   "bullet_points": [
-    "Three NVIDIA L40S GPUs providing a combined 144 GB of VRAM",
-    "16 vCPUs powered by an AMD EPYC 9575F processor",
-    "192 GB of system memory with top-tier large-block write bandwidth",
-    "Top-tier performance in LLM inference prompt processing and text generation",
-    "KVM-based virtualization with shared CPU allocation and no local storage",
-    "Best suited for machine learning inference, image processing, and data science"
+    "Equipped with 3 NVIDIA L40S Ada Lovelace GPUs providing 144 GB total VRAM",
+    "Powered by a 16-core AMD EPYC 9575F processor with AVX-512 support",
+    "Includes 192.0 GB of system RAM delivering 12.0 GB per vCPU",
+    "Delivers 6015.0 tokens/sec prompt processing on 7B language models",
+    "No bundled local storage, requiring external volumes for persistence",
+    "Optimized for deep learning inference, image processing, and visual computing"
   ],
   "categories": [
     "GPU Accelerated",
-    "Memory Optimized"
+    "Compute Optimized"
   ]
 }

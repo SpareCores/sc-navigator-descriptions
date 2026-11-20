@@ -1,22 +1,25 @@
 {
   "page": [
-    "Microsoft Azure D64plds_v6 is an ARM-based server instance powered by a 64-core Microsoft Neoverse-N2 processor running at 3.4 GHz. Built on the Microsoft Hyper-V hypervisor, this instance features 64 dedicated physical cores with a single thread per core, eliminating hyperthreading overhead. It is configured with 128.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per vCPU. Local storage is bundled, consisting of a 3780 GB NVMe SSD, and the instance is Premium Storage capable.",
-    "In benchmark evaluations, the D64plds_v6 demonstrates top-tier multi-core performance, scoring in the top 10% for multi-core stress-ng tests, multi-threaded bzip3 decompression, and Geekbench multi-core metrics. Its memory subsystem achieves top-tier read and write bandwidth for large uncached blocks, reaching 465.57 GB/sec and 203.79 GB/sec respectively. Database operations and CPU physics tests also rank in the top 10%. Single-core performance, including single-threaded stress-ng and Geekbench single-core scores, falls within the average range, indicating that the server's strength lies in parallelized workloads.",
-    "The ARM64 architecture and low memory-to-core ratio provide a cost-efficient profile for compute-heavy workloads that do not require massive memory footprints. The combination of high-density physical cores and fast local NVMe storage makes this instance highly suitable for multi-threaded software compilation, database operations, static web serving, and parallelized data decompression tasks."
+    "Microsoft Azure D64plds_v6 is an ARM-based compute instance powered by an Azure-tailored Neoverse-N2 processor running at 3.4 GHz. The instance supplies 64 dedicated physical cores without simultaneous multithreading, providing deterministic execution across all 64 vCPUs. The CPU architecture includes a 64 KB L1 data cache per core, 1 MB L2 cache per core, and 128 MB of shared L3 cache, alongside hardware cryptographic acceleration with AES instructions.",
+    "System memory consists of 128 GB of RAM, establishing a 1:2 vCPU-to-memory ratio of 2 GB per core. Benchmarks reveal exceptional memory subsystem capabilities, reaching 465.57 GB/s in large-block uncached read tests and 203.79 GB/s in large-block write operations, both ranking in the top 10% of evaluated systems. Additionally, the instance incorporates 3,780 GB of direct-attached local NVMe SSD storage, eliminating standard external volume latency for scratch and data caching operations. No discrete GPU hardware is present.",
+    "Benchmark data displays a pronounced contrast between single-threaded and multi-threaded CPU throughput. Single-core tests such as Geekbench (1,697.0) and stress-ng (2,075.09) exhibit middle-tier results. Conversely, aggregate parallel throughput ranks in the top tier, reflected in a Geekbench multi-core score of 23,430.0, a Clang compilation score of 65,496.0, and a multi-threaded bzip3 decompression rate of 600.8 GB/s. PassMark database operations also attained top-tier metrics at 37,402.55, supplemented by Redis throughput reaching 117.69 million set operations per second.",
+    "The 2 GB per core allocation makes this server less suited for large in-memory datasets or hyper-dense virtualization layers. However, the density of physical cores combined with high memory bandwidth and local NVMe storage provides strong resource efficiency for multi-threaded build systems, CI/CD pipelines, container orchestration nodes, web serving fleets, and high-throughput transactional database workloads."
   ],
-  "description": "Microsoft Azure D64plds_v6 is an ARM-based server instance featuring 64 dedicated physical cores powered by a 3.4 GHz Microsoft Neoverse-N2 processor. It is configured with 128.0 GB of RAM, providing a 2.0 GB per vCPU ratio, and includes 3780 GB of local NVMe SSD storage. Operating on the Microsoft Hyper-V hypervisor, the instance delivers top-tier multi-core performance, ranking in the top 10% for multi-threaded bzip3 decompression, software compilation, and database operations. Its memory subsystem achieves top-tier large-block read and write bandwidths of 465.57 GB/sec and 203.79 GB/sec. While single-core benchmarks remain average, the high core density and fast local storage offer a qualitatively cost-efficient profile for parallelized workloads. This server is well-suited for multi-threaded software compilation, database hosting, and high-throughput static web serving.",
-  "og_description": "Microsoft Azure D64plds_v6 is an ARM64 server with 64 dedicated Neoverse-N2 cores, 128 GB RAM, and 3780 GB NVMe SSD storage, delivering top-tier multi-core and database performance.",
-  "meta_description": "Microsoft Azure D64plds_v6 is an ARM64 server featuring 64 dedicated cores, 128 GB RAM, and 3780 GB NVMe SSD storage for compute-heavy workloads.",
-  "tagline": "An ARM64 compute-focused instance featuring sixty-four dedicated physical cores and high-speed local NVMe SSD storage for parallelized workloads.",
+  "description": "Microsoft Azure D64plds_v6 provides 64 dedicated ARM-based Neoverse-N2 cores at 3.4 GHz without simultaneous multithreading. It features 128 GB of system memory, providing a compute-focused 1:2 vCPU-to-RAM ratio alongside 3,780 GB of local NVMe SSD storage. The memory subsystem demonstrates top-tier performance, achieving 465.57 GB/s uncached read bandwidth and 203.79 GB/s write bandwidth. Multi-core compute performance is notably strong, as demonstrated by top-tier results in Clang software compilation, PassMark database operations, and multi-threaded decompression tests. Single-core throughput ranks within the mid-tier. The bundled high-speed local storage and core density yield high computational efficiency for parallelized processing tasks, making the instance an effective platform for software compilation pipelines, web serving clusters, batch processing workloads, and transactional database services requiring fast local caching.",
+  "og_description": "Microsoft Azure D64plds_v6 features 64 ARM Neoverse-N2 cores, 128 GB RAM, and 3,780 GB local NVMe SSD storage, delivering top-tier multi-threaded compute and memory bandwidth.",
+  "meta_description": "Microsoft Azure D64plds_v6 features 64 ARM Neoverse-N2 cores, 128 GB RAM, and 3,780 GB NVMe storage, delivering high multi-threaded throughput.",
+  "tagline": "ARM Neoverse-N2 instance with 64 dedicated cores, dense local NVMe storage, and top-tier multi-core compilation performance.",
   "bullet_points": [
-    "64 dedicated ARM64 Microsoft Neoverse-N2 physical cores running at 3.4 GHz",
-    "128.0 GB of system memory providing a compute-optimized 2.0 GB per core ratio",
-    "Bundled 3780 GB local NVMe SSD storage with Premium Storage capability",
-    "Top-tier multi-core performance, software compilation, and database operations",
-    "Optimized for parallelized workloads, multi-threaded decompression, and web serving"
+    "64 dedicated ARM Neoverse-N2 cores running at 3.4 GHz with no hyperthreading",
+    "128 GB total system RAM providing 2 GB per core allocation",
+    "3,780 GB integrated local NVMe SSD storage",
+    "Top-tier uncached memory read bandwidth exceeding 465 GB/s",
+    "High parallel efficiency in software compilation and database transactions",
+    "Well suited for CI/CD runners, container platforms, and web serving"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

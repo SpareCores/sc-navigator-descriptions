@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure M128bs_v3 is an x86_64 architecture server belonging to the MBSMediumMemoryv3 family. It features 128 dedicated vCPUs derived from 64 physical cores of an Intel Xeon 8473C processor running at 4.0 GHz. The system is equipped with 1024.0 GB of RAM, yielding a memory-to-core ratio of 8.0 GB per core. It lacks local storage and dedicated GPU hardware, relying instead on external block storage and premium storage options.",
-    "Benchmark results indicate exceptional memory performance, with cached read bandwidth reaching 9026.27 GB/sec and uncached read bandwidth at 433.45 GB/sec, both placing in the top 10% tier. Multi-threaded operations are highly efficient, as evidenced by top-tier bzip3 decompression and a strong multi-core Geekbench score. Database operations and Redis SET throughput of 138.25 million operations per second also rank in the top tier, supported by advanced CPU instruction sets like AVX-512 and Intel AMX for matrix operations.",
-    "Given its high resource density and massive memory capacity, the server offers strong qualitative cost efficiency for memory-bound enterprise applications, though the lack of local NVMe storage means all disk I/O must traverse the network to block storage. This configuration is highly suited for large-scale in-memory databases, Redis caching layers, heavy database operations, and memory-intensive enterprise workloads."
+    "Microsoft Azure M128bs_v3 is a memory-optimized virtual machine based on the x86_64 architecture, powered by an Intel Xeon 8473C processor operating at frequencies up to 4.0 GHz. The instance provisions 128 dedicated vCPUs mapped across 64 physical cores with multithreading enabled, supported by 105 MB of L3 cache. It incorporates 1024 GB of system memory, establishing a high ratio of 8.0 GB of RAM per vCPU. Hardware accelerators are not present, and the instance provides no local disk storage, requiring external network-attached block volumes such as Azure Premium Storage for persistent file systems.",
+    "Performance benchmarks show top-tier throughput in parallel compute and memory subsystems. Uncached large-block memory read bandwidth reaches 433.45 GB/sec, while write operations achieve 185.13 GB/sec, supporting heavy data-shuffling operations. The instance attains a PassMark CPU score of 106668.0 and a multi-core stress-ng score of 110229.0. Multi-threaded bzip3 decompression registers at 647.83 GB/sec. Specialized vector extensions including AVX-512 and Intel Advanced Matrix Extensions (AMX) allow CPU-based machine learning inference, delivering 36.99 tokens per second for prompt processing on 70B parameter models.",
+    "System tradeoffs center on the balance between single-thread execution and aggregated parallel density. Single-core benchmark metrics position the CPU in the middle-to-upper percentiles, confirming that workload efficiency relies on multi-threaded parallelization rather than individual thread speeds. The reliance on remote storage also necessitates consideration of network storage throughput limits for disk-bound tasks. The M128bs_v3 is well suited for enterprise in-memory databases like SAP HANA or Redis, large-scale data analytics, caching clusters, and high-concurrency transactional database engines."
   ],
-  "description": "Microsoft Azure M128bs_v3 is a memory-optimized server powered by an Intel Xeon 8473C processor with 128 vCPUs and 1024.0 GB of RAM. Operating on the x86_64 architecture, this instance delivers top-tier memory bandwidth, reaching 9026.27 GB/sec for cached reads and 433.45 GB/sec for uncached reads. While it lacks local storage and GPUs, it supports premium block storage and features advanced CPU instructions like AVX-512 and Intel AMX. Benchmarks highlight exceptional multi-threaded performance, top-tier database operations, and high Redis throughput of 138.25 million operations per second. This profile makes it highly efficient for memory-intensive enterprise applications, large-scale databases, and in-memory caching systems.",
-  "og_description": "Microsoft Azure M128bs_v3 is a memory-optimized server featuring 128 vCPUs, an Intel Xeon 8473C processor, and 1024 GB of RAM, delivering top-tier memory bandwidth and database performance.",
-  "meta_description": "Microsoft Azure M128bs_v3 is a memory-optimized server with 128 vCPUs, 1024 GB RAM, and an Intel Xeon processor, built for high-throughput database workloads.",
-  "tagline": "A high-core, memory-optimized instance featuring top-tier memory bandwidth and advanced Intel Xeon processing for demanding enterprise database workloads.",
+  "description": "Microsoft Azure M128bs_v3 is a memory-optimized virtual machine designed for high-density enterprise workloads. Powered by an Intel Xeon 8473C x86_64 processor reaching 4.0 GHz, the instance supplies 128 dedicated vCPUs across 64 physical cores and 1024 GB of system memory, establishing an 8 GB per vCPU ratio. No discrete GPU or local storage is included, directing data persistence to network-attached block storage. Benchmark metrics confirm exceptional multi-threaded throughput and memory bandwidth, reaching 433.45 GB/sec in large block uncached reads and 185.13 GB/sec in writes. Real-world key-value tests reflect this architectural strength with 138.25 million Redis SET operations per second alongside top-tier database operation scores. While single-thread benchmarks remain moderate, advanced instruction support including AVX-512 and AMX delivers capable matrix math and CPU-based inference. The M128bs_v3 is strategically matched for enterprise in-memory databases, large caching layers, data engineering workloads, and large-scale transactional enterprise systems.",
+  "og_description": "Microsoft Azure M128bs_v3 is a memory-optimized instance featuring 128 Intel Xeon vCPUs, 1024 GB of RAM, and high memory bandwidth, tailored for in-memory databases and large-scale data processing workloads.",
+  "meta_description": "Microsoft Azure M128bs_v3 features 128 Intel Xeon vCPUs, 1024 GB RAM, and high memory bandwidth for in-memory database and enterprise analytics workloads.",
+  "tagline": "A 128-vCPU memory-optimized system with one terabyte of RAM and high memory bandwidth designed for demanding in-memory enterprise databases.",
   "bullet_points": [
-    "128 vCPUs and 1024 GB of RAM providing an 8:1 memory-to-core ratio",
-    "Intel Xeon 8473C processor with 4.0 GHz clock speed and AMX/AVX-512 support",
-    "Top-tier memory bandwidth of up to 9026.27 GB/sec for cached reads",
-    "No local storage, requiring external premium block storage",
-    "Optimized for in-memory databases, Redis caching, and heavy enterprise workloads"
+    "128 dedicated vCPUs (64 physical cores) via 4.0 GHz Intel Xeon 8473C processor",
+    "1024 GB system memory delivering an 8 GB per vCPU allocation ratio",
+    "No local storage or GPU bundled, relying on network-attached block storage",
+    "High memory bandwidth with 433.45 GB/sec uncached reads and 185.13 GB/sec writes",
+    "Top-tier database performance reaching 138.25 million Redis SET operations per second",
+    "Hardware instruction support for AVX-512 and Intel Advanced Matrix Extensions (AMX)"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Compute Optimized"
   ]
 }

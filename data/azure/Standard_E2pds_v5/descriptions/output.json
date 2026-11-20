@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E2pds_v5 is an ARM64-based virtual machine belonging to the EPDSv5 server family, running on the Microsoft Hyper-V hypervisor. It features a dedicated Ampere Neoverse-N1 processor with 2 physical cores and 2 vCPUs operating at a clock speed of 3.0 GHz. The system is equipped with 16.0 GB of RAM, providing a high memory-to-core ratio of 8.0 GB per vCPU. Local storage is supported by a 77 GB SSD, and the instance is premium storage capable.",
-    "Performance benchmarks indicate moderate single-core capabilities but lower multi-core and memory bandwidth efficiency. The stress-ng single-core CPU test scores 1791.39, while the multi-core score drops to 3552.48. Memory bandwidth tests show 140.84 GB/sec for small cached blocks, but drop to 27.08 GB/sec for large uncached blocks. Geekbench scores are weak to poor, with a single-core score of 1107.0 and a multi-core score of 1978.0. Redis SET operations achieve 2.8 million operations per second, and static web serving throughput is measured at 2.91 GB/sec.",
-    "From a qualitative cost-efficiency perspective, the E2pds_v5 offers a high memory density per vCPU on an ARM architecture, making it a resource-efficient option for memory-bound workloads that do not require intensive multi-threaded compute. However, the lack of AVX, AMX, and other advanced vector extensions limits its utility for high-performance computing or complex mathematical modeling. It is best suited for lightweight database operations, basic web serving, caching layers, and memory-intensive development or testing environments."
+    "Microsoft Azure E2pds_v5 is a memory-optimized virtual machine built on the 64-bit ARM architecture. Powered by Ampere ARMv8 Neoverse-N1 processors running at 3.0 GHz, the instance provides 2 dedicated physical cores and 2 vCPUs without multithreading overhead. It is equipped with 16.0 GB of RAM, establishing a high 1:8 core-to-memory ratio of 8.0 GB per vCPU. The hardware package also integrates 81 GB of local SSD temporary storage and operates under Microsoft Hyper-V virtualization, without attached GPUs.",
+    "Benchmark outcomes show that single-core capabilities outpace overall multi-core throughput due to the low core count. In stress-ng testing, single-core CPU performance scored 1791.39, ranking in the middle tier, whereas multi-core execution reached 3552.48, placing in the bottom quartile. Memory bandwidth metrics yield 27.08 GB/sec for uncached large-block reads and 16.68 GB/sec for writes. Geekbench results confirm modest compute capability, producing 1107.0 in single-core and 1978.0 in multi-core evaluation, with specialized sub-tests like software compilation and ray tracing registering in the lowest tier.",
+    "Operationally, the ARM-based Ampere architecture provides power and density efficiency for scale-out applications, but computational limitations represent a clear tradeoff. Intensive mathematical modeling, code compilation, and LLM inference run slowly, as evidenced by small-model LLM generation rates reaching only 28.01 tokens per second. However, with 2.8 million operations per second in Redis SET benchmarks and stable static web throughput of 2.91 GB/sec, the instance provides steady memory access for lightweight deployments.",
+    "Microsoft Azure E2pds_v5 is primarily suited for memory-sensitive, low-compute workloads. These include mid-tier in-memory caching nodes, small Redis or database instances, lightweight web serving layers, and ARM-native staging environments that require a high RAM-to-core allocation without intense computational demands."
   ],
-  "description": "Microsoft Azure E2pds_v5 is an ARM64-based virtual machine from the EPDSv5 family, powered by a 2-core Ampere Neoverse-N1 processor running at 3.0 GHz. It features 16.0 GB of RAM, yielding an 8.0 GB per vCPU ratio, alongside a 77 GB local SSD. Benchmarks show average single-core performance, with a stress-ng single-core score of 1791.39, but weaker multi-core and memory bandwidth results, such as a Geekbench multi-core score of 1978.0. Lacking advanced vector extensions like AVX and AMX, this instance is not designed for heavy compute or machine learning. Qualitatively, it provides a cost-effective, memory-dense profile for ARM-native applications. It is best suited for memory-optimized workloads, lightweight databases, caching layers like Redis, and general-purpose web serving.",
-  "og_description": "Microsoft Azure E2pds_v5 is an ARM64 virtual machine featuring a 2-core Ampere Neoverse-N1 processor, 16 GB of RAM, and a 77 GB local SSD, optimized for memory-intensive, lightweight workloads.",
-  "meta_description": "Microsoft Azure E2pds_v5 is an ARM64 virtual machine with 2 vCPUs, 16 GB RAM, and a 77 GB local SSD, designed for memory-optimized ARM workloads.",
-  "tagline": "An ARM64 virtual machine offering high memory density and local SSD storage for efficient, memory-bound scale-out workloads.",
+  "description": "Microsoft Azure E2pds_v5 is a memory-optimized virtual machine utilizing the ARM64 architecture. Equipped with an Ampere Neoverse-N1 processor operating at 3.0 GHz, it supplies 2 dedicated physical cores, 2 vCPUs, and 16.0 GB of memory, yielding a 1:8 vCPU-to-RAM ratio. Local storage consists of an integrated 81 GB SSD, and no GPUs are included. Performance benchmarks reflect modest compute throughput, registering a Geekbench single-core score of 1107.0 and a multi-core score of 1978.0, alongside 2.8 million operations per second in Redis SET operations. Due to its balanced memory density and lower computational ceiling, the E2pds_v5 is well suited for memory-intensive caching tiers, small databases, lightweight web servers, and ARM-native development environments that do not require dense CPU processing power.",
+  "og_description": "Microsoft Azure E2pds_v5 is an ARM-based memory-optimized VM featuring 2 vCPUs, 16 GB RAM, and an 81 GB local SSD on Ampere Neoverse-N1 silicon, suited for caching and small database workloads.",
+  "meta_description": "Microsoft Azure E2pds_v5 features 2 ARM64 vCPUs, 16.0 GB RAM, and an 81 GB local SSD on Ampere Neoverse-N1 processors for memory-centric tasks.",
+  "tagline": "Two-core ARM64 memory-optimized virtual machine paired with 16 GB RAM and fast local temporary SSD storage.",
   "bullet_points": [
-    "Powered by a dedicated 2-core Ampere Neoverse-N1 ARM64 processor running at 3.0 GHz",
-    "Provides 16.0 GB of system memory, offering a high 8.0 GB of RAM per vCPU",
-    "Includes 77 GB of local SSD storage and supports Premium Storage",
-    "Delivers 2.8 million operations per second in Redis SET benchmarks",
-    "Best suited for memory-intensive ARM applications, caching, and lightweight databases"
+    "Ampere ARMv8 Neoverse-N1 processor running at 3.0 GHz",
+    "2 dedicated physical cores and 2 vCPUs without simultaneous multithreading",
+    "16.0 GB system memory providing 8.0 GB of RAM per vCPU",
+    "Bundled 81 GB local SSD temporary storage",
+    "Tailored for Redis caches, small databases, and lightweight ARM services"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

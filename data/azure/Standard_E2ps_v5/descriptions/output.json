@@ -1,22 +1,21 @@
 {
   "page": [
-    "Microsoft Azure E2ps_v5 is a memory-optimized virtual machine belonging to the EPSv5 server family. It features 2 dedicated vCPUs powered by an Ampere Altra ARMv8 Neoverse-N1 processor running at 3.0 GHz. The hardware configuration includes 16.0 GB of RAM, yielding a high memory-to-core ratio of 8.0 GB per vCPU. This instance does not include local storage or bundled GPUs, but it is Premium Storage capable, allowing users to attach external storage volumes.",
-    "Benchmark evaluations indicate modest performance characteristics. The single-core stress-ng CPU performance and single-threaded gzip compression are average, but multi-core stress-ng performance and Geekbench multi-core scores fall into the weak and poor categories, respectively. Memory bandwidth tests, including both cached small-block and uncached large-block reads and writes, show poor throughput. Cryptographic operations and database operations also register lower-tier results, with Redis SET operations achieving 2.48 million operations per second.",
-    "From a cost-efficiency perspective, the E2ps_v5 offers a low-cost entry point for ARM-based workloads requiring a larger memory footprint relative to compute capacity. However, the primary tradeoff is the lower overall processing throughput and restricted memory bandwidth. This server is best suited for lightweight, memory-intensive workloads that do not demand high CPU performance, such as small-scale database caching, basic web serving, and simple memory-bound application testing."
+    "Microsoft Azure E2ps_v5 is a memory-optimized virtual machine instance based on the 64-bit ARM architecture. Hosted on Microsoft Hyper-V, the system provides 2 dedicated physical cores and 2 vCPUs using an Ampere ARMv8 Neoverse-N1 processor operating at a clock speed of 3.0 GHz. The CPU architecture includes 64 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of shared L3 cache, with hardware support for AES cryptographic operations. It is configured with 16.0 GB of memory, establishing a high ratio of 8.0 GB of RAM per core. The instance does not include local disk storage or integrated GPUs, requiring remote storage solutions such as Premium Storage for persistent filesystems.",
+    "Benchmark results demonstrate moderate single-threaded compute efficiency alongside throughput limits associated with a dual-core footprint. The instance scores 1821.98 in stress-ng single-core execution and delivers 24.11 GB/sec during single-threaded gzip compression. Multi-threaded capacity reflects the physical core constraint, yielding a multi-core stress-ng score of 3613.78 and a Geekbench multi-core score of 1987.0. Uncached large-block memory read bandwidth reaches 21.79 GB/sec with write bandwidth measuring 13.35 GB/sec. Operational benchmarks record 1417.7 in PassMark database operations and 2.48 million operations per second during Redis SET testing.",
+    "The E2ps_v5 offers favorable resource efficiency for workloads requiring substantial memory buffers without the cost overhead of high core counts. Because compute power is limited to two physical threads, heavy concurrent processing and intensive CPU tasks will encounter resource limits. It is well suited for memory-bound services, small-scale caching layers like Redis, lightweight relational databases, and ARM-native staging or development environments."
   ],
-  "description": "Microsoft Azure E2ps_v5 is a memory-optimized virtual machine from the EPSv5 family, featuring 2 dedicated vCPUs powered by an Ampere ARMv8 Neoverse-N1 processor running at 3.0 GHz. It is equipped with 16.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. The instance does not include local storage or integrated GPUs but supports Premium Storage. Benchmark results show average single-core CPU performance and single-threaded compression, but multi-core processing, memory bandwidth, and database operations are relatively weak. This server represents a cost-efficient option for ARM-based workloads requiring high memory density relative to compute power. It is best suited for lightweight memory-bound tasks, small database caches, and basic web serving.",
-  "og_description": "Microsoft Azure E2ps_v5 is an ARM-based, memory-optimized virtual machine featuring 2 dedicated Ampere Neoverse-N1 vCPUs, 16 GB of RAM, and Premium Storage capability for lightweight memory-bound workloads.",
-  "meta_description": "Microsoft Azure E2ps_v5 is an ARM-based virtual machine with 2 vCPUs and 16 GB of RAM, optimized for lightweight memory-intensive workloads.",
-  "tagline": "An ARM-powered virtual machine offering high memory density and dedicated compute cores for lightweight, memory-bound applications.",
+  "description": "Microsoft Azure E2ps_v5 is a memory-optimized virtual machine featuring 2 dedicated vCPUs on an Ampere ARMv8 Neoverse-N1 processor clocked at 3.0 GHz. Built on arm64 architecture and managed via Microsoft Hyper-V, the instance provides 16.0 GB of system memory, delivering an 8.0 GB per vCPU allocation. It features no local disk storage and no GPU hardware, relying on external network-attached storage. Benchmark testing shows balanced single-core execution, registering 1821.98 in single-core stress-ng and 24.11 GB/sec in gzip compression, while multi-core workloads are restricted by the dual-core topology. Uncached memory read bandwidth reaches 21.79 GB/sec, and the system achieves 2.48 million Redis SET operations per second. This hardware profile provides high memory density at low compute scale, making it suitable for lightweight databases, in-memory caches, and ARM application environments.",
+  "og_description": "Microsoft Azure E2ps_v5 is a memory-optimized arm64 virtual machine featuring 2 Ampere Neoverse-N1 vCPUs at 3.0 GHz and 16 GB RAM, designed for lightweight databases and memory-centric workloads.",
+  "meta_description": "Microsoft Azure E2ps_v5 is an arm64 memory-optimized VM providing 2 Ampere Neoverse-N1 vCPUs and 16 GB RAM for caching and entry-level databases.",
+  "tagline": "An ARM-based memory-optimized instance delivering high RAM-to-core density for lightweight databases, caching, and development environments without local disk overhead.",
   "bullet_points": [
-    "Features 2 dedicated Ampere ARMv8 Neoverse-N1 vCPUs running at 3.0 GHz",
-    "Equipped with 16.0 GB of RAM, providing 8.0 GB of memory per core",
-    "Supports Premium Storage with no local storage bundled",
-    "Delivers average single-core performance but limited multi-core and memory bandwidth",
-    "Best suited for lightweight memory-bound workloads and small database caches"
+    "2 dedicated Ampere ARMv8 Neoverse-N1 cores operating at 3.0 GHz",
+    "16.0 GB memory allocation providing 8.0 GB RAM per vCPU",
+    "ARM64 architecture with integrated AES hardware acceleration",
+    "No integrated local storage, requiring network-attached disks",
+    "Well suited for in-memory caching, small databases, and ARM testing"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

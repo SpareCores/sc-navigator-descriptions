@@ -1,22 +1,25 @@
 {
   "page": [
-    "Amazon Web Services g4dn.4xlarge is a GPU-accelerated instance powered by the Nitro hypervisor. It features an Intel Xeon 8259CL x86_64 processor with 16 vCPUs, 8 physical cores, and a base clock speed of 2.5 GHz. The system is equipped with 64.0 GB of DDR4 memory operating at 3 GHz, providing 4.0 GB of RAM per core. Graphics processing is handled by a single NVIDIA Turing T4 GPU with 16 GB of dedicated VRAM. Local storage consists of a 225 GB NVMe SSD, and the instance offers a baseline network bandwidth of 20 Gbps.",
-    "Performance benchmarks indicate a clear distinction between CPU-only workloads and GPU-accelerated tasks. Single-core CPU performance, measured via stress-ng and Geekbench, falls into the bottom 25% tier, while multi-core CPU performance and memory bandwidth consistently rank in the middle 50%. Conversely, the hardware excels at machine learning tasks; LLM inference speed for prompt processing using small (135M) and medium (7B) models ranks in the top 10% tier, with text generation speeds for these models placing in the top 25%. Prompt processing for large (70B) models falls back to the middle 50% tier.",
-    "Given the hardware profile, this instance offers a specialized resource density where the inclusion of a dedicated NVIDIA T4 GPU offsets the lower single-core CPU performance. It is qualitatively cost-efficient for workloads that can offload computation to the GPU rather than relying solely on raw CPU clock speeds. Appropriate workloads include graphics-intensive applications, machine learning inference (specifically small to medium LLMs), and GPU-accelerated database operations, whereas CPU-bound single-threaded tasks represent a performance tradeoff."
+    "Amazon Web Services g4dn.4xlarge is an accelerated computing instance powered by the AWS Nitro System. It is configured with an Intel Xeon 8259CL processor running at 2.5 GHz, delivering 16 dedicated vCPUs across 8 physical cores with simultaneous multithreading. Memory resources total 64.0 GB of DDR4 RAM clocked at 3 GHz, maintaining a balanced 4.0 GB per vCPU ratio. Acceleration is driven by a single NVIDIA Turing T4 GPU with 16 GB of dedicated VRAM. Storage includes a bundled 225 GB local NVMe SSD instance store volume, complemented by a 20 Gbps baseline network capability.",
+    "Benchmark data reflects clear strengths in GPU-centric machine learning tasks. Large language model inference speeds reach the top tier (top 10%) for prompt processing on smaller models (8447.43 tokens/sec on 135M) and medium models (1163.92 tokens/sec on 7B). Text generation throughput is strong (top 25%), recording 40.25 tokens/sec on a 7B model. However, on large 70B parameter models, prompt processing drops to average tier (13.51 tokens/sec), constrained by the 16 GB VRAM limit.",
+    "Host CPU execution demonstrates moderate to lower performance metrics. Single-core stress-ng (1286.18) and Geekbench (1144.0) fall into the bottom 25%, as do compression benchmarks like single-threaded gzip (21.73 GB/sec) and bzip3 decompression. Multi-core operations land consistently in the middle 50%, with a Geekbench multi-core score of 7019.0 and a PassMark CPU score of 14414.98. General memory operations and caching throughput are similarly positioned within average bands.",
+    "The hardware configuration provides solid qualitative cost efficiency for targeted acceleration tasks that do not justify high-end A100 or H100 accelerators. The inclusion of bundled local NVMe storage and high networking bandwidth supports data-intensive local operations. The instance is well matched for mid-sized LLM inference, ML model serving, video transcoding, graphics processing, and auxiliary web application backend tasks."
   ],
-  "description": "Amazon Web Services g4dn.4xlarge is a GPU-accelerated instance designed for graphics-intensive and machine learning workloads. Running on the Nitro hypervisor, it features an Intel Xeon 8259CL x86_64 processor with 16 vCPUs, 8 physical cores, and 64.0 GB of DDR4 memory. The hardware includes a dedicated NVIDIA Turing T4 GPU with 16 GB of VRAM, a 225 GB NVMe SSD, and 20 Gbps baseline network bandwidth. Benchmark data shows a tradeoff: single-core CPU performance is in the bottom 25%, whereas GPU-driven LLM inference for small and medium models reaches the top 10% for prompt processing. This resource configuration makes the instance highly suitable for machine learning inference, graphics rendering, and workloads that leverage GPU acceleration rather than single-threaded CPU processing.",
-  "og_description": "Amazon Web Services g4dn.4xlarge is a GPU-accelerated instance featuring 16 vCPUs, 64 GB RAM, a 16 GB NVIDIA Turing T4 GPU, and a 225 GB NVMe SSD, optimized for machine learning inference and graphics.",
-  "meta_description": "Amazon Web Services g4dn.4xlarge is a GPU-accelerated instance with 16 vCPUs, 64 GB RAM, and an NVIDIA T4 GPU for machine learning and graphics.",
-  "tagline": "A GPU-accelerated platform featuring an NVIDIA T4 GPU and NVMe storage, optimized for machine learning inference and graphics-intensive workloads.",
+  "description": "Amazon Web Services g4dn.4xlarge is an accelerated computing instance powered by an Intel Xeon 8259CL processor featuring 16 vCPUs (8 physical cores) at 2.5 GHz and 64.0 GB of DDR4 RAM. It includes a dedicated NVIDIA Turing T4 GPU with 16 GB of VRAM, 20 Gbps baseline networking, and a bundled 225 GB NVMe SSD local drive. Benchmark metrics indicate average multi-core CPU capacity and weaker single-thread throughput, but strong performance in GPU-driven inference. Specifically, it delivers top-tier prompt processing on 135M and 7B parameter models, alongside strong text generation throughput. The instance offers a balanced resource density for machine learning inference, graphics processing, video streaming, and data pipelines where large-scale enterprise accelerators are unnecessary.",
+  "og_description": "Amazon Web Services g4dn.4xlarge features 16 vCPUs, 64 GB RAM, a 16 GB NVIDIA T4 GPU, and 225 GB NVMe storage, delivering strong performance for machine learning inference and graphics workloads.",
+  "meta_description": "Amazon Web Services g4dn.4xlarge provides 16 vCPUs, 64 GB DDR4 RAM, a 16 GB NVIDIA T4 GPU, and local NVMe storage for GPU-accelerated computing workloads.",
+  "tagline": "Cost-efficient accelerated instance featuring an NVIDIA T4 GPU, 16 vCPUs, DDR4 memory, and high-speed local NVMe storage.",
   "bullet_points": [
-    "Equipped with one NVIDIA Turing T4 GPU featuring 16 GB of VRAM.",
-    "Features 16 vCPUs, 64.0 GB DDR4 RAM, and a 225 GB local NVMe SSD.",
-    "Delivers top-tier benchmark performance for small and medium LLM prompt processing.",
-    "Provides a baseline network bandwidth of 20 Gbps with EBS optimization.",
-    "Best suited for machine learning inference, graphics rendering, and GPU-supported workloads."
+    "16 dedicated vCPUs (8 cores, Intel Xeon 8259CL at 2.5 GHz)",
+    "NVIDIA Turing T4 GPU with 16 GB VRAM",
+    "64.0 GB DDR4 memory (4.0 GB per core ratio)",
+    "225 GB bundled local NVMe SSD storage",
+    "20 Gbps baseline network bandwidth",
+    "Optimized for small-to-medium LLM inference, graphics, and video encoding"
   ],
   "categories": [
     "GPU Accelerated",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

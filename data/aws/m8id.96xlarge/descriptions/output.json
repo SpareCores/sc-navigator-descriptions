@@ -1,24 +1,22 @@
 {
   "page": [
-    "Amazon Web Services m8id.96xlarge is a general-purpose instance powered by Intel Xeon 6975P-C processors using the x86_64 architecture. It features 384 vCPUs, corresponding to 192 physical cores, with a clock speed of 3.9 GHz and a 480 MB L3 cache. The instance is equipped with 1536.0 GB of DDR5 memory operating at 7 GHz, providing a balanced 4.0 GB of RAM per core. It includes 22,800 GB of local NVMe SSD storage and a baseline network bandwidth of 100 Gbps, managed via the AWS Nitro hypervisor.",
-    "Benchmark data indicates top-tier multi-core CPU performance, with stress-ng multi-core and Passmark CPU scores placing in the top 10%. Memory bandwidth is exceptionally high, with uncached read and write speeds also ranking in the top tier. The instance demonstrates strong capabilities in software compilation, ray tracing, and database operations, as evidenced by top-tier results in Geekbench compiling and Passmark database tests. However, single-core performance is more moderate, scoring in the average range for stress-ng single-core tests.",
-    "While the instance excels at parallel processing and memory-intensive tasks, it exhibits a notable performance tradeoff in LLM text generation, which ranges from poor to average. Conversely, prompt processing speeds remain strong. Given its massive local storage, high memory bandwidth, and multi-core density, the m8id.96xlarge is highly suited for large-scale database operations, high-throughput web serving, data-intensive applications, and parallelized compilation workloads."
+    "Amazon Web Services m8id.96xlarge is a general-purpose instance powered by the Nitro hypervisor and dedicated dual-socket Intel Xeon 6975P-C processors. Operating on the x86_64 architecture, the system provides 192 physical cores and 384 vCPUs running at 3.9 GHz, supported by 480 MB of L3 cache. It incorporates 1536 GB of DDR5 memory configured at a 1:4 core-to-memory ratio clocked at 7 GHz. A total of 22800 GB of local NVMe SSD instance storage is bundled directly with the host, supplemented by a 100 Gbps baseline network bandwidth. No discrete graphics hardware is present.",
+    "Benchmark metrics demonstrate exceptional parallel throughput, placing multi-core compute tests in the top tier. The instance achieved 414823.4 in stress-ng multi-core and 178166.0 in PassMark CPU score, driven by native hardware support for Intel AMX and AVX-512 instruction sets. Memory performance is equally pronounced, recording uncached read bandwidth of 1144.93 GB/sec and write bandwidth of 476.1 GB/sec. Data processing workloads show top-tier results in Redis operations (484.17 million operations per second), static web throughput (198.97 GB/sec), and PassMark database operations. Conversely, single-core metrics fall into average percentiles, and LLM text generation throughput remains constrained without GPU acceleration.",
+    "From a resource utilization perspective, the integration of 22.8 TB of fast NVMe storage alongside 1.5 TB of high-speed memory minimizes external storage transfer overhead and latency. This dense configuration provides strong qualitative efficiency for high-density transactional databases, large-scale Redis in-memory caches, distributed compilation, and high-throughput web serving environments requiring immense local scratch space and parallel CPU execution."
   ],
-  "description": "Amazon Web Services m8id.96xlarge is a high-density general-purpose instance featuring 384 vCPUs powered by Intel Xeon 6975P-C processors on the x86_64 architecture. It is equipped with 1536.0 GB of DDR5 RAM and 22,800 GB of local NVMe SSD storage, supported by a 100 Gbps baseline network. Operating under the Nitro hypervisor, the instance delivers top-tier multi-core CPU performance and exceptional memory bandwidth. While single-core performance is average and LLM text generation speeds are limited, its massive parallel processing capacity and high-speed local storage make it highly efficient for database operations, software compilation, and high-throughput web serving.",
-  "og_description": "Amazon Web Services m8id.96xlarge is a general-purpose instance with 384 Intel Xeon vCPUs, 1536 GB DDR5 RAM, and 22.8 TB NVMe SSD storage, delivering top-tier multi-core and database performance.",
-  "meta_description": "Amazon Web Services m8id.96xlarge features 384 Intel Xeon vCPUs, 1.5 TB DDR5 RAM, and 22.8 TB NVMe SSD storage for high-throughput workloads.",
-  "tagline": "A high-density x86_64 platform combining massive multi-core compute, DDR5 memory, and extensive local NVMe storage for data-intensive enterprise workloads.",
+  "description": "Amazon Web Services m8id.96xlarge is a general-purpose instance running on the AWS Nitro hypervisor, featuring 384 dedicated vCPUs across 192 physical cores powered by Intel Xeon 6975P-C processors clocked at 3.9 GHz. It features 1536 GB of high-speed DDR5 memory, 480 MB of L3 cache, and 100 Gbps of baseline networking throughput. Storage includes 22800 GB of local NVMe SSD instance storage, while GPU acceleration is not included. Hardware acceleration includes Intel AMX and AVX-512 extensions, yielding top-tier multi-threaded compute and data handling performance, with Redis throughput reaching 484.17 million operations per second and multi-core stress-ng scores exceeding 414800. Single-thread performance is moderate. The hardware profile offers high efficiency for large-scale caching layers, distributed databases, complex code compilation, and parallel data processing pipelines requiring substantial local storage and memory density.",
+  "og_description": "Amazon Web Services m8id.96xlarge is a general-purpose instance featuring 384 vCPUs on Intel Xeon 6975P-C processors, 1536 GB DDR5 memory, 22.8 TB local NVMe storage, and 100 Gbps networking.",
+  "meta_description": "Amazon Web Services m8id.96xlarge features 384 vCPUs, 1536 GB DDR5 memory, 22.8 TB of NVMe SSD local storage, and 100 Gbps baseline network bandwidth.",
+  "tagline": "High-core count general-purpose computing with 384 vCPUs, 1.5 TB DDR5 memory, and 22.8 TB integrated NVMe storage for data-intensive workloads.",
   "bullet_points": [
-    "Powered by Intel Xeon 6975P-C processors with 384 vCPUs and 480 MB L3 cache.",
-    "Equipped with 1536.0 GB of high-speed 7 GHz DDR5 memory.",
-    "Includes 22,800 GB of local NVMe SSD storage and 100 Gbps network bandwidth.",
-    "Delivers top-tier multi-core CPU performance and memory bandwidth.",
-    "Optimized for large-scale database operations, software compilation, and web serving.",
-    "Exhibits moderate single-core performance and slower LLM text generation."
+    "384 dedicated vCPUs via Intel Xeon 6975P-C processors running at 3.9 GHz",
+    "1536 GB DDR5 memory delivering over 1.1 TB/s uncached read bandwidth",
+    "22800 GB bundled local NVMe SSD high-speed storage",
+    "100 Gbps baseline network interface on the Nitro hypervisor",
+    "Suited for massive in-memory caching, databases, and heavy parallel compilation"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database",
-    "Compute Optimized"
+    "Storage & Database"
   ]
 }

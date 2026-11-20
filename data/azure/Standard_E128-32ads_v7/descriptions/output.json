@@ -1,24 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E128-32ads_v7 is a memory-optimized server belonging to the Eadsv7 family, running on the Microsoft Hyper-V hypervisor. It features a high memory-to-vCPU ratio, equipped with 1024.0 GB of RAM and 32 dedicated vCPUs mapped to 16 physical AMD EPYC 9V45 cores. The processor operates at a clock speed of 4.5 GHz on the x86_64 architecture, featuring 32 MB of L3 cache and supporting advanced instruction sets such as AVX-512 and cryptography acceleration.",
-    "The server includes 7559 GB of local NVMe SSD storage, making it highly capable for data-intensive operations. In benchmark evaluations, the single-core performance is top-tier, as demonstrated by stress-ng single-core and Geekbench single-core scores. Single-threaded tasks like gzip compression and bzip3 decompression also rank in the top 10%. Multi-core performance and memory bandwidth benchmarks generally fall into the average to strong ranges, with static web serving throughput showing strong performance.",
-    "While the server excels in memory capacity and single-core execution, its multi-threaded scaling and large-model LLM inference represent clear tradeoffs. For instance, LLM text generation with a large 70B model is poor, registering only 2.44 tokens per second. However, smaller model inference and general memory-bound tasks perform well. This hardware profile offers high resource density, making it a qualitatively cost-efficient choice for memory-intensive workloads without the overhead of dedicated GPU hardware. It is highly suited for large databases, in-memory caching systems, software compilation, and data-intensive enterprise applications."
+    "Microsoft Azure E128-32ads_v7 is a memory-optimized virtual machine engineered for enterprise workloads that require high memory capacity relative to compute footprint. Powered by the AMD EPYC 9V45 processor running on the x86_64 architecture with Microsoft Hyper-V, the instance provides 32 dedicated vCPUs mapped across 16 physical cores with simultaneous multithreading. The processor operates at clock speeds up to 4.5 GHz, supported by 48 KB L1 data cache, 1.0 MB L2 cache, and 32 MB L3 cache per core cluster, alongside hardware support for AVX-512 instructions.",
+    "The defining characteristic of this configuration is its high memory-to-core ratio, delivering 1024.0 GB of RAM, which equates to 32.0 GB per vCPU. Local storage is fully bundled, providing 7559 GB of high-speed NVMe SSD capacity. The instance lacks discrete GPU acceleration, relying entirely on the AMD EPYC processor for computational tasks.",
+    "Benchmark results demonstrate strong single-thread and core-level compute capabilities, achieving top-tier ratings in stress-ng single-core tests and Geekbench single-core scores of 2884.0. Multi-core execution is solid with a Geekbench multi-core score of 22126.0 and top-tier compression metrics, including 41.3 GB/sec in gzip. Because raw core count is limited to 32 vCPUs on a high-memory chassis, multi-threaded stress testing and large-model LLM generation yield average to low performance relative to compute-dense architectures, confirming that this shape trades massive parallel compute for dense memory allocation.",
+    "From a cost-efficiency perspective, the instance avoids the unnecessary licensing costs of higher vCPU counts while preserving a full 1 TB memory allocation and expansive local NVMe storage. This architecture is an effective fit for large-scale in-memory databases like Redis or SAP HANA, enterprise relational database management systems, heavy caching tiers, and memory-bound ETL analytics pipelines."
   ],
-  "description": "Microsoft Azure E128-32ads_v7 is a memory-optimized virtual machine from the Eadsv7 family, powered by a 4.5 GHz AMD EPYC 9V45 processor. It features 32 dedicated vCPUs (16 physical cores), 1024.0 GB of RAM, and a substantial 7559 GB local NVMe SSD. Operating on Microsoft Hyper-V, this x86_64 server delivers top-tier single-core performance, outstanding single-threaded compression speeds, and strong software compilation capabilities. However, multi-core scaling and large-model LLM inference show relative performance tradeoffs. With its massive memory-to-CPU ratio and high-capacity local storage, this server is highly cost-efficient for memory-bound enterprise workloads. It is best suited for large-scale databases, in-memory caching, and data-intensive applications.",
-  "og_description": "Microsoft Azure E128-32ads_v7 is a memory-optimized server featuring 32 vCPUs, 1024 GB RAM, and 7559 GB NVMe SSD storage, delivering top-tier single-core performance for database and enterprise workloads.",
-  "meta_description": "Microsoft Azure E128-32ads_v7 is a memory-optimized server with 32 vCPUs, 1024 GB RAM, and 7559 GB NVMe SSD, built for database workloads.",
-  "tagline": "A memory-optimized server combining massive RAM capacity, high-speed local NVMe storage, and strong single-core performance for data-intensive enterprise workloads.",
+  "description": "Microsoft Azure E128-32ads_v7 is a memory-optimized virtual machine featuring 32 dedicated vCPUs across 16 physical AMD EPYC 9V45 cores based on x86_64 architecture, clocked at 4.5 GHz with AVX-512 extensions. The server is configured with 1024.0 GB of RAM, establishing a high 32 GB per vCPU allocation, and includes 7559 GB of integrated NVMe SSD local storage without discrete GPUs. In synthetic benchmarks, the instance demonstrates top-tier single-core execution with a Geekbench single-core score of 2884.0 and strong compression throughput, though multi-core throughput and unaccelerated large LLM inference remain modest due to the constrained core count. By pairing a massive memory footprint and fast NVMe disk with a restrained compute profile, the instance optimizes resource allocation for memory-constrained workloads without incurring superfluous vCPU costs. It is suited for in-memory databases, large caching layers, high-volume transactional databases, and memory-intensive analytics engines.",
+  "og_description": "Microsoft Azure E128-32ads_v7 is a memory-optimized instance featuring 32 vCPUs via AMD EPYC 9V45 processors, 1024 GB RAM, and 7559 GB NVMe SSD storage for memory-bound database systems.",
+  "meta_description": "Microsoft Azure E128-32ads_v7 provides 32 vCPUs, 1024 GB RAM, and 7559 GB NVMe SSD storage, built for memory-heavy databases and caching workloads.",
+  "tagline": "High-capacity memory architecture pairing 1024 GB RAM and fast NVMe local storage with constrained vCPU allocation for data-heavy workloads.",
   "bullet_points": [
-    "Equipped with 1024 GB of RAM and 32 dedicated vCPUs on AMD EPYC 9V45 processors",
-    "Includes 7559 GB of high-speed local NVMe SSD storage",
-    "Top-tier single-core CPU performance and single-threaded compression speeds",
-    "Strong capabilities in software compilation and static web serving",
-    "Tradeoffs in multi-threaded scaling and large-model LLM inference",
-    "Optimized for large databases, in-memory caching, and enterprise applications"
+    "AMD EPYC 9V45 processor with 32 dedicated vCPUs and 16 physical cores at 4.5 GHz",
+    "1024.0 GB of system memory delivering 32.0 GB per vCPU",
+    "7559 GB bundled local NVMe SSD storage",
+    "Top-tier single-core compute and data compression benchmark performance",
+    "Lacks GPU hardware acceleration",
+    "Tailored for large in-memory databases, caching tiers, and memory-bound analytics"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

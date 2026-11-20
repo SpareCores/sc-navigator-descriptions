@@ -1,23 +1,21 @@
 {
   "page": [
-    "Microsoft Azure D16a_v4 is a general-purpose virtual machine belonging to the DAv4 family. It is powered by an AMD EPYC 7452 processor utilizing the x86_64 architecture. The server features 16 dedicated vCPUs mapped to 8 physical cores with hyper-threading enabled. It is equipped with 64.0 GB of system memory, providing a balanced 4.0 GB of RAM per vCPU. Additionally, the instance includes 410 GB of local SSD storage, while lacking any dedicated GPU hardware.",
-    "Performance benchmarks position the D16a_v4 primarily in the average tier across most workloads. Single-core CPU performance is a notable strength, with stress-ng single-core benchmarks placing it in the top 25%. Multi-core CPU performance, PassMark CPU scores, and Geekbench multi-core metrics fall within the middle 50%. A key performance tradeoff is observed in memory write operations, where large-block write bandwidth is classified in the bottom 25%, contrasting with the average read-only memory bandwidth. Large-model LLM inference is not supported due to the lack of hardware accelerators, though small-model text generation performs strongly.",
-    "From a cost-efficiency perspective, the D16a_v4 offers a balanced resource density suitable for general-purpose workloads. The combination of dedicated AMD EPYC cores, a moderate memory-to-vCPU ratio, and bundled local SSD storage makes it a viable option for applications requiring consistent CPU allocation without the premium cost of memory-optimized or GPU-accelerated instances. Recommended workloads include web serving, database operations, software compilation, and moderate-scale text processing."
+    "Microsoft Azure D16a_v4 is a general-purpose virtual machine hypervised by Microsoft Hyper-V. It is powered by an x86_64 AMD EPYC 7452 processor operating at 3.35 GHz, allocating 16 vCPUs across 8 physical cores with two threads per core. System memory totals 64.0 GB of RAM, maintaining a standard 1:4 vCPU-to-memory ratio of 4.0 GB per vCPU. The server bundles 429 GB of local SSD temporary storage and includes no dedicated hardware GPUs or complimentary public IPv4 addresses.",
+    "Benchmark results demonstrate dependable general-purpose compute capabilities. In stress-ng testing, single-core CPU throughput reached a strong top-25% result of 2707.27, while multi-core performance scored 21649.45. Geekbench evaluations yielded scores of 1394.0 in single-core and 8187.0 in multi-core tasks, alongside balanced scores across software compilation (13244.0) and ray tracing (16050.0). Small model (135M) LLM text generation achieved a strong 276.2 tokens per second, while 7B model generation measured 14.03 tokens per second.",
+    "The primary architectural constraint lies in memory write throughput. While cached read bandwidth is substantial at 799.89 GB/sec, uncached large-block write operations scored 25.81 GB/sec, falling into the bottom 25% tier. Additionally, vector instructions are limited to standard AVX, lacking AVX-512 extensions. The server is well suited for balanced enterprise workloads such as relational databases, web application hosting, build systems, and general business applications that benefit from integrated local SSD scratch space."
   ],
-  "description": "Microsoft Azure D16a_v4 is an x86_64 general-purpose virtual machine from the DAv4 family, powered by an AMD EPYC 7452 processor. It features 16 dedicated vCPUs across 8 physical cores, 64.0 GB of RAM, and 410 GB of local SSD storage. Benchmarks indicate strong single-core CPU performance and small-model text generation capabilities, while multi-core processing, database operations, and memory read bandwidth remain in the average tier. A notable hardware tradeoff is its weak large-block memory write bandwidth, which falls in the bottom 25%. Lacking dedicated GPUs, this instance is qualitatively cost-effective for workloads requiring balanced compute and memory resources without specialized acceleration. It is well-suited for static web serving, software compilation, and general-purpose database operations.",
-  "og_description": "Microsoft Azure D16a_v4 is an x86_64 virtual machine featuring 16 dedicated AMD EPYC 7452 vCPUs, 64 GB RAM, and 410 GB local SSD storage, delivering balanced general-purpose performance.",
-  "meta_description": "Microsoft Azure D16a_v4 is an x86_64 virtual machine with 16 AMD EPYC vCPUs, 64 GB RAM, and 410 GB local SSD storage for general-purpose workloads.",
-  "tagline": "A balanced x86_64 virtual machine featuring dedicated AMD EPYC processors and local SSD storage for general-purpose workloads.",
+  "description": "Microsoft Azure D16a_v4 is a general-purpose virtual machine powered by an AMD EPYC 7452 x86_64 processor clocked at 3.35 GHz. It provides 16 vCPUs over 8 physical cores, 64.0 GB of system memory (4.0 GB per vCPU), and 429 GB of integrated local SSD storage without dedicated GPUs. In benchmarks, it shows strong single-core CPU execution alongside balanced multi-core metrics, achieving 1394.0 single-core and 8187.0 multi-core scores in Geekbench, and 14.43 million operations per second in Redis SET tests. Large-block uncached memory write throughput represents a performance bottleneck at 25.81 GB/sec, and instruction sets exclude AVX-512. The configuration is matched to enterprise web serving, relational database workloads, software compilation, and generic background processing tasks.",
+  "og_description": "Microsoft Azure D16a_v4 is a general-purpose VM featuring 16 vCPUs via an AMD EPYC 7452 processor, 64 GB RAM, and 429 GB local SSD storage, suited for databases and general enterprise workloads.",
+  "meta_description": "Microsoft Azure D16a_v4 features 16 vCPUs on an AMD EPYC 7452 processor, 64 GB RAM, and 429 GB local SSD for enterprise apps and databases.",
+  "tagline": "Sixteen AMD EPYC vCPUs paired with 64 GB RAM and fast local SSD storage for balanced computing workloads.",
   "bullet_points": [
-    "Powered by an AMD EPYC 7452 processor with 16 dedicated vCPUs and 8 physical cores",
-    "Equipped with 64.0 GB of system memory and 410 GB of local SSD storage",
-    "Strong single-core CPU performance and small-model text generation capabilities",
-    "Average multi-core performance and database operation throughput",
-    "Tradeoff of weak large-block memory write bandwidth",
-    "Suited for static web serving, software compilation, and general-purpose databases"
+    "Powered by an AMD EPYC 7452 processor delivering 16 dedicated vCPUs at 3.35 GHz",
+    "Balanced 64.0 GB memory configuration maintaining a standard 1:4 vCPU-to-RAM ratio",
+    "Includes 429 GB of local SSD temporary storage for high-speed scratch space",
+    "Strong single-core compute performance and fast text generation on compact models",
+    "Suited for mid-tier databases, software compilation, and enterprise application hosting"
   ],
   "categories": [
-    "General Purpose",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

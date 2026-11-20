@@ -1,21 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D16as_v7 is a general-purpose virtual machine belonging to the Dasv7 server family. It is powered by an AMD EPYC 9V45 processor using the x86_64 architecture, operating at a clock speed of 4.5 GHz. The server features 16 dedicated vCPUs mapped to 8 physical cores with multithreading enabled. It is equipped with 64.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per core. This instance does not include local storage or integrated GPUs, but it is capable of utilizing Premium Storage.",
-    "In benchmark evaluations, the D16as_v7 demonstrates top-tier single-core performance, highlighted by a stress-ng single-core score of 3767.78 and high single-threaded compression and decompression speeds. Multi-core performance and memory bandwidth benchmarks generally fall within the average tier, with a passmark CPU score of 33162.55 and a multi-core stress-ng score of 30076.66. Memory performance is strong, as evidenced by a PassMark memory score of 2797.39. Large-block memory read and write speeds are average, measuring 51.11 GB/sec and 34.21 GB/sec respectively.",
-    "This server is designed for general-purpose workloads that require a balance of compute and memory resources without the need for local storage or GPU acceleration. It is well-suited for tasks such as web serving, database operations, and small-scale language model inference, where it achieves strong prompt processing and text generation speeds on small models. However, performance degrades significantly on larger models, with prompt processing on a 70B model falling into the bottom tier."
+    "The Microsoft Azure D16as_v7 is a general-purpose virtual machine based on the AMD EPYC 9V45 processor using the x86_64 architecture. Virtualized under Microsoft Hyper-V, the instance is allocated 16 dedicated vCPUs mapped across 8 physical cores with simultaneous multithreading enabled. The CPU supports boost speeds up to 4.5 GHz alongside per-core cache allocations of 48 KB L1 data cache, 1.0 MB L2 cache, and a shared 32 MB L3 cache. Instruction set extensions include AVX-512 with VNNI and BF16 support, hardware AES, VAES, and SHA extensions for cryptographic tasks. It features 64.0 GB of system memory, matching a standard 1:4 vCPU-to-RAM ratio of 4.0 GB per vCPU. The instance does not include bundled local disk storage or hardware accelerators such as GPUs.",
+    "Benchmark data demonstrates exceptionally strong single-core performance. In stress-ng single-core tests, the D16as_v7 reaches the top 10% tier with a score of 3767.78, mirrored in data processing tasks where single-threaded gzip compression hits 41.61 GB/s and bzip3 decompression achieves 18.34 GB/s. PassMark memory testing registers in the upper quartile with a score of 2797.39, supported by large-block read and write bandwidths of 51.11 GB/s and 34.21 GB/s respectively. Multi-threaded execution aligns with the median tier across general cloud servers, reflecting an aggregate stress-ng multi-core score of 30076.66 and a PassMark CPU score of 33162.55.",
+    "The compute profile shows solid resource density for general enterprise computing, balancing high per-thread burst speeds with standard memory allocation. A primary operational tradeoff is the total lack of ephemeral local storage, requiring network-attached remote disks for all persistent filesystem operations. In machine learning workloads, while small parameter models (135M) perform strongly on CPU vector registers, larger models (70B) demonstrate significant throughput bottlenecks.",
+    "The D16as_v7 is well suited for medium-scale web application serving, backend microservices, caching tiers like Redis (achieving 27.12 million operations per second), relational and document databases, and continuous integration pipelines requiring rapid single-thread build times."
   ],
-  "description": "Microsoft Azure D16as_v7 is a general-purpose virtual machine from the Dasv7 family, powered by an AMD EPYC 9V45 processor running at 4.5 GHz. Built on the x86_64 architecture, it features 16 dedicated vCPUs across 8 physical cores and is configured with 64.0 GB of RAM, yielding a balanced 4.0 GB per core. The instance lacks local storage and GPU accelerators but is Premium Storage capable. Benchmark results show top-tier single-core CPU performance and single-threaded compression speeds, alongside average multi-core and memory bandwidth metrics. The server is suited for general-purpose workloads, including web serving, database operations, and small-scale language model inference, though it exhibits performance limitations on larger model workloads.",
-  "og_description": "Microsoft Azure D16as_v7 is a general-purpose virtual machine featuring 16 dedicated AMD EPYC vCPUs, 64.0 GB of RAM, and top-tier single-core performance, suitable for web serving and database workloads.",
-  "meta_description": "Microsoft Azure D16as_v7 is a general-purpose VM with 16 AMD EPYC vCPUs, 64 GB RAM, and top-tier single-core performance for balanced workloads.",
-  "tagline": "A balanced general-purpose virtual machine featuring high-frequency AMD processors and dedicated compute resources for reliable multi-workload execution.",
+  "description": "The Microsoft Azure D16as_v7 is a general-purpose virtual machine powered by an AMD EPYC 9V45 processor clocked up to 4.5 GHz. Configured with 16 dedicated vCPUs (8 physical cores) and 64.0 GB of RAM, it maintains a balanced 1:4 compute-to-memory ratio. The instance includes AVX-512 and cryptographic instruction extensions, but contains no discrete GPUs and zero bundled local storage, requiring external managed disks. Benchmarks show upper-decile single-core CPU execution and single-threaded data compression, alongside upper-quartile memory performance. Multithreaded operations, static web delivery, and database transactions perform within median industry ranges. The instance provides an efficient profile for enterprise web serving, Redis caching nodes, microservice backends, and CI/CD pipelines needing robust per-thread compute throughput.",
+  "og_description": "Microsoft Azure D16as_v7 features 16 vCPUs on a 4.5 GHz AMD EPYC 9V45 CPU, 64 GB RAM, and top-tier single-core performance for general-purpose enterprise and backend workloads.",
+  "meta_description": "Microsoft Azure D16as_v7 provides 16 vCPUs, 64 GB RAM, and AMD EPYC processing, delivering top-tier single-thread performance for web apps and databases.",
+  "tagline": "Balanced general-purpose compute pairing 16 vCPUs and 64 GB RAM with high single-thread AMD EPYC clock speeds.",
   "bullet_points": [
-    "16 dedicated vCPUs powered by an AMD EPYC 9V45 processor at 4.5 GHz",
-    "64.0 GB of system memory providing a balanced 4.0 GB per core",
-    "Top-tier single-core CPU and single-threaded compression performance",
-    "No local storage or GPU, with support for Premium Storage",
-    "Suitable for web serving, database operations, and small-scale LLM inference"
+    "16 dedicated vCPUs across 8 physical cores using the AMD EPYC 9V45 processor",
+    "64.0 GB system memory providing a balanced 4.0 GB per vCPU allocation",
+    "Top-tier single-core CPU throughput and rapid single-threaded compression speeds",
+    "AVX-512 vector and cryptographic instruction set support",
+    "No bundled local storage, requiring attached network disks",
+    "Suited for web serving, microservices, caching layers, and database workloads"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

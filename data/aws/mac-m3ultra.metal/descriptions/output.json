@@ -1,19 +1,20 @@
 {
   "page": [
-    "Amazon Web Services mac-m3ultra.metal is a bare metal macOS instance powered by the Apple silicon architecture. The server features a dedicated Apple processor with 28 physical cores and 28 virtual CPUs running at a clock speed of 4.0 GHz. It is equipped with 256.0 GB of unified memory, providing a high memory-to-core ratio of 9.14 GB per physical core.",
-    "This instance does not include local NVMe storage or integrated discrete GPUs, meaning storage requirements must be met via external network-attached services. Networking capabilities include a baseline bandwidth of 10 Gbps. The system does not come with complimentary public IPv4 addresses.",
-    "From a cost efficiency perspective, the mac-m3ultra.metal offers high resource density for macOS-specific workloads, utilizing dedicated Apple silicon rather than virtualized commodity hardware. This hardware profile is designed for specialized tasks such as macOS and iOS application building, continuous integration and continuous delivery pipelines, and native Apple platform software compilation."
+    "Amazon Web Services mac-m3ultra.metal is a bare-metal macOS instance powered by dedicated Apple silicon hardware. Built on the arm64_mac architecture, the server provides 28 physical CPU cores operating at a base frequency of 4.0 GHz with a single thread per core. Memory allocation is dense, offering 256.0 GB of system memory, which translates to approximately 9.14 GB per physical core. The instance includes a 10 Gbps baseline network bandwidth profile and does not contain integrated hardware GPUs or local storage.",
+    "Because the server lacks local NVMe storage, persistent storage and operating disk requirements must be provisioned through network-attached block storage volumes. This design trades local disk throughput for operational flexibility in lifecycle management. The hardware provides dedicated physical execution without virtualization overhead, ensuring deterministic compute cycles and consistent execution latency across all 28 cores. Cost efficiency is driven by the high compute density and extensive memory footprint, allowing consolidation of multiple concurrent build or test pipelines onto a single physical node.",
+    "Workload applicability centers on enterprise macOS build environments, continuous integration and continuous deployment (CI/CD) pipelines, multi-platform software compilation, and large Xcode test suites. The extensive 256.0 GB memory capacity also accommodates memory-intensive macOS-native applications, large simulator instances, and native multimedia processing pipelines that require high per-core RAM capacity."
   ],
-  "description": "Amazon Web Services mac-m3ultra.metal is a bare metal macOS instance featuring a dedicated 28-core Apple processor operating at 4.0 GHz. Built on the arm64_mac architecture, this server provides 28 physical cores with a single thread per core and is equipped with 256.0 GB of system memory, yielding 9.14 GB of RAM per core. The instance does not include local storage or discrete GPU hardware, relying instead on network-attached storage options. Network connectivity is supported by a 10 Gbps baseline bandwidth. This specialized hardware configuration is designed for native Apple platform development workloads, including iOS and macOS application compilation, automated testing, and CI/CD pipelines. It offers a high-density, dedicated resource environment for organizations requiring native Apple silicon performance within the cloud.",
-  "og_description": "Amazon Web Services mac-m3ultra.metal is a bare metal macOS instance featuring a 28-core Apple processor, 256.0 GB of memory, and 10 Gbps network bandwidth for native Apple platform development.",
-  "meta_description": "Amazon Web Services mac-m3ultra.metal is a bare metal macOS instance with a 28-core Apple CPU, 256.0 GB of RAM, and 10 Gbps baseline network speed.",
-  "tagline": "A dedicated bare metal macOS instance featuring twenty-eight Apple silicon cores and two hundred fifty-six gigabytes of unified memory.",
+  "description": "Amazon Web Services mac-m3ultra.metal is a dedicated bare-metal macOS server designed for compute and memory-intensive Apple ecosystem operations. Built on the arm64_mac architecture, it features 28 physical Apple CPU cores clocked at 4.0 GHz with one thread per core, accompanied by 256.0 GB of memory for an allocation of 9.14 GB per core. The instance provides 10 Gbps baseline network bandwidth, operates without dedicated GPUs, and does not include bundled local storage, requiring network-attached storage for disk operations. Eliminating hypervisor overhead guarantees fully deterministic processor utilization. The server delivers cost efficiency through resource consolidation, making it practical to execute multiple resource-heavy compilation jobs simultaneously. mac-m3ultra.metal is well matched for enterprise continuous integration and continuous delivery (CI/CD) pipelines, Xcode application builds, multi-target testing suites, and data-heavy macOS-native processing workloads.",
+  "og_description": "Amazon Web Services mac-m3ultra.metal is a bare-metal Apple silicon instance equipped with 28 physical arm64_mac cores at 4.0 GHz, 256 GB memory, and 10 Gbps network bandwidth for macOS workloads.",
+  "meta_description": "Amazon Web Services mac-m3ultra.metal is a bare-metal macOS instance featuring 28 dedicated Apple silicon cores, 256 GB RAM, and 10 Gbps networking.",
+  "tagline": "Dedicated bare-metal Apple silicon system offering twenty-eight physical cores and high memory density for intensive continuous integration and compilation workflows.",
   "bullet_points": [
-    "Dedicated 28-core Apple silicon processor running at 4.0 GHz",
-    "256.0 GB of unified memory providing 9.14 GB per core",
-    "10 Gbps baseline network bandwidth",
-    "No local storage or discrete GPU included",
-    "Designed for macOS and iOS build, test, and CI/CD workloads"
+    "28 dedicated Apple silicon physical cores running at 4.0 GHz",
+    "256.0 GB system memory (9.14 GB per physical core)",
+    "Bare-metal arm64_mac architecture without hypervisor overhead",
+    "10 Gbps baseline network connectivity",
+    "Requires network-attached block storage (no local instance storage)",
+    "Optimized for macOS CI/CD pipelines and large-scale Xcode builds"
   ],
   "categories": [
     "Memory Optimized",

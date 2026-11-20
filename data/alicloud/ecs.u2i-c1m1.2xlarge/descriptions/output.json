@@ -1,21 +1,24 @@
 {
   "page": [
-    "Alibaba Cloud ecs.u2i-c1m1.2xlarge is an x86_64 architecture server instance powered by the KVM hypervisor. It features 8 dedicated Intel Xeon vCPUs running at a clock speed of 2.7 GHz. The instance is configured with 8.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU.",
-    "This server type does not include local storage, requiring external block storage for persistent data. It also lacks any GPU acceleration, making it unsuitable for hardware-accelerated graphics or deep learning tasks. Network connectivity is provisioned with a baseline bandwidth of 5 Gbps, and the instance does not include complimentary public IPv4 addresses.",
-    "With a one-to-one ratio of vCPUs to memory, this instance is highly compute-heavy relative to its memory capacity. This configuration offers qualitative cost efficiency for workloads that require dedicated CPU cycles but have minimal memory footprints. It is suited for CPU-bound tasks such as light web serving, batch processing, and basic computational workloads that fit entirely within the 8.0 GB memory limit."
+    "Alibaba Cloud ecs.u2i-c1m1.2xlarge is a compute instance built on the x86_64 architecture and managed via the KVM hypervisor. It features 8 dedicated vCPUs derived from an Intel Xeon processor running at a base clock frequency of 2.7 GHz. System memory is provisioned at 8.0 GB, which establishes a 1:1 memory-to-core ratio of 1.0 GB of RAM per virtual processor. The instance does not include integrated or discrete GPU hardware.",
+    "Storage and networking resources rely on external allocations. The configuration contains no local storage, requiring network-attached cloud storage volumes for operating system persistence and application data. The network layer provides a baseline bandwidth capacity of 5 Gbps. Complimentary public IPv4 addresses are not included, requiring an allocated elastic IP address or network address translation gateway for external public routing.",
+    "The 1:1 memory-to-vCPU profile emphasizes CPU density over memory capacity. This design provides cost efficiency for multi-threaded compute operations that do not require standard 1:2 or 1:4 memory footprints, avoiding expenditure on unneeded RAM. However, the constrained memory per core represents an operational tradeoff, making the instance vulnerable to out-of-memory errors if applications scale thread count with high per-thread allocations.",
+    "This server profile is structured for high-concurrency tasks requiring modest memory. Common use cases include batch processing pipelines, CI/CD compilation and test runners, stateless web serving, data ingestion workers, and parallel calculation tasks operating on streaming data."
   ],
-  "description": "Alibaba Cloud ecs.u2i-c1m1.2xlarge is an x86_64 compute instance running on the KVM hypervisor. It is equipped with 8 dedicated Intel Xeon vCPUs clocked at 2.7 GHz and 8.0 GB of system memory, establishing a ratio of 1.0 GB of RAM per vCPU. The instance does not include local storage or GPU accelerators, relying on network-attached storage for data persistence. It features a baseline network bandwidth of 5 Gbps and does not provide complimentary public IPv4 addresses. Given its low memory-to-CPU ratio, this server is designed for compute-heavy workloads with small memory footprints, such as batch processing, light web serving, and basic computational tasks.",
-  "og_description": "Alibaba Cloud ecs.u2i-c1m1.2xlarge is a KVM-based x86_64 server with 8 dedicated Intel Xeon vCPUs, 8.0 GB of RAM, and 5 Gbps network bandwidth, designed for memory-light compute workloads.",
-  "meta_description": "Alibaba Cloud ecs.u2i-c1m1.2xlarge is a KVM-based server featuring 8 dedicated Intel Xeon vCPUs, 8.0 GB of RAM, and 5 Gbps baseline network bandwidth.",
-  "tagline": "A dedicated compute instance featuring an efficient one-to-one ratio of Intel Xeon vCPUs to gigabytes of memory for lightweight processing.",
+  "description": "Alibaba Cloud ecs.u2i-c1m1.2xlarge is an x86_64 virtual machine instance powered by a 2.7 GHz Intel Xeon processor running under the KVM hypervisor. The instance is configured with 8 dedicated vCPUs and 8.0 GB of system memory, yielding a 1:1 memory-to-vCPU allocation of 1.0 GB per core. It includes no bundled local storage, necessitating external cloud storage volumes for operating system disks and persistent file storage, and provides no discrete GPU acceleration. Network connectivity features a baseline bandwidth of 5 Gbps, with zero complimentary public IPv4 addresses included. With its compute-heavy ratio and dedicated CPU resources, the configuration favors processing-intensive workloads that operate with minimal working memory footprints. It is structured for tasks such as batch data transformation, distributed compute workers, CI/CD compilation stages, and lightweight microservices requiring parallel core scaling without substantial memory demands.",
+  "og_description": "Alibaba Cloud ecs.u2i-c1m1.2xlarge is an x86_64 virtual instance featuring 8 dedicated Intel Xeon vCPUs clocked at 2.7 GHz, 8 GB of RAM, a 5 Gbps baseline network connection, and no local disk storage.",
+  "meta_description": "Alibaba Cloud ecs.u2i-c1m1.2xlarge is an x86_64 instance offering 8 dedicated Intel Xeon vCPUs at 2.7 GHz, 8 GB RAM, and a 5 Gbps baseline network interface.",
+  "tagline": "Dedicated eight-core compute configuration offering one gigabyte of memory per virtual core and five gigabits baseline network throughput.",
   "bullet_points": [
     "8 dedicated Intel Xeon vCPUs running at 2.7 GHz",
-    "8.0 GB of system memory providing 1.0 GB per vCPU",
+    "8.0 GB system RAM providing 1.0 GB memory per virtual core",
     "5 Gbps baseline network bandwidth",
-    "No local storage or GPU accelerators included",
-    "Suited for CPU-bound tasks with low memory requirements"
+    "KVM hypervisor based on x86_64 architecture",
+    "No local storage or GPU bundled, requiring network-attached storage",
+    "Suitable for batch processing, build agents, and distributed worker nodes"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

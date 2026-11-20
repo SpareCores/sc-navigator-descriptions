@@ -1,23 +1,24 @@
 {
   "page": [
-    "Amazon Web Services r5d.metal is a bare-metal, memory-optimized instance featuring 96 vCPUs and 48 physical cores powered by an Intel Xeon 8259CL processor running at 3.1 GHz. Built on the x86_64 architecture, this server includes 768.0 GB of DDR4 memory operating at 3 GHz, providing a high memory-to-vCPU ratio of 8.0 GB per core. It features 3600 GB of local NVMe SSD storage and a baseline network bandwidth of 25 Gbps.",
-    "Benchmark results indicate strong multi-core performance, with high ratings in multi-core CPU stress tests, Passmark CPU scores, and software compilation tasks. The memory subsystem demonstrates strong performance, achieving high read and write bandwidths in large-block tests. Database operations and Redis SET operations also rank in the top tier, alongside high static web serving throughput. However, single-core CPU performance and single-threaded tasks remain in the average range.",
-    "While the instance excels at memory-intensive and parallelized workloads, it exhibits weak performance in LLM text generation tasks, particularly with larger models, due to the lack of dedicated GPU acceleration. The qualitative cost profile reflects a high-density resource allocation suited for enterprise-grade deployments. This server is optimized for large-scale databases, in-memory caching systems like Redis, high-throughput web serving, and memory-intensive data processing applications."
+    "Amazon Web Services r5d.metal is a bare-metal, memory-optimized server instance built on the x86_64 architecture. It provides dedicated physical hardware powered by Intel Xeon 8259CL processors running at 3.1 GHz, offering 48 physical cores and 96 vCPUs. The platform features 768.0 GB of DDR4 system memory clocked at 3 GHz, delivering an 8:1 memory-to-core ratio of 8.0 GB per vCPU. Storage is bundled via 3600 GB of high-speed local NVMe SSD instance storage, paired with a baseline network bandwidth of 25 Gbps. The server operates without dedicated GPUs and supports hardware virtualization extensions alongside instruction sets such as AVX-512 and AES.",
+    "Benchmark results demonstrate strong parallel compute and memory throughput. The server scores in the top tier for multi-core compute in stress-ng (82012.9) and the PassMark CPU suite (57042.31), bolstered by high instruction throughput in compilation (44143.0) and ray tracing tasks. Large-block uncached read memory bandwidth reaches 224.13 GB/sec, while cached read bandwidth delivers 4539.97 GB/sec. These characteristics translate to robust transactional operations, evidenced by 74.42 million Redis SET operations per second and 44.25 GB/sec in static web serving throughput.",
+    "Tradeoffs manifest primarily in single-threaded tasks and text-generation workloads. Single-core performance across Geekbench and stress-ng falls in the middle range, reflecting standard per-core frequencies of the Intel Xeon 8259CL generation. Furthermore, the absence of hardware accelerators results in weak to poor text generation throughput for large language models, generating only 4.99 tokens per second on a 7B parameter model. Cost efficiency is optimized for memory-dense, read-heavy workloads where massive RAM capacity and direct-attached NVMe storage remove the overhead of virtualization and external network block storage.",
+    "The Amazon Web Services r5d.metal is directly aligned with large-scale in-memory databases, distributed caching layers such as Redis or Memcached, high-throughput database operations, and big data ETL pipelines that require fast local scratch disks and dedicated bare-metal access."
   ],
-  "description": "Amazon Web Services r5d.metal is a bare-metal, memory-optimized server designed for high-density workloads. It is equipped with 96 vCPUs across 48 physical cores of an Intel Xeon 8259CL processor running at 3.1 GHz, paired with 768.0 GB of DDR4 memory. The instance features 3600 GB of local NVMe SSD storage and a baseline network speed of 25 Gbps. Benchmark data highlights strong multi-core CPU capabilities, high memory bandwidth, and exceptional performance in database and Redis operations. However, single-core performance is average, and LLM text generation is weak due to the absence of GPU acceleration. This server is highly suited for large-scale databases, in-memory caching, and data-intensive enterprise applications.",
-  "og_description": "Amazon Web Services r5d.metal is a bare-metal server with 96 vCPUs, 768 GB DDR4 RAM, and 3600 GB NVMe SSD storage, optimized for large databases and memory-intensive enterprise workloads.",
-  "meta_description": "Amazon Web Services r5d.metal is a bare-metal server featuring 96 vCPUs, 768 GB RAM, and 3600 GB NVMe SSD storage for memory-intensive workloads.",
-  "tagline": "A bare-metal, memory-optimized server featuring high-capacity DDR4 RAM and local NVMe storage for demanding database and caching workloads.",
+  "description": "Amazon Web Services r5d.metal is a bare-metal, memory-optimized instance powered by Intel Xeon 8259CL x86_64 processors running at 3.1 GHz. Providing 48 physical cores and 96 dedicated vCPUs, it is equipped with 768.0 GB of DDR4 memory, bundled 3600 GB local NVMe SSD storage, and a baseline network throughput of 25 Gbps. Benchmark evaluations indicate top-quartile multi-core compute throughput, robust uncached memory bandwidth of 224.13 GB/sec, and high transactional capability reaching 74.42 million Redis SET operations per second. Lacking hardware accelerators, it yields low token generation rates for large language models and middle-tier single-core scores. The platform delivers strong resource density and qualitative cost efficiency for memory-intensive enterprise applications, distributed caching layers, relational databases, and data processing pipelines needing low-latency local storage without hypervisor overhead.",
+  "og_description": "Amazon Web Services r5d.metal is a bare-metal server featuring 96 vCPUs, 768 GB DDR4 RAM, and 3600 GB local NVMe SSD storage, optimized for large in-memory databases and high-throughput data processing.",
+  "meta_description": "Amazon Web Services r5d.metal features 96 dedicated vCPUs, 768 GB RAM, and 3600 GB NVMe storage, delivering bare-metal memory and database performance.",
+  "tagline": "Bare-metal high-density memory server with 96 vCPUs and direct-attached NVMe storage for enterprise in-memory databases.",
   "bullet_points": [
-    "96 vCPUs and 48 physical cores powered by Intel Xeon 8259CL processors",
-    "768.0 GB of high-speed DDR4 memory for memory-intensive applications",
-    "3600 GB of bundled local NVMe SSD storage for high-speed local I/O",
-    "Strong performance in database operations, Redis caching, and multi-core tasks",
-    "25 Gbps baseline network bandwidth for reliable data transfer",
-    "Best suited for large-scale databases, in-memory data stores, and enterprise workloads"
+    "Dedicated bare-metal architecture with 48 physical cores and 96 vCPUs on Intel Xeon 8259CL processors",
+    "768.0 GB of high-speed DDR4 memory providing an 8:1 memory-to-core ratio",
+    "Bundled 3600 GB local NVMe SSD instance storage and 25 Gbps baseline network bandwidth",
+    "Demonstrated high throughput in Redis operations (74.42M ops/sec) and multi-core benchmarks",
+    "Optimal for in-memory databases, distributed caching, and large-scale data processing workloads"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

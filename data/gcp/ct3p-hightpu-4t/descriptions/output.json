@@ -1,22 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform ct3p-hightpu-4t is a specialized TPU-accelerated server instance designed for machine learning workloads. It features 48 dedicated vCPUs based on the x86_64 architecture, paired with 340 GB of system memory, providing approximately 7.08 GB of RAM per core. The instance operates on a single vNUMA node configuration.",
-    "The primary computational capability of this instance is driven by four integrated Google TPU v3 accelerators, delivering a combined total of 128 GB of high-bandwidth VRAM. This hardware configuration does not include local storage, meaning all data persistence must rely on external network-attached storage volumes. No complimentary public IPv4 addresses are bundled with this instance.",
-    "Given the inclusion of four Google TPU v3 accelerators, this server is optimized for deep learning tasks, specifically large-scale model training and high-throughput inference. The high memory capacity of 340 GB supports large datasets in memory during training phases. From a cost-efficiency perspective, the integration of dedicated TPUs provides a highly specialized resource density for tensor operations compared to general-purpose CPU instances, though the lack of local storage requires careful architectural planning for data pipeline throughput."
+    "Google Cloud Platform ct3p-hightpu-4t is an accelerator-focused machine type engineered for deep learning and matrix-intensive workloads. The host infrastructure is built on the x86_64 architecture and provides 48 dedicated vCPUs paired with 340 GB of system memory across a single vNUMA node, which establishes an allocation of approximately 7.08 GB of RAM per virtual processor. Dedicated machine learning acceleration is delivered through four integrated Google TPU v3 chips, offering a combined 128 GB of specialized high-bandwidth accelerator memory.",
+    "Hardware capabilities on the host rely heavily on accelerator delegation, as advanced CPU vector and matrix extensions such as AVX-512 and AMX are not exposed to the virtual environment. In addition, the instance contains no bundled local storage, requiring persistent network volumes or object storage for dataset ingestion, temporary caching, and model checkpoints. Computational throughput is centered around the four TPU coprocessors rather than general-purpose CPU compute.",
+    "In terms of qualitative cost efficiency, the ct3p-hightpu-4t aggregates substantial accelerator capacity within a single virtual machine instance, minimizing multi-node coordination overhead for supported training jobs. A major architectural tradeoff is software compatibility, as workloads must be explicitly compiled and managed through TPU-supported frameworks rather than generic CUDA libraries. The configuration is primarily tailored for neural network training, large batch inference, and machine learning research pipelines."
   ],
-  "description": "Google Cloud Platform ct3p-hightpu-4t is a specialized, accelerator-optimized server configured with 48 dedicated x86_64 vCPUs and 340 GB of system memory. Designed primarily for machine learning workloads, the instance integrates four Google TPU v3 accelerators providing a total of 128 GB of high-bandwidth VRAM. It operates within a single vNUMA node and does not include local storage, requiring external network storage solutions for data persistence. With 7.08 GB of RAM per core, the hardware profile is tailored to handle large datasets during model training and execution. This server is engineered for deep learning workloads, including neural network training, natural language processing, and high-throughput tensor inference, offering a highly dense and specialized compute environment for AI development.",
-  "og_description": "Google Cloud Platform ct3p-hightpu-4t is a TPU-accelerated server featuring 48 dedicated x86_64 vCPUs, 340 GB RAM, and four Google TPU v3 accelerators with 128 GB VRAM for machine learning workloads.",
-  "meta_description": "Google Cloud Platform ct3p-hightpu-4t features 48 vCPUs, 340 GB RAM, and four Google TPU v3 accelerators with 128 GB VRAM for deep learning.",
-  "tagline": "A dedicated accelerator platform featuring four integrated tensor processing units and high-capacity memory for complex machine learning workloads.",
+  "description": "Google Cloud Platform ct3p-hightpu-4t is an accelerator-optimized machine type engineered for machine learning and deep learning workloads. Built on the x86_64 architecture, the host system features 48 dedicated vCPUs and 340 GB of system memory mapped to a single vNUMA node, providing roughly 7.08 GB of RAM per virtual processor. Acceleration is delivered by four Google TPU v3 processors with 128 GB of combined high-bandwidth memory. The instance has no integrated local storage, necessitating external network-attached volumes for data persistence and model artifact storage. CPU instruction flags for vector extensions are largely bypassed in favor of direct execution on the specialized TPU matrix hardware. This setup provides high computational density for training and inference pipelines compatible with Google TPU software frameworks, representing a structured alternative to conventional GPU clusters for dedicated tensor processing, neural network training, and machine learning research.",
+  "og_description": "Google Cloud Platform ct3p-hightpu-4t provides 48 dedicated x86_64 vCPUs, 340 GB system memory, and four Google TPU v3 accelerators with 128 GB total VRAM, designed for specialized machine learning training.",
+  "meta_description": "Google Cloud Platform ct3p-hightpu-4t is a TPU-accelerated instance with 48 dedicated x86_64 vCPUs, 340 GB of RAM, and four Google TPU v3 chips with 128 GB VRAM.",
+  "tagline": "Dedicated 48-core host platform paired with four custom TPU v3 accelerators and 128 GB accelerator memory for deep learning workflows.",
   "bullet_points": [
-    "Four integrated Google TPU v3 accelerators with 128 GB total VRAM",
-    "48 dedicated x86_64 vCPUs and 340 GB of system memory",
-    "Single vNUMA node architecture for simplified memory access",
-    "No local storage included, requiring external network-attached storage",
-    "Optimized for deep learning model training and tensor inference workloads"
+    "Four integrated Google TPU v3 accelerators providing 128 GB total VRAM",
+    "48 dedicated x86_64 vCPUs backed by 340 GB system memory",
+    "Single vNUMA node architecture with 7.08 GB RAM per virtual core",
+    "No bundled local storage, requiring network-attached storage solutions",
+    "Tailored for distributed deep learning training and large-scale model inference"
   ],
   "categories": [
-    "GPU Accelerated",
-    "Memory Optimized"
+    "GPU Accelerated"
   ]
 }

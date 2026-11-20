@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D48ads_v7 is a general-purpose server instance from the Dadsv7 family, powered by an AMD EPYC 9V45 processor. It features 48 vCPUs mapped to 24 physical cores with hyper-threading enabled, running at a clock speed of 4.5 GHz. The architecture is x86_64, supported by Microsoft Hyper-V virtualization. The system is equipped with 192.0 GB of system memory, providing a balanced 4.0 GB of RAM per vCPU. It includes a bundled local storage capacity of 2835 GB on NVMe SSDs and is Premium Storage capable.",
-    "In benchmark evaluations, the D48ads_v7 demonstrates top-tier performance in single-core processing, ranking in the top 10% for stress-ng single-core and Geekbench single-core and multi-core tests. It also achieves top-tier results in single-threaded gzip compression, bzip3 decompression, and image and text processing. Multi-core CPU performance, software compilation, and ray tracing fall into the top 25% bracket. Memory performance is strong, with read-only small block bandwidth and large block write bandwidth in the top 25%, though large block read-only bandwidth drops to average levels.",
-    "For database and application workloads, the instance shows strong capabilities, scoring in the top 25% for Passmark database operations and Redis SET operations, which can leverage the fast local NVMe SSD storage. It also handles small-scale LLM inference efficiently, reaching top-tier speeds for 135M parameter models, though medium 7B model prompt processing is average. Lacking a dedicated GPU, it is not suited for heavy deep learning training or large-scale model inference. The instance offers high resource density and a balanced compute-to-memory ratio, making it a cost-efficient choice for enterprise web serving, database hosting, and software development pipelines."
+    "Microsoft Azure D48ads_v7 is a general-purpose virtual machine based on Microsoft Hyper-V. It is powered by a dedicated AMD EPYC 9V45 processor operating at clock speeds up to 4.5 GHz, providing 48 vCPUs across 24 physical cores with multithreading enabled. The system includes 192.0 GB of memory, preserving a standard 1:4 vCPU-to-memory ratio of 4.0 GB per vCPU. Storage architecture features 2835 GB of bundled local NVMe SSD capacity, while discrete GPU acceleration is not present on this machine type.",
+    "The x86_64 architecture incorporates per-core cache allocations of 48 KB L1 data, 1.0 MB L2, and a 32 MB L3 cache segment. Hardware support includes AVX-512 extensions (encompassing AVX-512F, AVX-512 VNNI, and AVX-512 BF16) along with hardware cryptography primitives such as AES, VAES, and SHA-NI. These vector and cryptographic enhancements yield strong single-core compute performance, as reflected in high benchmark scores across Geekbench and single-threaded stress-ng tests.",
+    "Benchmark results highlight balanced system throughput, recording 86468.87 in multi-core stress-ng tests, 76.88 million operations per second in Redis SET operations, and 59.25 GB/sec in static web serving. While cached memory bandwidth is high, uncached large-block read bandwidth performs in the average range. The inclusion of dense local NVMe storage reduces reliance on external networked disks, improving qualitative cost efficiency for I/O-intensive workloads. The D48ads_v7 is well suited for relational databases, distributed caching layers, software compilation pipelines, and CPU-based machine learning inference."
   ],
-  "description": "The Microsoft Azure D48ads_v7 is a general-purpose server instance powered by a 4.5 GHz AMD EPYC 9V45 processor with 48 vCPUs and 24 physical cores. It features 192.0 GB of RAM, offering a balanced 4.0 GB per core, and includes 2835 GB of local NVMe SSD storage. Operating on Microsoft Hyper-V, the instance delivers top-tier single-core and multi-core CPU performance, alongside strong memory bandwidth and database processing capabilities. While it lacks a GPU, its high-speed local storage and robust CPU performance make it highly efficient for workloads such as database hosting, static web serving, software compilation, and small-scale language model inference.",
-  "og_description": "Microsoft Azure D48ads_v7 is a general-purpose server featuring 48 AMD EPYC vCPUs, 192 GB RAM, and 2835 GB local NVMe SSD storage, delivering top-tier single-core performance and strong database capabilities.",
-  "meta_description": "Microsoft Azure D48ads_v7 is an AMD EPYC-powered server with 48 vCPUs, 192 GB RAM, and 2835 GB NVMe SSD storage, optimized for general-purpose workloads.",
-  "tagline": "A balanced general-purpose server featuring high-speed AMD EPYC processors, substantial system memory, and fast local NVMe SSD storage.",
+  "description": "Microsoft Azure D48ads_v7 is a general-purpose instance featuring 48 vCPUs and 24 physical cores powered by an AMD EPYC 9V45 processor clocked at up to 4.5 GHz. Built on Microsoft Hyper-V, the system includes 192.0 GB of RAM, maintaining a 1:4 vCPU-to-memory allocation, and integrates 2835 GB of local NVMe SSD storage. The processor incorporates AVX-512, VAES, and SHA-NI vector and cryptographic instruction sets, delivering strong single-thread performance alongside high multi-core throughput across Geekbench and stress-ng suites. While uncached large-block memory read bandwidth lands in the median tier, write operations and cached memory throughput remain robust. The high core density paired with bundled NVMe media delivers a balanced resource profile that lowers reliance on external storage arrays. Microsoft Azure D48ads_v7 is engineered for enterprise relational databases, Redis caching layers, continuous integration build pipelines, and CPU-driven inference tasks.",
+  "og_description": "Microsoft Azure D48ads_v7 features 48 vCPUs via an AMD EPYC 9V45 processor, 192 GB RAM, and 2835 GB of local NVMe SSD storage, delivering balanced throughput for enterprise databases and web services.",
+  "meta_description": "Microsoft Azure D48ads_v7 is a general-purpose VM featuring 48 vCPUs on an AMD EPYC 9V45 processor, 192 GB RAM, and 2835 GB local NVMe storage.",
+  "tagline": "Dedicated AMD EPYC processing paired with high-capacity local NVMe storage for memory-balanced enterprise workloads, databases, and high-throughput application serving.",
   "bullet_points": [
-    "Powered by a 48-vCPU AMD EPYC 9V45 processor running at 4.5 GHz.",
-    "Includes 192.0 GB of RAM and 2835 GB of local NVMe SSD storage.",
-    "Delivers top-tier single-core CPU and multi-core Geekbench performance.",
-    "Strongly suited for database operations, Redis, and static web serving.",
-    "Efficient for software compilation and small-scale LLM inference."
+    "AMD EPYC 9V45 processor providing 48 dedicated vCPUs at up to 4.5 GHz.",
+    "192.0 GB system memory maintaining a balanced 1:4 vCPU-to-RAM ratio.",
+    "Bundled 2835 GB local NVMe SSD for high-throughput, low-latency I/O operations.",
+    "Advanced vector extensions including AVX-512, VNNI, and BF16 instruction sets.",
+    "Suited for enterprise databases, caching layers, CI/CD pipelines, and web serving."
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

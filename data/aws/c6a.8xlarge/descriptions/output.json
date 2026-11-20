@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c6a.8xlarge is a compute-optimized server instance powered by the x86_64 architecture. It features 32 dedicated vCPUs derived from 16 physical cores of an AMD EPYC 7R13 processor operating at a clock speed of 3.6 GHz. The instance is equipped with 64.0 GB of DDR4 memory running at 3 GHz, translating to 2.0 GB of RAM per core. It utilizes the AWS Nitro hypervisor and does not include local storage or GPU accelerators.",
-    "Performance benchmarks indicate strong single-core CPU capabilities, with stress-ng single-core testing placing in the top 25 percent. Multi-core CPU performance and PassMark CPU scores fall within the middle 50 percent average. Memory performance is notable, with the PassMark memory score ranking in the top 25 percent, though uncached large-block read and write memory bandwidths remain in the average tier. In terms of specialized workloads, the instance demonstrates strong text generation speeds for small language models, while large model prompt processing is weak, placing in the bottom 25 percent.",
-    "The c6a.8xlarge provides a baseline network bandwidth of 12 Gbps. From a cost-efficiency perspective, the instance offers a high-density compute profile with dedicated AMD EPYC resources, making it a viable option for compute-bound workloads that do not require local NVMe storage. Tradeoffs include the absence of bundled local storage and GPUs, which limits its utility for heavy data-storage operations or hardware-accelerated machine learning. It is suited for workloads such as software compilation, web serving, and moderate-scale database operations."
+    "Amazon Web Services c6a.8xlarge is a compute-optimized instance built on the AWS Nitro System and powered by third-generation AMD EPYC 7R13 processors. It delivers 32 virtual CPUs across 16 physical cores with simultaneous multithreading at a clock speed of 3.6 GHz on an x86_64 architecture. Memory configuration includes 64.0 GB of DDR4 system memory clocked at 3 GHz, maintaining a 1:2 vCPU-to-RAM ratio of 2.0 GB per vCPU. The instance carries 32 MB of L3 cache, alongside 0.5 MB L2 and 32 KB L1 data caches per core. Hardware cryptography extensions such as AES, VAES, and SHA-NI are present, while AVX-512 and matrix extensions are absent.",
+    "Hardware configurations exclude integrated local disk storage and discrete GPU accelerators, relying on remote elastic storage solutions and standard CPU execution for compute pipelines. Baseline network bandwidth is rated at 12 Gbps. In benchmark tests, the instance shows strong single-core CPU throughput via stress-ng, scoring 2990.99, while multi-core stress-ng reaches 47825.07. PassMark testing records an overall CPU score of 38324.88 alongside a strong memory subsystem mark of 2774.08. Read-only cached memory bandwidth exceeds 2291 GB/sec, while uncached large-block read transfers measure 76.63 GB/sec.",
+    "Workload evaluation demonstrates solid throughput for compile tasks, static web serving at 25.98 GB/sec, and in-memory key-value operations registering 35.17 million Redis SET operations per second. Light-parameter language model generation also shows strong responsiveness on small models, though lack of accelerator hardware severely constrains larger model inference. Given its compute density and lack of bundled local NVMe storage, c6a.8xlarge offers cost-effective execution for distributed batch processing, continuous integration build servers, and web serving fleets that do not require high storage IOPS or heavy GPU acceleration."
   ],
-  "description": "Amazon Web Services c6a.8xlarge is an x86_64 compute-optimized server instance powered by an AMD EPYC 7R13 processor running at 3.6 GHz. It features 32 dedicated vCPUs across 16 physical cores, 64.0 GB of DDR4 memory, and a baseline network bandwidth of 12 Gbps. Operating on the Nitro hypervisor, this instance does not include local storage or GPU accelerators. Benchmark data shows strong single-core CPU performance and strong memory scores, while multi-core CPU performance and large-block memory bandwidth remain average. The instance is highly capable at text generation for small language models but shows weak performance on large 70B models. Given its compute-to-memory ratio of 2.0 GB per core and lack of local storage, the c6a.8xlarge is best suited for compute-intensive tasks such as software compilation, web serving, and moderate database operations where external storage is utilized.",
-  "og_description": "Amazon Web Services c6a.8xlarge is a compute-optimized instance with 32 dedicated vCPUs, an AMD EPYC 7R13 processor, and 64 GB DDR4 RAM, delivering strong single-core and memory benchmark performance.",
-  "meta_description": "Amazon Web Services c6a.8xlarge is an x86_64 compute-optimized instance featuring 32 dedicated vCPUs, 64 GB RAM, and 12 Gbps network bandwidth.",
-  "tagline": "A dedicated AMD EPYC compute-optimized instance featuring thirty-two vCPUs and sixty-four gigabytes of RAM for compute-intensive workloads.",
+  "description": "Amazon Web Services c6a.8xlarge is a compute-optimized instance powered by a 3.6 GHz AMD EPYC 7R13 processor under the AWS Nitro hypervisor. The system provides 32 vCPUs across 16 physical cores with 64.0 GB of DDR4 memory, adhering to a 1:2 compute-focused memory allocation. It features 12 Gbps baseline networking, omitting integrated local storage and GPU accelerators. Hardware security includes AES, VAES, and SHA-NI acceleration, though AVX-512 instructions are unsupported. Benchmark results show strong single-core compute and memory performance, supported by 35.17 million Redis SET operations per second and 25.98 GB/sec static web throughput. Without local NVMe disks, storage must be attached remotely. The instance delivers cost-efficient throughput for compilation pipelines, distributed microservices, batch compute, and intermediate web serving.",
+  "og_description": "Amazon Web Services c6a.8xlarge features 32 vCPUs on AMD EPYC 7R13 processors, 64 GB DDR4 RAM, and 12 Gbps network baseline. A compute-optimized server engineered for distributed workloads.",
+  "meta_description": "Amazon Web Services c6a.8xlarge provides 32 vCPUs via AMD EPYC 7R13 processors, 64 GB DDR4 memory, and 12 Gbps networking for compute-intensive tasks.",
+  "tagline": "Dedicated 32-vCPU AMD EPYC architecture delivering balanced compute performance and reliable DDR4 memory throughput for compute-focused infrastructure.",
   "bullet_points": [
-    "Powered by a 3.6 GHz AMD EPYC 7R13 processor with 32 dedicated vCPUs",
-    "Equipped with 64.0 GB of DDR4 memory at a 1:2 vCPU-to-RAM ratio",
-    "Delivers strong single-core CPU and PassMark memory benchmark performance",
-    "Provides 12 Gbps baseline network bandwidth via the Nitro hypervisor",
-    "Lacks local storage and GPU accelerators, requiring network-attached storage",
-    "Optimized for software compilation, web serving, and moderate database tasks"
+    "32 vCPUs across 16 AMD EPYC 7R13 physical cores clocked at 3.6 GHz",
+    "64.0 GB of DDR4 system memory running at 3 GHz",
+    "12 Gbps baseline network bandwidth via AWS Nitro System",
+    "Zero local disk storage and zero discrete GPU accelerators",
+    "Hardware cryptographic extensions including AES, VAES, and SHA-NI",
+    "Tailored for batch processing, CI/CD build runners, and web application servers"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

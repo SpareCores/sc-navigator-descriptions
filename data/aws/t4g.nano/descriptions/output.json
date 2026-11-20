@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services t4g.nano is a burstable instance powered by custom AWS Graviton processors utilizing the 64-bit ARMv8 Neoverse-N1 architecture. It features 2 physical cores providing 2 vCPUs running at a clock speed of 2.5 GHz, with 1.0 thread per core. The processor includes 64 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, with hardware support for AES cryptographic acceleration.",
-    "This instance is configured with 0.5 GB of system memory, yielding a low memory-to-core ratio of 0.25 GB per core. It does not include local storage or bundled GPUs, and it operates with a baseline network bandwidth of 0 Gbps. The instance runs on the AWS Nitro hypervisor.",
-    "Benchmark results indicate modest performance characteristics. The stress-ng single-core CPU test scores 1507.78, placing it in the average tier, while the multi-core score of 3000.57 falls into the lower quartile. Memory bandwidth for cached small blocks is measured at 116.61 GB/sec. Other metrics, such as PassMark CPU and memory scores, register near the bottom of the performance spectrum, though it achieves a static web serving throughput of 2.45 GB/sec and 2.34 million operations per second in Redis SET benchmarks.",
-    "Given its low resource footprint and burstable CPU allocation model, the t4g.nano offers high qualitative cost efficiency for lightweight, intermittent workloads. It is designed for low-traffic web serving, microservices, development environments, and basic testing where continuous high CPU utilization is not required."
+    "Amazon Web Services t4g.nano is an entry-tier, burstable general-purpose virtual machine based on the AWS Nitro System. Powered by the arm64 AWS Graviton processor family utilizing Neoverse-N1 cores clocked at 2.5 GHz, the instance provisions 2 vCPUs across 2 physical cores with 1 thread per core. Memory capacity is constrained to 0.5 GB of system RAM, allocating 0.25 GB per core. The processor features 64 KB L1 data cache, 1.0 MB L2 cache, and 32 MB L3 cache, with hardware acceleration support for AES cryptography. The instance includes no local storage and does not feature hardware GPUs, relying entirely on network-attached storage architectures.",
+    "Benchmark results demonstrate a clear separation between single-thread compute efficiency and full-system throughput under constrained memory. In stress-ng testing, single-core CPU throughput reached 1507.78 points, placing it within the average tier (middle 50%), while multi-core performance scored 3000.57 points in the bottom 25% due to core count and burstable budget mechanisms. In application benchmarks, t4g.nano delivered 2.34 million operations per second in Redis SET tests and 2.45 GB/sec in static web serving throughput, reflecting baseline operational constraints in throughput-heavy scenarios.",
+    "The primary operational tradeoff of t4g.nano centers on its 0.5 GB RAM footprint, which severely limits memory-intensive execution runtimes. However, its ARM-based architecture yields high compute efficiency per unit of resource allocation for lightweight workloads. The instance is suited for low-traffic microservices, lightweight monitoring agents, headless cron runners, simple proxy gateways, and non-demanding development environments with minimal memory requirements."
   ],
-  "description": "Amazon Web Services t4g.nano is a burstable, entry-level instance powered by a 2.5 GHz AWS Graviton Neoverse-N1 ARM64 processor. It features 2 physical cores with 1.0 thread per core, 64 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. The instance is equipped with 0.5 GB of system memory, providing 0.25 GB per core, and does not include local storage or dedicated GPU hardware. Running on the AWS Nitro hypervisor, its performance profile is modest, with stress-ng single-core benchmarks showing average performance, while multi-core and memory bandwidth tests rank in the lower tiers. The t4g.nano is qualitatively highly cost-efficient for low-demand, burstable workloads, making it suitable for lightweight applications, microservices, static web serving, and development or testing environments that do not require sustained high CPU utilization.",
-  "og_description": "Amazon Web Services t4g.nano is a burstable ARM64 instance featuring 2 vCPUs powered by an AWS Graviton Neoverse-N1 processor, 0.5 GB of RAM, and no local storage, optimized for lightweight, low-cost workloads.",
-  "meta_description": "Amazon Web Services t4g.nano is a burstable ARM64 instance with 2 vCPUs, 0.5 GB of RAM, and Nitro hypervisor technology for lightweight workloads.",
-  "tagline": "A low-cost, burstable ARM64 instance designed for lightweight microservices, development environments, and intermittent testing workloads.",
+  "description": "Amazon Web Services t4g.nano is a micro-tier burstable virtual machine powered by AWS Graviton ARMv8 Neoverse-N1 processors running on the AWS Nitro hypervisor. The instance provides 2 vCPUs clocked at 2.5 GHz along with 0.5 GB of system memory, yielding 0.25 GB per core without simultaneous multithreading. It includes no bundled local NVMe storage and no GPU acceleration. Benchmark evaluations show solid per-core computational capabilities, achieving an average-tier stress-ng single-core score of 1507.78, while multi-core throughput registers at 3000.57 points due to burstable allocation limits. Redis throughput reaches 2.34 million operations per second, alongside 2.45 GB/sec for static web delivery. Because of its constrained memory profile and zero baseline network bandwidth, t4g.nano is specifically suited for low-overhead administrative utilities, basic proxies, edge telemetry agents, and lightweight background cron tasks that operate within tight memory bounds.",
+  "og_description": "Amazon Web Services t4g.nano features 2 vCPUs on AWS Graviton Neoverse-N1 ARM silicon, 0.5 GB RAM, burstable CPU performance, and Nitro virtualization for lightweight microservices.",
+  "meta_description": "Amazon Web Services t4g.nano is an arm64 burstable instance offering 2 vCPUs, 0.5 GB RAM, and AWS Graviton Neoverse-N1 cores for low-footprint cloud workloads.",
+  "tagline": "Ultra-low-footprint burstable ARM compute designed for lightweight microservices, basic network proxies, and background administrative agents requiring minimal memory.",
   "bullet_points": [
-    "Powered by a 2.5 GHz AWS Graviton Neoverse-N1 ARM64 processor",
-    "Configured with 2 physical cores and 0.5 GB of system memory",
-    "Burstable CPU allocation model utilizing the AWS Nitro hypervisor",
-    "Features hardware-accelerated AES cryptography support",
-    "Best suited for lightweight microservices, static web serving, and testing"
+    "AWS Graviton Neoverse-N1 arm64 architecture operating at 2.5 GHz",
+    "2 burstable vCPUs across 2 physical cores with single-threading",
+    "0.5 GB total system memory with 0.25 GB allocated per vCPU",
+    "Zero bundled local instance storage requiring remote EBS volumes",
+    "Average single-core stress-ng rating paired with 2.34M ops/sec Redis baseline",
+    "Optimized for lightweight background jobs, telemetry agents, and simple proxies"
   ],
   "categories": [
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "General Purpose"
   ]
 }

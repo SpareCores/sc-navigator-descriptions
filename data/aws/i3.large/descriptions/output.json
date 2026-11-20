@@ -1,22 +1,22 @@
 {
   "page": [
-    "Amazon Web Services i3.large is a storage-optimized instance featuring the x86_64 architecture. It is equipped with an Intel Xeon E5-2686 v4 processor operating at 2.3 GHz, delivering 2 dedicated vCPUs from 1 physical core with hyper-threading enabled. The instance includes 15.0 GB of system memory, translating to 7.62 GB per core. Notably, it comes bundled with 475 GB of local NVMe SSD storage, while network performance is rated at a baseline of 1 Gbps.",
-    "Benchmark results indicate that the compute and memory subsystems operate in lower performance tiers. The stress-ng single-core and multi-core CPU tests, along with Geekbench and Passmark CPU scores, fall into the bottom 10% of tested hardware. Memory bandwidth tests, including large block read and write operations, also register in the bottom 10% category. However, the primary value proposition of this instance lies in its high-speed local NVMe storage capacity rather than raw computational throughput.",
-    "From a cost-efficiency perspective, the i3.large offers a dense local storage allocation relative to its compute footprint, making it a viable option for storage-intensive workloads that do not require high CPU performance. It is suited for local database hosting, caching layers, and basic storage-heavy applications where high IOPS and low-latency local storage are prioritized over processing speed."
+    "Amazon Web Services i3.large is an entry-tier storage-optimized virtual machine operating on the Xen hypervisor. It is driven by an Intel Xeon E5-2686 v4 processor with x86_64 architecture running at 2.3 GHz. The hardware configuration delivers 2 vCPUs derived from a single physical core via two threads per core, 15.0 GB of system RAM, and a baseline network bandwidth of 1 Gbps. A key feature of this profile is the inclusion of 475 GB of direct-attached local NVMe SSD storage. The server does not include GPU acceleration hardware.",
+    "Benchmark evaluations highlight the generational constraints of the Broadwell-era processor. Synthetic compute tests rank in the lower performance brackets, registering a Geekbench single-core score of 866.0, a multi-core score of 1005.0, and a PassMark CPU score of 2202.24. Memory throughput aligns with these results, yielding 11.11 GB/sec uncached read bandwidth and 7.41 GB/sec uncached write bandwidth. Operational workload metrics demonstrate 1.27 million operations per second on Redis SET tasks and 1.51 GB/sec of static web serving throughput.",
+    "The primary tradeoff of the i3.large is its low computational density juxtaposed against fast local NVMe storage capacity. While not suited for compute-heavy workloads or modern instruction-set acceleration such as AVX-512, its direct NVMe attachment provides high I/O throughput and low-latency disk access. The instance is suited for localized I/O-bound services, such as small relational databases, distributed NoSQL nodes, search indexers, transactional logs, and persistent caching systems."
   ],
-  "description": "Amazon Web Services i3.large is a storage-optimized instance utilizing the x86_64 architecture with an Intel Xeon E5-2686 v4 processor. It features 2 dedicated vCPUs, 15.0 GB of memory, and a bundled 475 GB NVMe SSD, operating on the Xen hypervisor. Benchmark data indicates that its CPU and memory performance, including stress-ng and Geekbench scores, fall within the bottom 10% of tested hardware. Despite these computational limitations, the instance provides a high-speed local storage footprint with a baseline network bandwidth of 1 Gbps. This hardware profile makes the i3.large qualitatively cost-efficient for storage-heavy tasks that prioritize local NVMe capacity over raw processing power. It is best suited for lightweight database hosting, caching layers, and basic storage-intensive workloads.",
-  "og_description": "Amazon Web Services i3.large is a storage-optimized instance featuring 2 vCPUs, 15.0 GB of RAM, and 475 GB of local NVMe SSD storage, designed for lightweight database and storage-heavy workloads.",
-  "meta_description": "Amazon Web Services i3.large is a storage-optimized x86_64 instance featuring 2 vCPUs, 15.0 GB RAM, and a bundled 475 GB NVMe SSD.",
-  "tagline": "A storage-optimized instance featuring dedicated compute resources and high-speed local NVMe SSD storage for localized data workloads.",
+  "description": "Amazon Web Services i3.large is an entry-tier storage-optimized instance running on the Xen hypervisor with an Intel Xeon E5-2686 v4 processor at 2.3 GHz. It features 2 vCPUs across 1 physical core, 15.0 GB of memory, and 1 Gbps baseline network speed, alongside an integrated 475 GB local NVMe SSD. Hardware accelerators are absent. Benchmark performance reflects its legacy architecture, with a Geekbench multi-core score of 1005.0 and a PassMark CPU score of 2202.24. Memory bandwidth reaches 11.11 GB/sec for uncached reads and 7.41 GB/sec for writes. The instance handles 1.27 million operations per second in Redis SET evaluations and delivers 1.51 GB/sec static web throughput. Its high ratio of local NVMe storage to compute capacity makes it appropriate for I/O-bound tasks including small NoSQL databases, transactional stores, and search index nodes.",
+  "og_description": "Amazon Web Services i3.large features 2 vCPUs on an Intel Xeon E5-2686 v4 CPU, 15.0 GB of memory, and 475 GB of local NVMe SSD storage for low-latency, storage-optimized I/O workloads.",
+  "meta_description": "Amazon Web Services i3.large offers 2 vCPUs, 15.0 GB RAM, and a bundled 475 GB local NVMe SSD, built for I/O-bound databases and search nodes.",
+  "tagline": "Entry-level storage-optimized instance pairing low-latency local NVMe SSD capacity with dedicated memory for high-throughput I/O database workloads.",
   "bullet_points": [
-    "Intel Xeon E5-2686 v4 processor with 2 dedicated vCPUs",
-    "15.0 GB of system memory",
-    "Bundled 475 GB local NVMe SSD storage",
-    "1 Gbps baseline network bandwidth",
-    "Best suited for lightweight database hosting and local caching"
+    "2 vCPUs powered by an Intel Xeon E5-2686 v4 processor at 2.3 GHz",
+    "15.0 GB system RAM with 1 Gbps baseline network throughput",
+    "Bundled 475 GB local NVMe SSD storage for high-IOPS access",
+    "Lower-tier compute and memory bandwidth benchmark performance",
+    "Tailored for small NoSQL databases, transactional data, and search nodes"
   ],
   "categories": [
     "Storage & Database",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

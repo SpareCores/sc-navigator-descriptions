@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.hfg7.4xlarge is a general-purpose virtual machine instance powered by the KVM hypervisor. It features a dedicated Intel Xeon 8369HB processor with an x86_64 architecture, operating at a clock speed of 3.3 GHz. The instance provides 16 vCPUs across 8 physical cores with hyper-threading enabled, paired with 64.0 GB of system memory, resulting in a 4.0 GB memory-per-core ratio. Local storage is not bundled with this instance, and network performance is defined by a baseline bandwidth of 6 Gbps.",
-    "Benchmark results place the instance in the average tier for most compute tasks, with a Passmark CPU score of 18076.58 and a stress-ng multi-core performance of 16667.55. Memory performance is a notable strength, with the Passmark memory score rated as strong and a cached read-only memory bandwidth of 932.51 GB/sec. The processor supports advanced instruction sets including AVX-512 and AES cryptography, which assist in workloads like static web serving, measured at 13.8 GB/sec, and Redis SET operations, achieving 16.27 million operations per second.",
-    "Lacking local storage and dedicated GPU hardware, this instance is not configured for heavy storage-bound databases or complex deep learning training. However, the dedicated CPU allocation and strong memory bandwidth offer high resource density and predictable performance for its hardware class. The instance is well-suited for workloads such as web serving, in-memory caching, software compilation, and moderate-scale text or image processing."
+    "Alibaba Cloud ecs.hfg7.4xlarge is a high-clock-speed computing instance powered by Intel Xeon 8369HB processors running at a base clock frequency of 3.3 GHz. Configured with 16 vCPUs across 8 physical cores and 64 GB of memory, the instance maintains a balanced 1:4 vCPU-to-memory ratio. Virtualization is handled via KVM with dedicated CPU core allocation. It incorporates instruction set extensions including AVX-512, AVX512_VNNI, and AVX512_BF16 for accelerated vector computations, alongside hardware AES acceleration.",
+    "Benchmark results demonstrate steady mid-tier execution across most standard workloads, with a Geekbench multi-core score of 8,380 and a PassMark CPU score of 18,076.58. The memory subsystem reflects higher throughput, highlighted by a strong PassMark memory score of 2,769.96 and uncached read bandwidth reaching 88.47 GB/sec. CPU-based machine learning inference handles small models reasonably well at 985.84 prompt tokens per second, but degrades significantly when handling 7B parameter models, registering a weak 23.99 prompt tokens per second.",
+    "The instance does not include bundled local storage or integrated hardware accelerators, relying entirely on network-attached block devices and a 6 Gbps baseline network interface. This makes ecs.hfg7.4xlarge an efficient platform for mid-tier application architectures, Redis caching layers, web application serving, software compilation pipelines, and transactional database services that require steady clock frequencies without local storage persistence."
   ],
-  "description": "Alibaba Cloud ecs.hfg7.4xlarge is a general-purpose instance featuring a dedicated Intel Xeon 8369HB processor running at 3.3 GHz. Built on the x86_64 architecture, it provides 16 vCPUs, 8 physical cores, and 64.0 GB of RAM, with no local storage or GPU accelerators. The instance delivers a baseline network bandwidth of 6 Gbps. Performance benchmarks indicate average compute capabilities, highlighted by a Passmark CPU score of 18076.58 and a strong Passmark memory score. Supported instruction sets include AVX-512 and AES, which facilitate efficient cryptographic and vector operations. This instance is suited for general-purpose workloads, including web serving, software compilation, and in-memory caching, where dedicated CPU allocation and high memory bandwidth are required without local storage.",
-  "og_description": "Alibaba Cloud ecs.hfg7.4xlarge is a general-purpose instance with 16 dedicated Intel Xeon vCPUs, 64 GB RAM, and 6 Gbps network bandwidth, delivering strong memory performance for web serving and caching.",
-  "meta_description": "Alibaba Cloud ecs.hfg7.4xlarge features 16 dedicated Intel Xeon vCPUs, 64 GB RAM, and 6 Gbps bandwidth for general-purpose and memory-intensive workloads.",
-  "tagline": "A dedicated Intel-powered instance offering balanced compute resources and strong memory bandwidth for general-purpose and caching workloads.",
+  "description": "Alibaba Cloud ecs.hfg7.4xlarge is a high-frequency compute instance built on the x86_64 architecture, featuring a 3.3 GHz Intel Xeon 8369HB processor with 16 vCPUs and 64 GB of RAM. Operating under KVM virtualization with dedicated core assignment, it features instruction sets such as AVX-512 and AVX512_BF16. The instance includes no onboard local storage, depending on external storage volumes across a 6 Gbps baseline network interface, and contains zero GPUs. Benchmark evaluation indicates consistent mid-range performance, with multi-core scores reaching 8,380 in Geekbench and 18,076.58 in PassMark, accompanied by top-quartile PassMark memory throughput. The server provides balanced resource allocation without local storage overhead, making it suitable for transactional relational databases, software build runners, static and dynamic web serving, and memory-oriented caching workloads like Redis.",
+  "og_description": "Alibaba Cloud ecs.hfg7.4xlarge features a 3.3 GHz Intel Xeon 8369HB processor with 16 dedicated vCPUs, 64 GB RAM, 6 Gbps baseline networking, and robust memory throughput for mid-tier enterprise workloads.",
+  "meta_description": "Alibaba Cloud ecs.hfg7.4xlarge offers 16 vCPUs, 64 GB RAM, and a 3.3 GHz Intel Xeon 8369HB processor for compute-focused and web server workloads.",
+  "tagline": "A high-frequency sixteen-core compute instance featuring dedicated resources, balanced memory scaling, and advanced vector processing capabilities for enterprise applications.",
   "bullet_points": [
-    "Dedicated Intel Xeon 8369HB processor running at 3.3 GHz",
-    "16 vCPUs and 64.0 GB of RAM with a 1:4 resource ratio",
-    "Strong memory performance with 932.51 GB/sec cached read bandwidth",
-    "6 Gbps baseline network bandwidth and no local storage",
-    "Optimized for web serving, software compilation, and in-memory databases"
+    "3.3 GHz Intel Xeon 8369HB processor with 16 vCPUs and 8 physical cores",
+    "64 GB dedicated memory with strong PassMark memory throughput",
+    "AVX-512 and AVX512_BF16 instruction extensions for vector execution",
+    "Zero integrated local storage with reliance on remote network volumes",
+    "6 Gbps baseline network bandwidth for mid-volume traffic",
+    "Suited for Redis caching, transactional databases, and software compilation"
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

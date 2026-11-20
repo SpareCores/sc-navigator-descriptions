@@ -1,22 +1,25 @@
 {
   "page": [
-    "Microsoft Azure D4alds_v7 is a virtual machine instance running on the Microsoft Hyper-V hypervisor. It features 4 dedicated vCPUs mapped to 2 physical AMD EPYC 9V45 cores, operating at a clock speed of 4.5 GHz. The x86_64 architecture includes 32 MB of L3 cache, 1.0 MB of L2 cache, and 48 KB of L1d cache. It is configured with 8.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per vCPU. Storage is provided via a local 236 GB NVMe SSD, and the instance is capable of utilizing Premium Storage.",
-    "Benchmark data indicates top-tier single-core performance, with stress-ng single-core CPU, Geekbench single-core, and single-threaded gzip compression and bzip3 decompression tests all scoring in the top 10%. Multi-core performance, including stress-ng multi-core and Geekbench multi-core, falls within the average range. Memory bandwidth tests for both cached small blocks and uncached large blocks also register average performance, as do Redis SET operations, static web serving throughput, and small-model LLM inference. However, multi-threaded bzip3 decompression is a relative bottleneck, performing in the bottom 25%.",
-    "Given its low memory-to-vCPU ratio of 1:2, this instance offers a compute-focused hardware profile. It provides a cost-efficient option for workloads that require high single-threaded CPU performance but have modest memory footprints. The inclusion of a local NVMe SSD provides fast temporary storage. This server is suited for single-threaded processing tasks, lightweight web serving, software compilation, and basic database operations that fit within the 8.0 GB memory limit."
+    "Microsoft Azure D4alds_v7 is an x86_64 general purpose virtual machine featuring dedicated CPU allocation on an AMD EPYC 9V45 processor clocked at up to 4.5 GHz. The instance is configured with 4 vCPUs derived from 2 physical cores across 2 threads per core, supported by 48 KB L1 data cache, 1.0 MB L2 cache, and 32 MB L3 cache. It provides 8.0 GB of system memory, establishing a 1:2 vCPU-to-RAM ratio of 2.0 GB per vCPU. Hardware features include comprehensive vector instruction extensions such as AVX-512 with VNNI and BF16, alongside cryptographic acceleration via AES, VAES, and SHA-NI.",
+    "Storage consists of a bundled 236 GB local NVMe SSD, while GPU acceleration is not present. The server includes zero complimentary public IPv4 addresses and runs atop Microsoft Hyper-V virtualization with hardware SVM support. In synthetic testing, the high base frequency of the AMD EPYC core yields top-tier single-core performance, evidenced by a Geekbench single-core score of 2804.0, a stress-ng single-core rating of 3779.19, and fast single-threaded compression speeds (41.05 GB/sec in gzip).",
+    "Across multithreaded and parallel workloads, aggregate throughput remains moderate due to the 4-vCPU envelope. Geekbench multi-core registers at 6511.0, PassMark CPU achieves 10112.45, and Redis SET operations deliver 8.22 million operations per second. Memory throughput reaches 49.04 GB/sec for uncached 256 MB reads and 34.06 GB/sec for writes. The hardware profile represents a lean memory configuration that maximizes single-thread compute efficiency at a low resource footprint.",
+    "Given its 8.0 GB RAM boundary and fast per-core execution, Microsoft Azure D4alds_v7 is well aligned for lightweight web serving, CI/CD runners, batch text processing, microservices, and modest data transformations that benefit from local NVMe temporary caching without requiring large in-memory working sets."
   ],
-  "description": "Microsoft Azure D4alds_v7 is an x86_64 virtual machine featuring 4 dedicated vCPUs powered by an AMD EPYC 9V45 processor running at 4.5 GHz. Configured with 8.0 GB of memory and a local 236 GB NVMe SSD, this instance offers a compute-optimized 1:2 RAM-to-vCPU ratio. Benchmark results show top-tier single-core CPU performance, single-threaded text processing, and compression capabilities, while multi-core operations and memory bandwidth perform at average levels. The instance lacks GPU acceleration. This hardware profile is qualitatively cost-efficient for compute-heavy, low-memory workloads. It is suited for tasks such as single-threaded data processing, software compilation, lightweight web serving, and database operations that do not exceed the memory capacity.",
-  "og_description": "Microsoft Azure D4alds_v7 is a compute-optimized virtual server featuring 4 dedicated AMD EPYC vCPUs at 4.5 GHz, 8.0 GB of RAM, and a local 236 GB NVMe SSD, delivering top-tier single-core performance.",
-  "meta_description": "Microsoft Azure D4alds_v7 is a virtual server with 4 AMD EPYC vCPUs, 8.0 GB RAM, and a 236 GB NVMe SSD, optimized for high single-core compute workloads.",
-  "tagline": "A compute-optimized virtual server featuring high-frequency AMD EPYC processing and local NVMe storage for memory-lean, single-threaded workloads.",
+  "description": "Microsoft Azure D4alds_v7 is a compute-skewed general purpose instance powered by a 4.5 GHz AMD EPYC 9V45 processor. Configured with 4 dedicated vCPUs (2 physical cores), 8.0 GB of memory (2.0 GB per vCPU), and a bundled 236 GB local NVMe SSD, it delivers high single-thread efficiency supported by AVX-512 vector instructions and cryptographic hardware acceleration. Benchmark results show top-tier single-core CPU speed (Geekbench single-core 2804.0) alongside solid mid-tier multithreaded and static web serving throughput (8.81 GB/sec). With a compact memory footprint and fast NVMe temporary storage, the D4alds_v7 offers a cost-efficient profile for CPU-bound microservices, CI/CD build tasks, text processing, and caching layers that do not demand extensive RAM capacity.",
+  "og_description": "Microsoft Azure D4alds_v7 features 4 vCPUs on an AMD EPYC 9V45 processor (4.5 GHz), 8.0 GB RAM, and a 236 GB local NVMe SSD, delivering top-tier single-thread performance for compute-centric workloads.",
+  "meta_description": "Microsoft Azure D4alds_v7 offers 4 vCPUs on AMD EPYC 9V45 hardware, 8.0 GB RAM, and 236 GB NVMe SSD storage for efficient single-thread compute tasks.",
+  "tagline": "High-frequency AMD EPYC execution with low-memory density and bundled NVMe local storage for efficient, compute-centric workloads.",
   "bullet_points": [
-    "Powered by 4 dedicated AMD EPYC 9V45 vCPUs running at 4.5 GHz",
-    "Equipped with 8.0 GB of RAM and a local 236 GB NVMe SSD",
-    "Delivers top-tier single-core CPU and single-threaded compression performance",
-    "Features a compute-optimized 1:2 RAM-to-vCPU ratio for memory-lean tasks",
-    "Suited for software compilation, web serving, and lightweight database operations"
+    "4 dedicated vCPUs (2 physical cores) powered by an AMD EPYC 9V45 at up to 4.5 GHz",
+    "8.0 GB total system memory providing 2.0 GB of RAM per vCPU",
+    "Integrated 236 GB local NVMe SSD for fast scratch and temporary data access",
+    "Top-tier single-core performance with AVX-512, VNNI, and cryptographic acceleration",
+    "No bundled GPU and zero complimentary public IPv4 addresses",
+    "Suited for CI/CD pipelines, lightweight web serving, and CPU-intensive microservices"
   ],
   "categories": [
     "Compute Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

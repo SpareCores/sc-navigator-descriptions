@@ -1,0 +1,23 @@
+{
+  "page": [
+    "Microsoft Azure D64pls_v7 is an ARM-based compute instance built on the 64-bit ARM architecture (arm64) and virtualized via Microsoft Hyper-V. The virtual machine delivers 64 dedicated vCPUs alongside 128.0 GB of system memory, establishing a 1:2 vCPU-to-memory ratio (2.0 GB per core). The instance includes no bundled local disks, relying instead on network-attached Premium Storage capabilities for persistent root and data volumes.",
+    "The 2.0 GB per vCPU allocation reflects a compute-oriented resource profile tailored for execution-heavy processing rather than in-memory storage. By pairing high dedicated core counts with a lower memory footprint on energy-efficient ARM silicon, the hardware profile minimizes the resource cost overhead often associated with larger memory footprints in traditional 1:4 general-purpose instances.",
+    "System architects must account for specific architectural constraints. Because the instance contains zero local ephemeral storage, all persistent disk input/output depends entirely on network storage performance. Workloads must also be compatible with or compiled for the arm64 instruction set. Workloads demanding extensive in-memory caching or high memory-per-thread ratios will encounter memory bottlenecks before core saturation.",
+    "The D64pls_v7 is suited for multi-threaded, parallel processing tasks that scale horizontally across high CPU counts with moderate memory needs. Representative workloads include software build farms, CI/CD pipeline agents, microservice container hosting, video transcoding, and compute-heavy web application tiers."
+  ],
+  "description": "Microsoft Azure D64pls_v7 is an ARM-powered virtual machine built on 64 dedicated arm64 vCPUs and 128.0 GB of system memory under Microsoft Hyper-V. Featuring a 1:2 vCPU-to-memory ratio of 2.0 GB per core, this configuration targets compute-focused workloads that do not require expansive memory footprints. The instance does not include local disk storage, instead utilizing remote Premium Storage for data persistence, and operates without discrete hardware acceleration. The ARM architecture combined with a streamlined memory allocation provides a cost-efficient hardware profile for parallel compute execution, avoiding the resource overhead of standard 1:4 memory configurations. Tradeoffs include arm64 instruction set requirements and complete reliance on remote storage IOPS. The D64pls_v7 is well suited for CPU-intensive web serving, continuous integration and build pipelines, batch processing, and containerized microservices.",
+  "og_description": "Microsoft Azure D64pls_v7 provides 64 dedicated arm64 vCPUs and 128 GB RAM on Hyper-V. With a 1:2 memory ratio and support for Premium Storage, it delivers dense compute capacity for parallel workloads.",
+  "meta_description": "Microsoft Azure D64pls_v7 features 64 dedicated arm64 vCPUs and 128 GB RAM. A compute-dense instance with no local disk, built for scale-out workloads.",
+  "tagline": "Dedicated 64-core ARM architecture paired with a streamlined 2 GB per core profile for scalable, compute-centric workloads.",
+  "bullet_points": [
+    "64 dedicated vCPUs based on 64-bit ARM architecture (arm64)",
+    "128.0 GB system RAM providing a focused 2.0 GB per vCPU ratio",
+    "Stateless hardware configuration with zero bundled local storage",
+    "Capable of connecting to remote Premium Storage volumes",
+    "Optimized for CI/CD builds, container clusters, and multi-threaded batch compute"
+  ],
+  "categories": [
+    "Compute Optimized",
+    "General Purpose"
+  ]
+}

@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure F1ams_v7 is a memory-intensive virtual machine from the Famsv7 family, running on the Microsoft Hyper-V hypervisor. It features a single dedicated physical core and vCPU powered by an AMD EPYC 9V45 processor with an x86_64 architecture. The CPU operates at a clock speed of 4.5 GHz and includes 48 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. It is equipped with 8.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per core. This instance does not include local storage or bundled GPUs, but it is premium storage capable.",
-    "Benchmark data highlights strong single-core capabilities alongside expected multi-core limitations due to the single-vCPU configuration. The instance achieves top-tier performance in stress-ng single-core CPU testing and single-threaded compression and decompression tasks, such as gzip and bzip3. However, multi-core CPU performance, PassMark CPU scores, and database operations fall into the lower tier. Memory bandwidth for large block read and write operations is average, while small block cached reads are relatively weak. Large-block uncached read speeds reach 42.07 GB/sec, and write speeds reach 31.72 GB/sec.",
-    "From a cost-efficiency perspective, the F1ams_v7 offers a low-cost entry point for workloads requiring a high memory-to-vCPU ratio without the need for multi-threaded processing power. The dedicated CPU allocation ensures consistent performance compared to shared-core burstable instances. This server is best suited for lightweight memory-intensive tasks, single-threaded applications, basic web serving, and small-scale LLM inference tasks using small models."
+    "Microsoft Azure F1ams_v7 is an entry-level virtual machine instance featuring a single dedicated AMD EPYC 9V45 vCPU operating at up to 4.5 GHz on the x86_64 architecture. The underlying core configuration includes 48 KB of L1 data cache, 1.0 MB of L2 cache, and access to 32 MB of L3 cache, orchestrated via Microsoft Hyper-V. The instance provides 8.0 GB of RAM, delivering an 8:1 memory-to-vCPU ratio. It does not include bundled local storage or integrated GPUs, necessitating remote managed storage for filesystem persistence.",
+    "Benchmark results demonstrate strong single-thread performance driven by the high clock speed. Single-core stress-ng tests achieved a score of 3,750.29, ranking in the top 10 percent of evaluated systems. Data handling exhibited similar single-threaded strength, with gzip compression reaching 41.06 GB/sec and bzip3 decompression reaching 17.92 GB/sec. Large-block uncached memory read and write benchmarks performed in the middle 50 percent, registering 42.07 GB/sec and 31.72 GB/sec respectively. Conversely, multi-threaded throughput and parallelized operations such as Redis SET (3.64 million operations per second) and static web throughput (2.81 GB/sec) ranked in the bottom quartile due to single-core limitations.",
+    "The hardware balance provides a cost-efficient profile for tasks that require high single-threaded processor speed alongside a comfortable memory allotment, without incurring charges for unused secondary cores. Primary workload fits include single-threaded microservices, linear batch scripts, continuous integration runner nodes, and lightweight caching instances."
   ],
-  "description": "Microsoft Azure F1ams_v7 is a single-vCPU, memory-intensive virtual machine from the Famsv7 family. Powered by an AMD EPYC 9V45 processor running at 4.5 GHz, it features one dedicated physical core and 8.0 GB of RAM. The instance lacks local storage and GPUs but is premium storage capable. In benchmarks, the F1ams_v7 demonstrates top-tier single-core CPU performance and single-threaded compression speeds, though its multi-core and database performance are limited by its single-vCPU design. Memory bandwidth is average, with uncached reads at 42.07 GB/sec. This instance provides a cost-effective option for lightweight, memory-intensive workloads, single-threaded applications, and small-scale model inference.",
-  "og_description": "Microsoft Azure F1ams_v7 is a single-vCPU virtual machine featuring an AMD EPYC 9V45 processor at 4.5 GHz and 8.0 GB of RAM, offering strong single-core performance for memory-intensive workloads.",
-  "meta_description": "Microsoft Azure F1ams_v7 is a single-vCPU, memory-intensive VM with an AMD EPYC 9V45 CPU, 8.0 GB RAM, and top-tier single-core performance.",
-  "tagline": "A single-core, memory-intensive virtual machine featuring high clock-speed AMD EPYC processing for efficient single-threaded workloads.",
+  "description": "Microsoft Azure F1ams_v7 is a single-core virtual machine powered by an AMD EPYC 9V45 processor clocked at 4.5 GHz on the x86_64 architecture, managed by Microsoft Hyper-V. The instance provides 1 dedicated vCPU, 8.0 GB of system memory, 32 MB of L3 cache, zero bundled GPUs, and no integrated local storage. In benchmark evaluations, its 4.5 GHz frequency delivers top-tier single-core compute and data processing, achieving 41.06 GB/sec in single-threaded gzip compression and 17.92 GB/sec in bzip3 decompression. Because it features only one vCPU without hardware parallelism, multi-threaded throughput and aggregate database metrics sit in the lower quartile, including 3.64 million Redis SET operations per second and 2.81 GB/sec in static web throughput. F1ams_v7 is designed for lightweight single-threaded microservices, single-threaded batch execution, small caching instances, and low-concurrency worker pipelines that benefit from a high memory-to-core allocation without paying for unneeded processor cores.",
+  "og_description": "Microsoft Azure F1ams_v7 features 1 dedicated AMD EPYC 9V45 vCPU at 4.5 GHz, 8.0 GB of system memory, and no local disk, offering top-tier single-threaded processing for lightweight cloud workloads.",
+  "meta_description": "Microsoft Azure F1ams_v7 offers 1 dedicated AMD EPYC 9V45 vCPU at 4.5 GHz with 8.0 GB RAM, delivering strong single-core performance without local storage.",
+  "tagline": "Single dedicated high-clock AMD core paired with an eight-gigabyte memory footprint for efficient, non-parallelized execution and lightweight services.",
   "bullet_points": [
-    "Single dedicated AMD EPYC 9V45 core operating at 4.5 GHz",
-    "8.0 GB of system memory providing a high RAM-to-vCPU ratio",
-    "Top-tier single-core CPU and single-threaded compression performance",
-    "Premium storage capable with no local storage bundled",
-    "Suited for lightweight memory-intensive tasks and single-threaded applications"
+    "1 dedicated AMD EPYC 9V45 vCPU operating at up to 4.5 GHz on x86_64 architecture",
+    "8.0 GB RAM providing an 8:1 memory-to-core ratio with 32 MB L3 cache",
+    "Top-tier single-core performance with 41.06 GB/sec gzip and 17.92 GB/sec bzip3 decompression",
+    "Zero integrated GPUs and no local ephemeral storage included",
+    "Tailored for lightweight microservices, single-threaded workers, and basic caching tasks"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized",
+    "Memory Optimized"
   ]
 }

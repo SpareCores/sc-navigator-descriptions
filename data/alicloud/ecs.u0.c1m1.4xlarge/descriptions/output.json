@@ -1,19 +1,20 @@
 {
   "page": [
-    "Alibaba Cloud ecs.u0.c1m1.4xlarge is an x86_64 architecture server instance running on the KVM hypervisor. It features 16 dedicated physical cores with 16 vCPUs, resulting in a configuration of 1.0 thread per core. The instance is equipped with 16.0 GB of system memory, providing a resource density of 1.0 GB of RAM per core.",
-    "This instance does not include local storage, requiring external block storage solutions for data persistence. It provides a baseline network bandwidth of 3 Gbps and does not include complimentary public IPv4 addresses. A key hardware tradeoff is the absence of advanced CPU instruction sets, such as AVX, AVX512, AMX, and hardware-accelerated cryptography flags like AES, which are marked as unavailable in this configuration.",
-    "From a qualitative cost-efficiency perspective, the dedicated CPU allocation combined with a low memory-to-core ratio positions this instance for compute-heavy tasks that do not require large memory footprints or advanced vector extensions. Appropriate workloads include basic parallel processing, batch computing, lightweight web serving, and distributed compute nodes where memory requirements are minimal."
+    "Alibaba Cloud ecs.u0.c1m1.4xlarge is an x86_64 virtual instance hosted on the KVM hypervisor. It is provisioned with 16 dedicated virtual CPUs and 16.0 GB of memory, yielding a direct 1:1 vCPU-to-RAM ratio of 1.0 GB per core. The server does not contain integrated graphics processing units, local instance storage, or complimentary public IPv4 addresses, relying entirely on network-attached block storage for persistence. Network interfaces operate at a baseline throughput of 3 Gbps.",
+    "The 1:1 ratio of compute threads to memory places this instance in a highly compute-centric configuration. While standard general-purpose servers allocate 4 GB per core, this instance prioritizes thread density over working memory footprint. For parallel workloads that do not consume large memory tables, this structure avoids paying for unutilized RAM capacity. However, memory-intensive services will experience paging or out-of-memory states under full concurrency.",
+    "Appropriate deployments include multi-threaded batch compilation, video and audio transcoding, stateless microservices, distributed build workers, continuous integration nodes, and high-concurrency web proxies that maintain small per-connection memory profiles."
   ],
-  "description": "Alibaba Cloud ecs.u0.c1m1.4xlarge is an x86_64 compute instance running on the KVM hypervisor. It features 16 dedicated physical cores and 16 vCPUs, providing a strict 1:1 thread-to-core ratio. The system is configured with 16.0 GB of RAM, yielding a resource density of 1.0 GB of memory per core. This instance does not include local storage, requiring external block storage, and offers a baseline network bandwidth of 3 Gbps with zero complimentary public IPv4 addresses. Notably, advanced CPU instruction sets such as AVX, AVX512, AMX, and AES cryptography are unavailable on this hardware. This profile is designed for compute-focused workloads with low memory requirements, such as batch processing, basic parallel computing, and lightweight distributed tasks.",
-  "og_description": "Alibaba Cloud ecs.u0.c1m1.4xlarge is an x86_64 KVM instance with 16 dedicated vCPUs, 16 GB RAM, and 3 Gbps network bandwidth, designed for compute-focused workloads with low memory requirements.",
-  "meta_description": "Alibaba Cloud ecs.u0.c1m1.4xlarge is an x86_64 KVM instance featuring 16 dedicated vCPUs, 16 GB RAM, and 3 Gbps baseline network bandwidth.",
-  "tagline": "A dedicated compute instance featuring sixteen vCPUs and sixteen gigabytes of memory for low-memory parallel processing workloads.",
+  "description": "Alibaba Cloud ecs.u0.c1m1.4xlarge is a compute-focused x86_64 instance operating under the KVM hypervisor. Equipped with 16 dedicated vCPUs and 16.0 GB of system memory, it features a 1:1 CPU-to-memory allocation yielding 1.0 GB per vCPU. The instance does not feature bundled local storage or dedicated GPU acceleration, relying on network-attached disks for storage needs, with network interfaces rated at a 3 Gbps baseline. This configuration provides high multi-threaded compute density while eliminating expenditure on unneeded memory capacity. The primary tradeoff is the lean memory ceiling, which limits applicability for memory-heavy databases or caching layers. It is best suited for horizontally scaled stateless applications, continuous integration build jobs, media encoding, and computational tasks characterized by high thread counts and compact memory footprints.",
+  "og_description": "Alibaba Cloud ecs.u0.c1m1.4xlarge is a KVM-based virtual server with 16 dedicated x86_64 vCPUs, 16 GB RAM, 3 Gbps baseline network bandwidth, and network-attached storage support.",
+  "meta_description": "Alibaba Cloud ecs.u0.c1m1.4xlarge is an x86_64 instance featuring 16 dedicated vCPUs, 16 GB of RAM, and a 3 Gbps network baseline.",
+  "tagline": "A high-density compute instance with a 1:1 core-to-memory profile designed for thread-intensive workloads with modest memory requirements.",
   "bullet_points": [
-    "16 dedicated x86_64 physical cores with a 1:1 thread-to-core ratio.",
-    "16.0 GB of system memory providing 1.0 GB of RAM per core.",
-    "3 Gbps baseline network bandwidth with zero local storage.",
-    "Absence of advanced CPU extensions such as AVX, AVX512, and AES.",
-    "Designed for compute-heavy, low-memory parallel processing and batch workloads."
+    "16 dedicated x86_64 vCPUs on the KVM hypervisor",
+    "16.0 GB system memory (1.0 GB per vCPU)",
+    "3 Gbps baseline network bandwidth",
+    "No bundled local storage, requiring external block storage",
+    "Zero dedicated GPU hardware accelerators",
+    "Optimized for batch processing, build runners, and stateless workloads"
   ],
   "categories": [
     "Compute Optimized"

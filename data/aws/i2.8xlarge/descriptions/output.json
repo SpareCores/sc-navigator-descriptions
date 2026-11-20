@@ -1,23 +1,23 @@
 {
   "page": [
-    "Amazon Web Services i2.8xlarge is a storage-optimized second-generation instance built on the Xen hypervisor. It features 32 dedicated vCPUs mapped to 16 physical Intel Xeon E5-2670 v2 cores running at 2.5 GHz with hyper-threading enabled. System resources include 244.0 GB of memory (7.62 GB per vCPU), 25 MB of L3 cache, and a baseline network bandwidth of 10 Gbps. High-speed local disk capacity is provided via 6400 GB of NVMe SSD storage.",
-    "Benchmark results indicate steady multi-core computational throughput alongside high-capacity storage capability. PassMark CPU scoring reaches 29387.12, and stress-ng multi-core execution achieves 27789.21. Memory bandwidth testing demonstrates uncached read rates of 82.93 GB/sec and write rates of 37.47 GB/sec. However, single-core performance presents a limitation, as demonstrated by a Geekbench single-core score of 534.0 and single-threaded gzip compression of 20.36 GB/sec.",
-    "The instance delivers high resource density for IO-intensive processing, achieving 11.15 million Redis SET operations per second and strong PassMark database test scores of 12597.61. The high capacity of local NVMe SSD storage bundled with substantial RAM makes this platform cost-efficient for large analytical databases, data caching layers, and IOPS-heavy transactional workloads. Older CPU architecture limits its suitability for single-threaded tasks or intensive machine learning workloads."
+    "Amazon Web Services i2.8xlarge is a legacy generation, storage-optimized virtual machine provisioned on the Xen hypervisor. It is powered by the Intel Xeon E5-2670 v2 processor operating at 2.5 GHz, providing 32 vCPUs across 16 physical cores with simultaneous multithreading enabled. The instance is configured with 244.0 GB of system memory, averaging 7.62 GB per vCPU, and includes 6,400 GB of directly attached local SSD storage. Network connectivity is rated at a 10 Gbps baseline bandwidth, and no GPU hardware is present.",
+    "Benchmark results demonstrate the architectural characteristics of the underlying Ivy Bridge hardware. Single-core throughput is constrained, reflected by a Geekbench single-core score of 534.0 and single-threaded bzip3 decompression at 7.4 GB/sec, placing in the lower percentiles. In contrast, multi-threaded metrics remain competitive for general data processing, achieving a PassMark CPU score of 29,387.12, multi-core stress-ng at 27,789.21, and Redis SET throughput exceeding 11.15 million operations per second. Memory bandwidth yields 82.93 GB/sec on uncached 256 MB read blocks and 37.47 GB/sec on writes.",
+    "From a cost-efficiency perspective, the resource profile prioritizes dense local solid-state storage and memory capacity over single-thread compute efficiency. The inclusion of 6,400 GB bundled local SSD eliminates external EBS transfer latency and attached volume fees for high-IOPS applications. The trade-off is the older CPU microarchitecture lacking newer vector instruction sets like AVX-512, which diminishes suitability for modern instruction-heavy operations and large language model inference.",
+    "The i2.8xlarge instance fits I/O-intensive workloads requiring large amounts of local scratch space or fast disk access. It is appropriate for relational databases, distributed NoSQL datastores, Redis caching layers, and high-throughput data warehousing tasks."
   ],
-  "description": "Amazon Web Services i2.8xlarge is a storage-optimized instance equipped with 32 dedicated vCPUs from 16 physical Intel Xeon E5-2670 v2 cores operating at 2.5 GHz. It combines 244.0 GB of memory with 6400 GB of local NVMe SSD storage and a 10 Gbps baseline network capability. Performance benchmarks show middle-tier multi-threaded capabilities, evidenced by a 27789.21 stress-ng multi-core score and 11.15 million Redis SET operations per second. However, single-core execution is constrained, reflected in a Geekbench single-core score of 534.0 and weak single-threaded gzip compression. The server provides strong resource density for data-heavy operations where local SSD capacity and memory capacity take priority over single-core clock efficiency. It is suitable for high-throughput database systems, NoSQL datastores, static web serving, and memory-intensive caching tiers.",
-  "og_description": "Amazon Web Services i2.8xlarge features 32 vCPUs, 244.0 GB RAM, and 6400 GB NVMe SSD storage. It delivers solid database operations and cache performance for disk-bound enterprise workloads.",
-  "meta_description": "Amazon Web Services i2.8xlarge features 32 vCPUs, 244.0 GB RAM, and 6400 GB NVMe SSD storage tailored for high-throughput database and storage workloads.",
-  "tagline": "A storage-optimized instance providing high-capacity local NVMe storage and balanced memory for data-intensive databases and enterprise caching workloads.",
+  "description": "Amazon Web Services i2.8xlarge is a storage-optimized instance operating on the Xen hypervisor, powered by an Intel Xeon E5-2670 v2 processor running at 2.5 GHz. The configuration allocates 32 dedicated vCPUs from 16 physical cores, 244.0 GB of RAM, and 6,400 GB of bundled local SSD storage, backed by a 10 Gbps baseline network interface. The instance shows average multi-core processing with a PassMark CPU score of 29,387.12 and 11.15 million Redis SET operations per second, though single-core metrics like the Geekbench single-core score of 534.0 reflect older CPU silicon. The substantial integrated local SSD capacity provides high throughput for I/O-heavy applications without additional attached storage costs. This configuration is suited for large transactional databases, distributed NoSQL systems, in-memory caches, and batch ETL data processing.",
+  "og_description": "Amazon Web Services i2.8xlarge is a storage-optimized instance featuring 32 vCPUs on Intel Xeon E5-2670 v2 hardware, 244 GB of memory, and 6,400 GB of integrated local SSD storage.",
+  "meta_description": "Amazon Web Services i2.8xlarge provides 32 vCPUs, 244 GB RAM, 6,400 GB local SSD storage, and 10 Gbps network bandwidth for I/O-heavy workloads.",
+  "tagline": "Dense storage-optimized architecture delivering 32 vCPUs, 244 GB RAM, and 6,400 GB of integrated high-speed local solid-state storage.",
   "bullet_points": [
-    "32 dedicated vCPUs powered by 16 Intel Xeon E5-2670 v2 physical cores at 2.5 GHz",
-    "244.0 GB total system RAM providing 7.62 GB memory per vCPU",
-    "6400 GB local NVMe SSD storage with 10 Gbps baseline network bandwidth",
-    "Achieves 11.15 million Redis SET operations per second",
-    "Tailored for high-throughput database operations, NoSQL layers, and data caching"
+    "32 vCPUs and 16 physical cores powered by Intel Xeon E5-2670 v2 at 2.5 GHz",
+    "244.0 GB system RAM with 7.62 GB allocation per vCPU",
+    "6,400 GB bundled local SSD storage for low-latency I/O operations",
+    "10 Gbps baseline network interface throughput without accelerator GPUs",
+    "Tailored for transactional databases, NoSQL stores, and high-throughput caching"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

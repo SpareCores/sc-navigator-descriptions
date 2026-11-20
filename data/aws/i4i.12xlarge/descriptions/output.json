@@ -1,23 +1,24 @@
 {
   "page": [
-    "Amazon Web Services i4i.12xlarge is a storage-optimized server instance built on the AWS Nitro hypervisor. It features 48 vCPUs and 24 physical cores powered by an Intel Xeon 8375C processor operating at 3.5 GHz. The system includes 384.0 GB of DDR4 memory running at 3 GHz, providing 8.0 GB of RAM per physical core. Local storage is a key feature, consisting of 11,250 GB of NVMe SSD capacity. The network interface provides a baseline bandwidth of 28 Gbps.",
-    "Benchmark results place the i4i.12xlarge in the average performance tier for most standard compute and memory workloads. The instance achieved a Geekbench multi-core score of 15,700.0 and a Passmark CPU score of 48,290.74. In specialized tests, it demonstrated strong performance in image processing with 14,996.0 on Geekbench and CPU encryption with 43,100.5 on Passmark. Memory bandwidth tests recorded 161.73 GB/sec for large block read-only operations and 70.12 GB/sec for large block write operations. For database workloads, the server processed 44.86 million Redis SET operations per second and scored 20,855.81 in Passmark database operations.",
-    "While the instance excels in storage capacity and shows strong performance in encryption and image processing, it exhibits limitations in large-scale machine learning tasks. LLM inference testing with a 70B parameter model resulted in a weak performance tier, generating only 2.76 tokens per second. However, for smaller models, such as a 135M parameter model, it achieved a strong text generation speed of 298.89 tokens per second. Given the high local NVMe SSD capacity and balanced memory-to-core ratio, this server is designed for storage-intensive workloads, database operations, and data processing tasks that do not require GPU acceleration."
+    "Amazon Web Services i4i.12xlarge is an x86_64 storage-optimized instance running on the AWS Nitro hypervisor. The system is driven by an Intel Xeon 8375C processor providing 24 physical cores and 48 vCPUs with dedicated CPU allocation running at 3.5 GHz. It includes a 54 MB L3 cache, 384 GB of DDR4 memory running at 3 GHz, and 11,250 GB of local NVMe SSD storage. The network interface supports a baseline throughput of 28 Gbps. Hardware acceleration features include AVX-512 with VNNI, AES, VAES, and SHA-NI cryptographic instructions, while no discrete GPUs are present.",
+    "Benchmark results show balanced general compute capabilities with a Geekbench multi-core score of 15,700 and a PassMark CPU score of 48,290.74, placing it within the middle 50% across standard synthetic benchmarks. Cryptographic throughput stands out, achieving a PassMark CPU encryption score of 43,100.5 (top 25%), assisted by hardware acceleration instructions. Memory subsystem tests register uncached read bandwidth of 161.73 GB/sec and uncached write bandwidth of 70.12 GB/sec. In application-level benchmarks, the instance delivers 44.86 million Redis SET operations per second and a static web serving throughput of 39.68 GB/sec.",
+    "The inclusion of 11.25 TB of directly attached NVMe SSD storage provides dense local disk capacity without requiring dedicated network storage attachments, enhancing cost efficiency for high-IOPS operations. However, executing large language model generation shows clear resource limits on CPU hardware: while text generation on a 135M model reaches a strong 298.89 tokens per second, text generation on a 70B model falls to 2.76 tokens per second (bottom 25%). The instance is best suited for transactional and NoSQL databases, search engines, distributed storage nodes, and large-scale data processing that require heavy local IOPS paired with substantial RAM."
   ],
-  "description": "Amazon Web Services i4i.12xlarge is a storage-optimized server running on the Nitro hypervisor, equipped with 48 vCPUs and 24 physical cores from an Intel Xeon 8375C processor clocked at 3.5 GHz. It features 384.0 GB of DDR4 memory and a substantial 11,250 GB of local NVMe SSD storage, alongside a 28 Gbps baseline network bandwidth. Performance benchmarks indicate average tier results for general compute, with a Passmark CPU score of 48,290.74, but show strong capabilities in CPU encryption and image processing. Database operations are supported by a Redis SET throughput of 44.86 million operations per second. However, the lack of a GPU limits its utility for large-scale AI tasks, as demonstrated by a weak 2.76 tokens per second in 70B LLM text generation. This instance is best suited for large databases, storage-heavy applications, and data processing workloads.",
-  "og_description": "Amazon Web Services i4i.12xlarge is a storage-optimized server featuring 48 Intel Xeon vCPUs, 384 GB DDR4 RAM, and 11,250 GB of local NVMe SSD storage, designed for database and storage-intensive workloads.",
-  "meta_description": "Amazon Web Services i4i.12xlarge is a storage-optimized server with 48 Intel vCPUs, 384 GB RAM, and 11,250 GB of local NVMe SSD storage.",
-  "tagline": "A storage-optimized x86_64 platform featuring massive local NVMe SSD capacity and balanced memory for database and data-intensive workloads.",
+  "description": "Amazon Web Services i4i.12xlarge is a storage-optimized instance featuring 48 dedicated vCPUs from an Intel Xeon 8375C processor running at 3.5 GHz, paired with 384 GB of DDR4 RAM and 11,250 GB of local NVMe SSD storage on the Nitro hypervisor. It delivers 28 Gbps baseline network bandwidth alongside hardware cryptographic acceleration including AES, VAES, and SHA-NI. Synthetic benchmarks reflect solid mid-tier multi-core computing (PassMark CPU score of 48,290.74) and top-tier encryption execution (43,100.5). Memory bandwidth reaches 161.73 GB/sec on uncached reads, supporting high throughput workloads such as Redis, which reached 44.86 million operations per second. While unsuited for large-scale LLM parameter generation without GPUs, its bundled NVMe storage and 8:1 memory-to-core ratio make it well suited for high-transaction databases, distributed caching, and search engine infrastructure.",
+  "og_description": "Amazon Web Services i4i.12xlarge provides 48 vCPUs on Intel Xeon 8375C hardware, 384 GB DDR4 RAM, 11,250 GB local NVMe SSD storage, and 28 Gbps network throughput for IOPS-intensive workloads.",
+  "meta_description": "Amazon Web Services i4i.12xlarge features 48 vCPUs, 384 GB RAM, and 11.25 TB NVMe SSD storage, engineered for high-IOPS storage and database workloads.",
+  "tagline": "Storage-optimized compute featuring 48 dedicated vCPUs, 384 GB RAM, and 11.25 TB NVMe SSD storage for intensive data operations.",
   "bullet_points": [
-    "48 vCPUs and 24 physical cores via Intel Xeon 8375C processor at 3.5 GHz",
-    "11,250 GB of local NVMe SSD storage for high-capacity local data access",
-    "384.0 GB of DDR4 memory with 28 Gbps baseline network bandwidth",
-    "Strong performance in CPU encryption and image processing benchmarks",
-    "Suited for database operations, storage-heavy applications, and data processing",
-    "Weak performance on large-scale LLM inference due to lack of GPU acceleration"
+    "48 dedicated vCPUs (24 physical cores) via Intel Xeon 8375C at 3.5 GHz",
+    "384 GB DDR4 memory with 161.73 GB/sec uncached read bandwidth",
+    "11,250 GB of integrated high-speed local NVMe SSD storage",
+    "28 Gbps baseline network throughput on the AWS Nitro hypervisor",
+    "Hardware-accelerated encryption instructions yielding top 25% cryptography benchmark scores",
+    "Tailored for transactional databases, distributed storage, and caching clusters"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

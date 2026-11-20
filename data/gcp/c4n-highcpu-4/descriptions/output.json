@@ -1,23 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4n-highcpu-4 is a compute-optimized instance built on x86_64 architecture using a 2.3 GHz Intel Xeon 8581C processor. It provides 4 virtual CPUs derived from 2 physical cores with hyperthreading enabled, paired with 8.0 GB of system memory, giving 2.0 GB per vCPU. Hardware features include a 260 MB L3 cache, 2 MB L2 cache, and vector/matrix instructions including AVX-512 and AMX tile processing. The instance includes zero complimentary public IPv4 addresses, no integrated GPUs, and no default local storage.",
-    "Benchmark results highlight strong single-core performance alongside trade-offs in memory bandwidth. The c4n-highcpu-4 achieved top-tier Geekbench single-core scores and strong single-threaded performance in gzip compression, bzip3 decompression, and text processing. Conversely, multi-core CPU stress tests and uncached memory bandwidth read/write speeds measured in lower benchmark brackets. Software compilation via Clang and extended PassMark memory tests also recorded lower performance categories.",
-    "From a cost-efficiency and hardware density perspective, the c4n-highcpu-4 provides dedicated vCPUs with a lower memory-to-core ratio, prioritizing raw single-thread execution over high-capacity memory operations. Workloads suited for this server include static web serving, Redis caching operations, light LLM prompt processing, text processing, and single-threaded batch execution."
+    "Google Cloud Platform c4n-highcpu-4 is an entry-level compute-focused instance from the network-optimized family. It is equipped with an Intel Xeon 8581C processor built on the x86_64 architecture, configured with 4 dedicated virtual CPUs across 2 physical cores and hyper-threading enabled at a base frequency of 2.3 GHz. The instance is allocated 8.0 GB of system memory, matching a 1:2 vCPU-to-RAM ratio of 2.0 GB per vCPU. The processor supports advanced hardware instruction sets, including AVX-512 extensions (such as VNNI and BF16) and Intel Advanced Matrix Extensions (AMX). There is no onboard local storage or discrete GPU acceleration included with this instance profile.",
+    "Benchmark data reflects strong per-core performance paired with limited aggregate throughput. The server scores in the top 10% on Geekbench single-core testing (2228.0) and exhibits strong single-threaded data compression and decompression performance. Conversely, multi-threaded throughput metrics such as stress-ng multi-core and bzip3 decompression register in the bottom 25% due to the 4-vCPU ceiling. Memory bandwidth benchmarks also place in the lower tier, recording 32.55 GB/s uncached reads and 20.39 GB/s uncached writes on large memory blocks, which similarly depresses the PassMark memory score.",
+    "From an operational and resource perspective, the instance provides high single-thread execution efficiency but faces clear multi-core and memory capacity tradeoffs. With 8 GB of RAM and no bundled local storage, workloads must account for remote block storage configurations and memory footprints. The c4n-highcpu-4 is best matched for single-thread-intensive services, static web serving, network edge services, lightweight database operations, and small model LLM prompt processing."
   ],
-  "description": "Google Cloud Platform c4n-highcpu-4 is a compute-optimized instance provisioned with 4 vCPUs (2 physical cores), 8.0 GB of RAM, and no bundled local storage or GPUs. Built on a 2.3 GHz Intel Xeon 8581C processor with x86_64 architecture, it features a 260 MB L3 cache and supports instruction sets including AVX-512 and AMX. Benchmarks indicate top-tier single-core Geekbench metrics alongside strong single-threaded gzip compression and text processing throughput. Conversely, multi-threaded CPU stress tests and uncached memory bandwidth metrics land in lower performance tiers. Operating with a 2.0 GB per vCPU memory ratio, this server presents a trade-off favoring individual core execution over memory-heavy parallel compute. The c4n-highcpu-4 fits lightweight web serving, Redis caching, text processing, and single-threaded batch execution workloads.",
-  "og_description": "Google Cloud Platform c4n-highcpu-4 features 4 vCPUs on an Intel Xeon 8581C processor with 8 GB RAM. It offers strong single-core CPU speeds for text processing and web serving workloads.",
-  "meta_description": "Google Cloud Platform c4n-highcpu-4 provides 4 vCPUs, 8 GB RAM, and an Intel Xeon 8581C CPU optimized for single-threaded workloads.",
-  "tagline": "A compute-focused x86 instance offering strong single-threaded performance, 4 vCPUs, 8 GB RAM, and advanced Intel matrix extensions.",
+  "description": "Google Cloud Platform c4n-highcpu-4 is a compute-focused instance in the network-optimized series, configured with 4 dedicated vCPUs (2 physical cores) powered by an Intel Xeon 8581C x86_64 processor clocked at 2.3 GHz. The hardware profile provides 8.0 GB of RAM (2.0 GB per core) and includes support for AVX-512 and AMX instructions, but contains no discrete GPU and no local storage. Benchmark results highlight top-tier single-core performance, achieving high single-thread compression speeds and a strong single-core Geekbench score. However, its small core footprint leads to lower comparative multi-core throughput and memory bandwidth. The c4n-highcpu-4 delivers solid compute density for single-thread bound workloads, static web serving, light database tasks, and lightweight API mediation.",
+  "og_description": "Google Cloud Platform c4n-highcpu-4 is an x86_64 compute-oriented instance offering 4 dedicated vCPUs on an Intel Xeon 8581C processor and 8 GB RAM, suited for single-thread workloads and web serving.",
+  "meta_description": "Google Cloud Platform c4n-highcpu-4 provides 4 dedicated Intel Xeon 8581C vCPUs, 8 GB RAM, and top-tier single-core performance for compute workloads.",
+  "tagline": "Dedicated Intel Xeon compute configuration with top-tier single-core performance and advanced instruction support for specialized compute workloads.",
   "bullet_points": [
-    "4 vCPUs (2 physical cores) on a 2.3 GHz Intel Xeon 8581C CPU",
-    "8.0 GB system memory providing 2.0 GB per virtual core",
-    "Support for Intel AVX-512, AMX, and cryptographic instruction sets",
-    "Strong single-core execution and compression benchmark scores",
-    "No default local storage or accelerated GPU hardware",
-    "Fit for text processing, Redis caching, and web serving workloads"
+    "4 dedicated vCPUs (2 physical cores) via Intel Xeon 8581C processor",
+    "8.0 GB system RAM (compute-oriented 1:2 vCPU-to-memory ratio)",
+    "Hardware support for AVX-512, AMX-TILE, and AMX-INT8 vector instructions",
+    "Top-tier single-core Geekbench and single-threaded compression performance",
+    "Requires remote persistent storage with no local disks or GPU accelerators",
+    "Well-suited for static web serving, lightweight databases, and single-threaded tasks"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

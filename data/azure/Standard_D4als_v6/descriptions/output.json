@@ -1,21 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D4als_v6 is a virtual machine instance from the Dalv6 server family, powered by a dedicated x86_64 AMD EPYC 9V74 processor running at 3.7 GHz. Managed by the Microsoft Hyper-V hypervisor, it features 4 vCPUs across 2 physical cores with 2 threads per core, alongside 32 MB of L3 cache. The instance includes 8.0 GB of memory, equivalent to 2.0 GB per vCPU, and contains no local storage or attached GPUs.",
-    "Benchmark evaluation reveals strong single-core compute performance, highlighted by high scores in single-threaded stress-ng testing and Geekbench single-core and text processing workloads. However, multi-core operations achieve average throughput, and memory bandwidth tests show lower overall performance, particularly in uncached read tasks and PassMark memory testing. Microbenchmark results demonstrate steady handling of static web serving and Redis SET operations.",
-    "With its low memory-to-vCPU ratio and absent local storage, the D4als_v6 provides a lean compute profile focused on CPU-bound execution rather than memory-intensive or data-caching workloads. The hardware profile is cost-effective for single-threaded processing, API gateways, microservices, and light web serving, while memory-heavy tasks such as large language model inference face capacity bottlenecks."
+    "Microsoft Azure D4als_v6 is a general-purpose, low-memory virtual machine instance powered by a dedicated AMD EPYC 9V74 processor. The instance configuration exposes 4 vCPUs across 2 physical cores utilizing simultaneous multithreading at a clock speed of 3.7 GHz. The compute architecture features 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of shared L3 cache, backed by x86_64 instruction sets including AVX-512 (supporting VNNI and BF16) and cryptographic hardware acceleration via AES, VAES, and SHA-NI.",
+    "System memory is configured at 8.0 GB, resulting in a 1:2 vCPU-to-RAM ratio (2.0 GB per core). This lower memory allocation differentiates the instance from standard 1:4 general-purpose tiers. The VM includes no bundled local ephemeral storage and requires network-attached storage, although it supports Azure Premium Storage. There are no hardware GPUs or included complimentary public IPv4 addresses with this configuration.",
+    "Performance benchmarks reflect strong single-threaded CPU capabilities, scoring within the top 25% in both stress-ng single-core tests and Geekbench 6 single-core evaluations. Multi-threaded processing and general computation align with mid-tier expectations, as observed in stress-ng multi-core and PassMark CPU metrics. Conversely, memory subsystem benchmarks demonstrate lower throughput, with PassMark memory scores ranking in the bottom 10% and large-block uncached read bandwidth measuring 36.9 GB/sec. Large model inference tasks, such as 7B parameter LLM processing, show constrained execution rates due to the restricted RAM capacity.",
+    "The qualitative cost efficiency of the D4als_v6 stems from its reduced memory density, allowing compute-focused operations that do not require extensive RAM pools to avoid paying for unneeded memory capacity. Appropriate workloads include lightweight web servers, reverse proxies, CI/CD runners, text processing jobs, and microservices that prioritize clock speed and modern vector instructions over memory-heavy caches or large local datasets."
   ],
-  "description": "Microsoft Azure D4als_v6 is a compute-focused x86_64 virtual machine powered by a 3.7 GHz AMD EPYC 9V74 processor running under Microsoft Hyper-V. It provides 4 dedicated vCPUs split across 2 physical cores, 32 MB of L3 cache, and 8.0 GB of system memory, yielding a 2.0 GB per vCPU memory density. The instance includes no attached GPUs or local disk storage. Performance tests demonstrate strong single-core execution capability, particularly in single-threaded CPU benchmarks and text processing tasks. Conversely, multi-core throughput and memory bandwidth benchmarks show lower efficiency, with uncached read speeds and memory operations falling into lower percentiles. The unit delivers steady results for static web serving and key-value database operations like Redis. D4als_v6 offers a streamlined, cost-effective profile tailored for lightweight web applications, microservices, and single-thread bound processing workloads that do not require extensive RAM or local storage.",
-  "og_description": "Microsoft Azure D4als_v6 is an x86_64 virtual machine featuring 4 vCPUs from a 3.7 GHz AMD EPYC 9V74 CPU, 8 GB RAM, and zero local storage, optimized for single-threaded compute workloads.",
-  "meta_description": "Microsoft Azure D4als_v6 offers 4 vCPUs via an AMD EPYC 9V74 CPU and 8 GB RAM, delivering strong single-core performance for lightweight web serving.",
-  "tagline": "An entry compute-focused instance with dedicated AMD EPYC cores, offering strong single-threaded performance for lightweight web and microservice workloads.",
+  "description": "Microsoft Azure D4als_v6 is a general-purpose virtual machine equipped with 4 vCPUs and 8.0 GB of RAM, running on a dedicated 3.7 GHz AMD EPYC 9V74 processor. Based on the x86_64 architecture with 2 physical multithreaded cores, the instance includes AVX-512 extensions and dedicated cryptographic instruction sets. With a 1:2 vCPU-to-memory ratio, it functions as a low-memory variant without included local disk storage, relying on external Premium Storage. Benchmark results demonstrate strong single-core compute performance in stress-ng and Geekbench tests, balanced multi-core output, but weak memory subsystem bandwidth and constrained medium-scale LLM processing. Operating without attached GPUs, the D4als_v6 offers an efficient resource balance for workloads requiring compute capacity without massive RAM overhead, including static web serving, software utilities, text parsing, and lightweight microservices.",
+  "og_description": "Microsoft Azure D4als_v6 is an AMD EPYC 9V74-powered instance offering 4 vCPUs, 8.0 GB RAM, and AVX-512 support. It delivers strong single-core performance for lightweight compute and web workloads.",
+  "meta_description": "Microsoft Azure D4als_v6 features 4 vCPUs on an AMD EPYC 9V74 processor with 8.0 GB RAM, optimized for compute-focused tasks requiring minimal memory.",
+  "tagline": "A compact compute instance offering dedicated high-frequency AMD execution and vector extensions with a lean memory footprint for focused workloads.",
   "bullet_points": [
-    "Powered by 4 vCPUs on a 3.7 GHz AMD EPYC 9V74 processor",
-    "Configured with 8.0 GB memory providing 2.0 GB per vCPU",
-    "Strong single-core compute performance and text processing execution",
-    "No integrated local disk storage or GPU hardware accelerators",
-    "Suited for single-threaded jobs, static web serving, and microservices"
+    "4 dedicated vCPUs on a 3.7 GHz AMD EPYC 9V74 processor",
+    "8.0 GB system memory (1:2 vCPU-to-RAM ratio)",
+    "AVX-512 and cryptographic instruction acceleration",
+    "No bundled local storage; supports Premium Storage disks",
+    "Strong single-core compute benchmarks in Geekbench and stress-ng",
+    "Well suited for web serving, microservices, and text processing"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E48ds_v6 is an Edsv6-family memory-optimized virtual machine configured with 48 vCPUs and 384.0 GB of RAM, yielding an 8.0 GB per core ratio. Powered by an Intel Xeon 8573C x86_64 processor with 24 physical cores and a clock speed of 4.2 GHz, this server features a 260 MB L3 cache. It includes 2835 GB of local NVMe SSD storage and operates on the Microsoft Hyper-V hypervisor. The CPU architecture supports advanced vector and matrix extensions, including AVX-512 and Intel AMX for accelerated tile and integer operations.",
-    "In benchmark evaluations, the E48ds_v6 demonstrates strong performance across multiple domains. It achieves top-tier results in Geekbench image processing and strong ratings in Geekbench multi-core, ray tracing, and software compilation tests. Memory performance is characterized by high read-only bandwidth for small cached blocks, though Passmark memory scores and large-block uncached read/write bandwidth remain in the average to weak ranges. The system also shows strong throughput in Redis SET operations, static web serving, and multi-threaded bzip3 decompression.",
-    "This hardware profile is highly suited for memory-intensive workloads, database operations, and local storage-heavy tasks. The inclusion of Intel AMX instructions enables efficient CPU-based LLM inference, as evidenced by strong token generation speeds on small and medium models. However, the lack of a dedicated GPU limits its utility for heavy deep learning training. The server represents a resource-dense option for enterprise databases, caching layers, and software development pipelines that require a balance of high memory capacity and fast local NVMe storage."
+    "Microsoft Azure E48ds_v6 is a memory-optimized virtual machine built on the Microsoft Hyper-V hypervisor. The instance is powered by a dedicated 4.2 GHz Intel Xeon 8573C processor using the x86_64 architecture. It delivers 48 vCPUs sourced from 24 physical cores with two threads per core. Memory allocation stands at 384.0 GB of RAM, preserving an 8.0 GB per vCPU ratio, backed by 260 MB of L3 cache, 2 MB of L2 cache, and 48 KB of L1d cache. Accelerators such as AVX-512, AMX (Tile and INT8), and cryptographic instruction extensions are present. The instance does not include a GPU but features 2835 GB of bundled local NVMe SSD storage.",
+    "Benchmark outcomes demonstrate solid compute and high-density throughput across key domains. The E48ds_v6 achieved a PassMark CPU score of 62,531.31 and a Geekbench multi-core score of 18,086.0, both placing in the top 25%. Instruction vectorization delivers strong results, recording 68,300.48 in PassMark extended instructions and 19,707.0 in Geekbench image processing, which falls into the top 10%. Memory cached read bandwidth reached 3669.37 GB/sec, supporting fast in-memory key-value processing as reflected in 65.36 million Redis SET operations per second. However, uncached large-block write operations (69.83 GB/sec) and general PassMark memory scoring (1705.69) fall into lower percentiles, representing a tradeoff when handling extremely large, uncached working sets.",
+    "The combination of 384 GB of memory, fast local NVMe storage, and AMX-enabled vector extensions provides substantial resource density without the premium operational overhead of dedicated GPU acceleration. This profile positions the instance effectively for enterprise in-memory databases, large-scale caching tiers, Clang-based software compilation, and CPU-driven LLM inference across small-to-medium models."
   ],
-  "description": "Microsoft Azure E48ds_v6 is an Edsv6-family memory-optimized virtual machine featuring 48 vCPUs and 384.0 GB of RAM, powered by an Intel Xeon 8573C x86_64 processor running at 4.2 GHz. It includes 2835 GB of local NVMe SSD storage and runs on the Microsoft Hyper-V hypervisor. The processor supports advanced instruction sets like AVX-512 and Intel AMX. Benchmarks indicate top-tier performance in image processing, alongside strong results in software compilation, ray tracing, and Redis operations. While memory bandwidth for small cached blocks is strong, large-block uncached memory performance is average. This server is well-suited for memory-intensive databases, caching layers, and CPU-based machine learning inference workloads.",
-  "og_description": "Microsoft Azure E48ds_v6 is an Edsv6 virtual machine featuring 48 vCPUs, 384 GB RAM, and 2835 GB local NVMe SSD storage, delivering strong performance for memory-intensive databases and CPU-based inference.",
-  "meta_description": "Microsoft Azure E48ds_v6 is an Edsv6 virtual machine with 48 vCPUs, 384 GB RAM, and 2835 GB local NVMe SSD storage, optimized for memory-heavy workloads.",
-  "tagline": "A memory-optimized virtual machine featuring high-speed local NVMe storage and advanced matrix extensions for demanding database and inference workloads.",
+  "description": "Microsoft Azure E48ds_v6 is a memory-optimized virtual machine featuring 48 dedicated vCPUs from a 24-core Intel Xeon 8573C processor clocked at 4.2 GHz on the x86_64 architecture. It is equipped with 384.0 GB of RAM (8.0 GB per vCPU), 260 MB of L3 cache, and 2835 GB of local NVMe SSD storage, without GPU hardware. Benchmark results indicate top-quartile performance across Geekbench multi-core execution (18,086.0), PassMark CPU workloads (62,531.31), and Redis SET operations (65.36 million ops/sec). The presence of AVX-512 and Intel AMX matrix instructions enables efficient CPU-based inference and data processing. While uncached large-block memory writes show mid-tier rates, its high ratio of memory and bundled high-speed local disk make the E48ds_v6 well suited for in-memory databases, large distributed caches, software compilation, and analytical data workloads.",
+  "og_description": "Microsoft Azure E48ds_v6 features 48 vCPUs on an Intel Xeon 8573C, 384 GB RAM, and 2835 GB local NVMe SSD, providing high memory density and strong compute for databases and analytics.",
+  "meta_description": "Microsoft Azure E48ds_v6 delivers 48 vCPUs, 384 GB RAM, and 2835 GB local NVMe SSD storage powered by a 4.2 GHz Intel Xeon processor for memory workloads.",
+  "tagline": "Dedicated 48-vCPU memory-optimized instance with 384 GB RAM, integrated NVMe SSD storage, and advanced AMX vector processing.",
   "bullet_points": [
-    "48 vCPUs and 384.0 GB RAM providing a high 8.0 GB per core memory ratio.",
-    "2835 GB of high-speed local NVMe SSD storage for low-latency data access.",
-    "Intel Xeon 8573C processor with AVX-512 and AMX instruction support.",
-    "Strong benchmark performance in image processing, software compilation, and Redis.",
-    "Optimized for enterprise databases, caching layers, and CPU-based LLM inference."
+    "48 dedicated vCPUs powered by a 4.2 GHz Intel Xeon 8573C CPU (x86_64)",
+    "384.0 GB total system RAM providing 8.0 GB per vCPU ratio",
+    "2835 GB high-speed local NVMe SSD storage included",
+    "Intel AMX and AVX-512 hardware extensions for accelerated matrix and vector compute",
+    "Suited for large in-memory databases, high-throughput Redis caching, and CI/CD compilation"
   ],
   "categories": [
     "Memory Optimized",
     "Storage & Database",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure L8as_v4 is a storage-oriented virtual machine belonging to the Lasv4 server family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by an AMD EPYC 9V74 processor with 8 dedicated vCPUs, derived from 4 physical cores with multithreading enabled. The CPU operates at a clock speed of 3.7 GHz and is equipped with 32 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. It supports advanced instruction sets including AVX-512 vector extensions (AVX512F, AVX512_VNNI, AVX512_BF16) and hardware-accelerated cryptography (AES, VAES, SHA_NI).",
-    "This instance is provisioned with 64.0 GB of system memory, translating to 8.0 GB of RAM per core. It includes a bundled 1920 GB local NVMe SSD and is Premium Storage capable. In benchmark evaluations, the L8as_v4 demonstrates strong single-core performance, scoring in the top 25% for stress-ng single-core CPU and Geekbench single-core tests. Multi-core performance, database operations, and memory write bandwidth fall within the average range. However, uncached read memory bandwidth for large blocks (256 MB) and prompt processing for medium-sized LLM models (7B) represent performance bottlenecks, placing in the bottom 25%.",
-    "From a cost-efficiency perspective, the L8as_v4 offers a high local NVMe storage-to-compute ratio and dense memory allocation, making it a viable option for workloads requiring fast local scratch space without the overhead of external storage arrays. The server is well-suited for database operations, text processing, web serving, and general-purpose workloads that benefit from high single-core speed and local NVMe storage, though it is less optimal for memory-intensive uncached read operations or large-scale LLM inference."
+    "Microsoft Azure L8as_v4 is a storage-optimized virtual machine running on the Microsoft Hyper-V hypervisor. The instance is powered by an AMD EPYC 9V74 x86_64 processor clocked at 3.7 GHz, delivering 8 dedicated vCPUs mapped to 4 physical cores with multithreading enabled. The CPU configuration features 32 KB L1 data cache, 1.0 MB L2 cache, and 32 MB L3 cache, backed by instruction support for AVX-512 vector extensions, bfloat16, and hardware-accelerated cryptographic primitives including AES, VAES, and SHA-NI.",
+    "Hardware resource provisioning includes 64.0 GB of system memory, yielding an 8.0 GB per-vCPU ratio. Attached directly to the instance is a bundled 1920 GB local NVMe SSD for high-speed scratch space and low-latency disk operations. No hardware accelerators or GPUs are present in this profile, and no complimentary public IPv4 addresses are assigned.",
+    "Performance testing reflects strong single-core capabilities, registering a top-quartile Geekbench single-core score of 2080.0 and a stress-ng single-core rating of 3078.28. Multi-core performance aligns with expected mid-tier results for an 8-vCPU instance, achieving 8101.0 in Geekbench multi-core and 12313.93 in stress-ng. Memory bandwidth benchmarks demonstrate high throughput for cached 16 KB reads at 607.39 GB/sec, though larger uncached 256 MB reads settle in the lower quartile at 38.85 GB/sec. Application testing shows 11.75 million operations per second in Redis SET workloads and 11.61 GB/sec in static web throughput.",
+    "The qualitative cost profile favors IO-intensive operations where onboard NVMe storage eliminates external block storage latency and data transfer overheads. The balanced allocation of 64 GB RAM and local NVMe capacity positions this instance effectively for transactional databases, NoSQL data stores, caching layers, and search index nodes requiring rapid local disk access."
   ],
-  "description": "Microsoft Azure L8as_v4 is an x86_64 storage-optimized virtual machine powered by an AMD EPYC 9V74 processor running at 3.7 GHz. It features 8 dedicated vCPUs (4 physical cores), 64.0 GB of system memory, and a bundled 1920 GB local NVMe SSD. Operating on the Microsoft Hyper-V hypervisor, the instance supports AVX-512 extensions and hardware cryptography. Benchmark data highlights strong single-core CPU and text processing performance, while multi-core execution, database operations, and memory write bandwidth remain average. A notable performance tradeoff is its weak uncached large-block read memory bandwidth. Qualitatively, the server provides high local storage density relative to its compute resources. It is best suited for database workloads, text processing, and web serving applications requiring fast local NVMe storage.",
-  "og_description": "Microsoft Azure L8as_v4 is an 8-vCPU storage-optimized server featuring an AMD EPYC 9V74 processor, 64 GB RAM, and a 1920 GB local NVMe SSD, delivering strong single-core performance for database workloads.",
-  "meta_description": "Microsoft Azure L8as_v4 is an 8-vCPU server with an AMD EPYC CPU, 64 GB RAM, and 1920 GB local NVMe SSD, optimized for database and storage workloads.",
-  "tagline": "An AMD-powered virtual machine featuring dense local NVMe SSD storage and strong single-core performance for database and text processing workloads.",
+  "description": "Microsoft Azure L8as_v4 is a storage-optimized instance equipped with 8 dedicated vCPUs and 4 physical cores from an AMD EPYC 9V74 processor running at 3.7 GHz. Built on the x86_64 architecture with Microsoft Hyper-V, it provides 64.0 GB of RAM alongside an integrated 1920 GB local NVMe SSD. It contains no GPU hardware. In benchmark tests, the instance demonstrates upper-quartile single-core CPU throughput, while multi-core compute and data-processing tasks fall within mid-tier expectations. Large uncached memory read bandwidth represents a relative bottleneck compared to cached operations. With its high memory-to-core allocation and fast local disk, the instance delivers solid resource density for transactional databases, distributed key-value caches, log indexing, and I/O-bound data pipelines.",
+  "og_description": "Microsoft Azure L8as_v4 offers 8 vCPUs from an AMD EPYC 9V74 processor at 3.7 GHz, 64 GB RAM, and a bundled 1920 GB NVMe SSD, engineered for I/O-intensive storage and database workloads.",
+  "meta_description": "Microsoft Azure L8as_v4 provides 8 vCPUs on AMD EPYC 9V74 hardware, 64 GB RAM, and a bundled 1920 GB local NVMe SSD for fast data processing.",
+  "tagline": "Storage-focused computing with dedicated AMD EPYC performance, substantial system memory, and direct NVMe solid-state drive integration.",
   "bullet_points": [
-    "AMD EPYC 9V74 processor with 8 dedicated vCPUs running at 3.7 GHz",
-    "64.0 GB of system memory providing 8.0 GB of RAM per core",
-    "Bundled 1920 GB local NVMe SSD with Premium Storage capability",
-    "Strong single-core CPU and text processing benchmark performance",
-    "Average multi-core, database, and web serving throughput",
-    "Best suited for database operations, text processing, and local storage workloads"
+    "8 dedicated vCPUs (4 physical cores) via 3.7 GHz AMD EPYC 9V74",
+    "64.0 GB total system memory (8.0 GB per vCPU ratio)",
+    "Bundled 1920 GB local NVMe SSD for low-latency storage",
+    "AVX-512, bfloat16, and SHA-NI cryptographic hardware support",
+    "Suited for relational databases, NoSQL stores, and caching layers"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

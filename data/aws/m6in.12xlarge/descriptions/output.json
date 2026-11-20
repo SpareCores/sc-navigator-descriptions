@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services m6in.12xlarge is a general-purpose, network-optimized server instance powered by the AWS Nitro hypervisor. It features an Intel Xeon 8375C processor with 24 physical cores and 48 vCPUs running at a clock speed of 3.5 GHz. The architecture is x86_64, supported by 192.0 GB of DDR4 memory operating at 3 GHz, yielding a balanced 4.0 GB of RAM per vCPU. This instance does not include local storage, relying entirely on network-attached storage, but features a high baseline network bandwidth of 75 Gbps.",
-    "In benchmark evaluations, the m6in.12xlarge demonstrates solid mid-range performance across compute and memory tasks. It achieves a Geekbench multi-core score of 15823.0 and a Passmark CPU score of 48435.76. Notably, it shows strong performance in cryptographic and image processing workloads, scoring 43448.8 in the Passmark CPU encryption test and 15040.0 in Geekbench image processing, both placing in the top 25% tier. Memory bandwidth is measured at 158.1 GB/sec for large block read-only operations and 69.22 GB/sec for large block write operations.",
-    "From a resource density and cost-efficiency perspective, the instance offers a balanced hardware profile for enterprise workloads requiring high network throughput without the overhead of local NVMe drives. The high baseline network bandwidth of 75 Gbps makes it highly efficient for distributed systems. It is well-suited for workloads such as database operations, static web serving, multi-threaded decompression, and moderate language model inference, where its 48 vCPUs and 192 GB of RAM can be fully utilized."
+    "Amazon Web Services m6in.12xlarge is an x86_64 general-purpose instance optimized for high-bandwidth networking and enterprise computing workloads. Driven by the AWS Nitro hypervisor, the instance is powered by an Intel Xeon 8375C processor operating at 3.5 GHz. It provides 48 vCPUs across 24 dedicated physical cores with two threads per core. Memory capacity is 192.0 GB of DDR4 RAM running at 3 GHz, maintaining a balanced 4.0 GB per vCPU ratio. Local storage is not provided, requiring reliance on remote Elastic Block Store (EBS) volumes, but the platform features a substantial 75 Gbps baseline network bandwidth. No physical GPUs are present.",
+    "Benchmark results highlight solid performance across standard general-purpose computing tasks. In CPU metrics, the instance achieves 46,377.4 in stress-ng multi-core testing, alongside a Geekbench multi-core score of 15,823.0 and a PassMark CPU score of 48,435.76, placing it squarely in the middle 50% tier. Instruction-set acceleration provides stronger outcomes in specialized areas: the instance scores in the top 25% for PassMark CPU encryption (43,448.8) and Geekbench image processing (15,040.0), supported by hardware-level AES, VAES, and AVX-512 extensions. Memory bandwidth reaches 158.1 GB/sec for uncached large-block reads and 69.22 GB/sec for writes.",
+    "Workload evaluation shows balanced execution across distributed serving and in-memory services. The instance records 45.59 million operations per second in Redis SET operations and delivers 41.66 GB/sec in static web serving throughput. For CPU-based language model inference, it processes 91.95 prompt tokens per second and 25.02 generation tokens per second on a 7B parameter model. These metrics, combined with 75 Gbps of baseline networking, make m6in.12xlarge well positioned for high-traffic web applications, microservices backbones, clustered databases, and distributed ETL pipelines."
   ],
-  "description": "Amazon Web Services m6in.12xlarge is a general-purpose, network-optimized instance powered by the AWS Nitro hypervisor and an Intel Xeon 8375C processor. It features 48 vCPUs (24 physical cores) running at 3.5 GHz, paired with 192.0 GB of DDR4 memory. Lacking local storage, the instance relies on network-attached storage but compensates with a high baseline network bandwidth of 75 Gbps. Benchmark results indicate balanced performance, highlighted by strong results in cryptographic operations and image processing. With a 1:4 vCPU-to-RAM ratio, this instance is qualitatively cost-effective for network-heavy enterprise applications, database operations, static web serving, and multi-threaded data processing.",
-  "og_description": "Amazon Web Services m6in.12xlarge is a general-purpose instance with 48 vCPUs, 192 GB DDR4 RAM, and 75 Gbps network bandwidth, delivering strong cryptographic and image processing performance.",
-  "meta_description": "Amazon Web Services m6in.12xlarge is a general-purpose instance featuring 48 vCPUs, 192 GB RAM, and 75 Gbps network bandwidth.",
-  "tagline": "A network-optimized general purpose instance featuring forty-eight vCPUs, high-speed DDR4 memory, and seventy-five gigabits per second baseline bandwidth.",
+  "description": "Amazon Web Services m6in.12xlarge is a general-purpose, network-optimized virtual server powered by the Nitro hypervisor and an Intel Xeon 8375C processor running at 3.5 GHz. Configured with 48 vCPUs across 24 physical cores and 192.0 GB of DDR4 memory, it preserves a standard 1:4 compute-to-memory ratio. It lacks local instance storage and dedicated GPUs, depending instead on network storage while offering 75 Gbps of baseline network bandwidth. Benchmarks display steady mid-tier results in stress-ng multi-core (46,377.4) and PassMark CPU tests (48,435.76), with upper-quartile scores in encryption tests (43,448.8) backed by cryptographic and AVX-512 instructions. The server yields 45.59 million Redis SET operations per second and 41.66 GB/sec in web throughput, making it suitable for distributed caching, high-concurrency web tiers, relational databases, and ETL processing.",
+  "og_description": "Amazon Web Services m6in.12xlarge features 48 vCPUs via an Intel Xeon 8375C processor, 192 GB DDR4 RAM, and 75 Gbps baseline networking, designed for data processing and network-bound applications.",
+  "meta_description": "Amazon Web Services m6in.12xlarge is an Intel Xeon 8375C instance offering 48 vCPUs, 192 GB RAM, and 75 Gbps network bandwidth for balanced workloads.",
+  "tagline": "A 48-vCPU x86 general-purpose server delivering 192 GB RAM and high-capacity 75 Gbps network throughput for distributed systems.",
   "bullet_points": [
-    "Intel Xeon 8375C processor with 48 vCPUs and 24 physical cores",
-    "192.0 GB of DDR4 memory at 3 GHz",
-    "75 Gbps baseline network bandwidth optimized for EBS",
-    "Strong performance in cryptographic and image processing benchmarks",
-    "No local storage, relying entirely on network-attached storage",
-    "Suited for database operations, web serving, and multi-threaded workloads"
+    "Intel Xeon 8375C processor with 48 vCPUs across 24 physical cores at 3.5 GHz",
+    "192.0 GB of 3 GHz DDR4 memory providing 4.0 GB per vCPU",
+    "75 Gbps baseline network bandwidth running on the AWS Nitro hypervisor",
+    "Zero bundled local instance storage and no dedicated graphics accelerators",
+    "Hardware cryptographic extensions yielding top 25% CPU encryption scores",
+    "Suited for clustered databases, high-throughput web serving, and ETL pipelines"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

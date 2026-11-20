@@ -1,23 +1,25 @@
 {
   "page": [
-    "OVHcloud h100-380 is a GPU-accelerated server designed for intensive computational tasks. It features an AMD EPYC 9354 processor with 30 dedicated physical cores and 30 vCPUs operating at a base frequency of 3.0 GHz on the x86_64 architecture. The hardware configuration includes 380.0 GB of system memory, providing 12.67 GB of RAM per core. For acceleration, the server is equipped with a single NVIDIA H100 GPU based on the Hopper architecture, which provides 80 GB of dedicated VRAM. Local storage consists of 4040 GB of NVMe SSD capacity, and network connectivity is rated at a baseline bandwidth of 8 Gbps.",
-    "Benchmark data indicates top-tier performance in specific workloads, particularly in large language model (LLM) inference. Prompt processing and text generation speeds across small, medium, and large models consistently rank in the top 10% of tested systems. Single-core CPU performance via stress-ng also reaches the top tier. Multi-core CPU performance, cached memory bandwidth, and cryptographic operations fall within the top 25%. However, a notable hardware tradeoff is observed in uncached memory bandwidth for large blocks, where both read and write speeds rank in the bottom 25%.",
-    "From a cost-efficiency perspective, the server represents a high-density resource allocation where the integration of a premium Hopper-architecture GPU and substantial NVMe storage is balanced against the 30-core CPU profile. This configuration is optimized for workloads that heavily leverage GPU acceleration and local storage speed rather than massive CPU core counts. Appropriate workloads include LLM inference, machine learning model training, data science pipelines, and complex cryptographic processing."
+    "OVHcloud h100-380 is a cloud GPU instance built on KVM virtualization, engineered primarily for deep learning acceleration, large-scale model inference, and data-intensive compute workloads. The system is equipped with 30 dedicated physical x86_64 cores from the AMD EPYC 9354 processor running at 3.0 GHz, configured without simultaneous multithreading (1 thread per core). Memory allocation stands at 380.0 GB of system RAM, providing an ample 12.67 GB per core. The host also integrates a dedicated NVIDIA Hopper H100 accelerator offering 80 GB of high-bandwidth VRAM, 4,040 GB of local NVMe SSD storage, and an 8 Gbps baseline network bandwidth. Complementary public IPv4 addresses are not included.",
+    "Benchmark evaluations reveal top-tier execution in GPU-centric operations. In large language model inference tests across 135M, 7B, and 70B parameter models, the instance consistently scores in the top 10% for both prompt processing and token generation, processing 4,640.67 prompt tokens per second and generating 201.78 tokens per second on 7B models. On CPU-driven benchmarks, the AMD EPYC 9354 delivers strong performance with a single-core stress-ng result of 3,147.58 (top 10%) and a multi-core score of 94,563.21 (top 25%). Cache performance is robust with cached small-block read speeds reaching 4,405.2 GB/sec, alongside high Redis SET throughput of 72.92 million operations per second.",
+    "Performance tradeoffs emerge within host memory subsystem bandwidth and general CPU execution. Large-block uncached memory read and write benchmarks register in the bottom 25% at 30.58 GB/sec and 22.36 GB/sec, respectively. In addition, multi-core Geekbench ratings (14,257.0) and database operations (21,233.72) hover in the middle 50%, reflecting limits in host RAM streaming compared to pure accelerator throughput. From a cost-efficiency perspective, the server combines high hardware density by packaging a flagship datacenter GPU with extensive local NVMe capacity and dedicated EPYC cores, maximizing resource value for heavy accelerator tasks rather than pure host memory bandwidth applications.",
+    "The OVHcloud h100-380 is optimal for training and fine-tuning medium-sized machine learning models, deploying high-throughput LLM inference APIs, scientific simulation frameworks, and GPU-accelerated ETL pipelines requiring rapid local NVMe staging."
   ],
-  "description": "OVHcloud h100-380 is a GPU-accelerated server featuring an AMD EPYC 9354 processor with 30 dedicated physical cores, 380.0 GB of RAM, and a single NVIDIA H100 GPU with 80 GB of VRAM. Built on the x86_64 architecture, this KVM-based instance integrates 4040 GB of local NVMe SSD storage and an 8 Gbps network interface. Performance benchmarks highlight top-tier capabilities in LLM inference and single-core CPU execution, though uncached memory bandwidth for large blocks represents a relative bottleneck. The server delivers high resource density for workloads requiring massive parallel processing and fast local storage. It is engineered for machine learning, large language model inference, data science, and cryptographic operations.",
-  "og_description": "OVHcloud h100-380 is a GPU-accelerated server featuring 30 dedicated AMD EPYC cores, 380 GB RAM, a 4040 GB NVMe SSD, and an NVIDIA H100 GPU with 80 GB VRAM, optimized for top-tier LLM inference.",
-  "meta_description": "OVHcloud h100-380 is a GPU-accelerated server with 30 AMD EPYC cores, 380 GB RAM, a 4040 GB NVMe SSD, and an NVIDIA H100 GPU with 80 GB VRAM.",
-  "tagline": "A dedicated GPU server combining AMD EPYC processing, local NVMe storage, and NVIDIA H100 acceleration for demanding machine learning workloads.",
+  "description": "OVHcloud h100-380 is a GPU-accelerated cloud instance featuring a single NVIDIA Hopper H100 accelerator with 80 GB VRAM. The instance is powered by 30 dedicated physical cores of an AMD EPYC 9354 processor clocked at 3.0 GHz, 380 GB of system RAM, and 4,040 GB of high-speed local NVMe SSD storage over an 8 Gbps network interface. Benchmark results indicate exceptional performance in AI workloads, placing the instance in the top 10% for LLM prompt processing and token generation across small, medium, and 70B parameter models. Host compute is reinforced by strong single-thread CPU benchmarks and AVX-512 support, though uncached large-block RAM throughput remains relatively modest. The generous combination of local NVMe capacity and Hopper acceleration positions this instance effectively for high-throughput LLM inference, machine learning model training, and data-heavy scientific computing.",
+  "og_description": "OVHcloud h100-380 is a GPU instance featuring an NVIDIA Hopper H100 80 GB GPU, 30 dedicated AMD EPYC 9354 cores, 380 GB RAM, and 4,040 GB NVMe storage optimized for AI inference and training.",
+  "meta_description": "OVHcloud h100-380 provides 30 AMD EPYC cores, 380 GB RAM, 4,040 GB NVMe, and an NVIDIA Hopper H100 80 GB GPU for high-performance AI inference.",
+  "tagline": "NVIDIA Hopper H100 acceleration combined with 30 dedicated EPYC cores and 4 TB NVMe storage for demanding AI workloads.",
   "bullet_points": [
-    "NVIDIA H100 GPU with 80 GB VRAM for parallel acceleration",
-    "30 dedicated AMD EPYC 9354 cores at 3.0 GHz",
-    "380 GB system memory and 4040 GB local NVMe SSD storage",
-    "Top-tier performance in LLM inference and prompt processing",
-    "8 Gbps baseline network bandwidth with KVM virtualization"
+    "NVIDIA Hopper H100 GPU with 80 GB high-bandwidth VRAM",
+    "30 dedicated AMD EPYC 9354 physical cores at 3.0 GHz",
+    "380 GB system RAM with 12.67 GB per core allocation",
+    "4,040 GB local NVMe SSD storage and 8 Gbps network bandwidth",
+    "Top-tier performance in small, medium, and large LLM inference workloads",
+    "Well suited for AI model training, LLM serving, and GPU data pipelines"
   ],
   "categories": [
     "GPU Accelerated",
-    "Storage & Database",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Storage & Database"
   ]
 }

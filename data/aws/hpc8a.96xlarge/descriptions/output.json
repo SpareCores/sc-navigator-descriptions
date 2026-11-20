@@ -1,23 +1,23 @@
 {
   "page": [
-    "Amazon Web Services hpc8a.96xlarge is a high-performance computing instance powered by the Nitro hypervisor. It features 192 dedicated physical cores and 192 vCPUs using the x86_64 AMD EPYC 9R45 processor, operating at a clock speed of 4.5 GHz. The system is equipped with 768.0 GB of DDR5 memory running at 6 GHz, yielding 4.0 GB of RAM per core. There is no local storage or GPU hardware bundled with this instance.",
-    "Benchmark data places this instance in the top 10% for both single-core and multi-core CPU performance, as measured by stress-ng and Geekbench. Memory bandwidth is exceptionally high, reaching 38,653.15 GB/sec for cached reads and 1,067.63 GB/sec for uncached large-block reads. It also demonstrates top-tier performance in cryptographic operations, database transactions, and LLM prompt processing. However, LLM text generation speeds for 135M and 7B models fall into the average tier, and there is no local storage, meaning all storage operations rely on network-attached resources.",
-    "The instance provides a baseline network bandwidth of 300 Gbps, supporting intensive distributed workloads. Given the dedicated core allocation, high clock speed, and massive memory bandwidth, the hpc8a.96xlarge is engineered for high-performance computing (HPC) applications, large-scale scientific simulations, software compilation, and complex parallel processing tasks that do not require local NVMe storage or GPU acceleration."
+    "Amazon Web Services hpc8a.96xlarge is a high performance computing instance driven by 192 dedicated physical cores across an x86_64 AMD EPYC 9R45 processor, running up to 4.5 GHz without simultaneous multithreading. It provides 768.0 GB of DDR5 memory rated at 6 GHz, yielding 4.0 GB of RAM per core, managed via the Nitro hypervisor architecture with support for AVX-512 extensions including VNNI and BF16.",
+    "Network infrastructure delivers a baseline bandwidth of 300 Gbps, catering to tightly coupled multi-node HPC tasks. The instance does not include bundled local storage or integrated GPUs, requiring remote EBS attachments or distributed network filesystems for data persistence. Benchmark outputs position this profile in the top tier across raw multi-core compute, extensive memory read/write throughput, and software compilation benchmarks.",
+    "Single-core performance registers in the top tier on both Geekbench and stress-ng suites, complemented by substantial parallel bandwidth exceeding 1000 GB/sec for large-block memory reads. While large-scale LLM prompt processing captures top-tier throughput via instruction-level vectorization, generative token emission rates remain within the average tier due to the lack of discrete GPU hardware.",
+    "Cost efficiency scales favorably for massive parallel workloads, scientific simulations, ray tracing, and high-throughput computational batch jobs where physical core isolation and high memory frequencies offset the reliance on network storage volumes."
   ],
-  "description": "Amazon Web Services hpc8a.96xlarge is a high-performance computing instance featuring 192 dedicated physical cores on an AMD EPYC 9R45 processor running at 4.5 GHz. Built on the x86_64 architecture and managed by the Nitro hypervisor, it includes 768.0 GB of high-speed DDR5 memory but lacks local storage and GPU accelerators. The instance delivers top-tier CPU and memory bandwidth performance, ranking in the top 10% across stress-ng, Geekbench, and database benchmarks. With a baseline network bandwidth of 300 Gbps, it is highly optimized for compute-intensive workloads. The lack of local storage requires reliance on network-attached storage, representing a key architectural tradeoff. This instance is best suited for high-performance computing, scientific simulations, and parallel processing workloads.",
-  "og_description": "Amazon Web Services hpc8a.96xlarge is a high-performance computing instance with 192 dedicated AMD EPYC cores, 768 GB DDR5 RAM, and 300 Gbps network bandwidth, optimized for compute-intensive parallel workloads.",
-  "meta_description": "Amazon Web Services hpc8a.96xlarge features 192 dedicated AMD EPYC cores, 768 GB DDR5 RAM, and 300 Gbps network bandwidth for high-performance computing.",
-  "tagline": "A dedicated 192-core high-performance computing platform featuring high-speed DDR5 memory and 300 Gbps network bandwidth for intensive parallel processing.",
+  "description": "Amazon Web Services hpc8a.96xlarge is a dedicated high performance computing instance built on 192 physical cores of an AMD EPYC 9R45 processor running at 4.5 GHz with a 1:1 core-to-thread topology. Equipped with 768.0 GB of high-speed DDR5 memory (6 GHz) and baseline networking of 300 Gbps, this system targets dense compute-heavy workloads. It features AVX-512 vector support but contains no local storage and zero GPUs, relying entirely on network-attached persistence. Benchmark measurements show top-tier results in multi-core stress operations, software compilation, memory throughput, and physics calculations. While CPU-based LLM prompt processing scores in the top tier, token generation runs at average tiers without hardware accelerators. The instance delivers high resource efficiency for scientific computing, physics simulations, batch processing, and clustered HPC clusters.",
+  "og_description": "Amazon Web Services hpc8a.96xlarge delivers 192 dedicated AMD EPYC cores, 768 GB DDR5 RAM, and 300 Gbps networking. It achieves top-tier compute performance for high-throughput HPC workloads.",
+  "meta_description": "Amazon Web Services hpc8a.96xlarge features 192 dedicated AMD EPYC cores, 768 GB DDR5 memory, and 300 Gbps networking for high performance computing tasks.",
+  "tagline": "Dedicated 192-core AMD EPYC compute power paired with 768 GB DDR5 RAM and 300 Gbps network connectivity.",
   "bullet_points": [
-    "192 dedicated AMD EPYC 9R45 physical cores running at 4.5 GHz.",
-    "768.0 GB of high-speed DDR5 memory at 6 GHz.",
-    "300 Gbps baseline network bandwidth for distributed workloads.",
-    "Top-tier multi-core CPU and memory bandwidth benchmark performance.",
-    "No local storage or GPU accelerators included.",
-    "Optimized for scientific simulations and high-performance computing."
+    "192 dedicated physical AMD EPYC 9R45 cores at 4.5 GHz without SMT",
+    "768.0 GB of 6 GHz DDR5 memory (4.0 GB per core)",
+    "300 Gbps baseline networking for clustered distributed workloads",
+    "No bundled local storage or discrete GPU accelerators",
+    "Top-tier performance in multi-core compute, memory bandwidth, and compilation",
+    "Suited for scientific computing, physics modeling, and large-scale parallel simulations"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

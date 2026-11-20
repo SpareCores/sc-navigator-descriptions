@@ -1,24 +1,22 @@
 {
   "page": [
-    "Amazon Web Services d3.2xlarge is a dense storage instance powered by the Nitro hypervisor. It features an Intel Xeon 8259CL x86_64 processor running at 3.1 GHz, delivering 8 vCPUs across 4 physical cores with hyper-threading enabled. The system is equipped with 64.0 GB of DDR4 memory operating at 3 GHz, providing 8.0 GB of RAM per physical core.",
-    "A defining characteristic of the d3.2xlarge is its massive local storage capacity, offering 11,880 GB of local HDD storage. This dense storage configuration is paired with a baseline network bandwidth of 6 Gbps. No dedicated GPUs are included in this instance configuration.",
-    "Benchmark data indicates a clear performance profile. Single-core CPU performance is relatively weak, scoring in the bottom 25% on stress-ng and Geekbench tests. However, multi-core CPU performance, memory bandwidth, and database operations fall into the average range, representing the middle 50% of tested servers. This highlights a tradeoff where raw single-threaded compute is limited, but the instance maintains stable multi-threaded throughput and memory performance.",
-    "Given the massive HDD capacity and average multi-core performance, the d3.2xlarge is highly cost-efficient for storage-intensive workloads that do not require high-speed SSD IOPS. It is well-suited for large-scale data warehousing, MapReduce jobs, distributed file systems, and big data analytics where sequential disk throughput and high resource density are prioritized over raw compute speed."
+    "Amazon Web Services d3.2xlarge is a storage-optimized virtual server built on the AWS Nitro System. It is powered by an x86_64 Intel Xeon 8259CL processor operating at a clock speed of 3.1 GHz, delivering 8 dedicated vCPUs derived from 4 physical cores with multithreading enabled. The CPU cache architecture comprises 32 KB of L1 data cache, 1.0 MB of L2 cache, and a 35 MB shared L3 cache, with instruction set support including AVX and AVX-512 extensions. The server includes 64 GB of DDR4 memory running at 3 GHz, providing a ratio of 8.0 GB per vCPU. Hardware resources include 11,880 GB of attached local HDD storage, 6 Gbps baseline network bandwidth, and zero discrete GPUs.",
+    "Benchmark results demonstrate performance characteristics aligned with high-throughput sequential execution rather than burst compute. In stress-ng evaluations, the server achieves 6,744.33 on multi-core performance alongside a PassMark CPU score of 7,914.79, landing in the middle 50% band. Large-block memory bandwidth sustains 51.95 GB/sec for read operations and 41.01 GB/sec for write operations. Conversely, single-core processing is modest, evidenced by a Geekbench single-core score of 1,117.0 and single-threaded gzip compression at 22.65 GB/sec. Machine learning benchmarks reflect clear boundaries, yielding weak execution speeds for 7B parameter models due to the absence of specialized accelerators.",
+    "The qualitative efficiency profile of the d3.2xlarge is defined by its massive volume of local magnetic storage paired with stable compute capacity. By utilizing mechanical HDD media rather than expensive NVMe arrays, the platform delivers high capacity per node at lower cost per gigabyte for sequential read and write operations. The architectural tradeoff is limited random I/O performance compared to solid-state alternatives. This hardware configuration is optimal for distributed file systems such as HDFS, massive log aggregation, data warehousing staging nodes, batch ETL operations, and long-term sequential data retention pipelines."
   ],
-  "description": "Amazon Web Services d3.2xlarge is a dense storage instance designed for data-intensive workloads. Powered by the Nitro hypervisor, it features an Intel Xeon 8259CL x86_64 processor with 8 vCPUs, 4 physical cores, and 64.0 GB of DDR4 memory. The standout hardware specification is its 11,880 GB of local HDD storage, supported by a 6 Gbps baseline network bandwidth. Performance benchmarks show a tradeoff: single-core CPU capabilities are weak, placing in the bottom 25%, while multi-core performance, memory bandwidth, and database operations achieve average marks. This hardware profile makes the d3.2xlarge highly cost-efficient for sequential storage-heavy applications rather than compute-intensive tasks. It is best suited for distributed file systems, big data analytics, and large-scale data warehousing.",
-  "og_description": "Amazon Web Services d3.2xlarge is a dense storage instance featuring 8 Intel Xeon vCPUs, 64 GB RAM, and 11,880 GB of local HDD storage, optimized for large-scale data warehousing and file systems.",
-  "meta_description": "Amazon Web Services d3.2xlarge is a dense storage instance with 8 vCPUs, 64 GB RAM, and 11,880 GB of local HDD storage for big data workloads.",
-  "tagline": "A dense storage instance combining massive local HDD capacity with balanced multi-core performance for data-intensive and distributed file system workloads.",
+  "description": "Amazon Web Services d3.2xlarge is a storage-optimized virtual server powered by the Nitro hypervisor and an Intel Xeon 8259CL processor running at 3.1 GHz. The configuration supplies 8 dedicated vCPUs across 4 physical cores, 64 GB of DDR4 memory clocked at 3 GHz, and an expansive 11,880 GB array of local HDD storage. Network throughput is provisioned with a 6 Gbps baseline, and the instance operates without a discrete GPU. In standardized benchmarking, the system displays middle-tier performance across multi-core compute workloads, memory bandwidth operations, and static web serving throughput, while single-core processing and compression throughput fall into lower tiers. Providing high storage density per compute thread, the instance offers economical resource scaling for sequential data access patterns. It is tailored for large-scale distributed file systems, data lake warehousing, log aggregation, and sequential data processing pipelines.",
+  "og_description": "Amazon Web Services d3.2xlarge is a storage-optimized Nitro instance featuring 8 vCPUs on Intel Xeon 8259CL hardware, 64 GB DDR4 memory, 6 Gbps baseline networking, and 11,880 GB of dense local HDD capacity.",
+  "meta_description": "Amazon Web Services d3.2xlarge is a storage-optimized instance offering 8 vCPUs on an Intel Xeon 8259CL processor, 64 GB of DDR4 RAM, and 11,880 GB of local HDD storage.",
+  "tagline": "Dense high-capacity local magnetic storage paired with dedicated Intel Xeon compute and sixty-four gigabytes of memory for data-intensive processing.",
   "bullet_points": [
-    "8 vCPUs powered by an Intel Xeon 8259CL processor at 3.1 GHz",
-    "64.0 GB of DDR4 memory providing 8.0 GB per physical core",
-    "11,880 GB of local HDD storage for dense data capacity",
-    "6 Gbps baseline network bandwidth on the Nitro hypervisor",
-    "Average multi-core and memory bandwidth performance with weaker single-core speeds",
-    "Optimized for distributed file systems, MapReduce, and data warehousing"
+    "8 vCPUs (4 physical cores) via 3.1 GHz Intel Xeon 8259CL processor",
+    "64 GB DDR4 system memory running at 3 GHz",
+    "11,880 GB of integrated high-density local HDD storage",
+    "6 Gbps baseline network bandwidth running on AWS Nitro hypervisor",
+    "Suited for big data file systems, log processing, data lakes, and sequential storage workloads"
   ],
   "categories": [
     "Storage & Database",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

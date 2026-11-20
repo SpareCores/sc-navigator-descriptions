@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E96-48as_v5 is a memory-optimized virtual machine from the EASv5 family, running on the Microsoft Hyper-V hypervisor. It features 48 dedicated vCPUs mapped to 24 physical cores of an AMD EPYC 7763 processor, operating at a clock speed of 3.525 GHz. The server is equipped with 672.0 GB of RAM, providing a high memory density of 14.0 GB per core. It lacks local storage and dedicated GPUs, though it is Premium Storage capable.",
-    "In benchmark evaluations, the E96-48as_v5 demonstrates strong multi-core processing capabilities, scoring in the top 25% for stress-ng multi-core CPU performance, Geekbench multi-core, and PassMark CPU tests. Its memory subsystem is particularly robust, achieving a top-tier rating in the PassMark memory score, although raw memory bandwidth tests for both cached and uncached large blocks fall within the average range. Single-core performance is also solid, with stress-ng single-core results placing in the top 25%.",
-    "The server's hardware profile makes it highly cost-efficient for memory-intensive workloads that do not require local NVMe storage or GPU acceleration. It is well-suited for large-scale databases, in-memory caching, enterprise applications, and multi-threaded data processing tasks like bzip3 decompression, where it performs in the top 25%. However, it is less optimal for large-scale LLM text generation, as evidenced by its poor performance on 70B parameter models."
+    "Microsoft Azure E96-48as_v5 is a memory-optimized virtual machine utilizing a constrained core configuration. Based on Microsoft Hyper-V virtualization, the system provides 48 vCPUs derived from 24 physical cores of an AMD EPYC 7763 processor clocked at 3.525 GHz. With an x86_64 architecture supporting instruction sets like AVX, AES, VAES, and SHA-NI, it lacks support for AVX-512 extensions and AMX. The instance contains 672.0 GB of RAM, resulting in an elevated memory ratio of 14.0 GB per vCPU. Local storage is not provided, requiring reliance on external remote storage systems, and it does not include GPUs or complimentary public IPv4 addresses.",
+    "Benchmark results demonstrate strong parallel compute and memory efficiency. The instance achieved top-tier performance in the PassMark memory evaluation (3018.35) and registered strong results across multithreaded benchmarks, such as stress-ng multi-core (64770.05), Geekbench multi-core (16324.0), and PassMark CPU overall score (52700.88). Multithreaded bzip3 decompression and hardware encryption also perform in the top 25%. In contrast, single-thread performance benchmarks\u2014including Geekbench single-core (1720.0) and PassMark physics testing\u2014fall into the middle 50% category. In uncached large-block scenarios, read memory bandwidth measured 105.72 GB/sec and write bandwidth reached 58.13 GB/sec.",
+    "The constrained-core layout of this virtual machine allows workloads that are constrained by per-core software licensing to access the total 672.0 GB memory footprint of a 96-vCPU chassis while licensing only 48 vCPUs. Tradeoffs include modest large-model LLM generation speeds (2.35 tokens/sec on 70B models, falling into the bottom 10%) due to the absence of dedicated matrix accelerators or discrete GPUs. The server is well positioned for enterprise relational databases, large-scale in-memory caches, analytics engines, and data processing systems requiring high memory-per-core density."
   ],
-  "description": "Microsoft Azure E96-48as_v5 is a memory-optimized virtual machine powered by an AMD EPYC 7763 processor with 48 dedicated vCPUs and 24 physical cores running at 3.525 GHz. It features 672.0 GB of RAM, translating to 14.0 GB per core, and operates on the Microsoft Hyper-V hypervisor. The instance does not include local storage but is Premium Storage capable, and it lacks GPU accelerators. Benchmarks highlight top-tier memory performance alongside strong multi-core CPU capabilities, particularly in multi-threaded decompression and encryption tasks. Conversely, memory bandwidth and database operations perform at average levels. Given its high memory-to-vCPU ratio and strong computational foundation, this server is best suited for memory-intensive enterprise workloads, in-memory databases, and large-scale data processing applications that do not require local disk storage.",
-  "og_description": "Microsoft Azure E96-48as_v5 is a memory-optimized virtual machine featuring 48 dedicated AMD EPYC vCPUs, 672 GB of RAM, and top-tier memory performance for database and enterprise workloads.",
-  "meta_description": "Microsoft Azure E96-48as_v5 is a memory-optimized virtual machine featuring 48 dedicated AMD EPYC vCPUs, 672 GB of RAM, and top-tier memory performance.",
-  "tagline": "A memory-optimized virtual machine featuring 48 dedicated AMD EPYC cores and 672 GB of RAM for demanding enterprise workloads.",
+  "description": "Microsoft Azure E96-48as_v5 is a memory-optimized virtual machine featuring 48 vCPUs (24 physical cores) based on the AMD EPYC 7763 processor running at 3.525 GHz under Microsoft Hyper-V. The system is equipped with 672.0 GB of memory, delivering a dense 14.0 GB of RAM per vCPU. There is no bundled local storage, discrete GPU, or complimentary public IPv4 allocation. In benchmark testing, the instance achieved top-tier marks in PassMark memory performance, backed by strong multi-core processing in stress-ng and Geekbench. Because it provides the memory volume of an E96 chassis with half the active CPU count, it presents a cost-efficient architecture for database engines constrained by per-core software licensing models. It is suitable for large in-memory databases, data analytics, and high-memory caching workloads.",
+  "og_description": "Microsoft Azure E96-48as_v5 is a memory-optimized instance featuring 48 AMD EPYC 7763 vCPUs, 672.0 GB of RAM, and top-tier memory benchmark scores for memory-intensive workloads.",
+  "meta_description": "Microsoft Azure E96-48as_v5 features 48 vCPUs on AMD EPYC 7763 hardware with 672.0 GB RAM, suited for memory-intensive enterprise workloads.",
+  "tagline": "Constrained-core architecture pairing 48 AMD EPYC vCPUs with 672 GB RAM for memory-intensive, license-sensitive enterprise systems.",
   "bullet_points": [
-    "48 dedicated vCPUs powered by an AMD EPYC 7763 processor running at 3.525 GHz",
-    "672.0 GB of system memory delivering top-tier PassMark memory benchmark scores",
-    "Premium Storage capable configuration with no local storage or GPU accelerators",
-    "Strong multi-core CPU performance and multi-threaded decompression capabilities",
-    "Optimized for memory-intensive enterprise applications and in-memory databases"
+    "Powered by AMD EPYC 7763 processor with 48 vCPUs and 24 physical cores",
+    "Provides 672.0 GB total system memory (14.0 GB per vCPU)",
+    "Top-tier PassMark memory benchmark score and strong multithreaded compute",
+    "Constrained CPU configuration to optimize per-core software licensing overhead",
+    "No bundled local storage, requiring attached network volumes",
+    "Tailored for in-memory databases, caching, and enterprise analytics"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

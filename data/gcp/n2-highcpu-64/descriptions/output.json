@@ -1,21 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform n2-highcpu-64 is a compute-optimized virtual machine instance belonging to the N2 family. It features 64 vCPUs mapped to 32 physical cores of an Intel Xeon processor running at 2.8 GHz. Built on the x86_64 architecture, this instance allocates 64.0 GB of system memory, yielding a resource density of 1.0 GB of RAM per vCPU. It does not include bundled local storage or dedicated GPU hardware, and provides zero complimentary public IPv4 addresses.",
-    "Benchmark evaluations position this instance primarily in the average tier for general compute tasks, with a Passmark CPU score of 45662.19 and a multi-core Geekbench score of 12016.0. However, it exhibits strong memory bandwidth performance, achieving 211.46 GB/sec for large-block read-only operations and 92.34 GB/sec for large-block write operations. Database operations are also a strong point, scoring 22021.79 in Passmark database testing. Conversely, single-threaded performance is a relative bottleneck, as evidenced by a weak rating in single-threaded gzip compression at 23.8 GB/sec.",
-    "From a cost-efficiency perspective, the n2-highcpu-64 is structured for workloads that demand high parallel processing capabilities without the overhead of large memory footprints. The 1:1 vCPU-to-RAM ratio makes it a cost-effective choice for CPU-bound tasks where paying for excess memory is inefficient. Supported by CPU instruction sets like AVX-512 and AES cryptography, this instance is well-suited for multi-threaded decompression, software compilation, static web serving, and moderate database operations."
+    "Google Cloud Platform n2-highcpu-64 is a compute-focused instance type within the N2 family, configured with a high ratio of virtual processing cores to system memory. Built on x86_64 Intel Xeon processors running at a base clock speed of 2.8 GHz, this server delivers 64 vCPUs derived from 32 dedicated physical cores via multithreading. The CPU subsystem features a 33 MB L3 cache, 1.0 MB of L2 cache per core, and hardware instruction extensions including AVX-512F, AVX-512 VNNI, and AES-NI. It includes 64.0 GB of memory, allocating exactly 1.0 GB per vCPU. The configuration contains no local NVMe storage and no discrete GPU accelerators.",
+    "Benchmark results demonstrate solid multi-threaded performance and strong uncached memory bandwidth. Large-block uncached memory read bandwidth reaches 211.46 GB/sec and write bandwidth hits 92.34 GB/sec, placing memory throughput in the upper performance tier. PassMark database operations also place in the upper tier with a score of 22021.79. In contrast, single-thread stress-ng throughput (1411.19) and single-threaded gzip compression (23.8 GB/sec) test in the lower quartile, whereas overall multi-core compute metrics across PassMark (45662.19) and Geekbench (12016.0) perform around the median.",
+    "The 1:1 memory-to-vCPU ratio presents distinct architectural tradeoffs. The server provides substantial thread density for parallel workloads, but its constrained 64.0 GB memory envelope limits utilization for in-memory databases or dense cache stores. Consequently, the n2-highcpu-64 is best suited for horizontally scaled compute jobs, distributed build systems, Clang compilation pipelines, batch media processing, and high-concurrency microservices that require massive thread concurrency without large working memory footprints."
   ],
-  "description": "The Google Cloud Platform n2-highcpu-64 is an x86_64 compute-optimized instance featuring 64 dedicated Intel Xeon vCPUs (32 physical cores) operating at 2.8 GHz, paired with 64.0 GB of RAM. Lacking local storage and GPU accelerators, this instance is designed for highly parallel, CPU-bound workloads. Performance benchmarks place the server in the average tier for multi-core processing, with a Geekbench multi-core score of 12016.0 and a Passmark CPU score of 45662.19. However, it demonstrates strong capabilities in large-block memory bandwidth (211.46 GB/sec read) and database operations. With a lean 1.0 GB of RAM per vCPU, it offers qualitative cost efficiency for resource-dense compute tasks. It is best suited for multi-threaded software compilation, static web serving, and database workloads that do not require massive memory footprints.",
-  "og_description": "Google Cloud Platform n2-highcpu-64 is an x86_64 compute-optimized instance with 64 Intel Xeon vCPUs and 64 GB RAM, delivering strong memory bandwidth and database performance for parallel workloads.",
-  "meta_description": "Google Cloud Platform n2-highcpu-64 is a compute-optimized instance featuring 64 Intel Xeon vCPUs, 64 GB RAM, and strong memory bandwidth.",
-  "tagline": "A high-core compute instance offering balanced parallel processing and strong memory bandwidth for CPU-intensive workloads without excess memory overhead.",
+  "description": "Google Cloud Platform n2-highcpu-64 is an Intel Xeon-powered instance configured with 64 vCPUs across 32 dedicated physical cores and 64.0 GB of system memory. Operating at 2.8 GHz on the x86_64 architecture, it features AVX-512 vector support and a 33 MB L3 cache. The machine comes with no bundled local storage, no discrete GPUs, and zero complimentary public IPv4 addresses, requiring remote block storage for persistent data. Hardware benchmarks reveal strong large-block memory bandwidth exceeding 211 GB/sec for reads and robust PassMark database performance, while single-threaded processing remains modest. With an allocation of 1.0 GB of RAM per vCPU, this instance type delivers cost-effective compute density for thread-heavy applications, multi-core compilation tasks, static web serving, and parallel batch workloads that operate within lean memory boundaries.",
+  "og_description": "Google Cloud Platform n2-highcpu-64 offers 64 vCPUs, 64 GB RAM, and 2.8 GHz Intel Xeon processors. Optimized for high-thread compute tasks, batch pipelines, and parallel compilation.",
+  "meta_description": "Google Cloud Platform n2-highcpu-64 features 64 vCPUs, 64 GB RAM, and Intel Xeon cores, providing dense compute power for parallel, CPU-bound workloads.",
+  "tagline": "A high-density 64-vCPU compute instance engineered for multithreaded processing, parallel batch execution, and memory-lean distributed computational tasks.",
   "bullet_points": [
-    "64 dedicated Intel Xeon vCPUs and 64.0 GB of system memory",
-    "Strong large-block memory bandwidth and database operation performance",
-    "No bundled local storage or GPU accelerators",
-    "Equipped with AVX-512 and AES hardware acceleration flags",
-    "Optimal for multi-threaded software compilation and static web serving"
+    "64 dedicated vCPUs backed by 32 physical Intel Xeon cores at 2.8 GHz",
+    "64.0 GB total system memory (1.0 GB per vCPU allocation)",
+    "Strong uncached memory throughput with 211.46 GB/sec read bandwidth",
+    "Hardware vector acceleration via AVX-512F and AVX-512 VNNI",
+    "No bundled local storage or attached GPU accelerators",
+    "Best suited for code compilation, CI/CD runners, and parallel batch processing"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

@@ -1,22 +1,21 @@
 {
   "page": [
-    "Microsoft Azure DC4es_v6 is a virtual machine instance belonging to the DCEV6 server family. It is built on the x86_64 CPU architecture and features 4 dedicated vCPUs powered by an Intel processor. The instance is configured with 16.0 GB of system memory, yielding an allocation of 4.0 GB of RAM per core. It operates under the Microsoft Hyper-V hypervisor.",
-    "This instance does not include any local storage, meaning it relies entirely on external storage solutions, though it is designated as Premium Storage capable. There are no integrated GPUs present on this server, and it comes with zero complimentary public IPv4 addresses.",
-    "From a qualitative cost-efficiency perspective, the DC4es_v6 offers a dedicated hardware profile suitable for workloads requiring consistent CPU performance without the overhead of local storage. Given its 4 vCPUs and 16.0 GB of memory, this instance is positioned for general-purpose workloads, small-scale databases, and memory-conscious applications that utilize network-attached Premium Storage."
+    "Microsoft Azure DC4es_v6 is a general-purpose virtual machine based on the x86_64 architecture, operating under the Microsoft Hyper-V hypervisor. The instance is powered by a dedicated Intel Xeon TDX processor operating at 4.2 GHz, providing 4 vCPUs across 2 physical cores with hyperthreading enabled. It includes 16.0 GB of system memory, matching a standard 1:4 vCPU-to-memory ratio (4.0 GB per core). The processor features a 260 MB L3 cache alongside support for modern vector and matrix acceleration instructions, including AVX-512, Intel AMX (tile and int8), and cryptographic instruction sets such as AES, VAES, and SHA_NI. The server does not bundle local disk storage or discrete GPUs, requiring external storage attachments.",
+    "Benchmark results demonstrate strong single-core performance, led by a Geekbench single-core score of 1949.0, placing it in the upper quartile due to its 4.2 GHz clock speed and updated core architecture. Conversely, multi-threaded throughput is restricted by the 2-core, 4-thread execution envelope, resulting in lower-tier results in multi-core stress-ng (3933.18) and Geekbench multi-core (4364.0), as well as software compilation tests. Mixed workloads such as text processing, image processing, and PassMark database operations land in the mid-range performance tier. Redis SET throughput registers at 5.19 million operations per second.",
+    "From an infrastructure perspective, DC4es_v6 delivers solid per-thread performance and advanced instruction acceleration, though overall throughput is inherently limited by core density. Because local storage is absent, overall operational overhead must account for network-attached storage dependencies. This hardware profile is best matched with entry to mid-tier general-purpose enterprise applications, containerized microservices, light caching layers, and database workloads that rely more on single-thread frequency and memory consistency than wide parallel scaling."
   ],
-  "description": "Microsoft Azure DC4es_v6 is an x86_64 virtual machine from the DCEV6 server family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated Intel vCPUs and 16.0 GB of system memory, providing 4.0 GB of RAM per core. The instance does not include local storage but is Premium Storage capable, allowing users to attach high-performance external drives. It contains no GPUs and offers zero complimentary public IPv4 addresses. Positioned as a memory-optimized option within its family despite its balanced 1:4 vCPU-to-RAM ratio, this server is designed for workloads requiring dedicated compute resources without local storage dependencies. It is suited for database hosting, general-purpose applications, and lightweight enterprise workloads.",
-  "og_description": "Microsoft Azure DC4es_v6 is a DCEV6 family virtual machine featuring 4 dedicated Intel vCPUs, 16.0 GB of RAM, and Premium Storage capability under the Microsoft Hyper-V hypervisor.",
-  "meta_description": "Microsoft Azure DC4es_v6 is a DCEV6 virtual machine with 4 dedicated Intel vCPUs, 16.0 GB RAM, and Premium Storage capability.",
-  "tagline": "A dedicated four-core Intel virtual machine featuring sixteen gigabytes of memory and premium external storage compatibility.",
+  "description": "Microsoft Azure DC4es_v6 is a general-purpose virtual machine running on Microsoft Hyper-V, equipped with a dedicated 4.2 GHz Intel Xeon TDX processor featuring 4 vCPUs across 2 physical cores. It provides 16.0 GB of memory, maintaining a balanced 1:4 vCPU-to-RAM ratio, backed by 260 MB of L3 cache and support for AVX-512, AMX, and hardware cryptography instructions. The instance includes no integrated local storage or discrete GPU acceleration, requiring network-attached storage solutions. Benchmark measurements demonstrate strong single-core performance in Geekbench, offset by lower multi-threaded throughput due to the four-vCPU limit in high-concurrency tasks. Memory performance and database operations consistently fall into median brackets. The DC4es_v6 is suitable for general application hosting, lightweight database workloads, microservices, and intermediate compute tasks requiring modern instruction sets.",
+  "og_description": "Microsoft Azure DC4es_v6 offers 4 vCPUs from a 4.2 GHz Intel Xeon TDX processor, 16 GB RAM, and AVX-512/AMX extensions. It provides strong single-thread speed for general-purpose cloud workloads.",
+  "meta_description": "Microsoft Azure DC4es_v6 features 4 vCPUs, 16 GB RAM, and a 4.2 GHz Intel Xeon TDX CPU, delivering reliable general-purpose cloud computing.",
+  "tagline": "Balanced four-vCPU computing featuring 4.2 GHz Intel Xeon architecture, advanced matrix acceleration, and sixteen gigabytes of system memory.",
   "bullet_points": [
-    "4 dedicated Intel vCPUs on x86_64 architecture",
-    "16.0 GB of system memory providing 4.0 GB per core",
-    "Premium Storage capable with no local storage included",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Suitable for small databases and general-purpose workloads"
+    "Dedicated 4.2 GHz Intel Xeon TDX processor with 4 vCPUs (2 physical cores)",
+    "16.0 GB system memory providing a balanced 1:4 vCPU-to-RAM ratio",
+    "Hardware vector and matrix extensions including AVX-512 and AMX",
+    "Zero integrated local storage and no bundled GPU hardware",
+    "Optimized for microservices, application backends, and light databases"
   ],
   "categories": [
-    "Memory Optimized",
     "General Purpose"
   ]
 }

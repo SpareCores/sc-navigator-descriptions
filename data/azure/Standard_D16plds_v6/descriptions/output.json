@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D16plds_v6 is an ARM-based virtual machine powered by a Microsoft Neoverse-N2 processor. Operating on the Microsoft Hyper-V hypervisor, this server features 16 dedicated physical cores and 16 vCPUs running at 3.4 GHz, with a single thread per core. The memory configuration is 32.0 GB of RAM, yielding a low memory-to-core ratio of 2.0 GB per core. It includes a bundled 945 GB local NVMe SSD and supports Premium Storage.",
-    "Benchmark results show strong memory performance, with large-block read-only memory bandwidth reaching 307.54 GB/sec and write bandwidth at 124.58 GB/sec, both placing in the top 25% tier. Single-threaded gzip compression is also highly efficient at 33.08 GB/sec. Standard CPU benchmarks, such as stress-ng multi-core (33160.55) and Geekbench multi-core (14736.0), fall within the average range. Large-model LLM prompt processing is a relative bottleneck, registering in the bottom 25% at 24.62 tokens/sec, though small-model text generation remains strong at 263.31 tokens/sec.",
-    "The ARM64 architecture combined with a low memory-to-core ratio provides a cost-efficient profile for workloads that prioritize raw integer compute and local storage speed over large memory footprints. The bundled 945 GB NVMe SSD makes it suitable for local caching, web serving, and lightweight database operations. This instance is well-suited for software compilation, static web serving, and containerized microservices that benefit from dedicated physical cores without hyperthreading overhead."
+    "Microsoft Azure D16plds_v6 is an ARM-based virtual machine powered by 16 physical cores of the Microsoft ARM Neoverse-N2 architecture operating at 3.4 GHz on the Microsoft Hyper-V hypervisor. The instance allocates 16 dedicated vCPUs with a single thread per core and features an L3 cache capacity of 128 MB. System memory is sized at 32.0 GB, establishing a 2.0 GB per core allocation. Local ephemeral storage is integrated directly via a 945 GB NVMe solid-state drive. Hardware acceleration via discrete GPU is not present on this server type.",
+    "Benchmark testing indicates distinct strengths in memory subsystem throughput. The instance achieves top-quartile performance in large-block uncached memory read bandwidth at 307.54 GB/sec and memory write bandwidth at 124.58 GB/sec, corroborated by a strong PassMark memory score of 2945.61. Single-threaded gzip compression is also upper-quartile at 33.08 GB/sec. General multi-core processing lands within the middle 50% band, with a Geekbench multi-core score of 14736.0 and a PassMark CPU score of 14693.2. Machine learning inference performance varies, delivering strong output on small 135M parameter models (263.31 tokens/sec text generation) but lower-quartile performance for 7B parameter prompt processing at 24.62 tokens/sec.",
+    "The 1:2 vCPU-to-memory ratio provides a resource configuration suited for workloads where CPU processing density and fast storage access take precedence over vast memory footprints. The bundled 945 GB local NVMe SSD eliminates network storage latency for scratch space and temporary file manipulation. Workload profiles that align with this architectural profile include software compilation pipelines, code testing, batch compression, intermediate ETL processing, and stateless web application serving."
   ],
-  "description": "Microsoft Azure D16plds_v6 is an ARM64-based virtual machine featuring a 16-core Microsoft Neoverse-N2 processor running at 3.4 GHz with dedicated CPU allocation and no hyperthreading. It is configured with 32.0 GB of RAM, establishing a compute-focused 2.0 GB per core ratio, and includes a bundled 945 GB local NVMe SSD. Benchmark data indicates strong memory bandwidth performance, with large-block read speeds reaching 307.54 GB/sec, alongside average multi-core CPU performance. The server lacks GPU acceleration and is optimized for workloads requiring high-speed local storage and dedicated physical cores without massive memory requirements. It is best suited for tasks such as software compilation, static web serving, and lightweight database operations.",
-  "og_description": "Microsoft Azure D16plds_v6 is an ARM64 virtual server featuring 16 dedicated Neoverse-N2 cores, 32 GB of RAM, and a 945 GB local NVMe SSD, optimized for compute-heavy workloads requiring fast local storage.",
-  "meta_description": "Microsoft Azure D16plds_v6 is an ARM64 virtual server with 16 dedicated cores, 32 GB RAM, and a 945 GB local NVMe SSD for compute-focused workloads.",
-  "tagline": "An ARM64 compute-focused virtual server featuring sixteen dedicated cores, low memory density, and high-speed local NVMe SSD storage.",
+  "description": "Microsoft Azure D16plds_v6 is an ARM64 cloud instance equipped with 16 dedicated Microsoft ARM Neoverse-N2 physical cores running at 3.4 GHz under Microsoft Hyper-V. Configured with a 1:2 vCPU-to-memory ratio, the system supplies 32.0 GB of RAM alongside 945 GB of bundled local NVMe SSD storage, operating without discrete GPU accelerators. Synthetic benchmarks reflect upper-quartile memory subsystem throughput, producing 307.54 GB/sec in uncached read bandwidth and fast single-threaded gzip compression at 33.08 GB/sec, while CPU compute metrics like Geekbench multi-core (14736.0) perform in the median range. By pairing 16 dedicated ARM cores with fast ephemeral NVMe disk space and reduced memory overhead, the instance delivers balanced cost efficiency for compute-centric workloads that require high local disk IOPS, including CI/CD build environments, batch data compression, and intermediate ETL stages.",
+  "og_description": "Microsoft Azure D16plds_v6 is an ARM64 cloud server featuring 16 Neoverse-N2 cores at 3.4 GHz, 32 GB memory, and 945 GB local NVMe SSD storage, delivering strong memory throughput for compute-bound tasks.",
+  "meta_description": "Microsoft Azure D16plds_v6 is an ARM64 server with 16 Neoverse-N2 cores at 3.4 GHz, 32 GB RAM, and 945 GB local NVMe SSD storage for compute workloads.",
+  "tagline": "ARM-driven 16-core configuration pairing high-speed memory bandwidth with local NVMe SSD storage for compute-dense workloads.",
   "bullet_points": [
-    "ARM64 architecture with 16 dedicated Microsoft Neoverse-N2 cores at 3.4 GHz",
-    "32.0 GB RAM providing a compute-optimized 2.0 GB per core ratio",
-    "Bundled 945 GB local NVMe SSD for high-speed temporary storage",
-    "Strong memory bandwidth performance exceeding 307 GB/sec for large block reads",
-    "Suited for software compilation, static web serving, and lightweight databases"
+    "16 dedicated ARM Neoverse-N2 cores clocked at 3.4 GHz",
+    "32.0 GB system RAM with 2.0 GB per vCPU density",
+    "Bundled 945 GB direct-attached NVMe SSD local storage",
+    "High uncached memory read bandwidth exceeding 307 GB/sec",
+    "Tailored for software compilation, batch processing, and CI/CD pipelines"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

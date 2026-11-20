@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E96as_v7 is a memory-optimized virtual machine belonging to the Easv7 server family. It is powered by an AMD EPYC 9V45 x86_64 processor with 48 physical cores and 96 vCPUs running at a clock speed of 4.5 GHz. The system features a dedicated CPU allocation with hyper-threading enabled, supported by 768.0 GB of RAM, which yields a high memory-to-vCPU ratio of 8.0 GB per core. There is no integrated GPU or local storage bundled with this instance, though it is Premium Storage capable.",
-    "Benchmark data places the E96as_v7 in the top 10% for both single-core and multi-core CPU performance, as demonstrated by stress-ng and Geekbench metrics. Memory bandwidth is highly efficient, with small-block read-only and large-block write operations scoring in the top tier. Database operations and memory-bound tasks perform exceptionally well, with Redis SET operations reaching 139.15 million operations per second. However, while small and medium LLM inference speeds rank in the top tier, prompt processing for large 70B models drops to average tier performance, representing a notable tradeoff for large-scale AI workloads.",
-    "From a cost-efficiency perspective, the high density of memory relative to vCPUs provides a balanced resource profile for memory-intensive workloads without the overhead of dedicated GPU hardware. This makes the server suitable for large-scale database operations, in-memory caching, software compilation, and medium-scale language model inference. The lack of local storage requires external storage attachments, which should be factored into the overall infrastructure design."
+    "Microsoft Azure E96as_v7 is a memory-optimized virtual machine built on Microsoft Hyper-V. The system is powered by an x86_64 AMD EPYC 9V45 processor clocked at up to 4.5 GHz, delivering 96 dedicated vCPUs across 48 physical cores with simultaneous multithreading. It features 768.0 GB of system memory, maintaining an 8.0 GB RAM-to-vCPU ratio. Cache architecture consists of 48 KB L1 data cache, 1.0 MB L2 cache, and 32 MB L3 cache. Instruction set extensions include AVX-512 (f, vnni, bf16), AVX-VNNI, AES, VAES, and SHA_NI. The instance does not include integrated GPUs or bundled local storage, requiring network-attached remote block storage for persistence.",
+    "Benchmark measurements place the E96as_v7 in the top tier across raw compute, memory throughput, and concurrent transaction benchmarks. In synthetic CPU assessments, the instance achieved 176,297.7 on stress-ng multi-core and 28,020.0 in Geekbench multi-core. Cryptographic and vector extension workloads show high execution efficiency, supported by a PassMark CPU encryption score of 116,018.29. Large-block uncached read and write memory throughput reached 301.73 GB/sec and 174.51 GB/sec respectively, enabling in-memory transaction performance of 139.15 million Redis SET operations per second and 39,178.7 in PassMark database operations.",
+    "CPU-based machine learning inference benchmarks reflect balanced performance across small to medium parameter models, achieving 5,521.78 prompt tokens per second on a 135M model and 56.72 generation tokens per second on a 7B model. Larger 70B parameter models show mid-tier prompt processing speeds due to the absence of hardware accelerators. Given the memory density and compute profile, the instance provides high compute density per gigabyte of memory, though architectures requiring high-throughput, low-latency disk operations must factor in reliance on external storage networks.",
+    "The Azure E96as_v7 is well suited for memory-intensive enterprise workloads, including large-scale in-memory databases, distributed caches, real-time analytics platforms, large compilations, and enterprise resource planning systems."
   ],
-  "description": "Microsoft Azure E96as_v7 is a memory-optimized virtual machine from the Easv7 family, featuring 96 vCPUs and 48 physical cores powered by an AMD EPYC 9V45 x86_64 processor running at 4.5 GHz. It is equipped with 768.0 GB of RAM, providing a high 8.0 GB per core ratio, but lacks bundled local storage and GPU hardware. In benchmark testing, the instance delivers top-tier performance in CPU execution, memory bandwidth, and database operations, with Redis SET operations exceeding 139 million per second. While small and medium LLM inference tasks perform in the top tier, prompt processing for large 70B models falls to average levels. This server is designed for memory-intensive workloads, including large databases, in-memory caching, and software compilation, offering high resource density for enterprise applications.",
-  "og_description": "Microsoft Azure E96as_v7 is a memory-optimized server with 96 vCPUs, 768 GB RAM, and an AMD EPYC 9V45 processor, delivering top-tier database and multi-core CPU benchmark performance.",
-  "meta_description": "Microsoft Azure E96as_v7 is a memory-optimized VM featuring 96 vCPUs, 768 GB RAM, and an AMD EPYC CPU, built for demanding database workloads.",
-  "tagline": "A memory-optimized virtual machine featuring ninety-six vCPUs and high-density RAM for demanding database and enterprise workloads.",
+  "description": "Microsoft Azure E96as_v7 is a memory-optimized cloud server driven by a 4.5 GHz AMD EPYC 9V45 processor with 96 vCPUs (48 physical cores) and 768.0 GB of RAM. Operating on the Microsoft Hyper-V platform, it features an 8:1 memory-to-vCPU ratio, advanced instruction sets like AVX-512 and VAES, and no local disk storage or hardware accelerators. Benchmark results demonstrate top-tier multi-threaded processing, high uncached memory bandwidth exceeding 300 GB/sec on reads, and high in-memory transactional capability, recording 139.15 million Redis SET operations per second. While 70B LLM inference reveals CPU-bound limits, small and medium model inferencing remains capable. Lacking local storage, it relies on network volumes, making it suitable for in-memory databases, large cache tiers, and large data analytics.",
+  "og_description": "Microsoft Azure E96as_v7 is a memory-optimized VM featuring 96 vCPUs on an AMD EPYC 9V45 processor, 768 GB of RAM, and top-tier multi-core and in-memory transactional performance.",
+  "meta_description": "Microsoft Azure E96as_v7 features 96 vCPUs via AMD EPYC 9V45 processors and 768 GB RAM, optimized for memory-heavy enterprise databases and caches.",
+  "tagline": "A high-capacity memory-optimized server with 96 AMD EPYC vCPUs and 768 GB RAM for enterprise data processing.",
   "bullet_points": [
-    "Powered by an AMD EPYC 9V45 processor with 96 vCPUs and 48 physical cores.",
-    "Equipped with 768.0 GB of RAM, providing 8.0 GB of memory per core.",
-    "Top-tier performance in multi-core CPU benchmarks and database operations.",
-    "No bundled local storage or GPU hardware included.",
-    "Average-tier prompt processing performance for large 70B LLM models.",
-    "Designed for in-memory caching, large databases, and software compilation."
+    "96 dedicated vCPUs (48 cores) via 4.5 GHz AMD EPYC 9V45 processor",
+    "768.0 GB system memory providing an 8.0 GB per vCPU ratio",
+    "AVX-512, AVX-VNNI, and cryptographic acceleration support",
+    "Top-tier memory bandwidth and in-memory Redis transactional throughput",
+    "Stateless compute profile requiring network storage and zero bundled GPUs",
+    "Designed for in-memory databases, distributed caching, and real-time analytics"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

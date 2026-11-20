@@ -1,22 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.r9ae.xlarge is a memory-optimized virtual machine instance powered by the KVM hypervisor. It features 4 dedicated vCPUs based on the x86_64 architecture, utilizing AMD EPYC 9T95 processors operating at a base frequency of 2.25 GHz. The instance is configured with 32.0 GB of system memory, providing a high memory-to-core ratio of 8.0 GB per vCPU.",
-    "This instance does not include local storage or integrated GPU hardware, meaning all storage requirements must be met through network-attached block storage. It provides a baseline network bandwidth of 4 Gbps. The dedicated CPU allocation ensures that the 4 vCPUs deliver consistent compute performance without resource contention from other tenants on the host.",
-    "Given its high memory density of 8.0 GB per vCPU, the ecs.r9ae.xlarge is designed for memory-intensive workloads. It is suitable for hosting medium-sized databases, caching layers, enterprise applications, and memory-bound data processing tasks that do not require local NVMe storage or GPU acceleration."
+    "Alibaba Cloud ecs.r9ae.xlarge is a memory-optimized virtual machine instance deployed on the KVM hypervisor. It is powered by the x86_64 AMD EPYC 9T95 processor running at a clock speed of 2.25 GHz. The configuration includes 4 dedicated vCPUs paired with 32.0 GB of system memory, establishing a 1:8 compute-to-memory ratio with 8.0 GB of RAM allocated per virtual core. The instance includes no GPU acceleration and does not bundle local disk storage, necessitating the attachment of external block storage for persistent root and application volumes. Network connectivity provides a baseline throughput of 4 Gbps, with zero complimentary public IPv4 addresses assigned by default.",
+    "Architecturally, the high memory density per core targets processes constrained by system memory capacity rather than raw compute cycles. With 4 dedicated vCPUs handling 32 GB of memory, the instance avoids over-provisioning compute capacity merely to satisfy memory requirements. However, the lack of integrated NVMe or local disk storage introduces dependencies on network storage latency and input/output throughput. System throughput is also governed by the 4 Gbps baseline network allocation, which serves both network storage traffic and general communication. From a cost-efficiency perspective, the 8 GB per vCPU ratio prevents paying for unused processing cores in memory-heavy software deployments.",
+    "The hardware profile fits medium-scale in-memory caching solutions, enterprise relational and NoSQL databases, memory-centric middleware, and intermediate data processing pipelines. It is particularly applicable for workloads such as Redis or Memcached instances, enterprise messaging brokers, and analytics jobs where working data sets reside in RAM, while baseline compute and network resources remain modest."
   ],
-  "description": "Alibaba Cloud ecs.r9ae.xlarge is a memory-optimized virtual machine instance running on the KVM hypervisor. It features 4 dedicated x86_64 vCPUs powered by AMD EPYC 9T95 processors running at 2.25 GHz. The instance is equipped with 32.0 GB of RAM, establishing a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or GPU resources, relying instead on network-attached storage and offering a baseline network bandwidth of 4 Gbps. With its dedicated CPU allocation, this instance provides stable and predictable performance. It is designed for memory-intensive workloads such as caching layers, relational databases, and enterprise applications that require a larger memory footprint relative to compute capacity.",
-  "og_description": "Alibaba Cloud ecs.r9ae.xlarge is a memory-optimized instance featuring 4 dedicated AMD EPYC vCPUs, 32 GB of RAM, and 4 Gbps network bandwidth, designed for memory-intensive enterprise workloads.",
-  "meta_description": "Alibaba Cloud ecs.r9ae.xlarge is a memory-optimized instance with 4 dedicated AMD EPYC vCPUs, 32 GB RAM, and 4 Gbps network bandwidth.",
-  "tagline": "A memory-optimized virtual server featuring dedicated AMD EPYC processors and a high memory-to-vCPU ratio for memory-intensive workloads.",
+  "description": "Alibaba Cloud ecs.r9ae.xlarge is a memory-optimized virtual instance built on the KVM hypervisor and powered by an AMD EPYC 9T95 processor running at 2.25 GHz. Operating on the x86_64 architecture, it delivers 4 dedicated vCPUs and 32.0 GB of system RAM, maintaining an 8.0 GB per vCPU allocation. The hardware profile lacks bundled local storage and GPU accelerators, utilizing remote block storage for operating system and data requirements alongside a 4 Gbps baseline network bandwidth. Without complimentary public IPv4 addresses, external routing requires dedicated configuration. The substantial RAM allocation relative to compute resources makes the instance cost-efficient for memory-bound tasks without requiring expenditure on unneeded processing capacity. It is well suited for medium-sized in-memory databases, Redis caches, messaging brokers, and memory-intensive enterprise middleware where memory capacity takes precedence over massive CPU parallelism.",
+  "og_description": "Alibaba Cloud ecs.r9ae.xlarge is a memory-optimized virtual machine featuring 4 dedicated AMD EPYC 9T95 vCPUs, 32 GB of RAM, a 4 Gbps baseline network, and support for external block storage.",
+  "meta_description": "Alibaba Cloud ecs.r9ae.xlarge is a memory-optimized instance featuring 4 dedicated AMD EPYC 9T95 vCPUs, 32 GB RAM, 4 Gbps baseline networking, and network block storage.",
+  "tagline": "Memory-optimized x86 virtual server delivering an eight-to-one memory-to-vCPU ratio with dedicated processing cores for data-intensive enterprise workloads.",
   "bullet_points": [
-    "4 dedicated AMD EPYC 9T95 vCPUs running at 2.25 GHz",
-    "32.0 GB of system memory providing 8.0 GB per vCPU",
-    "4 Gbps baseline network bandwidth",
-    "No local storage or GPU accelerators included",
-    "Suitable for databases, caching layers, and memory-bound applications"
+    "4 dedicated x86_64 vCPUs powered by an AMD EPYC 9T95 processor at 2.25 GHz",
+    "32.0 GB system RAM providing an 8:1 memory-to-core ratio (8.0 GB per vCPU)",
+    "4 Gbps baseline network bandwidth on KVM hypervisor",
+    "Zero integrated local storage, requiring network-attached block volumes",
+    "Suited for in-memory databases, caching layers, and memory-bound enterprise applications"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

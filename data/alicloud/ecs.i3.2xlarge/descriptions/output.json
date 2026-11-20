@@ -1,24 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.i3.2xlarge is an x86_64 architecture server powered by an Intel Xeon 8269CY processor running at 2.5 GHz. It features 8 dedicated vCPUs derived from 4 physical cores with hyper-threading enabled. The system is equipped with 64.0 GB of system memory, providing 8.0 GB of RAM per core, and includes 1919 GB of bundled local SSD storage. Network connectivity is supported by a baseline bandwidth of 3 Gbps.",
-    "Benchmark evaluations indicate average performance across most multi-core and memory operations. The server achieves average ratings in Geekbench multi-core, Passmark CPU, and multi-threaded decompression tests. Single-core performance is relatively weak, as shown by stress-ng single-core and single-threaded gzip compression benchmarks. Memory bandwidth remains stable in the average tier for both cached small-block reads and uncached large-block read and write operations.",
-    "From a qualitative cost-efficiency perspective, the ecs.i3.2xlarge offers high storage density by bundling nearly 2 TB of local SSD storage with a moderate compute and memory profile. This makes it highly resource-dense for storage-intensive applications, though users should note the tradeoff of lower single-core CPU performance and poor results in complex tasks like medium-sized LLM inference.",
-    "This hardware profile is well-suited for database hosting, Redis caching layers, static web serving, and general-purpose storage-heavy applications. It is less optimal for compute-bound tasks or large-scale machine learning inference."
+    "Alibaba Cloud ecs.i3.2xlarge is an instance within the Local SSDs family designed for I/O-intensive workloads requiring direct local storage paired with dedicated compute resources. It operates on an Intel Xeon 8269CY processor clocked at 2.5 GHz using the x86_64 architecture under the KVM hypervisor. The instance is configured with 8 dedicated vCPUs mapped to 4 physical cores with 2 threads per core, accompanied by 32 KB L1 data cache, 1.0 MB L2 cache, and 35 MB L3 cache. It includes instruction set extensions including AVX, AVX-512, and AVX512_VNNI.",
+    "Memory and storage configuration consists of 64.0 GB of RAM, offering an 8:1 memory-to-vCPU ratio. Attached storage comprises a dedicated 1919 GB local SSD, providing high-capacity local disk space without relying on external volumes. Network throughput is provisioned with a 3 Gbps baseline bandwidth, and the instance does not feature an integrated GPU accelerator or complimentary public IPv4 addresses.",
+    "Benchmark testing shows consistent mid-tier performance across general compute and memory tasks. The instance achieved an average Geekbench multi-core score of 4514.0 and a single-core score of 1185.0, alongside a PassMark CPU score of 8306.29. In database and caching workloads, it demonstrated 2867.75 database operations in PassMark and 6.87 million operations per second in Redis SET operations. Compression workloads scored lower, with single-threaded gzip compression registering in the bottom 25 percentile. Medium-scale LLM inference for a 7B model recorded poor throughput, reflecting the constraints of non-GPU architecture for larger AI models.",
+    "From an architectural and cost-efficiency perspective, the bundled 1919 GB SSD avoids separate storage attachment overhead for high-capacity applications. The instance profile fits storage-heavy and memory-demanding workloads, including relational databases, NoSQL datastores, distributed caching layers, and search index nodes."
   ],
-  "description": "Alibaba Cloud ecs.i3.2xlarge is an x86_64 server powered by an Intel Xeon 8269CY processor operating at 2.5 GHz. It features 8 dedicated vCPUs, 64.0 GB of RAM, and a substantial 1919 GB of bundled local SSD storage, alongside a baseline network bandwidth of 3 Gbps. Performance benchmarks position this instance in the average tier for multi-core processing, memory bandwidth, and database operations, though its single-core performance is relatively weak. Qualitatively, the server provides high storage density relative to its compute resources, making it a cost-efficient choice for storage-heavy deployments. It is highly suited for workloads such as database hosting, Redis caching, and static web serving, while being less optimal for CPU-intensive tasks or advanced machine learning inference.",
-  "og_description": "Alibaba Cloud ecs.i3.2xlarge is an x86_64 server featuring 8 dedicated Intel Xeon vCPUs, 64 GB RAM, and 1919 GB of bundled local SSD storage, optimized for database and storage-heavy workloads.",
-  "meta_description": "Alibaba Cloud ecs.i3.2xlarge is an x86_64 server with 8 dedicated Intel Xeon vCPUs, 64 GB RAM, and 1919 GB of local SSD storage.",
-  "tagline": "A storage-dense server featuring dedicated Intel Xeon processors and substantial local SSD capacity for database and caching workloads.",
+  "description": "Alibaba Cloud ecs.i3.2xlarge is a storage-focused virtual instance powered by an Intel Xeon 8269CY processor at 2.5 GHz on the x86_64 architecture. Delivered via the KVM hypervisor, it features 8 dedicated vCPUs across 4 physical cores, 64.0 GB of memory, and 1919 GB of integrated local SSD storage. Network performance is anchored by a 3 Gbps baseline bandwidth, with zero bundled GPUs. Synthetic and real-world benchmarks show balanced results in the mid-tier spectrum, recording 4514.0 on Geekbench multi-core, 6.87 million operations per second on Redis SET benchmarks, and stable memory throughput reaching 51.37 GB/s uncached reads. CPU-bound compression and larger 7B language model tasks show lower efficiency, making the hardware less optimal for intensive compute-only or heavy generative AI processing. Given the high memory capacity and direct-attached SSD volume, the instance is suited for local database engines, transactional datastores, caching clusters, and I/O-bound enterprise systems.",
+  "og_description": "Alibaba Cloud ecs.i3.2xlarge features 8 dedicated vCPUs via an Intel Xeon 8269CY CPU, 64 GB RAM, 1919 GB of local SSD storage, and 3 Gbps baseline networking for database workloads.",
+  "meta_description": "Alibaba Cloud ecs.i3.2xlarge delivers 8 vCPUs, 64 GB RAM, and 1919 GB local SSD storage on Intel Xeon hardware for database and transactional workloads.",
+  "tagline": "High-capacity local SSD storage combined with generous memory capacity and dedicated Intel processing for I/O-intensive datastores and cache layers.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an Intel Xeon 8269CY processor",
-    "64.0 GB of system memory providing 8.0 GB per core",
-    "1919 GB of bundled local SSD storage",
-    "3 Gbps baseline network bandwidth",
-    "Best suited for database hosting, Redis caching, and static web serving"
+    "8 dedicated vCPUs across 4 physical cores powered by an Intel Xeon 8269CY processor at 2.5 GHz",
+    "64.0 GB of memory providing an 8:1 RAM-to-vCPU allocation ratio",
+    "Bundled 1919 GB local SSD storage for high-throughput disk access",
+    "3 Gbps baseline network bandwidth without GPU acceleration",
+    "Targeted for relational databases, NoSQL engines, and Redis caching systems"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

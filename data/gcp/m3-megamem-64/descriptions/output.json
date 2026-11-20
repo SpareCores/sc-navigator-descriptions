@@ -1,22 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform m3-megamem-64 is a memory-optimized instance featuring 64 vCPUs derived from 32 physical Intel Xeon cores running at 2.6 GHz. Equipped with 976 GB of system RAM, it provides a substantial memory ratio of 15.25 GB per vCPU. The instance utilizes the x86_64 architecture with hyperthreading enabled, supported by 54 MB of L3 cache, 1 MB L2 cache per core, and instruction set extensions including AVX-512 and AES cryptography. Local storage and GPUs are not bundled with this server type.",
-    "In synthetic benchmarks, the instance demonstrates strong multi-threaded execution and parallel processing capabilities. It achieved strong results in PassMark database operations, multi-threaded bzip3 decompression, Geekbench multi-core execution, image processing, ray tracing, and software compilation via Clang. Conversely, single-core CPU metrics across stress-ng and Geekbench sit in the average tier, alongside uncached memory bandwidth (150.66 GB/sec read, 62.1 GB/sec write) and static web serving throughput.",
-    "The m3-megamem-64 provides high memory resource density, trading off local storage drive availability and single-threaded velocity for high memory capacity and parallel throughput. This configuration makes it suited for large in-memory databases, memory-bound analytical systems, enterprise software builds, and heavy multi-threaded workloads."
+    "Google Cloud Platform m3-megamem-64 is an x86_64 memory-optimized virtual machine instance designed for workloads demanding exceptionally high memory-to-vCPU ratios. Powered by a 2.6 GHz Intel Xeon processor, the configuration provides 32 physical cores across 64 dedicated vCPUs with hyperthreading enabled, supported by 54 MB of L3 cache. It incorporates a dense allocation of 976.0 GB of RAM, which equates to 15.25 GB of system memory per vCPU. The instance contains no dedicated hardware accelerators or bundled local storage, requiring network-attached persistent storage for filesystem operations.",
+    "Benchmark results demonstrate strong parallel compute capabilities alongside mid-tier single-core performance. Single-core evaluations, including a Geekbench single-core score of 1577.0 and stress-ng metrics of 1852.19, sit firmly in the average tier. However, multi-threaded workloads leverage the 64 vCPUs effectively, achieving strong upper-quartile scores such as 16654.0 in Geekbench multi-core, 54571.25 in PassMark CPU, and 293.92 GB/sec in multi-threaded bzip3 decompression. Specialized instruction sets including AVX-512, VAES, and SHA-NI contribute to strong encryption performance (52571.11 in PassMark) and high database operations results (26047.32 in PassMark). Memory throughput registers at 150.66 GB/sec for large uncached reads and 62.1 GB/sec for uncached writes.",
+    "From an efficiency standpoint, the instance trades per-core execution speeds for massive memory density, making it cost-efficient primarily when applications would otherwise require sprawling multi-node clustering solely to satisfy aggregate RAM requirements. Because it lacks local NVMe disks, persistent I/O performance will depend entirely on attached storage configurations. This profile matches in-memory databases, large-scale enterprise resource planning systems, multi-threaded batch compilation, and memory-intensive ETL tasks."
   ],
-  "description": "Google Cloud Platform m3-megamem-64 is a memory-optimized cloud server built on 32 physical Intel Xeon cores operating at 2.6 GHz, providing 64 dedicated vCPUs and 976 GB of system RAM. With 15.25 GB of RAM per vCPU, 54 MB of L3 cache, and support for AVX-512 and VAES instruction sets, the instance delivers high memory density without bundled local storage or GPUs. Benchmark testing reveals strong performance in multi-core tasks, including PassMark database operations, Geekbench multi-core scoring, software compilation with Clang, ray tracing, and multi-threaded bzip3 decompression. Single-threaded metrics and uncached memory bandwidth fall into the average range for its hardware tier. The instance represents a resource-dense deployment option for workloads where memory capacity and concurrent execution are critical, making it well-matched for large in-memory caching systems, database management systems, batch data processing, and enterprise software backends.",
-  "og_description": "Google Cloud Platform m3-megamem-64 is a memory-optimized server offering 64 vCPUs, 976 GB RAM, and Intel Xeon hardware. It excels in multi-core execution and database performance.",
-  "meta_description": "Google Cloud Platform m3-megamem-64 features 64 vCPUs, 976 GB RAM, and Intel Xeon hardware tailored for memory-intensive enterprise workloads.",
-  "tagline": "High-density memory instance with 64 vCPUs and 976 GB RAM designed for large-scale database operations and memory-bound parallel workloads.",
+  "description": "Google Cloud Platform m3-megamem-64 is an x86_64 memory-optimized instance featuring 64 dedicated vCPUs (32 physical Intel Xeon cores at 2.6 GHz) and 976.0 GB of RAM, providing 15.25 GB of memory per vCPU. The configuration includes no local NVMe storage or discrete GPUs. Multi-threaded benchmark results place the instance in the top 25% for PassMark CPU (54571.25), Geekbench multi-core (16654.0), and database operations (26047.32), supported by hardware acceleration for AVX-512 and cryptographic routines (52571.11 in PassMark encryption). Memory throughput achieves 150.66 GB/sec for large uncached reads and 62.1 GB/sec for writes. Delivering vast capacity within a single system, the instance minimizes the need for multi-node clustering for memory-bound workloads, making it well suited for large in-memory databases, heavy data transformation pipelines, and high-thread analytical processing.",
+  "og_description": "Google Cloud Platform m3-megamem-64 is a memory-optimized server providing 64 Intel Xeon vCPUs, 976 GB of RAM, and high multi-core throughput for large in-memory databases and analytics.",
+  "meta_description": "Google Cloud Platform m3-megamem-64 features 64 vCPUs, 976 GB RAM, and high multi-core performance tailored for large in-memory enterprise workloads.",
+  "tagline": "Memory-optimized compute featuring 64 dedicated vCPUs and 976 GB RAM for scale-up in-memory enterprise workloads.",
   "bullet_points": [
-    "Powered by 32 physical Intel Xeon cores delivering 64 vCPUs at 2.6 GHz",
-    "Configured with 976 GB RAM providing 15.25 GB per vCPU and 54 MB L3 cache",
-    "Supports AVX-512, VAES, and hardware cryptography extensions",
-    "Demonstrates strong multi-core performance in database, compiling, and decompression benchmarks",
-    "Best suited for large in-memory databases, batch analytical processing, and enterprise application backends"
+    "64 dedicated vCPUs across 32 physical Intel Xeon cores at 2.6 GHz",
+    "976.0 GB total system memory providing 15.25 GB RAM per vCPU",
+    "Strong multi-threaded performance across Geekbench and PassMark benchmarks",
+    "Hardware support for AVX-512 and advanced cryptographic acceleration",
+    "Zero bundled local storage and no discrete GPUs",
+    "Suited for in-memory databases, large-scale ETL, and parallel batch processing"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Compute Optimized"
   ]
 }

@@ -1,21 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E64-32s_v4 is an x86_64 memory-optimized virtual machine belonging to the ESv4 server family. It is powered by a dedicated Intel Xeon 8272CL processor operating at 2.6 GHz, featuring 16 physical cores and 32 vCPUs via Hyper-Threading. The system is equipped with 504.0 GB of RAM, yielding a high memory-to-vCPU ratio of 15.75 GB per core. It does not include local storage or GPUs, relying instead on remote Premium Storage options.",
-    "Benchmark data indicates average performance across compute and memory subsystems. The single-core stress-ng CPU performance is 1488.59, while multi-core performance reaches 29804.34. Memory bandwidth tests show 1661.23 GB/sec for cached small-block reads and 142.18 GB/sec for uncached large-block reads. In database workloads, the server handles 27.94 million Redis SET operations per second and achieves a Passmark database operations score of 10989.83. LLM inference performance is average for smaller models but drops to weak or poor for larger models, reflecting the lack of hardware acceleration.",
-    "From a cost-efficiency perspective, the E64-32s_v4 offers a dense memory profile relative to its compute allocation, making it a viable option for memory-bound workloads that do not require high local disk I/O. The absence of bundled local storage and GPUs reduces overhead for deployments relying on network-attached storage. This configuration is highly suited for large in-memory databases, enterprise applications, caching layers, and memory-intensive data processing tasks."
+    "Microsoft Azure E64-32s_v4 is a memory-optimized virtual machine utilizing a constrained-core architecture. Powered by the Intel Xeon 8272CL processor running at 2.6 GHz on Microsoft Hyper-V, it provides 32 dedicated vCPUs mapped across 16 physical cores. The instance features a high memory allocation of 504.0 GB of RAM, equating to 15.75 GB of RAM per vCPU. Hardware instruction extensions include AVX-512 with VNNI support, AES cryptography, and Bit Manipulation Instructions (BMI2).",
+    "Architecturally, this configuration provides no bundled local ephemeral storage and includes zero dedicated GPUs, directing all disk I/O through external attached storage. Synthetic and computational benchmarks place CPU and memory throughput in the median tier, recording a Geekbench multi-core score of 10498.0 and a PassMark CPU score of 29038.35. Large-block uncached memory read bandwidth reaches 142.18 GB/sec with 83.44 GB/sec write throughput, supporting in-memory processing workloads such as Redis, which achieves 27.94 million SET operations per second.",
+    "Cost efficiency is centered around constrained compute licensing. By constraining the 64-vCPU host profile to 32 active vCPUs while retaining the full 504.0 GB memory footprint, the instance reduces per-core software licensing expenses for memory-heavy enterprise platforms. However, raw parallel computation and large-model machine learning inference remain restricted by the halved core count and lack of hardware accelerators.",
+    "The E64-32s_v4 is best suited for memory-intensive enterprise software, large in-memory caching systems, operational analytics, relational databases requiring constrained core licensing, and high-memory data processing tasks."
   ],
-  "description": "Microsoft Azure E64-32s_v4 is an x86_64 memory-optimized virtual machine from the ESv4 family, running on the Microsoft Hyper-V hypervisor. It features a dedicated Intel Xeon 8272CL processor with 16 physical cores and 32 vCPUs at 2.6 GHz, paired with 504.0 GB of RAM. This configuration provides a high memory-to-core ratio of 15.75 GB, though it lacks local storage and GPU accelerators. Benchmark results place its compute and memory capabilities in the average tier, with a multi-core stress-ng score of 29804.34 and a large-block read memory bandwidth of 142.18 GB/sec. It demonstrates solid database performance, executing 27.94 million Redis SET operations per second. Given its high memory density and reliance on remote Premium Storage, the E64-32s_v4 is well-suited for memory-intensive workloads such as large-scale caching, in-memory databases, and enterprise application hosting.",
-  "og_description": "Microsoft Azure E64-32s_v4 is a memory-optimized virtual machine featuring 32 vCPUs, 504 GB of RAM, and an Intel Xeon 8272CL processor, designed for memory-intensive enterprise workloads.",
-  "meta_description": "Microsoft Azure E64-32s_v4 is a memory-optimized VM with 32 vCPUs, 504 GB RAM, and an Intel Xeon processor, ideal for in-memory databases.",
-  "tagline": "A high-density memory-optimized virtual machine designed for memory-intensive enterprise applications, caching layers, and large-scale database workloads.",
+  "description": "Microsoft Azure E64-32s_v4 is a memory-optimized virtual machine operating on the Intel Xeon 8272CL processor at 2.6 GHz, providing 32 dedicated vCPUs across 16 physical cores alongside 504.0 GB of system memory. Designed as a constrained-core configuration, it delivers a high memory-to-core ratio of 15.75 GB per vCPU while reducing software core licensing demands. The instance includes AVX-512 vector support, no integrated GPU hardware, and no local disk storage, relying on external network storage. Benchmark evaluations show balanced computational throughput with a PassMark CPU score of 29038.35 and an uncached memory read bandwidth of 142.18 GB/sec. Memory-intensive transactional tasks perform consistently, demonstrated by 27.94 million Redis SET operations per second. The instance is suited for enterprise databases, in-memory caches, and memory-heavy analytics pipelines.",
+  "og_description": "Microsoft Azure E64-32s_v4 delivers 32 dedicated vCPUs and 504 GB RAM on Intel Xeon 8272CL hardware. A constrained-core design built for memory-heavy databases and enterprise caching.",
+  "meta_description": "Microsoft Azure E64-32s_v4 provides 32 vCPUs, 504 GB RAM, and Intel Xeon hardware tailored for memory-intensive database workloads.",
+  "tagline": "Constrained core memory-optimized compute instance delivering half-core allocation with full memory capacity for memory-bound workloads.",
   "bullet_points": [
-    "Intel Xeon 8272CL processor with 32 vCPUs and 16 physical cores",
-    "504.0 GB of RAM providing 15.75 GB per core",
-    "No local storage, optimized for remote Premium Storage",
-    "Delivers 27.94 million Redis SET operations per second",
-    "Suited for in-memory databases, caching, and enterprise applications"
+    "32 dedicated vCPUs and 16 physical cores via Intel Xeon 8272CL at 2.6 GHz",
+    "504.0 GB total RAM providing 15.75 GB memory allocation per vCPU",
+    "No bundled local ephemeral storage and zero hardware accelerator GPUs",
+    "Supports AVX-512, AVX-512 VNNI, and hardware AES cryptographic acceleration",
+    "High-throughput caching performance achieving 27.94 million Redis SET operations per second",
+    "Optimized for licensed enterprise databases, large in-memory caches, and memory-bound ETL"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

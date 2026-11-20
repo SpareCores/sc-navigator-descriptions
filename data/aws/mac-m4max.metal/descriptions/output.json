@@ -1,23 +1,24 @@
 {
   "page": [
-    "Amazon Web Services mac-m4max.metal is a bare metal macOS instance powered by Apple silicon. It features 16 physical cores and 16 vCPUs using the arm64_mac architecture, running at a clock speed of 4.0 GHz. The CPU allocation is fully dedicated, with one thread per core.",
-    "The instance is equipped with 128.0 GB of system memory, providing a high memory-to-core ratio of 8.0 GB per core. It does not include local storage or integrated GPUs, and features a baseline network bandwidth of 10 Gbps.",
-    "From a qualitative cost-efficiency perspective, this bare metal instance offers high resource density and dedicated hardware for Apple-specific development pipelines. The lack of local storage requires external storage attachment, which represents a structural tradeoff for disk-heavy operations.",
-    "This server type is designed for macOS and iOS application development, continuous integration and continuous delivery (CI/CD) pipelines, application building, and testing workloads requiring Apple silicon architecture."
+    "Amazon Web Services mac-m4max.metal is a dedicated bare-metal instance designed for macOS workloads, categorized under the General Purpose family. The server is powered by an Apple arm64_mac processor featuring 16 physical cores and 16 virtual CPUs operating at a clock speed of 4.0 GHz. Because it is a bare-metal deployment without virtualization hypervisors, all CPU resources are dedicated with a single thread per core.",
+    "Memory capacity is configured at 128.0 GB, yielding a high resource density of 8.0 GB of RAM per CPU core. The instance provides no integrated local storage, requiring network-attached storage solutions for file persistence and operating system storage. Discrete hardware accelerators are absent, with a reported GPU count of zero. Network connectivity is supported by a 10 Gbps baseline network bandwidth, and the instance includes zero complimentary public IPv4 addresses.",
+    "In terms of operational efficiency and hardware tradeoffs, the dedicated hardware profile delivers consistent clock execution and substantial memory capacity per core. However, the lack of local NVMe storage places all disk I/O demands onto network-attached storage architectures, making overall throughput reliant on the 10 Gbps network interface.",
+    "This hardware profile is tailored specifically for Apple ecosystem development, continuous integration and continuous deployment (CI/CD) pipelines, macOS application compiling, and automated testing tasks requiring native arm64 execution and substantial memory buffers."
   ],
-  "description": "Amazon Web Services mac-m4max.metal is a bare metal macOS instance designed for Apple-specific development workloads. It features an Apple arm64_mac CPU with 16 dedicated physical cores operating at 4.0 GHz, providing one thread per core. The instance is equipped with 128.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per core. It does not include local storage or a dedicated GPU, and it provides a baseline network bandwidth of 10 Gbps. Qualitatively, the instance offers high resource density for specialized macOS environments, though the absence of local storage requires external storage solutions. This hardware profile is optimized for macOS and iOS application building, testing, and CI/CD pipelines.",
-  "og_description": "Amazon Web Services mac-m4max.metal is a bare metal macOS instance featuring 16 dedicated Apple arm64_mac cores at 4.0 GHz, 128.0 GB of RAM, and 10 Gbps baseline network bandwidth.",
-  "meta_description": "Amazon Web Services mac-m4max.metal is a bare metal macOS instance with 16 dedicated arm64_mac cores, 128.0 GB of RAM, and 10 Gbps network speed.",
-  "tagline": "Dedicated bare metal macOS instances with Apple silicon, high memory density, and 10 Gbps networking for specialized development pipelines.",
+  "description": "Amazon Web Services mac-m4max.metal is a dedicated bare-metal macOS instance in the General Purpose family, built on an Apple arm64_mac processor running at 4.0 GHz. The configuration provides 16 physical cores and 16 dedicated vCPUs with a single thread per core, paired with 128.0 GB of system memory, providing 8.0 GB of RAM per core. The instance includes no discrete GPU hardware and contains no local storage, directing all storage traffic through network-attached volumes. Networking baseline bandwidth is rated at 10 Gbps, and no complimentary public IPv4 addresses are assigned. The high memory-to-core ratio and fixed-frequency dedicated cores deliver predictable execution for memory-demanding tasks without hypervisor overhead, though I/O performance remains tied to network capacity. Amazon Web Services mac-m4max.metal is primarily suited for continuous integration pipelines, native Apple application compilation, automated testing, and macOS-dependent development workloads.",
+  "og_description": "Amazon Web Services mac-m4max.metal is a bare-metal macOS instance featuring a 16-core Apple arm64_mac processor at 4.0 GHz, 128 GB of memory, and 10 Gbps baseline network bandwidth without local storage.",
+  "meta_description": "Amazon Web Services mac-m4max.metal is a bare-metal macOS server with 16 dedicated Apple arm64_mac cores at 4.0 GHz, 128 GB RAM, and 10 Gbps networking.",
+  "tagline": "Dedicated bare-metal Apple silicon compute with high-frequency cores and expansive unified memory designed for continuous macOS build and test pipelines.",
   "bullet_points": [
-    "16 dedicated Apple arm64_mac physical cores running at 4.0 GHz",
-    "128.0 GB of system memory providing 8.0 GB per core",
-    "10 Gbps baseline network bandwidth",
-    "Bare metal macOS environment without local storage or integrated GPUs",
-    "Optimized for macOS and iOS build, test, and CI/CD workloads"
+    "Dedicated 16-core Apple arm64_mac processor running at 4.0 GHz",
+    "128.0 GB of memory providing an 8.0 GB per core allocation ratio",
+    "Bare-metal architecture operating natively without hypervisor overhead",
+    "Baseline network bandwidth capacity rated at 10 Gbps",
+    "Zero integrated local storage requiring external storage volumes",
+    "Suited for Apple-platform CI/CD pipelines and native software compilation"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Memory Optimized"
   ]
 }

@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure DC96as_v5 is an x86_64 architecture server instance belonging to the DCASv5 family. It features 96 dedicated vCPUs powered by an AMD processor and runs on the Microsoft Hyper-V hypervisor. The system is configured with 384.0 GB of system memory, providing a balanced ratio of 4.0 GB of RAM per vCPU.",
-    "This instance does not include local storage, meaning all storage requirements must be met using external Premium Storage options, which the instance is capable of supporting. There are no integrated GPUs on this server, and it does not include any complimentary public IPv4 addresses.",
-    "From a cost-efficiency perspective, the DC96as_v5 offers high resource density with dedicated CPU allocation, making it suitable for enterprise workloads that require predictable CPU performance without the overhead of GPU hardware. The 1:4 vCPU-to-RAM ratio positions it for general-purpose enterprise applications, large-scale web serving, and database workloads that utilize external storage."
+    "Microsoft Azure DC96as_v5 is a general-purpose virtual machine based on the x86_64 architecture. It operates on the Microsoft Hyper-V hypervisor, powered by an AMD EPYC 9V74 processor. The configuration provisions 96 dedicated vCPUs mapped across 48 physical cores with 2 threads per core. Memory allocation totals 384.0 GB of RAM, maintaining a standard 1:4 vCPU-to-memory ratio at 4.0 GB per vCPU. Cache distribution includes 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache per core block. Instruction set extensions include AVX, AES, VAES, SHA-NI, BMI2, ADX, and FMA, whereas AVX-512 and AMX extensions are absent.",
+    "The instance does not include integrated local disk storage, requiring deployment with network-attached storage volumes, and it supports Premium Storage. Hardware acceleration is not present, with zero discrete GPUs attached. Benchmark evaluations place the stress-ng multi-core CPU performance in the top 25 percent with a score of 110477.48, while stress-ng single-core performance registers at 2022.45, positioning it within the middle 50 percent tier. In-memory data handling demonstrates high throughput, achieving 91.95 million operations per second on redis SET operations, which also falls into the top 25 percent tier.",
+    "With its dense 96-thread execution capacity and balanced memory allocation, the DC96as_v5 provides scalable throughput for multi-threaded enterprise workloads. Cost efficiency derives from high CPU core density and strong multi-core scaling relative to general-purpose cloud allocations, though workloads requiring ultra-fast local scratch disks or AVX-512 vector acceleration must accommodate remote storage latency and standard vector limits. Suitable workloads include large-scale web backends, distributed memory caches, relational database systems, batch processing, and continuous integration pipelines."
   ],
-  "description": "Microsoft Azure DC96as_v5 is a general-purpose server instance from the DCASv5 family, featuring 96 dedicated vCPUs on an AMD x86_64 architecture. Managed via the Microsoft Hyper-V hypervisor, the instance is equipped with 384.0 GB of system memory, establishing a balanced 4.0 GB of RAM per vCPU ratio. This configuration does not include local storage or integrated GPUs, though it is fully capable of utilizing external Premium Storage. Without complimentary public IPv4 addresses, network architecture must be configured externally. The high core count and dedicated CPU allocation make this instance suitable for large-scale general-purpose workloads, enterprise applications, and database deployments relying on network-attached storage.",
-  "og_description": "Microsoft Azure DC96as_v5 is a general-purpose instance featuring 96 dedicated AMD vCPUs, 384.0 GB of RAM, and Premium Storage capability, optimized for enterprise workloads without local storage.",
-  "meta_description": "Microsoft Azure DC96as_v5 is an x86_64 general-purpose server with 96 dedicated AMD vCPUs, 384.0 GB of RAM, and Premium Storage capability.",
-  "tagline": "A dedicated 96-vCPU AMD processor instance with a balanced memory profile, designed for enterprise workloads utilizing external premium storage.",
+  "description": "Microsoft Azure DC96as_v5 is a general-purpose instance featuring 96 dedicated vCPUs and 48 physical cores powered by an AMD EPYC 9V74 processor on the x86_64 architecture. The virtual machine includes 384.0 GB of memory, providing a balanced 4.0 GB per vCPU. It operates without integrated local storage or dedicated GPU acceleration, relying on Premium Storage remote disks for persistent data. Hardware extensions include AVX, AES, VAES, and SHA-NI cryptographic support. Synthetic benchmarks reflect strong performance, with stress-ng multi-core results reaching 110477.48 and redis SET operations processing 91.95 million operations per second, both ranking in the top 25 percent tier. Single-core performance falls in the middle 50 percent tier with a stress-ng score of 2022.45. This configuration fits high-concurrency enterprise workloads including distributed caching, transactional databases, batch processing pipelines, and multi-tier enterprise application servers requiring broad multi-threaded CPU capacity.",
+  "og_description": "Microsoft Azure DC96as_v5 is a general-purpose virtual machine with 96 vCPUs on an AMD EPYC 9V74 processor, 384 GB of memory, and top-tier multi-core compute and redis benchmark performance.",
+  "meta_description": "Microsoft Azure DC96as_v5 features 96 dedicated vCPUs, an AMD EPYC 9V74 processor, 384 GB RAM, and strong multi-core throughput for scalable workloads.",
+  "tagline": "A high-density 96-vCPU AMD EPYC server configuration delivering balanced memory capacity and strong multi-threaded compute throughput for scalable enterprise workloads.",
   "bullet_points": [
-    "96 dedicated AMD vCPUs on x86_64 architecture",
-    "384.0 GB of system memory providing 4.0 GB per core",
-    "Premium Storage capable with no local storage bundled",
-    "Zero integrated GPUs and zero complimentary public IPv4 addresses",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Best suited for general-purpose enterprise applications and databases"
+    "AMD EPYC 9V74 processor delivering 96 dedicated vCPUs across 48 physical cores",
+    "384.0 GB system RAM maintaining a balanced 1:4 vCPU-to-memory profile",
+    "No bundled local storage, requiring attached Premium Storage volumes",
+    "Top 25 percent multi-core benchmark score and 91.95M ops/sec Redis SET throughput",
+    "Tailored for distributed in-memory caching, relational databases, and enterprise backends"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

@@ -1,22 +1,25 @@
 {
   "page": [
-    "Microsoft Azure F32-16amds_v7 is a memory-intensive virtual machine from the Famdsv7 family, running on the Microsoft Hyper-V hypervisor. It features a dedicated AMD EPYC 9V45 processor with 16 physical cores and 16 vCPUs on the x86_64 architecture, operating at a clock speed of 4.5 GHz. The hardware configuration includes 256.0 GB of system memory, yielding a high memory-to-core ratio of 16.0 GB per core. Local storage is bundled, consisting of a 3780 GB NVMe SSD, and the instance is Premium Storage capable. No GPU accelerators are present.",
-    "Benchmark results indicate top-tier single-core performance. The stress-ng single-core CPU test and single-threaded gzip compression and bzip3 decompression benchmarks all place in the top 10% of tested servers. Multi-threaded decompression is also strong, ranking in the top 25%. For machine learning tasks, the server achieves top-tier text generation speeds of 425.32 tokens per second on small 135M parameter LLM models. However, multi-core CPU performance, memory bandwidth, and database operations on Passmark and Redis fall into the average category.",
-    "From a cost-efficiency perspective, the F32-16amds_v7 offers a dense hardware profile, combining a high-frequency dedicated AMD EPYC CPU with substantial memory capacity and fast local NVMe storage. This resource density makes it highly suitable for memory-intensive applications, large-scale data decompression, and local database hosting where high-speed storage and large RAM buffers are required. It is also well-suited for single-threaded processing tasks and lightweight LLM inference workloads."
+    "Microsoft Azure F32-16amds_v7 is an x86_64 virtual machine configuration that couples high clock speeds with an extensive memory footprint and direct-attached solid-state storage. Running on the Microsoft Hyper-V hypervisor, the instance provides 16 dedicated physical cores and 16 vCPUs powered by an AMD EPYC 9V45 processor capable of reaching 4.5 GHz. The CPU architecture includes 48 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, complemented by vector extensions including AVX-512, AVX512_VNNI, and AVX512_BF16 for accelerated numerical operations.",
+    "Hardware allocations distinguish this instance through a high memory-to-core ratio, delivering 256.0 GB of RAM at 16.0 GB per vCPU. Storage capacity includes an integrated 3,780 GB local NVMe SSD, providing low-latency ephemeral scratch space alongside support for premium remote storage. The instance operates without discrete GPU accelerators and allocates zero complimentary public IPv4 addresses, relying on virtual network infrastructure for connectivity.",
+    "Benchmark results highlight strong single-threaded performance driven by the 4.5 GHz clock ceiling. In stress-ng single-core tests, the system placed in the top 10% of recorded results at 3,529.75, matching top-tier rates in single-threaded gzip compression at 38.87 GB/sec and bzip3 decompression at 17.39 GB/sec. Small-model LLM inference generation also achieved top-tier throughput at 425.32 tokens per second. In contrast, multi-threaded CPU throughput, large-block memory bandwidth, PassMark aggregate scores, and Redis operations fell within median tiers, reflecting the 16-thread cap relative to higher-core instances.",
+    "Qualitatively, the F32-16amds_v7 balances high per-thread execution efficiency with generous memory and fast NVMe storage density on a single node. This resource mix suits memory-bound data processing, high-throughput compression pipelines, in-memory databases, and compute-focused analytical jobs requiring extensive workspace."
   ],
-  "description": "Microsoft Azure F32-16amds_v7 is a memory-intensive virtual machine powered by a dedicated AMD EPYC 9V45 processor running at 4.5 GHz. Built on the x86_64 architecture, it provides 16 physical cores and 16 vCPUs, paired with 256.0 GB of RAM and a local 3780 GB NVMe SSD. The server excels in single-core operations, with stress-ng single-core CPU performance, single-threaded gzip compression, and bzip3 decompression all scoring in the top 10% of benchmarks. It also demonstrates top-tier text generation speeds for small LLM models. While multi-core performance and memory bandwidth remain average, the high memory-to-core ratio of 16.0 GB per core and fast local storage make this instance highly efficient for memory-heavy workloads, data processing, and database hosting.",
-  "og_description": "Microsoft Azure F32-16amds_v7 is a memory-intensive virtual machine featuring a 16-core AMD EPYC 9V45 processor, 256 GB of RAM, and a 3780 GB local NVMe SSD for demanding database and data processing workloads.",
-  "meta_description": "Microsoft Azure F32-16amds_v7 is a memory-intensive server with a 16-core AMD EPYC CPU, 256 GB RAM, and 3780 GB local NVMe SSD storage.",
-  "tagline": "A memory-intensive virtual machine combining high-frequency dedicated AMD EPYC processing with massive local NVMe SSD storage for demanding data workloads.",
+  "description": "Microsoft Azure F32-16amds_v7 is an x86_64 instance featuring 16 dedicated physical cores and 16 vCPUs powered by an AMD EPYC 9V45 processor running up to 4.5 GHz under Microsoft Hyper-V. The system provides an expanded memory capacity of 256.0 GB (16.0 GB per core) and integrates a 3,780 GB local NVMe SSD for fast ephemeral scratch data, with no bundled GPU hardware. In benchmark testing, the high operating clock delivers top-tier single-threaded stress-ng compute, fast compression throughput, and strong lightweight LLM token generation, alongside median multi-threaded and memory bandwidth figures. The combination of strong single-core speed, local NVMe capacity, and a high memory-to-vCPU ratio makes this server profile well aligned with large-footprint in-memory databases, data analytics, compression pipelines, and memory-intensive transactional workloads.",
+  "og_description": "Microsoft Azure F32-16amds_v7 delivers 16 dedicated AMD EPYC 9V45 cores clocked at 4.5 GHz, 256 GB of memory, and a 3,780 GB NVMe SSD for memory-heavy and disk-intensive compute workloads.",
+  "meta_description": "Microsoft Azure F32-16amds_v7 features 16 AMD EPYC 9V45 cores up to 4.5 GHz, 256 GB RAM, and 3,780 GB local NVMe SSD storage for memory-intensive computing.",
+  "tagline": "Dedicated AMD EPYC compute featuring high single-core clock speeds, high memory density per core, and high-capacity local NVMe storage.",
   "bullet_points": [
-    "Dedicated 16-core AMD EPYC 9V45 processor running at 4.5 GHz.",
-    "256.0 GB of system memory providing 16.0 GB per core.",
-    "Bundled 3780 GB local NVMe SSD with Premium Storage capability.",
-    "Top-tier single-core CPU and single-threaded decompression performance.",
-    "Optimized for memory-intensive databases and data processing workloads."
+    "16 dedicated physical cores and 16 vCPUs using AMD EPYC 9V45 processors up to 4.5 GHz",
+    "256.0 GB total system memory providing 16.0 GB RAM per core",
+    "Integrated 3,780 GB local NVMe SSD storage",
+    "AVX-512 instruction set support including VNNI and BF16 formats",
+    "Top-tier benchmark performance in single-core compute and data compression",
+    "Tailored for memory-intensive analytics, caching layers, and local scratch workloads"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

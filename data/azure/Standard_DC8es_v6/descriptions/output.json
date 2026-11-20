@@ -1,23 +1,21 @@
 {
   "page": [
-    "Microsoft Azure DC8es_v6 is an x86_64 architecture server instance belonging to the DCEV6 family. It features 8 dedicated vCPUs powered by an Intel processor and runs on the Microsoft Hyper-V hypervisor. The instance is equipped with 32.0 GB of system memory, yielding a resource density of 4.0 GB of RAM per virtual core.",
-    "This server configuration does not include any local storage, meaning all storage requirements must be met via external network-attached storage, though the instance is designated as Premium Storage capable. There are zero integrated GPUs, making it unsuitable for hardware-accelerated graphics or parallel computing workloads. Additionally, the instance does not include any complimentary public IPv4 addresses.",
-    "From a qualitative cost-efficiency perspective, the DC8es_v6 offers a balanced allocation of dedicated compute cores to memory. This resource profile is designed for workloads that require dedicated CPU execution without the overhead of local storage maintenance. Suitable workloads include general-purpose applications, mid-sized databases utilizing network storage, and standard enterprise web serving."
+    "Microsoft Azure DC8es_v6 is a general-purpose virtual machine based on the x86_64 architecture, powered by a dedicated 4.2 GHz Intel Xeon processor featuring Trust Domain Extensions (TDX). It allocates 8 vCPUs across 4 physical cores with multithreading enabled at two threads per core, combined with 32.0 GB of system memory. This yields a balanced 1:4 vCPU-to-memory ratio with 4.0 GB of RAM per vCPU. The underlying CPU incorporates a 260 MB L3 cache, a 2 MB L2 cache, and extended instruction sets such as AVX-512, AMX-TILE, and AMX-INT8, alongside cryptographic acceleration.",
+    "Benchmark results demonstrate consistent average-tier performance across general compute suites. In stress-ng, the instance achieves 1,717.18 points in single-core and 7,011.03 points in multi-core metrics, while Geekbench results yield 1,855.0 and 7,602.0, respectively. Text processing in Geekbench registers in the top 25% at 2,509.0 points. In-memory data handling is highlighted by a throughput of 8.32 million SET operations per second in Redis and a PassMark database operations rating of 4,846.25. The server bundles neither local ephemeral disk storage nor dedicated GPUs, requiring network-attached storage for all filesystem activity.",
+    "The absence of bundled local storage reduces operational overhead for workloads that do not need scratch disks, focusing cost efficiency on dedicated CPU cycles and system memory. The DC8es_v6 is well suited for containerized microservices, middle-tier enterprise web backends, caching services, and database layers integrated with cloud block storage."
   ],
-  "description": "Microsoft Azure DC8es_v6 is an x86_64 architecture server instance within the DCEV6 family, featuring 8 dedicated Intel vCPUs and 32.0 GB of system memory. Operating on the Microsoft Hyper-V hypervisor, this instance provides a balanced 4.0 GB of RAM per virtual core. It does not include local storage, relying instead on its Premium Storage capability for external network-attached storage solutions. The server lacks integrated GPUs and does not provide complimentary public IPv4 addresses. Qualitatively, the dedicated CPU allocation and balanced memory footprint offer a stable environment for workloads that do not require local disk space or hardware acceleration. The DC8es_v6 is configured for general-purpose applications, enterprise web serving, and database workloads utilizing network-attached storage.",
-  "og_description": "Microsoft Azure DC8es_v6 is a DCEV6 family server with 8 dedicated Intel vCPUs, 32.0 GB RAM, and no local storage, optimized for general-purpose and network-storage-reliant workloads.",
-  "meta_description": "Microsoft Azure DC8es_v6 is a DCEV6 family server featuring 8 dedicated Intel vCPUs, 32.0 GB RAM, and Hyper-V virtualization with no local storage.",
-  "tagline": "A dedicated eight-core virtual server featuring thirty-two gigabytes of memory and premium network storage capabilities for balanced enterprise workloads.",
+  "description": "Microsoft Azure DC8es_v6 is a general-purpose virtual machine powered by an x86_64 Intel Xeon TDX processor operating at 4.2 GHz. Running on Microsoft Hyper-V, it is provisioned with 8 dedicated vCPUs spanning 4 physical cores, paired with 32.0 GB of memory to yield a standard 1:4 core-to-memory allocation. The processor incorporates a 260 MB L3 cache alongside hardware support for AVX-512 and Intel AMX matrix extensions. Lacking local ephemeral storage and physical GPU hardware, the VM depends on remote storage solutions. In benchmark testing, the DC8es_v6 demonstrates consistent average multi-core and single-core compute performance, alongside strong text processing output in Geekbench and 8.32 million Redis SET operations per second. Its balanced footprint delivers cost-effective dedicated compute capacity for containerized microservices, middle-tier enterprise web serving, and database workloads backed by networked block storage.",
+  "og_description": "Microsoft Azure DC8es_v6 is a general-purpose VM featuring 8 vCPUs on a 4.2 GHz Intel Xeon TDX processor, 32 GB RAM, and no local storage, designed for reliable enterprise web serving and microservices.",
+  "meta_description": "Microsoft Azure DC8es_v6 is an 8-vCPU, 32 GB RAM general-purpose instance featuring an Intel Xeon TDX processor with AMX and AVX-512 capabilities.",
+  "tagline": "Balanced eight-vCPU compute with dedicated Intel Xeon architecture, thirty-two gigabytes of memory, and advanced vector acceleration for containerized enterprise workloads.",
   "bullet_points": [
-    "8 dedicated Intel vCPUs on x86_64 architecture",
-    "32.0 GB of system memory providing 4.0 GB per vCPU",
-    "Premium Storage capable with no local disk storage",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Zero integrated GPUs and zero complimentary public IPv4 addresses",
-    "Suited for general-purpose applications and network-attached databases"
+    "8 dedicated vCPUs powered by a 4.2 GHz Intel Xeon TDX processor (4 physical cores)",
+    "32.0 GB system memory providing a balanced 1:4 core-to-memory ratio",
+    "Hardware support for AVX-512, AMX-TILE, and AMX-INT8 acceleration instructions",
+    "Diskless architecture requiring external network-attached storage",
+    "Suited for containerized services, caching layers, and web application backends"
   ],
   "categories": [
-    "General Purpose",
-    "Memory Optimized"
+    "General Purpose"
   ]
 }

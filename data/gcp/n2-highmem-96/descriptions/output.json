@@ -1,22 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform n2-highmem-96 is a memory-optimized virtual machine instance belonging to the N2 family. It is configured with 96 vCPUs mapped to 48 physical cores of an Intel Xeon processor running at 2.6 GHz. The instance features 768 GB of system memory, yielding a high memory-to-vCPU ratio of 8 GB per vCPU. It operates on the x86_64 architecture and does not include local NVMe storage or dedicated GPU hardware.",
-    "Performance benchmarks indicate strong multi-core capabilities and high memory throughput. The instance achieved a strong rating in multi-core CPU performance via stress-ng and Geekbench. Memory bandwidth tests demonstrate high efficiency, with read-only small block cached speeds reaching 4896.56 GB/sec and large block uncached write speeds at 144.43 GB/sec. Database operations and Redis SET operations also registered strong performance, processing 88.47 million operations per second. However, single-core CPU tasks and large-scale LLM text generation show average to poor performance, reflecting a tradeoff where parallelized workloads are favored over single-threaded execution speed.",
-    "From a qualitative cost-efficiency perspective, the high memory density and dedicated CPU allocation make this instance suitable for memory-intensive enterprise workloads without the overhead of bare-metal deployments. It is optimized for large-scale databases, in-memory caching systems like Redis, high-throughput static web serving, and parallelized software compilation."
+    "Google Cloud Platform n2-highmem-96 is a high-memory compute instance featuring 96 vCPUs across 48 physical Intel Xeon cores clocked at 2.6 GHz. Operating on the x86_64 architecture with hyperthreading enabled, the instance provides 768.0 GB of total RAM, delivering an 8:1 memory-to-vCPU ratio of 8.0 GB per vCPU. Hardware cache structures include 48 KB of L1 data cache per core, 1 MB of L2 cache, and a shared 54 MB L3 cache pool. CPU instruction sets include AVX, AVX-512F, and AVX-512 VNNI, alongside hardware-accelerated cryptographic instructions like AES, VAES, and SHA-NI.",
+    "Benchmark outcomes show distinct multi-core throughput and memory access performance. Multi-threaded evaluations such as the PassMark CPU test (74,382.22), Geekbench multi-core (17,004.0), and stress-ng multi-core (89,966.98) place this machine in the top tier of compute capacity. Uncached memory bandwidth reaches 333.34 GB/sec for 256 MB reads and 144.43 GB/sec for writes, scaling up to 4,896.56 GB/sec for cached 16 KB read blocks. Additionally, in-memory key-value processing achieves strong performance, demonstrated by 88.47 million Redis SET operations per second and 30,989.85 points in PassMark database operations.",
+    "Single-core performance presents a moderate profile. Stress-ng single-core (1,838.08), Geekbench single-core (1,571.0), and single-threaded gzip compression (27.69 GB/sec) score within average distributions. The configuration lacks local bundled NVMe storage and dedicated GPU accelerators, meaning network storage interfaces must be provisioned separately. For machine learning tasks, while small model inference prompt processing is strong, large language model text generation degrades to 2.51 tokens per second on 70B models due to the absence of dedicated matrix acceleration chips like AMX.",
+    "Given its massive memory allocation and multi-threaded throughput, the n2-highmem-96 configuration delivers efficient resource utilization for large-scale enterprise databases, distributed in-memory data grids, large Clang compilation workflows, and static high-throughput web serving."
   ],
-  "description": "Google Cloud Platform n2-highmem-96 is a memory-optimized instance featuring 96 vCPUs and 768 GB of RAM, powered by a 2.6 GHz Intel Xeon processor. Operating on the x86_64 architecture with dedicated CPU allocation, this instance provides 8 GB of memory per vCPU but does not include local storage or GPUs. Benchmark data highlights strong multi-core CPU performance, high memory bandwidth, and excellent database operation throughput, though single-core performance remains average. This resource profile makes the instance highly suitable for memory-intensive workloads, including large databases, in-memory caches, and high-throughput web serving.",
-  "og_description": "Google Cloud Platform n2-highmem-96 is a memory-optimized instance with 96 vCPUs, 768 GB RAM, and an Intel Xeon processor, delivering strong multi-core and database performance for enterprise workloads.",
-  "meta_description": "Google Cloud Platform n2-highmem-96 is a memory-optimized instance featuring 96 vCPUs, 768 GB RAM, and strong multi-core performance.",
-  "tagline": "A memory-optimized virtual server featuring ninety-six dedicated vCPUs and high memory bandwidth for demanding database and caching workloads.",
+  "description": "Google Cloud Platform n2-highmem-96 is a memory-optimized instance featuring 96 vCPUs across 48 physical Intel Xeon cores at 2.6 GHz on the x86_64 architecture. Equipped with 768.0 GB of RAM, it maintains an 8:1 memory-to-core ratio of 8.0 GB per vCPU, supported by a 54 MB L3 cache and AVX-512 VNNI instructions. The instance exhibits exceptional multi-core and memory subsystem performance, reaching 333.34 GB/sec in large-block uncached read memory bandwidth and processing 88.47 million Redis SET operations per second. However, single-core speeds remain average, and it includes no bundled local storage or dedicated GPUs. This configuration is best suited for in-memory databases, large-scale caching layers, data processing, and highly concurrent enterprise workloads requiring large memory capacities.",
+  "og_description": "Google Cloud Platform n2-highmem-96 features 96 vCPUs, 768 GB RAM, and Intel Xeon architecture, delivering exceptional memory bandwidth and multi-core throughput for large-scale workloads.",
+  "meta_description": "Google Cloud Platform n2-highmem-96 features 96 vCPUs and 768 GB RAM on Intel Xeon hardware, delivering strong multi-core performance for memory-dense workloads.",
+  "tagline": "Large-scale Intel Xeon configuration delivering 96 dedicated vCPUs, 768 GB memory, and high-throughput memory bandwidth for data-intensive enterprise workloads.",
   "bullet_points": [
-    "96 vCPUs and 768 GB of RAM providing 8 GB per core",
-    "Dedicated 2.6 GHz Intel Xeon processor architecture",
-    "Strong multi-core CPU and memory bandwidth benchmarks",
-    "Optimized for large databases and in-memory caches",
-    "No bundled local storage or GPU accelerators"
+    "96 vCPUs across 48 physical Intel Xeon cores running at 2.6 GHz (x86_64 architecture)",
+    "768.0 GB system RAM providing an 8.0 GB per vCPU memory-optimized density",
+    "Hardware vector support including AVX-512F, AVX-512 VNNI, and cryptographic acceleration",
+    "High memory throughput reaching 333.34 GB/sec uncached reads and 88.47M Redis ops/sec",
+    "No bundled local storage or dedicated GPU hardware accelerators",
+    "Suited for in-memory databases, enterprise caching layers, and high-throughput multi-core workloads"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

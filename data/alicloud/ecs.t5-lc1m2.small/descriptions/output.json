@@ -1,22 +1,21 @@
 {
   "page": [
-    "Alibaba Cloud ecs.t5-lc1m2.small is a burstable virtual machine instance powered by the KVM hypervisor. It features a single x86_64 Intel Xeon 8163 processor core running at 2.5 GHz with 1 vCPU and 1 thread per core. The system is equipped with 2.0 GB of system memory, providing 2.0 GB per core. It does not include local storage or dedicated GPU hardware, and operates with a baseline network bandwidth of 0 Gbps. The CPU includes support for AVX, AVX512F, AES cryptography, and FMA instructions.",
-    "Performance benchmarks place this instance in the lower tier, with stress-ng single-core and multi-core CPU metrics scoring 1042.98. Memory bandwidth is measured at 73.95 GB/sec for small cached blocks, dropping to 8.7 GB/sec for large uncached blocks, and 7.34 GB/sec for write operations. Passmark CPU and memory scores are 1239.52 and 653.25 respectively. In database and application tests, the instance achieves 1.12 million operations per second in Redis SET benchmarks and 0.86 GB/sec in static web serving throughput.",
-    "This instance offers a highly cost-efficient profile for entry-level, low-utilization workloads where continuous CPU performance is not required. Due to its burstable CPU allocation and limited memory capacity, it is best suited for lightweight tasks such as basic web serving, small-scale development or testing environments, simple microservices, and low-traffic background processes."
+    "Alibaba Cloud ecs.t5-lc1m2.small is an entry-level, shared-core burstable virtual machine hosted on the KVM hypervisor. It runs on the x86_64 architecture, drawing compute power from a 2.5 GHz Intel Xeon 8163 processor. The virtual machine configuration provides 1 burstable vCPU mapped to a single physical core, paired with 2.0 GB of system memory. Advanced CPU instruction flags are present, including AVX, AVX-512F, AES, and BMI2. The instance does not include integrated local disk storage, dedicated GPU hardware accelerators, or complimentary public IPv4 networking allocations, and it operates with a 0 Gbps network baseline.",
+    "Benchmark evaluation across standard compute and memory suites indicates minimal baseline throughput consistent with a shared single-core resource tier. Synthetic CPU performance measures 1042.98 in both single-core and multi-core stress-ng tests. Large-block uncached memory operations register 8.7 GB/s read throughput and 7.34 GB/s write throughput. For operational services, Redis achieves 1.12 million SET operations per second, while static web serving throughput measures 0.86 GB/s. In micro-workload machine learning tests, inference throughput using a small 135M parameter language model reaches 53.79 tokens per second for prompt ingestion and 9.43 tokens per second for text generation.",
+    "Because the vCPU is subject to burstable resource allocation, sustained high compute utilization risks core throttling. From an infrastructure cost perspective, the instance provides economical resource density for micro-scale operational tasks where idle periods predominate. Tradeoffs include low baseline processing capacity, zero bundled local storage, and the absence of hardware redundancy. The instance is positioned for low-traffic dev-test sandboxes, internal staging environments, small batch cron executions, and lightweight background automation scripts."
   ],
-  "description": "Alibaba Cloud ecs.t5-lc1m2.small is a burstable, entry-level virtual machine instance utilizing the KVM hypervisor. It is configured with a single-core Intel Xeon 8163 x86_64 processor running at 2.5 GHz, 2.0 GB of RAM, and no local storage. The instance features a burstable CPU allocation model, making it highly cost-efficient for workloads with intermittent CPU demands. Benchmark results indicate lower-tier performance, with a Passmark CPU score of 1239.52 and a Redis SET throughput of 1.12 million operations per second. Lacking a dedicated GPU and baseline network bandwidth, this instance is designed for lightweight, non-resource-intensive applications. It is best suited for basic web serving, microservices, and development or testing environments.",
-  "og_description": "Alibaba Cloud ecs.t5-lc1m2.small is a burstable x86_64 instance featuring 1 vCPU Intel Xeon 8163 processor, 2.0 GB RAM, and no local storage, designed for low-intensity workloads.",
-  "meta_description": "Alibaba Cloud ecs.t5-lc1m2.small is a burstable KVM instance with 1 vCPU, 2.0 GB RAM, and no local storage, optimized for entry-level workloads.",
-  "tagline": "A low-cost, burstable single-core virtual machine designed for lightweight development environments and low-traffic background applications.",
+  "description": "Alibaba Cloud ecs.t5-lc1m2.small is a shared burstable virtual instance operating on the KVM hypervisor. Built on the x86_64 architecture, it is powered by an Intel Xeon 8163 processor running at 2.5 GHz. The server configuration features 1 burstable vCPU, 2.0 GB of system memory, no integrated local storage, and no GPU accelerators. Baseline network performance is rated at 0 Gbps, with zero complimentary public IPv4 addresses included. In synthetic benchmarks, the instance demonstrates lower-tier compute and memory throughput, scoring 1042.98 on stress-ng tests and achieving 8.7 GB/s during uncached large-block memory read operations. The hardware profile is optimized for budget efficiency under intermittent workloads, accepting strict limits on sustained CPU throughput and storage access. Consequently, this instance is suited for lightweight development environments, basic script execution, staging setups, and low-priority microservices.",
+  "og_description": "Alibaba Cloud ecs.t5-lc1m2.small is an entry-level burstable instance with 1 vCPU on an Intel Xeon 8163 processor, 2.0 GB RAM, and no local disk, designed for light development and intermittent utility tasks.",
+  "meta_description": "Alibaba Cloud ecs.t5-lc1m2.small provides 1 burstable Intel Xeon vCPU, 2.0 GB of memory, and no local disk for low-demand testing and background automation.",
+  "tagline": "An entry-level burstable shared instance providing minimal resource consumption for non-critical background automation and low-intensity development testing.",
   "bullet_points": [
-    "Single-core Intel Xeon 8163 processor running at 2.5 GHz",
-    "2.0 GB of system memory with no local storage",
-    "Burstable CPU allocation model for cost-efficient resource usage",
-    "KVM hypervisor-based x86_64 architecture",
-    "Suited for lightweight web serving, microservices, and testing"
+    "1 burstable Intel Xeon 8163 vCPU operating at 2.5 GHz",
+    "2.0 GB system memory (2.0 GB per vCPU)",
+    "No integrated local storage or GPU accelerators",
+    "KVM hypervisor based on x86_64 architecture with AVX-512 support",
+    "Suited for dev-test sandboxes, intermittent cron jobs, and light automation"
   ],
   "categories": [
-    "Burstable & Budget",
-    "General Purpose"
+    "Burstable & Budget"
   ]
 }

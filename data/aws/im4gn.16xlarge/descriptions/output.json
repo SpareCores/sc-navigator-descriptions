@@ -1,22 +1,24 @@
 {
   "page": [
-    "Amazon Web Services im4gn.16xlarge is a storage-optimized server powered by 64 dedicated AWS Graviton Neoverse-N1 physical cores running on the arm64 architecture at 2.5 GHz. The instance features 256.0 GB of system memory, providing a balanced 1:4 vCPU-to-memory ratio of 4.0 GB per core. It is equipped with 30,000 GB of local NVMe SSD storage and delivers a baseline network bandwidth of 100 Gbps, managed via the AWS Nitro hypervisor.",
-    "Benchmark data indicates strong multi-core performance, with stress-ng multi-core CPU tests and software compilation via Clang scoring in the top 25%. The architecture demonstrates high efficiency in cached memory bandwidth, reaching 3782.92 GB/sec for small blocks, and excels in high-throughput operations, as evidenced by 72.61 million operations per second in Redis SET benchmarks and 46.08 GB/sec in static web serving. However, single-threaded performance is a notable tradeoff, with single-core Geekbench and compression tasks scoring in the lower percentiles. Large-block memory writes and LLM inference tasks generally perform in the average tier.",
-    "Utilizing custom ARM-based Graviton processors allows this server type to offer high resource density and qualitative cost efficiency for storage-intensive workloads compared to traditional x86 alternatives. The combination of massive local NVMe SSD capacity, high baseline network bandwidth, and strong multi-core throughput makes the im4gn.16xlarge highly suitable for large-scale databases, Redis deployments, high-throughput web serving, and distributed data-store workloads."
+    "Amazon Web Services im4gn.16xlarge is a storage-optimized instance built on the Nitro hypervisor and powered by 64-bit Arm-based AWS Graviton2 processors (Neoverse-N1). The configuration delivers 64 dedicated physical cores without simultaneous multithreading at a clock speed of 2.5 GHz. It includes 256.0 GB of memory (4.0 GB per core), 30,000 GB of local NVMe SSD storage, and a baseline network bandwidth of 100 Gbps. No dedicated GPUs are attached.",
+    "Benchmark results highlight strong throughput across multi-threaded and I/O-heavy operations. The instance achieves strong performance in multi-core stress testing (97,045.1 in stress-ng), Clang software compilation (42,813.0), Redis SET throughput (72.61 million ops/sec), and static web serving throughput (46.08 GB/sec). Conversely, single-core execution metrics, such as Geekbench single-core (971.0) and single-threaded gzip compression (20.34 GB/sec), place in the lower quartile, reflecting the architectural emphasis on core density rather than single-thread clock frequencies.",
+    "The dense integration of 30 TB high-speed local NVMe storage combined with a 100 Gbps network interface provides high qualitative cost efficiency for data-intensive architectures. Workloads that can divide data pipelines across 64 dedicated Arm cores will maximize the return on resource density, whereas applications reliant on single-threaded IPC or x86-specific instruction sets will face performance bottlenecks.",
+    "This instance profile is best suited for high-throughput distributed databases, large-scale Redis caching layers, log indexing clusters, data lakes, and continuous integration compilation pipelines that require rapid local disk access and broad parallel compute capability."
   ],
-  "description": "Amazon Web Services im4gn.16xlarge is a storage-optimized server featuring 64 dedicated AWS Graviton Neoverse-N1 cores on the arm64 architecture, running at 2.5 GHz. It is equipped with 256.0 GB of memory, 30,000 GB of local NVMe SSD storage, and a baseline network bandwidth of 100 Gbps under the Nitro hypervisor. Benchmarks show strong multi-core capabilities, particularly in Redis operations, static web serving, and software compilation, though single-threaded performance and LLM inference speeds represent clear tradeoffs. The custom ARM architecture delivers high resource density and qualitative cost efficiency for data-intensive deployments. This server is optimized for high-throughput databases, caching layers, and distributed storage workloads.",
-  "og_description": "Amazon Web Services im4gn.16xlarge is a storage-optimized server featuring 64 Graviton cores, 256 GB RAM, 30 TB NVMe SSD storage, and 100 Gbps network bandwidth for high-throughput database workloads.",
-  "meta_description": "Amazon Web Services im4gn.16xlarge is an arm64 storage-optimized server with 64 Graviton cores, 256 GB RAM, and 30 TB of local NVMe SSD storage.",
-  "tagline": "An arm64 storage-optimized instance featuring thirty terabytes of local NVMe SSD storage and high-bandwidth networking for data-intensive workloads.",
+  "description": "Amazon Web Services im4gn.16xlarge is a storage-optimized instance powered by a 64-core AWS Graviton2 Neoverse-N1 processor operating at 2.5 GHz on the Nitro hypervisor. The instance features 256.0 GB of RAM, a massive 30,000 GB local NVMe SSD storage volume, and a 100 Gbps baseline network bandwidth, operating without discrete GPUs. In benchmark evaluations, it demonstrates high efficiency in parallel compute and fast I/O workloads, recording strong results in multi-core stress testing, software compilation, Redis operations (72.61 million ops/sec), and static web throughput. Single-threaded metrics, including Geekbench single-core, show weaker relative performance, confirming a core-count-oriented architecture over peak per-core speed. With its high NVMe storage capacity and dense dedicated physical cores, the im4gn.16xlarge is primarily suited for distributed databases, caching clusters, and high-volume data analytics engines.",
+  "og_description": "Amazon Web Services im4gn.16xlarge provides 64 dedicated Graviton2 cores, 256 GB RAM, 30 TB local NVMe SSD storage, and 100 Gbps networking designed for storage-optimized and data-intensive tasks.",
+  "meta_description": "Amazon Web Services im4gn.16xlarge features 64 Graviton2 cores, 256 GB RAM, 30 TB local NVMe SSD storage, and 100 Gbps networking for dense data workloads.",
+  "tagline": "64-core Arm-based server with 30 TB local NVMe SSD storage and 100 Gbps networking for high-throughput storage-intensive workloads.",
   "bullet_points": [
-    "64 dedicated AWS Graviton Neoverse-N1 physical cores on arm64 architecture",
-    "30,000 GB of high-speed local NVMe SSD storage",
-    "256.0 GB of system memory and 100 Gbps baseline network bandwidth",
-    "Strong multi-core performance in Redis and static web serving benchmarks",
-    "Best suited for large-scale databases, caching layers, and distributed storage"
+    "Powered by 64 dedicated AWS Graviton2 Neoverse-N1 Arm cores at 2.5 GHz",
+    "Equipped with 256 GB RAM and 30,000 GB high-speed local NVMe SSD storage",
+    "High-throughput 100 Gbps baseline network bandwidth via AWS Nitro System",
+    "High performance in parallel compilation, Redis throughput, and multi-threaded stress tests",
+    "Best suited for distributed databases, caching layers, log analytics, and CI/CD pipelines"
   ],
   "categories": [
     "Storage & Database",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

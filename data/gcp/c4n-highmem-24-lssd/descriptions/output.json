@@ -1,23 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4n-highmem-24-lssd is a memory-optimized server instance belonging to the c4n family. It features 24 dedicated vCPUs built on the x86_64 architecture, paired with 186.0 GB of system memory. This configuration provides a resource density of 7.75 GB of RAM per core, supporting memory-intensive operations without GPU acceleration.",
-    "The instance includes bundled local storage consisting of four NVMe SSDs, delivering a total capacity of 1611 GB. This high-speed local storage is integrated directly into the hardware profile, offering low-latency data access. The server does not include complimentary public IPv4 addresses.",
-    "From a qualitative cost-efficiency perspective, the c4n-highmem-24-lssd balances dedicated compute resources with a high memory-to-core ratio and integrated high-speed local storage. This makes the server suitable for workloads such as databases, memory-intensive data processing, and applications requiring fast local scratch space."
+    "Google Cloud Platform c4n-highmem-24-lssd belongs to the Network Optimized family, engineered for high-throughput, memory-demanding infrastructure. It provides 24 dedicated vCPUs based on the x86_64 architecture paired with 186.0 GB of system memory, yielding an allocation of 7.75 GB of RAM per vCPU. The server does not incorporate GPU acceleration, dedicating its host resources entirely to CPU compute, high memory density, and local I/O handling.",
+    "The storage subsystem includes 1611 GB of integrated local NVMe SSD capacity distributed across 4 drives. This local NVMe implementation provides low-latency, high-IOPS storage directly on the hypervisor host, removing network transit overhead for disk operations. In terms of public networking, the instance includes zero complimentary public IPv4 addresses, requiring reliance on private VPC topologies, Cloud NAT, or associated external network routing for external connectivity.",
+    "From a cost-efficiency perspective, the high-density combination of substantial memory and integrated local NVMe disks eliminates the need for expensive high-tier networked block storage in performance-sensitive scenarios. However, because local NVMe storage is ephemeral by nature, workloads must account for data persistence through external replication or snapshots. This hardware configuration fits in-memory caching systems, transactional databases, real-time analytics engines, and high-performance search clusters."
   ],
-  "description": "Google Cloud Platform c4n-highmem-24-lssd is a memory-optimized server instance from the c4n family, featuring 24 dedicated vCPUs on the x86_64 architecture and 186.0 GB of RAM. This configuration yields a high resource density of 7.75 GB of memory per core. The server is equipped with 1611 GB of local NVMe SSD storage distributed across four drives, providing fast local read and write capabilities without any GPU accelerators. Designed for workloads requiring substantial memory and low-latency local storage, this instance is well-suited for database hosting, memory-intensive data processing, and applications requiring high-speed local scratch space. Its hardware profile offers a balanced combination of dedicated compute, high memory capacity, and integrated storage resources.",
-  "og_description": "Google Cloud Platform c4n-highmem-24-lssd is a memory-optimized server featuring 24 dedicated x86_64 vCPUs, 186 GB RAM, and 1611 GB of local NVMe SSD storage across four drives.",
-  "meta_description": "Google Cloud Platform c4n-highmem-24-lssd features 24 dedicated x86_64 vCPUs, 186 GB RAM, and 1611 GB of local NVMe SSD storage.",
-  "tagline": "A memory-optimized server featuring dedicated compute cores, high memory density, and integrated local NVMe SSD storage for demanding workloads.",
+  "description": "Google Cloud Platform c4n-highmem-24-lssd is an x86_64 instance from the Network Optimized family configured with 24 dedicated vCPUs and 186.0 GB of memory. Designed for resource-intensive applications, it delivers a memory-dense ratio of 7.75 GB per core without discrete GPU acceleration. The instance incorporates 1611 GB of high-speed local NVMe SSD storage across 4 drives, offering high-throughput, low-latency disk I/O directly attached to the host. System networking requires dedicated routing or VPC configuration as complimentary public IPv4 addresses are not provided. Cost efficiency is driven by the density of the coupled memory and integrated NVMe hardware, which reduces reliance on external network storage for high-IOPS tasks. Given its memory capacity and fast ephemeral storage, this configuration is well aligned with workloads such as in-memory databases, distributed data caches, real-time analytics engines, and transactional database clusters requiring substantial caching capacity.",
+  "og_description": "Google Cloud Platform c4n-highmem-24-lssd features 24 dedicated x86_64 vCPUs, 186 GB RAM, and 1611 GB of local NVMe SSD storage, engineered for memory-intensive enterprise database and caching workloads.",
+  "meta_description": "Google Cloud Platform c4n-highmem-24-lssd delivers 24 dedicated x86_64 vCPUs, 186 GB of memory, and 1611 GB of NVMe SSD local storage for data workloads.",
+  "tagline": "Dedicated 24-core x86_64 architecture with 186 GB memory and integrated NVMe local storage for low-latency, memory-intensive data processing.",
   "bullet_points": [
     "24 dedicated x86_64 vCPUs",
-    "186.0 GB of system memory with 7.75 GB per core",
-    "1611 GB of local NVMe SSD storage across 4 drives",
-    "Zero GPU configuration for non-accelerated workloads",
-    "Optimized for databases and memory-intensive data processing"
+    "186.0 GB total RAM (7.75 GB per vCPU)",
+    "1611 GB local NVMe SSD storage across 4 drives",
+    "No integrated GPU accelerators",
+    "Optimized for in-memory databases, distributed caches, and IOPS-heavy data processing"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

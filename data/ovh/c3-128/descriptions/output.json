@@ -1,23 +1,23 @@
 {
   "page": [
-    "OVHcloud c3-128 is a compute-optimized server instance featuring 64 dedicated physical cores powered by an AMD EPYC x86_64 processor running at 2.3 GHz. The architecture allocates exactly one thread per core, ensuring dedicated execution resources without hyperthreading. It is configured with 128 GB of RAM, yielding a resource density of 2.0 GB per core. Local storage is provided by a 400 GB NVMe SSD, and the instance includes an 8 Gbps baseline network bandwidth alongside one complimentary public IPv4 address.",
-    "Benchmark data reveals a clear distinction between single-core and multi-core performance. While single-threaded tasks like gzip compression and Geekbench single-core execution register in the middle 50%, multi-threaded capabilities are highly competitive. The instance achieves top-tier status in stress-ng multi-core CPU performance, Passmark CPU physics, and multi-threaded bzip3 decompression. Memory bandwidth for small cached blocks also ranks in the top tier, though large-block uncached read and write operations drop to the strong category. This profile indicates a tradeoff where highly parallelized workloads benefit significantly, whereas single-threaded execution remains average.",
-    "Given the dedicated 64-core hardware profile and strong multi-core benchmarks, the c3-128 is suited for parallel computing tasks such as software compilation, ray tracing, and image processing, all of which scored in the top tier during testing. It also supports high-throughput database operations, demonstrated by a top-tier result of 137.31 million Redis SET operations per second. The qualitative cost efficiency of this instance lies in its high density of dedicated physical cores, making it a viable option for compute-bound workloads that do not require massive memory footprints."
+    "OVHcloud c3-128 is a compute-optimized virtual instance built on AMD EPYC x86_64 processors running under the KVM hypervisor. The instance is configured with 64 dedicated physical cores (64 vCPUs) running at a base clock speed of 2.3 GHz, with one thread per core (simultaneous multithreading is disabled). It provides 128 GB of system memory, matching a 1:2 compute-optimized ratio of 2.0 GB RAM per core. The package includes 400 GB of local NVMe SSD storage, an 8 Gbps baseline network interface, and no attached GPUs.",
+    "Benchmark results demonstrate exceptional multi-threaded computational and memory throughput. The instance ranks in the top 10% on multi-core stress-ng tests, multi-threaded bzip3 decompression, PassMark CPU scores, and software compilation via Clang. It also registers top-tier results in Redis SET operations (137.31 million ops/sec) and cached memory bandwidth. In contrast, single-threaded metrics reflect the 2.3 GHz clock frequency, registering average tier performance in single-core Geekbench and single-threaded gzip and bzip3 tasks. Additionally, the CPU does not support AVX-512 extensions.",
+    "OVHcloud c3-128 offers high core-density economics for highly parallel processing pipelines. The inclusion of 400 GB NVMe local storage facilitates low-latency temporary data operations without requiring secondary volume attachments. However, users running single-threaded bottlenecks, large-scale vector acceleration requiring AVX-512, or memory-heavy applications requiring high RAM ratios may experience architectural limits.",
+    "This server is suited for CPU-bound multi-threaded workloads, including software compilation farms, continuous integration and deployment (CI/CD) pipelines, batch data processing, physics simulations, and high-throughput in-memory caching nodes."
   ],
-  "description": "OVHcloud c3-128 is a compute-optimized server featuring 64 dedicated physical cores on an AMD EPYC x86_64 processor running at 2.3 GHz with no hyperthreading. It is equipped with 128 GB of RAM, a 400 GB NVMe SSD, and an 8 Gbps baseline network interface. Benchmark results indicate top-tier multi-core CPU performance, software compilation speeds, and Redis SET throughput, alongside strong database and static web serving capabilities. Conversely, single-threaded performance and LLM text generation speeds fall into the average range. With a low memory-to-core ratio of 2.0 GB per core, this instance represents a tradeoff favoring dense parallel processing over memory-intensive operations. It is suited for multi-threaded workloads such as software compilation, ray tracing, image processing, and high-throughput caching.",
-  "og_description": "OVHcloud c3-128 is a compute-optimized server with 64 dedicated AMD EPYC cores, 128 GB RAM, and a 400 GB NVMe SSD, delivering top-tier multi-core performance for parallel processing workloads.",
-  "meta_description": "OVHcloud c3-128 is a compute-optimized server featuring 64 dedicated AMD EPYC cores, 128 GB RAM, and top-tier multi-core performance.",
-  "tagline": "A dedicated sixty-four core compute instance designed for highly parallelized workloads, multi-threaded software compilation, and high-throughput caching.",
+  "description": "OVHcloud c3-128 is a compute-optimized instance offering 64 dedicated physical cores on an AMD EPYC x86_64 platform clocked at 2.3 GHz without multithreading. It features 128 GB of RAM (2.0 GB per core), 400 GB of local NVMe SSD storage, and an 8 Gbps network interface, without discrete GPUs. In benchmarks, the c3-128 demonstrates top-tier multi-core computing power, excelling in parallel Clang software compilation, multi-threaded decompression, PassMark CPU evaluation, and Redis operations. Single-thread performance is moderate due to the 2.3 GHz base frequency, and the processor lacks AVX-512 support. The bundled local NVMe storage and dedicated compute cores provide strong operational efficiency for scalable, multi-threaded tasks. OVHcloud c3-128 is suited for large-scale software builds, CI/CD workloads, batch data transformations, and high-volume caching systems.",
+  "og_description": "OVHcloud c3-128 is a compute-optimized server with 64 dedicated AMD EPYC cores, 128 GB RAM, and 400 GB NVMe storage, delivering top-tier multi-threaded processing for CI/CD and batch compute.",
+  "meta_description": "OVHcloud c3-128 features 64 AMD EPYC cores, 128 GB RAM, 400 GB NVMe storage, and 8 Gbps networking, optimized for parallel compute workloads.",
+  "tagline": "Dedicated 64-core AMD EPYC compute power paired with local NVMe storage for dense multi-threaded workloads.",
   "bullet_points": [
-    "64 dedicated AMD EPYC physical cores with no hyperthreading",
-    "128 GB RAM and 400 GB local NVMe SSD storage",
-    "Top-tier multi-core CPU, software compilation, and ray tracing performance",
-    "High-throughput caching with 137.31 million Redis SET operations per second",
-    "Tradeoff of lower memory-per-core ratio optimized for pure compute",
-    "Suited for parallel processing, multi-threaded decompression, and physics simulations"
+    "64 dedicated AMD EPYC x86_64 physical cores (1 thread/core) at 2.3 GHz",
+    "128 GB system memory (2.0 GB per core allocation)",
+    "Bundled 400 GB high-speed local NVMe SSD storage",
+    "Top-tier multi-core performance in Clang compilation and multi-threaded decompression",
+    "8 Gbps baseline network bandwidth",
+    "Best fit for CI/CD pipelines, multi-threaded build systems, and in-memory caches"
   ],
   "categories": [
-    "Compute Optimized",
-    "Storage & Database"
+    "Compute Optimized"
   ]
 }

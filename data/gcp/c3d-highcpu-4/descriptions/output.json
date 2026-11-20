@@ -1,22 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c3d-highcpu-4 is a compute-optimized server built on x86_64 architecture using AMD EPYC 9B14 processors. The instance provides 4 dedicated virtual CPUs across 2 physical cores with 2 threads per core, paired with 8.0 GB of RAM, resulting in a ratio of 2.0 GB of memory per core. Cache specifications include 32 KB of L1d cache, 1 MB of L2 cache, and 32 MB of shared L3 cache. Supported instruction set extensions feature AVX-512 vector instructions (f, vnni, bf16), AES, VAES, and SHA_NI hardware acceleration. The instance does not include local NVMe storage or GPU hardware.",
-    "Performance data indicates high single-core CPU throughput, ranking in the top 25% on stress-ng single-thread benchmarks. Single-threaded text processing, bzip3 decompression, and gzip compression show mid-range results. In contrast, multi-core CPU scoring and total memory bandwidth drop into the lower 25th percentile. Memory benchmark tests report limited throughput during large-block read and write operations, which correlates with low scores in memory-sensitive workloads including Redis operation rates, static web serving throughput, and PassMark database tests.",
-    "The 1:2 vCPU-to-memory ratio provides a lean hardware configuration designed to minimize memory allocation overhead for CPU-heavy tasks. However, the low memory capacity limits parallel scaling for data-heavy operations. The instance is suited for single-threaded compute tasks, utility scripting, lightweight batch processing, and low-concurrency application services that do not require high memory bandwidth or local SSD storage."
+    "Google Cloud Platform c3d-highcpu-4 is an entry-tier, compute-focused virtual machine instance equipped with 4 dedicated vCPUs mapped across 2 physical AMD EPYC 9B14 cores. Built on the x86_64 architecture, each core supports two threads, complemented by 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of shared L3 cache. System memory totals 8.0 GB, yielding a 1:2 vCPU-to-RAM density of 2.0 GB per vCPU. The instance does not include integrated GPUs or local storage, relying exclusively on attached persistent storage solutions for data persistence.",
+    "Performance profiles demonstrate competent single-threaded execution, supported by an advanced instruction set including AVX-512, AVX512_VNNI, and AVX512_BF16, along with hardware-accelerated AES and SHA cryptographic instructions. In synthetic testing, single-core CPU throughput registers in the top 25% on stress-ng and shows average scores on Geekbench (1863.0) and PassMark (7006.41 total CPU score). However, aggregate multithreaded capacity and memory performance remain constrained due to the 4-vCPU and 8.0 GB footprint. Multi-core evaluations on Geekbench (4217.0) and stress-ng fall into lower industry quartiles, alongside low memory bandwidth metrics measuring 37.53 GB/s read and 15.4 GB/s write on uncached blocks.",
+    "From an architectural standpoint, the c3d-highcpu-4 provides qualitative efficiency for workloads characterized by moderate thread concurrency and low memory overhead. The lack of bundled local NVMe storage and limited memory ceiling make it suboptimal for large in-memory databases, dense data science workloads, or heavy parallel compiling. Instead, the instance is appropriate for lightweight batch processing, entry-level continuous integration tasks, utility microservices, single-threaded web serving, and small-model inference tasks."
   ],
-  "description": "Google Cloud Platform c3d-highcpu-4 is a compute-optimized virtual server powered by an AMD EPYC 9B14 processor on x86_64 architecture. It provides 4 dedicated vCPUs spanning 2 physical cores with hyperthreading and 8.0 GB of RAM, yielding a 1:2 vCPU-to-memory ratio. Hardware support includes AVX-512, AES, and SHA vector instructions, with cache allocation comprising 32 MB L3 cache. Benchmarks show strong single-core CPU performance in the top quartile, alongside average execution times for single-threaded compression and general CPU benchmarks. Conversely, multi-core throughput, memory bandwidth, and database transaction rates fall into the bottom quartile due to low memory density and limited memory bus transfer speeds. The instance offers resource efficiency for compute-heavy, low-memory execution paths without bundled local disk or GPU accelerators. It is suitable for batch processing, basic text processing, utility scripts, and single-threaded compute workloads.",
-  "og_description": "Google Cloud Platform c3d-highcpu-4 is a compute-optimized instance featuring 4 dedicated AMD EPYC vCPUs and 8 GB RAM, designed for light compute and single-threaded batch processing workloads.",
-  "meta_description": "Google Cloud Platform c3d-highcpu-4 is a compute-optimized server with 4 AMD EPYC vCPUs and 8 GB RAM for CPU-focused single-threaded tasks.",
-  "tagline": "A compute-focused x86 instance featuring four dedicated virtual cores and balanced vector instruction support for single-threaded processing workloads.",
+  "description": "Google Cloud Platform c3d-highcpu-4 is a compute-focused instance powered by AMD EPYC 9B14 processors using x86_64 architecture. It provides 4 dedicated vCPUs across 2 physical cores, coupled with 8.0 GB of RAM at a 2.0 GB per vCPU ratio, featuring 32 MB of L3 cache alongside instruction support for AVX-512 and cryptographic offloading. The configuration contains no dedicated GPUs or local storage, requiring network-attached storage. Benchmark evaluations indicate competitive single-core performance, though overall throughput is constrained by the low core count and moderate memory bandwidth. Cost-efficient for light compute scenarios without extensive memory demands, this instance fits lightweight utility workloads, modest web services, entry-level CI/CD jobs, and small model processing tasks.",
+  "og_description": "Google Cloud Platform c3d-highcpu-4 features 4 dedicated vCPUs via AMD EPYC 9B14 processors, 8 GB of memory, and strong single-core CPU benchmarks for lightweight compute tasks.",
+  "meta_description": "Google Cloud Platform c3d-highcpu-4 offers 4 dedicated vCPUs on AMD EPYC 9B14 hardware with 8 GB RAM, tailored for compute-biased utility workloads.",
+  "tagline": "Dedicated AMD EPYC compute power featuring a lean memory footprint and balanced instruction-level execution for modest services.",
   "bullet_points": [
-    "AMD EPYC 9B14 CPU with 4 dedicated vCPUs across 2 physical cores",
-    "8.0 GB DDR memory providing a 1:2 vCPU-to-RAM ratio",
-    "Hardware acceleration for AVX-512, VAES, and SHA instruction sets",
-    "Strong single-core CPU execution in benchmark testing",
-    "Zero attached local disk storage and no GPU acceleration",
-    "Fit for single-threaded compute, utility processing, and light batch tasks"
+    "4 dedicated vCPUs powered by AMD EPYC 9B14 processors (2 physical cores, 2 threads per core)",
+    "8.0 GB system memory (2.0 GB per vCPU allocation)",
+    "Comprehensive instruction set support including AVX-512, AVX512_BF16, and AES-NI",
+    "No integrated GPUs or local storage; relies on persistent remote disks",
+    "Solid single-core benchmark performance with low aggregate memory bandwidth",
+    "Targeted for microservices, lightweight web servers, and modest CI/CD pipeline workers"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

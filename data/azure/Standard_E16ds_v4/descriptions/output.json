@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E16ds_v4 is a memory-optimized virtual machine instance belonging to the EDSv4 family, running on the Microsoft Hyper-V hypervisor. It features 16 dedicated vCPUs mapped to 8 physical Intel Xeon 8272CL processor cores operating at a base frequency of 2.6 GHz. The x86_64 architecture includes 35 MB of L3 cache and supports advanced instruction sets such as AVX-512 and AVX512_VNNI. The instance is equipped with 128 GB of RAM, establishing a high memory-to-vCPU ratio of 8 GB per core. Storage is bundled with a 614 GB local SSD, and the instance is Premium Storage capable. No GPUs are present on this configuration.",
-    "In benchmark evaluations, the E16ds_v4 demonstrates consistent mid-range performance. It achieves a Geekbench single-core score of 1244.0 and a multi-core score of 7658.0. Memory performance is characterized by a read-only small block cached bandwidth of 830.49 GB/sec, which drops to 69.79 GB/sec for uncached large blocks, alongside a write bandwidth of 41.6 GB/sec. Database operations score 5749.22 on Passmark, and the instance processes 13.72 million Redis SET operations per second. A notable performance tradeoff is observed in LLM inference workloads; while prompt processing for a small 135M model reaches 878.33 tokens/second, prompt processing for a medium 7B model drops to a weak 29.49 tokens/second, indicating limitations for larger AI workloads.",
-    "The qualitative cost profile of the E16ds_v4 reflects its positioning as a memory-dense resource. The inclusion of a 614 GB local SSD provides high local storage capacity without requiring separate storage attachments, enhancing overall resource density. Given its high memory capacity and solid database benchmark performance, this instance is well-suited for memory-intensive enterprise applications, relational databases, caching layers like Redis, and static web serving."
+    "Microsoft Azure E16ds_v4 is a memory-optimized virtual machine instance powered by Microsoft Hyper-V. The system is provisioned with 16 dedicated vCPUs mapped across 8 physical cores on an Intel Xeon 8272CL processor operating at a base frequency of 2.6 GHz. Built on the x86_64 architecture, the processor features 35 MB of L3 cache and supports advanced instruction sets including AVX-512, AVX512_VNNI, AES, and FMA. Hardware acceleration is absent, with zero GPUs included.",
+    "Memory capacity is configured at 128.0 GB of RAM, yielding an allocation of 8.0 GB per vCPU. The instance comes equipped with 644 GB of direct-attached local SSD storage alongside support for Azure Premium Storage remote volumes. Benchmarks show uncached memory bandwidth sustained at 69.79 GB/sec for large-block reads and 41.6 GB/sec for writes, alongside cached read throughput reaching 830.49 GB/sec.",
+    "Benchmark evaluations reveal modest single-thread compute capabilities, placing in the lower quartile on both stress-ng and Geekbench single-core tests. Conversely, multi-threaded workloads operate squarely in the middle tier, evidenced by a multi-core Geekbench score of 6,410 and a PassMark CPU score of 15,834.08. In database tests, the instance records 13.72 million Redis SET operations per second and steady throughput across PassMark database operations.",
+    "The hardware configuration trades single-threaded peak compute for memory capacity and high local I/O density. Because of its 1:8 vCPU-to-memory ratio and bundled high-speed local disk, the E16ds_v4 provides practical cost efficiency for memory-intensive enterprise tasks without requiring over-provisioned compute cores. Appropriate deployment workloads include relational database servers, in-memory caching solutions like Redis, intermediate ETL processing, and medium-scale analytics applications requiring fast temporary storage."
   ],
-  "description": "Microsoft Azure E16ds_v4 is a memory-optimized virtual machine from the EDSv4 family, powered by an Intel Xeon 8272CL processor with 16 dedicated vCPUs and 128 GB of RAM. This configuration yields a high 8 GB of memory per core, supported by a bundled 614 GB local SSD. Operating on the Microsoft Hyper-V hypervisor, the x86_64 architecture supports AVX-512 instructions. Benchmark results place the instance in the average tier for most workloads, with a Geekbench multi-core score of 7658.0 and 13.72 million Redis SET operations per second. However, a performance tradeoff is evident in LLM inference, where prompt processing for a 7B model drops to a weak 29.49 tokens/second. The qualitative cost efficiency is driven by high memory density and bundled local storage, making the instance suitable for database operations, caching layers, and memory-intensive enterprise workloads.",
-  "og_description": "Microsoft Azure E16ds_v4 is a memory-optimized instance featuring 16 Intel Xeon vCPUs, 128 GB of RAM, and a 614 GB local SSD, designed for database workloads and memory-intensive enterprise applications.",
-  "meta_description": "Microsoft Azure E16ds_v4 is a memory-optimized VM with 16 Intel Xeon vCPUs, 128 GB RAM, and a 614 GB local SSD for database and enterprise workloads.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated Intel processors, high memory density, and integrated local SSD storage for enterprise database workloads.",
+  "description": "Microsoft Azure E16ds_v4 is a memory-optimized cloud virtual machine featuring 16 dedicated vCPUs from an 8-core Intel Xeon 8272CL processor at 2.6 GHz on the x86_64 architecture. The system provides 128.0 GB of system memory, maintaining an 8.0 GB per vCPU ratio, and includes 644 GB of local SSD temporary storage with no hardware GPUs. Benchmark testing reveals lower-tier single-core performance alongside balanced multi-threaded throughput, illustrated by a Geekbench multi-core score of 6,410 and 13.72 million Redis SET operations per second. Memory throughput delivers 69.79 GB/sec for uncached read operations. The hardware layout is cost-efficient for applications prioritizing memory volume and local scratch disk over raw CPU frequency, making it suitable for relational databases, in-memory caches, data transformation jobs, and static web serving.",
+  "og_description": "Microsoft Azure E16ds_v4 is a memory-optimized server with 16 vCPUs on an Intel Xeon 8272CL CPU, 128 GB RAM, and 644 GB local SSD storage, suited for databases and in-memory caches.",
+  "meta_description": "Microsoft Azure E16ds_v4 provides 16 vCPUs, 128 GB RAM, and 644 GB local SSD storage on Intel Xeon architecture for memory-intensive workloads.",
+  "tagline": "Memory-dense computing platform combining 128 GB RAM with 644 GB of local SSD storage for data-intensive enterprise workloads.",
   "bullet_points": [
-    "16 dedicated vCPUs powered by an Intel Xeon 8272CL processor",
-    "128 GB of RAM providing a high 8 GB memory-to-core ratio",
-    "Bundled 614 GB local SSD storage with Premium Storage capability",
-    "Delivers 13.72 million Redis SET operations per second in benchmarks",
-    "Exhibits performance limitations in medium-sized LLM inference tasks",
-    "Best suited for relational databases, caching layers, and enterprise applications"
+    "16 dedicated vCPUs from an 8-core Intel Xeon 8272CL processor running at 2.6 GHz",
+    "128.0 GB total system RAM providing 8.0 GB per vCPU allocation",
+    "Bundled 644 GB local SSD temporary storage with Premium Storage capability",
+    "Integrated AVX-512 and VNNI vector instruction extensions",
+    "Best suited for relational databases, Redis caching layers, and ETL pipelines"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

@@ -1,20 +1,19 @@
 {
   "page": [
-    "Amazon Web Services r8ib.large is a memory-optimized virtual machine instance powered by the Nitro hypervisor. It features an x86_64 architecture with a dedicated Intel processor operating at a clock speed of 3.9 GHz. The instance is configured with 1 physical CPU core, supporting 2 threads per core to deliver 2 virtual CPUs (vCPUs).",
-    "The instance is equipped with 16.0 GB of memory, resulting in a memory-to-vCPU ratio of 8.0 GB per vCPU. It does not include local storage, meaning all storage requirements must be met via network-attached volumes. Network connectivity is established with a baseline bandwidth of 2 Gbps. There are no GPUs or complimentary public IPv4 addresses bundled with this instance.",
-    "Given its memory-to-vCPU ratio, the r8ib.large is designed for memory-intensive workloads that do not require local storage or GPU acceleration. It is suitable for small-scale databases, in-memory caching, and enterprise applications requiring dedicated Intel CPU performance. From a qualitative cost-efficiency perspective, the instance provides a high memory density per vCPU within the Gen8 Intel hardware class, though users must factor in the additional cost of network-attached storage."
+    "Amazon Web Services r8ib.large is a memory-optimized virtual machine instance running on the AWS Nitro System. It is powered by an Intel x86_64 processor clocked at 3.9 GHz, configured with 2 dedicated vCPUs derived from a single physical execution core using two threads per core. The server provides 16.0 GB of system memory, which represents an 8.0 GB per vCPU allocation, reflecting an elevated 1:8 compute-to-memory ratio characteristic of memory-optimized families.",
+    "The r8ib.large includes no onboard local storage, necessitating reliance on remote block storage solutions for persistent data retention. It contains no integrated graphics processing units or hardware accelerators. Networking is configured with a 2 Gbps baseline bandwidth, and instances are deployed without complimentary public IPv4 addresses. Users must account for network throughput limits when sizing external volume attachment for I/O-heavy operations.",
+    "By offering substantial memory capacity relative to its 2 vCPUs, the r8ib.large allows memory-heavy tasks to operate efficiently without overprovisioning unneeded compute cores. This configuration delivers solid resource efficiency for workloads where memory footprint dictates instance sizing. Primary operational fits include in-memory key-value stores, distributed caches, small-to-medium relational databases, and data transformation microservices requiring moderate compute paired with ample memory."
   ],
-  "description": "Amazon Web Services r8ib.large is a memory-optimized Gen8 instance featuring a dedicated Intel processor running at 3.9 GHz on the x86_64 architecture. Managed by the Nitro hypervisor, the instance provides 2 vCPUs derived from 1 physical core with 2 threads. It is equipped with 16.0 GB of system memory, providing a high memory-to-vCPU allocation of 8.0 GB per core. The instance does not include local storage or GPU hardware, and it features a baseline network bandwidth of 2 Gbps. This configuration is designed for memory-intensive workloads, such as small-scale databases, caching layers, and enterprise applications that rely on dedicated Intel compute resources but do not require local NVMe storage.",
-  "og_description": "Amazon Web Services r8ib.large is a memory-optimized Gen8 instance with a 3.9 GHz Intel CPU, 2 vCPUs, 16.0 GB of RAM, and 2 Gbps baseline network bandwidth, running on the Nitro hypervisor.",
-  "meta_description": "Amazon Web Services r8ib.large is a memory-optimized Gen8 instance featuring 2 vCPUs, 16.0 GB RAM, and a 3.9 GHz Intel processor.",
-  "tagline": "A memory-optimized Gen8 instance featuring dedicated Intel compute resources and high memory density for memory-intensive workloads.",
+  "description": "Amazon Web Services r8ib.large is an entry-level memory-optimized instance built on the Nitro hypervisor architecture. Powered by a dedicated x86_64 Intel processor operating at 3.9 GHz, the instance exposes 2 vCPUs mapped to a single physical core with hyper-threading enabled. It is equipped with 16.0 GB of memory, yielding a 1:8 core-to-memory ratio of 8.0 GB per vCPU, specifically suited for memory-bound applications. The configuration contains no dedicated GPUs and features no local instance storage, requiring persistent workloads to rely on networked storage volumes. Network performance is provisioned with a baseline bandwidth of 2 Gbps, and no complimentary public IPv4 addresses are assigned by default. From an architectural efficiency perspective, the high RAM-to-vCPU allocation minimizes the need to scale compute resources simply to satisfy memory footprint demands. The r8ib.large instance fits in-memory caching systems, lightweight relational or key-value databases, and memory-intensive microservices.",
+  "og_description": "Amazon Web Services r8ib.large is a memory-optimized Nitro instance featuring 2 Intel x86_64 vCPUs at 3.9 GHz, 16 GB of RAM, 2 Gbps network baseline, and dependency on external block storage.",
+  "meta_description": "Amazon Web Services r8ib.large features 2 Intel vCPUs at 3.9 GHz, 16 GB memory, 2 Gbps network baseline, and Nitro-based virtualization without local storage.",
+  "tagline": "Memory-optimized dual-vCPU architecture delivering high RAM density alongside dedicated high-frequency compute for caching, in-memory processing, and mid-tier backend services.",
   "bullet_points": [
-    "Dedicated Intel processor operating at 3.9 GHz clock speed",
-    "16.0 GB of system memory providing 8.0 GB per vCPU",
-    "2 vCPUs powered by 1 physical core with 2 threads",
-    "Baseline network bandwidth of 2 Gbps",
-    "No local storage or GPU hardware included",
-    "Designed for small-scale databases and in-memory caching"
+    "Dual Intel x86_64 vCPUs running at 3.9 GHz on 1 physical core",
+    "16.0 GB system RAM providing an 8.0 GB per vCPU allocation",
+    "AWS Nitro hypervisor architecture with dedicated CPU allocation",
+    "2 Gbps baseline network bandwidth without local disk storage",
+    "Suited for distributed caching, in-memory databases, and data processing"
   ],
   "categories": [
     "Memory Optimized"

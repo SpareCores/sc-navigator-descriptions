@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D4d_v4 is a general-purpose virtual machine belonging to the DDv4 family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated vCPUs mapped to 2 physical cores of an Intel Xeon 8272CL x86_64 processor operating at 2.6 GHz. The processor includes a 35 MB L3 cache, 1.0 MB L2 cache, and 32 KB L1D cache. It supports hardware-assisted virtualization and advanced instruction sets such as AVX-512, AVX512_VNNI, and AES cryptography.",
-    "The instance is equipped with 16.0 GB of system memory, providing a balanced allocation of 4.0 GB per vCPU. It includes a bundled 154 GB local SSD for temporary storage, which is beneficial for workloads requiring low-latency scratch space. No dedicated GPU hardware is present on this server configuration.",
-    "Benchmark results indicate that the D4d_v4 delivers modest processing capabilities. In stress-ng and Passmark CPU tests, both single-core and multi-core performances fall into the bottom 25% tier. Memory bandwidth tests show weak to poor performance, with large-block read-only bandwidth measured at 22.2 GB/sec. However, single-threaded operations like gzip compression and bzip3 decompression achieve average tier results. Geekbench scores also reflect average single-core performance but weak multi-core scaling, compiling, and image processing capabilities.",
-    "From a resource density perspective, the D4d_v4 offers a balanced hardware profile suitable for entry-level general-purpose workloads. Given its modest CPU and memory bandwidth benchmarks, it is best suited for lightweight web serving, basic text processing, and development or testing environments that benefit from local SSD storage but do not require sustained high-throughput compute or memory performance."
+    "Microsoft Azure D4d_v4 is a general-purpose virtual machine running on the Microsoft Hyper-V hypervisor. The instance is powered by an Intel Xeon 8272CL processor operating at a base frequency of 2.6 GHz. It provides 4 dedicated vCPUs split across 2 physical cores with hyper-threading enabled. Cache configuration includes 32 KB of L1 data cache per core, 1.0 MB of L2 cache, and a shared 35 MB L3 cache. Instruction set extensions include AVX, AVX-512 (Foundation and VNNI), and AES-NI, with no hardware accelerators or GPUs included.",
+    "Memory and integrated storage follow standard balanced ratios. The instance supplies 16.0 GB of system memory, matching a 1:4 vCPU-to-RAM ratio with 4.0 GB of memory per core. Bundled with the instance is 161 GB of local SSD ephemeral storage. The instance does not include complimentary public IPv4 addresses, relying on internal or assigned networking configurations for connectivity.",
+    "Benchmark results place the D4d_v4 in low-to-mid tier performance ranges. Single-core evaluations, such as the Geekbench single-core score of 1332.0 and text processing, register in the middle 50% category, alongside single-threaded gzip compression at 25.16 GB/sec. However, multi-core metrics fall largely into the bottom 25%, shown by a Geekbench multi-core score of 2921.0, a PassMark CPU score of 4399.99, and multi-core stress-ng at 3700.14. Memory bandwidth drops to the bottom 10% for large uncached reads at 22.2 GB/sec, though cached small-block reads achieve 219.01 GB/sec.",
+    "From a cost-efficiency perspective, the D4d_v4 provides a dense balance of compute, memory, and fast local temporary storage for standard business workloads. Given its modest throughput in parallelized workloads and database operations (1461.74 on PassMark), it is best aligned with general application serving, development and test environments, small enterprise microservices, and lightweight caching systems like Redis, where balanced vCPU and RAM density is more critical than raw multi-threaded compute speed."
   ],
-  "description": "The Microsoft Azure D4d_v4 is a general-purpose virtual machine from the DDv4 family, powered by an Intel Xeon 8272CL x86_64 processor running at 2.6 GHz. It provides 4 dedicated vCPUs, 16.0 GB of RAM, and a bundled 154 GB local SSD. Operating under the Microsoft Hyper-V hypervisor, the CPU supports AVX-512 and AES instructions. Performance benchmarks place this instance primarily in the lower tiers, with weak multi-core CPU and memory bandwidth results, though it maintains average single-threaded compression and text processing speeds. Lacking a GPU, the D4d_v4 is qualitatively positioned as a cost-effective option for workloads with moderate resource demands. It is best suited for general-purpose tasks, lightweight web serving, software development, and testing environments that utilize local scratch storage.",
-  "og_description": "Microsoft Azure D4d_v4 is a general-purpose virtual machine featuring 4 vCPUs, 16 GB of RAM, and a 154 GB local SSD, powered by an Intel Xeon 8272CL processor under Hyper-V for moderate workloads.",
-  "meta_description": "Microsoft Azure D4d_v4 is a general-purpose virtual machine with 4 vCPUs, 16 GB RAM, and a 154 GB local SSD, powered by an Intel Xeon processor.",
-  "tagline": "A balanced general-purpose virtual machine featuring dedicated Intel Xeon processing and integrated local SSD storage for moderate development workloads.",
+  "description": "Microsoft Azure D4d_v4 is a general-purpose virtual machine featuring 4 dedicated vCPUs from an Intel Xeon 8272CL processor running at 2.6 GHz across 2 physical hyper-threaded cores. The instance is configured with 16.0 GB of RAM and bundles 161 GB of local SSD storage, with no discrete GPU. It supports AVX-512 and AES vector instructions. Across benchmark testing, the D4d_v4 exhibits mid-range single-threaded performance, as indicated by a Geekbench single-core score of 1332.0 and balanced gzip compression, but ranks in lower percentiles for multi-core compute and large uncached memory operations. With its 1:4 vCPU-to-memory configuration and local scratch storage, it is suited for enterprise application hosting, moderate web serving, development servers, and general-purpose business logic.",
+  "og_description": "Microsoft Azure D4d_v4 is a general-purpose virtual machine featuring 4 dedicated vCPUs from an Intel Xeon 8272CL processor, 16.0 GB of memory, and 161 GB of integrated local SSD storage.",
+  "meta_description": "Microsoft Azure D4d_v4 features 4 vCPUs on an Intel Xeon 8272CL processor, 16.0 GB RAM, and 161 GB local SSD for balanced general-purpose workloads.",
+  "tagline": "A balanced 4-vCPU general-purpose compute instance featuring 16 GB of memory and fast local SSD storage.",
   "bullet_points": [
-    "4 dedicated vCPUs on an Intel Xeon 8272CL processor",
-    "16.0 GB system memory with 4.0 GB per core",
-    "154 GB bundled local SSD storage",
-    "AVX-512 and AES hardware instruction support",
-    "Best suited for lightweight web serving and development environments"
+    "4 dedicated vCPUs powered by an Intel Xeon 8272CL processor at 2.6 GHz",
+    "16.0 GB of system RAM providing a balanced 1:4 core-to-memory ratio",
+    "161 GB of integrated local SSD temporary storage",
+    "Support for AVX, AVX-512 VNNI, and hardware-accelerated AES cryptography",
+    "Tailored for general web application serving, development environments, and microservices"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

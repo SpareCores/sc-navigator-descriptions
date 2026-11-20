@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure L12aos_v4 is a storage-optimized server instance powered by a dedicated AMD EPYC 9V74 processor. Operating on the x86_64 architecture, this instance features 12 virtual CPUs mapped to 6 physical cores with multithreading enabled. It is equipped with 96.0 GB of system memory, providing a high memory-to-core ratio of 8.0 GB per vCPU. The hardware configuration includes a substantial 8639 GB local NVMe SSD, making it highly capable for storage-intensive operations.",
-    "Performance benchmarks indicate strong single-core capabilities, with stress-ng single-core CPU and Geekbench single-core scores placing in the top 25% of tested hardware. Text processing and small-model LLM text generation also demonstrate strong performance. However, multi-core CPU execution, database operations, and web serving throughput fall within the average tier. A notable performance tradeoff is observed in memory bandwidth; while small-block cached reads are average, large-block uncached read memory bandwidth is weak, registering in the bottom 25% at 38.93 GB/sec.",
-    "From a cost-efficiency perspective, the L12aos_v4 offers a high density of local NVMe storage relative to its compute footprint, reducing the need for external premium storage attachments for large datasets. This resource profile is highly suitable for large-scale databases, data warehousing, indexing services, and memory-intensive applications that require rapid access to extensive local scratch space."
+    "Microsoft Azure L12aos_v4 is a storage-optimized virtual machine provisioned on Microsoft Hyper-V. It features the AMD EPYC 9V74 processor based on the x86_64 architecture, configured with 12 dedicated vCPUs mapped across 6 physical cores with simultaneous multithreading. The CPU operates at an active frequency of 3.7 GHz and includes 32 KB L1 data cache, 1 MB L2 cache, and 32 MB L3 cache. It incorporates vector and cryptographic acceleration instructions, including AVX-512, AVX-512 VNNI, AVX-512 BF16, AES, and SHA-NI. The instance is allocated 96.0 GB of memory (8.0 GB per vCPU) and bundles 8,639 GB of high-speed local NVMe SSD storage. It operates without dedicated GPUs and provides zero complimentary public IPv4 addresses.",
+    "Benchmark results demonstrate strong single-core compute performance, highlighted by top-quartile results in stress-ng single-core (3,078.38) and Geekbench single-core tests (2,087.0). Multi-core throughput remains in the middle 50% tier, registering a PassMark CPU score of 20,559.19, a Geekbench multi-core score of 10,441.0, and a stress-ng multi-core output of 18,474.21. In memory assessments, small-block cached read throughput reaches 912.02 GB/sec, though uncached large-block reads fall into the bottom 25% at 38.93 GB/sec. Application tests show steady mid-range throughput, with 17.12 million operations per second in Redis SET workloads and 16.01 GB/sec in static web serving benchmarks.",
+    "The primary tradeoff of the L12aos_v4 lies in its memory subsystem latency over large sequential working sets versus its large NVMe storage capacity and high single-thread clock. The hardware profile is cost-efficient for applications requiring significant low-latency local disk space alongside substantial memory per core, avoiding external block storage overheads. It is well-fitted for high-I/O transactional databases, data warehousing, analytics platforms, distributed cache architectures, and log aggregation systems requiring direct access to fast NVMe SSD storage."
   ],
-  "description": "The Microsoft Azure L12aos_v4 is a storage-optimized server instance powered by a dedicated 12-vCPU AMD EPYC 9V74 processor with 6 physical cores and 96.0 GB of RAM. It features a massive 8639 GB local NVMe SSD, providing substantial high-speed storage capacity. Benchmarks reveal strong single-core CPU performance and text processing capabilities, alongside average multi-core and database execution speeds. However, uncached large-block read memory bandwidth is a performance bottleneck, scoring in the bottom 25%. This instance offers high qualitative cost efficiency for storage-heavy workloads by bundling massive local NVMe capacity with a balanced compute and memory profile. It is best suited for large-scale databases, indexing, and data warehousing applications.",
-  "og_description": "Microsoft Azure L12aos_v4 is a storage-optimized server featuring a 12-vCPU AMD EPYC processor, 96 GB RAM, and a massive 8.6 TB local NVMe SSD, ideal for database and data warehousing workloads.",
-  "meta_description": "Microsoft Azure L12aos_v4 is a storage-optimized server with 12 vCPUs, 96 GB RAM, and 8.6 TB local NVMe SSD storage for database workloads.",
-  "tagline": "A storage-dense virtual server combining dedicated AMD EPYC processing, 96 GB of RAM, and 8.6 TB of high-speed local NVMe SSD.",
+  "description": "Microsoft Azure L12aos_v4 is a storage-optimized virtual machine powered by an AMD EPYC 9V74 processor at 3.7 GHz. Built on x86_64 architecture, it delivers 12 dedicated vCPUs (6 physical cores) and 96.0 GB of RAM, offering a high 8.0 GB memory-to-vCPU ratio. A key attribute is its bundled 8,639 GB local NVMe SSD storage array, operating without dedicated GPU hardware. CPU performance benchmarks show strong single-threaded execution, ranking in the top 25% on Geekbench and stress-ng single-core metrics, while multi-core workloads, PassMark CPU testing, and Redis operations place squarely in the middle 50%. Although uncached large-block memory read bandwidth ranks in the lower tier, the instance's high local I/O density and strong vector instruction set (AVX-512) provide efficient hardware economics for data-intensive applications. It is tailored for large transactional databases, distributed storage, data analytics, and search indexing nodes.",
+  "og_description": "Microsoft Azure L12aos_v4 is a storage-optimized VM featuring 12 AMD EPYC vCPUs, 96 GB RAM, and 8,639 GB of local NVMe SSD storage, designed for I/O-intensive database and data warehouse workloads.",
+  "meta_description": "Microsoft Azure L12aos_v4 features 12 AMD EPYC vCPUs, 96 GB RAM, and 8,639 GB local NVMe SSD storage for intensive database and storage workloads.",
+  "tagline": "High-capacity local NVMe storage combined with AMD EPYC compute and 96 GB RAM for data-intensive processing.",
   "bullet_points": [
-    "Dedicated AMD EPYC 9V74 processor with 12 vCPUs and 6 physical cores",
-    "Massive 8639 GB local NVMe SSD storage for high-capacity local data access",
-    "96.0 GB of system memory delivering 8.0 GB per virtual core",
-    "Strong single-core CPU and text processing benchmark performance",
-    "Tradeoff in uncached large-block read memory bandwidth",
-    "Optimized for large-scale databases, indexing, and data warehousing"
+    "12 dedicated vCPUs (6 cores / 12 threads) powered by AMD EPYC 9V74 at 3.7 GHz",
+    "96.0 GB system RAM with 8.0 GB per core allocation ratio",
+    "Bundled 8,639 GB direct-attached local NVMe SSD storage",
+    "Hardware vector support including AVX-512, VNNI, and BF16",
+    "Strong single-core compute performance in the top 25% of benchmarks",
+    "Optimized for high-throughput transactional databases, indexing, and analytics"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

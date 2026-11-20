@@ -1,23 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E96ps_v6 is an ARM-based virtual machine from the Epsv6 family, running on the Microsoft Hyper-V hypervisor. It features 96 dedicated physical cores powered by the Microsoft Neoverse-N2 ARM processor running at 3.4 GHz, with 1.0 thread per core. The processor includes 64 KB of L1d cache, 1.0 MB of L2 cache, and 128 MB of L3 cache. It is equipped with 672.0 GB of RAM, providing 7.0 GB of memory per core. This instance does not include local storage or GPUs, but it is Premium Storage capable.",
-    "Benchmark data indicates top-tier multi-core performance, with stress-ng multi-core, Geekbench multi-core, and bzip3 multi-threaded decompression scoring in the top 10%. Memory bandwidth is a key strength, with both cached small-block and uncached large-block read/write operations reaching top-tier levels. Database operations, Redis SET operations, and static web serving throughput also rank in the top 10%. However, single-core performance is average, as shown by stress-ng single-core and Geekbench single-core scores.",
-    "While the instance excels in multi-threaded workloads, there is a notable performance tradeoff in specific tasks. For instance, LLM text generation using a small 135M model is weak, placing in the bottom 25%, whereas text generation with a medium 7B model ranks in the top 10%. Given its high memory density and strong multi-core capabilities, the E96ps_v6 is highly suited for memory-intensive workloads, large-scale database operations, software compilation, and multi-threaded data processing."
+    "Microsoft Azure E96ps_v6 is a memory-optimized virtual machine built on the 64-bit ARM architecture, utilizing 96 dedicated Microsoft Neoverse-N2 cores operating at a base frequency of 3.4 GHz. The physical core architecture assigns one thread per core without simultaneous multithreading, supported by 64 KB of L1 data cache, 1.0 MB of L2 cache per core, and a shared 128 MB L3 cache. Memory capacity totals 672.0 GB, establishing an allocation of 7.0 GB per vCPU. The server includes no local ephemeral storage, relying completely on external network volumes for persistent storage operations, and features no dedicated GPU hardware.",
+    "Performance testing demonstrates strong parallel compute and memory throughput. The system achieves top-tier results in multi-core metrics, registering a Geekbench multi-core score of 24092.0 and a stress-ng multi-core benchmark of 198302.01. Uncached memory read bandwidth measures 464.87 GB/sec, accompanied by 205.52 GB/sec for write tasks. Workloads centered on fast memory access excel, as seen in Redis SET performance reaching 170.49 million operations per second and high PassMark database operational metrics. Single-thread benchmarks operate in the average tier, with a single-core Geekbench score of 1696.0.",
+    "The architecture delivers qualitative cost efficiency by packing high memory density onto energy-efficient ARM physical cores, avoiding thread contention found in hyperthreaded systems. The primary tradeoff centers on the lack of attached high-speed local disk and modest single-core throughput. The configuration is primarily aligned with memory-heavy operations, including Redis caching layers, in-memory databases, parallel software compilation pipelines, and batch data processing."
   ],
-  "description": "Microsoft Azure E96ps_v6 is an ARM-based virtual machine from the Epsv6 family, configured with 96 dedicated physical cores on a 3.4 GHz Microsoft Neoverse-N2 processor. It features 672.0 GB of RAM, yielding 7.0 GB of memory per core, and operates on the Microsoft Hyper-V hypervisor. While it lacks local storage and GPUs, it is Premium Storage capable. Benchmarks highlight top-tier multi-core CPU performance, exceptional memory bandwidth, and superior database and Redis SET operations. However, single-core performance remains average, and text generation for very small LLM models is weak. This memory-dense, multi-core profile makes the E96ps_v6 highly efficient for large-scale databases, software compilation, and multi-threaded enterprise workloads.",
-  "og_description": "Microsoft Azure E96ps_v6 is an ARM-based instance featuring 96 dedicated Neoverse-N2 cores, 672 GB of RAM, and top-tier multi-core and memory bandwidth performance for database and enterprise workloads.",
-  "meta_description": "Microsoft Azure E96ps_v6 is an ARM-based virtual machine with 96 dedicated cores and 672 GB of RAM, optimized for memory-intensive enterprise workloads.",
-  "tagline": "An ARM-powered, memory-dense virtual machine delivering top-tier multi-core performance and high memory bandwidth for demanding enterprise database workloads.",
+  "description": "Microsoft Azure E96ps_v6 is a memory-optimized virtual machine powered by 96 dedicated ARM64 Neoverse-N2 cores clocked at 3.4 GHz with single-threaded physical cores. The instance features 672.0 GB of RAM, equating to 7.0 GB per vCPU, supported by 128 MB of L3 cache. It does not provision local ephemeral storage or GPU acceleration, depending entirely on remote block storage for data persistence. Benchmark results highlight top-tier multi-threaded compute, high memory bandwidth reaching 464.87 GB/sec for uncached reads, and exceptional in-memory key-value throughput with 170.49 million Redis SET operations per second. While single-thread execution speeds are moderate, the lack of hardware multithreading contention ensures predictable parallel throughput. This configuration provides strong qualitative efficiency for large memory-bound footprints, making it suitable for distributed in-memory databases, high-capacity caching layers, continuous integration build clusters, and memory-intensive enterprise workloads.",
+  "og_description": "Microsoft Azure E96ps_v6 features 96 ARM Neoverse-N2 cores, 672 GB RAM, and top-tier multi-threaded memory bandwidth. It delivers dedicated physical compute for memory-intensive enterprise workloads.",
+  "meta_description": "Microsoft Azure E96ps_v6 is an ARM-based memory-optimized instance featuring 96 dedicated Neoverse-N2 cores and 672 GB RAM for memory-intensive workloads.",
+  "tagline": "High-density ARM64 architecture delivering 96 dedicated cores and 672 GB of system memory for parallel in-memory workloads and caching infrastructure.",
   "bullet_points": [
-    "96 dedicated Microsoft Neoverse-N2 ARM cores running at 3.4 GHz",
-    "672.0 GB of system memory providing 7.0 GB of RAM per core",
-    "Top-tier multi-core CPU performance and memory bandwidth",
-    "Excellent throughput for database operations and Redis SET queries",
-    "Average single-core performance and weak small-model LLM text generation",
-    "Best suited for memory-intensive databases, software compilation, and web serving"
+    "96 dedicated ARM Neoverse-N2 physical cores clocked at 3.4 GHz",
+    "672 GB system memory providing 7.0 GB per vCPU",
+    "Top-tier memory read throughput of 464.87 GB/sec on uncached blocks",
+    "Zero local storage allocation, utilizing remote network block storage",
+    "Engineered for in-memory databases, Redis caching, and heavy compilation"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

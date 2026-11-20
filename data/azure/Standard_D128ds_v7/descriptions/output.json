@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D128ds_v7 is a general-purpose virtual machine belonging to the Ddsv7 family, running on the Microsoft Hyper-V hypervisor. It features 128 dedicated vCPUs mapped to 64 physical cores of an Intel Xeon 6973P-C processor with x86_64 architecture, operating at a clock speed of 4.2 GHz. The system is equipped with 512.0 GB of RAM, providing 4.0 GB of memory per core, and includes a massive 480 MB L3 cache. Storage is bundled with 7559 GB of local NVMe SSD capacity, though it does not include any dedicated GPUs.",
-    "Benchmark data highlights top-tier multi-core performance, with stress-ng multi-core, PassMark CPU, and bzip3 multi-threaded decompression scores all ranking in the top 10% of tested systems. Memory bandwidth is exceptionally strong, achieving top-tier results for both small-block cached and large-block uncached read and write operations. While single-core performance in stress-ng and text generation for large language models falls into the average category, the server excels in database operations, static web serving throughput, and Redis SET operations, all of which place in the top 10%.",
-    "From a qualitative cost-efficiency perspective, the D128ds_v7 offers high resource density by combining a massive 128-vCPU compute allocation with a substantial local NVMe SSD storage tier. This configuration avoids the premium cost of dedicated GPU hardware while delivering top-tier throughput for data-intensive tasks. It is highly suited for large-scale database hosting, high-throughput static web serving, multi-threaded data compression, and memory-intensive enterprise applications."
+    "Microsoft Azure D128ds_v7 is a general-purpose virtual machine built on Microsoft Hyper-V virtualization. Powered by a dedicated Intel Xeon 6973P-C processor operating at up to 4.2 GHz, it supplies 64 physical cores and 128 vCPUs across an x86_64 architecture. Memory capacity scales to 512.0 GB of RAM, maintaining a balanced 1:4 core-to-memory allocation of 4.0 GB per vCPU. The processor architecture includes a substantial 480 MB L3 cache alongside 2 MB L2 cache per core, supplemented by advanced instruction sets such as AVX-512, AMX-tile, AMX-int8, and cryptographic accelerators like VAES and SHA-NI. The instance also provisions 7,559 GB of fast local NVMe SSD storage, while omitting discrete graphics processors.",
+    "Benchmark evaluations reveal exceptional parallel processing and memory throughput. Multi-core stress-ng tests place the instance within the top 10% of tested systems, corroborated by top-tier PassMark aggregate CPU, cryptographic, and extended instruction scores. Memory throughput remains robust across large-block operations, exceeding 658 GB/sec in uncached read bandwidth and 255 GB/sec in uncached write bandwidth. In-memory data structures perform exceptionally well, achieving 204.83 million operations per second in Redis SET evaluations. Conversely, single-threaded processing represents a moderate tradeoff, where single-core stress-ng metrics fall into the middle 50% category despite a 4.2 GHz peak frequency.",
+    "The integration of 7,559 GB local NVMe storage and high core density makes the D128ds_v7 resource-efficient for horizontally scalable compute tasks without requiring external disk attachments for temporary high-speed scratch space. Given its combination of multi-threaded compute density, high memory bandwidth, and substantial local storage, the instance is well suited for enterprise database clusters, static web serving at scale, Redis caching tiers, large-scale software builds, and batch data processing."
   ],
-  "description": "The Microsoft Azure D128ds_v7 is a high-capacity, general-purpose virtual machine from the Ddsv7 family, powered by an Intel Xeon 6973P-C processor. It features 128 dedicated vCPUs (64 physical cores) running at 4.2 GHz, 512.0 GB of RAM, and a bundled 7559 GB local NVMe SSD, with no GPU acceleration. Benchmarks show top-tier multi-core CPU performance, exceptional memory bandwidth, and outstanding database and Redis SET operation throughput, though single-core metrics remain average. This hardware profile delivers strong qualitative cost efficiency for resource-dense, non-GPU workloads. It is highly suited for enterprise database hosting, high-throughput web serving, and multi-threaded data processing.",
-  "og_description": "Microsoft Azure D128ds_v7 is a 128-vCPU general-purpose server with 512 GB RAM and 7559 GB NVMe SSD storage, delivering top-tier multi-core performance and database throughput.",
-  "meta_description": "Microsoft Azure D128ds_v7 features 128 vCPUs, 512 GB RAM, and 7.5 TB NVMe SSD, offering top-tier multi-core performance for database workloads.",
-  "tagline": "A high-density, 128-vCPU general-purpose server featuring massive local NVMe storage and top-tier multi-core processing capabilities for enterprise workloads.",
+  "description": "Microsoft Azure D128ds_v7 is a general-purpose virtual machine featuring 128 dedicated vCPUs (64 physical cores) based on the Intel Xeon 6973P-C processor running at up to 4.2 GHz. Supported by 512.0 GB of RAM, a large 480 MB L3 cache, and integrated AVX-512 and AMX acceleration, the instance delivers top-tier parallel compute capability. Benchmark data demonstrates top-decile performance across multi-core stress tests, PassMark database evaluations, and Redis caching throughput, achieving over 204 million SET operations per second alongside 658 GB/sec uncached read memory bandwidth. It integrates 7,559 GB of fast local NVMe SSD storage without discrete GPUs. While single-core performance remains average, the vast core count, substantial memory footprint, and high-speed local disk make the D128ds_v7 appropriate for large-scale enterprise databases, heavy multi-threaded ETL pipelines, distributed caching systems, and high-throughput web serving architectures.",
+  "og_description": "Microsoft Azure D128ds_v7 features 128 vCPUs on Intel Xeon 6973P-C processors, 512 GB RAM, and 7,559 GB local NVMe SSD storage, offering top-tier multi-threaded compute and database performance.",
+  "meta_description": "Microsoft Azure D128ds_v7 provides 128 dedicated vCPUs, 512 GB RAM, and 7,559 GB NVMe SSD storage for large enterprise databases and multi-core workloads.",
+  "tagline": "A high-density 128-vCPU enterprise instance pairing 512 GB RAM with over seven terabytes of local NVMe storage for data-intensive processing.",
   "bullet_points": [
-    "128 dedicated vCPUs powered by an Intel Xeon 6973P-C processor at 4.2 GHz.",
-    "512.0 GB of RAM paired with 7559 GB of high-speed local NVMe SSD storage.",
-    "Top-tier multi-core CPU performance and memory bandwidth in benchmark testing.",
-    "Excellent throughput for database operations, Redis SET, and static web serving.",
-    "Best suited for large-scale enterprise databases, web serving, and multi-threaded data processing."
+    "128 dedicated vCPUs (64 physical cores) via Intel Xeon 6973P-C at 4.2 GHz",
+    "512.0 GB system memory with 480 MB L3 processor cache",
+    "Bundled 7,559 GB high-speed local NVMe SSD storage",
+    "Hardware support for AVX-512, AMX-tile, AMX-int8, and VAES extensions",
+    "Top-tier performance in multi-core throughput, Redis operations, and database tasks",
+    "Tailored for high-concurrency databases, Redis caching, and heavy multi-threaded workloads"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

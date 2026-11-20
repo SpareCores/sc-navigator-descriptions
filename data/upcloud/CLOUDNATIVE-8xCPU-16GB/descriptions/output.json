@@ -1,23 +1,23 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-8xCPU-16GB is a Cloud Native family virtual server built on the KVM hypervisor. It features an x86_64 architecture powered by an AMD EPYC 7542 processor running at 2.0 GHz. The configuration includes 8 shared vCPUs mapped to 8 physical cores with 1 thread per core, alongside 16.0 GB of system memory, yielding 2.0 GB of RAM per core. This instance does not bundle local storage or dedicated GPU hardware, but it includes one complimentary public IPv4 address.",
-    "Performance benchmarks indicate a varied profile. While Geekbench single-core and text processing tests show strong results in the top 25%, stress-ng single-core performance falls into the bottom 10%, and multi-core performance is weak, placing in the bottom 25%. Memory performance is also mixed; small-block read-only cached bandwidth is average, but large-block uncached read and write speeds are weak. Similarly, Passmark memory scores are in the bottom 25%, while Passmark CPU and database operations maintain average performance.",
-    "Given its shared CPU allocation and 1:2 vCPU-to-RAM ratio, this server represents a budget-friendly option for workloads that do not require continuous, dedicated CPU performance. It is suited for static web serving, basic Redis key-value operations, and lightweight text or image processing. However, it is less optimal for memory-intensive databases or large-scale LLM inference, where its uncached memory bandwidth and shared CPU resources present performance tradeoffs."
+    "UpCloud CLOUDNATIVE-8xCPU-16GB is a shared-core cloud compute instance powered by an AMD EPYC 7542 x86_64 processor clocked at 2.0 GHz. The virtual machine is configured with 8 vCPUs and 16.0 GB of system memory, providing a 1:2 vCPU-to-RAM ratio. Standard CPU instruction extensions include AVX, AES, and SHA-NI, while newer AVX-512 and matrix extensions are unsupported. This instance includes no bundled local storage, requiring network-attached storage volumes, and does not provide complimentary public IPv4 addresses or dedicated GPU hardware.",
+    "Benchmark results show mixed compute performance reflecting its shared CPU allocation. Synthetic stress-ng evaluations place single-core and multi-core throughput in lower percentiles. In contrast, standard architectural benchmarks such as Geekbench demonstrate strong single-core performance with a score of 2027.0 and average multi-core throughput reaching 10101.0. Memory subsystem throughput benchmarks, including uncached read speeds of 30.23 GB/s and write speeds of 17.66 GB/s, place the memory bus in the lower tier relative to dedicated compute hardware.",
+    "Application and operational metrics indicate balanced capacity for general processing tasks. The instance delivers 11.14 million operations per second in Redis SET operations and sustained throughput in software compilation benchmarks. However, memory-intensive execution and larger LLM inference workloads display noticeable constraints due to limited memory bandwidth and lack of vector accelerators.",
+    "UpCloud CLOUDNATIVE-8xCPU-16GB functions effectively as a cost-efficient resource for containerized microservices, build nodes, CI/CD pipeline agents, and web application runtimes where predictable compute bursting is acceptable and high-speed local disk I/O is not required."
   ],
-  "description": "UpCloud CLOUDNATIVE-8xCPU-16GB is a KVM-based virtual server featuring 8 shared AMD EPYC 7542 vCPUs and 16.0 GB of RAM. Operating on an x86_64 architecture, this server does not include local storage or GPU accelerators. Performance benchmarks show a mixed profile, with strong Geekbench single-core and text processing results, but weak stress-ng CPU and uncached memory bandwidth performance. This resource configuration is qualitatively cost-efficient for workloads with variable CPU demands, such as lightweight web serving, Redis caching, and basic text processing, though it is constrained by its shared CPU allocation and lower memory bandwidth under heavy multi-threaded loads.",
-  "og_description": "UpCloud CLOUDNATIVE-8xCPU-16GB is a KVM virtual server with 8 shared AMD EPYC vCPUs and 16 GB RAM, offering a budget-friendly option for variable workloads like web serving and text processing.",
-  "meta_description": "UpCloud CLOUDNATIVE-8xCPU-16GB features 8 shared AMD EPYC vCPUs and 16 GB RAM, suitable for budget-conscious general computing and web serving.",
-  "tagline": "A budget-friendly shared CPU instance with eight cores and sixteen gigabytes of memory for variable general-purpose workloads.",
+  "description": "UpCloud CLOUDNATIVE-8xCPU-16GB is a virtual machine featuring 8 shared vCPUs on an AMD EPYC 7542 processor operating at 2.0 GHz alongside 16.0 GB of RAM. Designed with a 1:2 compute-to-memory profile, the x86_64 platform supports core cryptographic and vector instruction sets such as AES, SHA-NI, and AVX. The configuration includes zero local storage, zero dedicated GPUs, and zero complimentary public IPv4 addresses, utilizing network infrastructure for persistence. Performance testing shows solid Geekbench scores alongside modest memory bandwidth and lower multi-core stress execution typical of shared-core configurations. It serves adequately for distributed web serving, continuous integration runners, lightweight compilation tasks, and containerized microservices.",
+  "og_description": "UpCloud CLOUDNATIVE-8xCPU-16GB provides 8 shared AMD EPYC 7542 vCPUs at 2.0 GHz with 16.0 GB of system memory, suited for containerized workloads, CI/CD pipelines, and web runtimes.",
+  "meta_description": "UpCloud CLOUDNATIVE-8xCPU-16GB features 8 shared AMD EPYC 7542 vCPUs, 16.0 GB RAM, and KVM virtualization for cost-effective compute workloads.",
+  "tagline": "Shared eight-core AMD EPYC architecture delivering balanced processing power and memory allocation for container runtimes and continuous integration workflows.",
   "bullet_points": [
-    "Powered by an AMD EPYC 7542 processor with 8 shared vCPUs",
-    "Equipped with 16.0 GB of system memory and no local storage",
-    "Strong Geekbench single-core and text processing benchmark results",
-    "Weak stress-ng CPU and uncached memory bandwidth performance",
-    "Includes one complimentary public IPv4 address",
-    "Best suited for lightweight web serving, Redis caching, and basic text processing"
+    "8 shared AMD EPYC 7542 vCPUs running at 2.0 GHz clock speed",
+    "16.0 GB system RAM with 2.0 GB allocation per vCPU",
+    "x86_64 platform with AVX, AES, and SHA-NI cryptographic support",
+    "Zero bundled local disk storage and zero discrete GPUs",
+    "Suited for CI/CD runners, container staging, and microservices"
   ],
   "categories": [
-    "Burstable & Budget",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Burstable & Budget"
   ]
 }

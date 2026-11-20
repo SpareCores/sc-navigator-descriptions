@@ -1,22 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c3d-highmem-90-lssd is a memory-optimized server instance within the c3d family. It features 90 dedicated vCPUs powered by AMD EPYC 9B14 processors using the x86_64 architecture, with 45 physical cores and 2 threads per core. The instance is equipped with 720.0 GB of RAM, providing a memory-to-vCPU ratio of 8.0 GB per core. Local storage is bundled, consisting of 8 NVMe SSDs totaling 3216 GB. There are no GPUs present on this instance.",
-    "Benchmark data indicates top-tier multi-core performance, with stress-ng multi-core, PassMark CPU, and PassMark CPU extended instructions tests all scoring in the top 10%. Single-core performance is strong, placing in the top 25% for stress-ng single-core tests, though Geekbench single-core scores fall in the middle 50%. Memory bandwidth is strong for read-only operations, reaching 6368.24 GB/sec for small cached blocks and 217.31 GB/sec for large uncached blocks, though large block write bandwidth is average at 77.28 GB/sec.",
-    "The combination of high memory capacity, dedicated AMD EPYC processing, and fast local NVMe storage makes this instance suitable for database operations, software compilation, and large-scale data processing. PassMark database operations and Redis SET operations both rank in the top 25%. For machine learning workloads, the instance achieves top-tier prompt processing speeds for small LLM models, but text generation speeds for larger models drop to average levels, highlighting a tradeoff when running large-scale inference without dedicated GPU acceleration."
+    "Google Cloud Platform c3d-highmem-90-lssd is an x86_64 server configuration driven by AMD EPYC 9B14 processors. It delivers 90 dedicated vCPUs spanning 45 physical cores with simultaneous multithreading enabled. The memory architecture provides 720 GB of total RAM, corresponding to an 8 GB per-vCPU ratio. Cache provisions feature 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache per core cluster. Advanced CPU instruction sets include AVX-512 with VNNI and bfloat16 support, as well as hardware AES and SHA cryptographic accelerations. No dedicated GPU accelerators are included.",
+    "Integrated local storage is configured with 3,216 GB of NVMe SSD capacity spread across 8 local solid-state drives, providing low-latency ephemeral block storage directly to the host. In benchmark evaluations, the multi-core compute throughput achieved top-tier standing in stress-ng multi-core testing (129,175.86) and PassMark CPU evaluations (87,474.24), alongside elevated results in Clang software compilation (60,820.0) and ray tracing tasks. Cryptographic and vector extension workloads also exhibit upper-percentile execution speeds due to native AVX-512 extensions.",
+    "The 720 GB memory pool demonstrates strong cached memory read bandwidth reaching 6,368.24 GB/sec and uncached read bandwidth of 217.31 GB/sec, though large-block uncached write bandwidth settles at an average 77.28 GB/sec. Redis operations reach 118.1 million operations per second, supported by fast memory access and high-core parallelization. CPU-based inference workloads perform reliably on small to medium models, though large 70B parameter models remain constrained by the absence of dedicated tensor acceleration.",
+    "Qualitatively, this instance achieves favorable resource efficiency for enterprise deployments needing both high thread counts and massive memory footprints alongside rapid scratch disk access. The combination of dense memory allocation, dedicated AMD cores, and fast local NVMe SSD storage makes the instance well suited for in-memory database engines, large analytical caches, distributed data processing, Clang build farms, and high-throughput transactional databases."
   ],
-  "description": "Google Cloud Platform c3d-highmem-90-lssd is a memory-optimized server instance featuring 90 dedicated vCPUs from an AMD EPYC 9B14 processor and 720.0 GB of RAM. Built on the x86_64 architecture, it includes 8 local NVMe SSDs providing 3216 GB of bundled storage, with no GPU accelerators. The instance delivers top-tier multi-core CPU performance, ranking in the top 10% on PassMark and stress-ng multi-core benchmarks. Memory read bandwidth is strong, though write bandwidth remains average. This hardware profile is optimized for memory-intensive workloads, database operations, software compilation, and prompt processing for smaller language models, though it exhibits average performance on large-scale text generation tasks due to the lack of dedicated GPU hardware.",
-  "og_description": "Google Cloud Platform c3d-highmem-90-lssd is a memory-optimized server with 90 AMD EPYC vCPUs, 720 GB RAM, and 3216 GB of local NVMe SSD storage, delivering top-tier multi-core CPU performance.",
-  "meta_description": "Google Cloud Platform c3d-highmem-90-lssd features 90 AMD EPYC vCPUs, 720 GB RAM, and 3216 GB NVMe SSD storage for memory-intensive workloads.",
-  "tagline": "A memory-optimized x86_64 server featuring 90 AMD EPYC vCPUs, 720 GB RAM, and 3.2 TB of local NVMe SSD storage.",
+  "description": "Google Cloud Platform c3d-highmem-90-lssd is a memory-dense, compute-capable instance featuring 90 dedicated vCPUs from AMD EPYC 9B14 processors across 45 physical cores. The platform integrates 720 GB of system memory, maintaining an 8 GB per-vCPU distribution, paired with 3,216 GB of local NVMe SSD storage across 8 bundled drives. Benchmark results place its multi-core compute, code compilation, and PassMark CPU performance in the top tier, while cached memory reads and database operations demonstrate strong throughput. With integrated AVX-512 vector support and robust cryptographic acceleration, it operates efficiently without discrete GPUs. The substantial memory footprint and high-speed local NVMe capacity position this server well for in-memory databases, large-scale data processing pipelines, distributed caching architectures, and intensive continuous integration build environments.",
+  "og_description": "Google Cloud Platform c3d-highmem-90-lssd offers 90 dedicated AMD EPYC vCPUs, 720 GB RAM, and 3,216 GB of local NVMe SSD storage for memory-intensive enterprise and database workloads.",
+  "meta_description": "Google Cloud Platform c3d-highmem-90-lssd features 90 AMD EPYC vCPUs, 720 GB memory, and 3,216 GB NVMe SSD storage for heavy in-memory and database workloads.",
+  "tagline": "High-density AMD EPYC server featuring 90 vCPUs, 720 GB memory, and local NVMe storage for memory-bound and transactional processing.",
   "bullet_points": [
-    "90 dedicated AMD EPYC vCPUs and 720 GB of RAM",
-    "Bundled 3216 GB local NVMe SSD storage across 8 drives",
-    "Top-tier multi-core CPU and software compilation performance",
-    "Strong memory read bandwidth and database operation speeds",
-    "Suited for memory-intensive databases, ETL, and software compilation"
+    "AMD EPYC 9B14 processor with 90 dedicated vCPUs across 45 physical cores",
+    "720 GB system RAM providing an 8 GB per-vCPU memory allocation",
+    "3,216 GB high-speed local NVMe SSD storage across 8 integrated drives",
+    "Top-tier multi-core compute, compilation, and cryptographic benchmark scores",
+    "Optimized for in-memory data stores, transactional databases, and ETL workloads"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

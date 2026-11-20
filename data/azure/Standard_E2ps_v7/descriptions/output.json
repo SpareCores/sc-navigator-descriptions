@@ -1,0 +1,21 @@
+{
+  "page": [
+    "The Microsoft Azure E2ps_v7 is a memory-optimized virtual machine built on 64-bit ARM architecture and provisioned via the Microsoft Hyper-V hypervisor. The instance is configured with 2 dedicated vCPUs and 16.0 GB of RAM, providing an allocation of 8.0 GB of memory per core. This architectural balance specifically addresses environments where system memory capacity is the principal constraint relative to overall processor thread count.",
+    "Regarding peripheral and accelerator hardware, the E2ps_v7 includes no onboard local disk storage and zero discrete GPUs. Storage operations rely entirely on attached remote volumes, with architectural support for Azure Premium Storage. Because the underlying hardware relies on the ARM64 instruction set, traditional x86 vector extensions like AVX or AMX are absent, necessitating software stacks compiled directly for ARM environments.",
+    "From a cost-efficiency perspective, the high RAM-to-vCPU ratio offers a resource-dense footprint for memory-bound tasks without requiring the provisioning of unneeded compute capacity. The primary operational tradeoff involves the reliance on network-attached storage for all filesystem I/O. The E2ps_v7 is suitable for running in-memory caching systems, small-scale relational databases, and memory-heavy application backends."
+  ],
+  "description": "The Microsoft Azure E2ps_v7 is an ARM-based, memory-optimized virtual machine instance deployed on the Microsoft Hyper-V hypervisor. It is configured with 2 dedicated 64-bit ARM vCPUs and 16.0 GB of system memory, yielding an 8.0 GB per core allocation ratio. The instance does not include integrated local disk storage, necessitating the use of remote Premium Storage volumes for OS and data persistence. Furthermore, it contains no GPU accelerators. The high memory-to-compute ratio provides qualitative cost efficiency for memory-constrained workloads that do not demand extensive CPU throughput, preventing over-provisioning of processor cores. The primary engineering tradeoff is the complete reliance on network-attached storage and the requirement for ARM64-compatible binaries. The E2ps_v7 is targeted at workloads such as small in-memory caching tiers, relational database deployments with moderate transaction rates, lightweight application hosting, and memory-dependent microservices.",
+  "og_description": "Microsoft Azure E2ps_v7 is a memory-optimized virtual machine running on ARM64 architecture with Microsoft Hyper-V. It includes 2 dedicated vCPUs, 16 GB of RAM, and requires attached storage.",
+  "meta_description": "Microsoft Azure E2ps_v7 is an ARM-based memory-optimized instance featuring 2 dedicated vCPUs, 16 GB RAM, and support for remote Premium Storage.",
+  "tagline": "ARM64 memory-optimized virtual machine featuring two dedicated vCPUs and sixteen gigabytes of memory for memory-intensive workloads requiring external storage.",
+  "bullet_points": [
+    "2 dedicated 64-bit ARM vCPUs managed by Microsoft Hyper-V",
+    "16.0 GB total system memory providing 8.0 GB per vCPU",
+    "Diskless architecture requiring remote Premium Storage disks",
+    "No GPU acceleration hardware included",
+    "Targeted for in-memory caches, small databases, and memory-heavy microservices"
+  ],
+  "categories": [
+    "Memory Optimized"
+  ]
+}

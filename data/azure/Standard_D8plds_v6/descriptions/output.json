@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D8plds_v6 is an ARM-based virtual machine belonging to the Dpldsv6 server family. It is configured with 8 dedicated vCPUs powered by a Microsoft Neoverse-N2 processor running at 3.4 GHz. The architecture is arm64, featuring 8 physical cores with a single thread per core. Memory capacity is 16.0 GB, yielding a resource density of 2.0 GB of RAM per core. The server includes a local 472 GB NVMe SSD and is capable of utilizing Premium Storage.",
-    "Performance benchmarks place this instance mostly in the average tier. The single-core and multi-core stress-ng benchmarks achieved scores of 2073.29 and 16574.2 respectively. Single-threaded gzip compression is a notable strength, performing in the top 25% at 33.05 GB/sec. Conversely, cryptographic performance is relatively weak, with the PassMark CPU encryption test scoring 1492.59. Memory bandwidth tests show 910.4 GB/sec for cached small blocks and 169.64 GB/sec for uncached large blocks. Redis SET operations reached 16.63 million operations per second, and static web serving throughput was measured at 15.55 GB/sec.",
-    "Given its 1:2 vCPU-to-RAM ratio, this server offers a compute-focused hardware profile with a lower memory footprint, making it a qualitatively cost-efficient option for workloads that do not require massive memory allocations. The inclusion of a fast local NVMe SSD provides high-speed temporary storage. This configuration is well-suited for tasks such as web serving, software compilation, lightweight database operations, and basic text or image processing."
+    "Microsoft Azure D8plds_v6 is an ARM64-based virtual machine configured with 8 dedicated vCPUs mapped to 8 physical cores without multithreading, running at 3.4 GHz on the ARM Neoverse-N2 microarchitecture. The instance is provisioned with 16.0 GB of memory (2.0 GB per vCPU), 128 MB of L3 cache, and a bundled 472 GB NVMe SSD local drive. It operates on the Microsoft Hyper-V hypervisor and lacks discrete graphics hardware.",
+    "Benchmark results demonstrate reliable mid-tier compute and memory bandwidth, showing 2073.29 on single-core stress-ng, 16574.2 on multi-core stress-ng, and a Geekbench multi-core score of 9344.0. Large-block memory reads achieve 169.64 GB/sec while writes register 72.69 GB/sec. A notable highlight is single-threaded gzip compression at 33.05 GB/sec, placing in the top quartile, whereas cryptographic testing shows lower relative throughput on the PassMark encryption benchmark at 1492.59.",
+    "Because of the 1:2 vCPU-to-RAM ratio, this profile reflects a compute-oriented balance rather than a memory-heavy configuration. The integrated high-speed local NVMe storage reduces external block storage overhead for temporary scratch space. Workload suitability centers on scale-out application tiers, Clang-based software compilation, static web serving, containerized services, and lightweight key-value caching."
   ],
-  "description": "Microsoft Azure D8plds_v6 is an ARM-based virtual machine from the Dpldsv6 family, featuring 8 dedicated vCPUs powered by a 3.4 GHz Microsoft Neoverse-N2 processor. It is equipped with 16.0 GB of RAM, providing a 2.0 GB per core ratio, and includes a 472 GB local NVMe SSD. Benchmark results indicate average overall performance, highlighted by strong single-threaded gzip compression at 33.05 GB/sec, though cryptographic performance is weaker. With its compute-leaning resource allocation and fast local storage, this instance is suited for web serving, software compilation, and database operations that do not require high memory-to-CPU ratios.",
-  "og_description": "Microsoft Azure D8plds_v6 is an ARM-based virtual machine featuring 8 dedicated Neoverse-N2 vCPUs, 16.0 GB of RAM, and a 472 GB local NVMe SSD, optimized for compute-focused workloads.",
-  "meta_description": "Microsoft Azure D8plds_v6 is an ARM-based VM with 8 dedicated vCPUs, 16.0 GB of RAM, and a 472 GB local NVMe SSD for compute-focused tasks.",
-  "tagline": "An ARM-powered virtual machine featuring dedicated compute cores, low memory density, and fast local NVMe SSD storage for efficient processing.",
+  "description": "Microsoft Azure D8plds_v6 is an ARM64 instance powered by an 8-core ARM Neoverse-N2 processor running at 3.4 GHz with dedicated physical cores. It features 16.0 GB of system memory, establishing a 1:2 vCPU-to-RAM ratio, alongside 128 MB of L3 cache and a bundled 472 GB local NVMe SSD. Operating on Microsoft Hyper-V without a discrete GPU, the server delivers consistent mid-range performance across synthetic benchmarks, including a multi-core stress-ng score of 16574.2 and strong single-threaded gzip compression throughput of 33.05 GB/sec. While PassMark encryption performance trails at 1492.59, overall throughput remains steady across web serving, software builds, and key-value operations. The inclusion of high-speed local storage coupled with efficient Neoverse cores makes this server suited for code compilation pipelines, web application hosting, caching nodes, and batch compute tasks.",
+  "og_description": "Microsoft Azure D8plds_v6 features 8 dedicated ARM Neoverse-N2 cores, 16 GB RAM, and a bundled 472 GB NVMe SSD. It delivers balanced compute performance for compilation and web serving.",
+  "meta_description": "Microsoft Azure D8plds_v6 provides 8 ARM Neoverse-N2 cores, 16 GB RAM, and 472 GB local NVMe SSD storage for compute-focused, scale-out workloads.",
+  "tagline": "ARM Neoverse compute instance with dedicated cores, integrated NVMe local storage, and efficient memory ratios for scale-out workloads.",
   "bullet_points": [
-    "8 dedicated ARM64 Neoverse-N2 cores running at 3.4 GHz",
-    "16.0 GB of system memory providing 2.0 GB per core",
-    "472 GB of high-speed local NVMe SSD storage",
-    "Strong single-threaded gzip compression performance",
-    "Suited for web serving, software compilation, and database tasks"
+    "8 dedicated ARM Neoverse-N2 physical cores clocked at 3.4 GHz",
+    "16.0 GB system memory providing a 1:2 vCPU-to-RAM ratio",
+    "Bundled 472 GB local NVMe SSD temporary storage",
+    "High single-threaded compression performance reaching 33.05 GB/sec",
+    "Well suited for software compilation, web serving, and caching layers"
   ],
   "categories": [
     "Compute Optimized",
+    "General Purpose",
     "Storage & Database"
   ]
 }

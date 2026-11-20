@@ -1,23 +1,23 @@
 {
   "page": [
-    "Amazon Web Services vt1.3xlarge is a specialized compute-focused instance designed for video transcoding workloads. Powered by an Intel Xeon 8259CL processor with an x86_64 architecture, this instance features 12 dedicated vCPUs across 6 physical cores with hyper-threading enabled, operating at a base clock speed of 2.5 GHz. The CPU architecture includes support for Advanced Vector Extensions, specifically AVX, AVX512F, and AVX512_VNNI, alongside cryptography acceleration via AES. It is equipped with 24.0 GB of DDR4 memory running at 3 GHz, translating to a resource density of 2.0 GB of RAM per core.",
-    "Performance benchmarks indicate average capabilities across general compute and memory operations. The instance achieved a multi-core stress-ng CPU score of 10177.46 and a Geekbench multi-core score of 5969.0, both placing in the middle tier of tested hardware. Single-core performance is relatively weak, with a stress-ng single-core score of 1324.09 and a Geekbench single-core score of 1230.0. Memory bandwidth is average, reaching 72.07 GB/sec for large-block read operations and 44.54 GB/sec for large-block write operations.",
-    "The vt1.3xlarge does not include local storage or dedicated GPU hardware, relying entirely on network-attached storage. Network connectivity is supported by a baseline bandwidth of 3 Gbps. In terms of specialized workloads, the instance demonstrates average performance in static web serving at 8.73 GB/sec and Redis SET operations at 9.5 million operations per second. However, it exhibits poor performance for medium-sized language model inference, processing only 14.1 tokens per second for a 7B model.",
-    "Given its hardware profile, the vt1.3xlarge is qualitatively cost-efficient for workloads that benefit from dedicated Intel Xeon cores and AVX-512 vector instructions without requiring massive memory footprints or local SSD storage. It is best suited for video transcoding, software compilation, and general-purpose multi-threaded processing tasks."
+    "Amazon Web Services vt1.3xlarge is a specialized accelerated computing instance designed primarily for real-time video transcoding and media processing workflows. Driven by the AWS Nitro System hypervisor, the virtual machine features 12 dedicated vCPUs mapped across 6 physical cores of an Intel Xeon 8259CL processor clocked at 2.5 GHz. The CPU architecture supports x86_64 instruction sets including AVX-512 extensions. Memory is provisioned with 24 GB of DDR4 system RAM operating at 3 GHz, delivering 2.0 GB per vCPU.",
+    "Hardware acceleration is provided by a single Xilinx U30 media accelerator equipped with 24 GB of dedicated VRAM. The instance carries no local NVMe storage, requiring network-attached storage via Amazon EBS, and provides a baseline network throughput of 3 Gbps without complimentary public IPv4 addresses. Synthetic CPU evaluations place the platform in average bands for general multi-threaded compute, scoring 10,911.36 on PassMark CPU and 5,969.0 on Geekbench multi-core, while single-threaded tasks register lower relative marks, such as 1,324.09 on stress-ng.",
+    "Memory bandwidth benchmarks demonstrate consistent performance, yielding 72.07 GB/sec for large-block read operations and 44.54 GB/sec for write tasks. Workloads that focus on general-purpose machine learning or text compression underperform relative to modern general compute, with 7B parameter LLM inference showing poor prompt processing rates of 14.1 tokens/sec. Consequently, the vt1.3xlarge delivers cost-efficient performance primarily when leveraging its integrated Xilinx ASIC for high-density video streaming, live encoding, and OTT broadcasting pipelines rather than standard CPU-bound enterprise jobs."
   ],
-  "description": "Amazon Web Services vt1.3xlarge is a compute-focused instance optimized for video transcoding and multi-threaded processing. It features an Intel Xeon 8259CL x86_64 processor with 12 dedicated vCPUs and 24.0 GB of DDR4 memory. The instance lacks local storage and dedicated GPUs, relying on a 3 Gbps baseline network bandwidth. Benchmark results show average multi-core performance, with a Geekbench multi-core score of 5969.0 and a multi-core stress-ng score of 10177.46, though single-core performance is relatively weak. The hardware supports AVX-512 vector instructions, making it qualitatively cost-efficient for compute-bound tasks that do not require high memory-to-CPU ratios. It is best suited for video transcoding, software compilation, and moderate web serving workloads.",
-  "og_description": "Amazon Web Services vt1.3xlarge is a compute-focused instance featuring 12 dedicated Intel Xeon vCPUs, 24.0 GB of DDR4 RAM, and 3 Gbps network bandwidth, optimized for video transcoding.",
-  "meta_description": "Amazon Web Services vt1.3xlarge is an Intel-powered instance with 12 vCPUs and 24 GB RAM, designed for video transcoding and compute tasks.",
-  "tagline": "A dedicated Intel Xeon compute instance with AVX-512 support, optimized for video transcoding and multi-threaded workloads without local storage.",
+  "description": "Amazon Web Services vt1.3xlarge is an accelerated computing instance engineered for video transcoding and media pipeline processing. It features 12 vCPUs across 6 physical cores of an Intel Xeon 8259CL processor running at 2.5 GHz, paired with 24 GB of DDR4 system memory. Hardware acceleration is provided by a dedicated Xilinx U30 card featuring 24 GB of VRAM. The instance relies entirely on remote storage, containing no local disks, and operates on a 3 Gbps baseline network interface via the AWS Nitro System. Benchmark metrics highlight mid-tier multi-core processor performance and DDR4 memory throughput, alongside weak CPU-based compression and large language model inference speeds. Cost efficiency is optimized strictly for media-centric workloads that take direct advantage of the specialized Xilinx ASIC hardware, making the instance suitable for live video transcoding, adaptive bitrate streaming, and multi-channel video distribution.",
+  "og_description": "Amazon Web Services vt1.3xlarge features 12 vCPUs, 24 GB DDR4 RAM, and an integrated Xilinx U30 accelerator with 24 GB VRAM, built specifically for scalable real-time video transcoding workloads.",
+  "meta_description": "Amazon Web Services vt1.3xlarge features 12 vCPUs, 24 GB RAM, and a Xilinx U30 GPU accelerator with 24 GB VRAM for specialized video transcoding tasks.",
+  "tagline": "Accelerated computing instance with a dedicated media processing card, 12 vCPUs, and 24 GB RAM optimized for video transcoding workflows.",
   "bullet_points": [
-    "12 dedicated vCPUs powered by an Intel Xeon 8259CL processor",
-    "24.0 GB of DDR4 memory providing a 1:2 vCPU-to-RAM ratio",
-    "AVX-512 vector instruction support for accelerated processing",
-    "3 Gbps baseline network bandwidth with no local storage",
-    "Optimized for video transcoding, software compilation, and web serving"
+    "Intel Xeon 8259CL processor with 12 vCPUs and 6 physical cores at 2.5 GHz",
+    "Single Xilinx U30 accelerator card bundled with 24 GB dedicated VRAM",
+    "24 GB DDR4 system memory running at 3 GHz",
+    "Baseline network throughput of 3 Gbps with AWS Nitro hypervisor architecture",
+    "Zero local storage bundled, relying entirely on network-attached storage",
+    "Tailored for live video transcoding, OTT broadcasting, and video stream delivery"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "GPU Accelerated",
+    "Compute Optimized"
   ]
 }

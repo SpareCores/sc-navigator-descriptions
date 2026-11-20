@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E48ds_v7 is an Edsv7-family virtual machine configured with 48 vCPUs and 24 physical cores powered by an Intel Xeon 6973P-C processor. Operating on the x86_64 architecture under the Microsoft Hyper-V hypervisor, this server features a base clock speed of 4.2 GHz. It is equipped with 384.0 GB of RAM, yielding a high memory-to-vCPU ratio of 8.0 GB per core. The processor includes a substantial 480 MB L3 cache and supports advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions (AMX) for accelerated vector and matrix operations.",
-    "For local storage, the instance includes a bundled 2835 GB NVMe SSD and is Premium Storage capable. In benchmark evaluations, the E48ds_v7 demonstrates strong performance in data compression and cryptography, scoring in the top 25% for single-threaded gzip compression, multi-threaded bzip3 decompression, and Passmark CPU encryption tests. Memory performance is balanced, with uncached large-block read bandwidth at 162.68 GB/sec and write bandwidth at 66.17 GB/sec. Database and key-value operations are highly efficient, as evidenced by strong Redis SET performance reaching 76.28 million operations per second.",
-    "While the server excels at prompt processing for small and medium language models, text generation for large 70B models is a relative bottleneck, registering in the bottom 25% of benchmarks. This highlights a tradeoff where CPU-based inference is highly capable for smaller models but limited for massive parameter scales. Given its high memory density, fast local NVMe storage, and strong cryptographic and compression capabilities, the E48ds_v7 is qualitatively cost-efficient for memory-intensive workloads. It is highly suited for relational databases, in-memory caching layers, data warehousing, and enterprise-grade web serving."
+    "Microsoft Azure E48ds_v7 is a memory-optimized virtual machine powered by the Intel Xeon 6973P-C processor running on Microsoft Hyper-V. The system provides 48 dedicated vCPUs mapped across 24 physical cores with multithreading enabled at clock speeds up to 4.2 GHz. Cache resources are substantial, consisting of 48 KB L1d cache, 2 MB L2 cache, and a large 480 MB shared L3 cache. Memory capacity sits at 384 GB of RAM, sustaining an 8 GB per vCPU ratio suitable for memory-intensive enterprise tasks. The CPU incorporates modern vector and matrix extensions, including AVX-512 and Intel AMX instructions.",
+    "Integrated hardware includes 2835 GB of local NVMe solid-state storage alongside compatibility with Azure Premium Storage. The instance does not include a discrete GPU accelerator. In benchmark tests, the CPU demonstrated strong performance in PassMark compute metrics, cryptographic tests utilizing hardware AES acceleration, and multithreaded bzip3 decompression. Key-value operations showed high throughput, reaching 76.28 million Redis SET operations per second, complemented by 61.11 GB/sec of static web serving bandwidth.",
+    "Small and medium language model prompt evaluation shows strong performance due to AMX and AVX-512 instruction support, though generation throughput scales down substantially on large 70-billion parameter models due to lack of dedicated GPU hardware. Memory bandwidth metrics, stress-ng multi-core testing, and database operational benchmarks place the server in the middle performance quartile across cloud hardware tiers.",
+    "The combination of 384 GB of system memory, fast local NVMe capacity, and dedicated compute density yields favorable cost efficiency for architectures needing high in-memory capacity paired with fast local scratch space. Microsoft Azure E48ds_v7 is aligned with workloads such as large in-memory databases, Redis caching clusters, high-volume transactional web backends, and intensive data processing pipelines."
   ],
-  "description": "Microsoft Azure E48ds_v7 is an Edsv7-family virtual machine featuring 48 vCPUs and 24 physical Intel Xeon 6973P-C cores running at 4.2 GHz on the x86_64 architecture. It delivers a high memory-to-vCPU ratio with 384.0 GB of RAM and includes a bundled 2835 GB NVMe SSD. Benchmark results show strong performance in data compression, cryptography, and Redis SET operations, alongside high-throughput static web serving. While the server excels at prompt processing for small and medium language models, text generation for large 70B models represents a performance tradeoff. With its large L3 cache and support for Intel AMX and AVX-512 instructions, this memory-optimized instance is well-suited for memory-intensive databases, caching layers, and enterprise web applications.",
-  "og_description": "Microsoft Azure E48ds_v7 is a memory-optimized virtual machine featuring 48 vCPUs, 384 GB RAM, and a 2835 GB NVMe SSD, delivering strong performance for databases and memory-intensive workloads.",
-  "meta_description": "Microsoft Azure E48ds_v7 features 48 vCPUs, 384 GB RAM, and 2835 GB NVMe SSD storage, optimized for memory-intensive enterprise workloads.",
-  "tagline": "A high-density memory-optimized server with dedicated Intel Xeon processing and fast local NVMe storage for demanding database workloads.",
+  "description": "Microsoft Azure E48ds_v7 is a memory-optimized virtual machine featuring 48 dedicated vCPUs and 24 physical cores based on the x86_64 Intel Xeon 6973P-C processor clocked at 4.2 GHz. Supported by a 480 MB L3 cache, the system supplies 384 GB of memory at an 8 GB per vCPU ratio, coupled with 2835 GB of local NVMe SSD storage. The processor incorporates AVX-512 and Intel AMX acceleration. Synthetic testing highlights strong multi-threaded decompression, hardware encryption, and high-throughput key-value handling, registering over 76 million Redis SET operations per second. While small and medium LLM prompt processing performs well via matrix extensions, memory bandwidth metrics and large-model inference remain moderate without dedicated GPU acceleration. This profile offers efficient density for memory-bound applications, large transactional databases, enterprise caching layers, and high-throughput ETL data pipelines.",
+  "og_description": "Microsoft Azure E48ds_v7 offers 48 Intel Xeon vCPUs, 384 GB RAM, and 2835 GB NVMe local storage, engineered for high-throughput in-memory caching, database processing, and data-intensive services.",
+  "meta_description": "Microsoft Azure E48ds_v7 delivers 48 Intel Xeon vCPUs, 384 GB RAM, and 2835 GB NVMe SSD storage for memory-intensive databases and caching workloads.",
+  "tagline": "High-capacity memory architecture pairing 48 Intel Xeon cores with fast local NVMe storage for memory-intensive enterprise workloads and data processing.",
   "bullet_points": [
-    "48 vCPUs and 384 GB RAM providing a high 8.0 GB per core memory allocation",
-    "Bundled 2835 GB local NVMe SSD with Premium Storage compatibility",
-    "Intel Xeon 6973P-C processor with 4.2 GHz clock speed and 480 MB L3 cache",
-    "Strong benchmark performance in cryptography, data compression, and Redis operations",
-    "Best suited for memory-intensive databases, caching layers, and enterprise web serving"
+    "48 dedicated vCPUs powered by Intel Xeon 6973P-C running up to 4.2 GHz",
+    "384 GB RAM providing an 8 GB per vCPU memory footprint",
+    "2835 GB high-speed local NVMe SSD storage included",
+    "Hardware-accelerated AVX-512 and Intel AMX instruction sets",
+    "Strong performance in cryptography, key-value operations, and prompt processing",
+    "Suited for in-memory databases, Redis caching tiers, and enterprise ETL pipelines"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

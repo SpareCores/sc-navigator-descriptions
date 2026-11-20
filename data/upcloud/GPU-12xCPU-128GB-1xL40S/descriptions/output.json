@@ -1,24 +1,25 @@
 {
   "page": [
-    "UpCloud GPU-12xCPU-128GB-1xL40S is a GPU-accelerated server configured with an AMD EPYC 9575F processor featuring 12 physical cores on the x86_64 architecture. The CPU operates at a base frequency of 2.0 GHz with a shared allocation model. The system is equipped with 128.0 GB of system memory, providing 10.67 GB of RAM per core. Graphics and parallel processing workloads are accelerated by a single NVIDIA L40S GPU based on the Ada Lovelace architecture, which includes 48 GB of dedicated VRAM.",
-    "In benchmark evaluations, the server demonstrates top-tier single-core performance, with stress-ng single-core and Geekbench single-core scores placing in the top 10%. Multi-core CPU performance falls within the average range, reflecting the shared CPU allocation model. Memory bandwidth for large blocks is strong, ranking in the top 25% for both read and write operations. The hardware excels in LLM inference tasks, achieving top-tier text generation speeds of 368.94 tokens per second with a small 135M model and strong performance of 36.32 tokens per second with a medium 7B model.",
-    "From a resource density perspective, the server offers a high-capacity GPU and substantial memory allocation relative to its 12 vCPUs. However, users must note that local storage is not bundled with this instance, meaning external storage solutions must be attached. The shared CPU allocation also introduces potential performance variability under sustained multi-core CPU loads, though the underlying AMD EPYC 9575F hardware mitigates this with strong single-threaded execution.",
-    "This server configuration is suited for GPU-accelerated workloads such as machine learning inference, small to medium large language model execution, and image processing. It is also appropriate for single-threaded data decompression tasks and memory-intensive applications that do not require dedicated, non-shared multi-core CPU resources."
+    "UpCloud GPU-12xCPU-128GB-1xL40S is a GPU-accelerated cloud server built on the KVM hypervisor. The instance integrates an AMD EPYC 9575F processor providing 12 vCPUs across 12 physical cores clocked at 2.0 GHz, configured with 1 thread per core under a shared CPU allocation model. The host architecture provides 64 KB L1d cache, 0.5 MB L2 cache, and 16 MB L3 cache per core, alongside hardware support for vector and cryptographic instruction sets including AVX-512, AVX-VNNI, AES, and SHA-NI.",
+    "Hardware acceleration is supplied by a single NVIDIA L40S GPU featuring 48 GB of GDDR6 VRAM from the Ada Lovelace generation. The host system is provisioned with 128.0 GB of system RAM, yielding approximately 10.67 GB of memory per core. The server does not bundle local disk storage, necessitating the attachment of network-based block storage volumes for persistent data. One public IPv4 address is included by default.",
+    "Benchmark results reveal strong single-thread execution, with Geekbench single-core and stress-ng single-core figures placing in the top tier of evaluated hardware. Text processing and single-threaded bzip3 decompression also place in the top decile. In contrast, multi-core metric outputs from stress-ng and PassMark sit in the median range due to the 12-core ceiling. Memory subsystem benchmarks show high uncached read throughput of 288.12 GB/sec and write bandwidth of 154.63 GB/sec.",
+    "For machine learning operations, the L40S GPU achieves top-tier generation speed for small 135M language models at 368.94 tokens per second and strong performance on medium 7B models at 36.32 tokens per second. Performance moderates on larger 70B models due to GPU memory bandwidth and single-accelerator capacity constraints.",
+    "From an infrastructure perspective, this instance balances high-capacity GPU VRAM and dense host memory against a moderate compute core count. It is well suited for small-to-medium parameter model inference, image generation, video transcoding, and accelerated rendering workloads that do not demand extensive local IOPS."
   ],
-  "description": "UpCloud GPU-12xCPU-128GB-1xL40S is a GPU-accelerated virtual server featuring 12 shared AMD EPYC 9575F vCPUs on the x86_64 architecture and 128.0 GB of system memory. It integrates a single NVIDIA L40S GPU with 48 GB of VRAM, based on the Ada Lovelace architecture. Benchmark data reveals top-tier single-core performance and strong large-block memory bandwidth, alongside highly efficient LLM inference capabilities, particularly in text generation. However, the instance does not include local storage, and the CPU cores are shared, which represents a tradeoff for sustained multi-core workloads. This server is highly suited for machine learning inference, image processing, and memory-intensive applications requiring moderate compute resources paired with high-performance graphics acceleration.",
-  "og_description": "UpCloud GPU-12xCPU-128GB-1xL40S is a GPU-accelerated server featuring 12 shared AMD EPYC vCPUs, 128 GB RAM, and an NVIDIA L40S GPU with 48 GB VRAM. It excels in single-core tasks and LLM inference.",
-  "meta_description": "UpCloud GPU-12xCPU-128GB-1xL40S features 12 AMD EPYC vCPUs, 128 GB RAM, and an NVIDIA L40S GPU, delivering top-tier single-core and LLM performance.",
-  "tagline": "A GPU-accelerated virtual server combining top-tier single-core CPU performance with an NVIDIA L40S GPU for efficient machine learning inference.",
+  "description": "UpCloud GPU-12xCPU-128GB-1xL40S is a GPU-accelerated instance designed for machine learning inference and graphic workloads. Powered by an AMD EPYC 9575F processor, it provides 12 vCPUs across 12 physical cores at 2.0 GHz, paired with 128 GB of system memory and an NVIDIA L40S GPU with 48 GB of VRAM. Benchmark testing demonstrates top-tier single-core CPU throughput, above-average large-block memory bandwidth, and strong generative throughput on small to mid-sized language models. The 12-core shared CPU topology delivers average multi-threaded synthetic benchmark scores. Local storage is not bundled, requiring persistent network volumes for data storage. With a generous memory-to-core allocation and 48 GB GPU frame buffer, the instance is positioned for AI inference serving, media processing, and accelerated compute tasks.",
+  "og_description": "UpCloud GPU-12xCPU-128GB-1xL40S is a GPU-accelerated server with an AMD EPYC 9575F processor, 12 vCPUs, 128 GB RAM, and an NVIDIA L40S 48 GB GPU designed for AI inference and graphic computing.",
+  "meta_description": "UpCloud GPU-12xCPU-128GB-1xL40S features 12 vCPUs on an AMD EPYC 9575F CPU, 128 GB RAM, and an NVIDIA L40S 48 GB GPU for accelerated workloads.",
+  "tagline": "Accelerated computing instance pairing an NVIDIA L40S GPU and high-frequency AMD EPYC execution with dense memory for machine learning inference.",
   "bullet_points": [
-    "NVIDIA L40S GPU with 48 GB VRAM for parallel processing",
-    "12 shared AMD EPYC 9575F vCPUs with top-tier single-core performance",
-    "128 GB of system memory providing 10.67 GB per core",
-    "No local storage included, requiring external storage attachments",
-    "Optimized for machine learning inference and image processing"
+    "Single NVIDIA L40S GPU featuring 48 GB Ada Lovelace VRAM",
+    "12 vCPUs on AMD EPYC 9575F processor at 2.0 GHz",
+    "128 GB system RAM providing 10.67 GB memory per core",
+    "Top-tier single-core CPU benchmark scores and high memory bandwidth",
+    "No bundled local storage, requiring external persistent volumes",
+    "Tailored for AI inference, text processing, and graphics pipelines"
   ],
   "categories": [
     "GPU Accelerated",
-    "Memory Optimized",
-    "Compute Optimized"
+    "Memory Optimized"
   ]
 }

@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E96-48ads_v7 is an x86_64 architecture server belonging to the Eadsv7 family, powered by a dedicated AMD EPYC 9V45 processor. It features 48 vCPUs across 24 physical cores with hyper-threading enabled, operating at a clock speed of 4.5 GHz. The hardware configuration includes 768.0 GB of RAM, providing a high memory-to-vCPU ratio of 16.0 GB per core. Additionally, the server is equipped with 5669 GB of local NVMe SSD storage, while containing no GPUs.",
-    "In benchmark testing, the E96-48ads_v7 demonstrates top-tier performance in single-core processing, with stress-ng single-core CPU performance, gzip compression, and bzip3 decompression all ranking in the top 10%. Multi-core CPU performance and passmark CPU scores fall within the top 25%. Memory bandwidth tests show strong write speeds for large blocks and high read speeds for small cached blocks, though large block read-only bandwidth drops to average levels. Database operations, including Redis SET operations and PassMark database benchmarks, consistently rank in the top 25%.",
-    "This server offers high resource density, combining substantial memory capacity with fast local NVMe storage, making it qualitatively cost-efficient for memory-bound and storage-intensive workloads. However, the lack of GPU acceleration limits its utility for heavy deep learning training, and large-block memory reads represent a relative performance tradeoff compared to its top-tier single-core capabilities. The hardware profile is suited for large relational databases, in-memory caching systems like Redis, data analytics, and medium-scale language model inference."
+    "Microsoft Azure E96-48ads_v7 is a constrained-core, memory-optimized virtual machine built on the AMD EPYC 9V45 platform. It allocates 48 vCPUs across 24 dedicated physical cores with symmetric multithreading, capable of reaching speeds up to 4.5 GHz. The architecture incorporates 48 KB of L1 data cache, 1 MB of L2 cache, and 32 MB of L3 cache per core cluster, alongside hardware support for AVX-512 vector and cryptographic instructions. A key differentiator of this constrained-core tier is its generous memory allocation: it provides 768.0 GB of system RAM, yielding a 16:1 memory-to-vCPU ratio (16.0 GB per vCPU). Additionally, the instance bundles 5,669 GB of high-speed local NVMe SSD storage.",
+    "Benchmark results validate strong compute and memory subsystem performance. In stress-ng testing, the single-core CPU throughput scored 3,775.28 (top 10%), while multi-core throughput achieved 89,048.42 (top 25%). Memory operations showed a cached read bandwidth of 4,989.53 GB/sec and an uncached write bandwidth of 99.65 GB/sec. The system also demonstrated top-tier single-threaded compression performance, recording 41.42 GB/sec in gzip and 18.08 GB/sec in bzip3 decompression. In-memory data store performance is further highlighted by 76.45 million operations per second in Redis SET operations and a PassMark database score of 29,451.72.",
+    "The instance is structured to deliver cost efficiency for software workloads that are licensed on a per-core basis but demand high memory footprints and fast local scratch storage. By restricting the vCPU count to 48 while retaining the full 768 GB memory footprint and 5.6 TB NVMe disk array of a larger chassis, it minimizes per-core licensing overhead without starving large datasets. Workloads that fit this profile include large-scale relational database engines, in-memory databases like Redis, analytics platforms, and memory-bound batch processing systems."
   ],
-  "description": "The Microsoft Azure E96-48ads_v7 is a memory-optimized server from the Eadsv7 family, featuring a dedicated AMD EPYC 9V45 processor with 48 vCPUs, 24 physical cores, and a 4.5 GHz clock speed. It is equipped with 768.0 GB of RAM, yielding 16.0 GB per core, and 5669 GB of local NVMe SSD storage, with no GPU hardware. Benchmarks indicate top-tier single-core CPU performance and gzip compression, alongside strong multi-core and database execution capabilities. While large-block memory read bandwidth is average, the server's high memory density and fast local storage provide qualitative cost efficiency for resource-heavy deployments. The processor supports advanced vector extensions including AVX-512 and cryptography acceleration via VAES and SHA-NI, which enhances its processing efficiency for secure workloads.",
-  "og_description": "Microsoft Azure E96-48ads_v7 is a memory-optimized server featuring 48 vCPUs, 768 GB RAM, and 5669 GB of local NVMe SSD storage, delivering top-tier single-core performance and strong database capabilities.",
-  "meta_description": "Microsoft Azure E96-48ads_v7 is a memory-optimized server with 48 vCPUs, 768 GB RAM, and 5669 GB NVMe SSD storage, built for database workloads.",
-  "tagline": "A memory-dense x86 platform featuring high-capacity local NVMe storage and top-tier single-core processing for demanding database and caching workloads.",
+  "description": "Microsoft Azure E96-48ads_v7 is a memory-optimized virtual machine running on an AMD EPYC 9V45 processor. It features 48 dedicated vCPUs (24 physical cores) clocked up to 4.5 GHz, 768.0 GB of RAM, and 5,669 GB of integrated local NVMe SSD storage. With an expansive 16:1 memory-to-vCPU ratio, the system offers high memory density suited for software environments governed by per-core licensing models. Empirical benchmarks reflect strong overall throughput, including top 10% performance in stress-ng single-core compute and gzip compression, alongside 76.45 million Redis SET operations per second. Hardware vector extensions such as AVX-512 facilitate efficient processing across demanding database operations, in-memory caching tiers, and data analytics pipelines.",
+  "og_description": "Microsoft Azure E96-48ads_v7 offers 48 dedicated vCPUs on AMD EPYC 9V45, 768 GB RAM, and 5,669 GB local NVMe storage, delivering high memory capacity for licensing-constrained database workloads.",
+  "meta_description": "Microsoft Azure E96-48ads_v7 features 48 AMD EPYC vCPUs, 768 GB RAM, and 5,669 GB NVMe storage, optimized for large memory workloads and database systems.",
+  "tagline": "Constrained-core architecture pairing 48 AMD vCPUs with 768 GB RAM and dense local NVMe storage for memory-intensive workloads.",
   "bullet_points": [
-    "48 vCPUs and 768 GB RAM providing 16 GB of memory per core",
-    "5669 GB of high-speed local NVMe SSD storage",
-    "Top-tier single-core CPU performance and gzip compression speeds",
-    "Strong database execution and Redis SET operations performance",
-    "Suited for memory-intensive databases, data analytics, and caching"
+    "48 dedicated vCPUs powered by AMD EPYC 9V45 processors running up to 4.5 GHz",
+    "768.0 GB of system memory providing an expansive 16:1 RAM-to-vCPU ratio",
+    "Bundled 5,669 GB high-throughput local NVMe SSD storage",
+    "Top-tier single-core compute and gzip compression benchmark performance",
+    "Hardware support for AVX-512 instruction sets and cryptographic acceleration",
+    "Tailored for in-memory databases, per-core licensed engines, and high-RAM analytics"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

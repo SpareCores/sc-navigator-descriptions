@@ -1,19 +1,19 @@
 {
   "page": [
-    "Amazon Web Services c9gd.large is a compute-optimized instance built on the AWS Nitro hypervisor platform. It features custom AWS Graviton ARM64 processors running at a clock speed of 3.3 GHz. The instance provides 2 dedicated physical CPU cores and 2 vCPUs with 1 thread per core, accompanied by 4.0 GB of system memory, yielding a 1:2 vCPU-to-RAM ratio characteristic of compute-heavy server profiles.",
-    "For storage and networking, c9gd.large comes equipped with 118 GB of attached local NVMe SSD instance storage. This direct-attached local storage delivers low latency and direct I/O performance suitable for scratch space or temporary operational data. Network connectivity is configured with a baseline bandwidth of 1 Gbps. The instance includes zero complimentary public IPv4 addresses and operates without discrete GPU acceleration.",
-    "From a resource density perspective, c9gd.large offers an efficient balance of high-frequency Arm-based compute cores paired with fast local NVMe storage. The 1:2 vCPU-to-RAM configuration provides dedicated processing power without allocating excessive memory overhead. This instance is well matched for compute-intensive tasks, CI/CD build environments, web serving, and localized caching or database workloads that benefit from direct NVMe instance storage."
+    "Amazon Web Services c9gd.large is a compute-optimized virtual machine built on the AWS Nitro hypervisor architecture. It features a custom AWS Graviton arm64 processor delivering 2 dedicated physical cores running at 3.3 GHz. With a single thread per core, the instance avoids thread contention, offering predictable processing performance for arm64-compatible execution stacks. The instance provides 4.0 GB of system memory, matching a standard 1:2 compute-optimized ratio of 2.0 GB of memory per core.",
+    "A key differentiator of the c9gd family is the inclusion of integrated local instance storage. The c9gd.large comes equipped with a 118 GB local NVMe SSD, bypassing network-attached block storage latencies to deliver direct, high-throughput input and output. Networking is configured with a 1 Gbps baseline bandwidth, and no complimentary public IPv4 addresses are assigned by default.",
+    "From an efficiency perspective, the dedicated arm64 hardware profile offers high power and resource efficiency compared to legacy architectures, particularly when paired with direct-attached NVMe storage. Because local instance store data is ephemeral, deployments requiring persistence must design around host lifecycle boundaries. This setup is appropriate for compute-heavy, IOPS-sensitive applications such as distributed caching, temporary data crunching, continuous integration builds, and edge batch processing."
   ],
-  "description": "Amazon Web Services c9gd.large is a compute-optimized ARM64 server instance running on the AWS Nitro System. Powered by custom AWS Graviton processors operating at 3.3 GHz, it features 2 dedicated physical CPU cores and 2 vCPUs without SMT. The system includes 4.0 GB of RAM, maintaining a 1:2 vCPU-to-RAM balance suited for compute-oriented tasks. For local data processing, the instance provides 118 GB of bundled NVMe SSD instance storage alongside a 1 Gbps baseline network bandwidth. Without dedicated GPUs or shared CPU credits, c9gd.large delivers dedicated core execution and fast local disk access. This instance type is tailored for containerized microservices, build nodes, batch processing, and lightweight database applications requiring direct-attached NVMe storage.",
-  "og_description": "Amazon Web Services c9gd.large is an ARM64 compute-optimized instance with 2 dedicated Graviton cores at 3.3 GHz, 4.0 GB RAM, 118 GB local NVMe SSD storage, and 1 Gbps network bandwidth.",
-  "meta_description": "Amazon Web Services c9gd.large features 2 Graviton cores at 3.3 GHz, 4.0 GB RAM, 118 GB local NVMe SSD, and 1 Gbps baseline networking.",
-  "tagline": "Compute-optimized ARM64 instance featuring dedicated Graviton cores, balanced 1:2 memory allocation, and high-speed local NVMe SSD storage for intensive workloads.",
+  "description": "Amazon Web Services c9gd.large is a compute-optimized instance built on the AWS Nitro hypervisor and powered by an arm64 AWS Graviton processor. It provides 2 dedicated physical cores clocked at 3.3 GHz alongside 4.0 GB of RAM, sustaining a 1:2 core-to-memory ratio. Distinct from purely network-storage instances, the c9gd.large incorporates a high-speed 118 GB local NVMe SSD instance store volume alongside a 1 Gbps baseline network interface. It includes no dedicated GPUs. The combination of dedicated arm64 execution cores and low-latency ephemeral local storage yields strong operational efficiency for tasks that demand rapid scratch space and dedicated CPU processing without hyper-threading contention. The instance is well matched for continuous integration build runners, microservices, batch processing, and temporary caching layers.",
+  "og_description": "Amazon Web Services c9gd.large is an arm64 compute-optimized instance with 2 dedicated 3.3 GHz Graviton cores, 4.0 GB RAM, a 118 GB local NVMe SSD instance store, and 1 Gbps network bandwidth.",
+  "meta_description": "Amazon Web Services c9gd.large features 2 dedicated 3.3 GHz arm64 cores, 4.0 GB memory, and a 118 GB NVMe SSD local drive for compute-bound tasks.",
+  "tagline": "Dedicated arm64 processing performance paired with low-latency local NVMe scratch storage for compute workloads requiring rapid temporary input and output.",
   "bullet_points": [
-    "Powered by 2 dedicated AWS Graviton ARM64 cores running at 3.3 GHz",
-    "4.0 GB system memory providing a 1:2 vCPU-to-RAM resource ratio",
-    "118 GB bundled direct-attached local NVMe SSD instance storage",
-    "1 Gbps baseline network bandwidth running on AWS Nitro System",
-    "Best suited for compute-bound tasks, CI/CD build nodes, and web serving"
+    "Two dedicated arm64 AWS Graviton cores clocked at 3.3 GHz (1 thread per core)",
+    "4.0 GB total system memory (2.0 GB per core)",
+    "Bundled 118 GB high-speed local NVMe SSD instance store",
+    "1 Gbps baseline network bandwidth running on AWS Nitro hypervisor",
+    "Tailored for CI/CD builds, batch computing, and distributed caching nodes"
   ],
   "categories": [
     "Compute Optimized",

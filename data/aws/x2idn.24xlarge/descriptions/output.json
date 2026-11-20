@@ -1,22 +1,25 @@
 {
   "page": [
-    "Amazon Web Services x2idn.24xlarge is a memory-optimized instance powered by Intel Xeon 8375C processors. It features 96 vCPUs across 48 physical cores with hyperthreading enabled, operating at a clock speed of 3.5 GHz. The system is equipped with 1536.0 GB of DDR4 memory running at 3 GHz, providing 16.0 GB of RAM per physical core. Local storage consists of 2850 GB of NVMe SSD instance store volumes, and the instance utilizes the AWS Nitro hypervisor.",
-    "Benchmark data shows strong multi-core and memory performance. The instance achieves top-tier results in Passmark CPU encryption tests and strong ratings in multi-core CPU benchmarks, Geekbench multi-core scores, and Passmark database operations. Memory bandwidth is highly rated, reaching 326.82 GB/sec for large block reads and 137.6 GB/sec for large block writes. However, single-core performance is average, as reflected in the stress-ng single-core and Geekbench single-core benchmarks.",
-    "The instance provides a baseline network bandwidth of 75 Gbps. While it excels at memory-intensive workloads and multi-threaded tasks, it exhibits limitations in specific compute areas, such as large-scale LLM text generation where performance is weak. Given the high memory-to-vCPU ratio, the local NVMe storage, and strong database operation benchmarks, this instance is designed for memory-intensive databases, Redis caching layers, large-scale data processing, and enterprise applications requiring substantial memory capacity."
+    "Amazon Web Services x2idn.24xlarge is a memory-optimized instance running on the AWS Nitro System. It is powered by a 3.5 GHz Intel Xeon 8375C processor featuring the x86_64 architecture, configured with 48 physical cores and 96 dedicated vCPUs with hyperthreading. The instance includes 1536 GB of DDR4 memory running at 3 GHz, providing an exceptionally high 16:1 memory-to-core ratio. High-speed local scratch space is bundled via 2850 GB of NVMe SSD instance storage. Baseline network performance is rated at 75 Gbps, and no discrete GPUs are present.",
+    "Benchmark evaluations highlight strong parallel execution and high data throughput. Multi-core performance across stress-ng (92,904.33) and Geekbench (18,074.0) ranks in the top 25%, alongside a PassMark CPU score of 76,040.07 and top-tier PassMark encryption performance (87,174.88). Its memory subsystem delivers strong large-block read bandwidth at 326.82 GB/sec and write bandwidth at 137.6 GB/sec. This translates to high operational throughput in caching layers, reaching 87.7 million Redis SET operations per second and strong PassMark database scores.",
+    "Single-threaded execution remains average across benchmarks, reflected in a Geekbench single-core score of 1,665.0 and stress-ng single-core score of 1,892.88. Large-model CPU-based LLM generation presents a bottleneck, testing in the bottom 25% for 70B models at 2.76 tokens/sec due to the absence of dedicated matrix acceleration engines or GPUs. From an efficiency perspective, the platform yields substantial value when consolidated around large datasets requiring rapid memory access, high network ingress/egress, and high local I/O.",
+    "AWS x2idn.24xlarge is best suited for memory-intensive enterprise workloads, including large in-memory databases like SAP HANA or Redis clusters, real-time big data analytics engines, relational database instances, and network-intensive data processing pipelines."
   ],
-  "description": "Amazon Web Services x2idn.24xlarge is a memory-optimized instance featuring 96 vCPUs, 48 physical Intel Xeon 8375C cores, and 1536.0 GB of DDR4 RAM. Operating on the Nitro hypervisor, it includes 2850 GB of local NVMe SSD storage and a 75 Gbps baseline network bandwidth. Benchmarks indicate strong multi-core capabilities, with top-tier performance in encryption and strong results in database operations, Redis SET operations, and memory bandwidth. Conversely, single-core performance is average, and text generation for large language models is weak. This hardware profile, characterized by high memory density and dedicated compute resources, is designed for memory-intensive databases, caching layers, and enterprise workloads requiring high memory-to-vCPU ratios.",
-  "og_description": "Amazon Web Services x2idn.24xlarge is a memory-optimized instance featuring 96 vCPUs, 1536 GB of DDR4 RAM, 2850 GB of NVMe SSD storage, and 75 Gbps network bandwidth for memory-intensive workloads.",
-  "meta_description": "Amazon Web Services x2idn.24xlarge is a memory-optimized instance featuring 96 vCPUs, 1536 GB of DDR4 RAM, and 2850 GB of local NVMe SSD storage.",
-  "tagline": "A memory-optimized platform featuring high RAM density, dedicated Intel Xeon processors, local NVMe storage, and strong multi-core performance.",
+  "description": "Amazon Web Services x2idn.24xlarge is a memory-optimized instance built on the Nitro System, featuring a 48-core, 96-vCPU Intel Xeon 8375C processor on the x86_64 architecture. Equipped with 1536 GB of DDR4 memory at 3 GHz and 2850 GB of local NVMe SSD storage, it targets memory-heavy computing without hardware GPUs. Benchmarks exhibit strong multi-threaded compute, high memory bandwidth (326.82 GB/sec uncached reads), and 75 Gbps network bandwidth, leading to 87.7 million Redis SET operations per second. However, single-core speeds and CPU-based 70B LLM inference remain average or constrained. The instance provides strong hardware consolidation value for in-memory databases, real-time analytics, and enterprise data processing.",
+  "og_description": "Amazon Web Services x2idn.24xlarge offers 96 vCPUs, 1536 GB DDR4 RAM, 2850 GB NVMe SSD storage, and 75 Gbps networking for demanding in-memory databases and caching architectures.",
+  "meta_description": "Amazon Web Services x2idn.24xlarge features 96 vCPUs, 1536 GB RAM, and 2850 GB NVMe storage, optimized for large memory and database workloads.",
+  "tagline": "High-density memory-optimized cloud server with 1.5 TB RAM, integrated NVMe SSD storage, and 75 Gbps networking throughput.",
   "bullet_points": [
-    "96 vCPUs and 1536 GB of DDR4 RAM providing a high memory-to-core ratio",
-    "2850 GB of local NVMe SSD storage and 75 Gbps baseline network bandwidth",
-    "Strong multi-core CPU, database operations, and memory bandwidth benchmark results",
-    "Average single-core performance and weak large-scale LLM text generation",
-    "Designed for memory-intensive databases, caching layers, and enterprise applications"
+    "Intel Xeon 8375C CPU with 48 physical cores and 96 dedicated vCPUs",
+    "1536 GB DDR4 system memory with a 16:1 memory-to-core ratio",
+    "Bundled 2850 GB local NVMe SSD storage",
+    "75 Gbps baseline network bandwidth via AWS Nitro System",
+    "Ranks in the top 25% for multi-core benchmarks and Redis throughput",
+    "Tailored for in-memory databases, data caching, and large analytics engines"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

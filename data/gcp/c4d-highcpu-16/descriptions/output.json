@@ -1,21 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c4d-highcpu-16 is a compute-optimized virtual machine powered by an AMD EPYC 9B45 processor. It features 16 dedicated vCPUs mapped to 8 physical cores with multithreading enabled. The instance is equipped with 30.0 GB of system memory, yielding approximately 1.88 GB of RAM per vCPU. This configuration does not include local storage or dedicated GPU hardware. The CPU architecture is x86_64, supporting advanced instruction sets such as AVX-512, AVX_VNNI, and cryptographic acceleration via AES and SHA_NI.",
-    "Benchmark data indicates exceptional single-core capabilities. The server achieves top-tier performance in single-core CPU stress tests, single-threaded gzip compression, and single-threaded bzip3 decompression. Geekbench single-core and text processing metrics also rank in the top 10% of tested systems. Multi-core performance, memory bandwidth, and database operations fall within the average range. Additionally, the processor demonstrates strong performance in image processing and text generation for small language models, though performance scales down to average levels for medium-sized models.",
-    "Given its high compute-to-memory ratio and lack of bundled local storage, the c4d-highcpu-16 offers a resource-dense profile optimized for CPU-bound tasks. It is highly cost-efficient for workloads that demand strong single-threaded execution without requiring massive memory footprints. Recommended workloads include single-threaded data processing, text and image manipulation, lightweight web serving, and small-scale machine learning inference."
+    "Google Cloud Platform c4d-highcpu-16 is a compute-focused instance powered by the AMD EPYC 9B45 processor built on the x86_64 architecture. The configuration supplies 16 dedicated virtual CPUs across 8 physical cores with simultaneous multithreading, backed by 30.0 GB of system memory, which allocates 1.88 GB per vCPU. Cache resources include 48 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of shared L3 cache. The platform incorporates AVX-512 vector support including VNNI and BF16 instructions, as well as hardware-accelerated cryptographic extensions such as VAES and SHA-NI.",
+    "Benchmark evaluations reveal exceptional single-threaded capabilities. In single-core evaluations, the instance achieves top-tier results in stress-ng single-core processing, Geekbench single-core scores, single-threaded gzip compression, and text processing. Light language model inference also shows strong throughput on small models, delivering 424.39 tokens per second on 135M parameter text generation. Conversely, aggregate multi-threaded benchmarks, including multi-core stress-ng, Geekbench multi-core, and software compilation via Clang, register in the middle fifty percent of cloud servers. Memory throughput for uncached large blocks registers at 53.46 GB/sec for reads and 34.08 GB/sec for writes.",
+    "The primary resource tradeoff centers on memory density and storage. With approximately 1.88 GB of RAM per vCPU, the instance is constrained for large in-memory databases or sprawling multi-gigabyte datasets. Furthermore, no local NVMe storage is bundled, requiring reliance on remote persistent disks for disk I/O operations. Without discrete GPU accelerators, hardware acceleration is limited to CPU-native instruction sets.",
+    "This hardware balance positions the c4d-highcpu-16 effectively for CPU-bound tasks that prioritize high per-core execution speeds over memory scale. Primary workload fits include batch processing, compression pipelines, CI/CD compilation, and lightweight inferencing tasks."
   ],
-  "description": "Google Cloud Platform c4d-highcpu-16 is a compute-optimized virtual machine featuring 16 dedicated vCPUs and 30.0 GB of RAM, powered by an AMD EPYC 9B45 processor. Built on the x86_64 architecture, it includes 8 physical cores and supports advanced instruction sets like AVX-512 and SHA_NI. The instance does not include local storage or GPU accelerators. Performance benchmarks highlight exceptional single-core execution, with top-tier results in single-threaded compression, text processing, and small-model LLM text generation. Conversely, multi-core performance and memory bandwidth remain in the average tier. This hardware profile delivers qualitative cost efficiency for compute-heavy, memory-light workloads. It is highly suited for single-threaded processing, text and image manipulation, and lightweight inference tasks.",
-  "og_description": "Google Cloud Platform c4d-highcpu-16 is a compute-optimized server with 16 dedicated AMD EPYC vCPUs, 30 GB RAM, and top-tier single-core performance for text processing and compression.",
-  "meta_description": "Google Cloud Platform c4d-highcpu-16 features 16 dedicated AMD EPYC vCPUs and 30 GB RAM, delivering top-tier single-core benchmark performance.",
-  "tagline": "A compute-optimized virtual machine delivering exceptional single-core performance and dedicated AMD EPYC processing for CPU-intensive workloads.",
+  "description": "Google Cloud Platform c4d-highcpu-16 provides 16 dedicated vCPUs and 30.0 GB of system memory powered by an AMD EPYC 9B45 x86_64 processor across 8 physical cores. Designed with a compute-heavy profile of 1.88 GB of RAM per vCPU, it features 32 MB of L3 cache alongside AVX-512 instruction set extensions. Benchmark testing demonstrates top-tier single-core CPU throughput, leading performance in single-threaded data compression, and strong handling of small-model text inference. Multi-threaded processing and memory bandwidth align within average cloud server tiers. The server includes no bundled local storage and lacks GPU accelerators, making it reliant on external storage solutions. This hardware allocation serves compute-intensive workloads that benefit from rapid per-thread performance, including build compilation, data transformation, batch compute jobs, and lightweight web serving.",
+  "og_description": "Google Cloud Platform c4d-highcpu-16 delivers 16 vCPUs and 30 GB RAM powered by AMD EPYC 9B45 processors, offering top-tier single-core performance for compute-intensive tasks without bundled local disks.",
+  "meta_description": "Google Cloud Platform c4d-highcpu-16 offers 16 vCPUs, 30 GB RAM, and AMD EPYC 9B45 computing for high single-core performance and CPU-focused workloads.",
+  "tagline": "Dedicated AMD EPYC compute power offering high single-threaded throughput and AVX-512 extensions for CPU-intensive compilation and data processing pipelines.",
   "bullet_points": [
-    "16 dedicated vCPUs powered by an AMD EPYC 9B45 processor",
-    "30.0 GB of system memory with no local storage or GPU",
-    "Top-tier single-core CPU and text processing benchmark performance",
-    "Supports AVX-512, AVX_VNNI, and SHA_NI instruction sets",
-    "Optimized for single-threaded data processing and small-model inference"
+    "AMD EPYC 9B45 processor with 16 dedicated vCPUs across 8 physical cores",
+    "30.0 GB total system memory providing 1.88 GB per vCPU",
+    "Top-tier single-core CPU, text processing, and compression benchmark performance",
+    "Support for AVX-512, VNNI, BF16, and cryptographic acceleration instructions",
+    "No bundled local disk storage or hardware GPU accelerators",
+    "Suited for CI/CD compilation, batch compute, and light model inference"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

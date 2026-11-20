@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure EC96as_v5 is an x86_64 architecture server instance belonging to the ECASv5 family. It features 96 dedicated vCPUs powered by an AMD processor and runs on the Microsoft Hyper-V hypervisor. The instance is configured with 672.0 GB of system memory, providing a ratio of 7.0 GB of RAM per virtual core.",
-    "This server type does not include local storage, meaning all storage requirements must be met using external volumes. It is Premium Storage capable, allowing connection to high-performance persistent disks. There are zero integrated GPUs, making it unsuitable for hardware-accelerated graphics or GPU-based machine learning workloads. Additionally, it does not include any complimentary public IPv4 addresses.",
-    "From a qualitative cost-efficiency perspective, the EC96as_v5 offers a high density of dedicated compute cores and memory, making it suitable for enterprise-scale workloads that require substantial memory capacity without the overhead of local physical disks. Recommended workloads include large-scale databases, memory-intensive enterprise applications, data warehousing, and heavy analytical processing."
+    "Microsoft Azure EC96as_v5 is a high-capacity, memory-optimized instance built on the x86_64 architecture and managed via Microsoft Hyper-V. The platform features AMD EPYC 9V74 processors offering 96 dedicated virtual CPUs spanning 48 physical cores with two threads per core. Memory capacity totals 672.0 GB, allocating 7.0 GB of RAM per vCPU. Hardware cache specifications include 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. Cryptographic instructions such as AES, VAES, and SHA-NI are supported, alongside AVX, BMI2, and ADX vector and integer manipulation flags. The configuration includes zero GPUs and provides no bundled local disk storage or complimentary public IPv4 addresses.",
+    "Benchmark data illustrates a distinct profile prioritizing concurrent multi-threaded scale over raw single-core execution speed. Single-core evaluations, including Geekbench single-core at 1445.0 and stress-ng single-core at 1935.57, align within the median performance tiers. In contrast, multi-threaded tasks demonstrate strong throughput within the upper quartile, marked by a stress-ng multi-core metric of 108011.39 and an overall PassMark CPU score of 72451.38. Specialized compute tests verify high efficiency in parallel compiling with Clang at 51543.0 and ray tracing at 78227.0, while PassMark encryption and extended instructions exceed 80000 points.",
+    "Data manipulation and memory-oriented tests show solid performance across high-concurrency scenarios. PassMark database operations achieved a strong score of 24289.95, accompanied by Redis SET benchmarks reaching 91.4 million operations per second. However, PassMark memory subsystem tests landed in the middle quartile at 2483.23. The absence of integrated local NVMe storage requires all persistent storage and swap operations to rely on external network-attached volumes, introducing network latency tradeoffs for disk-intensive write patterns.",
+    "From an infrastructure efficiency perspective, the high ratio of 7.0 GB of memory per vCPU provides substantial density without requiring distributed memory clustering. This structure is suited for large enterprise relational databases, distributed caching layers such as Redis, enterprise-grade software compilation pipelines, and memory-bound ETL workflows requiring extensive thread parallelization."
   ],
-  "description": "Microsoft Azure EC96as_v5 is an x86_64 architecture server instance from the ECASv5 family, featuring 96 dedicated vCPUs powered by an AMD processor. Operating on the Microsoft Hyper-V hypervisor, this instance is equipped with 672.0 GB of system memory, yielding a ratio of 7.0 GB of RAM per virtual core. The server does not include local storage but is Premium Storage capable, enabling high-performance external disk attachments. It contains no GPUs and offers zero complimentary public IPv4 addresses. Designed for memory-intensive operations, the EC96as_v5 is qualitatively cost-efficient for workloads requiring high resource density. It is suited for large-scale databases, enterprise applications, and memory-heavy data processing tasks.",
-  "og_description": "Microsoft Azure EC96as_v5 is an x86_64 server featuring 96 dedicated AMD vCPUs, 672 GB of RAM, and Premium Storage support. It is optimized for memory-intensive enterprise workloads and database applications.",
-  "meta_description": "Microsoft Azure EC96as_v5 is an x86_64 server featuring 96 dedicated AMD vCPUs, 672 GB of RAM, and Premium Storage support for memory-intensive workloads.",
-  "tagline": "A dedicated ninety-six core AMD instance featuring six hundred seventy-two gigabytes of memory for memory-intensive enterprise workloads.",
+  "description": "Microsoft Azure EC96as_v5 is a memory-optimized virtual machine powered by dedicated AMD EPYC 9V74 processors across an x86_64 architecture. The instance provides 96 virtual CPUs mapped across 48 physical cores with simultaneous multithreading, coupled with 672.0 GB of system memory, yielding 7.0 GB of RAM per vCPU. It operates on the Microsoft Hyper-V hypervisor and lacks local storage, requiring attached network volumes for persistence. The processor incorporates 32 MB of L3 cache, hardware AES and SHA cryptographic accelerations, and standard AVX instructions. Synthetic benchmarks show average single-core performance alongside strong multi-core compute metrics, demonstrated by high throughput in compilation tasks, ray tracing, and stress-ng multi-core evaluations. With 91.4 million operations per second in Redis SET tests and high database operation scores, this server is architecturally suited for large-scale caching tiers, in-memory databases, data analytics, and concurrent batch processing.",
+  "og_description": "Microsoft Azure EC96as_v5 is a memory-optimized virtual machine featuring 96 dedicated vCPUs from AMD EPYC 9V74 processors, 672 GB of RAM, and strong multi-threaded execution for demanding in-memory workloads.",
+  "meta_description": "Microsoft Azure EC96as_v5 offers 96 dedicated vCPUs on AMD EPYC 9V74 processors and 672 GB of RAM, tailored for high-capacity memory and database workloads.",
+  "tagline": "High-density compute instance pairing ninety-six dedicated AMD EPYC cores with extensive memory capacity for scale-up database operations and intensive multithreaded processing.",
   "bullet_points": [
-    "96 dedicated vCPUs powered by an AMD processor",
-    "672.0 GB of system memory providing 7.0 GB per core",
-    "Premium Storage capable with no local storage included",
-    "Operates on the Microsoft Hyper-V hypervisor",
-    "Suited for large databases and memory-intensive enterprise applications"
+    "96 dedicated vCPUs powered by 48-core AMD EPYC 9V74 processors with hyper-threading",
+    "672.0 GB system memory providing 7.0 GB RAM per virtual core",
+    "Strong multi-core compute throughput verified across PassMark and stress-ng suites",
+    "High-throughput Redis key-value performance measuring 91.4 million SET operations per second",
+    "Absence of onboard local storage requires attached remote storage for data persistence",
+    "Designed for in-memory database systems, large compilation tasks, and analytical processing"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

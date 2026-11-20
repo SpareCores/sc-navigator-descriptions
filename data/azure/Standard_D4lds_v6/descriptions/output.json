@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D4lds_v6 is a compute-oriented virtual machine belonging to the Dldsv6 server family, running on the Microsoft Hyper-V hypervisor. It features 4 vCPUs mapped to 2 physical Intel Xeon 8573C cores with hyper-threading enabled, operating at a clock speed of 4.2 GHz. The hardware configuration includes 8.0 GB of system memory, yielding a low memory-to-vCPU ratio of 2.0 GB per core. Local storage is provided via a 236 GB NVMe SSD, and the instance is capable of utilizing Premium Storage.",
-    "Performance benchmarks reveal a distinct contrast between single-core compute capabilities and memory-bound operations. The server demonstrates strong single-core performance, as evidenced by a Geekbench single-core score of 2141.0 and single-threaded gzip compression throughput of 31.32 GB/sec. However, multi-core scaling and memory subsystem performance are weaker. The stress-ng multi-core CPU test and Passmark memory score fall into the lower performance tier, with large-block memory read bandwidth limited to 36.76 GB/sec and write bandwidth to 25.84 GB/sec.",
-    "From a cost-efficiency perspective, the D4lds_v6 offers a specialized resource profile that reduces memory overhead costs for workloads that are primarily CPU-bound. By constraining RAM to 8.0 GB while maintaining dedicated high-frequency Intel Xeon cores, it avoids the premium associated with high-memory instances. This makes it a viable option for single-threaded tasks, lightweight web serving, and basic text processing, though it is less suitable for memory-intensive databases or highly parallelized compilation tasks."
+    "Microsoft Azure D4lds_v6 is a low-memory, local-disk variant within Azure's general-purpose virtual machine lineup, provisioned via Microsoft Hyper-V. The instance is powered by an x86_64 Intel Xeon 8573C processor running up to 4.2 GHz. The compute configuration provides 4 vCPUs mapped across 2 dedicated physical cores with 2 threads per core. Architectural instruction support is extensive, featuring AVX-512 extensions (including VNNI and BF16) and Intel AMX (Advanced Matrix Extensions with AMX Tile and AMX INT8). Memory is configured at 8.0 GB of RAM, resulting in a 1:2 vCPU-to-memory ratio (2.0 GB per core). For high-speed temporary storage, the instance bundles a dedicated 236 GB NVMe SSD. No hardware accelerators or GPUs are included.",
+    "Benchmark evaluation displays a mix of strong single-threaded performance coupled with lower throughput in memory-bound and multi-core tasks. The Intel Xeon 8573C demonstrates upper-quartile performance in Geekbench single-core (2141.0), single-threaded gzip compression (31.32 GB/sec), and Geekbench text processing (2535.0). Multi-threaded compute results place closer to median thresholds, recording 4805.0 on Geekbench multi-core and 7398.11 on PassMark CPU score. However, stress-ng multi-core (3990.56) and memory subsystem benchmarks\u2014including PassMark memory (1693.71), read-only large-block bandwidth (36.76 GB/sec), and large-block write bandwidth (25.84 GB/sec)\u2014fall into the lowest 25% bracket.",
+    "Cost efficiency is focused around workloads requiring dedicated per-vCPU throughput and fast local disk scratch space without the overhead of excess memory. The 1:2 RAM-to-vCPU ratio limits its viability for large in-memory databases, as shown by Redis SET performance ranking in the bottom quartile (5.69 million ops/sec). The instance is well-suited for web frontends, lightweight batch processing, single-threaded application servers, CI/CD runners, and edge inference on small models that fit comfortably within the 8.0 GB RAM envelope."
   ],
-  "description": "Microsoft Azure D4lds_v6 is an x86_64 compute-oriented virtual machine powered by a 4.2 GHz Intel Xeon 8573C processor. Configured with 4 vCPUs across 2 physical cores, it includes 8.0 GB of memory and a 236 GB local NVMe SSD. Benchmark data highlights strong single-core execution, with a Geekbench single-core score of 2141.0 and high single-threaded gzip compression speeds. Conversely, the instance exhibits lower performance in memory bandwidth and multi-core scaling, making it a cost-efficient choice for CPU-bound, single-threaded tasks rather than memory-intensive applications. It is suited for lightweight web serving, text processing, and basic utility workloads.",
-  "og_description": "Microsoft Azure D4lds_v6 is a compute-oriented virtual machine featuring 4 Intel Xeon vCPUs, 8.0 GB of RAM, and a 236 GB NVMe SSD, optimized for single-threaded workloads and lightweight web serving.",
-  "meta_description": "Microsoft Azure D4lds_v6 is a 4-vCPU virtual machine with 8.0 GB RAM and 236 GB NVMe SSD, featuring strong single-core Intel Xeon performance.",
-  "tagline": "A compute-focused virtual machine balancing high-frequency single-core Intel performance with a compact memory footprint and local NVMe storage.",
+  "description": "Microsoft Azure D4lds_v6 is a compute-leaning, low-memory virtual machine powered by an x86_64 Intel Xeon 8573C processor running at up to 4.2 GHz. The instance delivers 4 dedicated vCPUs across 2 physical cores, 8.0 GB of system memory, and a bundled 236 GB NVMe SSD for fast local temporary storage, without GPU accelerators. The CPU features Intel AMX and AVX-512 vector support, translating to strong single-core benchmarks, notably in Geekbench single-core (2141.0) and single-threaded gzip compression (31.32 GB/sec). However, multi-core throughput and memory bandwidth tests fall into lower percentiles due to core count constraints and memory architecture limits. With a lean 2.0 GB per vCPU ratio, the D4lds_v6 is most effective for web serving, build pipelines, and processing pipelines needing local NVMe scratch storage rather than large memory footprints.",
+  "og_description": "Microsoft Azure D4lds_v6 provides 4 vCPUs on an Intel Xeon 8573C processor, 8.0 GB of memory, and 236 GB of bundled local NVMe SSD storage, designed for light-memory compute workloads.",
+  "meta_description": "Microsoft Azure D4lds_v6 features 4 vCPUs via an Intel Xeon 8573C processor, 8.0 GB RAM, and a 236 GB local NVMe SSD for fast scratch disk storage.",
+  "tagline": "Dedicated 4.2 GHz Intel Xeon performance paired with bundled local NVMe scratch storage for compute-focused, memory-lean workloads.",
   "bullet_points": [
-    "Intel Xeon 8573C processor running at 4.2 GHz with 4 vCPUs",
-    "8.0 GB of system memory and 236 GB local NVMe SSD storage",
-    "Strong single-core performance in compression and text processing",
-    "Lower memory bandwidth and multi-core scaling capabilities",
-    "Suitable for lightweight web serving and single-threaded utility tasks"
+    "Intel Xeon 8573C processor reaching clock speeds of 4.2 GHz",
+    "4 dedicated vCPUs across 2 physical cores with hyper-threading",
+    "8.0 GB system memory (2.0 GB per vCPU)",
+    "236 GB integrated local NVMe SSD storage",
+    "Hardware support for Intel AMX and AVX-512 extensions",
+    "Optimized for CI/CD runners, web serving, and small-model inference"
   ],
   "categories": [
     "Compute Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D2lds_v7 is an x86_64 server instance powered by a dedicated Intel Xeon 6973P-C processor running at a clock speed of 4.2 GHz. It features 2 vCPUs derived from 1 physical core with 2 threads per core, managed via the Microsoft Hyper-V hypervisor. The memory configuration is constrained to 4.0 GB of RAM, yielding a low memory-to-vCPU ratio of 2.0 GB per core. Storage is provided via a bundled 118 GB local NVMe SSD, and the instance is Premium Storage capable.",
-    "Benchmark results indicate strong single-threaded performance, with gzip compression reaching 35.35 GB/sec and bzip3 decompression at 14.66 GB/sec. However, multi-core and memory bandwidth metrics are limited. The stress-ng multi-core CPU performance is rated as poor, and memory write bandwidth for large blocks is restricted to 12.55 GB/sec. Passmark database operations and Redis SET operations also show lower-tier performance, reflecting the resource constraints of the 4.0 GB memory allocation.",
-    "From a cost-efficiency perspective, the D2lds_v7 offers a low-cost entry point for workloads requiring dedicated high-clock CPU execution but minimal memory overhead. The inclusion of a local NVMe SSD provides fast temporary storage without extra disk costs. This server is best suited for lightweight, single-threaded tasks, basic web serving, development environments, or simple utility scripts that do not demand large memory footprints or intensive multi-core scaling."
+    "Microsoft Azure D2lds_v7 is an entry-tier instance within the Intel-based Dldsv7 virtual machine series, tailored for workloads requiring a lean memory footprint combined with direct local storage. It is provisioned with 2 vCPUs derived from a single physical core on an Intel Xeon 6973P-C processor running at 4.2 GHz. The compute setup is paired with 4.0 GB of RAM (yielding a 1:2 vCPU-to-RAM ratio), 480 MB of shared L3 cache, and modern instruction set extensions including AVX-512 and AMX matrix acceleration. Hardware resources also integrate 118 GB of local NVMe SSD storage, while operating without discrete GPU acceleration.",
+    "Benchmark evaluations reveal that single-core computational execution is solid, supported by the high clock speed of the Intel architecture. The instance delivers strong single-threaded data processing, achieving 35.35 GB/sec in gzip compression and 14.66 GB/sec in bzip3 decompression tests. However, overall throughput is constrained by the small core count and memory bandwidth limitations. PassMark CPU scores reach 3,829.89 and stress-ng multi-core tests place the instance in the lower tier relative to larger cloud configurations. Write bandwidth across large uncached memory blocks is measured at 12.55 GB/sec, and database operations reflect low throughput at 1,008.73 operations.",
+    "From a cost-efficiency perspective, the D2lds_v7 avoids overhead by provisioning a reduced memory capacity and utilizing hyperthreaded vCPUs on a single physical core. The inclusion of bundled local NVMe storage provides rapid scratch space without requiring additional attached volume provisioning. The primary architectural tradeoff is the small memory ceiling and the hyperthreaded core division, which limits suitability for concurrent multi-threaded applications or memory-heavy databases.",
+    "Microsoft Azure D2lds_v7 is best aligned with lightweight compute tasks, compression pipelines, edge proxying, microservices, and small-footprint batch processing where local scratch space and modern Intel instruction sets are prioritized over high memory density."
   ],
-  "description": "The Microsoft Azure D2lds_v7 is a low-memory, x86_64 virtual machine featuring 2 dedicated vCPUs from a single physical Intel Xeon 6973P-C core clocked at 4.2 GHz. Equipped with 4.0 GB of RAM and a bundled 118 GB local NVMe SSD, this instance is designed for compute-focused workloads with minimal memory requirements. Performance benchmarks show strong single-threaded capabilities, such as high gzip compression speeds, though multi-core scaling and memory bandwidth remain limited. The server is highly cost-efficient for lightweight applications, serving as an entry-level option for utility scripting, basic web serving, and development tasks that benefit from dedicated CPU cycles and fast local storage without the overhead of a larger memory footprint.",
-  "og_description": "Microsoft Azure D2lds_v7 is a low-memory virtual machine featuring 2 dedicated Intel Xeon vCPUs at 4.2 GHz, 4.0 GB of RAM, and a 118 GB local NVMe SSD, optimized for lightweight single-threaded workloads.",
-  "meta_description": "Microsoft Azure D2lds_v7 is a low-memory instance with 2 dedicated 4.2 GHz Intel Xeon vCPUs, 4.0 GB RAM, and a 118 GB local NVMe SSD.",
-  "tagline": "A low-memory, dedicated compute instance featuring a high-clock Intel processor and fast local NVMe SSD storage for lightweight workloads.",
+  "description": "Microsoft Azure D2lds_v7 is an entry-tier virtual machine powered by a 4.2 GHz Intel Xeon 6973P-C processor. It features 2 dedicated vCPUs mapped across 1 physical core, 4.0 GB of memory, and 118 GB of integrated local NVMe SSD storage. The processor provides advanced vector and matrix acceleration instructions, such as AVX-512 and AMX. Benchmark results highlight strong single-threaded performance in compression workloads, reaching 35.35 GB/sec in gzip compression, alongside average small-model inference speeds. Because the configuration is limited to 2 vCPUs and a 1:2 vCPU-to-memory allocation, multi-threaded throughput and memory-intensive database performance remain constrained. The D2lds_v7 is primarily suited for lightweight web services, microservices, compression tasks, and localized build or test workloads requiring fast temporary scratch storage.",
+  "og_description": "Microsoft Azure D2lds_v7 is a general-purpose virtual machine equipped with 2 vCPUs on an Intel Xeon 6973P-C processor, 4 GB of system memory, and a dedicated 118 GB local NVMe solid-state drive.",
+  "meta_description": "Microsoft Azure D2lds_v7 is a dual-vCPU virtual machine featuring an Intel Xeon 6973P-C processor, 4 GB of RAM, and 118 GB of local NVMe SSD storage.",
+  "tagline": "A dual-core compute instance featuring high clock speeds, integrated NVMe scratch storage, and a streamlined memory profile.",
   "bullet_points": [
-    "Dedicated Intel Xeon 6973P-C processor clocked at 4.2 GHz",
-    "Low-memory configuration with 4.0 GB RAM (2.0 GB per core)",
-    "Bundled 118 GB local NVMe SSD for fast temporary storage",
-    "Strong single-threaded performance in compression benchmarks",
-    "Suited for lightweight utility scripting and basic web serving"
+    "2 vCPUs and 1 physical core powered by an Intel Xeon 6973P-C processor at 4.2 GHz",
+    "4.0 GB system RAM providing a lean 1:2 compute-to-memory distribution",
+    "118 GB of fast onboard NVMe SSD local temporary storage",
+    "Hardware support for AVX-512 and AMX advanced vector and matrix instruction sets",
+    "Strong single-threaded compression performance offset by low multi-core scaling",
+    "Well-suited for microservices, lightweight web servers, and local scratch workloads"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

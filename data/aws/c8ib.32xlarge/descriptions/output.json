@@ -1,22 +1,21 @@
 {
   "page": [
-    "Amazon Web Services c8ib.32xlarge is a compute-optimized server instance powered by Intel processors. It features 128 virtual CPUs mapped to 64 physical cores with 2.0 threads per core, running on dedicated CPU allocation at a clock speed of 3.9 GHz. The instance operates on the x86_64 architecture and utilizes the Nitro hypervisor.",
-    "The hardware configuration includes 256.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. This instance does not include local storage or integrated graphics processing units. For network connectivity, the instance provides a baseline network bandwidth of 133 Gbps.",
-    "Given its high compute-to-memory ratio and high-speed network interface, this server is designed for compute-intensive workloads. Suitable applications include high-performance computing, batch processing, distributed analytics, and compute-heavy web serving."
+    "The Amazon Web Services c8ib.32xlarge is an x86_64 compute-optimized server instance managed by the AWS Nitro System. Hardware resources include 64 physical cores and 128 dedicated vCPUs powered by Intel processors operating at a frequency of 3.9 GHz, utilizing simultaneous multithreading at two threads per core. System memory is sized at 256.0 GB, establishing a 2.0 GB per core or 1:2 vCPU-to-memory allocation. The platform does not feature integrated graphics or discrete hardware accelerators, maintaining a zero GPU configuration.",
+    "A prominent architectural component of the c8ib.32xlarge is its networking layer, supplying a baseline network bandwidth of 133 Gbps. This throughput facilitates high-bandwidth inter-node communication across clustered topologies. Unlike instances containing local solid-state drives, this server allocates zero bundled local storage. All persistent disk operations must route over the network to external block devices. This stateless configuration avoids allocating budget to local ephemeral drives when persistent storage is preferred, though it shifts storage I/O entirely onto network interfaces.",
+    "From a resource density perspective, the platform emphasizes dedicated thread count and network capacity over memory expansion or attached storage arrays. Workloads constrained by CPU clock cycles and node-to-node communications achieve high resource efficiency, whereas memory-saturated tasks or deep learning acceleration will encounter architectural limits. The c8ib.32xlarge is targeted for distributed high-performance computing, large-scale batch processing, scientific simulations, continuous integration suites, and clustered data transformation pipelines."
   ],
-  "description": "Amazon Web Services c8ib.32xlarge is a compute-optimized instance featuring 128 vCPUs and 64 physical Intel cores running at 3.9 GHz. Built on the x86_64 architecture and the Nitro hypervisor, it provides dedicated CPU allocation with 256.0 GB of RAM, equating to 2.0 GB per core. The instance does not include local storage or GPUs, but it delivers a baseline network bandwidth of 133 Gbps. This configuration is engineered for compute-heavy workloads such as batch processing, distributed analytics, and high-performance computing tasks requiring high network throughput and dedicated CPU resources.",
-  "og_description": "Amazon Web Services c8ib.32xlarge is a compute-optimized instance featuring 128 vCPUs, 256.0 GB of RAM, and a 133 Gbps baseline network bandwidth powered by 3.9 GHz Intel processors.",
-  "meta_description": "Amazon Web Services c8ib.32xlarge is a compute-optimized instance with 128 vCPUs, 256.0 GB of RAM, and 133 Gbps network bandwidth.",
-  "tagline": "A compute-optimized x86_64 instance featuring one hundred twenty-eight vCPUs, two hundred fifty-six gigabytes of RAM, and high-speed baseline networking.",
+  "description": "The Amazon Web Services c8ib.32xlarge is a compute-optimized instance built on the Nitro system, powered by x86_64 Intel processors operating at 3.9 GHz. It provides 128 dedicated vCPUs mapped across 64 physical cores with two threads per core, alongside 256.0 GB of system memory, matching a standard 1:2 compute-to-memory ratio. This instance features an extensive baseline network bandwidth of 133 Gbps, making it suited for tightly coupled parallel computation and network-bound processing tasks. It includes zero discrete GPUs and provides no bundled local storage, necessitating reliance on networked storage architectures for persistent data. By dedicating resources purely to high clock-rate processing and massive network throughput rather than attached NVMe drives or accelerator hardware, the configuration yields targeted efficiency for scale-out compute environments. The c8ib.32xlarge is well tailored for high-performance computing clusters, distributed batch analytics, scientific modeling, ETL data processing, and compute-heavy enterprise applications.",
+  "og_description": "The Amazon Web Services c8ib.32xlarge is a compute-optimized Nitro instance offering 128 Intel vCPUs, 256 GB memory, and 133 Gbps network bandwidth for large-scale distributed workloads.",
+  "meta_description": "Amazon Web Services c8ib.32xlarge features 128 Intel vCPUs at 3.9 GHz, 256 GB RAM, and a 133 Gbps baseline network interface without local storage.",
+  "tagline": "High-throughput compute instance combining 128 Intel vCPUs, 256 GB memory, and 133 Gbps networking for demanding distributed and compute-bound workloads.",
   "bullet_points": [
-    "128 dedicated vCPUs powered by 3.9 GHz Intel processors",
-    "256.0 GB of system memory providing 2.0 GB per core",
-    "133 Gbps baseline network bandwidth for high-throughput workloads",
-    "Built on the Nitro hypervisor with x86_64 architecture",
-    "Optimized for batch processing, distributed analytics, and high-performance computing"
+    "128 dedicated Intel x86_64 vCPUs across 64 physical cores at 3.9 GHz",
+    "256.0 GB system memory adhering to a 1:2 vCPU-to-RAM ratio",
+    "133 Gbps baseline network bandwidth for high-throughput node interconnects",
+    "Diskless architecture with no bundled local storage or integrated GPUs",
+    "Engineered for HPC clusters, batch pipelines, and distributed processing workloads"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

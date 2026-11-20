@@ -1,22 +1,24 @@
 {
   "page": [
-    "Vultr vhp-4c-12gb-intel is a virtual server belonging to the High Performance family. It features an Intel Xeon x86_64 processor with 4 vCPUs mapped to 2 physical cores with hyper-threading enabled. The CPU operates at a base clock speed of 2.0 GHz and is allocated on a shared basis. The system is equipped with 12.0 GB of system memory, providing 3.0 GB of RAM per core, and includes a bundled 260 GB NVMe SSD for local storage.",
-    "Benchmark results indicate average single-core performance, with a stress-ng single-core score of 1466.08 and a Geekbench single-core score of 1206.0. However, due to the shared CPU allocation, multi-core performance scales poorly, resulting in a weak stress-ng multi-core score of 5747.52 and a weak Geekbench multi-core score of 3843.0. Memory performance is mixed; cached small-block read bandwidth is average at 421.33 GB/sec, but uncached large-block read bandwidth drops to a weak 36.96 GB/sec. Cryptographic and database operations also fall into the lower performance tiers, as shown by a weak Passmark database operations score of 1351.82.",
-    "From a cost-efficiency perspective, this server offers a budget-friendly entry point for workloads requiring a moderate amount of NVMe storage and memory without demanding sustained, dedicated multi-core CPU performance. The shared CPU architecture introduces resource contention risks, making it less suitable for intensive multi-threaded tasks, large database operations, or real-time LLM inference. It is best suited for general-purpose workloads such as light web serving, software compilation tasks, text processing, and basic Redis caching."
+    "Vultr vhp-4c-12gb-intel is a virtual server in the High Performance lineup, offering a balanced general-purpose resource profile. It provides 4 shared vCPUs derived from 2 physical cores on an Intel Xeon processor running at 2.0 GHz, supporting hyperthreading with two threads per core. Memory capacity is 12.0 GB, allocating 3.0 GB of RAM per vCPU. Hardware features include 16 MB of L3 cache, 4 MB of L2 cache, 32 KB of L1 data cache, and vector instruction extensions including AVX, AVX-512F, and AVX-512 VNNI. Local storage is bundled as a 260 GB NVMe SSD, and the instance includes one complimentary public IPv4 address. No discrete GPU acceleration is present.",
+    "Benchmark results show balanced middle-tier single-core efficiency but constrained multi-core throughput due to its shared 2-core physical topology. Single-threaded tests such as Geekbench single-core (1165.0), stress-ng single-core (1466.08), and gzip compression (24.18 GB/sec) fall within the middle 50% category. In contrast, multi-threaded workloads indicate lower performance bounds, with Geekbench multi-core scoring 3734.0, PassMark CPU scoring 6551.68, and multi-threaded bzip3 decompression dropping into the bottom 10% (17.19 GB/sec). Memory bandwidth is healthy for cached reads at 421.33 GB/sec and uncached writes at 28.11 GB/sec, though uncached large-block reads are limited to 36.96 GB/sec.",
+    "Cost efficiency is centered on providing a capable local NVMe storage volume paired with moderate memory density for shared virtual computing. The architecture trade-off lies in the shared dual-core foundation, which restricts dense computational tasks such as large compilation jobs (Geekbench clang score of 5818.0) or heavy database query loads. However, the system delivers solid transactional throughput for caching layers, achieving 6.4 million operations per second on Redis SET tests. The server fits web serving, caching proxies, staging environments, background task queues, and low-concurrency backend services."
   ],
-  "description": "The Vultr vhp-4c-12gb-intel is a High Performance virtual server configured with 4 shared vCPUs on an Intel Xeon x86_64 processor, 12.0 GB of RAM, and a 260 GB NVMe SSD. Operating at 2.0 GHz across 2 physical cores with hyper-threading, this server delivers average single-core performance but exhibits weak multi-core scaling due to its shared CPU allocation. Benchmark data shows average performance in single-threaded compression and software compilation, contrasted by weak results in multi-core processing, large-block memory bandwidth, and database operations. This hardware profile offers a cost-effective option for resource-dense workloads that do not require dedicated CPU cores. It is best suited for general-purpose applications, light web serving, text processing, and Redis caching, where resource contention is not a critical bottleneck.",
-  "og_description": "Vultr vhp-4c-12gb-intel is a High Performance virtual server featuring 4 shared Intel Xeon vCPUs, 12.0 GB of RAM, and 260 GB of NVMe SSD storage. It is optimized for general-purpose workloads and light caching.",
-  "meta_description": "Vultr vhp-4c-12gb-intel is a High Performance virtual server featuring 4 shared Intel Xeon vCPUs, 12.0 GB of RAM, and 260 GB of local NVMe SSD storage.",
-  "tagline": "A shared-core virtual server balancing moderate memory and NVMe storage for general-purpose workloads and light caching applications.",
+  "description": "Vultr vhp-4c-12gb-intel is a High Performance series virtual server built on x86_64 Intel Xeon hardware running at 2.0 GHz. It features 4 shared vCPUs mapped to 2 physical cores, 12.0 GB of RAM, and a bundled 260 GB NVMe SSD, without dedicated GPU capabilities. Single-core performance sits in the middle 50% across benchmarks like Geekbench (1165.0) and stress-ng (1466.08), supported by AVX-512 vector instruction support and 16 MB of L3 cache. However, multi-core throughput is constrained by the two physical cores, placing multi-threaded tasks like clang compilation and PassMark testing in the bottom 25%. In-memory transaction throughput is stable, yielding 6.4 million Redis SET operations per second. This instance fits general web application serving, Redis caching nodes, microservices, and lightweight development workloads.",
+  "og_description": "Vultr vhp-4c-12gb-intel features 4 shared vCPUs on a 2.0 GHz Intel Xeon CPU, 12.0 GB RAM, and a 260 GB NVMe SSD. It delivers solid single-core compute and balanced memory for web serving and caching.",
+  "meta_description": "Vultr vhp-4c-12gb-intel offers 4 shared Intel Xeon vCPUs, 12.0 GB RAM, and a 260 GB NVMe SSD for balanced general-purpose workloads and caching services.",
+  "tagline": "Balanced x86 virtual server pairing 12 GB RAM with fast NVMe storage for web serving, microservices, and caching layers.",
   "bullet_points": [
-    "Intel Xeon x86_64 processor with 4 shared vCPUs and 2.0 GHz clock speed",
-    "12.0 GB of system memory and 260 GB of local NVMe SSD storage",
-    "Average single-core performance but limited multi-core scaling",
-    "Equipped with one complimentary public IPv4 address",
-    "Best suited for light web serving, text processing, and Redis caching"
+    "4 shared vCPUs powered by an Intel Xeon 2.0 GHz processor (2 physical cores, 4 threads)",
+    "12.0 GB system memory (3.0 GB RAM per vCPU)",
+    "260 GB local NVMe SSD storage included",
+    "Hardware support for AVX, AVX-512F, and AVX-512 VNNI instructions",
+    "Balanced single-core compute with 6.4M ops/sec Redis SET transaction throughput",
+    "Best suited for web backends, caching services, and general utility workloads"
   ],
   "categories": [
     "General Purpose",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "Storage & Database"
   ]
 }

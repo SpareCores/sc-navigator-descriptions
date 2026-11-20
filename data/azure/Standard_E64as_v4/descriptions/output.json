@@ -1,23 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E64as_v4 is a memory-optimized virtual machine belonging to the EASv4 server family. It is powered by an AMD EPYC 7763 processor with an x86_64 architecture, offering 64 dedicated vCPUs across 32 physical cores with multithreading enabled. The system features a 3.525 GHz clock speed, 512 GB of RAM providing 8 GB per core, and a local 885 GB SSD. It runs on the Microsoft Hyper-V hypervisor and supports Premium Storage.",
-    "Benchmark data indicates strong multi-core and memory performance. The server achieves top-tier results in Passmark memory testing and strong scores in multi-core stress-ng, Passmark CPU, and Geekbench multi-core benchmarks. Database operations are highly efficient, with Redis SET operations reaching 62.62 million operations per second. However, while cached memory bandwidth is strong at 4162.87 GB/sec, uncached read and write memory bandwidths fall into the average category.",
-    "Due to the lack of GPU acceleration, the server is poorly suited for large-scale AI tasks, as demonstrated by its weak performance of 2.76 tokens per second in large-model LLM text generation. It is, however, highly cost-effective for memory-intensive enterprise workloads that do not require accelerators. The hardware profile is optimized for relational databases, in-memory caching systems like Redis, software compilation, and data-dense general-purpose applications."
+    "Microsoft Azure E64as_v4 is a memory-optimized virtual machine running on the Microsoft Hyper-V hypervisor. It is powered by a dedicated AMD EPYC 7763 processor configured with 32 physical cores and 64 vCPUs running at 3.525 GHz. Memory capacity totals 512.0 GB, providing an 8.0 GB allocation per vCPU. Storage configuration includes a 928 GB local SSD alongside support for Premium Storage volumes. Dedicated hardware accelerators are not included, with a GPU count of zero.",
+    "Benchmark results demonstrate strong parallel compute and high memory responsiveness. PassMark memory testing places the system in the top 10% tier. Multi-threaded performance is similarly competitive, reflected in top 25% results across stress-ng multi-core tests, PassMark CPU evaluation (62243.41), and Geekbench multi-core runs (17837.0). Single-threaded tasks, such as Geekbench single-core execution (1614.0) and single-threaded gzip compression (25.88 GB/sec), register within the middle 50% band. Large block uncached memory bandwidth reaches 107.94 GB/sec for reads and 51.36 GB/sec for writes.",
+    "The dense 8:1 memory-to-vCPU ratio renders the system effective for memory-bound applications, including in-memory datastores and relational databases. This is supported by 62.62 million operations per second in Redis SET evaluations and upper-quartile PassMark database scores. However, the platform lacks AVX-512 vector support and discrete GPUs, causing large model AI execution to degrade, as indicated by 70B parameter LLM generation falling into the bottom 25% bracket. Primary workload fits include high-memory databases, Redis caching layers, ETL pipelines, and multi-threaded compilation."
   ],
-  "description": "Microsoft Azure E64as_v4 is an x86_64 memory-optimized virtual machine powered by a dedicated AMD EPYC 7763 processor. It features 64 vCPUs, 32 physical cores, 512 GB of RAM, and an 885 GB local SSD. Operating on Microsoft Hyper-V, this server delivers strong multi-core processing and top-tier memory performance, as evidenced by high Passmark memory scores and 62.62 million Redis SET operations per second. While cached memory bandwidth is strong, uncached memory bandwidth remains average. Additionally, the lack of a GPU results in weak performance for large-scale LLM text generation. This server is highly cost-efficient for memory-intensive workloads, making it best suited for database hosting, in-memory caching, and large-scale software compilation.",
-  "og_description": "Microsoft Azure E64as_v4 is an x86_64 memory-optimized server with 64 vCPUs, 512 GB RAM, and an 885 GB SSD, delivering strong database and multi-core performance for memory-intensive workloads.",
-  "meta_description": "Microsoft Azure E64as_v4 is a memory-optimized server featuring 64 vCPUs, 512 GB RAM, and an 885 GB SSD, ideal for databases and in-memory caching.",
-  "tagline": "A high-density, memory-optimized virtual server featuring dedicated AMD EPYC processing and local SSD storage for demanding database workloads.",
+  "description": "Microsoft Azure E64as_v4 is a memory-optimized virtual machine built on the AMD EPYC 7763 processor, providing 64 dedicated vCPUs across 32 physical cores clocked at 3.525 GHz. Designed for memory-intensive workloads, it provides 512.0 GB of RAM, establishing an 8.0 GB memory-to-vCPU ratio, combined with a 928 GB local SSD and Premium Storage capability. Hardware acceleration is absent. Synthetic testing reveals top 10% PassMark memory performance and top 25% multi-core CPU output in both stress-ng and Geekbench. Data storage throughput is highlighted by 62.62 million operations per second in Redis SET benchmarks and strong PassMark database operations results. Single-core processing and uncached memory bandwidth operate in average tiers. The absence of AVX-512 extensions limits performance on large-scale model inference. The instance is suited for enterprise relational databases, large in-memory caches, data analysis, and parallel compilation tasks.",
+  "og_description": "Microsoft Azure E64as_v4 is a memory-optimized virtual machine featuring 64 AMD EPYC 7763 vCPUs, 512 GB of RAM, and a 928 GB local SSD, delivering top-tier memory and database benchmark performance.",
+  "meta_description": "Microsoft Azure E64as_v4 delivers 64 AMD EPYC vCPUs, 512 GB RAM, and a 928 GB local SSD for memory-intensive databases and high-memory workloads.",
+  "tagline": "High-capacity memory-optimized architecture combining 64 dedicated cores, 512 GB of RAM, and local SSD storage for demanding database operations.",
   "bullet_points": [
-    "64 dedicated vCPUs powered by an AMD EPYC 7763 processor",
-    "512 GB of RAM providing a high 8 GB per core memory ratio",
-    "885 GB of local SSD storage with Premium Storage capability",
-    "Top-tier Passmark memory performance and strong Redis database throughput",
-    "Best suited for relational databases, in-memory caching, and software compilation"
+    "64 dedicated vCPUs on an AMD EPYC 7763 processor operating at 3.525 GHz",
+    "512.0 GB total system RAM delivering an 8.0 GB per vCPU ratio",
+    "Local 928 GB SSD storage with Premium Storage compatibility",
+    "Top 10% PassMark memory benchmark score and 62.62 million Redis SET ops/sec",
+    "Tailored for in-memory databases, large Redis caches, and compilation pipelines"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

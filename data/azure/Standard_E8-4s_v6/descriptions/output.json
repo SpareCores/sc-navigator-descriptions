@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E8-4s_v6 is an x86_64 architecture server instance belonging to the Esv6 server family, virtualized via Microsoft Hyper-V. It features 4 dedicated vCPUs mapped to 2 physical cores of an Intel Xeon 8573C processor running at a clock speed of 4.2 GHz. The processor includes a 260 MB L3 cache and supports advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions. The instance is configured with 64.0 GB of RAM, yielding a high memory-to-vCPU ratio of 16.0 GB per vCPU. It does not include local storage or bundled GPUs, but it is Premium Storage capable for remote disk attachments.",
-    "Benchmark results indicate strong single-core performance, with a Geekbench single-core score of 2090.0 and strong text processing capabilities. However, multi-core scaling is relatively weak, as evidenced by a stress-ng multi-core CPU score of 3972.36 and a Geekbench multi-core score of 4757.0. Memory bandwidth is also a notable bottleneck, with uncached read and write speeds falling into the bottom 25% tier at 35.14 GB/sec and 24.76 GB/sec respectively. Despite these memory bandwidth constraints, the instance maintains average performance in database operations, static web serving, and single-threaded compression tasks.",
-    "From a cost-efficiency perspective, the E8-4s_v6 offers high memory density per active vCPU, making it a viable option for memory-bound workloads that do not require massive parallel processing power. This resource profile is well-suited for relational database hosting, caching layers, enterprise application servers, and memory-intensive text processing pipelines."
+    "Microsoft Azure E8-4s_v6 is a memory-optimized virtual machine utilizing a constrained core architecture. Powered by an Intel Xeon 8573C processor running up to 4.2 GHz, the instance exposes 4 dedicated vCPUs mapped across 2 physical cores with hyperthreading. It features 64.0 GB of RAM, yielding a high memory-to-vCPU ratio of 16.0 GB per vCPU, supported by 260 MB of L3 cache and hardware extensions including AVX-512, AMX, and cryptographic acceleration instructions.",
+    "Benchmark results highlight solid single-thread performance alongside constrained parallel execution. In Geekbench testing, the instance achieved a strong single-core score of 2090.0 and robust text processing performance of 2508.0. Multi-core performance is constrained by the 4-vCPU count, scoring 4757.0 in Geekbench multi-core and registering in the lower percentile on stress-ng multi-core and Clang software compilation benchmarks. Memory bandwidth for large uncached blocks reached 35.14 GB/sec for reads and 24.76 GB/sec for writes.",
+    "The instance does not include local storage or integrated GPUs, relying instead on network-attached remote storage configurations supported by its Premium Storage design. The constrained vCPU layout optimizes software licensing costs that scale by core count while retaining a full 64.0 GB memory footprint.",
+    "This hardware profile is suitable for memory-intensive workloads that require large RAM allocations but do not demand high multi-threaded compute density. Key workload fits include enterprise relational databases, in-memory caches, middleware, and memory-bound analytics engines."
   ],
-  "description": "Microsoft Azure E8-4s_v6 is an x86_64 memory-optimized server instance powered by a 4.2 GHz Intel Xeon 8573C processor. It features 4 dedicated vCPUs and 64.0 GB of RAM, providing a high 16.0 GB of memory per vCPU. The instance contains no local storage or GPUs but supports Premium Storage. Performance benchmarks show strong single-core capabilities, including a Geekbench single-core score of 2090.0 and strong text processing. However, multi-core scaling and memory bandwidth are relatively weak, with uncached read speeds at 35.14 GB/sec. This hardware configuration is qualitatively cost-efficient for memory-heavy, low-vCPU workloads, making it suitable for database operations, caching layers, and memory-intensive enterprise applications.",
-  "og_description": "Microsoft Azure E8-4s_v6 is a memory-optimized instance featuring 4 dedicated Intel Xeon vCPUs, 64.0 GB of RAM, and strong single-core performance, suitable for database and enterprise workloads.",
-  "meta_description": "Microsoft Azure E8-4s_v6 is a memory-optimized server with 4 Intel Xeon vCPUs, 64.0 GB of RAM, and strong single-core benchmark performance.",
-  "tagline": "A memory-optimized x86_64 virtual machine featuring high memory density per vCPU and strong single-core Intel Xeon performance.",
+  "description": "Microsoft Azure E8-4s_v6 is a memory-optimized virtual machine featuring 4 dedicated vCPUs and 64.0 GB of RAM, running on an Intel Xeon 8573C processor clocked up to 4.2 GHz. Designed with a constrained core configuration on Microsoft Hyper-V, it provides 16.0 GB of memory per core and 260 MB of L3 cache alongside advanced vector extensions like AVX-512 and AMX. Benchmark results demonstrate strong single-thread performance, indicated by a Geekbench single-core score of 2090.0, while multi-core metrics reflect the restricted 4-vCPU count. The instance includes no local storage or GPUs, directing I/O to remote storage. By packaging a large memory pool with reduced core counts, it provides a cost-effective operational profile for core-licensed relational database workloads, in-memory processing, and caching systems.",
+  "og_description": "Microsoft Azure E8-4s_v6 is a memory-optimized VM providing 4 dedicated vCPUs, 64 GB RAM, and an Intel Xeon 8573C CPU at 4.2 GHz, designed for core-licensed databases and in-memory caching.",
+  "meta_description": "Microsoft Azure E8-4s_v6 offers 4 vCPUs and 64 GB RAM on an Intel Xeon 8573C CPU, tailored for memory-intensive and core-licensed cloud workloads.",
+  "tagline": "High-memory architecture pairing dedicated high-clock Intel cores with generous memory density to optimize core-based enterprise software licensing overheads.",
   "bullet_points": [
-    "4 dedicated vCPUs and 64.0 GB of RAM providing 16.0 GB per vCPU",
-    "Intel Xeon 8573C processor running at 4.2 GHz with AMX and AVX-512 support",
-    "Strong single-core performance with a Geekbench score of 2090.0",
-    "No local storage or bundled GPUs, with support for Premium Storage",
-    "Best suited for memory-intensive databases, caching, and enterprise applications"
+    "Intel Xeon 8573C processor running up to 4.2 GHz with 4 dedicated vCPUs across 2 physical cores",
+    "Generous 64.0 GB RAM allocation providing 16.0 GB per vCPU with 260 MB L3 cache",
+    "Strong single-core benchmark performance with AVX-512 and AMX instruction support",
+    "Constrained vCPU profile designed to reduce per-core software licensing expenses",
+    "No local instance storage or bundled GPU accelerators",
+    "Suited for in-memory caches, relational database systems, and intermediate data processing"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

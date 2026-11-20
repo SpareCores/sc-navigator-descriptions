@@ -1,22 +1,23 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-12xCPU-32GB is a Cloud Native family virtual server running on the KVM hypervisor. It features 12 shared vCPUs mapped to 12 physical cores of an AMD EPYC 7542 processor with an x86_64 architecture. The CPU operates at a clock speed of 2.0 GHz and includes 16 MB of L3 cache. The system is equipped with 32.0 GB of system memory, providing 2.67 GB of RAM per core. No local storage or dedicated GPU hardware is bundled with this instance type, though it includes one complimentary public IPv4 address.",
-    "Performance benchmarks indicate a mixed profile. The server demonstrates strong single-core performance in Geekbench tests, but poor single-core performance in stress-ng tests, placing it in the bottom 10%. Multi-core CPU performance across stress-ng, Geekbench, and Passmark falls consistently into the average tier. Memory bandwidth tests for both small and large blocks also register average throughput, though the Passmark memory score is weak, ranking in the bottom 25%. For specialized workloads, the server delivers average performance in static web serving, Redis SET operations, and software compilation, but exhibits poor text generation speeds for medium-sized language models.",
-    "From a cost-efficiency perspective, the shared CPU allocation model offers a resource-dense configuration for multi-threaded tasks without the premium of dedicated cores. However, the shared CPU architecture presents a tradeoff in performance consistency under sustained, heavy single-core loads. This server is best suited for general-purpose workloads, multi-threaded utility processing, static web serving, and lightweight database operations that do not require dedicated CPU execution or local NVMe storage."
+    "UpCloud CLOUDNATIVE-12xCPU-32GB is a virtual server instance categorized within the Cloud Native family, operating under the KVM hypervisor. The hardware profile features an x86_64 AMD EPYC 7542 processor running at a base clock speed of 2.0 GHz, offering 12 shared vCPUs and 12 physical cores configured with 1 thread per core. The cache topology includes 64 KB of L1 data cache, 0.5 MB of L2 cache, and 16 MB of L3 cache per core cluster. Instruction set support includes standard AVX, AES, and SHA-NI cryptographic acceleration, while lacking AVX-512 extensions and AMX units.",
+    "System memory consists of 32.0 GB of RAM, yielding an allocation ratio of 2.67 GB per core. There is no bundled local storage provided with this instance type, requiring network-attached storage or external volume configuration for persistent file systems. Similarly, the instance excludes discrete GPU accelerators and complimentary public IPv4 addresses.",
+    "Benchmark outcomes demonstrate competitive general compute throughput across multi-core tests, registering a Geekbench multi-core score of 12,817.0 and a PassMark CPU score of 22,297.86. Single-threaded performance exhibits variance, reaching a strong Geekbench single-core score of 2,199.0 while scoring in the lowest tier on synthetic stress-ng single-core tests (787.29). Memory benchmarks yield 54.21 GB/sec read and 42.64 GB/sec write on large 256 MB blocks, although PassMark memory testing registers a weak 1,834.1. Medium 7B LLM inference text generation is limited at 4.94 tokens per second.",
+    "The 1:2.67 vCPU-to-RAM ratio positions this instance as an economical compute-oriented platform where multi-threaded execution matters more than heavy RAM per thread or local disk I/O. CLOUDNATIVE-12xCPU-32GB fits parallel compilation jobs, containerized microservices, horizontal web application serving, compression workloads, and stateless background processing."
   ],
-  "description": "UpCloud CLOUDNATIVE-12xCPU-32GB is a KVM-based virtual server featuring 12 shared vCPUs on an AMD EPYC 7542 processor and 32.0 GB of RAM. Operating at 2.0 GHz, this x86_64 architecture instance does not include local storage or GPU accelerators. Benchmark data shows average multi-core CPU performance and static web serving throughput, though single-core stress-ng performance and Passmark memory scores are weak. The shared CPU allocation provides a cost-efficient option for multi-threaded workloads, though it introduces performance variability under sustained loads. This server is suitable for general-purpose applications, static web serving, and multi-threaded utility tasks.",
-  "og_description": "UpCloud CLOUDNATIVE-12xCPU-32GB is a KVM virtual server with 12 shared AMD EPYC vCPUs and 32 GB RAM, delivering average multi-core performance for general-purpose and web serving workloads.",
-  "meta_description": "UpCloud CLOUDNATIVE-12xCPU-32GB is a KVM virtual server featuring 12 shared AMD EPYC vCPUs, 32 GB RAM, and average multi-core performance.",
-  "tagline": "A shared-core virtual server offering twelve vCPUs and thirty-two gigabytes of memory for multi-threaded utility workloads.",
+  "description": "UpCloud CLOUDNATIVE-12xCPU-32GB is a compute-focused instance within UpCloud's Cloud Native series, powered by a 12-core AMD EPYC 7542 processor running at 2.0 GHz on the KVM hypervisor. It is provisioned with 32.0 GB of memory (2.67 GB per vCPU) and operates with shared CPU allocation. The configuration excludes onboard local storage and dedicated GPU hardware, requiring external volumes for persistent data. Multi-core performance is balanced, highlighted by a Geekbench multi-core score of 12,817.0, a PassMark CPU score of 22,297.86, and static web serving throughput of 9.33 GB/sec. Synthetic memory benchmarks show moderate bandwidth (54.21 GB/sec large block reads), though single-core stress-ng efficiency is limited. CLOUDNATIVE-12xCPU-32GB is well aligned for CI/CD compilation pipelines, container clusters, multi-threaded batch jobs, and scalable web serving.",
+  "og_description": "UpCloud CLOUDNATIVE-12xCPU-32GB delivers 12 shared AMD EPYC 7542 vCPUs, 32 GB RAM, and KVM virtualization without bundled local storage, suited for scalable multi-threaded microservices.",
+  "meta_description": "UpCloud CLOUDNATIVE-12xCPU-32GB features 12 vCPUs on an AMD EPYC 7542 processor, 32 GB RAM, and KVM virtualization for multi-threaded workloads.",
+  "tagline": "Twelve-core AMD EPYC cloud instance with 32 GB memory for multi-threaded microservices, code compilation, and scalable stateless workloads.",
   "bullet_points": [
-    "Twelve shared AMD EPYC 7542 vCPUs operating at 2.0 GHz",
-    "Thirty-two gigabytes of system memory without bundled local storage",
-    "Average multi-core CPU and static web serving benchmark performance",
-    "Weak single-core stress-ng and Passmark memory performance profiles",
-    "Appropriate for static web serving and multi-threaded utility tasks"
+    "12 shared vCPUs powered by an AMD EPYC 7542 processor at 2.0 GHz",
+    "32.0 GB system memory (2.67 GB allocation per core)",
+    "No bundled local storage or integrated hardware accelerators",
+    "Balanced multi-core performance with 12,817 Geekbench multi-core score",
+    "Suited for container orchestration, software compilation, and stateless web tiers"
   ],
   "categories": [
-    "Burstable & Budget",
+    "Compute Optimized",
     "General Purpose"
   ]
 }

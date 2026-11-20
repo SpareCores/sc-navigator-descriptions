@@ -1,24 +1,24 @@
 {
   "page": [
-    "Microsoft Azure F48amds_v7 is a memory-intensive server instance powered by a dedicated AMD EPYC 9V45 processor with 48 physical cores and 48 vCPUs running at a clock speed of 4.5 GHz. Built on the x86_64 architecture, this virtual machine runs on the Microsoft Hyper-V hypervisor. It features 384.0 GB of system memory, providing a resource density of 8.0 GB of RAM per core. Local storage is bundled, consisting of a 5669 GB NVMe SSD, and the instance is capable of utilizing Premium Storage.",
-    "Performance benchmarks place this instance in the top tier for both single-core and multi-core CPU workloads, as demonstrated by stress-ng and PassMark CPU tests. Memory bandwidth is highly efficient, with small-block cached reads and large-block uncached writes scoring in the top tier, while uncached large-block reads rank in the top 25%. The server exhibits strong performance in database operations, with Redis SET operations exceeding 130 million operations per second. However, a performance tradeoff is visible in large-scale machine learning tasks; while LLM inference speeds for small and medium models rank in the top tier, prompt processing and text generation for large 70B models fall into the average tier.",
-    "From a cost-efficiency perspective, the F48amds_v7 offers high resource density by combining dedicated high-frequency compute cores with a substantial memory footprint and large local NVMe storage. This eliminates the need to provision separate high-speed storage volumes for data-intensive tasks. The hardware profile is highly suited for memory-intensive databases, high-throughput Redis caching layers, data compression pipelines, and medium-scale LLM inference workloads."
+    "Microsoft Azure F48amds_v7 is an x86_64 server instance powered by dedicated AMD EPYC 9V45 processors operating at up to 4.5 GHz. The instance provisions 48 physical cores mapped to 48 vCPUs with a single thread per core, backed by 48 KB L1 data cache, 1.0 MB L2 cache, and 32 MB L3 cache. It incorporates 384.0 GB of system memory, delivering an allocation ratio of 8.0 GB per vCPU. Storage architecture features 5,669 GB of integrated local NVMe SSD capacity alongside support for Azure Premium Storage, with virtualization managed via Microsoft Hyper-V. Dedicated hardware accelerators are not present.",
+    "Benchmark assessments show top-tier computational and memory throughput across intensive workloads. In CPU benchmarks, the instance achieves top-decile scores in stress-ng single-core (3,765.29), stress-ng multi-core (175,742.28), PassMark CPU (98,150.08), and PassMark extended instructions (116,343.41), supported by hardware support for AVX-512 vector and neural network extensions. Memory subsystem performance demonstrates 9,285.95 GB/sec in cached small-block reads and 177.17 GB/sec in large-block uncached writes. The server also records top-tier results in Redis SET operations (130.02 million operations per second) and multi-threaded bzip3 decompression (653.96 GB/sec), with static web serving throughput reaching 82.49 GB/sec.",
+    "The hardware configuration provides high resource density by combining 1:8 core-to-memory scaling with large local NVMe storage and dedicated execution cores. The lack of simultaneous multithreading avoids thread contention, ensuring consistent execution times for heavy compute tasks. A notable operational tradeoff is the reliance on CPU-only execution for machine learning tasks; while prompt and generation rates remain strong for small and medium language models, large parameter architectures (such as 70B models) demonstrate average CPU inference throughput.",
+    "Microsoft Azure F48amds_v7 is suitable for high-throughput in-memory caching layers, relational database engines requiring fast local scratch disks, enterprise data processing, heavy compression pipelines, and batch compilation workloads."
   ],
-  "description": "Microsoft Azure F48amds_v7 is a memory-intensive virtual machine featuring 48 dedicated AMD EPYC 9V45 cores running at 4.5 GHz on the x86_64 architecture. It is equipped with 384.0 GB of RAM, offering a high 8.0 GB per core ratio, and includes 5669 GB of local NVMe SSD storage. Benchmarks show top-tier performance in single-core and multi-core CPU execution, database operations, and Redis SET throughput. While memory bandwidth and small-to-medium LLM inference speeds are exceptionally strong, performance drops to average levels for large 70B LLM inference. This server delivers high qualitative cost efficiency for resource-dense workloads by bundling massive local storage with high-frequency dedicated compute. It is highly suited for memory-optimized databases, caching layers, and data-intensive processing pipelines.",
-  "og_description": "Microsoft Azure F48amds_v7 is a memory-intensive server featuring 48 dedicated AMD EPYC cores at 4.5 GHz, 384 GB RAM, and a 5669 GB NVMe SSD, delivering top-tier database and multi-core performance.",
-  "meta_description": "Microsoft Azure F48amds_v7 is a memory-intensive server with 48 AMD EPYC cores, 384 GB RAM, and 5669 GB NVMe SSD, optimized for database workloads.",
-  "tagline": "A high-frequency, memory-intensive virtual server bundling dedicated AMD EPYC cores with massive local NVMe storage for demanding database workloads.",
+  "description": "Microsoft Azure F48amds_v7 is an x86_64 server instance powered by a 48-core dedicated AMD EPYC 9V45 processor clocked at 4.5 GHz with a single thread per core. It is configured with 384.0 GB of system memory (8.0 GB per core) and includes 5,669 GB of high-speed local NVMe SSD storage under Microsoft Hyper-V virtualization. Synthetic and system benchmarks show top-tier multi-core computing power, marked by a PassMark CPU score of 98,150.08 and 130.02 million Redis SET operations per second. Memory throughput reaches 9,285.95 GB/sec for cached read operations, supported by AVX-512 vector extensions. While small-to-medium model inference runs efficiently on CPU execution paths, large parameter models reflect average processing rates due to the absence of dedicated GPUs. The server is well configured for in-memory databases, large-scale data transformation, and IOPS-demanding analytics workloads.",
+  "og_description": "Microsoft Azure F48amds_v7 offers 48 dedicated AMD EPYC 9V45 cores at 4.5 GHz, 384 GB RAM, and 5,669 GB local NVMe SSD storage, delivering top-tier performance for memory-intensive and database workloads.",
+  "meta_description": "Microsoft Azure F48amds_v7 features 48 dedicated AMD EPYC cores, 384 GB RAM, and 5.6 TB NVMe storage for memory-intensive computing and databases.",
+  "tagline": "Dedicated AMD EPYC performance paired with extensive system memory and high-capacity NVMe SSD storage for intensive data processing workloads.",
   "bullet_points": [
-    "48 dedicated AMD EPYC 9V45 cores operating at 4.5 GHz",
-    "384.0 GB of system memory providing 8.0 GB of RAM per core",
-    "Bundled 5669 GB local NVMe SSD storage",
-    "Top-tier performance in database operations and Redis caching",
-    "Average performance for large-scale 70B LLM inference workloads",
-    "Suited for memory-intensive databases and high-throughput data pipelines"
+    "48 dedicated AMD EPYC 9V45 cores running at 4.5 GHz with 1:1 physical-to-virtual core allocation",
+    "384.0 GB total system memory providing an 8.0 GB per vCPU ratio",
+    "5,669 GB integrated local NVMe SSD storage for high-IOPS applications",
+    "Top-decile multi-core CPU compute, data compression, and Redis operations benchmark results",
+    "Suited for large-scale relational databases, in-memory caches, and enterprise data analytics"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Storage & Database"
   ]
 }

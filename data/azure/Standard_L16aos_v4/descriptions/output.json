@@ -1,24 +1,24 @@
 {
   "page": [
-    "Microsoft Azure L16aos_v4 is a storage and memory-optimized server instance powered by an AMD EPYC 9V74 processor. Built on the x86_64 architecture, this instance features 16 dedicated vCPUs mapped to 8 physical cores with multithreading enabled at 2.0 threads per core. The processor operates at a clock speed of 3.7 GHz and includes 32 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. It is equipped with 128.0 GB of system memory, providing a resource density of 8.0 GB per vCPU. Storage is a key component of this instance, which bundles 11,519 GB of local NVMe SSD storage and supports Premium Storage. The instance runs on the Microsoft Hyper-V hypervisor and does not include any GPUs.",
-    "Benchmark data reveals strong single-core performance, with stress-ng single-core CPU and Geekbench single-core scores placing in the top 25%. Text processing and text generation for small language models also demonstrate strong performance. However, multi-core CPU performance, Passmark scores, and Redis SET operations fall into the average category. A notable hardware tradeoff is observed in memory bandwidth; while cached small-block read-only bandwidth is average, uncached large-block read-only memory bandwidth is weak, falling into the bottom 25%. Additionally, large-scale LLM inference is highly constrained, with prompt processing for a 70B model rated as poor.",
-    "From a qualitative cost-efficiency perspective, the L16aos_v4 offers high local storage density and a solid memory-to-vCPU ratio, making it a resource-dense option for workloads that require substantial local scratch space or caching without the overhead of external storage arrays. This hardware profile is highly suitable for relational and non-relational databases, large-scale data processing, and local file indexing. It is also well-suited for applications requiring strong single-threaded performance alongside high-capacity local NVMe storage, though it is less optimal for memory-bandwidth-intensive parallel computing or large-scale AI inference."
+    "Microsoft Azure L16aos_v4 is a storage-optimized virtual machine provisioned on Microsoft Hyper-V. The system is driven by a 3.7 GHz AMD EPYC 9V74 processor featuring 16 dedicated virtual CPUs mapped across 8 physical cores with two threads per core. Memory capacity is allocated at 128.0 GB of RAM, providing 8.0 GB per core. The hardware configuration bundles 11,519 GB of direct-attached NVMe SSD storage. There are no GPUs present on this instance type, and zero complimentary public IPv4 addresses are included.",
+    "Benchmark results highlight solid compute performance, with Geekbench single-core scoring 2,084.0 and stress-ng single-core reaching 3,079.05, placing both in the top 25% tier. Multi-core performance metrics, such as PassMark CPU (26,168.72) and Geekbench multi-core (12,359.0), remain in the middle 50% category alongside Clang software compilation (19,339.0) and Redis SET operations (22.64 million operations/sec). Large-block read memory bandwidth falls into the lower 25% at 36.77 GB/sec, while large-model 70B LLM prompt processing lands in the bottom 10% at 4.44 tokens/sec due to memory-bound constraints.",
+    "The dense 11.5 TB local NVMe storage allocation provides qualitative cost efficiency for organizations requiring direct high-capacity disk storage without the supplementary expense of network-attached block devices. The 1:8 vCPU-to-memory ratio additionally balances high-throughput memory operations with compute density.",
+    "The L16aos_v4 is suited for transactional databases, NoSQL engines, distributed data stores, index indexing nodes, and large-scale data ingestion pipelines that need high NVMe disk capacity alongside balanced CPU and memory resources."
   ],
-  "description": "The Microsoft Azure L16aos_v4 is a storage-focused server instance powered by an AMD EPYC 9V74 processor running at 3.7 GHz. It features 16 dedicated vCPUs across 8 physical cores, 128.0 GB of RAM, and a substantial 11,519 GB of local NVMe SSD storage. Operating under the Microsoft Hyper-V hypervisor, the instance delivers strong single-core CPU and text processing performance, though its multi-core benchmarks and uncached large-block memory read bandwidth are average to weak. Lacking GPU acceleration, it is not designed for heavy AI workloads, as evidenced by poor large-model LLM inference speeds. However, its high local storage capacity and 8:1 memory-to-core ratio make it qualitatively cost-efficient for database hosting, data warehousing, and I/O-intensive workloads requiring rapid local storage access.",
-  "og_description": "Microsoft Azure L16aos_v4 is a storage-optimized server featuring 16 dedicated AMD EPYC vCPUs, 128 GB RAM, and 11,519 GB of local NVMe SSD storage, suitable for database and I/O-heavy workloads.",
-  "meta_description": "Microsoft Azure L16aos_v4 features 16 AMD EPYC vCPUs, 128 GB RAM, and 11,519 GB local NVMe SSD storage for database and storage-intensive workloads.",
-  "tagline": "A storage-dense instance featuring high-capacity local NVMe SSDs, balanced memory, and strong single-core AMD EPYC processor performance.",
+  "description": "Microsoft Azure L16aos_v4 is a storage-optimized instance powered by a 3.7 GHz AMD EPYC 9V74 processor. It features 16 dedicated vCPUs derived from 8 physical cores, paired with 128.0 GB of system memory. Storage is heavily provisioned with a bundled 11,519 GB NVMe SSD array, while accelerator hardware is omitted. Benchmarking demonstrates strong single-core compute performance, placing in the top quartile for Geekbench and stress-ng single-core tests, accompanied by average multi-core and memory throughput. The system achieves 22.64 million operations per second in Redis SET operations and steady compression metrics. The high density of local NVMe storage relative to CPU resources offers efficient economics for high-throughput disk workloads. This configuration is aligned with distributed NoSQL databases, transactional data stores, search indexing clusters, and high-volume data warehousing workloads requiring substantial local IOPS.",
+  "og_description": "Microsoft Azure L16aos_v4 is a storage-optimized instance featuring 16 AMD EPYC 9V74 vCPUs, 128 GB RAM, and 11,519 GB of local NVMe SSD storage for intensive database workloads.",
+  "meta_description": "Microsoft Azure L16aos_v4 features 16 AMD EPYC 9V74 vCPUs, 128 GB RAM, and 11,519 GB NVMe SSD storage tailored for high-capacity database systems.",
+  "tagline": "Storage-optimized AMD EPYC computing with 16 vCPUs, 128 GB memory, and over 11.5 TB of local NVMe SSD capacity.",
   "bullet_points": [
-    "Powered by a 3.7 GHz AMD EPYC 9V74 processor with 16 dedicated vCPUs",
-    "Bundles 11,519 GB of high-speed local NVMe SSD storage",
-    "Equipped with 128.0 GB of system memory (8.0 GB per vCPU)",
-    "Strong single-core CPU and text processing benchmark results",
-    "Weak uncached large-block memory read bandwidth",
-    "Best suited for databases, data warehousing, and high-I/O applications"
+    "AMD EPYC 9V74 processor providing 16 dedicated vCPUs at 3.7 GHz",
+    "128.0 GB total RAM delivering 8.0 GB memory per physical core",
+    "Bundled 11,519 GB high-capacity local NVMe SSD storage",
+    "Strong single-core processing tier across Geekbench and stress-ng benchmarks",
+    "Tailored for distributed databases, data warehousing, and log analytics"
   ],
   "categories": [
     "Storage & Database",
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

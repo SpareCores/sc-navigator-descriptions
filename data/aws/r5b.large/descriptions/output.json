@@ -1,22 +1,22 @@
 {
   "page": [
-    "Amazon Web Services r5b.large is a memory-optimized instance built on the Nitro hypervisor. It features 2 vCPUs derived from a single physical core with 2 threads per core, utilizing an Intel Xeon 8259CL processor running at 3.1 GHz. The instance is equipped with 16.0 GB of DDR4 memory running at 3 GHz, providing a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or a GPU, and it operates with a baseline network bandwidth of 1 Gbps.",
-    "Benchmark data indicates that the r5b.large exhibits lower-tier compute and memory performance relative to the broader cloud market. In stress-ng testing, single-core performance scored 1273.69 and multi-core performance scored 1675.38. Memory bandwidth benchmarks show read-only large block speeds of 12.97 GB/sec and write speeds of 11.36 GB/sec. Geekbench testing aligns with these results, yielding a single-core score of 1138.0 and a multi-core score of 1356.0.",
-    "From a qualitative cost-efficiency perspective, the r5b.large offers a dedicated Intel Xeon hardware profile with a high memory allocation per vCPU, making it suitable for memory-bound workloads that do not require high compute throughput. However, the tradeoff is a significant performance bottleneck in CPU-intensive tasks, as evidenced by lower scores in Passmark CPU and software compilation.",
-    "Given its hardware profile and benchmark characteristics, the r5b.large is designed for workloads requiring higher memory capacity relative to compute power. Appropriate use cases include small-scale caching layers, lightweight database operations, and memory-intensive background tasks that do not demand high CPU or storage I/O performance."
+    "Amazon Web Services r5b.large is a memory-optimized instance built on the AWS Nitro hypervisor, powered by a 3.1 GHz Intel Xeon 8259CL processor. The virtual machine allocates 2 vCPUs backed by 1 dedicated physical core with two threads per core. Memory capacity totals 16.0 GB of DDR4 running at 3 GHz, offering an 8:1 memory-to-vCPU ratio. The configuration contains no local storage, requiring attached network storage volumes, and provides a 1 Gbps baseline network bandwidth without discrete GPU accelerators.",
+    "Benchmark evaluations highlight entry-level computational capability bounded by the single physical core. PassMark CPU scoring registers at 2004.55, while Geekbench yields 1138.0 for single-core and 1356.0 for multi-core performance. In stress-ng, the system achieves 1273.69 in single-core and 1675.38 in multi-core metrics. Memory bandwidth reaches 95.91 GB/sec for small cached reads and 12.97 GB/sec for large uncached reads. Real-world operational throughput demonstrates 1.67 million Redis SET operations per second and 1.88 GB/sec in static web serving tests.",
+    "From a cost-efficiency perspective, the instance provides high memory density per compute unit without the overhead of higher vCPU allocations. The primary tradeoff is constrained multi-threaded execution due to the dual-thread single-core design. The r5b.large is primarily fitted for small in-memory caches, development databases, lightweight backend services, and test environments where memory footprint exceeds CPU demands."
   ],
-  "description": "Amazon Web Services r5b.large is a memory-optimized instance featuring 2 vCPUs and 16.0 GB of DDR4 memory. Powered by an Intel Xeon 8259CL processor running at 3.1 GHz on the Nitro hypervisor, this instance provides a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or GPU accelerators, and operates with a baseline network bandwidth of 1 Gbps. Benchmark results place its compute and memory bandwidth performance in the lower percentiles, with a stress-ng single-core score of 1273.69 and large-block memory read bandwidth of 12.97 GB/sec. Consequently, the r5b.large is best suited for memory-bound workloads with low CPU demands, such as small-scale caching, lightweight database operations, and memory-intensive background processing.",
-  "og_description": "Amazon Web Services r5b.large is a memory-optimized instance with 2 vCPUs, 16.0 GB of DDR4 RAM, and an Intel Xeon 8259CL CPU, designed for memory-bound workloads with low compute requirements.",
-  "meta_description": "Amazon Web Services r5b.large is a memory-optimized instance featuring 2 vCPUs, 16.0 GB DDR4 RAM, and an Intel Xeon 8259CL processor.",
-  "tagline": "A memory-optimized instance featuring a high memory-to-vCPU ratio for workloads requiring memory capacity over raw compute performance.",
+  "description": "Amazon Web Services r5b.large is a memory-optimized virtual server running on the AWS Nitro hypervisor, utilizing an Intel Xeon 8259CL processor clocked at 3.1 GHz. It features 2 vCPUs across 1 physical core, 16.0 GB of DDR4 memory, and a 1 Gbps baseline network profile. The instance omits local disk storage and GPU hardware, depending on network storage for persistent data. Synthetic benchmarks reflect conservative processing capabilities, registering 1138.0 on single-core and 1356.0 on multi-core Geekbench runs, alongside a PassMark CPU score of 2004.55. Application metrics indicate 1.67 million Redis SET operations per second and 1.88 GB/sec static web throughput. By providing an 8 GB per vCPU density, the configuration optimizes cost efficiency for memory-sensitive tasks where computational demands remain minimal. The server is suited for lightweight database workloads, staging environments, Redis caching nodes, and small memory-intensive background utilities.",
+  "og_description": "Amazon Web Services r5b.large is a memory-optimized instance offering 2 vCPUs on an Intel Xeon 8259CL processor, 16 GB DDR4 RAM, and 1 Gbps network bandwidth for lightweight in-memory and database workloads.",
+  "meta_description": "Amazon Web Services r5b.large is a memory-optimized instance featuring 2 vCPUs, 16 GB DDR4 RAM, and 1 Gbps network bandwidth on the AWS Nitro hypervisor.",
+  "tagline": "High memory-to-vCPU allocation with dedicated Intel Xeon architecture for memory-reliant workloads requiring minimal concurrent processing power.",
   "bullet_points": [
-    "2 vCPUs and 16.0 GB DDR4 memory providing 8.0 GB per core",
-    "Intel Xeon 8259CL processor running at 3.1 GHz on Nitro hypervisor",
-    "Baseline network bandwidth of 1 Gbps with no local storage",
-    "Suited for memory-bound workloads with low CPU utilization",
-    "Appropriate for small-scale caching and lightweight database operations"
+    "2 vCPUs from 1 physical Intel Xeon 8259CL core at 3.1 GHz",
+    "16.0 GB DDR4 memory providing an 8:1 memory-to-vCPU ratio",
+    "Nitro hypervisor with 1 Gbps baseline network bandwidth",
+    "No integrated local storage, requiring network-attached storage",
+    "Suited for lightweight databases, in-memory caches, and background workers"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

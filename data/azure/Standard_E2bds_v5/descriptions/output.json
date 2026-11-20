@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E2bds_v5 is a memory-optimized virtual machine belonging to the EBDSv5 server family, running on the Microsoft Hyper-V hypervisor. It features 2 dedicated vCPUs mapped to 1 physical Intel Xeon 8370C core with hyper-threading enabled, operating at a base frequency of 2.8 GHz. The processor architecture is x86_64, supported by 48 KB L1D cache, 1 MB L2 cache, and 48 MB L3 cache. It includes hardware-accelerated instruction sets such as AVX, AVX-512F, AVX-512 VNNI, AES, and SHA_NI. The instance is equipped with 16.0 GB of RAM, yielding a high memory-to-core ratio of 8.0 GB per vCPU. It also includes 77 GB of local SSD storage and supports premium block storage.",
-    "Benchmark data reveals a clear distinction between single-core and multi-core performance. Single-core execution is moderate, with Geekbench single-core scoring 1647.0 and stress-ng single-core CPU performance rated as average. However, multi-core and memory bandwidth metrics are limited. Multi-core stress-ng and Geekbench scores fall into the lower percentile, reflecting the physical constraint of having only a single physical core. Memory bandwidth is also constrained, with uncached read and write speeds measuring 14.85 GB/sec and 13.69 GB/sec respectively. Database operations and Redis SET performance are relatively low, indicating that while memory capacity is high, throughput-heavy workloads may face bottlenecks.",
-    "From a qualitative cost-efficiency perspective, the E2bds_v5 provides a dense memory allocation relative to its compute footprint, making it a viable option for memory-bound workloads that do not require intensive parallel processing. It is suitable for small-scale databases, caching layers, lightweight web serving, and single-threaded data processing tasks. However, it is less suited for heavy multi-threaded compilation, complex physics simulations, or large-scale LLM inference due to its single physical core limitation."
+    "Microsoft Azure E2bds_v5 is a memory-optimized virtual machine provisioned on Microsoft Hyper-V. It is powered by an x86_64 Intel Xeon Platinum 8370C processor running at a base clock frequency of 2.8 GHz. The instance is configured with 1 physical core that provides 2 dedicated vCPUs via multithreading. It includes 48 KB of L1d cache, 1 MB of L2 cache, and 48 MB of L3 cache, with hardware support for vector extensions like AVX-512 and cryptographic offloads including AES-NI and SHA-NI.",
+    "Hardware resource allocations feature 16.0 GB of system RAM, resulting in an 8.0 GB per vCPU ratio that fulfills memory-optimized workload profiles. The instance includes an 81 GB local SSD for temporary scratch space or swap, while lacking onboard GPU accelerators. Network configurations omit complimentary public IPv4 addresses, requiring dedicated Azure networking resources for public endpoints.",
+    "Benchmark measurements indicate solid single-threaded performance offset by predictable multi-core throughput constraints resulting from its 2 vCPU profile. Single-core stress-ng reached 1889.79, and Geekbench single-core hit 1529.0, both falling within middle percentiles. Conversely, parallel execution tasks such as multi-core stress-ng (1932.98), multi-core Geekbench (1774.0), and Clang software compilation (2068.0) placed in lower percentiles due to core limitations. Memory read-only bandwidth registered at 14.85 GB/sec for uncached blocks, and Redis SET throughput recorded 2.01 million operations per second.",
+    "Given its high memory-to-core ratio and bundled local SSD storage, the E2bds_v5 provides cost-efficient hosting for medium-demand applications where memory headroom takes precedence over parallel computing power. Best-fit use cases include in-memory caching systems, small-scale relational databases, light enterprise application backends, and microservices requiring generous memory footprints without heavy compute contention."
   ],
-  "description": "Microsoft Azure E2bds_v5 is an x86_64 memory-optimized virtual machine powered by an Intel Xeon 8370C processor running at 2.8 GHz. It features 2 dedicated vCPUs, 16.0 GB of RAM, and 77 GB of local SSD storage. While single-core benchmarks show average performance, multi-core capabilities and memory bandwidth are relatively constrained due to the single physical core architecture. The server is qualitatively cost-efficient for memory-intensive, low-compute workloads, offering a high memory-to-vCPU ratio. It is best suited for small-scale databases, caching layers, and lightweight web serving, but is not recommended for highly parallelized or compute-heavy tasks.",
-  "og_description": "Microsoft Azure E2bds_v5 is an x86_64 memory-optimized virtual machine featuring 2 vCPUs, 16 GB of RAM, and 77 GB of local SSD storage, powered by an Intel Xeon 8370C processor under Hyper-V.",
-  "meta_description": "Microsoft Azure E2bds_v5 is an x86_64 memory-optimized virtual machine featuring 2 vCPUs, 16 GB RAM, and 77 GB local SSD, powered by Intel Xeon.",
-  "tagline": "A memory-optimized virtual machine featuring a high RAM-to-vCPU ratio and local SSD storage for lightweight, memory-bound workloads.",
+  "description": "Microsoft Azure E2bds_v5 is a memory-optimized virtual machine featuring 2 dedicated vCPUs derived from 1 physical core on an Intel Xeon Platinum 8370C processor at 2.8 GHz. It delivers 16.0 GB of RAM alongside 81 GB of local SSD storage, providing an 8.0 GB per vCPU ratio without onboard GPU hardware. Architectural features include 48 MB of L3 cache, AVX-512 extensions, and AES-NI acceleration. Benchmark metrics reveal competent single-core metrics, such as a 1529.0 Geekbench single-core score and 28.5 GB/sec single-threaded gzip compression, while multi-core compute throughput remains constrained by the 2-vCPU envelope. This instance is suited for memory-intensive low-concurrency applications, small database engines, in-memory caches, and microservices that require substantial memory per thread.",
+  "og_description": "Microsoft Azure E2bds_v5 is a memory-optimized virtual machine featuring 2 vCPUs on an Intel Xeon 8370C processor, 16 GB RAM, and an 81 GB local SSD, suited for caches and databases.",
+  "meta_description": "Microsoft Azure E2bds_v5 is a memory-optimized VM offering 2 vCPUs, 16 GB RAM, and 81 GB local SSD storage on Intel Xeon Platinum hardware.",
+  "tagline": "Two-vCPU memory-optimized instance featuring sixteen gigabytes of RAM and eighty-one gigabytes of bundled local solid-state storage.",
   "bullet_points": [
-    "Intel Xeon 8370C processor with 2 vCPUs and 16.0 GB RAM",
-    "77 GB local SSD storage with premium block storage capability",
-    "High memory-to-core ratio of 8.0 GB per vCPU",
-    "Average single-core performance but limited multi-core scaling",
-    "Best suited for small databases, caching, and lightweight web serving"
+    "2 dedicated vCPUs powered by an Intel Xeon Platinum 8370C processor at 2.8 GHz",
+    "16.0 GB system memory providing an 8.0 GB per vCPU ratio",
+    "81 GB bundled local SSD temporary storage",
+    "Hardware support for AVX-512 and cryptographic acceleration instructions",
+    "Well-aligned for in-memory caching, small relational databases, and memory-bound tasks"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

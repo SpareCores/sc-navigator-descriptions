@@ -1,22 +1,21 @@
 {
   "page": [
-    "Amazon Web Services c5a.xlarge is a compute-optimized virtual machine powered by the AWS Nitro hypervisor. It features an x86_64 architecture with an AMD EPYC 7R32 processor running at 3.3 GHz. The instance provides 4 dedicated vCPUs across 2 physical cores with hyperthreading enabled. It is equipped with 8.0 GB of DDR4 memory running at 3 GHz, yielding 2.0 GB of RAM per core. There is no local NVMe storage or GPU acceleration bundled with this instance, and it operates with a baseline network bandwidth of 1 Gbps.",
-    "Performance benchmarks indicate a modest profile for this hardware class. Single-core and multi-core CPU performance tests via stress-ng place the instance in the bottom 10%, while Geekbench single-core scores reach average levels. Memory bandwidth tests for both small and large blocks fall into the bottom 25%, reflecting the DDR4 memory architecture limits. However, the CPU demonstrates average performance in specific workloads, such as single-threaded gzip compression, bzip3 decompression, and Passmark CPU encryption tests.",
-    "From a qualitative cost-efficiency perspective, the c5a.xlarge offers a low-cost entry point for dedicated x86 compute resources, making it accessible for budget-conscious deployments. However, users face tradeoffs in memory-intensive or high-throughput scenarios, as evidenced by weak database operations, static web serving, and multi-threaded decompression benchmarks. This instance is best suited for lightweight compute tasks, basic web serving, single-threaded batch processing, and small-scale development or testing environments that do not require high memory density or local storage."
+    "Amazon Web Services c5a.xlarge is a compute-optimized instance built on the AWS Nitro System and powered by AMD EPYC 7R32 processors. It provides 4 vCPUs across 2 physical cores with multithreading enabled at a base clock of 3.3 GHz. The instance is paired with 8.0 GB of DDR4 memory running at 3 GHz, representing a 1:2 vCPU-to-RAM ratio of 2.0 GB per core. It operates on the x86_64 architecture with support for AVX, AES, and SHA extensions, but lacks AVX-512 and AMX instructions. There is no bundled local storage, meaning operations depend entirely on remote block storage, and network performance is provisioned with a 1 Gbps baseline bandwidth.",
+    "Benchmark results place the c5a.xlarge in lower-to-middle percentiles across synthetic and real-world metrics. Its single-core compute performance sits in the middle tier, evidenced by a Geekbench single-core score of 1327.0 and average single-threaded compression speeds. However, multi-core throughput trails behind, scoring 3021.0 in Geekbench and registering in the bottom tiers for stress-ng and multi-threaded decompression. Memory bandwidth benchmarks remain weak, with 35.51 GB/sec uncached read and 22.22 GB/sec write speeds. Text generation for small 135M language models achieves 112.14 tokens/sec, but drops sharply to 5.33 tokens/sec on 7B parameter models.",
+    "Without bundled GPUs or local NVMe drives, this instance is suited for compute-bound batch jobs, CI/CD compilation, and lightweight web serving where memory footprints remain within 8 GB. Its AMD hardware architecture offers a cost-effective alternative to comparable Intel-based compute instances, trading peak vector throughput and memory bandwidth for economical CPU cycle capacity."
   ],
-  "description": "Amazon Web Services c5a.xlarge is a compute-optimized instance featuring an AMD EPYC 7R32 processor running at 3.3 GHz on the x86_64 architecture. Managed by the AWS Nitro hypervisor, it delivers 4 dedicated vCPUs (2 physical cores) and 8.0 GB of DDR4 RAM, with no local storage or GPU accelerators. Benchmark data shows average performance in single-threaded compression and encryption tasks, though overall multi-core compute and memory bandwidth fall into lower percentiles. With a baseline network speed of 1 Gbps, this instance represents a cost-effective option for dedicated compute resources where high memory capacity is not required. It is best suited for lightweight batch processing, basic web serving, and development workloads.",
-  "og_description": "Amazon Web Services c5a.xlarge is a compute-optimized instance featuring a 3.3 GHz AMD EPYC processor, 4 dedicated vCPUs, and 8.0 GB of DDR4 RAM, designed for entry-level dedicated compute workloads.",
-  "meta_description": "Amazon Web Services c5a.xlarge is a compute-optimized instance with 4 dedicated vCPUs, 8.0 GB DDR4 RAM, and an AMD EPYC 7R32 processor.",
-  "tagline": "A budget-friendly, compute-optimized virtual machine featuring dedicated AMD EPYC processors and DDR4 memory for lightweight, single-threaded workloads.",
+  "description": "Amazon Web Services c5a.xlarge is a compute-optimized instance driven by an AMD EPYC 7R32 processor operating at 3.3 GHz. Provisioned on the AWS Nitro System, the instance features 4 vCPUs across 2 physical cores and 8.0 GB of DDR4 memory running at 3 GHz. It includes no bundled local storage or dedicated graphics accelerators, relying on a 1 Gbps baseline network link. Benchmark evaluations demonstrate average single-threaded execution, shown by a Geekbench single-core score of 1327.0, while multi-core workloads and memory bandwidth reflect lower-tier performance. Without AVX-512 support, vector and matrix intensive throughput is constrained. The instance serves as an economical compute option for scale-out workloads, automated build and CI/CD pipelines, lightweight web applications, and CPU-driven batch processing tasks that do not demand extensive memory capacity or local disk IOPS.",
+  "og_description": "Amazon Web Services c5a.xlarge features 4 vCPUs via an AMD EPYC 7R32 processor, 8 GB DDR4 memory, and 1 Gbps baseline network on the Nitro hypervisor for compute-centric workloads.",
+  "meta_description": "Amazon Web Services c5a.xlarge offers 4 vCPUs, 8 GB DDR4 RAM, and 3.3 GHz AMD EPYC compute power designed for cost-efficient batch processing.",
+  "tagline": "An entry-level compute-optimized instance balancing dedicated x86 CPU performance with cost-efficient memory density for scale-out processing tasks.",
   "bullet_points": [
-    "Powered by a 3.3 GHz AMD EPYC 7R32 processor with 4 dedicated vCPUs.",
-    "Equipped with 8.0 GB of DDR4 memory and 1 Gbps baseline network bandwidth.",
-    "Delivers average performance in single-threaded compression and encryption benchmarks.",
-    "Lacks local storage and GPU acceleration, relying entirely on network-attached storage.",
-    "Best suited for lightweight batch processing, basic web serving, and development environments."
+    "4 vCPUs (2 physical cores at 3.3 GHz) powered by AMD EPYC 7R32",
+    "8.0 GB DDR4 memory providing a 1:2 core-to-memory ratio",
+    "EBS-only storage architecture with no local instance storage",
+    "Baseline 1 Gbps networking via AWS Nitro System",
+    "Fit for CI/CD compilation, batch workloads, and lightweight web serving"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

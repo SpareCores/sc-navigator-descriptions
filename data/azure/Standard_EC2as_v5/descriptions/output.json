@@ -1,23 +1,22 @@
 {
   "page": [
-    "Microsoft Azure EC2as_v5 is an x86_64 architecture virtual machine belonging to the ECASv5 server family. It is powered by an AMD processor and runs on the Microsoft Hyper-V hypervisor. The configuration provides 2 dedicated vCPUs and 16.0 GB of system memory, yielding a memory-to-core ratio of 8.0 GB per vCPU.",
-    "This server type does not include local storage, meaning all storage operations rely on external volumes. It is, however, designated as Premium Storage capable, allowing integration with high-performance remote disk options. There are zero integrated GPUs, making it unsuitable for hardware-accelerated graphics or parallel computing workloads. Additionally, it does not include any complimentary public IPv4 addresses.",
-    "From a cost-efficiency perspective, the EC2as_v5 offers a high memory-to-vCPU ratio of 1:8, categorizing it as a memory-optimized resource. This density allows for efficient handling of memory-bound tasks without paying for unnecessary compute cores. The hardware profile is configured for workloads such as small-scale databases, caching layers, memory-intensive enterprise applications, and lightweight data processing tasks that require a larger memory footprint relative to processing power."
+    "Microsoft Azure EC2as_v5 is a memory-optimized virtual machine instance running on Microsoft Hyper-V. It is powered by an AMD EPYC 9V74 x86_64 processor, configured with 2 dedicated vCPUs derived from a single physical core across two hardware threads. The compute configuration includes 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of shared L3 cache. Memory capacity is set to 16.0 GB RAM, delivering an 8.0 GB per vCPU ratio suitable for memory-heavy small-scale services. The instance features no local disk storage, relying entirely on remote storage volumes, and includes no dedicated hardware GPUs or complimentary public IPv4 addresses.",
+    "Benchmark results highlight an emphasis on memory density rather than multithreaded raw compute throughput. In stress-ng testing, single-core CPU throughput reached 1982.68, placing it in the average tier, while multi-core performance registered the same score of 1982.68, placing in the bottom 10 percent due to the two-vCPU hardware ceiling. Similarly, Geekbench returned an average single-core score of 1164.0, but a multi-core score of 1413.0, reflecting constrained aggregate processor capacity. Memory performance on PassMark registered at 1469.98, while Redis SET operations yielded 1.63 million operations per second, both sitting in the lower performance tiers.",
+    "Architecturally, the server provides dedicated CPU allocation alongside hardware acceleration flags such as AES, VAES, SHA-NI, and AVX, though advanced vector sets like AVX-512 and AMX are absent. The lack of integrated local storage necessitates architectural reliance on Azure Premium Storage or standard managed network disks. The qualitative cost profile makes this configuration efficient for environments that need moderate memory capacity at low resource overhead without paying for excessive CPU cores.",
+    "The Azure EC2as_v5 is suited for light in-memory caching nodes, staging instances for relational databases, Redis key-value stores, and microservices requiring an elevated RAM-to-CPU ratio without sustained multi-core compute pressure."
   ],
-  "description": "Microsoft Azure EC2as_v5 is an x86_64 architecture virtual machine within the ECASv5 family, running on the Microsoft Hyper-V hypervisor. It features an AMD processor with 2 dedicated vCPUs and 16.0 GB of system memory, establishing a high memory-to-core ratio of 8.0 GB per vCPU. This instance does not include local storage or integrated GPUs, though it is Premium Storage capable for external disk configurations. It also lacks complimentary public IPv4 addresses. The high memory density relative to its compute capacity makes this server type a cost-efficient option for memory-bound workloads that do not require extensive CPU scaling. It is structured for workloads such as small-scale databases, in-memory caching, and lightweight enterprise applications.",
-  "og_description": "Microsoft Azure EC2as_v5 is an x86_64 virtual machine featuring 2 dedicated AMD vCPUs, 16.0 GB of RAM, and Premium Storage capability, optimized for memory-intensive workloads.",
-  "meta_description": "Microsoft Azure EC2as_v5 is an x86_64 virtual machine with 2 dedicated AMD vCPUs and 16.0 GB of RAM, optimized for memory-bound workloads.",
-  "tagline": "An x86_64 virtual machine featuring a high memory-to-core ratio of eight gigabytes per dedicated AMD vCPU with remote storage support.",
+  "description": "Microsoft Azure EC2as_v5 is a memory-optimized virtual machine powered by an AMD EPYC 9V74 processor based on the x86_64 architecture. Managed under Microsoft Hyper-V, the instance provides 2 dedicated vCPUs from 1 physical core and 16.0 GB of system memory, establishing an 8.0 GB per vCPU ratio. It does not include local disk storage or hardware GPU accelerators, necessitating remote managed disks for persistent storage. Benchmark testing shows average single-core capabilities, registering 1982.68 in stress-ng and 1164.0 in Geekbench, alongside lower multi-core and throughput marks resulting from the two-thread limit. Hardware-level cryptographic acceleration is present via AES, VAES, and SHA-NI extensions. With its memory-focused allocation, EC2as_v5 serves workloads such as small in-memory caches, low-traffic database servers, and lightweight background workers requiring elevated RAM allocations without high core counts.",
+  "og_description": "Microsoft Azure EC2as_v5 is a memory-optimized instance featuring 2 dedicated vCPUs from an AMD EPYC 9V74 processor, 16 GB RAM, and no local disk storage, engineered for memory-dense microservices.",
+  "meta_description": "Microsoft Azure EC2as_v5 is a memory-optimized VM providing 2 AMD EPYC 9V74 vCPUs and 16 GB RAM for memory-weighted entry workloads.",
+  "tagline": "A dual-vCPU entry profile delivering high memory allocation per core for memory-demanding cloud services requiring minimal processor overhead.",
   "bullet_points": [
-    "Powered by an AMD processor with x86_64 architecture",
-    "Features 2 dedicated vCPUs and 16.0 GB of system memory",
-    "Provides a high memory-to-core ratio of 8.0 GB per vCPU",
-    "Premium Storage capable with no local storage included",
-    "Configured with zero GPUs and zero complimentary public IPv4 addresses",
-    "Suited for small-scale databases, caching layers, and memory-bound applications"
+    "Powered by AMD EPYC 9V74 processor with 2 dedicated vCPUs on 1 physical core",
+    "Allocates 16.0 GB RAM delivering an 8.0 GB per vCPU memory-optimized ratio",
+    "Requires network storage volumes due to no integrated local disk storage",
+    "Features hardware cryptographic acceleration including AES, VAES, and SHA-NI",
+    "Appropriate for light caching layers, small databases, and memory-sensitive microservices"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

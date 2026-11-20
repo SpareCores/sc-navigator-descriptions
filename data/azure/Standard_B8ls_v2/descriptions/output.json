@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure B8ls_v2 is a burstable virtual machine belonging to the Bsv2 server family, running on the Microsoft Hyper-V hypervisor. It features an Intel Xeon 8370C processor with an x86_64 architecture, operating at a clock speed of 2.8 GHz. The configuration includes 8 virtual CPUs mapped to 4 physical cores with 2 threads per core. Memory capacity is limited to 16.0 GB, which yields a low memory-to-core ratio of 2.0 GB per vCPU. No local storage is bundled with this instance, though it is premium storage capable. There are no integrated GPUs or complimentary public IPv4 addresses.",
-    "Benchmark results place the B8ls_v2 consistently in the average performance tier across most workloads. The stress-ng single-core CPU performance score is 1898.08, and the multi-core score is 7752.64. In memory bandwidth tests, it achieves 419.37 GB/sec for cached small-block reads and 59.94 GB/sec for uncached large-block reads. Geekbench testing yields a single-core score of 1638.0 and a multi-core score of 6117.0. While most metrics, such as the Redis SET throughput of 7.94 million operations per second and static web serving at 11.68 GB/sec, fall into the average category, multi-threaded bzip3 decompression is a relative weak point, scoring 32.1 GB/sec.",
-    "From a cost-efficiency perspective, the burstable CPU allocation model allows for lower resource costs during idle periods, making it suitable for workloads with variable CPU utilization. However, the low memory allocation of 2.0 GB per core and the lack of local storage represent significant tradeoffs for memory-intensive or data-heavy applications. This server is configured for workloads such as light web serving, code compilation, and basic database operations that do not require sustained maximum CPU performance or large memory footprints."
+    "Microsoft Azure B8ls_v2 is a burstable, entry-tier compute instance within the Bsv2 family, configured with 8 vCPUs mapped across 4 physical cores and 16.0 GB of system RAM. Powered by an Intel Xeon 8370C x86_64 processor clocked at 2.8 GHz, this server type utilizes Microsoft Hyper-V virtualization and features 48 MB of L3 cache alongside support for instruction sets including AVX-512, SHA-NI, and AES cryptography. It does not include integrated local disk storage or dedicated graphics processing units, requiring attached remote storage for operational persistence.",
+    "Benchmark evaluations position the B8ls_v2 consistently within the middle 50% percentile across general computing workloads. It achieves a Geekbench single-core score of 1638.0 and a multi-core score of 6117.0, paired with an overall PassMark CPU score of 11387.88. Synthetic stress testing demonstrates balanced capabilities, yielding 7752.64 on stress-ng multi-core tests and uncached read memory bandwidth of 59.94 GB/sec. However, data throughput contracts under certain parallel routines, as demonstrated by a weak bottom-25% result of 32.1 GB/sec in multi-threaded bzip3 decompression.",
+    "Resource distribution is tailored for burstable access, offering a lean memory-to-core ratio of 2.0 GB per vCPU. This low-memory footprint makes it cost-efficient for intermittent processing demands where continuous sustained compute thresholds are unnecessary. In return, workloads with high memory footprints or heavy concurrent write needs may experience resource constraints under persistent strain.",
+    "The hardware configuration is suited for low-to-medium throughput web serving, build automation, continuous integration pipelines, and light background processing. It also handles small-scale Redis caching and lightweight database tasks that do not require massive in-memory storage capacity."
   ],
-  "description": "Microsoft Azure B8ls_v2 is an x86_64 burstable virtual machine from the Bsv2 family, powered by an Intel Xeon 8370C processor running at 2.8 GHz. It features 8 vCPUs (4 physical cores) and 16.0 GB of RAM, resulting in a low memory-to-core ratio of 2.0 GB per vCPU. The instance lacks local storage and integrated GPUs but is premium storage capable. Benchmark results generally fall into the average tier, with a Geekbench multi-core score of 6117.0 and a Redis SET performance of 7.94 million operations per second, though multi-threaded bzip3 decompression is weak. The burstable CPU allocation makes this server a cost-efficient option for workloads with fluctuating demands, such as light web serving, software compilation, and small-scale database operations, provided they do not require high memory capacity or sustained CPU utilization.",
-  "og_description": "Microsoft Azure B8ls_v2 is an x86_64 burstable virtual machine featuring 8 vCPUs, 16.0 GB of RAM, and an Intel Xeon 8370C processor, designed for workloads with variable CPU utilization.",
-  "meta_description": "Microsoft Azure B8ls_v2 is an x86_64 burstable virtual machine with 8 vCPUs, 16.0 GB of RAM, and an Intel Xeon 8370C processor.",
-  "tagline": "A burstable x86_64 virtual machine with an Intel Xeon processor, offering balanced average performance for workloads with variable CPU demands.",
+  "description": "Microsoft Azure B8ls_v2 is a burstable virtual machine from the Bsv2 family designed for low-memory, intermittent workloads. Equipped with an Intel Xeon 8370C processor running at 2.8 GHz, it provides 8 vCPUs across 4 physical cores, 16.0 GB of RAM (2.0 GB per core), and 48 MB of L3 cache. It contains no attached local storage or GPUs, relying on remote storage for disk operations. Benchmark results consistently place it in the average performance tier, registering a PassMark CPU score of 11387.88 and a Geekbench multi-core score of 6117.0, though multi-threaded compression metrics dip into the lower quartile. The B8ls_v2 delivers an economical hardware balance for burst-tolerant applications such as static web serving, CI/CD runners, and light database caching.",
+  "og_description": "Microsoft Azure B8ls_v2 features 8 burstable vCPUs via an Intel Xeon 8370C processor, 16.0 GB RAM, and no local disk. It delivers stable mid-tier compute for bursty, budget-conscious workloads.",
+  "meta_description": "Microsoft Azure B8ls_v2 provides 8 burstable vCPUs, an Intel Xeon 8370C processor, and 16.0 GB RAM for entry-level compute and intermittent workloads.",
+  "tagline": "Cost-effective burstable x86 compute featuring eight vCPUs and balanced memory for lightweight, intermittent workloads without attached local disks.",
   "bullet_points": [
-    "Intel Xeon 8370C processor with 8 vCPUs and 4 physical cores",
-    "16.0 GB of RAM providing a low memory-to-core ratio of 2.0 GB",
-    "Burstable CPU allocation for cost-efficient handling of variable workloads",
-    "No local storage included, but supports premium external storage",
-    "Average benchmark performance across web serving and database operations"
+    "Intel Xeon 8370C processor with 8 burstable vCPUs and 4 physical cores",
+    "16.0 GB system RAM providing 2.0 GB of memory per vCPU",
+    "No integrated local storage or GPU hardware bundled",
+    "Supports AVX-512 vector extensions and AES cryptographic acceleration",
+    "Well-aligned for lightweight web serving, CI/CD pipelines, and bursty processing"
   ],
   "categories": [
     "Burstable & Budget",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

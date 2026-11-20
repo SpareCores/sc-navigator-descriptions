@@ -1,22 +1,21 @@
 {
   "page": [
-    "Amazon Web Services r4.large is a memory-optimized, fourth-generation instance type. It features 2 vCPUs mapped to 1 physical Intel Xeon E5-2686 v4 core with hyper-threading enabled, operating at a clock speed of 2.3 GHz. The instance is equipped with 15.0 GB of system memory, providing a high memory-to-vCPU ratio of 7.5 GB per vCPU. It runs on the Xen hypervisor under the x86_64 architecture. There is no local storage or GPU hardware bundled with this instance, and the baseline network bandwidth is rated at 1 Gbps.",
-    "Benchmark data indicates that the r4.large sits in the lower performance tiers for compute-heavy and memory-throughput tasks. The stress-ng single-core and multi-core CPU benchmarks rank in the bottom 10%, reflecting the older generation Intel Xeon architecture. Memory bandwidth tests show a read-only small block cached speed of 77.72 GB/sec, but uncached large block read and write speeds drop to 8.31 GB/sec and 5.85 GB/sec respectively, both placing in the bottom 10%. PassMark memory performance is slightly better but remains weak at the bottom 25%.",
-    "The primary tradeoff of the r4.large is its reliance on legacy hardware, which limits its execution speed for modern workloads. For instance, Redis SET operations achieve 0.62 million operations per second, and static web serving throughput is measured at 1.52 GB/sec, both in the bottom 10%. However, the instance offers a high memory capacity relative to its vCPU count, making it qualitatively cost-effective for legacy memory-bound applications that do not require high CPU throughput. Appropriate workloads include small-scale caching layers, lightweight database operations, and legacy enterprise applications requiring a larger memory footprint without intensive computational demands."
+    "Amazon Web Services r4.large is a memory-optimized virtual machine instance running on the Xen hypervisor. It is configured with two dedicated vCPUs derived from a single physical core with hyperthreading on an Intel Xeon E5-2686 v4 processor operating at 2.3 GHz. The instance is provisioned with 15.0 GB of system memory, providing approximately 7.62 GB per core. It contains no onboard local storage, relying exclusively on network-attached volumes, includes no GPU hardware, and provides a 1 Gbps baseline network bandwidth allocation.",
+    "Benchmark testing positions the r4.large within the lower relative performance tiers across computational and memory throughput metrics. In raw CPU assessments, it recorded a Geekbench single-core score of 846.0, a multi-core score of 980.0, and a PassMark CPU score of 1583.62. Memory throughput for uncached large blocks registered at 8.31 GB/sec for read operations and 5.85 GB/sec for write operations, corresponding to a PassMark memory score of 1499.05. Application-level tests reflect these hardware limits, yielding 0.62 million Redis SET operations per second and 1.52 GB/sec in static web serving throughput.",
+    "Given its elevated memory-to-vCPU ratio, r4.large is suited for memory-weighted workloads that demand minimal processing capability, such as lightweight in-memory key-value caching, development or staging database instances, and modest batch workers. The primary architectural tradeoff is its legacy Broadwell processor family and lack of AVX-512 support, leading to lower per-core compute efficiency compared to modern alternatives."
   ],
-  "description": "Amazon Web Services r4.large is a memory-optimized, fourth-generation instance configured with 2 vCPUs and 15.0 GB of RAM. Powered by an Intel Xeon E5-2686 v4 processor running at 2.3 GHz on the Xen hypervisor, this x86_64 instance provides a high memory-to-vCPU ratio of 7.5 GB per vCPU. It does not include local storage or GPU accelerators, and features a baseline network bandwidth of 1 Gbps. Performance benchmarks, including stress-ng and Geekbench, place the instance in the bottom 10% for compute and memory bandwidth, with uncached large-block memory read speeds at 8.31 GB/sec. Consequently, the r4.large represents a legacy tier with lower computational efficiency but high memory density. It is best suited for memory-bound workloads with low CPU requirements, such as small database operations, caching layers, and legacy enterprise applications.",
-  "og_description": "Amazon Web Services r4.large is a memory-optimized instance featuring 2 vCPUs, 15.0 GB of RAM, and an Intel Xeon E5-2686 v4 CPU, designed for legacy memory-bound workloads with low compute demands.",
-  "meta_description": "Amazon Web Services r4.large is a memory-optimized instance with 2 vCPUs and 15.0 GB RAM, powered by an Intel Xeon E5-2686 v4 processor.",
-  "tagline": "A legacy memory-optimized instance offering high memory density for lightweight, memory-bound workloads and small-scale database operations.",
+  "description": "Amazon Web Services r4.large is a memory-optimized instance running on the Xen hypervisor, powered by a 2.3 GHz Intel Xeon E5-2686 v4 processor. It provides 2 vCPUs across a single physical core, paired with 15.0 GB of RAM, offering a high memory-to-core ratio of 7.62 GB per core. The instance includes no local storage or GPU accelerators and provides a baseline network speed of 1 Gbps. Supported instructions include AVX, AES, and FMA, though newer extensions like AVX-512 are absent. Across benchmarks, the legacy microarchitecture achieves modest results, including a Geekbench multi-core score of 980.0, a PassMark CPU score of 1583.62, and Redis SET throughput of 0.62 million operations per second. With large uncached read bandwidth of 8.31 GB/sec, the r4.large is positioned for memory-reliant workloads with low computational intensity, such as small-scale in-memory caches, development databases, and routine background jobs.",
+  "og_description": "Amazon Web Services r4.large is a memory-optimized instance featuring 2 vCPUs on an Intel Xeon E5-2686 v4 processor, 15.0 GB RAM, and 1 Gbps network baseline for memory-centric, low-compute workloads.",
+  "meta_description": "Amazon Web Services r4.large is a memory-optimized virtual machine featuring 2 vCPUs, 15 GB of RAM, and a 1 Gbps baseline network interface.",
+  "tagline": "A memory-optimized dual-vCPU virtual machine configuration featuring fifteen gigabytes of system memory for low-compute caching and database workloads.",
   "bullet_points": [
-    "2 vCPUs and 15.0 GB of system memory",
-    "Intel Xeon E5-2686 v4 processor running at 2.3 GHz",
-    "No local storage or GPU accelerators included",
-    "1 Gbps baseline network bandwidth",
-    "Suited for lightweight caching and legacy memory-bound applications"
+    "2 vCPUs backed by 1 physical Intel Xeon E5-2686 v4 core at 2.3 GHz",
+    "15.0 GB system memory without bundled local storage",
+    "Baseline network bandwidth of 1 Gbps running on a Xen hypervisor",
+    "Broadwell-generation x86_64 architecture with AVX and AES instructions",
+    "Suitable for small in-memory caches, staging databases, and background tasks"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }
