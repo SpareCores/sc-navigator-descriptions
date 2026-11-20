@@ -1,23 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.s6-c1m2.xlarge is an x86_64 architecture server instance powered by the Intel Xeon 8269CY processor running at a clock speed of 2.5 GHz. This instance is configured with 4 virtual CPUs and 8.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. Virtualization is managed via the KVM hypervisor.",
-    "A primary characteristic of this instance is its shared CPU allocation model, which influences its performance profile under sustained workloads. The instance does not feature any local storage, meaning all storage requirements must be met via network-attached block storage. Additionally, the baseline network bandwidth is rated at 0 Gbps, and there are no integrated GPUs or complimentary public IPv4 addresses included with the deployment.",
-    "Due to the shared CPU resource model and lack of bundled local storage or dedicated network bandwidth, this instance represents a budget-oriented tier. It is designed for workloads that do not require continuous maximum CPU utilization or high-speed local disk access. Suitable workloads include lightweight web serving, development environments, basic code compilation, and non-critical background tasks that can tolerate shared-resource performance variability."
+    "Alibaba Cloud ecs.s6-c1m2.xlarge is an entry-tier virtual instance from the shared ecs.s6 family, running on the KVM hypervisor. It is equipped with 4 shared vCPUs derived from an x86_64 Intel Xeon 8269CY processor operating at a base frequency of 2.5 GHz. System memory is sized at 8.0 GB, establishing a 1:2 compute-optimized ratio with 2.0 GB of memory per core. The shared CPU allocation model distributes physical host resources among multiple virtual tenants, prioritizing cost efficiency over dedicated hardware reservation.",
+    "This configuration includes no bundled local storage, meaning primary persistence relies entirely on remote block storage solutions. It provides no GPU acceleration resources and lacks complimentary public IPv4 addresses. The baseline network bandwidth is designated at 0 Gbps, reflecting its positioning within shared resource pools. Additionally, the instance reports unexposed extended CPU features and vector accelerators in its guest environment.",
+    "The structural tradeoff of the ecs.s6-c1m2.xlarge centers on CPU sharing. While the 4 vCPU to 8 GB memory ratio handles multi-threaded tasks well, potential contention on shared cores makes it unsuitable for latency-sensitive production systems. It is most appropriate for staging environments, automated testing, lightweight microservices, internal CI/CD runners, and background batch tasks where low infrastructure overhead is prioritized over guaranteed throughput."
   ],
-  "description": "Alibaba Cloud ecs.s6-c1m2.xlarge is an x86_64 architecture server instance utilizing the Intel Xeon 8269CY processor clocked at 2.5 GHz. Managed by the KVM hypervisor, it features 4 vCPUs under a shared CPU allocation model and 8.0 GB of system memory, resulting in 2.0 GB of RAM per core. The instance includes no local storage, requiring external network-attached volumes, and has a baseline network bandwidth of 0 Gbps. It does not contain any GPUs or complimentary public IPv4 addresses. Given its shared CPU architecture and lack of bundled storage, this instance offers a budget-friendly profile for workloads with variable resource demands. It is suited for lightweight web serving, development environments, and non-critical background processing tasks where sustained peak performance is not required.",
-  "og_description": "Alibaba Cloud ecs.s6-c1m2.xlarge is a shared-CPU x86_64 server with 4 vCPUs, 8.0 GB RAM, and an Intel Xeon 8269CY processor, designed for budget-friendly, non-critical workloads.",
-  "meta_description": "Alibaba Cloud ecs.s6-c1m2.xlarge is a shared-CPU x86_64 instance with 4 vCPUs, 8.0 GB RAM, and no local storage, optimized for budget workloads.",
-  "tagline": "A budget-friendly, shared-CPU virtual instance with four cores and eight gigabytes of memory for lightweight, non-critical workloads.",
+  "description": "Alibaba Cloud ecs.s6-c1m2.xlarge is a shared compute instance belonging to the ecs.s6 family, provisioned via the KVM hypervisor. Powered by an x86_64 Intel Xeon 8269CY processor clocked at 2.5 GHz, the configuration delivers 4 shared vCPUs paired with 8.0 GB of memory, maintaining a 1:2 vCPU-to-memory allocation of 2.0 GB per vCPU. The instance comes with no integrated local storage and no dedicated hardware accelerators or GPUs. Network bandwidth baseline is registered at 0 Gbps, and no complimentary public IPv4 addresses are assigned. Due to its shared CPU resource model, the instance offers an economical computing profile tailored for workloads that tolerate variable CPU availability rather than requiring sustained high-frequency compute. The ecs.s6-c1m2.xlarge is suitable for lightweight web serving, application testing, non-critical build environments, and background processing tasks that do not demand dedicated core affinity or extensive local disk input/output performance.",
+  "og_description": "Alibaba Cloud ecs.s6-c1m2.xlarge is a shared-core virtual machine with 4 vCPUs on a 2.5 GHz Intel Xeon 8269CY processor, 8 GB of memory, no local storage, and KVM-based virtualization.",
+  "meta_description": "Alibaba Cloud ecs.s6-c1m2.xlarge is a shared compute instance offering 4 vCPUs on an Intel Xeon 8269CY processor, 8 GB RAM, and KVM virtualization.",
+  "tagline": "A shared four vCPU instance with eight gigabytes of memory designed for entry-level computing tasks and cost-conscious development environments.",
   "bullet_points": [
-    "Intel Xeon 8269CY processor running at 2.5 GHz",
-    "4 vCPUs with shared CPU allocation",
-    "8.0 GB of system memory with 2.0 GB per core",
-    "No local storage or integrated GPU hardware",
-    "KVM hypervisor virtualization",
-    "Suited for lightweight web serving and development environments"
+    "4 shared vCPUs powered by an Intel Xeon 8269CY processor at 2.5 GHz",
+    "8.0 GB system RAM providing a 1:2 vCPU-to-memory ratio (2.0 GB per core)",
+    "No bundled local storage, requiring network-attached storage solutions",
+    "No GPU accelerators or complimentary public IPv4 addresses included",
+    "Shared resource model providing economical compute capacity for variable demands",
+    "Well suited for development, staging, lightweight web serving, and testing"
   ],
   "categories": [
-    "Burstable & Budget",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Burstable & Budget"
   ]
 }

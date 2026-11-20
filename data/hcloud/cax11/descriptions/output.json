@@ -1,22 +1,23 @@
 {
   "page": [
-    "Hetzner Cloud cax11 is an entry-level, ARM-based virtual server instance powered by the Ampere Altra processor family. It features 2 shared vCPUs utilizing the Neoverse-N1 architecture running at 2.0 GHz, paired with 4.0 GB of RAM. Local storage is provided via a 40 GB NVMe SSD, and the instance operates under a QEMU hypervisor. The CPU configuration does not support hyper-threading, providing one thread per physical core, and includes hardware-assisted AES cryptography while lacking AVX and AMX instruction sets.",
-    "Performance benchmarks indicate that the cax11 is positioned at the lower end of the spectrum, reflecting its shared-resource model. Single-core CPU performance in stress-ng tests is average, but multi-core scaling is weak, with a Geekbench multi-core score of 1734.0 and a Passmark CPU score of 1535.95. Memory bandwidth is also constrained, with uncached write speeds of 14.07 GB/sec and read speeds of 23.72 GB/sec. These metrics suggest a clear tradeoff between dedicated compute power and resource density.",
-    "From a cost-efficiency perspective, the cax11 offers an economical entry point into ARM64 cloud computing, making it suitable for lightweight workloads that do not require sustained high-performance CPU or memory throughput. Appropriate use cases include basic web serving, development environments, lightweight background tasks, and small-scale database operations."
+    "Hetzner Cloud cax11 is an entry-level, cost-optimized virtual instance built on ARM64 architecture. Virtualized via QEMU, the instance is powered by an Ampere Altra processor featuring Neoverse-N1 cores operating at a base frequency of 2.0 GHz. The resource layout provides 2 shared vCPUs mapped across 2 physical cores with single-threading, alongside 4.0 GB of system memory, yielding approximately 1.95 GB of RAM per vCPU. Hardware-accelerated cryptographic processing is enabled via ARM AES instructions, whereas complex vector extensions such as AVX or AMX are not present.",
+    "Storage configuration includes a bundled 40 GB NVMe solid-state drive, providing low-latency local block storage directly attached to the virtual machine. The instance does not feature dedicated graphics hardware or included complimentary public IPv4 addresses, requiring reliance on IPv6 or an add-on IPv4 address for direct network routing.",
+    "Benchmark evaluations indicate modest computational throughput across synthetic and application-specific workloads. In stress-ng testing, single-core execution registers an average score of 1765.57, though multi-core throughput lands in the lower quartile at 3492.4 due to the shared 2-core footprint. PassMark tests confirm this baseline tier, scoring 1535.95 for CPU operations and 1281.01 for memory access. Application-level performance demonstrates 2.47 million operations per second in Redis SET routines, 2.11 GB/s in static web throughput, and 85.38 tokens per second on small 135M parameter language model prompt processing.",
+    "Due to its shared-core model and low resource profile, cax11 provides high cost efficiency for low-intensity continuous operations rather than computationally intensive deployments. The primary tradeoff lies between its economical price structure and reduced multi-threaded headroom or memory bandwidth. Hetzner Cloud cax11 is technically appropriate for lightweight microservices, development and testing environments, basic edge compute, modest API backends, and low-traffic web serving."
   ],
-  "description": "Hetzner Cloud cax11 is an entry-level, ARM-based virtual server featuring 2 shared vCPUs from the Ampere Altra Neoverse-N1 processor family running at 2.0 GHz. It is equipped with 4.0 GB of RAM and a 40 GB NVMe SSD for local storage, operating under a QEMU hypervisor. Benchmarks reveal average single-core CPU performance, but weak multi-core and memory bandwidth capabilities, as evidenced by a Geekbench multi-core score of 1734.0 and uncached write speeds of 14.07 GB/sec. Lacking advanced vector extensions, this instance is designed for budget-conscious, low-intensity workloads. It is best utilized for lightweight web serving, software development testing, and basic background tasks.",
-  "og_description": "Hetzner Cloud cax11 is an ARM64 virtual server featuring 2 shared Ampere Altra vCPUs, 4.0 GB of RAM, and 40 GB of NVMe SSD storage, designed for entry-level workloads and budget-sensitive hosting.",
-  "meta_description": "Hetzner Cloud cax11 is an ARM64 virtual server with 2 shared Ampere Altra vCPUs, 4.0 GB RAM, and 40 GB NVMe storage for lightweight workloads.",
-  "tagline": "An entry-level ARM64 virtual server with shared Ampere Altra processors and NVMe storage for budget-conscious, lightweight workloads.",
+  "description": "Hetzner Cloud cax11 is an ARM64 virtual server situated within the vendor's cost-optimized tier. Driven by an Ampere Altra Neoverse-N1 processor operating at 2.0 GHz, the instance provides 2 shared vCPUs, 4.0 GB of RAM, and 40 GB of bundled local NVMe SSD storage without integrated GPU acceleration. Performance benchmarks show modest execution capacity, achieving 1765.57 in stress-ng single-core tests and 3492.4 in multi-core metrics, alongside 2.47 million Redis SET operations per second and 2.11 GB/s static web serving throughput. Its shared vCPU allocation presents an economical profile suited for resource-light deployments, providing balanced cost efficiency at the expense of heavy parallel execution. Hetzner Cloud cax11 is suitable for lightweight web applications, testing environments, staging servers, and minor background automation workloads.",
+  "og_description": "Hetzner Cloud cax11 features 2 shared ARM64 vCPUs on Ampere Altra Neoverse-N1 silicon, 4.0 GB RAM, and 40 GB NVMe storage, delivering an economical platform for low-intensity cloud services.",
+  "meta_description": "Hetzner Cloud cax11 is an ARM64 instance offering 2 shared Ampere Altra vCPUs, 4 GB RAM, and 40 GB NVMe storage for lightweight development workloads.",
+  "tagline": "An economical dual-core ARM64 cloud instance pairing Ampere Altra processing with local NVMe storage for low-overhead service deployments.",
   "bullet_points": [
-    "2 shared Ampere Altra Neoverse-N1 vCPUs running at 2.0 GHz",
-    "4.0 GB of RAM and 40 GB of local NVMe SSD storage",
-    "ARM64 architecture with hardware-assisted AES cryptography",
-    "Average single-core performance with weak multi-core and memory bandwidth benchmarks",
-    "Suitable for lightweight web serving, development environments, and background tasks"
+    "2 shared vCPUs powered by 2.0 GHz Ampere Altra Neoverse-N1 ARM64 processors",
+    "4.0 GB system memory providing approximately 1.95 GB of RAM per vCPU",
+    "40 GB local NVMe SSD storage included for system volumes and fast local I/O",
+    "Shared-core architecture optimized for low-cost operational budgets",
+    "Tailored for microservices, lightweight web servers, and test environments"
   ],
   "categories": [
     "Burstable & Budget",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

@@ -1,20 +1,20 @@
 {
   "page": [
-    "Amazon Web Services r8in.large is a memory-optimized instance belonging to the r8in family. It is powered by a dedicated Intel x86_64 processor operating at a clock speed of 3.9 GHz. The instance features 1 physical core supporting 2 vCPUs via hyperthreading, paired with 16.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per vCPU.",
-    "This instance utilizes the AWS Nitro hypervisor to minimize virtualization overhead. It does not include local storage, meaning all storage requirements must be met via network-attached Elastic Block Store volumes. Network connectivity is defined by a baseline bandwidth of 3 Gbps, and the instance does not include complimentary public IPv4 addresses.",
-    "From a cost-efficiency perspective, the r8in.large provides a high-density memory allocation relative to its compute footprint, making it suitable for memory-bound workloads that do not require massive CPU scaling. However, the lack of local storage and the moderate 3 Gbps baseline network bandwidth represent key tradeoffs for I/O-heavy applications. This instance is designed for workloads such as small-scale in-memory databases, caching layers, and memory-intensive enterprise applications."
+    "Amazon Web Services r8in.large is a memory-optimized virtual machine instance deployed on the AWS Nitro hypervisor architecture. It features a 64-bit x86_64 Intel processor operating at a clock speed of 3.9 GHz. The compute configuration consists of 2 dedicated virtual CPUs derived from 1 physical execution core via simultaneous multithreading with 2 threads per core. System memory totals 16.0 GB of RAM, yielding an allocation of 8.0 GB of memory per core, aligned with the 1:8 vCPU-to-memory ratio typical of the memory-optimized family.",
+    "The r8in.large instance does not include integrated local SSD storage or GPU acceleration, requiring network-attached storage solutions such as Amazon Elastic Block Store (EBS) for persistent data storage. Network connectivity is supported by a baseline bandwidth rating of 3 Gbps, and no complimentary public IPv4 addresses are assigned by default. From an infrastructure efficiency perspective, the dedicated high-frequency CPU cores coupled with substantial memory per vCPU provide solid memory density without requiring investment in larger multi-socket configurations.",
+    "Because this instance provides a high ratio of RAM relative to its compute core count, it is suited for workloads constrained primarily by memory capacity rather than parallel compute execution. Target deployments include in-memory caches, key-value datastores, medium-scale transactional databases, and backend services requiring substantial working memory per thread."
   ],
-  "description": "Amazon Web Services r8in.large is a memory-optimized instance designed for workloads requiring a high memory-to-vCPU ratio. Built on the AWS Nitro hypervisor, this instance features a dedicated Intel x86_64 processor running at 3.9 GHz, delivering 2 vCPUs across 1 physical core. It is equipped with 16.0 GB of system memory, providing 8.0 GB of RAM per vCPU. The instance does not include local storage, relying entirely on network-attached storage, and offers a baseline network bandwidth of 3 Gbps. With no integrated GPU and zero complimentary public IPv4 addresses, the r8in.large represents a specialized, cost-efficient option for memory-bound tasks. It is best suited for small-scale databases, caching layers, and memory-intensive enterprise applications that require dedicated compute resources without the overhead of local storage.",
-  "og_description": "Amazon Web Services r8in.large is a memory-optimized instance featuring 2 vCPUs on a 3.9 GHz Intel processor, 16.0 GB of RAM, and a 3 Gbps baseline network bandwidth with no local storage.",
-  "meta_description": "Amazon Web Services r8in.large is a memory-optimized instance with 2 vCPUs, 16.0 GB of RAM, and a 3.9 GHz Intel CPU on the Nitro hypervisor.",
-  "tagline": "A memory-optimized x86_64 instance featuring a dedicated 3.9 GHz Intel processor and high memory density for memory-bound workloads.",
+  "description": "Amazon Web Services r8in.large is a memory-optimized virtual machine built on the AWS Nitro hypervisor. The instance is powered by a 3.9 GHz x86_64 Intel processor featuring 2 dedicated vCPUs from 1 physical core with 2 threads per core. It is configured with 16.0 GB of system memory, providing an 8.0 GB per-core allocation. Hardware acceleration is absent, with zero GPUs included, and the instance possesses no bundled local storage, necessitating reliance on remote storage volumes. Baseline networking capabilities reach 3 Gbps, with zero complimentary public IPv4 addresses assigned. Given the high memory-to-vCPU ratio of 1:8, the instance provides cost-effective memory density for memory-bound applications without paying for excess compute cores. It is suitable for in-memory caching layers, medium relational or NoSQL database workloads, and enterprise applications requiring high RAM allocations relative to processing threads.",
+  "og_description": "Amazon Web Services r8in.large is a memory-optimized Nitro instance featuring 2 dedicated Intel vCPUs at 3.9 GHz, 16.0 GB RAM, 3 Gbps baseline network bandwidth, and no bundled local SSD storage.",
+  "meta_description": "Amazon Web Services r8in.large is a memory-optimized Nitro virtual server offering 2 dedicated 3.9 GHz Intel vCPUs, 16.0 GB RAM, and 3 Gbps baseline network.",
+  "tagline": "Dedicated high-frequency compute cores paired with generous memory allocation for memory-constrained backend applications and intermediate database deployments.",
   "bullet_points": [
-    "Dedicated Intel x86_64 processor running at 3.9 GHz",
-    "16.0 GB of system memory with 2 vCPUs (8.0 GB per core)",
-    "Built on the AWS Nitro hypervisor for low virtualization overhead",
-    "No local storage, requiring network-attached EBS volumes",
-    "3 Gbps baseline network bandwidth",
-    "Suited for small-scale in-memory databases and caching layers"
+    "2 dedicated vCPUs powered by a 3.9 GHz x86_64 Intel processor",
+    "16.0 GB system memory offering an 8.0 GB per-core ratio",
+    "Underlying AWS Nitro hypervisor virtualization layer",
+    "3 Gbps baseline network performance",
+    "Zero local disk storage and zero dedicated GPU hardware",
+    "Fit for in-memory caching, transactional databases, and memory-bound services"
   ],
   "categories": [
     "Memory Optimized"

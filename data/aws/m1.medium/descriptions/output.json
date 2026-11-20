@@ -1,22 +1,21 @@
 {
   "page": [
-    "Amazon Web Services m1.medium is a first-generation general-purpose server instance running on the Xen hypervisor. It features a legacy 32-bit Intel Xeon E5-2651 v2 processor operating at 1.8 GHz, configured with a single dedicated physical core and one thread. The system is equipped with 4.0 GB of system memory and includes 410 GB of local HDD storage. No GPU resources or complimentary public IPv4 addresses are provided, and the baseline network bandwidth is rated at 0 Gbps.",
-    "Benchmark evaluations place the performance of this instance in the lowest tiers. The single-core and multi-core stress-ng CPU tests both score 1284.79, reflecting weak to poor processing capabilities. Memory bandwidth is similarly constrained, with large-block read and write speeds measured at 7.84 GB/sec and 6.77 GB/sec respectively. Synthetic benchmarks like Geekbench yield a single-core score of 489.0 and a multi-core score of 491.0, while Passmark CPU and memory scores are 593.15 and 544.51, indicating limited computational throughput.",
-    "The primary tradeoff of the m1.medium is its reliance on legacy i386 architecture and slow HDD local storage, which limits its utility for modern, resource-intensive applications. While it offers a high storage capacity of 410 GB relative to its single-core compute profile, the qualitative cost efficiency is low compared to modern instance families that offer significantly higher performance per resource unit. This instance is best suited for legacy 32-bit applications, basic file storage, or low-traffic static web serving that does not require high network throughput or modern instruction sets."
+    "Amazon Web Services m1.medium is a legacy first-generation general-purpose cloud instance built on the Xen hypervisor and utilizing the 32-bit i386 processor architecture. The instance provides 1 dedicated physical core and 1 vCPU powered by an Intel Xeon E5-2651 v2 CPU running at a base clock frequency of 1.8 GHz. Memory allocation is set at 4.0 GB, accompanied by 410 GB of bundled local HDD storage. The instance includes no GPU acceleration and reports a baseline network bandwidth of 0 Gbps.",
+    "Across synthetic compute and memory benchmarks, the m1.medium demonstrates performance constrained to the lower percentiles. The single vCPU yields a stress-ng score of 1284.79 and Geekbench scores of 489.0 for single-core and 491.0 for multi-core evaluation, placing it in the bottom 10 percent of tested instances. Memory throughput reaches 7.84 GB/s for large uncached reads and 6.77 GB/s for uncached writes. Application-level benchmarks show 0.45 million Redis SET operations per second and 1.13 GB/s in static web serving throughput.",
+    "From a cost-efficiency and architectural standpoint, the instance offers legacy support but low computational density relative to modern standards. The CPU lacks modern instruction sets such as AVX and AVX-512, while the bundled storage relies on rotational magnetic media rather than solid-state drives. These hardware specifications make the instance suited primarily for running legacy 32-bit software systems, basic batch utilities, and low-traffic environments requiring local scratch disk capacity without high IOPS demands."
   ],
-  "description": "Amazon Web Services m1.medium is a legacy, first-generation general-purpose instance utilizing the Xen hypervisor and an Intel Xeon E5-2651 v2 processor. It is configured with 1 dedicated physical core (i386 architecture) running at 1.8 GHz, 4.0 GB of RAM, and 410 GB of local HDD storage. Performance benchmarks indicate highly constrained capabilities, with Geekbench single-core and multi-core scores under 500, and a baseline network bandwidth of 0 Gbps. Due to its legacy architecture and low processing throughput, this instance is primarily suited for running legacy 32-bit workloads, basic file hosting, or low-demand static web serving where modern CPU instruction sets are not required.",
-  "og_description": "Amazon Web Services m1.medium is a legacy general-purpose instance featuring a 1.8 GHz Intel Xeon CPU, 4.0 GB of RAM, and 410 GB of local HDD storage, designed for basic legacy 32-bit workloads.",
-  "meta_description": "Amazon Web Services m1.medium is a legacy general-purpose instance with 1 vCPU, 4.0 GB RAM, and 410 GB HDD storage for basic 32-bit workloads.",
-  "tagline": "A legacy general-purpose instance featuring dedicated single-core compute, 4 GB of RAM, and bundled local HDD storage for basic workloads.",
+  "description": "Amazon Web Services m1.medium is a first-generation general-purpose instance featuring 1 dedicated vCPU on an Intel Xeon E5-2651 v2 processor clocked at 1.8 GHz using 32-bit i386 architecture. The instance includes 4.0 GB of memory, 410 GB of local HDD storage, and a baseline network bandwidth of 0 Gbps, with zero GPU hardware attached. Benchmark evaluations reflect legacy performance levels, registering a PassMark CPU score of 593.15, Geekbench multi-core score of 491.0, and Redis throughput of 0.45 million SET operations per second, consistently placing in the bottom tier across categories. The absence of modern instruction extensions such as AVX limits throughput on compute-intensive operations. Given its hardware profile, the instance is suitable primarily for maintaining legacy 32-bit applications, non-critical background jobs, and lightweight services that require local rotational storage.",
+  "og_description": "Amazon Web Services m1.medium is a general-purpose legacy instance featuring 1 dedicated i386 vCPU at 1.8 GHz, 4.0 GB RAM, and 410 GB bundled local HDD storage for maintaining older 32-bit workloads.",
+  "meta_description": "Amazon Web Services m1.medium provides 1 dedicated i386 vCPU, 4.0 GB RAM, and 410 GB local HDD storage for legacy general-purpose cloud workloads.",
+  "tagline": "Legacy 32-bit general-purpose compute instance equipped with one dedicated virtual core, 4 GB memory, and bundled local mechanical storage.",
   "bullet_points": [
-    "Single-core Intel Xeon E5-2651 v2 processor running at 1.8 GHz",
-    "Legacy i386 32-bit CPU architecture with Xen hypervisor",
-    "4.0 GB of system memory and 410 GB of bundled local HDD storage",
-    "Highly constrained benchmark performance across CPU and memory tests",
-    "Best suited for legacy 32-bit applications and basic static web serving"
+    "Dedicated single-core Intel Xeon E5-2651 v2 processor clocked at 1.8 GHz",
+    "32-bit i386 architecture operating under the Xen hypervisor",
+    "4.0 GB system memory paired with 410 GB bundled local HDD storage",
+    "Absence of modern AVX and AVX-512 instruction set extensions",
+    "Suitable for legacy 32-bit applications and low-throughput background tasks"
   ],
   "categories": [
-    "General Purpose",
-    "Storage & Database"
+    "General Purpose"
   ]
 }
