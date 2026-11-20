@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c7se.xlarge is an enhanced compute instance powered by an Intel Xeon 8369B processor operating at 2.9 GHz. Based on the x86_64 architecture and virtualized via KVM, the instance provides 4 dedicated vCPUs mapped to 2 physical cores with hyper-threading enabled. System resources include 8.0 GB of memory, yielding 2.0 GB per vCPU, alongside 48 MB of L3 cache and a baseline network bandwidth of 2 Gbps. The instance lacks local storage drives and discrete GPU accelerators. Instruction set capabilities include AVX-512, AVX512_VNNI, AES, VAES, and SHA_NI.",
-    "Benchmark results demonstrate consistent single-threaded compute output alongside moderate memory and multi-core throughput. Single-core evaluations, including stress-ng single-core (1883.99), Geekbench single-core (1556.0), and PassMark encryption tests, fall within average baseline tiers. Conversely, multi-core benchmarks show lower relative scaling, with Geekbench multi-core scoring 3343.0 and stress-ng multi-core scoring 3871.28. Uncached memory read bandwidth reaches 30.35 GB/sec, while write operations peak at 25.29 GB/sec.",
-    "With a 1:2 vCPU-to-RAM ratio, the hardware configuration prioritizes vCPU density over memory capacity. This allocation profile suits workloads requiring dedicated execution threads without intensive RAM footprints, such as static web serving, lightweight single-threaded processing, small software compilations, and basic microservice hosting."
+    "Alibaba Cloud ecs.c7se.xlarge is a compute-oriented virtual machine based on the KVM hypervisor. It is powered by a dedicated 2.9 GHz Intel Xeon 8369B processor featuring an x86_64 architecture with 2 physical cores and 4 vCPUs via multithreading. Hardware cache includes 48 KB of L1 data cache, 1 MB of L2 cache, and a shared 48 MB L3 cache. Instruction set extensions include AVX, AVX-512 (foundation and VNNI), alongside cryptographic acceleration via AES, VAES, and SHA-NI. The instance is allocated 8.0 GB of system memory, providing a 1:2 compute-to-memory ratio of 2.0 GB per vCPU.",
+    "The configuration does not bundle local storage, relying on external network-attached block volumes for persistent disk storage. Network connectivity is provisioned with a baseline bandwidth of 2 Gbps, and no complimentary public IPv4 addresses are assigned. Memory throughput benchmarks show 30.35 GB/sec for uncached read operations and 25.29 GB/sec for uncached write operations, reflecting standard dual-channel server memory characteristics.",
+    "Benchmark evaluation shows average single-threaded efficiency alongside multi-threaded metrics constrained by the physical core count. The instance recorded 1556.0 on Geekbench single-core, 1883.99 on stress-ng single-core, and 27.97 GB/sec in gzip compression. Multi-threaded processing registered 3343.0 on Geekbench and 3871.28 on stress-ng. PassMark encryption testing reached 3658.3, aided by integrated cryptographic hardware acceleration, while static web serving throughput reached 6.33 GB/sec and Redis SET performance delivered 3.95 million operations per second.",
+    "From a cost-efficiency perspective, the ecs.c7se.xlarge offers dedicated compute resources without the overhead of massive memory allocations or local NVMe storage arrays. It is best suited for compute-focused entry tiers, small-scale microservices, static web serving, and basic proxy routing."
   ],
-  "description": "Alibaba Cloud ecs.c7se.xlarge is a compute-focused instance powered by a 2.9 GHz Intel Xeon 8369B processor on the x86_64 architecture. Operating under KVM, it offers 4 dedicated vCPUs across 2 physical cores, 8.0 GB of RAM (2.0 GB per vCPU), 48 MB of L3 cache, and 2 Gbps of baseline network bandwidth without local storage or GPU acceleration. Instruction set support includes AVX-512, VNNI, and AES. Benchmark evaluations show average single-threaded CPU execution, single-core Geekbench performance, and encryption throughput, paired with weaker relative multi-threaded compute and memory bandwidth results. The 1:2 vCPU-to-RAM ratio delivers structured compute resources for modest single-threaded applications, static web serving, basic software compilation, and light utility processing tasks.",
-  "og_description": "Alibaba Cloud ecs.c7se.xlarge features 4 dedicated vCPUs on an Intel Xeon 8369B processor, 8.0 GB RAM, and 2 Gbps baseline networking, delivering solid single-core performance for lightweight web serving.",
-  "meta_description": "Alibaba Cloud ecs.c7se.xlarge offers 4 vCPUs, 8 GB RAM, and an Intel Xeon 8369B CPU for single-thread compute and basic web serving workloads.",
-  "tagline": "An entry-level compute-optimized instance offering dedicated Intel Xeon vCPUs, 8 GB RAM, and AVX-512 support for lightweight processing workloads.",
+  "description": "Alibaba Cloud ecs.c7se.xlarge is a compute-focused instance powered by an Intel Xeon 8369B processor running at 2.9 GHz on the x86_64 architecture. Configured with 2 physical cores and 4 dedicated vCPUs, it pairs 8.0 GB of RAM with a 2 Gbps baseline network interface. The instance includes no local storage or bundled GPU accelerators, operating entirely with external network-attached volumes. Synthetic testing reflects average single-core capabilities, registering 1556.0 on Geekbench single-core and 27.97 GB/sec in gzip compression, while overall multi-threaded throughput is constrained by the two physical core count. Hardware encryption support via AES and SHA-NI delivers stable cryptographic metrics, complemented by a static web serving throughput of 6.33 GB/sec. Given its 1:2 core-to-memory ratio and lack of local NVMe storage, the ecs.c7se.xlarge serves entry-tier application tiers, lightweight web serving, and modular backend microservices.",
+  "og_description": "Alibaba Cloud ecs.c7se.xlarge features 4 vCPUs and 8 GB RAM powered by an Intel Xeon 8369B processor at 2.9 GHz. It delivers reliable single-thread compute for web serving and lightweight microservices.",
+  "meta_description": "Alibaba Cloud ecs.c7se.xlarge offers 4 vCPUs, 8 GB RAM, and a 2.9 GHz Intel Xeon 8369B processor, tailored for lightweight web serving and microservices.",
+  "tagline": "A compute-oriented virtual server featuring dedicated Intel Xeon processing with balanced single-core throughput for lightweight web tiers and microservices.",
   "bullet_points": [
-    "4 dedicated vCPUs powered by an Intel Xeon 8369B processor at 2.9 GHz",
-    "8.0 GB memory capacity with a 1:2 vCPU-to-RAM compute ratio",
-    "2 Gbps baseline network bandwidth and 48 MB L3 cache",
-    "Hardware vector and crypto acceleration including AVX-512, VNNI, and AES",
-    "Average single-thread execution efficiency paired with low-tier multi-threaded scaling",
-    "Targeted at static web serving, single-threaded utility processing, and basic compilation tasks"
+    "4 dedicated vCPUs powered by a 2.9 GHz Intel Xeon 8369B processor",
+    "8.0 GB system RAM providing 2.0 GB per core allocation",
+    "2 Gbps baseline network bandwidth with external cloud block storage support",
+    "Hardware-level AVX-512, VAES, and SHA-NI instruction set integration",
+    "Suited for static web serving, microservices, and lightweight application processing"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }
