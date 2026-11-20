@@ -119,15 +119,26 @@ def batch_results(job) -> dict[str, str | None]:
     """
     content = client().files.download(file=job.dest.file_name)
     results = {}
+    usage = {"promptTokenCount": 0, "candidatesTokenCount": 0, "thoughtsTokenCount": 0}
     for line in content.decode().splitlines():
         if not line.strip():
             continue
         item = json.loads(line)
+        for field in usage:
+            usage[field] += (
+                item.get("response", {}).get("usageMetadata", {}).get(field, 0)
+            )
         try:
             results[item["key"]] = _response_text(item["response"])
         except (KeyError, IndexError):
             logger.warning(f"No answer for {item.get('key')}: {item.get('error')}")
             results[item.get("key")] = None
+    logger.info(
+        f"Token usage of batch job {job.name}: "
+        f"{usage['promptTokenCount']} input, "
+        f"{usage['candidatesTokenCount']} output, "
+        f"{usage['thoughtsTokenCount']} thinking"
+    )
     return results
 
 
