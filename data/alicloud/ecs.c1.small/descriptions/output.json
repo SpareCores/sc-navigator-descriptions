@@ -1,18 +1,19 @@
 {
   "page": [
-    "Alibaba Cloud ecs.c1.small is an x86_64 compute-oriented virtual server running on the KVM hypervisor. The instance provides 8 dedicated vCPUs and 8.0 GB of RAM, establishing a 1.0 GB memory-to-vCPU allocation ratio. The hardware specification does not include local ephemeral storage, GPU accelerators, or complimentary public IPv4 addresses.",
-    "The 1:1 ratio of memory to vCPUs prioritizes multi-core processing density over memory capacity. Because local storage is not attached, persistent network storage must be provisioned separately. This resource balance makes the server suitable for CPU-bound computational jobs, multi-threaded batch processing, stateless web application serving, and software compilation tasks that require processing power without extensive memory overhead."
+    "The Alibaba Cloud ecs.c1.small is an x86_64 instance running on the KVM hypervisor within the ecs.c1 family. The machine configuration provides 8 dedicated vCPUs accompanied by 8.0 GB of system memory, creating a tightly balanced 1.0 GB allocation per virtual core. Because the vCPUs are dedicated, execution pipelines avoid resource contention associated with shared-core or burstable configurations.",
+    "Storage and accelerator features are strictly externalized on this server type. There is no bundled local physical storage, requiring storage workloads to rely on remote network-attached volumes. In addition, the instance contains zero GPUs and does not come with complimentary public IPv4 addresses, functioning within isolated network configurations unless public addressing is assigned explicitly.",
+    "The 1:1 ratio of memory to processor cores delivers favorable cost efficiency for compute-heavy parallel applications that do not require extensive memory footprints. The primary tradeoff is the strict 8.0 GB memory ceiling, which limits applicability for in-memory databases or caching layers. Workloads best aligned with this configuration include multi-threaded batch processors, CPU-bound queue workers, parallel build pipelines, and non-memory-intensive compute tasks."
   ],
-  "description": "Alibaba Cloud ecs.c1.small is an x86_64 virtual server hosted on the KVM hypervisor within the compute-focused instance family. It provides 8 dedicated vCPUs and 8.0 GB of system memory, yielding a low memory-to-vCPU ratio of 1.0 GB of RAM per core. The instance lacks local ephemeral storage, requiring attached network block storage for persistence, and contains no integrated GPU accelerators or complimentary public IPv4 addresses. With its compute-dense configuration, the server balance favors parallel multi-core CPU execution over memory capacity. This hardware profile is positioned for CPU-bound processing, stateless web serving, software compilation tasks, and parallel batch workloads that do not demand large per-core memory footprints.",
-  "og_description": "Alibaba Cloud ecs.c1.small is an x86_64 KVM-based instance featuring 8 dedicated vCPUs and 8.0 GB RAM. It lacks local storage and GPU accelerators, serving CPU-bound multi-threaded workloads.",
-  "meta_description": "Alibaba Cloud ecs.c1.small is an x86_64 server offering 8 dedicated vCPUs and 8.0 GB RAM without local storage or GPUs for CPU-bound tasks.",
-  "tagline": "A dedicated x86_64 compute instance offering 8 vCPUs and 8 GB RAM tailored for CPU-intensive parallel processing tasks.",
+  "description": "Alibaba Cloud ecs.c1.small is a compute-focused virtual machine deployed on the KVM hypervisor. The instance features 8 dedicated x86_64 vCPUs and 8.0 GB of system memory, maintaining a 1.0 GB RAM allocation per core. It is configured with no local storage, requiring attached network volumes for persistent data, and includes zero GPU accelerators. With dedicated compute cores and no bundled public IPv4 addresses, the instance offers qualitative cost advantages for processing tasks requiring multi-thread parallelism without demanding substantial memory overhead. The distinct 1:1 memory-to-core ratio introduces a tradeoff for memory-dense routines, focusing the server toward compute-bound processing. Workload fits include multi-threaded processing jobs, distributed CI/CD build workers, compute-intensive queuing systems, and parallel batch routines.",
+  "og_description": "Alibaba Cloud ecs.c1.small features 8 dedicated x86_64 vCPUs and 8.0 GB RAM on KVM. With no local disk or GPU, it provides a 1:1 compute profile tailored for parallelized workloads.",
+  "meta_description": "Alibaba Cloud ecs.c1.small features 8 dedicated x86_64 vCPUs, 8.0 GB RAM, and KVM virtualization for parallel, compute-focused processing tasks.",
+  "tagline": "A dedicated eight-core processor profile with balanced per-core memory, built for concurrent and parallel CPU compute tasks.",
   "bullet_points": [
-    "8 dedicated x86_64 vCPUs on KVM hypervisor",
-    "8.0 GB system RAM providing 1.0 GB per vCPU ratio",
-    "No bundled local ephemeral storage attached",
-    "No GPU accelerators or complimentary public IPv4",
-    "Tailored for CPU-intensive multi-threaded workloads"
+    "8 dedicated x86_64 vCPUs managed by KVM hypervisor",
+    "8.0 GB system memory with 1.0 GB per vCPU allocation",
+    "Zero local storage, utilizing external network storage volumes",
+    "No GPU accelerators provisioned",
+    "Suited for multi-threaded batch workloads and queue workers"
   ],
   "categories": [
     "Compute Optimized"
