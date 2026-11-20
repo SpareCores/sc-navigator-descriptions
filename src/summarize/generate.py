@@ -2,11 +2,12 @@
 Generate human-friendly, plain English summaries for all servers.
 
 By default, the Gemini Batch API is used, which takes hours to complete, so
-each run does two things:
+each run does the following:
 
-1. Collect the results of our finished batch jobs, and save the valid ones.
-2. If no batch job is still pending or running, submit a new one with all
-   servers having a missing or outdated description.
+1. Check our batch jobs, and stop if any is still in progress.
+2. Collect the results of the finished batch jobs, and save the valid ones.
+3. Submit a new batch job with all servers still having a missing or outdated
+   description (including the ones that failed validation).
 
 Run it periodically (e.g. hourly) until all descriptions are up to date.
 Use `--sync` to call the API directly instead (e.g. for testing).
@@ -119,15 +120,18 @@ def save(server: dict, text: str | None) -> bool:
     help="Call the API directly for each server instead of using the Batch API.",
 )
 def main(n, status, sync):
-    if status:
+    if not sync:
         jobs = llm.list_batches()
         for job in jobs:
             logger.info(
                 f"Batch job {job.name}: {job.state}, created at {job.create_time}, "
                 f"updated at {job.update_time}, stats: {job.completion_stats}"
             )
-        logger.info(f"Found {len(jobs)} batch job(s)")
-        return
+        if status:
+            return
+        if any(job.state not in llm.BATCH_DONE for job in jobs):
+            logger.info("Nothing to do while a batch job is in progress")
+            return
 
     logger.debug("Loading servers from database...")
     database.load(n)
@@ -145,31 +149,25 @@ def main(n, status, sync):
         logger.info(f"Saved {saved} description(s)")
         return
 
-    running = False
-    for job in llm.list_batches():
+    for job in jobs:
         if job.state in llm.BATCH_DONE_OK:
             results = llm.batch_results(job)
-            # skips results for servers that changed since submitting the job
-            saved = sum(
-                save(outdated.pop(key), text)
-                for key, text in results.items()
-                if key in outdated
-            )
+            saved = 0
+            # results for servers that changed since submitting the job are
+            # skipped, and failed ones stay outdated to be submitted again below
+            for key, text in results.items():
+                if key in outdated and save(outdated[key], text):
+                    del outdated[key]
+                    saved += 1
             logger.info(
                 f"Saved {saved} description(s) from {len(results)} result(s) "
                 f"of batch job {job.name}"
             )
-            llm.delete_batch(job)
-        elif job.state in llm.BATCH_DONE_FAILED:
-            logger.warning(f"Batch job {job.name} ended with {job.state}: {job.error}")
-            llm.delete_batch(job)
         else:
-            logger.info(f"Batch job {job.name} is still in progress ({job.state})")
-            running = True
+            logger.warning(f"Batch job {job.name} ended with {job.state}: {job.error}")
+        llm.delete_batch(job)
 
-    if running:
-        logger.info("Not submitting a new batch job while one is in progress")
-    elif outdated:
+    if outdated:
         llm.submit_batch(
             {
                 key: llm.build_request(server["input"])
