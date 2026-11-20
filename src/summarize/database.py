@@ -5,7 +5,6 @@ Exposes servers, benchmarks, prices after load(n) is called.
 
 from sc_crawler.table_fields import Status
 from sc_crawler.tables import BenchmarkScore, Server, ServerPrice, Vendor
-from sc_data import db
 from sqlalchemy.orm import contains_eager
 from sqlmodel import Session, create_engine, func, select
 
@@ -25,6 +24,9 @@ def load(n: int | None = None) -> None:
     Preprocess benchmarks (remove framework version from config).
     """
     global servers, benchmarks, prices, benchmarks_by_id, benchmarks_by_server
+    # imported here, as it downloads the database on import
+    from sc_data import db
+
     engine = create_engine(f"sqlite:///{db.path}")
     query = select(Server).where(Server.status == Status.ACTIVE)
     if n is not None:

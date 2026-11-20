@@ -109,11 +109,26 @@ def save(server: dict, text: str | None) -> bool:
     help="Limit the number of servers to process (default: all servers)",
 )
 @click.option(
+    "--status",
+    is_flag=True,
+    help="Only show our batch jobs, without loading the database or changing anything.",
+)
+@click.option(
     "--sync",
     is_flag=True,
     help="Call the API directly for each server instead of using the Batch API.",
 )
-def main(n, sync):
+def main(n, status, sync):
+    if status:
+        jobs = llm.list_batches()
+        for job in jobs:
+            logger.info(
+                f"Batch job {job.name}: {job.state}, created at {job.create_time}, "
+                f"updated at {job.update_time}, stats: {job.completion_stats}"
+            )
+        logger.info(f"Found {len(jobs)} batch job(s)")
+        return
+
     logger.debug("Loading servers from database...")
     database.load(n)
     outdated = find_outdated_servers()
