@@ -6,6 +6,8 @@ each run does the following:
 
 1. Check our batch jobs, and stop if any is still in progress.
 2. Collect the results of the finished batch jobs, and save the valid ones.
+   A job is deleted only when collecting it saves nothing new, i.e. after its
+   results were committed by an earlier run, so a failed commit is recovered.
 3. Submit a new batch job with all servers still having a missing or outdated
    description (including the ones that failed validation).
 
@@ -168,10 +170,15 @@ def main(n, status, sync):
                 f"Saved {saved} description(s) from {len(results)} result(s) "
                 f"of batch job {job.name}"
             )
+            if saved:
+                logger.info(f"Keeping batch job {job.name} until a later run")
+                continue
         else:
             logger.warning(f"Batch job {job.name} ended with {job.state}: {job.error}")
         llm.delete_batch(job)
 
+    # a retried key might have been saved meanwhile from another batch job
+    retried &= outdated.keys()
     if outdated:
         job = llm.submit_batch(
             {
