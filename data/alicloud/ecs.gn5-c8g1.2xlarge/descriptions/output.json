@@ -1,22 +1,24 @@
 {
   "page": [
-    "Alibaba Cloud ecs.gn5-c8g1.2xlarge is a GPU-accelerated virtual machine instance powered by a dedicated KVM hypervisor. The host environment provides 8 vCPUs derived from 4 physical cores of an Intel Xeon E5-2682 v4 processor operating at 2.5 GHz on the x86_64 architecture. Hardware acceleration is delivered by a single NVIDIA Pascal P100 GPU equipped with 16 GB of VRAM. The system is provisioned with 60 GB of system memory, yielding 7.5 GB of RAM per vCPU, alongside 472 GB of local SSD storage and a baseline network throughput of 3 Gbps.",
-    "Benchmark results demonstrate sharp contrast between CPU throughput and GPU-assisted execution. The legacy Intel Broadwell architecture produces lower CPU metric scores, with stress-ng single-core registering 954.2 and multi-core reaching 4765.11, both trailing modern compute platforms. Similarly, general compression and database operations fall in the lower quartiles. However, the bundled NVIDIA P100 provides strong acceleration for targeted machine learning tasks. In language model inference, the instance achieves 9872.83 tokens per second on prompt processing for 135M models and 316.69 tokens per second for 7B models, accompanied by 42.77 tokens per second during 7B text generation.",
-    "The primary tradeoff of this instance rests on its older CPU generation and moderate network interface against its high memory density and dedicated GPU. Cost efficiency is driven primarily by utilizing the Pascal accelerator for moderate GPU-bound workloads without incurring the expense of modern enterprise accelerator architectures. The instance is suited for deep learning inference on small to medium models, legacy GPU-accelerated scientific computations, and graphics processing pipelines that do not depend on newer tensor core architectures."
+    "Alibaba Cloud ecs.gn5-c8g1.2xlarge is an x86_64 GPU-accelerated compute instance featuring a dedicated 4-core, 8-thread Intel Xeon E5-2682 v4 processor clocked at 2.5 GHz with a 40 MB L3 cache. It provides 60.0 GB of system RAM (7.5 GB per vCPU), a 472 GB local SSD volume, and a baseline network throughput of 3 Gbps. Hardware acceleration is provided by a single bundled NVIDIA Pascal P100 GPU equipped with 16 GB of VRAM.",
+    "Benchmark data reflects clear architectural contrasts between host CPU throughput and GPU execution capabilities. The Broadwell-generation Intel Xeon CPU produces modest results, falling into lower benchmark percentiles for stress-ng compute tasks (954.2 single-core, 4765.11 multi-core) and PassMark CPU subtests. The instruction set supports standard AVX, AES, and FMA extensions, but lacks newer AVX-512 and AMX vector capabilities. Memory read bandwidth tests and compression workloads also post lower-tier performance scores.",
+    "In contrast, the integrated NVIDIA P100 GPU delivers notable acceleration for machine learning workloads that fit within its 16 GB memory boundary. Benchmarks indicate top-tier prompt processing throughput across small models (9872.83 tokens/sec on 135M) and medium models (316.69 tokens/sec on 7B), accompanied by strong text generation speeds (42.77 tokens/sec on 7B). However, lack of sufficient VRAM precludes running larger 70B parameter models.",
+    "Cost efficiency is centered around legacy GPU acceleration. While its host processor and memory subsystem offer reduced performance relative to newer architectures, the server provides cost-effective entry-level GPU processing with local SSD storage for specialized compute-intensive and smaller deep learning tasks."
   ],
-  "description": "Alibaba Cloud ecs.gn5-c8g1.2xlarge is a GPU-accelerated virtual machine configured with an Intel Xeon E5-2682 v4 processor delivering 8 vCPUs across 4 physical cores at 2.5 GHz. The hardware profile integrates 60 GB of RAM, a 472 GB local SSD, and an NVIDIA Pascal P100 GPU with 16 GB of VRAM, operating over a 3 Gbps network baseline. While synthetic benchmarks show modest general CPU and memory throughput compared to modern x86 architectures, the onboard P100 GPU provides solid throughput for parallel workloads. The system achieves 316.69 prompt tokens per second and 42.77 generation tokens per second on 7B parameter language models. Given the resource balance, this instance is suited for small-to-medium deep learning inference, image processing, and GPU-driven legacy scientific calculations requiring dedicated VRAM.",
-  "og_description": "Alibaba Cloud ecs.gn5-c8g1.2xlarge features 8 vCPUs on Intel Xeon E5-2682 v4, 60 GB RAM, 472 GB SSD, and an NVIDIA P100 16 GB GPU, delivering dedicated acceleration for machine learning inference.",
-  "meta_description": "Alibaba Cloud ecs.gn5-c8g1.2xlarge provides 8 vCPUs, 60 GB RAM, a 472 GB local SSD, and an NVIDIA P100 16 GB GPU for accelerated computing workloads.",
-  "tagline": "Dedicated Pascal accelerator instance with sixty gigabytes of memory and integrated local SSD storage for specialized computational tasks.",
+  "description": "Alibaba Cloud ecs.gn5-c8g1.2xlarge is a GPU-accelerated server equipped with an Intel Xeon E5-2682 v4 processor (4 physical cores, 8 vCPUs at 2.5 GHz), 60.0 GB of memory, a 472 GB local SSD, and 3 Gbps baseline network bandwidth. The hardware core features a bundled NVIDIA Pascal P100 GPU with 16 GB VRAM. Synthetic CPU and system memory benchmarks indicate lower-tier host performance, characterized by modest stress-ng and compression results alongside standard AVX vector support. However, GPU inference benchmarks demonstrate high-tier prompt processing for small and medium-sized language models (9872.83 tokens/sec on a 135M model and 316.69 tokens/sec on a 7B model). With its combined local storage and dedicated Pascal accelerator, this instance provides cost-effective throughput for GPU-assisted mathematical computing, legacy deep learning development, and medium model inference pipelines where advanced host CPU capabilities are not strictly required.",
+  "og_description": "Alibaba Cloud ecs.gn5-c8g1.2xlarge features 8 vCPUs, 60 GB RAM, a 472 GB local SSD, and an NVIDIA P100 16 GB GPU, delivering strong acceleration for medium model inference and scientific computing.",
+  "meta_description": "Alibaba Cloud ecs.gn5-c8g1.2xlarge delivers 8 vCPUs, 60 GB RAM, a 472 GB SSD, and an NVIDIA P100 GPU for accelerated inference and computing workloads.",
+  "tagline": "Dedicated Pascal GPU acceleration bundled with local SSD storage for small and medium model machine learning workloads.",
   "bullet_points": [
-    "Hardware accelerator: 1x NVIDIA Pascal P100 GPU with 16 GB VRAM",
-    "Processing: 8 dedicated vCPUs (4 physical cores) via Intel Xeon E5-2682 v4 at 2.5 GHz",
-    "Memory and Storage: 60 GB RAM paired with 472 GB bundled local SSD storage",
-    "Network: 3 Gbps baseline network bandwidth",
-    "Best fit: Small to medium machine learning model inference, GPU data analytics, and legacy CUDA workloads"
+    "Intel Xeon E5-2682 v4 processor with 8 dedicated vCPUs (4 physical cores) at 2.5 GHz",
+    "NVIDIA Pascal P100 GPU with 16 GB dedicated VRAM",
+    "60.0 GB of system memory and 472 GB integrated local SSD storage",
+    "3 Gbps baseline network bandwidth running on KVM hypervisor",
+    "Top-tier small and medium LLM prompt processing speeds",
+    "Well suited for mid-tier AI inference, GPU-accelerated batch jobs, and mathematical simulation"
   ],
   "categories": [
     "GPU Accelerated",
-    "Memory Optimized"
+    "Compute Optimized"
   ]
 }

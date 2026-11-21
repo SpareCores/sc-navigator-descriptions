@@ -1,24 +1,23 @@
 {
   "page": [
-    "Amazon Web Services r8a.medium is an entry-level memory-optimized instance built on the Nitro hypervisor architecture. It features a single dedicated x86_64 physical core and 1 vCPU powered by an AMD EPYC 9R45 processor running at up to 4.5 GHz. The CPU subsystem includes 48 KB L1d cache, 1 MB L2 cache, and 4 MB L3 cache, complemented by support for advanced vector instruction sets including AVX-512, AVX-512 VNNI, and AVX-512 BF16, alongside cryptographic extensions such as AES and SHA-NI.",
-    "The system is equipped with 8.0 GB of high-speed DDR5 memory clocked at 6 GHz, establishing a 1:8 vCPU-to-RAM ratio characteristic of the r8a memory-optimized profile. It does not include bundled local storage or integrated GPU accelerators, instead relying on network-attached storage solutions. Network connectivity provides a baseline bandwidth of 1 Gbps with no complimentary public IPv4 addresses included by default.",
-    "Benchmark results highlight exceptional single-threaded performance balanced against strict single-core resource limits. The instance achieves top-tier results in single-core stress-ng tests (3753.98), single-threaded gzip compression (41.09 GB/sec), and Geekbench single-core execution (2790.0). However, overall multi-core metrics, including multi-core Geekbench (2787.0) and PassMark CPU scores (3479.37), land in the lower quartiles due to the presence of only a single dedicated thread.",
-    "Uncached memory throughput is stable, yielding 46.87 GB/sec for 256 MB reads and 34.48 GB/sec for writes. The instance offers strong single-threaded CPU capability paired with an 8 GB memory pool in a low-resource footprint, making it suitable for lightweight in-memory caching nodes, development database replicas, single-threaded batch processing, and lightweight web serving services."
+    "Amazon Web Services r8a.medium is an entry-level memory-optimized instance powered by the Nitro hypervisor. It is equipped with a single dedicated x86_64 AMD EPYC 9R45 core operating at up to 4.5 GHz with one thread. Memory is configured with 8.0 GB of DDR5 operating at 6 GHz, establishing an 8:1 memory-to-vCPU ratio. The processor includes 48 KB of L1 data cache, 1.0 MB of L2 cache, and 4 MB of L3 cache, alongside support for instruction sets including AVX-512, AES, and SHA_NI. The instance includes no local storage and relies on network-attached storage, with a baseline network bandwidth of 1 Gbps and zero bundled public IPv4 addresses.",
+    "Benchmark results highlight strong single-threaded processing capabilities alongside the expected throughput constraints of a single-core environment. The instance achieves top-tier results in Geekbench single-core testing (2790.0) and stress-ng single-core performance (3753.98), accompanied by fast single-threaded gzip compression at 41.09 GB/sec. Conversely, multi-threaded throughput ranks in the lower percentiles across PassMark CPU (3479.37) and Clang software compilation (2775.0) due to the single vCPU allocation. Memory throughput reaches 46.87 GB/sec for uncached reads and 34.48 GB/sec for uncached writes.",
+    "From an architectural efficiency perspective, r8a.medium provides an entry point to DDR5 memory channels and modern Zen-based AMD architecture without requiring multi-core commitments. The absence of integrated local NVMe storage and high-bandwidth networking limits its profile for intensive storage pipelines. The instance is suited for lightweight memory-bound utilities, small in-memory caching nodes, single-threaded processing daemons, and low-traffic web services that require dedicated CPU clock consistency paired with an 8 GB memory footprint."
   ],
-  "description": "Amazon Web Services r8a.medium is a memory-optimized instance featuring 1 dedicated vCPU from an AMD EPYC 9R45 processor clocked at 4.5 GHz and 8.0 GB of DDR5 memory. Operating on the AWS Nitro hypervisor, it offers a high memory-to-vCPU ratio of 1:8 without local storage or GPU hardware. The CPU architecture supports AVX-512 and cryptographic accelerators, leading to top-tier single-core computational results in Geekbench (2790.0) and gzip compression. Multi-core throughput remains restricted by the single-core configuration. With a 1 Gbps baseline network profile and stable uncached memory throughput, the r8a.medium provides an entry-level memory-heavy environment suitable for small in-memory caches, small database instances, microservices, and single-threaded batch jobs.",
-  "og_description": "Amazon Web Services r8a.medium features 1 dedicated AMD EPYC 9R45 vCPU at 4.5 GHz, 8 GB DDR5 RAM, and 1 Gbps networking, delivering top-tier single-core performance for memory-focused tasks.",
-  "meta_description": "Amazon Web Services r8a.medium is a memory-optimized Nitro instance with 1 AMD EPYC vCPU, 8 GB DDR5 memory, and top-tier single-core performance.",
-  "tagline": "Single dedicated core AMD EPYC instance delivering 8 GB DDR5 memory for memory-intensive low-concurrency workloads.",
+  "description": "Amazon Web Services r8a.medium is a memory-optimized instance featuring one dedicated x86_64 vCPU derived from an AMD EPYC 9R45 processor running at 4.5 GHz. Built on the AWS Nitro hypervisor, it is configured with 8.0 GB of 6 GHz DDR5 system memory, providing an 8:1 memory-to-vCPU allocation. The hardware profile does not bundle local storage, requiring network-attached volumes, and provides a 1 Gbps baseline network bandwidth without included public IPv4 addresses. Synthetic benchmarks demonstrate top-decile single-core CPU and compression metrics, balanced by entry-level multi-core throughput due to the single-thread execution model. Large-block uncached memory operations deliver 46.87 GB/sec read and 34.48 GB/sec write bandwidth. The r8a.medium is suited for small-scale memory-intensive workloads, single-threaded data tasks, lightweight caching, and development services.",
+  "og_description": "Amazon Web Services r8a.medium is a memory-optimized virtual machine featuring 1 dedicated AMD EPYC 9R45 core at 4.5 GHz, 8.0 GB DDR5 RAM, and a 1 Gbps network baseline under the Nitro hypervisor.",
+  "meta_description": "Amazon Web Services r8a.medium offers 1 AMD EPYC 9R45 vCPU, 8.0 GB of DDR5 memory, and 1 Gbps baseline networking for memory-focused cloud workloads.",
+  "tagline": "Single dedicated high-frequency core configuration paired with eight gigabytes of high-speed DDR5 memory for lightweight, memory-intensive computational tasks.",
   "bullet_points": [
-    "1 dedicated AMD EPYC 9R45 vCPU clocked at up to 4.5 GHz",
-    "8.0 GB high-speed DDR5 memory (1:8 core-to-RAM ratio)",
-    "Top-tier single-core compute and data compression benchmark performance",
-    "Hardware vector extensions including AVX-512, VNNI, and BF16",
-    "1 Gbps baseline network throughput without local NVMe storage",
-    "Well-suited for small in-memory caching, microservices, and development databases"
+    "One dedicated AMD EPYC 9R45 core running at 4.5 GHz",
+    "8.0 GB of high-speed 6 GHz DDR5 system memory",
+    "High single-thread benchmark output with AVX-512 instruction support",
+    "No bundled local NVMe storage; network storage required",
+    "1 Gbps baseline network bandwidth on AWS Nitro hypervisor",
+    "Suited for small in-memory caches, background tasks, and low-concurrency servers"
   ],
   "categories": [
     "Memory Optimized",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }
