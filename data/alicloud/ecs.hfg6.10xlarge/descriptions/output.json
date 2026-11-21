@@ -1,24 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.hfg6.10xlarge is an x86_64 server instance within the High Clock Speed family. It is equipped with an Intel Xeon Platinum 8269CY processor offering a base clock speed of 3.1 GHz. The hardware layout comprises 20 physical cores, yielding 40 dedicated vCPUs with hyperthreading enabled, accompanied by a 35 MB L3 cache. Memory capacity totals 192.0 GB of RAM, equivalent to 4.8 GB per vCPU, paired with a baseline network bandwidth allocation of 12 Gbps. The instance provides no bundled local NVMe storage and does not feature dedicated GPU accelerators.",
-    "Benchmark results place the ecs.hfg6.10xlarge in the middle 50% across measured computational and memory domains. Its multi-threaded compute profile records a Geekbench multi-core score of 12045.0, a PassMark CPU score of 34691.95, and a stress-ng multi-core throughput of 38378.07. Extended vector instruction sets including AVX-512 and AVX-512 VNNI support operations such as software compilation via Clang (Geekbench sub-score of 28733.0) and ray tracing (29129.0). Uncached large-block read memory bandwidth achieves 108.89 GB/sec alongside 48.09 GB/sec in writes, facilitating in-memory operations like Redis SET throughput reaching 34.78 million operations per second.",
-    "The 4.8 GB-per-vCPU ratio situates this configuration between general-purpose and memory-focused allocations, balancing compute density and available memory per thread. Workloads reliant strictly on persistent internal storage require external cloud block storage attachments due to the absence of bundled local disks. This instance is technically suited for large-scale relational database engines, distributed caching layers, build pipelines, and enterprise enterprise web application hosting."
+    "Alibaba Cloud ecs.hfg6.10xlarge is an x86_64 instance from the High Clock Speed family, powered by a dedicated Intel Xeon 8269CY processor clocked at 3.1 GHz. The configuration allocates 20 physical cores and 40 virtual CPUs alongside 192.0 GB of system memory, yielding 4.8 GB of RAM per vCPU. Hypervisor operations run on KVM, supported by 35 MB of L3 cache and advanced instruction extensions including AVX-512F and AVX-512 VNNI. The instance features no bundled local storage and no dedicated GPUs, requiring external network-attached volumes over its 12 Gbps baseline network interface.",
+    "Benchmark results place the instance consistently within average mid-tier ranges across compute and memory workloads. The system achieves a multi-core Geekbench score of 12,045 and a PassMark CPU rating of 34,691.95, accompanied by 35,214.09 in PassMark extended instruction tests. Memory subsystems deliver 108.89 GB/sec in large-block read operations and 48.09 GB/sec in large-block writes. Key workload metrics reflect 34.78 million operations per second in Redis SET benchmarks, 25.35 GB/sec in static web serving, and 166.28 GB/sec in multi-threaded bzip3 decompression.",
+    "The absence of local NVMe storage requires architectural consideration for I/O-intensive workloads, redirecting disk operations to network storage over the 12 Gbps interface. Furthermore, CPU-based inference for medium-sized language models remains constrained, delivering 12.71 tokens per second during 7B text generation. Balancing 3.1 GHz dedicated cores with 192 GB of RAM, the instance is well matched for software compilation, caching tiers, backend application hosting, and relational database servers."
   ],
-  "description": "Alibaba Cloud ecs.hfg6.10xlarge is a High Clock Speed instance powered by an Intel Xeon 8269CY processor operating at 3.1 GHz. Built on the x86_64 architecture under KVM virtualization, it provides 40 dedicated vCPUs across 20 physical cores, paired with 192.0 GB of system memory and 12 Gbps of baseline networking. It contains no onboard local storage and lacks GPU accelerators. Standard benchmarks place its multi-core compute and memory transfer rates in the median tier, evidenced by a Geekbench multi-core score of 12045.0 and uncached memory read bandwidth of 108.89 GB/sec. Instruction support covers AVX-512 and AVX-512 VNNI, contributing to solid performance in compilation and scientific workloads. The 4.8 GB memory-to-core density makes this server suitable for enterprise databases, in-memory key-value caching clusters, and mid-tier backend applications requiring consistent single-thread processor speeds.",
-  "og_description": "Alibaba Cloud ecs.hfg6.10xlarge provides 40 dedicated vCPUs from an Intel Xeon 8269CY 3.1 GHz CPU, 192 GB RAM, and 12 Gbps networking for enterprise databases and memory-centric workloads.",
-  "meta_description": "Alibaba Cloud ecs.hfg6.10xlarge features 40 dedicated vCPUs via a 3.1 GHz Intel Xeon CPU, 192 GB RAM, and 12 Gbps bandwidth for compute-intensive tasks.",
-  "tagline": "A high-clock 40-vCPU Intel Xeon server with 192 GB memory suited for databases, in-memory caching, and compilation.",
+  "description": "Alibaba Cloud ecs.hfg6.10xlarge is a high-clock-speed compute instance featuring 40 vCPUs across 20 physical cores on an Intel Xeon 8269CY processor running at 3.1 GHz. It provides 192.0 GB of memory, delivering a balanced 4.8 GB per vCPU ratio, with KVM virtualization and hardware support for AVX-512 and VNNI instruction sets. The server includes no bundled local storage and no GPU accelerators, routing disk traffic and communications through a 12 Gbps baseline network link. Across benchmarks, it sustains mid-tier throughput with a PassMark CPU score of 34,691.95, Geekbench multi-core score of 12,045, and 34.78 million operations per second in Redis SET testing. Without local NVMe disks, persistent storage depends on network attached volumes. This hardware footprint is suitable for enterprise application tiers, in-memory caching platforms, CI/CD build servers, and relational databases.",
+  "og_description": "Alibaba Cloud ecs.hfg6.10xlarge features 40 vCPUs on a 3.1 GHz Intel Xeon 8269CY processor, 192 GB RAM, 12 Gbps baseline networking, and zero local storage for compute-intensive enterprise workloads.",
+  "meta_description": "Alibaba Cloud ecs.hfg6.10xlarge features 40 vCPUs on a 3.1 GHz Intel Xeon 8269CY CPU, 192 GB RAM, and a 12 Gbps baseline network link for compute workloads.",
+  "tagline": "High-clock 40-vCPU Intel Xeon server with 192 GB memory and balanced network bandwidth for intensive computing and database tasks.",
   "bullet_points": [
-    "Dedicated 40 vCPUs across 20 physical Intel Xeon 8269CY cores at 3.1 GHz",
-    "192.0 GB system RAM providing 4.8 GB per dedicated vCPU thread",
-    "Hardware vector acceleration via AVX-512 and AVX-512 VNNI instruction sets",
-    "Baseline network throughput capacity capped at 12 Gbps",
-    "Zero bundled local disk storage, requiring external block storage",
-    "Optimized for relational databases, in-memory caching, and parallel build jobs"
+    "Intel Xeon 8269CY processor running at 3.1 GHz with 20 physical cores and 40 vCPUs",
+    "192.0 GB of system memory providing 4.8 GB per vCPU",
+    "No bundled local disk storage; relies on external block storage",
+    "12 Gbps baseline network interface without attached GPUs",
+    "Hardware support for AVX-512F and AVX-512 VNNI vector instructions",
+    "Suited for compilation pipelines, in-memory caching, and relational databases"
   ],
   "categories": [
     "Compute Optimized",
-    "General Purpose",
-    "Memory Optimized"
+    "General Purpose"
   ]
 }

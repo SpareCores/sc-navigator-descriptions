@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E2_v4 is a memory-optimized virtual machine instance belonging to the Ev4 family. It is powered by an Intel Xeon 8272CL processor running at a base frequency of 2.6 GHz. Built on the x86_64 architecture and managed by the Microsoft Hyper-V hypervisor, this instance provides 2 dedicated vCPUs mapped to a single physical core with hyper-threading. It features 16.0 GB of RAM, resulting in a high memory-to-vCPU ratio of 8.0 GB per core. No local storage or GPU accelerators are bundled with this configuration.",
-    "Performance benchmarks position the E2_v4 in the lower tiers. Single-core stress-ng and Geekbench scores are weak, while multi-core CPU performance is poor, reflecting the limits of its dual-vCPU setup. Memory bandwidth tests show poor throughput, with read-only large block speeds at 8.21 GB/sec and write speeds at 7.37 GB/sec. Database operations and Redis SET performance are also in the bottom decile, with Redis achieving 1.76 million operations per second.",
-    "Qualitatively, the E2_v4 offers a cost-effective entry point for memory-intensive workloads that have modest CPU demands. The primary tradeoff is constrained processing power and memory bandwidth. This instance is best suited for lightweight, memory-sensitive workloads such as small-scale caching layers, minor database operations, or basic web serving."
+    "Microsoft Azure E2_v4 is an entry-level virtual machine belonging to the memory-optimized Ev4 family. Built on Microsoft Hyper-V, it provides 2 vCPUs derived from a single physical core with hyper-threading enabled. The underlying processor is an x86_64 Intel Xeon Platinum 8272CL clocked at 2.6 GHz, featuring 32 KB L1d cache, 1.0 MB L2 cache, and a 35 MB shared L3 cache. Instruction set extensions include AVX, AVX-512F, and AVX-512 VNNI, alongside hardware acceleration for AES encryption.",
+    "Hardware allocations prioritize memory density over compute throughput. The instance includes 16.0 GB of RAM, which equates to 8.0 GB per vCPU. No dedicated GPUs are included, and the instance has no local storage bundled, requiring external network-attached disks for operating system and data persistence. Furthermore, no complimentary public IPv4 addresses are assigned.",
+    "Benchmark measurements indicate constrained overall compute and memory throughput due to the single physical core footprint. In multi-core assessments, the instance achieved a Geekbench score of 1356.0 and a stress-ng score of 1845.28, placing it in the bottom 10% of tested systems. Memory bandwidth scales from 102.55 GB/sec for small 16 KB cached reads down to 8.21 GB/sec for large 256 MB uncached reads and 7.37 GB/sec for writes. PassMark database operations scored 687.48, while Redis processed 1.76 million SET operations per second.",
+    "From a qualitative cost perspective, the E2_v4 represents a low-footprint gateway to memory-intensive configurations. Its primary tradeoff lies in limited compute capacity, making it unsuitable for parallel compute jobs or compute-bound workloads. The configuration is primarily suited for lightweight databases, small in-memory caches, development environments, and low-traffic applications requiring a larger RAM-to-CPU ratio."
   ],
-  "description": "Microsoft Azure E2_v4 is a memory-optimized virtual machine instance featuring 2 dedicated vCPUs and 16.0 GB of RAM, powered by an Intel Xeon 8272CL processor running at 2.6 GHz. Built on the x86_64 architecture and managed by the Microsoft Hyper-V hypervisor, this instance provides a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or GPU accelerators. Performance benchmarks place the instance in the lower tiers, with weak single-core and poor multi-core CPU results, alongside constrained memory bandwidth. Qualitatively, the E2_v4 offers a cost-effective entry point for memory-intensive workloads that have modest CPU demands. It is best suited for small-scale databases, lightweight caching systems, and basic web serving applications.",
-  "og_description": "Microsoft Azure E2_v4 is a memory-optimized virtual machine featuring 2 dedicated Intel Xeon vCPUs, 16.0 GB of RAM, and no local storage, designed for lightweight memory-sensitive workloads.",
-  "meta_description": "Microsoft Azure E2_v4 is a memory-optimized instance with 2 Intel Xeon vCPUs and 16.0 GB of RAM, designed for lightweight database and caching workloads.",
-  "tagline": "A budget friendly virtual machine offering a high memory allocation relative to compute resources for lightweight memory intensive applications.",
+  "description": "Microsoft Azure E2_v4 is a memory-optimized virtual machine featuring 2 vCPUs derived from a single physical core on an Intel Xeon Platinum 8272CL processor at 2.6 GHz. It provides 16.0 GB of system memory, yielding an 8:1 memory-to-vCPU ratio. The instance includes no GPU acceleration, lacks bundled local storage, and provides no complimentary public IPv4 addresses. Benchmark performance reflects its minimal core allocation, yielding bottom-tier results across multi-core compute tests (Geekbench multi-core score of 1356.0) and uncached memory operations (8.21 GB/sec large read). PassMark database operations reached 687.48, and Redis throughput logged 1.76 million SET operations per second. Given its restricted compute profile paired with generous memory allocation, the E2_v4 is tailored for lightweight memory-bound workloads, small in-memory caching nodes, development staging, and low-concurrency database services.",
+  "og_description": "Microsoft Azure E2_v4 is a memory-optimized VM providing 2 vCPUs from an Intel Xeon 8272CL processor and 16 GB RAM. It includes no bundled local storage or GPUs, fitting lightweight database tasks.",
+  "meta_description": "Microsoft Azure E2_v4 provides 2 vCPUs and 16 GB RAM on an Intel Xeon 8272CL processor. Designed for memory-intensive low-concurrency workloads.",
+  "tagline": "Dual-vCPU memory-optimized instance featuring 16 GB RAM for small in-memory workloads and lightweight database deployments without local storage.",
   "bullet_points": [
-    "Features 2 dedicated vCPUs and 16.0 GB of system memory",
-    "Powered by an Intel Xeon 8272CL processor at 2.6 GHz",
-    "High memory-to-core ratio of 8.0 GB per vCPU",
-    "No bundled local storage or GPU accelerators",
-    "Best suited for small databases, caching, and light web serving"
+    "2 vCPUs powered by a single physical Intel Xeon Platinum 8272CL core (2.6 GHz)",
+    "16.0 GB RAM offering an 8.0 GB per vCPU ratio",
+    "No bundled local storage or integrated GPU hardware",
+    "Hardware support for AVX-512 and AES instructions",
+    "Suitable for small in-memory caches, light databases, and test environments"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }
