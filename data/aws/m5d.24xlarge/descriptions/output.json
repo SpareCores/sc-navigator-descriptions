@@ -1,24 +1,25 @@
 {
   "page": [
-    "Amazon Web Services m5d.24xlarge is a general-purpose Nitro-based cloud server powered by an Intel Xeon Platinum 8259CL processor. Running on the x86_64 architecture, it delivers 96 virtual central processing units across 48 physical cores with simultaneous multithreading at a clock speed of 3.1 GHz. The hardware profile includes 384 GB of DDR4 system memory at a 1:4 vCPU-to-RAM ratio, 3600 GB of integrated local NVMe SSD storage, and a baseline network throughput of 25 Gbps. No graphical processing units are bundled with this instance type.",
-    "Benchmark results highlight significant multi-core throughput alongside modest single-thread capacity. The instance achieves top-quartile performance in multi-core compute tests, including a multi-core stress-ng rating of 81319.36 and a PassMark CPU score of 55443.45. Memory throughput is broad, reaching 214.54 GB/s on large uncached read operations. In-memory data structures perform effectively, evidenced by Redis SET throughput reaching 74.41 million operations per second. However, single-core evaluations show limitations, ranking in the bottom quartile across stress-ng single-core (1380.89) and Geekbench single-core (1147.0) runs.",
-    "Cost efficiency is heavily driven by resource density and bundled high-speed storage. Combining 96 vCPUs, 384 GB of RAM, and 3.6 TB of local NVMe SSDs avoids the operational overhead and detached volume fees of secondary storage. However, per-thread pricing efficiency decreases for workloads bound by single-core speed or those requiring hardware acceleration, as demonstrated by poor LLM text-generation performance.",
-    "This server type is suitable for high-concurrency enterprise workloads requiring balanced resources and rapid local disk access. Primary use cases include distributed in-memory databases, caching layers, batch ETL processing, large-scale build pipelines, and transactional database clusters requiring high IOPS local caching."
+    "Amazon Web Services m5d.24xlarge is a general-purpose virtual machine based on the AWS Nitro hypervisor architecture. It features an Intel Xeon Platinum 8259CL processor running at 3.1 GHz across 48 physical cores and 96 vCPUs on an x86_64 instruction set. The system includes 384 GB of DDR4 memory running at 3 GHz, maintaining a balanced 1:4 vCPU-to-memory ratio of 4 GB per vCPU. Attached to the instance are 3600 GB of local NVMe SSD storage and a baseline network throughput of 25 Gbps. No dedicated GPUs are included in this configuration.",
+    "Benchmark evaluations reveal substantial aggregate multi-threaded execution power, supported by strong results in stress-ng multi-core testing (81,319.36), PassMark CPU score (55,443.45), and extended instruction processing (73,965.40). The instance delivers high caching and uncached memory bandwidth alongside strong I/O capabilities, achieving 74.41 million operations per second in Redis SET operations and 43.63 GB/sec in static web serving throughput. Conversely, single-core metrics fall into lower percentiles, as demonstrated by weak single-threaded performance in stress-ng (1380.89) and Geekbench (1147.0), as well as poor tokens-per-second rates during LLM text generation tasks.",
+    "Cost efficiency is driven by high-density horizontal compute and extensive bundled NVMe storage. Systems that can saturate parallel threads and leverage local scratch capacity maximize value, whereas single-threaded bottlenecks or workloads demanding modern GPU acceleration will experience suboptimal hardware efficiency.",
+    "AWS m5d.24xlarge is well suited for highly parallelized multi-threaded tasks, distributed data processing, in-memory caching platforms such as Redis, large-scale build farms, and high-throughput static web serving fleets requiring local temporary storage."
   ],
-  "description": "Amazon Web Services m5d.24xlarge is a general-purpose server powered by an Intel Xeon 8259CL processor on the AWS Nitro system. It provides 96 vCPUs across 48 physical cores at 3.1 GHz, paired with 384 GB of DDR4 memory, 3600 GB of high-speed local NVMe SSD storage, and a 25 Gbps network baseline. Synthetic testing indicates exceptional multi-threaded compute density and memory bandwidth, reaching 74.41 million Redis SET operations per second and strong PassMark cryptographic scores. However, single-threaded execution and sequential LLM text generation rank low due to per-core performance limits. With bundled high-capacity NVMe drives and a balanced 1:4 compute-to-memory ratio, this instance is efficient for distributed relational databases, memory caching layers, continuous integration clusters, and multi-threaded enterprise application backends.",
-  "og_description": "Amazon Web Services m5d.24xlarge features 96 vCPUs on an Intel Xeon 8259CL processor, 384 GB DDR4 RAM, 3600 GB local NVMe SSD storage, and 25 Gbps networking for demanding database workloads.",
-  "meta_description": "Amazon Web Services m5d.24xlarge offers 96 vCPUs, 384 GB DDR4 RAM, and 3600 GB NVMe SSD storage on Nitro architecture for multi-threaded workloads.",
-  "tagline": "A high-density 96-vCPU general-purpose instance featuring 384 GB of memory and 3600 GB of fast local NVMe storage.",
+  "description": "Amazon Web Services m5d.24xlarge is a general-purpose cloud instance powered by an Intel Xeon 8259CL processor delivering 96 vCPUs and 48 physical cores on an x86_64 architecture. Designed around the Nitro hypervisor, the server provides 384 GB of DDR4 memory, 3600 GB of local NVMe SSD storage, and 25 Gbps baseline network bandwidth, with zero GPUs present. Benchmarks demonstrate top-quartile performance in multi-core metrics, memory bandwidth, PassMark multi-thread scores, static web serving throughput, and Redis SET transactions reaching 74.41 million operations per second. In contrast, single-thread throughput across stress-ng and Geekbench tests scores in lower percentiles. This configuration is aligned with distributed multi-threaded operations, caching tiers, high-bandwidth web serving, and database workloads requiring high local NVMe throughput.",
+  "og_description": "Amazon Web Services m5d.24xlarge features 96 vCPUs on an Intel Xeon 8259CL processor, 384 GB DDR4 RAM, 3600 GB local NVMe SSD storage, and 25 Gbps network bandwidth for parallel workloads.",
+  "meta_description": "Amazon Web Services m5d.24xlarge features 96 vCPUs, 384 GB RAM, and 3600 GB local NVMe SSD storage, optimized for multi-threaded and caching workloads.",
+  "tagline": "High-density multi-core compute paired with fast local NVMe storage and balanced memory for parallelized and data-intensive workloads.",
   "bullet_points": [
-    "96 vCPUs and 48 physical cores powered by Intel Xeon 8259CL at 3.1 GHz",
-    "384 GB DDR4 system memory maintaining a balanced 1:4 core-to-memory ratio",
-    "3600 GB integrated local NVMe SSD storage with 25 Gbps baseline network bandwidth",
-    "Strong multi-threaded throughput and memory bandwidth for caching and databases",
-    "Tradeoff in single-core performance and CPU-based LLM generation speeds",
-    "Optimized for distributed databases, ETL pipelines, and caching layers"
+    "96 vCPUs (48 physical cores) powered by Intel Xeon 8259CL at 3.1 GHz",
+    "384 GB DDR4 memory with balanced 4 GB per vCPU allocation",
+    "3600 GB high-speed integrated local NVMe SSD storage",
+    "25 Gbps baseline networking on the AWS Nitro hypervisor",
+    "Strong multi-core computation, web throughput, and Redis operational capacity",
+    "Suited for large-scale caching tiers, web serving, and parallelized data tasks"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }
