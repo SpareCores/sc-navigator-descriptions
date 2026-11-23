@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.n1.medium is an entry-level virtual server instance within the shared family, provisioned via the KVM hypervisor. It is configured with an x86_64 Intel Xeon 8163 processor clocked at 2.5 GHz, providing two virtual CPUs backed by one physical core with two threads per core. The instance is allocated 4.0 GB of system memory, matching a 1:2 vCPU-to-memory ratio of 2.0 GB per vCPU. The processor architecture includes basic instruction set extensions such as AVX, AVX-512F, AES, BMI2, ADX, and FMA, supported by 32 KB of L1 data cache, 1.0 MB of L2 cache, and 33 MB of shared L3 cache. It does not include bundled local storage, operating purely on network-attached storage, and does not feature GPUs.",
-    "Benchmark data reflects performance in lower tiers compared to modern cloud hardware. The instance scored 959.0 in Geekbench single-core and 1698.0 in Geekbench multi-core, with PassMark measuring an overall CPU score of 2676.41 and a memory score of 1127.43. Stress-ng returned 1108.59 for single-core and 2194.17 for multi-core tests. Memory throughput tests show 159.5 GB/sec for cached 16 KB small blocks, dropping to 16.3 GB/sec read and 14.46 GB/sec write for uncached 256 MB blocks. Application-level metrics show 2.87 million operations per second in Redis SET workloads and 1.9 GB/sec in static web serving throughput.",
-    "Given its single physical core and legacy processor architecture, the instance exhibits poor to weak throughput across compute-intensive, compression, and high-frequency database operations. It functions as a lightweight compute option suited for low-traffic web hosting, basic internal testing, small staging environments, or minor utility microservices that do not demand extensive CPU or memory bandwidth."
+    "Alibaba Cloud ecs.n1.medium is an entry-tier virtual instance configured with 2 vCPUs derived from a single physical core across two threads. Operating on the x86_64 architecture using the KVM hypervisor, it is powered by an Intel Xeon 8163 processor running at a base clock speed of 2.5 GHz with 33 MB of L3 cache. System memory totals 4.0 GB, establishing a 1:2 vCPU-to-RAM ratio of 2.0 GB per core. The instance provides no integrated local storage and features zero hardware accelerators or GPUs, requiring attached remote block storage for persistent data operations.",
+    "Benchmark testing indicates that the ecs.n1.medium operates primarily within entry-level performance tiers. It delivers a Geekbench single-core score of 959.0 and a multi-core score of 1698.0, placing it in the lower percentiles for compute execution. Computational passes under stress-ng yield 1108.59 in single-core and 2194.17 in multi-core metrics, while PassMark testing records a CPU aggregate score of 2676.41 and a database operations mark of 570.41. Memory transfers achieve 16.3 GB/sec for large uncached reads and 14.46 GB/sec for writes, alongside 1.9 GB/sec in static web serving throughput.",
+    "The instance offers low-overhead compute capacity suited for budget-conscious deployments where sustained high-throughput execution is not required. While the 1:2 compute-to-memory configuration delivers foundational processing capability with dedicated threads, the older CPU microarchitecture and absence of local high-speed storage constrain heavy I/O and parallel compilation tasks. Consequently, the ecs.n1.medium is best deployed for lightweight utility tasks, development and test instances, low-traffic microservices, and secondary background processes."
   ],
-  "description": "Alibaba Cloud ecs.n1.medium is an entry-tier x86_64 instance featuring 2 vCPUs on a single physical core of an Intel Xeon 8163 processor clocked at 2.5 GHz, paired with 4.0 GB of RAM. The instance lacks bundled local storage and GPU hardware, relying on external network storage. Benchmark evaluations place the instance in the lower percentiles across compute and memory metrics, recording a PassMark CPU score of 2676.41, a Geekbench multi-core score of 1698.0, and 2.87 million operations per second on Redis SET benchmarks. The uncached memory read bandwidth reaches 16.3 GB/sec with write speeds of 14.46 GB/sec. Given its constrained core count and modest throughput profiles, ecs.n1.medium is best aligned with lightweight utility workloads, low-demand staging environments, and basic web serving rather than compute- or memory-intensive applications.",
-  "og_description": "Alibaba Cloud ecs.n1.medium provides 2 vCPUs and 4.0 GB RAM on an Intel Xeon 8163 processor. With no local storage or GPU, it provides entry-level performance for low-traffic tasks.",
-  "meta_description": "Alibaba Cloud ecs.n1.medium features 2 vCPUs and 4.0 GB RAM on an Intel Xeon 8163 CPU, designed for basic utility and lightweight web hosting workloads.",
-  "tagline": "Dual-vCPU entry instance delivering baseline compute and 4 GB RAM for lightweight utility hosting and development environments.",
+  "description": "The Alibaba Cloud ecs.n1.medium is an entry-level virtual server powered by a 2.5 GHz Intel Xeon 8163 processor built on the x86_64 architecture. It features 2 vCPUs executed across 1 physical core, 4.0 GB of system memory at a 1:2 vCPU-to-RAM ratio, and zero integrated local storage or GPU hardware. In synthetic evaluations, the instance registers entry-tier computational marks, including a Geekbench single-core score of 959.0, a multi-core score of 1698.0, and a PassMark CPU rating of 2676.41. Memory bandwidth reaches 16.3 GB/sec on uncached large reads, alongside 1.9 GB/sec in static web throughput. Given the modest compute density and absence of onboard disks, this server is an economical option suited for lightweight utility processes, development and staging servers, basic background tasks, and low-traffic internal web hosting.",
+  "og_description": "Alibaba Cloud ecs.n1.medium features 2 vCPUs, 4.0 GB RAM, and an Intel Xeon 8163 processor at 2.5 GHz. Designed without local storage or GPUs, it suits lightweight microservices and test environments.",
+  "meta_description": "Alibaba Cloud ecs.n1.medium provides 2 vCPUs on an Intel Xeon 8163 processor with 4.0 GB RAM and no local storage for low-demand cloud workloads.",
+  "tagline": "An entry-level dual-vCPU computing profile with 4 GB memory optimized for cost-sensitive background services, functional testing, and low-intensity microservices.",
   "bullet_points": [
-    "Intel Xeon 8163 processor with 2 vCPUs (1 physical core, 2 threads) at 2.5 GHz",
-    "4.0 GB total RAM providing 2.0 GB memory per virtual core",
-    "No bundled local storage and no GPU acceleration",
-    "Hardware support for AVX, AVX-512F, AES, and BMI2 instruction sets",
-    "Suited for basic testing, low-traffic web serving, and background microservices"
+    "2 vCPUs powered by an Intel Xeon 8163 processor clocked at 2.5 GHz",
+    "4.0 GB system memory providing a 1:2 vCPU-to-RAM allocation",
+    "Zero local disk storage and no GPU accelerators attached",
+    "Supports vector instructions including AVX and AVX-512F",
+    "Best suited for dev/test environments, lightweight microservices, and basic background workloads"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Burstable & Budget",
+    "Compute Optimized"
   ]
 }
