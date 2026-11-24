@@ -162,7 +162,7 @@ def main(n, status, sync):
         for job in jobs:
             logger.info(
                 f"Batch job {job.name}: {job.state}, created at {job.create_time}, "
-                f"updated at {job.update_time}, stats: {job.completion_stats}"
+                f"updated at {job.update_time}: {llm.batch_progress(job)}"
             )
         if status:
             return

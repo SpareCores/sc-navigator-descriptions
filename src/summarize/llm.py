@@ -7,9 +7,11 @@ request can be sent directly (sync) or as a line of a batch JSONL file.
 
 import json
 import logging
+import os
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
+import httpx
 from google import genai
 from google.genai.types import JobState
 
@@ -90,6 +92,27 @@ def list_batches() -> list:
         for job in client().batches.list()
         if (job.display_name or "").startswith(BATCH_PREFIX)
     ]
+
+
+def batch_progress(job) -> str:
+    """Request counts of a batch job.
+
+    Read from the REST API, as the SDK drops these stats for the Gemini API.
+    """
+    response = httpx.get(
+        f"https://generativelanguage.googleapis.com/v1beta/{job.name}",
+        headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"]},
+    )
+    response.raise_for_status()
+    stats = response.json().get("metadata", {}).get("batchStats", {})
+    # int64 values are returned as strings
+    count = {k: int(v) for k, v in stats.items()}
+    return (
+        f"{count.get('successfulRequestCount', 0):,} succeeded, "
+        f"{count.get('failedRequestCount', 0):,} failed, "
+        f"{count.get('pendingRequestCount', 0):,} pending "
+        f"out of {count.get('requestCount', 0):,} request(s)"
+    )
 
 
 def submit_batch(requests: dict[str, dict]):
