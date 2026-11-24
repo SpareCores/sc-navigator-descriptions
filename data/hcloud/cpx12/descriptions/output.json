@@ -1,23 +1,22 @@
 {
   "page": [
-    "Hetzner Cloud cpx12 is an entry-level virtual server powered by a shared AMD EPYC x86_64 processor. Running on the QEMU hypervisor, the instance provides 1 shared vCPU clocked at 2.0 GHz alongside 2.0 GB of system memory. The underlying processor includes 32 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache, with broad instruction set support featuring AVX-512 extensions (including VNNI and BF16) and hardware-accelerated cryptographic operations via AES, VAES, and SHA-NI.",
-    "Storage is provided via a bundled 40 GB local NVMe SSD, delivering local high-speed disk access without requiring separate block storage attachments. The instance includes zero dedicated GPUs and does not come with complimentary public IPv4 addresses, relying on modern network and compute configurations tailored for lean deployments.",
-    "Benchmark results demonstrate strong single-thread execution, placing in the top 25% of tested systems for stress-ng single-core performance at 2999.88. Single-threaded gzip compression reaches 24.66 GB/sec and bzip3 decompression achieves 12.27 GB/sec. However, multi-core capacity and aggregate throughput remain constrained by the single shared vCPU design, reflected in lower PassMark CPU, memory bandwidth, and static web serving scores. Text generation on small 135M language models yields 107.47 tokens per second.",
-    "Given its minimal hardware footprint and shared resource allocation, Hetzner Cloud cpx12 serves as a cost-efficient platform for lightweight background services, microservices, staging environments, low-traffic web applications, and small utility or development nodes."
+    "Hetzner Cloud cpx12 is an entry-tier virtual server operating on the QEMU hypervisor, equipped with 1 shared virtual CPU from an AMD EPYC processor clocked at 2.0 GHz. Built upon the x86_64 architecture, the processor includes extended instruction sets such as AVX-512, AVX-512 VNNI, AVX-512 BF16, AES, and SHA-NI. The hardware profile provides 2.0 GB of memory and 40 GB of local NVMe SSD storage. The instance does not include a dedicated GPU and is provisioned without complimentary public IPv4 addresses.",
+    "Benchmark testing reflects the constraints and strengths of a single-core shared resource. In stress-ng single-core compute evaluations, the instance achieved a score of 2999.88, categorizing its single-threaded processing in the top 25 percent. Multi-core stress-ng testing produced the identical score due to the single-core limitation, positioning aggregate processing in the bottom 25 percent alongside a PassMark CPU score of 2673.99. Memory bandwidth performance registers at 146.65 GB/s in cached 16 KB read tests and 28.87 GB/s in uncached 256 MB write tests. Single-threaded data handling tests recorded 24.66 GB/s for gzip compression and 12.27 GB/s for bzip3 decompression.",
+    "Application-level throughput aligns with entry-tier hardware allocations, yielding 2.11 GB/s in static web serving benchmarks, 2.79 million operations per second for Redis SET requests, and a PassMark database score of 1004.95. In small model machine learning inference tests, text generation reached 107.47 tokens per second using a 135M parameter model. The shared CPU allocation and low memory capacity establish a cost-efficient hardware balance for low-intensity environments. Hetzner Cloud cpx12 is best suited for lightweight web serving, automation scripts, edge utilities, microservices, and development workloads."
   ],
-  "description": "Hetzner Cloud cpx12 is an entry-level virtual machine offering 1 shared vCPU based on the AMD EPYC x86_64 architecture running at 2.0 GHz, coupled with 2.0 GB of RAM. The instance features a bundled 40 GB NVMe SSD for fast local read and write operations, with no attached GPUs. Hardware features include AVX-512 vector support and cryptographic acceleration. In synthetic benchmarks, the cpx12 exhibits strong single-core CPU throughput in stress-ng evaluations, although total multi-core capacity and uncached memory bandwidth reflect its single-thread shared boundary. Small-scale model inference maintains steady throughput for low-parameter workloads. Due to its lean physical footprint and shared CPU allocation, the cpx12 provides a budget-friendly option tailored for microservices, lightweight web servers, development environments, and low-intensity background utilities.",
-  "og_description": "Hetzner Cloud cpx12 features 1 shared AMD EPYC vCPU at 2.0 GHz, 2.0 GB RAM, and a 40 GB NVMe SSD. It delivers solid single-core compute performance for lightweight services and development nodes.",
-  "meta_description": "Hetzner Cloud cpx12 provides 1 shared AMD EPYC vCPU, 2.0 GB RAM, and a 40 GB NVMe SSD, suited for lightweight utilities and entry-level workloads.",
-  "tagline": "An economical single-core x86 virtual server with fast local NVMe storage designed for light workloads and development tasks.",
+  "description": "Hetzner Cloud cpx12 is an entry-tier virtual instance featuring 1 shared AMD EPYC vCPU on the x86_64 architecture clocked at 2.0 GHz, 2.0 GB of system memory, and 40 GB of local NVMe SSD storage. The processor incorporates AVX-512 and hardware cryptographic instructions. In synthetic benchmarks, the instance demonstrates capable single-thread compute with a stress-ng single-core score of 2999.88, placing it in the top 25 percent, while overall multi-core and PassMark CPU metrics reflect the physical single-core limit. Memory operations reach 28.87 GB/s in uncached write tests, supported by 24.66 GB/s single-threaded gzip compression and 2.79 million Redis SET operations per second. The instance omits dedicated GPUs and complimentary IPv4 addresses, providing a resource-dense configuration for lightweight microservices, automation jobs, test pipelines, and low-traffic web applications.",
+  "og_description": "Hetzner Cloud cpx12 features 1 shared AMD EPYC vCPU, 2.0 GB RAM, and 40 GB NVMe SSD storage, providing capable single-threaded compute for low-traffic services and utility workloads.",
+  "meta_description": "Hetzner Cloud cpx12 provides 1 shared AMD EPYC vCPU, 2.0 GB RAM, and 40 GB NVMe SSD storage for budget-oriented, lightweight cloud workloads.",
+  "tagline": "A single-core shared x86 cloud instance with fast NVMe storage designed for economical execution of lightweight background tasks.",
   "bullet_points": [
-    "1 shared AMD EPYC vCPU running at 2.0 GHz with AVX-512 support",
-    "2.0 GB system memory and 32 MB L3 processor cache",
-    "Bundled 40 GB local NVMe SSD storage",
-    "Strong single-core compute performance in stress-ng benchmarks",
-    "Best fit for staging, microservices, and lightweight web serving"
+    "1 shared AMD EPYC vCPU clocked at 2.0 GHz with AVX-512 extensions",
+    "2.0 GB system memory paired with 40 GB local NVMe SSD storage",
+    "Capable single-core performance with 2999.88 in stress-ng evaluations",
+    "24.66 GB/s gzip compression and 2.79M ops/sec Redis SET throughput",
+    "Fit for lightweight microservices, automation scripts, and test environments"
   ],
   "categories": [
     "Burstable & Budget",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }
