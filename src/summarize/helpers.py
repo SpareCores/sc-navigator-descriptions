@@ -79,11 +79,15 @@ def get_benchmark_stats_for_server(
     return (tier, value_str)
 
 
-def _get_price_for_server(server_id: str, prices: list) -> object | None:
-    return next((p for p in prices if p.server_id == server_id), None)
+def get_price_for_server(server_id: str, prices: list) -> str | None:
+    """Formatted min ONDEMAND price, e.g. "0.0123 USD", or None if not priced."""
+    price = next((p for p in prices if p.server_id == server_id), None)
+    if price is None:
+        return None
+    return str(round(price.price, 4)) + " " + price.currency
 
 
-def _server_spec_dict(server, price) -> dict:
+def _server_spec_dict(server, price: str | None) -> dict:
     """Build the server spec dict (no benchmarks yet)."""
     return {
         "vendor_name": server.vendor.name,
@@ -171,16 +175,12 @@ def _server_spec_dict(server, price) -> dict:
             else None
         ),
         "complimentary_public_ipv4_addresses": server.ipv4,
-        "min_ondemand_price_per_hour": (
-            str(round(price.price, 4)) + " " + price.currency
-            if price is not None
-            else None
-        ),
+        "min_ondemand_price_per_hour": price,
         "benchmarks": {},
     }
 
 
-def build_server_payload(server, price) -> dict:
+def build_server_payload(server, price: str | None) -> dict:
     """Full server dict for LLM input: specs + benchmark results, nulls dropped."""
     server_dict = _server_spec_dict(server, price)
     for benchmark_name in INTERESTING_BENCHMARKS:

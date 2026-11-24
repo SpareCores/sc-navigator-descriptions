@@ -26,7 +26,7 @@ from pydantic import ValidationError
 
 from src.summarize import database, llm
 from src.summarize.config import DATA_FOLDER, MODEL_CONFIG, system_prompt, user_prompt
-from src.summarize.helpers import _get_price_for_server, build_server_payload
+from src.summarize.helpers import build_server_payload, get_price_for_server
 from src.summarize.models import ServerSummary
 
 logger = logging.getLogger("src.summarize")
@@ -49,6 +49,40 @@ def _hashes(server_dict: dict) -> dict:
     return hashes
 
 
+# relative price change below which we keep using the previously described price
+PRICE_TOLERANCE = 0.25
+
+
+def _stable_price(new: str | None, old: str | None) -> str | None:
+    """Price to describe the server with, ignoring noise in the pricing data.
+
+    Prices of some vendors (e.g. Alibaba Cloud) keep disappearing and
+    reappearing as availability changes, or jump a bit as the cheapest region
+    changes. The LLM only discusses cost qualitatively, so these changes are
+    not worth a new description: keep the old price unless the new one is
+    meaningfully different.
+    """
+    if old is None:
+        return new
+    if new is None:
+        return old
+    new_value, new_currency = new.split()
+    old_value, old_currency = old.split()
+    if new_currency != old_currency:
+        return new
+    if abs(float(new_value) - float(old_value)) <= PRICE_TOLERANCE * float(old_value):
+        return old
+    return new
+
+
+def _load_json(path: Path) -> dict:
+    try:
+        with open(path) as f:
+            return load(f)
+    except FileNotFoundError:
+        return {}
+
+
 def find_outdated_servers() -> dict[str, dict]:
     """Servers without an up-to-date description.
 
@@ -63,14 +97,13 @@ def find_outdated_servers() -> dict[str, dict]:
             / server.api_reference
             / "descriptions"
         )
-        price = _get_price_for_server(server.server_id, database.prices)
+        price = _stable_price(
+            get_price_for_server(server.server_id, database.prices),
+            _load_json(folder / "input.json").get("min_ondemand_price_per_hour"),
+        )
         server_dict = build_server_payload(server, price)
         hashes = _hashes(server_dict)
-        try:
-            with open(folder / "hashes.json") as f:
-                existing_hashes = load(f)
-        except FileNotFoundError:
-            existing_hashes = {}
+        existing_hashes = _load_json(folder / "hashes.json")
         if existing_hashes.get("combined") == hashes["combined"]:
             continue
         key = f"{server.vendor.vendor_id}/{server.api_reference}/{hashes['combined']}"
@@ -123,7 +156,9 @@ def save(server: dict, text: str | None) -> bool:
 )
 def main(n, status, sync):
     if not sync:
+        logger.debug("Looking up batch jobs...")
         jobs = llm.list_batches()
+        logger.info(f"Found {len(jobs)} batch job(s)")
         for job in jobs:
             logger.info(
                 f"Batch job {job.name}: {job.state}, created at {job.create_time}, "
@@ -139,16 +174,16 @@ def main(n, status, sync):
     database.load(n)
     outdated = find_outdated_servers()
     logger.info(
-        f"Found {len(outdated)} outdated description(s) "
-        f"out of {len(database.servers)} server(s)"
+        f"Found {len(outdated):,} outdated description(s) "
+        f"out of {len(database.servers):,} server(s)"
     )
 
     if sync:
         saved = 0
         for i, (key, server) in enumerate(outdated.items(), start=1):
-            logger.debug(f"Generating summary {i}/{len(outdated)}: {key}")
+            logger.debug(f"Generating summary {i:,}/{len(outdated):,}: {key}")
             saved += save(server, llm.generate_sync(llm.build_request(server["input"])))
-        logger.info(f"Saved {saved} description(s)")
+        logger.info(f"Saved {saved:,} description(s)")
         return
 
     retried = set()
@@ -167,7 +202,7 @@ def main(n, status, sync):
                 else:
                     retried.add(key)
             logger.info(
-                f"Saved {saved} description(s) from {len(results)} result(s) "
+                f"Saved {saved:,} description(s) from {len(results):,} result(s) "
                 f"of batch job {job.name}"
             )
             if saved:
@@ -187,8 +222,8 @@ def main(n, status, sync):
             }
         )
         logger.info(
-            f"Submitted batch job {job.name} with {len(outdated)} request(s): "
-            f"{len(retried)} retried, {len(outdated) - len(retried)} new"
+            f"Submitted batch job {job.name} with {len(outdated):,} request(s): "
+            f"{len(retried):,} retried, {len(outdated) - len(retried):,} new"
         )
 
 

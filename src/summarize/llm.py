@@ -135,12 +135,13 @@ def batch_results(job) -> dict[str, str | None]:
             results[item.get("key")] = None
     logger.info(
         f"Token usage of batch job {job.name}: "
-        f"{usage['promptTokenCount']} input, "
-        f"{usage['candidatesTokenCount']} output, "
-        f"{usage['thoughtsTokenCount']} thinking"
+        f"{usage['promptTokenCount']:,} input, "
+        f"{usage['candidatesTokenCount']:,} output, "
+        f"{usage['thoughtsTokenCount']:,} thinking"
     )
     return results
 
 
 def delete_batch(job) -> None:
     client().batches.delete(name=job.name)
+    logger.info(f"Deleted batch job {job.name}")
