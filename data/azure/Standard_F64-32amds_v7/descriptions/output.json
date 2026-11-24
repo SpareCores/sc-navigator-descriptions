@@ -1,24 +1,25 @@
 {
   "page": [
-    "Microsoft Azure F64-32amds_v7 is a compute-focused and memory-intensive virtual machine built on AMD EPYC 9V45 processors operating at up to 4.5 GHz. Configured with 32 dedicated physical cores and 32 vCPUs without multithreading (1 thread per core), the instance integrates 512.0 GB of system memory, providing 16.0 GB of RAM per vCPU. Hardware features include AVX-512 extensions (such as AVX-512 VNNI and BF16) and 7559 GB of high-speed local NVMe SSD storage. The platform contains no discrete graphics accelerators.",
-    "Benchmark outcomes show top-tier single-core performance alongside strong multi-core scalability. Stress-ng single-core tests place in the top 10% (score 3642.79), complemented by strong gzip compression (39.65 GB/sec) and bzip3 decompression (17.84 GB/sec). Memory architecture tests demonstrate high throughput, recording 219.58 GB/sec in large-block uncached reads and a top-10% PassMark memory score of 3029.38. Database evaluation shows exceptional throughput, with PassMark database operations reaching 37989.46 (top 10%) and Redis SET handling 93.4 million operations per second.",
-    "With its 1:16 core-to-memory ratio and 7.5 TB NVMe disk space, the hardware profile offers substantial density for in-memory workloads and high-throughput I/O pipelines without paying for specialized GPU hardware. CPU-driven LLM inference performs in the top tier for small 135M parameter models (5006.15 tokens/sec prompt, 395.18 tokens/sec generation), but decreases to mid-range performance on large 70B models due to the absence of dedicated accelerators.",
-    "The F64-32amds_v7 is particularly suited for large-scale in-memory databases, Redis caching clusters, high-speed data compression pipelines, and CPU-bound analytical data processing where dedicated non-threaded cores and expansive local NVMe disk arrays are essential."
+    "Microsoft Azure F64-32amds_v7 is a compute-focused instance configured with constrained core counts to offer an elevated memory-to-vCPU ratio. Built on Microsoft Hyper-V, it features 32 dedicated physical cores and 32 vCPUs powered by an AMD EPYC 9V45 processor clocked at 4.5 GHz on the x86_64 architecture. The underlying AMD processor provides 48 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, along with extended instruction sets including AVX-512 (F, VNNI, BF16) and cryptographic acceleration via AES and SHA-NI.",
+    "Despite belonging to the compute-optimized lineage, this configuration bundles 512.0 GB of total RAM, delivering 16.0 GB of memory per core. Storage is also fully provisioned locally with 7,560 GB of high-speed NVMe SSD capacity. The instance operates without discrete GPU accelerators. Benchmarks highlight exceptional memory and storage throughput, scoring in the top tier for PassMark memory (3,029.38) and PassMark database operations (37,989.46), alongside a strong uncached read bandwidth of 219.58 GB/sec and write bandwidth of 135.09 GB/sec.",
+    "In compute workloads, the instance achieves top-tier single-core stress-ng performance (3,642.79) and single-threaded compression throughput (39.65 GB/sec for gzip and 17.84 GB/sec for bzip3). Multi-core throughput is strong, marked by a multi-core stress-ng score of 116,567.07 and 93.4 million Redis SET operations per second. CPU-based small LLM inference runs exceptionally fast at 5,006.15 prompt tokens per second, though larger models like 70B show average CPU throughput (3.01 generation tokens per second) due to the absence of dedicated matrix accelerators.",
+    "The F64-32amds_v7 represents an efficient hardware balance when software licensing is constrained by core counts, providing full access to 512 GB of RAM and 7.5 TB of NVMe SSD without paying per-core software premiums for an unneeded 64 cores. It is ideally positioned for in-memory databases, large cache layers, heavy database operations, data ingestion pipelines, and compute tasks requiring generous local scratch storage."
   ],
-  "description": "Microsoft Azure F64-32amds_v7 is a high-performance instance powered by 32 dedicated physical AMD EPYC 9V45 cores (x86_64 architecture at 4.5 GHz, 1 thread per core) paired with 512.0 GB of RAM and 7559 GB of local NVMe SSD storage. Lacking discrete GPUs, this configuration emphasizes pure CPU calculation, high memory capacity (16.0 GB per core), and fast local I/O. In benchmarks, the server excels in single-core compute (top 10% in stress-ng and data decompression), PassMark database operations (37989.46), and memory bandwidth, while achieving 93.4 million Redis SET operations per second. CPU-based small LLM inference also reaches top-tier throughput. Offering massive fast local storage and memory density, the instance provides high qualitative efficiency for non-GPU computational tasks. It is best suited for in-memory databases, large Redis caches, analytical data compression pipelines, and heavy transaction processing.",
-  "og_description": "Microsoft Azure F64-32amds_v7 features 32 dedicated AMD EPYC 9V45 cores, 512 GB RAM, and 7559 GB NVMe SSD storage, delivering top-tier performance for in-memory databases and compute workloads.",
-  "meta_description": "Microsoft Azure F64-32amds_v7 features 32 AMD EPYC cores, 512 GB RAM, and 7559 GB NVMe storage, excelling at high-throughput databases and compute.",
-  "tagline": "Dedicated AMD EPYC performance with 512 GB memory and 7.5 TB NVMe storage for memory-intensive enterprise workloads.",
+  "description": "Microsoft Azure F64-32amds_v7 is a compute-optimized instance based on the AMD EPYC 9V45 platform, operating on Microsoft Hyper-V with x86_64 architecture. It provides 32 dedicated physical cores and 32 vCPUs clocked at 4.5 GHz, paired with an extensive 512.0 GB of system memory (16.0 GB per core) and 7,560 GB of local NVMe SSD storage. While lacking hardware GPU accelerators, the instance incorporates AVX-512 instructions, AES cryptography, and substantial cache hierarchies. Benchmark performance places it in the top tier for single-core stress-ng tests, PassMark memory scores, and database operation benchmarks, while uncached memory bandwidth reaches 219.58 GB/sec read and 135.09 GB/sec write. It also delivers strong multi-core processing with 93.4 million Redis SET operations per second. This hardware profile makes it suited for database systems, in-memory caching, compression pipelines, and memory-intensive enterprise workloads that benefit from core-constrained licensing structures.",
+  "og_description": "Microsoft Azure F64-32amds_v7 offers 32 dedicated AMD EPYC 9V45 cores at 4.5 GHz, 512 GB RAM, and 7,560 GB local NVMe SSD storage, delivering top-tier database and single-core benchmark performance.",
+  "meta_description": "Microsoft Azure F64-32amds_v7 features 32 dedicated AMD EPYC cores, 512 GB memory, and 7,560 GB local NVMe SSD storage for memory-heavy compute workloads.",
+  "tagline": "Dedicated AMD EPYC performance combined with an expanded 512 GB memory pool and fast local NVMe storage.",
   "bullet_points": [
-    "32 dedicated AMD EPYC 9V45 cores operating up to 4.5 GHz with AVX-512 instruction support",
-    "512.0 GB of system memory providing a dense 16.0 GB per core allocation",
-    "7559 GB integrated high-speed local NVMe SSD storage",
-    "Top-tier benchmark performance in database operations, memory speed, and data compression",
-    "Optimized for in-memory databases, large Redis clusters, and intensive ETL pipelines"
+    "32 dedicated AMD EPYC 9V45 physical cores operating at up to 4.5 GHz",
+    "512.0 GB of system memory providing an expanded 16.0 GB per core",
+    "7,560 GB of bundled high-speed local NVMe SSD storage",
+    "AVX-512 and cryptographic hardware acceleration instruction support",
+    "Top-tier performance in database operations, memory benchmarks, and single-thread execution",
+    "Well suited for in-memory databases, caching, compression pipelines, and core-licensed software"
   ],
   "categories": [
     "Memory Optimized",
-    "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

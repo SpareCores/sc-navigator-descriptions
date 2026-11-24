@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D32alds_v6 is an x86_64 server instance powered by an AMD EPYC 9V74 processor operating at 3.7 GHz. Built on Microsoft Hyper-V, the system provides 32 dedicated vCPUs across 16 physical cores with simultaneous multithreading enabled. The memory footprint comprises 64.0 GB of RAM, resulting in a 2.0 GB allocation per vCPU. Hardware features include an integrated 1890 GB NVMe solid-state drive for low-latency local storage, alongside support for Premium Storage tiers. Advanced CPU instructions include AVX-512 with VNNI and BF16 extensions, as well as hardware-accelerated cryptographic instructions such as AES, VAES, and SHA-NI.",
-    "Benchmark measurements show solid processing capability, particularly in single-core and cryptographic execution. The instance recorded a Geekbench single-core score of 2099.0 and a multi-core score of 17923.0, both reaching the top quartile. Stress-ng single-core processing also placed in the top quartile at 3081.05, while Passmark CPU encryption scored 38565.36. Memory subsystem performance is characterized by an uncached large-block read speed of 80.53 GB/sec and a Passmark memory score of 2756.72. Lightweight language model evaluation revealed high throughput, reaching 344.97 tokens per second for text generation on a 135M model.",
-    "The compact 1:2 memory-to-core ratio maximizes compute density while minimizing unnecessary memory overhead, offering a cost-efficient architecture for CPU-bound tasks. The presence of direct NVMe storage provides rapid scratch space, though memory limitations make it less suitable for massive in-memory datasets or 70B parameter language model generation. The server is well positioned for software build systems, static web application serving, batch data transformation, and distributed transactional database instances."
+    "Microsoft Azure D32alds_v6 is a general-purpose virtual machine based on the x86_64 architecture, operating under Microsoft Hyper-V. The system is equipped with an AMD EPYC 9V74 processor running at 3.7 GHz, delivering 32 dedicated vCPUs mapped across 16 physical cores with simultaneous multithreading enabled. The memory configuration provides 64.0 GB of RAM, resulting in a lean 2.0 GB per vCPU ratio. A bundled 1888 GB NVMe SSD local drive is included alongside support for Premium Storage, while no dedicated GPUs are provisioned.",
+    "Benchmark evaluations reveal strong single-core CPU throughput, highlighted by a Geekbench single-core score of 2099.0 and a stress-ng single-core rating of 3081.05, placing it in the top 25%. Multi-core execution ranks solidly, with Geekbench multi-core reaching 17923.0 and a PassMark CPU score of 46771.35. Instruction set extensions including AVX-512, AVX512_VNNI, and AVX512_BF16 drive notable performance in cryptography and lightweight machine learning, where LLM text generation on a 135M model reaches 344.97 tokens per second.",
+    "Memory bandwidth tests show 80.53 GB/sec uncached read-only and 58.7 GB/sec uncached write capabilities, supported by a strong PassMark memory rating of 2756.72. The 1:2 memory-to-vCPU ratio presents an operational tradeoff: workloads demanding high memory density per thread may face constraints despite the high compute density. However, the presence of 1888 GB local NVMe storage provides fast temporary disk I/O, which mitigates memory constraints for caching and disk-buffered processing.",
+    "This server type is suitable for compute-heavy general-purpose applications, CI/CD compilation pipelines, web serving clusters, batch processing, and caching tiers that benefit from fast local NVMe storage without requiring massive memory footprints."
   ],
-  "description": "Microsoft Azure D32alds_v6 is a compute-oriented virtual server featuring 32 dedicated vCPUs and 64.0 GB of RAM, driven by an AMD EPYC 9V74 processor clocked at 3.7 GHz. Configured with 16 physical cores on the x86_64 architecture, it incorporates a local 1890 GB NVMe SSD and provides architectural support for AVX-512 and cryptographic accelerators. Benchmarks highlight strong CPU performance, recording a Geekbench single-core score of 2099.0, a multi-core score of 17923.0, and top-tier text generation throughput on small language models. The 1:2 RAM-to-vCPU allocation yields strong compute efficiency for workloads that do not demand extensive memory capacity. With high-speed local disk caching and solid multi-threaded performance, this server is suitable for continuous integration pipelines, batch data transformations, static web workloads, and database operations.",
-  "og_description": "Microsoft Azure D32alds_v6 is a 32-vCPU virtual machine powered by an AMD EPYC 9V74 processor with 64 GB RAM and an integrated 1890 GB NVMe SSD, delivering strong compute and storage throughput for batch tasks.",
-  "meta_description": "Microsoft Azure D32alds_v6 is a 32-vCPU virtual machine featuring an AMD EPYC 9V74 processor, 64 GB RAM, and a bundled 1890 GB local NVMe SSD for intensive workloads.",
-  "tagline": "Dedicated thirty-two vCPU compute platform equipped with high-frequency AMD EPYC performance, fast local NVMe storage, and balanced memory allocation.",
+  "description": "Microsoft Azure D32alds_v6 is an x86_64 virtual machine featuring an AMD EPYC 9V74 processor with 32 dedicated vCPUs across 16 physical cores operating at 3.7 GHz. The system provides 64.0 GB of RAM, offering a 1:2 memory-to-vCPU profile, paired with a fast 1888 GB NVMe SSD local drive without GPU accelerators. Benchmark results indicate strong single-core and cryptographic execution, reinforced by AVX-512 vector instructions and a Geekbench single-core score of 2099.0. Memory subsystems deliver 80.53 GB/sec uncached read bandwidth, while PassMark memory metrics test within the top 25%. The primary tradeoff rests in its reduced memory-to-core allocation, favoring throughput-dense processing over large in-memory databases. It is well-fitted for build compilation, caching layers, batch ETL, and high-throughput web serving.",
+  "og_description": "Microsoft Azure D32alds_v6 provides 32 vCPUs on an AMD EPYC 9V74 processor, 64 GB RAM, and a bundled 1888 GB NVMe SSD, delivering strong single-core performance for general-purpose workloads.",
+  "meta_description": "Microsoft Azure D32alds_v6 offers 32 dedicated vCPUs on AMD EPYC 9V74 silicon, 64 GB RAM, and 1888 GB local NVMe SSD storage for compute-focused tasks.",
+  "tagline": "32 dedicated AMD EPYC vCPUs paired with 64 GB RAM and fast 1888 GB NVMe SSD local storage.",
   "bullet_points": [
-    "32 dedicated vCPUs powered by an AMD EPYC 9V74 processor at 3.7 GHz",
-    "64.0 GB system RAM yielding a compute-dense 2.0 GB per vCPU ratio",
-    "Bundled 1890 GB local NVMe SSD for fast temporary storage and caching",
-    "Hardware-level AVX-512, BF16, and VAES cryptographic acceleration",
-    "Suited for software compilation, batch processing, and web workloads"
+    "32 dedicated vCPUs on a 16-core AMD EPYC 9V74 processor at 3.7 GHz",
+    "64.0 GB system memory (2.0 GB per vCPU allocation)",
+    "Bundled 1888 GB NVMe SSD local storage",
+    "Hardware support for AVX-512, AVX512_VNNI, and AVX512_BF16 instructions",
+    "Well-suited for CI/CD builds, batch ETL, web serving, and caching layers"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

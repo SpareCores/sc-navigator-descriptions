@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D32ads_v7 is a general-purpose virtual machine built on the Microsoft Hyper-V hypervisor. The instance is powered by dedicated AMD EPYC 9V45 processors running on the x86_64 architecture with a clock speed of up to 4.5 GHz. It features 32 virtual CPUs derived from 16 physical cores with simultaneous multithreading enabled. The memory configuration totals 128.0 GB of RAM, maintaining a balanced 4.0 GB per vCPU allocation. Local storage includes a bundled 1890 GB NVMe SSD, and the instance includes zero GPUs.",
-    "Benchmark results show notable single-thread processing capabilities. The instance scored 3753.87 in stress-ng single-core tests, placing it in the top tier. PassMark CPU extended instructions and encryption benchmarks scored strongly at 53395.54 and 40124.54 respectively, supported by hardware AVX-512 and cryptographic extensions. Multi-threaded stress-ng throughput registered at 60013.36, representing average tier scaling across its 32 threads. Memory benchmarks recorded an uncached read bandwidth of 101.21 GB/sec and write bandwidth of 67.44 GB/sec, alongside a strong PassMark memory score of 2908.92.",
-    "The inclusion of high-speed local NVMe storage combined with a standard 1:4 CPU-to-memory ratio provides practical cost efficiency for IO-intensive operations without requiring supplemental ephemeral block storage attachments. However, as a non-accelerated CPU instance without discrete GPUs, large-scale model training is impractical, though lightweight inference remains feasible. The configuration is best aligned with enterprise web applications, intermediate relational database servers, caching layers, and continuous integration pipelines."
+    "Microsoft Azure D32ads_v7 is a general-purpose virtual machine based on the x86_64 architecture, powered by an AMD EPYC 9V45 processor clocked at up to 4.5 GHz. It provides 32 vCPUs derived from 16 physical cores with simultaneous multithreading (2 threads per core) on dedicated CPU allocation. The instance is configured with 128.0 GB of system memory, matching a standard 1:4 vCPU-to-RAM ratio (4.0 GB per vCPU), and features 1888 GB of direct-attached NVMe SSD local storage alongside support for Premium Storage. It contains no dedicated GPU hardware accelerators.",
+    "Benchmark results demonstrate exceptional single-core capabilities, placing stress-ng single-core compute performance within the top 10% tier. Instruction set extensions including AVX-512, AVX-512 VNNI, and AVX-512 BF16 contribute to top-tier execution in single-threaded gzip compression (41.23 GB/sec) and bzip3 decompression (18.08 GB/sec). PassMark evaluations also reflect strong overall CPU execution (57,509.96) and cryptographic performance (40,124.54), supported by hardware AES and VAES acceleration.",
+    "Multi-core execution and I/O throughput reside primarily in the middle 50% tier, with multi-core stress-ng registering 60,013.36 and PassMark database operations reaching 19,363.0. Memory bandwidth remains solid with 101.21 GB/sec uncached read and 67.44 GB/sec write on large 256 MB blocks. For AI inference tasks without a GPU, the instance achieves top-tier generation speeds of 413.11 tokens/sec on lightweight 135M parameter models, but falls back to middle-tier throughput (24.24 tokens/sec) on medium 7B models.",
+    "The D32ads_v7 offers balanced resource density and high single-threaded efficiency paired with fast local NVMe capacity. It is well-suited for general-purpose workloads that benefit from responsive single-core performance and fast scratch storage, such as high-traffic web applications, database staging, CI/CD compilation pipelines, and lightweight CPU-based inference services."
   ],
-  "description": "Microsoft Azure D32ads_v7 is a general-purpose instance providing 32 vCPUs and 16 physical cores via an AMD EPYC 9V45 processor clocked at 4.5 GHz on an x86_64 architecture. Configured with 128.0 GB of memory adhering to a standard 1:4 core-to-RAM ratio, it bundles 1890 GB of high-speed local NVMe SSD storage with zero discrete GPUs. Benchmark results demonstrate top-tier single-core performance alongside strong encryption and extended instruction execution via AVX-512 support. The balanced hardware design delivers solid resource density and qualitative cost efficiency for input-output heavy workloads that benefit from direct NVMe access. D32ads_v7 is well suited for relational databases, Redis caching layers, web serving platforms, and continuous integration build environments.",
-  "og_description": "Microsoft Azure D32ads_v7 delivers 32 dedicated vCPUs on an AMD EPYC 9V45 processor, 128 GB memory, and a 1890 GB local NVMe SSD, providing balanced performance for databases and application tiers.",
-  "meta_description": "Microsoft Azure D32ads_v7 features 32 vCPUs, 128 GB RAM, and a bundled 1890 GB NVMe SSD powered by 4.5 GHz AMD EPYC processors on Microsoft Hyper-V.",
-  "tagline": "A balanced 32-vCPU computing profile pairing fast single-core clock frequencies with integrated NVMe local storage for enterprise services.",
+  "description": "Microsoft Azure D32ads_v7 is a general-purpose instance featuring 32 vCPUs and 16 physical cores powered by an AMD EPYC 9V45 processor operating up to 4.5 GHz on an x86_64 architecture. The system provides 128.0 GB of memory maintaining a balanced 1:4 core-to-memory ratio, supplemented by 1888 GB of local NVMe SSD storage. While lacking hardware GPU accelerators, it delivers top-tier single-threaded compute and compression speeds via comprehensive AVX-512 and vector extensions. Multi-core performance, memory bandwidth (101.21 GB/sec uncached read), and database metrics place in the strong-to-average tiers. The D32ads_v7 provides balanced resource density and fast local disk performance suitable for web backends, database engines, compression tasks, and CPU-driven machine learning inference.",
+  "og_description": "Microsoft Azure D32ads_v7 features 32 vCPUs from an AMD EPYC 9V45 processor, 128 GB RAM, and 1888 GB local NVMe SSD storage, delivering strong single-core and general-purpose performance.",
+  "meta_description": "Microsoft Azure D32ads_v7 offers 32 vCPUs, AMD EPYC 9V45 at 4.5 GHz, 128 GB RAM, and 1888 GB NVMe SSD for balanced general-purpose workloads.",
+  "tagline": "Balanced 32-vCPU AMD EPYC instance featuring 128 GB RAM, high-speed NVMe local storage, and top-tier single-core performance.",
   "bullet_points": [
-    "32 vCPUs and 16 physical cores via AMD EPYC 9V45 at 4.5 GHz",
-    "128.0 GB system memory providing 4.0 GB per vCPU",
-    "Bundled 1890 GB local NVMe SSD storage",
-    "Hardware support for AVX-512 vector extensions and VAES acceleration",
-    "Top-tier single-core CPU throughput and strong encryption benchmarks",
-    "Targeted for database systems, web serving, and CI/CD pipelines"
+    "32 dedicated vCPUs (16 physical cores) via AMD EPYC 9V45 up to 4.5 GHz",
+    "128.0 GB system memory (balanced 4.0 GB RAM per vCPU ratio)",
+    "1888 GB bundled high-speed local NVMe SSD storage",
+    "Top-tier single-core performance with AVX-512 and hardware crypto flags",
+    "Suited for database staging, enterprise applications, CI/CD, and CPU inference"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

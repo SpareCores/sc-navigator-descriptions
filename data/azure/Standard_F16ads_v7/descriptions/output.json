@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure F16ads_v7 is a compute-optimized virtual machine instance based on the AMD EPYC 9V45 processor built on the x86_64 architecture. The instance provides 16 dedicated physical cores and 16 vCPUs running at 4.5 GHz, operating with one execution thread per core under the Microsoft Hyper-V hypervisor. The configuration includes 64 GB of system memory, yielding 4 GB of memory per core, paired with a bundled 1890 GB local NVMe solid-state drive for high-speed temporary storage. No discrete GPU acceleration is included in this hardware profile.",
-    "Benchmark testing reveals high single-threaded compute efficiency, driven by the 4.5 GHz clock frequency and AMD Zen-based architecture with AVX-512 instruction extensions such as VNNI and BF16. Geekbench single-core results and stress-ng single-core tests place the instance in the top tier of evaluated hardware. Compression and decompression benchmarks show strong performance, specifically in single-threaded gzip and bzip3 throughput. Multi-core performance is robust across compilation and text processing tasks, while broader multi-core benchmarks align with mid-tier results across the 16-core category.",
-    "From an infrastructure perspective, the dedicated core allocation ensures predictable CPU execution without multi-threading contention. The integrated NVMe SSD eliminates network transfer overhead for IO-heavy scratch workloads, though instances using local storage require external durability strategies for persistent state. The 1:4 core-to-memory ratio provides balanced resource utilization for compute-centric applications without incurring the premium of high-memory tiers. The F16ads_v7 is suitable for software compilation pipelines, batch data processing, web serving, and database tasks requiring fast local scratch disks."
+    "Microsoft Azure F16ads_v7 is a compute-optimized virtual machine powered by an AMD EPYC 9V45 processor clocked up to 4.5 GHz. The configuration allocates 16 dedicated physical cores and 16 vCPUs without multithreading (1.0 thread per core), coupled with 64.0 GB of system memory, yielding a 4.0 GB per-core allocation. Storage is provided locally through an integrated 1888 GB NVMe SSD, while GPU hardware is not included. The underlying CPU architecture incorporates modern vector instruction support, including AVX-512 extensions (AVX-512F, AVX-512 VNNI, and AVX-512 BF16).",
+    "Benchmark outcomes demonstrate exceptional single-thread capability. In stress-ng single-core tests, the server scores 3786.84, placing in the top tier alongside a Geekbench single-core result of 2741.0. Single-threaded gzip compression reached 41.32 GB/sec, and image processing registered in the top tier at 20245.0. Multi-threaded performance scales robustly across the 16 dedicated cores, with Geekbench multi-core hitting 19953.0 and multi-threaded bzip3 decompression achieving 250.93 GB/sec. For lightweight artificial intelligence tasks, the instance achieves top-tier text generation throughput on small 135M parameter models at 438.13 tokens/sec.",
+    "The 1:1 physical core-to-vCPU allocation ensures predictable instruction execution without resource contention from simultaneous multithreading. Paired with high-throughput local NVMe storage and balanced memory bandwidth, the instance delivers high efficiency for compute-bound operations without requiring specialized GPU accelerators. The primary hardware tradeoff is a moderate memory capacity relative to core count and average throughput on highly parallelized database workloads.",
+    "This server profile is well matched for compute-heavy workloads that demand high per-core clocks and fast local caching, including software compilation pipelines, web serving clusters, batch data compression, and small-model CPU inference pipelines."
   ],
-  "description": "Microsoft Azure F16ads_v7 is a compute-optimized virtual machine instance featuring 16 dedicated AMD EPYC 9V45 processor cores running at 4.5 GHz on the x86_64 architecture. Operating with one thread per physical core, the instance provides 64 GB of system memory and an integrated 1890 GB local NVMe SSD, without discrete GPU hardware. The CPU incorporates AVX-512 instruction extensions, delivering top-tier benchmark performance in single-core compute tasks and data compression algorithms, alongside strong results in software compilation and text manipulation. The combination of dedicated 4.5 GHz cores, a 1:4 core-to-memory ratio, and direct local NVMe storage offers reliable execution density for latency-sensitive processes. F16ads_v7 is well suited for CPU-bound computation, continuous integration build pipelines, web serving infrastructure, and localized database workloads.",
-  "og_description": "Microsoft Azure F16ads_v7 features 16 dedicated AMD EPYC 9V45 cores at 4.5 GHz, 64 GB of RAM, and 1890 GB of NVMe SSD storage, delivering strong single-core compute for build pipelines and web workloads.",
-  "meta_description": "Microsoft Azure F16ads_v7 offers 16 AMD EPYC cores at 4.5 GHz, 64 GB RAM, and 1890 GB local NVMe SSD storage for compute-intensive workloads and databases.",
-  "tagline": "High-clock 16-core dedicated compute platform with integrated NVMe storage for intensive processing, data compression, and web serving workloads.",
+  "description": "Microsoft Azure F16ads_v7 is a compute-optimized instance delivering 16 dedicated physical cores and 16 vCPUs running on an AMD EPYC 9V45 processor with a peak clock rate of 4.5 GHz. It includes 64.0 GB of RAM (4.0 GB per core) and bundled high-speed local storage consisting of an 1888 GB NVMe SSD, without attached GPUs. Benchmark evaluations show top-tier single-core CPU execution, leading compression throughput, and strong multi-core scaling in Geekbench. The absence of SMT guarantees uninterrupted compute cycles per core. F16ads_v7 is well suited for CPU-bound microservices, continuous integration and build servers, algorithmic compression pipelines, and CPU-based lightweight machine learning inference.",
+  "og_description": "Microsoft Azure F16ads_v7 provides 16 dedicated AMD EPYC cores at 4.5 GHz, 64 GB RAM, and an integrated 1888 GB NVMe SSD, delivering top-tier single-core performance for compute workloads.",
+  "meta_description": "Microsoft Azure F16ads_v7 features 16 dedicated AMD EPYC cores at 4.5 GHz, 64 GB RAM, and an 1888 GB NVMe SSD for compute-intensive cloud workloads.",
+  "tagline": "Dedicated sixteen-core AMD compute performance with 1888 GB local NVMe storage and top-tier single-threaded processing speeds.",
   "bullet_points": [
-    "16 dedicated AMD EPYC 9V45 cores operating at 4.5 GHz with AVX-512 support",
-    "64 GB total memory providing 4 GB per physical core",
-    "Bundled 1890 GB local NVMe SSD high-throughput temporary storage",
-    "Top-tier benchmark throughput in single-core processing and data compression",
-    "Suitable for software compilation, batch processing, and local database workloads"
+    "AMD EPYC 9V45 processor clocked up to 4.5 GHz with 16 dedicated physical cores (no SMT)",
+    "64.0 GB system memory providing 4.0 GB per core",
+    "Bundled 1888 GB local NVMe SSD storage",
+    "Top-tier single-thread CPU benchmarks and compression throughput",
+    "Tailored for CI/CD builds, batch compression, and CPU-driven inference"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

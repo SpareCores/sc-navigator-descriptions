@@ -1,23 +1,25 @@
 {
   "page": [
-    "Microsoft Azure E96ads_v6 is a memory-optimized virtual machine built on the x86_64 architecture and powered by a dedicated AMD EPYC 9V74 processor running at up to 3.7 GHz. The instance provisions 96 vCPUs across 48 physical cores with simultaneous multithreading, backed by 32 KB L1 data cache, 1.0 MB L2 cache, and 32 MB L3 cache per core cluster. It incorporates modern vector and cryptographic instruction extensions, including AVX-512, AVX-512 VNNI, AVX-512 BF16, AES, and SHA-NI, running on Microsoft Hyper-V virtualization.",
-    "Memory capacity and local I/O throughput are key specifications of this configuration. The server contains 672.0 GB of system memory, providing 7.0 GB of RAM per vCPU. Bundled local storage includes 5669 GB of direct-attached NVMe SSD space suitable for high-throughput scratch disks, temporary processing buffers, and caching tiers. The instance contains zero discrete GPUs and does not allocate complimentary public IPv4 addresses.",
-    "Benchmark assessments highlight strong computational and in-memory execution throughput. Multi-core performance measured by stress-ng reached 147511.51 points, placing the instance in the top 10% tier of tested cloud systems, while stress-ng single-core performance attained 3077.18 points in the top 25%. In memory-centric workloads, Redis SET operations reached 112.8 million operations per second, also placing in the top 25%.",
-    "From a cost-efficiency perspective, the E96ads_v6 consolidates high compute density, substantial memory, and integrated multi-terabyte NVMe storage into a single node, reducing the operational overhead of distributed fleets for large single-node workloads. Because the local NVMe storage is ephemeral, workloads requiring long-term data durability must implement remote persistent storage strategies. The configuration fits large relational and in-memory database engines, Redis clusters, enterprise analytics, transactional caches, and heavy data processing pipelines."
+    "The Microsoft Azure E96ads_v6 is a memory-optimized virtual machine instance powered by dedicated AMD EPYC 9V74 processors. It provides 96 vCPUs across 48 physical cores with simultaneous multithreading running at frequencies up to 3.7 GHz. The compute architecture features an x86_64 instruction set with hardware support for AVX-512 vector extensions, including AVX512_VNNI and AVX512_BF16, alongside cryptographic accelerators like VAES and SHA_NI. The instance is allocated 672 GB of system memory, yielding an allocation ratio of 7.0 GB of RAM per vCPU.",
+    "Integrated directly into the host hardware, the E96ads_v6 includes 5670 GB of local NVMe SSD storage, bypassing network-attached storage latency for high-speed scratch space and temporary file operations. The virtual machine runs under the Microsoft Hyper-V hypervisor and supports Azure Premium Storage for persistent external disk arrays. No hardware GPUs are provisioned on this instance type.",
+    "Benchmark results demonstrate top-tier compute and memory access capability. Multi-core execution via stress-ng achieved a score of 147,511.51, ranking in the top 10% of tested systems, while single-core performance registered at 3,077.18 in the top 25%. In memory-centric key-value testing, the instance delivered 112.8 million Redis SET operations per second, reflecting high sustained data ingestion capabilities.",
+    "By delivering massive memory alongside 5.67 TB of fast local NVMe capacity, the E96ads_v6 achieves strong resource density and operational efficiency for scaled data tiers. The omission of dedicated GPUs directs all compute resources strictly toward CPU-bound and memory-bound tasks. This virtual machine is engineered for large-scale relational and in-memory databases, real-time analytical processing, Redis caching deployments, and intensive ETL pipelines."
   ],
-  "description": "Microsoft Azure E96ads_v6 is a memory-optimized virtual machine featuring 96 dedicated vCPUs (48 physical cores) based on the AMD EPYC 9V74 x86_64 processor clocked at 3.7 GHz. Equipped with 672.0 GB of RAM, the system delivers 7.0 GB of memory per core and includes 5669 GB of bundled local NVMe SSD storage without discrete GPUs. In synthetic benchmarks, the instance recorded top-tier multi-core execution on stress-ng (147511.51, top 10%) and strong single-core performance (3077.18, top 25%). High memory throughput is demonstrated by 112.8 million Redis SET operations per second (top 25%). While ephemeral local storage requires independent strategies for persistent data, the instance offers dense resource aggregation for memory-bound tasks. It is well suited for in-memory databases, Redis deployments, enterprise analytics, and high-throughput data processing pipelines.",
-  "og_description": "Microsoft Azure E96ads_v6 is a memory-optimized virtual machine featuring 96 dedicated AMD EPYC vCPUs, 672 GB of RAM, and 5669 GB local NVMe SSD storage for intensive in-memory enterprise databases and data analytics.",
-  "meta_description": "Microsoft Azure E96ads_v6 is a memory-optimized VM with 96 AMD EPYC vCPUs, 672 GB RAM, and 5669 GB local NVMe SSD storage for memory-intensive workloads.",
-  "tagline": "Memory-optimized computing with 96 AMD EPYC cores, 672 GB memory, and 5.6 TB NVMe storage for enterprise caching and analytics.",
+  "description": "The Microsoft Azure E96ads_v6 is a memory-optimized virtual machine equipped with 96 vCPUs across 48 physical AMD EPYC 9V74 cores operating at up to 3.7 GHz. Featuring an x86_64 architecture with AVX-512 support, the system provides 672 GB of RAM, equating to 7.0 GB of memory per vCPU. Storage architecture features a bundled 5670 GB local NVMe SSD array alongside Premium Storage support, while GPU hardware is omitted. Benchmark evaluations place the instance in the top 10% for multi-core stress-ng throughput with a score of 147,511.51 and verify strong caching capability with 112.8 million Redis SET operations per second. The instance delivers high resource density for memory-heavy computing without external storage latency penalties. It is suitable for hosting large in-memory caching systems, transactional databases, big data analytics engines, and high-throughput data transformation pipelines.",
+  "og_description": "Microsoft Azure E96ads_v6 is a memory-optimized virtual machine featuring 96 AMD EPYC 9V74 vCPUs, 672 GB of memory, and 5670 GB of local NVMe SSD storage for intensive in-memory and database workloads.",
+  "meta_description": "Microsoft Azure E96ads_v6 provides 96 AMD EPYC vCPUs, 672 GB RAM, and 5670 GB NVMe SSD storage designed for demanding enterprise memory workloads.",
+  "tagline": "High-density memory-optimized infrastructure with dedicated AMD EPYC compute and extensive local NVMe storage for memory-bound and transactional enterprise applications.",
   "bullet_points": [
-    "96 dedicated vCPUs powered by AMD EPYC 9V74 processors at 3.7 GHz",
-    "672.0 GB total RAM delivering 7.0 GB of memory per vCPU",
-    "5669 GB of bundled high-speed direct-attached NVMe SSD storage",
-    "Top 10% multi-core stress-ng performance and 112.8M Redis SET operations per second",
-    "Optimized for in-memory databases, large caching layers, and analytics pipelines"
+    "96 dedicated AMD EPYC 9V74 vCPUs clocked at 3.7 GHz across 48 physical cores",
+    "672 GB system memory offering 7 GB of RAM per vCPU",
+    "5670 GB integrated high-speed local NVMe SSD storage",
+    "Top 10% multi-core throughput in stress-ng benchmark evaluations",
+    "Redis throughput measured at 112.8 million SET operations per second",
+    "Optimized for large in-memory databases, real-time analytics, and caching layers"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }
