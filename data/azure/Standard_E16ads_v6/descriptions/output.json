@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E16ads_v6 is a memory-optimized virtual machine belonging to the Eadv6 server family. It is powered by an AMD EPYC 9V74 processor utilizing the x86_64 architecture. The instance features 16 dedicated vCPUs mapped to 8 physical cores with multithreading enabled, operating at a clock speed of 3.7 GHz. It is equipped with 128.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. Additionally, the server includes a bundled 945 GB local NVMe SSD and supports Premium Storage.",
-    "Benchmark evaluations indicate strong single-core performance, with stress-ng single-core and Geekbench single-core scores placing in the top 25%. Multi-core processing, text decompression, and database operations perform in the average range. Memory performance is mixed; while cached small-block read bandwidth and large-block write bandwidth are average, uncached large-block read bandwidth falls into the bottom 25%. For language model workloads, the server demonstrates strong text generation speeds with small models, but performance drops significantly to the bottom 10% when processing prompts for large 70B models.",
-    "From a cost-efficiency perspective, the E16ads_v6 offers a dense memory allocation and fast local NVMe storage relative to its compute footprint, making it a viable option for memory-intensive workloads without the premium of a larger vCPU count. The combination of high memory capacity, dedicated AMD EPYC cores, and local NVMe storage makes this instance well-suited for relational databases, in-memory caching systems like Redis, text processing pipelines, and moderate-scale data processing tasks."
+    "Microsoft Azure E16ads_v6 is a memory-optimized virtual machine built on the x86_64 AMD EPYC 9V74 processor running under Microsoft Hyper-V. The instance provides 16 dedicated virtual CPUs mapped across 8 physical cores at 3.7 GHz, utilizing two threads per core. Memory capacity totals 128.0 GB, establishing an 8.0 GB per vCPU ratio. High-speed local scratch capacity is provisioned via an integrated 945 GB NVMe solid-state drive, while graphics processing units are absent.",
+    "Benchmark testing shows strong single-threaded performance, with Geekbench single-core reaching 1970.0 and stress-ng single-core achieving 3080.08, both ranking in the top 25%. Multi-core throughput aligns with expectations for 8 physical cores, registering 11455.0 on Geekbench multi-core and 24643.48 on stress-ng multi-core. Cryptographic and vector extension workloads benefit from hardware-supported AVX-512, VAES, and SHA-NI flags. Memory benchmarks demonstrate high cached small-block throughput at 1216.46 GB/sec, though uncached large-block read bandwidth drops to 37.92 GB/sec.",
+    "Architectural tradeoffs center around memory density and storage integration versus sustained multi-core parallel scaling. The instance delivers high single-thread efficiency and dedicated NVMe storage, making it cost-efficient for memory-dependent applications without requiring dedicated GPU acceleration or bare-metal hypervisor costs. However, large model AI inference shows steep performance falloffs, with 70B prompt processing settling in the bottom 10% at 4.46 tokens/sec.",
+    "This server profile suits relational and in-memory databases such as Redis, which achieved 22.31 million SET operations per second in testing. The combined 128 GB memory footprint and 945 GB NVMe scratch drive also support enterprise resource planning backends, text processing pipelines, Clang software builds, and mid-tier analytics engines requiring consistent per-core RAM allocations."
   ],
-  "description": "The Microsoft Azure E16ads_v6 is an x86_64 memory-optimized virtual machine powered by an AMD EPYC 9V74 processor running at 3.7 GHz. It features 16 dedicated vCPUs, 128.0 GB of RAM, and a bundled 945 GB local NVMe SSD. Operating on Microsoft Hyper-V, this instance delivers strong single-core CPU and text-processing performance, alongside average multi-core and database capabilities. However, uncached large-block memory read bandwidth is a relative bottleneck, performing in the bottom 25%. With its high memory-to-core ratio and fast local storage, the E16ads_v6 is highly suitable for memory-intensive workloads, including relational databases, in-memory caching, and text processing pipelines.",
-  "og_description": "Microsoft Azure E16ads_v6 is an x86_64 memory-optimized server featuring 16 dedicated AMD EPYC vCPUs, 128 GB of RAM, and a 945 GB local NVMe SSD, optimized for databases and memory-intensive workloads.",
-  "meta_description": "Microsoft Azure E16ads_v6 is a memory-optimized server with 16 AMD EPYC vCPUs, 128 GB RAM, and a 945 GB local NVMe SSD for database workloads.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated AMD EPYC processors and high-speed local NVMe storage for memory-intensive database workloads.",
+  "description": "Microsoft Azure E16ads_v6 is a memory-optimized virtual machine powered by an AMD EPYC 9V74 processor clocked at 3.7 GHz. Configured with 16 vCPUs across 8 physical cores, it supplies 128.0 GB of memory alongside an integrated 945 GB local NVMe SSD. The architecture features extensive instruction support including AVX-512, SHA-NI, and VAES. Benchmark evaluations highlight top-quartile single-core processing capabilities, marked by a Geekbench score of 1970.0, and stable multi-core throughput reaching 11455.0. Although large-block uncached memory read bandwidth is constrained, small-block cached throughput and Redis operations perform reliably at scale. The 8 GB per vCPU allocation and fast local NVMe storage deliver strong resource density and qualitative cost efficiency for memory-intensive duties without the overhead of GPU hardware. Azure E16ads_v6 is well suited for hosting in-memory caches, relational database workloads, software compilation, and data analytics pipelines requiring significant temporary disk storage.",
+  "og_description": "Microsoft Azure E16ads_v6 features 16 vCPUs on an AMD EPYC 9V74 processor, 128 GB of RAM, and a 945 GB NVMe SSD, delivering strong single-core speed for memory-intensive database workloads.",
+  "meta_description": "Microsoft Azure E16ads_v6 provides 16 vCPUs, 128 GB RAM, and a 945 GB NVMe SSD on AMD EPYC hardware, engineered for memory-heavy enterprise databases.",
+  "tagline": "A memory-optimized virtual machine delivering high single-core execution speed, abundant memory per core, and local NVMe caching capacity.",
   "bullet_points": [
-    "Powered by a 16-vCPU AMD EPYC 9V74 processor at 3.7 GHz",
-    "Equipped with 128.0 GB of RAM (8.0 GB per core)",
-    "Includes a bundled 945 GB local NVMe SSD",
-    "Strong single-core CPU and text-processing benchmark performance",
-    "Ideal for relational databases, in-memory caching, and data pipelines"
+    "AMD EPYC 9V74 processor with 16 dedicated vCPUs (8 physical cores) at 3.7 GHz",
+    "128.0 GB system memory providing an 8 GB per vCPU ratio",
+    "Bundled 945 GB local NVMe SSD for fast temporary storage and caching",
+    "Top-tier single-core benchmark metrics supported by AVX-512 instructions",
+    "Suited for in-memory databases, Redis caches, analytics, and software builds"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

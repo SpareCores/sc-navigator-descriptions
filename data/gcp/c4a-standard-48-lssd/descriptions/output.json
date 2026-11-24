@@ -1,24 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform c4a-standard-48-lssd is an arm64-based server instance powered by the ARMv8 Neoverse-V2 architecture. It features 48 dedicated physical cores with a clock speed of 3.0 GHz and a 1.0 thread-per-core configuration. The hardware includes 192 GB of system memory, providing 4.0 GB of RAM per core, and is bundled with 4020 GB of local NVMe SSD storage.",
-    "Benchmark results indicate strong multi-core capabilities and high memory throughput. The instance achieved a top-tier rating in Geekbench multi-core testing and software compilation, alongside top-tier PassMark database operations and static web serving throughput. Memory bandwidth is also strong, reaching 286.75 GB/sec for large block read-only operations. However, single-core performance is more moderate, with Geekbench single-core and stress-ng single-core scores falling into the average category.",
-    "From a resource density perspective, the instance offers high qualitative cost efficiency for multi-threaded and database workloads due to its dedicated physical cores and integrated high-capacity local NVMe storage. Tradeoffs include the absence of x86-specific instruction sets such as AVX and AMX, and average single-threaded decompression and text processing speeds. It is highly suitable for database hosting, multi-threaded software compilation, static web serving, and medium-scale LLM inference tasks."
+    "Google Cloud Platform c4a-standard-48-lssd is a general-purpose virtual machine based on the ARMv8 64-bit architecture. It features 48 dedicated physical cores powered by ARM Neoverse-V2 processors clocked at 3.0 GHz, operating with one thread per core. Memory capacity is allocated at 192 GB of RAM, preserving a standard 1:4 vCPU-to-memory ratio of 4.0 GB per core. The processor subsystem includes 64 KB of L1 data cache, 2 MB of L2 cache, and an 80 MB shared L3 cache, alongside integrated hardware AES cryptographic capabilities. Storage is bundled directly via 4,020 GB of local NVMe SSDs across 10 devices, while no hardware accelerators or GPUs are included.",
+    "Benchmark results demonstrate strong multi-threaded compute and memory subsystem performance. The instance achieved a Geekbench multi-core score of 24,288.0 and a Clang software compilation score of 71,188.0, both placing in the top 10% tier. Stress-ng multi-core testing reached 87,014.41 points, reflecting efficient 48-core parallelization despite moderate single-core benchmark ratings. Memory performance is equally capable, with PassMark memory scoring in the top 10% at 3,183.47 points, supported by uncached read bandwidth of 286.75 GB/sec and uncached write bandwidth of 143.04 GB/sec. Application testing shows top-tier outcomes in static web serving at 97.21 GB/sec, database operations scoring 48,182.95, and Redis SET throughput exceeding 98 million operations per second.",
+    "The primary architectural tradeoff lies in the contrast between moderate single-threaded instruction throughput and high multi-core scalability coupled with fast local I/O. For operations requiring extensive x86 instruction sets such as AVX-512 or AMX, compatibility adjustments are necessary due to the ARM architecture. Given its dedicated core layout and dense local NVMe storage, this server offers robust resource efficiency for parallelized, I/O-intensive workloads including relational databases, high-throughput caching tiers, software build systems, and containerized web services."
   ],
-  "description": "Google Cloud Platform c4a-standard-48-lssd is an arm64 server featuring 48 dedicated physical ARMv8 Neoverse-V2 cores running at 3.0 GHz, 192 GB of RAM, and 4020 GB of local NVMe SSD storage. This instance delivers top-tier performance in multi-core benchmarks, software compilation, and database operations, alongside strong memory bandwidth. While single-core processing and text manipulation scores fall into the average tier, its dedicated core allocation and high-capacity local storage provide excellent resource density for multi-threaded workloads. The lack of AVX or AMX instruction sets represents a key architectural tradeoff. This server is optimized for database hosting, static web serving, and multi-threaded compilation tasks.",
-  "og_description": "Google Cloud Platform c4a-standard-48-lssd is an arm64 server with 48 dedicated Neoverse-V2 cores, 192 GB RAM, and 4020 GB NVMe SSD, delivering top-tier database and multi-core performance.",
-  "meta_description": "Google Cloud Platform c4a-standard-48-lssd features 48 arm64 cores, 192 GB RAM, and 4020 GB NVMe SSD for top-tier database and multi-core workloads.",
-  "tagline": "An arm64 server combining 48 dedicated physical cores with high-capacity local NVMe storage for demanding database and multi-threaded workloads.",
+  "description": "Google Cloud Platform c4a-standard-48-lssd is an ARM-based general-purpose instance featuring 48 dedicated ARM Neoverse-V2 cores operating at 3.0 GHz, 192 GB of system memory, and 4,020 GB of integrated local NVMe SSD storage. Utilizing a balanced 1:4 vCPU-to-RAM allocation, it delivers top-tier parallel processing and memory throughput, as evidenced by Geekbench multi-core scores in the upper decile and uncached read bandwidth exceeding 286 GB/sec. Single-core performance registers in the middle tier, making the hardware best aligned with highly concurrent, multithreaded tasks rather than single-threaded processing. The substantial bundled NVMe capacity enables fast local I/O, reflected in strong Redis, database, and static web serving benchmarks. Without GPUs or x86 instruction extensions, the instance is optimized for multi-threaded compilation pipelines, high-density web serving, Redis caching tiers, and localized database workloads.",
+  "og_description": "Google Cloud Platform c4a-standard-48-lssd features 48 dedicated ARM Neoverse-V2 cores, 192 GB of RAM, and 4,020 GB of local NVMe SSD storage, delivering high multi-threaded throughput for databases and web serving.",
+  "meta_description": "Google Cloud Platform c4a-standard-48-lssd is an ARM-based general purpose instance with 48 Neoverse-V2 cores, 192 GB RAM, and 4,020 GB NVMe local storage.",
+  "tagline": "Dedicated ARM Neoverse-V2 architecture combined with high-speed local NVMe storage delivers balanced multi-core throughput and strong memory bandwidth for demanding I/O workloads.",
   "bullet_points": [
-    "48 dedicated physical ARMv8 Neoverse-V2 cores at 3.0 GHz",
-    "192 GB of system memory and 4020 GB of local NVMe SSD storage",
-    "Top-tier performance in database operations and software compilation",
-    "Strong multi-core execution and high memory bandwidth",
-    "Average single-core performance and absence of AVX/AMX instructions",
-    "Best suited for database hosting, web serving, and multi-threaded workloads"
+    "48 dedicated ARM Neoverse-V2 cores running at 3.0 GHz with one thread per core",
+    "192 GB of system memory providing a balanced 4.0 GB per core ratio",
+    "4,020 GB of integrated high-speed local NVMe SSD storage",
+    "Top-tier multi-core execution for software compilation, web serving, and database operations",
+    "Well suited for high-concurrency databases, Redis caching, CI/CD builds, and web serving"
   ],
   "categories": [
-    "Storage & Database",
     "General Purpose",
-    "Compute Optimized"
+    "Storage & Database"
   ]
 }

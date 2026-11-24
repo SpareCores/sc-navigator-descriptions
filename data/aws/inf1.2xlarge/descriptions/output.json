@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services inf1.2xlarge is an x86_64 architecture server powered by an Intel Xeon 8275CL processor. It features 8 dedicated vCPUs, structured as 4 physical cores with 2 threads per core, running at a clock speed of 2.5 GHz. The system is equipped with 16.0 GB of DDR4 memory operating at 3 GHz, yielding 2.0 GB of RAM per core. This instance runs on the AWS Nitro hypervisor, includes no local storage, and provides a baseline network bandwidth of 5 Gbps.",
-    "Benchmark results place the inf1.2xlarge in the average performance tier for most standard CPU and memory operations. The Intel Xeon processor achieves a single-core stress-ng score of 1495.28 and a multi-core score of 7874.32. Memory bandwidth tests show 439.45 GB/sec for cached small blocks and 50.99 GB/sec for uncached large blocks. However, multi-threaded bzip3 decompression is weak at 30.03 GB/sec. For language model workloads, the server demonstrates weak to poor performance, processing 135M model prompts at 395.75 tokens/sec and 7B model prompts at a poor 11.45 tokens/sec.",
-    "From a qualitative cost-efficiency perspective, the inf1.2xlarge offers a balanced compute-to-memory ratio for general-purpose and compute-bound workloads that do not require local storage or high-end GPU acceleration. Given the average performance in database operations with a PassMark database score of 2987.14 and static web serving throughput of 6.88 GB/sec, this instance is suited for web serving, basic serialization tasks, and moderate computational workloads, while being poorly suited for larger local LLM inference tasks."
+    "Amazon Web Services inf1.2xlarge is an accelerated computing instance built on the AWS Nitro hypervisor architecture. The platform features an Intel Xeon 8275CL x86_64 processor operating at a base frequency of 2.5 GHz across 4 physical cores and 8 vCPUs, supported by 35 MB of L3 cache. Memory configuration includes 16.0 GB of DDR4 RAM clocked at 3 GHz, providing 2.0 GB per virtual core. Hardware acceleration is provided by a single AWS Inferentia chip equipped with 8 GB of total VRAM. The instance does not include local disk storage and connects with a baseline network bandwidth of 5 Gbps.",
+    "Benchmark evaluations indicate consistent middle-tier host CPU performance alongside specialized accelerator metrics. The host system achieves a Geekbench single-core score of 1211.0 and a multi-core score of 4565.0, paired with a PassMark CPU score of 8870.98. Memory throughput reaches 50.99 GB/sec for uncached large-block reads and 38.4 GB/sec for large-block writes. For machine learning tasks, the single Inferentia accelerator yields 117.52 tokens per second for text generation on a 135M parameter model, but performance declines on larger architectures, recording 11.45 tokens per second prompt processing and 6.67 tokens per second text generation on a 7B parameter model.",
+    "The absence of integrated local storage necessitates network-attached storage solutions, which rely on the 5 Gbps baseline network link. From a cost-efficiency perspective, the instance targets specialized inference pipelines where deploying full-scale discrete GPUs would introduce resource and cost overheads. The hardware profile is aligned with lightweight machine learning inference, computer vision, natural language text processing, and associated microservices."
   ],
-  "description": "Amazon Web Services inf1.2xlarge is an x86_64 server featuring an Intel Xeon 8275CL processor with 8 dedicated vCPUs, 4 physical cores, and 16.0 GB of DDR4 memory. Operating on the AWS Nitro hypervisor, it delivers a baseline network bandwidth of 5 Gbps and lacks local storage. Performance benchmarks indicate average capabilities, with a PassMark CPU score of 8870.98 and a static web serving throughput of 6.88 GB/sec. However, it exhibits weak performance in multi-threaded decompression and LLM inference, with prompt processing for a 7B model dropping to a poor 11.45 tokens/sec. This server is best suited for web serving, moderate database operations, and general compute tasks rather than heavy AI inference workloads.",
-  "og_description": "Amazon Web Services inf1.2xlarge is an x86_64 server with 8 dedicated Intel Xeon vCPUs, 16 GB DDR4 RAM, and 5 Gbps network bandwidth, delivering average performance for web serving and general compute.",
-  "meta_description": "Amazon Web Services inf1.2xlarge features 8 dedicated Intel Xeon vCPUs, 16 GB DDR4 RAM, and 5 Gbps network speed on the Nitro hypervisor.",
-  "tagline": "An x86_64 compute instance with dedicated Intel Xeon cores and balanced memory performance for standard web serving and utility workloads.",
+  "description": "Amazon Web Services inf1.2xlarge is an accelerated computing instance powered by an Intel Xeon 8275CL processor with 8 vCPUs, 4 physical cores, and 16.0 GB of DDR4 system memory. Acceleration is driven by a single AWS Inferentia chip providing 8 GB of VRAM. It operates on the Nitro hypervisor, provides a 5 Gbps baseline network bandwidth, and does not include local storage. Benchmark results show average host computing throughput, with a PassMark score of 8870.98 and a Geekbench multi-core result of 4565.0. On machine learning inference benchmarks, it maintains 117.52 tokens per second for text generation on lightweight 135M models, but falls to 6.67 tokens per second on 7B models. This instance serves specialized, cost-effective inference pipelines, text processing, and lightweight model serving where general-purpose GPU overhead is unnecessary.",
+  "og_description": "Amazon Web Services inf1.2xlarge provides 8 vCPUs on an Intel Xeon 8275CL CPU, 16 GB DDR4 memory, and one AWS Inferentia chip with 8 GB VRAM for specialized machine learning inference workloads.",
+  "meta_description": "Amazon Web Services inf1.2xlarge features 8 vCPUs, 16 GB DDR4 RAM, and an AWS Inferentia accelerator with 8 GB VRAM designed for machine learning inference.",
+  "tagline": "An accelerator-driven cloud instance combining eight virtual cores, DDR4 memory, and dedicated inference hardware for lightweight machine learning workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an Intel Xeon 8275CL processor at 2.5 GHz",
-    "16.0 GB of DDR4 memory with 50.99 GB/sec large-block read bandwidth",
-    "5 Gbps baseline network bandwidth running on the AWS Nitro hypervisor",
-    "Average performance in static web serving and database operations",
-    "Weak performance in multi-threaded decompression and local LLM inference",
-    "Well-suited for general-purpose compute, web serving, and utility workloads"
+    "AWS Inferentia accelerator with 8 GB dedicated VRAM",
+    "8 vCPUs across 4 physical cores via Intel Xeon 8275CL at 2.5 GHz",
+    "16.0 GB DDR4 system memory at 3 GHz",
+    "5 Gbps baseline network interface without bundled local storage",
+    "Tailored for lightweight model inference and text processing microservices"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "GPU Accelerated",
+    "Compute Optimized"
   ]
 }

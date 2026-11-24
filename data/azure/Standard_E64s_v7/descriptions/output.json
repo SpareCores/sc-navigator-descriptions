@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E64s_v7 is a memory-optimized virtual machine belonging to the Esv7 server family, running on the Microsoft Hyper-V hypervisor. It features 64 dedicated vCPUs mapped to 32 physical cores of an Intel Xeon 6973P-C x86_64 processor operating at 4.2 GHz. The processor includes a 480 MB L3 cache, 2 MB L2 cache, and 48 KB L1d cache. It supports advanced instruction sets such as AVX-512, Intel Advanced Matrix Extensions (AMX), and cryptography acceleration via VAES and SHA-NI.",
-    "The server is equipped with 512.0 GB of system memory, providing a high memory-to-vCPU ratio of 8.0 GB per core. It does not include any bundled local storage, but it is Premium Storage capable, allowing external storage attachments. There are zero complimentary public IPv4 addresses included with this configuration.",
-    "Benchmark results indicate strong multi-core CPU performance, with a Passmark CPU score of 80,219.92 and a stress-ng multi-core score of 63,502.15. Memory read bandwidth is highly efficient, reaching 4,689.08 GB/sec for cached small blocks and 329.32 GB/sec for uncached large blocks. Database operations are a key strength, demonstrated by a Passmark database score of 29,091.56 and Redis SET throughput of 105.13 million operations per second. Single-core performance and small-model LLM inference speeds fall within average ranges. This hardware profile is highly suited for memory-intensive workloads, large-scale database hosting, software compilation, and high-throughput web serving."
+    "Microsoft Azure E64s_v7 is an enterprise memory-optimized virtual machine built on the Microsoft Hyper-V hypervisor. The instance is powered by an x86_64 Intel Xeon 6973P-C processor operating at 4.2 GHz, providing 64 dedicated vCPUs derived from 32 physical cores with hyper-threading enabled. Cache configuration includes 48 KB of L1 data cache, 2 MB of L2 cache per core, and 480 MB of shared L3 cache. Instruction set extensions include AVX-512 variants, AVX-VNNI, and Intel Advanced Matrix Extensions (AMX), delivering hardware acceleration for matrix math and vector calculations.",
+    "System memory totals 512.0 GB of RAM, establishing a 1:8 vCPU-to-memory ratio with 8.0 GB allocated per vCPU. Hardware benchmarks reveal strong multi-core performance, achieving 63,502.15 in multi-core stress-ng tests and a PassMark CPU score of 80,219.92. Memory subsystem throughput reaches 329.32 GB/sec for large-block uncached reads and 147.79 GB/sec for writes. Single-core stress-ng tests register in the middle tier at 2,206.19, while single-core Geekbench scores rank in the upper quartile at 2,127.0.",
+    "The E64s_v7 contains no bundled local storage and zero included public IPv4 addresses, requiring remote attached premium managed disks for root filesystem and persistent application data. Acceleration hardware is omitted, featuring zero discrete GPUs. From a resource-density perspective, the machine provides substantial memory capacity paired with dedicated compute, though the absence of ephemeral NVMe requires balancing external block storage latency against memory access speeds.",
+    "This hardware profile is targeted toward large in-memory databases, key-value stores, distributed analytics, and enterprise data processing. Benchmark results validate this focus, demonstrating 105.13 million operations per second in Redis SET workloads and 29,091.56 in PassMark database transaction tests."
   ],
-  "description": "Microsoft Azure E64s_v7 is a memory-optimized virtual machine from the Esv7 family, powered by a 64-vCPU Intel Xeon 6973P-C x86_64 processor running at 4.2 GHz. It features 512.0 GB of RAM, yielding a high resource density of 8.0 GB per core, though it lacks bundled local storage. Operating on Microsoft Hyper-V, the server delivers strong multi-core performance and memory bandwidth, as evidenced by a Passmark CPU score of 80,219.92 and uncached read speeds of 329.32 GB/sec. It also demonstrates exceptional database efficiency, achieving 105.13 million Redis SET operations per second. While single-core speeds and LLM inference performance remain average, the instance's massive L3 cache and advanced instruction sets like AMX and AVX-512 make it highly effective for memory-intensive enterprise databases, software compilation, and high-throughput web serving.",
-  "og_description": "Microsoft Azure E64s_v7 is a memory-optimized virtual machine featuring 64 vCPUs, an Intel Xeon 6973P-C processor, and 512 GB of RAM, designed for high-throughput database and enterprise workloads.",
-  "meta_description": "Microsoft Azure E64s_v7 is a memory-optimized VM with 64 Intel Xeon vCPUs, 512 GB RAM, and strong multi-core database performance.",
-  "tagline": "A high-density memory-optimized virtual machine featuring advanced Intel Xeon processing for demanding database and enterprise workloads.",
+  "description": "Microsoft Azure E64s_v7 is a memory-optimized virtual machine configured with 64 dedicated vCPUs and 512.0 GB of RAM, maintaining an 8.0 GB per vCPU allocation. Driven by an x86_64 Intel Xeon 6973P-C processor clocked at 4.2 GHz across 32 physical cores, the instance features a 480 MB L3 cache alongside AVX-512 and AMX instruction extensions. The instance has no integrated local storage or discrete GPUs, relying on networked block storage for persistent data. In benchmark evaluations, the E64s_v7 registers upper-quartile multi-core processing with a PassMark CPU score of 80,219.92 and uncached memory read bandwidth of 329.32 GB/sec. It delivers high throughput on memory-centric tasks, achieving 105.13 million operations per second on Redis SET benchmarks. The hardware profile is engineered primarily for memory-intensive workloads, including enterprise relational databases, large-scale in-memory caches, distributed analytics engines, and batch transaction processing pipelines.",
+  "og_description": "Microsoft Azure E64s_v7 is a memory-optimized instance featuring 64 dedicated vCPUs, an Intel Xeon 6973P-C CPU at 4.2 GHz, 512 GB RAM, and advanced AVX-512 and AMX extensions for memory-bound enterprise workloads.",
+  "meta_description": "Microsoft Azure E64s_v7 offers 64 dedicated vCPUs, 512 GB RAM, and Intel Xeon 6973P-C processing for large-scale enterprise in-memory databases.",
+  "tagline": "A high-density memory-optimized cloud server offering 512 GB of RAM and 64 dedicated Intel Xeon vCPUs for large enterprise database architectures.",
   "bullet_points": [
-    "64 dedicated vCPUs powered by an Intel Xeon 6973P-C processor at 4.2 GHz",
-    "512.0 GB of system memory providing a high 8.0 GB per core ratio",
-    "Strong multi-core performance with a Passmark CPU score of 80,219.92",
-    "Excellent database throughput reaching 105.13 million Redis SET operations per second",
-    "Premium Storage capable configuration with no bundled local storage",
-    "Optimized for memory-intensive databases, software compilation, and web serving"
+    "64 dedicated vCPUs across 32 physical cores via Intel Xeon 6973P-C at 4.2 GHz",
+    "512.0 GB system RAM providing an 8.0 GB per-core allocation ratio",
+    "480 MB shared L3 cache with hardware support for AVX-512 and Intel AMX instructions",
+    "High memory throughput achieving 329.32 GB/sec large-block uncached read speeds",
+    "No bundled local disk storage, requiring external premium block storage",
+    "Designed for large-scale Redis caching, in-memory databases, and high-concurrency data processing"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

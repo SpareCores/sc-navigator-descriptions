@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure B4ls_v2 is a burstable virtual machine belonging to the Bsv2 server family. It is built on the x86_64 architecture and powered by an Intel Xeon 8370C processor operating at 2.8 GHz. The server features 4 vCPUs mapped to 2 physical cores with hyper-threading enabled. It is configured with 8.0 GB of system memory, providing 2.0 GB of RAM per core. No local storage is bundled with this instance, though it is premium storage capable, and it does not include any GPU accelerators.",
-    "Benchmark data reveals moderate single-core performance alongside weaker multi-core capabilities, which is typical for burstable hardware. The stress-ng single-core CPU performance and Geekbench single-core score both rank in the average tier, while multi-core metrics from stress-ng and Geekbench fall into the weak category. Memory performance is a notable bottleneck, with the Passmark memory score ranking in the poor tier and memory bandwidth read-only tests registering as weak. However, the instance maintains average performance in specific workloads, such as static web serving throughput, gzip compression, and text generation using a small 135M LLM model.",
-    "The B4ls_v2 offers a budget-friendly hardware profile with a low memory-to-vCPU ratio of 1:2. The primary tradeoff is its burstable CPU allocation and low memory bandwidth, which limits its suitability for sustained, resource-intensive operations. Multi-threaded decompression and database operations perform poorly under test conditions. Consequently, this server is best suited for low-traffic web servers, light development environments, small-scale background tasks, or basic text processing workloads that experience intermittent CPU utilization spikes rather than continuous heavy loads."
+    "Microsoft Azure B4ls_v2 is a burstable virtual machine belonging to the low-memory tier of the Bsv2 series. Operating under Microsoft Hyper-V, it provides 4 vCPUs backed by 2 physical cores on an Intel Xeon 8370C processor running at a base clock speed of 2.8 GHz. Memory is provisioned at 8.0 GB total, yielding 2.0 GB per vCPU. The instance carries no local storage, relying entirely on network-attached storage, and includes no dedicated GPUs or complimentary public IPv4 addresses.",
+    "Benchmark results demonstrate moderate single-thread compute capabilities counterbalanced by modest multi-core scaling. The Intel Xeon 8370C architecture delivers average single-core throughput, recording a Geekbench single-core score of 1635.0 and gzip compression at 28.71 GB/sec. However, multi-core tasks show typical burstable constraints, scoring in the lower quartiles with 3495.0 on Geekbench multi-core and 3872.77 on stress-ng multi-core tests. Memory throughput is limited, marked by a PassMark memory score of 1126.86 and an uncached read bandwidth of 30.2 GB/sec.",
+    "The 1:2 vCPU-to-RAM ratio and burstable credit model provide an economical operational baseline for systems with intermittent CPU utilization. Workloads requiring continuous full-core execution or large memory footprints will experience throughput limitations. The configuration is best aligned with low-traffic web services, background queuing workers, microservices, and development environments that do not require local ephemeral storage."
   ],
-  "description": "Microsoft Azure B4ls_v2 is a burstable virtual machine from the Bsv2 family, featuring 4 vCPUs and 8.0 GB of RAM. Powered by an Intel Xeon 8370C processor running at 2.8 GHz on the x86_64 architecture, this instance does not include local storage or GPU accelerators. Benchmark results indicate average single-core CPU performance, but weak multi-core and memory bandwidth capabilities, with Passmark memory scores ranking in the poor tier. The server demonstrates average throughput in static web serving and single-threaded compression tasks. Given its burstable CPU allocation and low memory-to-vCPU ratio of 2.0 GB per core, the B4ls_v2 is a cost-effective option for workloads with variable CPU demands, such as low-traffic web servers, light background processing, and basic text processing tasks.",
-  "og_description": "Microsoft Azure B4ls_v2 is a burstable virtual machine featuring 4 vCPUs, 8.0 GB of RAM, and an Intel Xeon 8370C processor, designed for low-intensity workloads with variable CPU demands.",
-  "meta_description": "Microsoft Azure B4ls_v2 is a burstable virtual machine with 4 vCPUs, 8.0 GB of RAM, and an Intel Xeon 8370C processor on the x86_64 architecture.",
-  "tagline": "A burstable, budget-friendly virtual machine with moderate single-core performance for light workloads and variable CPU utilization demands.",
+  "description": "Microsoft Azure B4ls_v2 is an entry-level burstable instance featuring 4 vCPUs derived from 2 physical cores of an Intel Xeon 8370C processor clocked at 2.8 GHz. Configured with 8.0 GB of RAM, it maintains a reduced memory ratio of 2.0 GB per vCPU, without local temporary storage or onboard GPU acceleration. Architectural benchmarks highlight balanced single-threaded performance alongside constrained multi-core throughput and moderate memory bandwidth. This hardware setup suits variable, non-continuous workloads such as development or testing nodes, lightweight application servers, low-concurrency web tiers, and auxiliary CI/CD tasks that accommodate burstable CPU scheduling.",
+  "og_description": "Microsoft Azure B4ls_v2 features 4 burstable vCPUs on an Intel Xeon 8370C processor, 8.0 GB RAM, and no local disk storage, targeting low-concurrency applications and development environments.",
+  "meta_description": "Microsoft Azure B4ls_v2 provides 4 burstable vCPUs on an Intel Xeon 8370C CPU with 8.0 GB RAM, designed for low-memory, intermittent workloads.",
+  "tagline": "A burstable 4 vCPU configuration with 8 GB memory designed for intermittent processing loads, microservices, and lightweight application tiers.",
   "bullet_points": [
-    "Intel Xeon 8370C processor with 4 vCPUs and 8.0 GB of RAM",
-    "Burstable CPU allocation for handling variable workload spikes",
-    "Average single-core performance but weak multi-core and memory bandwidth",
-    "No local storage or GPU accelerators included",
-    "Best suited for low-traffic web serving, light background tasks, and basic text processing"
+    "Burstable allocation across 4 vCPUs powered by an Intel Xeon 8370C processor at 2.8 GHz",
+    "8.0 GB system memory with a 1:2 vCPU-to-RAM ratio",
+    "No integrated local storage, requiring network-attached remote storage volumes",
+    "Average single-core compute performance with reduced multi-threaded scaling under sustained load",
+    "Suited for development servers, low-traffic web hosting, and background task processing"
   ],
   "categories": [
     "Burstable & Budget",
+    "Compute Optimized",
     "General Purpose"
   ]
 }

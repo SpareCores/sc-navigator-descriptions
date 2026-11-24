@@ -1,21 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D160als_v7 is a compute-optimized virtual machine from the Dalsv7 family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated AMD EPYC 9V45 processor with 160 vCPUs across 80 physical cores, operating at a clock speed of 4.5 GHz. The system is configured with 320.0 GB of system memory, yielding a low memory-to-core ratio of 2.0 GB per core. It does not include local storage or integrated GPUs, though it is premium storage capable.",
-    "Benchmark results place this server in the top tier for both single-core and multi-core CPU performance, measured via stress-ng and Geekbench. The AMD EPYC processor supports advanced instruction sets including AVX-512, AVX512_VNNI, AVX512_BF16, and cryptography extensions like AES and SHA_NI. Memory bandwidth is highly efficient, reaching 14,528.43 GB/sec for cached small blocks and 463.81 GB/sec for uncached large blocks. The server also demonstrates top-tier throughput in Redis SET operations and static web serving.",
-    "The primary tradeoff of the D160als_v7 is its low memory density of 2.0 GB per core and the absence of local storage, which makes it less suitable for memory-intensive databases or massive in-memory caching. However, its high compute density and top-tier CPU performance make it highly cost-efficient for compute-bound workloads. This resource profile is optimal for CPU-intensive tasks such as software compilation, ray tracing, large-scale text and image processing, and LLM inference, where it achieves top-tier prompt processing speeds."
+    "Microsoft Azure D160als_v7 is an x86_64 general-purpose virtual machine optimized for high-density compute requirements with a constrained memory footprint. Powered by an AMD EPYC 9V45 processor clocked at up to 4.5 GHz, the instance delivers 160 dedicated vCPUs mapped across 80 physical cores using two threads per core. Memory capacity is configured at 320.0 GB, resulting in a low memory-to-core ratio of 2.0 GB per vCPU. The instance does not include bundled local storage or integrated hardware accelerators, relying entirely on remote premium storage capabilities and CPU execution.",
+    "Benchmark results demonstrate top-tier performance across both single-threaded and massive multithreaded workloads. The CPU achieves a multi-core score of 28,767.0 in Geekbench and 288,282.1 in stress-ng multi-core testing. Memory throughput benchmarks show uncached read speeds reaching 463.81 GB/sec and uncached write speeds at 210.18 GB/sec. The presence of advanced vector extensions\u2014including AVX-512 VNNI and BF16\u2014yields high throughput in mathematical and machine learning tasks, logging 369.6 tokens per second on prompt processing for 7B parameter models.",
+    "Cost efficiency is focused heavily on compute-centric scaling. Because memory is capped at 2.0 GB per vCPU and local storage is omitted, the instance reduces the overhead typically tied to unused RAM or unneeded local NVMe drives. System administrators must account for remote storage latency and bandwidth when deploying I/O-intensive workloads, as all persistent storage must be mounted remotely.",
+    "The Azure D160als_v7 is suitable for highly parallel compute tasks that do not demand extensive RAM per core. Key deployment profiles include large-scale software compilation, batch processing, video encoding, static web serving fleets, and CPU-based LLM inference pipelines."
   ],
-  "description": "Microsoft Azure D160als_v7 is a compute-optimized virtual machine powered by a dedicated 160-vCPU AMD EPYC 9V45 processor operating at 4.5 GHz. Built on the x86_64 architecture and running under Microsoft Hyper-V, it features 320.0 GB of RAM, resulting in a low memory-to-core ratio of 2.0 GB per core. The server lacks local storage and GPUs but is premium storage capable. Benchmarks place this instance in the top tier for single-core and multi-core CPU performance, memory bandwidth, and cryptographic operations. It supports AVX-512 and SHA_NI instructions, making it highly efficient for compute-bound tasks. The low memory-to-core ratio represents a tradeoff for memory-heavy applications, but the high vCPU density makes it highly cost-effective for CPU-intensive workloads like software compilation, text processing, and LLM inference.",
-  "og_description": "Microsoft Azure D160als_v7 is a compute-optimized server with 160 vCPUs on an AMD EPYC 9V45 processor and 320 GB RAM. It delivers top-tier CPU and memory bandwidth performance for compute-bound workloads.",
-  "meta_description": "Microsoft Azure D160als_v7 is a 160-vCPU compute-optimized server with 320 GB RAM, powered by a 4.5 GHz AMD EPYC processor for high-throughput workloads.",
-  "tagline": "A dedicated compute instance featuring one hundred sixty vCPUs and a low memory-to-core ratio for intensive parallel processing workloads.",
+  "description": "Microsoft Azure D160als_v7 is a high-vCPU general-purpose virtual machine designed for compute-heavy parallel workloads. Built on the x86_64 AMD EPYC 9V45 processor running up to 4.5 GHz, it supplies 160 dedicated vCPUs across 80 physical cores alongside 320.0 GB of memory. It features a lean 2.0 GB of RAM per vCPU ratio, excludes local disk storage in favor of premium remote storage attachments, and contains no GPUs. Benchmark metrics consistently rank in the top tier, exhibiting strong CPU throughput in stress-ng and Geekbench, as well as high uncached memory bandwidth exceeding 460 GB/sec for reads. Hardware vector support including AVX-512 VNNI accelerates CPU-based inference and cryptographic operations. The instance is suitable for parallel batch jobs, extensive software compilation, web serving, and CPU-based machine learning inference.",
+  "og_description": "Microsoft Azure D160als_v7 delivers 160 vCPUs via AMD EPYC 9V45 processors and 320 GB RAM. Tailored for parallel computing without local storage, it excels at compilation and CPU inference.",
+  "meta_description": "Microsoft Azure D160als_v7 features 160 vCPUs on AMD EPYC 9V45, 320 GB RAM, and remote storage, delivering high compute density for parallel workloads.",
+  "tagline": "High-density 160-vCPU computing powered by AMD EPYC processors, designed for parallel compute and memory-lean execution environments.",
   "bullet_points": [
-    "Dedicated AMD EPYC 9V45 processor with 160 vCPUs and 80 physical cores at 4.5 GHz",
-    "320.0 GB of system memory providing a 2.0 GB per core ratio",
-    "Top-tier CPU performance in single-core and multi-core benchmarks",
-    "Advanced vector and cryptographic instruction support including AVX-512 and SHA_NI",
-    "Optimized for software compilation, text processing, and LLM inference"
+    "160 dedicated vCPUs (80 physical cores) powered by AMD EPYC 9V45 at up to 4.5 GHz",
+    "320.0 GB system memory (2.0 GB per vCPU)",
+    "Hardware support for AVX-512, VNNI, BF16, and AES cryptographic extensions",
+    "No bundled local storage, requiring premium remote storage attachments",
+    "Well-suited for large software builds, CPU-driven model inference, and batch processing"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

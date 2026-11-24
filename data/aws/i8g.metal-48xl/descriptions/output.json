@@ -1,22 +1,24 @@
 {
   "page": [
-    "Amazon Web Services i8g.metal-48xl is a bare-metal storage-optimized server powered by 192 physical ARMv9 cores using the AWS Graviton Neoverse-V2 architecture running at 2.8 GHz. The system features dedicated CPU allocation with one thread per core and includes 64 KB L1d cache, 2 MB L2 cache, and 36 MB L3 cache. It is equipped with 1536 GB of DDR5 memory, providing 8 GB of RAM per physical core, alongside 45,000 GB of local NVMe SSD storage and 100 Gbps of baseline network bandwidth.",
-    "In benchmark evaluations, the instance exhibits top-tier multi-core performance, recording 295,153.48 in multi-core stress-ng tests and strong multi-core Geekbench results. Memory bandwidth reaches 871.74 GB/sec for large block reads and 403.47 GB/sec for large block writes. The bare-metal design excels in database and caching workloads, achieving 347.98 million Redis SET operations per second, top-tier database operation scores in PassMark, and 160.54 GB/sec static web serving throughput. Single-core CPU benchmarks and LLM text generation rates reflect standard general-purpose levels without specialized accelerator support.",
-    "From a resource efficiency perspective, combining 45 TB of high-speed local NVMe SSD storage with 1.5 TB of DDR5 memory minimizes external network storage overhead for latency-sensitive applications. The key tradeoff is the absence of discrete GPUs and specialized x86 vector extensions, which limits suitability for complex AI training. This instance is structured for enterprise relational databases, large-scale Redis caching clusters, software compilation, and data-intensive analytical processing."
+    "Amazon Web Services i8g.metal-48xl is a bare-metal storage-optimized instance built on the 64-bit ARMv9 architecture. The system is powered by AWS Graviton Neoverse-V2 processors operating at 2.8 GHz, delivering 192 dedicated physical cores and 192 vCPUs with a single thread per core configuration. It is equipped with 64 KB L1 data cache, 2 MB L2 cache, and 36 MB L3 cache. Memory capacity totals 1536.0 GB of DDR5 RAM, providing 8.0 GB of memory per core. Bundled storage comprises 45000 GB of high-speed local NVMe SSD capacity, paired with a baseline network bandwidth of 100 Gbps. The instance contains zero discrete GPUs.",
+    "Benchmark results demonstrate exceptional multi-threaded execution and data throughput. The server achieves top-tier results in multi-core stress-ng tests, multi-threaded bzip3 decompression, and Clang compilation tasks. Memory throughput is substantial, registering uncached read speeds of 871.74 GB/sec and write speeds of 403.47 GB/sec. Data infrastructure tests highlight top-tier capabilities, including 347.98 million operations per second in Redis SET evaluations, leading database operation scores in PassMark, and 160.54 GB/sec static web serving throughput. Conversely, single-core metrics across stress-ng and Geekbench remain in the mid-range tier.",
+    "Without accelerator hardware, text generation speeds for large language models remain low, making the instance impractical for generative AI token generation. However, the high density of physical ARM cores, coupled with 45 TB of direct-attached NVMe storage and 1.5 TB of DDR5 memory, yields high resource efficiency for data-heavy workloads on a per-gigabyte basis. The hardware profile is aligned with distributed NoSQL databases, transactional data stores, search engines, real-time analytics, and high-concurrency data streaming pipelines."
   ],
-  "description": "Amazon Web Services i8g.metal-48xl is a bare-metal, storage-optimized instance equipped with 192 dedicated AWS Graviton Neoverse-V2 ARMv9 physical cores running at 2.8 GHz. Built for intensive memory and I/O tasks, it delivers 1536 GB of DDR5 memory, 45,000 GB of local NVMe SSD storage, and 100 Gbps baseline network throughput. Benchmark results show top-tier multi-core performance, recording 347.98 million Redis SET operations per second, 871.74 GB/sec read memory bandwidth, and high database operation scores. While single-threaded CPU benchmarks reflect standard execution speeds, its massive local SSD capacity and high memory allocation offer exceptional resource density. This server is structured for enterprise database clusters, in-memory key-value stores, large software build environments, and high-throughput web infrastructure.",
-  "og_description": "Amazon Web Services i8g.metal-48xl is a bare-metal storage instance featuring 192 Graviton ARM cores, 1536 GB DDR5 RAM, 45,000 GB NVMe SSD storage, and 100 Gbps networking for database workloads.",
-  "meta_description": "Amazon Web Services i8g.metal-48xl features 192 Graviton ARM cores, 1536 GB DDR5 RAM, 45,000 GB NVMe SSD storage, and 100 Gbps networking.",
-  "tagline": "High-density ARM bare-metal platform delivering 45 TB NVMe SSD storage, 1.5 TB DDR5 RAM, and high-throughput multi-core database processing.",
+  "description": "Amazon Web Services i8g.metal-48xl is a bare-metal storage-optimized instance powered by 192 dedicated physical ARMv9 AWS Graviton Neoverse-V2 cores operating at 2.8 GHz. Designed without hyperthreading, it features 1536.0 GB of DDR5 memory, yielding an 8.0 GB per core ratio, along with 45000 GB of integrated local NVMe SSD storage and 100 Gbps baseline networking. The server achieves top-tier performance across multi-core compute tests, uncached memory bandwidth benchmarks, Clang compilation, and high-frequency in-memory database operations such as Redis SET workloads. While single-threaded performance is mid-tier and generative AI inference is constrained by the absence of discrete GPUs, the bare-metal architecture delivers immense I/O and compute density. This profile makes the instance well suited for large distributed databases, big data analytics engines, log aggregation systems, and high-throughput data processing services.",
+  "og_description": "Amazon Web Services i8g.metal-48xl bare-metal server features 192 ARMv9 Graviton cores, 1536 GB DDR5 RAM, 45 TB local NVMe SSD storage, and 100 Gbps networking for high-throughput database workloads.",
+  "meta_description": "Amazon Web Services i8g.metal-48xl features 192 ARMv9 Graviton cores, 1536 GB DDR5 memory, 45 TB NVMe storage, and 100 Gbps networking for large databases.",
+  "tagline": "Bare-metal 192-core ARM platform offering 1.5 TB DDR5 memory, 45 TB NVMe storage, and 100 Gbps throughput for data-intensive systems.",
   "bullet_points": [
-    "192 dedicated AWS Graviton Neoverse-V2 ARMv9 physical cores at 2.8 GHz",
-    "1536 GB DDR5 system memory and 45,000 GB local NVMe SSD storage",
-    "100 Gbps baseline network bandwidth with bare-metal allocation",
-    "Top-tier multi-threaded CPU, memory bandwidth, and Redis throughput",
-    "Suited for large database operations, in-memory caching, and compilation"
+    "192 dedicated physical ARMv9 AWS Graviton Neoverse-V2 cores at 2.8 GHz",
+    "1536.0 GB DDR5 system memory providing 8.0 GB RAM per physical core",
+    "45000 GB integrated local NVMe SSD high-throughput storage array",
+    "100 Gbps baseline network bandwidth without virtualization overhead",
+    "Top-tier performance in multi-core compute, Redis operations, and memory bandwidth",
+    "Targeted for distributed NoSQL databases, search engines, and large-scale data analytics"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized"
+    "Memory Optimized",
+    "Compute Optimized"
   ]
 }

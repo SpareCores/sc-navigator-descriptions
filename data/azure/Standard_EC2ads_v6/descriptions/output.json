@@ -1,19 +1,19 @@
 {
   "page": [
-    "Microsoft Azure EC2ads_v6 is an x86_64 architecture server instance belonging to the ECadsv6 family. It is equipped with 2 dedicated vCPUs powered by an AMD processor and runs on the Microsoft Hyper-V hypervisor. The instance features 16.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per core.",
-    "For local storage, the EC2ads_v6 includes a bundled 77 GB local SSD. The instance is also Premium Storage capable, allowing for high-performance external disk attachments. It does not include any complimentary public IPv4 addresses.",
-    "Given the 8.0 GB of memory per core, this instance offers high resource density for memory-bound workloads relative to its low vCPU count. This makes it a qualitatively cost-efficient option for workloads requiring more memory than compute power, such as small-scale relational databases, caching layers, and memory-intensive enterprise applications."
+    "Microsoft Azure EC2ads_v6 is a memory-optimized virtual machine instance powered by an AMD EPYC 9V74 processor on the x86_64 architecture. The instance provides 2 dedicated vCPUs derived from 1 physical core with 2 execution threads, coupled with 32 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. Memory capacity is configured at 16.0 GB, delivering an 8.0 GB per core ratio. Local ephemeral storage includes an 81 GB solid-state drive, running under the Microsoft Hyper-V hypervisor without bundled GPU hardware or complimentary public IPv4 addresses.",
+    "Benchmark data displays strong single-core CPU throughput, where stress-ng single-core performance registers in the top 25 percent at 3016.26. Geekbench single-core reaches 1860.0 and text processing scores 2043.0, both placing in the middle 50 percent tier alongside PassMark memory performance at 1847.43. However, due to its low total core allocation of a single physical core, multi-threaded metrics remain limited. Both stress-ng multi-core and Geekbench multi-core place in the lower 25 percent, while compiling software with clang and PassMark database operations land in the bottom 10 percent.",
+    "This instance profile offers cost efficiency for memory-centric, low-concurrency operations rather than parallel compute execution. The provision of 16.0 GB of memory paired with an 81 GB local SSD makes it suitable for intermediate memory caching, small relational databases, staging environments, and single-threaded or lightly threaded backend tasks requiring high memory density per vCPU."
   ],
-  "description": "Microsoft Azure EC2ads_v6 is an x86_64 architecture server instance within the ECadsv6 family, running on the Microsoft Hyper-V hypervisor. It features 2 dedicated vCPUs powered by an AMD processor and is configured with 16.0 GB of memory, providing a high memory-to-core ratio of 8.0 GB per vCPU. The instance comes equipped with a 77 GB local SSD and is Premium Storage capable, supporting high-performance external storage configurations. No complimentary public IPv4 addresses are included. With its high memory density relative to its compute capacity, the EC2ads_v6 is designed for memory-intensive workloads that do not require high CPU core counts. This hardware profile is suited for small database deployments, caching systems, and lightweight enterprise applications.",
-  "og_description": "Microsoft Azure EC2ads_v6 is an x86_64 virtual machine featuring 2 dedicated AMD vCPUs, 16 GB of RAM, and a 77 GB local SSD. It is Premium Storage capable and optimized for memory-intensive database workloads.",
-  "meta_description": "Microsoft Azure EC2ads_v6 is an x86_64 virtual machine featuring 2 dedicated AMD vCPUs, 16 GB of RAM, and a 77 GB local SSD on Microsoft Hyper-V.",
-  "tagline": "An AMD-powered virtual machine featuring high memory density and local SSD storage for memory-intensive workloads.",
+  "description": "Microsoft Azure EC2ads_v6 is a memory-optimized instance featuring 2 dedicated vCPUs from a single AMD EPYC 9V74 physical core on the x86_64 architecture. Equipped with 16.0 GB of system memory, the instance delivers a generous 8.0 GB per core allocation alongside an 81 GB local SSD for temporary storage. While stress-ng single-core execution demonstrates strong performance within the top 25 percent and memory subsystem benchmarks achieve average marks, total parallel compute capacity is constrained by the two-thread limit, as reflected in lower-tier Geekbench and PassMark multi-core results. The instance contains no GPU acceleration and does not include complimentary public IPv4 addresses. With its high RAM-to-CPU ratio and integrated local solid-state storage, this configuration is best deployed for lightweight in-memory caching, small transactional databases, and low-concurrency backend services.",
+  "og_description": "Microsoft Azure EC2ads_v6 features 2 vCPUs from an AMD EPYC 9V74 processor, 16.0 GB RAM, and an 81 GB local SSD. It delivers high memory density for lightweight caching and database services.",
+  "meta_description": "Microsoft Azure EC2ads_v6 provides 2 vCPUs on AMD EPYC 9V74 hardware, 16.0 GB RAM, and an 81 GB SSD for memory-focused, low-thread workloads.",
+  "tagline": "Memory-optimized virtual machine featuring dedicated AMD EPYC cores, generous memory density, and bundled local solid-state storage for small-scale caching workloads.",
   "bullet_points": [
-    "2 dedicated AMD vCPUs on x86_64 architecture",
-    "16.0 GB of system memory with 8.0 GB per core",
-    "77 GB bundled local SSD storage",
-    "Premium Storage capable for external disk expansion",
-    "Suited for small databases and caching layers"
+    "2 dedicated vCPUs powered by an AMD EPYC 9V74 processor (1 physical core, 2 threads)",
+    "16.0 GB system memory providing an 8.0 GB per vCPU ratio",
+    "81 GB local solid-state drive for scratch and temporary storage",
+    "Strong single-core benchmark performance balanced by constrained multi-core throughput",
+    "Suited for in-memory caches, small databases, and low-concurrency application tiers"
   ],
   "categories": [
     "Memory Optimized",

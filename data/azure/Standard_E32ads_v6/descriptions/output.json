@@ -1,24 +1,25 @@
 {
   "page": [
-    "Microsoft Azure E32ads_v6 is an Eadv6-series virtual machine powered by a dedicated AMD EPYC 9V74 processor. Operating on the x86_64 architecture, this server features 32 virtual CPUs mapped to 16 physical cores with multithreading enabled. The CPU runs at a clock speed of 3.7 GHz and includes 32 MB of L3 cache. It is equipped with 256.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per vCPU.",
-    "This instance includes 1890 GB of local NVMe SSD storage and is capable of utilizing Premium Storage. Virtualization is managed via the Microsoft Hyper-V hypervisor. The CPU supports advanced instruction sets including AVX-512, AVX512_VNNI, AVX512_BF16, and cryptographic acceleration via AES and SHA_NI. It does not include any complimentary public IPv4 addresses or dedicated GPU hardware.",
-    "Benchmark results indicate strong single-core CPU performance, with top-25% scores in stress-ng and Geekbench single-core tests. Multi-core performance is average overall, though Geekbench multi-core and image processing metrics rank in the top 25%. Memory performance is robust, with PassMark memory scores in the top 25%, while uncached memory bandwidth reads reach 75.65 GB/sec. Large-block uncached memory writes perform at 55.63 GB/sec. For lightweight language model workloads, the server achieves top-tier text generation speeds of 341.89 tokens/sec on a small 135M model.",
-    "Given its high resource density, the E32ads_v6 offers qualitative cost efficiency for memory-intensive workloads that require fast local scratch space. The combination of 256 GB of RAM and local NVMe storage makes this server well-suited for relational databases, in-memory caching layers, data analytics, and memory-bound enterprise applications."
+    "Microsoft Azure E32ads_v6 is a memory-optimized virtual machine powered by an AMD EPYC 9V74 x86_64 processor clocked at 3.7 GHz. Managed under Microsoft Hyper-V, the instance is provisioned with 16 physical cores and 32 dedicated vCPUs with hyper-threading enabled. Cache allocation consists of 32 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. It incorporates 256.0 GB of system RAM, maintaining an 8.0 GB memory-to-vCPU ratio. Local ephemeral storage is bundled as 1890 GB of high-speed NVMe SSD capacity, while no dedicated hardware GPU accelerators are present.",
+    "Benchmark outcomes demonstrate robust compute throughput and high memory speed. Geekbench evaluates single-core performance at 1,980.0 points and multi-core at 16,104.0 points, placing both in the top 25% bracket. Similarly, stress-ng yields 3,079.96 in single-core CPU testing and 49,283.7 in multi-core metrics. PassMark highlights strong memory capability with a score of 2,758.74, accompanied by an encryption score of 38,619.67 boosted by hardware AES, VAES, and SHA-NI flags. Memory bandwidth registers at 2,433.15 GB/sec for small cached blocks, 75.65 GB/sec for uncached read-only blocks, and 55.63 GB/sec for writes. In-memory data handling through Redis measures 44.75 million SET operations per second.",
+    "The CPU includes broad AVX instructions, featuring AVX-512F, AVX-512 VNNI, and AVX-512 BF16. Lightweight model execution performs well on this architecture, delivering 2,755.25 prompt processing tokens per second and 341.89 text generation tokens per second for a 135M model (top 10%). However, performance tapers as model size scales without discrete accelerators: medium (7B) inference registers 90.46 prompt tokens per second and 17.42 generation tokens per second, while 70B models drop to 8.7 prompt tokens per second.",
+    "Azure E32ads_v6 provides balanced cost efficiency for memory-heavy and disk-intensive deployments by combining substantial RAM with 1,890 GB of local NVMe storage on a single virtual host. It is structurally aligned with in-memory caching layers, enterprise relational databases, large-scale data transformation (ETL), and compressed analytics pipelines."
   ],
-  "description": "The Microsoft Azure E32ads_v6 is a memory-optimized virtual machine featuring 32 vCPUs and 256.0 GB of RAM, powered by a dedicated 3.7 GHz AMD EPYC 9V74 processor. Built on the x86_64 architecture, it includes 1890 GB of local NVMe SSD storage and supports Premium Storage. Operating under Microsoft Hyper-V, the CPU supports AVX-512 and cryptographic instructions. Benchmarks show strong single-core and multi-core Geekbench performance, alongside top-tier text generation speeds for small language models. Uncached memory write bandwidth reaches 55.63 GB/sec, and PassMark memory scores rank in the top 25%. Lacking a GPU, this server is designed for memory-intensive workloads. It is highly suited for database hosting, in-memory caching, and data processing tasks that benefit from a high memory-to-vCPU ratio and fast local storage.",
-  "og_description": "Microsoft Azure E32ads_v6 is a memory-optimized virtual machine featuring 32 vCPUs, 256 GB of RAM, and 1890 GB of local NVMe SSD storage powered by an AMD EPYC 9V74 processor.",
-  "meta_description": "Microsoft Azure E32ads_v6 is a memory-optimized VM with 32 vCPUs, 256 GB RAM, and 1890 GB NVMe SSD storage, powered by an AMD EPYC CPU.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated AMD EPYC processing, high-capacity local NVMe SSD storage, and robust single-core performance.",
+  "description": "Microsoft Azure E32ads_v6 is a memory-optimized virtual machine featuring a 3.7 GHz AMD EPYC 9V74 processor with 16 physical cores and 32 dedicated vCPUs. The instance supplies 256.0 GB of RAM (8.0 GB per vCPU) and includes 1890 GB of local NVMe SSD storage without integrated GPUs. Evaluated benchmarks show strong single-core CPU execution with a Geekbench score of 1,980.0 and PassMark memory performance of 2,758.74. Uncached memory throughput reaches 75.65 GB/sec for reads and 55.63 GB/sec for writes, alongside Redis handling of 44.75 million SET operations per second. Modern AVX-512 instructions enable rapid vector computation, achieving 341.89 tokens per second for small LLM text generation. Designed for memory-intensive architectures, the E32ads_v6 is best suited for production in-memory databases, caching nodes, big data processing, and enterprise application hosting.",
+  "og_description": "Microsoft Azure E32ads_v6 is a memory-optimized instance featuring 32 vCPUs on an AMD EPYC 9V74 processor, 256 GB RAM, and 1,890 GB local NVMe SSD storage for memory-intensive enterprise tasks.",
+  "meta_description": "Microsoft Azure E32ads_v6 features 32 vCPUs, 256 GB RAM, and 1,890 GB NVMe SSD storage powered by an AMD EPYC 9V74 processor for database workloads.",
+  "tagline": "Memory-optimized compute delivering 256 GB RAM, fast local NVMe storage, and high-frequency AMD EPYC processing.",
   "bullet_points": [
-    "32 vCPUs and 256 GB of RAM providing a high 1:8 memory-to-vCPU ratio",
-    "1890 GB of high-speed local NVMe SSD storage",
-    "Dedicated AMD EPYC 9V74 processor running at 3.7 GHz",
-    "Strong single-core CPU and memory benchmark performance",
-    "Optimized for databases, in-memory caching, and data analytics"
+    "32 dedicated vCPUs across 16 physical cores via AMD EPYC 9V74 at 3.7 GHz",
+    "256.0 GB system RAM providing an 8.0 GB per-vCPU ratio",
+    "1,890 GB integrated high-speed local NVMe SSD storage",
+    "Hardware-accelerated vector and cryptographic instruction support including AVX-512 and VAES",
+    "Geekbench single-core score of 1,980.0 and multi-core score of 16,104.0",
+    "Well aligned with in-memory databases, Redis caches, and data transformation workloads"
   ],
   "categories": [
     "Memory Optimized",
     "Storage & Database",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

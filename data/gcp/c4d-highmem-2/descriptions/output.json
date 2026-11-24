@@ -1,19 +1,19 @@
 {
   "page": [
-    "Google Cloud Platform c4d-highmem-2 is a memory-optimized virtual machine instance configured with 2 dedicated vCPUs and 15.0 GB of system memory. Built on the x86_64 CPU architecture, this instance allocates 7.5 GB of RAM per virtual core, providing a high memory-to-vCPU ratio. It does not include local storage or bundled GPUs, meaning all storage requirements must be met through external block storage volumes.",
-    "The instance offers a cost-effective entry point for workloads requiring a larger memory footprint relative to compute capacity without the overhead of higher vCPU counts. Because there is no local NVMe storage or integrated GPU hardware, users must factor in the latency and cost of network-attached storage. The dedicated CPU allocation ensures consistent processing performance, though the low core count limits parallel processing capabilities.",
-    "This server configuration is suitable for small-scale databases, caching layers, memory-intensive web applications, and lightweight enterprise applications that require more memory than standard general-purpose instances but do not demand high multi-core compute performance."
+    "Google Cloud Platform c4d-highmem-2 is a general-purpose virtual machine configuration engineered with an elevated memory-to-vCPU allocation. Utilizing the x86_64 architecture, this instance is provisioned with 2 dedicated vCPUs and 15.0 GB of system memory, providing 7.5 GB of RAM per vCPU. The dedicated core allocation ensures consistent compute cycles without the thread contention or throttling typical of shared-core burstable instances.",
+    "Hardware resource provisions exclude local disk storage and discrete graphics accelerators, meaning all persistent storage workflows rely entirely on remote network-attached block volumes. Because local storage is absent and zero complimentary public IPv4 addresses are assigned by default, deployments require appropriate VPC routing and external block volume attachments for functional operation.",
+    "From an operational cost perspective, the instance is positioned for memory-heavy entry-tier services that do not demand extensive CPU parallelism. Allocating 15 GB across two dedicated cores provides efficient resource utilization for low-concurrency caching tiers, small relational databases, memory-resident microservices, and intermediate data transformation tasks where memory density takes precedence over raw compute capacity."
   ],
-  "description": "Google Cloud Platform c4d-highmem-2 is an x86_64 virtual machine featuring 2 dedicated vCPUs and 15.0 GB of RAM, yielding a high memory-to-core ratio of 7.5 GB per vCPU. This instance does not include bundled local storage or GPU accelerators, relying entirely on external network storage. The dedicated CPU allocation ensures stable performance for memory-sensitive applications that do not require massive parallel processing. It represents a resource-dense option for workloads needing more memory than compute, offering qualitative cost efficiency by avoiding the expense of unnecessary vCPUs. Suitable workloads include small databases, caching systems, and memory-intensive web applications.",
-  "og_description": "Google Cloud Platform c4d-highmem-2 is an x86_64 virtual machine featuring 2 dedicated vCPUs and 15.0 GB of RAM. It lacks local storage and GPUs, making it ideal for memory-sensitive, low-compute workloads.",
-  "meta_description": "Google Cloud Platform c4d-highmem-2 is an x86_64 virtual machine with 2 dedicated vCPUs and 15.0 GB of RAM, designed for memory-intensive workloads.",
-  "tagline": "A memory-dense virtual machine featuring dedicated x86_64 compute cores and a high memory-to-vCPU ratio for memory-sensitive workloads.",
+  "description": "Google Cloud Platform c4d-highmem-2 is an x86_64 architecture virtual machine tailored for memory-centric operational workloads within the general-purpose category. The system provides 2 dedicated vCPUs accompanied by 15.0 GB of total RAM, delivering a 7.5 GB per core allocation ratio. This elevated memory configuration supports services requiring substantial runtime memory without mandating high core counts. The instance includes no integrated local storage, requiring persistent operational data to be maintained via network-attached block storage volumes, and does not incorporate GPU acceleration. By delivering dedicated CPU scheduling alongside an expansive memory footprint for a dual-core instance, c4d-highmem-2 functions as an efficient host for small relational databases, distributed cache layers such as Redis, lightweight in-memory data processing pipelines, and memory-intensive background microservices that operate under moderate processing concurrency.",
+  "og_description": "Google Cloud Platform c4d-highmem-2 is an x86_64 virtual instance providing 2 dedicated vCPUs, 15.0 GB of RAM, and reliance on network-attached storage for memory-intensive workloads.",
+  "meta_description": "Google Cloud Platform c4d-highmem-2 features 2 dedicated x86_64 vCPUs and 15.0 GB RAM, configured for memory-intensive general-purpose cloud workloads.",
+  "tagline": "A dual-core x86 virtual machine configured with an expanded memory ratio for memory-centric workloads and small database deployments.",
   "bullet_points": [
-    "2 dedicated x86_64 vCPUs",
-    "15.0 GB of system memory (7.5 GB per core)",
-    "No bundled local storage or GPU accelerators",
-    "Designed for memory-intensive, low-compute workloads",
-    "Suitable for small databases and caching layers"
+    "2 dedicated x86_64 vCPUs ensuring predictable compute performance",
+    "15.0 GB total system memory providing 7.5 GB per vCPU",
+    "Zero integrated local storage, requiring network-attached persistent disks",
+    "No hardware accelerators or dedicated GPU resources",
+    "Suited for in-memory caching, small relational databases, and light ETL tasks"
   ],
   "categories": [
     "Memory Optimized",

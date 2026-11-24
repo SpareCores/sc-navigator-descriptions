@@ -1,24 +1,23 @@
 {
   "page": [
-    "Amazon Web Services c8a.4xlarge is a compute-optimized instance powered by the Nitro hypervisor. It features an x86_64 AMD EPYC 9R45 processor with 16 dedicated physical cores and 16 vCPUs operating at a clock speed of 4.5 GHz. The CPU architecture includes 48 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache per core, alongside support for advanced instruction sets such as AVX-512, AVX_VNNI, and AVX512_BF16.",
-    "The instance is equipped with 32.0 GB of high-speed DDR5 memory operating at 6 GHz, yielding a resource density of 2.0 GB per core. It does not include local storage or dedicated GPU hardware. Network connectivity is provisioned at an 8 Gbps baseline bandwidth.",
-    "In benchmark evaluations, the c8a.4xlarge demonstrates top-tier single-core performance, scoring in the top 10% for stress-ng single-core CPU tests, Geekbench single-core, and single-threaded gzip and bzip3 operations. Multi-core performance, memory bandwidth, and database operations fall within the average range. It also shows strong performance in static web serving throughput and small-model LLM text generation.",
-    "Given its compute-heavy profile, high clock speed, and DDR5 memory, the c8a.4xlarge offers qualitative cost efficiency for workloads requiring intense single-threaded performance or vector calculations without massive memory footprints. It is well-suited for web serving, image processing, text processing, and lightweight machine learning inference."
+    "Amazon Web Services c8a.4xlarge is a compute-optimized instance built on the AWS Nitro hypervisor architecture. It is powered by a dedicated AMD EPYC 9R45 processor based on the x86_64 architecture, providing 16 physical cores and 16 vCPUs running at clock speeds up to 4.5 GHz with 1 thread per core. Memory allocation stands at 32.0 GB of DDR5 RAM operating at 6 GHz, establishing a compute-focused ratio of 2.0 GB of RAM per vCPU. Storage is not bundled locally, meaning workloads rely on network-attached persistence, and default network bandwidth is rated at a baseline of 8 Gbps without complimentary public IPv4 addresses. Dedicated hardware accelerators are not included, yielding a GPU count of zero.",
+    "Benchmark results demonstrate strong compute efficiency, led by top-tier single-core and multi-core evaluations. The instance recorded a Geekbench single-core score of 2,807.0 and a multi-core score of 21,584.0, complemented by top-tier single-core stress-ng CPU output (3,776.99) and single-threaded gzip compression at 41.52 GB/sec. Instruction set extensions such as AVX-512, AVX-512 VNNI, and AVX-512 BF16 support dense mathematical operations, reflecting top-tier performance in image processing (21,778.0) and text processing (3,937.0). For lighter computational models, small-scale (135M) LLM text generation reaches a top-tier rate of 430.49 tokens/sec.",
+    "Resource-intensive workloads exhibit balanced mid-range characteristics. Multi-core stress-ng (59,718.9), PassMark CPU score (47,006.99), and uncached large-block memory read bandwidth (109.17 GB/sec) test within the average tier. Similarly, medium-scale (7B) model inference processes at 23.8 tokens/sec for generation and 124.05 tokens/sec for prompts. Software compilation via Clang (35,601.0) and database operations (20,831.18) deliver standard mid-range output.",
+    "The 1:2 vCPU-to-memory ratio, high single-thread throughput, and absence of local storage position the c8a.4xlarge as a cost-efficient deployment for CPU-bound tasks that do not require massive in-memory footprints. Best-fit use cases include compute-intensive batch processing, high-throughput static web serving (measured at 52.84 GB/sec), distributed microservices, media encoding, and automated CI/CD pipeline workers."
   ],
-  "description": "Amazon Web Services c8a.4xlarge is a compute-optimized instance featuring an x86_64 AMD EPYC 9R45 processor with 16 dedicated physical cores running at 4.5 GHz. Built on the Nitro hypervisor, it includes 32.0 GB of DDR5 memory at 6 GHz, providing 2.0 GB of RAM per core. The instance lacks local storage and GPU accelerators, relying on an 8 Gbps baseline network bandwidth. Benchmarks highlight top-tier single-core CPU performance, single-threaded compression, and text processing, alongside strong static web serving throughput. Its hardware profile makes it highly efficient for compute-bound workloads that benefit from high clock speeds and advanced vector instructions (AVX-512) without requiring massive memory allocations. Recommended workloads include web serving, image processing, text processing, and small-scale language model inference.",
-  "og_description": "Amazon Web Services c8a.4xlarge is a compute-optimized instance featuring a 16-core AMD EPYC 9R45 CPU at 4.5 GHz, 32 GB of DDR5 RAM, and Nitro hypervisor virtualization for high-performance single-core tasks.",
-  "meta_description": "Amazon Web Services c8a.4xlarge is an AMD EPYC-powered compute-optimized instance with 16 dedicated cores, 32 GB DDR5 RAM, and 8 Gbps network bandwidth.",
-  "tagline": "A dedicated 16-core AMD EPYC compute instance with high-speed DDR5 memory, optimized for single-threaded execution and vector-intensive workloads.",
+  "description": "Amazon Web Services c8a.4xlarge is a compute-optimized instance driven by an AMD EPYC 9R45 processor on the Nitro System. Operating on the x86_64 architecture, it provides 16 dedicated physical cores and 16 vCPUs running up to 4.5 GHz, paired with 32.0 GB of DDR5 RAM at a 1:2 core-to-memory ratio. The instance includes 8 Gbps baseline network bandwidth, contains no integrated local NVMe storage, and has no GPUs. Benchmarks demonstrate top-tier single-core CPU throughput, highlighted by a Geekbench single-core mark of 2,807.0, top-decile text and image processing scores, and rapid small-model inference at 430.49 tokens/sec. Mid-tier ratings across multi-threaded stress testing and memory bandwidth maintain predictable execution for non-memory-heavy tasks. The c8a.4xlarge fits compute-bound workloads including CI/CD build environments, batch processing, static web serving, and media transcode pipelines.",
+  "og_description": "Amazon Web Services c8a.4xlarge is a compute-optimized instance with 16 dedicated AMD EPYC cores at 4.5 GHz, 32 GB DDR5 RAM, and 8 Gbps network bandwidth, built for CPU-heavy tasks.",
+  "meta_description": "Amazon Web Services c8a.4xlarge features 16 AMD EPYC cores at 4.5 GHz, 32 GB DDR5 RAM, and 8 Gbps networking for compute-focused server workloads.",
+  "tagline": "Dedicated AMD EPYC computing with 16 high-frequency cores and DDR5 memory for compute-heavy processing workloads.",
   "bullet_points": [
-    "AMD EPYC 9R45 processor with 16 dedicated physical cores running at 4.5 GHz",
-    "32.0 GB of high-speed DDR5 memory operating at 6 GHz",
-    "Top-tier single-core CPU, image processing, and text processing benchmark performance",
-    "Supports AVX-512, AVX_VNNI, and AVX512_BF16 vector instructions",
-    "8 Gbps baseline network bandwidth with Nitro hypervisor integration",
-    "Best suited for web serving, text processing, and lightweight LLM inference"
+    "16 dedicated AMD EPYC 9R45 cores delivering clock speeds up to 4.5 GHz",
+    "32.0 GB of DDR5 memory running at 6 GHz (2.0 GB RAM per vCPU)",
+    "Top-tier single-core Geekbench score (2,807.0) and strong static web throughput (52.84 GB/sec)",
+    "AVX-512 vector support accelerating image processing and lightweight AI inference",
+    "Baseline network throughput of 8 Gbps with zero local disk storage attached",
+    "Tailored for batch compute, CI/CD runners, and computational microservices"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

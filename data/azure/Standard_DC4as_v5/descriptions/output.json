@@ -1,20 +1,20 @@
 {
   "page": [
-    "Microsoft Azure DC4as_v5 is a general-purpose virtual machine belonging to the DCASv5 server family. Running on the Microsoft Hyper-V hypervisor, this instance features an x86_64 AMD processor with 4 dedicated virtual CPUs. It is configured with 16.0 GB of system memory, yielding a balanced allocation of 4.0 GB of RAM per core.",
-    "This server type does not include any local storage, meaning all storage requirements must be met using external volumes, though the instance is explicitly Premium Storage capable. There are no complimentary public IPv4 addresses bundled with this configuration. Additionally, the instance does not feature any dedicated GPU hardware, making it unsuitable for accelerated graphics or hardware-dependent machine learning workloads.",
-    "From a cost-efficiency perspective, the dedicated CPU allocation and standard 1:4 vCPU-to-RAM ratio position this instance as a stable resource for general-purpose workloads. It is well-suited for applications requiring predictable CPU performance without the variability of burstable models, such as mid-tier web serving, small databases, and general enterprise application hosting."
+    "Microsoft Azure DC4as_v5 is a general-purpose virtual machine running on the Microsoft Hyper-V hypervisor. The instance is powered by an AMD EPYC 9V74 processor based on the x86_64 architecture, providing 4 dedicated vCPUs distributed across 2 physical cores with 2 threads per core. Memory capacity is configured at 16.0 GB of RAM, offering an even 4.0 GB of memory per core. The underlying processor includes 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, with hardware instruction support for AES, VAES, SHA-NI, BMI2, ADX, and AVX.",
+    "Hardware accelerators are absent on the DC4as_v5, which features 0 GPUs, and the server does not include bundled local instance storage. Workloads requiring persistent disk storage rely on external remote storage attachments, such as Azure Premium Storage. The instance does not include complimentary public IPv4 addresses, necessitating configured networking resources for external ingress.",
+    "Performance benchmark results show moderate single-thread compute capabilities balanced by comparatively modest multi-threaded throughput. Single-core tests such as stress-ng (1990.57) and Geekbench (1224.0) fall within the middle 50% category, alongside baseline text processing (1569.0) and PassMark CPU encryption (2914.49). However, multi-core metrics place lower, with stress-ng multi-core (3963.09), Geekbench multi-core (2718.0), and the overall PassMark CPU score (4766.46) falling into the bottom 25% bracket. Similarly, Redis SET operations measured at 3.43 million operations per second, with the PassMark memory score reaching 1733.45.",
+    "With its 1:4 vCPU-to-memory ratio, the DC4as_v5 functions as a balanced, entry-tier general-purpose compute node. It is well-matched for microservices, lightweight web backends, CI/CD utility agents, and basic enterprise processing tasks that do not depend on dense parallel throughput, high-throughput in-memory caching, or local NVMe storage speeds."
   ],
-  "description": "The Microsoft Azure DC4as_v5 is a general-purpose virtual machine from the DCASv5 family, powered by an x86_64 AMD processor. Running on the Microsoft Hyper-V hypervisor, it provides 4 dedicated vCPUs and 16.0 GB of system memory, establishing a balanced 1:4 vCPU-to-RAM ratio of 4.0 GB per core. This instance does not include local storage, though it is Premium Storage capable, requiring external network-attached storage for persistent data. It features no integrated GPU resources and provides zero complimentary public IPv4 addresses. With its dedicated CPU allocation, the DC4as_v5 offers predictable performance for general-purpose workloads, making it suitable for tasks such as web serving, application hosting, and small database deployments that do not require local disk storage or hardware acceleration.",
-  "og_description": "Microsoft Azure DC4as_v5 is a general-purpose virtual machine featuring 4 dedicated AMD vCPUs, 16.0 GB of RAM, and Premium Storage capability under the Microsoft Hyper-V hypervisor.",
-  "meta_description": "Microsoft Azure DC4as_v5 is an x86_64 virtual machine with 4 dedicated AMD vCPUs, 16.0 GB of RAM, and Premium Storage capability.",
-  "tagline": "A balanced general-purpose virtual machine featuring dedicated AMD processors, premium storage compatibility, and a stable one-to-four resource ratio.",
+  "description": "Microsoft Azure DC4as_v5 is a general-purpose virtual machine powered by an AMD EPYC 9V74 x86_64 processor. The configuration provides 4 dedicated vCPUs over 2 physical cores, accompanied by 16.0 GB of system memory, matching a standard 1:4 compute-to-RAM ratio. Cache resources include 32 KB L1d, 1.0 MB L2, and 32 MB L3. The instance lacks local disk storage, requiring external premium storage options, and contains no discrete GPUs or bundled public IPv4 addresses. Benchmark testing reveals standard single-core execution alongside lower multi-core and memory subsystem metrics, recording 1990.57 in stress-ng single-core and 2718.0 in Geekbench multi-core. Consequently, the DC4as_v5 is appropriate for non-intensive enterprise software, lightweight web servers, application middle tiers, and basic development pipelines.",
+  "og_description": "Microsoft Azure DC4as_v5 features 4 dedicated AMD EPYC 9V74 vCPUs, 16.0 GB RAM, and no local disk. It delivers stable single-thread performance for balanced, general-purpose enterprise tasks.",
+  "meta_description": "Microsoft Azure DC4as_v5 provides 4 dedicated AMD EPYC vCPUs and 16.0 GB RAM for balanced, general-purpose cloud computing workloads without local storage.",
+  "tagline": "A balanced four-vCPU AMD EPYC configuration with sixteen gigabytes of memory tailored for general-purpose workloads without local storage.",
   "bullet_points": [
-    "Powered by an x86_64 AMD processor with 4 dedicated vCPUs",
-    "Equipped with 16.0 GB of system memory (4.0 GB per core)",
-    "Supports Premium Storage for external disk configurations",
-    "Operates on the Microsoft Hyper-V hypervisor",
-    "Lacks local storage and integrated GPU hardware",
-    "Suited for general-purpose application hosting and web serving"
+    "4 dedicated vCPUs powered by an AMD EPYC 9V74 processor",
+    "16.0 GB system RAM providing 4.0 GB per core",
+    "No bundled local storage, requiring network-attached storage options",
+    "Zero integrated GPUs and zero complimentary public IPv4 addresses",
+    "Well-suited for lightweight web serving, microservices, and general compute tasks"
   ],
   "categories": [
     "General Purpose"

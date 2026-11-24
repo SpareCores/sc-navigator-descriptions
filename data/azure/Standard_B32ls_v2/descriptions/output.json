@@ -1,22 +1,25 @@
 {
   "page": [
-    "Microsoft Azure B32ls_v2 is a burstable virtual machine belonging to the Bsv2 server family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by an Intel Xeon 8370C processor operating at 2.8 GHz. The configuration includes 32 vCPUs mapped to 16 physical cores with hyper-threading enabled. Memory capacity is 64.0 GB, yielding a low memory-to-vCPU ratio of 2.0 GB per core. No local storage is bundled, though the instance is premium storage capable, and there are zero complimentary public IPv4 addresses.",
-    "Performance benchmarks place the B32ls_v2 in the average tier across most metrics. The stress-ng single-core CPU performance is 1899.38, and multi-core performance reaches 31040.35. In memory bandwidth testing, it achieves 1669.05 GB/sec for cached small blocks and 142.03 GB/sec for uncached large blocks. The instance demonstrates strong text generation performance during LLM inference with a small 135M model, reaching 292.79 tokens/sec, though performance drops to a weak 6.5 tokens/sec for prompt processing on a large 70B model.",
-    "From a cost-efficiency perspective, the burstable CPU allocation model offers a budget-friendly profile for workloads with variable CPU utilization. However, the 1:2 memory-to-vCPU ratio and lack of local storage present clear tradeoffs for memory-heavy or storage-intensive applications. This server is suited for workloads such as static web serving, software compilation, and database operations that experience intermittent spikes in demand rather than sustained, continuous compute loads."
+    "Microsoft Azure B32ls_v2 is a burstable virtual machine belonging to the Bsv2 series. The instance is powered by an x86_64 Intel Xeon 8370C processor running at a base clock frequency of 2.8 GHz under the Microsoft Hyper-V hypervisor. It provides 32 vCPUs mapped across 16 physical cores with simultaneous multithreading enabled. The CPU supports vector and cryptography instructions including AVX-512, AVX-512 VNNI, VAES, and SHA-NI, paired with 48 MB of L3 cache.",
+    "Memory capacity is configured at 64.0 GB of RAM, yielding an allocation of 2.0 GB per vCPU. This low memory-to-vCPU ratio aligns with compute-leaning burstable architectures. The instance contains no local ephemeral storage, requiring remote Azure storage options for persistence and operating system disks. Hardware accelerators are absent, with zero GPUs present. Benchmarked uncached memory bandwidth reaches 142.03 GB/sec for large-block reads and 66.03 GB/sec for writes.",
+    "Benchmark results demonstrate consistent mid-tier performance across general compute suites, scoring 1634.0 in Geekbench single-core and 13883.0 in multi-core evaluations. Stress-ng scores show 1899.38 in single-core and 31040.35 in multi-core metrics. In real-world simulation tasks, it handles static web serving at 33.06 GB/sec and manages 32.15 million Redis SET operations per second. While small-scale LLM generation (135M model) performs strongly at 292.79 tokens per second, large models such as 70B demonstrate weak throughput at 6.5 tokens per second during prompt ingestion.",
+    "Given its burstable CPU credit allocation and low memory footprint, the instance offers cost-efficient scaling for intermittent processing rather than continuous sustained load. Best-fit deployments include batch compilation pipelines, bursty application servers, CI/CD runners, and variable-traffic web services that do not require dense RAM footprints or onboard NVMe storage."
   ],
-  "description": "Microsoft Azure B32ls_v2 is a burstable virtual machine from the Bsv2 family, built on the x86_64 architecture and powered by an Intel Xeon 8370C processor running at 2.8 GHz. It features 32 vCPUs across 16 physical cores, 64.0 GB of RAM, and no local storage. Operating under the Microsoft Hyper-V hypervisor, this instance offers a low memory-to-vCPU ratio of 2.0 GB per core. Benchmark results indicate average performance across most categories, including a stress-ng multi-core score of 31040.35 and a static web serving throughput of 33.06 GB/sec. It exhibits strong text generation capabilities with small LLM models, though performance degrades on larger models. Given its burstable CPU allocation and lack of bundled storage, the B32ls_v2 is best suited for workloads with fluctuating resource demands, such as static web serving, software compilation, and intermittent database operations.",
-  "og_description": "Microsoft Azure B32ls_v2 is a burstable x86_64 virtual machine featuring 32 Intel Xeon vCPUs, 64.0 GB of RAM, and no local storage, designed for workloads with variable CPU utilization.",
-  "meta_description": "Microsoft Azure B32ls_v2 is a burstable x86_64 virtual machine with 32 Intel Xeon vCPUs, 64.0 GB of RAM, and no bundled local storage.",
-  "tagline": "A burstable, Intel-powered virtual machine with a low memory-to-core ratio, designed for workloads with variable CPU utilization.",
+  "description": "Microsoft Azure B32ls_v2 is a burstable virtual machine from the Bsv2 series, engineered for variable-demand workloads requiring high thread counts with low memory overhead. Driven by an Intel Xeon 8370C processor clocked at 2.8 GHz, it supplies 32 vCPUs across 16 physical cores, supported by 48 MB of L3 cache and AVX-512 instruction support. The system delivers 64.0 GB of RAM, maintaining a 2.0 GB per vCPU density, and operates without bundled local storage or GPU accelerators. Synthetic benchmarks reflect standard mid-range compute capabilities, recording 13883.0 in Geekbench multi-core and 31040.35 in stress-ng multi-core testing. Data handling demonstrates 32.15 million Redis SET operations per second and 33.06 GB/sec in static web serving. The instance presents a cost-effective platform for intermittent workloads, continuous integration workers, code compilation, and bursty web application tiers.",
+  "og_description": "Microsoft Azure B32ls_v2 is a burstable virtual machine offering 32 vCPUs on an Intel Xeon 8370C processor, 64 GB RAM, and Hyper-V virtualization for variable compute workloads without local storage.",
+  "meta_description": "Microsoft Azure B32ls_v2 features 32 burstable vCPUs, an Intel Xeon 8370C processor, 64 GB RAM, and premium storage compatibility for bursty workloads.",
+  "tagline": "A high-core-count burstable virtual machine with balanced memory allocation designed for non-continuous compute tasks, compilation queues, and scalable microservices.",
   "bullet_points": [
-    "Powered by an Intel Xeon 8370C processor at 2.8 GHz with 32 vCPUs",
-    "Equipped with 64.0 GB of RAM, providing 2.0 GB per core",
-    "Burstable CPU allocation model for handling variable workloads",
-    "No bundled local storage, but supports premium storage options",
-    "Suited for static web serving, software compilation, and database operations"
+    "32 burstable vCPUs across 16 Intel Xeon 8370C physical cores at 2.8 GHz",
+    "64.0 GB total system memory providing 2.0 GB RAM per vCPU",
+    "Hardware vector processing with AVX-512 and AVX-512 VNNI support",
+    "No integrated local storage, requiring remote network-attached disks",
+    "Throughput of 32.15 million Redis SET operations per second",
+    "Optimized for CI/CD build nodes, batch processing, and bursty web servers"
   ],
   "categories": [
     "Burstable & Budget",
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.g7.16xlarge is an x86_64 architecture instance powered by the Intel Xeon 8369B processor running at 2.7 GHz. It features 64 dedicated vCPUs derived from 32 physical cores with hyper-threading enabled. The instance is configured with 256 GB of system memory, maintaining a 4.0 GB per core ratio. It does not include local storage or dedicated GPU hardware, relying entirely on network-attached storage and a baseline network bandwidth of 32 Gbps.",
-    "Multi-core benchmark results place this instance in the top 25% tier, as demonstrated by strong scores in multi-threaded bzip3 decompression, Geekbench multi-core, and stress-ng multi-core tests. It also exhibits strong performance in Passmark database operations and LLM inference for small 135M models. Conversely, single-core performance metrics, including stress-ng single-core and Geekbench single-core scores, fall within the average middle 50% range. Memory bandwidth and static web serving throughput also align with average tier performance.",
-    "The lack of local storage requires reliance on external block storage, which may impact I/O-intensive workloads. However, the high vCPU count and strong multi-core scaling make it suitable for parallel processing tasks, software compilation, database operations, and medium-scale LLM inference. The qualitative cost efficiency of this instance is defined by its high resource density and balanced CPU-to-memory ratio, offering a stable environment for enterprise applications that do not require local NVMe drives or GPU acceleration."
+    "Alibaba Cloud ecs.g7.16xlarge is a general-purpose virtual machine built on KVM virtualization and powered by an x86_64 Intel Xeon 8369B processor operating at 2.7 GHz. The instance supplies 64 dedicated vCPUs mapped across 32 physical cores with hyper-threading enabled, accompanied by 256 GB of system memory, matching a standard 1:4 vCPU-to-RAM ratio of 4.0 GB per vCPU. Cache provisioning includes 48 KB L1 data cache, 1 MB L2 cache, and a shared 48 MB L3 cache. Instruction set extensions include AVX-512, AVX-512 VNNI, VAES, and SHA-NI for vector math and cryptographic operations. Hardware accelerators are omitted with a zero GPU count, and no bundled local storage is provided, requiring external network block storage for persistence. Network connectivity is rated at a 32 Gbps baseline.",
+    "Benchmark results demonstrate strong parallel compute and memory subsystems, placing its multi-core stress-ng score of 62,017.14 and Geekbench multi-core score of 16,705 in the top 25% of measured systems. Multi-threaded compilation under Clang reached 40,694, and PassMark database operations reached 25,157.94, both representing upper-quartile outputs. Conversely, single-threaded metrics reflect average performance, evidenced by a single-core Geekbench score of 1,603.0 and stress-ng single-core throughput of 1,848.79. Large uncached memory reads achieved 169.75 GB/sec, while static web serving throughput measured 42.67 GB/sec, placing overall input/output and single-threaded operations in the middle 50% tier.",
+    "The 64 vCPU scale offers strong resource density for parallel tasks, but workloads reliant on low-latency local disk must account for the lack of onboard storage. The instance delivers solid qualitative cost efficiency for highly concurrent backends, distributed build farms, enterprise microservices, intermediate data transformations, and high-concurrency database servers."
   ],
-  "description": "Alibaba Cloud ecs.g7.16xlarge is a general-purpose instance featuring 64 dedicated vCPUs and 256 GB of RAM, powered by an Intel Xeon 8369B processor at 2.7 GHz. Built on the x86_64 architecture, this KVM-hypervised instance provides a balanced 1:4 vCPU-to-RAM ratio but lacks local storage and GPU accelerators. Benchmark data indicates strong multi-core performance, placing it in the top 25% for multi-threaded decompression, database operations, and software compilation. However, single-core CPU performance and memory bandwidth remain in the average middle 50% tier. With a baseline network bandwidth of 32 Gbps, this instance is suited for parallel processing, database management, and enterprise applications that utilize network-attached storage.",
-  "og_description": "Alibaba Cloud ecs.g7.16xlarge is a general-purpose instance with 64 dedicated Intel Xeon vCPUs, 256 GB RAM, and 32 Gbps network bandwidth, delivering strong multi-core performance without local storage.",
-  "meta_description": "Alibaba Cloud ecs.g7.16xlarge is a 64-vCPU, 256 GB RAM general-purpose instance featuring Intel Xeon processors and strong multi-core performance.",
-  "tagline": "A dedicated sixty-four vCPU general-purpose instance delivering strong multi-core processing capabilities and balanced memory allocation for enterprise workloads.",
+  "description": "Alibaba Cloud ecs.g7.16xlarge is a general-purpose cloud instance configured with 64 dedicated vCPUs and 256 GB of memory, driven by an Intel Xeon 8369B processor running at 2.7 GHz. Utilizing an x86_64 architecture with hyper-threading across 32 physical cores, it features AVX-512 vector extensions, cryptographic accelerators, and 32 Gbps baseline networking. The system contains no integrated local storage or GPU hardware, relying on external block storage for data persistence. Benchmark results indicate top-quartile multi-core compute and compilation speeds, alongside average single-core execution and memory streaming rates. Maintaining a balanced 1:4 core-to-RAM ratio, the instance suits parallel computing, large database deployments, CI/CD compilation pipelines, and enterprise application clusters.",
+  "og_description": "Alibaba Cloud ecs.g7.16xlarge features 64 vCPUs on an Intel Xeon 8369B CPU, 256 GB of RAM, and 32 Gbps networking. Designed for balanced multi-threaded compute and enterprise database tasks.",
+  "meta_description": "Alibaba Cloud ecs.g7.16xlarge delivers 64 vCPUs, 256 GB RAM, and 32 Gbps networking on an Intel Xeon 8369B processor for demanding multi-core workloads.",
+  "tagline": "A high-capacity 64-vCPU platform pairing 256 GB of memory with balanced multi-threaded throughput and 32 Gbps networking bandwidth.",
   "bullet_points": [
-    "Intel Xeon 8369B processor with 64 dedicated vCPUs and 256 GB RAM",
-    "Strong multi-core performance in database operations and software compilation",
-    "Average single-core CPU performance and memory bandwidth",
-    "No local storage, requiring network-attached storage solutions",
-    "32 Gbps baseline network bandwidth for data transfer",
-    "Suited for parallel processing, database hosting, and enterprise applications"
+    "64 dedicated vCPUs across 32 physical Intel Xeon 8369B cores at 2.7 GHz",
+    "256 GB system memory adhering to a standard 1:4 vCPU-to-RAM ratio",
+    "32 Gbps baseline network bandwidth without local disk storage or GPUs",
+    "Hardware support for AVX-512, AVX-512 VNNI, VAES, and SHA-NI instruction sets",
+    "Top-tier multi-threaded compilation, compression, and database operation benchmarks",
+    "Suited for large microservice backends, CI/CD build clusters, and enterprise databases"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

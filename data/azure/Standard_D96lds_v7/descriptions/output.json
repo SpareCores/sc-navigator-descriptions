@@ -1,24 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D96lds_v7 is an x86_64 compute-optimized server powered by an Intel Xeon 6973P-C processor running at 4.2 GHz. It features 96 vCPUs across 48 physical cores with hyper-threading enabled, supported by a 480 MB L3 cache. The instance is configured with 192.0 GB of system memory, yielding a low memory-to-core ratio of 2.0 GB per vCPU. Local storage is bundled, consisting of a 5669 GB NVMe SSD.",
-    "Benchmark data indicates top-tier performance in multi-threaded operations and memory bandwidth. The server achieves top-tier results in Passmark CPU tests, including extended instructions, encryption, and physics simulations. Multi-threaded bzip3 decompression and small-block cached memory read bandwidth also rank in the top tier. For database workloads, the instance demonstrates high efficiency in Redis SET operations and Passmark database operations, alongside strong static web serving throughput.",
-    "Due to its compute-oriented design, the D96lds_v7 presents a clear resource tradeoff: it provides massive processing power and high-speed local storage but features a restricted memory footprint of 2.0 GB per vCPU. This makes it highly cost-efficient for CPU-bound workloads that do not require massive RAM arrays, avoiding the premium cost of memory-optimized instances. However, memory-intensive applications may experience bottlenecks.",
-    "This server is optimized for high-throughput compute tasks, multi-threaded data processing, and high-performance database operations. It is highly suitable for static web serving, Redis deployments, and CPU-based machine learning tasks such as LLM prompt processing, where its Intel Advanced Matrix Extensions and AVX-512 capabilities can be fully utilized."
+    "Microsoft Azure D96lds_v7 is an x86_64 server instance positioned within the General Purpose family, characterized by a low memory-to-vCPU ratio and high-capacity local disk storage. It runs on Microsoft Hyper-V and is powered by an Intel Xeon 6973P-C processor operating at 4.2 GHz. The instance is configured with 96 vCPUs across 48 physical cores with two threads per core, backed by 480 MB of L3 cache, 2 MB of L2 cache, and 48 KB of L1d cache. System memory totals 192.0 GB, allocating 2.0 GB of RAM per vCPU. Hardware acceleration instructions include AVX-512 (with VNNI and BF16) and Intel AMX (tile and int8), alongside cryptographic accelerators like VAES and SHA-NI. There are no GPUs present, and the instance includes 5669 GB of local NVMe SSD storage.",
+    "Benchmark measurements indicate substantial multi-core throughput and matrix compute efficiency. The instance achieved top-tier marks in PassMark CPU tests (108,246.31), extended instruction evaluations (125,494.83), and cryptographic tasks (104,936.03), complemented by strong multi-core stress-ng performance (100,098.18). Cached memory bandwidth reached 7,403.16 GB/sec, while uncached read and write benchmarks showed 349.97 GB/sec and 137.53 GB/sec, respectively. Multi-threaded bzip3 decompression delivered top-tier throughput at 611.35 GB/sec. Benefiting from AMX extensions, CPU-based prompt processing across small, medium, and large language models placed in the top 10%, although single-core stress-ng metrics (2,279.19) and single-threaded generation speeds remained in the mid-tier category.",
+    "The primary resource tradeoff of the D96lds_v7 is its compact 2:1 memory-to-core density coupled with high core count and high-speed NVMe storage. With 192.0 GB of memory shared among 96 vCPUs, it is optimized for high-throughput compute tasks rather than memory-heavy footprints. The instance excels in scenarios requiring intensive parallel processing, fast temporary local storage, and high transaction volume, such as database operations (PassMark database score of 33,207.86), high-throughput Redis caching (159.81 million SET operations/sec), batch compression pipelines, static web serving (150.35 GB/sec), and CPU-driven machine learning inference."
   ],
-  "description": "Microsoft Azure D96lds_v7 is a compute-optimized, x86_64 server designed for high-throughput, CPU-intensive workloads. Powered by an Intel Xeon 6973P-C processor running at 4.2 GHz, it delivers 96 vCPUs and 192.0 GB of RAM, representing a 2.0 GB per vCPU ratio. The server includes a 5669 GB local NVMe SSD, providing high-speed storage capacity. Benchmarks show top-tier performance in Passmark CPU tests, multi-threaded decompression, Redis SET operations, and static web serving. It also excels in LLM prompt processing, utilizing Intel AMX and AVX-512 instruction sets. While highly cost-efficient for raw compute and storage-heavy tasks, its low memory-to-core ratio represents a tradeoff for memory-bound applications. It is best suited for high-performance databases, web serving, and parallel data processing.",
-  "og_description": "Microsoft Azure D96lds_v7 is a compute-optimized server featuring 96 Intel Xeon vCPUs, 192 GB of RAM, and a 5669 GB local NVMe SSD, delivering top-tier performance for databases and multi-threaded workloads.",
-  "meta_description": "Microsoft Azure D96lds_v7 is a compute-optimized server with 96 Intel Xeon vCPUs, 192 GB RAM, and a 5669 GB local NVMe SSD for high-throughput workloads.",
-  "tagline": "A high-compute, storage-bundled server with ninety-six vCPUs and local NVMe SSDs optimized for parallel processing and database workloads.",
+  "description": "Microsoft Azure D96lds_v7 is an x86_64 General Purpose instance featuring 96 vCPUs across 48 physical cores of an Intel Xeon 6973P-C processor running at 4.2 GHz. The system provides 192.0 GB of memory (2.0 GB per vCPU), a large 480 MB L3 cache, and 5669 GB of local NVMe SSD storage without integrated GPUs. Designed for high parallel throughput with a lower memory-per-core ratio, it supports AVX-512 and Intel AMX hardware extensions. Benchmark results demonstrate top-tier multi-threaded processing, leading PassMark CPU scores, and exceptional performance in Redis operations and LLM prompt processing, offset by average single-threaded benchmarks. The server is well matched for compute-heavy parallel workloads, database workloads, data compression pipelines, and CPU-based inference.",
+  "og_description": "Microsoft Azure D96lds_v7 features 96 vCPUs on an Intel Xeon 6973P-C processor, 192 GB RAM, and 5669 GB of NVMe SSD storage, delivering top-tier multi-core and database benchmark results.",
+  "meta_description": "Microsoft Azure D96lds_v7 offers 96 vCPUs, 192 GB RAM, and 5669 GB local NVMe storage powered by an Intel Xeon 6973P-C CPU for compute-heavy workloads.",
+  "tagline": "High-throughput 96-vCPU compute with extensive NVMe storage and advanced AMX matrix acceleration for demanding multi-threaded workloads.",
   "bullet_points": [
-    "96 Intel Xeon vCPUs running at 4.2 GHz with 480 MB L3 cache",
-    "192 GB of system memory providing a compute-optimized 2.0 GB per vCPU ratio",
-    "Bundled 5669 GB local NVMe SSD for high-speed storage operations",
-    "Top-tier performance in database operations, Redis SET, and static web serving",
-    "Hardware-accelerated execution via Intel AVX-512 and AMX extensions",
-    "Best suited for high-throughput databases, web serving, and CPU-bound data processing"
+    "96 vCPUs across 48 physical cores via Intel Xeon 6973P-C processor clocked at 4.2 GHz",
+    "192.0 GB of RAM providing a compute-focused 2:1 vCPU-to-memory density",
+    "Bundled 5669 GB high-speed local NVMe SSD storage",
+    "Hardware support for Intel AMX and AVX-512 vector acceleration",
+    "Top-tier performance in multi-core PassMark tests and Redis operations",
+    "Ideal for relational databases, Redis caching, batch compression, and LLM prompt processing"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

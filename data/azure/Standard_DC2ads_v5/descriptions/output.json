@@ -1,21 +1,22 @@
 {
   "page": [
-    "Microsoft Azure DC2ads_v5 is a virtual machine instance belonging to the DCADSv5 family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 AMD processor with 2 dedicated virtual CPUs and 8.0 GB of system memory, yielding a balanced allocation of 4.0 GB of RAM per core.",
-    "This instance is equipped with 77 GB of local SSD storage and is capable of utilizing Premium Storage options. It does not include any complimentary public IPv4 addresses, and there are no integrated graphics processing units on this server type.",
-    "Due to its entry-level hardware profile and balanced resource distribution, the DC2ads_v5 is designed for general-purpose workloads. It is suitable for small-scale web serving, development environments, lightweight databases, and basic application hosting where dedicated CPU resources are required without massive memory or compute demands."
+    "Microsoft Azure DC2ads_v5 is a general-purpose virtual machine configuration powered by an AMD EPYC 9V74 processor running under Microsoft Hyper-V. The instance provides 2 vCPUs derived from a single physical core with simultaneous multithreading (2 threads per core). It is provisioned with 8.0 GB of RAM, yielding a balanced 1:4 vCPU-to-memory ratio (4.0 GB per vCPU), and features 32 MB of L3 cache alongside an 81 GB local SSD for temporary storage. The instance does not include dedicated GPU acceleration or bundled complimentary public IPv4 addresses.",
+    "Benchmark results reflect the entry-level compute capacity of a single-core, dual-thread hardware allocation. The instance scored 1981.87 in stress-ng single-core tests, placing in the average middle tier, but multi-core throughput registered in the bottom 10% across the fleet. Similarly, Geekbench metrics produced scores of 1154.0 in single-core and 1390.0 in multi-core testing, with PassMark CPU benchmarks rating at 2340.49 and database operations at 710.55. Redis performance reached 1.66 million SET operations per second, constrained by overall CPU thread concurrency.",
+    "From an architectural and cost-efficiency perspective, the DC2ads_v5 offers an entry-tier footprint capable of running standard enterprise utilities without overprovisioning CPU resources. While compute density is naturally limited by the physical single-core allocation, the inclusion of 81 GB of local solid-state storage reduces dependencies on external block volumes for ephemeral files. It represents an efficient baseline for lightweight backend utilities, small development environments, and low-traffic web services where high computational throughput is not required."
   ],
-  "description": "Microsoft Azure DC2ads_v5 is a general-purpose virtual machine from the DCADSv5 family, powered by an x86_64 AMD processor and managed via the Microsoft Hyper-V hypervisor. The instance features 2 dedicated vCPUs and 8.0 GB of system memory, maintaining a balanced 4.0 GB of RAM per core. For local storage, it includes a 77 GB SSD and supports Premium Storage configurations. This server does not feature any GPUs or complimentary public IPv4 addresses. Given its resource profile, the DC2ads_v5 is positioned as a cost-efficient option for entry-level workloads, including small databases, development environments, and lightweight web applications requiring dedicated CPU allocation.",
-  "og_description": "Microsoft Azure DC2ads_v5 is a general-purpose virtual machine featuring 2 dedicated AMD vCPUs, 8.0 GB of RAM, and 77 GB of local SSD storage, optimized for entry-level workloads.",
-  "meta_description": "Microsoft Azure DC2ads_v5 is a general-purpose virtual machine featuring 2 dedicated AMD vCPUs, 8 GB of RAM, and a 77 GB local SSD.",
-  "tagline": "A balanced general-purpose virtual machine featuring dedicated AMD processors, local SSD storage, and support for premium storage configurations.",
+  "description": "Microsoft Azure DC2ads_v5 is a general-purpose virtual machine equipped with 2 vCPUs from a single AMD EPYC 9V74 physical core and 8.0 GB of memory, maintaining a 1:4 vCPU-to-RAM ratio. Built on Microsoft Hyper-V, the instance includes an 81 GB local SSD for ephemeral storage without integrated GPU hardware. Across benchmark suites, the server exhibits baseline compute throughput consistent with its 2-thread footprint, posting 1981.87 in stress-ng single-core testing, a Geekbench multi-core score of 1390.0, and 1.66 million Redis SET operations per second. Hardware cryptographic flags including AES, VAES, and SHA-NI are available. Given the compact physical CPU profile paired with modest local storage, the DC2ads_v5 serves as a cost-efficient general-purpose host for lightweight internal tooling, small databases, staging environments, and entry-level web serving.",
+  "og_description": "Microsoft Azure DC2ads_v5 features 2 vCPUs on an AMD EPYC 9V74 processor, 8.0 GB of RAM, and an 81 GB local SSD. It offers an efficient baseline configuration for entry-level workloads.",
+  "meta_description": "Microsoft Azure DC2ads_v5 provides 2 vCPUs via AMD EPYC 9V74, 8 GB RAM, and an 81 GB local SSD for lightweight general-purpose cloud workloads.",
+  "tagline": "Compact dual-thread general-purpose server featuring AMD EPYC architecture with dedicated local SSD storage for lightweight cloud workloads.",
   "bullet_points": [
-    "2 dedicated x86_64 AMD virtual CPUs",
-    "8.0 GB of system memory with 4.0 GB per core",
-    "77 GB of local SSD storage with Premium Storage capability",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Suitable for lightweight databases, web serving, and development environments"
+    "Powered by an AMD EPYC 9V74 processor offering 2 vCPUs across 1 physical core",
+    "8.0 GB memory configuration maintaining a standard 1:4 compute-to-RAM ratio",
+    "Bundled 81 GB local SSD for high-speed temporary storage",
+    "Hardware cryptographic extensions including AES, VAES, and SHA-NI",
+    "Suited for small database engines, staging environments, and low-traffic web applications"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

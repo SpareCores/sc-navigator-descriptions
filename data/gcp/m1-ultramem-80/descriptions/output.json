@@ -1,22 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform m1-ultramem-80 is a memory-optimized server designed for workloads requiring massive memory capacity relative to compute resources. It features 80 dedicated vCPUs mapped to 40 physical cores on an Intel Xeon processor running at 2.2 GHz, utilizing the x86_64 architecture. The server is equipped with 1922 GB of system memory, providing approximately 24.02 GB of RAM per vCPU. It does not include local storage or GPU accelerators.",
-    "Performance benchmarks indicate a clear tradeoff between single-core and multi-core execution. Single-core performance is positioned in the bottom 10% across stress-ng, Geekbench, and compression tests. However, multi-core benchmarks, such as stress-ng multi-core and Passmark CPU tests, achieve average tier results. Memory bandwidth tests also show average performance, though the Passmark memory score falls into the bottom 25%.",
-    "From a qualitative cost-efficiency perspective, this server offers high memory density, making it suitable for consolidating memory-bound workloads that do not require high single-threaded CPU performance. It is well-suited for large in-memory databases, enterprise resource planning systems, and memory-intensive data processing pipelines."
+    "Google Cloud Platform m1-ultramem-80 is a memory-optimized virtual machine instance engineered for workloads demanding an exceptionally high memory-to-vCPU ratio. Built on the x86_64 architecture, the system is powered by dedicated Intel Xeon processors running at a base clock speed of 2.2 GHz across 40 physical cores and 80 vCPUs. The hardware configuration integrates 55 MB of L3 cache, 32 KB of L1d cache, and 0.25 MB of L2 cache per core. The central highlight of the configuration is its massive 1922.0 GB memory footprint, offering approximately 24.02 GB of RAM per vCPU. The instance includes no bundled local storage and provides zero discrete graphics processors or complimentary public IPv4 addresses.",
+    "Benchmark measurements indicate a pronounced divergence between single-threaded and parallel execution. Single-core performance ranks in the lowest tier, reflected by a stress-ng single-core score of 847.69, a Geekbench single-core score of 849.0, and low throughput in single-threaded gzip compression at 19.68 GB/sec. Conversely, multi-threaded throughput achieves balanced, mid-tier results across standard suites, marked by a stress-ng multi-core result of 40217.38, a Geekbench multi-core score of 8396.0, and a Passmark CPU score of 39241.27. Memory subsystem performance demonstrates 123.42 GB/sec in uncached read bandwidth and 58.75 GB/sec in write bandwidth, enabling the platform to sustain 40.16 million Redis SET operations per second.",
+    "From an infrastructure and cost perspective, the instance is specialized for density in system RAM rather than raw compute velocity. The 2.2 GHz processor architecture without AVX-512 capabilities presents a throughput tradeoff for compute-bound algorithms, meaning resource investment is heavily skewed toward memory allocation. Consequently, the m1-ultramem-80 is best suited for large-scale in-memory databases such as SAP HANA, massive Redis or Memcached clusters, enterprise caching layers, and high-footprint extract-transform-load (ETL) pipelines."
   ],
-  "description": "Google Cloud Platform m1-ultramem-80 is an x86_64 memory-optimized server configured with 80 dedicated vCPUs and 1922 GB of RAM, yielding a high memory-to-core ratio of 24.02 GB per vCPU. Powered by an Intel Xeon processor running at 2.2 GHz, this server does not include local storage or GPU hardware. Benchmark data reveals a performance profile characterized by poor single-core execution but average multi-core and memory bandwidth capabilities. Consequently, this instance is designed for memory-bound workloads rather than compute-intensive tasks. It is highly suited for large-scale in-memory databases, caching layers, and enterprise applications that require massive memory footprints to process large datasets without relying on local storage.",
-  "og_description": "Google Cloud Platform m1-ultramem-80 is an x86_64 memory-optimized server featuring 80 dedicated Intel Xeon vCPUs and 1922 GB of RAM, designed for large-scale in-memory databases and enterprise workloads.",
-  "meta_description": "Google Cloud Platform m1-ultramem-80 is a memory-optimized server with 80 Intel Xeon vCPUs and 1922 GB of RAM for memory-intensive workloads.",
-  "tagline": "A high-density memory-optimized server featuring massive RAM capacity for memory-bound enterprise applications and large in-memory databases.",
+  "description": "Google Cloud Platform m1-ultramem-80 is an x86_64 memory-optimized instance featuring 80 dedicated Intel Xeon vCPUs across 40 physical cores at 2.2 GHz and 1922.0 GB of RAM. The configuration delivers a memory density of 24.02 GB per vCPU with 55 MB of L3 cache, operating without local storage or discrete GPUs. Benchmark results demonstrate average multi-threaded execution with a stress-ng score of 40217.38 and Redis throughput reaching 40.16 million operations per second, contrasted by lower single-threaded metrics. Hardware capabilities favor memory density over raw compute speed, making this server appropriate for massive in-memory databases, large-scale key-value caching layers, and memory-bound enterprise data analytics.",
+  "og_description": "Google Cloud Platform m1-ultramem-80 delivers 80 dedicated Intel Xeon vCPUs and 1922 GB of system RAM. Designed for in-memory databases and analytics, it pairs high memory capacity with balanced multi-core execution.",
+  "meta_description": "Google Cloud Platform m1-ultramem-80 is a memory-optimized instance featuring 80 vCPUs, 1922 GB RAM, and dedicated Intel Xeon cores for in-memory workloads.",
+  "tagline": "Massive memory allocation paired with dedicated multi-core Intel Xeon compute designed specifically for high-capacity in-memory data processing and caching.",
   "bullet_points": [
-    "80 dedicated Intel Xeon vCPUs and 1922 GB of RAM",
-    "High memory-to-vCPU ratio of 24.02 GB per core",
-    "Average multi-core and memory bandwidth benchmark performance",
-    "No bundled local storage or GPU accelerators",
-    "Designed for large-memory workloads like in-memory databases"
+    "80 dedicated vCPUs on 40 physical Intel Xeon cores at 2.2 GHz",
+    "1922.0 GB of total RAM providing 24.02 GB memory per vCPU",
+    "Measured Redis throughput of 40.16 million operations per second",
+    "No bundled local storage and zero GPU accelerators",
+    "Suited for large in-memory databases, enterprise caching, and memory-intensive ETL"
   ],
   "categories": [
-    "Memory Optimized",
-    "Storage & Database"
+    "Memory Optimized"
   ]
 }

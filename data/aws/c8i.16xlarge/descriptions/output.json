@@ -1,23 +1,23 @@
 {
   "page": [
-    "Amazon Web Services c8i.16xlarge is a compute-optimized instance powered by the Nitro hypervisor and an Intel Xeon 6975P-C processor. It features 64 vCPUs (32 physical cores with hyper-threading) running at 3.9 GHz, backed by a 480 MB L3 cache. The system is equipped with 128.0 GB of DDR5 memory operating at 7 GHz, yielding a 2.0 GB per core ratio. It lacks local storage and dedicated GPUs, relying on network-attached storage and a baseline network bandwidth of 30 Gbps.",
-    "Benchmark data highlights strong multi-core performance, with Geekbench multi-core and software compilation tests placing in the top 10% tier. The processor's support for advanced instruction sets, including AVX-512 and Intel AMX (Advanced Matrix Extensions), accelerates vector and matrix operations. This is reflected in strong LLM inference speeds, particularly for prompt processing on medium-sized 7B models, which ranks in the top 10% tier. Static web serving throughput also achieves top-tier status, while large-block memory read bandwidth reaches 197.26 GB/sec.",
-    "Given its compute-heavy configuration and high-speed DDR5 memory, the c8i.16xlarge offers high resource density for CPU-bound tasks without the added cost of bundled local storage or GPUs. It is highly suited for compute-intensive workloads such as software compilation, image processing, high-throughput web serving, and medium-scale machine learning inference. However, memory-bound applications requiring more than 2 GB of RAM per core or workloads dependent on local NVMe storage may face performance tradeoffs."
+    "Amazon Web Services c8i.16xlarge is a compute-optimized instance built on the Nitro hypervisor architecture. It features a 64-vCPU allocation across 32 physical cores using the x86_64 Intel Xeon 6975P-C processor clocked at 3.9 GHz. The processor includes 480 MB of shared L3 cache and supports advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions (AMX). Memory capacity is 128.0 GB of high-speed 7 GHz DDR5 memory, yielding a 1:2 vCPU-to-RAM ratio of 2.0 GB per virtual core. The instance has no local bundled storage, relying on external network-attached volumes, and offers a baseline network bandwidth of 30 Gbps.",
+    "Benchmark results demonstrate exceptional multi-threaded performance and instruction execution speed. The instance achieved top-tier rankings in Geekbench multi-core with a score of 21074.0, Clang software compilation at 59767.0, and static web serving throughput reaching 107.02 GB/sec. Parallelized integer and floating-point computations show similar strength, marked by a PassMark CPU score of 82984.7 and a stress-ng multi-core result of 69204.24. Thanks to DDR5 bandwidth reaching up to 197.26 GB/sec in large-block uncached reads, the platform also delivers strong throughput for memory-bound tasks, registering 114.83 million operations per second in Redis SET operations.",
+    "Hardware tradeoffs center around the compute-heavy design and local storage profile. With a 2 GB per vCPU ratio and zero local NVMe storage, memory-dense databases or workloads that require high-throughput temporary scratch disks will need specialized instance families or external storage provisioning. However, for compute-intensive automation, CI/CD compilation pipelines, web serving at scale, and CPU-driven AMX-accelerated matrix operations, the instance offers significant computational resource density.",
+    "The Amazon Web Services c8i.16xlarge is suited for software build farms, parallel distributed computing, media encoding, high-traffic static web servers, and batch data processing."
   ],
-  "description": "Amazon Web Services c8i.16xlarge is a compute-optimized instance featuring 64 vCPUs and 32 physical cores powered by an Intel Xeon 6975P-C processor running at 3.9 GHz. Built on the Nitro hypervisor, it includes 128.0 GB of high-speed DDR5 memory at 7 GHz, providing 2.0 GB of RAM per core. The instance lacks local storage and GPUs, but delivers a baseline network bandwidth of 30 Gbps. Performance benchmarks place this server in the top tier for multi-core tasks, software compilation, and image processing. It also demonstrates strong capabilities in LLM prompt processing, aided by hardware-level AVX-512 and AMX extensions. This instance is highly suited for compute-intensive workloads, including high-throughput web serving, software development pipelines, and medium-scale inference tasks, offering a balanced, cost-efficient profile for pure CPU processing.",
-  "og_description": "Amazon Web Services c8i.16xlarge is a compute-optimized instance with 64 vCPUs, 128 GB DDR5 RAM, and an Intel Xeon processor, delivering top-tier performance for software compilation and web serving.",
-  "meta_description": "Amazon Web Services c8i.16xlarge is a compute-optimized instance featuring 64 vCPUs, 128 GB DDR5 RAM, and 30 Gbps network bandwidth.",
-  "tagline": "A high-frequency, compute-optimized platform featuring advanced matrix extensions and high-speed DDR5 memory for intensive multi-threaded workloads.",
+  "description": "Amazon Web Services c8i.16xlarge is a compute-optimized instance driven by a 3.9 GHz Intel Xeon 6975P-C processor with 64 vCPUs and 32 physical cores on the AWS Nitro System. Equipped with 128.0 GB of 7 GHz DDR5 memory and 480 MB of L3 cache, it incorporates hardware acceleration extensions including AVX-512 and Intel AMX. It features 30 Gbps baseline network bandwidth without local disk storage or bundled GPUs. Across benchmarks, the instance demonstrates top-tier multi-threaded compilation performance, high static web throughput of 107.02 GB/sec, and strong CPU throughput across integer and cryptographic tests. With a tight 2.0 GB of RAM per vCPU, it emphasizes raw processing throughput over memory capacity, making it appropriate for large-scale CI/CD build pipelines, distributed batch jobs, high-concurrency web serving, and CPU-based inferencing.",
+  "og_description": "Amazon Web Services c8i.16xlarge features 64 vCPUs via Intel Xeon 6975P-C processors, 128 GB of DDR5 memory, and 30 Gbps networking, tailored for compute-heavy workloads and build systems.",
+  "meta_description": "Amazon Web Services c8i.16xlarge provides 64 vCPUs, 128 GB DDR5 RAM, and 30 Gbps bandwidth for compute-focused compilation, web serving, and batch tasks.",
+  "tagline": "Dedicated 64-vCPU Intel Xeon computing power with high-speed DDR5 memory for intensive parallel compilation and processing tasks.",
   "bullet_points": [
-    "64 vCPUs and 32 physical cores powered by an Intel Xeon 6975P-C processor at 3.9 GHz",
-    "128.0 GB of high-speed DDR5 memory operating at 7 GHz",
-    "Top-tier benchmark performance in software compilation and image processing",
-    "Hardware acceleration for vector and matrix operations via AVX-512 and AMX",
-    "30 Gbps baseline network bandwidth with no local storage or GPU",
-    "Best suited for compute-heavy workloads, web serving, and medium-scale LLM inference"
+    "64 dedicated vCPUs on Intel Xeon 6975P-C at 3.9 GHz with 480 MB L3 cache",
+    "128.0 GB of 7 GHz DDR5 memory (2.0 GB per vCPU)",
+    "30 Gbps baseline network bandwidth via AWS Nitro hypervisor",
+    "Hardware acceleration via Intel AMX and AVX-512 instruction sets",
+    "Top-tier performance in Clang compilation and static web serving throughput",
+    "Zero bundled local disk storage, relying on external network-attached storage"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services i4i.large is a storage-optimized server instance featuring 2 vCPUs powered by a dedicated 3.5 GHz Intel Xeon 8375C processor with 1 physical core and 2 threads. The instance is equipped with 16.0 GB of DDR4 memory operating at 3 GHz and includes 468 GB of local NVMe SSD storage. It operates on the Nitro hypervisor and provides a baseline network bandwidth of 1 Gbps.",
-    "Benchmark data indicates average single-core performance, with a Geekbench single-core score of 1558.0 and a stress-ng single-core CPU score of 1880.58. However, due to its configuration of a single physical core, multi-core performance is limited, as reflected in a poor Geekbench multi-core score of 1806.0 and a stress-ng multi-core score of 1923.48. Memory bandwidth benchmarks also fall into the lower percentiles, with large-block read-only bandwidth at 14.18 GB/sec and write bandwidth at 13.19 GB/sec.",
-    "From a resource density perspective, the i4i.large offers a high ratio of local NVMe storage relative to its small compute footprint, making it a qualitatively cost-efficient option for workloads requiring fast local storage without needing massive CPU resources. It is suitable for small-scale database operations, low-throughput web serving, and lightweight transactional applications that benefit from low-latency NVMe storage."
+    "Amazon Web Services i4i.large is a storage-optimized virtual machine running on the AWS Nitro System. It features an Intel Xeon 8375C processor built on the x86_64 architecture, providing 2 vCPUs across 1 physical core with multithreading enabled at a clock speed of 3.5 GHz. The CPU includes 54 MB of L3 cache alongside support for AVX-512 vector extensions and cryptographic instruction sets such as AES-NI and SHA-NI. System memory totals 16.0 GB of DDR4 operating at 3 GHz, and the instance includes a dedicated 468 GB NVMe SSD alongside a baseline network throughput of 1 Gbps. No GPU accelerators are present.",
+    "Benchmark evaluations reflect standard single-threaded execution paired with entry-level multi-core compute throughput. In single-core testing, the instance achieved a Geekbench score of 1558.0 and a stress-ng score of 1880.58, placing it in the mid-range tier. However, constrained by its two-thread, single-core profile, multi-core benchmarks scored in lower tiers, recording 1806.0 in Geekbench and 1923.48 in stress-ng. Memory subsystems delivered 14.18 GB/s read and 13.19 GB/s write in large block operations. Data serving metrics include 2.04 million Redis SET operations per second and 3.59 GB/s in static web serving throughput.",
+    "The primary architectural value of this configuration lies in low-latency local NVMe storage coupled with an 8:1 memory-to-vCPU ratio. This profile suits modest I/O-intensive workloads where direct high-speed local disk access is critical, yet intensive compute scaling is unnecessary. Typical applications include small-scale transactional databases, caching layers, write-ahead logging nodes, and read-heavy search indices where local storage capacity and caching headroom take precedence over parallel compute density."
   ],
-  "description": "Amazon Web Services i4i.large is a storage-optimized instance featuring 2 vCPUs from a dedicated 3.5 GHz Intel Xeon 8375C processor, 16.0 GB of DDR4 memory, and 468 GB of local NVMe SSD storage. Running on the Nitro hypervisor, it delivers a baseline network speed of 1 Gbps. Performance benchmarks show average single-core capabilities, with a Geekbench single-core score of 1558.0, but multi-core and memory bandwidth results are limited due to the single physical core architecture. This instance provides a high storage-to-vCPU ratio, offering qualitative cost efficiency for storage-heavy workloads that do not require intensive multi-threaded compute. It is best suited for small-scale databases, basic transactional applications, and lightweight web serving.",
-  "og_description": "Amazon Web Services i4i.large is a storage-optimized instance featuring 2 vCPUs, 16 GB DDR4 RAM, and 468 GB of local NVMe SSD storage, designed for small-scale database workloads.",
-  "meta_description": "Amazon Web Services i4i.large is a storage-optimized instance featuring 2 vCPUs, 16 GB DDR4 RAM, and 468 GB of local NVMe SSD storage.",
-  "tagline": "A storage-optimized instance combining dedicated Intel Xeon processing with local NVMe SSD storage for data-intensive, low-compute workloads.",
+  "description": "Amazon Web Services i4i.large is a storage-optimized instance powered by a 3.5 GHz Intel Xeon 8375C processor running on the AWS Nitro hypervisor. The configuration provides 2 vCPUs across 1 physical core, 16.0 GB of DDR4 memory, and a direct-attached 468 GB NVMe SSD, backed by 1 Gbps baseline network bandwidth without discrete GPUs. In synthetic evaluations, the platform demonstrates reliable single-threaded performance with a Geekbench score of 1558.0, though overall computational throughput is constrained by the two-thread limit, as seen in a multi-core score of 1806.0. Memory throughput reaches 14.18 GB/s for large uncached reads, while Redis caching throughput yields 2.04 million SET operations per second. With an 8:1 memory-to-vCPU ratio and built-in solid-state storage, i4i.large is tailored for lightweight transactional databases, distributed cache replicas, log ingestion, and storage-heavy workloads requiring fast local scratch or persistent caching space.",
+  "og_description": "Amazon Web Services i4i.large is a storage-optimized virtual server equipped with 2 vCPUs from an Intel Xeon 8375C processor, 16 GB RAM, 1 Gbps networking, and a dedicated 468 GB NVMe SSD drive.",
+  "meta_description": "Amazon Web Services i4i.large is a storage-optimized instance with 2 vCPUs, 16 GB DDR4 RAM, and a bundled 468 GB NVMe SSD powered by an Intel Xeon 8375C CPU.",
+  "tagline": "Storage-optimized virtual machine featuring high-speed local NVMe flash, balanced memory capacity, and dedicated single-core Intel Xeon compute performance.",
   "bullet_points": [
-    "Dedicated Intel Xeon 8375C processor with 2 vCPUs and 1 physical core",
-    "16.0 GB of DDR4 memory and 468 GB of local NVMe SSD storage",
-    "Nitro hypervisor with 1 Gbps baseline network bandwidth",
-    "Average single-core CPU performance paired with limited multi-core capacity",
-    "Suitable for small-scale databases and storage-sensitive applications"
+    "2 vCPUs (1 physical Intel Xeon 8375C core) clocked at 3.5 GHz",
+    "16.0 GB DDR4 memory with an 8:1 memory-to-core allocation",
+    "Bundled 468 GB local NVMe SSD storage",
+    "1 Gbps baseline network interface without attached GPUs",
+    "Well-suited for transactional databases, caching nodes, and local I/O tasks"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

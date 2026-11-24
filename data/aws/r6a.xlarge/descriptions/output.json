@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services r6a.xlarge is a memory-optimized server instance powered by an AMD EPYC 7R13 processor utilizing the x86_64 architecture. It features 4 dedicated vCPUs derived from 2 physical cores with hyperthreading enabled, running at a clock speed of 3.6 GHz. The instance is equipped with 32.0 GB of DDR4 memory running at 3 GHz, providing a memory-to-vCPU ratio of 8 GB per vCPU. It operates on the AWS Nitro hypervisor, lacks local storage, and provides a baseline network bandwidth of 2 Gbps.",
-    "Performance benchmarks indicate strong single-core CPU capabilities, with stress-ng single-core performance scoring in the top 25% at 2976.78. However, multi-core scaling is limited, as evidenced by a weak multi-core stress-ng score of 5966.47 and a weak Geekbench multi-core score of 3725.0. Memory bandwidth benchmarks also fall into the lower tier, with uncached large-block read and write speeds recorded at 38.45 GB/sec and 22.57 GB/sec respectively. Single-threaded operations, such as gzip compression and bzip3 decompression, perform at average levels.",
-    "Given its high memory-to-vCPU ratio but modest multi-core compute and memory bandwidth performance, the r6a.xlarge is suited for memory-intensive workloads that do not require intensive parallel processing. Appropriate use cases include medium-sized databases, caching layers, and memory-bound enterprise applications. The lack of local storage requires reliance on network-attached storage, and the 2 Gbps baseline network bandwidth should be factored into data-transfer-heavy architectures."
+    "Amazon Web Services r6a.xlarge is a memory-optimized instance running on the AWS Nitro System. It is powered by an AMD EPYC 7R13 processor based on the x86_64 architecture, providing 4 vCPUs derived from 2 dedicated physical cores with multithreading enabled. The CPU operates at 3.6 GHz with 32 KB L1d cache, 0.5 MB L2 cache, and 8 MB L3 cache per slice. Supported instruction sets include AVX, AES, VAES, SHA-NI, and BMI2, while advanced matrix extensions and AVX-512 variants are not available on this platform.",
+    "The instance is equipped with 32.0 GB of DDR4 memory clocked at 3 GHz, establishing a high 1:8 vCPU-to-RAM ratio of 8.0 GB per vCPU. It lacks local instance storage, requiring network-attached storage volumes for persistent data. Network performance is provisioned with a baseline bandwidth of 2 Gbps. Hardware acceleration is absent, with 0 GPUs assigned to this instance configuration.",
+    "Benchmark results demonstrate strong single-core CPU execution, achieving a stress-ng score in the top 25% and an average Geekbench single-core score of 1666.0. However, multi-core throughput is constrained by the 4-vCPU topology, placing multi-threaded benchmarks such as stress-ng multi-core, bzip3 decompression, and Geekbench multi-core in the bottom 25%. Uncached memory bandwidth reaches 38.45 GB/sec for read operations and 22.57 GB/sec for writes. Workloads involving Redis set operations and static web serving register in the bottom quartile.",
+    "From a cost efficiency and architectural standpoint, the r6a.xlarge delivers substantial memory density per core via AMD hardware, avoiding the overhead of high CPU allocations when only large memory capacity is required. It is well aligned with memory-intensive workloads that do not demand extensive parallel compute, such as distributed in-memory caching tiers, mid-sized relational database instances, ETL data staging, and application background jobs."
   ],
-  "description": "Amazon Web Services r6a.xlarge is a memory-optimized instance featuring 4 dedicated vCPUs and 32.0 GB of DDR4 memory, delivering an 8 GB per vCPU ratio. Powered by an AMD EPYC 7R13 processor running at 3.6 GHz on the Nitro hypervisor, it offers strong single-core performance but exhibits weaker multi-core scaling and memory bandwidth in benchmark testing. The instance lacks local storage and provides a baseline network bandwidth of 2 Gbps. It is best suited for memory-bound workloads, such as caching layers, database operations, and enterprise applications that require a larger memory footprint relative to compute resources without demanding high parallel processing capabilities.",
-  "og_description": "Amazon Web Services r6a.xlarge is a memory-optimized instance with 4 vCPUs, 32 GB DDR4 RAM, and an AMD EPYC 7R13 CPU, offering strong single-core performance for memory-bound workloads.",
-  "meta_description": "Amazon Web Services r6a.xlarge is a memory-optimized instance featuring 4 vCPUs, 32 GB DDR4 RAM, and an AMD EPYC 7R13 processor.",
-  "tagline": "A memory-optimized x86 instance featuring a high memory-to-core ratio and strong single-core performance for memory-bound workloads.",
+  "description": "Amazon Web Services r6a.xlarge is a memory-optimized Nitro instance powered by a 3.6 GHz AMD EPYC 7R13 processor (x86_64), offering 4 vCPUs across 2 physical cores. It features 32.0 GB of DDR4 memory at 3 GHz, yielding an 8.0 GB per vCPU allocation. The instance includes 2 Gbps baseline network bandwidth, contains no local storage, and has no GPUs. Benchmark metrics show strong single-core performance alongside average PassMark and Geekbench single-core results, though overall multi-threaded throughput is limited by the low core count. With uncached read bandwidth of 38.45 GB/sec and average compression performance, the r6a.xlarge offers an economical footprint for memory-bound tasks requiring moderate compute, such as in-memory data stores, caching, and mid-tier database servers.",
+  "og_description": "Amazon Web Services r6a.xlarge is a memory-optimized Nitro instance featuring 4 vCPUs on an AMD EPYC 7R13 processor, 32 GB of DDR4 memory, and 2 Gbps baseline network bandwidth.",
+  "meta_description": "Amazon Web Services r6a.xlarge is a memory-optimized instance with 4 vCPUs from an AMD EPYC 7R13 processor, 32 GB DDR4 RAM, and 2 Gbps network bandwidth.",
+  "tagline": "Memory-dense computing with four dedicated vCPUs and thirty-two gigabytes of RAM for memory-intensive enterprise tasks.",
   "bullet_points": [
-    "Powered by a 3.6 GHz AMD EPYC 7R13 processor with 4 dedicated vCPUs",
-    "Equipped with 32.0 GB of DDR4 memory providing 8 GB per vCPU",
-    "Strong single-core CPU performance in benchmark testing",
-    "No local storage, relying entirely on network-attached storage",
-    "Delivers a baseline network bandwidth of 2 Gbps",
-    "Best suited for memory-intensive applications, caching, and databases"
+    "Powered by an AMD EPYC 7R13 processor running at 3.6 GHz with 4 vCPUs across 2 physical cores",
+    "Equipped with 32.0 GB of DDR4 memory providing an 8.0 GB per vCPU allocation",
+    "Includes 2 Gbps baseline networking capacity without integrated local storage or GPUs",
+    "Delivers strong single-core compute performance with moderate multi-core throughput",
+    "Suited for in-memory caching, mid-sized database instances, and memory-heavy application tiers"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

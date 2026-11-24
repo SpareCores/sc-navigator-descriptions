@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services c3.xlarge is an x86_64 compute-optimized instance powered by an Intel Xeon E5-2680 v2 processor running at 2.8 GHz. It features 4 virtual CPUs mapped to 2 physical cores with hyperthreading enabled. The memory configuration consists of 8.0 GB of RAM, yielding 1.88 GB per core. Local storage is provided via an 80 GB NVMe SSD, and the instance operates on the Xen hypervisor with a baseline network bandwidth of 1 Gbps.",
-    "Benchmark evaluations place this instance in the lower performance tiers. The single-core and multi-core stress-ng CPU tests register at 1316.08 and 3460.56 respectively, both falling into the bottom 25% of tested hardware. Memory bandwidth tests show 189.36 GB/sec for cached small blocks and drop to 26.21 GB/sec for large uncached blocks. Cryptographic and integer performance is limited by the lack of modern instruction sets such as AVX-512, SHA-NI, and FMA, though basic AVX and AES instructions are supported.",
-    "Given the poor to weak benchmark results across Geekbench and Passmark suites, the c3.xlarge exhibits low resource density and computational throughput compared to modern hardware generations. The 80 GB local NVMe SSD provides fast local storage, but the overall memory capacity of 8.0 GB restricts its utility for memory-intensive applications. This instance is best suited for legacy workloads, basic web serving, or lightweight batch processing tasks that require dedicated CPU allocation but do not demand high memory bandwidth or modern instruction sets."
+    "Amazon Web Services c3.xlarge is a third-generation compute-optimized virtual machine operating on the Xen hypervisor. It is configured with an Intel Xeon E5-2680 v2 processor running at 2.8 GHz on the x86_64 architecture. The server allocates 4 dedicated vCPUs mapped across 2 physical cores, accompanied by 8.0 GB of system memory, yielding a 1:2 vCPU-to-memory ratio. In addition to core compute resources, the instance includes 80 GB of local SSD storage, providing direct-attached disk access without attached GPU hardware.",
+    "Microarchitectural capabilities include hardware virtualization support, AES cryptography acceleration, and AVX vector instructions, while excluding modern instruction extensions such as AVX-512, FMA, or BMI2. The processor features a 25 MB L3 cache, 32 KB L1 data cache, and 256 KB L2 cache per core. Networking performance is established at a 1 Gbps baseline bandwidth.",
+    "In benchmark testing, the server exhibits output reflective of its hardware era. Geekbench scores reach 685 for single-core and 1486 for multi-core processing, placing the instance in the lower percentiles compared to modern instances. Similarly, PassMark CPU testing achieves 3705.66 and stress-ng records 3460.56 multi-core throughput, both landing in the bottom quartile. Redis SET operations reach 1.47 million operations per second, and static web serving delivers 3.73 GB per second.",
+    "Cost efficiency on this hardware profile is limited by older instruction set performance and lower compute density compared to contemporary instances. However, the bundled 80 GB local SSD provides functional utility for tasks requiring local scratch space without external storage attachments. Best-fit deployments include legacy application hosting, basic web servers, non-critical batch jobs, and general functional testing."
   ],
-  "description": "Amazon Web Services c3.xlarge is an x86_64 compute-optimized instance featuring 4 vCPUs from an Intel Xeon E5-2680 v2 processor running at 2.8 GHz, paired with 8.0 GB of RAM and an 80 GB NVMe SSD. Operating on the Xen hypervisor, it provides a baseline network bandwidth of 1 Gbps. Benchmark data indicates limited performance, with single-core and multi-core CPU scores falling into the bottom 25% tier, and memory bandwidth dropping significantly for uncached operations. The hardware lacks modern instruction sets like AVX-512 and FMA, which restricts its efficiency for advanced mathematical or cryptographic tasks. This instance is suitable for legacy applications, basic web serving, and lightweight batch processing where dedicated CPU allocation is required but modern high-throughput performance is not critical.",
-  "og_description": "Amazon Web Services c3.xlarge is an x86_64 compute-optimized instance featuring 4 vCPUs, 8.0 GB of RAM, and an 80 GB NVMe SSD, designed for legacy workloads, lightweight batch processing, and basic web serving.",
-  "meta_description": "Amazon Web Services c3.xlarge is an x86_64 compute-optimized instance featuring 4 vCPUs, 8.0 GB of RAM, and 80 GB of local NVMe SSD storage.",
-  "tagline": "A legacy compute-optimized instance featuring dedicated virtual CPUs, local NVMe SSD storage, and basic network throughput for lightweight workloads.",
+  "description": "Amazon Web Services c3.xlarge is a legacy compute-optimized virtual server powered by a 2.8 GHz Intel Xeon E5-2680 v2 processor with x86_64 architecture. Running on the Xen hypervisor, the instance provides 4 vCPUs across 2 dedicated physical cores, 8.0 GB of memory, and 80 GB of integrated local SSD storage, without GPU acceleration. Its networking provides a baseline bandwidth of 1 Gbps. CPU instruction sets include AVX and AES-NI, but lack modern extensions such as AVX-512 or FMA. Across benchmark evaluations, including Geekbench and stress-ng, the instance scores within the bottom quartiles, reflecting the older CPU generation. Qualitative resource efficiency is primarily relevant for legacy software maintenance, basic batch processing, small-scale web serving, and development environments that require a 1:2 CPU-to-memory ratio alongside fast local scratch storage.",
+  "og_description": "Amazon Web Services c3.xlarge is a compute-optimized instance featuring 4 vCPUs from an Intel Xeon E5-2680 v2 processor, 8.0 GB RAM, and 80 GB local SSD storage, designed for legacy compute workloads.",
+  "meta_description": "Amazon Web Services c3.xlarge provides 4 vCPUs on an Intel Xeon E5-2680 v2 processor, 8.0 GB of RAM, and 80 GB of local SSD storage for compute workloads.",
+  "tagline": "Legacy compute-focused instance pairing four vCPUs and eight gigabytes of RAM with integrated high-speed local solid-state scratch storage.",
   "bullet_points": [
-    "Intel Xeon E5-2680 v2 processor with 4 vCPUs and 2.8 GHz clock speed",
-    "8.0 GB of system memory and 80 GB of local NVMe SSD storage",
-    "Xen hypervisor architecture with 1 Gbps baseline network bandwidth",
-    "Support for AVX and AES instruction sets, lacking AVX-512 and FMA",
-    "Suited for legacy applications, lightweight batch processing, and basic web serving"
+    "Intel Xeon E5-2680 v2 CPU delivering 4 vCPUs across 2 physical cores at 2.8 GHz",
+    "8.0 GB system memory alongside 80 GB integrated local SSD storage",
+    "1 Gbps baseline network throughput operating on Xen hypervisor",
+    "Legacy instruction support with AVX and AES but lacking AVX-512 or FMA",
+    "Targeted for legacy software hosting, basic web serving, and batch tasks"
   ],
   "categories": [
     "Compute Optimized",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

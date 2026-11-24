@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services x8i.large is a memory-optimized server belonging to the x8i server family. It features 2 vCPUs mapped to 1 physical core with 2 threads per core, powered by an Intel Xeon 6975P-C processor running at 3.9 GHz. The system is equipped with 32.0 GB of DDR5 memory running at 7 GHz, yielding a high memory-to-vCPU ratio of 16 GB per core. It operates on the Nitro hypervisor and does not include local storage or a GPU. Network connectivity is limited to a baseline bandwidth of 1 Gbps.",
-    "Benchmark results indicate strong single-core capabilities but limited multi-core scaling. The server achieves a strong single-core Geekbench score of 2154.0 and strong single-threaded gzip compression at 34.34 GB/sec. However, multi-core performance is constrained, with a poor stress-ng multi-core score of 2159.18 and a weak Geekbench multi-core score of 2719.0. Memory bandwidth is also a bottleneck, registering a poor read-only large block speed of 20.29 GB/sec and a weak write speed of 16.61 GB/sec.",
-    "From a resource density perspective, the x8i.large offers high memory capacity relative to its low vCPU count, making it a cost-efficient option for memory-bound tasks that do not require heavy parallel processing. The primary tradeoffs are the lack of local storage, low network bandwidth, and weak multi-core performance. This profile is appropriate for single-threaded memory-intensive operations, lightweight caching, text processing, and basic database operations that fit entirely within memory."
+    "Amazon Web Services x8i.large is a memory-optimized cloud virtual machine running on the AWS Nitro System. It is equipped with two vCPUs derived from a single physical core with simultaneous multithreading on an Intel Xeon 6975P-C processor clocked at 3.9 GHz. The CPU incorporates an extensive 480 MB L3 cache along with advanced instruction sets including AVX-512 and Intel AMX matrix extensions. System memory consists of 32 GB of high-frequency 7 GHz DDR5 RAM, delivering an extreme memory-to-vCPU ratio of 16 GB per core. The instance includes no bundled local storage, relying on network-attached volumes, and provides a 1 Gbps baseline network bandwidth without integrated GPU acceleration.",
+    "Benchmark results demonstrate strong single-threaded performance alongside constrained multi-core throughput dictated by the 1-core, 2-thread physical footprint. In synthetic evaluation, the instance achieved a Geekbench single-core score of 2154.0, ranking in the upper 25 percent of tested machines, complemented by strong single-threaded gzip compression of 34.34 GB/s and bzip3 decompression of 14.36 GB/s. In contrast, multi-threaded metrics such as PassMark CPU (4078.61), multi-core Geekbench (2719.0), and stress-ng multi-core scores land in the lower quartiles. Memory bandwidth yields 20.29 GB/s on large-block reads and 16.61 GB/s on writes, with redis SET performance logging 3.82 million operations per second.",
+    "Given its heavy memory allocation relative to compute capability, the x8i.large is cost-efficient primarily for memory-bound applications that require substantial working sets without necessitating broad multi-core processing power. It is well-suited for small in-memory caches, light database workloads, memory-intensive batch extract-transform-load (ETL) processing, and single-threaded analytics tasks where memory density per vCPU is paramount."
   ],
-  "description": "Amazon Web Services x8i.large is a memory-optimized server featuring 2 vCPUs and 1 physical core powered by an Intel Xeon 6975P-C processor at 3.9 GHz. It is equipped with 32.0 GB of DDR5 memory running at 7 GHz, providing a high memory-to-vCPU ratio of 16 GB per core. Running on the Nitro hypervisor, this instance lacks local storage and GPUs, and has a baseline network bandwidth of 1 Gbps. Benchmarks show strong single-core performance, such as a Geekbench single-core score of 2154.0 and strong gzip compression, but reveal poor multi-core scaling and weak uncached memory bandwidth. This server is qualitatively cost-efficient for memory-intensive, single-threaded workloads. It is best suited for lightweight caching, text processing, and memory-bound applications with low parallel processing requirements.",
-  "og_description": "Amazon Web Services x8i.large is a memory-optimized server featuring 2 vCPUs, 32.0 GB of DDR5 RAM, and an Intel Xeon 6975P-C processor, offering strong single-core performance but limited multi-core scaling.",
-  "meta_description": "Amazon Web Services x8i.large is a memory-optimized server with 2 vCPUs, 32.0 GB DDR5 RAM, and an Intel Xeon 6975P-C processor on the Nitro hypervisor.",
-  "tagline": "A memory-optimized server featuring high DDR5 memory density per core and strong single-threaded performance for memory-bound workloads.",
+  "description": "Amazon Web Services x8i.large is a memory-optimized instance engineered for memory-dense workloads requiring modest compute capacity. Powered by the AWS Nitro System, the instance features an Intel Xeon 6975P-C processor operating at 3.9 GHz, allocating two vCPUs across a single physical core with hyper-threading enabled. It is paired with 32 GB of DDR5 memory running at 7 GHz, providing a generous 16 GB of RAM per vCPU, supported by a 480 MB L3 cache and AMX acceleration. The instance does not bundle local disk storage and connects at a 1 Gbps baseline network throughput. Benchmark testing exhibits strong single-core CPU and compression metrics alongside lower aggregate multi-core throughput. Consequently, the x8i.large provides balanced cost efficiency for lightweight relational databases, in-memory key-value caching, and memory-bound background tasks.",
+  "og_description": "Amazon Web Services x8i.large is a memory-optimized Nitro instance featuring 2 vCPUs on an Intel Xeon 6975P-C processor, 32 GB DDR5 RAM, 480 MB L3 cache, and baseline 1 Gbps networking.",
+  "meta_description": "Amazon Web Services x8i.large is a memory-optimized instance featuring 2 vCPUs on an Intel Xeon 6975P-C processor, 32 GB of DDR5 RAM, and 1 Gbps networking.",
+  "tagline": "Memory-dense two-vCPU instance delivering 32 GB of DDR5 memory and strong single-core performance for memory-centric operational workloads.",
   "bullet_points": [
-    "Intel Xeon 6975P-C processor with 2 vCPUs and 3.9 GHz clock speed",
-    "32.0 GB of high-speed 7 GHz DDR5 memory",
-    "Strong single-core performance in Geekbench and compression tests",
-    "Nitro hypervisor architecture with 1 Gbps baseline network bandwidth",
-    "No local storage or GPU accelerators included",
-    "Suited for single-threaded memory-intensive tasks and text processing"
+    "2 vCPUs powered by 1 physical Intel Xeon 6975P-C core at 3.9 GHz",
+    "32 GB high-frequency 7 GHz DDR5 memory (16 GB RAM per vCPU)",
+    "Extensive 480 MB L3 cache with Intel AMX and AVX-512 extensions",
+    "Stateless configuration without bundled local storage",
+    "1 Gbps baseline network bandwidth running on AWS Nitro hypervisor",
+    "Suited for in-memory caches, small databases, and memory-heavy ETL tasks"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

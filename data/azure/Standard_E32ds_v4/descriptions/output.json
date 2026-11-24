@@ -1,23 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E32ds_v4 is a memory-optimized virtual machine belonging to the EDSv4 family, running on the Microsoft Hyper-V hypervisor. It features 32 dedicated vCPUs mapped from 16 physical Intel Xeon 8272CL cores operating at 2.6 GHz. The x86_64 architecture includes 35 MB of L3 cache and supports advanced instruction sets such as AVX-512 and AVX512_VNNI. The instance is equipped with 256.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core.",
-    "For storage-heavy operations, the server includes a 1229 GB local SSD and is Premium Storage capable. In benchmark testing, the E32ds_v4 demonstrates solid performance across memory and compute tasks. It achieved a strong Passmark memory score of 2817.92, placing it in the top 25% of tested systems. Memory bandwidth tests show read-only speeds of 1663.39 GB/sec for small cached blocks and 107.55 GB/sec for large uncached blocks. Multi-core stress-ng performance reached 29820.32, while multi-threaded bzip3 decompression registered at 127.55 GB/sec.",
-    "Database and web serving benchmarks show a static web serving throughput of 21.6 GB/sec and 27.54 million operations per second for Redis SET operations. However, the system exhibits limitations in large-scale machine learning tasks; while it handles small 135M LLM inference at 195.94 text generation tokens per second, large 70B LLM prompt processing drops to a weak 5.59 tokens per second. This profile makes the E32ds_v4 highly cost-efficient for memory-intensive enterprise applications, relational databases, and caching layers, while being less suitable for heavy LLM inference."
+    "Microsoft Azure E32ds_v4 is a memory-optimized virtual machine instance powered by an Intel Xeon 8272CL processor running at 2.6 GHz. Operating on the Microsoft Hyper-V hypervisor with an x86_64 architecture, the instance provides 32 dedicated vCPUs mapped to 16 physical cores with two threads per core. System memory is sized at 256 GB, resulting in an 8:1 memory-to-vCPU ratio. It also integrates 1288 GB of direct-attached local SSD storage, 35 MB of shared L3 cache, and instruction support including AVX-512, AVX-512 VNNI, and AES cryptography.",
+    "Benchmark results indicate strong performance in the memory subsystem, with a PassMark memory score of 2817.92 placing it in the top 25 percent. The system delivers 107.55 GB/sec in uncached 256 MB block reads and 48.04 GB/sec in uncached block writes, alongside cached 16 KB read speeds of 1663.39 GB/sec. Compute benchmarks fall within the median tier, registering 27501.47 on the PassMark CPU test, a Geekbench multi-core score of 9099.0, and 29820.32 in multi-core stress-ng tests. In-memory operations achieve 27.54 million Redis SET operations per second and 11214.81 PassMark database operations.",
+    "This hardware balance provides high memory density alongside local high-speed storage without the cost profile of GPU-equipped hardware. Tradeoffs include standard median single-core computing throughput and reduced efficiency on very large machine learning models, as indicated by a lower prompt processing rate of 5.59 tokens per second on a 70B model. The instance is structured primarily for large relational databases, distributed in-memory data grids, Redis caching layers, and enterprise memory-bound data processing."
   ],
-  "description": "The Microsoft Azure E32ds_v4 is a memory-optimized virtual machine from the EDSv4 family, powered by a 32-vCPU Intel Xeon 8272CL processor running at 2.6 GHz. It features 256.0 GB of RAM, offering a high 8.0 GB of memory per core, alongside a 1229 GB local SSD with Premium Storage capabilities. Operating on the Microsoft Hyper-V hypervisor, this instance delivers strong memory performance, as evidenced by a Passmark memory score in the top 25% and a small-block read bandwidth of 1663.39 GB/sec. While it excels in memory-intensive tasks, database operations, and web serving, its lack of a GPU limits its utility for large-scale AI workloads, with 70B LLM prompt processing performing weakly at 5.59 tokens per second. It is best suited for relational databases, in-memory caching, and data-dense enterprise workloads.",
-  "og_description": "Microsoft Azure E32ds_v4 is a memory-optimized virtual server featuring 32 Intel Xeon vCPUs, 256 GB of RAM, and a 1229 GB local SSD, delivering strong memory performance for databases and enterprise workloads.",
-  "meta_description": "Microsoft Azure E32ds_v4 is a 32-vCPU Intel Xeon server with 256 GB RAM and 1229 GB local SSD, optimized for memory-intensive database workloads.",
-  "tagline": "An x86 memory-optimized virtual server with high-density RAM and local SSD storage, built for demanding database and enterprise caching workloads.",
+  "description": "Microsoft Azure E32ds_v4 is a memory-optimized instance featuring 32 dedicated vCPUs from a 16-core Intel Xeon 8272CL processor clocked at 2.6 GHz. Built on x86_64 architecture and Hyper-V virtualization, it provides 256 GB of system RAM, maintaining an 8 GB per vCPU ratio, paired with 1288 GB of local SSD temporary storage. Its memory subsystem demonstrates top-quartile PassMark memory test results, complemented by uncached read throughput exceeding 107 GB/sec. CPU throughput aligns with median cloud benchmarks across multi-threaded tests, including a 27501.47 PassMark CPU score and 27.54 million Redis SET operations per second. The instance lacks discrete GPU acceleration and exhibits lower performance on large language model inference. Consequently, the configuration is best tailored for memory-intensive enterprise software, large in-memory caches, relational database systems, and data processing pipelines demanding significant RAM allocations and fast local storage.",
+  "og_description": "Microsoft Azure E32ds_v4 is a memory-optimized VM providing 32 vCPUs on an Intel Xeon 8272CL processor, 256 GB RAM, and 1288 GB local SSD storage designed for in-memory databases and large-scale data caches.",
+  "meta_description": "Microsoft Azure E32ds_v4 features 32 vCPUs on Intel Xeon 8272CL, 256 GB RAM, and 1288 GB local SSD, optimized for memory-heavy and database workloads.",
+  "tagline": "Memory-optimized configuration with high RAM capacity, dedicated Intel Xeon cores, and fast local SSD storage for demanding database and caching workloads.",
   "bullet_points": [
-    "32 dedicated Intel Xeon vCPUs and 256 GB of RAM",
-    "1229 GB local SSD storage with Premium Storage capability",
-    "Strong memory performance ranking in the top 25% of benchmarks",
-    "Delivers 27.54 million operations per second in Redis SET tests",
-    "Optimized for relational databases, caching, and enterprise applications"
+    "32 dedicated vCPUs across 16 physical cores via Intel Xeon 8272CL at 2.6 GHz",
+    "256 GB of system memory providing an 8 GB per vCPU allocation",
+    "1288 GB bundled local SSD storage for fast temporary I/O",
+    "Top-quartile PassMark memory score with 107.55 GB/sec uncached read bandwidth",
+    "Suited for in-memory databases, Redis clusters, and memory-intensive analytics"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

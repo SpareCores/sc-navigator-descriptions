@@ -1,22 +1,23 @@
 {
   "page": [
-    "UpCloud PREMIUM-2xCPU-4GB is a Premium family virtual server configured with 2 shared vCPUs and 4.0 GB of system memory, running on the KVM hypervisor. The underlying hardware features an AMD EPYC 9575F x86_64 processor operating at 2.0 GHz, with 2 physical cores and a single thread per core. The CPU cache configuration includes 64 KB of L1d cache, 0.5 MB of L2 cache, and 16 MB of L3 cache. Storage is provided via a bundled 50 GB local SSD, and the server includes one complimentary public IPv4 address.",
-    "Benchmark data indicates highly polarized performance characteristics. Single-core CPU performance is exceptionally strong, with stress-ng single-core CPU tests, single-threaded gzip compression, and single-threaded bzip3 decompression all placing in the top tier (top 10%). Geekbench single-core metrics also rank in the top 25%. However, multi-core and memory performance are significantly more limited. Multi-core Geekbench scores, software compilation, ray tracing, and image processing benchmarks fall into the bottom 25%. Furthermore, the PassMark memory score ranks in the bottom 10%, and small-block read-only memory bandwidth is in the bottom 25%.",
-    "Given the shared CPU allocation and low memory capacity, this server offers a cost-effective entry point for workloads that do not require dedicated physical resources. It is well-suited for single-threaded utility tasks, lightweight static web serving, basic text processing, and prompt processing or text generation using small language models. It is less suitable for database operations, multi-threaded compilation, or memory-intensive applications due to the documented bottlenecks in memory bandwidth and multi-core scaling."
+    "UpCloud PREMIUM-2xCPU-4GB is a compute-oriented virtual server instance powered by the KVM hypervisor. It is provisioned with 2 shared vCPUs based on the x86_64 AMD EPYC 9575F processor clocked at 2.0 GHz, 4.0 GB of system memory (2.0 GB per core), and a bundled 50 GB local SSD. It includes one complimentary public IPv4 address and operates without dedicated GPU acceleration. The underlying AMD processor features advanced vector and cryptographic instruction sets, including AVX-512, AVX-512 VNNI, AVX-512 BF16, AES, and SHA-NI.",
+    "Benchmark data demonstrates exceptionally high single-threaded performance. The instance achieves top-tier results in single-core stress-ng tests (3836.96) and Geekbench single-core execution (2322.0), along with top-tier throughput in single-threaded compression algorithms such as gzip (40.92 GB/sec) and bzip3 decompression (17.05 GB/sec). Text processing via Geekbench also registers in the upper quartile. However, overall multi-core capabilities and aggregate compute metrics reflect its modest two-core footprint, showing average to lower-tier results in multi-core stress-ng (7660.14) and Geekbench multi-core (4032.0).",
+    "Memory and complex multi-threaded workloads present distinct performance boundaries. Uncached read bandwidth is solid at 67.23 GB/sec, but cached small-block bandwidth and the overall PassMark memory score rank in the lower brackets. Highly parallel tasks like clang compilation, ray tracing, and Redis operations are restricted by the core allocation and memory capacity. Qualitative cost efficiency is strongest when leveraging the server's single-core burst capability for lightweight execution paths, rather than wide parallel processing.",
+    "UpCloud PREMIUM-2xCPU-4GB is well-suited for single-threaded utilities, static web serving (benchmarked at 8.78 GB/sec), small-scale edge services, and lightweight background automation. It can also manage modest AI inference tasks on lightweight models, reaching 681.26 prompt tokens per second on 135M parameter models."
   ],
-  "description": "UpCloud PREMIUM-2xCPU-4GB is a KVM-based virtual server featuring 2 shared AMD EPYC 9575F vCPUs, 4.0 GB of RAM, and a 50 GB local SSD. Operating on the x86_64 architecture at 2.0 GHz, the processor delivers top-tier single-core performance, ranking in the top 10% for single-threaded stress-ng and compression benchmarks. However, its shared CPU allocation and memory architecture present clear tradeoffs, with multi-core Geekbench scores and memory bandwidth tests falling into the bottom 25%, and PassMark memory performance in the bottom 10%. This resource profile makes the server a cost-effective option for lightweight, single-threaded tasks, static web serving, and small-scale text processing. It is not recommended for database operations or heavy multi-threaded workloads.",
-  "og_description": "UpCloud PREMIUM-2xCPU-4GB is a KVM-based virtual server with 2 shared AMD EPYC vCPUs, 4.0 GB RAM, and a 50 GB SSD, offering strong single-core performance alongside limited multi-core and memory bandwidth.",
-  "meta_description": "UpCloud PREMIUM-2xCPU-4GB features 2 shared AMD EPYC vCPUs, 4.0 GB RAM, and a 50 GB SSD, delivering strong single-core but limited multi-core performance.",
-  "tagline": "A budget-friendly shared-CPU virtual server delivering strong single-threaded performance for lightweight applications and basic web serving.",
+  "description": "UpCloud PREMIUM-2xCPU-4GB is a KVM-based compute instance equipped with 2 shared vCPUs running on an AMD EPYC 9575F processor at 2.0 GHz, 4.0 GB of memory, and 50 GB of bundled local SSD storage. Designed with a 1:2 vCPU-to-RAM ratio, it includes hardware support for AVX-512 and cryptographic accelerators, with no dedicated GPU. Performance metrics reveal outstanding single-core execution, ranking in the top tier for Geekbench single-core and single-threaded gzip compression. Conversely, multi-threaded tasks, ray tracing, and memory-intensive operations are constrained by the physical core count and memory capacity. It provides efficient single-threaded throughput, making it suitable for static web serving, text parsing, light utility tasks, and microservice workloads.",
+  "og_description": "UpCloud PREMIUM-2xCPU-4GB features 2 shared AMD EPYC 9575F vCPUs, 4 GB RAM, and a bundled 50 GB SSD, delivering exceptional single-core benchmarks for web serving and lightweight tasks.",
+  "meta_description": "UpCloud PREMIUM-2xCPU-4GB features 2 AMD EPYC vCPUs, 4 GB RAM, and 50 GB SSD storage, offering top-tier single-threaded performance for lightweight services.",
+  "tagline": "Two AMD EPYC vCPUs paired with 4 GB RAM and fast SSD storage for single-thread-intensive workloads.",
   "bullet_points": [
-    "2 shared AMD EPYC 9575F vCPUs and 4.0 GB of system memory",
-    "Bundled 50 GB local SSD storage and 1 public IPv4 address",
-    "Top-tier single-core CPU and single-threaded compression performance",
-    "Weak multi-core scaling and poor memory bandwidth benchmarks",
-    "Best suited for static web serving, text processing, and lightweight single-threaded tasks"
+    "2 shared vCPUs powered by AMD EPYC 9575F processor at 2.0 GHz",
+    "4.0 GB RAM paired with 50 GB local SSD storage",
+    "Top-tier single-core CPU and compression benchmark results",
+    "Support for AVX-512 vector extensions and hardware cryptography",
+    "Suited for static web hosting, API endpoints, and single-threaded utilities"
   ],
   "categories": [
-    "Burstable & Budget",
+    "Compute Optimized",
     "General Purpose"
   ]
 }

@@ -1,23 +1,21 @@
 {
   "page": [
-    "Google Cloud Platform c2d-highcpu-8 is a compute-optimized virtual machine instance based on x86_64 architecture. It features 8 dedicated vCPUs mapped across 4 physical cores of an AMD EPYC 7B13 processor, supported by 16.0 GB of RAM. This configuration maintains a 1:2 vCPU-to-RAM ratio, allocating 2.0 GB of memory per vCPU. The instance carries 32 MB of L3 cache, along with supported instruction extensions including AVX, AES, VAES, SHA_NI, BMI2, and FMA. It includes no attached local storage or discrete GPUs.",
-    "In benchmark evaluations, the c2d-highcpu-8 demonstrates strong single-core CPU performance via stress-ng, positioning in the top quartile. Multi-core processor performance, Geekbench scores, compile tests, and PassMark suite evaluations land squarely in the average performance tier. Memory bandwidth tests yield moderate results, reaching up to 68.67 GB/sec for uncached large block reads. Multi-threaded bzip3 decompression performs weaker relative to broader instance classes, illustrating a tradeoff under sustained multi-core decompression pipelines.",
-    "The dedicated resource allocation and high single-threaded performance profile make c2d-highcpu-8 cost-effective for compute-dense workloads that do not require expansive memory footprints or local ephemeral disks. Appropriate application targets include software compilation, CI/CD build workers, static web serving, moderate database processing, and small-scale model inference."
+    "Google Cloud Platform c2d-highcpu-8 is a compute-optimized virtual machine powered by AMD EPYC 7B13 processors on the x86_64 architecture. The server allocates 8 dedicated vCPUs across 4 physical cores with two threads per core. Memory is provisioned at 16 GB, creating a compact 1:2 vCPU-to-RAM ratio of 2.0 GB per core. The CPU configuration includes 32 KB of L1 data cache, 0.5 MB of L2 cache, and 32 MB of shared L3 cache. The instance includes neither integrated local storage nor hardware GPU acceleration, requiring network-attached storage for persistent disk capacity.",
+    "Benchmark evaluation highlights strong single-core execution, with stress-ng single-core performance ranking in the top 25% of measured systems. In contrast, multi-core metrics\u2014including PassMark CPU scores and Geekbench multi-core results\u2014remain within the middle tier. Memory bandwidth achieves 68.67 GB/sec for uncached 256 MB reads and 49.73 GB/sec for large block writes. While single-threaded gzip throughput remains stable at 28.22 GB/sec, multi-threaded bzip3 decompression performs below median expectations. Redis operations execute at 8.73 million operations per second, accompanied by a static web serving throughput of 10.6 GB/sec.",
+    "By limiting RAM capacity to 2.0 GB per vCPU and omitting bundled NVMe storage, c2d-highcpu-8 maximizes resource allocation toward pure execution cycles without overhead from unused memory. This hardware profile makes the instance well suited for CI/CD compilation jobs, stateless web routing, containerized batch workers, and distributed microservices that demand dedicated CPU threads without large local data sets."
   ],
-  "description": "Google Cloud Platform c2d-highcpu-8 is a compute-optimized instance powered by a dedicated AMD EPYC 7B13 processor utilizing x86_64 architecture. Configured with 8 vCPUs across 4 physical cores and 16.0 GB of RAM, it maintains a 1:2 vCPU-to-memory ratio suitable for compute-bound tasks. The CPU features 32 MB of L3 cache alongside instruction sets including AVX, AES, VAES, and FMA, while omitting attached local storage and discrete GPUs. Benchmark results highlight strong single-core CPU performance alongside average multi-core CPU, memory bandwidth, and web serving throughput. A slight tradeoff appears in multi-threaded bzip3 decompression, which benchmarks in the lower tier. Overall, c2d-highcpu-8 offers a balanced execution environment for CPU-intensive tasks such as software compilation, static web delivery, redis key-value processing, and small-scale model inference where lower memory per vCPU is required.",
-  "og_description": "Google Cloud Platform c2d-highcpu-8 features 8 vCPUs driven by AMD EPYC 7B13 processors and 16 GB RAM, offering strong single-core performance for compute-intensive workloads.",
-  "meta_description": "Google Cloud Platform c2d-highcpu-8 provides 8 vCPUs, 16 GB RAM, and AMD EPYC processors optimized for compute-heavy workloads.",
-  "tagline": "Compute-optimized architecture delivering strong single-core performance with dedicated AMD EPYC processors and a compact memory footprint for targeted processing tasks.",
+  "description": "Google Cloud Platform c2d-highcpu-8 is a compute-optimized virtual machine featuring 8 dedicated vCPUs across 4 physical cores of an AMD EPYC 7B13 processor and 16 GB of system RAM. Utilizing the x86_64 architecture with a lean 1:2 memory-to-core allocation (2.0 GB per vCPU), it prioritizes processor execution over memory footprint. The configuration includes no onboard local storage and no GPU accelerators, using detached network volumes for persistent storage. Benchmark data reflects top-quartile single-core CPU throughput alongside balanced multi-core metrics, 10.6 GB/sec static web serving throughput, and steady memory transfer rates. Although multi-threaded decompression tests reveal lower relative efficiency under specific workloads, its compute density and dedicated thread allocation suit code compilation pipelines, microservices, batch processing, and stateless web serving.",
+  "og_description": "Google Cloud Platform c2d-highcpu-8 provides 8 dedicated vCPUs on AMD EPYC 7B13 processors with 16 GB RAM. Engineered for compute-focused tasks, it delivers strong single-core speed without bundled local disks.",
+  "meta_description": "Google Cloud Platform c2d-highcpu-8 features 8 dedicated vCPUs on AMD EPYC 7B13 processors and 16 GB of RAM for compute-focused workloads.",
+  "tagline": "Dedicated AMD EPYC compute optimized for processing efficiency, code compilation, and scalable stateless network workloads without memory overhead.",
   "bullet_points": [
-    "8 vCPUs and 4 physical cores on an AMD EPYC 7B13 processor",
-    "16.0 GB dedicated RAM with a 1:2 vCPU-to-memory ratio",
-    "Strong single-core CPU performance in benchmark testing",
-    "Hardware support for AVX, AES, VAES, and 32 MB L3 cache",
-    "Zero attached local SSD storage and no discrete GPUs",
-    "Suited for CI/CD compilation, web serving, and batch jobs"
+    "8 dedicated vCPUs powered by an AMD EPYC 7B13 processor (4 physical cores, 8 threads)",
+    "16 GB system memory with a 1:2 compute-to-memory ratio (2.0 GB per vCPU)",
+    "Top-quartile single-core CPU throughput on stress-ng benchmarks",
+    "No bundled local storage or integrated GPU hardware accelerators",
+    "Suited for CI/CD compilation, stateless web hosting, batch computing, and microservices"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

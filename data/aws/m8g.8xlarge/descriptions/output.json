@@ -1,23 +1,21 @@
 {
   "page": [
-    "Amazon Web Services m8g.8xlarge is a general-purpose server instance powered by the AWS Graviton processor family. It features 32 dedicated physical cores on the ARMv9 Neoverse-V2 architecture, running at 2.8 GHz with a 1:1 thread-to-core ratio. The instance is equipped with 128.0 GB of system memory, providing 4.0 GB of RAM per core. It utilizes the AWS Nitro hypervisor, includes a baseline network bandwidth of 15 Gbps, and does not feature local storage or GPU accelerators.",
-    "Benchmark data indicates top-tier memory performance, with uncached large-block read and write memory bandwidth scoring in the top 10% of tested systems. This high memory throughput is reflected in Passmark memory scores and database operations, which also rank in the top tier. Multi-core processing is a strong point, with Geekbench multi-core scores reaching the top 10% and software compilation with Clang ranking in the top 25%. However, single-core CPU performance and LLM inference speeds for large 70B models remain average to weak, showing a clear tradeoff between massive parallel memory throughput and raw single-threaded execution speed.",
-    "From a cost-efficiency perspective, the m8g.8xlarge offers a highly dense resource profile for memory-intensive and multi-threaded workloads without the premium cost of specialized memory-optimized hardware. The high memory bandwidth and strong multi-core scaling make this instance well-suited for database operations, Redis deployments, static web serving, and software compilation pipelines. Conversely, it is less optimal for large-scale LLM inference or workloads requiring local NVMe storage."
+    "Amazon Web Services m8g.8xlarge is a general-purpose virtual machine built on the AWS Nitro hypervisor architecture. Powered by 32 physical cores based on the AWS ARMv9 Neoverse-V2 microarchitecture operating at 2.8 GHz, each core runs a single thread, delivering 32 dedicated vCPUs. The processor cache architecture integrates 64 KB of L1 data cache, 2 MB of L2 cache, and a shared 36 MB L3 cache. System memory measures 128 GB, reflecting a balanced 4.0 GB per core ratio. This configuration includes no integrated local storage and features no discrete GPU accelerators, while network connectivity operates at a baseline speed of 15 Gbps.",
+    "Benchmark results demonstrate top-tier execution across multi-core and memory-heavy metrics. The instance achieved a Geekbench multi-core score of 21608 and uncached memory read bandwidth of 397.95 GB/sec alongside 191.37 GB/sec write bandwidth. Strong throughput is also seen in database and caching operations, with 67.6 million Redis SET operations per second, a PassMark database score of 46696.21, and static web throughput of 72.62 GB/sec. By contrast, single-thread execution falls within average ranges, illustrated by a single-core Geekbench score of 1863, and large-parameter language model prompt processing scores within the lower tiers.",
+    "The instance provides high resource density for horizontal scaling, distributed caching layers, relational databases, Clang software build farms, and multi-threaded enterprise services. Workloads dependent on local ephemeral disks must rely on network-attached alternatives, and applications constrained by single-threaded performance or hardware acceleration will not fully leverage this architecture."
   ],
-  "description": "Amazon Web Services m8g.8xlarge is a general-purpose instance powered by 32 dedicated physical cores of the ARMv9-based AWS Graviton Neoverse-V2 processor. Operating at 2.8 GHz, this server features 128.0 GB of RAM, providing a balanced 4.0 GB per core ratio, and runs on the Nitro hypervisor with 15 Gbps baseline network bandwidth. It lacks local storage and GPU accelerators. Benchmark results highlight top-tier memory performance, with uncached large-block read and write bandwidths in the top 10%, alongside strong multi-core execution in software compilation and database operations. However, single-core performance and large-model LLM inference are average to weak. The m8g.8xlarge offers high resource density and qualitative cost efficiency for multi-threaded, memory-intensive applications, making it highly suitable for database hosting, Redis caching, static web serving, and CI/CD compilation pipelines.",
-  "og_description": "Amazon Web Services m8g.8xlarge is a general-purpose ARM64 server with 32 dedicated Graviton cores, 128 GB RAM, and top-tier memory bandwidth, ideal for databases and multi-threaded workloads.",
-  "meta_description": "Amazon Web Services m8g.8xlarge is an ARM64 general-purpose server featuring 32 dedicated cores, 128 GB RAM, and top-tier memory bandwidth.",
-  "tagline": "An ARM64 general-purpose server delivering top-tier memory bandwidth and dedicated multi-core performance for database and compilation workloads.",
+  "description": "Amazon Web Services m8g.8xlarge is a general-purpose instance built on the Nitro hypervisor, utilizing 32 dedicated physical cores on AWS ARMv9 Neoverse-V2 silicon running at 2.8 GHz. Paired with 128 GB of memory, it maintains a standard 1:4 vCPU-to-RAM ratio alongside a 36 MB L3 cache and a 15 Gbps baseline network interface. The instance does not bundle local disk storage or GPU hardware. Benchmark evaluations show top-tier multi-core compute and memory bandwidth, reaching a Geekbench multi-core score of 21608 and 397.95 GB/sec uncached read throughput. It exhibits strong operational density for data stores, generating 46696.21 points in PassMark database tests and 67.6 million Redis SET operations per second. While single-thread benchmarks and large LLM prompt processing remain at median or lower percentiles, the instance effectively supports multi-threaded microservices, web serving clusters, in-memory caching systems, and compilation pipelines.",
+  "og_description": "Amazon Web Services m8g.8xlarge features 32 dedicated ARMv9 Neoverse-V2 cores, 128 GB RAM, and 15 Gbps baseline networking, delivering top-tier memory bandwidth and multi-core throughput.",
+  "meta_description": "Amazon Web Services m8g.8xlarge provides 32 dedicated ARM Neoverse-V2 cores, 128 GB RAM, and a 15 Gbps network interface for balanced cloud workloads.",
+  "tagline": "A 32-core ARMv9 Neoverse-V2 configuration with 128 GB memory, providing high memory bandwidth and solid parallel throughput for general workloads.",
   "bullet_points": [
-    "32 dedicated ARMv9 Neoverse-V2 physical cores running at 2.8 GHz",
-    "128.0 GB of system memory with top-tier uncached read/write bandwidth",
-    "15 Gbps baseline network bandwidth powered by the Nitro hypervisor",
-    "Strong multi-core performance for software compilation and database operations",
-    "No local storage or GPU acceleration included",
-    "Optimized for Redis, static web serving, and multi-threaded workloads"
+    "32 dedicated ARMv9 Neoverse-V2 physical cores clocked at 2.8 GHz",
+    "128 GB RAM delivering high-tier uncached memory bandwidth",
+    "15 Gbps baseline network bandwidth running on the Nitro hypervisor",
+    "Zero integrated local disk storage and zero discrete GPUs",
+    "Optimized for distributed caching, compilation pipelines, databases, and microservices"
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }

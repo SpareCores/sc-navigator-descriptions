@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure L4as_v4 is a storage and memory-dense virtual machine powered by a 3.7 GHz AMD EPYC 9V74 processor built on x86_64 architecture. Managed by Microsoft Hyper-V, the instance features 4 dedicated vCPUs mapped to 2 physical cores with hyperthreading enabled. Hardware resources include 32 GB of system memory, yielding an 8 GB memory ratio per vCPU, 32 MB of L3 cache, and a bundled direct-attached 960 GB NVMe SSD for high-throughput local storage.",
-    "Benchmark evaluations reveal strong single-threaded CPU capability, highlighted by high single-core stress-ng and Geekbench scores. Multi-core performance, Redis SET operation throughput reaching 5.97 million ops/sec, and static web serving throughput at 6.39 GB/sec perform at average tier levels. Conversely, memory read bandwidth and multi-threaded compilation tasks present lower performance bottlenecks.",
-    "By combining an 8:1 RAM-to-vCPU allocation with fast local NVMe storage on a dedicated core layout, the L4as_v4 achieves qualitative resource efficiency for memory-conscious and disk IO-heavy operations without requiring dedicated external block storage. This instance configuration is suitable for local database processing, caching clusters, log analytics, and web application backends."
+    "Microsoft Azure L4as_v4 is a storage-optimized virtual machine powered by an AMD EPYC 9V74 processor operating at 3.7 GHz. The instance allocates 4 vCPUs across 2 physical execution cores via multithreading on the Microsoft Hyper-V hypervisor. The hardware profile includes 32.0 GB of system memory, yielding an 8.0 GB per-vCPU ratio, paired with 32 MB of shared L3 cache and support for modern instruction sets including AVX-512 and cryptographic accelerators.",
+    "Storage configuration on the L4as_v4 features 960 GB of bundled local NVMe SSD capacity, providing direct low-latency disk access for data-heavy applications. The platform does not incorporate discrete hardware accelerators or GPUs, and it includes zero complimentary public IPv4 addresses, relying on private networking topologies or external IP allocation.",
+    "Benchmark results demonstrate strong single-thread performance, posting a Geekbench single-core score of 2079.0 and a stress-ng single-core score of 3077.78. Multi-core performance aligns with expected dual-core physical limits, registering 6153.87 in stress-ng and 4766.0 in Geekbench multi-core tests. While text processing and compression metrics perform reliably, uncached large-block memory read bandwidth (36.89 GB/sec) and database operation throughput show lower comparative efficiency under high memory load.",
+    "Resource allocation provides a cost-efficient balance of localized NVMe disk density and dedicated compute capacity for smaller-scale transactional storage. The instance fits high-speed temporary caching, transactional logging, local file indexing, intermediate ETL stages, and localized database workloads where raw NVMe IOPS take priority over high thread counts."
   ],
-  "description": "Microsoft Azure L4as_v4 is an AMD EPYC 9V74-powered instance configured with 4 dedicated vCPUs, 32 GB of RAM, and a bundled 960 GB NVMe SSD for fast local storage. Running at 3.7 GHz with AVX-512 instruction support, it demonstrates strong single-core compute performance along with solid throughput in Redis operations (5.97 million ops/sec) and static web serving (6.39 GB/sec). Although memory read bandwidth is lower compared to high-bandwidth compute nodes, its 8 GB per vCPU memory density and integrated NVMe SSD offer an effective resource mix. This instance serves well for local database nodes, in-memory caching layers, search indexing, and web backend deployment.",
-  "og_description": "Microsoft Azure L4as_v4 features 4 vCPUs on an AMD EPYC 9V74 CPU, 32 GB RAM, and a bundled 960 GB local NVMe SSD, delivering strong single-core compute performance for database and caching workloads.",
-  "meta_description": "Microsoft Azure L4as_v4 provides 4 vCPUs, 32 GB RAM, and 960 GB local NVMe SSD storage on AMD EPYC 9V74 hardware for database and memory workloads.",
-  "tagline": "High-density instance delivering 32 GB memory, direct-attached 960 GB NVMe SSD storage, and strong single-core processor performance.",
+  "description": "Microsoft Azure L4as_v4 is a storage-optimized virtual machine equipped with 4 vCPUs and 2 physical cores on a 3.7 GHz AMD EPYC 9V74 processor. The instance provides 32.0 GB of memory alongside an integrated 960 GB local NVMe SSD, catering to workloads requiring low-latency scratchpad or transactional disk storage without dedicated GPU acceleration. Benchmark data highlights strong single-core CPU throughput, marked by a Geekbench single-core score of 2079.0 and a stress-ng score of 3077.78, while multi-core compute and overall memory bandwidth remain within middle-to-lower percentiles due to the 2-core physical limit. With its 8.0 GB RAM per vCPU ratio and bundled fast NVMe capacity, the instance delivers a balanced hardware profile for localized databases, caching layers, and search index nodes.",
+  "og_description": "Microsoft Azure L4as_v4 is a storage-optimized instance offering 4 vCPUs on an AMD EPYC 9V74 processor, 32 GB of memory, and 960 GB of local NVMe SSD storage for low-latency database workloads.",
+  "meta_description": "Microsoft Azure L4as_v4 features 4 vCPUs on an AMD EPYC 9V74 CPU, 32 GB RAM, and a bundled 960 GB local NVMe SSD for fast storage operations.",
+  "tagline": "A storage-optimized virtual server pairing dedicated AMD EPYC cores with high-speed local NVMe disk and balanced memory capacity.",
   "bullet_points": [
-    "4 dedicated vCPUs running on a 3.7 GHz AMD EPYC 9V74 processor",
-    "32 GB total system RAM providing an 8 GB per vCPU ratio",
-    "960 GB bundled local NVMe SSD storage for low-latency IO",
-    "Strong single-core compute performance and 5.97 million Redis SET ops/sec",
-    "Ideal fit for local databases, caching tiers, log indexing, and web servers"
+    "AMD EPYC 9V74 processor delivering 4 vCPUs across 2 physical cores at 3.7 GHz",
+    "32.0 GB system memory providing an 8.0 GB per-vCPU density",
+    "Bundled 960 GB local NVMe SSD for low-latency I/O operations",
+    "Strong single-core benchmark throughput supported by AVX-512 extensions",
+    "Suited for local caching, transactional logging, and entry-tier database hosting"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

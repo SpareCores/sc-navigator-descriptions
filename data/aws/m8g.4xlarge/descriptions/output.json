@@ -1,22 +1,24 @@
 {
   "page": [
-    "Amazon Web Services m8g.4xlarge is a general-purpose server instance powered by the AWS Graviton processor family. It features 16 dedicated physical cores on the arm64 architecture, utilizing the ARMv9 Neoverse-V2 model running at 2.8 GHz. The instance is equipped with 64.0 GB of system memory, providing a balanced allocation of 4.0 GB per core. It operates on the Nitro hypervisor and does not include local storage or GPU hardware. Network connectivity is supported by an 8 Gbps baseline bandwidth.",
-    "Performance benchmarks indicate strong memory capabilities, with the Passmark memory score ranking in the top tier. Memory bandwidth tests show strong results for large block read-only operations at 296.67 GB/sec and write operations at 133.88 GB/sec. Single-core and multi-core CPU performance, measured via stress-ng and Geekbench, fall within the average range. Multi-threaded bzip3 decompression shows strong performance at 200.91 GB/sec, while database operations score strongly on Passmark. LLM inference speeds are average for text generation on medium models but weak for prompt processing.",
-    "Given its ARM-based architecture and dedicated core allocation, the m8g.4xlarge offers a resource-dense profile that is qualitatively cost-efficient for general-purpose workloads. The lack of bundled local storage means storage requirements must be handled externally. This instance is suited for workloads such as database operations, web serving, multi-threaded decompression tasks, and general-purpose application hosting."
+    "Amazon Web Services m8g.4xlarge is a general-purpose virtual machine based on the AWS Nitro System. It is powered by the AWS Graviton ARMv9 processor utilizing Neoverse-V2 cores clocked at 2.8 GHz. The instance is configured with 16 dedicated physical cores and 16 vCPUs, maintaining a single thread per core without simultaneous multithreading. It provides 64.0 GB of memory, equating to 4.0 GB per vCPU, with an L3 cache size of 36 MB, 2 MB L2 cache, and 64 KB L1 data cache. This instance type includes no local bundled storage, requiring remote EBS volumes, and has no discrete GPU accelerators. Baseline networking throughput is provisioned at 8 Gbps.",
+    "Benchmark results highlight strong memory subsystem performance alongside balanced compute capabilities. The instance scored within the top 10% on the PassMark memory suite (3213.67), demonstrated by large-block uncached read speeds of 296.67 GB/sec and write speeds of 133.88 GB/sec in the top 25%. Decompression throughput is also elevated, reaching 200.91 GB/sec in multi-threaded bzip3 tests. General compute tests reflect steady mid-tier output, with Geekbench yielding a single-core score of 1867.0 and a multi-core score of 15796.0. Database operational throughput scored in the top 25% on PassMark with 24099.5 operations.",
+    "Hardware tradeoffs include the absence of x86-specific instruction sets like AVX, AVX-512, and AMX, making workloads dependent on those vector extensions unsuited for this platform. Furthermore, medium model LLM prompt processing fell into the bottom 25% at 31.24 tokens/sec, and high-tier (70B) LLM evaluation yielded no viable results, indicating limitations for larger AI inference workloads. The ARM64 architecture delivers cost efficiency through dense single-thread core execution and superior memory throughput per core relative to equivalent standard x86 general-purpose nodes.",
+    "The m8g.4xlarge instance is optimal for memory-sensitive enterprise applications, relational and key-value database operations, multi-threaded data compression, microservices architectures, and high-throughput static web serving."
   ],
-  "description": "Amazon Web Services m8g.4xlarge is an arm64 general-purpose instance powered by a 2.8 GHz AWS Graviton Neoverse-V2 processor. It features 16 dedicated physical cores, 64.0 GB of RAM, and runs on the Nitro hypervisor. The instance does not include local storage or GPU accelerators, and it provides an 8 Gbps baseline network bandwidth. Benchmark data shows top-tier memory performance on Passmark and strong uncached memory bandwidth write speeds of 133.88 GB/sec. CPU performance is average across single-core and multi-core stress-ng tests, while database operations and multi-threaded decompression perform strongly. This instance is qualitatively cost-efficient for general-purpose workloads, making it suitable for database hosting, web serving, and multi-threaded data processing.",
-  "og_description": "Amazon Web Services m8g.4xlarge is an arm64 general-purpose instance with 16 dedicated Graviton Neoverse-V2 cores, 64 GB RAM, and 8 Gbps network bandwidth, delivering top-tier memory performance.",
-  "meta_description": "Amazon Web Services m8g.4xlarge is an arm64 general-purpose instance featuring 16 dedicated Graviton cores, 64 GB RAM, and top-tier memory performance.",
-  "tagline": "An arm64 general-purpose instance featuring sixteen dedicated cores and high-bandwidth memory for balanced database and web serving workloads.",
+  "description": "Amazon Web Services m8g.4xlarge is a general-purpose instance featuring the AWS Graviton ARMv9 Neoverse-V2 architecture running on the Nitro hypervisor. It is equipped with 16 dedicated physical cores (16 vCPUs) clocked at 2.8 GHz with a 1:1 thread-to-core mapping, paired with 64.0 GB of RAM. The instance lacks local storage and discrete GPUs, relying on an 8 Gbps baseline network link. Benchmark testing reveals top-tier memory performance, achieving a PassMark memory score of 3213.67 and robust uncached read/write bandwidth in the top 25%. Decompression and database operations also score above average. Tradeoffs include modest large-model LLM inference capabilities and the absence of x86 vector extensions like AVX-512. Due to high memory throughput and balanced resource allocation, m8g.4xlarge is well aligned for database hosting, containerized microservices, compression pipelines, and general web workloads.",
+  "og_description": "Amazon Web Services m8g.4xlarge is a general-purpose server with 16 ARMv9 Neoverse-V2 cores, 64 GB RAM, 8 Gbps networking, top-tier memory bandwidth, and strong database operation metrics.",
+  "meta_description": "Amazon Web Services m8g.4xlarge features 16 ARMv9 Graviton cores, 64 GB RAM, 8 Gbps networking, and high-bandwidth memory for databases and web services.",
+  "tagline": "Sixteen dedicated ARMv9 cores paired with 64 GB RAM delivering high-bandwidth memory for scalable general-purpose workloads.",
   "bullet_points": [
-    "16 dedicated AWS Graviton Neoverse-V2 physical cores on arm64 architecture.",
-    "64.0 GB of system memory providing 4.0 GB per core.",
-    "Top-tier Passmark memory score and strong large-block memory bandwidth.",
-    "8 Gbps baseline network bandwidth with Nitro hypervisor.",
-    "No local storage or GPU accelerators included.",
-    "Suited for database operations, web serving, and multi-threaded decompression."
+    "AWS Graviton ARMv9 Neoverse-V2 processor with 16 dedicated cores at 2.8 GHz",
+    "64.0 GB total system memory with 4.0 GB allocated per core",
+    "High-throughput memory architecture with 296.67 GB/sec uncached read bandwidth",
+    "8 Gbps baseline network bandwidth running on the AWS Nitro hypervisor",
+    "No bundled local storage or integrated hardware accelerators",
+    "Suited for database management, data compression, and containerized enterprise services"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

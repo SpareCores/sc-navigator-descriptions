@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D32plds_v5 is an ARM-based virtual machine instance belonging to the DPLDSv5 server family, running on the Microsoft Hyper-V hypervisor. It features 32 dedicated physical cores and 32 vCPUs powered by an Ampere Altra ARMv8 Neoverse-N1 processor operating at 3.0 GHz. The hardware configuration includes 64.0 GB of system memory, yielding a 2.0 GB per core ratio, and a bundled 1229 GB local SSD. The processor architecture lacks AVX, AVX512, and AMX vector extensions but supports hardware-accelerated AES cryptography.",
-    "In benchmark evaluations, the instance demonstrates average multi-core performance, with a stress-ng multi-core CPU score of 57238.05 and a Geekbench multi-core score of 12092.0. Single-core performance is relatively weak, as indicated by a Geekbench single-core score of 1033.0 and a poor single-threaded bzip3 decompression rate of 6.99 GB/sec. Memory bandwidth is solid, reaching 2231.84 GB/sec for small cached blocks and 143.96 GB/sec for large uncached blocks. Large-model LLM inference is a notable bottleneck, with the 70B model yielding poor throughput under 4 tokens per second, though smaller 135M models achieve average generation speeds of 207.67 tokens per second.",
-    "Given its low memory-to-vCPU ratio, the D32plds_v5 offers a cost-efficient profile for compute-focused workloads that do not require massive memory footprints. The inclusion of a 1229 GB local SSD provides high-capacity, low-latency storage, making it suitable for applications with high disk I/O requirements. Appropriate workloads include multi-threaded application compiling, static web serving, Redis caching operations, and medium-scale database deployments that fit within the 64.0 GB memory limit."
+    "Microsoft Azure D32plds_v5 is an ARM-based virtual machine configured with 32 dedicated vCPUs and 64 GB of memory, yielding a 1:2 memory-to-vCPU ratio. Built on the Ampere ARMv8 Neoverse-N1 architecture clocked at 3.0 GHz, each vCPU corresponds directly to a physical core with one thread per core. The instance includes 1288 GB of local SSD temporary storage and supports premium storage attachments. It does not include hardware GPU acceleration or complimentary public IPv4 addresses.",
+    "Benchmark results demonstrate consistent middle-tier throughput across multi-threaded operations, reflecting the density of 32 physical cores. In stress-ng testing, multi-core performance reached 57,238.05, while Clang software compilation registered a score of 25,849.0. Memory bandwidth delivers 143.96 GB/sec for large un-cached reads and 69.76 GB/sec for writes. Single-core performance is more modest, with a Geekbench single-core score of 1033.0 and reduced single-threaded bzip3 decompression throughput. Large language model inference on 70B parameter models remains limited due to memory capacity and lack of hardware accelerators.",
+    "From a cost-efficiency perspective, the Neoverse-N1 platform provides cost-effective compute scale for multi-threaded workloads compared to traditional x86 architecture. The bundled 1288 GB local SSD adds high-speed scratch space without extra storage volume fees. However, the 2 GB per core allocation requires monitoring for memory-hungry services.",
+    "This instance suits multi-threaded scale-out tasks such as static web serving, containerized microservices, distributed build systems, and intermediate data transformation where CPU parallelism outweighs single-thread clock speed requirements."
   ],
-  "description": "Microsoft Azure D32plds_v5 is an ARM64 virtual machine powered by a 32-core Ampere Altra Neoverse-N1 processor running at 3.0 GHz. It features 64.0 GB of RAM, providing a 1:2 vCPU-to-memory ratio, and includes 1229 GB of local SSD storage. Operating on the Microsoft Hyper-V hypervisor, this instance delivers dedicated CPU allocation without hyperthreading. Benchmarks show average multi-core capabilities, with a multi-core Geekbench score of 12092.0 and a static web serving throughput of 24.8 GB/sec, though single-core performance and large-model LLM inference are weak. Lacking AVX extensions but supporting AES cryptography, this server is qualitatively cost-efficient for compute-centric, low-memory tasks. It is best suited for multi-threaded software compilation, static web serving, Redis caching, and database operations.",
-  "og_description": "Microsoft Azure D32plds_v5 is an ARM64 server with 32 dedicated Ampere Altra cores, 64 GB RAM, and a 1229 GB local SSD, delivering balanced multi-core performance for compute-focused workloads.",
-  "meta_description": "Microsoft Azure D32plds_v5 is a 32-vCPU ARM64 server with 64 GB RAM and 1229 GB local SSD, optimized for low-memory compute workloads.",
-  "tagline": "An ARM64 compute-focused instance featuring thirty-two dedicated cores and local SSD storage for efficient multi-threaded workloads.",
+  "description": "Microsoft Azure D32plds_v5 is an ARM-based instance featuring 32 dedicated vCPUs powered by the Ampere ARMv8 Neoverse-N1 architecture at 3.0 GHz, matched with 64 GB of memory and a bundled 1288 GB local SSD. With one thread per physical core, the instance exhibits reliable parallel computing throughput, achieving a stress-ng multi-core result of 57,238.05 and a Geekbench multi-core score of 12,092.0. Single-core processing metrics and memory-intensive tasks face constraints due to modest per-thread performance and a lean 2 GB memory-per-core ratio. The absence of GPU acceleration limits heavy machine learning workloads, but the platform offers qualitative compute efficiency for highly parallelized applications. Azure D32plds_v5 fits multi-threaded workloads, including container clusters, Clang build environments, batch data processing pipelines, and web servers requiring fast local scratch storage.",
+  "og_description": "Microsoft Azure D32plds_v5 is a 32-core Ampere Neoverse-N1 ARM instance featuring 64 GB RAM, 1288 GB local SSD storage, and solid multi-core performance for parallelized workloads.",
+  "meta_description": "Microsoft Azure D32plds_v5 is an ARMv8 virtual machine with 32 vCPUs, 64 GB RAM, and a 1288 GB local SSD designed for scalable parallel compute workloads.",
+  "tagline": "An ARM-based compute instance with thirty-two dedicated cores, balanced memory density, and integrated local solid-state storage.",
   "bullet_points": [
-    "Powered by a 32-core Ampere Altra ARMv8 Neoverse-N1 processor at 3.0 GHz",
-    "Equipped with 64.0 GB of RAM and a 1229 GB local SSD",
-    "Dedicated CPU allocation with no hyperthreading for predictable performance",
-    "Delivers average multi-core performance and static web serving throughput",
-    "Best suited for software compilation, Redis caching, and database operations"
+    "32 dedicated Ampere ARMv8 Neoverse-N1 cores running at 3.0 GHz",
+    "64 GB of system memory providing a 1:2 vCPU-to-RAM ratio",
+    "1288 GB integrated local SSD scratch storage",
+    "Strong multi-threaded efficiency for compilation and web serving",
+    "Suited for CI/CD compilation, container clusters, and microservices"
   ],
   "categories": [
     "Compute Optimized",
+    "General Purpose",
     "Storage & Database"
   ]
 }

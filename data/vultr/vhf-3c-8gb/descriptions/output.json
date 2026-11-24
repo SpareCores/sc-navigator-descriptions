@@ -1,22 +1,23 @@
 {
   "page": [
-    "Vultr vhf-3c-8gb is an x86_64 virtual server belonging to the High Frequency Compute family. It features 3 Intel vCPUs mapped to 3 physical cores with a shared CPU allocation and a clock speed of 2.0 GHz. The system is equipped with 8.0 GB of system memory, providing 2.67 GB of RAM per core. Local storage is bundled, consisting of a 256 GB NVMe SSD. Additionally, the instance includes one complimentary public IPv4 address.",
-    "Performance benchmarks reveal a mixed profile. The server excels in single-threaded gzip compression, placing in the top 10% with a throughput of 38.09 GB/sec. However, multi-core and memory-intensive operations show limitations. Geekbench multi-core and Passmark CPU scores fall into the bottom 25%, reflecting the shared CPU allocation. Large-block memory bandwidth is also weak, with read and write speeds of 32.54 GB/sec and 16.94 GB/sec respectively. While small-block cached memory reads are average at 395.59 GB/sec, database operations and small-model LLM inference remain in the middle tier.",
-    "Given its shared CPU architecture and bundled NVMe storage, this instance offers a resource-dense entry point for workloads that do not require sustained, dedicated CPU performance. It is well-suited for lightweight web serving, basic database operations, single-threaded file compression tasks, and development environments. It is less appropriate for heavy multi-threaded compilation, large-scale LLM inference, or memory-bound high-performance computing due to the observed performance drop-offs in those areas."
+    "The Vultr vhf-3c-8gb is an instance in the High Frequency Compute family. It features 3 shared vCPUs on an Intel x86_64 architecture operating at a base frequency of 2.0 GHz, coupled with 8.0 GB of system memory, which yields approximately 2.67 GB of RAM per vCPU. Hardware cache structures include 32 KB of L1 data cache, 4 MB of L2 cache, and 16 MB of L3 cache. Instruction set extensions include AVX, AES, BMI2, and FMA, though AVX-512 and AMX extensions are absent. Storage is provisioned locally as a 256 GB NVMe SSD, and the instance includes one public IPv4 address without bundled hardware accelerators.",
+    "Benchmark results demonstrate mixed compute behavior across typical synthetic profiles. In basic compression benchmarks, single-threaded gzip performance lands in the top tier at 38.09 GB/sec, while single-core stress-ng (2401.69) and Geekbench single-core (1233.0) stay in the middle tier. However, multi-core metrics reveal shared-resource limits: Geekbench multi-core registers 2928.0, and PassMark overall CPU reaches 5738.4, both scoring in the lower tier. Memory access benchmarks exhibit strong small-block cached read throughput (395.59 GB/sec), yet uncached reads drop to 32.54 GB/sec and uncached writes fall to 16.94 GB/sec.",
+    "The instance delivers a balanced, entry-to-mid deployment profile by combining high-speed local NVMe storage with an atypical three-core layout. The primary tradeoff lies in the shared-core model and weak memory bandwidth under heavy uncached operational loads, such as large LLM inference or massive multi-core compilation. It functions effectively for web serving, microservices, continuous integration tasks, and lightweight operational databases where consistent single-threaded execution and direct NVMe response times are prioritized over multi-threaded throughput."
   ],
-  "description": "Vultr vhf-3c-8gb is an x86_64 virtual server from the High Frequency Compute family, configured with 3 shared Intel vCPUs, 8.0 GB of RAM, and a bundled 256 GB NVMe SSD. Operating at 2.0 GHz, the processor supports AVX, AES, and BMI2 instructions. Benchmark data indicates strong single-threaded performance, notably in gzip compression, which reaches the top 10% tier at 38.09 GB/sec. However, the shared CPU allocation leads to weaker multi-core and large-block memory bandwidth results, placing Geekbench multi-core and Passmark CPU scores in the bottom 25%. This server represents a cost-efficient option for workloads requiring fast local storage and moderate compute, such as lightweight database operations, basic web serving, and single-threaded processing tasks, while avoiding sustained multi-threaded or memory-intensive applications.",
-  "og_description": "Vultr vhf-3c-8gb is a High Frequency Compute virtual server featuring 3 shared Intel vCPUs, 8.0 GB of RAM, and a 256 GB NVMe SSD, offering strong single-threaded compression but limited multi-core performance.",
-  "meta_description": "Vultr vhf-3c-8gb is an x86_64 virtual server with 3 shared Intel vCPUs, 8.0 GB RAM, and 256 GB NVMe SSD, optimized for light workloads.",
-  "tagline": "A budget-friendly shared-core instance featuring fast bundled NVMe storage and strong single-threaded compression performance for lightweight workloads.",
+  "description": "The Vultr vhf-3c-8gb is a High Frequency Compute instance delivering 3 shared Intel x86_64 vCPUs running at 2.0 GHz, 8.0 GB of RAM, and 256 GB of local NVMe SSD storage. It includes one dedicated IPv4 address with no hardware accelerators. Benchmark evaluations place its single-core compute performance within the average tier, complemented by top-tier single-threaded gzip compression at 38.09 GB/sec. Due to its shared execution model and lower memory bandwidth on uncached transfers, multi-threaded workloads such as PassMark CPU tests and 7B LLM inference perform in lower percentiles. The server provides a cost-effective allocation of rapid local NVMe storage paired with moderate memory density, making it suitable for general web hosting, lightweight operational databases, and build environments.",
+  "og_description": "Vultr vhf-3c-8gb is a High Frequency Compute instance offering 3 shared Intel vCPUs at 2.0 GHz, 8.0 GB RAM, and a 256 GB NVMe SSD, engineered for light database and web tasks.",
+  "meta_description": "Vultr vhf-3c-8gb technical overview: 3 shared Intel x86_64 vCPUs, 8.0 GB RAM, and 256 GB NVMe storage for web serving and lightweight workloads.",
+  "tagline": "Cost-effective shared Intel compute with integrated NVMe storage for entry-level databases, staging environments, and general web applications.",
   "bullet_points": [
     "3 shared Intel x86_64 vCPUs running at 2.0 GHz",
-    "8.0 GB of system memory with 2.67 GB per core",
-    "Bundled 256 GB NVMe SSD local storage",
+    "8.0 GB system RAM (2.67 GB per core)",
+    "Bundled 256 GB high-speed local NVMe SSD",
     "Top-tier single-threaded gzip compression performance",
-    "Best suited for lightweight databases, basic web serving, and development"
+    "Includes 1 complimentary public IPv4 address",
+    "Targeted for web serving, CI/CD runners, and light databases"
   ],
   "categories": [
-    "Burstable & Budget",
+    "General Purpose",
     "Compute Optimized"
   ]
 }

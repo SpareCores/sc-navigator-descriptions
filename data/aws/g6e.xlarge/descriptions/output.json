@@ -1,24 +1,24 @@
 {
   "page": [
-    "Amazon Web Services g6e.xlarge is a graphics-intensive virtual machine instance featuring a dedicated AMD EPYC 7R13 processor with an x86_64 architecture. The instance provides 4 vCPUs (2 physical cores with 2 threads per core) running at 3.4 GHz, alongside 32.0 GB of DDR4 memory operating at 3 GHz. For hardware acceleration, it includes a single NVIDIA L40S GPU from the Ada Lovelace family, equipped with 45 GB of VRAM. Local storage is provided via a 250 GB NVMe SSD, and the baseline network bandwidth is rated at 2 Gbps.",
-    "Benchmark data highlights a stark contrast between CPU-bound tasks and GPU-accelerated workloads. The instance achieves top-tier performance in LLM inference, delivering 13365.51 tokens per second for small model prompt processing and 134.56 tokens per second for medium model text generation. Conversely, multi-core CPU performance is weak, with stress-ng multi-core and Geekbench multi-core scores falling into the bottom 25%. Memory bandwidth is also limited, registering weak read-only and write speeds on large blocks. Single-core CPU performance remains average to strong, with stress-ng single-core scoring in the top 25%.",
-    "From a cost-efficiency perspective, the g6e.xlarge offers high resource density for GPU-centric workloads, trading off raw multi-core CPU capacity and memory bandwidth for specialized Ada Lovelace acceleration. This hardware profile is suited for small to medium LLM inference, graphics-intensive rendering, and GPU-accelerated machine learning tasks, while it is less optimal for CPU-heavy compilation, database operations, or high-throughput web serving."
+    "Amazon Web Services g6e.xlarge is an accelerated computing instance hosted on the AWS Nitro hypervisor. The virtual machine is provisioned with 4 vCPUs derived from 2 physical cores on an AMD EPYC 7R13 processor operating at 3.4 GHz, utilizing the x86_64 architecture. Memory configuration totals 32.0 GB of DDR4 RAM running at 3 GHz, providing 8.0 GB per vCPU. Hardware acceleration is provided by a single NVIDIA L40S GPU based on the Ada Lovelace architecture, equipped with 45 GB of VRAM. Bundled local storage includes 250 GB of NVMe SSD capacity, complemented by a baseline network throughput of 2 Gbps.",
+    "Benchmark outcomes demonstrate extreme polarization driven by the dedicated accelerator. In large language model inference, the NVIDIA L40S yields top-tier performance within the top 10% of tested instances, reaching 13,365.51 tokens per second during prompt processing and 506.94 tokens per second during text generation on small 135M parameter models. For medium 7B parameter models, prompt evaluation achieves 6,130.77 tokens per second and text generation clocks at 134.56 tokens per second. In contrast, multi-threaded CPU and memory throughput reflect the modest 4-vCPU footprint. The instance registered weak benchmark tiers across multi-core Geekbench (3,790.0), multi-core stress-ng (5,979.57), and Redis SET throughput (4.7 million ops/sec), while single-core compute performance placed in the top 25% with a 2,991.88 stress-ng score.",
+    "The primary architectural tradeoff centers on pairing an enterprise-grade GPU with an entry-level CPU core allocation and 2 Gbps baseline networking. From a resource-efficiency standpoint, the instance is optimized for workloads that run primarily on GPU compute, making full use of the 45 GB VRAM and NVMe scratch disk without paying the operational cost overhead of a larger host CPU footprint. However, applications bound by host memory bandwidth, widespread multi-core CPU scaling, or continuous network streaming will encounter bottlenecks on this instance profile.",
+    "Amazon Web Services g6e.xlarge is ideally matched for small-to-medium parameter deep learning inference, model fine-tuning, graphics rendering, visual computing pipelines, and GPU-accelerated video transcode workflows."
   ],
-  "description": "Amazon Web Services g6e.xlarge is a graphics-intensive instance powered by an AMD EPYC 7R13 processor with 4 vCPUs and 32.0 GB of DDR4 memory. It features a dedicated NVIDIA L40S GPU with 45 GB of VRAM and a 250 GB NVMe SSD. While multi-core CPU performance and memory bandwidth benchmarks fall into the bottom 25%, the instance delivers top-tier results in LLM inference, achieving 6130.77 tokens per second for medium model prompt processing. This makes the g6e.xlarge highly cost-efficient for specialized GPU workloads, such as machine learning inference and graphics rendering, rather than general-purpose multi-core computing or database operations.",
-  "og_description": "Amazon Web Services g6e.xlarge is an x86_64 instance with 4 vCPUs, 32 GB RAM, a 250 GB NVMe SSD, and an NVIDIA L40S GPU with 45 GB VRAM, delivering top-tier LLM inference performance.",
-  "meta_description": "Amazon Web Services g6e.xlarge features 4 vCPUs, 32 GB RAM, and an NVIDIA L40S GPU, offering top-tier performance for LLM inference workloads.",
-  "tagline": "An accelerated virtual server featuring dedicated graphics hardware and local NVMe storage for efficient machine learning inference workloads.",
+  "description": "Amazon Web Services g6e.xlarge is an accelerated computing virtual machine running on the AWS Nitro System. Powered by an x86_64 AMD EPYC 7R13 processor operating at 3.4 GHz, the instance delivers 4 vCPUs (2 physical cores), 32.0 GB of DDR4 memory, and 250 GB of bundled NVMe SSD storage alongside a 2 Gbps baseline network link. Its core capability stems from an NVIDIA L40S Ada Lovelace GPU with 45 GB of VRAM. Benchmark results exhibit top-tier LLM inference execution, generating 134.56 tokens per second on 7B models and prompt ingestion exceeding 6,130 tokens per second. Conversely, host-bound metrics like multi-core CPU processing, memory bandwidth, and Redis transactions place in lower benchmark tiers due to the compact CPU complement. This instance serves workloads focused on AI inference, graphics processing, and compute-heavy GPU acceleration requiring dedicated VRAM capacity without excessive host CPU expenditure.",
+  "og_description": "Amazon Web Services g6e.xlarge features an NVIDIA L40S GPU with 45 GB VRAM, 4 vCPUs via an AMD EPYC 7R13 processor, 32 GB DDR4 RAM, and 250 GB of NVMe SSD storage for accelerated workloads.",
+  "meta_description": "Amazon Web Services g6e.xlarge delivers 4 vCPUs, 32 GB RAM, 250 GB NVMe SSD, and an NVIDIA L40S GPU with 45 GB VRAM for accelerated AI inference workloads.",
+  "tagline": "Accelerated computing node integrating an NVIDIA L40S GPU with 45 GB VRAM and NVMe storage for efficient AI inference.",
   "bullet_points": [
-    "Equipped with 1 NVIDIA L40S GPU featuring 45 GB of VRAM",
-    "Features 4 vCPUs powered by an AMD EPYC 7R13 processor",
-    "Includes 32.0 GB of DDR4 memory and a 250 GB NVMe SSD",
-    "Delivers top-tier LLM inference speeds for small and medium models",
-    "Exhibits lower multi-core CPU and memory bandwidth performance",
-    "Best suited for GPU-accelerated machine learning and graphics tasks"
+    "NVIDIA L40S Ada Lovelace GPU with 45 GB VRAM",
+    "4 dedicated vCPUs from an AMD EPYC 7R13 processor running at 3.4 GHz",
+    "32.0 GB DDR4 system memory and 250 GB local NVMe SSD storage",
+    "Top-tier performance in small and medium parameter LLM inference",
+    "2 Gbps baseline network bandwidth via AWS Nitro System",
+    "Engineered for deep learning inference, graphics processing, and video transcoding"
   ],
   "categories": [
     "GPU Accelerated",
-    "Memory Optimized",
-    "Storage & Database"
+    "Memory Optimized"
   ]
 }

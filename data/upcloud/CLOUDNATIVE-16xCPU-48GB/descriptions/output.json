@@ -1,23 +1,23 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-16xCPU-48GB is a cloud server instance belonging to the Cloud Native family, utilizing the KVM hypervisor. It features 16 shared vCPUs mapped to 16 physical cores with 1.0 thread per core, powered by an AMD EPYC 7542 processor running at 2.0 GHz. The memory configuration provides 48.0 GB of RAM, translating to 3.0 GB per core. No local storage or GPU hardware is bundled with this instance, though it includes one complimentary public IPv4 address.",
-    "Benchmark data indicates a split performance profile. The instance registers poor single-core performance in stress-ng tests, placing in the bottom 10%, which is a typical tradeoff for shared CPU allocations. However, Geekbench single-core scores are strong, placing in the top 25%, and Geekbench text processing reaches the top tier. Multi-core performance across stress-ng, Geekbench, and Passmark CPU tests consistently falls into the average category. Memory bandwidth tests, including read-only and write operations on large blocks, also align with average tier performance.",
-    "Given the shared CPU allocation and the absence of local storage, this instance offers a cost-efficient profile for workloads that require high core counts and moderate memory density without requiring dedicated CPU execution. It is suited for multi-threaded tasks such as software compilation, text processing, and static web serving, where resource sharing does not critically impact execution times. It is less suited for single-core intensive tasks or workloads requiring local NVMe storage."
+    "The UpCloud CLOUDNATIVE-16xCPU-48GB is a cloud server instance within UpCloud's Cloud Native family, running on KVM virtualization. The instance provides 16 shared vCPUs powered by an AMD EPYC 7542 processor operating at a base frequency of 2.0 GHz, paired with 48.0 GB of system memory, resulting in a 3.0 GB per vCPU allocation. Local storage is not bundled with the instance and must be attached separately over network block storage. No dedicated graphics accelerators or complimentary public IPv4 addresses are included.",
+    "Hardware architecture features the x86_64 instruction set with support for standard extensions including AVX, AES-NI, SHA-NI, BMI2, and FMA, though AVX-512 and AMX extensions are absent. Cache distribution includes 64 KB of L1 data cache, 0.5 MB of L2 cache, and 16 MB of L3 cache per core cluster. On synthetic stress benchmarks, single-core execution delivers 787.49 stress-ng bogo-ops, placing it in the lower performance tier, whereas multi-core throughput scales to 12555.22 bogo-ops. Memory bandwidth registers at 82.52 GB/s for large uncached reads and 39.0 GB/s for writes, supporting solid memory bus utilization.",
+    "Application and synthetic evaluation indicates strong burst text and image processing capabilities, with Geekbench single-core reaching 2089.0 and multi-core achieving 14914.0. In network application metrics, static web serving achieves 11.83 GB/s throughput, and PassMark database operations measure 9983.1 points, accompanied by 22.77 million Redis SET operations per second. Machine learning inferencing delivers 1104.1 tokens per second for prompt processing on small 135M parameter models and 56.21 tokens per second on 7B models.",
+    "Due to its shared CPU topology and lack of local storage, the instance is cost-efficient for scale-out, multi-threaded workloads that tolerate varying CPU availability rather than continuous sustained peak utilization. Best-fit use cases include parallel compilation tasks, caching layers, containerized microservices, background batch data processing, and general web serving."
   ],
-  "description": "UpCloud CLOUDNATIVE-16xCPU-48GB is a KVM-based virtual server featuring 16 shared AMD EPYC 7542 vCPUs running at 2.0 GHz and 48.0 GB of system memory. Lacking local storage and GPU accelerators, this instance relies on network-attached storage. Performance benchmarks reveal a mixed profile: while stress-ng single-core metrics fall into the bottom 10%, Geekbench single-core and text processing benchmarks achieve strong and top-tier ratings, respectively. Multi-core execution, memory bandwidth, and database operations consistently perform within the average range. This resource density makes the instance a cost-effective option for multi-threaded workloads, static web serving, and software compilation where dedicated CPU performance is not a strict requirement.",
-  "og_description": "UpCloud CLOUDNATIVE-16xCPU-48GB is a KVM server with 16 shared AMD EPYC vCPUs and 48 GB RAM, delivering average multi-core performance for budget-conscious multi-threaded workloads.",
-  "meta_description": "UpCloud CLOUDNATIVE-16xCPU-48GB features 16 shared AMD EPYC vCPUs and 48 GB RAM, offering balanced multi-core performance for general workloads.",
-  "tagline": "A shared-CPU virtual server offering sixteen cores and forty-eight gigabytes of memory for cost-effective multi-threaded processing.",
+  "description": "UpCloud CLOUDNATIVE-16xCPU-48GB is a cloud-native virtual server featuring 16 shared vCPUs based on the AMD EPYC 7542 processor at 2.0 GHz, coupled with 48.0 GB of RAM. The instance lacks local disk storage and dedicated GPUs, relying entirely on attached external volumes. Benchmarks show balanced overall throughput, capturing 14914.0 on Geekbench multi-core and 28502.96 on PassMark CPU, with strong scores in text processing and image handling despite modest single-thread stress-ng scores. Memory throughput is consistent at 82.52 GB/s read, and Redis processing sustains 22.77 million SET operations per second. Configured with a 1:3 core-to-memory ratio and shared compute cores, this instance offers economical multi-threaded capacity suitable for distributed container workloads, CI/CD compilation runners, microservices, and general web applications.",
+  "og_description": "UpCloud CLOUDNATIVE-16xCPU-48GB features 16 shared AMD EPYC 7542 vCPUs, 48.0 GB RAM, and KVM virtualization for cost-effective microservices, background processing, and web serving.",
+  "meta_description": "UpCloud CLOUDNATIVE-16xCPU-48GB offers 16 shared AMD EPYC vCPUs and 48 GB RAM for multi-threaded microservices, caching, and web workloads.",
+  "tagline": "Shared 16-core AMD EPYC compute instance with 48 GB memory designed for horizontal scaling, distributed microservices, and batch processing workloads.",
   "bullet_points": [
-    "16 shared AMD EPYC 7542 vCPUs at 2.0 GHz",
-    "48.0 GB of system memory with 3.0 GB per core",
-    "Strong Geekbench single-core and top-tier text processing benchmarks",
-    "Average multi-core, memory bandwidth, and database performance",
-    "No local storage or GPU accelerators included",
-    "Suited for static web serving, software compilation, and multi-threaded tasks"
+    "16 shared vCPUs powered by AMD EPYC 7542 processors at 2.0 GHz",
+    "48.0 GB system RAM providing 3.0 GB allocation per core",
+    "No bundled local storage or integrated GPU hardware",
+    "Geekbench multi-core score of 14914.0 and 22.77M Redis ops/sec",
+    "Suited for container clusters, web serving, and CI/CD pipelines"
   ],
   "categories": [
-    "Burstable & Budget",
-    "General Purpose"
+    "General Purpose",
+    "Burstable & Budget"
   ]
 }

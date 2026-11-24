@@ -1,25 +1,24 @@
 {
   "page": [
-    "Amazon Web Services z1d.12xlarge is a high-frequency, memory-optimized instance built on the AWS Nitro System. It features 48 vCPUs, corresponding to 24 physical cores with 2 threads per core, utilizing the x86_64 architecture. The instance is powered by an Intel Xeon 8151 processor running at a sustained core speed of 4.0 GHz, supported by a 24 MB L3 cache. It includes hardware-level features such as Advanced Vector Extensions (AVX and AVX-512F), AES cryptography, and Intel Turbo Boost technology.",
-    "The hardware configuration is equipped with 384.0 GB of DDR4 memory operating at 3 GHz, providing 8.0 GB of RAM per physical core. For local storage, the z1d.12xlarge includes 1800 GB of NVMe SSD instance store volumes, offering high-speed, low-latency local storage directly attached to the hypervisor. Network connectivity is delivered via a baseline bandwidth of 25 Gbps.",
-    "Benchmark results indicate strong memory performance, with large-block read-only memory bandwidth reaching 215.38 GB/sec and write bandwidth at 92.12 GB/sec, both placing in the top 25% tier. CPU-bound tasks, such as stress-ng multi-core performance (52390.69) and Passmark CPU scores (44393.51), fall within the average range. However, LLM text generation benchmarks show weaker performance, indicating that this instance is not optimized for large language model inference without GPU acceleration. From a resource density perspective, the combination of high-frequency dedicated CPU cores, substantial DDR4 memory, and integrated NVMe storage provides a balanced profile for workloads requiring high single-threaded performance alongside fast local storage.",
-    "Given the high clock speed, large memory footprint, and fast local NVMe storage, the z1d.12xlarge is suited for relational databases with high per-core licensing costs, electronic design automation (EDA), financial simulations, and data-intensive workloads that benefit from high single-core compute performance and low-latency storage."
+    "Amazon Web Services z1d.12xlarge is a memory-optimized Nitro-based virtual server designed for compute-intensive workloads that require sustained high clock speeds alongside substantial memory. The instance is powered by dedicated Intel Xeon 8151 processors on the x86_64 architecture, providing 24 physical cores and 48 vCPUs with hyper-threading enabled. These processors feature a sustained all-core clock speed of 4.0 GHz, supported by 32 KB L1 data cache, 1.0 MB L2 cache, and a 24 MB L3 cache. Standard instruction set extensions including AVX, AVX-512F, AES, BMI2, and ADX are supported.",
+    "The system is equipped with 384.0 GB of DDR4 memory running at 3 GHz, delivering an 8:1 memory-to-core ratio of 8.0 GB per vCPU. Local storage is provided via 1,800 GB of NVMe SSD instance storage. Networking features a baseline bandwidth of 25 Gbps. The instance contains zero GPUs and includes zero complimentary public IPv4 addresses.",
+    "Benchmark evaluations indicate strong memory subsystem throughput. In uncached large block tests (256 MB), read bandwidth achieved 215.38 GB/sec and write bandwidth reached 92.12 GB/sec, placing memory throughput in the top 25% tier alongside a PassMark memory score of 2,812.58. General processing metrics, including a PassMark CPU score of 44,393.51, a Geekbench multi-core score of 11,997.0, and a stress-ng multi-core metric of 52,390.69, perform within the middle 50% tier. LLM text generation throughput falls within the bottom 25% tier due to the absence of dedicated GPU hardware acceleration.",
+    "Cost efficiency is supported by high per-core performance paired with large RAM and integrated NVMe capacity, which reduces the need for supplemental external storage attachments in high-throughput environments. The instance is suited for relational database workloads, in-memory caches, electronic design automation (EDA), financial modeling, and build pipelines requiring high CPU clock speeds and low-latency storage."
   ],
-  "description": "Amazon Web Services z1d.12xlarge is a high-frequency, memory-optimized instance built on the AWS Nitro hypervisor. It features 48 vCPUs powered by an Intel Xeon 8151 processor running at 4.0 GHz on the x86_64 architecture. The hardware configuration includes 384.0 GB of DDR4 memory and 1800 GB of local NVMe SSD storage, alongside a 25 Gbps baseline network bandwidth. Benchmark data highlights strong memory performance, with large-block read-only bandwidth reaching 215.38 GB/sec, while CPU and database operations perform in the average tier. The instance is qualitatively cost-efficient for workloads that require high single-core compute speeds combined with high memory density and fast local storage. It is well-suited for relational databases, electronic design automation (EDA), and financial simulation workloads.",
-  "og_description": "Amazon Web Services z1d.12xlarge is an x86_64 instance featuring 48 vCPUs at 4.0 GHz, 384 GB DDR4 RAM, and 1800 GB local NVMe SSD storage, optimized for high-frequency compute and database workloads.",
-  "meta_description": "Amazon Web Services z1d.12xlarge features 48 vCPUs at 4.0 GHz, 384 GB DDR4 RAM, and 1800 GB local NVMe SSD storage for memory-intensive workloads.",
-  "tagline": "A high-frequency compute and memory-optimized platform featuring dedicated 4.0 GHz cores and integrated local NVMe SSD storage.",
+  "description": "Amazon Web Services z1d.12xlarge is a memory-optimized instance featuring 48 vCPUs and 24 physical cores from dedicated 4.0 GHz Intel Xeon 8151 processors on x86_64 Nitro architecture. It integrates 384.0 GB of DDR4 memory running at 3 GHz, offering an 8:1 memory-to-vCPU ratio. Local storage is supplied via 1,800 GB of NVMe SSD storage, and baseline network throughput is rated at 25 Gbps. Benchmark results demonstrate strong memory bandwidth, registering 215.38 GB/sec on uncached large reads and 92.12 GB/sec on writes, placing it in the top quartile of tested instances. Compute benchmarks, including Geekbench and PassMark CPU suites, perform within the middle tier, while lack of discrete GPUs limits machine learning inference. The instance delivers high hardware density for in-memory databases, electronic design automation, financial simulation, and I/O-intensive enterprise workloads.",
+  "og_description": "Amazon Web Services z1d.12xlarge features 48 vCPUs powered by 4.0 GHz Intel Xeon 8151 processors, 384 GB DDR4 RAM, 1,800 GB NVMe SSD local storage, and 25 Gbps baseline networking.",
+  "meta_description": "Amazon Web Services z1d.12xlarge delivers 48 vCPUs at 4.0 GHz, 384 GB DDR4 RAM, 1,800 GB NVMe local storage, and 25 Gbps networking for memory-heavy workloads.",
+  "tagline": "High-frequency 4.0 GHz compute capacity combined with 384 GB DDR4 memory and 1,800 GB fast local NVMe storage.",
   "bullet_points": [
-    "48 vCPUs powered by high-frequency 4.0 GHz Intel Xeon processors",
-    "384 GB of DDR4 memory providing 8.0 GB per physical core",
-    "1800 GB of integrated local NVMe SSD instance storage",
-    "Strong memory bandwidth performance exceeding 215 GB/sec",
-    "25 Gbps baseline network bandwidth via the Nitro hypervisor",
-    "Optimized for relational databases, EDA, and financial simulations"
+    "Dedicated 48 vCPUs / 24 physical cores on 4.0 GHz Intel Xeon 8151",
+    "384.0 GB DDR4 memory with strong 215.38 GB/s large-block read bandwidth",
+    "1,800 GB integrated NVMe SSD local instance storage",
+    "25 Gbps baseline network throughput on AWS Nitro System",
+    "Tailored for EDA, financial simulation, and high-performance in-memory databases"
   ],
   "categories": [
     "Memory Optimized",
-    "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

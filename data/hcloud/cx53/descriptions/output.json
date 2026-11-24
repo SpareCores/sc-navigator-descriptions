@@ -1,22 +1,22 @@
 {
   "page": [
-    "Hetzner Cloud cx53 is an x86_64 virtual machine running on the QEMU hypervisor. It is equipped with 16 vCPUs powered by an AMD EPYC processor running at 2.0 GHz, featuring 16 physical cores with 1 thread per core under a shared CPU allocation model. The system includes 31.0 GB of system memory, providing approximately 1.95 GB of RAM per core. Local storage is provided via a bundled 320 GB NVMe SSD, and the instance does not include any complimentary public IPv4 addresses or dedicated GPU hardware.",
-    "Performance benchmarks indicate a mixed profile. The single-core CPU performance measured via stress-ng is strong, placing in the top 25%, and text generation for small LLM models also demonstrates strong performance. However, Geekbench single-core and text processing scores are poor, falling into the bottom 10%. Most other metrics, including multi-core CPU performance, memory bandwidth, software compilation, ray tracing, and database operations, consistently rank in the average tier.",
-    "Given its shared CPU allocation and 1:2 RAM-to-vCPU ratio, the cx53 offers a resource-dense configuration suitable for workloads that require multi-threaded processing but do not demand sustained, dedicated CPU cores. The bundled 320 GB NVMe SSD provides fast local storage, making it a viable option for web serving, multi-threaded decompression tasks, and moderate database operations. However, the shared CPU model and lower per-core memory allocation represent a tradeoff for memory-intensive or sustained high-performance computing tasks."
+    "Hetzner Cloud cx53 is a virtual server instance within the Cost Optimized family, provisioned via the QEMU hypervisor on x86_64 architecture. The system provides 16 shared vCPUs powered by AMD EPYC processors operating at a base clock speed of 2.0 GHz, coupled with 31.0 GB of system memory, yielding approximately 1.95 GB of RAM per core. Cache configuration includes 32 KB of L1 data cache, 0.5 MB of L2 cache, and 16 MB of L3 cache. Local storage comprises an integrated 320 GB NVMe SSD, and the instance operates without a dedicated GPU accelerator or complimentary public IPv4 addresses.",
+    "Benchmark evaluations place the cx53 primarily in the middle 50% tier across general computing, memory, and database tasks. The instance achieved a PassMark CPU score of 30,149.72 and a multi-core Geekbench score of 4,993.0, with stress-ng recording 42,844.81 in multi-core throughput. Read-only memory bandwidth reached 128.82 GB/sec on uncached large blocks and 1,890.65 GB/sec on cached small blocks. Text-generation inference on a small 135M language model registered in the top 25% at 276.25 tokens per second. However, single-core metrics reflect the shared 2.0 GHz CPU configuration: Geekbench single-core scored 706.0 and text processing scored 685.0, both landing in the bottom 10%.",
+    "Positioned within the Cost Optimized tier, the cx53 prioritizes resource density over dedicated CPU frequency, delivering 16 cores and fast local NVMe storage at an economical profile. The trade-off lies in shared CPU scheduling and modest single-thread performance, making it less suitable for latency-critical single-threaded execution. Instead, the configuration is best aligned with multi-threaded, parallelized workloads such as batch data processing, build and CI/CD pipelines, container hosting, static web serving (benchmarked at 22.86 GB/sec), and distributed caching using Redis, where 30.09 million SET operations per second were recorded."
   ],
-  "description": "Hetzner Cloud cx53 is an x86_64 virtual server built on the QEMU hypervisor, featuring 16 shared AMD EPYC vCPUs running at 2.0 GHz and 31.0 GB of system memory. It includes a bundled 320 GB NVMe SSD for local storage but lacks dedicated GPU hardware and complimentary public IPv4 addresses. Benchmark data shows strong single-core performance in stress-ng and small-model LLM text generation, though Geekbench single-core and text processing metrics are poor. Most other workloads, such as multi-core processing, memory bandwidth, and database operations, perform in the average range. With a 1:2 RAM-to-vCPU ratio and shared CPU allocation, the cx53 represents a cost-efficient option for multi-threaded tasks that do not require dedicated CPU resources. It is well-suited for static web serving, software compilation, and moderate database workloads.",
-  "og_description": "Hetzner Cloud cx53 is an x86_64 virtual server featuring 16 shared AMD EPYC vCPUs, 31.0 GB of RAM, and a bundled 320 GB NVMe SSD, delivering balanced multi-core performance for general-purpose workloads.",
-  "meta_description": "Hetzner Cloud cx53 is an x86_64 virtual server featuring 16 shared AMD EPYC vCPUs, 31.0 GB of RAM, and a bundled 320 GB NVMe SSD for local storage.",
-  "tagline": "A resource-dense virtual server featuring sixteen shared cores and local NVMe storage for balanced multi-threaded workloads.",
+  "description": "Hetzner Cloud cx53 is a cost-optimized x86_64 cloud server offering 16 shared AMD EPYC vCPUs clocked at 2.0 GHz, 31.0 GB of memory, and a 320 GB local NVMe SSD without discrete GPU hardware. Hypervisor virtualization is managed through QEMU. Benchmark evaluations place the server's multi-core and memory capabilities in the median 50% tier, highlighted by a PassMark CPU score of 30,149.72, stress-ng multi-core performance of 42,844.81, and a Redis throughput of 30.09 million SET operations per second. However, the shared core allocation and modest clock speed lead to poor single-core metrics, with Geekbench single-core in the bottom 10%. With roughly 1.95 GB of RAM per vCPU and fast NVMe storage, the cx53 provides high resource density for cost-sensitive multi-threaded tasks, including CI/CD compilation, container clusters, batch processing, and static web serving, while being less suited for single-thread latency-sensitive operations.",
+  "og_description": "Hetzner Cloud cx53 is a cost-optimized cloud server with 16 shared AMD EPYC vCPUs, 31.0 GB RAM, and a 320 GB NVMe SSD, delivering balanced multi-core throughput for parallel workloads and container hosting.",
+  "meta_description": "Hetzner Cloud cx53 is a cost-optimized server featuring 16 shared AMD EPYC vCPUs, 31 GB RAM, and 320 GB NVMe SSD storage for parallel computing tasks.",
+  "tagline": "Sixteen shared AMD EPYC vCPUs paired with fast NVMe storage and thirty-one gigabytes of RAM for cost-effective parallel workloads.",
   "bullet_points": [
-    "16 shared AMD EPYC vCPUs running at 2.0 GHz",
-    "31.0 GB of system memory with 1.95 GB per core",
-    "Bundled 320 GB local NVMe SSD storage",
-    "Strong single-core stress-ng and small-model LLM text generation performance",
-    "Suited for static web serving, software compilation, and multi-threaded decompression"
+    "16 shared AMD EPYC vCPUs operating at 2.0 GHz",
+    "31.0 GB system memory providing 1.95 GB RAM per core",
+    "Bundled 320 GB high-speed local NVMe SSD storage",
+    "Solid multi-core throughput balanced against low single-core execution speed",
+    "Well suited for CI/CD pipelines, container workloads, and static web serving"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Burstable & Budget",
+    "Compute Optimized"
   ]
 }

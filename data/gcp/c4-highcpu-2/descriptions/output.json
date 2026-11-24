@@ -1,21 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c4-highcpu-2 is an x86_64 compute-optimized server powered by an Intel Xeon 8581C processor. It features 2 dedicated vCPUs derived from 1 physical core with hyper-threading enabled, running at a base speed of 2.3 GHz. The instance is configured with 4.0 GB of RAM, yielding a 2.0 GB memory-to-core ratio. It does not include local storage or integrated GPUs, and offers zero complimentary public IPv4 addresses.",
-    "Benchmark data reveals strong single-core capabilities alongside constrained multi-core and memory performance. The server achieves top-tier single-core Geekbench scores in the top 10% and strong single-threaded performance in gzip compression and bzip3 decompression in the top 25%. However, multi-core benchmarks, such as stress-ng multi-core and Geekbench multi-core, fall into the bottom 10% and bottom 25% respectively, reflecting the low core count. Memory bandwidth is also limited, with uncached read and write speeds categorized in the bottom 10%.",
-    "The Intel Xeon processor supports advanced instruction sets including AVX-512 and Intel Advanced Matrix Extensions (AMX) for integer and tile operations. These hardware features assist in specific tasks like cryptography and lightweight machine learning inference, where it achieves average text generation speeds of 94.15 tokens per second on a small 135M model. Given the low memory capacity and lack of local storage, this server is best suited for single-threaded compute tasks, lightweight web serving, and basic utility workloads that benefit from dedicated CPU execution rather than memory-intensive operations."
+    "Google Cloud Platform c4-highcpu-2 is an x86_64 compute-oriented virtual machine configuration powered by an Intel Xeon 8581C processor clocked at 2.3 GHz. The instance provisions 2 vCPUs backed by a single physical core with hyperthreading enabled, alongside 4.0 GB of memory (2.0 GB per vCPU). The underlying processor includes 260 MB of L3 cache, 2 MB of L2 cache, and advanced instruction sets such as AVX-512, AMX (tile and int8), and hardware cryptography acceleration. The instance does not include bundled local storage or dedicated hardware GPU accelerators.",
+    "Benchmark results highlight solid single-thread performance alongside constrained overall throughput. The server scores 2292.0 in the Geekbench single-core test, placing it in the top tier, supported by strong gzip compression (34.76 GB/sec) and bzip3 decompression (14.76 GB/sec) rates. In contrast, multi-core capacity is bounded by the two-thread limit, registering a multi-core Geekbench score of 2816.0 and a multi-core stress-ng result of 2216.77. Uncached memory bandwidth reaches 20.28 GB/sec for reads and 14.17 GB/sec for writes, which trails larger multi-channel configurations.",
+    "Cost efficiency is focused on entry-level, compute-centric workloads that require modern instruction sets without paying for excess RAM capacity or unneeded hardware accelerators. With no bundled local disks or complimentary public IPv4 addresses, storage and external connectivity rely on attached network infrastructure. The primary performance tradeoff centers on strong instruction execution per core versus minimal aggregate memory and parallel execution limits.",
+    "The c4-highcpu-2 instance is suitable for lightweight batch tasks, continuous integration and build nodes, microservices, entry-level text processing, and single-threaded utilities that benefit from AVX-512 and AMX vector capabilities."
   ],
-  "description": "Google Cloud Platform c4-highcpu-2 is an x86_64 compute-optimized server featuring 2 dedicated vCPUs from a single physical Intel Xeon 8581C core running at 2.3 GHz, paired with 4.0 GB of RAM. It contains no local storage or GPUs. Single-core performance is a notable strength, with Geekbench single-core scores reaching the top 10% and single-threaded compression tests performing in the top 25%. Conversely, multi-core and memory bandwidth benchmarks are weak to poor due to the low resource footprint. The processor supports advanced instruction sets like AVX-512 and Intel AMX, making it capable of handling specialized cryptographic and lightweight vector operations. This server is best suited for single-threaded compute tasks, lightweight web serving, and basic utility workloads requiring dedicated CPU allocation without high memory demands.",
-  "og_description": "Google Cloud Platform c4-highcpu-2 is an x86_64 compute-optimized server with 2 dedicated Intel Xeon vCPUs and 4.0 GB of RAM, offering strong single-core performance but limited memory bandwidth.",
-  "meta_description": "Google Cloud Platform c4-highcpu-2 features 2 dedicated Intel Xeon vCPUs and 4.0 GB RAM, delivering strong single-core performance for lightweight compute.",
-  "tagline": "A dedicated dual-vCPU compute instance featuring advanced Intel Xeon instruction sets and strong single-core performance for lightweight workloads.",
+  "description": "Google Cloud Platform c4-highcpu-2 is an x86_64 compute-focused virtual machine featuring 2 vCPUs derived from 1 physical Intel Xeon 8581C core at 2.3 GHz, accompanied by 4.0 GB of memory. It does not include bundled local storage or GPU hardware. The CPU architecture supports modern instruction extensions, including AVX-512 and AMX. Benchmark data demonstrates top-tier single-core performance with a Geekbench single-core score of 2292.0 and strong compression throughput, though multi-threaded operations and memory bandwidth reflect the limitations of a 2-vCPU hardware footprint. With 2.0 GB of RAM per vCPU, the server offers resource-efficient compute capabilities for lightweight processing tasks. It is well suited for microservices, continuous integration jobs, lightweight web serving, and single-threaded batch scripts.",
+  "og_description": "Google Cloud Platform c4-highcpu-2 features 2 vCPUs on an Intel Xeon 8581C processor with 4 GB RAM, delivering strong single-thread execution for lightweight services and build workloads.",
+  "meta_description": "Google Cloud Platform c4-highcpu-2 provides 2 vCPUs on an Intel Xeon 8581C CPU with 4 GB RAM, delivering top single-core performance for light compute tasks.",
+  "tagline": "Compute-focused dual-vCPU architecture with advanced vector instruction extensions designed for lightweight single-threaded and batch workloads.",
   "bullet_points": [
-    "2 dedicated vCPUs powered by an Intel Xeon 8581C processor",
-    "4.0 GB of system memory with no local storage or GPU accelerators",
-    "Top-tier single-core CPU performance and strong single-threaded compression",
-    "Supports AVX-512 and Intel Advanced Matrix Extensions (AMX)",
-    "Best suited for single-threaded compute, lightweight web serving, and utility tasks"
+    "Powered by an Intel Xeon 8581C processor running at 2.3 GHz with 2 vCPUs on 1 physical core",
+    "Allocates 4.0 GB of system memory, matching a 1:2 compute-optimized ratio",
+    "Supports AVX-512 and AMX matrix instructions for enhanced compute operations",
+    "No bundled local disk storage or dedicated GPU hardware accelerators",
+    "Suited for CI/CD tasks, microservices, and single-threaded batch utilities"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

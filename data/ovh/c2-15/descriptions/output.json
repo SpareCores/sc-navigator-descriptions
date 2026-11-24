@@ -1,22 +1,23 @@
 {
   "page": [
-    "OVHcloud c2-15 is a compute-optimized virtual server hosted on the KVM hypervisor. It features an x86_64 architecture powered by an Intel Haswell processor running at 3.0 GHz. The configuration includes 4 dedicated physical cores with 4 vCPUs, meaning hyper-threading is disabled. It is equipped with 15.0 GB of RAM, providing 3.75 GB of memory per core, and includes 100 GB of local SSD storage.",
-    "Performance benchmarks indicate that the server sits mostly in the lower tiers for raw compute and memory throughput. Single-core and multi-core CPU performance tests, such as stress-ng and Geekbench, place the instance in the bottom 10% to 25% categories. Large-block memory read and write bandwidth benchmarks also rank in the weak category, though small-block cached reads achieve average tier performance. Passmark CPU and database operations benchmarks show average results, while Redis SET operations and static web serving throughput remain in the bottom 25%.",
-    "From a qualitative cost-efficiency perspective, the c2-15 offers dedicated physical cores without hyper-threading, which guarantees consistent CPU allocation for workloads sensitive to resource sharing. However, the older Intel Haswell architecture lacks modern instruction sets like AVX-512, limiting its efficiency in advanced cryptography or dense vector math. This server is best suited for light database operations, basic web serving, or legacy applications that require dedicated CPU cores but do not demand high-throughput memory or modern vector instruction sets."
+    "OVHcloud c2-15 is a virtual cloud instance built on KVM virtualization within the provider's Compute Optimized category. It features 4 dedicated x86_64 physical cores powered by an Intel Haswell-generation processor running at a base clock speed of 3.0 GHz. The processor does not use hyperthreading, dedicating one thread per core. Memory capacity stands at 15.0 GB of RAM, equating to 3.75 GB per core. Bundled storage includes a 100 GB local SSD, and the instance operates with no hardware GPU accelerators.",
+    "Benchmark measurements position the CPU in the average to lower tiers among cloud processors, reflecting the older Haswell microarchitecture. The single-core Geekbench score reaches 1196.0, and the PassMark CPU score records 6764.0, both settling in the middle 50 percent of tested instances. However, raw compute density under heavy stress tests is modest: stress-ng single-core (872.67) falls in the bottom 10 percent, while multi-core stress-ng (3481.67) and Geekbench multi-core (3698.0) place in the lower quartile. Cryptographic throughput and uncached memory bandwidth, with read speeds of 36.82 GB/sec and write speeds of 23.61 GB/sec, also sit in the bottom 25 percent.",
+    "From a cost-efficiency perspective, the inclusion of dedicated physical cores and local SSD storage makes the instance viable for predictable, low-complexity applications without hyperthreading contention. However, older instruction support is restricted to AVX, FMA, and AES without modern AVX-512 or AMX extensions. Workloads that depend on high vectorized compute or heavy language model processing suffer, as demonstrated by low 7B LLM inference rates.",
+    "The hardware configuration is well matched for software compilation, basic build nodes, internal tooling, and moderate web serving or lightweight database operations. Tasks demanding modern vector extensions, high-throughput memory streams, or large-scale multi-threaded processing should consider newer processor architectures."
   ],
-  "description": "OVHcloud c2-15 is a compute-optimized virtual server built on the KVM hypervisor, featuring an x86_64 Intel Haswell processor running at 3.0 GHz. It delivers 4 dedicated physical cores and 4 vCPUs without hyper-threading, paired with 15.0 GB of RAM and 100 GB of local SSD storage. Benchmark results show that the instance generally performs in the lower tiers, with single-core and multi-core CPU tests ranking in the bottom 10% to 25%, while small-block cached memory reads and Passmark database operations reach average levels. Lacking modern instruction sets like AVX-512, the c2-15 is best suited for workloads requiring dedicated CPU resources without high-throughput demands, such as light database tasks, basic web serving, and legacy application hosting.",
-  "og_description": "OVHcloud c2-15 is a KVM-based virtual server featuring 4 dedicated Intel Haswell cores at 3.0 GHz, 15 GB RAM, and 100 GB SSD storage, making it suitable for dedicated legacy workloads.",
-  "meta_description": "OVHcloud c2-15 is a KVM virtual server with 4 dedicated Intel cores, 15 GB RAM, and 100 GB SSD storage for consistent, non-hyperthreaded workloads.",
-  "tagline": "A dedicated four-core virtual server with local SSD storage, designed for workloads requiring consistent CPU allocation without hyper-threading.",
+  "description": "OVHcloud c2-15 is an x86_64 cloud instance configured with 4 dedicated Intel Haswell cores running at 3.0 GHz with one thread per core, paired with 15.0 GB of system memory and 100 GB of local SSD storage. Designed as a compute-oriented instance without hyperthreading, it delivers steady single-core baseline metrics, achieving a Geekbench single-core score of 1196.0 and an overall PassMark CPU score of 6764.0. However, the older architecture limits uncached memory bandwidth and modern vector capabilities, resulting in lower-quartile multi-core stress-ng and compression results. With bundled local storage and a near 1 to 4 core-to-memory ratio, the instance provides steady execution for continuous integration workers, software build pipelines, lightweight database operations, and general back-office microservices.",
+  "og_description": "OVHcloud c2-15 is an x86_64 cloud server featuring 4 dedicated 3.0 GHz Intel Haswell cores, 15.0 GB of system memory, and a 100 GB local SSD, balanced for compilation, test environments, and web services.",
+  "meta_description": "OVHcloud c2-15 features 4 dedicated Intel Haswell cores at 3.0 GHz, 15 GB RAM, and a 100 GB local SSD for general-purpose workloads and build pipelines.",
+  "tagline": "Dedicated four-core compute configuration with integrated local solid-state storage and balanced memory allocation for steady, predictable processing environments.",
   "bullet_points": [
-    "4 dedicated physical Intel Haswell cores at 3.0 GHz without hyper-threading",
-    "15.0 GB of system memory and 100 GB of local SSD storage",
-    "KVM hypervisor deployment with one complimentary public IPv4 address",
-    "Average performance in small-block cached memory reads and database operations",
-    "Best suited for light database tasks, legacy applications, and basic web serving"
+    "4 dedicated Intel Haswell x86_64 cores operating at 3.0 GHz without hyperthreading",
+    "15.0 GB of system memory providing 3.75 GB per core",
+    "Bundled 100 GB local SSD storage with zero GPU acceleration",
+    "AVX, AES, and FMA instruction set support without AVX-512 extensions",
+    "Suitable for software compilation, CI/CD runners, and mid-tier backend services"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

@@ -1,22 +1,24 @@
 {
   "page": [
-    "Amazon Web Services x2iezn.6xlarge is a memory-optimized instance powered by the AWS Nitro hypervisor. It features an Intel Xeon 8252C processor with an x86_64 architecture, operating at a high clock speed of 4.5 GHz. The instance provides 24 dedicated vCPUs across 12 physical cores with hyperthreading enabled. It is equipped with 768.0 GB of DDR4 memory running at 3 GHz, yielding a high memory-to-core ratio of 32.0 GB per core. No local NVMe storage or GPU accelerators are included in this configuration.",
-    "In benchmark testing, the instance demonstrates strong memory performance, with a PassMark memory score in the top 25% and a cached small-block read bandwidth of 1645.5 GB/sec. CPU performance is generally average, with a PassMark CPU score of 28155.2 and a Geekbench multi-core score of 11173.0. Single-threaded gzip compression is a notable strength, reaching 31.88 GB/sec. However, the lack of dedicated GPU acceleration limits its utility for large-scale AI workloads; while small 135M LLM inference runs at average speeds, prompt processing for a large 70B model drops to a poor 4.04 tokens/sec.",
-    "The instance provides a baseline network bandwidth of 50 Gbps, facilitating rapid data transfer for distributed environments. From a cost-efficiency perspective, the high memory density of 768.0 GB relative to 24 vCPUs positions this instance as a specialized resource for memory-bound workloads rather than general compute. The lack of local storage requires reliance on network-attached storage, which should be factored into architectural planning. This profile is suited for large in-memory databases, caching layers like Redis, enterprise applications, and memory-intensive data processing pipelines."
+    "Amazon Web Services x2iezn.6xlarge is a memory-optimized Nitro hypervisor instance powered by an Intel Xeon 8252C processor running at up to 4.5 GHz. The configuration allocates 24 dedicated vCPUs across 12 physical cores with hyperthreading enabled, featuring 24 MB of L3 cache, hardware AES acceleration, and AVX-512 instruction support. System memory measures 768.0 GB of DDR4 operating at 3 GHz, delivering an extreme memory-to-vCPU ratio of 32 GB per vCPU. The instance bundles no local NVMe storage and includes no discrete GPUs, depending entirely on network-attached storage across a 50 Gbps baseline network link.",
+    "Benchmark results highlight strong memory subsystem throughput and data compression performance. In synthetic testing, the instance achieved a top-tier PassMark memory score of 2,899.68 alongside single-threaded gzip throughput of 31.88 GB/sec. Large-block memory bandwidth sustains 103.8 GB/sec for uncached reads and 49.0 GB/sec for writes. General computation tests, including Geekbench multi-core (11,173.0) and PassMark CPU (28,155.2), place the instance squarely within middle-tier averages, while Redis operations reached 25.57 million SET operations per second.",
+    "From an architectural efficiency perspective, the platform delivers high value for RAM-dominated workloads that require fast per-core clock frequencies alongside massive volatile working memory. However, the lack of bundled local NVMe storage requires external EBS configuration for persistence, which must be factored into storage architectural design. Furthermore, execution of large language models shows steep performance degradation without hardware accelerators, yielding only 4.04 tokens/sec during 70B prompt ingestion.",
+    "The x2iezn.6xlarge instance is targeted at memory-intensive enterprise environments, particularly in-memory caching fleets, electronic design automation (EDA), relational and NoSQL memory databases, real-time analytics engines, and enterprise SAP HANA workloads."
   ],
-  "description": "Amazon Web Services x2iezn.6xlarge is a memory-optimized instance featuring 24 dedicated vCPUs and 768.0 GB of DDR4 RAM, driven by an Intel Xeon 8252C processor at 4.5 GHz. Built on the AWS Nitro hypervisor, it delivers a high memory-to-core ratio of 32.0 GB per core. Benchmark results show strong memory performance, with a PassMark memory score in the top 25% and a cached small-block read bandwidth of 1645.5 GB/sec. Single-threaded gzip compression is also strong at 31.88 GB/sec, while general CPU benchmarks fall in the average range. The instance lacks local storage and GPU accelerators, making it inefficient for large LLM inference, where 70B model prompt processing drops to 4.04 tokens/sec. With a 50 Gbps baseline network bandwidth, this instance is designed for memory-intensive workloads such as large in-memory databases, Redis caching, and enterprise application hosting.",
-  "og_description": "Amazon Web Services x2iezn.6xlarge is a memory-optimized instance with 24 vCPUs, 768 GB DDR4 RAM, and a 4.5 GHz Intel Xeon CPU, designed for memory-intensive enterprise workloads.",
-  "meta_description": "Amazon Web Services x2iezn.6xlarge is a memory-optimized instance featuring 24 vCPUs, 768 GB RAM, and a 4.5 GHz Intel Xeon processor.",
-  "tagline": "A memory-optimized x86 instance featuring 768 GB of DDR4 RAM and a high-frequency 4.5 GHz Intel Xeon processor.",
+  "description": "Amazon Web Services x2iezn.6xlarge is an extreme memory-optimized Nitro instance engineered around a 24-vCPU Intel Xeon 8252C processor operating at 4.5 GHz with AVX-512 instructions. It pairs 12 physical execution cores with 768.0 GB of DDR4 memory running at 3 GHz, providing an expansive 32 GB of RAM per vCPU. The instance does not include integrated local disk storage or GPU accelerators, relying on a 50 Gbps baseline network interface for host and storage connectivity. Synthetic testing demonstrates top-quartile PassMark memory execution and 31.88 GB/sec gzip compression throughput, accompanied by 25.57 million Redis SET operations per second. General multi-core processing performance remains at median levels. Designed specifically for memory-bound workloads, the instance offers cost-efficient RAM capacity for large-scale in-memory databases, electronic design automation, enterprise data caches, and transactional memory stores.",
+  "og_description": "Amazon Web Services x2iezn.6xlarge delivers 768 GB DDR4 RAM and 24 vCPUs via a 4.5 GHz Intel Xeon processor, built for memory-heavy in-memory databases and caching architectures.",
+  "meta_description": "Amazon Web Services x2iezn.6xlarge features 24 vCPUs, 768 GB DDR4 RAM, and 50 Gbps networking for memory-intensive enterprise workloads.",
+  "tagline": "High-frequency compute paired with extreme memory density for volatile data tiers, in-memory databases, and large cache deployments.",
   "bullet_points": [
-    "Intel Xeon 8252C processor with 24 dedicated vCPUs at 4.5 GHz",
-    "768.0 GB of DDR4 memory providing 32.0 GB per core",
-    "50 Gbps baseline network bandwidth via AWS Nitro hypervisor",
-    "Strong memory performance and single-threaded gzip compression",
-    "No local storage or GPU accelerators included",
-    "Suited for in-memory databases, Redis caching, and enterprise apps"
+    "24 dedicated vCPUs from an Intel Xeon 8252C processor clocked at 4.5 GHz",
+    "768.0 GB DDR4 memory yielding an extreme 32 GB per vCPU ratio",
+    "50 Gbps baseline network bandwidth running on the AWS Nitro system",
+    "Top-quartile memory performance with 2,899.68 PassMark memory score",
+    "No bundled local disk or GPU accelerators, requiring network storage",
+    "Engineered for in-memory databases, caching layers, and EDA workloads"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "Compute Optimized"
   ]
 }

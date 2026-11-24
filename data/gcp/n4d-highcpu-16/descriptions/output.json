@@ -1,21 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform n4d-highcpu-16 is an x86_64 architecture virtual machine featuring 16 dedicated vCPUs and 32.0 GB of system memory. This configuration provides a resource density of 2.0 GB of RAM per vCPU core. The instance operates with dedicated CPU allocation, ensuring consistent compute performance without resource sharing or CPU credit limitations.",
-    "This server type does not include bundled local storage or integrated GPU hardware, making it reliant on network-attached storage options for persistent data. Additionally, the instance does not come with complimentary public IPv4 addresses.",
-    "With a 1:2 vCPU-to-RAM ratio, the n4d-highcpu-16 is structured for compute-heavy workloads that require substantial processing power relative to memory capacity. This hardware profile is qualitatively cost-efficient for tasks such as batch processing, continuous integration and continuous delivery (CI/CD) pipelines, web serving, and distributed compute tasks where high memory overhead is unnecessary."
+    "Google Cloud Platform n4d-highcpu-16 is a virtual instance built on the x86_64 processor architecture within the general-purpose class. It allocates 16 dedicated vCPUs paired with 32.0 GB of system memory, yielding a 1:2 vCPU-to-RAM ratio of 2.0 GB per virtual core. The instance includes no bundled hardware accelerators or GPUs, and local storage is listed as None, necessitating the use of remote persistent disk volumes for operating systems and runtime data.",
+    "The 1:2 memory-to-core configuration targets tasks that prioritize parallel execution throughput over high per-core memory capacity. By provisioning a lean memory tier relative to its 16 processing threads, it eliminates the cost overhead associated with unused memory in compute-dense scenarios. However, the absence of local NVMe storage and integrated public IPv4 addresses means system architects must plan for network-attached storage throughput and network egress requirements.",
+    "Workloads suited for this server configuration include continuous integration and build automation runners, stateless web serving fleets, media transcoding, data transformation tasks, and distributed batch processing nodes where working datasets fit comfortably inside 32 GB of operational memory."
   ],
-  "description": "The Google Cloud Platform n4d-highcpu-16 is an x86_64 architecture virtual machine configured with 16 dedicated vCPUs and 32.0 GB of system memory. This allocation yields a compute-focused ratio of 2.0 GB of RAM per vCPU core. The instance features dedicated CPU resources, ensuring predictable execution speeds for processing-intensive tasks. It does not include bundled local storage or integrated GPU accelerators, and it is provisioned with zero complimentary public IPv4 addresses. Given its compute-heavy resource distribution, this server type is designed for workloads that prioritize raw processing power over large memory footprints. It is highly suited for applications such as batch processing, web serving, and continuous integration pipelines, offering a balanced, qualitatively cost-efficient profile for dedicated multi-core execution.",
-  "og_description": "Google Cloud Platform n4d-highcpu-16 is an x86_64 virtual machine featuring 16 dedicated vCPUs and 32.0 GB of RAM, designed for compute-intensive workloads without bundled local storage.",
-  "meta_description": "Google Cloud Platform n4d-highcpu-16 is an x86_64 virtual machine with 16 dedicated vCPUs and 32.0 GB of RAM for compute-heavy workloads.",
-  "tagline": "A dedicated x86_64 compute instance featuring sixteen vCPUs and thirty-two gigabytes of memory for processing-heavy workloads.",
+  "description": "Google Cloud Platform n4d-highcpu-16 is an x86_64 virtual compute instance configured with 16 dedicated vCPUs and 32.0 GB of system memory, establishing a 1:2 memory-to-vCPU ratio with 2.0 GB of RAM per core. The machine type includes no integrated graphics processors or local storage volumes, requiring external persistent storage attachments for operating system installation and scratch space. Networking configurations do not include complimentary public IPv4 addresses. Because of its compute-skewed resource profile, this server avoids the expense of surplus memory capacity while providing substantial multi-threaded processing density. The machine is suited for compute-bound operations that operate with moderate memory requirements, including software build environments, batch processing jobs, API application tiers, and distributed data processing pipelines.",
+  "og_description": "Google Cloud Platform n4d-highcpu-16 is a virtual machine featuring 16 dedicated x86_64 vCPUs, 32 GB of RAM, and zero local disk storage, configured for compute-heavy batch processing and CI/CD tasks.",
+  "meta_description": "Google Cloud Platform n4d-highcpu-16 provides 16 dedicated x86_64 vCPUs and 32 GB of system RAM for compute-focused workloads requiring external storage.",
+  "tagline": "Dedicated compute infrastructure delivering sixteen cores with balanced two gigabytes of memory per core for high-throughput batch and processing tasks.",
   "bullet_points": [
-    "16 dedicated x86_64 vCPUs for predictable compute performance",
-    "32.0 GB of system memory providing 2.0 GB of RAM per core",
-    "No bundled local storage or integrated GPU accelerators",
-    "Zero complimentary public IPv4 addresses included",
-    "Optimized for compute-heavy workloads like batch processing and CI/CD"
+    "16 dedicated x86_64 vCPUs",
+    "32.0 GB total system memory (2.0 GB per vCPU)",
+    "No integrated local storage; external persistent storage required",
+    "Zero hardware accelerator or GPU capacity",
+    "No complimentary public IPv4 addresses included",
+    "Suited for CI/CD runners, batch transformation, and stateless web tiers"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

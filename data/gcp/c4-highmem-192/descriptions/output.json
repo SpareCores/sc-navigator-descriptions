@@ -1,23 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c4-highmem-192 is a memory-optimized server instance powered by an Intel Xeon 8581C processor with an x86_64 architecture. It features 192 dedicated vCPUs derived from 96 physical cores with hyper-threading enabled, running at a base clock speed of 2.3 GHz. The instance is configured with 1488 GB of system memory, providing approximately 7.75 GB of RAM per vCPU. It does not include local storage or integrated GPUs.",
-    "Benchmark data indicates top-tier multi-core processing capabilities, with stress-ng multi-core performance, Passmark CPU scores, and multi-threaded bzip3 decompression all ranking in the top 10% of tested systems. The CPU features advanced instruction sets including AVX-512 and Intel Advanced Matrix Extensions (AMX), which contribute to strong performance in specialized tasks such as software compilation and LLM inference processing. However, single-core performance, as measured by stress-ng single-core tests, falls into the average category. Memory bandwidth is highly efficient, reaching 573.67 GB/sec for large block read-only operations, though the overall Passmark memory score remains in the average tier.",
-    "From a resource density perspective, this instance offers a high-capacity memory profile paired with massive parallel compute capabilities, making it a qualitatively cost-efficient option for memory-intensive workloads that do not require local NVMe storage. The lack of bundled local storage means storage-heavy operations must rely on network-attached volumes. This server is highly suited for large-scale database operations, in-memory caching systems like Redis, multi-threaded software compilation, and CPU-based machine learning inference."
+    "Google Cloud Platform c4-highmem-192 is an x86_64 server instance provisioned with 192 dedicated virtual CPUs across 96 physical cores, powered by an Intel Xeon 8581C processor operating at 2.3 GHz. The hardware architecture features 260 MB of L3 cache, 2 MB of L2 cache per core, and hardware acceleration via AVX-512 and Intel AMX matrix extensions. Total system memory measures 1488 GB, yielding an allocation of 7.75 GB per vCPU. The instance configuration includes no bundled local NVMe storage and contains zero discrete GPU accelerators.",
+    "Benchmark results demonstrate top-tier execution capacity for multi-threaded and memory-bound workloads. In stress-ng evaluations, multi-core throughput reaches the top 10 percent with a score of 165331.17, contrasted with single-core performance that settles in the middle 50 percent tier at 2096.79. Memory bandwidth tests demonstrate 573.67 GB/sec for uncached read operations and 246.84 GB/sec for write operations. Software compilation tests with Clang and PassMark CPU metrics also achieve top-tier classifications, while in-memory throughput tests yield 209.65 million Redis SET operations per second.",
+    "The high density of processor cores and RAM provides qualitative cost efficiency for organizations looking to consolidate large, multi-socket scale workloads into a single virtual machine rather than managing distributed nodes. Primary tradeoffs involve the reliance on network storage due to the absence of integrated local NVMe disks, alongside modest single-thread processor speeds. Best-fit enterprise workloads include high-capacity in-memory databases, large-scale Redis caching clusters, multi-threaded build farms, and batch data processing pipelines."
   ],
-  "description": "Google Cloud Platform c4-highmem-192 is a memory-optimized server featuring 192 dedicated vCPUs and 1488 GB of RAM, powered by an Intel Xeon 8581C processor. Built on the x86_64 architecture, this instance delivers top-tier multi-core performance, ranking in the top 10% for multi-threaded bzip3 decompression, Passmark CPU tests, and Redis SET operations. The processor supports advanced instruction sets like Intel AMX and AVX-512, facilitating strong performance in software compilation and LLM inference. However, single-core performance and overall memory scores fall into the average tier. Lacking local storage and GPUs, the instance relies on network-attached storage. It is highly suited for large-scale in-memory databases, parallelized enterprise workloads, and CPU-based machine learning tasks.",
-  "og_description": "Google Cloud Platform c4-highmem-192 is a memory-optimized server featuring 192 Intel Xeon vCPUs, 1488 GB of RAM, and top-tier multi-core performance for in-memory databases and parallel computing.",
-  "meta_description": "Google Cloud Platform c4-highmem-192 features 192 Intel Xeon vCPUs and 1488 GB of RAM, delivering top-tier multi-core performance for enterprise workloads.",
-  "tagline": "A high-density memory and massive multi-core compute instance designed for demanding in-memory databases and parallelized enterprise workloads.",
+  "description": "Google Cloud Platform c4-highmem-192 is an x86_64 compute instance configured with 192 dedicated virtual CPUs and 96 physical cores powered by a 2.3 GHz Intel Xeon 8581C processor. It features 1488 GB of system memory, providing 7.75 GB per vCPU, backed by 260 MB of L3 cache and support for AMX and AVX-512 instructions. The instance incorporates no bundled local storage and no GPU accelerators, relying on remote volumes for persistence. Benchmark evaluations highlight exceptional multi-threaded performance, with stress-ng multi-core and PassMark CPU metrics ranking in the top decile, paired with large-block memory read bandwidth of 573.67 GB/sec. Conversely, single-core metrics operate near the median. The dense hardware profile provides high compute and memory consolidation, avoiding multi-node clustering overhead for memory-heavy operations. Appropriate workloads include high-capacity in-memory databases like Redis, extensive data warehousing and ETL pipelines, multi-threaded software compilation, and large CPU-based matrix operations.",
+  "og_description": "Google Cloud Platform c4-highmem-192 features 192 vCPUs from an Intel Xeon 8581C processor and 1488 GB of RAM. It delivers top-tier multi-threaded compute and high memory bandwidth for heavy database workloads.",
+  "meta_description": "Google Cloud Platform c4-highmem-192 offers 192 vCPUs, 1488 GB of RAM, and Intel Xeon 8581C processing for memory-intensive enterprise workloads.",
+  "tagline": "Massive 192-vCPU x86 compute instance with 1488 GB of memory designed for parallel in-memory databases and large-scale data processing.",
   "bullet_points": [
-    "192 dedicated Intel Xeon vCPUs and 1488 GB of system memory",
-    "Top-tier multi-core performance and high-speed memory bandwidth",
-    "Intel AMX and AVX-512 support for accelerated vector and matrix operations",
-    "No local storage or GPU resources included in the configuration",
-    "Best suited for large-scale in-memory databases, Redis, and software compilation"
+    "Intel Xeon 8581C processor with 192 dedicated vCPUs and 96 physical cores",
+    "1488 GB total RAM providing 7.75 GB memory allocation per vCPU",
+    "Hardware support for Intel AMX and AVX-512 extended instruction sets",
+    "Zero bundled local disk storage and zero discrete GPU hardware",
+    "Top-tier memory read bandwidth reaching 573.67 GB/sec on large uncached blocks",
+    "Suited for large-scale in-memory databases, Redis caches, and compilation clusters"
   ],
   "categories": [
     "Memory Optimized",
-    "Compute Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

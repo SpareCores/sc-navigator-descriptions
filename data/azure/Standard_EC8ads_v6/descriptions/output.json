@@ -1,19 +1,20 @@
 {
   "page": [
-    "Microsoft Azure EC8ads_v6 is an x86_64 architecture virtual machine belonging to the ECadsv6 server family. It is equipped with 8 dedicated vCPUs powered by an AMD processor and runs on the Microsoft Hyper-V hypervisor. The instance features 64.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per vCPU.",
-    "This server includes 307 GB of local SSD storage and is capable of utilizing Premium Storage. It does not include any complimentary public IPv4 addresses and does not feature any GPU accelerators.",
-    "Given the 1:8 vCPU-to-RAM ratio, this instance is configured as a memory-optimized resource. The inclusion of dedicated vCPUs and local SSD storage makes it qualitatively cost-efficient for workloads requiring high memory density and fast local scratch space without the overhead of a GPU. It is suited for memory-intensive workloads, database hosting, and data processing tasks."
+    "Microsoft Azure EC8ads_v6 is a memory-optimized virtual machine instance based on the AMD EPYC 9V74 processor. Built on the x86_64 architecture and managed via Microsoft Hyper-V, the instance provides 8 dedicated vCPUs mapped across 4 physical cores with simultaneous multithreading. It delivers 64.0 GB of system memory, maintaining an 8.0 GB per vCPU ratio, alongside a dedicated 322 GB local solid-state drive (SSD) for temporary storage. The CPU configuration features 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, with hardware support for vector extensions including AVX-512, AVX512_VNNI, and AVX512_BF16, as well as cryptographic acceleration via AES and SHA-NI.",
+    "Benchmark measurements indicate balanced overall compute capacity alongside solid single-thread throughput. In synthetic processor stress testing, the instance achieved a stress-ng single-core score of 3022.86, placing it in the top 25 percent of comparable servers, whereas multi-core stress-ng reached 12056.83 in the median tier. Geekbench testing mirrors this trend, producing a single-core score of 1937.0, a multi-core score of 7291.0, and a strong text processing score of 2526.0. In memory and database workloads, the system sustained 10.34 million Redis SET operations per second and registered a PassMark database score of 3718.39, reflecting stable throughput under I/O and caching stress.",
+    "With 8 GB of memory per vCPU and fast bundled local SSD storage, the instance exhibits a cost-efficient footprint for memory-dense and latency-sensitive deployments. The trade-off centers on its 4 physical core constraint, which moderates extreme parallel compute throughput relative to compute-focused families. The EC8ads_v6 is technically suited for medium-sized relational databases, in-memory caching systems, search indexing, ETL operations, and enterprise business applications requiring consistent memory overhead."
   ],
-  "description": "Microsoft Azure EC8ads_v6 is an x86_64 architecture virtual machine from the ECadsv6 family, running on the Microsoft Hyper-V hypervisor. It features 8 dedicated vCPUs powered by an AMD processor, paired with 64.0 GB of system memory, which establishes a high memory-to-core ratio of 8.0 GB per vCPU. For storage, the instance is equipped with 307 GB of local SSD storage and supports Premium Storage configurations. It does not include integrated GPUs or complimentary public IPv4 addresses. This hardware profile makes the server highly suitable for memory-optimized workloads, database operations, and data processing tasks that benefit from dedicated compute resources and fast local storage.",
-  "og_description": "Microsoft Azure EC8ads_v6 is an x86_64 virtual machine featuring 8 dedicated AMD vCPUs, 64 GB of RAM, and 307 GB of local SSD storage, optimized for memory-intensive database workloads.",
-  "meta_description": "Microsoft Azure EC8ads_v6 is a memory-optimized virtual machine featuring 8 dedicated AMD vCPUs, 64 GB of RAM, and 307 GB of local SSD storage.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated AMD processors, high memory density, and fast local SSD storage for demanding database workloads.",
+  "description": "Microsoft Azure EC8ads_v6 is a memory-optimized instance featuring 8 dedicated vCPUs derived from 4 physical cores on an AMD EPYC 9V74 processor using the x86_64 architecture. Equipped with 64.0 GB of RAM, a 1:8 core-to-memory allocation, and 322 GB of local SSD temporary storage, the instance provides high memory density without hardware GPUs. Benchmarks demonstrate strong single-thread execution, highlighted by a top-tier stress-ng single-core rating of 3022.86 and 2526.0 in Geekbench text processing, alongside median multi-core results such as a PassMark CPU score of 14089.21. In-memory data handling is verified by 10.34 million Redis SET operations per second and a PassMark memory score of 2421.97. The instance delivers balanced cost efficiency for memory-heavy configurations, making it suited for relational databases, Redis or Memcached clusters, ETL pipelines, and memory-intensive enterprise web services.",
+  "og_description": "Microsoft Azure EC8ads_v6 is a memory-optimized VM providing 8 vCPUs on an AMD EPYC 9V74 CPU, 64 GB RAM, and a 322 GB local SSD for databases, caching layers, and memory-intensive tasks.",
+  "meta_description": "Microsoft Azure EC8ads_v6 is a memory-optimized VM with 8 AMD EPYC 9V74 vCPUs, 64 GB RAM, and 322 GB local SSD storage for database and caching workloads.",
+  "tagline": "Memory-optimized AMD EPYC instance delivering 64 GB of RAM, integrated local SSD storage, and robust single-core compute performance.",
   "bullet_points": [
-    "8 dedicated AMD vCPUs on x86_64 architecture",
-    "64.0 GB of system memory providing 8.0 GB per core",
-    "307 GB of local SSD storage with Premium Storage capability",
-    "Powered by the Microsoft Hyper-V hypervisor",
-    "Optimized for memory-intensive workloads and database hosting"
+    "AMD EPYC 9V74 processor with 8 dedicated vCPUs (4 physical cores) and AVX-512 instructions",
+    "64.0 GB of memory providing an 8 GB per vCPU allocation ratio",
+    "Bundled 322 GB local solid-state drive with premium storage support",
+    "Top-quartile single-core performance with 3022.86 on stress-ng and 2526.0 in text processing",
+    "Sustained 10.34 million Redis SET operations per second for memory-bound workloads",
+    "Suited for in-memory caches, relational databases, data transformation, and enterprise apps"
   ],
   "categories": [
     "Memory Optimized",

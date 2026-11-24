@@ -1,23 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.r7a.large is an x86_64 architecture server instance powered by a dedicated AMD EPYC 7T83 processor running at 2.55 GHz. It features 2 vCPUs derived from 1 physical core with 2 threads per core, supported by a KVM hypervisor. The instance is configured with 16.0 GB of system memory, providing a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or dedicated GPU hardware, and it operates with a baseline network bandwidth of 1 Gbps.",
-    "Benchmark data reveals a distinct contrast between single-core and multi-core performance. The instance demonstrates strong single-core CPU performance in stress-ng tests, placing in the top 25%. However, its multi-core performance is weak, falling into the bottom 25% for stress-ng and the bottom 10% for Geekbench multi-core tests. Memory bandwidth is a notable bottleneck, with read-only small block and write large block tests both scoring in the bottom 10%. Similarly, database operations, Redis SET operations, and static web serving throughput all rank in the bottom 10% of benchmarks.",
-    "From a qualitative cost-efficiency perspective, the ecs.r7a.large offers a high memory density relative to its low vCPU count, making it suitable for memory-bound workloads that do not require intensive parallel processing. The primary tradeoff is the limited multi-core scaling and constrained memory bandwidth, which restricts its utility for heavy database operations, software compilation, or high-throughput web serving. Appropriate workloads include single-threaded applications, lightweight text processing, basic single-threaded compression tasks, and low-concurrency memory-intensive utilities."
+    "Alibaba Cloud ecs.r7a.large is a memory-optimized virtual machine provisioned on the KVM hypervisor. It runs on an AMD EPYC 7T83 processor at a base frequency of 2.55 GHz, using the x86_64 architecture. The instance provides 2 dedicated vCPUs mapped across 1 physical core with 2 execution threads. Hardware-level features include standard AVX, AES, VAES, SHA-NI, and bit manipulation instruction sets, while lacking AVX-512 and AMX instruction extensions. The system offers 32 KB of L1 data cache, 0.5 MB of L2 cache, and 32 MB of L3 cache.",
+    "Hardware allocations provide 16.0 GB of RAM, establishing an 8:1 memory-to-core ratio of 8.0 GB per vCPU. Local disk storage is not bundled with the server, necessitating network-attached storage for persistent block devices. Networking interfaces operate with a baseline network bandwidth of 1 Gbps, and no complimentary public IPv4 addresses are assigned by default. Hardware accelerators are absent, with 0 GPUs available.",
+    "Benchmark results highlight solid single-threaded performance offset by constrained aggregate capacity due to the 2-vCPU configuration. The instance achieves a strong stress-ng single-core score of 2691.19, along with average single-threaded compression and decompression figures (25.53 GB/sec gzip compression, 10.58 GB/sec bzip3 decompression). However, multi-core throughput is restricted by the low core count, resulting in weak multi-core stress-ng scores (2691.50) and a bottom-tier Geekbench multi-core rating of 1854.0. Uncached large-block memory read bandwidth reached 26.05 GB/sec, while write operations measured 12.61 GB/sec. Application tests yielded 2.05 million Redis SET operations per second and 2.18 GB/sec in static web serving throughput.",
+    "The ecs.r7a.large provides a low-entry, cost-effective deployment profile for memory-sensitive services that do not require expansive multi-threaded compute. Typical workloads suited to this architecture include intermediate caching instances, low-traffic in-memory databases, lightweight background workers, and memory-bound microservices."
   ],
-  "description": "Alibaba Cloud ecs.r7a.large is an x86_64 memory-optimized server instance featuring 2 vCPUs and 16.0 GB of RAM, powered by a dedicated AMD EPYC 7T83 processor at 2.55 GHz. Operating on a KVM hypervisor, it provides 8.0 GB of memory per core but lacks local storage and GPU accelerators. Performance benchmarks show a significant divergence: single-core CPU performance is strong, ranking in the top 25%, whereas multi-core performance and memory bandwidth are weak, often falling into the bottom 10%. This resource profile presents a clear tradeoff, offering high memory capacity per vCPU alongside constrained parallel processing capabilities. Consequently, the instance is best suited for memory-bound, single-threaded workloads, lightweight text processing, and basic utility tasks rather than high-throughput database operations or parallelized computing.",
-  "og_description": "Alibaba Cloud ecs.r7a.large is a memory-optimized instance with 2 vCPUs, 16 GB RAM, and an AMD EPYC 7T83 CPU. It features strong single-core performance but exhibits weak multi-core and memory bandwidth results.",
-  "meta_description": "Alibaba Cloud ecs.r7a.large is a memory-optimized instance with 2 vCPUs, 16 GB RAM, and a dedicated AMD EPYC CPU, suited for single-threaded tasks.",
-  "tagline": "A memory-dense, single-core-focused virtual server designed for lightweight, memory-bound workloads requiring dedicated AMD EPYC processing power.",
+  "description": "Alibaba Cloud ecs.r7a.large is a memory-optimized instance featuring 2 dedicated vCPUs derived from 1 physical AMD EPYC 7T83 core clocked at 2.55 GHz on the x86_64 architecture. Designed around a high memory-to-vCPU ratio, it incorporates 16.0 GB of RAM (8.0 GB per vCPU) with 32 MB of L3 cache. It excludes integrated local storage and hardware GPUs, utilizing a 1 Gbps baseline network interface. Benchmarks reflect robust single-core compute, shown by a stress-ng single-core score in the top 25%, balanced by lower multi-threaded performance due to the dual-thread ceiling. Memory bandwidth delivers 26.05 GB/sec for uncached reads, while Redis workloads reach 2.05 million SET operations per second. It is best applied to smaller in-memory data structures, caching services, and low-concurrency, memory-focused enterprise applications.",
+  "og_description": "Alibaba Cloud ecs.r7a.large is a memory-optimized instance with 2 vCPUs, 16 GB RAM, and AMD EPYC 7T83 processors. Delivers strong single-core compute for memory-focused microservices.",
+  "meta_description": "Alibaba Cloud ecs.r7a.large features 2 vCPUs, 16 GB RAM, and AMD EPYC 7T83 processors, optimized for small in-memory caches and memory-heavy workloads.",
+  "tagline": "Dedicated AMD EPYC performance delivering 16 GB of memory across two vCPUs for cost-efficient, memory-oriented deployments.",
   "bullet_points": [
-    "Dedicated AMD EPYC 7T83 processor running at 2.55 GHz",
-    "16.0 GB of RAM providing a high 8.0 GB per core memory ratio",
-    "Strong single-core CPU performance ranking in the top 25%",
-    "Constrained multi-core scaling and low memory bandwidth",
-    "No local storage and 1 Gbps baseline network bandwidth",
-    "Suited for single-threaded applications and memory-bound utilities"
+    "AMD EPYC 7T83 processor running at 2.55 GHz on x86_64 architecture",
+    "2 dedicated vCPUs across 1 physical core with multithreading enabled",
+    "16.0 GB system memory (8.0 GB allocation per vCPU)",
+    "No integrated local storage; 1 Gbps baseline network bandwidth",
+    "Strong single-core compute score of 2691.19 on stress-ng",
+    "Designed for small in-memory caches, key-value stores, and light databases"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

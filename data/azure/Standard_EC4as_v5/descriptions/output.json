@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure EC4as_v5 is an x86_64 architecture virtual machine belonging to the ECASv5 server family. Powered by dedicated AMD processors, this instance provides 4 dedicated virtual CPUs and runs on the Microsoft Hyper-V hypervisor. It features 32.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per vCPU.",
-    "This server configuration does not include bundled local storage, meaning all storage requirements must be met via external network-attached storage, though the instance is designated as Premium Storage capable. There are no integrated graphics processing units or complimentary public IPv4 addresses included with this instance type.",
-    "From a cost-efficiency perspective, the EC4as_v5 offers a high memory density relative to its compute allocation, making it a viable option for memory-intensive workloads that do not require massive CPU scaling or local scratch disks. The hardware profile is designed for workloads such as relational databases, in-memory caching, and data analytics tasks that benefit from a 1:8 vCPU-to-RAM ratio."
+    "Microsoft Azure EC4as_v5 is a memory-optimized virtual machine instance powered by the AMD EPYC 9V74 processor based on the x86_64 architecture. Managed via Microsoft Hyper-V, the instance provides 4 dedicated virtual CPUs mapped across 2 physical cores with 2 threads per core. Memory allocation stands at 32.0 GB of RAM, establishing a high 1:8 vCPU-to-memory ratio of 8.0 GB per vCPU. Cache resources include 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of shared L3 cache. Instruction set features include hardware-accelerated AES, VAES, SHA-NI, AVX, and BMI2, though AVX-512 and AMX extensions are absent. The instance does not include integrated hardware accelerators or local disk storage, requiring remote Premium Storage disks for data persistence.",
+    "Benchmark results demonstrate consistent single-core execution with limited multi-threaded parallel throughput. The instance achieves average ratings in single-threaded tests, registering 2055.15 on stress-ng single-core, 1183.0 on Geekbench single-core, and 2900.35 on PassMark CPU encryption. In contrast, multi-core metrics fall into lower percentiles due to the 4-vCPU limit, producing a PassMark CPU score of 4754.49, Geekbench multi-core of 2516.0, and stress-ng multi-core throughput of 4309.78. Memory performance remains steady with a PassMark memory score of 1879.85, while Redis operations reach 3.42 million SET operations per second and PassMark database operations yield 1476.99.",
+    "From a cost-efficiency perspective, the instance prioritizes memory capacity over raw computation. Workloads requiring significant memory footprints without heavy sustained parallel CPU compute benefit from the 32.0 GB allocation without the overhead of higher core counts. However, the lack of bundled local ephemeral NVMe disks means high-I/O applications must factor in external network storage bandwidth and latency.",
+    "Microsoft Azure EC4as_v5 is best suited for memory-intensive workloads that do not demand extensive core concurrency. Typical deployment targets include small-to-medium in-memory caches, mid-sized relational database instances, background message brokers, and enterprise line-of-business applications needing substantial working memory."
   ],
-  "description": "Microsoft Azure EC4as_v5 is an x86_64 virtual machine from the ECASv5 family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated vCPUs powered by AMD processors and is configured with 32.0 GB of system memory, establishing a high memory-to-core ratio of 8.0 GB per vCPU. This instance does not include bundled local storage, though it is Premium Storage capable, and it lacks integrated GPUs and complimentary public IPv4 addresses. Qualitatively, the server provides a cost-effective option for memory-bound workloads due to its high resource density of RAM relative to compute cores. The EC4as_v5 is structured for workloads such as medium-sized databases, in-memory caching, and data processing tasks that require substantial memory capacity without the overhead of high CPU core counts or local storage.",
-  "og_description": "Microsoft Azure EC4as_v5 is an x86_64 virtual machine featuring 4 dedicated AMD vCPUs, 32.0 GB of RAM, and Premium Storage capability, designed for memory-intensive workloads without local storage.",
-  "meta_description": "Microsoft Azure EC4as_v5 is an x86_64 virtual machine with 4 dedicated AMD vCPUs, 32.0 GB of RAM, and Premium Storage capability.",
-  "tagline": "A dedicated AMD-powered virtual machine featuring a high memory-to-core ratio and Premium Storage capability for memory-intensive workloads.",
+  "description": "Microsoft Azure EC4as_v5 is a memory-optimized virtual machine featuring 4 dedicated vCPUs and 32.0 GB of RAM on an AMD EPYC 9V74 processor. Built on the x86_64 architecture under Microsoft Hyper-V, the system provides a 1:8 vCPU-to-memory ratio across 2 physical cores, with 32 MB of shared L3 cache and cryptographic acceleration via AES and SHA-NI. The instance contains no dedicated GPU hardware and includes no local ephemeral storage, utilizing network-attached Premium Storage instead. Benchmark evaluations indicate middle-tier single-core performance alongside modest multi-core throughput and average memory subsystems, generating 3.42 million Redis SET operations per second. The resource profile provides balanced cost efficiency for tasks requiring elevated RAM capacity without large parallel processor allocations. It fits small-to-midsize relational databases, in-memory caching nodes, enterprise backend applications, and memory-dependent data processing tasks.",
+  "og_description": "Microsoft Azure EC4as_v5 is a memory-optimized VM providing 4 vCPUs on an AMD EPYC 9V74 processor, 32.0 GB RAM, and Premium Storage capability for memory-centric server workloads.",
+  "meta_description": "Microsoft Azure EC4as_v5 offers 4 vCPUs on AMD EPYC 9V74 hardware, 32.0 GB RAM, and no local disk for memory-optimized enterprise database workloads.",
+  "tagline": "Dedicated AMD EPYC memory-optimized computing offering a balanced eight-to-one memory-to-vCPU ratio for memory-bound cloud workloads without local disk storage.",
   "bullet_points": [
-    "4 dedicated AMD vCPUs on x86_64 architecture",
-    "32.0 GB of system memory providing 8.0 GB per core",
-    "Premium Storage capable with no bundled local storage",
-    "Zero integrated GPUs and no complimentary public IPv4 addresses",
-    "Optimized for memory-intensive workloads and database operations"
+    "AMD EPYC 9V74 processor with 4 dedicated vCPUs (2 physical cores, 2 threads per core)",
+    "32.0 GB system memory providing an 8.0 GB per vCPU ratio",
+    "No integrated local storage, requiring network-attached Azure Premium Storage",
+    "Hardware cryptography features including AES, VAES, and SHA-NI",
+    "Well suited for in-memory caches, relational databases, and enterprise backends"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

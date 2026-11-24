@@ -1,22 +1,21 @@
 {
   "page": [
-    "Microsoft Azure E2as_v5 is a memory-optimized virtual machine belonging to the EASv5 server family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated AMD EPYC 7763 processor with 2 vCPUs, derived from 1 physical core with 2 threads. The CPU operates at a clock speed of 3.525 GHz and includes 32 MB of L3 cache. It is equipped with 16.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. This instance does not include local storage or integrated GPUs, but it is Premium Storage capable for remote disk attachments.",
-    "Performance benchmarks reveal a contrast between single-core and multi-core capabilities. The single-core CPU performance is strong, as demonstrated by a stress-ng single-core score of 2696.98, placing it in the top 25%. However, multi-core performance is limited due to the 2-vCPU configuration, with stress-ng multi-core and Geekbench multi-core scores falling into the bottom 25% and bottom 10% respectively. Memory bandwidth tests show weak to poor performance, with uncached read-only large block bandwidth at 30.8 GB/sec and write bandwidth at 22.14 GB/sec. Single-threaded tasks like gzip compression and bzip3 decompression perform at average levels.",
-    "From a cost-efficiency perspective, the E2as_v5 offers a low-entry point for memory-intensive workloads that do not require massive parallel processing power. The high memory density per vCPU makes it qualitatively cost-effective for applications requiring moderate compute but substantial memory allocation. However, the lack of local storage and poor database operations performance represent notable tradeoffs. This server is best suited for light memory-optimized workloads, basic text processing, small-scale caching, or development environments requiring a dedicated AMD EPYC processor with 16 GB of RAM."
+    "Microsoft Azure E2as_v5 is a memory-optimized virtual machine instance deployed on Microsoft Hyper-V. It is powered by a dedicated AMD EPYC 7763 processor operating at an indicated frequency of 3.525 GHz on the x86_64 architecture. The instance allocates a single physical core exposed as two dedicated vCPUs via multi-threading, paired with 32 KB L1 data cache, 0.5 MB L2 cache, and 32 MB L3 cache. It features 16.0 GB of system memory, providing an 8.0 GB per vCPU ratio characteristic of memory-oriented enterprise cloud profiles.",
+    "The instance does not bundle local disk storage, operating disklessly by default and requiring external block storage such as Azure Premium Storage. Hardware accelerators are absent, with zero GPUs included. Benchmark measurements reveal solid single-threaded performance, with stress-ng single-core execution reaching the top 25% tier and Geekbench single-core scoring 1,453 points. However, total multi-threaded scaling remains constrained by the dual-vCPU ceiling, as reflected in low multi-core Geekbench results (1,762 points) and moderate PassMark CPU scores.",
+    "Synthetic memory bandwidth tests record 128.6 GB/sec for small cached reads and 30.8 GB/sec for uncached reads, supporting average tier memory throughput in PassMark testing. With its 1:8 vCPU-to-RAM ratio, the E2as_v5 delivers cost-efficient memory density without requiring excessive compute allocation. It is functionally suited for small-footprint in-memory caches, lightweight relational database workloads, staging environments, and memory-intensive microservices that require substantial memory capacity relative to low concurrent compute demands."
   ],
-  "description": "Microsoft Azure E2as_v5 is a memory-optimized virtual machine from the EASv5 family, powered by a dedicated AMD EPYC 7763 processor. Operating on the x86_64 architecture under Microsoft Hyper-V, it provides 2 vCPUs (1 physical core, 2 threads) running at 3.525 GHz, paired with 16.0 GB of RAM. The instance lacks local storage and GPUs but supports Premium Storage. Benchmarks indicate strong single-core CPU performance, though multi-core capabilities and memory bandwidth are relatively weak. This server is qualitatively cost-effective for memory-intensive workloads with low parallel processing demands, such as light caching, text processing, and development environments.",
-  "og_description": "Microsoft Azure E2as_v5 is a memory-optimized virtual machine featuring a 2-vCPU AMD EPYC 7763 processor and 16.0 GB of RAM, designed for workloads requiring high memory density without intensive multi-core compute.",
-  "meta_description": "Microsoft Azure E2as_v5 is a memory-optimized VM with 2 vCPUs, 16 GB RAM, and an AMD EPYC 7763 CPU, suitable for light memory-intensive workloads.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated AMD EPYC processing and high memory density for entry-level memory-intensive workloads.",
+  "description": "Microsoft Azure E2as_v5 is a memory-optimized cloud instance provisioned on Microsoft Hyper-V, running on an AMD EPYC 7763 x86_64 processor clocked at 3.525 GHz. The configuration delivers 2 vCPUs across a single physical core, coupled with 16.0 GB of system memory for an 8.0 GB per vCPU ratio, plus a 32 MB L3 cache. It includes no bundled local storage, relying on attached network storage such as Azure Premium Storage, and omits hardware accelerators. Benchmark evaluations demonstrate capable single-core execution alongside modest multi-core capacity strictly bound by its two-thread limit. Memory subsystem performance is steady, achieving 30.8 GB/sec in uncached block reads. This resource profile provides cost-effective memory density for small in-memory caches, lightweight databases, and memory-heavy microservices.",
+  "og_description": "Microsoft Azure E2as_v5 is a memory-optimized VM providing 2 vCPUs on an AMD EPYC 7763 processor with 16 GB RAM and no local disk, intended for memory-dense, light-compute tasks.",
+  "meta_description": "Microsoft Azure E2as_v5 features 2 vCPUs on an AMD EPYC 7763 CPU, 16 GB RAM, and no local storage for memory-skewed, light-compute cloud applications.",
+  "tagline": "Dual-vCPU AMD EPYC virtual instance providing an 8-to-1 memory-to-core ratio for memory-intensive low-concurrency cloud workloads.",
   "bullet_points": [
-    "Dedicated AMD EPYC 7763 processor running at 3.525 GHz",
-    "16.0 GB of RAM providing a high 8.0 GB per core ratio",
-    "Strong single-core CPU performance in benchmark testing",
-    "Premium Storage capable with no local storage included",
-    "Best suited for light memory-intensive workloads and development"
+    "2 vCPUs derived from 1 physical core on an AMD EPYC 7763 processor at 3.525 GHz",
+    "16.0 GB system RAM offering a memory-dense 8.0 GB per vCPU allocation",
+    "No bundled local storage, requiring attached Azure remote storage options",
+    "Strong single-core CPU throughput balanced against limited dual-thread compute ceiling",
+    "Suited for small database instances, in-memory caching, and staging environments"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

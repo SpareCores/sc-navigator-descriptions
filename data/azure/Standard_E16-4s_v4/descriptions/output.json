@@ -1,22 +1,21 @@
 {
   "page": [
-    "Microsoft Azure E16-4s_v4 is a memory-optimized virtual machine from the ESv4 family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated vCPUs mapped to 2 physical Intel Xeon 8272CL cores with hyper-threading enabled. Operating at a base clock speed of 2.6 GHz, this x86_64 architecture processor includes 35 MB of L3 cache and supports AVX-512 vector instructions. The server is equipped with 128.0 GB of system memory, providing a high memory-to-vCPU ratio of 32 GB per vCPU. It does not include local storage or onboard GPUs, but it is Premium Storage capable.",
-    "Benchmark results indicate that the server's compute performance is modest. Both single-core and multi-core stress-ng CPU tests place the instance in the bottom 25% of performance. Similarly, Geekbench multi-core and Passmark CPU tests fall into the weak category, though single-core Geekbench performance achieves an average rating. Memory bandwidth tests show weak performance for both small and large block reads, although the Passmark memory score registers as average. Single-threaded bzip3 decompression performs at an average level, whereas multi-threaded decompression is poor, reflecting the limited physical core count.",
-    "From a cost-efficiency perspective, the E16-4s_v4 offers high memory density relative to its compute resources, making it a viable option for workloads that require large memory footprints without demanding high CPU throughput. It is well-suited for memory-intensive applications such as database caching, small-scale relational databases, and memory-bound data processing tasks where CPU utilization remains low."
+    "The Microsoft Azure E16-4s_v4 is a memory-optimized virtual machine configuration within the ESv4 series, running on the Microsoft Hyper-V hypervisor. It is structured as a constrained-core instance, delivering 128.0 GB of system memory paired with 4 dedicated vCPUs mapped across 2 physical cores of an Intel Xeon Platinum 8272CL processor clocked at 2.6 GHz. The x86_64 CPU features 35 MB of L3 cache alongside instruction set extensions including AVX-512, VNNI, and AES-NI. The instance includes no bundled local storage and zero complimentary public IPv4 addresses, requiring remote attached block storage for disk persistence.",
+    "Performance profiles reflect the constrained compute allocation alongside high memory capacity. The instance achieves an average single-core Geekbench score of 1225.0 and PassMark memory score of 2364.39, while its uncached read and write memory bandwidths reach 24.02 GB/s and 18.05 GB/s, respectively. Multi-threaded benchmark results, such as a multi-core Geekbench score of 2720.0 and PassMark CPU score of 4439.67, fall into lower percentile brackets due to the four-vCPU ceiling. Redis SET operations reach 3.55 million ops/sec, and static web serving throughput measures 3.94 GB/sec.",
+    "This architecture provides a high memory-to-vCPU ratio of 32 GB per core, making it cost-efficient for enterprise software setups where licensing is constrained by core count rather than memory volume. The primary tradeoff is moderate multi-core processing throughput alongside the absence of local ephemeral scratch space. The E16-4s_v4 is well tailored for memory-heavy relational databases, large in-memory caches, and enterprise data processing tasks with modest concurrency needs."
   ],
-  "description": "Microsoft Azure E16-4s_v4 is a memory-optimized virtual machine in the ESv4 family, configured with 4 dedicated vCPUs from an Intel Xeon 8272CL processor running at 2.6 GHz. It features 128.0 GB of RAM, offering a high memory-to-vCPU ratio of 32 GB per vCPU, but lacks local storage and GPU accelerators. Performance benchmarks show weak CPU and memory bandwidth results, placing the instance in the bottom 25% for most compute-heavy tasks, though it maintains average single-core Geekbench and Passmark memory scores. This hardware profile is qualitatively cost-efficient for memory-bound workloads that do not require intensive parallel processing, such as database caching layers and memory-intensive, low-concurrency databases.",
-  "og_description": "Microsoft Azure E16-4s_v4 is a memory-optimized virtual machine featuring 4 vCPUs, 128 GB RAM, and an Intel Xeon 8272CL processor, designed for memory-intensive workloads with low CPU demands.",
-  "meta_description": "Microsoft Azure E16-4s_v4 is a memory-optimized VM with 4 vCPUs, 128 GB RAM, and an Intel Xeon processor, suited for memory-bound workloads.",
-  "tagline": "A memory-optimized virtual machine featuring high memory density relative to compute resources for memory-bound workloads.",
+  "description": "The Microsoft Azure E16-4s_v4 is a memory-optimized virtual machine offering 128.0 GB of RAM allocated across 4 dedicated vCPUs and 2 physical cores on an Intel Xeon Platinum 8272CL processor at 2.6 GHz. Operating on Microsoft Hyper-V, this x86_64 instance features AVX-512 vector extensions, 35 MB of L3 cache, and zero bundled local storage. Benchmarks highlight solid memory subsystems, with a PassMark memory score of 2364.39 and single-core Geekbench performance of 1225.0, balanced against modest multi-core compute metrics resulting from the low core count. With 32.0 GB of memory per vCPU, this configuration offers high qualitative cost efficiency for environments constrained by per-core database licensing models. The E16-4s_v4 is primarily suited for in-memory caching tiers, relational database workloads, and analytics applications requiring high memory capacity without extensive parallel compute threads.",
+  "og_description": "Microsoft Azure E16-4s_v4 is a memory-optimized VM providing 128 GB RAM and 4 vCPUs on an Intel Xeon 8272CL processor, built for memory-heavy workloads requiring per-core license optimization.",
+  "meta_description": "Microsoft Azure E16-4s_v4 provides 128 GB RAM and 4 vCPUs on an Intel Xeon 8272CL CPU, designed for memory-intensive workloads needing optimized core counts.",
+  "tagline": "A high-density memory-optimized cloud instance delivering 32 GB per vCPU for database systems and memory-bound software stacks.",
   "bullet_points": [
-    "4 dedicated vCPUs powered by an Intel Xeon 8272CL processor at 2.6 GHz",
-    "128.0 GB of system memory providing 32 GB per vCPU",
-    "Premium Storage capable with no local storage or GPU included",
-    "Average single-core Geekbench and Passmark memory benchmark performance",
-    "Best suited for memory-intensive databases and caching layers with low CPU demands"
+    "Intel Xeon Platinum 8272CL processor with 4 dedicated vCPUs and 2 physical cores",
+    "128.0 GB system RAM yielding a high 32.0 GB per vCPU density",
+    "x86_64 architecture featuring AVX-512 and 35 MB L3 cache",
+    "No bundled local disk storage, requiring external persistent storage attachments",
+    "Best suited for core-licensed relational databases, Redis caching, and in-memory analytics"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

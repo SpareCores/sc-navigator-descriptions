@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure F16ams_v7 is an x86_64 architecture server belonging to the Famsv7 family. It features 16 dedicated physical cores and 16 vCPUs powered by an AMD EPYC 9V45 processor operating at a clock speed of 4.5 GHz. The CPU configuration includes 48 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. It is equipped with 128.0 GB of system memory, providing a high memory-to-core ratio of 8.0 GB per core. This instance does not include local storage or onboard GPUs, but it is premium storage capable and runs on the Microsoft Hyper-V hypervisor.",
-    "In benchmark evaluations, the F16ams_v7 exhibits top-tier single-core performance, placing in the top 10% for stress-ng single-core CPU tests and Geekbench single-core scores. Single-threaded compression and decompression tasks, such as gzip and bzip3, also rank in the top 10%. Multi-core performance is average, with stress-ng multi-core and PassMark CPU scores falling in the middle 50%. Memory performance is strong, with the PassMark memory score in the top 25% and uncached read memory bandwidth reaching 103.83 GB/sec. For lightweight machine learning workloads, the server achieves top-tier text generation speeds of 446.22 tokens/sec using a small 135M LLM model, though performance scales down to average for larger 7B and 70B models.",
-    "Given its high memory density of 8.0 GB per core and dedicated AMD EPYC processor, the F16ams_v7 offers qualitative cost efficiency for memory-intensive workloads that do not require local storage or GPU acceleration. The absence of bundled local storage means storage costs are decoupled, allowing users to scale premium remote storage independently. This server is well-suited for memory-intensive applications, database operations, single-threaded processing pipelines, text and image processing, and lightweight language model inference."
+    "Microsoft Azure F16ams_v7 is a compute-focused yet high-memory virtual machine instance powered by a dedicated AMD EPYC 9V45 processor. It features 16 physical cores and 16 vCPUs operating at clock speeds up to 4.5 GHz on the x86_64 architecture, with single-threaded core execution. The CPU configuration provides 48 KB L1 data cache, 1.0 MB L2 cache, and 32 MB L3 cache per core cluster, alongside hardware support for AVX-512 vector extensions (including VNNI and BF16) and cryptographic acceleration instructions such as VAES and SHA-NI.",
+    "The instance delivers 128.0 GB of system RAM, maintaining an 8.0 GB per vCPU ratio, which significantly exceeds conventional compute-optimized memory allocations. No bundled local storage is included, requiring users to rely on external network-attached Premium Storage volumes. Additionally, the instance provides zero complimentary public IPv4 addresses and operates without discrete hardware GPU acceleration.",
+    "Benchmark evaluation reveals exceptional single-threaded performance. The instance registers top-tier results in single-core stress-ng tests (3,727.59) and Geekbench 6 single-core (2,842.0) and multi-core (20,878.0) benchmarks. High execution efficiency is evident in compression workloads, recording 41.09 GB/sec in gzip compression and 17.45 GB/sec in single-threaded bzip3 decompression. Small-scale language model inference exhibits strong throughput, delivering 446.22 tokens per second for text generation on a 135M parameter model. Conversely, multi-core stress-ng, static web serving (32.45 GB/sec), and Redis SET operations (46.62 million ops/sec) align within average percentiles.",
+    "Given its elevated single-core frequency and sizable memory footprint, the F16ams_v7 provides strong resource density for compute workloads with expanded working memory sets. Primary fit includes batch data transformations, compilation tasks, image and text processing pipelines, and in-memory analytics that do not depend on local NVMe disk arrays."
   ],
-  "description": "The Microsoft Azure F16ams_v7 is a memory-intensive x86_64 server from the Famsv7 family, featuring 16 dedicated AMD EPYC 9V45 physical cores running at 4.5 GHz. It is equipped with 128.0 GB of RAM, yielding a high 8.0 GB per core ratio, and operates under the Microsoft Hyper-V hypervisor. While it lacks local storage and dedicated GPUs, it is premium storage capable. Benchmarks highlight top-tier single-core CPU and single-threaded compression performance, alongside strong memory performance and efficient lightweight LLM inference. Multi-core compute and database operations perform at average levels. The F16ams_v7 is optimized for memory-intensive workloads, text and image processing, and applications requiring high single-core efficiency without local storage dependencies.",
-  "og_description": "Microsoft Azure F16ams_v7 is a memory-intensive server featuring 16 dedicated AMD EPYC cores at 4.5 GHz, 128 GB RAM, and top-tier single-core performance, optimized for memory-heavy workloads.",
-  "meta_description": "Microsoft Azure F16ams_v7 is a memory-intensive server with 16 AMD EPYC cores, 128 GB RAM, and top-tier single-core performance.",
-  "tagline": "A memory-intensive, high-clock-speed virtual server delivering exceptional single-core performance and dedicated AMD EPYC processing power for demanding workloads.",
+  "description": "Microsoft Azure F16ams_v7 is a dedicated virtual machine running on an AMD EPYC 9V45 processor, providing 16 physical cores and 16 vCPUs at speeds up to 4.5 GHz. Equipped with 128.0 GB of system memory, the instance maintains an elevated 8.0 GB per core ratio. It does not include local storage or discrete GPU acceleration, relying on network-attached Premium Storage. Benchmark results demonstrate top-tier single-core performance, highlighted by strong results in Geekbench 6 (2,842.0 single-core, 20,878.0 multi-core) and gzip compression (41.09 GB/sec). Advanced instruction support includes AVX-512 with VNNI and BF16 formats, enabling fast small-model LLM generation (446.22 tokens/sec on 135M models). The instance provides a balanced configuration for memory-demanding compute jobs, data transformation, image manipulation, and text processing pipelines.",
+  "og_description": "Microsoft Azure F16ams_v7 offers 16 dedicated AMD EPYC 9V45 cores up to 4.5 GHz, 128 GB RAM, and AVX-512 extensions. Designed for high single-thread compute tasks and in-memory processing.",
+  "meta_description": "Microsoft Azure F16ams_v7 features 16 AMD EPYC cores at 4.5 GHz, 128 GB RAM, and AVX-512 support. Ideal for compute and memory-intensive workloads.",
+  "tagline": "High-frequency 16-core AMD EPYC compute instance paired with 128 GB RAM for memory-intensive computational workloads.",
   "bullet_points": [
-    "16 dedicated AMD EPYC 9V45 cores operating at 4.5 GHz",
-    "128.0 GB of system memory providing 8.0 GB per core",
-    "Top-tier single-core CPU and single-threaded compression performance",
-    "Premium storage capable with no local storage or bundled GPUs",
-    "Best suited for memory-intensive applications and text or image processing"
+    "16 dedicated physical AMD EPYC 9V45 cores clocked up to 4.5 GHz",
+    "128.0 GB total system memory providing an 8.0 GB per vCPU allocation",
+    "Hardware vector acceleration via AVX-512, AVX512_VNNI, and AVX512_BF16",
+    "Requires external network block storage with no local disks bundled",
+    "Top-tier performance in single-threaded compute, compression, and text tasks",
+    "Well suited for batch processing, software compilation, and in-memory pipelines"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized",
+    "Memory Optimized"
   ]
 }

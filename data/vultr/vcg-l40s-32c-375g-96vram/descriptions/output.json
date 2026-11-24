@@ -1,24 +1,25 @@
 {
   "page": [
-    "Vultr vcg-l40s-32c-375g-96vram is a Cloud GPU server configured with an x86_64 architecture. It features 32 dedicated physical cores powered by an Intel Xeon 6448H processor running at 2.0 GHz. The system is equipped with 375.0 GB of system memory, providing 11.72 GB per core. Graphics processing is handled by two NVIDIA L40S GPUs based on the Ada Lovelace architecture, delivering a combined 96 GB of VRAM. Local storage consists of a 2200 GB NVMe SSD, and the instance includes one complimentary public IPv4 address.",
-    "Benchmark results indicate strong multi-core and memory performance. The Intel Xeon CPU achieved a multi-core stress-ng score of 62892.75 and a PassMark CPU score of 64768.69, both placing in the top 25% tier. Single-core performance is moderate, with a stress-ng score of 2209.29. Memory bandwidth is highly efficient for read operations, reaching 4985.78 GB/sec for small cached blocks and 211.9 GB/sec for large uncached blocks, though large block write bandwidth is average at 88.2 GB/sec. The dual NVIDIA L40S GPUs demonstrate top-tier performance in LLM inference, processing 13643.47 tokens per second for prompt processing on a small 135M model and 6275.36 tokens per second on a medium 7B model.",
-    "This server offers high resource density by combining substantial system memory, dual enterprise GPUs, and local NVMe storage on a single instance. The dedicated CPU allocation ensures consistent processing capabilities without virtualization overhead, though the 2.0 GHz base clock speed limits single-threaded performance compared to higher-frequency alternatives. Given the dual L40S GPUs and high-speed memory read bandwidth, this configuration is suited for large language model inference, machine learning training, database operations, and data-intensive processing workloads."
+    "Vultr vcg-l40s-32c-375g-96vram is a dedicated GPU-accelerated cloud server instance configured for compute-intensive and machine learning workloads. It features 32 dedicated physical cores and 32 vCPUs powered by an Intel Xeon 6448H processor clocked at 2.0 GHz, built on the x86_64 architecture. The host provides 375.0 GB of system memory, yielding approximately 11.72 GB per core, along with 2200 GB of NVMe SSD local storage and 1 complimentary public IPv4 address. Its primary acceleration is driven by two NVIDIA Ada Lovelace L40S GPUs delivering a combined 96 GB of GDDR6 VRAM.",
+    "Benchmark results demonstrate strong multi-threaded and GPU-accelerated performance across the board. The server achieved a Geekbench multi-core score of 17,668.0 and a PassMark CPU score of 64,768.69, bolstered by hardware vector instruction sets including AVX-512 VNNI and BF16. In LLM inference benchmarks, the dual-L40S setup achieves top-tier results (top 10%), processing 13,643.47 tokens per second for prompt ingestion on a 135M parameter model and 6,275.36 tokens per second on a 7B parameter model. Memory subsystem measurements confirm high throughput, reaching 211.9 GB/sec in uncached read bandwidth, while Redis operations attained 70.17 million SET operations per second.",
+    "From a cost-efficiency perspective, the server concentrates substantial GPU memory (96 GB) and high host RAM (375 GB) into a single dual-socket GPU footprint, making it an efficient platform for mid-sized LLM inference and graphics workloads compared to deploying multiple smaller instances. A notable operational tradeoff is the Intel Xeon 6448H base clock rate of 2.0 GHz without Hyper-Threading enabled (1 thread per core), which yields average single-core CPU throughput on stress-ng tests while excelling in aggregate parallel execution.",
+    "This hardware profile is well-suited for high-throughput LLM inference, AI model fine-tuning, ray tracing, 3D image processing pipelines, and in-memory database services requiring substantial local NVMe storage and high GPU memory density."
   ],
-  "description": "Vultr vcg-l40s-32c-375g-96vram is a Cloud GPU server featuring 32 dedicated Intel Xeon 6448H physical cores running at 2.0 GHz, 375.0 GB of system memory, and a 2200 GB local NVMe SSD. The server is equipped with two NVIDIA L40S GPUs from the Ada Lovelace architecture, providing a total of 96 GB of VRAM. In benchmarks, the system demonstrates strong multi-core capabilities with a PassMark CPU score of 64768.69 and top-tier LLM inference performance, processing 6275.36 tokens per second for prompt processing on a 7B model. While single-core CPU performance is average, the high memory read bandwidth of 4985.78 GB/sec and dedicated hardware resources make this configuration highly efficient for parallel computing tasks. It is suited for machine learning inference, data-intensive database operations, and multi-threaded processing workloads.",
-  "og_description": "Vultr vcg-l40s-32c-375g-96vram is a Cloud GPU server featuring 32 Intel Xeon cores, 375 GB RAM, 2200 GB NVMe storage, and two NVIDIA L40S GPUs with 96 GB VRAM for high-performance LLM inference.",
-  "meta_description": "Vultr vcg-l40s-32c-375g-96vram features 32 Intel Xeon cores, 375 GB RAM, and dual NVIDIA L40S GPUs with 96 GB VRAM for intensive parallel workloads.",
-  "tagline": "A dual-GPU accelerated server featuring dedicated Intel Xeon processors, massive system memory, and high-speed local NVMe storage for parallel computing.",
+  "description": "Vultr vcg-l40s-32c-375g-96vram is a dedicated GPU-accelerated instance designed for AI inference, graphics processing, and compute workloads. Powered by an Intel Xeon 6448H processor with 32 dedicated physical cores on the x86_64 architecture at 2.0 GHz, it includes 375.0 GB of system RAM and 2200 GB of local NVMe SSD storage. The core feature consists of two NVIDIA L40S Ada Lovelace GPUs providing a total of 96 GB of VRAM. Benchmark performance places the instance in the top 10% for LLM inference token throughput on 135M and 7B models, supported by strong multi-core Geekbench (17,668.0) and PassMark (64,768.69) results. With high memory bandwidth and dedicated compute resources, this instance is configured for large language model deployment, ray tracing, image processing, and distributed database workloads.",
+  "og_description": "Vultr vcg-l40s-32c-375g-96vram features 32 dedicated Intel Xeon cores, 375 GB RAM, 2200 GB NVMe storage, and 2x NVIDIA L40S GPUs (96 GB VRAM) for high-throughput LLM inference and rendering.",
+  "meta_description": "Vultr vcg-l40s-32c-375g-96vram delivers 32 dedicated Intel Xeon cores, 375 GB RAM, 2200 GB NVMe storage, and dual NVIDIA L40S GPUs with 96 GB VRAM.",
+  "tagline": "Dual NVIDIA L40S GPUs with 96 GB total VRAM, 32 dedicated Xeon cores, and high-capacity NVMe storage for AI workloads.",
   "bullet_points": [
-    "Dual NVIDIA L40S GPUs providing 96 GB of total VRAM",
+    "Dual NVIDIA Ada Lovelace L40S GPUs providing 96 GB total VRAM",
     "32 dedicated Intel Xeon 6448H physical cores running at 2.0 GHz",
-    "375.0 GB of system memory with 11.72 GB per core",
-    "2200 GB of high-speed local NVMe SSD storage",
-    "Top-tier LLM inference performance on medium-sized models",
-    "Strong multi-threaded CPU and memory read bandwidth capabilities"
+    "375.0 GB system RAM with 211.9 GB/s uncached read bandwidth",
+    "2200 GB high-speed local NVMe SSD storage",
+    "Top-tier LLM inference performance exceeding 6,200 prompt tokens/sec on 7B models",
+    "Designed for AI inference, ray tracing, image processing, and in-memory caching"
   ],
   "categories": [
     "GPU Accelerated",
     "Memory Optimized",
-    "Storage & Database"
+    "Compute Optimized"
   ]
 }

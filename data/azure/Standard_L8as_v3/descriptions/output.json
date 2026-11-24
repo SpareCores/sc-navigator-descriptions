@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure L8as_v3 is a storage-optimized virtual machine from the LASv3 family, running on the Microsoft Hyper-V hypervisor. It features an x86_64 AMD EPYC 7763 processor with 8 dedicated vCPUs, derived from 4 physical cores with 2 threads per core, operating at a clock speed of 3.525 GHz. The CPU configuration includes 32 KB of L1d cache, 0.5 MB of L2 cache, and 32 MB of L3 cache. The system is equipped with 64.0 GB of system memory, providing 8.0 GB of RAM per core, and includes a bundled 2002 GB local NVMe SSD. No dedicated GPU is present on this instance.",
-    "In benchmark evaluations, the L8as_v3 demonstrates strong single-core CPU performance, scoring 2710.47 in stress-ng tests, which places it in the top 25% of tested instances. Multi-core CPU performance and memory bandwidth for small, cached blocks fall within the average tier. However, the system exhibits weaker performance in large-block, uncached memory operations, with read bandwidth at 38.93 GB/sec and write bandwidth at 22.95 GB/sec. Database operations, Redis SET operations, and static web serving throughput consistently register in the average range.",
-    "The qualitative cost profile of the L8as_v3 is defined by its high local storage density and generous memory-to-vCPU ratio, making it a resource-dense option for workloads requiring fast local scratch space without the overhead of external storage. The primary tradeoff lies in the uncached memory bandwidth limitations and weaker multi-threaded decompression speeds. Given these characteristics, this server is well-suited for database hosting, local caching layers, medium-scale web serving, and data processing tasks that benefit from high-capacity local NVMe storage and balanced memory allocation."
+    "Microsoft Azure L8as_v3 is a storage-optimized virtual machine instance powered by an AMD EPYC 7763 processor based on the x86_64 architecture. Configured with 8 dedicated virtual CPUs across 4 physical cores with simultaneous multithreading, it operates at a clock speed of 3.525 GHz. The VM includes 32 KB of L1 data cache, 0.5 MB of L2 cache, 32 MB of L3 cache, and 64 GB of system RAM, yielding an 8 GB per vCPU allocation. Local storage consists of a direct-attached 2006 GB NVMe SSD, providing dense high-speed scratch space directly on the host.",
+    "Benchmark evaluations reveal strong single-core CPU execution, with stress-ng single-core reaching 2710.47 points, placing it in the upper quartile. Multi-core compute performance sits firmly in the middle tier, yielding 10802.55 in stress-ng multi-core and 6373.0 in Geekbench multi-core. In memory workloads, cached read bandwidth achieves 515.46 GB/sec, though uncached large-block read (38.93 GB/sec) and write (22.95 GB/sec) metrics reflect lower architectural memory bandwidth ceilings typical of shared-host hypervisor allocations. In application tests, it handles 8.23 million Redis SET operations per second and 10.03 GB/sec in static web throughput.",
+    "The balance of 8 vCPUs, 64 GB RAM, and a bundled 2 TB NVMe drive offers high qualitative cost efficiency for I/O-intensive workloads needing local disk caching without auxiliary network storage fees. However, lack of AVX-512 extensions and lower large-block memory throughput restrict efficiency for heavy vectorized compute or large-scale AI modeling. The instance is suited for transactional databases, NoSQL engines, distributed data caching, and log indexing pipelines."
   ],
-  "description": "Microsoft Azure L8as_v3 is an x86_64 storage-optimized virtual machine powered by an AMD EPYC 7763 processor running at 3.525 GHz. It features 8 dedicated vCPUs, 64.0 GB of RAM, and a bundled 2002 GB local NVMe SSD. Operating under the Microsoft Hyper-V hypervisor, this instance delivers strong single-core CPU performance, though its uncached large-block memory bandwidth is relatively weak. With an average performance profile across database operations, Redis SET tasks, and static web serving, the L8as_v3 offers a resource-dense hardware configuration. It is highly suitable for database hosting, web serving, and workloads requiring substantial local NVMe storage and balanced memory capacity.",
-  "og_description": "Microsoft Azure L8as_v3 is an x86_64 virtual machine featuring an 8-vCPU AMD EPYC 7763 processor, 64 GB of RAM, and a 2002 GB local NVMe SSD, optimized for database and storage-heavy workloads.",
-  "meta_description": "Microsoft Azure L8as_v3 is an 8-vCPU virtual machine with an AMD EPYC 7763 processor, 64 GB RAM, and a 2002 GB local NVMe SSD.",
-  "tagline": "An x86_64 virtual machine featuring dedicated AMD EPYC processing, balanced memory, and high-capacity local NVMe SSD storage for data-intensive workloads.",
+  "description": "Microsoft Azure L8as_v3 is a storage-optimized virtual machine driven by an AMD EPYC 7763 processor with 8 dedicated vCPUs across 4 physical cores, running at 3.525 GHz. It includes 64 GB of memory (8 GB per vCPU) and features a bundled 2006 GB NVMe SSD for fast local data access. Benchmarks demonstrate strong single-thread performance alongside solid mid-tier multi-threaded and database results, achieving 8.23 million Redis SET operations per second and 10.03 GB/sec in static web throughput. Tradeoffs include modest uncached memory bandwidth and the omission of AVX-512 capabilities, making it less suited for large matrix compute workloads. Overall, the combination of substantial memory and integrated high-capacity NVMe makes this instance suitable for I/O-heavy relational and NoSQL databases, log analysis clusters, and local caching layers.",
+  "og_description": "Microsoft Azure L8as_v3 provides 8 dedicated vCPUs via an AMD EPYC 7763 processor, 64 GB of RAM, and 2006 GB of integrated local NVMe SSD storage for low-latency, storage-intensive cloud workloads.",
+  "meta_description": "Microsoft Azure L8as_v3 features 8 vCPUs on AMD EPYC 7763 hardware, 64 GB RAM, and a 2006 GB NVMe SSD for low-latency database and storage workloads.",
+  "tagline": "Storage-focused VM featuring dedicated AMD EPYC cores, an eight-to-one memory ratio, and fast local NVMe SSD capacity.",
   "bullet_points": [
-    "AMD EPYC 7763 processor with 8 dedicated vCPUs and 3.525 GHz clock speed",
-    "64.0 GB of system memory providing 8.0 GB of RAM per core",
-    "Bundled 2002 GB local NVMe SSD for high-speed local storage",
-    "Strong single-core CPU performance in benchmark testing",
-    "Suited for database hosting, caching layers, and web serving"
+    "8 dedicated vCPUs (4 physical cores) on AMD EPYC 7763 at 3.525 GHz",
+    "64 GB system memory providing 8 GB RAM per vCPU",
+    "Bundled 2006 GB local NVMe SSD storage",
+    "Strong single-core compute performance in stress-ng evaluations",
+    "No bundled GPU accelerators or AVX-512 support",
+    "Suited for NoSQL databases, caching systems, and log processing"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E32-8as_v4 is an EASv4-series virtual machine running on the Microsoft Hyper-V hypervisor. It features an AMD EPYC 7763 processor with an x86_64 architecture, operating at a clock speed of 3.525 GHz. The instance is configured with 8 dedicated vCPUs, derived from 4 physical cores with 2 threads per core. Cache resources include 32 KB of L1d cache, 0.5 MB of L2 cache, and 32 MB of L3 cache. It is equipped with 256.0 GB of system memory, yielding a high memory-to-core ratio of 32.0 GB per core. Local storage consists of a 524 GB SSD, and the instance is Premium Storage capable. No GPUs are present, and it includes zero complimentary public IPv4 addresses.",
-    "In benchmark evaluations, the E32-8as_v4 demonstrates strong single-core CPU performance, with a stress-ng single-core score of 2708.17, placing it in the top 25%. Multi-core CPU performance and memory read bandwidth are average, with stress-ng multi-core scoring 10828.46 and cached small-block read bandwidth reaching 517.55 GB/sec. However, a key performance tradeoff is its large-block memory write bandwidth, which is weak at 23.0 GB/sec, placing it in the bottom 25%. Similarly, while LLM inference text generation for a 7B model is average at 9.48 tokens/sec, the prompt processing speed for the same model is weak at 16.95 tokens/sec.",
-    "Given the high memory density of 32.0 GB per vCPU and the inclusion of a 524 GB local SSD, this server is qualitatively cost-efficient for memory-intensive workloads that do not require massive parallel CPU scaling. It is well-suited for database operations, caching layers like Redis, and memory-bound data processing tasks. The presence of hardware-accelerated cryptography flags, such as AES and SHA_NI, further supports secure transactional workloads."
+    "Microsoft Azure E32-8as_v4 is a memory-optimized virtual machine utilizing a constrained-core architecture. Powered by the AMD EPYC 7763 processor clocked at 3.525 GHz, the instance provides 8 dedicated vCPUs mapped across 4 physical cores with simultaneous multithreading. It features 256.0 GB of system memory, delivering a high memory-to-vCPU ratio of 32 GB per core. The configuration includes 550 GB of local temporary SSD storage and operates without bundled GPU hardware, managed under the Microsoft Hyper-V hypervisor.",
+    "Performance benchmarks reflect strong single-threaded CPU capabilities alongside stable, mid-tier multi-threaded execution. In stress testing, single-core processing rated in the upper quartile, while multi-core metrics and Geekbench results (1607 single-core, 6370 multi-core) aligned with standard 8-vCPU expectations. Uncached memory read bandwidth measured 39.69 GB/sec, whereas uncached write bandwidth registered at 23.0 GB/sec, representing a lower-tier result. In-memory throughput reached 8.08 million Redis SET operations per second, with PassMark database operations scoring 3289.56.",
+    "The primary efficiency tradeoff of the E32-8as_v4 stems from its constrained vCPU model. By pairing 256 GB of memory with only 8 active cores instead of the full 32 cores typical of the host chassis, it significantly reduces per-core software licensing expenses for database engines that require massive RAM footprints but limited compute parallelism. Conversely, tasks constrained by uncached memory write throughput or large-scale multi-threaded compilation will find fewer performance advantages.",
+    "This server type is primarily suited for large-footprint relational database engines such as SQL Server and Oracle, enterprise caching layers, and in-memory analytical workloads where memory capacity is the primary constraint rather than core count."
   ],
-  "description": "Microsoft Azure E32-8as_v4 is a memory-optimized virtual machine configured with an AMD EPYC 7763 processor, offering 8 dedicated vCPUs and 256.0 GB of RAM. Operating at 3.525 GHz on the Microsoft Hyper-V hypervisor, this instance features a high memory-to-core ratio of 32.0 GB per core and includes a 524 GB local SSD. Benchmark results show strong single-core CPU performance, though large-block memory write bandwidth and medium-model LLM prompt processing represent notable performance tradeoffs, scoring in the bottom 25%. With its high memory density, local SSD storage, and support for hardware-accelerated cryptography flags like AES and SHA_NI, the E32-8as_v4 is highly suited for memory-intensive applications, secure database operations, and caching workloads. It provides a balanced profile for workloads requiring massive memory capacity without the cost of high CPU core counts.",
-  "og_description": "Microsoft Azure E32-8as_v4 is an 8-vCPU memory-optimized virtual machine featuring an AMD EPYC 7763 processor, 256 GB of RAM, and a 524 GB local SSD, designed for memory-intensive database workloads.",
-  "meta_description": "Microsoft Azure E32-8as_v4 is an 8-vCPU memory-optimized virtual machine featuring an AMD EPYC 7763 processor, 256 GB of RAM, and a 524 GB local SSD.",
-  "tagline": "A memory-optimized virtual machine featuring high memory density, dedicated AMD EPYC processing, and local SSD storage for memory-bound workloads.",
+  "description": "Microsoft Azure E32-8as_v4 is a memory-optimized virtual machine tailored for memory-intensive workloads requiring reduced CPU core counts. Based on the x86_64 AMD EPYC 7763 processor running at 3.525 GHz, it provides 8 dedicated vCPUs across 4 physical cores and an expansive 256.0 GB of RAM, yielding 32 GB per vCPU. The instance is bundled with 550 GB of local SSD storage and features no GPU acceleration. Benchmark results show strong single-core CPU throughput alongside average multi-core and database transaction performance, with Redis achieving 8.08 million operations per second. However, uncached memory write bandwidth is comparatively limited at 23.0 GB/sec. The instance delivers notable licensing cost efficiency for software billed per core, making it well suited for enterprise database management systems, in-memory caching tiers, and memory-bound transactional applications.",
+  "og_description": "Microsoft Azure E32-8as_v4 is a memory-optimized instance featuring 8 AMD EPYC 7763 vCPUs, 256 GB RAM, and 550 GB local SSD storage, optimized for memory-dense enterprise database workloads.",
+  "meta_description": "Microsoft Azure E32-8as_v4 provides 8 AMD EPYC vCPUs, 256 GB RAM, and 550 GB SSD storage, designed for memory-intensive and licensed database workloads.",
+  "tagline": "Constrained vCPU architecture offering 256 GB of memory and local SSD storage for memory-intensive, license-sensitive database deployments.",
   "bullet_points": [
-    "AMD EPYC 7763 processor with 8 dedicated vCPUs running at 3.525 GHz",
-    "256.0 GB of RAM providing a high 32.0 GB per core memory density",
-    "524 GB local SSD storage with Premium Storage capability",
-    "Strong single-core CPU performance in stress-ng benchmarks",
-    "Tradeoffs include weak large-block memory write bandwidth",
-    "Optimized for databases, caching layers, and memory-intensive applications"
+    "AMD EPYC 7763 processor offering 8 dedicated vCPUs across 4 physical cores at 3.525 GHz",
+    "High-density memory profile supplying 256.0 GB of RAM (32.0 GB per vCPU)",
+    "Bundled 550 GB local SSD temporary storage volume without hardware GPU accelerators",
+    "Constrained core allocation designed to optimize per-core database licensing costs",
+    "Suited for large-scale relational databases, in-memory caches, and memory-heavy transactional systems"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

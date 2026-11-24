@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c7gn.metal is a bare-metal, compute-optimized server powered by 64 dedicated physical cores of the 64-bit ARMv8 architecture. It utilizes the AWS Graviton Neoverse-V1 processor running at a clock speed of 2.6 GHz. The hardware configuration includes 128.0 GB of DDR5 memory, providing a resource density of 2.0 GB of RAM per core. The processor features 64 KB of L1d cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, with hardware-accelerated AES cryptography support. This server does not include local storage or discrete graphics processing units.",
-    "A key differentiator of this instance is its baseline network bandwidth of 200 Gbps, designed for network-intensive workloads. In benchmark evaluations, the server demonstrates strong multi-core capabilities, achieving a top-tier rating in Geekbench multi-core performance and software compilation tasks. Memory performance is highly efficient, with Passmark memory scores and uncached large-block memory read bandwidth registering in the top tiers. Single-core performance and cryptographic operations align with average baseline expectations, while database operations and Redis SET throughput show strong performance.",
-    "Given its bare-metal architecture and high-density DDR5 memory configuration, the c7gn.metal offers high resource efficiency for multi-threaded, network-bound applications. The absence of local storage requires reliance on network-attached storage, which is supported by the high-capacity 200 Gbps network interface. This server is highly suited for high-performance computing, software compilation, static web serving at scale, and network-intensive distributed database workloads."
+    "Amazon Web Services c7gn.metal is a bare-metal, compute-optimized instance built on the arm64 architecture. It features 64 dedicated physical cores using AWS ARMv8 Neoverse-V1 processors clocked at 2.6 GHz, with one thread per core and no simultaneous multithreading. Memory provisioning includes 128 GB of DDR5 RAM, establishing a 1:2 compute-to-memory ratio of 2.0 GB per core. The server includes no local storage, requiring network-attached storage solutions, and provides a 200 Gbps baseline network bandwidth. Hardware accelerators like GPUs are not included.",
+    "Benchmark results demonstrate strong multi-threaded compute efficiency alongside high memory and network throughput. The instance ranks in the top tier for Geekbench multi-core performance (20,886.0) and Clang software compilation (59,675.0), supported by top-tier PassMark memory performance. Stress-ng multi-core testing reached 98,074.28, and Redis set operations hit 101.71 million operations per second. Conversely, single-core benchmarks remain moderate, with single-core Geekbench scoring 1,549.0 and single-core stress-ng reaching 1,535.78. LLM text generation throughput is restricted, scoring in the bottom tier on smaller models due to the absence of dedicated matrix acceleration hardware.",
+    "Without hyperthreading contention or hypervisor overhead, c7gn.metal maximizes per-core consistency and network throughput. It is technically suitable for distributed data processing, continuous integration build pipelines, network-intensive appliances, high-throughput static web serving, and memory-bandwidth-dependent computational jobs."
   ],
-  "description": "Amazon Web Services c7gn.metal is a bare-metal, compute-optimized server featuring 64 dedicated physical cores on the 64-bit ARMv8 architecture, powered by AWS Graviton Neoverse-V1 processors running at 2.6 GHz. Equipped with 128.0 GB of DDR5 memory, the server provides a balanced 2.0 GB of RAM per core. It lacks local storage and discrete GPUs, relying instead on a high-capacity 200 Gbps baseline network bandwidth for external data transfer and EBS connectivity. Benchmark data highlights top-tier multi-core performance, particularly in software compilation and memory bandwidth tests, alongside strong database and static web serving capabilities. This configuration makes the c7gn.metal highly efficient for multi-threaded, network-intensive workloads, including large-scale web serving, software build pipelines, and distributed database operations.",
-  "og_description": "Amazon Web Services c7gn.metal is a bare-metal server with 64 ARM Graviton cores, 128 GB DDR5 RAM, and 200 Gbps network bandwidth, optimized for multi-threaded, network-intensive workloads.",
-  "meta_description": "Amazon Web Services c7gn.metal is a bare-metal server featuring 64 ARM Graviton cores, 128 GB DDR5 RAM, and 200 Gbps network bandwidth.",
-  "tagline": "A bare-metal ARM server delivering high-bandwidth networking and strong multi-core performance for compute-intensive and network-bound workloads.",
+  "description": "Amazon Web Services c7gn.metal is a bare-metal compute-optimized server featuring 64 dedicated arm64 physical cores powered by AWS ARMv8 Neoverse-V1 processors operating at 2.6 GHz. Operating without hyperthreading or virtualization layers, the server provides direct hardware execution backed by 128 GB of DDR5 memory and 200 Gbps baseline network bandwidth. It contains no bundled local storage and lacks discrete GPUs. Multi-core performance is strong, registering top-tier results in software compilation and PassMark memory benchmarks, complemented by over 101 million operations per second in Redis SET evaluations. Single-thread performance is moderate across standard benchmarks, and language model text generation is constrained by the absence of specialized tensor hardware. With its high networking ceiling and clean physical core layout, c7gn.metal is well tailored for intensive compilation pipelines, network packet processing, container clusters, and distributed memory-bound applications.",
+  "og_description": "Amazon Web Services c7gn.metal is a bare-metal arm64 server with 64 dedicated Neoverse-V1 cores, 128 GB DDR5 RAM, and 200 Gbps network bandwidth designed for compute and network tasks.",
+  "meta_description": "Amazon Web Services c7gn.metal offers 64 dedicated arm64 cores, 128 GB DDR5 memory, and 200 Gbps networking for high-throughput compute workloads.",
+  "tagline": "Dedicated 64-core ARM bare-metal architecture delivering 200 Gbps network capacity and high DDR5 memory throughput for parallel computing tasks.",
   "bullet_points": [
-    "64 dedicated ARMv8 Graviton Neoverse-V1 physical cores",
-    "128 GB of high-speed DDR5 system memory",
-    "200 Gbps baseline network bandwidth for high-throughput workloads",
-    "Top-tier multi-core CPU and software compilation performance",
-    "No local storage, requiring network-attached storage solutions",
-    "Best suited for software compilation, web serving, and distributed databases"
+    "64 dedicated physical arm64 cores (AWS Neoverse-V1) at 2.6 GHz",
+    "128 GB of DDR5 memory providing 2.0 GB per core",
+    "200 Gbps baseline network interface without hypervisor overhead",
+    "Top-tier performance in multi-core compilation and memory benchmarks",
+    "Zero integrated local storage, requiring network-attached storage volumes",
+    "Suited for CI/CD builds, network appliances, and distributed caching"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

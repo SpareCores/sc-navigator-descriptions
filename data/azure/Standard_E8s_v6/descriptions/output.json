@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E8s_v6 is an x86_64 architecture virtual machine powered by a dedicated Intel Xeon 8573C processor running at 4.2 GHz. It features 8 vCPUs across 4 physical cores with hyper-threading enabled, managed via the Microsoft Hyper-V hypervisor. The system is equipped with 64.0 GB of RAM, yielding a high memory-to-vCPU ratio of 8.0 GB per core. It lacks local storage and dedicated GPUs, but it is Premium Storage capable.",
-    "Benchmark results indicate strong single-threaded performance, with a Geekbench single-core score of 2164.0 and single-threaded gzip compression reaching 31.4 GB/sec. Multi-core performance is average, with a Geekbench multi-core score of 8345.0 and a stress-ng multi-core CPU score of 7990.43. Memory bandwidth is measured at 621.63 GB/sec for cached small blocks and 67.48 GB/sec for uncached large blocks.",
-    "The lack of local storage represents a key architectural tradeoff, requiring reliance on external storage solutions. While the system handles small-model LLM inference adequately, it exhibits weak performance on larger models, such as 8.03 tokens/sec for medium model text generation. This server is suited for memory-intensive workloads, database operations, and text processing tasks that benefit from its 64.0 GB memory capacity and strong single-core execution."
+    "Microsoft Azure E8s_v6 is a memory-optimized virtual machine built on Microsoft Hyper-V virtualization. The instance features an x86_64 Intel Xeon 8573C processor clocked at up to 4.2 GHz, configured with 4 physical cores and 8 dedicated vCPUs via multithreading. It provides a substantial L3 cache allocation of 260 MB, alongside 2 MB of L2 cache and 48 KB of L1d cache. The system is equipped with 64.0 GB of system RAM, maintaining an 8.0 GB memory-to-vCPU ratio. Local storage is not included on this instance type, requiring external Premium Storage attachments for persistent data needs, and it operates without discrete GPU accelerators.",
+    "Instruction set features for the underlying processor include AVX-512 extensions (such as AVX512_VNNI and AVX512_BF16) and Intel AMX (Advanced Matrix Extensions) for tile and INT8 matrix calculations, alongside cryptographic accelerations like VAES and SHA_NI. In standard benchmarks, the E8s_v6 delivers strong single-core performance, scoring 1966.0 on Geekbench single-core and showing high efficiency in single-threaded gzip compression at 31.4 GB/sec and text processing at 2585.0 points. Multi-core performance lands squarely in the average tier, with a Geekbench multi-core result of 7679.0 and a PassMark CPU score of 14266.07.",
+    "Memory throughput reaches 67.48 GB/sec read and 46.48 GB/sec write for large 256 MB blocks, supporting workloads like in-memory key-value caching where it executes 11.39 million Redis SET operations per second. However, CPU-based execution of larger language models exhibits distinct limits; while small 135M model generation reaches 247.79 tokens per second, medium 7B model generation drops to 8.03 tokens per second, and large 70B models prove impractical due to core counts and lack of dedicated GPU hardware.",
+    "From a cost-efficiency perspective, the E8s_v6 presents an economical configuration for workloads requiring a generous 8:1 memory-to-core ratio without paying for unused multi-core density. Because local storage is absent, the overall deployment cost is dependent on attached storage tiers. It is particularly well suited for enterprise database hosting, in-memory caching layers such as Redis, business logic processing, and data preparation pipelines."
   ],
-  "description": "Microsoft Azure E8s_v6 is an x86_64 virtual machine configured with 8 vCPUs and 64.0 GB of RAM, delivering a memory-optimized 1:8 vCPU-to-RAM ratio. Powered by a dedicated Intel Xeon 8573C processor operating at 4.2 GHz, this Hyper-V hosted instance features 4 physical cores and a 260 MB L3 cache. It lacks local storage and GPUs but supports Premium Storage. Benchmarks show strong single-core performance, with a Geekbench single-core score of 2164.0 and single-threaded gzip compression of 31.4 GB/sec, alongside average multi-core and memory bandwidth results. However, LLM inference for larger models is a notable bottleneck, with text generation on a medium model dropping to 8.03 tokens/sec. This instance is suited for database operations, memory-intensive applications, and text processing workloads.",
-  "og_description": "Microsoft Azure E8s_v6 is an x86_64 memory-optimized virtual machine featuring 8 vCPUs, 64 GB RAM, and a 4.2 GHz Intel Xeon processor, designed for database and memory-intensive workloads.",
-  "meta_description": "Microsoft Azure E8s_v6 is an x86_64 memory-optimized VM with 8 vCPUs, 64 GB RAM, and a 4.2 GHz Intel Xeon CPU, lacking local storage.",
-  "tagline": "An x86_64 memory-optimized virtual machine featuring a dedicated 4.2 GHz Intel Xeon processor and a high memory-to-core ratio.",
+  "description": "Microsoft Azure E8s_v6 is a memory-optimized virtual machine running on an Intel Xeon 8573C processor with 8 vCPUs across 4 physical cores at 4.2 GHz and 64.0 GB of RAM. The instance features a high 8.0 GB RAM-to-vCPU ratio and a large 260 MB L3 cache, with hardware support for AVX-512 and AMX instructions. It includes no bundled local storage or GPUs, relying on remote storage solutions. In benchmark testing, the E8s_v6 demonstrates strong single-core execution with a Geekbench single-core score of 1966.0 and fast single-threaded gzip compression, while multi-core compute and PassMark results remain in the median range. In-memory performance is validated by 11.39 million Redis SET operations per second. Given its resource profile, the instance provides qualitative cost advantages for memory-intensive workloads that do not require extensive parallel core scaling, such as relational databases, in-memory caches, and general business application servers.",
+  "og_description": "Microsoft Azure E8s_v6 is a memory-optimized virtual machine providing 8 vCPUs on an Intel Xeon 8573C processor, 64 GB of RAM, 260 MB of L3 cache, and strong single-core compute performance.",
+  "meta_description": "Microsoft Azure E8s_v6 is a memory-optimized VM featuring an 8-vCPU Intel Xeon 8573C processor, 64 GB of RAM, and strong single-thread compute efficiency.",
+  "tagline": "Memory-optimized virtual machine pairing dedicated Intel Xeon cores with high RAM density for database and caching workloads.",
   "bullet_points": [
-    "Dedicated Intel Xeon 8573C processor running at 4.2 GHz",
-    "64.0 GB of RAM providing an 8.0 GB per vCPU ratio",
-    "Strong single-core performance in compression and text processing",
-    "No local storage, requiring external Premium Storage attachment",
-    "Suited for database operations and memory-intensive workloads"
+    "Intel Xeon 8573C processor with 8 vCPUs (4 physical cores) clocked up to 4.2 GHz",
+    "64.0 GB of system memory delivering an 8:1 memory-to-vCPU allocation",
+    "Large 260 MB L3 cache with hardware support for AVX-512 and Intel AMX matrix instructions",
+    "Diskless architecture requiring external network or Premium Storage attachments",
+    "Zero integrated GPUs, prioritizing standard enterprise memory and compute tasks",
+    "Well-suited for relational databases, in-memory key-value caching, and data processing"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

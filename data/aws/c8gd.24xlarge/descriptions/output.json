@@ -1,21 +1,20 @@
 {
   "page": [
-    "Amazon Web Services c8gd.24xlarge is a compute-optimized cloud server built on 64-bit ARMv9 architecture featuring 96 physical cores powered by AWS Graviton Neoverse-V2 processors running at 2.8 GHz. It is provisioned with 192.0 GB of memory, providing 2.0 GB of RAM per dedicated physical core. Hardware storage features a bundled 5700 GB local NVMe SSD instance store, while networking is backed by 40 Gbps baseline bandwidth managed via the AWS Nitro hypervisor.",
-    "Benchmark evaluation highlights exceptional multi-threaded performance. The server achieves top-tier results in stress-ng multi-core execution, PassMark physics testing, and Geekbench software compilation with Clang. Memory subsystem throughput is high, reaching 480.66 GB/sec for uncached read operations. The combined storage and processing capacity yields 195.84 million operations/sec in Redis SET benchmarks, 102.85 GB/sec static web serving throughput, and top-tier PassMark database operation scores, while single-core performance metrics remain in the average tier.",
-    "From a resource density perspective, integrating 5700 GB of fast local NVMe SSD directly with 96 cores provides strong cost efficiency for high-IOPS applications without requiring external block storage allocation. Key tradeoffs include modest single-core execution speed and the absence of discrete GPU hardware, which limits peak performance for accelerated graphics or pure GPU deep learning tasks.",
-    "The server is well suited for memory-bound parallel processing, high-concurrency database deployments, large software build pipelines, static web serving clusters, and CPU-bound LLM text generation tasks using medium to large models."
+    "Amazon Web Services c8gd.24xlarge is a compute-optimized instance built on the Nitro Hypervisor, powered by AWS ARMv9 Neoverse-V2 processors. It provides 96 dedicated physical cores running at 2.8 GHz without hyperthreading, alongside 192.0 GB of memory (2.0 GB per core). Local fast storage is provided through a 5,700 GB NVMe SSD setup, while networking features a baseline throughput of 40 Gbps. No GPUs are attached to this instance.",
+    "Benchmark results demonstrate top-tier multi-threaded processing, evidenced by a multi-core stress-ng metric of 163,583.92 and a Geekbench multi-core score of 26,012.0. Memory throughput reaches 480.66 GB/sec for uncached large reads and 201.46 GB/sec for writes. The instance excels in parallel operations such as Clang software compilation, PassMark database operations, and Redis SET operations (195.84 million operations/sec). However, single-core metrics remain moderate, with average-tier scores across single-threaded stress-ng, Geekbench, and gzip compression.",
+    "Given its combination of dense multi-core ARM architecture, direct NVMe storage, and high networking capacity, the c8gd.24xlarge offers strong qualitative resource efficiency for parallel workloads that do not rely on x86 vector extensions. It is well-fitted for large-scale distributed databases, high-throughput caching tiers, CI/CD code compilation pipelines, and static web serving."
   ],
-  "description": "Amazon Web Services c8gd.24xlarge is a compute-optimized, ARM-based instance powered by 96 physical cores of AWS Neoverse-V2 processors running at 2.8 GHz. It features 192.0 GB of memory, delivering a 1:2 core-to-RAM ratio, alongside 5700 GB of bundled local NVMe SSD storage and 40 Gbps baseline network bandwidth. Synthetic benchmarks show top-tier multi-threaded CPU performance, high memory bandwidth, and outstanding database and Redis SET operations throughput. The integrated local NVMe SSD offers strong cost efficiency for storage-heavy compute workloads by reducing reliance on external remote storage volumes. Primary tradeoffs include average single-threaded CPU speed and the lack of dedicated GPU accelerators. The c8gd.24xlarge is optimal for high-concurrency database systems, software compilation pipelines, static web serving, and multi-core data processing jobs.",
-  "og_description": "Amazon Web Services c8gd.24xlarge is an ARM-based compute instance featuring 96 Graviton Neoverse-V2 cores, 192 GB RAM, 5700 GB NVMe storage, and 40 Gbps networking for database and compiled workloads.",
-  "meta_description": "Amazon Web Services c8gd.24xlarge features 96 ARM Neoverse-V2 cores, 192 GB RAM, and 5700 GB NVMe SSD storage for compute and database workloads.",
-  "tagline": "A high-density 96-core ARM architecture compute instance equipped with 192 GB memory and fast 5700 GB local NVMe SSD storage.",
+  "description": "Amazon Web Services c8gd.24xlarge is an ARM-based compute-optimized instance delivering 96 dedicated cores via AWS ARMv9 Neoverse-V2 silicon at 2.8 GHz. It integrates 192.0 GB of RAM, a massive 5,700 GB NVMe SSD local storage volume, and 40 Gbps baseline network bandwidth under the Nitro hypervisor. Benchmarks indicate superior multi-threaded compute, memory bandwidth, and caching performance, marked by top-tier results in Redis SET throughput, database operations, and software compilation, contrasted with average single-thread performance. Without GPUs or x86 instructions, it provides high resource efficiency for scalable backend workloads, continuous integration pipelines, web serving, and distributed storage systems.",
+  "og_description": "Amazon Web Services c8gd.24xlarge features 96 ARM Neoverse-V2 cores, 192 GB RAM, 5,700 GB NVMe SSD storage, and 40 Gbps networking, optimized for multi-threaded databases and compile tasks.",
+  "meta_description": "Amazon Web Services c8gd.24xlarge offers 96 ARM Neoverse-V2 cores, 192 GB RAM, 5,700 GB NVMe SSD storage, and 40 Gbps baseline networking.",
+  "tagline": "Dedicated 96-core ARMv9 processing paired with dense 5.7 TB NVMe storage for parallel compute and high-throughput data workloads.",
   "bullet_points": [
-    "96 physical ARMv9 Neoverse-V2 cores operating at 2.8 GHz",
-    "192.0 GB RAM with 2.0 GB memory per physical core ratio",
-    "5700 GB bundled high-speed local NVMe SSD instance storage",
-    "40 Gbps baseline network bandwidth via AWS Nitro hypervisor",
-    "Top-tier multi-core execution, Redis, and database benchmark results",
-    "Best suited for high-concurrency databases, build pipelines, and web serving"
+    "AWS ARMv9 Neoverse-V2 architecture with 96 dedicated cores at 2.8 GHz",
+    "192.0 GB system memory (2.0 GB per core ratio)",
+    "5,700 GB high-speed local NVMe SSD storage bundled",
+    "40 Gbps baseline network bandwidth via Nitro hypervisor",
+    "Top-tier performance in multi-core compiling, Redis operations, and parallel decompression",
+    "Best suited for large software builds, distributed databases, caching, and static web serving"
   ],
   "categories": [
     "Compute Optimized",

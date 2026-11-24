@@ -1,24 +1,22 @@
 {
   "page": [
-    "OVHcloud r3-1024 is a memory-optimized server powered by an AMD EPYC processor with 128 physical cores and 128 vCPUs on the x86_64 architecture. It features a dedicated CPU allocation running at 2.3 GHz with no hyperthreading. The system is equipped with 1024.0 GB of RAM, providing 8.0 GB of memory per core, alongside 400 GB of local NVMe SSD storage and a 20 Gbps baseline network bandwidth.",
-    "In benchmark testing, the server exhibits top-tier multi-core performance, scoring in the top 10% for stress-ng multi-core CPU, PassMark CPU, and multi-threaded bzip3 decompression. Memory bandwidth is highly efficient, with cached small-block reads reaching 9921.46 GB/sec and large-block reads at 276.06 GB/sec. Database and caching performance are also notable, with Redis SET operations achieving 166.68 million operations per second. However, single-core performance and large-model LLM text generation represent clear performance tradeoffs, landing in the average and poor tiers respectively.",
-    "Given its high resource density and dedicated AMD EPYC cores, the r3-1024 offers strong qualitative cost efficiency for memory-intensive workloads that require massive parallel processing without hyperthreading overhead. It is highly suited for large-scale in-memory databases, Redis caching layers, software compilation pipelines, and high-throughput data processing tasks."
+    "OVHcloud r3-1024 is a memory-optimized cloud server instance running on the KVM hypervisor. It is powered by a dedicated 128-core AMD EPYC processor based on the x86_64 architecture operating at a base clock speed of 2.3 GHz. The CPU deployment offers dedicated core mapping with one thread per core, totaling 128 physical cores. The instance is configured with 1024 GB of system memory, yielding an 8:1 memory-to-core ratio of 8.0 GB per vCPU. Storage is bundled as a single 400 GB local NVMe SSD, and the instance connects to network infrastructure with a baseline throughput of 20 Gbps. No discrete GPUs are included in the configuration.",
+    "Benchmark evaluations reveal substantial throughput across multi-core compute and memory subsystems. In multi-threaded execution, the instance achieves top-tier results in stress-ng multi-core testing (288,167.36) and PassMark CPU scoring (113,820.59), alongside strong Clang software compilation and ray-tracing performance. Memory subsystems demonstrate high bandwidth, reaching 9,921.46 GB/s on small cached reads and maintaining top-tier PassMark memory rankings. High-concurrency data operations are evidenced by Redis SET operations processing 166.68 million operations per second. Conversely, single-threaded performance remains in the middle 50% tier, with Geekbench single-core reaching 1,903.0 and single-threaded gzip registering 29.13 GB/s, reflecting the moderate 2.3 GHz frequency.",
+    "The hardware configuration provides high density for memory-bound workloads that benefit from dedicated non-hyperthreaded physical cores. However, the bundled 400 GB NVMe SSD is small relative to the terabyte-scale memory pool, presenting an operational tradeoff if local persistent storage needs exceed baseline limits. Furthermore, absent GPU acceleration, large language model text generation falls to bottom-tier performance, producing 2.26 tokens per second on 70B parameter models. OVHcloud r3-1024 is suited for large in-memory databases, massive Redis caching tiers, parallel code build pipelines, and data-intensive analytics platforms."
   ],
-  "description": "OVHcloud r3-1024 is a memory-optimized server featuring 128 dedicated AMD EPYC physical cores (128 vCPUs) running at 2.3 GHz on the x86_64 architecture. It is equipped with 1024.0 GB of RAM, 400 GB of NVMe SSD storage, and a 20 Gbps baseline network interface. The server delivers top-tier multi-core CPU and memory bandwidth performance, as evidenced by its top 10% PassMark memory and stress-ng multi-core scores, alongside 166.68 million Redis SET operations per second. While single-core speeds and large-model LLM text generation are moderate, its massive memory footprint and dedicated core allocation make it highly efficient for memory-intensive workloads. It is best suited for in-memory databases, caching layers, and parallel software compilation.",
-  "og_description": "OVHcloud r3-1024 is a memory-optimized server featuring 128 dedicated AMD EPYC cores, 1024 GB RAM, and 400 GB NVMe SSD storage, delivering top-tier multi-core and memory bandwidth performance.",
-  "meta_description": "OVHcloud r3-1024 is a memory-optimized server with 128 dedicated AMD EPYC cores, 1024 GB RAM, and 400 GB NVMe storage for memory-intensive workloads.",
-  "tagline": "A high-density memory-optimized platform featuring dedicated AMD EPYC cores and NVMe storage for demanding in-memory database and caching workloads.",
+  "description": "OVHcloud r3-1024 is a memory-optimized cloud server built for data-intensive and parallel enterprise workloads. Powered by an x86_64 AMD EPYC processor, it provides 128 dedicated physical cores at 2.3 GHz with a single thread per core and 1024 GB of RAM, offering 8.0 GB of memory per core. Bundled infrastructure includes a 400 GB local NVMe SSD and a 20 Gbps baseline network interface, with zero discrete GPUs. Synthetic benchmarks show top-tier multi-core computing and memory performance, evidenced by 166.68 million Redis SET operations per second and high multi-threaded decompression rates. Single-thread performance is balanced in the median range due to the clock frequency, and text generation on large language models is constrained by the lack of accelerators. The server fits in-memory database deployments, caching clusters, and large parallel compilation tasks.",
+  "og_description": "OVHcloud r3-1024 is a memory-optimized server featuring 128 dedicated AMD EPYC cores, 1024 GB of RAM, a 400 GB NVMe SSD, and 20 Gbps networking designed for large in-memory databases.",
+  "meta_description": "OVHcloud r3-1024 is a memory-optimized instance with 128 dedicated AMD EPYC cores, 1024 GB RAM, a 400 GB NVMe SSD, and 20 Gbps networking.",
+  "tagline": "High-capacity memory-optimized compute providing 128 dedicated AMD EPYC cores, one terabyte of RAM, and fast local NVMe storage for memory-bound workloads.",
   "bullet_points": [
-    "128 dedicated AMD EPYC physical cores with no hyperthreading",
-    "1024 GB of system memory providing 8.0 GB per core",
-    "400 GB local NVMe SSD storage and 20 Gbps baseline network bandwidth",
-    "Top-tier multi-core performance and memory bandwidth benchmarks",
-    "Achieves 166.68 million operations per second in Redis SET tests",
-    "Optimized for in-memory databases, caching layers, and heavy compilation"
+    "128 dedicated AMD EPYC physical cores (1 thread per core) clocked at 2.3 GHz",
+    "1024 GB total system memory providing 8.0 GB of RAM per vCPU",
+    "Bundled 400 GB local NVMe SSD storage and 20 Gbps baseline networking",
+    "Top-tier multi-threaded processing and cached memory bandwidth benchmark results",
+    "Suitable for in-memory databases, large caching layers, and high-concurrency builds"
   ],
   "categories": [
     "Memory Optimized",
-    "Compute Optimized",
-    "Storage & Database"
+    "Compute Optimized"
   ]
 }

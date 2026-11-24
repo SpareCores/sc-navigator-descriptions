@@ -1,23 +1,25 @@
 {
   "page": [
-    "Amazon Web Services m8id.48xlarge is a general-purpose instance powered by the Nitro hypervisor. It features 192 vCPUs and 96 physical cores based on the x86_64 architecture, utilizing Intel Xeon 6975P-C processors running at 3.9 GHz. The system is equipped with 768.0 GB of DDR5 memory operating at 7 GHz, providing 4.0 GB of RAM per core. For local storage, the instance includes 11,400 GB of NVMe SSD instance store volumes. Network connectivity is supported by a baseline bandwidth of 75 Gbps.",
-    "Benchmark data indicates top-tier multi-core performance, with stress-ng multi-core, Passmark CPU, and Geekbench multi-core scores placing in the top 10% of tested systems. The DDR5 memory subsystem delivers top-tier read and write bandwidth, reaching 15,316.45 GB/sec for cached small-block reads and 587.33 GB/sec for uncached large-block reads. However, single-core performance represents a relative tradeoff, with stress-ng single-core results falling into the average middle 50% tier. The processor's Advanced Matrix Extensions (AMX) and Advanced Vector Extensions (AVX-512) contribute to top-tier performance in extended instructions, encryption, and LLM inference prompt processing.",
-    "From a qualitative cost-efficiency perspective, the m8id.48xlarge offers high resource density by combining massive compute capacity, high-speed DDR5 memory, and substantial local NVMe SSD storage within a single general-purpose footprint. This hardware profile is highly suited for large-scale database operations, multi-threaded software compilation, high-throughput static web serving, and medium-scale LLM inference workloads."
+    "Amazon Web Services m8id.48xlarge is a general-purpose, Nitro-virtualized instance equipped with dedicated Intel Xeon 6975P-C processors. The system delivers 96 physical cores and 192 virtual CPUs running at 3.9 GHz, backed by 480 MB of shared L3 cache and support for Advanced Matrix Extensions (AMX) and AVX-512 vector instructions. Memory provisioning includes 768.0 GB of high-speed DDR5 memory operating at 7 GHz, maintaining a balanced 4:1 memory-to-vCPU ratio. Complementing the compute architecture is an integrated 11,400 GB NVMe SSD instance storage volume and a 75 Gbps baseline network interface, operating without attached discrete GPUs.",
+    "Benchmark results place the m8id.48xlarge in the top tier across parallelized compute, in-memory operations, and I/O tasks. It exhibits top-tier multi-threaded decompression throughput of 1,306.18 GB/sec in bzip3, a PassMark CPU score of 143,956.66, and elevated performance in software compilation and cryptographic workloads. Memory throughput is equally robust, reaching 587.33 GB/sec in large uncached reads and 242.09 GB/sec in writes. For transactional and key-value workloads, the server achieved top-tier marks with 247.82 million Redis SET operations per second and high-throughput static web serving at 264.3 GB/sec. LLM prompt ingestion also demonstrates strong multi-core scaling, reaching 4,230.34 tokens/sec on lightweight models.",
+    "The primary operational tradeoff relates to per-core versus multi-core performance density. While stress-ng single-core performance registers in the average bracket, the massive 192-thread capacity and top-tier multi-core marks make it cost-efficient for heavy concurrency and multi-tenant consolidation rather than strictly single-threaded tasks. The substantial direct-attached 11.4 TB NVMe array delivers massive local IOPS without relying solely on remote network-attached volumes, lowering storage latency overhead.",
+    "Given its hardware scale and high memory bandwidth, the m8id.48xlarge is optimal for high-throughput distributed databases, enterprise in-memory caches, large-scale CI/CD build environments, batch ETL pipelines, and CPU-driven machine learning inference tasks."
   ],
-  "description": "Amazon Web Services m8id.48xlarge is an x86_64 general-purpose instance featuring 192 vCPUs from Intel Xeon 6975P-C processors running at 3.9 GHz, paired with 768.0 GB of DDR5 memory and 11,400 GB of local NVMe SSD storage. Operating on the Nitro hypervisor, it delivers 75 Gbps baseline network bandwidth. Benchmark results highlight top-tier multi-core CPU performance, memory bandwidth, and database operations, though single-core performance remains in the average tier. The inclusion of Intel Advanced Matrix Extensions (AMX) and Advanced Vector Extensions (AVX-512) accelerates cryptographic and vector-based workloads. This instance is highly suited for data-intensive applications, large-scale databases, multi-threaded software compilation, and LLM inference tasks.",
-  "og_description": "Amazon Web Services m8id.48xlarge is an x86_64 general-purpose instance with 192 vCPUs, 768 GB DDR5 RAM, and 11,400 GB NVMe SSD storage, delivering top-tier multi-core and database performance.",
-  "meta_description": "Amazon Web Services m8id.48xlarge is a general-purpose instance featuring 192 vCPUs, 768 GB DDR5 RAM, and 11,400 GB of local NVMe SSD storage.",
-  "tagline": "A high-density general-purpose platform combining massive multi-core compute, fast DDR5 memory, and extensive local NVMe SSD storage for demanding enterprise workloads.",
+  "description": "Amazon Web Services m8id.48xlarge is a general-purpose instance featuring 192 vCPUs across 96 physical cores powered by Intel Xeon 6975P-C processors at 3.9 GHz. Built on the AWS Nitro System, it couples 768.0 GB of DDR5 system memory with 11,400 GB of high-speed local NVMe SSD storage and 75 Gbps baseline network bandwidth. Synthetic benchmarks indicate top-tier multi-threaded computational power, memory bandwidth, and caching speed, with Redis processing achieving 247.82 million operations per second and strong multi-core software compilation scores. Single-core throughput is moderate by comparison, positioning the platform for highly parallel workloads rather than single-threaded bottlenecks. Its dense resource allocation and integrated high-capacity NVMe drive make it well matched for distributed database clusters, enterprise caching systems, heavy CI/CD pipelines, big data analytics, and CPU-based deep learning inference.",
+  "og_description": "Amazon Web Services m8id.48xlarge features 192 vCPUs, 768 GB DDR5 RAM, 11,400 GB NVMe storage, and 75 Gbps networking, delivering top-tier multi-core and database performance.",
+  "meta_description": "Amazon Web Services m8id.48xlarge provides 192 vCPUs, 768 GB DDR5 RAM, and 11.4 TB NVMe SSD storage for intensive database and compute workloads.",
+  "tagline": "Scalable 192-vCPU architecture combining 768 GB of DDR5 memory and 11.4 TB NVMe instance storage for enterprise multi-core throughput.",
   "bullet_points": [
-    "Powered by 192 vCPUs of Intel Xeon 6975P-C processors at 3.9 GHz",
-    "Equipped with 768.0 GB of high-speed 7 GHz DDR5 memory",
-    "Includes 11,400 GB of local NVMe SSD instance storage",
-    "Delivers top-tier multi-core, memory bandwidth, and database performance",
-    "Features Intel AMX and AVX-512 hardware acceleration flags",
-    "Best suited for large databases, heavy multi-threaded tasks, and LLM inference"
+    "192 dedicated vCPUs (96 physical cores) via Intel Xeon 6975P-C processors with 480 MB L3 cache",
+    "768.0 GB high-speed DDR5 memory operating at 7 GHz",
+    "11,400 GB integrated NVMe SSD local storage volume",
+    "75 Gbps baseline network bandwidth on the AWS Nitro hypervisor",
+    "Top-tier performance in multi-core compute, Redis transactions, and memory bandwidth",
+    "Suited for large distributed databases, in-memory caches, and enterprise ETL pipelines"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

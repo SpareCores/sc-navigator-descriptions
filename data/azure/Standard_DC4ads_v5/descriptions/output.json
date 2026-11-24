@@ -1,23 +1,21 @@
 {
   "page": [
-    "Microsoft Azure DC4ads_v5 is a general-purpose virtual machine belonging to the DCADSv5 family. It features an x86_64 AMD processor with 4 dedicated vCPUs and 16.0 GB of system memory, yielding a balanced allocation of 4.0 GB of RAM per core. The instance runs on the Microsoft Hyper-V hypervisor.",
-    "This server configuration includes 154 GB of local SSD storage and supports Premium Storage options for external disk attachments. It does not include any integrated GPUs or complimentary public IPv4 addresses.",
-    "Given its balanced resource allocation and dedicated CPU cores, the DC4ads_v5 offers a cost-effective profile for workloads requiring consistent compute performance without the overhead of high-end memory or GPU accelerators. It is suitable for general-purpose applications, web serving, small databases, and development environments."
+    "Microsoft Azure DC4ads_v5 is a general-purpose virtual machine deployed on Microsoft Hyper-V. The instance is powered by an AMD EPYC 9V74 processor based on the x86_64 architecture, configured with 4 dedicated vCPUs mapped across 2 physical cores with 2 threads per core. Memory allocation stands at 16.0 GB of RAM, providing a standard 1:4 vCPU-to-memory ratio (4.0 GB per vCPU). The CPU features 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, with hardware support for AVX, AES, VAES, and SHA-NI cryptographic extensions. Unlike base compute instances, this configuration includes a bundled 161 GB local SSD for high-speed scratch storage, alongside support for Azure Premium Storage. Hardware accelerators such as GPUs are absent.",
+    "Benchmark results demonstrate consistent single-thread execution alongside constrained multi-core throughput due to the 2-core hardware boundary. In Geekbench testing, the instance recorded a single-core score of 1219.0 (mid-tier performance) and a multi-core score of 2686.0 (lower tier). Similarly, stress-ng benchmarks reflect an average single-core rating of 2185.16, contrasted with a lower-quartile multi-core rating of 4242.25. The PassMark CPU evaluation reached 4724.98, while memory testing produced a score of 1701.64. Redis throughput reached 3.06 million SET operations per second, ranking in the lower quartile among comparable enterprise instances.",
+    "From a cost-efficiency perspective, the DC4ads_v5 offers an integrated compute-plus-storage profile where local SSD capacity removes the immediate need to provision external temporary disks. However, users seeking dense parallel compute will face scalability bottlenecks given the two physical core limitation. The instance is best suited for general-purpose enterprise tasks, internal microservices, moderate web serving, CI/CD runners, and development workloads requiring moderate memory with fast local scratch space."
   ],
-  "description": "Microsoft Azure DC4ads_v5 is an x86_64 general-purpose virtual machine from the DCADSv5 family, powered by an AMD processor and managed via the Microsoft Hyper-V hypervisor. It features 4 dedicated vCPUs and 16.0 GB of system memory, establishing a balanced 1:4 vCPU-to-RAM ratio of 4.0 GB per core. Storage needs are met by 154 GB of local SSD capacity alongside Premium Storage compatibility for expandable disk configurations. The instance does not include dedicated GPU hardware or complimentary public IPv4 addresses. With its dedicated compute allocation and local solid-state storage, this server provides a stable, cost-efficient foundation for standard business applications. It is designed for workloads such as web serving, application hosting, and small-scale database deployments that require consistent performance without the overhead of specialized hardware.",
-  "og_description": "Microsoft Azure DC4ads_v5 is a general-purpose virtual machine featuring 4 dedicated AMD vCPUs, 16 GB of RAM, and 154 GB of local SSD storage under the Microsoft Hyper-V hypervisor.",
-  "meta_description": "Microsoft Azure DC4ads_v5 is a general-purpose virtual machine featuring 4 dedicated AMD vCPUs, 16 GB RAM, and 154 GB of local SSD storage.",
-  "tagline": "A balanced general-purpose virtual machine featuring dedicated AMD processing cores and integrated local solid-state storage.",
+  "description": "Microsoft Azure DC4ads_v5 is a general-purpose virtual machine built on an AMD EPYC 9V74 processor using the x86_64 architecture. Managed under Microsoft Hyper-V, the system provides 4 dedicated vCPUs spread across 2 physical cores, paired with 16.0 GB of memory and a bundled 161 GB local SSD. It includes no hardware GPUs. Benchmark evaluations show balanced single-core execution, evidenced by a Geekbench single-core score of 1219.0 and a stress-ng single-core score of 2185.16, while multi-core metrics remain constrained by the low core count. PassMark CPU reached 4724.98 and Redis achieved 3.06 million SET operations per second. By providing dedicated compute, integrated fast scratch disk, and a balanced 1:4 vCPU-to-RAM ratio, the DC4ads_v5 serves general-purpose web tiers, CI/CD workers, and lightweight database environments.",
+  "og_description": "Microsoft Azure DC4ads_v5 is a general-purpose VM featuring 4 vCPUs on AMD EPYC 9V74 processors, 16.0 GB RAM, and a bundled 161 GB local SSD for balanced enterprise tasks and scratch storage.",
+  "meta_description": "Microsoft Azure DC4ads_v5 is a general-purpose virtual machine offering 4 vCPUs on AMD EPYC 9V74 hardware, 16.0 GB RAM, and a bundled 161 GB local SSD.",
+  "tagline": "Balanced general-purpose compute pairing four dedicated virtual cores and sixteen gigabytes of RAM with high-speed local temporary SSD storage.",
   "bullet_points": [
-    "4 dedicated AMD vCPUs on x86_64 architecture",
-    "16.0 GB of system memory with 4.0 GB per core",
-    "154 GB of local SSD storage",
-    "Premium Storage capability for expandable disk options",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Suited for web serving, application hosting, and small databases"
+    "4 dedicated vCPUs powered by an AMD EPYC 9V74 processor (2 physical cores, 4 threads)",
+    "16.0 GB system memory maintaining a balanced 1:4 vCPU-to-RAM ratio",
+    "Bundled 161 GB local SSD for low-latency scratch data and paging",
+    "Average single-core compute performance balanced against entry-level parallel throughput",
+    "Optimized for general-purpose workloads, CI/CD build agents, and moderate web application tiers"
   ],
   "categories": [
-    "General Purpose",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

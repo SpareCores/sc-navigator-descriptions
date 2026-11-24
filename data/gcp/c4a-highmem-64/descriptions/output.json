@@ -1,22 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c4a-highmem-64 is a memory-optimized server instance powered by the ARMv8 architecture. It features 64 dedicated physical cores utilizing the Neoverse-V2 CPU model running at 3.0 GHz, with one thread per core. The hardware configuration includes 512.0 GB of system memory, providing a ratio of 8.0 GB of RAM per core. The processor is equipped with 64 KB L1d cache, 2 MB L2 cache, and 80 MB L3 cache. This instance does not include local storage or bundled GPUs.",
-    "Benchmark data indicates strong multi-core and memory performance. The server achieves top-tier results in multi-threaded bzip3 decompression, Geekbench multi-core scores, and software compilation using Clang. Memory subsystem performance is highly efficient, with top-tier Passmark memory scores and cached read-only small block bandwidth reaching 7912.04 GB/sec. Database operations and Redis SET operations also rank in the top tier, alongside static web serving throughput. Single-core performance and text processing benchmarks fall within the average range.",
-    "Utilizing the ARM-based Neoverse-V2 architecture allows this instance to deliver high resource density and power efficiency. The 1:8 vCPU-to-RAM ratio makes it a cost-effective choice for memory-intensive deployments without the overhead of x86 licensing. This server is highly suited for database hosting, Redis caching layers, software compilation pipelines, static web serving at scale, and memory-bound multi-threaded applications."
+    "Google Cloud Platform c4a-highmem-64 is an Arm-based cloud instance powered by the 64-core ARMv8 Neoverse-V2 processor clocked at 3.0 GHz. Designed with a 1:1 physical-to-virtual core allocation, each of the 64 vCPUs runs a single dedicated thread without simultaneous multithreading. The processor incorporates 64 KB of L1 data cache per core, 2 MB of L2 cache per core, and a shared 80 MB L3 cache. Memory capacity is substantial, providing 512 GB of RAM at an allocation ratio of 8.0 GB per vCPU.",
+    "Benchmark results demonstrate exceptional multi-threaded throughput and memory bandwidth. In multi-threaded workloads, the instance achieves top-tier results in Geekbench multi-core (26,681.0), PassMark physics testing, and multi-threaded bzip3 decompression at 717.79 GB/sec. Memory operations show extreme bandwidth, hitting 7,912.04 GB/sec in cached 16 KB read tests and 350.71 GB/sec in 256 MB uncached reads. Application-level evaluations reflect this architectural strength with 134.03 million Redis SET operations per second, high static web serving throughput, and superior Clang compilation performance.",
+    "The hardware configuration does not include local NVMe storage or discrete GPU accelerators, meaning persistent storage must be provisioned over network block storage. While single-threaded computational tasks and text processing perform in the average range, the dense dedicated 64-core Arm layout delivers strong performance-per-watt and cost-effective scaling for parallel architectures.",
+    "Google Cloud Platform c4a-highmem-64 is well suited for high-density in-memory databases like Redis or Memcached, large-scale software compilation, batch processing, static web traffic handling, and enterprise analytics that benefit from high memory-to-vCPU ratios without requiring hardware acceleration."
   ],
-  "description": "Google Cloud Platform c4a-highmem-64 is an ARM-based server instance designed for memory-intensive workloads. It features 64 dedicated physical cores on the ARMv8 Neoverse-V2 architecture running at 3.0 GHz, paired with 512.0 GB of RAM, yielding 8.0 GB of memory per core. The instance lacks local storage and GPU accelerators. Performance benchmarks show top-tier capabilities in multi-core processing, software compilation, and memory bandwidth, with cached read-only small block speeds reaching 7912.04 GB/sec. Database operations, Redis SET throughput, and static web serving also perform in the top tier, while single-core execution remains average. This hardware profile offers high resource density and qualitative cost efficiency for memory-bound applications. It is highly suited for database hosting, large-scale caching, software build pipelines, and multi-threaded data processing.",
-  "og_description": "Google Cloud Platform c4a-highmem-64 is an ARM-based server featuring 64 dedicated Neoverse-V2 cores and 512 GB RAM, delivering top-tier memory bandwidth and database performance.",
-  "meta_description": "Google Cloud Platform c4a-highmem-64 is an ARMv8 server with 64 dedicated cores and 512 GB RAM, optimized for databases and memory-intensive workloads.",
-  "tagline": "An ARM-powered memory-optimized server featuring sixty-four dedicated cores and high-bandwidth memory for demanding database and compilation workloads.",
+  "description": "Google Cloud Platform c4a-highmem-64 is a high-memory compute instance featuring 64 dedicated physical cores on the ARMv8 Neoverse-V2 architecture at 3.0 GHz. With one thread per core and no hyperthreading, the instance provides 512 GB of system memory, yielding an 8.0 GB per vCPU ratio, alongside an 80 MB L3 cache. It contains no integrated GPU acceleration or local disk storage, relying on network-attached volumes. In synthetic and application benchmarks, the server demonstrates top-tier multi-core execution, Clang compilation, and cached memory bandwidth exceeding 7,900 GB/sec, while maintaining over 134 million Redis operations per second. Delivering balanced qualitative resource efficiency through energy-conscious Arm silicon, the c4a-highmem-64 is designed for memory-intensive enterprise tasks, in-memory key-value databases, distributed caching layers, high-concurrency web serving, and parallel software build pipelines.",
+  "og_description": "Google Cloud Platform c4a-highmem-64 provides 64 dedicated Neoverse-V2 Arm cores, 512 GB of memory, and high bandwidth for memory-intensive caching, compilation, and database workloads.",
+  "meta_description": "Google Cloud Platform c4a-highmem-64 features 64 Arm Neoverse-V2 cores and 512 GB RAM, offering strong memory bandwidth for large in-memory databases.",
+  "tagline": "A high-density 64-core Arm architecture pairing 512 GB of system memory with high cached bandwidth for parallel memory-intensive processing.",
   "bullet_points": [
-    "64 dedicated ARMv8 Neoverse-V2 physical cores running at 3.0 GHz",
-    "512 GB of system memory providing 8.0 GB of RAM per core",
-    "Top-tier performance in database operations, Redis SET, and memory bandwidth",
-    "Excellent multi-core scaling for software compilation and multi-threaded decompression",
-    "Optimized for database hosting, caching layers, and memory-bound workloads"
+    "64 dedicated physical cores using ARMv8 Neoverse-V2 architecture at 3.0 GHz",
+    "512 GB total RAM providing an 8.0 GB per vCPU memory allocation",
+    "Top-tier memory read bandwidth and multi-core compilation performance",
+    "Zero integrated GPUs and no bundled local storage",
+    "Tailored for in-memory databases, caching systems, and parallel builds"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

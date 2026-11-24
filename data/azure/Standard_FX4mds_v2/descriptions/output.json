@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure FX4mds_v2 is a memory-intensive virtual server powered by the Microsoft Hyper-V hypervisor. It features an x86_64 architecture with 4 dedicated vCPUs derived from 2 physical Intel Xeon 8573C cores running at 4.2 GHz. The processor includes a 260 MB L3 cache and supports advanced instruction sets such as AVX-512 and Intel AMX for matrix operations. The server is equipped with 84.0 GB of system memory, yielding a high memory-to-core ratio of 21.0 GB per core. Local storage is provided by a 236 GB NVMe SSD, and the instance is Premium Storage capable.",
-    "Benchmark results indicate highly asymmetric performance characteristics. The server achieves top-tier single-core performance, as evidenced by a Geekbench single-core score of 2262.0 and strong single-threaded compression and decompression rates. However, multi-core performance is limited, with stress-ng multi-core and bzip3 multi-threaded decompression benchmarks falling into the bottom 25%. Memory bandwidth also exhibits a sharp contrast; while cached small-block reads perform at an average rate of 345.52 GB/sec, uncached large-block read and write speeds are weak, measuring 35.98 GB/sec and 25.58 GB/sec respectively.",
-    "From a resource-density perspective, the FX4mds_v2 offers a specialized qualitative cost profile, providing a massive memory footprint without requiring the purchase of excess vCPUs. This makes it highly efficient for memory-bound, low-concurrency workloads. It is well-suited for database operations, in-memory caching systems like Redis, and single-threaded text or data processing tasks. It is less suitable for heavily parallelized compute tasks, software compilation, or large-scale LLM text generation."
+    "Microsoft Azure FX4mds_v2 is a high-frequency, memory-intensive compute instance hosted on Microsoft Hyper-V. The server is powered by an Intel Xeon 8573C processor running at a base clock speed of 4.2 GHz across 2 physical cores and 4 dedicated virtual CPUs with hyper-threading enabled. Cache configuration includes 48 KB of L1 data cache, 2 MB of L2 cache, and a large 260 MB L3 cache. It incorporates advanced vector and matrix acceleration instructions, including AVX-512 and Intel AMX, alongside AES cryptography extensions.",
+    "The hardware configuration pairs 84.0 GB of system memory, delivering an unusually high 21.0 GB of RAM per vCPU. Storage is locally provisioned via a 236 GB NVMe SSD, providing fast scratch and temporary data performance without external storage attachments. The instance includes no discrete graphics processing units and allocates zero complimentary public IPv4 addresses.",
+    "Benchmark measurements indicate exceptional single-core compute performance, highlighted by a Geekbench single-core score of 2262.0, placing it in the top 10 percent of evaluated systems. Single-threaded data handling tests also reflect strength, with gzip compression reaching 34.59 GB/sec and bzip3 decompression achieving 14.25 GB/sec. Conversely, multi-threaded throughput and large-block memory transfers fall into lower performance tiers due to the 4-vCPU ceiling and uncached large-block read-write bandwidth constraints of 35.98 GB/sec and 25.58 GB/sec, respectively.",
+    "Given its high core frequencies and high memory-per-core density, the FX4mds_v2 is architecturally aligned with licensing-constrained relational databases, electronic design automation (EDA), in-memory analytics, and single-thread-dominated calculation workloads that require significant memory footprints without paying for excess core counts."
   ],
-  "description": "Microsoft Azure FX4mds_v2 is a memory-intensive virtual server configured with 4 dedicated vCPUs from an Intel Xeon 8573C processor running at 4.2 GHz, 84.0 GB of RAM, and a 236 GB local NVMe SSD. Operating on the Microsoft Hyper-V hypervisor, this x86_64 instance features a high memory-to-core ratio of 21.0 GB per core and a large 260 MB L3 cache. Benchmarks show top-tier single-core performance, though multi-core compute and uncached memory bandwidth are relatively weak. This hardware profile makes the server a qualitatively cost-efficient choice for memory-bound workloads that do not require high parallel processing power. It is best suited for in-memory caching, database operations, and single-threaded data processing.",
-  "og_description": "Microsoft Azure FX4mds_v2 is a memory-intensive server with 4 Intel Xeon vCPUs, 84 GB RAM, and a 236 GB NVMe SSD, offering strong single-core performance for database and caching workloads.",
-  "meta_description": "Microsoft Azure FX4mds_v2 is a memory-intensive virtual server featuring 4 Intel Xeon vCPUs, 84 GB of RAM, and a 236 GB local NVMe SSD.",
-  "tagline": "A memory-intensive virtual server featuring high memory density, dedicated Intel Xeon cores, and local NVMe storage for memory-bound workloads.",
+  "description": "Microsoft Azure FX4mds_v2 is a high-clock-frequency, memory-intensive instance built on the x86_64 Intel Xeon 8573C processor running at 4.2 GHz. The configuration provides 4 dedicated vCPUs across 2 physical cores, coupled with 84.0 GB of system RAM, resulting in a dense 21.0 GB of memory per core. Local scratch storage is supported by an integrated 236 GB NVMe SSD. The processor features AVX-512, AMX matrix acceleration, and a 260 MB L3 cache. In benchmark tests, the instance demonstrates top-tier single-core performance, achieving a Geekbench single-core score of 2262.0 and strong single-threaded compression speeds. However, multi-core throughput and uncached large-block memory bandwidth remain limited by the low core count. The server is well suited for memory-heavy workloads constrained by per-core software licensing, electronic design automation, batch financial modeling, and high-frequency relational database processing.",
+  "og_description": "Microsoft Azure FX4mds_v2 features 4 dedicated vCPUs at 4.2 GHz on Intel Xeon 8573C hardware, 84 GB RAM, and a 236 GB NVMe SSD, delivering top-tier single-core compute performance.",
+  "meta_description": "Microsoft Azure FX4mds_v2 offers 4 dedicated 4.2 GHz vCPUs, 84 GB RAM, a 236 GB NVMe SSD, and high single-thread compute capabilities.",
+  "tagline": "High-frequency compute instance pairing extreme per-core memory capacity with dedicated high-clock Intel silicon and local NVMe storage.",
   "bullet_points": [
-    "Intel Xeon 8573C processor with 4 vCPUs and 4.2 GHz clock speed",
-    "84.0 GB of system memory providing 21.0 GB per core",
-    "236 GB local NVMe SSD storage with Premium Storage capability",
-    "Top-tier single-core performance but limited multi-core scaling",
-    "Suited for in-memory databases, caching layers, and text processing"
+    "Dedicated 4-vCPU Intel Xeon 8573C processor operating at 4.2 GHz",
+    "Generous 84.0 GB memory allocation providing 21.0 GB per vCPU",
+    "Integrated 236 GB local NVMe solid-state drive for high-speed local I/O",
+    "Top-tier Geekbench single-core score of 2262.0 with hardware AMX support",
+    "Tailored for EDA, core-licensed databases, and memory-intensive single-thread tasks"
   ],
   "categories": [
     "Memory Optimized",
+    "Compute Optimized",
     "Storage & Database"
   ]
 }

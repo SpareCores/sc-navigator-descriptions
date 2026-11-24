@@ -1,24 +1,22 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-16xCPU-192GB is a memory-optimized virtual server belonging to the Cloud Native family, running on the KVM hypervisor. It features an x86_64 architecture powered by an AMD EPYC 7542 processor with 16 vCPUs and 16 physical cores. The CPU allocation is shared, operating at a base clock speed of 2.0 GHz. The system is equipped with 192.0 GB of RAM, providing a high memory-to-core density of 12.0 GB per vCPU. No local storage or GPU hardware is bundled with this instance.",
-    "Performance benchmarks indicate a mixed profile. Single-core processing is a notable bottleneck, with stress-ng single-core performance scoring in the bottom 10%, though Geekbench single-core and text processing metrics show stronger results in the top 25%. Multi-core performance, including stress-ng multi-core and Geekbench multi-core, consistently falls within the average range. Memory bandwidth tests for both small and large blocks also register average throughput, though PassMark memory scores are weak, placing in the bottom 25%.",
-    "From a cost-efficiency perspective, the server offers high memory density relative to its shared CPU resource profile, making it a viable option for memory-intensive workloads that do not require dedicated, continuous CPU performance. However, the shared CPU allocation and poor single-core stress-ng results present a tradeoff for compute-bound tasks. This configuration is best suited for large-scale caching, database operations, static web serving, and memory-heavy background processing."
+    "UpCloud CLOUDNATIVE-16xCPU-192GB is a memory-dense virtual machine deployed on the KVM hypervisor. It runs on AMD EPYC 7542 processors clocked at 2.0 GHz across 16 shared vCPUs with 1 thread per core. The instance provides 192.0 GB of RAM, yielding an elevated allocation of 12.0 GB per core. The architecture supports basic x86_64 vector instructions including AVX, alongside hardware acceleration for AES and SHA extensions, but does not feature AVX-512 or AMX extensions. Local storage is not included, and the server does not contain dedicated GPU hardware.",
+    "Benchmark results demonstrate consistent middle-tier multi-threaded processing power, reflected in a PassMark CPU score of 23,491.5 and a Geekbench multi-core score of 15,441.0. Geekbench single-core performance reached 2,094.0, placing in the top quartile, whereas stress-ng single-core tests scored lower at 746.4. Memory bandwidth reaches 102.97 GB/sec for uncached large-block reads and 74.72 GB/sec for uncached writes, while the overall PassMark memory score scored in the bottom 25% at 1,412.21. In-memory data handling remains steady, with Redis SET operations achieving 17.45 million operations per second and static web throughput reaching 11.36 GB/sec. Large language model inference speeds fall off significantly on text generation, scoring in the bottom percentiles for both small and medium models.",
+    "With its 12:1 memory-to-core ratio, the platform offers qualitative cost efficiency for systems constrained primarily by RAM capacity rather than raw compute speed or GPU requirements. Shared CPU cores introduce potential contention tradeoffs compared to dedicated-core tiers. Consequently, this server is suitable for large in-memory databases, Redis caches, memory-heavy ETL processing, and backend microservices that do not rely on local NVMe disk arrays."
   ],
-  "description": "UpCloud CLOUDNATIVE-16xCPU-192GB is a memory-optimized virtual server built on the KVM hypervisor and powered by an AMD EPYC 7542 processor. Featuring 16 shared vCPUs and 192.0 GB of RAM, it delivers a high memory-to-core ratio of 12.0 GB per vCPU. While single-core stress-ng benchmarks place in the bottom 10%, Geekbench single-core and text processing tests show strong performance in the top 25%. Multi-core capabilities and memory bandwidth consistently rank in the average tier, though PassMark memory scores remain weak. Lacking local storage and GPU accelerators, this instance represents a qualitative tradeoff, offering high memory capacity on shared CPU resources. It is best suited for memory-intensive workloads such as database operations, caching, and static web serving.",
-  "og_description": "UpCloud CLOUDNATIVE-16xCPU-192GB is a memory-optimized KVM virtual server with 16 shared AMD EPYC vCPUs and 192 GB RAM, designed for memory-heavy workloads like databases and caching.",
-  "meta_description": "UpCloud CLOUDNATIVE-16xCPU-192GB is a memory-optimized KVM virtual server featuring 16 shared AMD EPYC vCPUs and 192 GB RAM for database workloads.",
-  "tagline": "A memory-optimized virtual server featuring high RAM density and shared AMD EPYC processors for memory-intensive workloads.",
+  "description": "UpCloud CLOUDNATIVE-16xCPU-192GB is a memory-focused instance offering 16 shared vCPUs and 192.0 GB of RAM, powered by AMD EPYC 7542 processors at 2.0 GHz on a KVM hypervisor. Featuring an architecture that allocates 12.0 GB of RAM per vCPU, it is configured without bundled local storage or GPUs. Compute benchmarks show moderate multi-core throughput, including a Geekbench multi-core score of 15,441.0 and a PassMark CPU score of 23,491.5, alongside balanced uncached memory bandwidth of 102.97 GB/sec for reads. Redis throughput hits 17.45 million SET operations per second, while LLM generation and stress-ng single-core execution remain weak. Because memory capacity is favored heavily over core count and fast local storage is absent, this instance is suited for in-memory databases, distributed caches, and analytical ETL workloads requiring large working memory sets.",
+  "og_description": "UpCloud CLOUDNATIVE-16xCPU-192GB provides 16 shared vCPUs on AMD EPYC 7542 hardware and 192 GB RAM. Designed for memory-intensive workloads, it includes no bundled local storage or GPUs.",
+  "meta_description": "UpCloud CLOUDNATIVE-16xCPU-192GB features 16 shared vCPUs on AMD EPYC 7542 and 192 GB RAM, delivering high memory density for in-memory workloads.",
+  "tagline": "High-density shared compute providing 192 GB of memory across 16 AMD EPYC cores for memory-bound cloud workloads.",
   "bullet_points": [
-    "16 shared AMD EPYC 7542 vCPUs on x86_64 architecture",
-    "192.0 GB of RAM providing 12.0 GB per core",
-    "Strong Geekbench single-core and text processing performance",
-    "Average multi-core CPU and memory bandwidth benchmarks",
-    "No local storage or GPU accelerators included",
-    "Best suited for database operations, caching, and static web serving"
+    "16 shared vCPUs powered by AMD EPYC 7542 processors at 2.0 GHz",
+    "192.0 GB RAM offering an expansive 12.0 GB per vCPU ratio",
+    "Zero bundled local disk storage and no GPU hardware included",
+    "17.45 million operations/sec Redis SET performance",
+    "Tailored for in-memory caching, ETL pipelines, and memory-heavy databases"
   ],
   "categories": [
     "Memory Optimized",
-    "Burstable & Budget",
     "General Purpose"
   ]
 }

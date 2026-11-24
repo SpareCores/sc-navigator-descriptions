@@ -1,24 +1,23 @@
 {
   "page": [
-    "OVHcloud r3-32 is a memory-optimized virtual server hosted on the KVM hypervisor. It features 4 dedicated physical cores powered by an AMD EPYC processor running at 2.3 GHz, utilizing the x86_64 architecture with one thread per core. The hardware configuration includes 32.0 GB of system memory, yielding 8.0 GB of RAM per core, alongside a local 100 GB NVMe SSD for storage. Network connectivity is provisioned with a baseline bandwidth of 1 Gbps, and the server includes one complimentary public IPv4 address.",
-    "Performance benchmarks indicate strong single-core capabilities, with stress-ng single-core CPU performance and Geekbench text processing scoring in the top 25%. Multi-core CPU performance, memory bandwidth, and Redis SET operations fall into the average tier. However, the server exhibits weaker performance in static web serving throughput, which registers at 4.42 GB/sec, and medium-model LLM prompt processing, placing those metrics in the bottom 25%.",
-    "From a resource density perspective, the dedicated AMD EPYC cores without hyperthreading offer predictable compute performance, making this instance a cost-efficient option for memory-intensive workloads that do not require massive parallel processing. The primary tradeoffs include the modest 1 Gbps network baseline and lower throughput for static web serving. This server is best suited for memory-bound applications, database operations, caching layers, and text processing tasks."
+    "OVHcloud r3-32 is a memory-optimized virtual instance powered by the KVM hypervisor on an x86_64 architecture. The server is configured with 4 dedicated physical AMD EPYC cores running at 2.3 GHz, with one thread per core and no simultaneous multithreading enabled. It includes 32 KB of L1 data cache, 0.5 MB of L2 cache, and 32 MB of L3 cache per core cluster, alongside hardware cryptographic instruction sets such as AES and SHA-NI.",
+    "Hardware allocations provide a total of 32.0 GB of RAM, yielding an 8:1 memory-to-vCPU ratio of 8.0 GB per core. Local storage features an integrated 100 GB NVMe SSD, providing low-latency disk access directly on the host node. The platform does not bundle discrete GPU accelerators, relying purely on host CPU compute, and is provisioned with a baseline network bandwidth of 1 Gbps with zero complimentary public IPv4 addresses included by default.",
+    "Benchmark data demonstrates balanced performance across memory and general compute metrics. In raw CPU benchmarks, the r3-32 achieves a strong single-core stress-ng result of 3,077.24, alongside a multi-core score of 12,261.5 and a Geekbench multi-core score of 6,003.0. Memory throughput remains solid with 120.0 GB/sec for uncached read operations and 74.19 GB/sec for uncached writes. Redis throughput reaches 9.91 million SET operations per second, matching expected performance profiles for in-memory systems.",
+    "Tradeoffs center around network-bound operations and heavy vectorized processing. Static web serving throughput tested at 4.42 GB/sec, placing it in the lower quartile, in part reflecting the 1 Gbps network baseline. Additionally, the instance lacks advanced vector sets like AVX-512 and AMX, making medium-to-large LLM processing inefficient, as shown by prompt processing rates of 21.45 tokens/sec on 7B parameter models. Given its dedicated core layout and dense 8 GB per vCPU ratio, the server offers strong qualitative cost efficiency for in-memory caching tiers, relational database instances, and data-intensive backend workloads."
   ],
-  "description": "OVHcloud r3-32 is a memory-optimized virtual server hosted on the KVM hypervisor, configured with 4 dedicated AMD EPYC physical cores operating at 2.3 GHz and 32.0 GB of system memory. This architecture delivers a high memory-to-core ratio of 8.0 GB per core, complemented by a 100 GB local NVMe SSD and a 1 Gbps baseline network connection. Benchmark results show strong single-core CPU and text processing performance, while multi-core operations, memory bandwidth, and Redis SET execution fall into the average tier. Conversely, static web serving throughput and medium-model LLM prompt processing are relatively weak. The dedicated, non-hyperthreaded core allocation ensures predictable performance, positioning this server as a cost-efficient option for memory-bound workloads. It is best suited for database hosting, caching layers, and text processing applications.",
-  "og_description": "OVHcloud r3-32 is a memory-optimized KVM virtual server featuring 4 dedicated AMD EPYC cores, 32 GB RAM, and a 100 GB NVMe SSD, delivering strong single-core performance for database and caching workloads.",
-  "meta_description": "OVHcloud r3-32 is a memory-optimized KVM virtual server featuring 4 dedicated AMD EPYC cores, 32 GB of RAM, and 100 GB of local NVMe SSD storage.",
-  "tagline": "A memory-optimized virtual server featuring dedicated AMD EPYC cores and local NVMe storage for memory-intensive workloads.",
+  "description": "OVHcloud r3-32 is a memory-optimized instance built on x86_64 AMD EPYC processors running on the KVM hypervisor. It is configured with 4 dedicated physical cores at 2.3 GHz (1 thread per core), 32.0 GB of system memory, and a bundled 100 GB local NVMe SSD. The instance lacks discrete GPUs and provides a 1 Gbps network baseline. Performance benchmarks show strong single-core compute performance alongside stable multi-core and memory subsystem throughput, reaching 9.91 million Redis SET operations per second and 120.0 GB/sec large-block read bandwidth. Tradeoffs include modest web serving throughput and the absence of AVX-512 instructions, which constrains vectorized and AI compute tasks. With an 8:1 memory-to-core ratio, r3-32 offers a cost-effective platform for database hosting, Redis caches, and data-processing tasks.",
+  "og_description": "OVHcloud r3-32 is a memory-optimized instance featuring 4 dedicated AMD EPYC cores, 32 GB RAM, a 100 GB NVMe SSD, and 1 Gbps bandwidth for database and in-memory caching workloads.",
+  "meta_description": "OVHcloud r3-32 features 4 dedicated AMD EPYC cores, 32 GB RAM, and a bundled 100 GB NVMe SSD, optimized for memory-heavy and database workloads.",
+  "tagline": "Dedicated AMD EPYC cores with high memory density and integrated NVMe storage for memory-intensive enterprise workloads.",
   "bullet_points": [
-    "4 dedicated AMD EPYC physical cores at 2.3 GHz with no hyperthreading",
-    "32.0 GB of RAM providing 8.0 GB of memory per core",
-    "100 GB local NVMe SSD storage and 1 Gbps baseline network bandwidth",
-    "Strong single-core CPU and text processing benchmark performance",
-    "Average multi-core execution and Redis SET operations",
-    "Suited for database hosting, caching layers, and text processing"
+    "4 dedicated AMD EPYC physical cores clocked at 2.3 GHz",
+    "32 GB system memory with an 8:1 GB-per-vCPU ratio",
+    "Local 100 GB NVMe SSD storage included",
+    "1 Gbps baseline network bandwidth without discrete GPUs",
+    "Well-suited for Redis caching, relational databases, and memory-heavy backends"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

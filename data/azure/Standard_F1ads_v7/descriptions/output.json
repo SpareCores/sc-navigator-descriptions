@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure F1ads_v7 is an entry-level virtual machine instance belonging to the Fadsv7 server family. It is equipped with a single dedicated AMD EPYC 9V45 processor core operating at a high base clock speed of 4.5 GHz. The system includes 4.0 GB of RAM, providing a 1:4 vCPU-to-memory ratio. For local storage, the instance features a bundled 118 GB NVMe SSD and is capable of utilizing Premium Storage. It runs on the Microsoft Hyper-V hypervisor and utilizes the x86_64 architecture.",
-    "Due to its single-core configuration, the instance exhibits highly polarized performance characteristics. In single-core benchmarks, the AMD EPYC processor achieves top-tier results, placing in the top 10% for stress-ng single-core CPU performance, single-threaded gzip compression, and single-threaded bzip3 decompression. Conversely, multi-core and multi-threaded operations are severely constrained, with stress-ng multi-core performance and PassMark CPU scores falling into the bottom 25%. Memory bandwidth is also limited, with read-only large block bandwidth measured at 39.12 GB/sec, though write bandwidth remains average at 31.44 GB/sec.",
-    "The F1ads_v7 offers a cost-efficient entry point for workloads requiring high single-threaded compute speed without the overhead of multi-core licensing or resource allocation. However, the lack of multiple cores and the modest 4.0 GB memory capacity present a clear trade-off, making it unsuitable for parallel processing, heavy database operations, or high-throughput web serving. Appropriate workloads include lightweight single-threaded background tasks, basic utility scripting, simple text processing, and low-concurrency development environments."
+    "Microsoft Azure F1ads_v7 is an entry-level virtual machine within Azure's compute-focused lineup, running on Microsoft Hyper-V. The instance is powered by a dedicated single physical core and single vCPU from an x86_64 AMD EPYC 9V45 processor clocked at up to 4.5 GHz. The CPU architecture provides 48 KB of L1d cache, 1.0 MB of L2 cache, and a substantial 32 MB L3 cache slice, alongside instruction set support including AVX-512 (with VNNI and BF16 extensions), AES, and SHA-NI cryptography acceleration. It is configured with 4.0 GB of system memory, matching a 1:4 vCPU-to-RAM profile.",
+    "Storage consists of an included 118 GB local NVMe SSD, providing high-speed scratch space directly attached to the host. No discrete GPU acceleration is included on this instance type. In benchmark testing, the high operating clock frequency and architecture of the AMD EPYC 9V45 yield top-tier single-core CPU throughput in stress-ng as well as top-tier compression execution speeds, registering 38.66 GB/sec in single-threaded gzip and 16.95 GB/sec in bzip3 decompression.",
+    "Performance tradeoffs center on the single-core limitation. Aggregate multithreaded capacity and parallel throughput metrics\u2014such as multi-core stress-ng, PassMark aggregate CPU evaluations, static web serving (2.63 GB/sec), and PassMark database operations\u2014place in the lower percentiles relative to multi-core cloud instances. Large memory read bandwidth reaches 39.12 GB/sec uncached, while write bandwidth stabilizes at 31.44 GB/sec.",
+    "From a cost-efficiency perspective, the F1ads_v7 offers an economical deployment model for dedicated compute resources that require sustained single-thread clock speed without the overhead of multi-core licensing or allocation costs. Appropriate workloads include lightweight batch processing, single-threaded compression utilities, automation agents, development environments, and small-footprint background workers."
   ],
-  "description": "Microsoft Azure F1ads_v7 is a single-core virtual machine from the Fadsv7 family, featuring a dedicated AMD EPYC 9V45 processor running at 4.5 GHz. It is configured with 4.0 GB of RAM and a bundled 118 GB NVMe SSD, with support for Premium Storage. Operating on Microsoft Hyper-V, this x86_64 instance delivers top-tier single-core CPU performance, ranking in the top 10% for single-threaded stress-ng, gzip compression, and bzip3 decompression benchmarks. However, its single-core nature limits multi-threaded workloads, resulting in weak multi-core CPU and memory bandwidth scores. This instance provides a qualitatively cost-efficient profile for single-threaded tasks but presents clear trade-offs for parallel computing. It is best suited for lightweight single-threaded background jobs, basic utility scripts, and low-concurrency development tasks.",
-  "og_description": "Microsoft Azure F1ads_v7 is a single-core virtual machine featuring a 4.5 GHz AMD EPYC processor, 4.0 GB of RAM, and a 118 GB NVMe SSD, delivering top-tier single-threaded benchmark performance.",
-  "meta_description": "Microsoft Azure F1ads_v7 is a single-core VM with a 4.5 GHz AMD EPYC CPU, 4.0 GB RAM, and a 118 GB NVMe SSD, optimized for single-threaded tasks.",
-  "tagline": "A single-core virtual machine featuring a high-frequency processor and local NVMe storage for dedicated, single-threaded workloads.",
+  "description": "Microsoft Azure F1ads_v7 is a compact compute-oriented instance powered by a single dedicated vCPU from a 4.5 GHz AMD EPYC 9V45 processor, paired with 4.0 GB of RAM and 118 GB of integrated NVMe SSD local storage. Operating on Microsoft Hyper-V, the system benefits from a large 32 MB L3 cache and AVX-512 vector support. In synthetic evaluations, the server achieves top-tier single-threaded performance in stress-ng testing and single-core compression benchmarks, such as gzip and bzip3. However, overall multi-core processing, static web serving throughput, and database transaction scores remain bounded by its single-thread design. With no discrete GPU and zero complimentary public IPv4 addresses, the instance is qualitatively cost-efficient for workloads prioritizing dedicated single-core compute over parallel execution. It is suited for lightweight automation agents, single-threaded processing tasks, development sandboxes, and low-concurrency microservices.",
+  "og_description": "Microsoft Azure F1ads_v7 is a single-core virtual machine featuring a 4.5 GHz AMD EPYC 9V45 processor, 4.0 GB of memory, and a 118 GB NVMe SSD for dedicated lightweight compute workloads.",
+  "meta_description": "Microsoft Azure F1ads_v7 features 1 dedicated AMD EPYC 9V45 vCPU at 4.5 GHz, 4.0 GB of memory, and 118 GB of fast local NVMe SSD storage.",
+  "tagline": "Single dedicated high-frequency core paired with fast local NVMe storage for lightweight processing tasks and compute-focused single-threaded workloads.",
   "bullet_points": [
-    "Single dedicated AMD EPYC 9V45 core operating at 4.5 GHz",
-    "4.0 GB of system memory and 118 GB of local NVMe SSD storage",
-    "Top-tier single-core CPU and single-threaded compression performance",
-    "Weak multi-core and memory bandwidth benchmark results",
-    "Suited for lightweight single-threaded tasks and low-concurrency utility scripts"
+    "Single dedicated core from an AMD EPYC 9V45 processor clocked at 4.5 GHz",
+    "4.0 GB system memory with 32 MB L3 processor cache",
+    "Bundled 118 GB local NVMe SSD high-speed scratch disk",
+    "Top-tier single-core stress and compression benchmark performance",
+    "Suited for automation agents, lightweight workers, and build utilities"
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

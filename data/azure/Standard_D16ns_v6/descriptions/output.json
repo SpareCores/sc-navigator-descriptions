@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure D16ns_v6 is a general-purpose, network-optimized virtual machine belonging to the Dnv6 family. It is powered by an Intel Xeon 8573C processor utilizing the x86_64 architecture. The server features 16 dedicated vCPUs mapped to 8 physical cores with hyper-threading enabled, running at a clock speed of 4.2 GHz. It is equipped with 64.0 GB of system memory, providing a balanced allocation of 4.0 GB per core. The instance has no local storage, but it is Premium Storage capable, and it does not include any GPU accelerators.",
-    "Benchmark data indicates strong performance in specific workloads. The single-threaded gzip compression speed reaches 31.44 GB/sec, and Geekbench text processing scores 2637.0, both placing in the top 25% tier. For language model tasks, the server achieves top-tier performance in text generation for small 135M models at 404.96 tokens/sec. Most other metrics, including stress-ng CPU performance, Geekbench multi-core, and Redis SET operations, fall within the average range.",
-    "From a qualitative cost-efficiency perspective, the D16ns_v6 offers a balanced resource density suitable for general-purpose workloads that require dedicated CPU resources without the overhead of local storage. The absence of local NVMe storage represents a tradeoff, requiring reliance on external Premium Storage. This virtual machine is suited for web serving, software compilation, text processing, database operations, and lightweight machine learning inference tasks."
+    "Microsoft Azure D16ns_v6 is a general-purpose virtual machine belonging to the Dnv6 network-optimized family. Running on the Microsoft Hyper-V hypervisor, the instance provides 16 vCPUs derived from 8 physical cores on an Intel Xeon 8573C processor using simultaneous multithreading. It features a clock speed of up to 4.2 GHz, 260 MB of L3 cache, and 64.0 GB of system memory, matching a standard 1:4 vCPU-to-memory ratio at 4.0 GB per vCPU. Hardware instruction support includes AVX-512 extensions and Advanced Matrix Extensions (AMX).",
+    "The instance does not include bundled local storage or integrated GPUs. Storage operations rely entirely on remote network-attached disks, making it capable of attaching Azure Premium Storage. Networking features are central to the D16ns_v6 designation, though it does not include complimentary public IPv4 addresses by default.",
+    "Benchmark measurements position the D16ns_v6 primarily in the middle 50% across standard synthetic evaluations, such as Geekbench (1915 single-core, 11276 multi-core) and PassMark CPU (26468.23). However, specific instruction workloads show higher capability: single-threaded gzip compression (31.44 GB/sec) and Geekbench text processing (2637.0) rank in the top 25%. In machine learning workloads utilizing CPU matrix instructions, text generation on a small 135M parameter model reaches 404.96 tokens per second, placing it in the top 10%, while medium 7B model generation settles into the average range at 15.78 tokens per second.",
+    "From an infrastructure perspective, the D16ns_v6 provides a balanced compute-to-memory profile for general production requirements. Tradeoffs include the total absence of ephemeral local disk space, which necessitates reliance on remote volumes for all persistent and scratch storage. Given its balanced resource ratios and network capabilities, the instance fits web application serving, database nodes, CI/CD runners, and CPU-based lightweight inference workloads."
   ],
-  "description": "Microsoft Azure D16ns_v6 is a general-purpose, network-optimized virtual machine from the Dnv6 family. Powered by an Intel Xeon 8573C processor running at 4.2 GHz, it provides 16 dedicated vCPUs across 8 physical cores and 64.0 GB of system memory. While it lacks local storage, it is Premium Storage capable and features no GPU accelerators. Performance benchmarks show strong capabilities in single-threaded gzip compression and text processing, alongside top-tier text generation speeds for small language models. General compute, memory bandwidth, and database operations perform in the average tier. This instance is suited for general-purpose workloads, web serving, software compilation, and lightweight inference tasks where dedicated CPU allocation is required but local storage is not.",
-  "og_description": "Microsoft Azure D16ns_v6 is a general-purpose, network-optimized VM featuring 16 dedicated Intel Xeon vCPUs, 64 GB RAM, and strong text processing and small-model LLM inference performance.",
-  "meta_description": "Microsoft Azure D16ns_v6 is a general-purpose VM with 16 dedicated Intel Xeon vCPUs, 64 GB RAM, and network-optimized capabilities.",
-  "tagline": "A dedicated general-purpose virtual machine featuring high-frequency Intel Xeon processors, balanced memory allocation, and optimized network performance for enterprise workloads.",
+  "description": "Microsoft Azure D16ns_v6 is a general-purpose, network-optimized virtual machine featuring 16 vCPUs and 64.0 GB of RAM, maintaining a balanced 1:4 core-to-memory ratio. Powered by an 8-core Intel Xeon 8573C processor running up to 4.2 GHz with 260 MB L3 cache, it supports AVX-512 and Intel AMX vector instructions. The configuration contains no dedicated GPUs and lacks local storage, relying entirely on remote network-attached storage options like Premium Storage. Benchmarks demonstrate steady mid-tier execution across PassMark, Geekbench, and Redis operations, with distinct strengths in text processing, single-thread gzip compression, and small-model CPU LLM inference. D16ns_v6 is suited for web applications, enterprise microservices, continuous integration pipelines, and general relational database deployments requiring consistent CPU allocation without ephemeral storage requirements.",
+  "og_description": "Microsoft Azure D16ns_v6 is a network-optimized general-purpose VM offering 16 vCPUs from an Intel Xeon 8573C CPU, 64 GB RAM, AMX support, and no local disk, built for web workloads and databases.",
+  "meta_description": "Microsoft Azure D16ns_v6 provides 16 vCPUs, 64 GB RAM, and an Intel Xeon 8573C processor for general-purpose workloads and remote storage architectures.",
+  "tagline": "Balanced 16-vCPU compute with 64 GB memory, advanced matrix extensions, and remote disk support for general enterprise workloads.",
   "bullet_points": [
-    "Powered by an Intel Xeon 8573C processor with 16 dedicated vCPUs at 4.2 GHz",
-    "Equipped with 64.0 GB of system memory and no local storage",
-    "Top-tier text generation performance for small language models at 404.96 tokens/sec",
-    "Strong single-threaded gzip compression and text processing benchmark results",
-    "Designed for web serving, software compilation, and database operations"
+    "Intel Xeon 8573C processor with 16 vCPUs (8 physical cores) at up to 4.2 GHz",
+    "64.0 GB system memory providing a balanced 4 GB per vCPU ratio",
+    "Support for AVX-512 and Intel AMX matrix extensions",
+    "Stateless configuration without local ephemeral storage, utilizing network storage",
+    "Well-suited for web application servers, relational databases, and enterprise services"
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }

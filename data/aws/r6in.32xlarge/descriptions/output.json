@@ -1,23 +1,24 @@
 {
   "page": [
-    "Amazon Web Services r6in.32xlarge is a memory-optimized server instance powered by the AWS Nitro hypervisor. It features 128 vCPUs mapped to 64 physical cores of an Intel Xeon 8375C processor running at 3.5 GHz. The x86_64 architecture includes support for advanced vector extensions such as AVX-512 and cryptographic acceleration via AES and SHA_NI. This instance is equipped with 1024.0 GB of DDR4 memory operating at 3 GHz, providing a balanced 8.0 GB of RAM per physical core.",
-    "Performance benchmarks indicate strong multi-core capabilities, with top-tier results in Passmark CPU encryption, extended instructions, and ray tracing. Memory bandwidth is highly efficient, registering strong read and write speeds for both cached small blocks and uncached large blocks. The instance lacks local NVMe storage, relying entirely on network-attached storage, but compensates with a substantial 200 Gbps baseline network bandwidth to support high-throughput EBS volumes and cluster communication.",
-    "From a cost-efficiency perspective, the r6in.32xlarge offers high resource density for memory-bound workloads, minimizing the need to scale horizontally solely for RAM capacity. It is highly suited for large-scale in-memory databases like Redis, enterprise database operations, high-throughput static web serving, and memory-intensive data processing pipelines."
+    "Amazon Web Services r6in.32xlarge is a memory-optimized instance built on the AWS Nitro hypervisor architecture. It features an Intel Xeon 8375C processor running on the x86_64 architecture with 64 physical cores and 128 dedicated vCPUs at a clock speed of 3.5 GHz. The CPU subsystem includes 48 KB of L1 data cache per core, 1 MB of L2 cache per core, and a shared 54 MB L3 cache, alongside support for instruction sets including AVX-512, AVX-512 VNNI, VAES, and SHA-NI. The instance is configured with 1024.0 GB of DDR4 memory running at 3 GHz, providing 8.0 GB of RAM per vCPU. It lacks local instance storage, relying on network-attached EBS volumes, and does not include a GPU. It provides a baseline network bandwidth of 200 Gbps.",
+    "Benchmark results demonstrate strong parallel throughput and high memory bandwidth across data-heavy workloads. Multi-core performance is robust, with a stress-ng multi-core score of 123840.1 and a PassMark CPU score of 86579.42, ranking in the top tier. Extended instruction benchmarks and cryptographic processing reached 106437.4 and 111172.37 on PassMark respectively, driven by native AVX-512 and VAES vector extensions. Large-block memory bandwidth shows 332.96 GB/sec for read-only access and 135.67 GB/sec for write operations. Single-threaded performance sits within the middle 50% across stress-ng (1891.49) and Geekbench (1695.0), indicating that the system's strengths stem from aggregate core scaling rather than raw single-core clocks.",
+    "Application-level testing reveals strong metrics for data-layer infrastructure. The system recorded 107.01 million Redis SET operations per second and scored 29450.04 in PassMark database operations, reinforced by a static web serving throughput of 72.68 GB/sec. In LLM CPU inference tests, prompt processing reached 2833.8 tokens/sec on a 135M model and 195.57 tokens/sec on a 7B model, while text generation rates remained modest across all model sizes due to absence of GPU hardware accelerators.",
+    "The primary tradeoff of the r6in.32xlarge is its complete reliance on network storage for local I/O, which must be paired with high-performance EBS configurations to match the memory throughput. The instance delivers high resource density per node, optimizing costs for large deployments that require vast RAM capacities and high network throughput without paying for accelerator silicon. It is well matched for in-memory databases, distributed caches, real-time analytics engines, and large-scale relational database deployments."
   ],
-  "description": "Amazon Web Services r6in.32xlarge is a memory-optimized instance featuring 128 vCPUs and 64 physical cores powered by an Intel Xeon 8375C processor running at 3.5 GHz. Built on the AWS Nitro hypervisor, it delivers 1024.0 GB of DDR4 memory and a high-speed 200 Gbps baseline network bandwidth. While it lacks local storage, its architectural design is optimized for network-attached EBS performance. Benchmark results show top-tier performance in CPU encryption, extended instructions, and ray tracing, alongside strong multi-core processing and memory bandwidth. This profile makes the instance highly efficient for memory-intensive workloads without requiring local disk storage. It is best suited for in-memory databases, large-scale enterprise database operations, and high-throughput data processing tasks.",
-  "og_description": "Amazon Web Services r6in.32xlarge is a memory-optimized instance with 128 vCPUs, 1024 GB DDR4 RAM, and 200 Gbps network bandwidth, optimized for large-scale databases and memory-intensive workloads.",
-  "meta_description": "Amazon Web Services r6in.32xlarge is a memory-optimized instance featuring 128 vCPUs, 1024 GB RAM, and 200 Gbps network bandwidth.",
-  "tagline": "A memory-optimized x86_64 instance featuring one terabyte of RAM, high-speed network bandwidth, and dedicated Intel Xeon processing power.",
+  "description": "Amazon Web Services r6in.32xlarge is a memory-optimized instance powered by the Nitro hypervisor and an Intel Xeon 8375C processor, providing 128 dedicated vCPUs across 64 physical cores at 3.5 GHz. It is equipped with 1024.0 GB of DDR4 RAM, delivering an 8:1 memory-to-core ratio, and features 200 Gbps of baseline networking throughput. The instance includes no GPU acceleration and no local storage, requiring network-attached storage. Benchmarks show high multi-core compute capability, with top-tier PassMark CPU and encryption results accelerated by AVX-512 and VAES instructions, alongside uncached large-block read memory bandwidth of 332.96 GB/sec. Redis SET performance reached 107.01 million operations per second, confirming strong memory handling. The r6in.32xlarge suits in-memory databases, distributed caching layers, big data analytics, and memory-intensive enterprise workloads.",
+  "og_description": "Amazon Web Services r6in.32xlarge is a memory-optimized instance featuring 128 vCPUs on an Intel Xeon 8375C processor, 1024 GB DDR4 RAM, and 200 Gbps network bandwidth without local disks or GPUs.",
+  "meta_description": "Amazon Web Services r6in.32xlarge features 128 vCPUs, 1024 GB DDR4 memory, and 200 Gbps networking on the Intel Xeon 8375C platform.",
+  "tagline": "A 128-vCPU memory-optimized platform featuring 1024 GB RAM and 200 Gbps networking for demanding in-memory workloads.",
   "bullet_points": [
-    "128 vCPUs and 1024.0 GB of DDR4 memory for memory-intensive applications",
-    "Intel Xeon 8375C processor running at 3.5 GHz with AVX-512 support",
-    "200 Gbps baseline network bandwidth optimized for EBS and cluster networking",
-    "Top-tier benchmark performance in CPU encryption and multi-core operations",
-    "Designed for in-memory databases, enterprise workloads, and data processing"
+    "128 dedicated vCPUs across 64 Intel Xeon 8375C cores at 3.5 GHz",
+    "1024.0 GB DDR4 memory providing 8.0 GB per core",
+    "High-throughput baseline network bandwidth of 200 Gbps",
+    "Hardware vector acceleration via AVX-512, VNNI, and VAES extensions",
+    "Zero local storage requiring network-attached EBS volumes",
+    "Suited for in-memory databases, Redis caches, and data analytics pipelines"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

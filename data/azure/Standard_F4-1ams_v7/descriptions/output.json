@@ -1,21 +1,22 @@
 {
   "page": [
-    "Microsoft Azure F4-1ams_v7 is an x86_64 architecture virtual machine belonging to the Famsv7 server family. It features 1 dedicated vCPU powered by an AMD processor and runs on the Microsoft Hyper-V hypervisor. The server is configured with 32.0 GB of system memory, yielding an exceptionally high memory-to-core ratio of 32.0 GB per vCPU.",
-    "This instance type does not include any local storage, meaning all storage requirements must be met via external network-attached storage, though the hardware is premium storage capable. There are zero integrated GPUs, and the configuration does not include any complimentary public IPv4 addresses.",
-    "Given the high memory density relative to the single dedicated vCPU, this server type offers a specialized qualitative cost profile. It is designed for memory-intensive workloads that do not require high parallel CPU processing power. Suitable workloads include small-scale in-memory databases, caching layers, lightweight data buffering, and memory-bound utility applications."
+    "Microsoft Azure F4-1ams_v7 is an x86_64 virtual machine instance powered by an AMD processor and virtualized on Microsoft Hyper-V. It provides 1 dedicated vCPU alongside 32.0 GB of system memory, establishing a dense 32.0 GB memory-to-core ratio. The configuration does not include local disk storage or hardware GPU acceleration, relying on remote disk solutions such as Azure Premium Storage for persistent data operations.",
+    "Architecturally, this instance operates as a constrained-core configuration within the Fams_v7 family. By allocating a full 32.0 GB memory block to a single virtual processor, it decouples extensive memory capacity from multi-core processor requirements. This architecture presents a clear trade-off: parallel and multi-threaded throughput is restricted to a single processing execution thread, making the instance unsuitable for core-heavy parallel calculations.",
+    "From an infrastructure and cost perspective, the F4-1ams_v7 offers resource efficiency for workloads constrained purely by memory capacity rather than compute throughput. It prevents the overprovisioning of compute resources and mitigates per-core software licensing expenses. Best-fit workloads include small-footprint in-memory caches, memory-resident database nodes with low concurrent query volume, single-threaded analytical tasks, and staging environments."
   ],
-  "description": "Microsoft Azure F4-1ams_v7 is an x86_64 virtual machine within the Famsv7 family, running on the Microsoft Hyper-V hypervisor. The hardware configuration features 1 dedicated vCPU powered by an AMD processor, paired with 32.0 GB of system memory. This establishes an exceptionally high memory-to-core ratio of 32.0 GB per vCPU. The server does not include any local storage, meaning it relies entirely on external premium storage options, and it features no integrated GPUs or complimentary public IPv4 addresses. This memory-intensive profile is qualitatively cost-efficient for workloads requiring significant memory capacity without the need for multi-core CPU scaling. Appropriate workloads include small-scale in-memory databases, caching layers, data buffering, and memory-bound utility applications.",
-  "og_description": "Microsoft Azure F4-1ams_v7 is a memory-intensive x86_64 virtual machine featuring 1 dedicated AMD vCPU, 32.0 GB of RAM, and no local storage, optimized for memory-bound workloads.",
-  "meta_description": "Microsoft Azure F4-1ams_v7 is an x86_64 virtual machine with 1 dedicated AMD vCPU and 32.0 GB of RAM, designed for memory-intensive workloads.",
-  "tagline": "A memory-intensive virtual machine featuring a high memory-to-core ratio with a single dedicated vCPU for memory-bound workloads.",
+  "description": "Microsoft Azure F4-1ams_v7 is an x86_64 virtual machine based on AMD processor architecture under Microsoft Hyper-V virtualization. Designed as a memory-intensive, constrained-core option within its series, the instance supplies 1 dedicated vCPU paired with 32.0 GB of RAM, yielding an exceptionally high 32.0 GB per vCPU ratio. It operates without integrated local storage or GPU accelerators, relying on Premium Storage capabilities for persistent disk operations. This structural design isolates memory scale from core expansion, making the server well suited for workloads that demand high memory capacity but modest processing concurrency, such as memory-resident databases, caching layers, low-concurrency data pipelines, and memory-intensive development environments. Qualitatively, it delivers resource efficiency by minimizing core allocation and related software licensing overhead while maintaining substantial memory headroom.",
+  "og_description": "Microsoft Azure F4-1ams_v7 is an AMD-powered x86_64 virtual machine featuring 1 dedicated vCPU, 32.0 GB of RAM, and Premium Storage support, tailored for memory-intensive applications requiring low compute concurrency.",
+  "meta_description": "Microsoft Azure F4-1ams_v7 provides 1 dedicated AMD vCPU and 32.0 GB RAM on Microsoft Hyper-V, tailored for high-memory, low-core enterprise workloads.",
+  "tagline": "A dedicated single-core compute profile with high-density memory allocation tailored for memory-bound tasks requiring minimal parallel processing capacity.",
   "bullet_points": [
-    "1 dedicated AMD vCPU on x86_64 architecture",
-    "32.0 GB of system memory providing a high memory-to-core ratio",
-    "No local storage included, supporting premium external storage",
-    "Zero integrated GPUs for non-graphical, memory-intensive tasks",
-    "Designed for small-scale in-memory databases and caching layers"
+    "Single dedicated AMD x86_64 vCPU virtualized via Microsoft Hyper-V",
+    "High memory allocation of 32.0 GB RAM (32.0 GB per core)",
+    "Stateless instance architecture requiring attached Premium Storage",
+    "Zero bundled GPUs, optimized for non-accelerated memory tasks",
+    "Designed for in-memory caching, databases, and low-concurrency workloads"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "Compute Optimized"
   ]
 }

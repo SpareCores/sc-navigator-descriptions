@@ -1,23 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E32pds_v5 is an ARM-based virtual machine belonging to the EPDSv5 family. It is powered by an Ampere Altra ARMv8 Neoverse-N1 processor operating at a sustained frequency of 3.0 GHz. The instance features 32 dedicated physical cores with a single thread per core, eliminating hyperthreading overhead. It is equipped with 208.0 GB of RAM, providing 6.5 GB of memory per core, and includes 1229 GB of local SSD storage alongside Premium Storage compatibility.",
-    "Benchmark results place the E32pds_v5 in the average tier for most multi-core and memory operations. The system achieved a multi-core Stress-ng CPU score of 57247.25 and a Geekbench multi-core score of 13049.0, though its single-core Geekbench score of 1122.0 is categorized as weak. Memory performance is robust, with a read-only small-block cached bandwidth of 2231.95 GB/sec and a large-block uncached write speed of 77.64 GB/sec. Database operations are supported by a Passmark database score of 21161.56 and Redis SET performance reaching 41.96 million operations per second. However, large-scale LLM inference is a notable bottleneck, with the 70B model yielding poor performance at 2.43 tokens per second for text generation.",
-    "Utilizing ARM64 architecture allows the E32pds_v5 to deliver high resource density and power efficiency compared to traditional x86 alternatives. The combination of 208.0 GB of memory and a 1229 GB local SSD makes this instance well-suited for memory-intensive workloads, database hosting, and web serving, where it achieves a static web serving throughput of 32.4 GB/sec. It is less suitable for single-threaded tasks or heavy AI model inference."
+    "Microsoft Azure E32pds_v5 is a memory-optimized virtual machine powered by an Ampere ARMv8 Neoverse-N1 processor operating at 3.0 GHz. Built on the Microsoft Hyper-V hypervisor, this instance provides 32 dedicated physical cores and 32 vCPUs configured with a single thread per core, avoiding hyper-threading contention. The hardware architecture supplies 208 GB of system memory, yielding 6.5 GB of RAM per vCPU, alongside 1288 GB of local SSD temporary storage. Discrete graphics processing units are not present in this configuration.",
+    "Benchmark testing reveals stable multi-threaded execution and balanced memory throughput across varied workloads. While single-core Geekbench metrics show modest throughput at 1122.0 points, the instance demonstrates multi-core scalability with a Geekbench multi-core score of 13049.0 and a multi-core stress-ng result of 57247.25. Uncached large-block memory read bandwidth reaches 170.75 GB/sec, supporting high-throughput data operations such as 41.96 million Redis SET operations per second. However, compute tasks requiring advanced vector extensions or large language model inference show constrained output due to architecture limitations.",
+    "The 1:1 physical core allocation offers predictable latency and cost-efficient core density compared to traditional x86 alternatives, though workloads must be compiled for ARM64 architectures. The system is well configured for memory-intensive applications that utilize local high-speed scratch disk, such as in-memory data structures, distributed NoSQL and relational databases, parallelized code compilation, and ETL data staging."
   ],
-  "description": "The Microsoft Azure E32pds_v5 is an ARM64-based virtual machine from the EPDSv5 family, featuring 32 dedicated physical cores powered by an Ampere Altra Neoverse-N1 processor running at 3.0 GHz. It is configured with 208.0 GB of RAM and 1229 GB of local SSD storage, with support for Premium Storage. Operating under Microsoft Hyper-V, the instance delivers solid multi-core performance, as evidenced by a multi-core Stress-ng score of 57247.25 and a Passmark database score of 21161.56. While single-core performance and large-scale LLM inference are relatively weak, its high memory capacity and fast local storage make it highly efficient for memory-intensive applications, database operations, and high-throughput static web serving.",
-  "og_description": "Microsoft Azure E32pds_v5 is an ARM64 virtual machine featuring 32 dedicated Ampere Neoverse-N1 cores, 208 GB of RAM, and 1229 GB of local SSD storage, optimized for memory-intensive and database workloads.",
-  "meta_description": "Microsoft Azure E32pds_v5 is an ARM64 virtual machine with 32 dedicated cores, 208 GB RAM, and 1229 GB local SSD storage for memory-intensive workloads.",
-  "tagline": "An ARM64-powered virtual machine featuring high memory density, dedicated physical cores, and fast local SSD storage for database and memory-intensive workloads.",
+  "description": "Microsoft Azure E32pds_v5 is an ARM64 memory-optimized virtual machine powered by a 32-core Ampere ARMv8 Neoverse-N1 processor clocked at 3.0 GHz. The instance delivers 32 dedicated vCPUs with a 1:1 physical core ratio, 208 GB of system memory (6.5 GB per vCPU), and 1288 GB of integrated local SSD storage, without GPU acceleration. Benchmark evaluations show balanced multi-threaded performance and strong memory throughput, achieving 41.96 million Redis SET operations per second, despite moderate single-threaded execution rates. The dedicated single-thread-per-core topology ensures consistent performance without noisy-neighbor thread contention. This hardware balance makes the E32pds_v5 suitable for memory-intensive enterprise tasks, such as distributed database clusters, caching tiers, parallel compilation pipelines, and data processing workloads compiled for ARM64 platforms.",
+  "og_description": "Microsoft Azure E32pds_v5 is an ARM64 memory-optimized VM offering 32 dedicated Ampere Neoverse-N1 cores, 208 GB RAM, and 1288 GB local SSD storage for high-density caching and database workloads.",
+  "meta_description": "Microsoft Azure E32pds_v5 features 32 Ampere ARM cores, 208 GB RAM, and 1288 GB local SSD storage, optimized for memory-intensive and database workloads.",
+  "tagline": "An ARM-based instance delivering thirty-two dedicated physical cores, generous memory capacity, and fast local SSD storage for scalable database workloads.",
   "bullet_points": [
-    "Powered by 32 dedicated Ampere Altra ARMv8 Neoverse-N1 physical cores at 3.0 GHz.",
-    "Equipped with 208.0 GB of RAM and 1229 GB of local SSD storage.",
-    "Delivers 41.96 million operations per second in Redis SET benchmarks.",
-    "Optimized for memory-intensive applications, database hosting, and web serving.",
-    "Features single-threaded execution limitations and poor large-scale LLM inference performance."
+    "32 dedicated Ampere ARMv8 Neoverse-N1 cores clocked at 3.0 GHz with no hyper-threading",
+    "208 GB total memory providing 6.5 GB of RAM per vCPU",
+    "1288 GB bundled local SSD temporary storage",
+    "High in-memory throughput reaching 41.96 million Redis SET operations per second",
+    "Targeted for in-memory caches, distributed databases, and ARM64-optimized enterprise applications"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

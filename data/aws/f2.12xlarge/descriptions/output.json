@@ -1,23 +1,24 @@
 {
   "page": [
-    "Amazon Web Services f2.12xlarge is an x86_64 architecture server powered by a dedicated AMD EPYC 7R13 processor operating at 3.4 GHz. It features 24 physical cores and 48 vCPUs with hyperthreading enabled. The memory configuration consists of 512.0 GB of DDR4 RAM running at 3 GHz, providing 10.67 GB of memory per core. Local storage is provided via a 1880 GB NVMe SSD, and the network interface delivers a baseline bandwidth of 25 Gbps. The instance runs on the AWS Nitro hypervisor.",
-    "Benchmark data indicates strong performance in several compute-heavy areas. The stress-ng single-core and multi-core CPU tests both rank in the top 25%, as does the PassMark CPU score and PassMark encryption test. Multi-threaded bzip3 decompression, Geekbench ray tracing, and Geekbench image processing also demonstrate strong performance. However, memory bandwidth tests for both small cached blocks and large uncached blocks fall within the average range.",
-    "While the server handles standard compute tasks and multi-threaded decompression efficiently, it exhibits performance limitations for specific workloads. LLM inference speed for text generation using a large 70B model is poor, falling into the bottom 10%, though prompt processing for the same model remains average. The server is suited for memory-intensive applications, database operations, and workloads requiring local NVMe storage, but is less optimal for large-scale LLM text generation."
+    "Amazon Web Services f2.12xlarge is an accelerated computing instance built on the AWS Nitro hypervisor. The system provides 48 dedicated vCPUs across 24 physical cores powered by an AMD EPYC 7R13 processor running at 3.4 GHz on the x86_64 architecture. Memory capacity is configured at 512 GB of DDR4 operating at 3 GHz, offering 10.67 GB of RAM per vCPU. The instance comes equipped with 1880 GB of local NVMe SSD storage, baseline network bandwidth of 25 Gbps, and two integrated Xilinx Virtex UltraScale+ (VU47P) hardware accelerators providing 160 GB of combined accelerator memory.",
+    "CPU benchmark results demonstrate strong performance across compute and cryptographic operations. In stress-ng testing, both single-core (2993.25) and multi-core (71813.3) scores rank in the top 25 percent. Passmark testing similarly places the instance in the top quartile for overall CPU score (56429.21) and encryption throughput (56862.73). Multi-threaded bzip3 decompression achieves 236.54 GB/sec, while Geekbench ray tracing and image processing register in the top 25 percent. General system memory bandwidth tests show moderate throughput, yielding 105.97 GB/sec on uncached reads and 58.55 GB/sec on uncached writes.",
+    "Hardware tradeoffs emerge in host-based machine learning inference. Processing 70B parameter models purely on the CPU yields poor text generation throughput at 2.34 tokens/sec, demonstrating that the system architecture relies on offloading target workloads to the dedicated FPGAs rather than the general-purpose CPU cores. Given its balanced resource footprint of high-capacity memory, local high-speed NVMe storage, and programmable logic, this server is suitable for FPGA development, financial analytics, hardware-accelerated genomics pipelines, real-time video processing, and data compression workloads."
   ],
-  "description": "Amazon Web Services f2.12xlarge is an x86_64 server featuring a dedicated 24-core AMD EPYC 7R13 processor running at 3.4 GHz, delivering 48 vCPUs. It is equipped with 512.0 GB of DDR4 RAM, a 1880 GB NVMe SSD, and a 25 Gbps baseline network interface, all managed via the Nitro hypervisor. Benchmark results show strong CPU performance, with stress-ng and PassMark CPU scores ranking in the top 25%. Multi-threaded bzip3 decompression, ray tracing, and image processing also perform in the top tier. Conversely, memory bandwidth and database operations fall into the average range, and LLM text generation for large 70B models is poor, placing in the bottom 10%. This server is suited for memory-intensive workloads, local storage-dependent applications, and general multi-threaded processing, though it presents clear performance tradeoffs for large-scale language model inference.",
-  "og_description": "Amazon Web Services f2.12xlarge is an x86_64 server with 48 vCPUs, 512 GB DDR4 RAM, and 1880 GB NVMe storage, delivering strong CPU and multi-threaded decompression performance.",
-  "meta_description": "Amazon Web Services f2.12xlarge features 48 vCPUs, 512 GB RAM, and 1880 GB NVMe SSD, offering strong CPU performance and average memory bandwidth.",
-  "tagline": "An x86_64 server combining dedicated AMD EPYC processing, high-capacity DDR4 memory, and local NVMe storage for data-intensive workloads.",
+  "description": "Amazon Web Services f2.12xlarge is an accelerated computing instance powered by the AWS Nitro System and an AMD EPYC 7R13 processor. It provides 48 dedicated vCPUs clocked at 3.4 GHz, 512 GB of DDR4 system memory, a bundled 1880 GB NVMe SSD, and 25 Gbps baseline network bandwidth. For hardware acceleration, it integrates two Xilinx Virtex UltraScale+ VU47P FPGA devices offering 160 GB of combined accelerator memory. Benchmark results indicate top-tier CPU performance in stress-ng and Passmark multi-core testing, alongside strong encryption and multi-threaded decompression throughput. While raw host-CPU large-model LLM generation exhibits lower throughput, the instance is architectured to offload compute-intensive kernels directly to programmable hardware logic. This setup fits custom FPGA-accelerated workloads, high-frequency financial modeling, genomics analysis, video transcoding, and memory-dense data pipelines requiring high-speed local NVMe storage.",
+  "og_description": "Amazon Web Services f2.12xlarge is an accelerated computing instance featuring 48 AMD EPYC vCPUs, 512 GB DDR4 memory, an 1880 GB NVMe SSD, and two Xilinx Virtex UltraScale+ FPGAs with 160 GB memory.",
+  "meta_description": "Amazon Web Services f2.12xlarge provides 48 AMD EPYC vCPUs, 512 GB RAM, 1880 GB local NVMe storage, and dual Xilinx Virtex UltraScale+ VU47P FPGAs.",
+  "tagline": "Dual FPGA acceleration paired with 48 AMD EPYC cores, 512 GB memory, and high-speed NVMe storage for specialized compute workloads.",
   "bullet_points": [
-    "Dedicated AMD EPYC 7R13 processor with 48 vCPUs and 3.4 GHz clock speed.",
-    "512.0 GB of DDR4 RAM and 1880 GB of local NVMe SSD storage.",
-    "Strong multi-core CPU performance and multi-threaded decompression capabilities.",
-    "Baseline network bandwidth of 25 Gbps managed by the Nitro hypervisor.",
-    "Poor performance for large-scale 70B LLM text generation tasks."
+    "Dual Xilinx Virtex UltraScale+ (VU47P) FPGAs with 160 GB total accelerator memory",
+    "48 dedicated AMD EPYC 7R13 vCPUs clocked at 3.4 GHz on the AWS Nitro hypervisor",
+    "512 GB DDR4 system memory providing 10.67 GB per vCPU",
+    "Bundled 1880 GB local NVMe SSD and 25 Gbps baseline networking",
+    "Strong performance across stress-ng compute, Passmark encryption, and multi-threaded decompression",
+    "Targeted at custom FPGA development, genomics analysis, video processing, and financial modeling"
   ],
   "categories": [
+    "GPU Accelerated",
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

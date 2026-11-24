@@ -1,20 +1,21 @@
 {
   "page": [
-    "Microsoft Azure DC4ads_v6 is a general-purpose virtual machine belonging to the DCadsv6 server family. It features 4 dedicated vCPUs powered by an AMD processor utilizing the x86_64 architecture. The instance runs on the Microsoft Hyper-V hypervisor and is configured with 16.0 GB of system memory, providing a memory allocation of 4.0 GB per core.",
-    "This server includes 154 GB of local SSD storage and is capable of utilizing Premium Storage. It does not include any graphics processing units, meaning all workloads rely entirely on the dedicated CPU cores. Additionally, the configuration includes zero complimentary public IPv4 addresses.",
-    "With its balanced 1:4 vCPU-to-RAM ratio and dedicated CPU allocation, the DC4ads_v6 offers a predictable resource profile for general-purpose workloads. The inclusion of local SSD storage provides a qualitative advantage for applications requiring low-latency scratch space. This hardware configuration is suitable for general-purpose applications, web serving, and small database workloads that benefit from dedicated compute resources and local SSD storage."
+    "Microsoft Azure DC4ads_v6 is a general-purpose confidential compute instance powered by AMD EPYC 9V74 processors. The instance provides 4 dedicated virtual CPUs mapped across 2 physical cores with multithreading enabled on the x86_64 architecture. Memory capacity is configured at 16 GB of RAM, adhering to a standard 1:4 vCPU-to-memory ratio. Hardware capabilities include 32 KB L1 data cache, 1.0 MB L2 cache, and a 32 MB L3 cache slice, along with instruction set extensions such as AVX-512 (F, VNNI, and BF16), AES, and SHA_NI for cryptographic operations.",
+    "Storage consists of an integrated 161 GB local solid-state drive, accompanied by support for Premium Storage remote volumes. The server does not include dedicated graphics processing units. Synthetic evaluation indicates competitive single-threaded CPU execution, evidenced by a top-quartile stress-ng single-core score of 3021.36 and an average Geekbench single-core score of 1890.0. Cryptographic throughput and memory subsystem speeds register in the mid-range based on PassMark encryption and memory results.",
+    "The constrained core footprint reflects clear scaling boundaries in parallelized computation. Multi-core metrics across stress-ng (6011.14) and Geekbench (4178.0) place the server in lower performance brackets, with corresponding weak scores in parallel compilation, ray tracing, and PassMark database operations. Redis SET throughput reaches 5.28 million operations per second.",
+    "The DC4ads_v6 delivers a balanced compute-to-memory profile suitable for entry-tier enterprise workloads requiring hardware-level security features and fast local scratch storage. Its resource envelope fits small web applications, microservices, secure enclave testing, and light CI/CD task runners where overall parallel compute demand remains modest."
   ],
-  "description": "Microsoft Azure DC4ads_v6 is a general-purpose virtual machine from the DCadsv6 family, featuring an AMD processor with x86_64 architecture. Operating on the Microsoft Hyper-V hypervisor, this instance provides 4 dedicated vCPUs and 16.0 GB of system memory, establishing a balanced 4.0 GB of RAM per core. Storage is supported by 154 GB of local SSD space, and the instance is Premium Storage capable. There are no integrated GPUs, and complimentary public IPv4 addresses are not included. The dedicated CPU allocation and local SSD storage make this server configuration suitable for general-purpose workloads, web serving, and small database applications requiring predictable compute resources without the need for hardware acceleration.",
-  "og_description": "Microsoft Azure DC4ads_v6 is a general-purpose virtual machine featuring 4 dedicated AMD vCPUs, 16.0 GB of RAM, and 154 GB of local SSD storage on the Microsoft Hyper-V hypervisor.",
-  "meta_description": "Microsoft Azure DC4ads_v6 is an x86_64 virtual machine with 4 dedicated AMD vCPUs, 16 GB of RAM, and 154 GB of local SSD storage on Hyper-V.",
-  "tagline": "A balanced general-purpose virtual machine featuring dedicated AMD processors, 16 GB of memory, and local SSD storage.",
+  "description": "Microsoft Azure DC4ads_v6 is a general-purpose virtual machine featuring 4 dedicated vCPUs derived from 2 physical cores on an AMD EPYC 9V74 processor. Built on the x86_64 architecture, it delivers 16 GB of memory and includes a 161 GB local SSD for high-speed temporary storage. The processor incorporates vector and cryptographic extensions, including AVX-512 and AES instructions. In benchmark evaluations, the DC4ads_v6 demonstrates solid single-threaded performance with top-quartile stress-ng single-core results and mid-tier PassMark CPU and memory marks. However, multi-core throughput across Geekbench, compiling, and database tests reflects the inherent limitations of its four virtual cores. Lacking dedicated GPUs, the instance represents an efficient configuration for basic application hosting, small transactional databases, confidential computing tasks, and standard business logic operations.",
+  "og_description": "Microsoft Azure DC4ads_v6 is a general-purpose instance featuring 4 vCPUs on AMD EPYC 9V74 hardware, 16 GB of RAM, 161 GB local SSD storage, and advanced vector and encryption instructions.",
+  "meta_description": "Microsoft Azure DC4ads_v6 provides 4 vCPUs on AMD EPYC 9V74 processors, 16 GB RAM, and a 161 GB local SSD for secure, general-purpose enterprise tasks.",
+  "tagline": "Balanced four-vCPU confidential compute instance equipped with AMD EPYC processing, integrated local solid-state storage, and advanced cryptographic acceleration.",
   "bullet_points": [
-    "4 dedicated AMD vCPUs on x86_64 architecture",
-    "16.0 GB of system memory with a 1:4 vCPU-to-RAM ratio",
-    "154 GB of local SSD storage with Premium Storage capability",
-    "Microsoft Hyper-V hypervisor virtualization",
-    "Zero complimentary public IPv4 addresses included",
-    "Suited for general-purpose applications, web serving, and small databases"
+    "4 dedicated vCPUs across 2 physical cores on AMD EPYC 9V74 (x86_64 architecture)",
+    "16 GB system memory adhering to a standard 1:4 compute-to-memory balance",
+    "161 GB bundled local SSD storage with Premium Storage compatibility",
+    "Hardware-level vector and cryptographic extensions including AVX-512 and AES",
+    "Strong single-core compute performance contrasted with lower multi-threaded scaling",
+    "Targeted for secure microservices, small web servers, and confidential workloads"
   ],
   "categories": [
     "General Purpose",

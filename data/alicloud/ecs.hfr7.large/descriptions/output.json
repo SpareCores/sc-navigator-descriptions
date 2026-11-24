@@ -1,22 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.hfr7.large is an x86_64 architecture virtual server powered by a dedicated Intel Xeon 8369HB processor running at 3.3 GHz. It features 1 physical core with hyper-threading enabled, delivering 2 vCPUs. The hardware configuration includes 16.0 GB of RAM, resulting in a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or a GPU, and operates on a KVM hypervisor with a baseline network bandwidth of 1 Gbps.",
-    "Benchmark results indicate a clear divergence between single-core and multi-core capabilities. Single-core performance, such as stress-ng and Geekbench single-core tests, falls within the average range. However, due to the low core count, multi-core benchmarks like stress-ng multi-core and Geekbench multi-core score in the bottom 10 percent. Memory bandwidth tests also show lower-tier performance, with uncached read and write speeds landing in the bottom 10 percent, and Passmark database operations and Redis SET operations similarly ranking in the poor category.",
-    "This server offers dedicated CPU resources and a high memory-to-core ratio, which is qualitatively cost-effective for workloads requiring memory capacity over raw parallel processing power. However, the lack of local storage and low multi-core throughput are significant tradeoffs. It is best suited for lightweight memory-bound applications, basic text processing, single-threaded tasks, or small-scale caching services that do not demand high disk I/O or massive parallel compute."
+    "Alibaba Cloud ecs.hfr7.large is an x86_64 virtual server from the high-clock-speed family, configured with 2 dedicated vCPUs mapped to 1 physical Intel Xeon 8369HB core running at a 3.3 GHz base frequency. The hardware includes 32 KB L1 data cache, 1.0 MB L2 cache, and 33 MB shared L3 cache, alongside support for AVX-512 vector extensions. Memory capacity is fixed at 16.0 GB, providing an 8.0 GB per-core allocation. The instance does not include local disk storage or hardware GPU acceleration, relying on network-attached volumes and offering a baseline network throughput of 1 Gbps.",
+    "Benchmark evaluations highlight a split profile dictated by core counts and clock speeds. Single-core performance sits in the middle tiers, evidenced by a stress-ng score of 1573.79, a Geekbench single-core score of 1327.0, and 26.65 GB/s gzip compression throughput. In contrast, aggregate multi-core throughput is constrained by the two-thread limit, resulting in lower scores across multi-threaded stress-ng (2071.39) and Geekbench (1591.0). Uncached memory bandwidth tests record 15.43 GB/s for reads and 13.17 GB/s for writes, accompanied by Redis performance of 2.01 million SET operations per second.",
+    "From a cost-efficiency perspective, ecs.hfr7.large delivers high per-core memory capacity and dedicated frequency without the overhead of larger socket allocations. The primary engineering tradeoff is the strict reliance on remote block storage and bounded multi-threaded processing power. Consequently, this instance serves best for small memory-focused workloads, in-memory caching tiers, lightweight relational databases, and background processing tasks that benefit from clock speed and memory headroom over raw core density."
   ],
-  "description": "Alibaba Cloud ecs.hfr7.large is an x86_64 memory-optimized virtual server featuring a dedicated Intel Xeon 8369HB processor clocked at 3.3 GHz. It provides 2 vCPUs from 1 physical core, 16.0 GB of RAM, and a 1 Gbps baseline network bandwidth, with no local storage or GPU. Single-core benchmark results, such as Geekbench and stress-ng single-core tests, place the server in the average performance tier. However, due to its dual-vCPU limitation, multi-core performance, memory bandwidth, and database operations fall into the lower percentiles. This server is qualitatively cost-efficient for memory-heavy, single-threaded applications but presents tradeoffs in parallel processing and storage. It is best suited for lightweight memory-bound workloads, basic text processing, and small-scale caching.",
-  "og_description": "Alibaba Cloud ecs.hfr7.large is an x86_64 server with 2 vCPUs, 16.0 GB RAM, and an Intel Xeon 8369HB CPU. It offers average single-core performance but limited multi-core and memory bandwidth.",
-  "meta_description": "Alibaba Cloud ecs.hfr7.large is a 2-vCPU, 16.0 GB RAM server with an Intel Xeon 8369HB CPU, offering dedicated single-core performance for memory-bound tasks.",
-  "tagline": "A dedicated dual-vCPU server with a high memory-to-core ratio, optimized for lightweight, single-threaded, and memory-bound workloads.",
+  "description": "Alibaba Cloud ecs.hfr7.large is an x86_64 virtual instance powered by a dedicated 3.3 GHz Intel Xeon 8369HB processor. The configuration allocates 2 vCPUs from a single physical hyper-threaded core, supported by 16 GB of memory to achieve an expansive 1:8 vCPU-to-RAM ratio. The system includes 33 MB of L3 cache, AVX-512 extensions, and a 1 Gbps baseline network bandwidth, while omitting local storage and GPU acceleration. Benchmark profiles indicate solid single-core execution alongside restricted multi-core and memory bandwidth metrics resulting from the compact core configuration. Cost efficiency is defined by dedicated clock cycles and generous per-vCPU memory density without requiring larger core footprints. The ecs.hfr7.large is suitable for lightweight in-memory caching, single-threaded batch processing, network-storage backed databases, and utility services requiring memory headroom.",
+  "og_description": "Alibaba Cloud ecs.hfr7.large is an x86_64 instance featuring a 3.3 GHz Intel Xeon 8369HB processor with 2 dedicated vCPUs, 16 GB RAM, 1 Gbps baseline network bandwidth, and remote storage integration.",
+  "meta_description": "Alibaba Cloud ecs.hfr7.large features a 3.3 GHz Intel Xeon 8369HB CPU with 2 vCPUs, 16 GB memory, and 1 Gbps networking for memory-centric workloads.",
+  "tagline": "A dual-vCPU high-frequency computing instance pairing 16 GB of memory with dedicated 3.3 GHz Intel Xeon performance for memory-demanding baseline services.",
   "bullet_points": [
-    "Dedicated Intel Xeon 8369HB processor running at 3.3 GHz",
-    "16.0 GB RAM providing a high 8.0 GB per core memory ratio",
-    "Average single-core performance with limited multi-core scaling",
-    "No local storage and 1 Gbps baseline network bandwidth",
-    "Best suited for lightweight memory-bound tasks and single-threaded applications"
+    "Dedicated 3.3 GHz Intel Xeon 8369HB processor with 2 vCPUs (1 physical core)",
+    "16.0 GB total system memory providing 8.0 GB per vCPU ratio",
+    "Hardware support for AVX-512 instruction extensions and 33 MB L3 cache",
+    "Requires network-attached block storage with zero bundled local disks",
+    "1 Gbps baseline network bandwidth without GPU acceleration",
+    "Suited for caching layers, lightweight databases, and memory-bound background tasks"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

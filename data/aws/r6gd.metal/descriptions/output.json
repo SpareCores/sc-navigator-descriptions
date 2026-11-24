@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services r6gd.metal is a bare-metal, memory-optimized server powered by 64 dedicated physical cores of the 64-bit ARMv8 AWS Graviton Neoverse-N1 processor running at 2.5 GHz. It features 512.0 GB of DDR4 memory, providing 8.0 GB of RAM per core. The server includes 3800 GB of local NVMe SSD instance storage and a baseline network bandwidth of 25 Gbps. It does not contain any GPUs.",
-    "Benchmark results show strong multi-core performance, with a stress-ng multi-core score of 97227.26 and strong cached read-only memory bandwidth at 3792.89 GB/sec. It also demonstrates strong performance in software compilation with Clang and static web serving throughput. However, single-core performance is relatively weak, as shown by a Geekbench single-core score of 985.0 and weak single-threaded gzip compression. LLM inference performance is generally weak to poor, particularly for text generation.",
-    "The bare-metal architecture offers high resource density and direct hardware access without hypervisor overhead, making it a qualitatively cost-efficient option for workloads requiring large memory footprints and fast local storage. The combination of 512 GB of RAM, 3800 GB of local NVMe SSD, and strong Redis SET performance makes this server highly suitable for memory-intensive databases, caching layers, and high-throughput web serving."
+    "Amazon Web Services r6gd.metal is a bare-metal, memory-optimized instance powered by custom 64-bit ARM architecture. The server delivers 64 physical cores and 64 dedicated vCPUs operating at 2.5 GHz via AWS Graviton2 Neoverse-N1 silicon, running one thread per core without simultaneous multithreading. It provides 512.0 GB of DDR4 system memory, yielding an 8.0 GB per core ratio. Hardware features include 3,800 GB of direct-attached NVMe SSD instance storage and a 25 Gbps baseline network interface. Hardware graphics acceleration is absent, with zero GPUs installed.",
+    "Benchmark results highlight significant multi-core throughput alongside modest single-threaded performance. The server achieves top-quartile results in multi-core stress-ng tests (97,227.26) and cached memory bandwidth reads at 3,792.89 GB/sec. Application benchmarks indicate high throughput in Clang software compilation, static web serving (47.45 GB/sec), and in-memory key-value caching, where Redis SET operations reach 74.12 million operations per second. Conversely, single-threaded processing reflects architectural tradeoffs, demonstrating weak performance in single-core Geekbench tests (985.0) and serial compression routines. Large language model text generation also remains weak across all evaluated parameter sizes.",
+    "The absence of a virtualization hypervisor eliminates virtualization overhead, delivering predictable access to physical memory channels, non-volatile storage, and physical compute cores. Qualitative cost efficiency is driven by the density of the Graviton2 core layout, the large 1:8 core-to-memory ratio, and integrated high-capacity NVMe storage. Amazon Web Services r6gd.metal is suited for memory-intensive enterprise workloads, distributed in-memory data grids, Redis and Memcached deployments, relational databases with high IOPS requirements, and large-scale continuous integration compilation pipelines."
   ],
-  "description": "Amazon Web Services r6gd.metal is a bare-metal, memory-optimized server powered by 64 dedicated physical cores of the 64-bit ARMv8 AWS Graviton Neoverse-N1 processor running at 2.5 GHz. It is equipped with 512.0 GB of DDR4 memory, 3800 GB of local NVMe SSD instance storage, and a baseline network bandwidth of 25 Gbps. The server lacks GPU acceleration. Benchmarks indicate strong multi-core capabilities, highlighted by a stress-ng multi-core score of 97227.26 and strong cached memory bandwidth of 3792.89 GB/sec. It also excels in static web serving and Redis SET operations, achieving 74.12 million operations per second. However, single-core performance and LLM inference speeds are relatively weak. This bare-metal instance is highly suited for memory-intensive databases, caching layers, software compilation, and high-throughput web serving workloads that benefit from direct hardware access and local NVMe storage.",
-  "og_description": "Amazon Web Services r6gd.metal is a bare-metal server with 64 Graviton cores, 512 GB DDR4 RAM, and 3800 GB NVMe SSD storage, optimized for memory-intensive databases and high-throughput web serving.",
-  "meta_description": "Amazon Web Services r6gd.metal is a bare-metal server featuring 64 Graviton cores, 512 GB RAM, and 3800 GB local NVMe SSD storage.",
-  "tagline": "A bare-metal, memory-optimized ARM server featuring dedicated physical cores, high-capacity local NVMe storage, and strong multi-core performance.",
+  "description": "Amazon Web Services r6gd.metal is a bare-metal memory-optimized server powered by 64-core AWS Graviton2 Neoverse-N1 processors running at 2.5 GHz on arm64 architecture. Equipped with 512.0 GB of DDR4 memory, it offers an 8.0 GB per core ratio along with 3,800 GB of high-speed local NVMe SSD storage and 25 Gbps baseline networking. Without hypervisor contention or GPU accelerators, the instance delivers dedicated physical execution with strong multi-threaded scaling, high cached memory bandwidth, and 74.12 million Redis SET operations per second. While single-thread execution and AI generation benchmarks remain modest, its extensive memory array and integrated high-speed local storage provide balanced performance for in-memory databases, key-value stores, relational database engines, and software compilation clusters.",
+  "og_description": "Amazon Web Services r6gd.metal is a bare-metal server featuring 64 ARMv8 cores, 512 GB DDR4 memory, 3,800 GB NVMe SSD storage, and 25 Gbps networking for demanding database workloads.",
+  "meta_description": "Amazon Web Services r6gd.metal features 64 ARM cores, 512 GB DDR4 memory, 3,800 GB NVMe SSD local storage, and 25 Gbps baseline network throughput.",
+  "tagline": "Bare-metal 64-core ARM architecture paired with 512 GB memory and integrated high-speed NVMe storage for enterprise in-memory workloads.",
   "bullet_points": [
-    "Powered by 64 dedicated AWS Graviton Neoverse-N1 physical cores at 2.5 GHz",
-    "Equipped with 512 GB DDR4 memory and 3800 GB local NVMe SSD storage",
-    "Delivers strong multi-core performance and 25 Gbps baseline network bandwidth",
-    "Achieves high throughput in Redis SET operations and static web serving",
-    "Best suited for memory-intensive databases, caching, and software compilation"
+    "Bare-metal 64-core dedicated AWS Graviton2 ARMv8 processor at 2.5 GHz",
+    "512.0 GB DDR4 memory configured at 8.0 GB per physical core",
+    "3,800 GB high-speed integrated local NVMe SSD instance storage",
+    "High-throughput caching performance supporting 74.12 million Redis SET operations per second",
+    "Suited for in-memory databases, distributed caches, heavy compilation, and I/O-intensive storage engines"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

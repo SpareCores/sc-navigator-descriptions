@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services r5b.metal is a memory-optimized bare-metal server powered by Intel Xeon 8259CL processors. It features 96 vCPUs across 48 physical cores with hyper-threading enabled, operating at a clock speed of 3.1 GHz. The system is equipped with 768.0 GB of DDR4 RAM running at 3 GHz, providing 8.0 GB of memory per physical core. It does not include local storage or dedicated GPU hardware, relying instead on network-attached storage and a baseline network bandwidth of 25 Gbps.",
-    "In benchmark testing, the r5b.metal demonstrates strong multi-core capabilities, as evidenced by a stress-ng multi-core score of 81,986.24 and a Passmark CPU score of 57,096.96. Memory performance is a key strength, with read-only large block memory bandwidth reaching 218.78 GB/sec and write large block bandwidth at 95.28 GB/sec. Database operations and Redis SET operations also show strong results, with Redis achieving 77.14 million operations per second. However, single-core performance is average, and LLM text generation speeds are poor, with the 7B model generating only 5.11 tokens per second.",
-    "Given its bare-metal architecture and high memory density, the r5b.metal offers qualitative cost efficiency for workloads requiring direct hardware access and large memory footprints without the overhead of virtualization. The absence of local storage and GPUs makes it less suitable for local-storage-heavy databases or intensive deep learning training. It is best suited for large-scale in-memory databases, high-throughput web serving, memory-intensive enterprise applications, and caching layers like Redis."
+    "Amazon Web Services r5b.metal is a bare-metal, memory-optimized server offering direct physical access to dual Intel Xeon Platinum 8259CL processors. Operating on the x86_64 architecture without a virtualization hypervisor overhead, it provides 48 physical cores and 96 vCPUs at a 3.1 GHz clock frequency. The architecture is equipped with 768.0 GB of DDR4 memory running at 3 GHz, maintaining an 8.0 GB per vCPU ratio, alongside 35 MB of L3 cache, hardware virtualization support (VMX), and advanced vector extensions including AVX-512.",
+    "Benchmark results demonstrate strong parallel compute and memory throughput. Multi-core evaluations such as stress-ng (81,986.24) and PassMark CPU (57,096.96) score in the top 25%, reinforced by an uncached large-block read memory bandwidth of 218.78 GB/sec. Application testing shows high capacity for memory-bound tasks, delivering 77.14 million operations per second in Redis SET operations and top-tier PassMark database operation scores. Conversely, single-threaded metrics, including Geekbench single-core (1331.0) and single-threaded compression tests, rank in the middle 50%.",
+    "Hardware limitations reflect its specific profile: the instance has zero GPUs and provides no bundled local NVMe storage, meaning persistent disk storage relies strictly on network-attached configurations over its 25 Gbps baseline network link. Additionally, CPU-based large language model text generation rates fall within the bottom 10%, confirming it is not suited for generative AI inference.",
+    "From an efficiency standpoint, the bare-metal design eliminates hypervisor performance penalties and allocates massive physical DDR4 capacity. The r5b.metal instance is well matched for large in-memory databases, enterprise relational database systems, high-concurrency caching tiers, and multi-threaded compilation workloads."
   ],
-  "description": "Amazon Web Services r5b.metal is a memory-optimized bare-metal server designed for high-memory workloads. It is powered by an Intel Xeon 8259CL processor with 96 vCPUs (48 physical cores) running at 3.1 GHz, paired with 768.0 GB of DDR4 memory. The server features a baseline network bandwidth of 25 Gbps but lacks local storage and GPU accelerators. Benchmark results indicate strong multi-core CPU performance, high memory bandwidth, and excellent database and Redis operation speeds. Conversely, single-core performance is average, and LLM text generation is poor. This bare-metal instance provides direct hardware access, making it highly efficient for memory-intensive enterprise applications, large in-memory databases, and high-throughput web serving.",
-  "og_description": "Amazon Web Services r5b.metal is a memory-optimized bare-metal server featuring 96 Intel Xeon vCPUs, 768 GB of DDR4 RAM, and 25 Gbps network bandwidth, ideal for large in-memory databases.",
-  "meta_description": "Amazon Web Services r5b.metal is a bare-metal server with 96 vCPUs and 768 GB RAM, optimized for memory-intensive enterprise workloads.",
-  "tagline": "A high-capacity bare-metal server featuring 768 GB of RAM and 96 vCPUs optimized for memory-intensive enterprise workloads and databases.",
+  "description": "Amazon Web Services r5b.metal is a bare-metal memory-optimized server powered by Intel Xeon Platinum 8259CL processors. It provides 96 dedicated vCPUs (48 physical cores) running at 3.1 GHz on an x86_64 architecture, paired with 768.0 GB of DDR4 memory at an 8:1 memory-to-vCPU ratio. Network performance is anchored by a 25 Gbps baseline interface. The system lacks local disk storage and contains no discrete GPUs. Benchmarks highlight strong multi-core processing, exceptional memory bandwidth (218.78 GB/sec uncached reads), and superior throughput in in-memory workloads, demonstrated by 77.14 million Redis SET operations per second. However, single-core benchmarks rank average, and LLM text generation throughput is low. Without hypervisor overhead, r5b.metal fits large-scale relational databases, distributed caching systems, and heavy multi-threaded data processing.",
+  "og_description": "Amazon Web Services r5b.metal features 96 vCPUs on Intel Xeon 8259CL hardware, 768 GB DDR4 RAM, and 25 Gbps networking. It delivers high multi-core compute and throughput for in-memory databases.",
+  "meta_description": "Amazon Web Services r5b.metal offers 96 vCPUs, 768 GB RAM, and bare-metal Intel Xeon execution optimized for memory-intensive enterprise database workloads.",
+  "tagline": "Bare-metal memory architecture with 96 vCPUs and 768 GB RAM engineered for high-throughput in-memory caching and enterprise databases.",
   "bullet_points": [
-    "96 Intel Xeon vCPUs and 768.0 GB of DDR4 memory",
-    "Bare-metal architecture providing direct hardware access",
-    "Strong multi-core CPU and memory bandwidth performance",
-    "25 Gbps baseline network bandwidth with no local storage",
-    "Optimized for in-memory databases, Redis caching, and enterprise apps"
+    "Bare-metal Intel Xeon 8259CL architecture with 48 physical cores and 96 dedicated vCPUs at 3.1 GHz",
+    "768.0 GB DDR4 system memory supporting up to 218.78 GB/sec uncached read bandwidth",
+    "High throughput for memory-bound applications, reaching 77.14 million Redis SET ops/sec",
+    "25 Gbps baseline network interface without bundled local storage or GPUs",
+    "Best fit for enterprise relational databases, distributed caching, and large-scale compilation"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services hpc6a.48xlarge is an x86_64 architecture server designed for high-performance computing workloads. It features 96 dedicated physical cores powered by AMD EPYC 7R13 processors running at 3.6 GHz, with a 1.0 thread-per-core configuration. The system is equipped with 384.0 GB of DDR4 memory operating at 3 GHz, providing 4.0 GB of memory per core. It utilizes the Nitro hypervisor and includes a 100 Gbps baseline network bandwidth. There is no local storage or GPU hardware bundled with this instance.",
-    "Benchmark data indicates top-tier performance in multi-core processing and memory operations. The server achieves top 10% placement in stress-ng multi-core CPU tests, Passmark CPU metrics (including physics, encryption, and extended instructions), and multi-threaded bzip3 decompression. Memory bandwidth for cached small blocks also ranks in the top 10%. However, single-core performance is moderate, with Geekbench single-core and single-threaded compression tasks scoring in the middle 50%.",
-    "The lack of local storage and GPU accelerators limits this server's utility for direct database hosting or hardware-accelerated deep learning. This is reflected in the LLM inference benchmarks, where text generation for a medium 7B model falls into the bottom 25%. Conversely, the high physical core count and 100 Gbps network throughput make it highly efficient for parallel compute-intensive tasks. Appropriate workloads include software compilation, ray tracing, molecular dynamics, weather modeling, and other highly parallel engineering simulations."
+    "Amazon Web Services hpc6a.48xlarge is a high-performance computing instance powered by the AWS Nitro hypervisor and a 96-core AMD EPYC 7R13 processor operating at up to 3.6 GHz. Operating on the x86_64 architecture, this instance allocates 96 physical cores without simultaneous multithreading (one thread per core), ensuring dedicated non-contended execution units for computational tasks. The instance includes 384.0 GB of DDR4 memory running at 3 GHz, providing 4.0 GB of RAM per core, and features a high-throughput 100 Gbps baseline network interface. It does not contain local disk storage or hardware GPU accelerators.",
+    "Benchmark evaluations demonstrate exceptional multi-threaded computational and memory capabilities. The instance scores in the top tier (top 10%) across stress-ng multi-core tests, multi-threaded bzip3 decompression, PassMark CPU benchmarks, and Clang compilation tests. Cached memory bandwidth reaches 12,154.54 GB/sec, while Redis SET operations achieved 179.29 million operations per second. However, single-threaded metrics, including Geekbench single-core and compression tests, remain in the average tier. Furthermore, without dedicated matrix accelerators such as AVX-512 or discrete GPUs, token generation performance on medium and large language models is significantly constrained.",
+    "From a cost-efficiency perspective, the instance provides high compute density per virtual machine boundary by dedicating 96 full AMD cores alongside 100 Gbps networking. The absence of integrated NVMe storage requires external network storage integration, but eliminates unnecessary local drive overhead for pure compute nodes. The hpc6a.48xlarge is primarily suited for tightly coupled high-performance computing workloads, computational fluid dynamics, finite element analysis, molecular dynamics, large-scale Clang or C++ compilation clusters, and parallel distributed batch processing."
   ],
-  "description": "Amazon Web Services hpc6a.48xlarge is a compute-optimized server featuring 96 dedicated physical AMD EPYC 7R13 cores running at 3.6 GHz on the Nitro hypervisor. It is equipped with 384.0 GB of DDR4 memory and a 100 Gbps baseline network interface, but lacks local storage and GPU accelerators. Benchmarks show top-tier multi-core CPU performance, ranking in the top 10% for Passmark CPU tests, multi-threaded decompression, and cached memory bandwidth. However, single-core performance and LLM text generation speeds are average to weak. This hardware profile delivers high compute density for parallel workloads, making it suitable for software compilation, ray tracing, and large-scale engineering simulations, while being less optimal for storage-heavy or GPU-dependent tasks.",
-  "og_description": "Amazon Web Services hpc6a.48xlarge is an x86_64 server with 96 dedicated AMD EPYC cores, 384 GB DDR4 RAM, and 100 Gbps networking, delivering top-tier multi-core performance for parallel computing.",
-  "meta_description": "Amazon Web Services hpc6a.48xlarge features 96 dedicated AMD EPYC cores, 384 GB RAM, and 100 Gbps networking for high-performance parallel computing.",
-  "tagline": "A dedicated 96-core compute platform with high-speed networking designed for parallel processing and intensive engineering simulations.",
+  "description": "Amazon Web Services hpc6a.48xlarge is a high-performance computing instance built on the Nitro system, featuring a dedicated 96-core AMD EPYC 7R13 processor clocked at 3.6 GHz. Operating without simultaneous multithreading, it delivers one physical core per vCPU alongside 384.0 GB of DDR4 memory and a 100 Gbps baseline network interface. The instance includes no local storage or discrete GPUs. In synthetic benchmarks, it achieves top-tier results in multi-core CPU stress tests, Clang compilation, ray tracing, and memory bandwidth, although single-threaded execution and GPU-dependent tasks like large model inference show standard or weak performance. The lack of integrated local storage directs the platform toward stateless or network-attached computing paradigms. hpc6a.48xlarge is structurally tailored for highly parallelized scientific simulations, computational engineering, batch processing, and distributed HPC workloads.",
+  "og_description": "Amazon Web Services hpc6a.48xlarge is a dedicated high-performance computing instance offering 96 physical AMD EPYC 7R13 cores, 384 GB DDR4 RAM, and a 100 Gbps network interface for parallel workloads.",
+  "meta_description": "Amazon Web Services hpc6a.48xlarge is a high-performance computing instance featuring 96 AMD EPYC cores, 384 GB DDR4 RAM, and 100 Gbps network bandwidth.",
+  "tagline": "A dedicated 96-core AMD EPYC platform with 384 GB DDR4 memory and 100 Gbps networking engineered for parallel compute-intensive workloads.",
   "bullet_points": [
-    "96 dedicated physical AMD EPYC 7R13 cores running at 3.6 GHz",
-    "384 GB of DDR4 memory providing 4 GB per core",
-    "100 Gbps baseline network bandwidth via Nitro hypervisor",
-    "Top-tier multi-core CPU and memory bandwidth benchmark performance",
-    "No local storage or GPU accelerators included",
-    "Best suited for parallel engineering simulations and software compilation"
+    "96 dedicated physical AMD EPYC 7R13 cores with 1 thread per core",
+    "384 GB DDR4 system memory running at 3 GHz (4 GB per core)",
+    "High-speed 100 Gbps baseline networking interface",
+    "Top-tier multi-threaded processing, ray tracing, and code compilation benchmarks",
+    "No integrated local storage or hardware GPU accelerators",
+    "Suited for distributed scientific simulations, CFD, and batch compute workloads"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

@@ -1,22 +1,25 @@
 {
   "page": [
-    "Microsoft Azure F32ads_v7 is a general-purpose virtual machine belonging to the Fadsv7 family, powered by the Microsoft Hyper-V hypervisor. It features 32 dedicated physical cores and 32 vCPUs utilizing the x86_64 AMD EPYC 9V45 processor, operating at a clock speed of 4.5 GHz. The system is equipped with 128.0 GB of system memory, providing a balanced allocation of 4.0 GB of RAM per core. For local storage, it includes a 3780 GB NVMe SSD and is Premium Storage capable. It does not feature any GPU accelerators.",
-    "Benchmark evaluations place the F32ads_v7 in the top tier for single-core CPU performance, with a stress-ng single-core score of 3541.18. It also registers top-tier performance in single-threaded gzip compression at 38.0 GB/sec, single-threaded bzip3 decompression at 16.54 GB/sec, and PassMark database operations at 37385.95. Multi-core performance is strong, ranking in the top 25% with a stress-ng multi-core score of 111314.11 and a PassMark CPU score of 72176.91. Memory bandwidth is robust, delivering 6116.97 GB/sec for cached small-block reads and 214.06 GB/sec for large-block reads.",
-    "Given its balanced 1:4 vCPU-to-RAM ratio and substantial 3780 GB local NVMe SSD storage, the F32ads_v7 offers high resource density and qualitative cost efficiency for workloads requiring both compute power and fast local disk access. The instance is well-suited for database operations, web serving, and lightweight LLM inference, as demonstrated by its top-tier database benchmark results and strong text generation speeds on 7B models."
+    "Microsoft Azure F32ads_v7 is a compute-optimized virtual machine instance running on Microsoft Hyper-V. The system is powered by an AMD EPYC 9V45 x86_64 processor clocked at up to 4.5 GHz, delivering 32 dedicated physical cores across 32 vCPUs with one thread per core. Memory capacity measures 128.0 GB of RAM, equating to 4.0 GB per vCPU. Hardware cache provisions include 48 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. Modern vector and instruction extensions are available, including AVX-512, AVX-512 VNNI, and AVX-512 BF16. There are no GPUs present on this instance type.",
+    "Integrated local storage is a primary feature of the F32ads_v7 architecture, bundling a 3780 GB NVMe SSD directly on the host. In benchmark evaluations, the dedicated AMD processor achieves top-tier results in single-core stress testing (3541.18 stress-ng score) and single-threaded data compression (38.0 GB/sec in gzip). Multi-core throughput exhibits strong placement in stress-ng (111314.11) and PassMark CPU metrics (72176.91). Database operations on PassMark register in the top 10% tier at 37385.95, while Redis SET throughput achieves 89.24 million operations per second, supported by 214.06 GB/sec in uncached read bandwidth.",
+    "From a cost-efficiency perspective, the inclusion of 3.78 TB of fast local NVMe SSD alongside a dedicated 32-core AMD platform eliminates the necessity for external disk attachments for temporary scratch storage or local caching layers. While lacking hardware accelerators such as GPUs or AMX matrix units, the system offers high CPU frequency and strong vector support, reaching 4183.35 tokens per second for small language model prompt processing.",
+    "The F32ads_v7 server is optimal for compute-bound and I/O-intensive workloads requiring rapid local disk access. Best-fit applications include relational and key-value database operations, batch compression pipelines, high-throughput web serving, and continuous integration compilation tasks."
   ],
-  "description": "Microsoft Azure F32ads_v7 is a general-purpose virtual machine from the Fadsv7 family, powered by an AMD EPYC 9V45 processor with 32 dedicated physical cores and 32 vCPUs running at 4.5 GHz. It features 128.0 GB of RAM and a 3780 GB local NVMe SSD, with Premium Storage capability. Under benchmark testing, the F32ads_v7 demonstrates top-tier single-core CPU performance, single-threaded compression, and database operations, alongside strong multi-core and memory bandwidth capabilities. Lacking a dedicated GPU, it relies on its high-frequency AMD architecture to deliver efficient processing. This configuration provides a balanced resource profile, making it highly suitable for database management, static web serving, and medium-scale LLM inference workloads.",
-  "og_description": "Microsoft Azure F32ads_v7 is a 32-vCPU general-purpose server featuring an AMD EPYC 9V45 processor, 128 GB RAM, and a 3780 GB local NVMe SSD, delivering top-tier single-core and database performance.",
-  "meta_description": "Microsoft Azure F32ads_v7 is a 32-vCPU server with an AMD EPYC 9V45 CPU, 128 GB RAM, and 3780 GB NVMe SSD, optimized for general-purpose workloads.",
-  "tagline": "A balanced 32-vCPU virtual machine featuring high-frequency AMD processing and substantial local NVMe SSD storage for database and general-purpose workloads.",
+  "description": "Microsoft Azure F32ads_v7 is a compute-optimized instance equipped with 32 dedicated physical cores and 32 vCPUs from an AMD EPYC 9V45 processor running at up to 4.5 GHz. The configuration features 128.0 GB of system RAM, providing 4.0 GB per core, and incorporates 3780 GB of integrated local NVMe SSD storage. The x86_64 architecture incorporates AVX-512 extensions, including VNNI and BF16 instructions, with zero GPUs present. In benchmarks, the F32ads_v7 demonstrates top-tier single-core performance alongside strong multi-core processing, top-tier database operation scores, and high compression rates. Memory throughput reaches 214.06 GB/sec for uncached block reads, matching well with the bundled NVMe disk to deliver cost-efficient local storage density without requiring separate block storage devices. This instance is well configured for relational databases, Redis caching layers, web serving, batch data processing, and enterprise CI/CD compilation workloads.",
+  "og_description": "Microsoft Azure F32ads_v7 features 32 dedicated AMD EPYC 9V45 cores at 4.5 GHz, 128 GB RAM, and a 3780 GB NVMe SSD, delivering top-tier single-core performance and rapid database operations.",
+  "meta_description": "Microsoft Azure F32ads_v7 provides 32 dedicated AMD EPYC cores at 4.5 GHz, 128 GB memory, and a 3780 GB local NVMe SSD for compute and database tasks.",
+  "tagline": "Dedicated AMD EPYC compute power paired with high-capacity local NVMe storage for database and compute-intensive enterprise workloads.",
   "bullet_points": [
-    "Powered by a 32-core AMD EPYC 9V45 processor running at 4.5 GHz",
-    "Equipped with 128.0 GB of RAM and a 3780 GB local NVMe SSD",
-    "Top-tier single-core CPU and database benchmark performance",
-    "Strong multi-core processing and memory bandwidth capabilities",
-    "Optimized for database operations, web serving, and medium LLM inference"
+    "32 dedicated AMD EPYC 9V45 physical cores operating at 4.5 GHz",
+    "128.0 GB system RAM with 4.0 GB per dedicated vCPU",
+    "3780 GB integrated local NVMe SSD storage",
+    "Hardware support for AVX-512, VNNI, and BF16 instruction sets",
+    "Top-tier performance in database operations and data compression",
+    "Suited for I/O-heavy databases, Redis caches, and compilation pipelines"
   ],
   "categories": [
-    "General Purpose",
-    "Storage & Database"
+    "Compute Optimized",
+    "Storage & Database",
+    "General Purpose"
   ]
 }

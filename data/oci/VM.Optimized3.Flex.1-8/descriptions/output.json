@@ -1,0 +1,23 @@
+{
+  "page": [
+    "Oracle Cloud Infrastructure VM.Optimized3.Flex.1-8 is an x86_64 compute-oriented virtual machine shape configured with 2 dedicated vCPUs from a single Intel Xeon 6354 physical core running at 3.0 GHz. It includes 8.0 GB of system memory, matching a 1:4 vCPU-to-RAM ratio, or 4.0 GB per allocated core. Cache sizing consists of 32 KB L1d, 4 MB L2, and 16 MB L3 cache. Supported instruction set extensions include AVX-512 (AVX512F and AVX512_VNNI), AES, VAES, SHA-NI, and BMI2. The instance does not include local disk storage or hardware GPU accelerators, necessitating remote block storage attachments.",
+    "Benchmark evaluations highlight a contrast between single-threaded capability and aggregate parallel throughput. The instance achieves average performance in single-core benchmarks, recording a Geekbench single-core score of 1,645.0, a stress-ng single-core result of 1,901.58, and single-threaded gzip compression of 28.39 GB/sec. However, because the instance relies on only 1 physical core with 2 hyperthreads, multithreaded benchmarks fall into lower percentile brackets. Multi-core Geekbench reached 1,921.0, and stress-ng multi-core achieved 1,959.49. Database operations (1,051.43 in PassMark) and Redis SET performance (1.96 million operations/sec) also reflect the core count constraints.",
+    "Memory bandwidth measures 15.97 GB/sec for uncached read operations and 13.97 GB/sec for write operations, placing memory throughput in the lower percentiles. For small language model inference (135M model), prompt processing achieves 179.5 tokens/sec while generation reaches 62.8 tokens/sec. With dedicated baseline compute from Intel Xeon 6354 processors and predictable clock frequencies, the shape offers consistent performance without noisy-neighbor degradation, though aggregate throughput is bounded by the single-core footprint.",
+    "Given its balance of modest memory and single-threaded stability alongside the lack of local NVMe storage, VM.Optimized3.Flex.1-8 fits lightweight application servers, low-volume static web serving, network utilities, CI/CD runners, and basic development or testing environments requiring dedicated x86 execution."
+  ],
+  "description": "Oracle Cloud Infrastructure VM.Optimized3.Flex.1-8 provides dedicated x86_64 compute through 2 vCPUs derived from 1 physical core of an Intel Xeon 6354 processor at 3.0 GHz, paired with 8.0 GB of RAM. The instance features AVX-512 and cryptographic hardware flags, but excludes local storage and GPU accelerators. Benchmark results demonstrate average single-threaded execution, with a single-core Geekbench score of 1,645.0 and stress-ng score of 1,901.58. However, due to its single physical core constraint, multithreaded capacity and memory bandwidth remain in the lower tiers, as seen in a multi-core Geekbench score of 1,921.0 and Redis SET throughput of 1.96 million ops/sec. VM.Optimized3.Flex.1-8 is best suited for entry-level microservices, build nodes, development workloads, and light web hosting.",
+  "og_description": "Oracle Cloud Infrastructure VM.Optimized3.Flex.1-8 offers 2 dedicated vCPUs on an Intel Xeon 6354 processor, 8.0 GB RAM, and AVX-512 support, suited for light web serving and development tasks.",
+  "meta_description": "Oracle Cloud Infrastructure VM.Optimized3.Flex.1-8 provides 2 dedicated vCPUs via an Intel Xeon 6354 CPU and 8.0 GB RAM for lightweight services.",
+  "tagline": "Dedicated Intel Xeon compute with 2 vCPUs and 8 GB RAM, built for balanced lightweight development and web workloads.",
+  "bullet_points": [
+    "2 dedicated vCPUs backed by 1 physical Intel Xeon 6354 core at 3.0 GHz",
+    "8.0 GB system memory (1:4 vCPU-to-RAM ratio)",
+    "Hardware vector and crypto support via AVX-512 and AES/SHA extensions",
+    "Zero local disk storage bundled, requiring external network storage",
+    "Suited for entry-level web hosting, build agents, and microservices"
+  ],
+  "categories": [
+    "General Purpose",
+    "Compute Optimized"
+  ]
+}

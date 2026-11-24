@@ -1,24 +1,25 @@
 {
   "page": [
-    "Google Cloud Platform a2-highgpu-8g is an accelerator-optimized server featuring eight NVIDIA Ampere A100 GPUs with a total of 320 GB of VRAM. The host system is powered by an Intel Xeon x86_64 processor running at 2.2 GHz, providing 96 dedicated vCPUs across 48 physical cores with hyperthreading enabled. It is equipped with 680.0 GB of system memory, yielding approximately 7.08 GB of RAM per core. No local storage is bundled with this instance type, and it includes zero complimentary public IPv4 addresses.",
-    "Benchmark data reveals a distinct performance profile. Single-core CPU performance is weak, as evidenced by bottom-25% results in stress-ng single-core, Geekbench single-core, and single-threaded gzip compression. However, multi-core and memory bandwidth capabilities are strong, placing in the top 25% for stress-ng multi-core and uncached memory read/write operations. The server excels in GPU-accelerated tasks, achieving top-tier performance in large language model inference prompt processing across 135M, 7B, and 70B models, as well as top-tier text generation for 7B and 70B models. Ray tracing benchmarks also rank in the top 25%.",
-    "Given the high density of specialized hardware, this server represents a significant resource commitment. The qualitative cost efficiency is centered on massive parallel processing and GPU-bound workloads rather than general-purpose compute. It is designed for workloads such as large language model inference, deep learning training, ray tracing, and high-throughput multi-threaded applications. It is less suitable for single-threaded tasks or applications requiring local NVMe storage."
+    "Google Cloud Platform a2-highgpu-8g is an accelerator-optimized virtual machine engineered for large-scale parallel computing and machine learning tasks. The configuration features 8 NVIDIA A100 GPUs based on the Ampere architecture, delivering a combined total of 320 GB of GPU memory. The host system is powered by an x86_64 Intel Xeon processor running at 2.2 GHz, providing 96 dedicated vCPUs across 48 physical cores with 2 threads per core, supported by 38 MB of L3 cache, AVX-512 extensions, and 680.0 GB of system memory.",
+    "Benchmark results demonstrate significant compute capacity across parallelized and accelerator workloads. The system achieves top-tier results in large language model inference across 7B and 70B parameter models for both prompt processing and token generation. Multi-core performance metrics are robust, reflected in high stress-ng multi-core and PassMark CPU scores, alongside memory read bandwidth reaching 219.95 GB/sec on large blocks and 64.13 million operations per second on Redis SET tests. Conversely, single-threaded execution is relatively modest, as shown by lower Geekbench single-core and single-threaded compression scores.",
+    "Because the instance includes no local storage, storage operations rely entirely on attached network volumes. Resource allocation favors multi-threaded parallel throughput and GPU execution over single-core speed. From an infrastructure cost perspective, this configuration aggregates immense accelerator and memory density into a single host, maximizing hardware utilization for workloads that can saturate eight GPUs simultaneously.",
+    "The a2-highgpu-8g instance is suited for deep learning training, distributed LLM inference, molecular modeling, high-performance computing simulations, and high-throughput data processing pipelines requiring high GPU and host memory density."
   ],
-  "description": "Google Cloud Platform a2-highgpu-8g is an accelerator-optimized server designed for parallel computing and machine learning workloads. It features eight NVIDIA Ampere A100 GPUs with 320 GB of total VRAM, paired with an Intel Xeon x86_64 processor providing 96 dedicated vCPUs and 680.0 GB of system memory. While single-core CPU benchmarks show weak performance, the server demonstrates strong multi-core capabilities and top-tier performance in large language model inference prompt processing and text generation. It lacks local storage and complimentary public IPv4 addresses. This server is structured for GPU-intensive applications, including deep learning, ray tracing, and high-throughput multi-threaded processing, where the high density of accelerators justifies the hardware class investment.",
-  "og_description": "Google Cloud Platform a2-highgpu-8g features 8 NVIDIA A100 GPUs, 96 vCPUs, and 680GB RAM, delivering top-tier LLM inference and strong multi-core performance for parallel workloads.",
-  "meta_description": "Google Cloud Platform a2-highgpu-8g is an accelerator-optimized server with 8 NVIDIA A100 GPUs, 96 vCPUs, and 680GB RAM for parallel workloads.",
-  "tagline": "An accelerator-optimized architecture featuring eight dedicated GPUs and high memory bandwidth for intensive parallel computing and language model inference.",
+  "description": "Google Cloud Platform a2-highgpu-8g is an accelerator-optimized instance designed for intensive distributed computing and deep learning workloads. The system integrates 8 NVIDIA Ampere A100 GPUs with 320 GB of collective VRAM alongside an Intel Xeon x86_64 processor delivering 96 dedicated vCPUs across 48 physical cores at 2.2 GHz. System memory totals 680.0 GB, providing 7.08 GB per vCPU core. Benchmark evaluations show top-tier execution in LLM prompt processing and text generation across small, medium, and 70B parameter models, accompanied by high multi-core throughput and strong large-block memory read bandwidth. Single-core compute and compression metrics demonstrate lower relative performance, reflecting its parallel optimization. The instance includes no local ephemeral storage, requiring attached network disks. This hardware profile is suited for large-scale AI model training, parallel inference pipelines, and compute-heavy scientific simulation workloads.",
+  "og_description": "Google Cloud Platform a2-highgpu-8g provides 8 NVIDIA A100 GPUs with 320 GB VRAM, 96 Intel Xeon vCPUs, and 680 GB of RAM, engineered for large-scale AI model training and HPC workloads.",
+  "meta_description": "Google Cloud Platform a2-highgpu-8g features 8 NVIDIA A100 GPUs, 96 vCPUs, and 680 GB RAM, optimized for high-throughput AI training and parallel inference.",
+  "tagline": "Eight NVIDIA A100 GPUs paired with 96 vCPUs and dense memory for high-throughput deep learning and parallel computing.",
   "bullet_points": [
-    "Eight NVIDIA Ampere A100 GPUs with 320 GB total VRAM",
-    "96 dedicated Intel Xeon vCPUs and 680 GB of system memory",
-    "Top-tier performance in large language model inference and prompt processing",
-    "Strong multi-core CPU and memory bandwidth benchmark results",
-    "Weak single-core CPU performance and no bundled local storage",
-    "Suited for deep learning, ray tracing, and highly parallelized workloads"
+    "8 NVIDIA Ampere A100 GPUs providing 320 GB total VRAM",
+    "96 dedicated vCPUs across 48 physical Intel Xeon cores at 2.2 GHz",
+    "680 GB system memory with 219.95 GB/sec uncached read bandwidth",
+    "Top-tier LLM inference throughput across 7B and 70B model architectures",
+    "Requires attached network storage as no local disks are provided",
+    "Suited for distributed deep learning, large-scale inference, and HPC"
   ],
   "categories": [
     "GPU Accelerated",
-    "Memory Optimized",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Memory Optimized"
   ]
 }

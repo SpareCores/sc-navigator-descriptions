@@ -1,23 +1,24 @@
 {
   "page": [
-    "Amazon Web Services i3.2xlarge is a storage-optimized instance running on the Xen hypervisor. It features an Intel Xeon E5-2686 v4 processor with 8 vCPUs and 4 physical cores, utilizing the x86_64 architecture. The CPU operates at a base clock speed of 2.3 GHz and includes a 45 MB L3 cache. The system is equipped with 61.0 GB of memory, providing 7.62 GB per core.",
-    "This instance includes a bundled 1900 GB local NVMe SSD, designed for high-capacity local storage needs. For network connectivity, it offers a baseline bandwidth of 2 Gbps. It does not include any complimentary public IPv4 addresses.",
-    "Benchmark results indicate modest compute capabilities. The single-core stress-ng performance is 883.49, and the multi-core score is 4158.51, both falling into lower performance tiers. Memory bandwidth is mixed, with read-only large block operations reaching an average of 41.72 GB/sec, while write operations are weaker at 23.58 GB/sec. Database operations, such as Redis SET, perform at 2.37 million operations per second.",
-    "The i3.2xlarge offers qualitative cost efficiency for workloads that require high local storage density and moderate memory capacity rather than raw processing power. It is suitable for NoSQL databases, transactional data stores, and log analytics. It is less suited for compute-heavy tasks or high-throughput web serving."
+    "Amazon Web Services i3.2xlarge is an x86_64 storage-optimized instance running on the Xen hypervisor. It is powered by an Intel Xeon E5-2686 v4 processor operating at 2.3 GHz, configured with 4 physical cores and 8 vCPUs with hyper-threading enabled. The system includes 61.0 GB of memory (7.62 GB per vCPU) and a 45 MB L3 cache. It features a bundled local storage capacity of 1900 GB on NVMe SSD, 2 Gbps baseline network bandwidth, and does not include hardware accelerators.",
+    "Benchmark outcomes demonstrate that the older Broadwell-era processor exhibits limited raw compute capability. Both single-core and multi-core evaluations\u2014including stress-ng and Geekbench\u2014rate within the bottom 10% to 25% of modern cloud instance profiles. The passmark CPU score registers at 6204.12, reflecting reduced throughput in compute-heavy tasks such as compilation and cryptographic processing. The processor supports AVX and AES instructions but lacks newer vector expansions like AVX-512.",
+    "Memory and operational benchmarks present mid-tier to lower-range results. Large-block read bandwidth attains 41.72 GB/sec, placing it in the middle tier, whereas cached small-block reads and uncached write bandwidth fall into the lower quartiles. In real-world service simulations, Redis SET operations achieve 2.37 million operations per second, and static web serving throughput measures 5.19 GB/sec. LLM text generation rates also remain constrained, achieving 89.88 tokens/sec on a small 135M model and dropping to 5.24 tokens/sec on a 7B model.",
+    "Resource allocation on the i3.2xlarge is heavily balanced toward dense, high-capacity NVMe storage rather than pure processor throughput. As a result, its qualitative cost efficiency is defined by its integrated fast local disk footprint per vCPU rather than compute density. Workloads best suited for this instance include distributed file systems, NoSQL databases, log analysis nodes, and data store caching layers where fast local NVMe read/write access takes precedence over compute-bound processing."
   ],
-  "description": "Amazon Web Services i3.2xlarge is a storage-optimized instance powered by an Intel Xeon E5-2686 v4 processor with 8 vCPUs and 4 physical cores on the x86_64 architecture. It features 61.0 GB of memory and a bundled 1900 GB local NVMe SSD, operating under the Xen hypervisor with a 2 Gbps baseline network bandwidth. Benchmark data shows modest compute and memory write performance, with a Geekbench single-core score of 893.0 and a multi-core score of 3348.0. Large-block memory reads achieve an average throughput of 41.72 GB/sec, while database operations like Redis SET perform at 2.37 million operations per second. This instance represents a qualitative tradeoff, prioritizing high-capacity local storage over raw processing speed. It is best suited for storage-intensive workloads, including NoSQL databases, transactional data stores, and log analytics, rather than compute-bound applications.",
-  "og_description": "Amazon Web Services i3.2xlarge is a storage-optimized instance featuring 8 vCPUs, 61.0 GB of RAM, and a 1900 GB local NVMe SSD. It is designed for low-latency database and storage-heavy workloads.",
-  "meta_description": "Amazon Web Services i3.2xlarge is a storage-optimized instance featuring 8 vCPUs, 61.0 GB of RAM, and a 1900 GB local NVMe SSD for database workloads.",
-  "tagline": "A storage-optimized virtual server featuring high-capacity local NVMe SSD storage and balanced memory for data-intensive applications.",
+  "description": "Amazon Web Services i3.2xlarge is a storage-optimized instance powered by a 4-core, 8-vCPU Intel Xeon E5-2686 v4 processor clocked at 2.3 GHz. Configured on an x86_64 architecture with the Xen hypervisor, it provides 61.0 GB of RAM alongside 1900 GB of bundled local NVMe SSD storage and a 2 Gbps baseline network profile. It contains no GPUs. Benchmark metrics reveal lower-percentile compute performance, with Geekbench and stress-ng scores reflecting older CPU architecture constraints, though memory performance remains mid-tier during large uncached reads (41.72 GB/sec). With substantial local NVMe storage and balanced memory, the i3.2xlarge delivers a qualitative cost advantage for storage-dense configurations rather than pure processing power. It is well-fitted for storage-intensive applications, operational NoSQL engines, distributed caching nodes, and transactional databases that rely directly on low-latency local disk I/O.",
+  "og_description": "Amazon Web Services i3.2xlarge provides 8 vCPUs on an Intel Xeon E5-2686 v4 CPU, 61.0 GB RAM, and 1900 GB of local NVMe SSD storage, tailored for storage-heavy distributed database nodes.",
+  "meta_description": "Amazon Web Services i3.2xlarge is a storage-optimized server featuring 8 vCPUs, 61.0 GB memory, and 1900 GB local NVMe SSD storage on Xen.",
+  "tagline": "Storage-focused instance delivering 1900 GB of high-speed local NVMe SSD storage with 61 GB of system memory.",
   "bullet_points": [
-    "Intel Xeon E5-2686 v4 processor with 8 vCPUs and 4 physical cores",
-    "1900 GB of high-speed local NVMe SSD storage",
-    "61.0 GB of system memory yielding 7.62 GB per core",
-    "2 Gbps baseline network bandwidth",
-    "Optimized for NoSQL databases, log processing, and transactional data stores"
+    "Intel Xeon E5-2686 v4 processor with 8 dedicated vCPUs (4 physical cores)",
+    "61.0 GB system RAM (7.62 GB per vCPU)",
+    "Bundled 1900 GB local NVMe SSD high-throughput storage",
+    "2 Gbps baseline network bandwidth profile",
+    "Tailored for transactional databases, NoSQL stores, and log processing"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

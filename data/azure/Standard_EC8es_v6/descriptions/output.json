@@ -1,19 +1,21 @@
 {
   "page": [
-    "Microsoft Azure EC8es_v6 is an ECEV6 family memory-optimized virtual machine instance. It features 8 dedicated vCPUs based on the x86_64 architecture with an Intel processor, running on the Microsoft Hyper-V hypervisor. The instance is configured with 64.0 GB of system memory, yielding a memory-to-vCPU ratio of 8.0 GB per core.",
-    "This instance does not include local storage, meaning all storage requirements must be met via external block storage, though the instance is designated as Premium Storage capable. There are zero integrated GPUs, and it does not include complimentary public IPv4 addresses.",
-    "From a qualitative cost-efficiency perspective, the EC8es_v6 provides a high memory-to-vCPU density, making it suitable for memory-bound workloads that do not require local scratch space. The dedicated CPU allocation ensures consistent processing capabilities. Appropriate workloads include relational databases, in-memory caching layers, and enterprise applications requiring substantial memory footprints relative to compute cores."
+    "Microsoft Azure EC8es_v6 is a memory-optimized virtual machine built on the x86_64 architecture. It provides 8 dedicated vCPUs mapped across 4 physical Intel Xeon cores running at up to 4.2 GHz, backed by Microsoft Hyper-V. The system incorporates 64.0 GB of system memory, providing an 8 GB per vCPU ratio. Hardware acceleration instruction sets are supported, including AVX-512 and Intel Advanced Matrix Extensions (AMX), alongside a large 260 MB L3 cache.",
+    "The instance does not include bundled local instance storage, requiring remote premium storage volumes for data persistence. It also includes zero complimentary public IPv4 addresses and operates without discrete GPU hardware accelerators. Compute performance benchmarks position the instance in the top 25 percent for Geekbench single-core execution with a score of 1966.0, while multi-core workloads deliver average tier throughput, scoring 7323.0 on Geekbench and 13533.17 on PassMark CPU.",
+    "In operational benchmarks, the instance achieves 10.01 million operations per second in Redis SET testing and scores 4889.85 in PassMark database operations. The high memory-to-vCPU ratio offers favorable resource efficiency for workloads bottlenecked on RAM rather than raw parallel compute cores. Because persistent local disk storage is absent, architectures must account for network storage latency when handling transactional write cycles.",
+    "Workloads best aligned with the EC8es_v6 profile include in-memory databases such as Redis, relational databases requiring dedicated buffer pools, intermediate ETL processing tasks, and enterprise caching systems."
   ],
-  "description": "Microsoft Azure EC8es_v6 is an ECEV6 family memory-optimized virtual machine featuring 8 dedicated vCPUs on an x86_64 Intel processor architecture, managed via the Microsoft Hyper-V hypervisor. The instance is equipped with 64.0 GB of system memory, establishing a high memory-to-core ratio of 8.0 GB per vCPU. It does not include local storage or integrated GPUs, but it is Premium Storage capable, requiring external block storage for persistent data. The dedicated CPU allocation ensures predictable compute performance. Qualitatively, the server offers high memory density relative to its compute resources, making it cost-efficient for memory-intensive applications that do not require local disk space. This hardware profile is suited for workloads such as in-memory databases, caching layers, and enterprise applications with large memory footprints.",
-  "og_description": "Microsoft Azure EC8es_v6 is an ECEV6 family memory-optimized virtual machine featuring 8 dedicated Intel vCPUs, 64.0 GB of RAM, and Premium Storage capability with no local disk.",
-  "meta_description": "Microsoft Azure EC8es_v6 is a memory-optimized virtual machine with 8 dedicated Intel vCPUs, 64.0 GB of RAM, and Premium Storage capability.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated Intel processors and sixty-four gigabytes of RAM for memory-intensive workloads.",
+  "description": "Microsoft Azure EC8es_v6 is a memory-optimized virtual machine powered by 4.2 GHz Intel Xeon processors on Microsoft Hyper-V. Providing 8 dedicated vCPUs across 4 physical cores and 64.0 GB of RAM, it maintains an 8 GB per vCPU memory density suitable for RAM-bound applications. The architecture incorporates 260 MB of L3 cache along with AVX-512 and AMX extensions. Benchmark testing indicates strong single-core compute performance, placing in the top quartile of Geekbench results, while multi-core compute tests such as PassMark reflect steady mid-range throughput. The instance includes no bundled local storage and zero GPUs, relying on remote persistent storage for disk needs. With measured throughput reaching 10.01 million Redis SET operations per second, this instance is suited for in-memory key-value stores, relational caching tiers, and medium-scale transactional databases.",
+  "og_description": "Microsoft Azure EC8es_v6 is a memory-optimized instance with 8 Intel Xeon vCPUs, 64 GB of memory, and AMX support. It delivers strong single-core performance for memory-heavy databases and caching systems.",
+  "meta_description": "Microsoft Azure EC8es_v6 is a memory-optimized virtual machine featuring 8 vCPUs on Intel Xeon hardware, 64 GB of RAM, and high-frequency compute up to 4.2 GHz.",
+  "tagline": "An 8-vCPU memory-optimized configuration pairing 64 GB of RAM with high-frequency Intel Xeon cores and matrix extensions for data workloads.",
   "bullet_points": [
-    "8 dedicated Intel vCPUs on x86_64 architecture",
-    "64.0 GB of system memory providing 8.0 GB per core",
-    "Premium Storage capable with no local storage bundled",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Suited for in-memory databases and caching layers"
+    "8 dedicated vCPUs across 4 physical Intel Xeon cores at up to 4.2 GHz",
+    "64.0 GB system memory (8.0 GB per vCPU allocation ratio)",
+    "Hardware support for AVX-512 and Intel Advanced Matrix Extensions (AMX)",
+    "Strong Geekbench single-core benchmark performance in the top 25th percentile",
+    "No bundled local disk storage, requiring network-attached storage volumes",
+    "Suited for in-memory caching, Redis deployments, and relational database servers"
   ],
   "categories": [
     "Memory Optimized"

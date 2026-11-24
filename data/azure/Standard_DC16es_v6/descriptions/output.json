@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure DC16es_v6 is an x86_64 architecture server instance belonging to the DCEV6 family. It features 16 dedicated vCPUs powered by an Intel processor and runs on the Microsoft Hyper-V hypervisor. The instance is configured with 64.0 GB of system memory, providing a resource density of 4.0 GB of RAM per virtual core.",
-    "This server configuration does not include local storage, meaning it relies entirely on external storage options, though it is designated as Premium Storage capable. There are no integrated GPUs, and it does not include any complimentary public IPv4 addresses.",
-    "From a qualitative cost-efficiency perspective, the dedicated CPU allocation and memory-to-core ratio position this instance for workloads requiring consistent compute performance without the overhead of local storage. Tradeoffs include the lack of local NVMe drives and hardware accelerators. It is designed for memory-optimized workloads, database nodes, and general-purpose enterprise applications that utilize network-attached storage."
+    "Microsoft Azure DC16es_v6 is a general-purpose virtual machine powered by an x86_64 Intel Xeon TDX processor. The configuration allocates 16 vCPUs across 8 dedicated physical cores operating at a clock speed of 4.2 GHz with 2 threads per core. System memory totals 64.0 GB, establishing a standard 1:4 vCPU-to-RAM ratio with 4.0 GB per vCPU. The processor includes 48 KB of L1 data cache, 2 MB of L2 cache, and 260 MB of L3 cache, alongside specialized instruction extensions including AVX-512, AMX tile and int8 execution, and SHA-NI cryptographic support. No integrated GPUs or local storage devices are bundled with this instance type, requiring external remote block storage.",
+    "Benchmark testing reflects strong single-core performance alongside average multi-core and memory throughput. The server registered a Geekbench single-core score of 1944.0, positioning it in the upper quartile of comparable instances. Multi-core results remained mid-tier, yielding 11137.0 in Geekbench multi-core and 14092.2 in multi-core stress-ng tests. PassMark testing generated a CPU score of 23118.53, an extended instructions score of 18731.6, and a database operations metric of 6467.49. In-memory throughput showed relative weakness with a PassMark memory score of 1371.4, while Redis SET performance reached 18.44 million operations per second.",
+    "The hardware configuration offers predictable single-threaded compute density and hardware-accelerated matrix operations. Tradeoffs include the lack of ephemeral local storage, meaning disk I/O performance relies on attached network storage. With its 1:4 resource allocation and dedicated core access, this server configuration fits CI/CD compilation jobs, enterprise application tiers, backend web serving, and relational database hosting."
   ],
-  "description": "Microsoft Azure DC16es_v6 is an x86_64 server instance from the DCEV6 family, featuring 16 dedicated Intel vCPUs and 64.0 GB of RAM. Operating on the Microsoft Hyper-V hypervisor, this instance provides a resource density of 4.0 GB of memory per core. It does not include local storage or integrated GPUs, but it is Premium Storage capable, requiring external storage attachments for data persistence. The dedicated CPU allocation ensures consistent processing capabilities. This configuration is designed for memory-optimized applications, database deployments, and general-purpose enterprise workloads that rely on network-attached storage rather than local physical disks.",
-  "og_description": "Microsoft Azure DC16es_v6 is a DCEV6 family memory-optimized server featuring 16 dedicated Intel vCPUs, 64.0 GB RAM, and no local storage, operating on the Microsoft Hyper-V hypervisor.",
-  "meta_description": "Microsoft Azure DC16es_v6 is a DCEV6 family server with 16 dedicated Intel vCPUs, 64.0 GB RAM, and no local storage, running on Hyper-V.",
-  "tagline": "An x86_64 dedicated virtual server with sixteen cores, sixty-four gigabytes of memory, and premium storage capability.",
+  "description": "Microsoft Azure DC16es_v6 is a general-purpose virtual machine equipped with an Intel Xeon TDX processor providing 16 dedicated vCPUs across 8 physical cores at 4.2 GHz. Supported by 64.0 GB of memory and 260 MB of L3 cache, the system incorporates advanced vector and matrix capabilities including AVX-512 and Intel AMX. The instance lacks bundled local storage and GPUs, depending entirely on remote storage volumes. Benchmark data indicates strong single-core performance with a Geekbench single-core score of 1944.0, while multi-core metrics and PassMark CPU scores sit in the average tier. PassMark memory testing indicates lower throughput, though Redis SET operations achieve 18.44 million operations per second. This instance profile aligns with enterprise application hosting, continuous integration workflows, and relational database management systems.",
+  "og_description": "Microsoft Azure DC16es_v6 provides 16 dedicated vCPUs from an Intel Xeon TDX processor, 64 GB memory, and advanced instruction sets like AMX and AVX-512 for enterprise applications and general-purpose workloads.",
+  "meta_description": "Microsoft Azure DC16es_v6 features 16 dedicated Intel Xeon TDX vCPUs, 64 GB RAM, and AVX-512/AMX instructions for general-purpose computing workloads.",
+  "tagline": "Dedicated 16 vCPU computing powered by Intel Xeon TDX architecture, combining balanced memory density, extensive instruction sets, and consistent single-thread execution.",
   "bullet_points": [
-    "16 dedicated Intel vCPUs on x86_64 architecture",
-    "64.0 GB of system memory (4.0 GB per core)",
-    "Premium Storage capable with no local storage bundled",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Designed for memory-optimized workloads and database deployments"
+    "16 dedicated vCPUs across 8 Intel Xeon TDX physical cores clocked at 4.2 GHz",
+    "64.0 GB system memory providing a balanced 1:4 vCPU-to-RAM ratio",
+    "260 MB L3 cache with AVX-512, AMX, and cryptographic instruction extensions",
+    "Zero local disk capacity, utilizing network-attached remote storage",
+    "Strong single-core benchmark performance alongside average multi-core output",
+    "Workload alignment for enterprise web services, CI/CD builds, and backend databases"
   ],
   "categories": [
-    "Memory Optimized",
     "General Purpose"
   ]
 }

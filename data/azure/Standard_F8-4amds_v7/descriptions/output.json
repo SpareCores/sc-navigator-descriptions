@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure F8-4amds_v7 is a memory-intensive virtual machine belonging to the Famdsv7 server family. It is built on the x86_64 architecture and runs on the Microsoft Hyper-V hypervisor. The server features 4 dedicated physical cores and 4 vCPUs powered by an AMD EPYC 9V45 processor operating at a clock speed of 4.5 GHz. It is equipped with 64.0 GB of system memory, providing a high resource density of 16.0 GB of RAM per core. For local storage, the instance includes a bundled 945 GB NVMe SSD, and it is capable of utilizing Premium Storage. No GPUs are included in this configuration.",
-    "Benchmark data highlights strong single-core performance, with stress-ng single-core CPU performance, single-threaded gzip compression, and single-threaded bzip3 decompression all ranking in the top tier. However, multi-core performance scales to average levels, as shown by stress-ng multi-core CPU performance, PassMark CPU scores, and multi-threaded bzip3 decompression falling into the middle tier. Memory bandwidth tests for both read and write operations also register in the average tier. For lightweight AI workloads, the server demonstrates strong text generation speeds with a small 135M LLM model, though prompt processing for medium 7B models is weak, representing a clear tradeoff for larger model inference.",
-    "From a cost-efficiency perspective, the F8-4amds_v7 offers a high memory-to-vCPU ratio alongside fast single-core processing and local NVMe storage, making it a resource-dense option for workloads that do not require massive parallelization. The combination of high-speed AMD EPYC cores, 64.0 GB of RAM, and fast local NVMe SSD storage makes this server well-suited for memory-intensive applications, database operations, caching layers like Redis, and single-threaded data processing tasks."
+    "Microsoft Azure F8-4amds_v7 is a virtual machine configuration utilizing dedicated AMD EPYC 9V45 processors clocked at up to 4.5 GHz. The instance provisions 4 physical cores and 4 vCPUs with single-threading enabled, supported by 48 KB L1 data cache, 1.0 MB L2 cache, and 32 MB L3 cache. It features 64.0 GB of system memory, providing a high memory allocation of 16.0 GB per core, along with a bundled 945 GB local NVMe SSD. Hardware virtualization is delivered via Microsoft Hyper-V, and the processor includes support for AVX-512 vector extensions, bfloat16, and cryptographic acceleration.",
+    "Benchmark results demonstrate top-tier single-core compute and data manipulation capabilities. In stress-ng single-core tests, the instance scored in the top 10 percent with 3541.48 points, mirrored by top-tier single-threaded compression throughput of 38.57 GB/sec in gzip and 16.95 GB/sec in bzip3 decompression. Multi-core performance aligns with the middle 50 percent at 14063.2 in stress-ng, reflecting the 4-core physical count. Memory subsystem testing registered read-only small-block cached bandwidth of 803.46 GB/sec and uncached large-block throughput of 52.32 GB/sec.",
+    "The combination of high clock frequency, large per-core memory capacity, and fast local NVMe storage creates a well-rounded operational profile for memory-intensive workloads that require sustained per-thread speed rather than broad thread counts. With 12.51 million operations per second in Redis SET benchmarks, this configuration fits in-memory caching tiers, relational database instances, stateful ETL processing, and search index services requiring low-latency local scratch disk."
   ],
-  "description": "Microsoft Azure F8-4amds_v7 is a memory-intensive virtual machine from the Famdsv7 family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated vCPUs and 4 physical cores powered by an AMD EPYC 9V45 processor clocked at 4.5 GHz, paired with 64.0 GB of RAM and a bundled 945 GB NVMe SSD. The server exhibits top-tier single-core CPU performance and single-threaded compression speeds, though its multi-core and memory bandwidth benchmarks align with average tiers. With a high memory-to-vCPU ratio of 16.0 GB per core, this instance offers strong qualitative cost efficiency for memory-bound workloads that benefit from fast single-threaded execution. It is highly suitable for database operations, Redis caching, and memory-intensive applications.",
-  "og_description": "Microsoft Azure F8-4amds_v7 is a memory-intensive VM featuring 4 dedicated AMD EPYC vCPUs at 4.5 GHz, 64 GB RAM, and a 945 GB NVMe SSD, delivering top-tier single-core performance.",
-  "meta_description": "Microsoft Azure F8-4amds_v7 is a memory-intensive VM with 4 AMD EPYC vCPUs, 64 GB RAM, and a 945 GB NVMe SSD, optimized for database workloads.",
-  "tagline": "A high-frequency, memory-intensive virtual machine featuring dedicated AMD EPYC cores and integrated local NVMe SSD storage for demanding database workloads.",
+  "description": "Microsoft Azure F8-4amds_v7 is a cloud server configuration featuring 4 dedicated physical cores from an AMD EPYC 9V45 processor operating at 4.5 GHz. The VM includes 64.0 GB of RAM, yielding an elevated 16.0 GB of memory per core, alongside a integrated 945 GB local NVMe SSD. Benchmark results place its single-core CPU throughput and compression rates in the top tier, while multi-core stress tests and memory bandwidth register at midrange levels consistent with its 4-core scale. The architecture incorporates advanced instruction sets including AVX-512 and cryptographic accelerators, though no discrete GPU hardware is present. With substantial memory density per core and fast attached storage, the F8-4amds_v7 is tailored for memory-intensive enterprise tasks, in-memory databases, caching layers, and high-frequency data processing pipelines requiring strong single-thread execution and rapid local temporary storage.",
+  "og_description": "Microsoft Azure F8-4amds_v7 provides 4 AMD EPYC 9V45 cores at 4.5 GHz, 64 GB RAM, and a 945 GB local NVMe SSD. It delivers top-tier single-core performance for memory-intensive database and caching workloads.",
+  "meta_description": "Microsoft Azure F8-4amds_v7 features 4 dedicated AMD EPYC cores at 4.5 GHz, 64 GB RAM, and 945 GB NVMe SSD storage for memory-intensive workloads.",
+  "tagline": "Dedicated high-clock AMD EPYC computing paired with dense per-core memory and integrated local NVMe storage for memory-demanding database workloads.",
   "bullet_points": [
-    "Powered by 4 dedicated AMD EPYC 9V45 vCPUs running at 4.5 GHz",
-    "Equipped with 64.0 GB of RAM, providing 16.0 GB of memory per core",
-    "Includes 945 GB of local NVMe SSD storage with Premium Storage capability",
-    "Delivers top-tier single-core CPU and single-threaded compression performance",
-    "Best suited for memory-intensive applications, databases, and caching layers"
+    "4 dedicated AMD EPYC 9V45 physical cores operating at up to 4.5 GHz",
+    "64.0 GB system RAM providing an extensive 16.0 GB memory per core",
+    "Bundled 945 GB local NVMe SSD for high-speed scratch space and caching",
+    "Top-tier single-core execution and compression benchmark performance",
+    "Tailored for in-memory databases, caching layers, and memory-heavy processing"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

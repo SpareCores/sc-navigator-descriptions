@@ -1,22 +1,23 @@
 {
   "page": [
-    "Amazon Web Services m8azn.medium is a general-purpose instance powered by a dedicated AMD EPYC 9R05 processor utilizing the x86_64 architecture. It features 1 physical core and 1 vCPU running at a high clock speed of 5.0 GHz. The instance is equipped with 4.0 GB of DDR5 memory operating at 6 GHz, providing a balanced 1:4 vCPU-to-RAM ratio. It does not include local storage or a GPU, relying instead on network-attached EBS storage, and offers a baseline network bandwidth of 2 Gbps.",
-    "Benchmark data reveals a stark contrast between single-core and multi-core performance due to the single-vCPU configuration. The instance achieves top-tier results in single-core metrics, including stress-ng single-core CPU performance, Geekbench single-core score, and single-threaded compression and decompression tasks. However, multi-core benchmarks, such as stress-ng multi-core, Geekbench multi-core, and Passmark CPU scores, fall into the bottom 25% tier. Memory bandwidth for large blocks and static web serving throughput perform in the average range, while database operations and Redis SET operations are relatively weak.",
-    "From a qualitative cost-efficiency perspective, the m8azn.medium offers high-frequency single-core performance at a lower resource density. The primary tradeoff is the lack of multi-threaded scaling, making it inefficient for parallelized workloads like software compilation or ray tracing. It is best suited for lightweight, single-threaded applications, basic web serving, text processing, or small-scale LLM inference tasks that benefit from high clock speeds without requiring extensive multi-core execution."
+    "Amazon Web Services m8azn.medium is a general-purpose instance powered by an AMD EPYC 9R05 processor built on x86_64 architecture. Operating on the AWS Nitro hypervisor, the instance provides 1 dedicated physical core and 1 vCPU running at a 5.0 GHz clock speed. System memory consists of 4.0 GB of high-speed DDR5 RAM rated at 6 GHz, establishing a standard 1:4 vCPU-to-memory ratio. The instance includes 48 KB of L1d cache, 1.0 MB of L2 cache, and 4 MB of L3 cache, with hardware instruction support for AVX-512, VNNI, and cryptographic accelerators like AES and SHA-NI. The instance contains no bundled local storage, relying on network-attached storage, and delivers a baseline network bandwidth of 2 Gbps.",
+    "Benchmark results demonstrate exceptional single-threaded performance contrasted with low total throughput due to the single-core configuration. The instance reaches the top tier in Geekbench single-core scoring (3084.0), stress-ng single-core execution (4180.09), single-threaded gzip compression (45.72 GB/sec), and bzip3 decompression (20.29 GB/sec). Geekbench text processing also lands in the top decile. Conversely, aggregate metrics reflecting multi-threaded parallel throughput, such as multi-core Geekbench (3068.0), PassMark CPU score (3871.4), and Redis SET operations (4.76 million operations/sec), register in the lower percentiles because of the single available thread.",
+    "From an efficiency standpoint, the m8azn.medium offers an entry-level deployment profile that minimizes resource commitment while maximizing per-core instruction velocity. Because there is only 1 vCPU and no local NVMe storage, workloads demanding multi-threaded parallelism or heavy sustained local I/O will face operational bottlenecks. It is best matched for single-threaded batch tasks, lightweight microservices, single-worker background queues, low-traffic web serving, and small-model text generation where peak single-core speed is prioritized over core density."
   ],
-  "description": "Amazon Web Services m8azn.medium is a general-purpose instance featuring a dedicated AMD EPYC 9R05 processor with 1 physical core and 1 vCPU running at 5.0 GHz. It is equipped with 4.0 GB of DDR5 memory at 6 GHz, 2 Gbps baseline network bandwidth, and no local storage or GPU. The instance delivers top-tier single-core performance, as demonstrated by high Geekbench single-core and single-threaded compression benchmarks. However, its single-vCPU design limits multi-core and parallelized performance, placing multi-threaded benchmarks in the lower tier. Qualitatively, this instance provides high single-thread compute efficiency for workloads that do not require parallel processing. It is best suited for lightweight web serving, text processing, small-scale LLM inference, and single-threaded application tasks.",
-  "og_description": "Amazon Web Services m8azn.medium is a general-purpose instance with a 5.0 GHz AMD EPYC CPU, 1 vCPU, and 4 GB DDR5 RAM, offering top-tier single-core performance but limited multi-core capacity.",
-  "meta_description": "Amazon Web Services m8azn.medium features a 5.0 GHz AMD EPYC CPU, 1 vCPU, and 4 GB DDR5 RAM, optimized for single-threaded workloads.",
-  "tagline": "A single-core, high-frequency instance delivering top-tier single-threaded performance and DDR5 memory for lightweight, non-parallelized workloads.",
+  "description": "Amazon Web Services m8azn.medium is a general-purpose, Nitro-based instance equipped with 1 dedicated physical core (1 vCPU) on an AMD EPYC 9R05 processor running at 5.0 GHz. It features 4.0 GB of 6 GHz DDR5 memory, no local storage, and a 2 Gbps baseline network bandwidth. Backed by instruction sets including AVX-512 and cryptographic accelerators, the instance excels in single-threaded tasks, recording top-tier benchmark results in Geekbench single-core, single-threaded gzip compression, and bzip3 decompression. Because compute capacity is limited to a single hardware thread, overall multi-core and database throughput remain low. The configuration provides strong single-thread efficiency at an entry-level footprint, making it suitable for single-threaded batch utilities, lightweight APIs, and low-scale web serving.",
+  "og_description": "Amazon Web Services m8azn.medium features 1 dedicated AMD EPYC 9R05 core running at 5.0 GHz, 4.0 GB DDR5 RAM, and 2 Gbps network bandwidth, delivering high single-threaded benchmark output for entry-level workloads.",
+  "meta_description": "Amazon Web Services m8azn.medium features 1 dedicated AMD EPYC vCPU at 5.0 GHz and 4.0 GB DDR5 RAM, optimized for single-threaded general purpose tasks.",
+  "tagline": "Dedicated 5.0 GHz single-core AMD EPYC performance paired with DDR5 memory for lightweight, single-threaded compute workloads.",
   "bullet_points": [
-    "Dedicated AMD EPYC 9R05 processor running at 5.0 GHz",
-    "4.0 GB of high-speed DDR5 memory operating at 6 GHz",
-    "Top-tier single-core CPU and text processing performance",
-    "No local storage, optimized for EBS and network-attached storage",
-    "2 Gbps baseline network bandwidth",
-    "Best suited for lightweight web serving and single-threaded tasks"
+    "1 dedicated AMD EPYC 9R05 physical core clocked at 5.0 GHz",
+    "4.0 GB of 6 GHz DDR5 memory in a standard 1:4 compute ratio",
+    "Top-tier single-core Geekbench and data compression benchmarks",
+    "No bundled local storage, requiring network-attached storage volumes",
+    "2 Gbps baseline network bandwidth running on AWS Nitro hypervisor",
+    "Suited for single-threaded batch jobs, microservices, and lightweight web serving"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

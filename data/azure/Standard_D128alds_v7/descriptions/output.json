@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D128alds_v7 is a compute-optimized server powered by a dedicated AMD EPYC 9V45 processor. Built on the x86_64 architecture, it features 128 vCPUs derived from 64 physical cores with multithreading enabled, running at a clock speed of 4.5 GHz. The processor includes 48 KB L1d, 1.0 MB L2, and 32 MB L3 cache, alongside advanced instruction sets such as AVX-512 (including VNNI and BF16) and cryptography accelerations like AES and SHA_NI.",
-    "The server is configured with 256.0 GB of system memory, yielding a low memory-to-core ratio of 2.0 GB per vCPU. For local storage, it bundles a high-capacity 7559 GB NVMe SSD, providing substantial local storage capacity. It is also Premium Storage capable, allowing integration with high-performance external storage options.",
-    "Benchmark results place this instance in the top tier (top 10%) for both single-core and multi-core CPU performance under stress-ng, as well as PassMark CPU and memory evaluations. It demonstrates exceptional memory bandwidth, reaching 12348.52 GB/sec for cached read-only small blocks and 376.33 GB/sec for uncached large blocks. The high compute density and fast local NVMe storage make it highly suitable for compute-heavy workloads, large-scale database operations, high-throughput web serving, and CPU-based LLM inference."
+    "Microsoft Azure D128alds_v7 is a high-vCPU server instance powered by an AMD EPYC 9V45 processor, delivering 128 dedicated virtual CPUs across 64 physical cores at clock speeds up to 4.5 GHz. Based on x86_64 architecture and running under Microsoft Hyper-V, the system supports advanced instructions including AVX-512 with VNNI and BF16, alongside AES and SHA cryptographic accelerations. Memory is provisioned at 256 GB, establishing a 1:2 vCPU-to-RAM ratio of 2.0 GB per vCPU. The instance bundles 7559 GB of local NVMe SSD storage and supports Premium Storage, while containing zero discrete GPUs.",
+    "Benchmark results place the instance in the top tier for CPU, memory, and data throughput metrics. It achieved a multi-core stress-ng score of 233,738.78 and a PassMark CPU score of 134,326.25. Memory bandwidth reaches 376.33 GB/sec for large uncached reads and 197.42 GB/sec for writes. The platform demonstrated 200.09 million operations per second on Redis SET benchmarks, 823.88 GB/sec during multi-threaded bzip3 decompression, and static web serving throughput of 105.54 GB/sec. On CPU-based inference workloads, it handled 331.9 prompt tokens per second and 66.04 generation tokens per second using a 7B model.",
+    "The 1:2 memory-to-core allocation offers cost-efficient scaling for compute-heavy workloads that do not demand large RAM footprints per thread. However, the relatively lean memory capacity per core acts as a tradeoff for large in-memory databases. Given the high clock rate and large NVMe SSD disk volume, the D128alds_v7 is well aligned with compute-intensive batch processing, CI/CD compilation pipelines, high-throughput web serving, and database tasks that utilize fast local storage."
   ],
-  "description": "The Microsoft Azure D128alds_v7 is a high-density, compute-optimized server utilizing a dedicated AMD EPYC 9V45 processor. Operating on the x86_64 architecture, it delivers 128 vCPUs across 64 physical cores at a clock speed of 4.5 GHz. It is equipped with 256.0 GB of RAM, representing a low memory-to-vCPU ratio of 2.0 GB per core, and includes a massive 7559 GB local NVMe SSD. The server excels in CPU-bound tasks, ranking in the top 10% for multi-core stress-ng benchmarks, PassMark CPU scores, and memory bandwidth. Supported by AVX-512 and cryptographic instruction sets, it is engineered for high-throughput workloads such as database operations, static web serving, and CPU-based machine learning inference.",
-  "og_description": "Microsoft Azure D128alds_v7 is a compute-optimized server featuring 128 vCPUs on an AMD EPYC processor, 256 GB of RAM, and a 7559 GB local NVMe SSD, delivering top-tier CPU and storage performance.",
-  "meta_description": "Microsoft Azure D128alds_v7 is a compute-optimized server featuring 128 AMD EPYC vCPUs, 256 GB RAM, and a bundled 7559 GB local NVMe SSD.",
-  "tagline": "A high-density compute platform combining 128 high-frequency AMD vCPUs with massive local NVMe storage for intensive processing workloads.",
+  "description": "Microsoft Azure D128alds_v7 is an AMD EPYC 9V45 instance featuring 128 dedicated vCPUs across 64 physical cores operating at up to 4.5 GHz. Built on x86_64 architecture under Microsoft Hyper-V, it incorporates 256 GB of system memory (2 GB per vCPU) and a bundled 7559 GB NVMe SSD local drive with Premium Storage support. The configuration omits discrete GPUs. Benchmark results demonstrate top-tier execution across compute and memory workloads, scoring 134,326.25 on PassMark CPU, 200.09 million operations per second on Redis SET tasks, and 823.88 GB/s on multi-threaded bzip3 decompression. Large-block memory bandwidth exceeds 376 GB/s for reads and 197 GB/s for writes. While the 1:2 vCPU-to-memory ratio requires careful sizing for RAM-heavy applications, the server delivers high cost efficiency for compute-intensive tasks, parallel compilation pipelines, high-throughput static web serving, and fast I/O local database operations.",
+  "og_description": "Microsoft Azure D128alds_v7 provides 128 vCPUs from an AMD EPYC 9V45 processor, 256 GB of memory, and 7559 GB of local NVMe SSD storage, delivering top-tier multi-core computing and I/O throughput.",
+  "meta_description": "Microsoft Azure D128alds_v7 features 128 vCPUs on an AMD EPYC 9V45, 256 GB RAM, and 7559 GB of NVMe SSD storage for compute-intensive workloads.",
+  "tagline": "High-density compute instance with 128 AMD EPYC cores, high-speed NVMe local storage, and strong multi-threaded performance for data-intensive processing.",
   "bullet_points": [
-    "128 vCPUs powered by a 4.5 GHz AMD EPYC 9V45 processor",
-    "256.0 GB of system memory (2.0 GB per vCPU)",
-    "7559 GB of high-speed local NVMe SSD storage",
-    "Top-tier multi-core CPU and memory bandwidth benchmark performance",
-    "Optimized for compute-heavy workloads, database operations, and LLM inference"
+    "128 dedicated vCPUs powered by AMD EPYC 9V45 processors running up to 4.5 GHz",
+    "256 GB system memory with a 1:2 vCPU-to-RAM ratio (2.0 GB per core)",
+    "Bundled 7559 GB NVMe SSD local storage with Premium Storage capability",
+    "Top-tier multi-threaded compute, memory bandwidth, and 200M ops/sec Redis performance",
+    "Suited for compute-bound data processing, CI/CD build clusters, and local database operations"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

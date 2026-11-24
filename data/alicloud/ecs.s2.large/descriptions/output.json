@@ -1,19 +1,19 @@
 {
   "page": [
-    "Alibaba Cloud ecs.s2.large is an x86_64 server instance running under KVM hypervisor virtualization. It is configured with 2 dedicated vCPUs and 4.0 GB of RAM, yielding a ratio of 2.0 GB of memory per core. The instance includes no attached local storage and operates without dedicated GPU acceleration. Standard CPU extensions, including vector processing sets such as AVX/AVX-512 and cryptographic accelerators like AES, are not reported as enabled on this hardware profile.",
-    "Benchmark performance metrics for the ecs.s2.large instance are unavailable. Operationally, the instance relies entirely on network-attached block storage solutions due to the lack of local disk storage. The 1:2 vCPU-to-memory ratio prioritizes core availability over memory capacity, while the absence of hardware cryptographic flags indicates processing reliance on standard x86 instruction paths.",
-    "From an architectural perspective, the ecs.s2.large provides a lightweight dedicated vCPU footprint. Without local storage or hardware accelerators, cost efficiency centers on baseline compute hosting, small microservices, internal staging environments, and non-intensive background utility tasks requiring fixed compute allocations without large memory demands."
+    "Alibaba Cloud ecs.s2.large is an entry-tier virtual server instance provisioned on the KVM hypervisor. The instance features 2 dedicated x86_64 virtual central processing units paired with 4.0 GB of system memory, establishing a 1:2 vCPU-to-RAM ratio of 2.0 GB per core. It does not include integrated GPU hardware accelerators, nor does it include bundled local disk storage, requiring external network-attached volumes for data persistence.",
+    "The architecture provides dedicated CPU execution without shared-core throttling, though advanced instruction set extensions such as AVX, AVX-512, AMX, and hardware-accelerated cryptographic instructions are not available in the guest environment. Complimentary public IPv4 addresses are also omitted from the standard hardware allocation, requiring network infrastructure configuration for external reachability.",
+    "Given the balanced yet compute-skewed 1:2 resource allocation and lack of onboard storage, ecs.s2.large provides a lightweight compute profile. The configuration matches baseline infrastructure roles such as running lightweight web services, microservice APIs, background task workers, CI/CD utility nodes, and development environments that operate without intense memory requirements or specialized vector computation."
   ],
-  "description": "Alibaba Cloud ecs.s2.large is an entry-level x86_64 instance built on KVM hypervisors. It features 2 dedicated vCPUs alongside 4.0 GB of system memory, providing a 2.0 GB memory-per-core ratio. The instance lacks local storage, requiring network-attached storage for persistent data, and contains no discrete GPU hardware. Advanced instruction set extensions, including AVX vector and AES encryption flags, are absent from this specification. Because benchmark data is unavailable, technical evaluation is based on its hardware configuration. With a 1:2 vCPU-to-RAM balance, the ecs.s2.large provides a low-footprint compute profile designed for lightweight utility services, basic web application backends, and development environments that require dedicated CPU allocations without extensive memory or local storage overhead.",
-  "og_description": "Alibaba Cloud ecs.s2.large is an x86_64 server instance featuring 2 dedicated vCPUs, 4.0 GB of memory, KVM hypervisor architecture, and no attached local storage or GPU hardware.",
-  "meta_description": "Alibaba Cloud ecs.s2.large offers 2 dedicated vCPUs, 4.0 GB RAM, and KVM virtualization without local storage or GPU hardware.",
-  "tagline": "Entry-level dual-core x86_64 virtual instance providing 4 GB RAM and dedicated vCPUs for lightweight application workloads.",
+  "description": "Alibaba Cloud ecs.s2.large is a KVM-virtualized cloud instance featuring 2 dedicated x86_64 vCPUs and 4.0 GB of system memory. Operating with a 1:2 ratio of 2.0 GB of RAM per core, this instance targets workloads requiring dedicated compute cycles with moderate memory overhead. The configuration provides no bundled local storage, requiring network-attached block volumes for data persistence, and includes zero GPU accelerators. Complimentary public IPv4 addresses are not included with the virtual machine. Advanced vector extensions and hardware cryptography instructions are unexposed. With dedicated CPU allocation, ecs.s2.large suits lightweight computational tasks, utility services, staging environments, API microservices, and general backend application serving where massive memory density and specialized instruction sets are not required.",
+  "og_description": "Alibaba Cloud ecs.s2.large features 2 dedicated x86_64 vCPUs, 4.0 GB of memory, and KVM virtualization, engineered for lightweight compute-oriented tasks without bundled local storage or GPUs.",
+  "meta_description": "Alibaba Cloud ecs.s2.large offers 2 dedicated x86_64 vCPUs and 4.0 GB RAM on KVM hypervisors for entry-level compute workloads with no local disks.",
+  "tagline": "Entry-level dedicated dual-core compute instance featuring a one-to-two vCPU to memory profile for lightweight application serving and processing tasks.",
   "bullet_points": [
-    "2 dedicated x86_64 vCPUs virtualized on KVM",
-    "4.0 GB total system memory (2.0 GB per core)",
-    "No local disk storage, requiring network block storage",
-    "No GPU hardware or advanced vector instruction extensions",
-    "Fit for lightweight web services and development environments"
+    "Two dedicated x86_64 virtual CPU cores",
+    "4.0 GB total system memory with 2.0 GB per vCPU",
+    "KVM hypervisor with dedicated CPU allocation",
+    "Zero local storage and no bundled GPU accelerators",
+    "Designed for lightweight microservices, testing environments, and API servers"
   ],
   "categories": [
     "Compute Optimized",

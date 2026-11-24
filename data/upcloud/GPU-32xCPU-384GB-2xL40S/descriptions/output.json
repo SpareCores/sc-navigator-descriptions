@@ -1,23 +1,25 @@
 {
   "page": [
-    "UpCloud GPU-32xCPU-384GB-2xL40S is a KVM-hypervised GPU server powered by an AMD EPYC 9575F processor. This x86_64 architecture CPU features 32 physical cores and 32 vCPUs with a base clock speed of 2.0 GHz, supported by 64 KB L1d, 0.5 MB L2, and 16 MB L3 cache. The system is equipped with 384.0 GB of system memory, providing 12.0 GB of RAM per core. For acceleration, it bundles two NVIDIA L40S GPUs based on the Ada Lovelace architecture, delivering a combined 96 GB of VRAM. Local storage is not included in this configuration, and it comes with one complimentary public IPv4 address.",
-    "In benchmark evaluations, the server demonstrates top-tier performance, placing in the top 10% for both single-core and multi-core CPU execution via stress-ng, Geekbench, and PassMark CPU testing. Cryptographic and vector execution capabilities are supported by hardware flags including AVX-512 and VAES. Memory bandwidth is strong, reaching 6364.76 GB/sec for cached reads and 327.05 GB/sec for uncached large-block reads. For AI workloads, the dual L40S GPUs achieve top-tier LLM inference speeds on small (135M) models, processing 5508.2 tokens/sec, while maintaining strong top-25% performance on medium (7B) models. Large (70B) model inference falls into the average tier.",
-    "Given its high-density hardware profile, this server offers qualitative cost efficiency for resource-intensive deployments by consolidating massive parallel compute and memory capacity into a single virtualized instance. The lack of local storage requires external storage integration, which represents a structural tradeoff. This configuration is highly suited for GPU-accelerated workloads such as machine learning model training, medium-scale LLM inference, ray tracing, and high-performance database operations."
+    "UpCloud GPU-32xCPU-384GB-2xL40S is a GPU-accelerated virtual server powered by the KVM hypervisor. The compute setup comprises 32 shared vCPUs mapped to 32 physical cores of an AMD EPYC 9575F processor running at a base clock speed of 2.0 GHz on the x86_64 architecture. Vector and tensor instruction sets include AVX-512, AVX-512 VNNI, and AVX-512 BF16. The instance is equipped with 384 GB of system RAM, allocating 12 GB per core, and incorporates two NVIDIA Ada Lovelace L40S accelerators offering a combined 96 GB of VRAM.",
+    "Benchmark results demonstrate top-tier compute performance. The AMD EPYC processor scores in the top decile across stress-ng single-core (4,186.78) and multi-core (131,937.77) evaluations, matched by a Geekbench multi-core rating of 25,149.0 and a PassMark CPU score of 87,135.2. Synthetic memory testing yields solid throughput, including 327.05 GB/s uncached read bandwidth, while decompression throughput reaches 572.67 GB/s in multi-threaded bzip3. Database and key-value execution are also strong, with PassMark database operations scoring in the top 10% and Redis throughput reaching 127.0 million SET operations per second.",
+    "In AI inference workloads, the dual L40S GPUs deliver strong prompt and generation throughput on smaller architectures, achieving 5,508.2 prompt tokens per second and 360.16 generation tokens per second on a 135M model, alongside 220.88 prompt tokens per second on a 7B model. However, performance tapers into the middle tier on larger models, where 70B inference registers 21.91 prompt tokens per second and 4.14 generation tokens per second. An architectural tradeoff to note is the complete absence of bundled local storage, requiring network-attached storage solutions for all persistent file operations.",
+    "Overall, the server provides substantial GPU and host compute density for high-throughput computing. It is well aligned for small-to-medium LLM inference, ray tracing, image and text processing pipelines, large-scale Redis in-memory deployments, and data transformation tasks."
   ],
-  "description": "UpCloud GPU-32xCPU-384GB-2xL40S is a KVM-hypervised GPU server designed for parallel computing and memory-intensive workloads. It features an AMD EPYC 9575F processor with 32 physical cores, 32 vCPUs, and 384.0 GB of RAM. The server integrates two NVIDIA L40S GPUs from the Ada Lovelace architecture, providing 96 GB of total VRAM, though it lacks local storage. Performance benchmarks place this server in the top 10% for multi-core CPU execution, database operations, and small-model LLM inference, with strong memory bandwidth and medium-model LLM processing. This hardware profile is highly efficient for consolidating heavy compute tasks, making it a strong fit for machine learning inference, data science, ray tracing, and database operations.",
-  "og_description": "UpCloud GPU-32xCPU-384GB-2xL40S is a KVM GPU server featuring an AMD EPYC 9575F CPU, 384 GB RAM, and two NVIDIA L40S GPUs with 96 GB VRAM, optimized for AI inference and parallel computing.",
-  "meta_description": "UpCloud GPU-32xCPU-384GB-2xL40S is a KVM server with 32 vCPUs, 384 GB RAM, and dual NVIDIA L40S GPUs for AI and high-performance computing.",
-  "tagline": "A high-density accelerator instance featuring dual Ada Lovelace GPUs and 384 GB RAM for demanding parallel computing workloads.",
+  "description": "UpCloud GPU-32xCPU-384GB-2xL40S is a high-density GPU server built on KVM virtualization and x86_64 architecture. It features 32 shared vCPUs from an AMD EPYC 9575F processor running at 2.0 GHz, 384 GB of system memory, and dual NVIDIA Ada Lovelace L40S GPUs delivering 96 GB of total VRAM. Computational benchmarks show top-tier multi-core execution, reflected by high stress-ng and Geekbench scores, as well as rapid Redis throughput exceeding 127 million operations per second. Hardware acceleration enables top-tier inference speeds on lightweight neural models and strong output on 7B parameter models, though larger 70B models exhibit average throughput. Because local storage is not bundled, external block storage must be attached for operational persistence. The instance suits small to mid-scale LLM deployment, image processing, ray tracing, and intensive in-memory caching workflows.",
+  "og_description": "UpCloud GPU-32xCPU-384GB-2xL40S features 32 AMD EPYC vCPUs, 384 GB RAM, and dual NVIDIA L40S GPUs with 96 GB VRAM, built for AI inference, parallel computing, and in-memory databases.",
+  "meta_description": "UpCloud GPU-32xCPU-384GB-2xL40S offers 32 AMD EPYC cores, 384 GB RAM, and dual NVIDIA L40S GPUs (96 GB VRAM) for accelerated AI inference workloads.",
+  "tagline": "Dual Ada Lovelace GPUs combined with 32 AMD EPYC cores and 384 GB RAM for accelerated AI inference and compute workloads.",
   "bullet_points": [
-    "Dual NVIDIA L40S GPUs with 96 GB total VRAM for parallel acceleration",
-    "AMD EPYC 9575F processor with 32 physical cores and 32 vCPUs",
-    "384 GB of system memory providing 12 GB of RAM per core",
-    "Top-tier performance in multi-core CPU benchmarks and database operations",
-    "Optimized for machine learning inference, ray tracing, and data science"
+    "Dual NVIDIA Ada Lovelace L40S GPUs with 96 GB total VRAM",
+    "32 vCPUs powered by an AMD EPYC 9575F processor at 2.0 GHz",
+    "384 GB system RAM providing 12 GB of memory per core",
+    "No integrated local storage, requiring external attached volumes",
+    "Top-decile performance on CPU stress testing, Geekbench, and Redis operations",
+    "Suited for mid-sized LLM inference, ray tracing, and memory-intensive processing"
   ],
   "categories": [
     "GPU Accelerated",
-    "Memory Optimized",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Memory Optimized"
   ]
 }

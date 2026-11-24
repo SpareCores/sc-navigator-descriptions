@@ -1,23 +1,25 @@
 {
   "page": [
-    "Microsoft Azure D96ds_v6 is a general-purpose virtual machine belonging to the Ddsv6 family. It is powered by a dedicated Intel Xeon 8573C processor operating at 4.2 GHz, featuring 48 physical cores and 96 vCPUs via hyperthreading on the x86_64 architecture. The processor includes a 260 MB L3 cache and supports Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX) for accelerated vector and matrix operations. The system is equipped with 384.0 GB of RAM, providing a balanced 4.0 GB of memory per core.",
-    "This instance features 5669 GB of local NVMe SSD storage and is Premium Storage capable. In benchmark evaluations, the server demonstrates strong multi-core performance, achieving a top-tier Geekbench multi-core score of 21967.0 and a top-tier Passmark CPU score of 86698.13. Memory bandwidth is highly efficient, with read-only large block bandwidth reaching 257.11 GB/sec and write large block bandwidth at 107.03 GB/sec. The local storage and high memory throughput support demanding database operations, as reflected in a strong Passmark database score of 32248.97 and 107.53 million operations per second in Redis SET benchmarks.",
-    "The D96ds_v6 is optimized for workloads requiring substantial parallel processing, high-speed local storage, and balanced memory-to-CPU ratios. It excels in static web serving, software compilation, and image processing, where it achieves top-tier benchmark results. Additionally, the inclusion of Intel AMX instructions enables strong performance in CPU-based machine learning tasks, such as LLM inference, where it processes 282.63 tokens per second for medium-sized 7B models. This server is highly suitable for relational databases, enterprise applications, large-scale CI/CD pipelines, and data processing tasks."
+    "Microsoft Azure D96ds_v6 is a general-purpose cloud instance powered by the 5th Generation Intel Xeon 8573C processor running on the Microsoft Hyper-V hypervisor. The instance provides 96 dedicated vCPUs across 48 physical cores with a peak clock frequency of 4.2 GHz, backed by 260 MB of L3 cache and advanced instruction set extensions including AVX-512, AMX-Tile, and AMX-INT8. Memory is configured at 384 GB, adhering to a standard 1:4 core-to-memory ratio. Local ephemeral storage is bundled via a 5,669 GB NVMe SSD, delivering high-speed scratch space directly to the host without reliance on network-attached volumes.",
+    "Benchmark results place the D96ds_v6 in the top tier for multi-core compute performance, with Geekbench multi-core scoring 21,967 and PassMark CPU reaching 86,698.13. Vectorized and accelerated workloads benefit substantially from integrated AMX instructions, reflected in a PassMark CPU extended instructions score of 105,443.81. Data-handling metrics are consistently strong, demonstrating 107.53 million Redis SET operations per second, PassMark database throughput of 32,248.97, and top-tier static web serving throughput of 116.39 GB/sec. LLM prompt ingestion tests also register strong throughput due to high memory bandwidth and AMX matrix acceleration.",
+    "From a cost-efficiency perspective, the D96ds_v6 packages dense multi-core processing with substantial bundled NVMe capacity, eliminating the need for premium provisioned IOPS disks for high-IOPS temporary caching and intermediate data stages. The lack of a discrete GPU limits its efficiency for large-scale deep learning model inference generation, where tokens per second scale down significantly relative to dedicated accelerators. However, for CPU-bound computational pipelines, the inclusion of dedicated physical execution threads minimizes performance jitter.",
+    "This server type fits high-concurrency production workloads requiring balanced compute and memory along with rapid local data retrieval. Typical deployment targets include large relational and NoSQL databases, Redis distributed caching tiers, extensive Clang software compilation pipelines, web application serving arrays, and batch analytics processing."
   ],
-  "description": "Microsoft Azure D96ds_v6 is a general-purpose virtual machine from the Ddsv6 family, powered by a dedicated 4.2 GHz Intel Xeon 8573C processor with 96 vCPUs and 48 physical cores. It features 384.0 GB of RAM and 5669 GB of local NVMe SSD storage. Operating on the x86_64 architecture, the CPU supports advanced instruction sets including AVX-512 and Intel AMX. Benchmarks indicate top-tier multi-core CPU performance, high memory bandwidth, and exceptional static web serving throughput. The instance is highly effective for database operations, software compilation, and CPU-based machine learning inference.",
-  "og_description": "Microsoft Azure D96ds_v6 is a general-purpose virtual machine featuring 96 vCPUs, 384 GB RAM, and 5669 GB of local NVMe SSD storage, delivering top-tier multi-core and database performance.",
-  "meta_description": "Microsoft Azure D96ds_v6 is a general-purpose VM with 96 vCPUs, 384 GB RAM, and 5669 GB NVMe SSD, optimized for databases and multi-core workloads.",
-  "tagline": "A high-capacity general-purpose instance featuring 96 vCPUs, fast local NVMe storage, and advanced matrix acceleration for demanding enterprise workloads.",
+  "description": "Microsoft Azure D96ds_v6 is a general-purpose virtual machine built on the Intel Xeon 8573C processor using the x86_64 architecture. Configured with 48 physical cores and 96 dedicated vCPUs operating at speeds up to 4.2 GHz, it pairs 384 GB of RAM with 5,669 GB of high-speed local NVMe SSD storage. In benchmark evaluations, the server achieves top-tier results in multi-core compute, static web serving throughput, and extended instruction execution, bolstered by hardware-level AMX and AVX-512 support. The platform demonstrates strong performance across database operations, multi-threaded decompression, and in-memory caching with Redis. While large-model LLM generation throughput remains modest compared to GPU-accelerated instances, the dense core allocation and fast bundled local disk offer solid resource density. The instance is suited for enterprise database hosting, large-scale CI/CD build environments, and high-concurrency web services.",
+  "og_description": "Microsoft Azure D96ds_v6 features 96 Intel Xeon vCPUs, 384 GB of memory, and 5,669 GB of NVMe SSD storage, delivering top-tier multi-threaded compute and throughput for demanding enterprise workloads.",
+  "meta_description": "Microsoft Azure D96ds_v6 offers 96 Intel Xeon vCPUs, 384 GB RAM, and a 5,669 GB NVMe SSD for enterprise databases and high-concurrency workloads.",
+  "tagline": "High-density multi-core compute featuring integrated NVMe storage and balanced memory for large-scale enterprise services and data processing.",
   "bullet_points": [
-    "96 vCPUs and 48 physical cores powered by a 4.2 GHz Intel Xeon 8573C processor",
-    "384.0 GB of system memory providing a balanced 4.0 GB per core ratio",
-    "5669 GB of high-speed local NVMe SSD storage for intensive I/O operations",
-    "Intel AMX and AVX-512 support for accelerated matrix and vector computations",
-    "Top-tier multi-core CPU, image processing, and static web serving benchmark performance",
-    "Best suited for relational databases, software compilation, and enterprise applications"
+    "96 dedicated vCPUs (48 physical cores) powered by Intel Xeon 8573C at 4.2 GHz",
+    "384 GB system memory maintaining a balanced 4:1 RAM-to-vCPU ratio",
+    "5,669 GB local NVMe SSD for high-throughput, low-latency scratch storage",
+    "Hardware acceleration via Intel AMX and AVX-512 instruction sets",
+    "Top-tier multi-core compute, static web serving, and database performance",
+    "Suited for large-scale enterprise databases, CI/CD compilation, and high-concurrency web services"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

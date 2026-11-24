@@ -1,22 +1,23 @@
 {
   "page": [
-    "Hetzner Cloud cpx42 is an x86_64 virtual server powered by an AMD EPYC processor configured with 8 vCPUs and 8 physical cores. The system features a shared CPU allocation running at a base clock speed of 2.0 GHz, supported by 16.0 GB of system memory, which equates to 1.95 GB of RAM per core. Storage is provided via a 320 GB local NVMe SSD, while no dedicated GPU hardware is included. The processor architecture supports advanced instruction sets including AVX-512, AVX512_VNNI, AVX512_BF16, and SHA_NI cryptography extensions.",
-    "In benchmark evaluations, the cpx42 demonstrates strong single-core performance. The stress-ng single-core CPU test and Geekbench single-core score both rank in the top 25% of tested instances. Single-threaded bzip3 decompression and text processing also show strong performance. Multi-core operations, including stress-ng multi-core CPU performance and Geekbench multi-core scores, fall within the average range. Memory bandwidth tests, such as uncached large block reads at 185.88 GB/sec and writes at 51.94 GB/sec, align with mid-tier performance profiles.",
-    "From a cost-efficiency perspective, the cpx42 offers a high density of virtual CPU cores and local NVMe storage relative to its resource class, though the shared CPU allocation represents a potential performance tradeoff under sustained multi-core workloads. This resource configuration is well-suited for workloads such as web serving, text processing, software compilation, and light database operations."
+    "Hetzner Cloud cpx42 is a virtual instance built on the x86_64 architecture, powered by an AMD EPYC processor running at a base clock speed of 2.0 GHz under the QEMU hypervisor. The instance provisions 8 shared vCPUs mapped across 8 physical cores with 1 thread per core, backed by 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache. It incorporates advanced instruction sets including AVX-512 (supporting VNNI and BF16), AES, VAES, and SHA-NI for accelerated cryptographic and vector computations. Memory is configured at 16.0 GB of RAM, providing approximately 1.95 GB per vCPU, alongside 320 GB of bundled local NVMe SSD storage without integrated GPU hardware.",
+    "Benchmark evaluations position the cpx42 with strong single-threaded performance, demonstrated by a stress-ng single-core score of 2,991.79 and a single-threaded bzip3 decompression throughput of 14.1 GB/sec, placing it in the top 25% of measured systems. In contrast, multi-core metrics reflect average tier execution, including a stress-ng multi-core score of 23,749.36, a Geekbench multi-core rating of 9,475.0, and a PassMark CPU score of 19,462.24. Throughput tests record 13.06 GB/sec in static web serving and 19.57 million operations per second in Redis SET workloads. Small-scale model inference registers 297.53 tokens per second for 135M parameter text generation, while medium 7B models yield 24.88 tokens per second.",
+    "The shared CPU allocation model and 1:2 vCPU-to-RAM ratio offer high resource density and qualitative cost efficiency for variable compute loads, though shared scheduling introduces potential execution variance under sustained maximum utilization. Combined with 320 GB of fast local NVMe storage, the instance is well matched for CI/CD compilation runners, static and dynamic web application hosting, build systems, microservices, and general backend caching services."
   ],
-  "description": "Hetzner Cloud cpx42 is an x86_64 virtual server configured with 8 shared AMD EPYC vCPUs, 16.0 GB of system memory, and 320 GB of local NVMe SSD storage. Operating at 2.0 GHz, the processor supports advanced vector and cryptographic instruction sets, including AVX-512 and SHA_NI. Benchmark data highlights strong single-core performance, with Geekbench single-core and single-threaded bzip3 decompression scores placing in the top 25%. Multi-core performance, memory bandwidth, and database operations fall within the average range. Given its shared CPU allocation and 1:2 memory-to-vCPU ratio, the cpx42 provides a cost-effective option for workloads that require high core counts and fast local storage but do not demand sustained, dedicated CPU performance. It is suitable for web serving, text processing, and software compilation.",
-  "og_description": "Hetzner Cloud cpx42 is an x86_64 virtual server featuring 8 shared AMD EPYC vCPUs, 16 GB RAM, and 320 GB NVMe SSD storage, delivering strong single-core performance for web serving and text processing.",
-  "meta_description": "Hetzner Cloud cpx42 is an x86_64 virtual server with 8 shared AMD EPYC vCPUs, 16 GB RAM, and 320 GB NVMe storage, optimized for budget-conscious workloads.",
-  "tagline": "An efficient shared-core virtual server combining eight AMD EPYC vCPUs with fast local NVMe storage for balanced web and text processing workloads.",
+  "description": "Hetzner Cloud cpx42 is a compute-focused virtual server equipped with 8 shared AMD EPYC vCPUs operating at 2.0 GHz and 16.0 GB of system memory, yielding a 1:2 core-to-RAM ratio. Built on the x86_64 architecture and hosted via QEMU, the hardware package includes 320 GB of bundled local NVMe SSD storage, modern AVX-512 vector support, and hardware cryptography extensions, without discrete GPUs. Empirical testing shows top-quartile single-core metrics, achieving a stress-ng single-core score of 2,991.79 and 14.1 GB/sec in bzip3 decompression, alongside average multi-core and memory subsystem throughput across PassMark, Geekbench, and Redis benchmarks. With balanced local storage density and shared compute resources, the cpx42 delivers qualitative cost efficiency for multi-threaded build environments, web serving, CI/CD pipelines, and application backends.",
+  "og_description": "Hetzner Cloud cpx42 features 8 shared AMD EPYC vCPUs, 16 GB RAM, and 320 GB NVMe SSD storage. It provides strong single-core compute performance for web serving, build tasks, and backend workloads.",
+  "meta_description": "Hetzner Cloud cpx42 offers 8 shared AMD EPYC vCPUs, 16 GB RAM, and 320 GB local NVMe storage, suited for web servers, build pipelines, and general tasks.",
+  "tagline": "An 8-core AMD EPYC configuration offering 16 GB RAM and 320 GB local NVMe SSD storage for compute workloads.",
   "bullet_points": [
-    "8 shared AMD EPYC vCPUs and 16.0 GB of system memory",
-    "320 GB of local NVMe SSD storage",
-    "Strong single-core CPU and text processing benchmark performance",
-    "Supports AVX-512 and SHA_NI hardware acceleration flags",
-    "Suitable for web serving, software compilation, and text processing"
+    "8 shared AMD EPYC vCPUs clocked at 2.0 GHz with 16.0 GB memory",
+    "320 GB of bundled local NVMe solid-state storage",
+    "Support for AVX-512 with VNNI and BF16, plus VAES hardware cryptography",
+    "Strong single-core compute and decompression benchmark performance",
+    "Tailored for CI/CD pipelines, web serving, microservices, and build servers"
   ],
   "categories": [
     "Compute Optimized",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "General Purpose"
   ]
 }

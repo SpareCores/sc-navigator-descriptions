@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c6g.metal is a bare-metal, compute-optimized server powered by the custom 64-core AWS Graviton2 processor using the arm64 architecture. It features 64 physical cores and 64 vCPUs with a dedicated allocation, running at a clock speed of 2.5 GHz on the ARMv8 Neoverse-N1 microarchitecture. The hardware configuration includes 128.0 GB of DDR4 memory, providing a resource density of 2.0 GB of RAM per core, with no local storage or GPU accelerators included. Network connectivity is supported by a baseline bandwidth of 25 Gbps.",
-    "Performance benchmarks indicate strong multi-core capabilities and high memory bandwidth efficiency. The server achieves top-tier results in multi-core CPU stress tests, software compilation with Clang, and high-throughput Redis SET operations. Static web serving throughput is also highly competitive, reaching 46.72 GB/sec. However, single-core performance is more moderate, as evidenced by average stress-ng single-core scores and weaker single-threaded compression and decompression metrics. Large-block uncached memory read and write speeds fall within the average range.",
-    "From a cost-efficiency perspective, the bare-metal architecture eliminates hypervisor overhead, making it highly efficient for workloads that benefit from direct hardware access and high physical core density. The 1:2 vCPU-to-RAM ratio is optimized for compute-heavy tasks rather than memory-intensive databases. Tradeoffs include the lack of local NVMe storage and lower single-threaded performance compared to x86 alternatives. This server is best suited for multi-threaded applications, software compilation pipelines, high-concurrency web serving, and Redis caching layers."
+    "Amazon Web Services c6g.metal is a bare-metal, compute-optimized instance powered by a 64-core AWS Graviton2 processor built on the 64-bit ARMv8 Neoverse-N1 microarchitecture. Operating at a clock speed of 2.5 GHz with a 1:1 physical-to-virtual core allocation, the server eliminates hyperthreading overhead and virtualization contention. It includes 128 GB of DDR4 memory, yielding a 1:2 compute-to-memory ratio of 2.0 GB per core, along with a 25 Gbps baseline network interface. The instance does not bundle local storage, relying exclusively on network-attached storage architectures, and does not include GPU accelerators.",
+    "Benchmark results highlight significant multi-core scaling alongside modest single-thread capabilities. The instance achieves top-tier results in multi-core compute tests such as stress-ng, Clang software compilation, static web serving throughput, and Redis SET operations. Furthermore, cached small-block memory reads demonstrate exceptional throughput. Conversely, single-core metrics\u2014including Geekbench single-core, single-threaded gzip compression, and text processing\u2014fall into the bottom quartiles, reflecting the moderate 2.5 GHz per-core clock rate and absence of x86 vector extensions like AVX-512.",
+    "From a cost-efficiency perspective, the Graviton2 ARM platform delivers high core density and efficient multi-threaded compute per watt compared to legacy x86 equivalents. Workloads requiring extreme single-thread execution speed or heavy local scratch disks may find the lack of local NVMe and moderate single-core speeds limiting. However, the c6g.metal configuration is exceptionally suited for high-concurrency microservices, static web infrastructure, distributed Redis caching layers, and multi-threaded CI/CD compilation pipelines optimized for the ARM64 ecosystem."
   ],
-  "description": "Amazon Web Services c6g.metal is a bare-metal, compute-optimized server featuring 64 dedicated physical cores on the arm64 AWS Graviton2 processor. Operating at 2.5 GHz, it is equipped with 128.0 GB of DDR4 memory and a 25 Gbps baseline network interface, with no local storage or GPU accelerators. Benchmarks reveal strong multi-core performance, particularly in software compilation, Redis operations, and static web serving, alongside average single-core and large-block memory bandwidth metrics. The lack of hypervisor overhead provides high resource density and efficiency for multi-threaded workloads. This server is highly suited for high-concurrency web serving, CI/CD compilation pipelines, and distributed caching systems.",
-  "og_description": "Amazon Web Services c6g.metal is a bare-metal, compute-optimized server featuring 64 physical arm64 cores, 128 GB DDR4 RAM, and 25 Gbps network bandwidth, delivering strong multi-core performance.",
-  "meta_description": "Amazon Web Services c6g.metal is a bare-metal server with 64 arm64 cores, 128 GB RAM, and 25 Gbps network speed, optimized for compute-heavy workloads.",
-  "tagline": "A bare-metal, 64-core ARM-based server delivering high multi-threaded efficiency and dedicated compute resources for high-concurrency workloads.",
+  "description": "Amazon Web Services c6g.metal is a bare-metal compute-optimized server equipped with a 64-core ARMv8 AWS Graviton2 processor running at 2.5 GHz with dedicated physical cores. It features 128 GB of DDR4 memory, establishing a 2.0 GB per core ratio, alongside a 25 Gbps baseline network bandwidth. The system contains no integrated GPUs and provides no bundled local storage, requiring external block storage for persistent data. Performance data demonstrates strong multi-threaded execution, high cached memory bandwidth, and superior throughput in Redis caching and Clang software compilation benchmarks. However, single-core processing scores and LLM generation throughput are comparatively modest due to the 2.5 GHz clock ceiling and lack of AVX extensions. With high core density and bare-metal execution efficiency, c6g.metal is well suited for multi-threaded container workloads, web serving, distributed in-memory caching, and ARM-native software build clusters.",
+  "og_description": "Amazon Web Services c6g.metal is a bare-metal compute server featuring 64 ARMv8 Graviton2 cores, 128 GB DDR4 RAM, and 25 Gbps networking, delivering strong multi-threaded performance for container and caching workloads.",
+  "meta_description": "Amazon Web Services c6g.metal offers 64 dedicated Graviton2 ARM cores, 128 GB RAM, and 25 Gbps networking for multi-threaded and compiled workloads.",
+  "tagline": "Bare-metal 64-core ARM compute instance delivering dense multi-threaded throughput and high network bandwidth for scalable containerized workloads and compilation pipelines.",
   "bullet_points": [
-    "64 dedicated physical arm64 cores running at 2.5 GHz",
-    "128.0 GB of DDR4 memory with 2.0 GB per core",
-    "25 Gbps baseline network bandwidth",
-    "Strong multi-core performance in software compilation and Redis operations",
-    "Bare-metal architecture eliminating hypervisor overhead",
-    "Best suited for multi-threaded applications, web serving, and CI/CD pipelines"
+    "Dedicated 64-core ARMv8 Neoverse-N1 AWS Graviton2 processor at 2.5 GHz",
+    "128 GB DDR4 system memory (2.0 GB per physical core)",
+    "High-speed 25 Gbps baseline network connectivity",
+    "Zero local disk storage and accelerator-free bare-metal architecture",
+    "High throughput in multi-core Clang compilation and Redis SET operations",
+    "Tailored for high-density container hosting, CI/CD pipelines, and web servers"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

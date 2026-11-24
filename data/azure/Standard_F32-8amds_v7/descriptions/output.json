@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure F32-8amds_v7 is a memory-optimized virtual machine from the Famdsv7 family, running on the Microsoft Hyper-V hypervisor. It features 8 dedicated physical cores and 8 vCPUs powered by an AMD EPYC 9V45 processor with an x86_64 architecture, operating at a clock speed of 4.5 GHz. The server is equipped with an exceptionally large memory capacity of 256.0 GB, translating to 32.0 GB of RAM per core, making it highly suitable for memory-intensive applications. Additionally, it bundles 3780 GB of local NVMe SSD storage and is Premium Storage capable, though it does not include any GPU accelerators.",
-    "Performance benchmarks highlight strong single-core capabilities. The single-core stress-ng CPU performance, single-threaded gzip compression, and single-threaded bzip3 decompression benchmarks all rank in the top tier (top 10%). Multi-core CPU performance, passmark CPU scores, and memory bandwidth (both cached and uncached) fall into the average category. For database and caching workloads, the instance delivers an average of 23.6 million operations per second on Redis SET operations and average performance in Passmark database operations. Large-model LLM inference (70B) is poor, but small-model (135M) text generation reaches top-tier speeds.",
-    "From a cost-efficiency perspective, the F32-8amds_v7 offers high resource density, combining massive memory and local NVMe storage relative to its 8 vCPUs. This makes it a qualitatively cost-effective choice for workloads that require large datasets to be held in memory or local high-speed storage without paying for unnecessary extra CPU cores. Tradeoffs include average multi-core scaling and poor large-scale LLM inference performance. This server is best suited for memory-intensive databases, caching layers, data processing, and single-threaded execution tasks."
+    "Microsoft Azure F32-8amds_v7 is a constrained-core virtual machine powered by an AMD EPYC 9V45 processor on the x86_64 architecture. Managed by Microsoft Hyper-V, the instance exposes 8 dedicated physical cores (8 vCPUs) at clock speeds reaching 4.5 GHz with a 1:1 thread-to-core mapping. It features 48 KB L1d, 1 MB L2, and 32 MB L3 cache, backed by vector extensions including AVX-512 (foundation, VNNI, and BF16) and cryptographic hardware instructions. Memory is provisioned at 256.0 GB, delivering an unusually high ratio of 32.0 GB per vCPU. The server bundles a high-capacity 3780 GB local NVMe SSD without discrete GPU accelerators.",
+    "Benchmark evaluations reveal top-tier single-threaded compute performance, placing in the top 10% for single-core stress-ng (3611.49), single-threaded gzip compression (41.08 GB/sec), and bzip3 decompression (18.14 GB/sec). Multi-core performance aligns with the median 50% due to the 8-core constraint, achieving 28792.13 in multi-core stress-ng and 24745.28 on PassMark CPU tests. Uncached large-block memory read bandwidth reaches 51.88 GB/sec and write bandwidth achieves 33.99 GB/sec. For lightweight language model inference, it generates 388.4 tokens per second on 135M models, though performance drops to 5.05 tokens per second during prompt processing on 70B parameter models.",
+    "By coupling 8 high-frequency dedicated cores with 256 GB of memory and 3.78 TB of NVMe storage, the configuration maximizes cost efficiency for software licensed on a per-core basis. The primary tradeoff is the strict 8-core parallel processing ceiling. Microsoft Azure F32-8amds_v7 is effective for memory-intensive relational databases, in-memory key-value caches like Redis, large-footprint ETL transformations, and single-threaded batch analytics."
   ],
-  "description": "Microsoft Azure F32-8amds_v7 is a memory-optimized virtual machine from the Famdsv7 family, featuring 8 dedicated AMD EPYC 9V45 vCPUs running at 4.5 GHz on the x86_64 architecture. It is equipped with 256.0 GB of RAM (32.0 GB per core) and 3780 GB of local NVMe SSD storage, with no GPU accelerators. Benchmarks show top-tier single-core CPU performance and single-threaded compression speeds, alongside average multi-core and memory bandwidth results. Qualitatively, this instance provides high resource density, making it cost-efficient for memory-heavy and storage-reliant workloads without over-provisioning compute cores. It is highly suited for memory-intensive databases, caching systems like Redis, and data processing tasks.",
-  "og_description": "Microsoft Azure F32-8amds_v7 is a memory-optimized server with 8 AMD EPYC vCPUs, 256 GB RAM, and 3780 GB local NVMe SSD storage, delivering top-tier single-core performance for databases and caching.",
-  "meta_description": "Microsoft Azure F32-8amds_v7 features 8 AMD EPYC vCPUs, 256 GB RAM, and 3780 GB NVMe SSD, optimized for memory-intensive and database workloads.",
-  "tagline": "A memory-intensive virtual server combining high-speed single-core performance with massive RAM and local NVMe storage for demanding database workloads.",
+  "description": "Microsoft Azure F32-8amds_v7 is a constrained-core virtual machine designed for memory-intensive workloads that require moderate core counts. Powered by an 8-core AMD EPYC 9V45 processor clocked at up to 4.5 GHz on Microsoft Hyper-V, the system provides 8 dedicated vCPUs with single threading per core, 256.0 GB of system memory (32.0 GB per core), and a bundled 3780 GB local NVMe SSD. It features AVX-512 vector acceleration and demonstrates top-tier single-core compute performance alongside average multi-core throughput. Uncached memory read bandwidth measures 51.88 GB/sec. By offering an expansive 256 GB memory footprint alongside significant local NVMe storage on only 8 cores, this instance optimizes per-core software licensing costs. It is well matched for per-core licensed relational databases, high-capacity Redis caches, memory-heavy data pipelines, and analytical batch processing.",
+  "og_description": "Microsoft Azure F32-8amds_v7 provides 8 dedicated AMD EPYC 9V45 cores clocked at 4.5 GHz, 256 GB RAM, and a 3780 GB NVMe SSD, delivering top-tier single-core performance for memory-bound workloads.",
+  "meta_description": "Microsoft Azure F32-8amds_v7 features 8 dedicated AMD EPYC cores, 256 GB RAM, and 3780 GB local NVMe SSD storage for memory-intensive workloads.",
+  "tagline": "Constrained dedicated AMD EPYC cores paired with dense memory and high-capacity local NVMe storage for license-optimized enterprise workloads.",
   "bullet_points": [
-    "8 dedicated AMD EPYC 9V45 vCPUs operating at 4.5 GHz",
-    "256 GB of RAM providing a high 32 GB per core ratio",
-    "3780 GB of high-speed local NVMe SSD storage",
-    "Top-tier single-core CPU and single-threaded compression performance",
-    "Ideal for memory-intensive databases, caching layers, and data processing"
+    "8 dedicated AMD EPYC 9V45 cores operating at up to 4.5 GHz without multithreading",
+    "256.0 GB of RAM providing an expansive 32.0 GB per-core allocation",
+    "Bundled 3780 GB local NVMe SSD for high-capacity fast scratch storage",
+    "Top-tier single-threaded compression and compute benchmark results",
+    "Optimized cost profile for workloads constrained by per-core software licensing",
+    "Well-suited for memory-intensive relational databases and in-memory caching systems"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

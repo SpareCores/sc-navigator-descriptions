@@ -1,23 +1,25 @@
 {
   "page": [
-    "Amazon Web Services m9gd.metal-48xl is a bare-metal general-purpose server powered by 192 dedicated physical cores of AWS Graviton ARMv9 architecture running at 3.3 GHz. The hardware configuration includes 768.0 GB of DDR5 memory, yielding 4.0 GB of RAM per core. Local storage is provided via 11,400 GB of NVMe SSD instance store volumes, and the system features a baseline network bandwidth of 100 Gbps. No GPUs are included in this configuration.",
-    "Benchmark data indicates top-tier multi-core CPU performance, with a stress-ng multi-core score of 380,524.27 and a PassMark CPU score of 107,915.98. Memory bandwidth is highly efficient, reaching 725.79 GB/sec for large-block read-only operations and 330.7 GB/sec for large-block write operations. The server demonstrates strong cryptographic capabilities with a PassMark encryption score of 56,832.22, supported by hardware-level AES. Single-threaded performance is moderate, as shown by a stress-ng single-core score of 2,013.79.",
-    "This server is optimized for highly parallelized workloads, database operations, and high-throughput web serving. It achieves 520.51 million operations per second in Redis SET benchmarks and 355.34 GB/sec in static web serving throughput. While prompt processing for small and medium language models is highly efficient, text generation speeds are limited, averaging 15.85 tokens/sec on a 7B model due to the lack of dedicated GPU acceleration. The combination of massive local NVMe storage and high memory bandwidth makes it suitable for large-scale databases, containerized microservices, and multi-threaded data processing."
+    "Amazon Web Services m9gd.metal-48xl is a bare-metal general-purpose server powered by ARMv9 architecture AWS Graviton Neoverse-V3 processors. The system delivers 192 dedicated physical cores clocked at 3.3 GHz without simultaneous multithreading, paired with 768.0 GB of DDR5 memory maintaining a balanced 1:4 vCPU-to-RAM allocation ratio of 4.0 GB per core. The server configuration includes 11,400 GB of local NVMe SSD instance storage and a 100 Gbps network bandwidth baseline. No hardware accelerators or GPUs are present on this platform.",
+    "Benchmark results demonstrate significant compute capacity across highly parallelized workloads. The multi-core stress-ng metric reaches 380,524.27, placing it in the top tier alongside a PassMark CPU score of 107,915.98. The server exhibits high memory performance, delivering 725.79 GB/sec read throughput and 330.7 GB/sec write throughput on large uncached memory blocks. Application-level tests reflect these throughput strengths, achieving 520.51 million operations per second on Redis SET tasks, 355.34 GB/sec in static web serving throughput, and top-tier metrics for PassMark database operations and multi-threaded bzip3 decompression.",
+    "While parallel compute and memory bandwidth are pronounced, single-core execution reflects mid-range positioning, with stress-ng single-core performance scoring 2,013.79. In AI inference evaluations without hardware acceleration, prompt processing achieves top-tier throughput for small and medium models (3,957.91 and 381.5 tokens/sec, respectively), but generative token production lags, falling to 27.04 tokens/sec on smaller models.",
+    "This server type offers dense resource consolidation by combining 192 dedicated ARM cores, extensive DDR5 bandwidth, 100 Gbps networking, and 11.4 TB of high-speed local NVMe storage. It is targeted at scale-out in-memory databases, distributed caching layers, data-intensive microservices, high-traffic web serving tiers, and batch compression or decompression pipelines."
   ],
-  "description": "Amazon Web Services m9gd.metal-48xl is a bare-metal, general-purpose server featuring 192 dedicated physical cores of AWS Graviton ARMv9 architecture running at 3.3 GHz. It is equipped with 768.0 GB of DDR5 memory, 11,400 GB of local NVMe SSD storage, and a 100 Gbps baseline network interface. Lacking a GPU, the server relies on its high-density ARM architecture to deliver top-tier multi-core performance, as evidenced by a PassMark CPU score of 107,915.98 and a multi-threaded bzip3 decompression rate of 1,953.03 GB/sec. It excels in memory bandwidth and database operations, achieving 520.51 million operations per second in Redis SET benchmarks. This configuration is highly suitable for large-scale databases, high-throughput web serving, and parallel data processing, though it exhibits lower performance in single-threaded tasks and LLM text generation.",
-  "og_description": "Amazon Web Services m9gd.metal-48xl is a bare-metal server with 192 Graviton ARMv9 cores, 768 GB DDR5 RAM, 11,400 GB NVMe SSD storage, and 100 Gbps networking, optimized for databases and parallel workloads.",
-  "meta_description": "Amazon Web Services m9gd.metal-48xl is a bare-metal server featuring 192 Graviton ARMv9 cores, 768 GB DDR5 RAM, and 11,400 GB NVMe SSD storage.",
-  "tagline": "A high-density bare-metal ARM platform featuring massive local NVMe storage and exceptional multi-core throughput for database and enterprise workloads.",
+  "description": "Amazon Web Services m9gd.metal-48xl is a bare-metal general-purpose server featuring 192 dedicated ARMv9 Neoverse-V3 cores clocked at 3.3 GHz, 768.0 GB of DDR5 memory, 11,400 GB of local NVMe SSD storage, and 100 Gbps baseline networking. Without hardware GPUs, the platform relies on pure CPU throughput and high-bandwidth memory, recording top-tier results in multi-core stress testing (380,524.27), PassMark database operations (62,496.61), and Redis SET transactions (520.51 million ops/sec). The system features balanced 4.0 GB per-core memory capacity alongside high sustained memory bandwidth, though single-core performance and generative text generation remain moderate. Given its large local storage footprint and extensive core density, the server is well-matched for distributed in-memory databases, caching infrastructure, high-throughput static web serving, and heavy parallel data processing.",
+  "og_description": "Amazon Web Services m9gd.metal-48xl is a bare-metal server with 192 ARMv9 cores, 768 GB DDR5 RAM, 11.4 TB local NVMe SSD storage, and 100 Gbps networking designed for heavy scale-out workloads.",
+  "meta_description": "Amazon Web Services m9gd.metal-48xl is a bare-metal server with 192 ARMv9 cores, 768 GB DDR5 memory, 11.4 TB NVMe storage, and 100 Gbps network bandwidth.",
+  "tagline": "Bare-metal 192-core ARMv9 computing platform with 768 GB DDR5 memory, 11.4 TB NVMe storage, and 100 Gbps baseline networking throughput.",
   "bullet_points": [
-    "192 dedicated AWS Graviton ARMv9 physical cores running at 3.3 GHz",
-    "768.0 GB of high-speed DDR5 memory with 4.0 GB per core",
-    "11,400 GB of local NVMe SSD instance storage",
-    "100 Gbps baseline network bandwidth for high-throughput data transfer",
-    "Top-tier multi-core processing and memory read/write bandwidth",
-    "Optimized for large-scale databases, Redis deployments, and web serving"
+    "192 dedicated physical ARMv9 Neoverse-V3 cores running at 3.3 GHz",
+    "768.0 GB high-bandwidth DDR5 system memory (4.0 GB per core)",
+    "11,400 GB direct-attached NVMe SSD instance storage",
+    "100 Gbps baseline network bandwidth",
+    "Top-tier performance in multi-core compute, Redis, and database operations",
+    "Suited for in-memory databases, large-scale caching, and parallel processing"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

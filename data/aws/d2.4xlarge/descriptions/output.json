@@ -1,22 +1,21 @@
 {
   "page": [
-    "Amazon Web Services d2.4xlarge is a dense storage instance powered by an Intel Xeon E5-2676 v3 processor. It features 16 vCPUs across 8 physical cores with hyper-threading enabled, running at a clock speed of 2.4 GHz. The system is equipped with 122.0 GB of system memory, providing 7.62 GB per core. A key hardware feature is its massive local storage capacity, consisting of 24,576 GB of local HDD storage, coupled with a baseline network bandwidth of 5 Gbps. The instance runs on the Xen hypervisor.",
-    "Performance benchmarks indicate a clear distinction between single-core and multi-core capabilities. Single-core performance is limited, with stress-ng and Geekbench single-core scores falling into the bottom 10%. However, multi-core performance scales to average levels, as shown by stress-ng multi-core and Passmark CPU scores. Memory read bandwidth is average at 625.97 GB/sec for cached blocks and 44.35 GB/sec for uncached blocks, though large block write bandwidth is weaker, placing in the bottom 25%. Cryptographic and integer operations benefit from AVX, AES, and FMA instruction sets.",
-    "From a cost-efficiency perspective, the d2.4xlarge offers a high density of local HDD storage relative to its compute and memory resources, making it a viable option for sequential read/write storage workloads where high-capacity local storage is prioritized over high-speed NVMe or SSD performance. Given the weak single-core performance and average multi-core capabilities, this instance is best suited for storage-intensive workloads such as MapReduce jobs, distributed file systems, log processing, and large-scale data warehousing."
+    "Amazon Web Services d2.4xlarge is a storage-optimized instance under the D2 generation, engineered for applications requiring massive local disk space. It runs on the Xen hypervisor with an x86_64 architecture powered by an Intel Xeon E5-2676 v3 processor clocked at 2.4 GHz. The instance delivers 16 vCPUs across 8 physical cores with simultaneous multithreading enabled (2 threads per core), supported by a 30 MB L3 cache, 122.0 GB of memory (7.62 GB per physical core), and a baseline network bandwidth of 5 Gbps. It includes no dedicated GPUs.",
+    "The defining characteristic of the d2.4xlarge is its bundled local storage, offering 24,576 GB of local hard disk drive (HDD) capacity. Compute benchmarks reveal modest execution rates typical of older Haswell-generation architectures. Single-core tests such as Geekbench single-core (895.0) and stress-ng single-core (742.99) fall within the bottom 10%, while multi-core workloads yield average scores, including a Geekbench multi-core score of 5383.0 and a PassMark CPU score of 14,324.65. Uncached large-block memory writes measure 19.85 GB/sec, placing memory throughput in the lower 25%.",
+    "Given its substantial 24 TB local HDD footprint, the d2.4xlarge trades single-threaded compute and fast random disk access for high-density sequential storage capacity. It is primarily suited for sequential read/write big data processing, data warehousing, Hadoop distributed file systems (HDFS), log collection, and batch ETL pipelines where total disk density outweighs raw compute velocity."
   ],
-  "description": "Amazon Web Services d2.4xlarge is a dense storage instance designed for high-capacity local storage workloads. It features an Intel Xeon E5-2676 v3 processor with 16 vCPUs, 8 physical cores, and 122.0 GB of memory. The instance is equipped with 24,576 GB of local HDD storage and a baseline network bandwidth of 5 Gbps. Benchmark data shows poor single-core performance, but average multi-core CPU and memory read bandwidth capabilities. While write bandwidth and single-threaded compression tasks are relatively weak, the instance provides a high volume of local storage per resource unit. It is best suited for storage-intensive applications, distributed file systems, log processing, and data warehousing workloads that require massive sequential disk throughput without the need for high-speed SSDs or intensive single-core compute performance.",
-  "og_description": "Amazon Web Services d2.4xlarge is a dense storage instance featuring 16 vCPUs, 122.0 GB of memory, and 24,576 GB of local HDD storage, designed for high-capacity sequential data workloads.",
-  "meta_description": "Amazon Web Services d2.4xlarge is a dense storage instance with 16 vCPUs, 122.0 GB RAM, and 24,576 GB of local HDD storage for data-intensive workloads.",
-  "tagline": "A high-capacity dense storage instance featuring massive local HDD capacity and balanced multi-core performance for sequential data processing workloads.",
+  "description": "Amazon Web Services d2.4xlarge is a dense storage-optimized virtual server powered by a 2.4 GHz Intel Xeon E5-2676 v3 processor on x86_64 architecture. Configured with 16 vCPUs (8 physical cores), 122.0 GB of RAM, and a 5 Gbps baseline network bandwidth, its distinguishing hardware element is 24,576 GB of bundled local HDD storage. It does not include a GPU. Benchmark testing reflects modest single-core throughput, with Geekbench and stress-ng single-core scores ranking in the bottom 10%, alongside middle-tier multi-core output (PassMark CPU score of 14,324.65). Memory write throughput reaches 19.85 GB/sec for uncached blocks. This hardware configuration is oriented toward massive local data storage, sequential log processing, data warehousing, and distributed Hadoop clusters.",
+  "og_description": "Amazon Web Services d2.4xlarge provides 16 vCPUs, 122 GB RAM, and 24,576 GB local HDD storage via an Intel Xeon E5-2676 v3 CPU, tailored for large-scale sequential storage and batch analytics.",
+  "meta_description": "Amazon Web Services d2.4xlarge features 16 vCPUs, 122 GB RAM, and 24,576 GB HDD storage powered by an Intel Xeon E5-2676 v3 processor for big data workloads.",
+  "tagline": "High-density local HDD capacity paired with 16 vCPUs for large sequential data sets, batch processing, and distributed log warehousing.",
   "bullet_points": [
-    "16 vCPUs and 122.0 GB of system memory",
-    "24,576 GB of local HDD storage capacity",
-    "Intel Xeon E5-2676 v3 processor running at 2.4 GHz",
-    "5 Gbps baseline network bandwidth",
-    "Well-suited for MapReduce, HDFS, and large-scale log processing"
+    "24,576 GB of bundled local HDD storage capacity",
+    "16 vCPUs (8 physical cores) powered by Intel Xeon E5-2676 v3 at 2.4 GHz",
+    "122.0 GB system memory with 5 Gbps baseline network bandwidth",
+    "Average multi-core CPU performance with PassMark score of 14,324.65",
+    "Tailored for Hadoop, distributed file systems, and bulk sequential data processing"
   ],
   "categories": [
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

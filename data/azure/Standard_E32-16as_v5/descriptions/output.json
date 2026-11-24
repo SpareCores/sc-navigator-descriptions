@@ -1,22 +1,21 @@
 {
   "page": [
-    "Microsoft Azure E32-16as_v5 is an EASv5-family virtual machine configured with 16 dedicated vCPUs and 256.0 GB of system memory. Powered by an AMD EPYC 7763 processor running at 3.525 GHz, this x86_64 architecture server features 8 physical cores with 2 threads per core under the Microsoft Hyper-V hypervisor. The processor includes 32 KB of L1 instruction/data cache, 0.5 MB of L2 cache, and 32 MB of L3 cache. It supports advanced instruction sets such as AVX, AES, VAES, SHA_NI, BMI2, ADX, and FMA. There is no bundled local storage or GPU hardware included with this instance, though it is Premium Storage capable.",
-    "Benchmark results indicate strong single-core CPU performance, with stress-ng single-core tests placing in the top 25% at 2701.79. Multi-core performance is average, with a stress-ng multi-core score of 21617.8 and a Geekbench multi-core score of 9778.0. Memory read bandwidth is average, reaching 1032.03 GB/sec for small cached blocks and 39.52 GB/sec for large uncached blocks. However, large-block memory write bandwidth is weak, registering in the bottom 25% at 22.78 GB/sec. For lightweight language model tasks, text generation using a small 135M model is strong at 273.29 tokens/sec, while prompt processing for the same model is average at 838.26 tokens/sec.",
-    "The high memory-to-vCPU ratio of 16 GB per core provides significant resource density for memory-bound workloads, offering qualitative cost efficiency for applications requiring large datasets in memory without needing proportional compute scaling. The primary tradeoff is the lack of local storage and weak large-block memory write speeds. This server is suited for memory-intensive workloads such as database operations, caching layers like Redis, and memory-heavy enterprise applications."
+    "Microsoft Azure E32-16as_v5 is an EASv5-series memory-optimized virtual machine hosted on Microsoft Hyper-V. The system provides 16 dedicated virtual CPUs derived from 8 physical cores on an AMD EPYC 7763 processor running at 3.525 GHz with simultaneous multithreading. Memory allocation is set at 256 GB of RAM, establishing a high ratio of 16 GB per virtual CPU. The instance provides no bundled local disk storage and contains no discrete GPUs, necessitating external network-attached volumes for persistent data storage.",
+    "Benchmark evaluations reveal strong single-thread execution, highlighted by top-quartile results in stress-ng single-core tests and small-scale language model text generation. Multi-threaded CPU execution and PassMark metrics align with the median across comparable instances, reflecting steady computational throughput for 16 vCPUs. Memory subsystems demonstrate high cached read throughput exceeding 1000 GB/sec, though uncached large-block write bandwidth measures lower at 22.78 GB/sec.",
+    "The constrained vCPU allocation relative to the 256 GB memory footprint delivers qualitative cost advantages for software stacks licensed per core that still mandate substantial memory buffers. However, the absence of local NVMe storage introduces network-dependent latency for write-intensive disk operations. The instance is suited for in-memory databases, Redis caching clusters, medium-scale ETL batching, and analytics platforms requiring extensive RAM without needing high parallel core counts."
   ],
-  "description": "Microsoft Azure E32-16as_v5 is an EASv5-family virtual machine featuring 16 dedicated vCPUs and 256.0 GB of RAM, yielding a high memory-to-vCPU ratio of 16 GB per core. Powered by an AMD EPYC 7763 processor running at 3.525 GHz on the x86_64 architecture, it operates under the Microsoft Hyper-V hypervisor. The instance lacks local storage and GPU accelerators but is Premium Storage capable. Benchmarks show strong single-core CPU performance and strong text generation speeds for small language models, alongside average multi-core and memory read capabilities, though large-block memory write bandwidth is weak. This configuration is suited for memory-intensive workloads, database operations, and caching layers.",
-  "og_description": "Microsoft Azure E32-16as_v5 is an EASv5 virtual machine featuring 16 dedicated AMD EPYC vCPUs and 256 GB of RAM. It offers strong single-core performance and is designed for memory-intensive workloads.",
-  "meta_description": "Microsoft Azure E32-16as_v5 features 16 dedicated AMD EPYC vCPUs, 256 GB RAM, and strong single-core performance for memory-intensive workloads.",
-  "tagline": "An AMD-powered virtual machine featuring a high memory-to-core ratio for memory-intensive database and caching workloads.",
+  "description": "Microsoft Azure E32-16as_v5 is a memory-optimized cloud instance within the EASv5 family running on Microsoft Hyper-V. The system features 16 dedicated vCPUs mapped across 8 physical AMD EPYC 7763 cores operating at 3.525 GHz, supported by 32 MB of L3 cache. It provides 256 GB of RAM, resulting in an elevated ratio of 16 GB of memory per vCPU. Hardware accelerators and local disk storage are absent, requiring workloads to rely on remote storage solutions. In benchmark testing, the instance demonstrates strong single-core compute performance and high throughput for small-model text generation, while uncached write memory bandwidth registers in the lower quartile. With its constrained core count relative to total RAM capacity, the instance offers licensing and compute cost efficiencies for memory-bound architectures. The E32-16as_v5 fits memory-intensive applications including Redis deployments, in-memory relational databases, and enterprise data caching frameworks.",
+  "og_description": "Microsoft Azure E32-16as_v5 is a memory-optimized virtual machine featuring 16 dedicated AMD EPYC 7763 vCPUs, 256 GB of RAM, and remote storage connectivity for memory-heavy enterprise workloads.",
+  "meta_description": "Microsoft Azure E32-16as_v5 offers 16 AMD EPYC 7763 vCPUs, 256 GB RAM, and no local storage, designed for memory-intensive enterprise computing workloads.",
+  "tagline": "High-density memory instance providing sixteen dedicated AMD EPYC cores and extensive system memory for demanding in-memory databases and caching layers.",
   "bullet_points": [
-    "16 dedicated vCPUs powered by an AMD EPYC 7763 processor at 3.525 GHz",
-    "256.0 GB of system memory providing a high 16 GB per core ratio",
-    "Strong single-core CPU performance and small-model text generation speeds",
-    "No bundled local storage, but compatible with Premium Storage",
-    "Suited for database operations, caching layers, and memory-heavy workloads"
+    "16 dedicated vCPUs across 8 physical AMD EPYC 7763 cores operating at 3.525 GHz",
+    "256 GB total system memory providing a high 16 GB per core density",
+    "No bundled local disk storage, utilizing network-attached remote storage exclusively",
+    "No GPU hardware acceleration included",
+    "Tailored for in-memory databases, caching systems, and per-core licensed applications"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

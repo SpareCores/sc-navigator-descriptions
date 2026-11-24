@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.i3.xlarge is an x86_64 architecture server powered by a dedicated Intel Xeon 8269CY processor operating at 2.5 GHz. The instance provides 4 vCPUs across 2 physical cores with hyper-threading enabled, paired with 32.0 GB of system memory. It features 959 GB of bundled local SSD storage and a baseline network bandwidth of 2 Gbps, running on the KVM hypervisor.",
-    "Benchmark data indicates that the processor and memory subsystem deliver modest performance. The stress-ng single-core and multi-core CPU metrics fall into the bottom 25%, as do the Passmark CPU and database operations scores. However, the system achieves average performance in Geekbench single-core testing and Passmark memory evaluations. Memory bandwidth for large block reads and writes is measured at 27.19 GB/sec and 23.19 GB/sec respectively, which also aligns with the lower quartile of tested instances.",
-    "From a resource density perspective, the ecs.i3.xlarge offers a high memory-to-vCPU ratio of 8 GB per core alongside substantial local SSD storage, presenting a qualitatively cost-efficient profile for workloads requiring local data caching or moderate memory capacity without demanding high-compute performance. Due to the lower CPU and multi-threaded decompression benchmarks, it is less suited for compute-intensive processing or high-throughput web serving. Appropriate workloads include memory-intensive caching, lightweight database operations, and general-purpose tasks requiring local SSD storage."
+    "Alibaba Cloud ecs.i3.xlarge is a storage and memory-focused instance within the Local SSDs family, provisioned on the KVM hypervisor. Hardware resources include 4 dedicated vCPUs across 2 physical cores on an Intel Xeon 8269CY processor running at 2.5 GHz, accompanied by 32 GB of system memory, yielding an 8 GB per-vCPU ratio. The configuration features an integrated 959 GB local SSD, 35 MB of shared L3 cache, and a 2 Gbps baseline network interface. Hardware acceleration support includes AVX-512 (f and vnni) and AES instructions, with no discrete GPU hardware installed.",
+    "Benchmark evaluations reveal modest compute throughput combined with steady memory access. The processor produces a Geekbench single-core score of 1187.0 and a multi-core score of 2607.0, alongside a Passmark CPU score of 4274.72. Memory benchmarks demonstrate large-block uncached read speeds of 27.19 GB/sec and write speeds of 23.19 GB/sec, reflected in a Passmark memory score of 2111.59. Application-level metrics record Redis SET execution at 3.49 million operations per second, static web serving throughput at 3.86 GB/sec, and small-model LLM generation speeds of 74.86 tokens per second.",
+    "Hardware tradeoffs prioritize local storage capacity and memory density over high compute power or networking bandwidth. The 2 Gbps baseline network connection and 4-thread execution envelope limit its suitability for network-bound services and parallel compilation tasks. However, the bundling of 959 GB local SSD storage alongside 32 GB of memory provides strong resource efficiency for stateful workloads. Recommended use cases include local transactional databases, cache nodes, log ingestion, and intermediate ETL data transformations requiring rapid local disk access."
   ],
-  "description": "Alibaba Cloud ecs.i3.xlarge is an x86_64 server configured with 4 vCPUs from a dedicated Intel Xeon 8269CY processor running at 2.5 GHz, 32.0 GB of RAM, and 959 GB of local SSD storage. Operating on the KVM hypervisor, it provides a baseline network bandwidth of 2 Gbps. Performance benchmarks indicate a lower-tier compute profile, with stress-ng CPU and Passmark database scores falling into the bottom 25%, though Geekbench single-core and Passmark memory scores reach average levels. The instance features a high memory-to-vCPU ratio of 8 GB per core, making it a qualitatively cost-efficient option for memory-optimized workloads that do not require intensive CPU performance. It is best suited for local data caching, lightweight database tasks, and general-purpose applications requiring substantial local SSD storage.",
-  "og_description": "Alibaba Cloud ecs.i3.xlarge is an x86_64 server with 4 vCPUs, 32 GB RAM, and 959 GB local SSD. It offers a high memory-to-vCPU ratio for caching and lightweight database workloads.",
-  "meta_description": "Alibaba Cloud ecs.i3.xlarge features 4 vCPUs, 32 GB RAM, and 959 GB local SSD, providing a memory-optimized profile for caching and database tasks.",
-  "tagline": "An x86_64 server featuring a high memory-to-vCPU ratio and local SSD storage for memory-intensive and caching workloads.",
+  "description": "Alibaba Cloud ecs.i3.xlarge is a storage-oriented instance from the Local SSDs family, provisioned with 4 dedicated vCPUs across 2 physical cores of an Intel Xeon 8269CY processor at 2.5 GHz. The configuration pairs 32 GB of RAM with a dedicated 959 GB local SSD, delivering a generous 8 GB memory-per-core ratio suited for data-heavy operations. The server supports vector acceleration via AVX-512 and provides a baseline network speed of 2 Gbps, while omitting discrete GPUs. Synthetic benchmarks place its CPU compute performance in lower percentiles, with a Passmark CPU score of 4274.72 and Geekbench multi-core score of 2607.0, balanced by moderate memory execution and 3.49 million Redis SET operations per second. With integrated high-speed local disk storage and elevated memory density relative to vCPU counts, the instance is engineered for transactional databases, caching layers, log aggregation, and local ETL processing pipelines.",
+  "og_description": "Alibaba Cloud ecs.i3.xlarge is a storage-oriented virtual machine with 4 vCPUs, 32 GB RAM, 959 GB of bundled local SSD storage, and a 2 Gbps baseline network, running on an Intel Xeon 8269CY CPU.",
+  "meta_description": "Alibaba Cloud ecs.i3.xlarge is a storage-focused instance featuring 4 vCPUs, 32 GB RAM, and 959 GB of local SSD storage backed by an Intel Xeon 8269CY processor.",
+  "tagline": "Dedicated storage-optimized virtual server combining bundled NVMe SSD capacity, generous memory allocations, and AVX-512 support for local transactional workloads.",
   "bullet_points": [
-    "Dedicated Intel Xeon 8269CY processor with 4 vCPUs and 2.5 GHz clock speed",
-    "32.0 GB of system memory providing a high 8 GB per core ratio",
-    "959 GB of bundled local SSD storage for fast data access",
-    "2 Gbps baseline network bandwidth on a KVM hypervisor",
-    "Best suited for memory-intensive caching and lightweight database operations"
+    "Intel Xeon 8269CY processor with 4 dedicated vCPUs across 2 physical cores at 2.5 GHz",
+    "32 GB of system memory providing an 8 GB per-vCPU allocation",
+    "Bundled 959 GB local SSD volume for high-throughput disk access",
+    "2 Gbps baseline network bandwidth on KVM hypervisor infrastructure",
+    "Optimized for local databases, caching nodes, and disk-intensive data processing"
   ],
   "categories": [
-    "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Memory Optimized"
   ]
 }

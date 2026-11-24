@@ -1,23 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E64-16as_v7 is an x86_64 architecture server belonging to the Easv7 family. It features an AMD EPYC 9V45 processor with 8 physical cores and 16 dedicated vCPUs, running at a clock speed of 4.5 GHz. The system is equipped with 512.0 GB of memory, yielding a high memory-to-vCPU ratio of 32.0 GB per core. It does not include local storage or bundled GPUs, but it is Premium Storage capable.",
-    "In benchmark testing, the server demonstrates strong single-core capabilities. The stress-ng single-core CPU performance and single-threaded gzip compression both rank in the top tier (top 10%). Similarly, single-threaded bzip3 decompression and text generation for small LLM models (135M) achieve top-tier performance. Multi-core operations, such as stress-ng multi-core CPU performance and multi-threaded bzip3 decompression, fall into the average category. Memory performance is robust, with the PassMark memory score ranking in the top 25%, while large-block memory bandwidth read and write speeds remain average.",
-    "The high memory density relative to the vCPU count makes this server a qualitatively cost-efficient option for memory-bound workloads that do not require massive parallel compute scaling. It is well-suited for large in-memory databases, caching layers like Redis, data buffering, and memory-intensive enterprise applications. The lack of local storage means workloads must rely on external Premium Storage, which should be factored into the overall architectural design."
+    "The Microsoft Azure E64-16as_v7 is a memory-optimized virtual machine instance based on the AMD EPYC 9V45 processor, running under the Microsoft Hyper-V hypervisor. The instance is allocated 16 dedicated vCPUs spanning 8 physical cores with simultaneous multithreading enabled at clock speeds up to 4.5 GHz. Each physical core features 48 KB of L1 data cache, 1.0 MB of L2 cache, and access to 32 MB of shared L3 cache. It incorporates vector instruction extensions including AVX-512 and cryptographic accelerators such as AES and SHA-NI.",
+    "A defining characteristic of this configuration is its high memory-to-vCPU allocation. The instance is provisioned with 512.0 GB of system memory, yielding 32.0 GB per virtual processor. In memory tests, it achieved a strong PassMark memory score of 2774.04, supported by uncached read bandwidth of 51.28 GB/s and write bandwidth of 34.22 GB/s. The instance provides no bundled local storage, requiring network-attached remote block volumes such as Azure Premium Storage for persistent file and database operations. No hardware accelerators or GPUs are included.",
+    "Benchmark outcomes demonstrate top-tier single-core execution speed, driven by the 4.5 GHz AMD Zen architecture. The instance achieved top-decile ratings in single-threaded stress-ng tests, gzip compression at 41.43 GB/s, and bzip3 single-threaded decompression at 18.43 GB/s. Because total execution is limited to 16 vCPUs constrained within a 64-vCPU-scale chassis, multi-threaded CPU throughput registers in the middle tier across PassMark and stress-ng suites. In caching and key-value environments, the instance sustained 27.35 million Redis SET operations per second.",
+    "The architecture of the E64-16as_v7 provides distinct cost efficiency for workloads constrained by memory capacity rather than core counts. Deployments that require vast memory allocations without incurring licensing or provisioning overhead for unneeded CPU cores benefit from this constrained vCPU design. Appropriate workloads include enterprise in-memory caches, memory-resident analytics, transactional database systems, and small-model inference tasks."
   ],
-  "description": "The Microsoft Azure E64-16as_v7 is a memory-optimized server from the Easv7 family, powered by an AMD EPYC 9V45 processor. It features 16 dedicated vCPUs across 8 physical cores running at 4.5 GHz, paired with 512.0 GB of system memory. This configuration provides a high resource density of 32.0 GB of RAM per vCPU. While the server lacks local storage and integrated GPUs, it is Premium Storage capable. In benchmark evaluations, the E64-16as_v7 delivers top-tier single-core CPU performance, single-threaded compression, and small-model LLM text generation, alongside strong memory performance. Multi-core and database operations perform at average levels. This server is highly suited for memory-intensive workloads, including in-memory databases, caching systems, and enterprise applications requiring substantial memory capacity without proportional vCPU overhead.",
-  "og_description": "Microsoft Azure E64-16as_v7 is a memory-optimized server featuring an AMD EPYC 9V45 CPU with 16 vCPUs and 512 GB RAM, delivering top-tier single-core performance for memory-intensive workloads.",
-  "meta_description": "Microsoft Azure E64-16as_v7 is a memory-optimized server with 16 vCPUs, 512 GB RAM, and top-tier single-core CPU performance.",
-  "tagline": "A memory-optimized virtual server featuring high memory density and top-tier single-core performance for memory-bound enterprise workloads.",
+  "description": "The Microsoft Azure E64-16as_v7 is a memory-optimized virtual machine featuring 16 dedicated vCPUs from an AMD EPYC 9V45 processor clocked at up to 4.5 GHz. Backed by 512.0 GB of RAM, it establishes an extensive 32.0 GB per vCPU ratio, catering to environments that require substantial memory capacity with restrained core density. The instance includes AVX-512 vector support but contains no bundled local storage or integrated GPUs, relying instead on network-attached storage such as Azure Premium Storage. Benchmark results demonstrate top-tier single-core performance alongside strong memory subsystem ratings, reaching 41.43 GB/s in gzip compression and 27.35 million Redis SET operations per second. Multi-threaded compute remains in the average tier due to the 16-vCPU boundary. The E64-16as_v7 fits memory-heavy deployments such as large in-memory caches, operational databases, and memory-bound analytics engines.",
+  "og_description": "Microsoft Azure E64-16as_v7 is a memory-optimized VM providing 16 dedicated vCPUs on an AMD EPYC 9V45 processor, 512 GB of RAM, no local storage, and strong single-core benchmark throughput.",
+  "meta_description": "Microsoft Azure E64-16as_v7 is a memory-optimized VM featuring 16 AMD EPYC vCPUs, 512 GB RAM, and exceptional single-core processing capabilities.",
+  "tagline": "A high-density memory instance balancing 512 GB of RAM across 16 high-frequency dedicated cores for memory-bound computational tasks.",
   "bullet_points": [
-    "AMD EPYC 9V45 processor with 16 dedicated vCPUs at 4.5 GHz",
-    "512.0 GB of system memory providing 32.0 GB per core",
-    "Top-tier single-core CPU and single-threaded compression performance",
-    "Strong memory performance ranking in the top 25% of benchmarks",
-    "No local storage included, but compatible with Premium Storage",
-    "Optimized for in-memory databases, caching, and memory-heavy workloads"
+    "AMD EPYC 9V45 processor with 16 dedicated vCPUs reaching 4.5 GHz",
+    "512.0 GB total system memory providing a high 32.0 GB per vCPU ratio",
+    "Top-tier single-core compute, compression, and lightweight inference performance",
+    "No bundled local storage, requiring network-attached block volumes",
+    "Tailored for in-memory databases, large Redis deployments, and memory-intensive analytics"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

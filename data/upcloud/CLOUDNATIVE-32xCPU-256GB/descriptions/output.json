@@ -1,24 +1,23 @@
 {
   "page": [
-    "UpCloud CLOUDNATIVE-32xCPU-256GB is a memory-optimized virtual server built on the KVM hypervisor. It features 32 shared vCPUs mapped to 32 physical cores of an AMD EPYC 7542 processor running at 2.0 GHz. The system is equipped with 256.0 GB of RAM, providing a high memory-to-core ratio of 8.0 GB per core. It does not include local storage or dedicated GPU hardware, but comes with one complimentary public IPv4 address.",
-    "Performance benchmarks indicate a clear distinction between single-core and multi-core workloads. While single-core CPU performance under stress-ng is positioned in the bottom 10%, multi-core performance scales significantly better, reaching average levels. Multi-threaded operations show strong results, with bzip3 decompression, Geekbench multi-core, ray tracing, and image processing scores all ranking in the top 25%. Passmark CPU tests for extended instructions, encryption, and physics also demonstrate strong performance. Memory bandwidth and database operations remain consistently in the average range.",
-    "Given its shared CPU allocation and high memory density, this server offers a cost-effective solution for memory-intensive workloads that do not require constant, dedicated single-core CPU performance. It is well-suited for multi-threaded data processing, memory-cached databases, software compilation, and moderate web serving. However, the lack of local storage requires external storage attachments, and the shared CPU model makes it less ideal for sustained, single-threaded high-compute tasks."
+    "UpCloud CLOUDNATIVE-32xCPU-256GB is a memory-optimized virtual server powered by the KVM hypervisor. It features 32 shared vCPUs based on the x86_64 AMD EPYC 7542 processor running at a base clock speed of 2.0 GHz, coupled with 256 GB of system memory. This configuration maintains a high memory-to-core ratio of 8 GB per vCPU. The CPU architecture includes 64 KB of L1 data cache, 0.5 MB of L2 cache, and 16 MB of L3 cache per core cluster, along with hardware support for AVX, AES-NI, SHA-NI, and BMI2 instruction sets. Local storage and discrete GPUs are omitted from this configuration, necessitating network-attached storage for stateful workloads.",
+    "Benchmark results demonstrate significant compute capacity across highly parallel tasks. The server achieves top-quartile results in multi-threaded Geekbench execution (16,439.0 points), bzip3 multi-threaded decompression (242.89 GB/sec), and PassMark CPU extended instruction and encryption evaluations. Conversely, single-threaded processing reflects the modest 2.0 GHz clock rate, registering in the lower spectrum during single-core stress testing (746.58). Large-block read memory bandwidth achieves 99.45 GB/sec, while uncached write bandwidth measures 44.93 GB/sec, supporting substantial data throughput across concurrent processes. The shared CPU allocation delivers high memory density with favorable cost efficiency for operations that prioritize memory capacity over dedicated core tenancy.",
+    "Because the server combines a heavy 256 GB memory footprint with 32 compute threads and diskless architecture, it is best suited for ephemeral, data-heavy workloads. Key deployment scenarios include in-memory databases, Redis caching clusters, extract-transform-load (ETL) pipelines, large-scale software compilation, and parallelized data analysis tasks that can operate without dedicated on-box NVMe storage."
   ],
-  "description": "UpCloud CLOUDNATIVE-32xCPU-256GB is a memory-optimized virtual server utilizing the KVM hypervisor. It features 32 shared vCPUs powered by an AMD EPYC 7542 processor running at 2.0 GHz, paired with 256.0 GB of system memory. This configuration delivers a high resource density of 8.0 GB of RAM per core. While single-core performance is limited, multi-core benchmarks show strong capabilities, particularly in multi-threaded decompression, image processing, and ray tracing. The server does not include integrated local storage or GPU accelerators, but includes one public IPv4 address. This instance is best suited for memory-intensive, multi-threaded workloads such as caching layers, database operations, and parallel data processing where shared CPU allocation is acceptable.",
-  "og_description": "UpCloud CLOUDNATIVE-32xCPU-256GB is a KVM-based virtual server featuring 32 shared AMD EPYC vCPUs and 256 GB RAM. It offers strong multi-core performance for memory-intensive workloads.",
-  "meta_description": "UpCloud CLOUDNATIVE-32xCPU-256GB is a KVM virtual server with 32 shared AMD EPYC vCPUs and 256 GB RAM, optimized for memory-dense workloads.",
-  "tagline": "A high-density virtual server featuring 256 GB of RAM and 32 shared AMD EPYC cores for memory-intensive multi-threaded workloads.",
+  "description": "UpCloud CLOUDNATIVE-32xCPU-256GB is a memory-optimized virtual machine instance deployed on KVM hypervisor infrastructure. The system is equipped with 32 shared AMD EPYC 7542 vCPUs clocked at 2.0 GHz alongside 256 GB of RAM, establishing an 8 GB per core memory profile. The processor supports standard instruction extensions including AVX, AES, SHA-NI, and BMI2, though it lacks AVX-512 and AMX capabilities. Hardware benchmarks highlight strong parallel processing throughput, showing top-quartile performance in multi-threaded bzip3 decompression, Geekbench multi-core tasks, ray tracing, and cryptographic encryption routines. Single-core stress testing yields lower relative throughput, aligning with the 2.0 GHz base clock speed and shared compute model. Local storage and dedicated GPUs are absent, requiring external storage volumes for data persistence. This instance provides a cost-efficient resource profile for memory-intensive operations, making it particularly well suited for distributed in-memory caching, ETL data transformation, enterprise database operations, and multi-threaded analytical computing.",
+  "og_description": "UpCloud CLOUDNATIVE-32xCPU-256GB is a memory-optimized cloud server providing 32 AMD EPYC 7542 shared vCPUs and 256 GB RAM on KVM architecture, designed for memory-heavy parallel workloads without local storage.",
+  "meta_description": "UpCloud CLOUDNATIVE-32xCPU-256GB features 32 shared AMD EPYC vCPUs, 256 GB of memory, and no local storage, suited for memory-intensive parallel processing.",
+  "tagline": "A memory-intensive virtual instance delivering 256 GB of system RAM across 32 shared AMD EPYC cores for highly parallelized enterprise workloads.",
   "bullet_points": [
-    "32 shared AMD EPYC 7542 vCPUs running at 2.0 GHz",
-    "256.0 GB of system memory providing 8.0 GB per core",
-    "Strong multi-threaded performance in decompression and image processing",
-    "KVM hypervisor architecture with one public IPv4 address included",
-    "No integrated local storage or GPU hardware",
-    "Optimized for memory-intensive, parallel data processing workloads"
+    "32 shared AMD EPYC 7542 vCPUs clocked at 2.0 GHz",
+    "256 GB total system RAM providing 8 GB of memory per core",
+    "Hardware cryptographic and integer acceleration via AES-NI, SHA-NI, and BMI2",
+    "Top-tier multi-threaded decompression, encryption, and ray tracing benchmark metrics",
+    "Diskless architecture requiring external volume configuration for persistent storage",
+    "Suited for in-memory caching layers, parallel ETL pipelines, and large memory-bound databases"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose",
     "Burstable & Budget"
   ]
 }

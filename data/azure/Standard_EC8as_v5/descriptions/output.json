@@ -1,19 +1,21 @@
 {
   "page": [
-    "Microsoft Azure EC8as_v5 is an x86_64 architecture virtual machine belonging to the ECASv5 server family. It features 8 dedicated vCPUs powered by an AMD processor and runs on the Microsoft Hyper-V hypervisor. The instance is configured with 64.0 GB of system memory, yielding a memory-to-core ratio of 8.0 GB per vCPU.",
-    "This server type does not include local storage, meaning it relies entirely on external block storage, though it is designated as Premium Storage capable. It does not feature any integrated GPUs, nor does it include complimentary public IPv4 addresses.",
-    "Given its high memory-to-vCPU ratio, the EC8as_v5 offers qualitative cost efficiency for memory-intensive workloads that do not require high-performance local disk storage or GPU acceleration. It is suited for workloads such as relational databases, in-memory caching, data analytics, and enterprise applications requiring a larger memory footprint relative to compute resources."
+    "Microsoft Azure EC8as_v5 is a memory-optimized virtual machine instance powered by the AMD EPYC 9V74 processor. Built on the x86_64 architecture and managed via Microsoft Hyper-V, this instance provides 8 dedicated vCPUs mapped across 4 physical cores with two threads per core. The hardware configuration includes 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of shared L3 cache, complemented by 64.0 GB of system memory, yielding an 8:1 memory-to-vCPU ratio of 8.0 GB per vCPU.",
+    "The instance does not bundle local disk storage, relying instead on network-attached Premium Storage capabilities for persistent data. Hardware acceleration via GPUs is not present. Across CPU and memory evaluation suites, the EC8as_v5 consistently scores within the middle 50 percent benchmark tier. It achieved a Geekbench single-core score of 1202.0 and a multi-core score of 4658.0, alongside stress-ng results of 1989.26 for single-core and 7920.99 for multi-core compute throughput.",
+    "In operational testing, the instance delivered 6.75 million operations per second in Redis SET evaluations and reached a PassMark database operations metric of 2864.68. The balanced memory subsystem and dedicated core allocation deliver predictable performance for data-intensive processing without paying a premium for unused GPU hardware. However, applications requiring low-latency scratch disks must account for the lack of local temporary NVMe storage.",
+    "Given its high RAM-to-CPU ratio and stable benchmark profile, the EC8as_v5 is suited for in-memory caching layers such as Redis, relational databases, medium-scale enterprise resource planning software, and distributed data analytics workloads."
   ],
-  "description": "Microsoft Azure EC8as_v5 is an x86_64 virtual machine from the ECASv5 family, utilizing an AMD processor and the Microsoft Hyper-V hypervisor. It features 8 dedicated vCPUs and 64.0 GB of system memory, establishing a memory-to-core ratio of 8.0 GB per vCPU. The instance does not include local storage but is Premium Storage capable, allowing connection to external storage volumes. It contains no GPUs and offers zero complimentary public IPv4 addresses. With its high memory allocation relative to compute cores, this server is designed for memory-intensive workloads. It is suited for database hosting, caching layers, and enterprise applications requiring substantial RAM without the need for local NVMe drives or hardware accelerators.",
-  "og_description": "Microsoft Azure EC8as_v5 is an x86_64 virtual machine featuring 8 dedicated AMD vCPUs and 64.0 GB of RAM. It is Premium Storage capable and optimized for memory-intensive enterprise workloads.",
-  "meta_description": "Microsoft Azure EC8as_v5 is an x86_64 virtual machine with 8 dedicated AMD vCPUs, 64.0 GB of RAM, and no local storage, running on Hyper-V.",
-  "tagline": "An AMD-powered virtual machine featuring eight dedicated vCPUs and sixty-four gigabytes of memory for memory-intensive workloads.",
+  "description": "Microsoft Azure EC8as_v5 is a memory-optimized instance featuring 8 dedicated vCPUs derived from 4 physical AMD EPYC 9V74 cores on the x86_64 architecture. Equipped with 64.0 GB of RAM, the instance delivers an 8:1 memory-to-core ratio, backed by 32 MB of L3 cache. It excludes integrated local storage and GPU acceleration, directing I/O demands to external Premium Storage volumes. Performance benchmarks place the EC8as_v5 in the middle tier across standard compute and memory tests, highlighted by a Geekbench multi-core score of 4658.0, a PassMark CPU score of 9071.03, and Redis throughput exceeding 6.75 million operations per second. The hardware configuration emphasizes cost efficiency by pairing dedicated compute with dense memory capacity, foregoing specialized accelerators. This profile makes it practical for in-memory databases, enterprise caching layers, and memory-bound transactional systems.",
+  "og_description": "Microsoft Azure EC8as_v5 is a memory-optimized virtual machine featuring 8 AMD EPYC 9V74 vCPUs and 64 GB of RAM, designed for memory-intensive enterprise workloads without bundled local storage.",
+  "meta_description": "Microsoft Azure EC8as_v5 is a memory-optimized VM providing 8 AMD EPYC 9V74 vCPUs, 64 GB RAM, and dedicated compute for memory-heavy workloads.",
+  "tagline": "High-density memory architecture paired with dedicated AMD EPYC processing power for in-memory databases and enterprise caching systems.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an AMD processor",
-    "64.0 GB of system memory providing 8.0 GB per core",
-    "Premium Storage capable with no local storage included",
-    "Built on the Microsoft Hyper-V hypervisor",
-    "Suited for memory-intensive databases and caching layers"
+    "8 dedicated vCPUs powered by AMD EPYC 9V74 processors",
+    "64.0 GB system RAM providing an 8:1 memory-to-vCPU ratio",
+    "No bundled local storage, requiring network-attached volumes",
+    "Zero integrated GPU acceleration hardware",
+    "Achieved 6.75 million Redis SET operations per second in benchmarks",
+    "Suited for in-memory caching, relational databases, and data processing"
   ],
   "categories": [
     "Memory Optimized"

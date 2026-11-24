@@ -1,0 +1,24 @@
+{
+  "page": [
+    "Microsoft Azure D128plds_v7 is an ARM-based virtual machine instance within the Dpldsv7 family, virtualized on Microsoft Hyper-V. It is configured with 128 dedicated 64-bit ARM (arm64) vCPUs and 256 GB of system memory, yielding an allocation ratio of 2.0 GB of RAM per vCPU. The instance does not feature graphical processing hardware, focusing computational resources purely on general and compute-intensive execution environments that require a lower memory footprint per core.",
+    "A notable architectural component of this instance is its large integrated local storage tier. The configuration includes 7559 GB of direct-attached NVMe SSD storage, supplemented by support for Azure Premium Storage remote disks. This expansive NVMe capacity provides high-throughput, low-latency scratch space directly on the host hardware. Tradeoffs center on the constrained 1:2 vCPU-to-memory ratio, which limits suitability for memory-heavy in-memory engines, as well as the requirement for arm64-compatible application runtimes.",
+    "From an operational standpoint, the combination of energy-efficient ARM core density and a reduced memory footprint minimizes resource waste for parallel compute jobs that do not saturate high memory capacities. The inclusion of substantial local NVMe storage eliminates external disk latency for heavy temporary read and write sequences. Primary suitable workloads include distributed build and continuous integration farms, parallel media encoding, high-concurrency web tiers, and batch data transformation pipelines requiring rapid ephemeral storage."
+  ],
+  "description": "Microsoft Azure D128plds_v7 is an ARM-based compute instance within the Dpldsv7 series, operating on Microsoft Hyper-V. It provides 128 dedicated arm64 vCPUs alongside 256 GB of system memory, establishing a 2.0 GB per vCPU ratio tailored for compute-heavy parallel workloads. The configuration includes no discrete GPU hardware but is bundled with a substantial 7559 GB local NVMe SSD storage volume for high-speed scratch space and temporary file operations, alongside compatibility with Premium Storage. Architecturally, the instance targets environments where thread concurrency and local disk throughput take precedence over large per-core memory capacities. The 64-bit ARM architecture delivers compute efficiency for compatible software stacks. Key workload applications include multi-threaded batch compute, continuous integration build clusters, video transcoding pipelines, and data staging services requiring dense CPU allocation and low-latency local disk caching.",
+  "og_description": "Microsoft Azure D128plds_v7 features 128 dedicated arm64 vCPUs, 256 GB RAM, and 7559 GB of local NVMe SSD storage on Microsoft Hyper-V, tailored for high-concurrency compute and IOPS-heavy workloads.",
+  "meta_description": "Microsoft Azure D128plds_v7 offers 128 dedicated arm64 vCPUs, 256 GB RAM, and 7559 GB local NVMe SSD storage for compute-dense, I/O-intensive workloads.",
+  "tagline": "High-density 128-core ARM compute instance featuring a 1:2 memory ratio and over 7.5 TB of integrated NVMe SSD scratch storage.",
+  "bullet_points": [
+    "128 dedicated 64-bit ARM (arm64) processor cores",
+    "256 GB total system memory (2.0 GB RAM per vCPU)",
+    "7559 GB local NVMe SSD high-speed scratch storage",
+    "Microsoft Hyper-V virtualization with Premium Storage support",
+    "Zero discrete GPU accelerators present",
+    "Optimized for parallel compilation, batch jobs, and high-I/O compute tasks"
+  ],
+  "categories": [
+    "Compute Optimized",
+    "Storage & Database",
+    "General Purpose"
+  ]
+}

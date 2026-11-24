@@ -1,23 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E8ads_v5 is a memory-optimized virtual machine powered by an AMD EPYC 7763 processor built on the x86_64 architecture. It features 8 dedicated vCPUs derived from 4 physical cores with multithreading enabled, running at a clock speed of 3.525 GHz. The system is equipped with 64.0 GB of RAM, yielding a high memory-to-core ratio of 8.0 GB per vCPU. Local storage is provided via a 307 GB SSD, and the instance supports Premium Storage.",
-    "Performance benchmarks indicate strong single-core CPU execution, with stress-ng single-core tests placing in the top 25 percent. Multi-core CPU performance, software compilation, and cryptography operations fall within the average range. Memory performance shows a distinct contrast; while cached small-block read bandwidth is average at 515.05 GB/sec, uncached large-block read and write bandwidths are weaker, measuring 38.15 GB/sec and 22.67 GB/sec respectively. Large-model LLM inference is limited, though small-model text generation remains average at 214.75 tokens per second.",
-    "Given its high memory density and dedicated AMD EPYC cores, the E8ads_v5 offers qualitative cost efficiency for memory-bound workloads that do not require massive parallel GPU acceleration. The inclusion of a 307 GB local SSD provides a fast temporary storage tier, making it suitable for relational databases, in-memory caching systems like Redis, data buffering, and general-purpose enterprise applications requiring a high RAM-to-vCPU ratio."
+    "Microsoft Azure E8ads_v5 is a memory-optimized virtual machine powered by an AMD EPYC 7763 processor clocked at up to 3.525 GHz. Built on the x86_64 architecture and running under Microsoft Hyper-V, the instance provisions 8 dedicated vCPUs mapped across 4 physical cores with multithreading enabled. The system includes 64.0 GB of system memory, establishing a generous 8:1 memory-to-vCPU ratio suited for stateful operations. In addition to networked Premium Storage capabilities, the instance bundles 322 GB of direct-attached local SSD storage. It operates without dedicated GPU hardware accelerators.",
+    "Benchmark results demonstrate strong single-threaded compute potential, with stress-ng single-core performance ranking in the top 25% at 2,702.89 points. Multi-core operations align closely with the median for its tier, yielding a stress-ng score of 10,805.45 and a Geekbench multi-core score of 5,838.0. In memory tests, cached reads reach 515.05 GB/sec, though uncached large-block read (38.15 GB/sec) and write (22.67 GB/sec) bandwidth metrics drop into the lower quartile. In transactional caching evaluations, the instance sustains 8.2 million Redis SET operations per second and achieves a PassMark database operations score of 3,544.21.",
+    "By delivering a high memory-to-core allocation alongside bundled fast local SSD scratch space, the E8ads_v5 achieves cost-effective resource utilization for applications bounded primarily by memory footprint rather than uncached memory bandwidth or raw GPU parallelization. This configuration makes the instance well suited for relational and in-memory databases, distributed caching nodes, memory-intensive CI/CD test runners, and intermediate ETL pipeline staging."
   ],
-  "description": "Microsoft Azure E8ads_v5 is an x86_64 memory-optimized virtual machine featuring 8 dedicated vCPUs and 64.0 GB of RAM, powered by an AMD EPYC 7763 processor running at 3.525 GHz. It includes 307 GB of local SSD storage and is Premium Storage capable. Benchmarks show strong single-core CPU performance, though uncached large-block memory bandwidth is relatively weak. Multi-core processing, database operations, and web serving throughput perform in the average tier. With an 8:1 RAM-to-vCPU ratio and dedicated CPU allocation, this instance provides a balanced, cost-efficient profile for memory-intensive workloads. It is well-suited for database hosting, in-memory caching, and enterprise applications requiring substantial memory without the need for dedicated GPU accelerators.",
-  "og_description": "Microsoft Azure E8ads_v5 is an x86_64 memory-optimized virtual machine featuring 8 dedicated AMD EPYC vCPUs, 64 GB of RAM, and a 307 GB local SSD, designed for database and memory-intensive workloads.",
-  "meta_description": "Microsoft Azure E8ads_v5 is an x86_64 memory-optimized VM featuring 8 AMD EPYC vCPUs, 64 GB of RAM, and 307 GB of local SSD storage.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated AMD EPYC processors, high RAM density, and local SSD storage for database workloads.",
+  "description": "Microsoft Azure E8ads_v5 is a memory-optimized virtual machine featuring an AMD EPYC 7763 processor running at 3.525 GHz across 8 dedicated vCPUs and 4 physical cores. It provides 64.0 GB of memory alongside an integrated 322 GB local SSD for high-speed temporary storage. Performance benchmarks indicate upper-quartile single-core CPU throughput alongside consistent median-tier multi-threaded processing, compiling, and Redis caching rates exceeding 8.2 million operations per second. However, large-block uncached memory bandwidth benchmarks place in the lower quartile, presenting a potential throughput bottleneck for unbounded streaming memory transfers. With its balanced 8:1 RAM-to-vCPU allocation, this instance represents an efficient infrastructure option for in-memory databases, Redis caches, mid-tier relational database hosting, and memory-intensive ETL tasks.",
+  "og_description": "Microsoft Azure E8ads_v5 is a memory-optimized instance featuring 8 AMD EPYC 7763 vCPUs, 64 GB of RAM, and 322 GB of local SSD storage, well-fitted for database hosting and caching tiers.",
+  "meta_description": "Microsoft Azure E8ads_v5 is a memory-optimized instance featuring 8 AMD EPYC 7763 vCPUs, 64 GB of RAM, and 322 GB of bundled local SSD storage.",
+  "tagline": "An AMD EPYC memory-optimized instance offering an eight-to-one memory ratio and integrated fast local SSD storage for data-heavy workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an AMD EPYC 7763 processor at 3.525 GHz",
-    "64 GB of system memory providing an 8:1 RAM-to-vCPU ratio",
-    "307 GB of local SSD storage with Premium Storage compatibility",
-    "Strong single-core CPU performance in benchmark testing",
-    "Suited for database hosting, in-memory caching, and enterprise applications"
+    "AMD EPYC 7763 CPU providing 8 dedicated vCPUs across 4 physical cores",
+    "64.0 GB system RAM providing an 8:1 memory-to-core ratio",
+    "Bundled 322 GB local SSD temporary storage volume",
+    "Strong single-core CPU throughput with 8.2 million Redis SET operations per second",
+    "Suited for in-memory caching, relational databases, and ETL workloads"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

@@ -1,19 +1,20 @@
 {
   "page": [
-    "Amazon Web Services r9gd.large is a memory-optimized virtual machine instance powered by AWS Graviton ARM64 processors. It features 2 dedicated physical cores running at 3.3 GHz with a 1:1 thread-to-core ratio, providing 2 vCPUs. The instance is equipped with 16.0 GB of system memory, yielding a high memory-to-vCPU ratio of 8.0 GB per core.",
-    "This instance type includes 118 GB of local NVMe SSD instance store volumes, offering high-speed local storage directly attached to the hypervisor. It operates on the AWS Nitro hypervisor and provides a baseline network bandwidth of 1 Gbps. No complimentary public IPv4 addresses are included.",
-    "The arm64 architecture and dedicated core allocation deliver predictable performance and high resource density, making the instance a cost-efficient choice for memory-bound workloads that benefit from local scratch storage. It is suitable for small-scale databases, in-memory caching, local data processing, and distributed systems requiring high memory-per-core ratios without the overhead of simultaneous multithreading."
+    "Amazon Web Services r9gd.large is a memory-optimized virtual instance built on the AWS Nitro hypervisor architecture. It features a custom AWS Graviton processor built on the arm64 64-bit architecture, delivering 2 dedicated physical cores and 2 vCPUs operating at a base clock speed of 3.3 GHz. The instance provisions 16.0 GB of system memory, maintaining a high 1:8 core-to-memory ratio of 8.0 GB of RAM per core, designed to support data-intensive and memory-constrained processing pipelines.",
+    "Storage and network I/O are handled with dedicated low-latency hardware. The instance includes a bundled 118 GB local NVMe SSD instance store volume directly attached to the host, offering high-throughput, low-latency scratch space compared to networked block storage. Networking capability is set to a baseline speed of 1 Gbps. The instance does not include graphics processing units or complimentary public IPv4 addresses.",
+    "From a cost-efficiency perspective, the Graviton arm64 architecture combined with a 1:8 memory configuration allows for efficient resource utilization in memory-heavy software environments. Because CPU allocation is dedicated without hardware multithreading overhead, each core delivers predictable single-threaded throughput. Workloads running on r9gd.large must be compiled or compatible with arm64 architectures, and local storage requires appropriate persistence strategies since instance store volumes are ephemeral.",
+    "Amazon Web Services r9gd.large is well suited for in-memory caching systems, distributed key-value stores, transactional databases requiring high RAM ratios, local temporary buffer storage, real-time analytics engines, and general memory-intensive arm64 workloads."
   ],
-  "description": "Amazon Web Services r9gd.large is a memory-optimized instance featuring 2 dedicated arm64 vCPUs powered by AWS Graviton processors running at 3.3 GHz. Built on the AWS Nitro hypervisor, it provides 16.0 GB of system memory, establishing a high 8.0 GB memory-to-core ratio. The instance includes 118 GB of local NVMe SSD storage for high-speed local data access, alongside a baseline network bandwidth of 1 Gbps. With its dedicated core allocation and single-threaded execution model, the r9gd.large offers predictable performance and high resource density for memory-intensive workloads. It is well-suited for small-scale databases, in-memory caching, and local data processing tasks that require a balance of high memory capacity and fast local storage without the need for hardware acceleration.",
-  "og_description": "Amazon Web Services r9gd.large is a memory-optimized arm64 instance featuring 2 dedicated Graviton vCPUs, 16.0 GB of RAM, and 118 GB of local NVMe SSD storage on the Nitro hypervisor.",
-  "meta_description": "Amazon Web Services r9gd.large is a memory-optimized arm64 instance with 2 dedicated vCPUs, 16.0 GB of RAM, and 118 GB of local NVMe SSD storage.",
-  "tagline": "A memory-optimized arm64 instance featuring dedicated Graviton cores, high memory-to-CPU density, and fast local NVMe SSD storage.",
+  "description": "Amazon Web Services r9gd.large is a memory-optimized instance powered by the AWS Nitro hypervisor and AWS Graviton arm64 processors. Operating at a clock speed of 3.3 GHz, the configuration supplies 2 dedicated physical cores (2 vCPUs) paired with 16.0 GB of memory, yielding a 1:8 core-to-RAM ratio of 8.0 GB per core. The server includes 118 GB of fast direct-attached NVMe SSD instance storage alongside a 1 Gbps baseline network bandwidth profile. It does not provision GPU accelerators or free public IPv4 addresses. The balanced memory-heavy profile combined with high-speed local ephemeral storage offers solid resource efficiency for workloads requiring fast local scratch caching and significant RAM without unneeded compute density. AWS r9gd.large is suited for in-memory databases, Redis and Memcached caching tiers, search indices, stream processing, and intermediate data transformation pipelines compatible with arm64 architectures.",
+  "og_description": "Amazon Web Services r9gd.large is a memory-optimized arm64 instance offering 2 dedicated Graviton cores, 16.0 GB RAM, a 118 GB NVMe SSD instance store, and 1 Gbps baseline network speed.",
+  "meta_description": "Amazon Web Services r9gd.large features 2 arm64 Graviton cores at 3.3 GHz, 16 GB RAM, 118 GB local NVMe SSD storage, and a 1 Gbps network baseline.",
+  "tagline": "An arm64 memory-optimized configuration featuring dedicated high-frequency cores, expansive RAM density, and high-speed local NVMe instance storage.",
   "bullet_points": [
-    "Powered by AWS Graviton arm64 processors running at 3.3 GHz",
-    "2 dedicated physical cores with 16.0 GB of system memory",
-    "118 GB of high-speed local NVMe SSD instance storage",
-    "Built on the AWS Nitro hypervisor with 1 Gbps baseline network bandwidth",
-    "Optimized for in-memory caching, small databases, and local data processing"
+    "AWS Graviton arm64 processor with 2 dedicated cores at 3.3 GHz",
+    "16.0 GB system memory providing an 8.0 GB per core ratio",
+    "118 GB directly attached local NVMe SSD instance store",
+    "Nitro System hypervisor with 1 Gbps baseline networking",
+    "Designed for in-memory caches, key-value stores, and arm64 databases"
   ],
   "categories": [
     "Memory Optimized",

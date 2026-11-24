@@ -1,24 +1,24 @@
 {
   "page": [
-    "Amazon Web Services m6idn.4xlarge is a general-purpose, network and EBS-optimized server instance powered by the AWS Nitro hypervisor. It features an x86_64 Intel Xeon 8375C processor running at 3.5 GHz, configured with 16 dedicated vCPUs across 8 physical cores. The system includes 64.0 GB of DDR4 memory operating at 3 GHz, yielding 4.0 GB of RAM per core. Local storage is provided via a bundled 950 GB NVMe SSD instance store volume, and the network interface supports a baseline bandwidth of 25 Gbps.",
-    "Benchmark results place this instance in the average performance tier across multiple workloads. The Intel Xeon processor achieves a stress-ng single-core score of 1890.79 and a multi-core score of 15409.45, supported by hardware-accelerated instructions including AVX-512 and AES cryptography. Memory performance is characterized by a read-only small block cached bandwidth of 829.41 GB/sec, which drops to 97.47 GB/sec for large uncached blocks. In database and web serving tests, the instance handles 16.8 million Redis SET operations per second and delivers a static web serving throughput of 22.26 GB/sec. For lightweight machine learning tasks, the system processes 135M parameter LLM prompts at 911.07 tokens per second, though performance scales down to 32.48 tokens per second for 7B parameter models.",
-    "From a resource density perspective, the m6idn.4xlarge offers a balanced hardware profile, combining dedicated compute resources with high-speed local NVMe storage and enhanced networking. This configuration is qualitatively cost-efficient for workloads that require high-speed local scratch space and consistent network throughput without the overhead of external storage. The instance is suited for database operations, web serving, software compilation, and moderate data processing tasks."
+    "Amazon Web Services m6idn.4xlarge is a general-purpose, Nitro-based virtual server built on Intel Xeon 8375C processors running at 3.5 GHz. Configured with 16 vCPUs across 8 physical cores with simultaneous multithreading, it delivers a standard 1:4 vCPU-to-RAM ratio with 64.0 GB of DDR4 memory clocked at 3 GHz. The instance includes a bundled 950 GB NVMe SSD instance store volume alongside dedicated network bandwidth with a baseline speed of 25 Gbps. No hardware GPUs are included.",
+    "Benchmark results place the m6idn.4xlarge consistently in the middle 50% across CPU, memory, and application-level workloads. It achieves a Geekbench single-core score of 1648.0, a multi-core score of 9891.0, and a PassMark CPU score of 21074.8. Under stress-ng, it produces 1890.79 single-core and 15409.45 multi-core metrics. Memory subsystem tests report read-only throughput of 97.47 GB/sec and write bandwidth of 57.21 GB/sec for large 256 MB blocks, accompanied by a PassMark database score of 7782.69 and 16.8 million Redis SET operations per second.",
+    "The presence of high-speed local NVMe storage and 25 Gbps network bandwidth increases resource density and operational efficiency for I/O-intensive workloads, eliminating latency bottlenecks associated with purely network-attached volumes. However, as an instance store, the 950 GB NVMe volume is ephemeral, meaning data does not persist across instance stop and start cycles.",
+    "This server type is suitable for balanced production environments that require fast local scratch storage and high baseline network throughput, such as relational databases, in-memory caching tiers, batch processing, CI/CD runners, and medium-scale web serving."
   ],
-  "description": "Amazon Web Services m6idn.4xlarge is a general-purpose, network and EBS-optimized server instance running on the AWS Nitro hypervisor. It features a 16-vCPU Intel Xeon 8375C processor with a 3.5 GHz clock speed, 64.0 GB of DDR4 memory, and a bundled 950 GB local NVMe SSD. The instance delivers a baseline network bandwidth of 25 Gbps. In performance benchmarks, the server demonstrates balanced capabilities, achieving a stress-ng multi-core score of 15409.45 and handling 16.8 million Redis SET operations per second. Its memory subsystem provides up to 829.41 GB/sec cached read bandwidth. Lacking a dedicated GPU, it is designed for non-accelerated workloads. The combination of dedicated compute, high-speed local storage, and robust networking makes this instance well-suited for database hosting, static web serving, software compilation, and general-purpose enterprise applications.",
-  "og_description": "Amazon Web Services m6idn.4xlarge is a general-purpose instance featuring 16 vCPUs, 64 GB DDR4 RAM, a 950 GB local NVMe SSD, and 25 Gbps baseline network bandwidth on the Nitro hypervisor.",
-  "meta_description": "Amazon Web Services m6idn.4xlarge is a 16-vCPU general-purpose server with 64 GB RAM, 950 GB NVMe SSD, and 25 Gbps networking.",
-  "tagline": "A balanced x86 server featuring dedicated Intel Xeon compute, high-speed local NVMe storage, and optimized 25 Gbps networking.",
+  "description": "Amazon Web Services m6idn.4xlarge is a general-purpose instance featuring 16 vCPUs (8 physical cores) powered by an Intel Xeon 8375C processor at 3.5 GHz on the Nitro hypervisor. It provides 64.0 GB of DDR4 RAM, a 25 Gbps network baseline, and 950 GB of attached NVMe SSD instance storage, without hardware GPU acceleration. In benchmark evaluations, it demonstrates consistent mid-range performance, recording a Geekbench multi-core score of 9891.0, 16.8 million Redis SET operations per second, and 22.26 GB/sec in static web serving throughput. The inclusion of bundled local NVMe storage enhances I/O-bound workflows, though the storage is ephemeral and requires consideration for persistence. The instance is well matched for mid-sized database workloads, distributed caching, web application hosting, and data processing tasks requiring balanced compute and high network bandwidth.",
+  "og_description": "Amazon Web Services m6idn.4xlarge is a general-purpose instance offering 16 Intel Xeon vCPUs, 64 GB RAM, 950 GB local NVMe SSD storage, and 25 Gbps networking for database and web workloads.",
+  "meta_description": "Amazon Web Services m6idn.4xlarge features 16 vCPUs, 64 GB RAM, 950 GB local NVMe storage, and 25 Gbps networking for data-intensive web workloads.",
+  "tagline": "Balanced x86 compute paired with 64 GB memory, high-speed baseline networking, and dedicated local NVMe instance storage.",
   "bullet_points": [
-    "Intel Xeon 8375C processor with 16 dedicated vCPUs and 3.5 GHz clock speed",
-    "64.0 GB of DDR4 memory providing 4.0 GB per core",
-    "Bundled 950 GB local NVMe SSD instance store volume",
-    "25 Gbps baseline network bandwidth with EBS optimization",
-    "Handles 16.8 million Redis SET operations per second and 22.26 GB/sec web serving",
-    "Suited for database hosting, software compilation, and general-purpose workloads"
+    "16 vCPUs across 8 physical cores via Intel Xeon 8375C at 3.5 GHz",
+    "64.0 GB DDR4 system memory at 3 GHz (1:4 vCPU-to-RAM ratio)",
+    "Bundled 950 GB local NVMe SSD storage for low-latency I/O",
+    "Baseline network bandwidth of 25 Gbps on the AWS Nitro hypervisor",
+    "Achieves 16.8 million Redis SET operations per second in benchmark testing",
+    "Suited for databases, caching layers, batch ETL, and web serving"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database",
-    "Compute Optimized"
+    "Storage & Database"
   ]
 }

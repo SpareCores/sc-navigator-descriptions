@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D16alds_v6 is an x86_64 server belonging to the Daldv6 family, powered by an AMD EPYC 9V74 processor. It features 16 dedicated vCPUs mapped to 8 physical cores with hyper-threading enabled, operating at a clock speed of 3.7 GHz. The memory configuration consists of 32.0 GB of RAM, yielding a resource density of 2.0 GB per core. Local storage is provided via a bundled 945 GB NVMe SSD, and the instance is premium storage capable.",
-    "Benchmark evaluations reveal strong single-core performance, with stress-ng single-core CPU and Geekbench single-core scores placing in the top 25%. Multi-core performance, including stress-ng multi-core and Geekbench multi-core metrics, falls within the average range. Memory bandwidth tests show average performance for cached small-block reads and large-block writes, but large-block uncached reads are relatively weak, placing in the bottom 25%. Text processing and small-model LLM text generation are notable strengths, scoring in the top tier.",
-    "The D16alds_v6 offers a specialized hardware profile that trades memory capacity for compute density. With only 2.0 GB of RAM per vCPU, it provides a cost-efficient alternative for workloads that require high CPU clock speeds and fast local NVMe storage without the overhead of a large memory footprint. However, the low memory-to-vCPU ratio and weak uncached large-block memory read bandwidth represent clear tradeoffs for memory-intensive applications.",
-    "This server is suited for compute-bound tasks with moderate memory requirements, such as software compilation, text processing, web serving, and small-scale language model inference. The integrated 945 GB NVMe SSD also makes it appropriate for database operations and localized file processing where high-speed storage is required."
+    "Microsoft Azure D16alds_v6 is a general-purpose, low-memory virtual machine powered by an AMD EPYC 9V74 processor operating at 3.7 GHz. Built on the x86_64 architecture and managed via Microsoft Hyper-V, the instance allocates 16 dedicated vCPUs spanning 8 physical cores with simultaneous multithreading enabled. The CPU subsystem features 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, complemented by vector extensions including AVX-512, AVX-512 VNNI, and AVX-512 BF16, alongside hardware acceleration for AES and SHA cryptography.",
+    "Memory capacity is configured at 32.0 GB, providing a lean 2.0 GB per vCPU allocation that aligns more closely with compute-heavy profiles than standard 1:4 memory configurations. For high-speed local data caching and scratch space, the instance includes an integrated 945 GB NVMe SSD. GPU acceleration is absent with zero onboard graphics processors, and default allocations do not include complimentary public IPv4 addresses.",
+    "Benchmark results highlight strong single-threaded performance, with Geekbench single-core reaching 2100.0 and stress-ng single-core scoring 3080.38, both situating the instance in the top quartile. Text processing and small-model lightweight LLM text generation also demonstrate upper-tier throughput. In contrast, multi-threaded tasks\u2014such as Geekbench multi-core (12444.0) and stress-ng multi-core (24653.38)\u2014deliver median results. Memory bandwidth for large uncached blocks tests in the lower quartile at 36.92 GB/sec, indicating a performance penalty during large contiguous read sweeps outside cache bounds.",
+    "The constrained memory footprint delivers strong resource efficiency for CPU-bound computations that do not justify paying for surplus RAM. With integrated local NVMe storage and solid single-thread throughput, the D16alds_v6 is suitable for static web serving, Clang compilation pipelines, batch text processing, continuous integration agents, and microservices requiring fast local disk IOPS."
   ],
-  "description": "The Microsoft Azure D16alds_v6 is an x86_64 virtual machine from the Daldv6 family, powered by an AMD EPYC 9V74 processor running at 3.7 GHz. It features 16 dedicated vCPUs, 32.0 GB of RAM, and a bundled 945 GB NVMe SSD. This server exhibits strong single-core CPU and text processing performance, placing in the top 25% of benchmarks, while multi-core operations and memory bandwidth generally perform in the average tier. With a low memory-to-vCPU ratio of 2.0 GB per core, it represents a cost-efficient option for compute-centric workloads that do not demand massive memory allocations. The D16alds_v6 is well-suited for software compilation, web serving, database operations, and small-scale language model inference.",
-  "og_description": "Microsoft Azure D16alds_v6 is an x86_64 server featuring 16 AMD EPYC vCPUs, 32 GB RAM, and a 945 GB NVMe SSD, delivering strong single-core performance for compute-focused workloads.",
-  "meta_description": "Microsoft Azure D16alds_v6 features 16 AMD EPYC vCPUs, 32 GB RAM, and a 945 GB NVMe SSD, optimized for compute-heavy, low-memory workloads.",
-  "tagline": "A compute-focused virtual machine featuring high-speed AMD EPYC processing, integrated NVMe SSD storage, and a streamlined memory-to-core ratio.",
+  "description": "Microsoft Azure D16alds_v6 is an x86_64 virtual instance configured with 16 dedicated vCPUs (8 physical cores at 3.7 GHz) using the AMD EPYC 9V74 processor and 32.0 GB of system memory. Designed with a compact 2.0 GB per vCPU ratio, it integrates 945 GB of direct-attached NVMe SSD storage and supports advanced instruction sets such as AVX-512 and crypto acceleration. Synthetic testing indicates upper-quartile single-core metrics in Geekbench and stress-ng, paired with average multi-threaded throughput and moderate memory bandwidth. Lacking dedicated GPUs, the instance offers cost-efficient compute density by trimming surplus RAM overhead. It is suited for CI/CD compilation, text processing, microservices, and static web serving workloads requiring low-latency scratch storage.",
+  "og_description": "Microsoft Azure D16alds_v6 features 16 vCPUs on an AMD EPYC 9V74 at 3.7 GHz, 32 GB RAM, and a 945 GB NVMe SSD. It delivers top-quartile single-core performance for compute-focused workloads.",
+  "meta_description": "Microsoft Azure D16alds_v6 features 16 vCPUs (AMD EPYC 9V74), 32 GB RAM, and a 945 GB NVMe SSD, delivering strong single-core compute performance.",
+  "tagline": "Dedicated AMD EPYC compute featuring 16 vCPUs, lean memory density, and 945 GB local NVMe storage for disk-intensive batch tasks.",
   "bullet_points": [
-    "16 dedicated vCPUs powered by a 3.7 GHz AMD EPYC 9V74 processor",
-    "32.0 GB of system memory providing 2.0 GB per core",
-    "Bundled 945 GB NVMe SSD local storage",
-    "Strong single-core CPU and text processing benchmark performance",
-    "Optimized for software compilation, web serving, and database workloads"
+    "16 dedicated vCPUs on 8 physical AMD EPYC 9V74 cores at 3.7 GHz",
+    "32.0 GB system RAM (compact 2.0 GB per vCPU memory allocation)",
+    "Bundled 945 GB local NVMe SSD high-speed scratch disk",
+    "Top-quartile single-core performance with AVX-512 instruction support",
+    "Tailored for build environments, text processing, and disk-intensive microservices"
   ],
   "categories": [
     "Compute Optimized",
+    "General Purpose",
     "Storage & Database"
   ]
 }

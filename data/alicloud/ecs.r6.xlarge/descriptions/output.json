@@ -1,23 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.r6.xlarge is a memory-optimized instance built on the KVM hypervisor. It is equipped with an Intel Xeon 8269CY processor operating at a clock speed of 2.5 GHz on the x86_64 architecture. The hardware configuration provides 4 dedicated vCPUs from 2 physical cores with hyper-threading, 32.0 GB of RAM, and no local storage. It features a baseline network bandwidth of 2 Gbps.",
-    "Benchmark results show a clear tradeoff between memory capacity and processing performance. The instance achieves average scores in Geekbench single-core and Passmark memory tests. However, its multi-core CPU performance, stress-ng benchmarks, and Passmark database operations are positioned in the bottom 25% tier. Cryptographic, compression, and decompression tasks also register weak performance, with bzip3 multi-threaded decompression falling into the bottom 10% tier.",
-    "From a qualitative cost-efficiency perspective, the ecs.r6.xlarge offers a high density of memory relative to its compute resources, making it suitable for memory-bound workloads that do not require intensive CPU processing. Recommended workloads include in-memory caching, lightweight database operations, and enterprise applications with a larger memory footprint."
+    "Alibaba Cloud ecs.r6.xlarge is a memory-optimized cloud server instance built on the x86_64 architecture using the KVM hypervisor. The virtual machine is configured with 4 dedicated vCPUs distributed across 2 physical cores on an Intel Xeon Platinum 8269CY processor clocked at 2.5 GHz. Computing capabilities are reinforced with 32 KB of L1 data cache, 1.0 MB of L2 cache, and 35 MB of shared L3 cache. In addition, the CPU provides support for vector and cryptographic instruction sets, including AVX-512, VNNI, and AES-NI.",
+    "Memory capacity is the defining specification of this instance, delivering 32.0 GB of RAM, which equates to an 8.0 GB per vCPU allocation. The instance does not include integrated local storage, requiring network-attached storage solutions for operating system disks and persistent file systems. Network connectivity is configured with a baseline throughput of 2 Gbps. The server operates without dedicated GPU acceleration hardware and does not include complimentary public IPv4 addresses.",
+    "Benchmark profiles reflect the instance's resource distribution. Single-core processor results fall within typical ranges for this CPU generation, while multi-core compute tests and CPU-bound operations such as multi-threaded compression and software compilation show lower relative output due to the modest 4 vCPU allocation. Memory subsystems maintain steady throughput, recording uncached sequential read and write speeds of 26.5 GB/s and 23.08 GB/s, alongside an average PassMark memory benchmark score. The cost efficiency profile is favorable for environments constrained by memory footprint rather than raw compute cycles, allowing operations to scale RAM usage without provisioning unneeded processor cores.",
+    "Given its high memory-to-vCPU ratio and network-reliant disk architecture, the ecs.r6.xlarge is suited for in-memory key-value stores such as Redis, caching layers, message queues, and memory-heavy web service components. It is less suited for compute-intensive tasks, parallel compiling workloads, or intensive batch processing that demand substantial CPU density."
   ],
-  "description": "Alibaba Cloud ecs.r6.xlarge is a memory-optimized instance featuring 4 dedicated vCPUs and 32.0 GB of RAM, powered by an Intel Xeon 8269CY processor at 2.5 GHz. Built on the x86_64 architecture with the KVM hypervisor, this server offers a high memory-to-vCPU ratio of 8.0 GB per core, though it lacks local storage and GPU capabilities. Performance benchmarks reveal a distinct tradeoff: while Geekbench single-core and Passmark memory scores reach average levels, overall multi-core CPU performance, database operations, and file decompression benchmarks fall into the lower 25% tier. This hardware profile is qualitatively cost-efficient for memory-intensive applications that require substantial RAM capacity but have modest processing demands. It is suitable for workloads such as in-memory caching, small databases, and memory-bound enterprise applications.",
-  "og_description": "Alibaba Cloud ecs.r6.xlarge is a memory-optimized KVM instance configured with 4 dedicated Intel Xeon vCPUs, 32 GB of RAM, and no local storage. It provides average single-core speeds but weak multi-core compute.",
-  "meta_description": "Alibaba Cloud ecs.r6.xlarge is a memory-optimized KVM instance featuring 4 dedicated Intel Xeon vCPUs, 32 GB of RAM, and a 2 Gbps baseline network speed.",
-  "tagline": "A memory-optimized virtual server featuring high RAM density and dedicated processing cores for memory-bound workloads.",
+  "description": "Alibaba Cloud ecs.r6.xlarge is a memory-optimized instance running on the KVM hypervisor, engineered for workloads requiring an elevated memory-to-compute ratio. The instance features 4 dedicated virtual CPUs derived from 2 physical cores of an Intel Xeon Platinum 8269CY processor operating at 2.5 GHz, paired with 32 GB of system memory. It provides an 8 GB per vCPU distribution, supported by hardware extensions including AVX-512 and AES instructions. The configuration does not bundle local disk storage and lacks GPU acceleration, relying on network-attached block storage and offering a baseline network throughput of 2 Gbps. Benchmark evaluations indicate modest compute capacity alongside standard memory performance, with uncached read speeds reaching 26.5 GB/s. Because the instance pairs low total core density with high memory capacity, it provides cost-efficient hosting for memory-bound services such as Redis instances, intermediate caching layers, and medium-scale relational databases that do not demand heavy parallel processing power.",
+  "og_description": "Alibaba Cloud ecs.r6.xlarge delivers 4 dedicated vCPUs on an Intel Xeon 8269CY processor paired with 32 GB of RAM and 2 Gbps baseline bandwidth, optimized for in-memory caching and databases.",
+  "meta_description": "Alibaba Cloud ecs.r6.xlarge is a memory-optimized virtual machine featuring 4 vCPUs, 32 GB RAM, and a 2 Gbps network baseline for memory-intensive workloads.",
+  "tagline": "A balanced memory-optimized instance providing a high memory-to-core ratio for in-memory caching, staging databases, and data processing environments.",
   "bullet_points": [
-    "Intel Xeon 8269CY processor with 4 dedicated vCPUs and 32.0 GB RAM",
-    "High memory-to-vCPU ratio of 8.0 GB per core",
-    "KVM hypervisor architecture with 2 Gbps baseline network bandwidth",
-    "No local storage or GPU accelerators included",
-    "Average single-core and memory performance paired with lower multi-core compute speeds",
-    "Suited for in-memory caching, light database tasks, and memory-intensive applications"
+    "Intel Xeon Platinum 8269CY processor with 4 dedicated vCPUs across 2 physical cores",
+    "32 GB system memory providing an 8:1 memory-to-vCPU allocation ratio",
+    "2 Gbps baseline network bandwidth without integrated local storage",
+    "Hardware support for AVX-512 vector extensions and cryptographic acceleration",
+    "Tailored for in-memory databases, Redis key-value stores, and caching tiers"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

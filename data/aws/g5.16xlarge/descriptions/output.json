@@ -1,23 +1,24 @@
 {
   "page": [
-    "Amazon Web Services g5.16xlarge is a graphics-intensive virtual machine instance powered by the AWS Nitro hypervisor. It features an x86_64 architecture with 64 dedicated vCPUs and 32 physical cores provided by an AMD EPYC 7R32 processor operating at 3.3 GHz. The system is equipped with 256.0 GB of DDR4 memory running at 3 GHz, a single NVIDIA Ampere A10G GPU with 22 GB of VRAM, and 1900 GB of local NVMe SSD storage. Networking capabilities include a baseline bandwidth of 25 Gbps.",
-    "Benchmark results indicate a distinct performance profile. While single-core CPU performance is rated as poor in stress-ng tests, multi-core CPU performance and memory bandwidth fall within the average range. Conversely, the instance demonstrates strong capabilities in PassMark CPU and memory evaluations, alongside strong Geekbench ray tracing performance. In language model tasks, the server achieves top-tier results for prompt processing and text generation with small (135M) and medium (7B) models. However, a notable performance tradeoff is observed with large (70B) models, where text generation speed drops to a weak rating of 2.72 tokens per second despite strong prompt processing.",
-    "From a qualitative cost-efficiency perspective, the g5.16xlarge bundles high-density GPU acceleration, local NVMe storage, and a high vCPU count, making it a resource-dense option for specialized workloads without requiring separate storage provisioning. This hardware composition is highly suited for GPU-accelerated applications, machine learning inference for small-to-medium models, ray tracing, and data-intensive tasks requiring fast local storage."
+    "Amazon Web Services g5.16xlarge is an accelerated computing instance engineered for graphics-intensive applications and machine learning inference. Built on the AWS Nitro System, the instance features an AMD EPYC 7R32 processor providing 64 vCPUs (32 physical cores with multithreading) running at 3.3 GHz on the x86_64 architecture. System memory is sized at 256.0 GB of DDR4 RAM running at 3 GHz, maintaining a 4.0 GB per vCPU ratio. A key component of this instance is the single NVIDIA A10G Tensor Core GPU equipped with 22 GB of dedicated VRAM. Storage includes 1900 GB of local NVMe SSD capacity, supplemented by a 25 Gbps baseline network link.",
+    "Benchmark results highlight strong specialized compute while demonstrating clear architectural trade-offs. The single NVIDIA A10G GPU delivers top-tier performance for smaller and medium-sized language models, sustaining prompt processing speeds of 9,378.63 tokens/sec on 135M models and 2,887.79 tokens/sec on 7B models, with corresponding text generation reaching 426.91 tokens/sec and 94.6 tokens/sec respectively. However, 70B parameter models show weak text generation throughput at 2.72 tokens/sec due to the 22 GB VRAM limit. On the CPU side, PassMark testing yields strong results for overall CPU score (55,615.41), encryption tests (68,193.38), and extended instructions (56,952.48). Conversely, single-core stress-ng tests place the CPU in the lower 10th percentile (766.79), confirming that performance gains are concentrated in parallelized and vector workloads rather than single-threaded tasks.",
+    "Qualitatively, the g5.16xlarge offers balanced resource density by packaging dedicated CPU cores, substantial host memory, fast local NVMe storage, and an enterprise GPU into a single virtual machine. This configuration eliminates external storage latencies and optimizes operational expenditure for workloads that do not demand multi-GPU clusters. It is directly suited for small-to-medium LLM inference, ray tracing rendering pipelines, video transcode tasks, graphics-heavy virtual workstations, and combined compute-storage pipelines."
   ],
-  "description": "Amazon Web Services g5.16xlarge is a graphics-intensive instance featuring 64 dedicated vCPUs from an AMD EPYC 7R32 processor running at 3.3 GHz, 256.0 GB of DDR4 memory, and a baseline network bandwidth of 25 Gbps. It includes a bundled NVIDIA Ampere A10G GPU with 22 GB of VRAM and 1900 GB of local NVMe SSD storage. Performance benchmarks show a contrast between poor single-core CPU metrics and top-tier LLM inference speeds for small and medium models. While PassMark CPU and memory scores are strong, text generation for large 70B models is weak. This configuration offers qualitative cost efficiency by combining dedicated compute, high-speed local storage, and GPU acceleration on the Nitro hypervisor. It is best suited for machine learning inference, ray tracing, and workloads requiring high-density GPU and storage resources.",
-  "og_description": "Amazon Web Services g5.16xlarge is a graphics-intensive instance featuring 64 vCPUs, 256 GB RAM, a 1900 GB NVMe SSD, and an NVIDIA Ampere A10G GPU with 22 GB VRAM for accelerated workloads.",
-  "meta_description": "Amazon Web Services g5.16xlarge features 64 vCPUs, 256 GB RAM, a 1900 GB NVMe SSD, and an NVIDIA A10G GPU for graphics and machine learning.",
-  "tagline": "An accelerated virtual server combining dedicated AMD EPYC processors, local NVMe storage, and NVIDIA Ampere graphics for demanding machine learning workloads.",
+  "description": "Amazon Web Services g5.16xlarge is an accelerated computing instance designed for GPU-centric workloads and parallel processing. It features 64 vCPUs powered by an AMD EPYC 7R32 processor, 256.0 GB of DDR4 memory, a 1900 GB local NVMe SSD, and 25 Gbps network bandwidth. Acceleration is delivered via a single NVIDIA A10G GPU with 22 GB of VRAM. Benchmark data exhibits top-tier performance for small-to-medium large language model inference (94.6 tokens/sec generation on 7B models) and strong ray tracing rendering, alongside solid multi-core PassMark CPU and encryption metrics. However, single-core CPU throughput remains low, and large 70B parameter models encounter throughput limitations due to VRAM constraints. This configuration offers high resource density for workloads combining medium-scale machine learning inference, graphics rendering, and local NVMe storage access.",
+  "og_description": "Amazon Web Services g5.16xlarge features 64 vCPUs, 256 GB RAM, a 1900 GB NVMe SSD, and an NVIDIA A10G GPU with 22 GB VRAM, built for GPU inference, ray tracing, and compute workloads.",
+  "meta_description": "Amazon Web Services g5.16xlarge features 64 AMD vCPUs, 256 GB RAM, 1900 GB NVMe SSD, and an NVIDIA A10G GPU for accelerated graphics and inference.",
+  "tagline": "Accelerated computing instance featuring a 22 GB NVIDIA A10G GPU, 64 vCPUs, and integrated high-speed NVMe storage.",
   "bullet_points": [
-    "64 dedicated AMD EPYC vCPUs and 256 GB of DDR4 memory",
-    "Bundled NVIDIA Ampere A10G GPU with 22 GB of VRAM",
-    "1900 GB of high-speed local NVMe SSD storage",
-    "Top-tier prompt processing and text generation for small and medium LLMs",
-    "25 Gbps baseline network bandwidth powered by the Nitro hypervisor",
-    "Well-suited for ray tracing, machine learning inference, and graphics-intensive applications"
+    "64 dedicated AMD EPYC 7R32 vCPUs (32 cores) clocked at 3.3 GHz",
+    "Single NVIDIA A10G GPU with 22 GB VRAM for accelerated computing",
+    "256.0 GB DDR4 memory paired with 1900 GB local NVMe SSD storage",
+    "25 Gbps baseline network bandwidth running on AWS Nitro System",
+    "Top-tier inference performance on 135M and 7B parameter machine learning models",
+    "Well suited for ray tracing, graphics workstations, and medium LLM serving"
   ],
   "categories": [
     "GPU Accelerated",
-    "General Purpose"
+    "Compute Optimized",
+    "Storage & Database"
   ]
 }

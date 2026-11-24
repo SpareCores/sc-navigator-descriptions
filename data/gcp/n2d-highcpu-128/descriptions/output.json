@@ -1,22 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform n2d-highcpu-128 is an x86_64 architecture server powered by an AMD EPYC 7B13 processor. It features 128 dedicated vCPUs mapped to 64 physical cores with 2 threads per core. The system is equipped with 128.0 GB of system memory, yielding a low memory-to-core ratio of 1.0 GB per vCPU. This instance does not include local storage or integrated GPU hardware, and it offers zero complimentary public IPv4 addresses.",
-    "Benchmark data indicates top-tier multi-core CPU performance, with a stress-ng multi-core score of 172,613.68 and a PassMark CPU score of 89,602.52. Memory bandwidth is highly efficient for small cached blocks, reaching 8,132.17 GB/sec, while large-block uncached reads and writes achieve strong rates of 263.09 GB/sec and 131.24 GB/sec respectively. The server also demonstrates strong capabilities in cryptography, database operations, and static web serving. However, due to the limited memory allocation per core, large-scale LLM text generation is a notable bottleneck, with the 70B model text generation falling into the bottom 25% at 2.67 tokens per second.",
-    "From a cost-efficiency perspective, the n2d-highcpu-128 provides high compute density relative to its memory footprint, making it a viable option for CPU-bound tasks that do not require massive RAM arrays. It is highly suited for parallel processing workloads, software compilation, ray tracing, and high-throughput web serving. Conversely, it is less optimal for memory-intensive databases or large-scale LLM inference."
+    "Google Cloud Platform n2d-highcpu-128 is a compute-focused instance within the N2D family, provisioned with 128 vCPUs and 128 GB of RAM. The instance runs on dedicated AMD EPYC 7B13 processors utilizing the x86_64 architecture across 64 physical cores with two threads per core. Each core provides 32 KB of L1 data cache and 0.5 MB of L2 cache, supported by 32 MB of shared L3 cache. Instruction set extensions include AVX, AES, VAES, SHA-NI, BMI2, and FMA, while AVX-512 and AMX extensions are absent. The configuration does not include GPUs or bundled local storage, requiring attached persistent storage volumes.",
+    "Benchmark results demonstrate significant parallel compute capabilities. In stress-ng, multi-core CPU throughput reaches 172613.68, placing it in the top 10%, while single-core performance ranks in the top 25% at 2694.18. PassMark scores reflect similar strengths, achieving 89602.52 in overall CPU, 136640.77 in cryptographic tests, and 14281.93 in physics simulations. Geekbench evaluations show top-tier ray tracing results at 100141.0 and solid clang software compilation marks at 52465.0. Memory throughput sustains 263.09 GB/sec for uncached 256 MB reads and 131.24 GB/sec for writes.",
+    "Hardware tradeoffs emerge from the low memory-to-vCPU ratio of 1.0 GB per vCPU. While static web serving achieves 48.86 GB/sec and Redis SET operations handle 120.13 million operations per second, memory-constrained data science and large model execution show limitations. Small and medium language models process prompts efficiently, but large 70B model token generation drops to a weak 2.67 tokens per second due to memory and accelerator constraints. Qualitative cost efficiency is driven by high CPU density per unit of memory rather than massive RAM scaling.",
+    "Workloads best aligned with the n2d-highcpu-128 include large-scale CI/CD build farms, batch video encoding, parallel scientific simulations, cryptography-heavy operations, and high-concurrency microservices that prioritize raw processor parallelism over in-memory database capacity."
   ],
-  "description": "Google Cloud Platform n2d-highcpu-128 is a compute-optimized x86_64 server configured with 128 dedicated vCPUs and 128.0 GB of RAM, powered by an AMD EPYC 7B13 processor. With a 1:1 ratio of gigabytes to vCPUs, this instance is designed for highly parallel, CPU-bound tasks. It lacks local storage and GPU accelerators. Benchmarks show top-tier multi-core CPU performance, strong memory bandwidth, and excellent ray tracing capabilities. However, the low memory-to-core ratio limits its effectiveness for memory-heavy applications, as evidenced by weak performance in large LLM text generation. This server is highly efficient for parallel processing, software compilation, and static web serving, but is not recommended for memory-intensive databases.",
-  "og_description": "Google Cloud Platform n2d-highcpu-128 is a compute-optimized server with 128 AMD EPYC vCPUs and 128 GB RAM, delivering top-tier multi-core performance for parallel workloads but limited by a 1 GB per vCPU memory ratio.",
-  "meta_description": "Google Cloud Platform n2d-highcpu-128 features 128 AMD EPYC vCPUs and 128 GB RAM, offering top-tier multi-core performance for compute-heavy workloads.",
-  "tagline": "A high-density compute server featuring 128 dedicated AMD EPYC vCPUs, optimized for parallel processing and CPU-bound workloads with minimal memory overhead.",
+  "description": "Google Cloud Platform n2d-highcpu-128 is a compute-centric server powered by an AMD EPYC 7B13 processor built on the x86_64 architecture. It provides 128 vCPUs derived from 64 physical cores alongside 128 GB of system memory, yielding a 1:1 vCPU-to-RAM ratio. The server includes no GPUs and offers no local disk storage, necessitating remote persistent block storage. Benchmark assessments establish strong multi-threaded capabilities, registering top-tier results in multi-core stress testing, cryptographic operations, physics calculations, and ray tracing. However, with only 1.0 GB of RAM per vCPU and lack of AVX-512 extensions, memory-intensive processes and large-model LLM generation scale less effectively. The instance delivers robust efficiency for CPU-dense tasks, making it suited for distributed compilation, parallel batch processing, encryption workloads, and web serving clusters.",
+  "og_description": "Google Cloud Platform n2d-highcpu-128 features 128 vCPUs on AMD EPYC 7B13 processors and 128 GB RAM. Designed for CPU-heavy tasks, it excels in multi-threaded computation, CI/CD, and ray tracing.",
+  "meta_description": "Google Cloud Platform n2d-highcpu-128 offers 128 vCPUs on AMD EPYC 7B13, 128 GB RAM, and high multi-core performance for compute-intensive workloads.",
+  "tagline": "High-density 128-vCPU AMD EPYC compute platform configured with 1 GB of memory per core for parallel batch workloads.",
   "bullet_points": [
-    "Powered by AMD EPYC 7B13 processor with 128 dedicated vCPUs and 64 physical cores.",
-    "Features 128.0 GB of RAM, establishing a compute-heavy 1:1 vCPU-to-RAM ratio.",
-    "Delivers top-tier multi-core CPU performance and high-speed cached memory bandwidth.",
-    "Lacks local storage and GPU accelerators, requiring network-attached storage.",
-    "Best suited for software compilation, ray tracing, and high-throughput web serving.",
-    "Exhibits performance trade-offs in memory-intensive tasks and large LLM text generation."
+    "128 vCPUs powered by 64-core AMD EPYC 7B13 x86_64 processor",
+    "128 GB of total system RAM providing a lean 1:1 vCPU-to-RAM ratio",
+    "Zero bundled local disk storage and no GPU accelerators",
+    "Top-tier multi-core compute, encryption, and ray tracing benchmark performance",
+    "Targeted for parallel compilation, batch jobs, cryptography, and web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

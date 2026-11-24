@@ -1,23 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.r7a.8xlarge is a memory-optimized instance powered by the KVM hypervisor. It features 32 dedicated vCPUs mapped from 16 physical cores of an AMD EPYC 7T83 processor running at 2.55 GHz. The system is equipped with 256.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or dedicated GPU hardware, relying on network-attached storage and a baseline network bandwidth of 8 Gbps.",
-    "Benchmark results show strong performance in single-core CPU execution via stress-ng and high memory efficiency in PassMark memory tests. However, multi-core CPU performance and memory bandwidth for large, potentially uncached blocks fall into the lower percentiles. Text generation using small language models demonstrates strong throughput, while database operations, static web serving, and software compilation align with average performance tiers.",
-    "The instance offers qualitative cost efficiency for memory-intensive workloads that do not require local SSD storage or GPU acceleration. The high memory density relative to the 32 vCPUs makes it suitable for in-memory databases, caching layers like Redis, and memory-bound data processing tasks. However, the weak large-block memory bandwidth represents a performance tradeoff for workloads requiring massive sequential memory throughput."
+    "Alibaba Cloud ecs.r7a.8xlarge is a memory-optimized virtual machine instance deployed on the KVM hypervisor. It is powered by the AMD EPYC 7T83 processor based on the x86_64 architecture, operating at a base frequency of 2.55 GHz. The instance provisions 32 dedicated vCPUs mapped across 16 physical cores with simultaneous multithreading enabled. The cache topology provides 32 KB of L1 data cache per core, 0.5 MB of L2 cache, and a 32 MB shared L3 cache. It includes standard cryptographic instructions such as AES, VAES, and SHA-NI, as well as AVX, BMI2, and FMA flags, while lacking AVX-512 and AMX instruction extensions.",
+    "The system is equipped with 256.0 GB of RAM, offering a high memory-to-vCPU ratio of 8.0 GB per vCPU. Hardware configuration details include zero integrated GPUs and no bundled local storage, requiring network-attached storage solutions for persistent disk state. Network connectivity provides a baseline network bandwidth of 8 Gbps, with zero complimentary public IPv4 addresses included by default.",
+    "Empirical benchmarks demonstrate strong single-core compute performance, with stress-ng single-core reaching the top 25% of measured systems. PassMark overall memory testing also lands in the top quartile. However, larger memory transactions show limitations: uncached read bandwidth drops to 38.38 GB/sec and uncached write bandwidth registers at 17.58 GB/sec, placing large-block throughput in the bottom 25%. Multi-core compute benchmarks, including a PassMark CPU score of 35,668.95 and Geekbench multi-core score of 11,041.0, place consistently within the middle 50% tier.",
+    "From an architectural standpoint, the resource profile emphasizes high memory density without the overhead of specialized accelerators. Workload compatibility centers on large-footprint in-memory databases, enterprise caching layers such as Redis clusters, large ETL pipeline workers, and data analytics tasks where system RAM capacity outweighs raw uncached memory streaming requirements."
   ],
-  "description": "Alibaba Cloud ecs.r7a.8xlarge is a memory-optimized instance featuring 32 dedicated vCPUs and 256.0 GB of RAM, powered by an AMD EPYC 7T83 processor at 2.55 GHz. Built on the KVM hypervisor, this x86_64 server provides 8.0 GB of memory per core but lacks local storage and GPU accelerators, relying on an 8 Gbps baseline network bandwidth. Performance benchmarks indicate strong single-core CPU capabilities and high PassMark memory scores, contrasted by weaker large-block memory read and write bandwidths. Multi-core processing, database operations, and Redis transaction speeds remain in the average tier. This hardware profile is suited for memory-intensive workloads such as in-memory databases, caching layers, and enterprise applications that prioritize high RAM capacity over local storage speed.",
-  "og_description": "Alibaba Cloud ecs.r7a.8xlarge is a memory-optimized instance with 32 dedicated AMD EPYC vCPUs, 256.0 GB of RAM, and 8 Gbps network bandwidth, suited for in-memory databases and caching.",
-  "meta_description": "Alibaba Cloud ecs.r7a.8xlarge features 32 dedicated AMD EPYC vCPUs and 256.0 GB of RAM, optimized for memory-intensive enterprise workloads.",
-  "tagline": "A memory-optimized x86_64 server featuring high RAM density and dedicated AMD EPYC processing for memory-bound enterprise workloads.",
+  "description": "Alibaba Cloud ecs.r7a.8xlarge is a memory-optimized instance featuring 32 dedicated vCPUs (16 physical cores) powered by an AMD EPYC 7T83 processor at 2.55 GHz and 256.0 GB of RAM. Operating on the KVM hypervisor with an x86_64 architecture, it delivers a memory ratio of 8.0 GB per core. The server includes no GPUs and no onboard local storage, backed by an 8 Gbps baseline network bandwidth. Benchmarks highlight strong single-core compute and high PassMark memory performance, while multi-core workloads and static web serving rank in the middle tier. Uncached large-block memory read and write speeds exhibit lower relative bandwidth. With its dense RAM profile and dedicated CPU cores, ecs.r7a.8xlarge is suited for in-memory databases, distributed caching layers, enterprise backend services, and large data processing workloads that do not require local NVMe storage.",
+  "og_description": "Alibaba Cloud ecs.r7a.8xlarge is a memory-optimized instance with 32 dedicated AMD EPYC 7T83 vCPUs, 256 GB RAM, and 8 Gbps networking, tailored for large-footprint in-memory workloads.",
+  "meta_description": "Alibaba Cloud ecs.r7a.8xlarge delivers 32 dedicated AMD EPYC 7T83 vCPUs, 256 GB RAM, and 8 Gbps network bandwidth for memory-intensive enterprise tasks.",
+  "tagline": "Memory-optimized compute node with 256 GB RAM, 32 dedicated AMD EPYC vCPUs, and high capacity per core.",
   "bullet_points": [
-    "32 dedicated vCPUs powered by an AMD EPYC 7T83 processor at 2.55 GHz",
-    "256.0 GB of system memory providing 8.0 GB of RAM per core",
-    "Strong single-core CPU performance and PassMark memory benchmark scores",
-    "No local storage or GPU accelerators included in the hardware profile",
-    "8 Gbps baseline network bandwidth for external data transfers",
-    "Suited for in-memory databases, caching layers, and memory-bound applications"
+    "32 dedicated vCPUs (16 physical cores) powered by AMD EPYC 7T83 at 2.55 GHz",
+    "256.0 GB system RAM providing an 8:1 memory-to-core ratio",
+    "No bundled local storage or integrated GPU hardware",
+    "8 Gbps baseline network bandwidth running on KVM hypervisor",
+    "Strong single-core compute results and high overall memory benchmark scores",
+    "Well configured for in-memory databases, enterprise caching, and ETL processing"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

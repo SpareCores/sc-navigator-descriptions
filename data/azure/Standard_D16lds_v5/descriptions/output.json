@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D16lds_v5 is an x86_64 architecture server belonging to the DLDSv5 family. It features 16 dedicated vCPUs mapped to 8 physical Intel Xeon 8370C cores running at 2.8 GHz, with hyper-threading enabled. The system is equipped with 32.0 GB of RAM, yielding a resource density of 2.0 GB per vCPU. Local storage is provided via a bundled 614 GB SSD, and the instance is capable of utilizing Premium Storage.",
-    "Benchmark evaluations position this server in the average tier for most compute and memory operations. The stress-ng single-core and multi-core CPU performance scores are 1899.08 and 15528.25 respectively, while the Geekbench multi-core score reaches 9941.0. Memory bandwidth tests show a read-only small block cached speed of 840.03 GB/sec, dropping to 102.63 GB/sec for large uncached blocks. Notably, the server demonstrates strong performance in LLM text generation using a small 135M model, achieving 274.55 tokens/sec, which falls into the top 25% tier.",
-    "The primary tradeoff of the D16lds_v5 is its low memory-to-vCPU ratio of 2.0 GB per core, which limits its utility for memory-intensive applications but increases cost efficiency for compute-bound workloads that do not require massive RAM footprints. The inclusion of a 614 GB local SSD provides fast scratch space, reducing reliance on external storage for temporary files. This hardware profile is suitable for workloads such as web serving, software compilation, lightweight database operations, and small-scale language model inference."
+    "Microsoft Azure D16lds_v5 is a compute-focused general-purpose virtual machine designed for workloads requiring a lower memory-to-vCPU allocation with fast scratch storage. Operating on Microsoft Hyper-V, the instance is powered by an Intel Xeon 8370C processor running at a base clock of 2.8 GHz on the x86_64 architecture. It provides 16 dedicated virtual CPUs derived from 8 physical cores via hyperthreading, backed by 48 MB of L3 cache and hardware support for AVX-512 with VNNI. The system is equipped with 32 GB of system memory, yielding a 1:2 vCPU-to-memory ratio of 2 GB per core, along with 644 GB of direct-attached local SSD storage.",
+    "Benchmark evaluations position the D16lds_v5 within average ranges across standard CPU and system operations, returning a Geekbench multi-core score of 9941 and a PassMark CPU score of 21155.48. In vectorized execution, PassMark extended instructions reached 14154.52, supported by hardware AVX-512 extensions. Memory bandwidth achieves 102.63 GB/sec on uncached read blocks and 59.33 GB/sec on writes. For real-world services, it delivers 16.06 million Redis SET operations per second and 22.3 GB/sec in static web serving. Additionally, small language model text generation achieves a strong 274.55 tokens per second on a 135M parameter model.",
+    "The 1:2 memory configuration offers a cost-effective design for workloads that do not saturate standard 1:4 memory footprints, avoiding overprovisioned RAM expenses. However, the 32 GB memory limit poses constraints for large in-memory datasets or deep multi-tenant virtualization. The inclusion of 644 GB local SSD storage benefits applications demanding high-speed temporary caching, CI/CD compilation, batch data transformation, and distributed web serving tiers."
   ],
-  "description": "Microsoft Azure D16lds_v5 is an x86_64 server within the DLDSv5 family, featuring 16 dedicated vCPUs powered by an Intel Xeon 8370C processor running at 2.8 GHz. It is configured with 32.0 GB of RAM, providing a low memory-to-CPU ratio of 2.0 GB per core, and includes a 614 GB local SSD. Benchmark results place the server in the average tier for general compute, with a Geekbench multi-core score of 9941.0 and a stress-ng multi-core score of 15528.25. However, it exhibits strong performance in text generation for small language models, reaching 274.55 tokens/sec. The low-memory configuration offers a cost-efficient profile for compute-bound tasks that do not demand large memory footprints. This server is suitable for web serving, software compilation, and lightweight database operations.",
-  "og_description": "Microsoft Azure D16lds_v5 is a compute-optimized server with 16 vCPUs, 32 GB RAM, and a 614 GB local SSD, delivering balanced performance for web serving and software compilation.",
-  "meta_description": "Microsoft Azure D16lds_v5 features 16 Intel Xeon vCPUs, 32 GB RAM, and a 614 GB local SSD, optimized for compute-bound workloads.",
-  "tagline": "A compute-focused x86 server featuring dedicated Intel Xeon processors, low memory density, and integrated local SSD storage.",
+  "description": "Microsoft Azure D16lds_v5 is an x86_64 virtual machine featuring an Intel Xeon 8370C processor with 16 dedicated vCPUs, 32 GB of RAM, and 644 GB of local SSD storage without bundled GPUs. Configured with a 1:2 vCPU-to-RAM ratio, this low-memory profile targets tasks that prioritize multi-threaded computation over large in-memory arrays. Benchmark tests demonstrate steady average performance across standard compute metrics, such as a PassMark CPU score of 21155.48 and 16.06 million Redis SET operations per second, along with strong small-model LLM generation throughput. The bundled fast local storage assists applications requiring quick disk access. The D16lds_v5 is well suited for code compilation pipelines, batch processing, static web serving, and distributed cache nodes that do not demand extensive RAM.",
+  "og_description": "Microsoft Azure D16lds_v5 provides 16 dedicated vCPUs on an Intel Xeon 8370C, 32 GB RAM, and 644 GB local SSD storage, suited for compute-focused tasks and high-throughput batch processing.",
+  "meta_description": "Microsoft Azure D16lds_v5 features 16 vCPUs on an Intel Xeon 8370C, 32 GB RAM, and 644 GB local SSD for compute and batch workloads.",
+  "tagline": "Dedicated 16-vCPU compute instance with 32 GB RAM and fast integrated local SSD storage for efficient processing.",
   "bullet_points": [
-    "16 dedicated vCPUs powered by Intel Xeon 8370C processors at 2.8 GHz",
-    "32.0 GB of RAM providing a compute-optimized 2.0 GB per core ratio",
-    "Bundled 614 GB local SSD for high-speed temporary storage",
-    "Strong text generation performance of 274.55 tokens/sec with small LLM models",
-    "Suited for web serving, software compilation, and lightweight database tasks"
+    "16 dedicated vCPUs on an Intel Xeon 8370C processor at 2.8 GHz",
+    "32 GB system memory offering a lean 1:2 compute-to-RAM allocation",
+    "Bundled 644 GB local SSD for high-speed scratch space and caching",
+    "AVX-512 and VNNI instruction support for accelerated integer and vector operations",
+    "Well suited for software compilation, batch processing, and high-throughput web serving"
   ],
   "categories": [
     "Compute Optimized",
+    "General Purpose",
     "Storage & Database"
   ]
 }

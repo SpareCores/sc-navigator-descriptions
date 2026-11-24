@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services r8gb.xlarge is a memory-optimized instance built on the AWS Nitro hypervisor. It features 4 dedicated physical cores and 4 vCPUs powered by the AWS Graviton ARMv9 Neoverse-V2 processor running at 2.8 GHz. The instance is equipped with 32.0 GB of RAM, yielding a high memory-to-core ratio of 8.0 GB per core. It does not include local storage or GPU hardware, and it operates with a baseline network bandwidth of 8 Gbps.",
-    "Benchmark data reveals strong memory subsystem performance, with the PassMark memory score ranking in the top tier. Memory bandwidth tests show 462.34 GB/sec for cached small-block reads and 96.47 GB/sec for uncached large-block reads. CPU performance is generally average, with a Geekbench single-core score of 1857.0 and a multi-core score of 5966.0. However, the instance exhibits weaknesses in specific compute areas, scoring in the bottom 25% on the PassMark CPU test and the bottom 10% on the PassMark encryption test, which correlates with the lack of advanced vector and matrix extensions.",
-    "Given the high memory density and strong memory bandwidth, this instance is suited for memory-intensive workloads such as caching layers, database operations, and memory-bound data processing. Redis SET operations perform at an average level of 9.2 million operations per second. Conversely, the instance is less suited for heavy cryptographic tasks or complex LLM inference, where text generation speeds for a 7B model drop to a weak 6.56 tokens per second."
+    "Amazon Web Services r8gb.xlarge is a memory-optimized instance built on the AWS Nitro hypervisor architecture. It features 4 dedicated vCPUs mapped to 4 physical cores of an AWS ARMv9 Neoverse-V2 processor clocked at 2.8 GHz, with 1 thread per core. Memory capacity is 32.0 GB of RAM, yielding an allocation of 8.0 GB per vCPU. Hardware cache provisions include 64 KB of L1 data cache, 2 MB of L2 cache, and 36 MB of L3 cache. Cryptographic hardware acceleration is supported via AES flags. The instance provides an 8 Gbps baseline network bandwidth, contains no local storage, and includes no GPUs.",
+    "Benchmark results demonstrate strong memory performance, highlighted by a PassMark memory score of 3009.48, placing it in the top 10 percent of evaluated instances. Uncached large block read memory bandwidth reached 96.47 GB/sec, with write bandwidth measuring 44.25 GB/sec. Single-threaded bzip3 decompression ranked in the top 25 percent at 14.36 GB/sec, while multi-threaded decompression achieved 56.21 GB/sec. General compute metrics, including Geekbench single-core (1857.0) and multi-core (5966.0), as well as stress-ng compute tests, placed squarely in the middle 50 percent. Conversely, PassMark CPU tests recorded lower tiers, including a CPU score of 3947.59 and an encryption score of 751.5 in the bottom 10 percent, alongside reduced small-model LLM prompt processing speeds.",
+    "The r8gb.xlarge offers cost-efficient memory density per core, making it well-suited for RAM-intensive tasks that do not depend heavily on x86 vector extensions like AVX-512. Without bundled local disk storage, workloads must rely on network-attached storage or operate strictly in memory. Given the combination of high memory bandwidth, 8.0 GB of RAM per vCPU, and consistent Redis performance of 9.2 million operations per second, this instance is suitable for in-memory caching layers, medium-scale relational databases, real-time analytics engines, and general data processing services."
   ],
-  "description": "The Amazon Web Services r8gb.xlarge is a memory-optimized instance featuring 4 dedicated ARMv9 cores powered by the AWS Graviton Neoverse-V2 processor at 2.8 GHz. It is configured with 32.0 GB of RAM, providing a high 8.0 GB per core ratio, and operates on the Nitro hypervisor with a baseline network bandwidth of 8 Gbps. This instance does not include local storage or GPU resources. Benchmark evaluations highlight top-tier memory performance, with a PassMark memory score in the top 10% and cached read bandwidth reaching 462.34 GB/sec. However, CPU-bound cryptographic and extended instruction performance is weak, scoring in the bottom 25% or lower. The r8gb.xlarge is suited for memory-intensive applications such as database operations, Redis caching, and web serving, while being less optimal for compute-heavy or cryptographic workloads.",
-  "og_description": "Amazon Web Services r8gb.xlarge is an ARM64 memory-optimized instance with 4 Graviton Neoverse-V2 cores, 32 GB RAM, and 8 Gbps network speed, delivering top-tier memory performance for databases.",
-  "meta_description": "Amazon Web Services r8gb.xlarge is an ARM64 memory-optimized instance featuring 4 Graviton cores, 32 GB RAM, and top-tier memory performance.",
-  "tagline": "An ARM-based, memory-optimized virtual server delivering high memory bandwidth and dedicated physical cores for memory-intensive database and caching workloads.",
+  "description": "Amazon Web Services r8gb.xlarge is an ARM-based, memory-optimized instance running on the AWS Nitro hypervisor. It is powered by a 4-core AWS ARMv9 Neoverse-V2 processor running at 2.8 GHz with dedicated physical cores and 32.0 GB of RAM, establishing an 8:1 memory-to-vCPU ratio. The configuration features 36 MB of L3 cache, an 8 Gbps network baseline, and AES encryption support, but lacks integrated local storage and GPU accelerators. In benchmarks, the instance demonstrates exceptional memory performance, achieving top-decile PassMark memory results and robust uncached read bandwidth of 96.47 GB/sec, while general CPU tests and LLM inference rank average to weak. It offers high memory density suited for in-memory caches, key-value stores like Redis, and data processing workloads.",
+  "og_description": "Amazon Web Services r8gb.xlarge is a memory-optimized instance with 4 dedicated ARMv9 Neoverse-V2 cores, 32 GB RAM, 8 Gbps network, and top-tier memory bandwidth for caching and database workloads.",
+  "meta_description": "Amazon Web Services r8gb.xlarge provides 4 dedicated ARMv9 cores, 32.0 GB RAM, and 8 Gbps networking for memory-intensive cloud workloads.",
+  "tagline": "Dedicated ARMv9 architecture delivering 32 GB of memory with top-tier bandwidth for memory-intensive caching and database workloads.",
   "bullet_points": [
-    "4 dedicated ARMv9 Graviton Neoverse-V2 physical cores at 2.8 GHz",
-    "32.0 GB of RAM providing a high 8.0 GB per core ratio",
-    "Top-tier memory performance with 462.34 GB/sec cached read bandwidth",
-    "8 Gbps baseline network bandwidth on the AWS Nitro hypervisor",
-    "Suited for database operations, Redis caching, and web serving",
-    "No local storage or GPU accelerators included"
+    "AWS ARMv9 Neoverse-V2 processor with 4 dedicated physical cores at 2.8 GHz",
+    "32.0 GB of system memory delivering 8.0 GB of RAM per vCPU",
+    "Top-tier memory benchmark performance and 96.47 GB/sec uncached read bandwidth",
+    "8 Gbps baseline network bandwidth running on AWS Nitro architecture",
+    "No bundled local storage or integrated GPU hardware accelerators",
+    "Well suited for Redis caching, in-memory databases, and general data processing"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

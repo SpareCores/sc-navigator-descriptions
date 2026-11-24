@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D48ls_v6 is a compute-optimized virtual machine belonging to the Dlsv6 server family. It is powered by an Intel Xeon 8573C processor with an x86_64 architecture, operating at a clock speed of 4.2 GHz. The instance features 48 dedicated vCPUs derived from 24 physical cores with hyper-threading enabled. It is equipped with 96.0 GB of system memory, yielding a low memory-to-core ratio of 2.0 GB per vCPU. The processor includes a 260 MB L3 cache and supports advanced instruction sets, including Intel Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX) for accelerated matrix operations.",
-    "This server type is deployed on the Microsoft Hyper-V hypervisor. It does not include any local storage, requiring the attachment of external Premium Storage volumes for persistent data. The primary hardware tradeoff of the D48ls_v6 is its low memory allocation relative to its high compute capacity, which makes it less suitable for memory-intensive workloads but highly cost-efficient for compute-heavy tasks that do not require large memory footprints.",
-    "Benchmark data indicates strong performance across several compute and memory bandwidth metrics. The instance achieves top-tier results in Geekbench image processing and strong ratings in multi-core Geekbench, Passmark CPU, and software compilation tests. Memory bandwidth tests for both small and large blocks also rank in the top 25 percent. Additionally, the hardware-assisted AMX instructions support strong performance in LLM inference for small and medium models. This profile makes the D48ls_v6 suitable for compute-bound workloads such as software compilation, image processing, web serving, and lightweight machine learning inference."
+    "Microsoft Azure D48ls_v6 is a compute-focused general-purpose virtual machine within the Dlsv6 series, configured with 48 vCPUs and 96 GB of system memory. Driven by the x86_64 Intel Xeon 8573C processor running up to 4.2 GHz across 24 physical cores (two threads per core), the instance allocates a dedicated 2 GB of memory per vCPU. Hardware capabilities include a massive 260 MB L3 cache alongside advanced instruction sets including AVX-512, AMX Tile, and AMX INT8, optimizing execution for vectorized math, cryptography, and matrix operations.",
+    "Benchmark results demonstrate strong tier placement across computational and data-handling workloads. The instance achieves a PassMark CPU score of 62,325.35 and Geekbench multi-core score of 20,088.0, with exceptional marks in image processing (20,338.0, placing in the top 10 percent) and Clang software compilation (43,827.0). Memory throughput remains strong under heavy loads, posting 249.73 GB/sec in large-block read operations and 102.08 GB/sec in large-block write operations. In operational throughput evaluations, it delivers 64.82 million Redis SET operations per second and handles 78.25 GB/sec in static web serving.",
+    "Architecturally, the instance prioritizes raw compute capacity over memory footprint, making it cost-efficient for core-intensive tasks that do not require standard 4:1 RAM-to-vCPU ratios. However, this design presents clear tradeoffs: memory-heavy databases may experience headroom limits, and the server includes zero local ephemeral disk storage, requiring external premium network storage for persistent or scratch filesystems. Additionally, graphics accelerators are absent, though AMX instructions enable capable CPU-based inference, demonstrated by 243.97 tokens per second on 7B parameter LLM prompt processing.",
+    "The D48ls_v6 is best suited for compute-heavy batch processing, multi-threaded CI/CD compilation pipelines, web tier fleets, and CPU-driven AI inference workloads."
   ],
-  "description": "The Microsoft Azure D48ls_v6 is an x86_64 compute-optimized virtual machine from the Dlsv6 family, powered by a 4.2 GHz Intel Xeon 8573C processor. It features 48 dedicated vCPUs across 24 physical cores, a 260 MB L3 cache, and 96.0 GB of RAM, representing a low memory-to-core ratio of 2.0 GB per vCPU. Running on Microsoft Hyper-V, the instance lacks local storage but supports Premium Storage. It features advanced CPU instruction sets like AVX-512 and AMX. Benchmarks show strong performance in multi-core processing, software compilation, and image processing, alongside strong memory bandwidth. The D48ls_v6 is designed for compute-heavy workloads such as web serving, software compilation, and medium-scale model inference where high memory density is not required.",
-  "og_description": "Microsoft Azure D48ls_v6 is a compute-optimized virtual machine featuring 48 dedicated Intel Xeon vCPUs, 96 GB of RAM, and no local storage, designed for high-throughput compute workloads.",
-  "meta_description": "Microsoft Azure D48ls_v6 is a compute-optimized VM with 48 Intel Xeon vCPUs, 96 GB RAM, and no local storage, running on Hyper-V.",
-  "tagline": "A compute-optimized virtual machine featuring forty-eight dedicated Intel Xeon cores and low memory density for high-throughput processing workloads.",
+  "description": "Microsoft Azure D48ls_v6 is a low-memory variant of the Dlsv6 general-purpose family, provisioned with 48 dedicated vCPUs, 24 physical cores, and 96 GB of RAM on an Intel Xeon 8573C processor reaching 4.2 GHz. Featuring 260 MB of L3 cache, AVX-512, and Intel AMX matrix extensions, the hardware is tuned for dense computational throughput rather than massive memory allocation, operating at a 2 GB per core ratio. Benchmark evaluations show top-quartile performance in compilation, image manipulation, static web throughput (78.25 GB/sec), and Redis throughput (64.82 million operations per second). With no onboard local disk storage and zero discrete GPUs, the instance relies on remote network storage for disk operations. This profile makes the instance highly cost-efficient for thread-dense batch workloads, CI/CD runners, network-facing microservices, and CPU-based lightweight machine learning inference.",
+  "og_description": "Microsoft Azure D48ls_v6 is a compute-focused instance featuring 48 vCPUs on an Intel Xeon 8573C CPU, 96 GB RAM, and AMX support, optimized for compute-heavy microservices and CI/CD.",
+  "meta_description": "Microsoft Azure D48ls_v6 features 48 Intel Xeon vCPUs, 96 GB RAM, and AMX extensions for high-density compute, compilation, and web serving workloads.",
+  "tagline": "A high-density 48-vCPU x86 computing platform offering dedicated Intel Xeon processing power, robust vector extensions, and efficient memory utilization.",
   "bullet_points": [
-    "Powered by an Intel Xeon 8573C processor with 48 dedicated vCPUs at 4.2 GHz.",
-    "Equipped with 96.0 GB of RAM, providing a compute-focused 2.0 GB per vCPU.",
-    "Features Intel AMX and AVX-512 instruction sets for accelerated vector and matrix operations.",
-    "No local storage included, with support for external Premium Storage.",
-    "Strong benchmark performance in software compilation, image processing, and memory bandwidth.",
-    "Suited for compute-bound tasks, web serving, and lightweight model inference."
+    "48 dedicated vCPUs (24 physical cores) via 4.2 GHz Intel Xeon 8573C processor",
+    "96 GB total system memory providing a dense 1:2 vCPU-to-RAM ratio",
+    "Support for AVX-512 and Intel AMX matrix acceleration instruction sets",
+    "No bundled local disk storage, requiring external premium network storage volumes",
+    "Strong throughput in multi-core Clang compilation, web serving, and Redis key-value workloads",
+    "Suited for thread-intensive compilation, containerized web clusters, and CPU-based inference"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

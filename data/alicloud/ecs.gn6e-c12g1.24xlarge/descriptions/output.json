@@ -1,23 +1,24 @@
 {
   "page": [
-    "Alibaba Cloud ecs.gn6e-c12g1.24xlarge is an x86_64 architecture GPU-accelerated server powered by an Intel Xeon 8163 processor. It features 96 dedicated vCPUs, consisting of 48 physical cores with hyperthreading enabled, running at a clock speed of 2.5 GHz. The system is equipped with 736.0 GB of RAM, providing 7.67 GB of memory per core. Acceleration is driven by eight NVIDIA Volta V100 GPUs, delivering a combined 256 GB of VRAM. This server operates on a KVM hypervisor and does not include local storage, relying entirely on network-attached storage options.",
-    "Performance benchmarks indicate a significant divergence between single-core and multi-core capabilities. The single-core CPU performance measured via stress-ng is 1104.49, which falls into the bottom 25% tier. In contrast, the multi-core CPU performance is highly robust, scoring 70674.73 in stress-ng and placing in the top 25% tier. This performance profile indicates that workloads must be highly parallelized to utilize the CPU architecture effectively. Network performance is supported by a baseline bandwidth of 32 Gbps.",
-    "Given the high density of eight enterprise-grade GPUs and substantial system memory, this instance represents a significant resource commitment. It is qualitatively cost-efficient for massive parallel processing tasks where GPU acceleration is the primary driver, offsetting the lower single-core CPU performance. Appropriate workloads include deep learning training, large-scale AI inference, high-performance computing, and complex scientific simulations that can utilize the 256 GB of total VRAM and 96 vCPUs."
+    "Alibaba Cloud ecs.gn6e-c12g1.24xlarge is an accelerated compute instance within the ecs.gn6e family, built on KVM virtualization to support high-density parallel compute tasks. The system is equipped with an Intel Xeon 8163 processor offering 96 dedicated vCPUs across 48 physical cores running at a base clock speed of 2.5 GHz. The x86_64 CPU subsystem features 32 KB of L1 data cache, 1 MB of L2 cache, and 33 MB of shared L3 cache, with instruction support for AVX, AVX-512F, FMA, BMI2, and AES cryptography.",
+    "Acceleration is anchored by eight NVIDIA Volta V100 GPUs, each equipped with 32 GB of VRAM for an aggregate GPU memory footprint of 256 GB. Host memory capacity is 736 GB, resulting in approximately 7.67 GB of system RAM per vCPU. Networking interfaces provide a 32 Gbps baseline throughput. The instance includes no integrated local storage, meaning input datasets and scratch storage must be provisioned via attached network block storage.",
+    "Benchmark data reflects the architectural tradeoffs of the multi-socket Intel Xeon configuration. In stress-ng evaluations, single-core CPU performance falls within the bottom 25 percent with a score of 1104.49, reflecting conservative base clock speeds. Conversely, multi-core scaling reaches 70674.73 in stress-ng, placing aggregate CPU throughput in the top 25 percent. The hardware configuration emphasizes dense GPU compute and system memory density rather than single-threaded CPU speed or integrated NVMe storage. Workloads aligned with this server profile include multi-GPU deep learning training, seismic data processing, large-scale scientific simulations, and parallel rendering pipelines."
   ],
-  "description": "Alibaba Cloud ecs.gn6e-c12g1.24xlarge is an x86_64 GPU-accelerated server designed for highly parallelized workloads. Powered by an Intel Xeon 8163 processor, it delivers 96 dedicated vCPUs, 736.0 GB of system memory, and a baseline network bandwidth of 32 Gbps. The hardware configuration features eight NVIDIA Volta V100 GPUs with a total of 256 GB of VRAM, while omitting local storage. Performance benchmarks reveal a significant contrast, with weak single-core CPU performance of 1104.49 in stress-ng but strong multi-core CPU performance of 70674.73. This resource-dense profile is qualitatively cost-efficient for workloads that heavily leverage GPU acceleration and multi-threaded processing. It is best suited for deep learning training, large-scale artificial intelligence inference, and high-performance computing applications.",
-  "og_description": "Alibaba Cloud ecs.gn6e-c12g1.24xlarge is an x86_64 server featuring 96 vCPUs, 736 GB RAM, and eight NVIDIA V100 GPUs with 256 GB VRAM. It delivers strong multi-core performance for parallelized GPU workloads.",
-  "meta_description": "Alibaba Cloud ecs.gn6e-c12g1.24xlarge is an x86_64 server with 96 vCPUs, 736 GB RAM, and 8 NVIDIA V100 GPUs for high-performance parallel computing.",
-  "tagline": "A high-density GPU server combining eight accelerators and massive system memory for parallelized deep learning and scientific computing workloads.",
+  "description": "Alibaba Cloud ecs.gn6e-c12g1.24xlarge is a GPU-accelerated instance designed for distributed training, high-performance computing, and parallel data processing. It is powered by an Intel Xeon 8163 processor providing 96 vCPUs across 48 physical cores operating at 2.5 GHz on an x86_64 architecture with AVX-512 support. Hardware acceleration is provided by 8 NVIDIA Volta V100 GPUs, offering a combined 256 GB of high-bandwidth VRAM with 32 GB per GPU. System memory totals 736 GB, establishing an allocation of 7.67 GB per vCPU core. Network performance is anchored by a 32 Gbps baseline bandwidth. The instance does not include bundled local storage, requiring external block storage for persistent data. In synthetic testing, single-core CPU throughput registers in the lower quartile, whereas the 96 dedicated vCPUs place multi-core throughput in the top twenty-five percent. This configuration fits deep learning model training, molecular modeling, large-scale video processing, and GPU-intensive computational science.",
+  "og_description": "Alibaba Cloud ecs.gn6e-c12g1.24xlarge is an accelerated instance featuring 8 NVIDIA V100 GPUs with 256 GB total VRAM, 96 Intel Xeon vCPUs, 736 GB RAM, and 32 Gbps network bandwidth for heavy parallel workloads.",
+  "meta_description": "Alibaba Cloud ecs.gn6e-c12g1.24xlarge provides 96 vCPUs, 736 GB memory, 8 NVIDIA V100 GPUs with 256 GB VRAM, and 32 Gbps networking for parallel computing.",
+  "tagline": "An accelerator-focused instance offering eight NVIDIA V100 GPUs, ninety-six dedicated Intel cores, and high memory capacity for distributed parallel computing workloads.",
   "bullet_points": [
-    "Eight NVIDIA Volta V100 GPUs with 256 GB total VRAM",
-    "96 dedicated Intel Xeon vCPUs and 736.0 GB of system memory",
-    "Strong multi-core CPU performance scoring 70674.73 in stress-ng",
-    "32 Gbps baseline network bandwidth for high-throughput data transfer",
-    "Optimized for deep learning, AI inference, and parallel computing"
+    "8 NVIDIA Volta V100 GPUs with 256 GB aggregate VRAM (32 GB per GPU)",
+    "96 dedicated Intel Xeon 8163 vCPUs (48 physical cores) at 2.5 GHz",
+    "736 GB system memory delivering 7.67 GB per vCPU",
+    "32 Gbps baseline network bandwidth without local disk storage",
+    "Top-quartile multi-core CPU throughput with a 70674.73 stress-ng benchmark score",
+    "Tailored for distributed deep learning, scientific simulation, and parallel rendering"
   ],
   "categories": [
     "GPU Accelerated",
-    "Memory Optimized",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Memory Optimized"
   ]
 }

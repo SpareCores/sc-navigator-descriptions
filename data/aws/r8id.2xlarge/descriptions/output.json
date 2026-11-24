@@ -1,24 +1,23 @@
 {
   "page": [
-    "Amazon Web Services r8id.2xlarge is a memory-optimized instance powered by the Nitro hypervisor. It features an x86_64 architecture with an Intel Xeon 6975P-C processor operating at 3.9 GHz. This configuration provides 8 vCPUs across 4 physical cores with hyperthreading enabled. The CPU includes a 480 MB L3 cache, 2 MB L2 cache, and 48 KB L1d cache. It supports advanced instruction sets including AVX-512, Advanced Matrix Extensions (AMX_TILE, AMX_INT8), and cryptographic acceleration via AES and SHA_NI.",
-    "The instance is equipped with 64.0 GB of DDR5 memory operating at 7 GHz, yielding 8.0 GB of RAM per core. For local storage, it includes a bundled 474 GB NVMe SSD instance store volume. Network connectivity is supported by a baseline bandwidth of 4 Gbps. No complimentary public IPv4 addresses are included.",
-    "Performance benchmarks indicate strong single-threaded capabilities, with Geekbench single-core scoring 2177.0 and single-threaded gzip compression reaching 34.56 GB/sec. Text processing is highly efficient, scoring 2983.0 in Geekbench, which is in the top tier. Multi-core performance is moderate, with a Geekbench multi-core score of 8391.0 and a stress-ng multi-core score of 8648.61. Memory bandwidth is measured at 641.02 GB/sec for cached small blocks and 68.58 GB/sec for uncached large blocks.",
-    "This instance is qualitatively cost-efficient for memory-intensive workloads requiring high-speed local scratch space, owing to its DDR5 memory density and integrated NVMe storage. It is well-suited for database operations, Redis deployments (achieving 15.3 million SET operations per second), software compilation, and light LLM inference. However, text generation on larger models is a tradeoff, as the 7B model text generation speed is relatively weak at 8.73 tokens per second."
+    "Amazon Web Services r8id.2xlarge is a memory-optimized virtual machine instance based on the AWS Nitro System. It is powered by a dedicated 3.9 GHz Intel Xeon 6975P-C processor using the x86_64 architecture, delivering 8 vCPUs across 4 physical cores with multithreading enabled. The instance integrates 64 GB of high-speed DDR5 memory operating at 7 GHz, providing an 8 GB per vCPU ratio suitable for memory-dense workloads. It also includes 474 GB of direct-attached NVMe SSD instance storage alongside a 4 Gbps baseline network bandwidth. Accelerator hardware is not included, leaving GPU count at zero.",
+    "Benchmark results show balanced compute output and notable single-threaded speed. The instance achieved a Geekbench single-core score of 2177.0, placing it in the top 25 percent, while multi-core compute in stress-ng reached 8648.61, within the middle 50 percent range. Memory subsystems exhibit consistent throughput, delivering 68.58 GB/sec in large-block read operations and 49.03 GB/sec in write operations. Single-threaded data handling excels, highlighted by gzip compression speeds of 34.56 GB/sec and top-decile Geekbench text processing scores of 2983.0. In-memory data store performance measured 15.3 million operations per second during Redis SET testing.",
+    "Hardware tradeoffs focus heavily on local disk latency and memory capacity over raw parallel compute throughput or extended networking headroom. While 4 Gbps baseline networking is modest, the inclusion of direct-attached NVMe storage removes external EBS latency for caching and temporary scratch files. The hardware configuration provides strong cost efficiency for deployments needing high RAM-per-core allocations and fast local storage without the overhead of enterprise-scale vCPU footprints. This profile aligns directly with in-memory caching layers, relational database instances, text analysis engines, ETL preprocessing, and intermediate build nodes."
   ],
-  "description": "The Amazon Web Services r8id.2xlarge is a memory-optimized instance running on the Nitro hypervisor. It features an 8-vCPU Intel Xeon 6975P-C processor with a 3.9 GHz clock speed, 4 physical cores, and a 480 MB L3 cache. The hardware configuration includes 64.0 GB of DDR5 memory running at 7 GHz and a bundled 474 GB NVMe SSD instance store. Benchmarks show strong single-core performance, with a Geekbench single-core score of 2177.0 and top-tier text processing capabilities. Memory bandwidth reaches 641.02 GB/sec for cached small blocks. This instance is highly suited for memory-intensive databases, Redis key-value stores, and software compilation. However, it exhibits weaker performance in larger LLM text generation tasks, with the 7B model text generation speed measured at 8.73 tokens per second.",
-  "og_description": "Amazon Web Services r8id.2xlarge is a memory-optimized instance featuring an 8-vCPU Intel Xeon processor, 64.0 GB of DDR5 RAM, a 474 GB NVMe SSD local instance store, and a baseline network bandwidth of 4 Gbps.",
-  "meta_description": "Amazon Web Services r8id.2xlarge is an 8-vCPU memory-optimized instance featuring 64 GB of DDR5 RAM and a 474 GB NVMe SSD local instance store.",
-  "tagline": "A memory-optimized instance featuring high-speed DDR5 RAM, dedicated Intel Xeon processing, and integrated NVMe SSD storage for database workloads.",
+  "description": "Amazon Web Services r8id.2xlarge is a memory-optimized Nitro hypervisor instance powered by an Intel Xeon 6975P-C processor clocked at 3.9 GHz. It features 8 vCPUs across 4 physical cores, 64 GB of DDR5 system memory running at 7 GHz, and 474 GB of local NVMe SSD storage. Operating without discrete GPU hardware, the instance includes 4 Gbps baseline network throughput. Performance testing reflects strong single-core capabilities, registering a 2177.0 Geekbench single-core score and 34.56 GB/sec gzip compression throughput. Redis SET benchmarks yielded 15.3 million operations per second, complemented by 68.58 GB/sec read bandwidth in large memory blocks. Offering an 8:1 memory-to-core ratio alongside integrated NVMe disk storage, the r8id.2xlarge delivers efficient density for in-memory databases, Redis caches, data pipeline stages, and transactional backend systems.",
+  "og_description": "Amazon Web Services r8id.2xlarge features 8 vCPUs on an Intel Xeon 6975P-C processor, 64 GB of DDR5 memory, 474 GB local NVMe SSD storage, and 4 Gbps networking for memory-intensive applications.",
+  "meta_description": "Amazon Web Services r8id.2xlarge offers 8 vCPUs, 64 GB DDR5 RAM, and 474 GB local NVMe SSD storage designed for database and memory-bound workloads.",
+  "tagline": "DDR5 memory density paired with high-frequency Intel Xeon cores and local NVMe storage for memory-intensive databases and real-time caching layers.",
   "bullet_points": [
-    "Intel Xeon 6975P-C processor with 8 vCPUs and 3.9 GHz clock speed",
-    "64.0 GB of high-speed 7 GHz DDR5 memory",
-    "Bundled 474 GB NVMe SSD local instance store",
-    "Strong single-threaded performance and top-tier text processing",
-    "Optimized for database operations, Redis, and software compilation"
+    "8 vCPUs powered by a 3.9 GHz Intel Xeon 6975P-C processor",
+    "64 GB high-frequency DDR5 memory with 8 GB per vCPU allocation",
+    "474 GB local NVMe SSD instance storage for low-latency operations",
+    "Support for AVX-512, AMX matrix extensions, and advanced cryptographic flags",
+    "4 Gbps baseline network throughput backed by the AWS Nitro System",
+    "Suited for Redis caching, relational databases, and data transformation jobs"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

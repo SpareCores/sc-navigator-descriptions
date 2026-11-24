@@ -1,20 +1,19 @@
 {
   "page": [
-    "Microsoft Azure EC2ads_v5 is an x86_64 architecture virtual machine powered by an AMD processor and managed via the Microsoft Hyper-V hypervisor. It features 2 dedicated vCPUs and 16.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per vCPU. This memory-optimized configuration is designed for workloads requiring a larger memory footprint relative to compute capacity.",
-    "The instance includes 77 GB of local SSD storage and is capable of utilizing Premium Storage for external disk requirements. It does not include complimentary public IPv4 addresses. The inclusion of local SSD storage provides low-latency scratch space, though the capacity is limited to 77 GB, which represents a tradeoff for data-intensive storage applications requiring massive local datasets.",
-    "From a cost-efficiency perspective, the EC2ads_v5 offers a dedicated hardware profile with a high memory-to-vCPU ratio, making it a viable option for memory-bound workloads that do not require high CPU core counts. This resource density is suitable for small-scale databases, caching layers, and memory-intensive enterprise applications."
+    "Microsoft Azure EC2ads_v5 is a memory-optimized virtual machine instance running on Microsoft Hyper-V. It is powered by an AMD EPYC 9V74 processor based on the x86_64 architecture, configured with 1 physical core presenting 2 dedicated virtual cores (vCPUs) via simultaneous multithreading. The system includes 32 KB of L1 data cache, 1 MB of L2 cache, and 32 MB of L3 cache. It provides 16.0 GB of system memory, yielding an 8:1 memory-to-vCPU ratio with 8.0 GB per vCPU. Hardware acceleration is absent, with no GPU included, while 81 GB of local SSD storage is directly bundled.",
+    "Benchmark outcomes demonstrate average single-threaded baseline performance alongside constrained multi-threaded execution due to the 2-vCPU configuration. In Geekbench testing, the instance achieved a single-core score of 1181.0 (average) and a multi-core score of 1415.0 (bottom 10%). A similar trend appears in stress-ng CPU measurements, scoring 1982.37 in both single-core (average) and multi-core (bottom 10%) workloads. PassMark metrics indicate a CPU score of 2353.04, an extended instructions score of 1484.19, a physics score of 266.27, and a database operations score of 724.95, each placing in the bottom 10%. Memory subsystem throughput yielded a PassMark memory score of 1481.53 (weak), while Redis SET throughput reached 1.69 million operations per second (bottom 10%).",
+    "Given its high RAM allocation relative to core count and bundled fast local scratch storage, the EC2ads_v5 is positioned for lightweight memory-bound workloads that do not require high parallel compute capacity. It is suited for small in-memory caches, development database instances, lightweight Redis deployments, and memory-intensive background utilities requiring local temporary storage."
   ],
-  "description": "Microsoft Azure EC2ads_v5 is an x86_64 virtual machine featuring 2 dedicated vCPUs and 16.0 GB of system memory, running on the Microsoft Hyper-V hypervisor. Powered by an AMD processor, this instance provides a high memory-to-core ratio of 8.0 GB per vCPU, classifying it as a memory-optimized resource. It comes equipped with 77 GB of local SSD storage and supports Premium Storage for expandable disk options, though it does not include complimentary public IPv4 addresses. The combination of dedicated compute resources, a high memory-to-vCPU ratio, and local solid-state storage makes this server suitable for memory-sensitive workloads such as small-scale databases, caching systems, and lightweight enterprise applications that require low-latency local scratch space without demanding high CPU core counts.",
-  "og_description": "Microsoft Azure EC2ads_v5 is an x86_64 virtual machine featuring 2 dedicated AMD vCPUs, 16.0 GB of RAM, and 77 GB of local SSD storage, optimized for memory-intensive workloads.",
-  "meta_description": "Microsoft Azure EC2ads_v5 is an x86_64 virtual machine featuring 2 dedicated AMD vCPUs, 16 GB of RAM, and 77 GB of local SSD storage.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated AMD processors, a high memory-to-core ratio, and integrated local SSD storage.",
+  "description": "Microsoft Azure EC2ads_v5 is a memory-optimized virtual machine powered by an AMD EPYC 9V74 processor under Microsoft Hyper-V. It provides 2 dedicated vCPUs from a single physical core, 16.0 GB of RAM (8.0 GB per vCPU), and 81 GB of bundled local SSD storage, without a GPU. The architecture includes 32 MB of L3 cache, AVX, and AES instructions. In synthetic benchmarks, it exhibits average single-core throughput (Geekbench single-core score of 1181.0, stress-ng single-core score of 1982.37) but lower overall multi-threaded capacity due to its two-thread limit, registering a Geekbench multi-core score of 1415.0 and Redis SET throughput of 1.69 million operations per second. The high 8:1 memory-to-core ratio and direct local disk make it suited for small memory-intensive workloads, including lightweight in-memory databases, local caching, and non-parallelized analytical tasks.",
+  "og_description": "Microsoft Azure EC2ads_v5 is a memory-optimized instance featuring 2 vCPUs on an AMD EPYC 9V74 processor, 16 GB RAM, and 81 GB local SSD storage, tailored for small memory-heavy workloads.",
+  "meta_description": "Microsoft Azure EC2ads_v5 features 2 vCPUs on an AMD EPYC 9V74 CPU, 16 GB of RAM, and 81 GB local SSD for small memory-centric workloads.",
+  "tagline": "Two-core AMD EPYC instance pairing a high 8:1 memory ratio with integrated local SSD storage.",
   "bullet_points": [
-    "2 dedicated vCPUs on x86_64 AMD architecture",
-    "16.0 GB of system memory providing 8.0 GB per core",
-    "77 GB of integrated local SSD storage",
-    "Premium Storage capable for expandable disk options",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Suitable for small-scale databases and caching layers"
+    "AMD EPYC 9V74 processor with 2 dedicated vCPUs across 1 physical core",
+    "16.0 GB system RAM providing an 8:1 memory-to-vCPU ratio",
+    "81 GB bundled local SSD storage for fast temporary caching",
+    "Hardware support for AES, VAES, SHA-NI, and AVX instructions",
+    "Best suited for small in-memory caches, test databases, and lightweight memory-bound jobs"
   ],
   "categories": [
     "Memory Optimized",

@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services m7a.24xlarge is a general-purpose server powered by the AWS Nitro hypervisor. It features 96 dedicated physical cores and 96 vCPUs utilizing the x86_64 AMD EPYC 9R14 processor running at 3.7 GHz. The system is equipped with 384.0 GB of DDR5 memory operating at 5 GHz, providing 4.0 GB of RAM per core. This instance does not include local storage or dedicated GPU hardware, but it offers a baseline network bandwidth of 38 Gbps.",
-    "In benchmark evaluations, the server demonstrates top-tier multi-core CPU performance, ranking in the top 10% for stress-ng multi-core, Geekbench multi-core, and Passmark CPU tests. Memory performance is highly competitive, with small-block read-only memory bandwidth reaching the top 10% tier, while large-block read and write bandwidths fall within the top 25%. The CPU's instruction set includes AVX-512 extensions, such as AVX512_VNNI and AVX512_BF16, and cryptographic accelerators like AES and SHA_NI, which contribute to top-tier scores in Passmark encryption and physics tests.",
-    "The instance is highly efficient for workloads requiring dense multi-core processing and high memory throughput without the need for local NVMe storage. It achieves top-tier performance in software compilation, ray tracing, and Redis SET operations, alongside strong capabilities in database operations and static web serving. Additionally, it shows strong to top-tier performance in LLM inference tasks across small, medium, and large models. This profile makes it well-suited for enterprise database hosting, large-scale software development pipelines, containerized microservices, and CPU-based machine learning inference."
+    "Amazon Web Services m7a.24xlarge is a general-purpose cloud instance powered by the Nitro hypervisor and fourth-generation AMD EPYC 9R14 processors running at 3.7 GHz. The x86_64 system provides 96 dedicated physical cores and 96 virtual CPUs without simultaneous multithreading, paired with 384.0 GB of high-frequency 5 GHz DDR5 memory. This delivers a standard general-purpose ratio of 4.0 GB of RAM per core, backed by 32 KB L1 data, 1.0 MB L2, and 32 MB L3 cache configurations alongside AVX-512 vector support. The instance operates without bundled local NVMe storage and features a baseline network throughput of 38 Gbps with zero complimentary public IPv4 addresses.",
+    "Benchmark results demonstrate top-tier compute and memory throughput. Multi-core operations scale linearly due to the dedicated 1:1 physical-to-virtual core allocation, placing stress-ng multi-core (293,589.22), Geekbench multi-core (22,335.0), and PassMark CPU score (106,240.69) within the top 10 percent of evaluated systems. Memory-intensive cached reads achieve 11,726.96 GB/sec, while uncached reads register at 328.46 GB/sec. Application-level metrics show 168.46 million Redis SET operations per second and 69.28 GB/sec in static web serving throughput. CPU-based LLM inference handles 5,460.99 prompt tokens per second on compact 135M parameter models and 48.65 generation tokens per second on 7B models.",
+    "The absence of internal physical disks requires reliance on networked block storage, shifting I/O economics toward external storage architecture. From a cost-efficiency perspective, the high core density and dedicated execution threads minimize resource contention, maximizing CPU throughput per dollar in heavily threaded environments. The m7a.24xlarge is well positioned for enterprise web fleets, distributed in-memory caching tiers, large-scale CI/CD build farms, and batch data transformation workloads that demand sustained CPU capacity with balanced memory allocations."
   ],
-  "description": "Amazon Web Services m7a.24xlarge is a general-purpose server featuring 96 dedicated physical cores powered by an AMD EPYC 9R14 processor running at 3.7 GHz. Built on the AWS Nitro hypervisor, the instance includes 384.0 GB of high-speed 5 GHz DDR5 memory, translating to 4.0 GB per core, and provides a baseline network bandwidth of 38 Gbps. It does not contain local storage or GPU hardware. Benchmarks indicate top-tier multi-core CPU performance, ranking in the top 10% for multi-core processing, software compilation, and cryptographic operations. The processor supports advanced instruction sets including AVX-512 and SHA_NI. This server is highly effective for multi-threaded enterprise workloads, software compilation, Redis databases, and CPU-based LLM inference.",
-  "og_description": "Amazon Web Services m7a.24xlarge is a general-purpose server with 96 AMD EPYC physical cores, 384 GB DDR5 RAM, and 38 Gbps network bandwidth, delivering top-tier multi-core and memory performance.",
-  "meta_description": "Amazon Web Services m7a.24xlarge features 96 AMD EPYC cores, 384 GB DDR5 RAM, and 38 Gbps network speed for high-performance multi-core workloads.",
-  "tagline": "A high-density, 96-core AMD EPYC general-purpose instance featuring DDR5 memory and top-tier multi-threaded performance for enterprise workloads.",
+  "description": "Amazon Web Services m7a.24xlarge is a general-purpose Nitro instance equipped with a 96-core AMD EPYC 9R14 processor at 3.7 GHz, delivering 96 dedicated vCPUs with a single thread per physical core. Built on x86_64 architecture with AVX-512 extensions, it incorporates 384.0 GB of DDR5 system memory operating at 5 GHz, providing 4.0 GB per core. The server includes no local disk storage, has zero GPUs, and delivers 38 Gbps baseline network bandwidth. Synthetic testing places its multi-threaded processing, compilation speed, and Redis operations in the top tier of evaluated hardware. Given its balanced 1:4 compute-to-memory configuration and high thread density, the instance is engineered for distributed application servers, in-memory key-value databases, continuous integration build jobs, and large-scale data processing pipelines.",
+  "og_description": "Amazon Web Services m7a.24xlarge is a 96-core general-purpose instance featuring AMD EPYC 9R14 processors, 384 GB of DDR5 memory, top-tier multi-threaded compute, and 38 Gbps baseline networking.",
+  "meta_description": "Amazon Web Services m7a.24xlarge features 96 dedicated AMD EPYC cores, 384 GB DDR5 RAM, 38 Gbps networking, and top-tier multi-core compute performance.",
+  "tagline": "High-density 96-core general-purpose compute with dedicated physical cores, fast DDR5 memory, and high baseline networking for enterprise workloads.",
   "bullet_points": [
-    "96 dedicated AMD EPYC 9R14 physical cores running at 3.7 GHz",
-    "384.0 GB of high-speed 5 GHz DDR5 memory",
-    "Top-tier multi-core CPU, software compilation, and encryption performance",
-    "38 Gbps baseline network bandwidth with Nitro hypervisor integration",
-    "No local storage or GPU accelerators included",
-    "Optimized for enterprise databases, software compilation, and CPU-based LLM inference"
+    "96 dedicated physical cores and 96 vCPUs via AMD EPYC 9R14 at 3.7 GHz",
+    "384.0 GB of fast DDR5 memory at 5 GHz (4.0 GB per core)",
+    "Baseline network bandwidth of 38 Gbps managed by AWS Nitro",
+    "Top-tier multi-threaded integer, compilation, and in-memory cache benchmark results",
+    "No bundled local storage, requiring network-attached storage architectures",
+    "Suited for large-scale web backends, CI/CD compilation, and distributed Redis caches"
   ],
   "categories": [
-    "General Purpose",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }

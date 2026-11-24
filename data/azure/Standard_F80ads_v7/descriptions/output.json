@@ -1,25 +1,25 @@
 {
   "page": [
-    "Microsoft Azure F80ads_v7 is an x86_64 architecture server belonging to the Fadsv7 family. It features 80 dedicated physical cores powered by an AMD EPYC 9V45 processor running at a clock speed of 4.5 GHz. The system is equipped with 320.0 GB of RAM, providing 4.0 GB of memory per core. Local storage consists of a 9449 GB NVMe SSD, and the server is premium storage capable. It operates under the Microsoft Hyper-V hypervisor and does not include any GPUs or complimentary public IPv4 addresses.",
-    "In benchmark evaluations, the F80ads_v7 demonstrates top-tier performance, placing in the top 10% for both single-core and multi-core stress-ng CPU tests. Its memory subsystem achieves top-tier read-only small block bandwidth of 14260.32 GB/sec and large block write bandwidth of 213.34 GB/sec. Cryptographic and compression capabilities are also in the top 10%, with a PassMark CPU encryption score of 117725.96 and a multi-threaded bzip3 decompression rate of 1012.5 GB/sec. Database operations are highly efficient, as shown by a Redis SET throughput of 202.34 million operations per second.",
-    "For machine learning workloads, the server achieves top-tier prompt processing speeds of 5722.82 tokens per second on a small 135M model, though text generation for the same model drops to an average tier of 231.82 tokens per second. Medium 7B model text generation remains in the top 10% at 54.82 tokens per second, while large 70B model prompt processing falls to the middle 50% tier at 23.62 tokens per second. This indicates a performance tradeoff where prompt processing scales well on smaller models but text generation and larger model processing are relatively constrained by the lack of dedicated GPU hardware.",
-    "From a cost-efficiency perspective, the F80ads_v7 offers a high density of dedicated physical cores and substantial local NVMe storage, making it a viable alternative to GPU-accelerated instances for CPU-bound tasks. The server is suited for high-throughput database operations, static web serving, data compression pipelines, and CPU-based language model inference."
+    "Microsoft Azure F80ads_v7 is a compute-optimized virtual machine instance powered by AMD EPYC 9V45 processors operating at up to 4.5 GHz. The instance delivers 80 dedicated x86_64 physical cores mapped directly to 80 vCPUs with 1 thread per core. The CPU architecture includes hardware support for AVX-512 extensions such as AVX-512 VNNI and BF16, alongside cryptographic acceleration instructions including AES and SHA-NI. The memory subsystem is configured with 320.0 GB of RAM, equating to 4.0 GB per core, backed by 32 MB of L3 cache per core cluster.",
+    "Local I/O capability is provided by 9,449 GB of bundled NVMe SSD storage, offering high local capacity without reliance solely on remote network-attached disks. The instance does not include GPU accelerators, directing its processing capacity entirely toward dense host CPU workloads. Benchmark results highlight top-tier standing across multiple compute and memory metrics, recording 290,168.74 in stress-ng multi-core tests and a PassMark CPU score of 128,668.08. Uncached memory read bandwidth reaches 476.02 GB/sec, while write operations achieve 213.34 GB/sec.",
+    "Data handling performance is further reflected in specialized benchmarks, including 202.34 million operations per second in Redis SET operations and a static web serving throughput of 111.41 GB/sec. Large-scale data compression and decompression yield 1,012.5 GB/sec on multi-threaded bzip3 tasks. In CPU-driven language model inference, prompt processing throughput reaches 5,722.82 tokens per second on small 135M models and 294.76 tokens per second on 7B parameter models.",
+    "From a cost-efficiency perspective, the F80ads_v7 offers high resource density by packing 80 physical cores and massive local NVMe storage into a single host footprint, minimizing multi-node orchestration overhead. However, the lack of discrete GPU hardware bounds its utility for intensive large-model training or real-time high-throughput generative AI text generation. The configuration is primarily fit for compute-heavy parallel workloads, batch data processing, high-throughput caching tiers, relational databases requiring fast local scratch disks, and compiler or build infrastructure."
   ],
-  "description": "Microsoft Azure F80ads_v7 is an x86_64 server from the Fadsv7 family, featuring 80 dedicated AMD EPYC 9V45 physical cores running at 4.5 GHz, 320.0 GB of RAM, and a 9449 GB local NVMe SSD. Operating under Microsoft Hyper-V, it delivers top-tier CPU performance, ranking in the top 10% for both single-core and multi-core stress-ng benchmarks. The memory architecture supports a top-tier read-only small block bandwidth of 14260.32 GB/sec. While it lacks dedicated GPUs, it achieves strong to top-tier results in CPU-based LLM inference, such as 54.82 tokens per second for medium 7B model text generation. This hardware profile is suited for high-throughput database operations, static web serving, data compression pipelines, and CPU-bound analytical workloads.",
-  "og_description": "Microsoft Azure F80ads_v7 is an x86_64 server featuring 80 dedicated AMD EPYC cores at 4.5 GHz, 320 GB RAM, and 9449 GB NVMe SSD storage, delivering top-tier database and CPU benchmark performance.",
-  "meta_description": "Microsoft Azure F80ads_v7 is an x86_64 server with 80 dedicated AMD EPYC cores, 320 GB RAM, and a 9449 GB NVMe SSD, optimized for high-throughput workloads.",
-  "tagline": "An 80-core AMD EPYC server with 320 GB RAM and 9.4 TB NVMe storage, delivering top-tier database and CPU performance.",
+  "description": "Microsoft Azure F80ads_v7 is a compute-optimized virtual machine featuring 80 dedicated physical cores from an AMD EPYC 9V45 processor running at 4.5 GHz. The x86_64 architecture incorporates AVX-512 instructions, AES, and SHA-NI cryptographic support. Paired with 320.0 GB of memory (4.0 GB per core) and 9,449 GB of high-speed local NVMe SSD storage, the instance is engineered for demanding compute and data-intensive tasks without GPU acceleration. Across benchmarks, the F80ads_v7 establishes top-tier multi-core execution (290,168.74 in stress-ng), sustained memory bandwidth up to 476.02 GB/sec uncached, and high key-value throughput with 202.34 million Redis SET operations per second. Delivering high single-node density, it serves compute-heavy analytics, large-scale software builds, database processing, and batch transformations.",
+  "og_description": "Microsoft Azure F80ads_v7 features 80 dedicated AMD EPYC 9V45 cores at 4.5 GHz, 320 GB RAM, and 9,449 GB local NVMe SSD storage, optimized for compute-heavy and high-throughput workloads.",
+  "meta_description": "Microsoft Azure F80ads_v7 features 80 AMD EPYC cores at 4.5 GHz, 320 GB RAM, and 9,449 GB local NVMe SSD storage for compute-heavy workloads.",
+  "tagline": "An 80-core compute powerhouse delivering dedicated AMD performance, 320 GB of memory, and multi-terabyte local NVMe SSD throughput.",
   "bullet_points": [
-    "80 dedicated AMD EPYC 9V45 physical cores operating at 4.5 GHz",
-    "320.0 GB of system memory providing 4.0 GB per core",
-    "9449 GB of local NVMe SSD storage with premium storage capability",
-    "Top-tier database performance with 202.34 million Redis SET operations per second",
-    "Top-tier CPU performance in both single-core and multi-core benchmarks",
-    "Suited for high-throughput database operations, web serving, and CPU-based inference"
+    "80 dedicated AMD EPYC 9V45 cores clocked at up to 4.5 GHz",
+    "320.0 GB of system memory (4.0 GB per vCPU)",
+    "Bundled 9,449 GB high-speed local NVMe SSD storage",
+    "Hardware support for AVX-512, VNNI, BF16, and SHA extensions",
+    "Exceptional throughput in Redis, multi-core compute, and decompression tasks",
+    "Best fit for parallel compute, large software compilation, and high-performance caching"
   ],
   "categories": [
-    "General Purpose",
+    "Compute Optimized",
     "Storage & Database",
-    "Compute Optimized"
+    "General Purpose"
   ]
 }

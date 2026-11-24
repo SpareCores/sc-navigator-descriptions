@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure E96a_v4 is an x86_64 architecture virtual machine from the EAv4 server family, running on the Microsoft Hyper-V hypervisor. It features 96 vCPUs mapped to 48 physical cores with multi-threading enabled, powered by an AMD EPYC 7452 processor operating at 3.35 GHz. The hardware configuration includes 672.0 GB of system memory, yielding 7.0 GB of RAM per core, alongside 2458 GB of local SSD storage. No graphics processing units are included.",
-    "Performance benchmarks reveal a contrast between single-core and multi-core execution. The single-core CPU performance under stress-ng is in the bottom 10%, while multi-core performance falls into the middle 50%. However, the instance demonstrates strong capabilities in memory operations, with small-block read-only memory bandwidth and PassMark memory scores placing in the top 25%. Cryptographic performance is highly competitive, with the PassMark CPU encryption test reaching the top 10%. Redis SET operations also perform strongly at 71.0 million operations per second. Conversely, large-scale LLM inference processing is a notable bottleneck, scoring in the bottom 10%.",
-    "From a resource density perspective, the E96a_v4 provides high memory density and substantial local SSD capacity, making it a viable option for workloads that require large datasets to reside in memory without the premium of GPU hardware. Tradeoffs include lower single-threaded processing speeds and limited suitability for modern large language model inference. This server is best suited for memory-intensive applications, relational databases, caching layers such as Redis, and multi-threaded data processing tasks."
+    "Microsoft Azure E96a_v4 is a memory-optimized virtual machine powered by the x86_64 AMD EPYC 7452 processor. Operating on the Microsoft Hyper-V hypervisor, the instance provides 96 dedicated vCPUs mapped across 48 physical cores with simultaneous multithreading at up to 3.35 GHz. The CPU subsystem includes 32 KB L1 data cache, 0.5 MB L2 cache, and 16 MB L3 cache, alongside hardware instruction support for AES, SHA-NI, AVX, BMI2, and FMA. It does not include AVX-512 or AMX extensions.",
+    "Memory capacity is configured at 672.0 GB of RAM, equating to 7.0 GB per vCPU. Benchmark results indicate solid caching efficiency, with small-block cached read bandwidth reaching 3932.23 GB/sec in the top 25% bracket, while uncached 256MB read and write bandwidth settle at 162.3 GB/sec and 79.33 GB/sec. The instance includes 2577 GB of local SSD storage, while accelerator hardware is absent with zero GPUs, and no complimentary public IPv4 addresses are assigned.",
+    "Computational benchmarks demonstrate a divergence between single-threaded and parallelized throughput. The stress-ng single-core result registers in the bottom 10%, yet parallel throughput yields a PassMark CPU score of 68394.35 and an encryption score of 97050.01 in the top 10%. Multi-threaded data processing remains effective, highlighted by 408.55 GB/sec in multi-threaded bzip3 decompression and 71.0 million operations per second in Redis SET evaluations. Conversely, large-model LLM prompt processing is constrained, managing 5.04 tokens per second.",
+    "With its dense 672.0 GB memory footprint, integrated 2.5 TB SSD storage, and 96 vCPUs, the E96a_v4 is technically tailored for large-scale in-memory databases, distributed caching nodes, memory-intensive data analytics, and high-concurrency enterprise applications that depend on vast memory capacity rather than peak single-core execution speed."
   ],
-  "description": "Microsoft Azure E96a_v4 is a memory-optimized virtual machine from the EAv4 family, featuring 96 vCPUs, 48 physical cores, and an AMD EPYC 7452 processor running at 3.35 GHz. It is equipped with 672.0 GB of RAM and 2458 GB of local SSD storage, managed via Microsoft Hyper-V. While single-core CPU performance and large-model LLM inference are relatively weak, the server delivers strong multi-threaded capabilities, particularly in memory bandwidth, cryptographic operations, and Redis SET throughput. The high memory-to-core ratio and integrated local SSD storage make this instance highly suitable for memory-intensive workloads, large-scale databases, and caching platforms where parallel processing and high memory capacity are critical.",
-  "og_description": "Microsoft Azure E96a_v4 is a memory-optimized virtual machine featuring 96 vCPUs, 672 GB of RAM, and 2458 GB of local SSD storage, powered by an AMD EPYC 7452 processor running on Hyper-V.",
-  "meta_description": "Microsoft Azure E96a_v4 is a memory-optimized server with 96 vCPUs, 672 GB RAM, and 2458 GB local SSD, powered by an AMD EPYC 7452 processor.",
-  "tagline": "A high-capacity memory-optimized instance with integrated local SSD storage, designed for demanding database and multi-threaded data processing workloads.",
+  "description": "Microsoft Azure E96a_v4 is a memory-optimized instance featuring 96 dedicated vCPUs and 48 physical cores on an AMD EPYC 7452 x86_64 processor clocked at 3.35 GHz. Built on Microsoft Hyper-V, it features 672.0 GB of RAM (7.0 GB per core) and bundled 2577 GB local SSD storage without GPU acceleration. The hardware configuration emphasizes parallel data throughput, supported by top-tier cryptographic acceleration and strong cached memory bandwidth of 3932.23 GB/sec. Benchmarks reflect moderate single-core performance alongside strong multi-threaded capabilities, including 71.0 million Redis SET operations per second and a PassMark CPU score of 68394.35. The server is well suited for memory-bound workloads, such as extensive in-memory caches, relational database systems, and large analytics engines requiring substantial RAM and multi-core concurrency.",
+  "og_description": "Microsoft Azure E96a_v4 delivers 96 vCPUs on AMD EPYC 7452, 672 GB RAM, and a 2577 GB local SSD. Tailored for memory-intensive enterprise databases and large-scale parallel processing.",
+  "meta_description": "Microsoft Azure E96a_v4 is a memory-optimized VM offering 96 AMD vCPUs, 672 GB RAM, and 2577 GB SSD storage for memory-intensive workloads.",
+  "tagline": "Dedicated 96-vCPU AMD computing platform delivering 672 GB memory and fast local SSD storage for massive in-memory architectures.",
   "bullet_points": [
-    "96 vCPUs and 48 physical cores powered by AMD EPYC 7452 at 3.35 GHz",
-    "672.0 GB of RAM providing high memory density for large datasets",
-    "2458 GB of integrated local SSD storage",
-    "Top-tier performance in cryptographic operations and strong memory bandwidth",
-    "Well-suited for relational databases, Redis caching, and multi-threaded processing"
+    "96 dedicated vCPUs (48 cores) via 3.35 GHz AMD EPYC 7452",
+    "672.0 GB system memory providing 7.0 GB per vCPU allocation",
+    "Bundled 2577 GB local SSD storage for high-speed temporary caching",
+    "Top-tier hardware encryption testing achieving 97050.01 PassMark score",
+    "High-throughput caching performance with 71.0M Redis SET ops/sec",
+    "Tailored for in-memory databases, analytics, and memory-bound parallel jobs"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

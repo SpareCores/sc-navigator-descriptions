@@ -1,23 +1,23 @@
 {
   "page": [
-    "Microsoft Azure E16pds_v5 is an ARM-based virtual machine belonging to the EPDSv5 family, running on the Microsoft Hyper-V hypervisor. It features 16 dedicated physical cores powered by an Ampere Altra ARMv8 Neoverse-N1 processor operating at 3.0 GHz. The architecture allocates one thread per core, providing a total of 16 vCPUs. The system is equipped with 128.0 GB of RAM, translating to 8.0 GB of memory per core, and includes a 614 GB local SSD.",
-    "Performance benchmarks place this server in the average tier for most multi-core and memory-bound operations. The single-core stress-ng performance is 1822.69, while multi-core performance reaches 28904.71. Memory bandwidth tests show 1127.57 GB/sec for cached small-block reads and 122.17 GB/sec for uncached large-block reads. However, single-threaded tasks show some limitations, with a weak Geekbench single-core score of 1087.0 and a weak Passmark CPU encryption score of 2590.42.",
-    "Given its 1:8 vCPU-to-RAM ratio, the E16pds_v5 offers a cost-efficient profile for memory-intensive workloads that do not require x86-specific instruction sets. The inclusion of 614 GB of local SSD storage combined with an average Passmark database operations score of 10869.44 and Redis SET performance of 21.74 million operations per second makes it suitable for database hosting, caching layers, and memory-optimized web serving."
+    "Microsoft Azure E16pds_v5 is a memory-optimized virtual machine built on Ampere ARMv8 Neoverse-N1 hardware. It features 16 dedicated physical cores running at 3.0 GHz with one thread per core, delivering 16 vCPUs without simultaneous multithreading contention. The system provides 128.0 GB of memory, establishing an 8:1 memory-to-vCPU ratio with 8.0 GB of RAM per core. Architectural cache resources include 64 KB of L1 data cache per core, 1.0 MB of L2 cache per core, and a shared 32 MB L3 cache. For temporary storage, the instance bundles 644 GB of local SSD capacity. No GPUs are attached.",
+    "Benchmark evaluations position the E16pds_v5 within average mid-range performance tiers for multi-threaded and memory-intensive execution. Multi-core operations recorded 28,904.71 in stress-ng and 9,470.0 in Geekbench multi-core testing. Memory performance yields uncached read bandwidth of 122.17 GB/sec and uncached write bandwidth of 65.4 GB/sec on 256 MB blocks, complementing a PassMark memory score of 1,883.14. Single-core evaluations reveal lower relative processing throughput, logging 1,087.0 on Geekbench single-core, 8.49 GB/sec on single-threaded bzip3 decompression, and 2,590.42 on the PassMark encryption test.",
+    "Hardware tradeoffs focus on high memory density and stable thread isolation over peak single-thread execution speed or advanced vector operations. The Neoverse-N1 architecture omits x86 extensions such as AVX-512 and AMX, which limits compute speed in heavy mathematical transformations and larger language model prompt processing, where 7B prompt parsing reached 19.03 tokens per second. However, for workloads requiring steady concurrency and abundant memory, the 16 dedicated physical cores prevent neighbor-thread interference across the 128.0 GB memory footprint.",
+    "The E16pds_v5 delivers cost-efficient memory scaling on ARM-native runtimes. With PassMark database operations reaching 10,869.44 and Redis achieving 21.74 million SET operations per second, it is well aligned for in-memory caches, relational or NoSQL database workloads, memory-intensive static web serving, and distributed ARM-based compilation environments requiring local scratch storage."
   ],
-  "description": "Microsoft Azure E16pds_v5 is an ARM-based virtual machine from the EPDSv5 family, running on the Microsoft Hyper-V hypervisor. It features 16 dedicated physical cores powered by an Ampere ARMv8 Neoverse-N1 processor at 3.0 GHz, paired with 128.0 GB of RAM and a 614 GB local SSD. With a 1:8 vCPU-to-RAM ratio, this server is optimized for memory-intensive workloads. Benchmark results show average multi-core performance, with a stress-ng multi-core score of 28904.71 and Redis SET operations reaching 21.74 million operations per second. However, single-core performance is weaker, as indicated by a Geekbench single-core score of 1087.0. This server is well-suited for database operations, caching layers, and memory-optimized web serving where ARM architecture is supported.",
-  "og_description": "Microsoft Azure E16pds_v5 is an ARM-based virtual machine featuring 16 dedicated Ampere Neoverse-N1 cores, 128 GB of RAM, and a 614 GB local SSD, optimized for memory-intensive database workloads.",
-  "meta_description": "Microsoft Azure E16pds_v5 is an ARM-based VM with 16 dedicated cores, 128 GB RAM, and 614 GB local SSD storage for memory-intensive workloads.",
-  "tagline": "An ARM-based virtual machine featuring a high memory-to-core ratio and local SSD storage for memory-intensive database and caching workloads.",
+  "description": "Microsoft Azure E16pds_v5 is an ARM-based memory-optimized virtual machine running on Ampere Neoverse-N1 silicon. Configured with 16 dedicated physical cores operating at 3.0 GHz and 128.0 GB of RAM, it maintains an 8:1 memory-to-vCPU allocation with 8.0 GB per core. The instance includes 644 GB of local SSD storage and operates without an attached GPU. Benchmark profiles indicate solid multi-threaded and memory throughput, including 21.74 million Redis SET operations per second and 122.17 GB/sec in large-block uncached memory read bandwidth. Although single-core speeds and vector acceleration are modest compared to x86 alternatives, its non-hyperthreaded core layout and large memory pool offer efficient resource density. It is suited for in-memory caching layers, relational databases, distributed ETL pipelines, and ARM-optimized microservices.",
+  "og_description": "Microsoft Azure E16pds_v5 is a memory-optimized VM providing 16 dedicated Ampere Neoverse-N1 ARM cores, 128 GB RAM, and 644 GB local SSD storage for memory-intensive workloads.",
+  "meta_description": "Microsoft Azure E16pds_v5 features 16 dedicated Ampere ARM cores, 128 GB RAM, and 644 GB local SSD storage for memory-optimized cloud workloads.",
+  "tagline": "Dedicated 16-core ARM architecture paired with 128 GB RAM and local SSD for memory-dense enterprise workloads.",
   "bullet_points": [
-    "16 dedicated Ampere Altra ARMv8 Neoverse-N1 physical cores running at 3.0 GHz",
-    "128.0 GB of system memory providing a 1:8 vCPU-to-RAM ratio",
-    "614 GB of integrated local SSD storage",
-    "Average multi-core performance with 21.74 million Redis SET operations per second",
-    "Optimized for database hosting, caching layers, and memory-intensive web serving"
+    "16 dedicated Ampere Neoverse-N1 ARMv8 physical cores at 3.0 GHz",
+    "128.0 GB of system memory providing an 8:1 RAM-to-vCPU ratio",
+    "Bundled 644 GB local SSD storage for fast temporary caching",
+    "Strong multi-threaded and memory throughput with 21.74M Redis SET ops/sec",
+    "Suited for in-memory databases, Redis caches, and ARM-native microservices"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "Storage & Database"
   ]
 }

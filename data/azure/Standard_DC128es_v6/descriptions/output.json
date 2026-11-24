@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure DC128es_v6 is a memory-optimized virtual machine instance belonging to the DCEV6 server family. Powered by an x86_64 Intel processor, this instance features 128 dedicated virtual CPUs and 512.0 GB of system memory, yielding a resource density of 4.0 GB of RAM per core. The underlying virtualization is managed by the Microsoft Hyper-V hypervisor.",
-    "This server configuration does not include local storage, meaning all storage requirements must be met via external network-attached volumes, though the instance is fully Premium Storage capable. Additionally, the DC128es_v6 does not feature any integrated graphics processing units and does not come with complimentary public IPv4 addresses.",
-    "From a qualitative cost-efficiency perspective, the DC128es_v6 provides a high-density allocation of dedicated compute and memory resources within a single virtual machine, reducing the overhead associated with managing multiple smaller nodes. This profile is suited for large-scale enterprise workloads, memory-intensive database deployments, complex data processing pipelines, and enterprise-grade web serving applications that require substantial parallel processing power and a large memory footprint without the need for local NVMe drives or GPU acceleration."
+    "Microsoft Azure DC128es_v6 is an enterprise-scale virtual machine configuration running on Microsoft Hyper-V. The platform utilizes 64 physical Intel Xeon cores supporting simultaneous multithreading, presenting 128 dedicated virtual CPUs clocked at up to 4.2 GHz. The CPU architecture incorporates a 260 MB shared L3 cache alongside 2 MB of L2 cache and 48 KB of L1 data cache per core. Silicon features include Intel Advanced Matrix Extensions and AVX-512 instructions with VNNI and bfloat16 support, enabling hardware-level acceleration for matrix multiplication and high-throughput vector mathematics.",
+    "The system provides 512 GB of system RAM, maintaining a balanced density of 4.0 GB per vCPU. No local ephemeral storage is bundled with the instance, requiring external remote block storage for persistent and temporary file operations. Hardware testing demonstrates stress-ng single-core throughput of 1831.08, falling in the median 50 percent band, whereas multi-core execution scales into the upper 25 percent with a score of 108052.8. In-memory operations show top-decile capability, delivering 134.8 million operations per second in Redis SET evaluations.",
+    "Without local NVMe drives or discrete GPU accelerators, the instance concentrates its resource allocation strictly on dense CPU scaling and memory-resident tasks. Qualitative cost efficiency stems from high multi-threaded density per physical core and high throughput in caching tasks without the added overhead of unneeded accelerator hardware. Microsoft Azure DC128es_v6 is well suited for large-scale distributed caching deployments, memory-intensive database engines, parallel compilation, and enterprise microservice architectures."
   ],
-  "description": "Microsoft Azure DC128es_v6 is a memory-optimized virtual machine from the DCEV6 family, running on the Microsoft Hyper-V hypervisor. It is equipped with an x86_64 Intel processor featuring 128 dedicated vCPUs and 512.0 GB of RAM, which translates to 4.0 GB of memory per core. This instance does not include local storage, relying instead on its Premium Storage capability for external block storage, and contains no onboard GPUs. Designed for high-density enterprise operations, the DC128es_v6 is structured to support large-scale workloads that demand significant parallel processing capabilities and substantial memory capacity. It is highly suited for memory-intensive databases, enterprise applications, and large-scale data processing tasks where dedicated compute resources and a stable virtualization environment are critical.",
-  "og_description": "Microsoft Azure DC128es_v6 is a memory-optimized virtual machine featuring 128 dedicated Intel vCPUs, 512.0 GB of RAM, and Premium Storage capability under the Microsoft Hyper-V hypervisor.",
-  "meta_description": "Microsoft Azure DC128es_v6 is a memory-optimized VM with 128 dedicated Intel vCPUs, 512.0 GB of RAM, and Premium Storage support.",
-  "tagline": "A high-core dedicated virtual machine featuring 128 vCPUs and 512 GB of memory for demanding enterprise workloads.",
+  "description": "Microsoft Azure DC128es_v6 is a general-purpose server type designed for compute-intensive enterprise workloads requiring substantial memory and parallel processing capacity. Powered by x86_64 Intel Xeon processors running at 4.2 GHz, it provides 128 dedicated vCPUs mapped to 64 physical cores with multithreading, backed by 260 MB of L3 cache. System memory totals 512 GB, maintaining a balanced 4 GB per vCPU ratio. The instance includes hardware instruction support for Intel AMX and AVX-512, accelerating vector mathematics and matrix calculations. It contains no attached local storage or integrated GPUs, relying on remote block storage solutions. Benchmark data reveals average single-core output alongside upper-quartile multi-core processing in stress-ng evaluations. Memory subsystem efficiency is demonstrated by top-tier Redis throughput achieving 134.8 million SET operations per second. This architecture makes the instance well suited for large in-memory caching layers, distributed databases, and high-concurrency microservice platforms.",
+  "og_description": "Microsoft Azure DC128es_v6 provides 128 dedicated Intel Xeon vCPUs, 512 GB of RAM, and 260 MB of L3 cache, achieving top-tier multi-core execution and high-volume in-memory caching performance.",
+  "meta_description": "Microsoft Azure DC128es_v6 delivers 128 dedicated Intel Xeon vCPUs, 512 GB RAM, and AMX instruction support for high-throughput enterprise processing.",
+  "tagline": "High-density compute instance featuring 128 dedicated Intel Xeon vCPUs, 512 GB RAM, and advanced matrix extensions for enterprise workloads.",
   "bullet_points": [
-    "128 dedicated x86_64 Intel vCPUs",
-    "512.0 GB of system memory providing 4.0 GB per core",
-    "Premium Storage capable with no local storage included",
-    "Powered by the Microsoft Hyper-V hypervisor",
-    "Suited for memory-intensive databases and large-scale enterprise workloads"
+    "128 dedicated vCPUs across 64 physical Intel Xeon cores running at up to 4.2 GHz",
+    "512 GB of system memory offering a balanced 4 GB per vCPU allocation",
+    "Hardware acceleration via Intel AMX and AVX-512 vector instructions",
+    "High in-memory throughput reaching 134.8 million Redis SET operations per second",
+    "Requires remote disk provisioning due to the absence of bundled local storage",
+    "Optimized for large-scale caching, relational databases, and multi-threaded enterprise services"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

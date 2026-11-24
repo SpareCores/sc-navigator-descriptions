@@ -1,23 +1,24 @@
 {
   "page": [
-    "Microsoft Azure FX64-32mds_v2 is a memory-intensive virtual machine running on the Microsoft Hyper-V hypervisor. It features an x86_64 architecture powered by a dedicated Intel Xeon 8573C processor with 16 physical cores and 32 vCPUs operating at 4.2 GHz. The processor includes a 260 MB L3 cache and supports advanced instruction sets such as Advanced Vector Extensions (AVX-512) and Advanced Matrix Extensions (AMX). The system is equipped with 1344.0 GB of RAM, yielding 42.0 GB of memory per core, and includes 3780 GB of local NVMe SSD storage.",
-    "Benchmark data indicates top-tier performance in Geekbench single-core execution, image processing, and text processing, all placing in the top 10% of tested systems. Large-block memory bandwidth read and write speeds are strong, placing in the top 25% with 241.54 GB/sec and 136.66 GB/sec respectively. Single-threaded gzip compression and multi-threaded bzip3 decompression also show strong performance. However, database operations and Redis SET operations perform in the average tier. While the server handles prompt processing for medium-sized LLM models efficiently, text generation for large 70B models is weak, registering at 2.71 tokens/sec.",
-    "Given its high memory-to-vCPU ratio and dedicated Intel Xeon hardware, this server offers qualitative cost efficiency for memory-bound workloads that do not require GPU acceleration. The inclusion of 3780 GB of local NVMe SSD storage provides a high-density resource profile for large-scale caching and in-memory databases. The server is best suited for memory-intensive applications, large-scale data decompression, text and image processing pipelines, and medium-scale language model prompt processing."
+    "Microsoft Azure FX64-32mds_v2 is a high-memory, compute-oriented instance provisioned via Microsoft Hyper-V. The system is driven by an Intel Xeon 8573C processor utilizing the x86_64 architecture, configured with 16 physical cores and 32 dedicated vCPUs operating at clock speeds up to 4.2 GHz. The CPU subsystem features 48 KB of L1 data cache, 2 MB of L2 cache, and a large 260 MB L3 cache pool. Supported instruction set extensions include AVX-512, AMX (tile and int8), and hardware cryptography accelerators (AES, VAES, SHA-NI). No dedicated GPUs are included.",
+    "A defining aspect of the FX64-32mds_v2 is its memory density, offering 1344.0 GB of RAM, which equates to 42.0 GB per vCPU. Storage capabilities include 3780 GB of integrated local NVMe SSD storage, along with support for Azure Premium Storage. In benchmark testing, the large uncached memory bandwidth demonstrates top-quartile performance, achieving 241.54 GB/sec on read operations and 136.66 GB/sec on write operations. Compute metrics show top-tier single-core Geekbench results (2367.0) and strong multi-core PassMark CPU scores (52457.14), supplemented by strong compression throughput in gzip and bzip3.",
+    "The constrained core count relative to the massive memory array results in a specialized hardware profile. Workloads requiring heavy parallel core counts may experience bottlenecks compared to full-socket deployments, as reflected in average multi-core stress-ng tests and weaker large-model LLM generation speeds. However, for applications bound by single-core speed, cache capacity, and massive working memory footprints, the high memory-per-core ratio provides substantial qualitative efficiency by avoiding over-provisioning compute cores simply to acquire adequate memory capacity.",
+    "The instance is well suited for large in-memory databases, electronic design automation (EDA), caching tiers, heavy relational database servers requiring NVMe scratch storage, and data processing pipelines that benefit from high memory density and accelerated single-thread execution."
   ],
-  "description": "Microsoft Azure FX64-32mds_v2 is a memory-intensive virtual machine featuring a dedicated 32-vCPU Intel Xeon 8573C processor running at 4.2 GHz on the Microsoft Hyper-V hypervisor. Built on the x86_64 architecture, it provides 1344.0 GB of RAM and 3780 GB of local NVMe SSD storage. Benchmark results show top-tier single-core CPU, image, and text processing capabilities, alongside strong large-block memory bandwidth. However, database operations and Redis SET operations perform in the average tier, and text generation for large 70B language models is weak. This server is designed for memory-bound workloads, large-scale data decompression, and text or image processing pipelines.",
-  "og_description": "Microsoft Azure FX64-32mds_v2 is a memory-intensive virtual machine featuring 32 vCPUs, 1344 GB of RAM, and 3780 GB of local NVMe SSD storage, delivering top-tier single-core and image processing performance.",
-  "meta_description": "Microsoft Azure FX64-32mds_v2 is a memory-intensive VM with 32 vCPUs, 1344 GB RAM, and 3780 GB NVMe SSD storage for memory-bound workloads.",
-  "tagline": "A memory-intensive x86 platform featuring high-capacity RAM, local NVMe SSD storage, and strong single-core processing capabilities.",
+  "description": "Microsoft Azure FX64-32mds_v2 is a compute- and memory-focused virtual machine powered by a 16-core, 32-vCPU Intel Xeon 8573C processor running up to 4.2 GHz on the x86_64 architecture. It provides an exceptional memory-to-core configuration with 1344.0 GB of system RAM (42.0 GB per vCPU) and includes 3780 GB of fast local NVMe SSD storage. Benchmark profiles show top-tier single-core performance alongside strong large-block memory read/write throughput and robust encryption handling. Operating without GPUs, the instance trades higher core density for extreme per-core memory allocation and strong single-thread performance. The instance architecture is best suited for memory-intensive enterprise databases, large-scale caching systems, financial modeling, and electronic design automation tasks requiring massive working sets without unnecessary vCPU licensing overhead.",
+  "og_description": "Microsoft Azure FX64-32mds_v2 features 32 dedicated vCPUs via an Intel Xeon 8573C CPU, 1344 GB RAM, and 3780 GB NVMe SSD storage, engineered for memory-heavy compute workloads.",
+  "meta_description": "Microsoft Azure FX64-32mds_v2 provides 32 vCPUs at 4.2 GHz, 1344 GB RAM, and 3780 GB local NVMe SSD storage for memory-intensive enterprise tasks.",
+  "tagline": "Massive memory allocation per core, high-frequency Intel compute, and integrated NVMe storage for memory-constrained workloads.",
   "bullet_points": [
-    "Intel Xeon 8573C processor with 32 vCPUs and 16 physical cores at 4.2 GHz",
-    "1344.0 GB of system memory providing 42.0 GB of RAM per core",
-    "3780 GB of local NVMe SSD storage for high-speed data access",
-    "Top-tier performance in single-core execution, image processing, and text processing",
-    "Strong large-block memory bandwidth and data decompression speeds",
-    "Best suited for memory-intensive applications, caching, and text processing pipelines"
+    "32 dedicated vCPUs from an Intel Xeon 8573C processor running up to 4.2 GHz",
+    "1344 GB of system RAM offering 42 GB per vCPU",
+    "3780 GB integrated local NVMe SSD storage capacity",
+    "Top-tier single-core processing and strong uncached memory bandwidth",
+    "Optimized for large in-memory databases, EDA, and high-memory analytics"
   ],
   "categories": [
     "Memory Optimized",
+    "Compute Optimized",
     "Storage & Database"
   ]
 }

@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c8i.96xlarge is a compute-optimized instance powered by the Nitro hypervisor. It features 384 vCPUs and 192 physical cores from an Intel Xeon 6975P-C processor operating at 3.9 GHz. The system includes 768.0 GB of DDR5 memory running at 7 GHz, providing 2.0 GB of RAM per core. It lacks local storage and dedicated GPU hardware, relying entirely on network-attached storage and a baseline network bandwidth of 100 Gbps.",
-    "Benchmark data shows top-tier multi-core performance, with stress-ng multi-core CPU and Passmark CPU scores ranking in the top 10%. Memory bandwidth is also highly rated, with read-only cached speeds reaching 30,590.21 GB/sec. The processor supports advanced instruction sets, including AVX-512 and Intel Advanced Matrix Extensions, which contribute to top-tier performance in Passmark extended instructions and encryption tests.",
-    "While multi-threaded capabilities and prompt processing for large language models rank in the top tier, single-core performance is average. Text generation speeds for LLM inference represent a notable bottleneck, falling into the average to poor categories. This resource profile, characterized by high compute density and fast DDR5 memory but no local storage, is suited for highly parallelized workloads such as static web serving, database operations, software compilation, and multi-threaded decompression."
+    "Amazon Web Services c8i.96xlarge is a compute-optimized instance built on the Nitro hypervisor architecture. It features two dedicated Intel Xeon 6975P-C processors with an x86_64 architecture, providing 192 physical cores and 384 vCPUs running at 3.9 GHz. The memory subsystem consists of 768.0 GB of DDR5 RAM rated at 7 GHz, delivering a compute-centric 2:1 vCPU-to-memory ratio (2.0 GB per core). Cache resources include a massive 480 MB L3 cache, complemented by 2 MB of L2 cache and 48 KB of L1d cache. Network connectivity provides a baseline bandwidth of 100 Gbps. The instance does not include integrated local storage or hardware GPUs.",
+    "Benchmark results demonstrate exceptional multi-threaded computational capabilities, ranking in the top 10% for multi-core stress-ng tests, PassMark CPU evaluation, Clang compilation, ray tracing, and multi-threaded bzip3 decompression. The CPU instruction set features AMX and AVX-512 vector extensions, driving high-tier results in extended instruction testing and hardware-accelerated encryption. Memory bandwidth tests indicate sustained large-block read throughput of 1,147.58 GB/sec and write throughput of 507.23 GB/sec, supporting high-rate Redis SET operations (509.89 million ops/sec) and static web serving throughput reaching 198.62 GB/sec. Conversely, single-threaded metrics such as single-core stress-ng perform in the median range.",
+    "Tradeoffs center around storage topology and sequential token generation constraints. Without bundled local NVMe storage, persistent data architectures rely entirely on network-attached storage or high-throughput external volumes across the 100 Gbps network fabric. For machine learning tasks, prompt processing performs at high tiers via Intel AMX matrix capabilities, but token generation speeds fall into lower performance bands due to the absence of dedicated GPU accelerators. The platform offers efficient resource consolidation for massive parallel compute pipelines, enterprise Clang compilation suites, high-concurrency microservice fleets, and in-memory key-value stores."
   ],
-  "description": "Amazon Web Services c8i.96xlarge is an x86_64 compute-optimized instance featuring 384 vCPUs and 192 physical cores powered by an Intel Xeon 6975P-C processor at 3.9 GHz. Equipped with 768.0 GB of DDR5 memory and a 100 Gbps network baseline, this Nitro-based server lacks local storage and GPU accelerators. Benchmarks indicate top-tier multi-core CPU performance, memory bandwidth, and database operations, though single-core execution and LLM text generation speeds are comparatively limited. The instance is designed for highly parallelized compute workloads, including software compilation, multi-threaded decompression, and high-throughput web serving.",
-  "og_description": "Amazon Web Services c8i.96xlarge is a compute-optimized instance with 384 vCPUs, 768 GB DDR5 RAM, and 100 Gbps network bandwidth, delivering top-tier multi-core performance for parallel workloads.",
-  "meta_description": "Amazon Web Services c8i.96xlarge is a compute-optimized instance featuring 384 vCPUs, 768 GB DDR5 RAM, and 100 Gbps network bandwidth.",
-  "tagline": "A compute-optimized instance featuring three hundred eighty-four virtual cores, DDR5 memory, and top-tier multi-threaded capabilities for parallel processing.",
+  "description": "Amazon Web Services c8i.96xlarge is a high-density, compute-optimized instance powered by dedicated Intel Xeon 6975P-C processors on the Nitro hypervisor. The x86_64 configuration provides 192 physical cores, 384 vCPUs clocked at 3.9 GHz, 480 MB of L3 cache, and 768.0 GB of DDR5 memory running at 7 GHz. It includes baseline 100 Gbps network connectivity, without bundled local storage or GPUs. Benchmark evaluations show top-tier multi-threaded processing, leading PassMark CPU scores, advanced matrix instruction processing, and rapid uncached memory throughput exceeding 1,147 GB/sec for reads. Single-core throughput and sequential LLM token generation represent the architectural tradeoffs. This instance is suited for parallel batch processing, massive Clang software builds, distributed caching, and compute-heavy containerized workloads requiring high network bandwidth.",
+  "og_description": "Amazon Web Services c8i.96xlarge delivers 384 vCPUs via Intel Xeon 6975P-C processors, 768 GB DDR5 RAM, and 100 Gbps networking for demanding parallel computing and high-density compilation.",
+  "meta_description": "Amazon Web Services c8i.96xlarge provides 384 vCPUs on Intel Xeon 6975P-C silicon, 768 GB DDR5 memory, and 100 Gbps networking for compute-intensive workloads.",
+  "tagline": "Massive 384-vCPU Intel Xeon platform with DDR5 memory and 100 Gbps networking designed for heavy parallel computing.",
   "bullet_points": [
-    "384 vCPUs and 192 physical cores powered by Intel Xeon 6975P-C at 3.9 GHz",
-    "768.0 GB of high-speed DDR5 memory with 2.0 GB allocated per core",
-    "100 Gbps baseline network bandwidth with no local storage or GPU hardware",
-    "Top-tier multi-core CPU, memory bandwidth, and database operation benchmarks",
-    "Supports advanced instruction sets including AVX-512 and Intel AMX",
-    "Suited for software compilation, multi-threaded decompression, and web serving"
+    "384 dedicated vCPUs (192 physical cores) powered by Intel Xeon 6975P-C processors at 3.9 GHz",
+    "768.0 GB DDR5 high-speed system memory with 480 MB shared L3 cache",
+    "High-speed 100 Gbps baseline networking throughput on Nitro system hypervisor",
+    "Top-tier multi-core performance in Clang compilation, ray tracing, and PassMark tests",
+    "Intel AMX and AVX-512 hardware instruction support for vectorized computing",
+    "Lacks bundled local storage and GPUs, requiring external storage architectures"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

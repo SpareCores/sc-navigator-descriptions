@@ -1,23 +1,22 @@
 {
   "page": [
-    "Microsoft Azure E16s_v5 is an ESv5 family virtual machine configured with 16 dedicated vCPUs and 128.0 GB of RAM. Powered by an Intel Xeon 8370C processor running at 2.8 GHz, this x86_64 architecture server features 8 physical cores with hyper-threading enabled, resulting in 2 threads per core. The processor includes a 48 MB L3 cache and supports advanced instruction sets such as AVX-512 and cryptography acceleration via AES and SHA_NI.",
-    "This instance does not include local storage or bundled GPUs, meaning all storage requirements must be met via external Premium Storage options. Additionally, it provides zero complimentary public IPv4 addresses. The high memory-to-vCPU ratio of 8 GB per core positions this hardware class as a memory-optimized resource, trading off local storage and hardware acceleration for substantial memory density.",
-    "Benchmark results place the E16s_v5 in the average performance tier across most standardized tests. It achieved a Geekbench multi-core score of 10035.0 and a Passmark CPU score of 21180.44. Memory bandwidth tests show read-only speeds of 834.31 GB/sec for cached small blocks and 102.57 GB/sec for uncached large blocks. Notably, the server demonstrates strong performance in text generation for small language models, reaching 295.71 tokens/sec, while maintaining average speeds of 15.7 tokens/sec for medium models.",
-    "Given its memory-to-vCPU ratio and average database operations score of 7997.58, the E16s_v5 is suited for memory-intensive workloads such as relational databases, caching layers like Redis, and medium-scale enterprise applications. From a qualitative cost-efficiency perspective, the lack of local storage and GPU hardware reduces overhead for workloads that rely strictly on high memory capacity and remote storage volumes."
+    "Microsoft Azure E16s_v5 is a memory-optimized virtual machine built on the x86_64 architecture. It is powered by an Intel Xeon Platinum 8370C processor running at a base clock speed of 2.8 GHz, provisioned with 16 vCPUs across 8 dedicated physical cores with hyperthreading enabled. The configuration includes 128.0 GB of system memory, maintaining an 8.0 GB per vCPU ratio, supported by 260 MB of L3 cache, 2 MB of L2 cache, and 48 KB of L1d cache. Architectural CPU flags include AVX-512 extensions (avx512f, avx512_vnni), hardware-accelerated encryption via AES-NI and SHA extensions, and BMI2.",
+    "The instance includes no bundled local storage, requiring network-attached storage or managed disks for persistent data. It does not feature discrete GPUs, relying solely on CPU resources for compute tasks. In benchmark evaluations, memory throughput achieves 102.57 GB/sec for uncached 256 MB read blocks and 59.08 GB/sec for write operations, with cached small-block reads reaching 834.31 GB/sec. General multi-core processing delivers a Geekbench score of 10035.0 and a PassMark CPU score of 21180.44. In memory-dependent operations, it sustains 16.03 million Redis SET operations per second and handles 21.78 GB/sec of static web serving throughput.",
+    "Cost efficiency is centered around memory density rather than raw multi-core compute throughput. Because the hardware dedicates 128.0 GB of RAM across 16 vCPUs, it avoids the expense of scaling compute core counts purely to acquire large memory capacity. The trade-off is the absence of local ephemeral NVMe storage, meaning all I/O workloads rely on remote storage throughput limits. The instance is suited for enterprise in-memory databases, large-scale caching tiers, memory-heavy analytics pipelines, and multi-threaded compilation workloads."
   ],
-  "description": "Microsoft Azure E16s_v5 is an ESv5 family virtual machine featuring 16 dedicated vCPUs and 128.0 GB of RAM, powered by an Intel Xeon 8370C processor at 2.8 GHz. Built on the x86_64 architecture with 8 physical cores and hyper-threading, it includes a 48 MB L3 cache and supports AVX-512 instructions. This server does not bundle local storage or GPUs, relying instead on remote Premium Storage. Benchmarks show average performance across most tests, including a Geekbench multi-core score of 10035.0 and a Passmark CPU score of 21180.44, alongside a strong text generation speed of 295.71 tokens/sec for small language models. With a memory-to-vCPU ratio of 8 GB per core, this instance is designed for memory-intensive workloads such as database operations, caching layers, and enterprise applications.",
-  "og_description": "Microsoft Azure E16s_v5 is an ESv5 virtual machine with 16 dedicated Intel Xeon vCPUs, 128 GB RAM, and no local storage, delivering average multi-core performance for memory-intensive workloads.",
-  "meta_description": "Microsoft Azure E16s_v5 is an ESv5 virtual machine featuring 16 dedicated Intel Xeon vCPUs, 128 GB RAM, and remote Premium Storage support.",
-  "tagline": "An Intel-powered, memory-optimized virtual machine with 128 GB RAM and 16 dedicated vCPUs for memory-intensive enterprise workloads.",
+  "description": "Microsoft Azure E16s_v5 is a memory-optimized virtual machine powered by an Intel Xeon 8370C processor at 2.8 GHz on the x86_64 architecture. It features 16 vCPUs derived from 8 physical cores, paired with 128.0 GB of RAM, establishing an 8.0 GB per vCPU ratio. Cache provisions include 260 MB of L3 cache alongside instruction support for AVX-512 and hardware cryptography. The instance includes no bundled local storage and no dedicated GPUs. Performance benchmarks show sustained uncached memory read bandwidth of 102.57 GB/sec, 16.03 million Redis SET operations per second, a Geekbench multi-core score of 10035.0, and a PassMark CPU score of 21180.44. By prioritizing memory allocation per core, the E16s_v5 delivers cost efficiency for RAM-intensive tasks without requiring higher core tiers. It is well-matched for large in-memory caches, relational database systems, and data analytics tasks requiring substantial memory headroom.",
+  "og_description": "Microsoft Azure E16s_v5 is a memory-optimized VM providing 16 vCPUs via an Intel Xeon 8370C processor and 128 GB RAM. Features 260 MB L3 cache, no local disk, and solid memory throughput.",
+  "meta_description": "Microsoft Azure E16s_v5 is a memory-optimized VM with 16 vCPUs, an Intel Xeon 8370C CPU, 128 GB RAM, no local storage, and 102.57 GB/sec memory read bandwidth.",
+  "tagline": "Memory-dense 16 vCPU computing powered by Intel Xeon processors, delivering 128 GB RAM for memory-intensive enterprise workloads.",
   "bullet_points": [
-    "16 dedicated vCPUs powered by an Intel Xeon 8370C processor at 2.8 GHz",
-    "128.0 GB of system memory providing a high 8 GB per core ratio",
-    "No local storage or integrated GPUs, requiring remote Premium Storage",
-    "Strong text generation performance of 295.71 tokens/sec for small LLMs",
-    "Suited for database operations, Redis caching, and memory-heavy workloads"
+    "16 vCPUs across 8 physical cores on an Intel Xeon 8370C 2.8 GHz processor",
+    "128.0 GB total system memory with an 8.0 GB per core ratio",
+    "Extensive cache hierarchy including 260 MB of shared L3 cache",
+    "Zero bundled local storage and zero GPU accelerators",
+    "Uncached memory read bandwidth reaching 102.57 GB/sec",
+    "Optimized for in-memory databases, caching layers, and large analytic datasets"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

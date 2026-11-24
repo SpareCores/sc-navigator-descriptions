@@ -1,21 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.hfg6.xlarge is a general-purpose virtual machine instance powered by the KVM hypervisor. It features 4 dedicated vCPUs mapped from 2 physical Intel Xeon 8269CY cores running at a clock speed of 3.1 GHz. The x86_64 architecture includes 16.0 GB of system memory, providing 4.0 GB of RAM per core. This instance does not include local storage or GPU accelerators, and it operates with a baseline network bandwidth of 2 Gbps.",
-    "Performance benchmarks indicate moderate single-core capabilities but limited multi-core scaling. The single-core stress-ng and Geekbench scores fall into the average range, supported by Intel AVX-512 vector extensions. However, multi-core benchmarks, including stress-ng multi-core and Geekbench multi-core, are positioned in the lower performance tiers. Memory bandwidth tests for both read and write operations also register in the bottom quartile, which impacts data-intensive tasks.",
-    "From a resource density perspective, the ecs.hfg6.xlarge offers dedicated CPU allocation, ensuring consistent compute performance without noisy-neighbor interference. However, the tradeoff is lower overall throughput in highly parallelized workloads, as evidenced by weak multi-threaded bzip3 decompression and database operation scores. This profile is best suited for general-purpose workloads that require dedicated CPU resources but do not demand high memory bandwidth or local storage, such as lightweight web serving, basic text processing, or small-scale application hosting."
+    "Alibaba Cloud ecs.hfg6.xlarge is an x86_64 virtual instance within the High Clock Speed family, operating on the KVM hypervisor. Compute is provided by an Intel Xeon 8269CY processor operating at a base frequency of 3.1 GHz, provisioned as 4 dedicated vCPUs spanning 2 physical cores with hyper-threading enabled. System memory totals 16.0 GB, allocating 4.0 GB per vCPU core. The instance includes 35 MB of L3 cache alongside support for AVX-512 vector extensions. Networking provides a baseline bandwidth of 2 Gbps, while no local instance storage or dedicated GPU accelerators are bundled with this configuration.",
+    "Benchmark evaluations highlight a divergence between single-threaded and multi-threaded throughput. Single-core performance sits in the middle 50% across tests, achieving 1432.58 in stress-ng and 1245.0 in Geekbench, supported by the 3.1 GHz clock rate. In contrast, multi-core benchmarks such as Geekbench multi-core (2760.0) and PassMark CPU (4655.05) rank in the bottom quartile, bounded by the two-physical-core physical limit. Memory bandwidth benchmarks also demonstrate lower-tier throughput, recording 26.35 GB/sec for uncached large-block reads and 22.75 GB/sec for large-block writes.",
+    "The primary architectural tradeoff lies in providing dedicated, elevated clock speeds while constrained by a low core count and lower memory bandwidth. Because no local disks are included, operational storage relies entirely on external network-attached block volumes. Given the balanced 1:4 vCPU-to-memory ratio, Alibaba Cloud ecs.hfg6.xlarge is suited for general application hosting, moderate web serving, CI/CD build workers, and small backend services where consistent clock frequency is prioritized over heavy parallel scalability."
   ],
-  "description": "Alibaba Cloud ecs.hfg6.xlarge is a general-purpose instance featuring 4 dedicated vCPUs and 16.0 GB of RAM, running on a 3.1 GHz Intel Xeon 8269CY processor. Built on the x86_64 architecture and managed via the KVM hypervisor, this instance provides a balanced 1:4 vCPU-to-RAM ratio but lacks local storage and GPU acceleration. It delivers a baseline network bandwidth of 2 Gbps. Benchmark data shows average single-core performance, aided by AVX-512 instruction support, but reveals weaker multi-core scaling and lower memory bandwidth. Consequently, the ecs.hfg6.xlarge is best suited for workloads requiring dedicated CPU allocation with moderate compute needs, such as lightweight web serving, text processing, and basic application hosting, rather than memory-intensive or highly parallelized database operations.",
-  "og_description": "Alibaba Cloud ecs.hfg6.xlarge is a general-purpose instance with 4 dedicated Intel Xeon vCPUs, 16 GB RAM, and 2 Gbps network bandwidth, suitable for lightweight web serving and basic application hosting.",
-  "meta_description": "Alibaba Cloud ecs.hfg6.xlarge is a general-purpose instance featuring 4 dedicated Intel Xeon vCPUs, 16 GB RAM, and a 2 Gbps baseline network speed.",
-  "tagline": "A dedicated general-purpose instance offering balanced compute and memory resources for lightweight applications and standard processing workloads.",
+  "description": "Alibaba Cloud ecs.hfg6.xlarge is a high-clock-speed instance delivering 4 dedicated vCPUs across 2 physical cores of an Intel Xeon 8269CY processor clocked at 3.1 GHz. Equipped with 16.0 GB of RAM, it maintains a balanced 1:4 vCPU-to-memory ratio on the x86_64 architecture with KVM virtualization. The configuration contains no local storage and no GPU hardware, relying on 2 Gbps baseline network bandwidth for external access. Benchmark data reveals average single-core efficiency across Geekbench and stress-ng, whereas multi-core compute, memory bandwidth, and parallel decompression metrics reflect lower-percentile results due to physical core constraints. With stable per-core execution speeds and modest network throughput, the instance provides cost-effective hosting for general business applications, intermediate web servers, build automation tasks, and lightweight microservices requiring predictable clock performance.",
+  "og_description": "Alibaba Cloud ecs.hfg6.xlarge features 4 dedicated vCPUs from a 3.1 GHz Intel Xeon 8269CY processor, 16 GB RAM, and 2 Gbps networking, delivering balanced compute for standard enterprise and web workloads.",
+  "meta_description": "Alibaba Cloud ecs.hfg6.xlarge provides 4 dedicated vCPUs via a 3.1 GHz Intel Xeon 8269CY, 16 GB RAM, and 2 Gbps network bandwidth without bundled local storage.",
+  "tagline": "High-frequency quad-vCPU instance delivering balanced memory allocation and steady single-thread performance for general computing and standard web services.",
   "bullet_points": [
-    "Powered by 4 dedicated Intel Xeon 8269CY vCPUs at 3.1 GHz",
-    "Equipped with 16.0 GB of system memory and no local storage",
-    "Delivers average single-core performance with AVX-512 support",
-    "Provides a baseline network bandwidth of 2 Gbps",
-    "Best suited for lightweight web serving and basic text processing"
+    "4 dedicated vCPUs across 2 physical cores on an Intel Xeon 8269CY processor",
+    "Base clock frequency of 3.1 GHz with AVX-512 instruction set support",
+    "16.0 GB system RAM providing a balanced 1:4 core-to-memory ratio",
+    "No integrated local storage and no hardware GPU accelerators included",
+    "2 Gbps baseline network bandwidth on KVM hypervisor",
+    "Well suited for standard web application servers, microservices, and CI/CD pipelines"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }

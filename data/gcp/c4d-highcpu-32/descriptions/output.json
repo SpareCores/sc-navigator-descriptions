@@ -1,21 +1,24 @@
 {
   "page": [
-    "Google Cloud Platform c4d-highcpu-32 is a compute-optimized server instance powered by an AMD EPYC 9B45 processor. It features 32 vCPUs mapped to 16 physical cores with simultaneous multithreading on the x86_64 architecture. The instance is configured with 60 GB of dedicated system memory, yielding approximately 1.88 GB of RAM per vCPU. It does not include local storage or dedicated GPU hardware, and provides zero complimentary public IPv4 addresses.",
-    "Benchmark results show top-tier performance in single-core stress-ng tests, Geekbench single-core and multi-core scores, single-threaded gzip compression, and single-threaded bzip3 decompression. The processor's extended instruction set capabilities are reflected in strong Passmark CPU and encryption scores, as well as strong multi-threaded bzip3 decompression. Memory bandwidth for both read and write operations falls within the average range, while static web serving throughput is strong. For small language model inference, text generation speed is in the top tier, while prompt processing remains strong.",
-    "The primary tradeoff of the c4d-highcpu-32 is its low memory-to-vCPU ratio of under 2 GB per core, making it less suitable for memory-intensive databases or massive datasets. However, its high-density compute allocation provides qualitative cost efficiency for CPU-bound workloads that do not require local NVMe storage or GPU acceleration. This instance is suited for software compilation, image processing, text processing, ray tracing, and light LLM inference tasks."
+    "Google Cloud Platform c4d-highcpu-32 is a compute-oriented virtual server powered by the x86_64 AMD EPYC 9B45 processor. The instance provides 32 dedicated vCPUs distributed across 16 physical cores with simultaneous multithreading enabled. The CPU configuration features 48 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, complemented by hardware acceleration flags including AVX-512, AVX-VNNI, SHA-NI, and AES encryption instructions. System memory totals 60.0 GB, resulting in an allocation ratio of 1.88 GB per vCPU.",
+    "Benchmark results highlight strong single-core CPU capabilities and compression performance. In stress-ng single-core tests and Geekbench evaluation, the instance scores within the top 10 percent of recorded results. Software compilation using Clang, ray tracing, and static web serving benchmarks demonstrate upper-quartile execution speeds. Cryptographic tests and extended vector instructions also perform in the top 25 percent. Conversely, multi-core stress tests, raw memory bandwidth across large blocks, and database transactions show average throughput.",
+    "The instance includes no bundled local storage, meaning that all persistent disk storage must be provisioned independently via networked block volumes. No complimentary public IPv4 addresses are assigned by default, and there are no hardware GPUs. Because memory capacity is limited to 1.88 GB per vCPU, the server offers high CPU resource density per cost tier for calculation-bound workloads, but introduces constraints for memory-intensive caching or in-memory databases.",
+    "Workload suitability centers on tasks that prioritize raw CPU clock cycles and multi-threaded processing over large memory footprints. Google Cloud Platform c4d-highcpu-32 is appropriate for continuous integration and compilation pipelines, static web traffic handling, data compression and decompression utilities, batch media processing, and CPU-based lightweight machine learning inference."
   ],
-  "description": "Google Cloud Platform c4d-highcpu-32 is an x86_64 compute-optimized server featuring 32 vCPUs and 60 GB of RAM, powered by an AMD EPYC 9B45 processor with 16 physical cores. This instance lacks local storage and GPU accelerators, focusing resources entirely on dedicated CPU performance. Benchmark data indicates top-tier single-core and multi-core CPU performance, with strong results in software compilation, ray tracing, and text processing. It offers average memory bandwidth and database operation speeds. Given the low memory-to-vCPU ratio of 1.88 GB per core, this server is designed for CPU-bound workloads such as software compilation, image processing, and web serving, rather than memory-heavy database applications.",
-  "og_description": "Google Cloud Platform c4d-highcpu-32 is a compute-optimized server with 32 vCPUs, 60 GB RAM, and an AMD EPYC 9B45 processor, delivering top-tier single-core and multi-core benchmark performance.",
-  "meta_description": "Google Cloud Platform c4d-highcpu-32 is a compute-optimized server featuring 32 vCPUs, 60 GB RAM, and an AMD EPYC 9B45 processor.",
-  "tagline": "An x86_64 compute-optimized server featuring 32 vCPUs and top-tier single-core performance for CPU-intensive processing tasks.",
+  "description": "Google Cloud Platform c4d-highcpu-32 is a compute-focused virtual machine configured with 32 dedicated vCPUs and 60 GB of system memory, yielding approximately 1.88 GB of RAM per vCPU. Powered by an x86_64 AMD EPYC 9B45 processor spanning 16 physical cores with simultaneous multithreading, the instance includes 32 MB of L3 cache alongside hardware support for AVX-512, AVX-VNNI, and cryptographic instruction sets. The server does not bundle local disk storage or complimentary public IPv4 addresses, requiring remote network storage for persistent data. In standardized performance benchmarks, the instance demonstrates top-tier single-core computation, data compression, and text processing, accompanied by strong compiler execution and static web serving throughput. Database operations and large-block memory transfers register at mid-tier levels, reflecting its lower memory-to-core allocation. Google Cloud Platform c4d-highcpu-32 is well aligned for CI/CD build pipelines, code compilation, microservice clusters, batch compute jobs, and lightweight CPU-based machine learning inference.",
+  "og_description": "Google Cloud Platform c4d-highcpu-32 is a compute-focused instance featuring 32 AMD EPYC 9B45 vCPUs, 60 GB RAM, AVX-512 support, and high single-core performance for build pipelines and compute tasks.",
+  "meta_description": "Google Cloud Platform c4d-highcpu-32 provides 32 vCPUs from dedicated AMD EPYC 9B45 processors and 60 GB RAM for compute-focused workloads without local storage.",
+  "tagline": "A dedicated 32 vCPU AMD EPYC instance delivering high single-thread throughput and vector acceleration for compute-heavy workloads and compilation pipelines.",
   "bullet_points": [
-    "Powered by an AMD EPYC 9B45 processor with 32 vCPUs and 16 physical cores",
-    "Features 60 GB of dedicated RAM, providing 1.88 GB of memory per vCPU",
-    "Delivers top-tier single-core and multi-core CPU benchmark performance",
-    "Lacks local storage and GPU accelerators, optimizing for pure compute workloads",
-    "Suited for software compilation, image processing, and text processing"
+    "32 dedicated vCPUs on an AMD EPYC 9B45 processor (16 physical cores, 32 threads)",
+    "60.0 GB of system RAM offering 1.88 GB per vCPU",
+    "Hardware support for AVX-512, AVX-VNNI, SHA-NI, and AES encryption",
+    "Top-tier single-core benchmark results and compression throughput",
+    "Requires remote network storage with no bundled local disks or GPUs",
+    "Suited for CI/CD build pipelines, batch compute, and static web serving"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

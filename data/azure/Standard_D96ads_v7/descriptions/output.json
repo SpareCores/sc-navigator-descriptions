@@ -1,22 +1,25 @@
 {
   "page": [
-    "Microsoft Azure D96ads_v7 is a general-purpose instance powered by an AMD EPYC 9V45 processor clocked at 4.5 GHz. It features 96 dedicated vCPUs across 48 physical cores with simultaneous multithreading, backed by 384 GB of memory (4 GB per vCPU). The instance incorporates 5,669 GB of local NVMe SSD storage. Advanced instruction set support includes AVX-512 extensions (AVX512F, AVX512_VNNI, AVX512_BF16), AES, and SHA_NI for hardware-accelerated vector computation and cryptography.",
-    "Benchmark results demonstrate strong processing capacity. In stress-ng tests, multi-core CPU performance reaches top-tier classification with 176,145.96 operations, complemented by a single-core score of 3,792.98. Cached memory read throughput measures 9,486.57 GB/sec, while uncached large-block write operations reach 174.65 GB/sec. High-concurrency data operations achieve notable throughput, evidenced by 140.26 million Redis SET operations per second and 39,508.94 in PassMark database operations. CPU-based small LLM prompt processing reaches 5,540.41 tokens per second.",
-    "Featuring a 1:4 vCPU-to-RAM ratio combined with high-capacity local NVMe storage, the D96ads_v7 provides high resource density without requiring supplementary storage attachments. Hardware tradeoffs include the absence of dedicated GPUs for matrix-heavy acceleration and lower relative throughput on 70B parameter LLM inference compared to dedicated hardware accelerators. Suitable workloads include high-concurrency web applications, relational and key-value database engines, microservices clusters, and CPU-bound ETL pipelines."
+    "Microsoft Azure D96ads_v7 is an AMD EPYC 9V45-powered general-purpose virtual machine offering 96 vCPUs (48 physical cores with 2 threads per core) operating up to 4.5 GHz on an x86_64 architecture. The system provides 384.0 GB of memory maintaining a 1:4 CPU-to-memory ratio (4.0 GB per vCPU) and includes 5,669 GB of fast local NVMe SSD storage. It operates without dedicated GPUs on the Microsoft Hyper-V hypervisor and supports advanced instruction sets including AVX-512, AVX-512 VNNI, and AVX-512 BF16.",
+    "Benchmark measurements place the instance consistently in the top tier across raw processing, memory throughput, and I/O-intensive workloads. In stress-ng, it achieved scores of 3,792.98 (single-core) and 176,145.96 (multi-core), alongside a PassMark CPU score of 117,050.24. Memory operations yielded 311.62 GB/sec read and 174.65 GB/sec write on uncached 256MB blocks, paired with a cached small-block bandwidth of 9,486.57 GB/sec. Data processing capability is highlighted by multi-threaded bzip3 decompression achieving 610.83 GB/sec and single-threaded gzip compression reaching 41.25 GB/sec.",
+    "For practical application tiers, the instance delivers high transaction processing and throughput, evidenced by 140.26 million Redis SET operations per second and 91.12 GB/sec static web serving throughput. CPU-based inference workloads achieve 5,540.41 tokens/sec prompt processing on small models (135M) and maintain 57.76 tokens/sec text generation on medium models (7B), though prompt processing drops to an average 25.81 tokens/sec on large 70B models due to the absence of hardware accelerators.",
+    "Given its combination of 96 compute threads, massive local NVMe scratch storage, and balanced memory allocation, the D96ads_v7 provides strong qualitative cost efficiency for large-scale enterprise workloads. It is well-fitted for relational databases, extensive in-memory caching layers, high-volume web serving, large-scale data compression and decompression pipelines, and CPU-driven batch processing."
   ],
-  "description": "Microsoft Azure D96ads_v7 is a general-purpose instance driven by a 4.5 GHz AMD EPYC 9V45 processor. It provides 96 dedicated vCPUs across 48 physical cores, 384 GB of RAM, and 5,669 GB of direct-attached local NVMe SSD storage. Featuring hardware vector support such as AVX-512 VNNI and BF16, it performs efficiently across compute and data tasks. In benchmarks, the server achieves top-tier results in multi-core compute (176,145.96 stress-ng ops) and executes 140.26 million Redis SET operations per second. The instance offers resource efficiency by combining balanced compute and memory density with local storage capabilities. Although lacking GPU hardware, its core capacity and local NVMe storage suit enterprise database workloads, containerized application clusters, real-time analytics, and CPU-based AI inference.",
-  "og_description": "Microsoft Azure D96ads_v7 is a 96 vCPU general-purpose server with 384 GB RAM and 5,669 GB local NVMe SSD storage. Powered by AMD EPYC 9V45 CPUs, it delivers top-tier database and multi-core performance.",
-  "meta_description": "Microsoft Azure D96ads_v7 offers 96 vCPUs, 384 GB RAM, and 5,669 GB local NVMe SSD storage powered by 4.5 GHz AMD EPYC processors for high-density workloads.",
-  "tagline": "High-density 96 vCPU instance with 384 GB memory and 5.6 TB local NVMe storage designed for throughput-demanding workloads.",
+  "description": "Microsoft Azure D96ads_v7 is a general-purpose instance featuring 96 vCPUs and 48 physical cores based on the AMD EPYC 9V45 processor clocked at 4.5 GHz. The x86_64 system includes 384.0 GB of RAM (4.0 GB per vCPU) and a bundled 5,669 GB local NVMe SSD without discrete GPUs. In performance benchmarks, it ranks in the top tier for multi-core compute with a stress-ng score of 176,145.96 and a PassMark CPU rating of 117,050.24. High memory throughput is demonstrated by 311.62 GB/sec uncached reads and 140.26 million Redis SET operations per second. With extensive AVX-512 support and fast local storage, this configuration delivers solid cost efficiency for high-throughput relational databases, in-memory caches, distributed build pipelines, and large-scale web services.",
+  "og_description": "Microsoft Azure D96ads_v7 provides 96 vCPUs via AMD EPYC 9V45 processors, 384 GB RAM, and 5,669 GB local NVMe SSD storage, delivering top-tier multi-core compute and database throughput.",
+  "meta_description": "Microsoft Azure D96ads_v7 is a 96-vCPU AMD EPYC 9V45 server with 384 GB RAM and 5,669 GB NVMe storage, suited for databases and heavy web services.",
+  "tagline": "High-density 96-vCPU compute with balanced memory and fast NVMe storage for enterprise database and caching workloads.",
   "bullet_points": [
-    "96 dedicated vCPUs driven by AMD EPYC 9V45 processors at 4.5 GHz",
-    "384 GB memory paired with 5,669 GB local NVMe SSD storage",
-    "Advanced vector acceleration with AVX-512 VNNI and BF16 instructions",
-    "High benchmark scores in multi-core execution and 140M Redis SET ops/sec",
-    "Suited for enterprise databases, microservices clusters, and CPU inference"
+    "96 vCPUs (48 physical cores) powered by AMD EPYC 9V45 up to 4.5 GHz",
+    "384.0 GB total system memory (4.0 GB per core ratio)",
+    "Bundled 5,669 GB local NVMe SSD storage",
+    "Hardware support for AVX-512, VNNI, and BF16 vector extensions",
+    "Top-tier performance in Redis caching and PassMark database operations",
+    "Engineered for enterprise databases, web serving, and high-throughput data processing"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

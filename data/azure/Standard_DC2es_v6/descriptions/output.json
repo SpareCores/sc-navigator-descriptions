@@ -1,23 +1,22 @@
 {
   "page": [
-    "Microsoft Azure DC2es_v6 is a virtual machine instance belonging to the DCEV6 server family. It is equipped with 2 dedicated vCPUs based on the x86_64 architecture and an Intel processor. The instance runs on the Microsoft Hyper-V hypervisor and provides 8.0 GB of system memory, yielding a memory-to-core ratio of 4.0 GB per vCPU.",
-    "This server configuration does not include local storage, meaning it relies entirely on external storage options, though it is premium storage capable. There are no bundled GPUs, making it unsuitable for hardware-accelerated workloads. Additionally, the instance comes with zero complimentary public IPv4 addresses, which requires external networking configurations for public internet access.",
-    "From a qualitative cost-efficiency perspective, the DC2es_v6 offers a low-cost entry point into the dedicated Intel-based DCEV6 family, balancing a modest resource footprint with dedicated CPU allocation. Given its 2 vCPUs and 8.0 GB of RAM, this instance is suited for lightweight general-purpose workloads, small databases, basic web serving, or development and testing environments that require dedicated compute resources without the need for local storage or GPU acceleration."
+    "Microsoft Azure DC2es_v6 is a general-purpose virtual machine instance built on Intel Xeon TDX silicon running under the Microsoft Hyper-V hypervisor. The instance provisions 2 vCPUs derived from a single physical core via multithreading, clocked at up to 4.2 GHz with dedicated CPU allocation. Its cache hierarchy includes 48 KB of L1 data cache, 2 MB of L2 cache, and 260 MB of shared L3 cache. System memory totals 8.0 GB, establishing a standard 1:4 compute-to-memory allocation of 4.0 GB per vCPU. The instance does not feature bundled local storage, requiring external block volumes, and includes no GPU accelerators.",
+    "Performance testing indicates a divergence between single-threaded efficiency and aggregate multi-core throughput. Bolstered by its 4.2 GHz clock speed, Geekbench single-core testing reached 1996.0 points, placing the VM in the top quartile of evaluated systems. The underlying processor provides advanced instruction extensions such as AVX-512, AMX (tile and int8), and cryptographic acceleration via AES and SHA-NI. In contrast, parallel capabilities remain constrained by the single physical core. Geekbench multi-core performance registered 2401.0 points and stress-ng multi-core testing scored 1939.61, both residing in lower benchmark percentiles. Throughput-dependent tasks like Clang code compilation and PassMark physics tests similarly demonstrate entry-level performance bounds.",
+    "From an efficiency perspective, the DC2es_v6 offers access to modern Intel Xeon compute features without the overhead of larger multi-core footprints. While it lacks the concurrent processing capability required for high-volume database engines or large-scale data caches, it provides consistent execution for serial workloads. This server profile is appropriately sized for lightweight web services, isolated utility routines, low-traffic APIs, and development environments that rely on high per-core speeds without heavy multithreading requirements."
   ],
-  "description": "Microsoft Azure DC2es_v6 is an x86_64 virtual machine instance within the DCEV6 server family, powered by an Intel processor and managed via the Microsoft Hyper-V hypervisor. It features 2 dedicated vCPUs and 8.0 GB of system memory, providing a resource density of 4.0 GB of RAM per vCPU. This instance does not include local storage or integrated GPUs, but it is premium storage capable. It also provides zero complimentary public IPv4 addresses. Positioned as a memory-optimized family member with an entry-level resource profile, the DC2es_v6 offers a cost-effective option for workloads requiring dedicated CPU allocation without massive resource overhead. It is best suited for lightweight general-purpose applications, small database instances, development environments, and basic web serving.",
-  "og_description": "Microsoft Azure DC2es_v6 is a DCEV6 family virtual machine featuring 2 dedicated Intel vCPUs, 8.0 GB of RAM, and no local storage, designed for entry-level dedicated workloads.",
-  "meta_description": "Microsoft Azure DC2es_v6 is a DCEV6 virtual machine with 2 dedicated Intel vCPUs, 8.0 GB RAM, and no local storage, managed via Microsoft Hyper-V.",
-  "tagline": "An entry-level, dedicated Intel-based virtual machine offering balanced compute and memory resources for lightweight workloads without local storage.",
+  "description": "Microsoft Azure DC2es_v6 is a general-purpose virtual machine instance equipped with 2 vCPUs derived from a single physical core on an Intel Xeon TDX processor operating at up to 4.2 GHz. Supported by 8.0 GB of memory, it maintains a standard 1:4 vCPU-to-RAM ratio under Microsoft Hyper-V virtualization with dedicated CPU allocation. The underlying Intel architecture provides broad instruction support, including AVX-512, AMX (tile and int8), and hardware cryptography flags like AES and SHA-NI. The instance contains no bundled local storage and includes zero integrated GPUs. Benchmark evaluations show strong single-thread capability, registering top-quartile Geekbench single-core performance. Conversely, multi-core throughput and memory-bound metrics reflect its compact dual-thread footprint, ranking in lower performance quartiles for parallel compilation, physics calculations, and Redis operations. The DC2es_v6 serves as a cost-efficient entry-level compute target suited for lightweight web services, small microservices, and modest background utility tasks requiring high per-core execution speeds.",
+  "og_description": "Microsoft Azure DC2es_v6 is a general-purpose virtual machine offering 2 vCPUs and 8 GB RAM powered by Intel Xeon TDX processors running at 4.2 GHz, suited for lightweight confidential enterprise workloads.",
+  "meta_description": "Microsoft Azure DC2es_v6 features 2 vCPUs, 8 GB of RAM, and 4.2 GHz Intel Xeon TDX processing, suited for small general-purpose cloud workloads.",
+  "tagline": "A balanced dual-vCPU configuration with high-frequency Intel Xeon architecture and advanced vector instructions for entry-level enterprise application hosting.",
   "bullet_points": [
-    "2 dedicated Intel vCPUs on x86_64 architecture",
-    "8.0 GB of system memory providing 4.0 GB per vCPU",
-    "Premium storage capable with no local storage included",
-    "Zero complimentary public IPv4 addresses",
-    "Managed via Microsoft Hyper-V hypervisor",
-    "Best suited for lightweight databases, development environments, and basic web serving"
+    "Dual vCPU configuration with 1 physical core and 2 threads on Intel Xeon TDX hardware clocked at 4.2 GHz",
+    "8.0 GB total system memory providing a balanced 1:4 core-to-memory ratio",
+    "Hardware support for AVX-512, AMX, and accelerated cryptographic instruction sets",
+    "No bundled local storage, relying on network-attached storage volumes",
+    "High single-core benchmark performance counterbalanced by limited parallel throughput",
+    "Appropriate for lightweight microservices, basic web serving, and development environments"
   ],
   "categories": [
-    "Memory Optimized",
     "General Purpose"
   ]
 }

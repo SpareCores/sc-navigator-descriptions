@@ -1,23 +1,22 @@
 {
   "page": [
-    "OVHcloud b3-16 is a general-purpose cloud server powered by an AMD EPYC processor utilizing the x86_64 architecture. It features 4 dedicated physical cores with 1 thread per core, operating at a base frequency of 2.3 GHz. The CPU configuration includes a 32 MB L3 cache and supports hardware-assisted virtualization via AMD SVM, alongside instruction sets such as AVX, AES, and SHA_NI. The server is provisioned with 16.0 GB of system memory, providing a balanced allocation of 4.0 GB per core.",
-    "The instance is deployed on a KVM hypervisor and includes 100 GB of local NVMe SSD storage. Network connectivity is supported by a baseline bandwidth of 1 Gbps, and the server is allocated one complimentary public IPv4 address. No GPU accelerators are included in this configuration.",
-    "Benchmark data indicates strong single-core performance, with stress-ng single-core CPU testing and Geekbench text processing scoring in the top 25%. Multi-core performance, memory bandwidth, and cryptographic operations fall within the average range. However, the server exhibits lower throughput in specific workloads, with static web serving and prompt processing for medium-sized (7B) language models scoring in the bottom 25%.",
-    "With its dedicated CPU allocation and balanced memory-to-core ratio, the b3-16 offers a predictable resource profile for general-purpose workloads. It is well-suited for applications requiring consistent single-core performance, such as text processing, lightweight database operations, and general application hosting, though it may be less efficient for high-throughput web serving or intensive multi-threaded tasks."
+    "OVHcloud b3-16 is a general-purpose virtual instance hosted on the KVM hypervisor. The instance is powered by an AMD EPYC x86_64 processor clocked at 2.3 GHz, offering 4 dedicated physical cores without simultaneous multithreading (1 thread per core). It is configured with 16 GB of system memory, maintaining a balanced 1:4 core-to-memory ratio of 4 GB per core. For storage, the configuration includes 100 GB of bundled local NVMe SSD capacity. Network connectivity provides a baseline bandwidth of 1 Gbps, and no GPU hardware is attached.",
+    "Benchmark results demonstrate strong single-threaded processing capabilities alongside balanced multi-core execution. In synthetic testing, the instance reaches top-quartile performance in stress-ng single-core tests and Geekbench text processing tasks. Multi-threaded throughput aligns with middle-tier expectations, scoring 5,737 in Geekbench multi-core and 12,080.84 in stress-ng multi-core evaluations. In-memory processing remains consistent, reaching 10.26 million operations per second on Redis SET tests, while static web serving throughput registers in the lower quartile relative to peer hardware.",
+    "The allocation of fully dedicated physical cores ensures predictable compute performance without the risk of noisy neighbor contention across shared execution threads. However, vector throughput is bounded by the absence of AVX-512 support, and network throughput remains constrained to baseline gigabit speeds. OVHcloud b3-16 serves effectively as an infrastructure layer for web application hosting, continuous integration and build pipelines, backend API services, and relational database systems that benefit from fast local NVMe storage."
   ],
-  "description": "The OVHcloud b3-16 is a general-purpose virtual server built on the x86_64 architecture and powered by a dedicated AMD EPYC processor. It features 4 physical cores (1 thread per core) running at 2.3 GHz, paired with 16.0 GB of RAM and 100 GB of local NVMe SSD storage. Operating on a KVM hypervisor, the server provides a baseline network bandwidth of 1 Gbps. Performance benchmarks show strong single-core capabilities, particularly in text processing and single-threaded CPU tasks, while multi-core operations and memory bandwidth remain average. Tradeoffs include lower performance in static web serving and medium LLM prompt processing. This configuration is suitable for general-purpose workloads, application hosting, and database operations requiring dedicated CPU resources without GPU acceleration.",
-  "og_description": "OVHcloud b3-16 is a general-purpose server featuring 4 dedicated AMD EPYC cores, 16 GB RAM, and 100 GB NVMe SSD storage, delivering strong single-core performance for general application hosting.",
-  "meta_description": "OVHcloud b3-16 is a general-purpose server with 4 dedicated AMD EPYC cores, 16 GB RAM, and 100 GB NVMe storage, optimized for balanced workloads.",
-  "tagline": "A balanced general-purpose server with dedicated AMD EPYC cores, local NVMe storage, and strong single-core performance for reliable application hosting.",
+  "description": "OVHcloud b3-16 is a general-purpose virtual machine designed for balanced compute and memory workloads. Driven by an x86_64 AMD EPYC processor running at 2.3 GHz, the instance delivers 4 dedicated physical cores with 1 thread per core and 16 GB of RAM, adhering to a 1:4 vCPU-to-memory ratio. It includes 100 GB of bundled NVMe SSD storage and a baseline network bandwidth of 1 Gbps, with zero GPU hardware attached. Benchmark assessments demonstrate strong single-core CPU execution and solid text processing performance, complemented by typical mid-tier results in multi-core metrics and in-memory key-value processing via Redis. However, static web serving and large-scale model inference throughput show architectural constraints. Given its dedicated core architecture and fast local solid-state storage, OVHcloud b3-16 is appropriate for continuous integration workers, web servers, backend API hosting, and moderate database workloads.",
+  "og_description": "OVHcloud b3-16 is a general-purpose cloud instance featuring 4 dedicated AMD EPYC cores, 16 GB of memory, and 100 GB of NVMe SSD storage, designed for balanced compute, API services, and backend database workloads.",
+  "meta_description": "OVHcloud b3-16 is a general-purpose instance featuring 4 dedicated AMD EPYC cores, 16 GB of RAM, and 100 GB of local NVMe SSD storage.",
+  "tagline": "A balanced four-core virtual instance with dedicated AMD EPYC processing, bundled NVMe storage, and dependable memory density for standard workloads.",
   "bullet_points": [
-    "4 dedicated AMD EPYC physical cores running at 2.3 GHz",
-    "16.0 GB of system memory and 100 GB of local NVMe SSD storage",
-    "Strong single-core CPU and text processing performance",
-    "1 Gbps baseline network bandwidth with KVM virtualization",
-    "Suitable for general-purpose application hosting and database operations"
+    "4 dedicated AMD EPYC x86_64 cores clocked at 2.3 GHz without multithreading",
+    "16 GB system memory with 4 GB allocated per physical core",
+    "100 GB local NVMe SSD storage included",
+    "1 Gbps baseline network bandwidth",
+    "Strong single-core execution and reliable in-memory caching performance",
+    "Suitable for web backends, CI/CD runners, and relational databases"
   ],
   "categories": [
-    "General Purpose",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

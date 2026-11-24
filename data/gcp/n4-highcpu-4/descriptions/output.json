@@ -1,21 +1,22 @@
 {
   "page": [
-    "Google Cloud Platform n4-highcpu-4 is an x86_64 architecture server powered by an Intel processor. It features 4 dedicated vCPUs derived from 2 physical cores with hyper-threading enabled, providing 2 threads per core. The instance is configured with 8.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. Cache architecture includes 48 KB of L1d cache, 2 MB of L2 cache, and a large 260 MB L3 cache. It does not include bundled local storage or GPU accelerators.",
-    "Performance benchmarks indicate average single-core capabilities but weaker multi-core scaling. The stress-ng single-core CPU performance and Geekbench single-core scores fall within the average range, supported by hardware acceleration flags such as AVX-512 and Intel Advanced Matrix Extensions (AMX) for tile and int8 operations. However, multi-core benchmarks, including Geekbench multi-core and stress-ng multi-core, register in the weak category. Memory performance is a notable bottleneck, with Passmark memory scores in the bottom 10% and uncached read/write memory bandwidth classified as weak.",
-    "Given its hardware profile, the n4-highcpu-4 is positioned as a budget-conscious option for compute-bound tasks that do not require massive memory footprints. It achieves average throughput in static web serving and single-threaded compression tasks like gzip and bzip3. However, it is poorly suited for memory-intensive database operations or large-scale multi-threaded workloads. Appropriate workloads include lightweight web serving, single-threaded utility scripts, and basic text processing."
+    "Google Cloud Platform n4-highcpu-4 is an x86_64 compute-oriented instance configured with 4 dedicated virtual CPUs derived from 2 physical Intel cores via multithreading. It features 8.0 GB of system memory, providing a 1:2 memory-to-vCPU allocation of 2.0 GB per vCPU. The processor architecture includes 48 KB of L1 data cache, 2 MB of L2 cache, and 260 MB of L3 cache. It incorporates advanced hardware instruction sets, including AVX-512, Intel AMX for matrix operations, and cryptographic extensions such as AES and SHA-NI. The instance is provisioned without local storage or discrete graphics accelerators.",
+    "Performance evaluation indicates stable single-threaded throughput, shown by a Geekbench single-core score of 1840.0 and a stress-ng single-core score of 1577.19. Single-threaded data handling remains balanced, with gzip compression registering 27.98 GB/sec and static web serving throughput reaching 6.82 GB/sec. Conversely, overall multithreaded capacity and memory subsystem speeds are constrained by the physical two-core footprint. PassMark CPU reached 5901.55 and Geekbench multi-core measured 4108.0, while PassMark memory scored 900.02. Memory bandwidth recorded 37.38 GB/sec read and 23.04 GB/sec write on large block transfers.",
+    "The n4-highcpu-4 provides dedicated CPU resources without burstable throttling, pairing modest core density with reduced memory allocation. The primary operational tradeoff is limited memory bandwidth and capacity, which prevents effective deployment for large data stores or intensive parallel analysis. It is appropriately configured for compute-bound tasks, continuous integration runners, containerized microservices, and lightweight web serving that require reliable compute execution without large resident memory footprints."
   ],
-  "description": "The Google Cloud Platform n4-highcpu-4 is an x86_64 compute-optimized server featuring 4 dedicated Intel vCPUs and 8.0 GB of RAM, providing a 2.0 GB per core memory ratio. It lacks local storage and GPU accelerators. The processor features a 260 MB L3 cache and supports advanced instruction sets including AVX-512 and Intel AMX. Benchmark data shows average single-core CPU performance and static web serving throughput, but weak multi-core scaling and poor memory bandwidth. This server is a cost-efficient option for lightweight, compute-focused workloads such as single-threaded processing, basic text manipulation, and low-traffic web serving, where high memory capacity and intensive multi-core parallelization are not required.",
-  "og_description": "Google Cloud Platform n4-highcpu-4 is an x86_64 server with 4 dedicated Intel vCPUs, 8 GB RAM, and no local storage. It offers average single-core performance but exhibits weak multi-core and memory bandwidth benchmarks.",
-  "meta_description": "Google Cloud Platform n4-highcpu-4 is an x86_64 server with 4 dedicated Intel vCPUs and 8 GB RAM, designed for lightweight compute-focused workloads.",
-  "tagline": "A budget-friendly, compute-optimized virtual machine featuring dedicated Intel processors with advanced matrix extensions for lightweight single-threaded workloads.",
+  "description": "Google Cloud Platform n4-highcpu-4 is a compute-focused virtual machine featuring 4 dedicated vCPUs mapped across 2 physical Intel x86_64 cores and 8.0 GB of system memory. Structured with a 1:2 memory-to-vCPU ratio, the processor architecture incorporates 260 MB of L3 cache along with AVX-512 and Intel AMX instruction sets. The instance includes no bundled local storage drives and zero discrete GPUs. Benchmark results demonstrate stable single-core execution, evidenced by a Geekbench single-core score of 1840.0 and static web serving throughput of 6.82 GB/sec. Multithreaded and memory subsystem metrics reflect the two-core physical boundary, with PassMark memory scoring 900.02. Given its dedicated core allocation and lower memory capacity, n4-highcpu-4 is best matched with lightweight web serving, stateless microservices, build pipelines, and modest CPU-bound batch tasks.",
+  "og_description": "Google Cloud Platform n4-highcpu-4 provides 4 dedicated Intel x86_64 vCPUs and 8 GB RAM with AVX-512 and AMX acceleration, offering balanced single-core throughput for microservices and build runners.",
+  "meta_description": "Google Cloud Platform n4-highcpu-4 delivers 4 dedicated Intel vCPUs and 8 GB of memory, tailored for lightweight web serving and batch tasks.",
+  "tagline": "A dedicated compute-focused virtual machine featuring balanced single-thread Intel processing, advanced matrix extensions, and compact memory allocation for stateless application workloads.",
   "bullet_points": [
-    "4 dedicated Intel vCPUs and 8.0 GB of system memory",
-    "Intel AMX and AVX-512 hardware acceleration support",
-    "Average single-core CPU and static web serving performance",
-    "No bundled local storage or GPU accelerators",
-    "Best suited for lightweight web serving and single-threaded tasks"
+    "4 dedicated vCPUs derived from 2 physical Intel x86_64 cores",
+    "8.0 GB of memory with a 1:2 vCPU-to-RAM ratio",
+    "Support for AVX-512 and Intel AMX instruction sets",
+    "No bundled local storage or integrated GPU hardware",
+    "Targeted for microservices, web serving, and CI/CD runners"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

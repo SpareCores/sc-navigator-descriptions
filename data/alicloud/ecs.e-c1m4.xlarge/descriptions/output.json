@@ -1,23 +1,23 @@
 {
   "page": [
-    "Alibaba Cloud ecs.e-c1m4.xlarge is an entry-level general-purpose virtual machine instance belonging to the ecs.e server family. It is configured with 4 vCPUs allocated on a shared basis, utilizing 2 physical cores and 2 threads per core on an Intel Xeon x86_64 processor running at 2.5 GHz. The instance includes 16.0 GB of system memory, yielding a 4.0 GB memory-per-core ratio, and does not feature any local storage or GPU hardware. Network connectivity is limited to a baseline bandwidth of 1 Gbps.",
-    "Performance benchmarks indicate average single-core capabilities but weak multi-core scaling, likely due to the shared CPU allocation model. The stress-ng single-core CPU performance and Geekbench single-core scores fall into the average tier, while multi-core metrics from stress-ng, Geekbench, and Passmark are classified as weak. Memory bandwidth tests show average performance for uncached large-block reads and writes, but weak performance for cached small-block reads.",
-    "Given the shared CPU architecture and lack of dedicated local storage, this instance offers a cost-efficient profile for workloads with low resource density or intermittent CPU demands. It is best suited for general-purpose tasks, light text processing, basic development environments, and low-traffic web serving where sustained multi-core performance is not a critical requirement."
+    "Alibaba Cloud ecs.e-c1m4.xlarge is an entry-level shared compute instance based on the x86_64 architecture. Powered by an Intel Xeon processor running at a base clock speed of 2.5 GHz, the virtual machine provides 4 vCPUs mapped across 2 physical cores with hyperthreading enabled. It is equipped with 16.0 GB of system memory, matching a 1:4 vCPU-to-memory ratio. Hardware acceleration flags include AVX, AVX-512F, AES, and FMA. The instance includes no local storage, requiring network-attached storage for persistence, and provides a 1 Gbps baseline network bandwidth. It contains no dedicated GPU hardware.",
+    "Benchmark results highlight an architecture optimized for moderate, non-continuous compute demands. The server achieves average single-core performance scores, demonstrated by 1539.0 in Geekbench single-core and 1733.69 in stress-ng single-core tests. Conversely, multi-threaded metrics rank in the lower quartile, with Geekbench multi-core scoring 3455.0 and PassMark CPU scoring 5906.83. Memory throughput reflects average performance during large uncached transfers (42.27 GB/sec read and 28.56 GB/sec write), but cached access speeds and database operations sit in the lower percentiles.",
+    "Because the ecs.e-c1m4.xlarge relies on shared vCPU allocations, it prioritizes resource economy over sustained compute throughput. The lack of bundled local NVMe storage and modest 1 Gbps networking further position it as a cost-efficient platform for light workloads. It is best applied to standard utility services, lightweight web serving, development environments, and low-traffic internal applications that require 16 GB of memory without heavy multi-threaded execution."
   ],
-  "description": "Alibaba Cloud ecs.e-c1m4.xlarge is a general-purpose instance in the ecs.e family, featuring 4 shared vCPUs on an Intel Xeon x86_64 processor at 2.5 GHz, 16.0 GB of RAM, and a 1 Gbps baseline network bandwidth. It contains no local storage or GPU accelerators. Benchmark data shows average single-core CPU and large-block memory bandwidth performance, contrasted with weak multi-core CPU scaling and weak database operation metrics. This resource profile provides a cost-efficient option for workloads with low resource density. It is suitable for general-purpose computing, basic text processing, development environments, and light web serving.",
-  "og_description": "Alibaba Cloud ecs.e-c1m4.xlarge is a general-purpose instance with 4 shared Intel Xeon vCPUs, 16.0 GB RAM, and 1 Gbps network bandwidth, suitable for light workloads and development.",
-  "meta_description": "Alibaba Cloud ecs.e-c1m4.xlarge features 4 shared vCPUs, 16.0 GB RAM, and 1 Gbps bandwidth, offering a cost-efficient profile for light workloads.",
-  "tagline": "A shared-CPU general-purpose instance with balanced memory and baseline networking for entry-level workloads and development environments.",
+  "description": "Alibaba Cloud ecs.e-c1m4.xlarge is a general-purpose shared instance delivering 4 vCPUs across 2 physical Intel Xeon cores at 2.5 GHz and 16.0 GB of memory. Operating on KVM virtualization within the x86_64 architecture, it features AVX-512 and AES instructions, 1 Gbps baseline network bandwidth, and relies entirely on remote storage due to the absence of bundled local disks. Benchmark profiles show reliable average single-core compute performance alongside lower-tier multi-threaded and database metrics, characteristic of shared processor resources. Lacking dedicated GPUs, the ecs.e-c1m4.xlarge offers an economical footprint tailored for development environments, low-traffic web applications, staging servers, and background utilities that fit a balanced memory footprint without needing continuous full-core execution.",
+  "og_description": "Alibaba Cloud ecs.e-c1m4.xlarge is a shared instance providing 4 vCPUs, 16 GB RAM, and 1 Gbps networking, designed for budget-conscious general workloads, dev environments, and low-traffic services.",
+  "meta_description": "Alibaba Cloud ecs.e-c1m4.xlarge features 4 shared vCPUs, 16 GB RAM, and 1 Gbps networking on Intel Xeon hardware for cost-efficient, entry-level workloads.",
+  "tagline": "Economical shared x86 compute offering four vCPUs and sixteen gigabytes of memory for entry-level deployments.",
   "bullet_points": [
-    "4 shared vCPUs on an Intel Xeon x86_64 processor running at 2.5 GHz",
-    "16.0 GB of system memory with a 1:4 vCPU-to-RAM ratio",
-    "1 Gbps baseline network bandwidth and no local storage",
-    "Average single-core CPU and large-block memory bandwidth performance",
-    "Weak multi-core scaling and database operation benchmark results",
-    "Best suited for general-purpose tasks, development environments, and light web serving"
+    "4 vCPUs across 2 physical Intel Xeon cores at 2.5 GHz with shared CPU allocation",
+    "16.0 GB system memory (4.0 GB per vCPU ratio)",
+    "No bundled local disk; requires external network block storage",
+    "1 Gbps baseline network bandwidth",
+    "Steady single-core execution with lower-tier multi-core compute capability",
+    "Suited for dev/test servers, staging environments, and low-traffic web hosting"
   ],
   "categories": [
-    "General Purpose",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "General Purpose"
   ]
 }

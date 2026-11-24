@@ -1,21 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.re6p-redis.2xlarge is a general-purpose server belonging to the ecs.re6p family. It is built on the x86_64 architecture and powered by an Intel Xeon 8269CY processor operating at 2.5 GHz. The hardware configuration delivers 8 dedicated vCPUs derived from 4 physical cores with hyper-threading enabled. It features 32.0 GB of system memory, providing a balanced 4.0 GB of RAM per core. This instance does not include local storage and relies entirely on network-attached storage, supported by a baseline network bandwidth of 2 Gbps.",
-    "Benchmark data reveals a contrast between single-core and multi-core capabilities. Single-core CPU performance under stress-ng and single-threaded gzip compression tests falls into the bottom 25% tier. Conversely, multi-core CPU performance and memory bandwidth tests, including a cached read-only small block speed of 392.36 GB/sec, rank in the average tier. The server achieves an average of 6.81 million operations per second in Redis SET benchmarks and maintains a static web serving throughput of 6.64 GB/sec.",
-    "From a cost-efficiency perspective, the dedicated CPU allocation ensures predictable performance without resource contention, making it a stable choice for its hardware class. Given the average database operations score of 2849.77 and the lack of local storage, this server is best suited for general-purpose workloads, distributed caching layers like Redis, and moderate web serving applications."
+    "Alibaba Cloud ecs.re6p-redis.2xlarge is an x86_64 instance configuration equipped with 8 dedicated vCPUs derived from 4 physical Intel Xeon 8269CY cores at a base clock speed of 2.5 GHz. The processor architecture includes 35 MB of L3 cache alongside support for AVX-512 instruction sets, including VNNI. The system provides 32.0 GB of RAM, maintaining a ratio of 4.0 GB per vCPU. It does not include bundled local storage, operating purely via remote network-attached disks, and features a baseline network throughput of 2 Gbps under the KVM hypervisor without hardware GPU acceleration.",
+    "Performance benchmarks place this instance in the middle tier across compute and memory categories. The CPU achieved a Geekbench multi-core score of 4,486.0 and a PassMark CPU score of 8,313.72, while single-core output is modest, recording 1,178.0 in Geekbench and 1,318.98 in stress-ng. Memory subsystems achieve 50.58 GB/sec uncached read throughput and 38.0 GB/sec uncached write bandwidth, which supports Redis caching throughput measured at 6.81 million SET operations per second and a PassMark database operations score of 2,849.77.",
+    "Because the server lacks onboard ephemeral NVMe drives, I/O-intensive workloads depend entirely on network storage, which must share the 2 Gbps network baseline. From a resource perspective, the configuration offers balanced memory density and dedicated CPU allocation without the overhead of unused accelerator hardware. This profile is engineered primarily for in-memory caching systems such as Redis, moderate transactional database instances, and general-purpose backend services."
   ],
-  "description": "Alibaba Cloud ecs.re6p-redis.2xlarge is a general-purpose server from the ecs.re6p family, featuring 8 dedicated Intel Xeon vCPUs, 32.0 GB of RAM, and a 2 Gbps baseline network bandwidth. It contains no local storage. While single-core benchmarks are weak, its multi-core performance and memory bandwidth are average, making it suitable for general-purpose workloads and caching.",
-  "og_description": "Alibaba Cloud ecs.re6p-redis.2xlarge is a general-purpose server featuring 8 dedicated Intel Xeon vCPUs, 32 GB RAM, and 2 Gbps network bandwidth, optimized for balanced workloads and caching.",
-  "meta_description": "Alibaba Cloud ecs.re6p-redis.2xlarge is an 8-vCPU, 32 GB RAM general-purpose server powered by an Intel Xeon CPU with 2 Gbps network bandwidth.",
-  "tagline": "A balanced general-purpose instance featuring dedicated Intel Xeon processors and stable memory throughput for caching and web serving workloads.",
+  "description": "Alibaba Cloud ecs.re6p-redis.2xlarge is an x86_64 server instance powered by an Intel Xeon 8269CY processor operating at 2.5 GHz. It provides 8 dedicated vCPUs across 4 physical cores, 35 MB of L3 cache, and 32.0 GB of system memory, yielding a 1:4 compute-to-memory ratio. The configuration includes no local storage or GPU acceleration, relying on network-attached block devices alongside a 2 Gbps baseline network bandwidth. Benchmark evaluations place the instance within the mid-range tier, recording a Geekbench multi-core score of 4,486.0, uncached memory read bandwidth of 50.58 GB/sec, and Redis throughput of 6.81 million SET operations per second. Lacking bundled NVMe disks, disk operations rely on external volumes constrained by baseline network limits. The instance is suitable for distributed in-memory caching, Redis deployments, mid-scale relational databases, and general application serving.",
+  "og_description": "Alibaba Cloud ecs.re6p-redis.2xlarge offers 8 dedicated vCPUs on an Intel Xeon 8269CY CPU, 32 GB RAM, 2 Gbps network bandwidth, and reliable throughput for in-memory caching and Redis.",
+  "meta_description": "Alibaba Cloud ecs.re6p-redis.2xlarge features 8 dedicated vCPUs, 32 GB RAM, Intel Xeon 8269CY processing, and 2 Gbps networking for in-memory caching workloads.",
+  "tagline": "Dedicated Intel Xeon compute with 32 GB of RAM and 2 Gbps networking designed for in-memory caching and backend application workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an Intel Xeon 8269CY processor",
-    "32.0 GB of system memory with 4.0 GB per core allocation",
-    "No local storage bundled, relying on network-attached storage",
-    "Average multi-core performance and 2 Gbps baseline network bandwidth",
-    "Suited for general-purpose applications, caching, and web serving"
+    "8 dedicated vCPUs powered by an Intel Xeon 8269CY processor at 2.5 GHz",
+    "32.0 GB system memory with 50.58 GB/sec uncached read bandwidth",
+    "2 Gbps baseline network bandwidth with KVM virtualization",
+    "Zero bundled local storage and no GPU accelerators",
+    "Capable of 6.81 million Redis SET operations per second"
   ],
   "categories": [
-    "General Purpose"
+    "General Purpose",
+    "Memory Optimized"
   ]
 }

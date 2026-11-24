@@ -1,23 +1,25 @@
 {
   "page": [
-    "Microsoft Azure D192lds_v7 is a compute-focused virtual machine powered by the Microsoft Hyper-V hypervisor. It features 192 dedicated vCPUs mapped to 96 physical cores of an Intel Xeon 6973P-C processor operating at 4.2 GHz. The system is equipped with 384.0 GB of RAM, yielding a low memory-to-core ratio of 2.0 GB per vCPU. Storage is supported by a large 11339 GB local NVMe SSD, while there are no integrated GPUs.",
-    "Benchmark results place this server in the top tier for multi-core CPU performance, passmark CPU scores, and memory bandwidth across both small and large blocks. Single-core performance is average, but multi-threaded operations like bzip3 decompression and gzip compression perform exceptionally well. The processor includes advanced instruction sets such as AVX-512 and Intel Advanced Matrix Extensions, which drive strong performance in cryptographic operations and prompt processing for large language models.",
-    "From a cost-efficiency perspective, the D192lds_v7 offers high compute density and massive local storage capacity, making it highly resource-efficient for CPU-bound workloads that do not require massive memory footprints. However, the low memory-to-vCPU ratio of 2.0 GB per core represents a tradeoff for memory-intensive applications. This configuration is highly suited for multi-threaded compute tasks, high-throughput web serving, database operations, and local NVMe-dependent storage workloads."
+    "Microsoft Azure D192lds_v7 is an x86_64 server instance powered by the Intel Xeon 6973P-C processor running on Microsoft Hyper-V. The system is provisioned with 96 dedicated physical cores and 192 vCPUs operating at clock speeds up to 4.2 GHz, backed by 480 MB of shared L3 cache and per-core L2 caches of 2 MB. It includes 384.0 GB of system memory, yielding a 1:2 vCPU-to-RAM ratio of 2.0 GB per vCPU. Hardware features include support for advanced vector and matrix acceleration instructions including AVX-512, AMX-TILE, and AMX-INT8, alongside cryptographic extensions such as AES and SHA-NI.",
+    "Integrated directly into the instance is an 11,339 GB NVMe solid-state local storage volume designed for high-throughput, low-latency temporary data requirements. The server does not bundle dedicated GPUs or complimentary public IPv4 addresses. In architectural benchmarks, the massive core density translates to top-tier multi-threaded performance, with multi-core stress-ng scores reaching 202,853.75 and multi-threaded bzip3 decompression achieving 1,146.71 GB/sec. Uncached large-block memory read bandwidth tops 688.55 GB/sec, while cached read-only access exceeds 15,083 GB/sec.",
+    "The 2.0 GB per vCPU resource profile establishes a compute-leaning design, trading larger memory allocations per thread for dense processing power and rapid NVMe scratch space. Single-core performance falls into an average distribution tier, indicating that the instance prioritizes parallel throughput across its 192 vCPUs rather than isolated single-thread frequency. Qualitative cost efficiency is highest when executing dense parallel calculations or local disk-intensive tasks that exhaust compute cores before memory limits are reached.",
+    "Workload suitability centers on high-concurrency batch processing, compression pipelines, large-scale Redis in-memory caches (recording over 268 million SET operations per second in testing), static web serving at scale, and high-throughput vector mathematical computations utilizing onboard Intel AMX acceleration."
   ],
-  "description": "Microsoft Azure D192lds_v7 is a compute-focused virtual machine featuring 192 dedicated vCPUs from an Intel Xeon 6973P-C processor running at 4.2 GHz. Built on the x86_64 architecture, it provides 384.0 GB of RAM, representing a low memory-to-core ratio of 2.0 GB per vCPU. The server includes a massive 11339 GB local NVMe SSD but lacks GPU acceleration. In benchmark testing, the D192lds_v7 delivers top-tier multi-core CPU performance, exceptional memory bandwidth, and strong cryptographic execution, aided by Intel AVX-512 and AMX extensions. While its single-core performance is average, its multi-threaded capabilities are highly efficient. This profile makes the server a strong fit for high-throughput database operations, multi-threaded data processing, and compute-heavy workloads that benefit from dense local storage but do not require high memory-per-core allocations.",
-  "og_description": "Microsoft Azure D192lds_v7 is a compute-focused virtual machine featuring 192 Intel Xeon vCPUs, 384 GB of RAM, and an 11339 GB local NVMe SSD, delivering top-tier multi-core performance.",
-  "meta_description": "Microsoft Azure D192lds_v7 is a compute-focused VM with 192 Intel Xeon vCPUs, 384 GB RAM, and an 11339 GB NVMe SSD for high-throughput workloads.",
-  "tagline": "A high-core Intel Xeon server featuring dense local NVMe storage and top-tier multi-threaded compute performance for resource-intensive workloads.",
+  "description": "Microsoft Azure D192lds_v7 is a high-density compute and storage instance powered by an Intel Xeon 6973P-C processor clocked at 4.2 GHz. Operating on Microsoft Hyper-V, the system provides 96 physical cores, 192 dedicated vCPUs, 480 MB of L3 cache, and 384.0 GB of RAM, establishing a 1:2 vCPU-to-memory allocation. Storage is anchored by an integrated 11,339 GB local NVMe SSD, while no discrete GPU is included. In benchmarks, the instance demonstrates top-tier multi-core throughput, top-tier memory bandwidth, and superior multi-threaded decompression, alongside robust hardware vector and matrix support via AVX-512 and AMX extensions. Single-core performance remains average, making the instance less cost-effective for single-threaded tasks but highly efficient for parallel workloads. It is best suited for compute-heavy batch processing, parallel data compression, large-scale key-value stores, static web serving, and matrix-based mathematical workloads.",
+  "og_description": "Microsoft Azure D192lds_v7 features 192 vCPUs, 384 GB RAM, and 11.3 TB local NVMe SSD storage on Intel Xeon 6973P-C processors, delivering top-tier multi-core computing power.",
+  "meta_description": "Microsoft Azure D192lds_v7 offers 192 Intel Xeon vCPUs, 384 GB RAM, and 11,339 GB local NVMe SSD storage for parallel compute and caching workloads.",
+  "tagline": "Dense 192-vCPU Intel compute platform paired with fast 11.3 TB local NVMe storage and matrix hardware acceleration.",
   "bullet_points": [
-    "192 dedicated vCPUs powered by an Intel Xeon 6973P-C processor at 4.2 GHz",
-    "Bundled 11339 GB local NVMe SSD storage for high-speed I/O operations",
-    "Top-tier multi-core CPU performance and memory bandwidth in benchmark testing",
-    "Intel AMX and AVX-512 support for accelerated cryptography and AI prompt processing",
-    "Low memory-to-core ratio of 2.0 GB per vCPU optimized for compute-heavy tasks",
-    "Best suited for multi-threaded data processing, databases, and high-throughput web serving"
+    "Intel Xeon 6973P-C processor with 96 physical cores and 192 dedicated vCPUs",
+    "384.0 GB system RAM with 2.0 GB memory allocation per vCPU",
+    "Bundled 11,339 GB local high-speed NVMe SSD storage array",
+    "Integrated Intel AMX and AVX-512 matrix and vector acceleration flags",
+    "Top-tier multi-core computing, compression, and memory bandwidth performance",
+    "Well suited for high-concurrency caching, parallel compression, and batch compute"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

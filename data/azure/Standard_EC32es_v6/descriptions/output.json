@@ -1,22 +1,25 @@
 {
   "page": [
-    "Microsoft Azure EC32es_v6 is an x86_64 architecture server instance belonging to the ECEV6 server family. It is configured with 32 dedicated vCPUs powered by an Intel processor and managed via the Microsoft Hyper-V hypervisor. The instance features 256.0 GB of system memory, yielding a memory-to-core ratio of 8.0 GB per vCPU.",
-    "This server type does not include local storage, meaning all storage requirements must be met through external volumes. It is designed to be Premium Storage capable, allowing integration with high-performance block storage options. The instance does not bundle any complimentary public IPv4 addresses or graphics processing units.",
-    "From a cost-efficiency perspective, the EC32es_v6 offers a high memory density relative to its compute allocation, making it a viable option for workloads that require substantial RAM without the overhead of local disk management. This hardware profile is suited for memory-intensive applications, enterprise databases, in-memory caching systems, and large-scale data processing tasks that leverage external storage architectures."
+    "Microsoft Azure EC32es_v6 is a memory-optimized virtual machine within the ECEV6 family, executed on Microsoft Hyper-V. It is powered by a dedicated 32-vCPU Intel Xeon TDX processor utilizing x86_64 architecture across 16 physical cores with hyperthreading enabled at 4.2 GHz. The CPU features 48 KB L1d cache, 2 MB L2 cache, and a massive 260 MB L3 cache, backed by instruction set extensions including AVX-512, AMX (tile and int8), and hardware cryptography accelerators like AES and VAES.",
+    "The instance is provisioned with 256.0 GB of system memory, maintaining an 8.0 GB per vCPU ratio suitable for memory-intensive enterprise footprints. It contains no bundled local storage and features zero GPUs, relying entirely on remote premium storage capabilities for persistence and data operations.",
+    "In benchmark evaluations, the EC32es_v6 demonstrates top-quartile execution in Geekbench single-core (2032.0), multi-core (16308.0), image processing (15278.0), and text processing (2490.0), alongside strong PassMark physics computing (6400.56). General compute measures including PassMark CPU score (41674.85), stress-ng multi-core (28246.96), and Redis SET throughput (36.72 million operations per second) place in the average tier. Conversely, PassMark memory performance scored in the bottom 25% (1542.55).",
+    "From an infrastructure and cost efficiency perspective, this configuration delivers dense memory allocation alongside dedicated modern Intel Xeon compute without incurring costs for local NVMe disks or GPU silicon. Tradeoffs include reliance on networked storage for IO and weaker PassMark memory throughput metrics despite the high RAM capacity.",
+    "The EC32es_v6 is suited for large relational databases, in-memory caches, enterprise ERP systems, and memory-bound ETL workflows requiring broad instruction set acceleration without local storage dependencies."
   ],
-  "description": "Microsoft Azure EC32es_v6 is a memory-optimized server instance from the ECEV6 family, built on the x86_64 architecture and powered by an Intel processor. Managed by the Microsoft Hyper-V hypervisor, it features 32 dedicated vCPUs and 256.0 GB of system memory, providing a high memory-to-core ratio of 8.0 GB per vCPU. The instance does not include local storage but is Premium Storage capable, allowing for high-performance external block storage integration. It contains no bundled GPUs and provides zero complimentary public IPv4 addresses. This resource configuration is designed for memory-intensive workloads, such as enterprise databases, in-memory analytics, and large-scale data processing, where high RAM capacity is required and storage is decoupled from the compute node.",
-  "og_description": "Microsoft Azure EC32es_v6 is a memory-optimized server from the ECEV6 family featuring 32 dedicated Intel vCPUs, 256.0 GB of RAM, and compatibility with Premium Storage for external workloads.",
-  "meta_description": "Microsoft Azure EC32es_v6 is a memory-optimized server with 32 dedicated Intel vCPUs, 256.0 GB of RAM, and Premium Storage compatibility.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated Intel processors and high RAM density for demanding enterprise database workloads.",
+  "description": "Microsoft Azure EC32es_v6 is a memory-optimized virtual machine from the ECEV6 family, featuring 32 dedicated vCPUs (16 physical cores) based on x86_64 Intel Xeon TDX architecture clocked up to 4.2 GHz. Accompanied by 260 MB of L3 cache, it delivers support for advanced extensions including AVX-512 and AMX. The instance supplies 256.0 GB of RAM (8.0 GB per vCPU) with zero bundled local storage and no GPUs, utilizing remote premium storage instead. Benchmark testing reveals top-tier performance in Geekbench single-core, multi-core, and image processing tests, coupled with average results in stress-ng compute, PassMark database operations, and Redis throughput (36.72 million ops/sec), though PassMark memory scores landed in the lower tier. This makes the instance a balanced choice for in-memory caching, relational databases, and enterprise data processing requiring high memory-to-core ratios.",
+  "og_description": "Microsoft Azure EC32es_v6 is a memory-optimized instance featuring 32 Intel Xeon vCPUs, 256 GB RAM, and AMX instructions, designed for memory-intensive workloads without local storage.",
+  "meta_description": "Microsoft Azure EC32es_v6 provides 32 dedicated Intel Xeon vCPUs, 256 GB memory, and AMX support for enterprise in-memory databases and memory-bound applications.",
+  "tagline": "Dedicated 32-core Intel compute with 256 GB memory, high-capacity L3 cache, and advanced matrix extensions for memory-heavy enterprise deployments.",
   "bullet_points": [
-    "32 dedicated Intel vCPUs on x86_64 architecture",
-    "256.0 GB of system memory providing 8.0 GB per core",
-    "Premium Storage capable for high-performance external block storage",
-    "No local storage or bundled GPU resources",
-    "Designed for memory-intensive databases and in-memory caching"
+    "32 dedicated vCPUs (16 physical cores) running Intel Xeon TDX at up to 4.2 GHz",
+    "256.0 GB RAM offering an 8:1 memory-to-vCPU allocation ratio",
+    "260 MB L3 cache with hardware support for AMX and AVX-512 extensions",
+    "No bundled local storage or GPUs; optimized for remote premium storage",
+    "Strong Geekbench single- and multi-core processing benchmark results",
+    "Fit for in-memory caching, relational databases, and enterprise ETL pipelines"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Compute Optimized"
   ]
 }

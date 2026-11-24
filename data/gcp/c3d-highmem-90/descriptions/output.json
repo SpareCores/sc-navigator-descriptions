@@ -1,22 +1,25 @@
 {
   "page": [
-    "Google Cloud Platform c3d-highmem-90 is a memory-optimized server instance powered by an AMD EPYC 9B14 processor using the x86_64 architecture. It features 90 dedicated vCPUs derived from 45 physical cores with multithreading enabled. The system is equipped with 720.0 GB of RAM, providing a high memory-to-vCPU ratio of 8.0 GB per core. It does not include local storage or GPU accelerators.",
-    "Benchmark data indicates top-tier multi-core CPU performance, with stress-ng multi-core and PassMark CPU scores placing in the top 10%. The processor supports advanced instruction sets including AVX-512 and cryptographic acceleration. Memory read bandwidth is strong, reaching 6374.57 GB/sec for cached small blocks and 218.2 GB/sec for uncached large blocks. However, memory write bandwidth for large blocks is average at 77.77 GB/sec, and single-core performance benchmarks, such as Geekbench single-core, fall within the middle 50% range.",
-    "Given the high memory density and strong multi-core capabilities, this server is configured for memory-intensive workloads, database operations, and software compilation. It demonstrates strong performance in Redis SET operations and static web serving. The absence of local storage requires reliance on network-attached storage, which is a key architectural tradeoff for disk-heavy applications."
+    "Google Cloud Platform c3d-highmem-90 is a high-memory general-purpose virtual machine built on the x86_64 architecture. The server is powered by an AMD EPYC 9B14 processor providing 90 dedicated vCPUs mapped across 45 physical cores with two threads per core. Memory allocation stands at 720.0 GB of system RAM, maintaining an 8.0 GB per vCPU ratio. Cache configuration includes 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache per core cluster. The underlying processor includes vector instruction extensions such as AVX-512F, AVX-512 VNNI, and AVX-512 BF16, alongside cryptographic acceleration via AES and SHA-NI.",
+    "Benchmark evaluations indicate top-tier multi-core compute capability. The instance recorded a multi-core stress-ng result of 129,140.9 and a PassMark CPU score of 87,517.3, both placing in the top ten percent of evaluated systems. High-concurrency operations show similar strength, demonstrated by a Clang software compilation score of 60,172.0 and a ray tracing score of 99,342.0 in Geekbench tests. Memory subsystems demonstrate high throughput, achieving 6,374.57 GB/sec in small-block cached read operations and 218.2 GB/sec in large-block uncached reads, while PassMark database operations reached 28,335.01.",
+    "The hardware configuration does not include local NVMe or SSD storage, nor does it supply bundled GPUs or complimentary public IPv4 addresses. Persistent disk throughput and IOPS rely entirely on attached cloud storage networks. While large-block write memory throughput and single-core execution metrics benchmark within average ranges, the extensive core count and memory pool deliver solid resource density for scale-up computing.",
+    "The c3d-highmem-90 is well suited for large in-memory databases, Redis deployments, continuous integration compilation tasks, multi-threaded scientific simulations, and CPU-based LLM inference preprocessing."
   ],
-  "description": "Google Cloud Platform c3d-highmem-90 is a memory-optimized server featuring 90 dedicated vCPUs and 720.0 GB of RAM, powered by an AMD EPYC 9B14 processor on the x86_64 architecture. It provides a high resource density of 8.0 GB of memory per core. While the instance lacks local storage and GPU accelerators, it delivers top-tier multi-core CPU performance, ranking in the top 10% on stress-ng and PassMark benchmarks. Memory read bandwidth is strong at 218.2 GB/sec for large blocks, though write bandwidth is average at 77.77 GB/sec. Single-core performance also falls in the average tier. This hardware profile is suited for memory-intensive workloads, large-scale database operations, and multi-threaded software compilation, offering a balanced tradeoff between massive memory capacity and high multi-core compute density.",
-  "og_description": "Google Cloud Platform c3d-highmem-90 is a memory-optimized server with 90 vCPUs and 720 GB RAM. It features an AMD EPYC 9B14 CPU, delivering top-tier multi-core performance for database workloads.",
-  "meta_description": "Google Cloud Platform c3d-highmem-90 is a memory-optimized server with 90 vCPUs, 720 GB RAM, and top-tier multi-core AMD EPYC performance.",
-  "tagline": "A memory-optimized x86_64 platform featuring ninety dedicated vCPUs and seven hundred twenty gigabytes of RAM for memory-intensive workloads.",
+  "description": "Google Cloud Platform c3d-highmem-90 is a memory-oriented server powered by an AMD EPYC 9B14 processor on the x86_64 architecture. The configuration supplies 90 dedicated vCPUs across 45 physical cores, 720.0 GB of memory, and hardware support for AVX-512 vector extensions. The instance incorporates no bundled local storage and features zero GPUs, relying on networked block devices for all disk operations. Benchmark results place its multi-core compute capabilities in the top tier, highlighted by high scores in PassMark CPU tests, Clang compilation, and ray tracing benchmarks, alongside strong database and Redis operational throughput. Memory bandwidth remains high for cached reads at 6,374.57 GB/sec, though single-core execution and write bandwidth align with median performance levels. This server profile is designed for memory-intensive enterprise applications, distributed cache clusters, large database operations, and high-concurrency compilation pipelines.",
+  "og_description": "Google Cloud Platform c3d-highmem-90 provides 90 dedicated AMD EPYC 9B14 vCPUs, 720 GB of system memory, advanced AVX-512 vector support, and high-throughput memory bandwidth without bundled local storage.",
+  "meta_description": "Google Cloud Platform c3d-highmem-90 is an x86_64 instance featuring 90 AMD EPYC 9B14 vCPUs, 720 GB of RAM, and top-tier multi-threaded compute performance.",
+  "tagline": "High-density AMD EPYC compute instance providing ninety dedicated vCPUs paired with 720 GB of memory for memory-intensive enterprise workloads.",
   "bullet_points": [
-    "90 dedicated vCPUs powered by AMD EPYC 9B14 processors.",
-    "720.0 GB of RAM providing 8.0 GB of memory per core.",
-    "Top-tier multi-core performance in stress-ng and PassMark benchmarks.",
-    "No local storage or GPU accelerators included.",
-    "Suited for memory-intensive databases and multi-threaded compilation."
+    "90 dedicated vCPUs across 45 AMD EPYC 9B14 physical cores",
+    "720.0 GB of total system memory with an 8:1 GB-to-vCPU allocation ratio",
+    "Top-tier multi-threaded compute, encryption, and software compilation benchmarks",
+    "Hardware vector acceleration supporting AVX-512, VNNI, and BF16",
+    "Zero integrated local storage, requiring network-attached storage solutions",
+    "Targeted for in-memory databases, high-capacity caching, and parallel build workloads"
   ],
   "categories": [
     "Memory Optimized",
+    "General Purpose",
     "Compute Optimized"
   ]
 }

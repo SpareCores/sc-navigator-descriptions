@@ -1,21 +1,23 @@
 {
   "page": [
-    "Google Cloud Platform c3d-highcpu-30 is a compute-optimized virtual machine instance belonging to the c3d server family. It is powered by an AMD EPYC 9B14 processor utilizing the x86_64 architecture. The server features 30 dedicated vCPUs mapped from 15 physical cores with multithreading enabled at 2.0 threads per core. It is configured with 59.0 GB of system memory, yielding a memory-to-core ratio of 1.97 GB per vCPU. No local storage or GPUs are bundled with this instance type, and it includes zero complimentary public IPv4 addresses.",
-    "Benchmark evaluations indicate strong single-core performance, with stress-ng single-core CPU testing and Geekbench text processing scoring in the top 25%. Passmark memory scores also rank in the top 25%, and text generation using a small 135M LLM model achieves a strong rate of 314.72 tokens per second. Most other metrics, including multi-core CPU performance, memory read bandwidth, software compilation, and database operations, fall within the average range. However, memory write bandwidth for large uncached blocks is a relative bottleneck, scoring in the bottom 25% at 25.11 GB/sec.",
-    "From a cost-efficiency perspective, the c3d-highcpu-30 offers a high density of compute resources relative to its memory footprint, making it a viable option for CPU-bound tasks where paying for excess RAM is unnecessary. The primary tradeoffs include the lack of local NVMe storage and the low memory-per-core ratio, which limits its utility for memory-intensive databases. This instance is best suited for workloads such as text processing, web serving, software compilation, and moderate-scale CPU-based machine learning inference."
+    "Google Cloud Platform c3d-highcpu-30 is a compute-focused virtual machine instance built on the x86_64 architecture. It provides 30 dedicated vCPUs mapped across 15 physical cores of an AMD EPYC 9B14 processor, running two threads per core. The instance configuration allocates 59.0 GB of system memory, yielding approximately 1.97 GB of RAM per vCPU. Hardware features include support for advanced vector instruction sets including AVX-512 (AVX512F, AVX512_VNNI, and AVX512_BF16) and cryptographic hardware acceleration via AES, VAES, and SHA_NI. The instance contains no bundled local storage and does not include discrete GPU accelerators or complimentary public IPv4 addresses.",
+    "Benchmark results demonstrate strong single-core compute performance, with stress-ng single-core CPU throughput testing in the top 25 percent at 2865.07. Multithreaded execution aligns with mid-tier industry baselines, producing a stress-ng multi-core score of 43031.83 and a Geekbench multi-core score of 14394.0. Text processing capabilities and PassMark memory metrics also perform in the upper quartile. However, the platform exhibits an operational tradeoff in sustained uncached write bandwidth, recording 25.11 GB/sec in 256MB write block tests, placing it in the lower 25 percent. Read-intensive memory operations maintain standard throughput, registering 72.56 GB/sec in large block tests and 2124.95 GB/sec in cached 16KB operations.",
+    "Given its compute-heavy memory-to-core ratio and dedicated AMD EPYC resources, this instance profile is tailored for compute-bound operations that require high per-thread efficiency without excessive RAM footprints. Typical deployment environments include continuous integration and compilation pipelines, batch text processing, microservices, and lightweight CPU-based inference workloads."
   ],
-  "description": "Google Cloud Platform c3d-highcpu-30 is an x86_64 compute-optimized server powered by an AMD EPYC 9B14 processor. It features 30 dedicated vCPUs across 15 physical cores, 59.0 GB of RAM, and no local storage or GPU resources. Performance benchmarks show strong single-core CPU execution, text processing, and small-model LLM text generation, all ranking in the top 25%. Conversely, memory write bandwidth for large uncached blocks is a notable bottleneck, placing in the bottom 25%. With a low memory-to-core ratio of 1.97 GB per vCPU, this instance provides a cost-efficient profile for CPU-heavy workloads that do not require massive memory allocations. It is suited for text processing, web serving, software compilation, and CPU-based machine learning inference.",
-  "og_description": "Google Cloud Platform c3d-highcpu-30 is an x86_64 compute-optimized server with 30 dedicated AMD EPYC vCPUs and 59 GB RAM. It offers strong single-core performance but lacks local storage.",
-  "meta_description": "Google Cloud Platform c3d-highcpu-30 features 30 dedicated AMD EPYC vCPUs, 59 GB RAM, and strong single-core CPU performance for compute-heavy tasks.",
-  "tagline": "A compute-dense virtual server featuring dedicated AMD EPYC processors, optimized for CPU-bound workloads requiring minimal memory overhead.",
+  "description": "Google Cloud Platform c3d-highcpu-30 is a compute-focused instance powered by an AMD EPYC 9B14 processor on the x86_64 architecture. It features 30 dedicated vCPUs across 15 physical cores with simultaneous multithreading, alongside 59.0 GB of memory (1.97 GB per vCPU). The instance includes AVX-512, VAES, and SHA_NI instruction sets, but includes no local storage or discrete GPUs. Benchmarks highlight strong single-core CPU execution (stress-ng score of 2865.07) and upper-quartile memory responsiveness, alongside solid results in text processing and lightweight language model inference. Multithreaded throughput and uncached read bandwidth align with average mid-tier standards, while uncached memory write throughput registers in the lower quartile. The configuration suits CPU-intensive workloads such as build pipelines, web serving, and analytical text processing.",
+  "og_description": "Google Cloud Platform c3d-highcpu-30 features 30 dedicated AMD EPYC 9B14 vCPUs, 59 GB RAM, and AVX-512 support. It offers strong single-core processing for compute-heavy workloads without local disk.",
+  "meta_description": "Google Cloud Platform c3d-highcpu-30 provides 30 dedicated AMD EPYC vCPUs, 59 GB RAM, and AVX-512 extensions for compute-intensive enterprise workloads.",
+  "tagline": "Dedicated AMD EPYC compute power offering 30 vCPUs and strong single-core execution for processor-bound workloads without bundled local storage.",
   "bullet_points": [
-    "30 dedicated vCPUs powered by AMD EPYC 9B14 processors",
-    "59.0 GB of system memory providing 1.97 GB per vCPU",
-    "Strong single-core CPU and text processing performance",
-    "No bundled local storage or GPU accelerators",
-    "Suited for web serving, software compilation, and CPU-based inference"
+    "30 dedicated vCPUs powered by an AMD EPYC 9B14 processor across 15 physical cores",
+    "59.0 GB system RAM providing an efficient 1.97 GB per-vCPU ratio",
+    "Hardware support for AVX-512 (F, VNNI, BF16), VAES, and SHA_NI instruction sets",
+    "Upper-quartile single-core compute performance and fast text processing",
+    "Zero bundled local disk and no discrete hardware accelerators",
+    "Suited for CI/CD compilation, batch text analysis, and CPU inference"
   ],
   "categories": [
-    "Compute Optimized"
+    "Compute Optimized",
+    "General Purpose"
   ]
 }

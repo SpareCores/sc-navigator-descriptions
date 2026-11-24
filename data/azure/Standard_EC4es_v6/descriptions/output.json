@@ -1,22 +1,22 @@
 {
   "page": [
-    "Microsoft Azure EC4es_v6 is a memory-optimized virtual machine belonging to the ECEV6 server family. It is powered by an Intel processor utilizing the x86_64 architecture and features 4 dedicated vCPUs. The instance is configured with 32.0 GB of system memory, yielding a memory-to-core ratio of 8.0 GB per vCPU. It runs on the Microsoft Hyper-V hypervisor.",
-    "This server type does not include any bundled local storage, but it is designated as Premium Storage capable, allowing users to attach high-performance external storage volumes. There are no integrated GPUs present on this instance, and it does not include complimentary public IPv4 addresses.",
-    "Given its dedicated CPU allocation and high memory-to-vCPU ratio, the EC4es_v6 offers a resource-dense profile suitable for memory-bound workloads. This configuration is designed for applications requiring significant memory capacity relative to compute resources, such as relational databases, in-memory caches, and enterprise applications, without the overhead of local storage maintenance."
+    "Microsoft Azure EC4es_v6 is a memory-optimized virtual machine instance running on Microsoft Hyper-V. The system provides 4 dedicated vCPUs mapped to 2 physical Intel Xeon TDX cores with 2 threads per core, operating at clock speeds up to 4.2 GHz. Built on the x86_64 architecture, the processor features advanced instruction set extensions including AVX-512, AMX tile and int8 execution, alongside a 260 MB L3 cache. Memory capacity is configured at 32.0 GB of RAM, establishing an 8 GB per vCPU allocation ratio. The instance does not include integrated local disk storage, relying instead on network-attached Premium Storage capabilities, and includes zero dedicated GPUs.",
+    "Benchmark evaluations reveal strong single-thread execution alongside expected constraints in multi-core throughput due to its 2-core / 4-thread count. In Geekbench testing, the instance achieved a strong single-core score of 2029.0, backed by an average stress-ng single-core result of 1914.19 and an average PassMark CPU score of 7271.8. However, parallel execution metrics reflect lower raw compute capacity, with multi-core stress-ng at 3931.09 and Geekbench compiling at 4898.0 falling into lower benchmark quartiles. Memory operations register intermediate throughput, with PassMark memory scoring 2131.36 and PassMark database operations at 2752.28, while Redis SET operations reached 5.19 million operations per second.",
+    "From a cost-efficiency perspective, the EC4es_v6 prioritizes memory density over multi-threaded parallel throughput. The absence of bundled local storage necessitates external volume provisioning for data persistence, while the high 1:8 vCPU-to-memory ratio provides significant headroom for footprint-heavy services without paying for excess compute cores. This profile is suited for memory-intensive workloads that require solid single-core responsiveness rather than heavy parallel computation, such as in-memory caching layers, medium-scale relational databases, enterprise applications, and ETL pipeline staging."
   ],
-  "description": "The Microsoft Azure EC4es_v6 is a memory-optimized virtual machine from the ECEV6 family, running on the Microsoft Hyper-V hypervisor. It features 4 dedicated Intel vCPUs on an x86_64 architecture and is equipped with 32.0 GB of RAM, establishing an 8.0 GB per vCPU memory-to-core ratio. This instance does not include local storage or integrated GPUs, but it is Premium Storage capable, allowing for external high-performance storage attachments. Designed for resource density, the EC4es_v6 provides a qualitative balance of dedicated compute and high memory capacity. This makes it suitable for memory-intensive workloads such as relational databases, in-memory caching, and enterprise applications that require dedicated CPU allocation without the need for local physical disks.",
-  "og_description": "Microsoft Azure EC4es_v6 is a memory-optimized virtual machine featuring 4 dedicated Intel vCPUs, 32.0 GB of RAM, and Premium Storage capability for memory-intensive enterprise workloads.",
-  "meta_description": "Microsoft Azure EC4es_v6 is a memory-optimized VM with 4 dedicated Intel vCPUs, 32.0 GB of RAM, and Premium Storage capability.",
-  "tagline": "A memory-optimized virtual machine featuring dedicated Intel processors and high memory-to-core density for enterprise database workloads.",
+  "description": "Microsoft Azure EC4es_v6 is a memory-optimized instance providing 4 dedicated vCPUs backed by 2 physical Intel Xeon TDX cores running at 4.2 GHz on the x86_64 architecture. Equipped with 32.0 GB of RAM, it maintains an 8 GB per vCPU ratio supported by 260 MB of L3 cache and advanced instruction sets including Intel AMX and AVX-512. The instance contains no onboard local storage, depending instead on external Premium Storage, and omits hardware GPUs. Synthetic benchmarks highlight strong single-threaded performance with a Geekbench single-core score of 2029.0, balanced by average multi-core metrics and a PassMark CPU score of 7271.8. Because multi-threaded compute density is limited by the two physical cores, the instance trades intensive parallel processing for dedicated per-core memory capacity. The EC4es_v6 is technically suited for memory-bound services requiring strong single-thread responsiveness, including in-memory caches, intermediate relational databases, enterprise transactional systems, and memory-heavy backend processing.",
+  "og_description": "Microsoft Azure EC4es_v6 is a memory-optimized instance featuring 4 dedicated Intel Xeon TDX vCPUs at 4.2 GHz, 32 GB RAM, AVX-512 and AMX acceleration, and Premium Storage capability.",
+  "meta_description": "Microsoft Azure EC4es_v6 is a memory-optimized virtual machine featuring 4 vCPUs on Intel Xeon TDX processors, 32 GB RAM, and Premium Storage support.",
+  "tagline": "High-clock Intel Xeon architecture delivering 32 GB of memory and strong single-core performance for memory-constrained enterprise workloads.",
   "bullet_points": [
-    "4 dedicated Intel vCPUs on x86_64 architecture",
-    "32.0 GB of system memory providing 8.0 GB per vCPU",
-    "Premium Storage capable with no bundled local storage",
-    "Powered by the Microsoft Hyper-V hypervisor",
-    "Optimized for relational databases and in-memory caching"
+    "4 dedicated vCPUs powered by 2 physical Intel Xeon TDX cores at 4.2 GHz",
+    "32.0 GB system RAM providing an 8 GB per vCPU memory-optimized ratio",
+    "Intel AMX and AVX-512 hardware acceleration with 260 MB L3 cache",
+    "No local storage bundled; requires external Premium Storage volumes",
+    "Suited for in-memory caches, relational databases, and enterprise services"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "General Purpose"
   ]
 }

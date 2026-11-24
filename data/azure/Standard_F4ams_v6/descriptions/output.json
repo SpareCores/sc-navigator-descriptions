@@ -1,22 +1,23 @@
 {
   "page": [
-    "Microsoft Azure F4ams_v6 is a memory-intensive virtual machine belonging to the Famsv6 server family. It runs on the Microsoft Hyper-V hypervisor and is powered by an AMD EPYC 9V74 processor using the x86_64 architecture. The instance features 4 dedicated physical cores with 1 thread per core, operating at a clock speed of 3.7 GHz. It is equipped with 32.0 GB of system memory, yielding a high memory-to-core ratio of 8.0 GB per vCPU. Local storage is not included, though the instance is premium storage capable for external disk attachments.",
-    "Performance benchmarks indicate strong single-core capabilities, with stress-ng single-core and Geekbench single-core scores placing in the top 25%. Text processing and small-model LLM text generation also demonstrate strong performance. Multi-core CPU performance, database operations, and Redis SET operations fall within the average range. However, a notable performance tradeoff is observed in memory bandwidth for large uncached read blocks, which registers in the bottom 25% at 38.92 GB/sec, alongside weaker prompt processing speeds for medium-sized LLM models.",
-    "From a qualitative cost-efficiency perspective, the F4ams_v6 offers a dense memory allocation relative to its 4 dedicated vCPUs, making it a viable option for memory-bound workloads that do not require local NVMe storage. The hardware profile is suited for memory-intensive applications, database operations, text processing, and lightweight LLM inference tasks."
+    "Microsoft Azure F4ams_v6 is an x86_64 compute-oriented virtual machine configuration with expanded memory allocation. Built on Microsoft Hyper-V virtualization, the instance is powered by dedicated AMD EPYC 9V74 processors operating at a base frequency of 3.7 GHz. The hardware profile provides 4 physical cores running 1 thread per core without simultaneous multithreading. Cache resources include 32 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of shared L3 cache. Processing is supported by extended vector and cryptography instructions, including AVX-512 (F, VNNI, and BF16), VAES, and SHA-NI.",
+    "The system provisions 32.0 GB of system memory, establishing a generous 8:1 memory-to-vCPU ratio of 8.0 GB per core. The instance includes no bundled local storage or complimentary public IPv4 addresses, requiring remote network storage via Azure Premium Storage volumes. In synthetic execution tests, the high CPU clock speeds yield strong top-tier single-core results, registering 3080.88 in stress-ng single-core tests and 2108.0 in Geekbench single-core evaluations. Multi-core performance scales predictably across the 4 dedicated cores, reaching a Geekbench multi-core score of 6842.0 and 12287.35 in stress-ng.",
+    "Memory subsystem benchmarks reveal 592.54 GB/sec throughput for cached small-block reads, though uncached large-block reads decline to 38.92 GB/sec. Text generation for lightweight 135M language models executes rapidly at 270.12 tokens per second, but prompt ingestion drops considerably on larger 7B parameter architectures. The absence of local solid-state drives and discrete hardware accelerators limits intensive local IOPS and massive AI training. However, the high per-core RAM density coupled with dedicated AMD execution units offers solid resource efficiency for in-memory databases, Redis deployments, enterprise application runtimes, and moderately scaled compilation pipelines."
   ],
-  "description": "The Microsoft Azure F4ams_v6 is a memory-intensive virtual machine from the Famsv6 family, powered by a 3.7 GHz AMD EPYC 9V74 processor with 4 dedicated physical cores on the x86_64 architecture. It features 32.0 GB of RAM, providing a high 8.0 GB per vCPU ratio, but includes no local storage. Benchmarks show strong single-core CPU and text processing performance, alongside average multi-core and database execution speeds. However, uncached large-block memory read bandwidth is a performance bottleneck, landing in the bottom 25%. Lacking a GPU and local disks, this instance is qualitatively cost-efficient for memory-heavy workloads relying on external premium storage. It is best suited for database operations, text processing, and moderate memory-bound applications.",
-  "og_description": "Microsoft Azure F4ams_v6 is a memory-intensive VM featuring 4 dedicated AMD EPYC cores, 32 GB of RAM, and strong single-core performance, making it suitable for database and text processing workloads.",
-  "meta_description": "Microsoft Azure F4ams_v6 is a memory-intensive VM with 4 dedicated AMD EPYC cores, 32 GB of RAM, and strong single-core benchmark performance.",
-  "tagline": "A memory-intensive virtual machine featuring dedicated AMD EPYC cores and high memory density for database and text processing workloads.",
+  "description": "Microsoft Azure F4ams_v6 is a specialized virtual machine configuration providing 4 dedicated x86_64 physical cores powered by AMD EPYC 9V74 processors running at 3.7 GHz on Microsoft Hyper-V. The system is equipped with an expanded 32.0 GB of RAM, granting 8.0 GB of memory per core. The processor features AVX-512 (including VNNI and BF16) along with 32 MB of L3 cache, delivering strong single-thread execution in Geekbench (2108.0) and stress-ng (3080.88). The instance contains no bundled local storage or hardware accelerators, relying on remote block storage for persistent data. Large-block memory reads exhibit moderate latency penalties, but cached operations and multi-threaded decompression perform reliably. With its high RAM-to-CPU ratio and dedicated core mapping, the instance is functionally suited for in-memory caching solutions, Redis data stores, software build orchestration, and enterprise web services requiring sustained per-core compute power.",
+  "og_description": "Microsoft Azure F4ams_v6 is a dedicated 4-core virtual machine powered by AMD EPYC 9V74 processors at 3.7 GHz. Featuring 32 GB of memory, it delivers strong single-core performance for memory-intensive compute workloads.",
+  "meta_description": "Microsoft Azure F4ams_v6 is a memory-dense compute virtual machine featuring 4 dedicated AMD EPYC 9V74 cores at 3.7 GHz, 32 GB RAM, and AVX-512 support.",
+  "tagline": "High-frequency dedicated AMD EPYC performance combined with an expanded 8-to-1 memory ratio for computation-heavy and memory-intensive enterprise tasks.",
   "bullet_points": [
-    "Powered by a dedicated 3.7 GHz AMD EPYC 9V74 processor with 4 physical cores",
-    "Equipped with 32.0 GB of RAM, offering a high 8.0 GB per vCPU ratio",
-    "Strong single-core CPU and text processing benchmark performance",
-    "No local storage included, but supports external premium storage",
-    "Well-suited for database operations, text processing, and memory-bound tasks"
+    "4 dedicated AMD EPYC 9V74 physical cores clocked at 3.7 GHz",
+    "32.0 GB system RAM yielding an 8.0 GB per-core allocation",
+    "Hardware support for AVX-512 (F, VNNI, BF16) and VAES instructions",
+    "Zero local disk storage, supporting Azure Premium Storage attachments",
+    "Strong single-core benchmark throughput across synthetic test suites",
+    "Tailored for Redis caching, in-memory databases, and CI/CD compilation"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

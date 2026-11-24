@@ -1,22 +1,24 @@
 {
   "page": [
-    "Amazon Web Services r7a.8xlarge is a memory-optimized server instance powered by the AWS Nitro hypervisor. It features an AMD EPYC 9R14 processor with 32 dedicated physical cores and 32 vCPUs operating at a clock speed of 3.7 GHz. The system is equipped with 256.0 GB of high-speed DDR5 memory running at 5 GHz, providing 8.0 GB of RAM per core. It does not include local storage or onboard GPUs, relying on network-attached storage and offering a baseline network bandwidth of 12 Gbps.",
-    "Benchmark data indicates strong multi-core and memory performance. The instance achieves top-tier results in prompt processing for small language models and strong performance in medium-model text generation. Multi-core CPU performance, software compilation, database operations, and Redis SET operations all rank in the top 25 percent. Memory bandwidth tests show high write speeds for large blocks and excellent read performance for cached small blocks, though uncached large block reads fall into the average tier.",
-    "Due to the lack of local NVMe storage and dedicated GPUs, this instance is not designed for local-storage-heavy databases or GPU-accelerated deep learning. However, the combination of 256 GB of DDR5 RAM, dedicated AMD EPYC cores, and strong memory bandwidth makes it highly cost-efficient for memory-intensive workloads relative to its resource density. It is well-suited for in-memory databases, Redis caching layers, enterprise applications, and CPU-based machine learning inference."
+    "Amazon Web Services r7a.8xlarge is a memory-optimized instance powered by the AWS Nitro System and fourth-generation AMD EPYC 9R14 processors. Built on the x86_64 architecture, the configuration features 32 dedicated physical cores and 32 vCPUs operating at speeds up to 3.7 GHz. The compute layer includes instruction set extensions such as AVX-512 with VNNI and BF16, as well as hardware-accelerated AES cryptography. The server is configured with 256.0 GB of DDR5 memory clocked at 5 GHz, maintaining an 8:1 memory-to-core ratio of 8.0 GB per vCPU.",
+    "Benchmark measurements indicate robust performance across multithreaded compute, memory, and database metrics. The instance achieves a PassMark CPU score of 62,261.4 and a multi-core Geekbench score of 19,786.0, alongside strong throughput in Clang software compilation (45,541.0) and ray tracing (57,822.0). In-memory database workloads demonstrate elevated throughput, logging 78.07 million operations per second on Redis SET tasks and a strong PassMark database operations score of 27,191.93. Large block uncached memory writes hit 105.97 GB/sec, while small block cached reads peak at 4,741.49 GB/sec. For small-scale language model inference, it processes prompts at 4,611.49 tokens per second on a 135M model.",
+    "Hardware tradeoffs include the absence of dedicated local NVMe storage and zero integrated hardware GPUs. Workloads requiring persistent storage must rely on external network-attached volumes over its baseline network bandwidth of 12 Gbps. While single-core synthetic stress testing falls within the median range, the combination of 32 dedicated AMD cores and substantial DDR5 bandwidth delivers efficient density for large datasets.",
+    "The r7a.8xlarge is structured for memory-intensive production tasks, including in-memory databases like Redis, large enterprise relational database engines, distributed caching nodes, memory-heavy ETL pipelines, and mid-tier CPU-based AI inference workflows."
   ],
-  "description": "Amazon Web Services r7a.8xlarge is a memory-optimized instance featuring 32 dedicated physical cores powered by an AMD EPYC 9R14 processor running at 3.7 GHz. It is equipped with 256.0 GB of DDR5 memory operating at 5 GHz, delivering 8.0 GB of RAM per core. Running on the AWS Nitro hypervisor, the instance provides a baseline network bandwidth of 12 Gbps, though it lacks local storage and GPU accelerators. Benchmark results show strong multi-core CPU performance, high memory write bandwidth, and top-tier prompt processing speeds for small language models. It also demonstrates strong capabilities in database operations and Redis SET performance. This hardware profile makes the r7a.8xlarge highly suitable for memory-intensive workloads, including in-memory databases, caching layers, and CPU-based machine learning inference.",
-  "og_description": "Amazon Web Services r7a.8xlarge is a memory-optimized instance featuring 32 AMD EPYC physical cores, 256 GB of DDR5 RAM, and a 12 Gbps network baseline, optimized for in-memory databases and caching.",
-  "meta_description": "Amazon Web Services r7a.8xlarge is a memory-optimized instance with 32 AMD EPYC cores, 256 GB of DDR5 RAM, and a 12 Gbps network baseline.",
-  "tagline": "A memory-optimized x86_64 platform featuring dedicated AMD EPYC processors and high-speed DDR5 memory for demanding database and caching workloads.",
+  "description": "Amazon Web Services r7a.8xlarge is a memory-optimized virtual machine driven by the AWS Nitro System and AMD EPYC 9R14 x86_64 processors. It is equipped with 32 dedicated cores running at 3.7 GHz, delivering strong multithreaded compute validated by a multi-core Geekbench score of 19,786.0 and a PassMark CPU score of 62,261.4. The instance provides 256.0 GB of high-speed 5 GHz DDR5 RAM, matching an 8:1 GB-per-core ratio, while omitting bundled local storage and GPUs. In-memory data structures perform exceptionally well, achieving 78.07 million Redis SET operations per second and 4,741.49 GB/sec in small cached reads. Networking sits at a 12 Gbps baseline. Lacking local NVMe disks, it relies on network storage, making it best fitted for memory-bound relational databases, in-memory caching systems, large-scale ETL pipelines, and specialized CPU-driven inference tasks.",
+  "og_description": "Amazon Web Services r7a.8xlarge features 32 dedicated AMD EPYC cores, 256 GB DDR5 memory, and 12 Gbps networking. Designed for memory-intensive enterprise databases, Redis caching, and ETL.",
+  "meta_description": "Amazon Web Services r7a.8xlarge delivers 32 dedicated AMD EPYC cores, 256 GB DDR5 RAM, and 12 Gbps network bandwidth for memory-optimized workloads.",
+  "tagline": "Dedicated AMD EPYC performance coupled with 256 GB of DDR5 memory designed for intensive enterprise caching and databases.",
   "bullet_points": [
-    "32 dedicated AMD EPYC 9R14 physical cores running at 3.7 GHz",
-    "256.0 GB of high-speed 5 GHz DDR5 memory",
-    "Strong multi-core CPU, database, and Redis SET benchmark performance",
-    "12 Gbps baseline network bandwidth powered by the Nitro hypervisor",
-    "Designed for in-memory databases, caching layers, and CPU-based inference"
+    "32 dedicated AMD EPYC 9R14 cores operating at up to 3.7 GHz",
+    "256.0 GB DDR5 system memory clocked at 5 GHz (8 GB per vCPU)",
+    "Strong multithreaded compute and memory performance across benchmarks",
+    "High in-memory throughput reaching 78.07 million Redis SET operations per second",
+    "12 Gbps baseline network bandwidth without local storage or GPUs",
+    "Fitted for in-memory databases, big data ETL, and enterprise caching systems"
   ],
   "categories": [
     "Memory Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

@@ -1,24 +1,22 @@
 {
   "page": [
-    "Amazon Web Services r7a.large is a memory-optimized virtual server instance powered by the AWS Nitro hypervisor. It features 2 dedicated physical cores and 2 vCPUs utilizing an x86_64 AMD EPYC 9R14 processor running at 3.7 GHz. The hardware configuration includes 16.0 GB of DDR5 memory operating at 5 GHz, yielding a high memory-to-vCPU ratio of 8.0 GB per core. This instance does not include local storage or dedicated GPU hardware, and it operates with a baseline network bandwidth of 1 Gbps.",
-    "In benchmark evaluations, the r7a.large demonstrates strong single-core performance, as evidenced by its stress-ng single-core CPU score of 3076.88 and a Geekbench single-core score of 1980.0, both placing in the top 25% of tested servers. Single-threaded bzip3 decompression is also strong at 13.75 GB/sec. However, multi-core and multi-threaded performance metrics fall into the average or weak categories. For instance, the Geekbench multi-core score of 3572.0 and the stress-ng multi-core CPU performance of 6109.26 are relatively limited by the dual-core hardware constraint.",
-    "Memory performance is mixed; while the PassMark memory score and large-block write bandwidth of 27.09 GB/sec are average, read-only memory bandwidth for both cached small blocks and uncached large blocks ranks in the bottom 25%. Similarly, database operations, Redis SET operations, and static web serving throughput show weaker benchmark results. For lightweight machine learning tasks, the instance achieves average performance on small 135M parameter LLM models but struggles with larger 7B models.",
-    "From a cost-efficiency perspective, the r7a.large offers a specialized entry point for memory-bound workloads that require dedicated CPU allocation and DDR5 memory speeds without the overhead of high core counts. The lack of bundled local storage means users must rely on network-attached storage, which is a key architectural tradeoff. This instance is best suited for memory-intensive, low-concurrency workloads such as small-scale caching, lightweight database nodes, and single-threaded data processing tasks."
+    "Amazon Web Services r7a.large is an entry-level memory-optimized instance powered by the Nitro hypervisor and fourth-generation AMD EPYC 9R14 processors. Built on the x86_64 architecture, the instance provides 2 dedicated physical cores and 2 vCPUs operating at 3.7 GHz without multithreading contention. It features 16 GB of DDR5 system memory clocked at 5 GHz, offering an 8:1 memory-to-vCPU ratio. CPU cache hierarchy includes 32 KB L1 data cache, 1 MB L2 cache, and 8 MB L3 cache, backed by vector and cryptographic hardware features including AVX-512, VAES, and SHA-NI.",
+    "Benchmark testing demonstrates strong single-threaded CPU capability, with Geekbench single-core and stress-ng single-core tests ranking in the top quartile. However, overall multi-threaded throughput is bounded by the dual-core profile, with PassMark CPU, compilation tasks, and multi-core Geekbench scores placing in lower tiers. Memory tests show uncached large-block read speeds of 36.7 GB/s and write speeds of 27.09 GB/s, alongside a PassMark memory score in the middle range.",
+    "The r7a.large does not include bundled local storage or discrete graphics accelerators, depending exclusively on networked storage services over a baseline network bandwidth of 1 Gbps. From a resource-density perspective, it offers a cost-effective path to modern DDR5 capacity for applications needing substantial RAM per core without incurring the expense of unneeded compute capacity.",
+    "Amazon Web Services r7a.large is appropriate for small-footprint in-memory caches, lightweight relational or key-value databases, background task queues, and microservices requiring high memory density alongside solid single-thread performance."
   ],
-  "description": "Amazon Web Services r7a.large is a memory-optimized virtual server powered by the AWS Nitro hypervisor. It features 2 dedicated vCPUs on an AMD EPYC 9R14 processor running at 3.7 GHz, paired with 16.0 GB of DDR5 memory at 5 GHz. The instance lacks local storage and GPU accelerators, relying on a baseline network bandwidth of 1 Gbps. Performance benchmarks indicate strong single-core capabilities, with top-tier results in single-threaded CPU and decompression tests. However, multi-core execution, memory read bandwidth, and database operations fall into average or weak categories due to the 2-core limitation. Qualitatively, the r7a.large provides a cost-efficient profile for memory-intensive applications that do not require massive parallel processing. It is best suited for small-scale databases, caching layers, and single-threaded data processing workloads.",
-  "og_description": "Amazon Web Services r7a.large is a memory-optimized instance featuring 2 dedicated AMD EPYC vCPUs, 16 GB of DDR5 RAM, and a 1 Gbps network baseline, designed for memory-intensive, low-concurrency workloads.",
-  "meta_description": "Amazon Web Services r7a.large is a memory-optimized instance with 2 AMD EPYC vCPUs, 16 GB DDR5 RAM, and strong single-core benchmark performance.",
-  "tagline": "A memory-optimized virtual server featuring dedicated AMD EPYC processing and DDR5 memory for low-concurrency, memory-intensive workloads.",
+  "description": "Amazon Web Services r7a.large is an entry-level memory-optimized instance featuring 2 dedicated x86_64 vCPUs and 2 physical cores powered by an AMD EPYC 9R14 processor running at 3.7 GHz. Governed by the Nitro hypervisor, the system provides 16 GB of DDR5 memory at 5 GHz, delivering an 8 GB per vCPU ratio suitable for memory-intensive low-concurrency tasks. It features no local storage or GPUs, relying on a 1 Gbps baseline network link for storage and external communication. In benchmark testing, the instance exhibits top-quartile single-core throughput across Geekbench and stress-ng tests, though total multi-core capacity remains bounded by the dual-core topology. Supported by AVX-512 and cryptographic hardware extensions, r7a.large provides cost-effective memory density for small in-memory caches, lightweight database servers, backend processing workers, and microservices requiring moderate compute paired with ample memory headroom.",
+  "og_description": "Amazon Web Services r7a.large is a memory-optimized instance featuring 2 dedicated AMD EPYC 9R14 vCPUs, 16 GB DDR5 memory, and a 1 Gbps network baseline for memory-intensive low-concurrency tasks.",
+  "meta_description": "Amazon Web Services r7a.large features 2 dedicated AMD EPYC cores, 16 GB of DDR5 RAM, and a 1 Gbps baseline network for memory-intensive cloud workloads.",
+  "tagline": "Memory-optimized dual-core configuration delivering dedicated fourth-generation AMD EPYC performance paired with high DDR5 memory density for small-footprint workloads.",
   "bullet_points": [
-    "2 dedicated vCPUs powered by a 3.7 GHz AMD EPYC 9R14 processor",
-    "16.0 GB of high-speed 5 GHz DDR5 memory",
-    "Strong single-core CPU and single-threaded decompression performance",
-    "No local storage or GPU accelerators included",
-    "1 Gbps baseline network bandwidth",
-    "Best suited for small-scale caching, lightweight databases, and single-threaded tasks"
+    "2 dedicated AMD EPYC 9R14 physical cores running at 3.7 GHz",
+    "16 GB high-speed DDR5 memory providing an 8:1 memory-to-core ratio",
+    "Hardware support for AVX-512 extensions and advanced cryptography",
+    "Stateless storage configuration with 1 Gbps baseline network connectivity",
+    "Targeted for in-memory caching, lightweight databases, and microservices"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }

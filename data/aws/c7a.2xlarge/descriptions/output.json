@@ -1,22 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c7a.2xlarge is a compute-optimized server instance powered by an AMD EPYC 9R14 processor. Built on the x86_64 architecture, it features 8 dedicated physical cores and 8 vCPUs running at a clock speed of 3.7 GHz. The hardware configuration includes 16.0 GB of DDR5 memory operating at 5 GHz, yielding a memory-to-vCPU ratio of 2.0 GB per core. This instance does not include local storage or GPU accelerators, and it operates on the Nitro hypervisor with a baseline network bandwidth of 3 Gbps.",
-    "Performance benchmarks indicate strong single-core capabilities, with a Geekbench single-core score of 1994.0 and strong single-threaded bzip3 decompression at 13.79 GB/sec. Text processing also ranks in the top 25% with a score of 2762.0. Multi-core performance is average, as shown by a Geekbench multi-core score of 10286.0 and a stress-ng multi-core CPU performance of 18308.68. Large-block uncached read memory bandwidth is a relative bottleneck, scoring in the bottom 25% at 38.63 GB/sec, while cached small-block reads reach 1185.57 GB/sec.",
-    "The c7a.2xlarge is qualitatively cost-efficient for compute-bound workloads that require high-frequency dedicated cores but do not demand massive memory footprints or local storage. It is well-suited for tasks such as single-threaded data processing, software compilation, static web serving, and lightweight LLM text generation using small models. However, it is less optimal for memory-intensive databases or large-scale LLM inference due to its 16.0 GB memory limit and lower uncached memory bandwidth."
+    "Amazon Web Services c7a.2xlarge is a compute-optimized instance built on the AWS Nitro System and powered by fourth-generation AMD EPYC 9R14 processors. The instance provides 8 dedicated physical cores and 8 vCPUs running at 3.7 GHz on the x86_64 architecture, with one thread per core. Memory capacity is 16.0 GB of high-speed DDR5 operating at 5 GHz, maintaining a 1:2 memory-to-vCPU ratio of 2.0 GB per core. The processor includes 32 KB L1 data cache, 1.0 MB L2 cache, and 32 MB L3 cache, alongside vector instruction support covering AVX-512 extensions such as VNNI and BF16.",
+    "Benchmark results reveal strong single-thread performance, highlighted by a Geekbench single-core score of 1994.0 and elevated metrics in text processing and single-threaded bzip3 decompression at 13.79 GB/sec. Small-model LLM text generation also reaches the upper quartile at 280.04 tokens per second. Multi-core performance aligns with expected mid-range compute profiles, registering a Geekbench multi-core score of 10286.0 and stress-ng throughput of 18308.68. However, memory bandwidth on large uncached read blocks drops into the lower quartile at 38.63 GB/sec, and larger 7B parameter LLM generation falls to 7.9 tokens per second.",
+    "The instance does not include integrated local instance storage and relies entirely on external network-attached volumes, while the network interface operates at a baseline bandwidth of 3 Gbps. There are no discrete hardware accelerators or GPUs provisioned. In terms of resource allocation and cost efficiency, the dedicated physical cores and DDR5 memory deliver predictable computational throughput without paying for excess memory overhead. The c7a.2xlarge is suited for CPU-bound tasks, continuous integration and build pipelines, batch processing, static web serving, and distributed microservices."
   ],
-  "description": "Amazon Web Services c7a.2xlarge is a compute-optimized instance featuring 8 dedicated physical cores and 8 vCPUs powered by an AMD EPYC 9R14 processor running at 3.7 GHz. It is equipped with 16.0 GB of high-speed DDR5 memory at 5 GHz, but lacks local storage and GPU accelerators. Operating on the Nitro hypervisor, it delivers a baseline network bandwidth of 3 Gbps. Benchmark results highlight strong single-core performance, particularly in Geekbench single-core tests and single-threaded bzip3 decompression, though uncached large-block memory bandwidth is a relative bottleneck. This resource profile makes the instance highly suitable for compute-heavy, single-threaded tasks, software compilation, and static web serving, while offering a balanced cost-to-performance ratio for workloads that do not require extensive memory capacity.",
-  "og_description": "Amazon Web Services c7a.2xlarge is a compute-optimized instance featuring 8 dedicated AMD EPYC cores, 16.0 GB of DDR5 RAM, and a 3 Gbps network baseline, optimized for high-frequency single-core workloads.",
-  "meta_description": "Amazon Web Services c7a.2xlarge is an x86_64 compute-optimized instance with 8 dedicated AMD EPYC cores, 16.0 GB DDR5 RAM, and Nitro hypervisor.",
-  "tagline": "A compute-optimized x86_64 instance featuring dedicated AMD EPYC processors and high-speed DDR5 memory for single-threaded and compute-bound workloads.",
+  "description": "Amazon Web Services c7a.2xlarge is a compute-optimized instance powered by an 8-core AMD EPYC 9R14 processor clocked at 3.7 GHz on the x86_64 architecture. Operating on the AWS Nitro hypervisor, the platform provides 8 dedicated vCPUs with a 1:1 thread-to-core mapping, paired with 16.0 GB of DDR5 memory at 5 GHz. The configuration excludes local storage and discrete GPUs, utilizing a 3 Gbps baseline network interface. Benchmark data highlights top-quartile single-core CPU throughput, text processing, and single-threaded bzip3 decompression, alongside mid-range multi-core performance and average Redis operation rates. Large uncached memory read bandwidth and larger model LLM inference represent performance bottlenecks due to memory constraints. Delivering cost-effective compute density through its balanced 1:2 core-to-memory ratio, the c7a.2xlarge is well positioned for continuous integration pipelines, batch compute workloads, web serving, and CPU-intensive microservices.",
+  "og_description": "Amazon Web Services c7a.2xlarge is a compute-optimized Nitro instance featuring 8 dedicated AMD EPYC 9R14 cores, 16 GB DDR5 memory, 3 Gbps network baseline, and strong single-core CPU benchmark results.",
+  "meta_description": "Amazon Web Services c7a.2xlarge provides 8 dedicated AMD EPYC 9R14 cores, 16 GB DDR5 RAM, and 3 Gbps network throughput for compute-focused workloads.",
+  "tagline": "Dedicated AMD EPYC cores and DDR5 memory delivering robust single-thread compute efficiency for CPU-intensive processing tasks.",
   "bullet_points": [
-    "Powered by an 8-core AMD EPYC 9R14 processor at 3.7 GHz",
-    "Equipped with 16.0 GB of DDR5 memory running at 5 GHz",
-    "Features strong single-core and text processing benchmark performance",
-    "Operates on the Nitro hypervisor with 3 Gbps baseline network bandwidth",
-    "Best suited for software compilation, static web serving, and compute-bound tasks"
+    "8 dedicated physical cores and 8 vCPUs via AMD EPYC 9R14 at 3.7 GHz",
+    "16.0 GB high-frequency DDR5 system memory (2.0 GB per core)",
+    "Hardware vector acceleration including AVX-512 VNNI and BF16",
+    "No bundled local disk; requires network-attached storage",
+    "3 Gbps baseline network bandwidth without discrete GPUs",
+    "Suited for software builds, CI/CD pipelines, and web application servers"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

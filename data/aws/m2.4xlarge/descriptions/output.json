@@ -1,23 +1,23 @@
 {
   "page": [
-    "Amazon Web Services m2.4xlarge is a memory-optimized second-generation virtual server instance powered by the Xen hypervisor. It features an x86_64 architecture with 8 dedicated physical cores and 8 vCPUs, utilizing an Intel Xeon E5-2665 0 processor operating at 2.4 GHz. The system is configured with 68.0 GB of system memory, yielding 8.55 GB of RAM per core. Local storage is provided via a bundled 1680 GB hard disk drive (HDD), and network connectivity is limited to a baseline bandwidth of 1 Gbps.",
-    "Benchmark evaluations indicate that the m2.4xlarge exhibits modest processing capabilities. Single-core performance is weak, with stress-ng single-core and Geekbench single-core scores falling into the bottom 25% and bottom 10% categories respectively. Multi-core performance is slightly stronger, achieving average ratings in stress-ng multi-core tests and software compilation benchmarks. Memory bandwidth remains stable, scoring in the average tier for both cached small-block and uncached large-block read and write operations. However, cryptographic and text processing performance is poor, reflecting the lack of modern instruction set extensions such as AVX, AVX-512, and AES-NI.",
-    "From a resource density perspective, the m2.4xlarge offers a high memory-to-vCPU ratio on legacy hardware. The inclusion of a large 1680 GB local HDD provides substantial storage capacity, though it lacks the speed of modern solid-state drives. This server is best suited for legacy memory-bound workloads, basic database operations, and batch processing tasks that require significant RAM but do not demand high-frequency CPU performance or modern cryptographic acceleration."
+    "Amazon Web Services m2.4xlarge is an earlier-generation instance provisioned on the Xen hypervisor, driven by an Intel Xeon E5-2665 processor operating at 2.4 GHz. It features 8 dedicated physical cores and 8 vCPUs on the x86_64 architecture. Hardware instruction extensions such as AVX, AVX-512, and AES are absent. The platform integrates 68.0 GB of system memory, yielding 8.55 GB per core, along with 1680 GB of attached local HDD storage, 1 Gbps baseline network bandwidth, and zero GPUs.",
+    "Benchmark evaluations show modest compute capabilities reflecting the age of the underlying architecture. Single-core processing is limited, demonstrated by a Geekbench single-core score of 662.0 and a stress-ng single-core score of 1229.78. Multi-threaded processing reaches average tiers in stress-ng multi-core testing at 6556.53 and Clang software compilation at 6139.0. Static web serving throughput reaches 5.88 GB/sec and Redis SET performance delivers 1.56 million operations per second. Memory throughput remains consistent with its generation, achieving average scores with 49.87 GB/sec large-block read bandwidth and 39.26 GB/sec large-block write bandwidth.",
+    "The instance trades compute efficiency and cryptographic instruction sets for high memory allocation per core and bulk local magnetic storage. It suits memory-oriented batch processing, non-latency-sensitive database operations, and internal caching systems that do not rely on modern vector acceleration or high-speed solid-state I/O."
   ],
-  "description": "Amazon Web Services m2.4xlarge is a legacy memory-optimized virtual server running on the Xen hypervisor. It features 8 dedicated vCPUs powered by an Intel Xeon E5-2665 0 processor at 2.4 GHz, paired with 68.0 GB of RAM and a bundled 1680 GB local HDD. Lacking modern CPU instruction sets like AVX and AES, its single-core compute and cryptographic performance fall into the lower percentiles. However, it maintains average multi-core processing and memory bandwidth capabilities. With a baseline network speed of 1 Gbps and no complimentary public IPv4 addresses, this instance is designed for memory-intensive legacy applications, database operations, and basic batch processing that benefit from high memory density rather than raw compute power.",
-  "og_description": "Amazon Web Services m2.4xlarge is an x86_64 virtual server featuring 8 vCPUs, 68 GB of RAM, and 1680 GB of local HDD storage, designed specifically for legacy memory-intensive workloads.",
-  "meta_description": "Amazon Web Services m2.4xlarge is an 8-vCPU virtual server with 68 GB RAM and 1680 GB local HDD storage for memory-intensive legacy workloads.",
-  "tagline": "A legacy memory-optimized virtual server featuring high RAM density and large local HDD storage for basic database and batch workloads.",
+  "description": "Amazon Web Services m2.4xlarge is a legacy virtual server featuring 8 dedicated vCPUs on an Intel Xeon E5-2665 processor clocked at 2.4 GHz on the Xen hypervisor. The instance is configured with 68.0 GB of system memory, providing 8.55 GB per vCPU, alongside 1680 GB of local HDD storage and a 1 Gbps network baseline. It contains no dedicated GPUs and lacks modern vector extensions like AVX and AES. Performance benchmarks show constrained single-core compute performance, highlighted by lower-tier Geekbench and compression results, though multi-core throughput and memory bandwidth measure in average ranges. The hardware configuration emphasizes large RAM capacity and local magnetic capacity over processing speed. This profile makes the instance viable for memory-heavy legacy enterprise applications, batch reporting jobs, and secondary database staging environments that require significant system memory without modern CPU acceleration requirements.",
+  "og_description": "Amazon Web Services m2.4xlarge features 8 vCPUs on an Intel Xeon E5-2665 processor, 68 GB of RAM, and 1680 GB of local HDD storage, designed for memory-intensive legacy computing and batch workloads.",
+  "meta_description": "Amazon Web Services m2.4xlarge offers 8 dedicated vCPUs, 68 GB RAM, and 1680 GB local HDD storage for memory-focused legacy workloads.",
+  "tagline": "A legacy high-memory instance featuring dedicated Xeon cores, substantial RAM density, and bulk magnetic storage for memory-centric non-vector workloads.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an Intel Xeon E5-2665 0 processor at 2.4 GHz",
-    "68.0 GB of system memory providing 8.55 GB of RAM per core",
-    "1680 GB of bundled local HDD storage for high-capacity data needs",
-    "Average performance in multi-core processing and memory bandwidth tests",
-    "Suited for legacy memory-bound applications and basic database operations"
+    "8 dedicated physical cores on an Intel Xeon E5-2665 processor running at 2.4 GHz",
+    "68.0 GB total system RAM providing an 8.55 GB per core allocation ratio",
+    "1680 GB bundled local spinning HDD disk storage with 1 Gbps network baseline",
+    "Absence of modern AVX, AVX-512, and AES instruction set extensions",
+    "Suited for legacy memory-intensive workloads, background batch jobs, and staging databases"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

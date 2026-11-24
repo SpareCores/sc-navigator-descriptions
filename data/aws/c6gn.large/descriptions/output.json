@@ -1,23 +1,22 @@
 {
   "page": [
-    "Amazon Web Services c6gn.large is a compute-optimized, network-optimized instance powered by the AWS Graviton processor family. It features 2 dedicated vCPUs based on the 64-bit ARMv8 Neoverse-N1 architecture, running at a clock speed of 2.5 GHz. The hardware configuration includes 4.0 GB of system memory, providing a 1:2 vCPU-to-RAM ratio of 2.0 GB per core. It operates on the AWS Nitro hypervisor and does not include local NVMe storage or dedicated GPU hardware.",
-    "Performance benchmarks indicate that the c6gn.large delivers average single-core CPU performance, with a stress-ng single-core score of 1515.29. However, its multi-core and memory capabilities are constrained. The stress-ng multi-core score is 3014.06, and the Geekbench multi-core score is 1749.0, both falling into the lower performance tiers. Memory bandwidth is also limited, with uncached large-block read speeds of 38.34 GB/sec and write speeds of 18.72 GB/sec.",
-    "From a cost-efficiency perspective, the c6gn.large offers a low-cost entry point for ARM64 development and testing. The dedicated core allocation ensures consistent performance without burst degradation, though the absolute resource limits restrict its utility for heavy workloads. Tradeoffs include poor database operations performance with a PassMark database score of 1286.79 and low static web serving throughput of 2.32 GB/sec.",
-    "This instance is best suited for lightweight ARM64-native applications, basic network-optimized tasks, software compilation testing, and low-traffic web serving."
+    "Amazon Web Services c6gn.large is a compute-optimized instance built on the AWS Nitro hypervisor architecture. It features 2 dedicated physical cores and 2 vCPUs powered by the 64-bit ARMv8 Neoverse-N1 processor operating at 2.5 GHz. With a 1:2 ratio of compute to memory, the system provides 4.0 GB of total RAM (2.0 GB per core). Local storage is absent on this instance, necessitating reliance on remote Elastic Block Store (EBS) volumes for persistent filesystem data, and no physical GPUs are included. Baseline network bandwidth is rated at 3 Gbps.",
+    "Benchmark results demonstrate modest raw compute capabilities consistent with an entry-level dual-core configuration. Single-core stress-ng performance reaches 1515.29, placing it in the average category, while multi-core throughput of 3014.06 falls into the bottom 25% of measured systems. Geekbench scores show 961.0 for single-core and 1749.0 for multi-core tests, with specialized tasks like Clang software compilation (2324.0) and ray tracing (1762.0) registering in the bottom 10%. Memory subsystem throughput records 38.34 GB/sec for uncached large-block reads and 18.72 GB/sec for writes.",
+    "Application and server test profiles reflect the hardware footprint of the dual-core ARM processor. In-memory Redis SET operations achieve 2.35 million operations per second, while static web serving registers 2.32 GB/sec of throughput. Lightweight language model inference using a small 135M model generates 23.55 tokens per second. Larger 7B and 70B language models are unsupported by the available memory footprint. The dedicated ARM core allocation avoids hyperthreading contention, delivering consistent execution despite restricted capacity.",
+    "The c6gn.large offers resource efficiency for lightweight distributed services and scale-out network appliances that require dedicated CPU execution without high memory footprints. It functions effectively for web serving, microservices, lightweight proxy nodes, routine data compression tasks, and containerized background workers tailored for the arm64 architecture."
   ],
-  "description": "Amazon Web Services c6gn.large is a compute-optimized instance featuring 2 dedicated vCPUs powered by the 2.5 GHz AWS Graviton Neoverse-N1 ARMv8 processor. It is equipped with 4.0 GB of memory, providing 2.0 GB per core, and runs on the AWS Nitro hypervisor. The instance does not include local storage or GPU accelerators but provides a baseline network bandwidth of 3 Gbps. Benchmarks show average single-core CPU performance with a stress-ng score of 1515.29, though multi-core and memory bandwidth results are weak, including a Geekbench multi-core score of 1749.0. Qualitatively, the c6gn.large serves as a cost-efficient option for lightweight ARM64 development, testing, and basic network-optimized workloads where dedicated CPU allocation is required but overall memory and multi-threaded demands remain low.",
-  "og_description": "Amazon Web Services c6gn.large is an ARM64 compute-optimized instance with 2 dedicated Graviton vCPUs, 4.0 GB RAM, and 3 Gbps network bandwidth, designed for lightweight network-optimized workloads.",
-  "meta_description": "Amazon Web Services c6gn.large is an ARM64 compute-optimized instance featuring 2 dedicated Graviton vCPUs, 4.0 GB RAM, and 3 Gbps baseline network bandwidth.",
-  "tagline": "An ARM64 compute-optimized instance featuring dedicated Graviton processors and baseline networking for lightweight, cost-efficient development and testing workloads.",
+  "description": "Amazon Web Services c6gn.large is an arm64 compute-optimized instance driven by an AWS Graviton Neoverse-N1 processor operating at 2.5 GHz on the Nitro hypervisor. It provides 2 dedicated physical cores without simultaneous multithreading, paired with 4.0 GB of system memory, yielding a 1:2 CPU-to-memory ratio. The configuration excludes local SSD storage and GPU accelerators, utilizing 3 Gbps baseline network bandwidth. Benchmarks illustrate mid-tier single-core stress performance (1515.29) balanced by entry-level multi-core metrics, including a Geekbench multi-core score of 1749.0 and Redis SET throughput of 2.35 million operations per second. Memory throughput reaches 38.34 GB/sec for uncached reads. This setup suits lightweight arm64 scale-out architectures, containerized microservices, reverse proxies, and modest continuous integration workloads that require predictable, dedicated CPU execution.",
+  "og_description": "Amazon Web Services c6gn.large is a compute-optimized arm64 instance offering 2 dedicated Graviton Neoverse-N1 cores at 2.5 GHz, 4.0 GB RAM, and 3 Gbps baseline network performance.",
+  "meta_description": "Amazon Web Services c6gn.large is a 2-vCPU arm64 instance featuring AWS Graviton Neoverse-N1 cores, 4.0 GB memory, and 3 Gbps network bandwidth.",
+  "tagline": "Dedicated dual-core 64-bit ARM compute paired with balanced memory and predictable baseline networking for lightweight microservices.",
   "bullet_points": [
-    "2 dedicated AWS Graviton Neoverse-N1 ARM64 vCPUs",
-    "4.0 GB of system memory providing 2.0 GB per core",
-    "3 Gbps baseline network bandwidth on the Nitro hypervisor",
-    "Average single-core CPU performance with 1515.29 stress-ng score",
-    "Best suited for lightweight ARM64 development, testing, and basic web serving"
+    "AWS Neoverse-N1 ARMv8 processor with 2 dedicated physical cores at 2.5 GHz",
+    "4.0 GB system RAM providing 2.0 GB memory per core",
+    "3 Gbps baseline network bandwidth running on the AWS Nitro hypervisor",
+    "Zero integrated local storage, requiring network-attached EBS storage",
+    "Tailored for lightweight arm64 web servers, microservices, and network proxies"
   ],
   "categories": [
-    "Compute Optimized",
-    "General Purpose"
+    "Compute Optimized"
   ]
 }

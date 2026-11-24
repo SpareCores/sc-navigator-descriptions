@@ -1,22 +1,24 @@
 {
   "page": [
-    "Microsoft Azure D48alds_v6 is an x86_64 architecture server powered by a dedicated AMD EPYC 9V74 processor. It features 48 vCPUs across 24 physical cores with multithreading enabled, operating at a clock speed of 3.7 GHz. The system is configured with 96.0 GB of system memory, yielding a resource density of 2.0 GB of RAM per core. Local storage is bundled, consisting of a 2835 GB NVMe SSD, and the instance is premium storage capable under the Microsoft Hyper-V hypervisor.",
-    "Benchmark results place this server in the top 25% for both single-core and multi-core CPU performance via stress-ng, as well as Geekbench multi-core and Passmark CPU tests. Memory performance is strong for cached small-block reads at 3648.29 GB/sec, though large-block uncached read and write operations fall into the average tier. Cryptographic and database operations perform strongly, with Redis SET operations reaching 66.39 million operations per second. For machine learning workloads, the server achieves top-tier text generation speeds of 339.07 tokens per second on small 135M models, but performance drops to the bottom 10% for text generation on large 70B models.",
-    "Given the 1:2 vCPU-to-RAM ratio, this server represents a compute-optimized hardware profile with a high-density local NVMe storage tradeoff. It is qualitatively cost-efficient for workloads requiring high raw compute power and fast local scratch space rather than massive memory footprints. Optimal workloads include software compilation, database operations, high-throughput web serving, and small-scale model inference."
+    "Microsoft Azure D48alds_v6 is a compute-oriented virtual machine powered by an AMD EPYC 9V74 processor operating at 3.7 GHz. Utilizing the x86_64 architecture under the Microsoft Hyper-V hypervisor, the instance provides 48 dedicated vCPUs distributed across 24 physical cores with two threads per core. System memory is configured at 96.0 GB, yielding a 1:2 vCPU-to-RAM ratio of 2.0 GB per vCPU. The hardware incorporates instruction set extensions including AVX-512, VNNI, and BF16, alongside hardware cryptographic engines like VAES and SHA-NI.",
+    "The instance includes 2835 GB of integrated local NVMe SSD storage for high-throughput ephemeral scratch capacity, in addition to supporting Azure Premium Storage. The configuration does not include discrete GPU hardware accelerators. Memory caching features 32 KB of L1 data cache per core, 1.0 MB of L2 cache, and a shared 32 MB L3 cache pool.",
+    "Synthetic benchmarks demonstrate upper-quartile processing capabilities, with top 25% results in single-core and multi-core stress-ng tests, PassMark CPU tests, and Geekbench suites. Parallel compute throughput is verified by elevated scores in Clang software compilation and multi-threaded bzip3 decompression. Cached small-block memory reads achieve high transfer rates, supporting high transaction volumes such as over 66 million Redis operations per second. However, uncached 256 MB memory transfers register in the average middle tier, and large-parameter language model generation is constrained by available memory capacity and the absence of GPU acceleration.",
+    "Given its high core count relative to memory and large bundled NVMe storage, Microsoft Azure D48alds_v6 offers strong qualitative cost efficiency for CPU-intensive parallel tasks needing fast local scratch space. It is appropriate for CI/CD build pipelines, distributed batch compute, microservices hosting, and localized database workloads with working sets that align with its 96 GB RAM capacity."
   ],
-  "description": "The Microsoft Azure D48alds_v6 is a compute-optimized server featuring a dedicated 48-vCPU AMD EPYC 9V74 processor running at 3.7 GHz on the x86_64 architecture. Configured with 96.0 GB of RAM and a bundled 2835 GB NVMe SSD, this virtual machine operates under Microsoft Hyper-V. It delivers strong CPU and database performance, ranking in the top 25% for multi-core stress-ng and Passmark benchmarks, alongside high-throughput Redis operations. However, its 1:2 memory-to-vCPU ratio represents a tradeoff for memory-intensive applications, and text generation performance for large 70B models is poor. This server is highly suited for compute-heavy workloads, software compilation, database operations, and small-scale machine learning inference.",
-  "og_description": "Microsoft Azure D48alds_v6 is a compute-optimized server with a 48-vCPU AMD EPYC processor, 96 GB RAM, and a 2835 GB NVMe SSD, delivering strong multi-core performance for databases and software compilation.",
-  "meta_description": "Microsoft Azure D48alds_v6 is a 48-vCPU AMD EPYC server with 96 GB RAM and 2835 GB NVMe SSD storage, optimized for compute-heavy workloads.",
-  "tagline": "A compute-optimized x86_64 platform combining high-frequency AMD EPYC processing with high-capacity local NVMe SSD storage for demanding workloads.",
+  "description": "Microsoft Azure D48alds_v6 is a compute-focused virtual machine powered by an AMD EPYC 9V74 processor operating at 3.7 GHz across 48 dedicated vCPUs and 24 physical cores. It features 96.0 GB of RAM, creating a 1:2 vCPU-to-memory ratio, alongside 2835 GB of bundled local NVMe SSD storage without discrete GPU hardware. Benchmark evaluations show strong compute performance, achieving top-quartile results in Geekbench multi-core, PassMark CPU tests, and Clang compilation metrics. Memory caching throughput supports elevated transaction rates in Redis, though uncached memory bandwidth falls within average ranges. The combination of dense AMD processing capacity and high-capacity local NVMe storage delivers effective resource efficiency for CPU-bound pipelines requiring fast local temporary storage, such as software compilation, batch processing, and database operations matching its memory footprint.",
+  "og_description": "Microsoft Azure D48alds_v6 is a 48-vCPU virtual machine featuring an AMD EPYC 9V74 processor, 96 GB RAM, and 2835 GB of local NVMe SSD storage, optimized for compute-heavy workloads and high-throughput compilation.",
+  "meta_description": "Microsoft Azure D48alds_v6 features 48 vCPUs on an AMD EPYC 9V74 CPU, 96 GB RAM, and 2835 GB local NVMe SSD storage for compute-dense processing.",
+  "tagline": "High-density 48-core AMD processing paired with fast integrated NVMe storage for compute-bound pipelines and parallel compilation tasks.",
   "bullet_points": [
-    "Dedicated 48-vCPU AMD EPYC 9V74 processor running at 3.7 GHz",
-    "Bundled 2835 GB local NVMe SSD storage with Premium Storage capability",
-    "96.0 GB system memory providing 2.0 GB of RAM per core",
-    "Strong multi-core CPU, database, and cryptographic benchmark performance",
-    "Best suited for software compilation, database tasks, and small-scale model inference"
+    "48 dedicated vCPUs across 24 physical cores via AMD EPYC 9V74 processor at 3.7 GHz",
+    "96.0 GB system memory providing a 1:2 vCPU-to-RAM compute-optimized profile",
+    "2835 GB bundled local NVMe SSD storage for high-speed ephemeral data handling",
+    "Top-quartile benchmark performance in multi-core compute, Clang compiling, and Redis operations",
+    "Tailored for parallel software builds, batch data processing, and localized database workloads"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "General Purpose"
   ]
 }

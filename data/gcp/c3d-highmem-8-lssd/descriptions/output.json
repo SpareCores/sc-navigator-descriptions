@@ -1,20 +1,20 @@
 {
   "page": [
-    "Google Cloud Platform c3d-highmem-8-lssd is a memory-optimized virtual machine instance featuring 8 dedicated vCPUs powered by an AMD EPYC 9B14 processor. Built on the x86_64 architecture, the instance provides 4 physical cores with 2 threads per core. It is equipped with 64 GB of system memory, yielding a high memory-to-core ratio of 8 GB per vCPU. Local storage is bundled via a single NVMe SSD offering 402 GB of capacity.",
-    "Benchmark data indicates strong single-core CPU performance, with stress-ng single-core tests placing in the top 25%. Multi-core CPU performance, software compilation, and database operations fall within the average range. However, a notable hardware tradeoff is present in memory bandwidth; while cached small-block reads are average, uncached large-block reads and writes are weak and poor, placing in the bottom 25% and bottom 10% respectively.",
-    "Given its high memory density and local NVMe SSD storage, this instance is qualitatively cost-efficient for memory-bound workloads that require fast local scratch space but are not heavily bottlenecked by uncached memory write speeds. It is suited for database operations, caching layers, text processing, and moderate web serving."
+    "Google Cloud Platform c3d-highmem-8-lssd is an x86_64 instance type powered by AMD EPYC 9B14 processors. It provides 8 vCPUs across 4 dedicated physical cores with 2 threads per core, alongside 64.0 GB of system memory, yielding an 8.0 GB RAM-per-vCPU ratio. Cache architecture features 32 KB L1d, 1.0 MB L2, and 32 MB L3 cache. Instruction set extensions include AVX-512 (f, vnni, bf16) as well as hardware cryptographic accelerations via AES, VAES, and SHA-NI. The instance is configured with 402 GB of local NVMe SSD storage and lacks hardware GPU accelerators.",
+    "Benchmark measurements indicate solid compute efficiency, showing top-quartile performance in single-core stress-ng tests (2861.78) and Geekbench text processing (2485.0). General computational results fall squarely in the middle 50%, with a Geekbench multi-core score of 7005.0, a PassMark CPU score of 13509.39, and multi-core stress-ng throughput reaching 11477.34. While small-block cached memory bandwidth maintains 565.66 GB/sec, uncached throughput displays notable bottlenecks, registering weak read bandwidth at 38.69 GB/sec and poor write throughput at 13.97 GB/sec. Data manipulation workloads achieve 10.75 million Redis SET operations per second and 11.06 GB/sec in static web serving throughput.",
+    "With its 1:8 core-to-memory allocation and integrated 402 GB local NVMe disk, this instance offers balanced hardware cost efficiency for memory-heavy and disk-caching tasks without the overhead of separate remote disk provisions. However, uncached memory bandwidth constraints limit performance for memory-streaming calculations or large-scale model inference. Workloads aligned with this server profile include in-memory caching systems, transactional relational databases, data processing pipelines, and web backend applications requiring fast scratch disks."
   ],
-  "description": "Google Cloud Platform c3d-highmem-8-lssd is an x86_64 memory-optimized instance featuring 8 dedicated vCPUs from an AMD EPYC 9B14 processor, 64 GB of RAM, and a 402 GB local NVMe SSD. It delivers strong single-core CPU performance, ranking in the top 25% on stress-ng benchmarks, while multi-core operations, software compilation, and database benchmarks perform at average levels. A key hardware tradeoff is its uncached memory write bandwidth, which falls into the bottom 10%. With 8 GB of RAM per vCPU and fast local storage, this instance provides qualitative resource density for memory-intensive applications. It is suited for database operations, text processing, and caching workloads that benefit from dedicated compute resources and local SSD storage without requiring extreme uncached memory write speeds.",
-  "og_description": "Google Cloud Platform c3d-highmem-8-lssd is an x86_64 memory-optimized instance with 8 AMD EPYC vCPUs, 64 GB RAM, and a 402 GB local NVMe SSD, offering strong single-core performance.",
-  "meta_description": "Google Cloud Platform c3d-highmem-8-lssd features 8 AMD EPYC vCPUs, 64 GB RAM, and a 402 GB local NVMe SSD for memory-intensive workloads.",
-  "tagline": "A memory-optimized instance featuring dedicated AMD EPYC processors, high memory density, and local NVMe SSD storage for database workloads.",
+  "description": "Google Cloud Platform c3d-highmem-8-lssd features 8 vCPUs across 4 physical AMD EPYC 9B14 cores, 64.0 GB of RAM, and 402 GB of local NVMe SSD storage on an x86_64 architecture without GPU accelerators. Delivering an 8.0 GB per vCPU memory density, it incorporates AVX-512 instructions and dedicated hardware cryptography flags. Benchmark testing indicates strong single-core compute performance alongside mid-tier results in Geekbench multi-core (7005.0) and PassMark CPU metrics (13509.39). While cached memory performance remains stable, large-block uncached write throughput is comparatively limited at 13.97 GB/sec. Operational throughput reaches 10.75 million Redis SET operations per second and 11.06 GB/sec in web serving. Given its generous memory capacity and integrated NVMe drive, the instance fits in-memory caching, local database deployments, and mid-tier backend services.",
+  "og_description": "Google Cloud Platform c3d-highmem-8-lssd features 8 vCPUs on AMD EPYC 9B14, 64 GB RAM, and a 402 GB local NVMe SSD. It delivers solid single-core metrics for in-memory and database operations.",
+  "meta_description": "Google Cloud Platform c3d-highmem-8-lssd offers 8 vCPUs, 64 GB RAM, and 402 GB local NVMe SSD storage powered by AMD EPYC 9B14 processors.",
+  "tagline": "High-memory compute profile with AMD EPYC processors, generous RAM per core, and integrated local NVMe SSD storage.",
   "bullet_points": [
-    "8 dedicated vCPUs powered by an AMD EPYC 9B14 processor",
-    "64 GB of system memory providing 8 GB of RAM per vCPU",
-    "Bundled 402 GB local NVMe SSD for high-speed local storage",
-    "Strong single-core CPU and text processing performance",
-    "Tradeoff of lower uncached memory write bandwidth",
-    "Suited for database operations, caching, and memory-bound applications"
+    "8 vCPUs (4 physical cores) via AMD EPYC 9B14 processors",
+    "64.0 GB system memory (8.0 GB allocation per core)",
+    "Integrated 402 GB local NVMe SSD storage",
+    "AVX-512 vector support and hardware-level cryptographic flags",
+    "Strong single-core compute performance and fast cached memory access",
+    "Suited for in-memory caching, relational databases, and data processing"
   ],
   "categories": [
     "Memory Optimized",
