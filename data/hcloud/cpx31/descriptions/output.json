@@ -1,22 +1,24 @@
 {
   "page": [
-    "Hetzner Cloud cpx31 is a virtual instance built on the QEMU hypervisor within the Regular Purpose family. It provides 4 shared vCPUs on an AMD EPYC processor running at 2.0 GHz using the x86_64 architecture, alongside 8.0 GB of system memory. Storage is provisioned locally with a bundled 160 GB NVMe SSD, while dedicated graphics acceleration is not included. Complimentary public IPv4 addresses are not allocated by default.",
-    "Computational benchmarks show strong single-core performance on stress-ng at 2,681.88, while multi-core stress-ng reaches 10,668.13 within the average tier. Geekbench scoring indicates mid-tier capability, yielding 1,463 for single-core and 4,741 for multi-core evaluations. Memory subsystem throughput reaches 60.53 GB/sec for uncached large-block reads and 41.80 GB/sec for uncached writes, although the PassMark memory benchmark reflects lower-tier results. Multi-threaded bzip3 decompression, Clang software compilation, Redis SET operations, and static web serving throughput also register in lower benchmark tiers.",
-    "The 1:2 vCPU-to-RAM configuration offers a dense compute allocation on shared hardware, providing cost efficiency for workloads that do not demand sustained dedicated cores. Tradeoffs include shared CPU contention during peak loads and constrained memory per core at roughly 1.95 GB. Hetzner Cloud cpx31 is suited for lightweight containerized services, CI/CD runners, build tasks, and non-critical development environments."
+    "Hetzner Cloud cpx31 is a virtual instance within the provider's Regular Purpose family, configured with 4 shared vCPUs based on AMD EPYC x86_64 processors running at a base clock of 2.0 GHz. The processor architecture provides 32 KB L1 data cache, 0.5 MB L2 cache, and 16 MB L3 cache, with hardware support for AVX, AES, and SHA-NI instruction sets, though it lacks AVX-512 and AMX extensions. Virtualization is delivered through QEMU with a 1:1 thread-to-core mapping under a shared host resource model.",
+    "The instance is provisioned with 8.0 GB of system memory, establishing a 1:2 vCPU-to-RAM ratio of 1.95 GB per core. Local storage is bundled directly as a 160 GB NVMe SSD, eliminating external disk attachment requirements for primary file storage. The configuration includes zero dedicated GPUs and does not bundle complimentary public IPv4 addresses, which must be routed or provisioned separately if required.",
+    "Benchmark data reflects mid-tier compute capabilities alongside entry-level throughput characteristics. The server achieves a Geekbench single-core score of 1,463 and a multi-core score of 4,741, matched by a PassMark CPU score of 8,392.09 and stress-ng multi-core throughput of 10,668.13. Large-block memory bandwidth sustains 60.53 GB/sec read and 41.80 GB/sec write. However, synthetic software compilation in Clang (5,726.0) and bzip3 multi-threaded decompression (26.07 GB/sec) score in the lower quartile. Similarly, memory-heavy tests show lower density performance, including a PassMark memory score of 1,280.84, Redis SET operations at 5.25 million per second, and static web serving throughput of 4.47 GB/sec.",
+    "From an infrastructure perspective, the cpx31 delivers cost efficiency by pairing bundled local NVMe storage with multi-core AMD computing under a shared allocation design. While unsuitable for sustained large-scale LLM processing or highly concurrent transactional databases, the server is well aligned with lightweight web application hosting, build automation, containerized microservices, and general compute workloads operating under balanced resource utilization."
   ],
-  "description": "Hetzner Cloud cpx31 is a virtual server featuring 4 shared vCPUs on an AMD EPYC processor operating at 2.0 GHz with x86_64 architecture. The system integrates 8.0 GB of memory and includes a bundled 160 GB local NVMe SSD without discrete GPU hardware or bundled IPv4 addresses. Benchmark assessments demonstrate strong single-core compute performance in stress-ng tests alongside middle-tier multi-core execution in both Geekbench and PassMark. However, memory performance and data-heavy tasks such as multi-threaded decompression, software compilation, and Redis operations fall into lower performance quartiles. The 1:2 vCPU-to-RAM ratio provides balanced resource density on shared hardware, offering cost efficiency for entry-level computational duties while presenting tradeoffs in memory capacity and potential shared CPU contention. This configuration aligns with continuous integration pipelines, batch utility scripts, microservices, and development environments requiring local fast NVMe storage.",
-  "og_description": "Hetzner Cloud cpx31 is a virtual server featuring 4 shared AMD EPYC vCPUs, 8.0 GB of memory, and 160 GB of local NVMe storage, delivering strong single-core compute for CI/CD and web testing.",
-  "meta_description": "Hetzner Cloud cpx31 features 4 shared AMD EPYC vCPUs, 8.0 GB RAM, and 160 GB local NVMe SSD storage for development and lightweight compute tasks.",
-  "tagline": "Four shared AMD EPYC cores paired with fast NVMe storage provide dependable single-thread performance for development pipelines and lightweight utility workloads.",
+  "description": "Hetzner Cloud cpx31 is an x86_64 instance featuring 4 shared AMD EPYC virtual cores clocked at 2.0 GHz, 8.0 GB of RAM, and 160 GB of bundled local NVMe SSD storage. Operating under QEMU hypervisor virtualization, its 1:2 CPU-to-memory ratio provides 1.95 GB of RAM per core. Standard compute benchmarks such as Geekbench (1,463 single-core, 4,741 multi-core) and PassMark CPU (8,392.09) demonstrate consistent mid-tier performance across general processing, encryption, and integer routines. Memory throughput and compilation metrics measure in the lower percentiles, with Redis achieving 5.25 million SET operations per second and web serving delivering 4.47 GB/sec. Without dedicated GPU acceleration or complimentary IPv4 addresses, the instance is positioned as an economical option for container hosting, lightweight development pipelines, and general computational tasks.",
+  "og_description": "Hetzner Cloud cpx31 provides 4 shared AMD EPYC cores, 8 GB RAM, and a bundled 160 GB NVMe SSD, delivering cost-effective processing for general microservices and web compute workloads.",
+  "meta_description": "Hetzner Cloud cpx31 features 4 shared AMD EPYC vCPUs, 8 GB RAM, and a 160 GB NVMe SSD for balanced, entry-level cloud computing.",
+  "tagline": "Economical multi-core cloud compute combining shared AMD EPYC processing with integrated high-speed local NVMe solid-state storage.",
   "bullet_points": [
-    "4 shared AMD EPYC vCPUs at 2.0 GHz on x86_64 architecture",
-    "8.0 GB system memory with a 1:2 vCPU-to-RAM ratio",
-    "Bundled 160 GB local NVMe SSD storage without discrete GPU support",
-    "Strong single-core compute performance observed in stress-ng tests",
-    "Suited for CI/CD pipelines, lightweight containers, and development stacks"
+    "4 shared AMD EPYC x86_64 cores operating at 2.0 GHz",
+    "8.0 GB total system memory (1.95 GB allocation per vCPU)",
+    "Bundled 160 GB local NVMe solid-state storage drive",
+    "Hardware encryption support including AES and SHA-NI flags",
+    "Suited for web serving, microservices, and development environments"
   ],
   "categories": [
     "Compute Optimized",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "General Purpose"
   ]
 }
