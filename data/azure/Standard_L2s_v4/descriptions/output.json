@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure L2s_v4 is a storage-optimized virtual machine provisioned on Microsoft Hyper-V. The instance is powered by an x86_64 Intel Xeon 8573C processor running at up to 4.2 GHz. The compute allocation consists of 2 vCPUs derived from a single physical core with hyper-threading enabled. Memory capacity is 16.0 GB RAM, providing 8.0 GB of memory per core. For local low-latency requirements, the system includes 480 GB of attached NVMe SSD storage. The CPU features extensive instruction set extensions, including AVX-512 and AMX matrix accelerators.",
-    "Benchmark outcomes highlight strong single-threaded performance contrasted by aggregate multi-threaded limits typical of a dual-vCPU footprint. The instance achieved a strong Geekbench single-core score of 2138.0 and gzip single-threaded compression throughput of 31.24 GB/sec. Conversely, multi-core metrics reveal throughput bottlenecks, with a multi-core Geekbench score of 2622.0 and stress-ng multi-core CPU performance in the bottom 10%. Memory bandwidth for large blocks recorded 20.23 GB/sec read and 14.38 GB/sec write.",
-    "Cost efficiency is centered around the inclusion of direct NVMe storage and modern single-thread processing speed. However, total compute density is limited by the single physical core. Workloads reliant on high parallel throughput or massive memory bandwidth will face constraints. Microsoft Azure L2s_v4 is appropriate for lightweight database operations, caching nodes, log aggregation, and single-threaded tasks requiring direct NVMe storage scratch space."
+    "Microsoft Azure L2s_v4 is a storage-optimized virtual machine instance deployed on the Microsoft Hyper-V hypervisor. The hardware profile features an Intel Xeon 8573C processor based on the x86_64 architecture, operating at a clock speed of 4.2 GHz. The compute configuration provides 2 dedicated vCPUs derived from a single physical core with multithreading enabled. The CPU includes 48 KB of L1 data cache, 2 MB of L2 cache, and 260 MB of L3 cache, alongside support for modern vector and matrix instructions including AVX-512 and Intel AMX. System memory totals 16.0 GB, yielding 8.0 GB per vCPU. Storage is bundled directly with a 480 GB local NVMe SSD, and the configuration contains no GPU acceleration.",
+    "Performance benchmarks show strong per-core results alongside multi-threaded throughput bounds expected from a 2-vCPU topology. In Geekbench tests, the instance scored 2138.0 in single-core performance, placing it within the upper tier of tested instances, whereas the multi-core result registered at 2622.0. PassMark metrics indicate a CPU score of 3723.78 and an extended instructions score of 2718.2. Memory throughput for uncached large blocks achieved 20.23 GB/sec for reads and 14.38 GB/sec for writes. In application-level benchmarks, the server sustained 2.85 million Redis SET operations per second and 4.16 GB/sec in static web serving throughput.",
+    "The qualitative cost efficiency of the L2s_v4 is defined by its pairing of high memory density and dedicated local NVMe storage with a minimal core footprint. Incorporating direct-attached high-speed NVMe avoids reliance on network-attached block storage for latency-sensitive scratch or operational data. Compute-intensive parallel scalability is limited by the single physical core. The instance is best suited for localized caching, low-concurrency relational and NoSQL databases, small transactional systems, and lightweight I/O-intensive workloads."
   ],
-  "description": "Microsoft Azure L2s_v4 is a storage-optimized virtual machine operating on Microsoft Hyper-V. It is powered by an Intel Xeon 8573C x86_64 processor clocked at 4.2 GHz, configured with 2 dedicated vCPUs spanning a single physical core. The instance provides 16.0 GB of system memory (8.0 GB per core) and includes 480 GB of bundled local NVMe SSD storage. Single-threaded performance is high, marked by a Geekbench single-core score of 2138.0 and gzip compression reaching 31.24 GB/sec. In contrast, multi-threaded tasks and uncached memory bandwidth fall into lower percentile bands due to the core count. With integrated high-speed local disk, this instance is suited for localized storage-bound tasks, small caching layers, and lightweight database engines.",
-  "og_description": "Microsoft Azure L2s_v4 is a storage-optimized VM with 2 vCPUs from an Intel Xeon 8573C processor, 16.0 GB RAM, and a bundled 480 GB NVMe SSD for fast local storage operations.",
-  "meta_description": "Microsoft Azure L2s_v4 features 2 vCPUs, an Intel Xeon 8573C processor, 16 GB RAM, and a 480 GB NVMe SSD for storage-oriented tasks.",
-  "tagline": "A compact two-vCPU server pairing high single-core Intel processor clocks with dedicated high-speed local NVMe SSD capacity.",
+  "description": "Microsoft Azure L2s_v4 is a storage-optimized virtual machine powered by an Intel Xeon 8573C processor running at 4.2 GHz on Microsoft Hyper-V. The system provides 2 dedicated vCPUs on 1 physical core, 16.0 GB of system memory, and a bundled 480 GB local NVMe SSD, operating without discrete GPU accelerators. The x86_64 CPU supports extended instruction sets including AVX-512 and AMX. Benchmark results reflect strong single-core capabilities, achieving 2138.0 on Geekbench single-core, while overall multi-core and uncached memory bandwidth remain constrained by the dual-thread configuration. From a cost-efficiency perspective, the instance provides high memory density of 8.0 GB per core paired with direct-attached NVMe storage at an entry-level capacity. The L2s_v4 is appropriate for small transactional databases, Redis caching layers, and lightweight transactional applications requiring low-latency local storage.",
+  "og_description": "Microsoft Azure L2s_v4 provides 2 dedicated vCPUs on an Intel Xeon 8573C processor, 16 GB RAM, and 480 GB local NVMe SSD storage, delivering strong single-core speed for lightweight storage workloads.",
+  "meta_description": "Microsoft Azure L2s_v4 features 2 dedicated vCPUs on an Intel Xeon 8573C CPU, 16 GB RAM, and a 480 GB NVMe SSD for local storage-driven workloads.",
+  "tagline": "Storage-optimized compute profile combining dedicated high-clock dual vCPUs, eight gigabytes per core memory density, and direct NVMe SSD storage.",
   "bullet_points": [
-    "Intel Xeon 8573C processor reaching clock speeds up to 4.2 GHz",
-    "2 vCPUs backed by 1 dedicated physical core with hyper-threading",
-    "16.0 GB total system memory providing 8.0 GB per core",
-    "Bundled 480 GB local NVMe SSD for low-latency storage access",
-    "Includes AVX-512 and AMX instruction extensions",
-    "Best fit for lightweight caching, logging, and small database workloads"
+    "2 dedicated vCPUs powered by an Intel Xeon 8573C processor running at 4.2 GHz",
+    "16.0 GB RAM delivering 8.0 GB per vCPU allocation",
+    "Bundled 480 GB direct-attached NVMe SSD local storage",
+    "Hardware support for AVX-512 and Intel AMX instruction extensions",
+    "High single-core performance with low-concurrency multi-threaded capacity",
+    "Targeted for small databases, caching layers, and local I/O tasks"
   ],
   "categories": [
     "Storage & Database",
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }
