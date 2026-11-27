@@ -1,24 +1,23 @@
 {
   "page": [
-    "Microsoft Azure D4plds_v5 is a compute-focused general virtual machine instance driven by an Ampere ARMv8 Neoverse-N1 processor operating at 3.0 GHz. The configuration allocates 4 physical cores mapped to 4 dedicated vCPUs with single threading per core. System memory is sized at 8.0 GB, establishing a 1:2 vCPU-to-RAM ratio of 2.0 GB per core. The instance includes a local 161 GB SSD drive and operates on the Microsoft Hyper-V hypervisor without discrete GPU acceleration.",
-    "Benchmark evaluations indicate consistent mid-tier execution for standard raw compute and mixed results across memory-bound tests. The instance achieves average throughput in stress-ng evaluations, registering 1,822.38 in single-core and 7,232.57 in multi-core routines, alongside standard large-block uncached memory read bandwidth of 49.0 GB/sec and write bandwidth of 30.16 GB/sec. Conversely, Geekbench 6 returns lower-tier scores of 1,112.0 single-core and 3,670.0 multi-core, with PassMark memory testing and cryptographic instruction benchmarks falling into the lower quartile.",
-    "From an architectural standpoint, the 1:2 memory configuration prioritizes execution logic density over massive in-memory caching. The local 161 GB solid-state disk provides fast scratch space directly attached to the host, bypassing network-attached storage latency for ephemeral needs. The ARM Neoverse-N1 cores provide stable per-core execution without hyper-threading contention, though workloads requiring x86-specific vector extensions such as AVX or AVX-512 are unsupported.",
-    "The D4plds_v5 instance is practical for ARM-native continuous integration and build pipelines, lightweight web microservices, batch processing, and caching tiers that fit comfortably within an 8.0 GB footprint. The combination of dedicated ARM physical cores and low-latency local SSD makes it suitable for cost-conscious, compute-skewed distributed workloads."
+    "Microsoft Azure D4plds_v5 is an ARM-based virtual machine configured with 4 dedicated vCPUs and 8.0 GB of memory, yielding a 1:2 core-to-RAM ratio of 2.0 GB per core. The instance is powered by Ampere ARMv8 Neoverse-N1 physical cores operating at 3.0 GHz, backed by 64 KB L1d cache, 1.0 MB L2 cache, and 32 MB L3 cache. It includes 161 GB of bundled local SSD temporary storage and operates on the Microsoft Hyper-V hypervisor without discrete GPU acceleration.",
+    "Benchmark evaluations position the Ampere Neoverse-N1 processor within the middle tier for raw CPU execution, achieving 1822.38 in single-core stress-ng and 7232.57 in multi-core stress-ng workloads. However, instruction-intensive benchmarks register in lower tiers, with Geekbench recording 1112.0 single-core and 3670.0 multi-core scores. Cryptographic and extended instruction tasks show performance bottlenecks, evidenced by a Passmark CPU encryption result of 653.26 and a Passmark memory score of 1071.92.",
+    "Memory throughput is mixed; while 16 KB cached reads achieve 283.11 GB/sec, uncached 256 MB reads and writes maintain steady throughput at 49.0 GB/sec and 30.16 GB/sec respectively. Passmark database operations score at an average 2832.53, while Redis SET operations sustain 5.68 million operations per second and static web throughput reaches 5.83 GB/sec.",
+    "From a resource and efficiency perspective, the reduced memory footprint provides a lean operational model for compute-bound tasks that do not demand extensive memory caching. The integrated 161 GB NVMe SSD supplies rapid scratch space. Microsoft Azure D4plds_v5 is appropriate for lightweight scale-out microservices, CI/CD compilation, distributed application workers, and web serving."
   ],
-  "description": "Microsoft Azure D4plds_v5 is an ARM-based compute instance powered by a 4-core Ampere ARMv8 Neoverse-N1 processor operating at 3.0 GHz with dedicated single-threaded execution. The configuration provides 8.0 GB of memory, yielding a 1:2 vCPU-to-RAM ratio, complemented by 161 GB of local SSD temporary storage without integrated GPU hardware. In benchmark tests, the instance demonstrates mid-tier performance in raw stress-ng multi-core workloads and large-block memory transfers, while displaying weaker metrics in Geekbench and PassMark instruction evaluations. The reduced memory footprint relative to core count shifts the resource profile toward compute tasks rather than data-heavy caching. Microsoft Azure D4plds_v5 is suited for ARM64 application builds, distributed web services, lightweight containerized workloads, and batch jobs requiring fast local scratch storage without expansive memory overhead.",
-  "og_description": "Microsoft Azure D4plds_v5 features 4 dedicated Ampere Neoverse-N1 ARM cores at 3.0 GHz, 8 GB RAM, and a 161 GB local SSD, providing balanced performance for compute-skewed ARM64 workloads.",
-  "meta_description": "Microsoft Azure D4plds_v5 features 4 dedicated Ampere ARM cores at 3.0 GHz, 8.0 GB of RAM, and a 161 GB local SSD for compute-focused ARM64 workloads.",
-  "tagline": "An energy-efficient ARM Neoverse-N1 architecture delivering four dedicated cores and integrated local SSD storage for compute-focused workloads.",
+  "description": "Microsoft Azure D4plds_v5 is a compute-focused ARM64 virtual machine featuring 4 dedicated Ampere Neoverse-N1 cores clocked at 3.0 GHz, paired with 8.0 GB of RAM (2.0 GB per core) and 161 GB of bundled local SSD storage. Evaluated across standard synthetic suites, the instance demonstrates mid-tier CPU throughput in stress-ng tests (7232.57 multi-core) and large-block memory transfers (49.0 GB/sec read), while showing lower-tier performance in Geekbench (3670.0 multi-core) and hardware-accelerated encryption. With balanced single-thread per core allocation and dedicated local storage, the instance is technically tailored for scale-out microservices, containerized API workers, code build pipelines, and stateless web tiers.",
+  "og_description": "Microsoft Azure D4plds_v5 features 4 dedicated Ampere Neoverse-N1 ARM cores, 8 GB RAM, and 161 GB local SSD storage, delivering steady mid-range compute performance for scale-out applications.",
+  "meta_description": "Microsoft Azure D4plds_v5 provides 4 dedicated Ampere ARM cores, 8 GB RAM, and 161 GB local SSD storage for efficient microservices and web serving.",
+  "tagline": "An ARM64 cloud instance pairing four dedicated Ampere cores with fast local SSD storage for efficient compute-oriented application workloads.",
   "bullet_points": [
-    "Ampere ARMv8 Neoverse-N1 processor running 4 dedicated physical cores at 3.0 GHz",
-    "8.0 GB system memory providing a compute-focused 1:2 vCPU-to-RAM ratio",
-    "161 GB integrated local SSD storage for fast temporary scratch space",
-    "Average raw compute performance under multi-core stress-ng workloads",
-    "Suitable for ARM64 application builds, containerized microservices, and batch jobs"
+    "4 dedicated Ampere Neoverse-N1 ARM64 cores running at 3.0 GHz",
+    "8.0 GB system memory providing 2.0 GB per dedicated physical core",
+    "161 GB of integrated high-speed local SSD temporary storage",
+    "Balanced uncached memory transfer rates up to 49.0 GB/sec",
+    "Well-suited for containerized microservices, build pipelines, and stateless web servers"
   ],
   "categories": [
     "Compute Optimized",
-    "General Purpose",
-    "Storage & Database"
+    "General Purpose"
   ]
 }
