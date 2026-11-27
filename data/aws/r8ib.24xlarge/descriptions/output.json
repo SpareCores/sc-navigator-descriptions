@@ -1,22 +1,24 @@
 {
   "page": [
-    "Amazon Web Services r8ib.24xlarge is a memory-optimized cloud server built on the AWS Nitro hypervisor architecture. The instance runs on an x86_64 Intel processor operating at 3.9 GHz. Compute resources comprise 48 physical cores, providing 96 dedicated vCPUs with two threads per core. System memory totals 768.0 GB of RAM, maintaining an 8.0 GB memory-to-vCPU allocation designed for large data sets in memory.",
-    "The instance does not include bundled local instance storage and operates with zero local NVMe or SSD disks, requiring remote network storage such as EBS for persistent data. Hardware accelerators are absent, with a GPU count of zero. Network connectivity is a primary feature of the configuration, offering a baseline throughput of 100 Gbps for high-bandwidth data transfers and cluster communications.",
-    "From a cost-efficiency perspective, the r8ib.24xlarge consolidates extensive memory arrays and high-capacity network interfaces into a single node. The architecture eliminates local storage hardware overhead, focusing investment on memory capacity and network throughput. However, workloads requiring fast local scratch disks will need to utilize network-attached volumes, introducing potential network overhead for disk I/O.",
-    "This server profile fits memory-intensive applications requiring substantial RAM alongside enterprise network performance. Typical use cases include large in-memory databases, distributed caching layers, big data analytics clusters, and high-concurrency enterprise applications."
+    "Amazon Web Services r8ib.24xlarge is an eighth-generation memory-optimized instance built on the AWS Nitro hypervisor architecture. It features an Intel Xeon 6975P-C processor operating at 3.9 GHz across 48 physical cores and 96 dedicated vCPUs with hyperthreading. Memory is configured with 768.0 GB of high-speed DDR5 RAM at 7 GHz, delivering an 8:1 memory-to-vCPU ratio of 8.0 GB per vCPU. The processor includes 480 MB of L3 cache, 2 MB of L2 cache, and advanced instruction sets including AMX (amx_tile, amx_int8), AVX-512 (vnni, bf16), and SHA-NI.",
+    "The instance delivers top-tier memory bandwidth, recording 7667.03 GB/sec in cached small-block reads and 385.55 GB/sec in uncached large-block reads, alongside 156.56 GB/sec in write bandwidth. Multi-core compute performance is robust, posting a stress-ng score of 103498.55 and multi-threaded bzip3 decompression throughput of 652.59 GB/sec. In in-memory key-value benchmarks, it achieved 171.63 million operations per second on Redis SET operations, and reached 212.53 GB/sec in static web serving throughput.",
+    "Hardware acceleration extensions such as AMX enable strong CPU-based inference, achieving 4485.29 tokens/sec for small model prompt processing and 318.29 tokens/sec for medium 7B models. However, the instance lacks integrated local NVMe storage and GPUs, requiring remote EBS volumes for persistent storage. Baseline networking is provisioned at 100 Gbps, catering to distributed data architectures.",
+    "From a qualitative cost-efficiency perspective, the r8ib.24xlarge consolidates high-density DDR5 memory and extensive core counts into a single bare-metal-equivalent Nitro partition, minimizing resource fragmentation for heavy enterprise workloads. It is suited for in-memory databases like Redis or SAP HANA, large-scale ETL pipelines, real-time analytics, and CPU-driven machine learning inferencing."
   ],
-  "description": "Amazon Web Services r8ib.24xlarge is a memory-optimized instance operating on the AWS Nitro hypervisor. It is powered by a 3.9 GHz Intel x86_64 processor delivering 48 physical cores and 96 dedicated vCPUs. The platform features 768.0 GB of system memory, providing an 8.0 GB per-vCPU ratio suited for large-footprint data processing. It includes no integrated local disks and zero GPUs, relying entirely on network-attached storage architectures. Network connectivity features a baseline throughput of 100 Gbps, enabling efficient data replication and high-speed communication across distributed systems. The lack of onboard storage directs resource allocation strictly toward memory volume and networking bandwidth. This instance is configured for large in-memory key-value stores, distributed databases, real-time analytics engines, and enterprise memory-constrained workloads.",
-  "og_description": "Amazon Web Services r8ib.24xlarge is a memory-optimized Nitro instance featuring 96 dedicated vCPUs on a 3.9 GHz Intel CPU, 768 GB RAM, and 100 Gbps network bandwidth with no local storage.",
-  "meta_description": "Amazon Web Services r8ib.24xlarge offers 96 vCPUs on a 3.9 GHz Intel processor, 768 GB memory, and 100 Gbps networking for memory-intensive enterprise tasks.",
-  "tagline": "High-density memory architecture with dedicated compute and 100 Gbps networking for large in-memory processing and distributed enterprise deployments.",
+  "description": "Amazon Web Services r8ib.24xlarge is a memory-optimized instance powered by a 3.9 GHz Intel Xeon 6975P-C processor built on the AWS Nitro System. Providing 96 dedicated vCPUs across 48 physical cores and 768.0 GB of 7 GHz DDR5 memory, it maintains an 8:1 memory-to-vCPU allocation. The CPU architecture supports AMX and AVX-512 instruction sets alongside a large 480 MB L3 cache. In benchmark tests, the instance demonstrates top-tier memory bandwidth of up to 7667.03 GB/sec cached and 385.55 GB/sec uncached, achieving 171.63 million Redis SET operations per second and 212.53 GB/sec static web serving throughput. It features 100 Gbps baseline networking but provides no local instance storage or GPUs. This profile is engineered for memory-intensive enterprise workloads, including large in-memory databases, real-time data streaming, distributed caching, and CPU-based vector inferencing.",
+  "og_description": "Amazon Web Services r8ib.24xlarge is a memory-optimized instance with 96 vCPUs on an Intel Xeon 6975P-C processor, 768 GB DDR5 RAM, 100 Gbps networking, and hardware support for AMX and AVX-512.",
+  "meta_description": "Amazon Web Services r8ib.24xlarge features 96 vCPUs, 768 GB DDR5 RAM, and 100 Gbps networking powered by Intel Xeon 6975P-C for memory-bound workloads.",
+  "tagline": "High-density 96-vCPU platform pairing 768 GB DDR5 memory with 100 Gbps networking for demanding in-memory enterprise workloads.",
   "bullet_points": [
-    "96 dedicated vCPUs powered by a 3.9 GHz Intel x86_64 processor (48 physical cores)",
-    "768.0 GB total system RAM providing 8.0 GB per vCPU",
-    "100 Gbps baseline network throughput for heavy data transfers",
-    "No integrated local storage disks, relying on network-attached volumes",
-    "Suited for large in-memory databases, distributed caches, and big data analytics"
+    "96 dedicated vCPUs (48 physical cores) powered by an Intel Xeon 6975P-C processor at 3.9 GHz",
+    "768.0 GB of fast 7 GHz DDR5 memory providing an 8.0 GB per vCPU ratio",
+    "Hardware-accelerated AMX and AVX-512 extensions paired with a 480 MB L3 cache",
+    "High-throughput networking with a 100 Gbps baseline interface",
+    "No bundled local storage or GPUs, requiring networked EBS volumes for persistent data",
+    "Optimal for in-memory databases, distributed caches, and large ETL data processing"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "Compute Optimized"
   ]
 }

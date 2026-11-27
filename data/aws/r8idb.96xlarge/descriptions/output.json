@@ -1,22 +1,25 @@
 {
   "page": [
-    "Amazon Web Services r8idb.96xlarge is a memory-optimized instance powered by dedicated Intel x86_64 processors operating at clock speeds up to 3.9 GHz on the AWS Nitro hypervisor architecture. The platform delivers 192 physical cores and 384 vCPUs via hyperthreading at two threads per core. Memory capacity is allocated at 3072 GB, providing a ratio of 8 GB of RAM per vCPU without discrete GPU acceleration hardware.",
-    "Data throughput and persistence are supported by 22,800 GB of direct-attached local NVMe SSD instance storage. This substantial local flash allocation provides high-IOPS and low-latency disk access for scratch space and temporary caching. Network connectivity is rated at a baseline bandwidth of 400 Gbps, accommodating high-throughput data ingress and egress across distributed cluster architectures.",
-    "The hardware configuration consolidates dense memory, high core counts, and high-capacity local NVMe storage into a single host footprint. These characteristics align with resource profiles required for large in-memory databases, distributed memory caches, real-time analytics engines, and enterprise transactional database environments."
+    "Amazon Web Services r8idb.96xlarge is a memory-optimized instance built on the AWS Nitro hypervisor architecture. It features Intel Xeon 6975P-C processors delivering 384 vCPUs across 192 dedicated physical cores operating at 3.9 GHz. The compute topology is backed by an extensive cache hierarchy including 480 MB of L3 cache, alongside hardware support for vector and matrix extensions such as AVX-512 and Intel AMX (Advanced Matrix Extensions). Memory configuration consists of 3072.0 GB of high-frequency DDR5 RAM at 7 GHz, delivering an 8:1 memory-to-vCPU ratio.",
+    "Storage and network subsystems are scaled to accommodate enterprise data volumes without separate external attachments. The instance includes 22,800 GB of local NVMe SSD instance storage directly attached for low-latency operations. Complementing local I/O, networking infrastructure provides up to 400 Gbps of baseline bandwidth. Acceleration relies entirely on CPU instruction sets, as no dedicated discrete GPUs are included in this instance type.",
+    "Empirical benchmarks indicate top-tier capabilities across parallel compute and data throughput. In stress-ng testing, multi-core throughput registered 413,592.34 in the top 10 percent of evaluated systems, despite single-core output placing in the middle 50 percent. Memory bandwidth reached 1,128.02 GB/sec for uncached 256MB reads and 454.14 GB/sec for writes. The platform demonstrated exceptional performance on in-memory caching and compression, recording 494.73 million operations per second on Redis SET operations, 1,891.25 GB/sec on multi-threaded bzip3 decompression, and 159.43 GB/sec in static web serving throughput.",
+    "From an architectural tradeoff perspective, the massive core density and 3 TB of DDR5 offer high resource density, making it cost-efficient for consolidation of large-scale in-memory databases and high-concurrency analytics over deploying fragmented nodes. However, sequential single-threaded execution remains moderate, and without discrete GPU acceleration, text generation for large language models remains constrained. The configuration is primarily aligned with memory-bound workloads, massive in-memory databases, real-time analytics engines, and high-throughput data processing pipelines requiring extensive local NVMe scratch space."
   ],
-  "description": "Amazon Web Services r8idb.96xlarge is a memory-optimized cloud server built on the AWS Nitro hypervisor architecture. Powered by dedicated 3.9 GHz Intel x86_64 processors, the instance delivers 192 physical cores and 384 vCPUs with two threads per core. Memory capacity reaches 3072 GB, providing an 8 GB per vCPU ratio suitable for memory-bound applications. Local storage includes 22,800 GB of direct-attached NVMe SSD instance storage, enabling high-throughput and low-latency disk operations. Network performance is anchored by a 400 Gbps baseline bandwidth configuration. The server contains no GPU hardware. By packaging extensive physical core counts, high memory density, massive local NVMe capacity, and broad network throughput into a single dedicated resource allocation, the r8idb.96xlarge is engineered for demanding workloads such as large in-memory databases, high-scale transactional systems, real-time analytics, and data-intensive enterprise processing pipelines.",
-  "og_description": "Amazon Web Services r8idb.96xlarge is a memory-optimized instance with 384 vCPUs on Intel architecture, 3072 GB of RAM, 22,800 GB of local NVMe SSD storage, and 400 Gbps baseline network bandwidth.",
-  "meta_description": "Amazon Web Services r8idb.96xlarge provides 384 Intel vCPUs, 3072 GB RAM, 22,800 GB local NVMe SSD storage, and 400 Gbps network bandwidth for memory-intensive workloads.",
-  "tagline": "High-capacity memory-optimized architecture combining 384 dedicated compute threads with 3072 GB RAM and fast direct-attached NVMe storage.",
+  "description": "Amazon Web Services r8idb.96xlarge is a memory-optimized Nitro instance powered by 384 vCPUs from Intel Xeon 6975P-C processors with 480 MB of L3 cache and AMX acceleration. The system pairs 3072.0 GB of 7 GHz DDR5 memory with 22,800 GB of direct-attached NVMe SSD instance storage and 400 Gbps baseline network bandwidth. Evaluated performance exhibits top-tier multi-core compute capability, high uncached memory read bandwidth of 1,128.02 GB/sec, and 494.73 million operations per second on Redis SET benchmarks. While single-thread speeds are standard and discrete GPUs are absent, the dense 3 TB memory pool, extensive NVMe scratch capacity, and high network throughput make this instance a targeted platform for large in-memory databases, distributed caching layers, and high-volume data analytics engines.",
+  "og_description": "Amazon Web Services r8idb.96xlarge provides 384 vCPUs via Intel Xeon 6975P-C processors, 3072 GB DDR5 RAM, 22,800 GB local NVMe SSD storage, and 400 Gbps network bandwidth for memory-intensive workloads.",
+  "meta_description": "Amazon Web Services r8idb.96xlarge features 384 vCPUs, 3072 GB DDR5 RAM, 22,800 GB local NVMe SSDs, and 400 Gbps networking for memory-intensive operations.",
+  "tagline": "Dense 384 vCPU memory-optimized system with 3 TB DDR5 RAM, 22.8 TB NVMe storage, and 400 Gbps network bandwidth.",
   "bullet_points": [
-    "384 dedicated vCPUs (192 physical cores) powered by 3.9 GHz Intel processors",
-    "3072 GB system memory delivering 8 GB RAM per vCPU allocation",
-    "22,800 GB bundled local NVMe SSD instance storage",
-    "400 Gbps baseline networking throughput on the AWS Nitro hypervisor",
-    "Tailored for in-memory databases, distributed caches, and large-scale data analytics"
+    "384 dedicated vCPUs (192 physical cores) powered by Intel Xeon 6975P-C processors at 3.9 GHz",
+    "3072.0 GB of high-speed 7 GHz DDR5 RAM with 480 MB of L3 cache",
+    "22,800 GB of direct-attached high-speed local NVMe SSD instance storage",
+    "400 Gbps baseline networking bandwidth orchestrated via the AWS Nitro hypervisor",
+    "Top-tier benchmark performance in multi-core compute, uncached memory bandwidth, and Redis throughput",
+    "Suited for large in-memory databases, real-time data caching, and distributed data pipelines"
   ],
   "categories": [
     "Memory Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

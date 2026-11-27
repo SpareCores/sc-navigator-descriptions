@@ -1,25 +1,24 @@
 {
   "page": [
-    "Amazon Web Services g6.48xlarge is an accelerated computing instance powered by the AWS Nitro System. Compute capacity is delivered via an AMD EPYC 7R13 processor with 96 physical cores and 192 vCPUs operating at 3.4 GHz on the x86_64 architecture. The system is equipped with 768 GB of DDR4 memory running at 3 GHz, 7520 GB of local NVMe SSD storage, and eight NVIDIA Ada Lovelace L4 GPUs providing a cumulative 179 GB of GPU VRAM. Networking throughput reaches a baseline bandwidth of 100 Gbps.",
-    "Benchmark evaluations show exceptional parallel processing and accelerated throughput across multiple domains. Multi-core performance is firmly top tier, demonstrated by a stress-ng score of 286,988.18 and a PassMark CPU score of 109,870.16. GPU acceleration produces a top-tier Geekbench ray tracing score of 137,807.0 alongside strong LLM inference metrics, delivering 2,812.24 prompt tokens per second and 53.57 generation tokens per second on medium 7B models. In-memory operations also place in the top tier, with Redis SET achieving 159.29 million operations per second, supported by a large-block read memory bandwidth of 254.22 GB/sec.",
-    "Hardware tradeoffs center on the balance between specialized acceleration and single-threaded operations. While single-core performance scores remain in the strong tier at 2,989.99 in stress-ng and 1,686.0 in Geekbench, text decompression and processing metrics are closer to average cloud baselines. Cost efficiency is optimized for parallel architectures that can saturate the combination of 8 discrete L4 GPUs, high vCPU density, and local NVMe storage simultaneously.",
-    "The AWS g6.48xlarge is suited for machine learning inference pipelines, multi-stream video processing, real-time graphics rendering, large-scale Redis caching tiers, and data analytics tasks requiring substantial NVMe disk caching alongside dense GPU computing."
+    "Amazon Web Services g6.48xlarge is an accelerated computing instance powered by the AWS Nitro hypervisor architecture. The platform features 192 vCPUs across 96 physical cores based on the x86_64 AMD EPYC 7R13 processor operating at a clock speed of 3.4 GHz. System memory totals 768.0 GB of DDR4 running at 3 GHz, providing 4.0 GB per core. Acceleration hardware includes eight NVIDIA Ada Lovelace L4 GPUs equipped with 179 GB of aggregate VRAM. Local high-speed storage is bundled via 7520 GB of NVMe SSD capacity, complemented by a 100 Gbps baseline network interface.",
+    "Benchmark evaluations place the instance in the upper deciles for both multi-threaded compute and parallel graphics. The system recorded a stress-ng multi-core CPU score of 286988.18 and a PassMark CPU score of 109870.16. Small-block cached read memory bandwidth reached 10516.05 GB/sec, while large-block uncached memory read bandwidth attained 254.22 GB/sec. Parallel execution capabilities are reflected in top-tier results for Clang software compilation at 57980.0, ray tracing at 137807.0, and high-throughput memory caching with Redis SET operations yielding 159.29 million operations per second.",
+    "Machine learning evaluations highlight high throughput during token generation and prompt ingestion. Prompt processing throughput reaches 11797.22 tokens per second on a small 135M parameter model, 2812.24 tokens per second on a medium 7B model, and 310.84 tokens per second on a 70B parameter architecture. Text generation rates range from 378.85 tokens per second on small models to 5.8 tokens per second on large 70B models. The dense multi-GPU design, coupled with 7520 GB NVMe storage and 100 Gbps networking, aligns with deep learning inference, video processing, 3D graphics rendering, and data-intensive computing pipelines."
   ],
-  "description": "Amazon Web Services g6.48xlarge is an accelerated computing instance engineered for intensive graphics and machine learning workloads. Powered by a 96-core AMD EPYC 7R13 processor delivering 192 vCPUs at 3.4 GHz, it incorporates 768 GB of DDR4 memory, 7520 GB of local NVMe SSD storage, and 100 Gbps baseline networking. Acceleration is driven by eight NVIDIA Ada Lovelace L4 GPUs equipped with 179 GB of aggregate VRAM. Benchmark results position the instance in the top tier for multi-core compute, Geekbench ray tracing, and Redis throughput at 159.29 million operations per second. LLM inference shows rapid prompt processing and text generation across small to large models. The platform offers strong resource density for parallel tasks, though single-threaded string processing remains average. It is well matched for machine learning inference, ray-traced rendering, high-throughput caching, and high-concurrency video processing pipelines.",
-  "og_description": "Amazon Web Services g6.48xlarge delivers 192 vCPUs via AMD EPYC 7R13 processors, 768 GB RAM, 7520 GB NVMe storage, and eight NVIDIA L4 GPUs with 179 GB VRAM over 100 Gbps networking.",
-  "meta_description": "Amazon Web Services g6.48xlarge features 192 vCPUs, 768 GB RAM, 7520 GB NVMe SSD storage, and 8 NVIDIA L4 GPUs for demanding inference workloads.",
-  "tagline": "An accelerated multi-GPU server featuring eight discrete GPUs, high core counts, and fast local NVMe storage for large-scale parallel workloads.",
+  "description": "Amazon Web Services g6.48xlarge is an accelerated computing instance within the AWS Nitro architecture, engineered for intensive parallel graphics and machine learning workloads. The system features 192 vCPUs across 96 physical AMD EPYC 7R13 processor cores operating at 3.4 GHz, 768 GB of DDR4 memory, and 7520 GB of local NVMe SSD storage. Hardware acceleration is provided by eight NVIDIA Ada Lovelace L4 GPUs delivering a combined 179 GB of video memory, complemented by 100 Gbps baseline network bandwidth. Synthetic and real-world benchmarks position this instance in the top tier for multi-core compute throughput, Clang compilation, ray tracing, and Redis operations exceeding 159 million transactions per second. For artificial intelligence pipelines, the eight L4 accelerators enable high-throughput prompt processing and generation across small, medium, and large language models. The dense multi-GPU configuration and fast local storage support distributed LLM inference, video transcoding, visual rendering, and data-intensive computational tasks.",
+  "og_description": "Amazon Web Services g6.48xlarge provides 192 AMD vCPUs, 768 GB memory, 8 NVIDIA L4 GPUs with 179 GB VRAM, 7520 GB NVMe SSD storage, and 100 Gbps networking for AI inference and graphics workloads.",
+  "meta_description": "Amazon Web Services g6.48xlarge features 192 vCPUs, 768 GB RAM, 8 NVIDIA L4 GPUs with 179 GB VRAM, 7520 GB NVMe SSD storage, and 100 Gbps networking.",
+  "tagline": "High-density accelerated platform pairing eight NVIDIA L4 GPUs, 192 vCPUs, fast NVMe storage, and 100 Gbps networking for demanding AI and graphics workloads.",
   "bullet_points": [
-    "Eight NVIDIA Ada Lovelace L4 GPUs with 179 GB total VRAM",
-    "192 vCPUs powered by a 96-core AMD EPYC 7R13 processor at 3.4 GHz",
-    "768 GB DDR4 memory and 7520 GB high-speed local NVMe SSD storage",
-    "100 Gbps baseline network bandwidth via AWS Nitro System",
-    "Top-tier performance in multi-core compute, ray tracing, and Redis operations",
-    "Tailored for LLM inference, graphics rendering, and heavy caching workloads"
+    "Eight NVIDIA Ada Lovelace L4 GPUs providing 179 GB aggregate VRAM",
+    "192 vCPUs and 96 physical cores powered by AMD EPYC 7R13 processors",
+    "768 GB DDR4 system memory with 4.0 GB per physical core allocation",
+    "7520 GB integrated local NVMe SSD storage for low-latency scratch data",
+    "100 Gbps baseline network bandwidth for distributed compute workloads",
+    "Engineered for large language model inference, ray tracing, and video processing"
   ],
   "categories": [
     "GPU Accelerated",
-    "Storage & Database",
-    "Compute Optimized"
+    "Compute Optimized",
+    "Storage & Database"
   ]
 }

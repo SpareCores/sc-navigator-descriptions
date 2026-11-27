@@ -1,21 +1,24 @@
 {
   "page": [
-    "Amazon Web Services r8in.16xlarge is a memory-optimized instance built on the AWS Nitro hypervisor architecture. Driven by 3.9 GHz dedicated Intel x86_64 processors, the instance delivers 64 vCPUs distributed across 32 physical cores with 2 threads per core. It is configured with 512.0 GB of system memory, establishing an 8:1 memory-to-vCPU allocation ratio of 8.0 GB per core to handle memory-intensive compute environments.",
-    "Network connectivity is a focal hardware metric for the r8in.16xlarge, providing a baseline network bandwidth of 100 Gbps. The instance contains no integrated GPUs and includes no local instance storage. As a result, all disk persistence and stateful storage operations require external attachment via Amazon Elastic Block Store (EBS) or network file systems, routing I/O through its network interface.",
-    "Hardware allocation is dedicated to the virtual machine, eliminating core oversubscription and stabilizing multi-threaded execution. With high memory density per core and 100 Gbps networking, the instance offers balanced resource utilization for scenarios limited by RAM capacity and data transfer speeds rather than localized storage latency. The platform is well suited for enterprise in-memory databases, large caching clusters, distributed data analysis, and memory-bound ETL workflows."
+    "Amazon Web Services r8in.16xlarge is a memory-optimized instance built on the AWS Nitro hypervisor architecture. It is powered by a dedicated Intel Xeon 6975P-C processor with an x86_64 architecture operating at 3.9 GHz. The hardware configuration delivers 64 vCPUs derived from 32 physical cores with 2 threads per core, alongside a substantial 480 MB L3 cache. Memory capacity is provisioned at 512 GB of high-speed DDR5 memory rated at 7 GHz, maintaining an 8:1 memory-to-vCPU ratio. The instance includes 100 Gbps of baseline network bandwidth and contains no bundled local storage or integrated GPUs.",
+    "Benchmark outcomes demonstrate robust parallel compute and data delivery capabilities. The system achieved a multi-core stress-ng score of 69,171.31 and an uncached read memory bandwidth of 192.67 GB/sec, placing it within the top 25 percent of tested systems. Multi-threaded bzip3 decompression reached 441.21 GB/sec, while static web serving throughput peaked at 151.09 GB/sec, placing it in the top 10 percent tier. For transactional in-memory workloads, it recorded 115.14 million operations per second in Redis SET benchmarks. Furthermore, hardware-assisted matrix capabilities like AMX and AVX-512 support strong small-to-medium CPU-based LLM inference throughput, achieving 297.08 prompt processing tokens per second on 7B models.",
+    "Resource allocation presents clear qualitative tradeoffs. The high memory density and 100 Gbps network pipe provide immense throughput per instance, reducing the operational overhead of horizontal scaling for massive memory footprints. However, the absence of local NVMe storage requires external EBS volumes for persistence, which must be factored into storage architectural planning. Single-core compute and large 70B parameter LLM generation scale moderately compared to its parallel strengths.",
+    "AWS r8in.16xlarge is strategically suited for high-density in-memory caching solutions, enterprise databases, real-time analytics engines, and CPU-driven vector processing pipelines that rely heavily on DDR5 throughput and high-speed network communication."
   ],
-  "description": "Amazon Web Services r8in.16xlarge is an x86_64 memory-optimized virtual machine operating on the AWS Nitro System. Driven by dedicated Intel processors running at 3.9 GHz, it features 64 vCPUs across 32 physical cores alongside 512.0 GB of RAM, sustaining an 8.0 GB per vCPU ratio. Designed for high-throughput network environments, the instance offers a baseline network bandwidth of 100 Gbps to support intensive cluster communication and distributed processing. There is no bundled local storage or GPU hardware, requiring workloads to rely on remote storage solutions such as Amazon EBS for persistence. This configuration delivers an efficient footprint for workloads constrained by memory capacity and network throughput rather than local disk speed. Consequently, r8in.16xlarge is suited for in-memory databases, large-scale distributed caching services, real-time telemetry processing, and large in-memory data transformation pipelines.",
-  "og_description": "Amazon Web Services r8in.16xlarge is a memory-optimized instance featuring 64 Intel vCPUs at 3.9 GHz, 512.0 GB RAM, and 100 Gbps baseline network bandwidth on the Nitro System for in-memory processing.",
-  "meta_description": "Amazon Web Services r8in.16xlarge offers 64 Intel vCPUs at 3.9 GHz, 512 GB memory, and 100 Gbps networking on the Nitro hypervisor for data-heavy workloads.",
-  "tagline": "High-density memory architecture pairing 512 GB RAM with 64 dedicated compute cores and 100 Gbps networking for demanding in-memory workloads.",
+  "description": "Amazon Web Services r8in.16xlarge is a memory-optimized Nitro-based instance featuring an Intel Xeon 6975P-C processor running at 3.9 GHz across 64 vCPUs and 32 physical cores. It provides 512 GB of DDR5 memory alongside an extensive 480 MB L3 cache, providing an 8:1 RAM-to-vCPU ratio designed for memory-intensive operations. Network capabilities are defined by a high-throughput 100 Gbps baseline interface, though the instance lacks bundled local storage and GPUs. Benchmark evaluations show top-tier multi-threaded data processing, highlighted by 115.14 million Redis SET operations per second and 151.09 GB/sec in static web serving. Featuring instruction support for AVX-512 and AMX, it delivers strong performance across data decompression and CPU-based LLM inference. The instance is well matched for in-memory databases, real-time analytics platforms, static data routing, and memory-constrained data science tasks.",
+  "og_description": "Amazon Web Services r8in.16xlarge features 64 vCPUs, 512 GB of 7 GHz DDR5 memory, and 100 Gbps baseline networking, delivering high throughput for in-memory databases and large-scale data analytics.",
+  "meta_description": "Amazon Web Services r8in.16xlarge delivers 64 vCPUs, 512 GB DDR5 memory, and 100 Gbps networking on Intel Xeon 6975P-C silicon for memory-heavy workloads.",
+  "tagline": "Memory-dense 64-vCPU architecture paired with 512 GB DDR5 RAM and 100 Gbps networking for high-throughput enterprise processing.",
   "bullet_points": [
-    "64 vCPUs across 32 dedicated Intel physical cores clocked at 3.9 GHz",
-    "512.0 GB system memory providing an 8.0 GB per vCPU allocation ratio",
-    "High-performance 100 Gbps baseline network interface on the Nitro hypervisor",
-    "No local storage or accelerator hardware, utilizing network-attached storage",
-    "Engineered for in-memory databases, big data analytics, and caching layers"
+    "64 dedicated vCPUs (32 physical cores) powered by 3.9 GHz Intel Xeon 6975P-C",
+    "512 GB of high-speed 7 GHz DDR5 memory with 480 MB L3 cache",
+    "High-speed 100 Gbps baseline network bandwidth via AWS Nitro System",
+    "Accelerated matrix operations via integrated Intel AMX and AVX-512 extensions",
+    "Optimized for in-memory data stores, transactional caching, and real-time analytics",
+    "No bundled local storage; relies on external network-attached volumes"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

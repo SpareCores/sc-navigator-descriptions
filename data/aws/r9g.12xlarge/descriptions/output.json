@@ -1,21 +1,24 @@
 {
   "page": [
-    "Amazon Web Services r9g.12xlarge is a memory-optimized instance built on the AWS Nitro hypervisor architecture and driven by arm64 AWS Graviton processors. The instance provides 48 dedicated physical cores corresponding to 48 vCPUs running at a clock speed of 3.3 GHz. The compute topology features 1 thread per core, avoiding resource contention between simultaneous multi-threading threads. Memory capacity totals 384.0 GB, establishing an allocation of 8.0 GB of memory per core.",
-    "The system does not bundle local storage, relying on external network-attached volumes for persistent data needs. Network performance is defined by a baseline bandwidth of 25 Gbps. The instance provides no hardware accelerators, with a GPU count of zero, and includes no complimentary public IPv4 addresses.",
-    "From an efficiency perspective, the custom arm64 architecture offers high memory density and consistent compute execution relative to power and resource allocation. Dedicated core assignments provide predictable execution paths for memory-heavy operations. The r9g.12xlarge fits technical workloads requiring large memory footprints, such as in-memory databases, distributed caching layers, real-time analytics, and data processing engines."
+    "Amazon Web Services r9g.12xlarge is an ARM-based, memory-optimized instance powered by AWS Graviton Neoverse-V3 processors running on the Nitro hypervisor. The configuration features 48 dedicated physical cores and 48 vCPUs running at 3.3 GHz without simultaneous multithreading. It provides 384.0 GB of memory, maintaining an 8:1 memory-to-vCPU ratio with 8.0 GB per core. The cache architecture includes 64 KB L1 data cache per core, 2 MB L2 cache, and a shared 48 MB L3 cache. Baseline network bandwidth is rated at 25 Gbps. There is no bundled local storage or integrated GPU, requiring workloads to rely on remote storage solutions such as Amazon EBS.",
+    "Benchmark results highlight strong parallel processing and cache-level throughput. Multi-core CPU operations scored 95,877.59 in stress-ng tests, ranking in the top 25%, while single-core performance registered at 1,982.88. Cached read operations reached 6,443.87 GB/sec, contrasting with uncached block bandwidth of 186.67 GB/sec for reads and 84.53 GB/sec for writes. The instance excels in compression and memory-centric throughput, achieving 579.62 GB/sec in multi-threaded bzip3 decompression, 125.22 million operations per second on Redis SET workloads, and 156.54 GB/sec in static web serving benchmarks, all placing in the top decile.",
+    "The 1:8 core-to-memory ratio provides resource efficiency for workloads requiring large memory footprints without overprovisioning excess compute cores. Because each vCPU represents a dedicated physical core, the architecture delivers consistent performance free from hyperthreading contention. A primary architectural tradeoff is the absence of local instance storage, making I/O performance dependent on network-attached storage or in-memory operations.",
+    "AWS r9g.12xlarge is suited for in-memory databases, Redis caching clusters, high-throughput web serving, real-time analytics engines, and data transformation jobs such as decompression or ETL pipelines."
   ],
-  "description": "Amazon Web Services r9g.12xlarge is an arm64 memory-optimized instance featuring 48 dedicated physical cores and 48 vCPUs clocked at 3.3 GHz on the Nitro hypervisor. With 1 thread per core, the architecture provides isolated compute resources paired with 384.0 GB of total RAM, delivering an 8.0 GB per vCPU ratio. The configuration excludes local storage volumes and GPU accelerators, utilizing network storage architectures for persistence. Network interfaces provide a baseline throughput of 25 Gbps, with zero complimentary public IPv4 addresses included. The high memory-to-core allocation provides resource efficiency for scale-up architectures requiring extensive RAM without multithread scheduling overhead. This hardware layout suits memory-bound workloads such as in-memory key-value databases, big data batch analytics, caching systems, and distributed processing environments.",
-  "og_description": "Amazon Web Services r9g.12xlarge is a memory-optimized arm64 instance featuring 48 dedicated AWS Graviton cores at 3.3 GHz, 384 GB RAM, 25 Gbps baseline networking, and zero local storage.",
-  "meta_description": "Amazon Web Services r9g.12xlarge features 48 dedicated arm64 cores at 3.3 GHz, 384 GB RAM, 25 Gbps baseline networking, and zero bundled local storage.",
-  "tagline": "An arm64 memory-optimized configuration with forty-eight dedicated cores, 384 GB of system memory, and high-throughput networking for memory-bound workloads.",
+  "description": "Amazon Web Services r9g.12xlarge is a memory-optimized instance running on the AWS Nitro hypervisor with 48 dedicated ARMv9 Neoverse-V3 physical cores at 3.3 GHz and 384.0 GB of RAM. Designed with an 8:1 memory-to-core allocation, it delivers 25 Gbps baseline networking and includes no local storage or GPU hardware. The instance exhibits exceptional memory-intensive throughput, reaching 125.22 million Redis SET operations per second, 579.62 GB/sec in multi-threaded bzip3 decompression, and 6,443.87 GB/sec in small-block cached memory reads. Multi-core performance reaches 95,877.59 in stress-ng evaluations. By eliminating thread contention with single-threaded physical cores, r9g.12xlarge offers balanced compute and high memory density for in-memory databases, Redis deployments, data processing pipelines, and high-concurrency web tiers.",
+  "og_description": "Amazon Web Services r9g.12xlarge features 48 dedicated ARM Neoverse-V3 cores, 384 GB RAM, and 25 Gbps networking, delivering high throughput for in-memory caching and Redis workloads.",
+  "meta_description": "Amazon Web Services r9g.12xlarge provides 48 ARMv9 cores, 384 GB RAM, and 25 Gbps network bandwidth optimized for memory-intensive enterprise workloads.",
+  "tagline": "Dedicated 48-core ARM architecture with 384 GB memory built for memory-heavy in-memory databases, caching, and concurrent data pipelines.",
   "bullet_points": [
-    "48 dedicated arm64 physical cores (48 vCPUs) at 3.3 GHz",
-    "384.0 GB system memory (8.0 GB RAM per core)",
-    "25 Gbps baseline network bandwidth",
-    "No bundled local storage, requiring network-attached storage",
-    "Best suited for in-memory databases, caching, and large analytics engines"
+    "48 dedicated AWS Graviton Neoverse-V3 ARM cores clocked at 3.3 GHz with no hyperthreading",
+    "384.0 GB total system memory providing an 8:1 RAM-to-vCPU ratio",
+    "Top-tier caching and database performance with 125.22M Redis SET operations per second",
+    "25 Gbps baseline network bandwidth running over the Nitro system",
+    "Zero bundled local instance storage, requiring network-attached storage",
+    "Best fit for Redis, in-memory databases, ETL decompression, and high-volume web serving"
   ],
   "categories": [
-    "Memory Optimized"
+    "Memory Optimized",
+    "General Purpose"
   ]
 }

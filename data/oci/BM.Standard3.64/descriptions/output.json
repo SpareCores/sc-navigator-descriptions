@@ -1,23 +1,22 @@
 {
   "page": [
-    "Oracle Cloud Infrastructure BM.Standard3.64 is a dedicated bare metal server built on the x86_64 architecture, powered by Intel Xeon 8358 processors running at a base clock speed of 2.6 GHz. The server configuration supplies 64 physical cores and 128 vCPUs via multithreading at 2 threads per core. System memory totals 1024 GB, which translates to a density of 8 GB of RAM per vCPU or 16 GB per physical core.",
-    "As a bare metal offering, compute and memory allocations are fully dedicated to the tenant without virtualization or hypervisor overhead. The hardware profile does not include local NVMe storage or discrete GPU accelerators, meaning operational file systems and persistent storage must be attached via remote block storage networks. Network connectivity includes one complimentary public IPv4 address.",
-    "The 1:8 core-to-memory ratio positions the server for memory-intensive enterprise tasks. Suitable workloads include large relational and in-memory database engines, enterprise resource planning platforms, high-throughput batch processing pipelines, and dense private virtualization hosts."
+    "Oracle Cloud Infrastructure BM.Standard3.64 is a bare metal compute instance powered by two Intel Xeon Platinum 8358 processors (x86_64 architecture). It provides 64 physical cores (128 vCPUs with hyper-threading enabled) operating at a base frequency of 2.6 GHz, accompanied by 48 MB of L3 cache. The platform is configured with 1024 GB of DDR4 memory running at 3 GHz, providing 8.0 GB of RAM per physical core (or 8.0 GB per vCPU in a 1:8 configuration). The system does not include local disk storage or discrete GPUs, requiring remote block or object storage for persistent data, and includes 1 complimentary public IPv4 address.",
+    "Benchmark results highlight strong throughput in parallel workloads and memory-intensive operations. Multi-core performance measured via stress-ng reached 116,299.16, placing the instance in the top 25% tier, supported by 482.21 GB/sec multi-threaded bzip3 decompression throughput. Memory subsystem performance is characterized by an uncached read bandwidth of 338.31 GB/sec and an uncached write bandwidth of 135.72 GB/sec. This memory architecture translates into high transactional efficiency, recording 103.89 million operations per second on Redis SET tests and top-tier static web serving throughput of 153.97 GB/sec. Conversely, single-threaded processing presents a tradeoff, with stress-ng single-core performance scoring in the average tier and single-threaded gzip compression registering in the lower quartile.",
+    "Instruction set support includes AVX-512 extensions (AVX512F and AVX512_VNNI) alongside standard vector and cryptographic acceleration instructions such as AES, VAES, and SHA_NI. These features assist in CPU-bound machine learning tasks, with prompt processing on a medium 7B model reaching 182.1 tokens per second. Cost efficiency derives from high physical core density and substantial memory capacity in a non-virtualized bare metal setup, avoiding virtualization overhead. BM.Standard3.64 is well suited for memory-intensive in-memory data grids, large enterprise databases, multi-threaded batch processing, and high-throughput static web serving."
   ],
-  "description": "Oracle Cloud Infrastructure BM.Standard3.64 is a bare metal server built on the x86_64 architecture, featuring Intel Xeon 8358 processors operating at 2.6 GHz. The platform delivers 64 physical cores and 128 vCPUs supported by 1024 GB of dedicated system memory, yielding an 8 GB per vCPU memory allocation. Because it operates on bare metal, all processor and memory resources are dedicated directly to the instance without hypervisor contention. The configuration includes zero local storage and no GPU accelerators, relying on network-attached storage solutions for persistence. One complimentary public IPv4 address is provided for connectivity. BM.Standard3.64 is suitable for memory-intensive workloads, enterprise databases, large container hosting environments, and distributed computing tasks.",
-  "og_description": "Oracle Cloud Infrastructure BM.Standard3.64 is a bare metal server featuring 64 physical cores (128 vCPUs) across Intel Xeon 8358 processors, 1024 GB RAM, dedicated resources, and no local storage.",
-  "meta_description": "Oracle Cloud Infrastructure BM.Standard3.64 is a bare metal server offering 128 vCPUs on Intel Xeon 8358 processors and 1024 GB of RAM without local storage.",
-  "tagline": "High-capacity bare metal computing with 128 dedicated vCPUs, 1024 GB system memory, and unshared Intel Xeon hardware for enterprise workloads.",
+  "description": "Oracle Cloud Infrastructure BM.Standard3.64 is a bare metal server featuring 64 physical cores and 128 vCPUs on Intel Xeon 8358 processors (x86_64) running at 2.6 GHz. Equipped with 1024 GB of DDR4 RAM, the platform offers significant memory density without integrated local storage or GPUs. Benchmark evaluation shows upper-quartile multi-core processing in stress-ng (116,299.16) and uncached memory read bandwidth of 338.31 GB/sec. It demonstrates top-tier web serving throughput of 153.97 GB/sec and handles over 103 million Redis SET operations per second. While single-thread operations reflect mid-range performance, the architecture delivers high resource consolidation and parallel throughput. These hardware characteristics align directly with large in-memory databases, dense virtualization clusters, and high-volume batch data pipelines.",
+  "og_description": "Oracle Cloud Infrastructure BM.Standard3.64 is a bare metal server with 128 vCPUs (Intel Xeon 8358) and 1024 GB RAM, delivering strong multi-threaded and memory-intensive performance.",
+  "meta_description": "Oracle Cloud Infrastructure BM.Standard3.64 bare metal server features 128 vCPUs, 1024 GB DDR4 RAM, and high-throughput multi-core performance.",
+  "tagline": "A high-density bare metal server with 128 vCPUs and 1024 GB RAM optimized for parallel computing and large in-memory workloads.",
   "bullet_points": [
-    "64 physical cores and 128 vCPUs powered by Intel Xeon 8358 processors at 2.6 GHz",
-    "1024 GB system memory providing an 8 GB per vCPU memory profile",
-    "Bare metal architecture with fully dedicated CPU and memory resources",
-    "Zero local storage disks and no GPU accelerators included",
-    "Includes one complimentary public IPv4 address",
-    "Well suited for in-memory databases, enterprise applications, and batch processing"
+    "Dual Intel Xeon 8358 processors offering 64 physical cores and 128 vCPUs at 2.6 GHz",
+    "1024 GB DDR4 memory with 338.31 GB/sec uncached read bandwidth",
+    "Bare metal architecture with no hypervisor overhead, local disks, or GPUs",
+    "Over 103 million operations per second on Redis SET benchmarks",
+    "Suited for large in-memory databases, heavy batch ETL, and high-capacity web serving"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "General Purpose",
+    "Compute Optimized"
   ]
 }
