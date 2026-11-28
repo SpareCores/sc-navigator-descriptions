@@ -1,23 +1,24 @@
 {
   "page": [
-    "Vultr vhp-8c-16gb-intel is an instance in the High Performance lineup, configured with 8 shared vCPUs derived from 4 physical Intel Xeon cores running at a base frequency of 2.0 GHz. Built on the x86_64 architecture, the processor features hyperthreading with two threads per core and incorporates 32 KB L1 data cache, 4 MB L2 cache, and 16 MB L3 cache. Vector extensions include AVX, AVX-512F, and AVX-512 VNNI, alongside hardware-accelerated AES cryptography and BMI2 instruction support. System memory totals 16.0 GB, yielding a 1:2 vCPU-to-RAM ratio of 2.0 GB per vCPU, while storage is provisioned via a bundled 350 GB local NVMe SSD. The instance includes one complimentary public IPv4 address and operates without dedicated hardware acceleration or GPUs.",
-    "Benchmark results position the instance within the mid-tier performance band across general compute and memory throughput tests, offset by lower single-threaded metrics. The system achieved a PassMark CPU score of 12,523.23 and a Stress-NG multi-core score of 11,603.93. Memory bandwidth sustains 62.89 GB/sec for uncached 256 MB reads and 44.50 GB/sec for writes. However, single-core execution reflects the modest 2.0 GHz clock speed, evidenced by a Geekbench single-core score of 1,090.0 and weak multi-threaded bzip3 decompression at 35.65 GB/sec. Data operations show balanced in-memory cache capability with 12.74 million Redis SET operations per second, though synthetic database operations in PassMark rated in the bottom quartile.",
-    "Resource allocation presents an advantageous balance of multi-core throughput and bundled local high-speed NVMe storage. Because the vCPUs use shared host allocation, peak sustained execution may experience contention compared to dedicated-core options, and small memory per core limits heavyweight in-memory databases. In contrast, workloads involving static web serving throughput (measured at 8.38 GB/sec), continuous integration pipelines, software compilation via Clang (scoring 10,363.0 in Geekbench), and parallelized batch jobs benefit substantially from the high thread count and responsive local storage."
+    "The Vultr vhp-8c-16gb-intel is an entry-tier compute-oriented instance within the High Performance family, provisioned with 8 shared vCPUs derived from 4 physical cores of an Intel Xeon processor running at 2.0 GHz. Built on the x86_64 architecture, the processor features 16 MB of L3 cache, 4 MB of L2 cache, and vector instruction support including AVX, AVX-512F, and AVX-512_VNNI, alongside hardware acceleration for AES cryptography.",
+    "Memory capacity is configured at 16.0 GB, establishing a 1:2 memory-to-vCPU ratio of 2.0 GB per vCPU. The server bundles a single 350 GB NVMe SSD for fast local persistence and includes one complimentary public IPv4 address. The configuration contains no dedicated GPU accelerators.",
+    "Benchmark outcomes show mid-tier throughput across general multithreaded and I/O tasks, counterbalanced by modest single-threaded performance. The server achieved a Geekbench multi-core score of 5786.0 and a PassMark CPU score of 12523.23, while Geekbench single-core performance registered at 1090.0, placing it in the lower quartile. Memory bandwidth remains solid with 62.89 GB/sec read and 44.5 GB/sec write on uncached blocks. Application tests demonstrate balanced results, delivering 12.74 million Redis SET operations per second and 8.38 GB/sec in static web serving throughput. CPU-based machine learning inference on larger models is constrained, generating only 5.01 tokens per second on a 7B parameter LLM.",
+    "Given its shared CPU core model and moderate memory allotment, the vhp-8c-16gb-intel provides cost efficiency for multi-threaded batch jobs, software compilation (scoring 10363.0 in Clang build benchmarks), web serving, and mid-sized database workloads that benefit from NVMe storage rather than peak single-thread execution."
   ],
-  "description": "Vultr vhp-8c-16gb-intel is a compute-oriented cloud server within the High Performance product line, featuring 8 shared vCPUs on 4 physical Intel Xeon cores at 2.0 GHz, 16.0 GB of system memory, and a bundled 350 GB NVMe SSD. Operating on x86_64 architecture, the processor supports AVX-512F, AVX-512 VNNI, and AES instructions. Benchmarks demonstrate solid mid-range multi-core efficiency, logging 5,786.0 in Geekbench multi-core and 12.74 million operations per second in Redis SET evaluations. Conversely, single-core throughput remains modest with a Geekbench score of 1,090.0, and 7B model LLM inference registers weak responsiveness. The 1:2 vCPU-to-RAM ratio and integrated high-speed local NVMe storage make this instance practical for parallel compilation, CI/CD runners, distributed microservices, and static web traffic hosting.",
-  "og_description": "Vultr vhp-8c-16gb-intel features 8 shared Intel Xeon vCPUs, 16.0 GB RAM, and a 350 GB NVMe SSD, delivering balanced multi-core performance for parallel compilation and web services.",
-  "meta_description": "Vultr vhp-8c-16gb-intel technical overview: 8 Intel Xeon vCPUs, 16 GB RAM, 350 GB NVMe SSD, and benchmark analysis for web serving and CI/CD workloads.",
-  "tagline": "Eight-thread Intel Xeon compute capacity matched with 16 GB memory and high-speed NVMe storage for multi-threaded workloads.",
+  "description": "The Vultr vhp-8c-16gb-intel is a High Performance series virtual machine featuring 8 shared vCPUs across 4 physical cores on an Intel Xeon x86_64 processor clocked at 2.0 GHz. It is equipped with 16.0 GB of RAM, a 16 MB L3 cache, and instruction support including AVX-512 and AES. Bundled with 350 GB of local NVMe SSD storage and one IPv4 address, the configuration lacks dedicated GPU acceleration. Benchmark evaluations show balanced multi-core execution, yielding a PassMark CPU score of 12523.23, a Geekbench multi-core score of 5786.0, and static web serving throughput of 8.38 GB/sec. However, single-core processing is modest with a Geekbench score of 1090.0. This compute-to-RAM balance makes the instance suitable for distributed web services, compilation pipelines, caching layers, and database workloads relying on local NVMe throughput.",
+  "og_description": "Vultr vhp-8c-16gb-intel offers 8 shared Intel Xeon vCPUs, 16 GB RAM, and a 350 GB NVMe SSD, delivering balanced multi-core performance for web serving, caching, and CI/CD pipelines.",
+  "meta_description": "Vultr vhp-8c-16gb-intel features 8 shared Intel Xeon vCPUs, 16 GB RAM, and 350 GB NVMe SSD storage for balanced multi-threaded compute workloads.",
+  "tagline": "An eight-vCPU Intel architecture featuring bundled NVMe storage and AVX-512 extensions tailored for multi-threaded compute and web applications.",
   "bullet_points": [
-    "8 shared vCPUs powered by Intel Xeon hardware at 2.0 GHz",
-    "16.0 GB system RAM providing a compute-focused 1:2 allocation ratio",
-    "Bundled 350 GB local NVMe SSD storage and 1 public IPv4 address",
-    "Hardware support for AVX-512 vector and deep learning VNNI instruction sets",
-    "Well suited for software compilation, CI/CD runners, and static web serving",
-    "Constrained single-thread clock speed and limited per-core memory capacity"
+    "8 shared vCPUs powered by a 2.0 GHz Intel Xeon x86_64 processor",
+    "16.0 GB system memory providing 2.0 GB per virtual core",
+    "Bundled 350 GB high-speed local NVMe SSD storage",
+    "Instruction set support including AVX-512F, AVX-512_VNNI, and AES",
+    "Well suited for CI/CD compilation, caching layers, web serving, and databases"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database"
+    "Storage & Database",
+    "Burstable & Budget"
   ]
 }

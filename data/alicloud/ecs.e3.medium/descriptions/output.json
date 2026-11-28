@@ -1,22 +1,22 @@
 {
   "page": [
-    "Alibaba Cloud ecs.e3.medium is an entry-tier virtual server provisioned on KVM hypervisor architecture. It features 2 vCPUs derived from a single physical core with hyper-threading enabled on an Intel Xeon 8269CY processor clocked at 2.5 GHz. The instance is configured with 16.0 GB of system memory, providing an elevated memory-to-vCPU ratio of 8 GB per vCPU. It does not bundle local disk storage or complimentary public IPv4 addresses, requiring remote network-attached volumes for persistent data storage.",
-    "Benchmark evaluations indicate that compute throughput is modest. Synthetic processor metrics place both single-core and multi-core execution in the lower benchmark percentiles, reflected by a Geekbench multi-core score of 1743.0 and a PassMark CPU score of 2616.1. Memory bandwidth tests yield 17.2 GB/sec for uncached large-block reads and 14.52 GB/sec for writes. Workload-specific throughput metrics demonstrate 2.52 million Redis SET operations per second and 2.49 GB/sec in static web serving capacity.",
-    "From an infrastructure cost perspective, the instance provides high memory density on a low core footprint. The core architectural tradeoff is the constrained processing capacity of a single physical core, which limits performance during compute-heavy execution. Consequently, the ecs.e3.medium is best aligned with memory-sensitive yet CPU-light tasks, including intermediate caching tiers, staging environments, lightweight relational databases, and background memory queues."
+    "Alibaba Cloud ecs.e3.medium is an entry-level, memory-skewed virtual machine instance configured with 2 vCPUs and 16.0 GB of RAM. Running on a KVM hypervisor with the x86_64 architecture, the instance allocates two hardware threads across a single physical core of an Intel Xeon 8269CY processor clocked at 2.5 GHz. The CPU subsystem features 32 KB of L1 data cache, 1.0 MB of L2 cache, and 35 MB of L3 cache, with hardware support for AVX, AVX-512, and AES instructions. The configuration does not include local disk storage or dedicated GPU hardware.",
+    "Benchmark results reflect entry-level performance characteristics defined by the dual-vCPU ceiling. In synthetic processor workloads, the instance recorded a Geekbench single-core score of 981.0 and a multi-core score of 1743.0, alongside a PassMark CPU score of 2616.1. Stress-ng returned 1102.08 for single-core and 2162.17 for multi-core throughput. Memory bandwidth tests demonstrated 17.2 GB/sec for uncached read-only streams and 14.52 GB/sec for large block writes. Application-level throughput reached 2.52 million operations per second in Redis SET tests and 2.49 GB/sec in static web serving benchmarks.",
+    "With an 8 GB RAM per vCPU ratio, the system offers high memory density relative to its processing capacity. This design suits workloads that demand in-memory capacity over raw CPU compute throughput, such as lightweight Redis or Memcached instances, staging environments, low-traffic database backends, and simple background job processing queues. Workloads requiring sustained high computational throughput or intensive local storage I/O require scaling to instances with higher core counts or dedicated local NVMe disks."
   ],
-  "description": "Alibaba Cloud ecs.e3.medium is a memory-oriented virtual instance configured with 2 vCPUs from a single hyper-threaded Intel Xeon 8269CY physical core operating at 2.5 GHz. It pairs 16.0 GB of memory with its dual-thread compute setup, establishing an 8 GB per vCPU profile. The server does not bundle local disk storage or included public IPv4 addresses, relying on external network storage. Benchmark evaluations record entry-level computational performance, such as a Geekbench multi-core score of 1743.0 and a PassMark CPU rating of 2616.1, alongside uncached memory read bandwidth of 17.2 GB/sec. The instance delivers cost efficiency for workloads prioritizing memory footprint over raw calculation speed. It is suited for lightweight databases, in-memory caching layers, background job workers, and staging environments.",
-  "og_description": "Alibaba Cloud ecs.e3.medium is a memory-oriented instance featuring 2 vCPUs on an Intel Xeon 8269CY processor at 2.5 GHz, 16 GB RAM, and zero bundled local storage for lightweight, memory-centric deployments.",
-  "meta_description": "Alibaba Cloud ecs.e3.medium features 2 vCPUs on an Intel Xeon 8269CY processor, 16 GB RAM, and zero local storage for memory-oriented cloud workloads.",
-  "tagline": "An entry-tier x86 instance offering high memory density relative to compute capacity for memory-focused services and lightweight databases.",
+  "description": "Alibaba Cloud ecs.e3.medium is a memory-oriented virtual instance powered by an Intel Xeon 8269CY processor operating at 2.5 GHz on the x86_64 architecture. The virtual machine delivers 2 vCPUs derived from a single physical core via hyper-threading, accompanied by 16.0 GB of system memory, yielding a high ratio of 8.0 GB per vCPU. It does not include integrated local storage or GPU acceleration. In benchmark evaluations, the instance produced a Geekbench multi-core score of 1743.0, a PassMark CPU score of 2616.1, and an uncached memory read bandwidth of 17.2 GB/sec. Application testing yielded 2.52 million operations per second on Redis SET tasks. The hardware profile is well suited for memory-centric, low-compute workloads including intermediate caching tiers, low-volume database services, and general background application staging.",
+  "og_description": "Alibaba Cloud ecs.e3.medium is a memory-skewed instance featuring 2 vCPUs on an Intel Xeon 8269CY processor, 16 GB RAM, and zero local storage, built for caching layers and light database tasks.",
+  "meta_description": "Alibaba Cloud ecs.e3.medium provides 2 vCPUs via an Intel Xeon 8269CY processor and 16 GB RAM for memory-focused, low-compute cloud workloads.",
+  "tagline": "A dual-thread instance offering high memory capacity per core for caching services, background workers, and entry-level database hosting.",
   "bullet_points": [
-    "Intel Xeon 8269CY processor running at 2.5 GHz with 2 vCPUs across 1 physical core",
-    "16.0 GB system RAM providing an 8 GB per vCPU allocation ratio",
-    "No bundled local disk storage or complimentary public IPv4 addresses",
-    "Supports AVX-512 vector extensions and KVM hypervisor isolation",
-    "Tailored for memory-centric microservices, caching layers, and staging environments"
+    "Dual vCPUs operating on a single Intel Xeon 8269CY physical core at 2.5 GHz",
+    "16.0 GB system memory providing an 8:1 RAM-to-vCPU ratio",
+    "x86_64 architecture supporting AVX-512 and AES vector instruction sets",
+    "Stateless deployment with zero integrated local storage",
+    "Optimized for small in-memory caches, development databases, and staging tiers"
   ],
   "categories": [
     "Memory Optimized",
-    "Burstable & Budget"
+    "General Purpose"
   ]
 }
