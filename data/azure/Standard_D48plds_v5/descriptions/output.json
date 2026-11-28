@@ -1,23 +1,25 @@
 {
   "page": [
-    "Microsoft Azure D48plds_v5 is an ARM-based virtual machine configured with 48 dedicated physical cores and 48 vCPUs powered by the Ampere ARMv8 Neoverse-N1 architecture operating at 3.0 GHz. Designed with a 1:2 memory-to-vCPU ratio, the system integrates 96.0 GB of RAM (2.0 GB per core) alongside a bundled 1933 GB local SSD. It does not include dedicated GPU accelerators. Cache hierarchy comprises 64 KB of L1 data cache, 1.0 MB of L2 cache, and 32 MB of L3 cache, backed by hardware-accelerated AES cryptographic instructions.",
-    "Benchmark outcomes show that the 48 independent single-threaded cores scale parallel throughput effectively, registering in the top 25% for stress-ng multi-core execution (85,051.53), Clang software compilation (39,975.0), and Redis SET operations (62.24 million operations per second). Conversely, single-core capabilities are comparatively modest, with Geekbench single-core scoring 1,117.0 and single-threaded bzip3 decompression at 8.92 GB/sec falling within the lower quartile. Memory throughput maintains mid-tier results across uncached 256 MB reads (176.14 GB/sec) and writes (76.83 GB/sec).",
-    "Cost efficiency is driven by the resource density of the Neoverse-N1 cores combined with bundled local scratch storage, delivering strong parallel capacity without the overhead of higher memory tiers. The architectural tradeoff centers on lower per-thread execution speeds and constrained per-core memory allocation. Consequently, the instance is well suited for highly parallelized workloads such as code compilation pipelines, Redis-backed in-memory caching, container orchestration, and multi-threaded web serving, but it is unsuited for memory-dense analytics or tasks bound to single-thread latency."
+    "Microsoft Azure D48plds_v5 is an ARM-based compute instance built on the 64-bit ARMv8 architecture, running on Microsoft Hyper-V. It is provisioned with 48 dedicated Ampere Neoverse-N1 physical cores operating at 3.0 GHz without simultaneous multithreading, providing 48 independent execution pipelines. The instance includes 96 GB of system memory, yielding a 1:2 vCPU-to-memory ratio (2.0 GB per core), alongside 1,933 GB of local SSD temporary storage. Hardware acceleration via GPUs is not included.",
+    "Benchmark results demonstrate strong parallel processing capabilities. In multi-core stress testing with stress-ng, the instance achieved a top-quartile score of 85,051.53, alongside a high Clang compilation score of 39,975.0 in Geekbench. In-memory data structures perform effectively, evidenced by Redis SET throughput reaching 62.24 million operations per second. However, single-threaded metrics reflect the architectural trade-offs of the Neoverse-N1 core, resulting in lower-quartile Geekbench single-core (1,117.0) and single-threaded bzip3 decompression scores. Inference on large language models shows steep performance drops on larger parameter configurations.",
+    "The qualitative cost-efficiency profile of the D48plds_v5 benefits from high core density and low-power ARM architecture, delivering competitive multi-threaded throughput per compute unit compared to conventional x86 instances. The integration of 1,933 GB of fast local SSD capacity eliminates immediate auxiliary storage requirements for temporary scratch spaces.",
+    "This server is optimal for horizontally scalable, multi-threaded workloads that tolerate moderate single-core speeds, such as distributed compilation pipelines, microservices fabrics, container fleets, caching tiers, and batch processing."
   ],
-  "description": "Microsoft Azure D48plds_v5 is an ARM64 compute instance featuring 48 dedicated physical cores on the Ampere Neoverse-N1 platform at 3.0 GHz, coupled with 96.0 GB of RAM and 1933 GB of bundled local SSD storage. Designed with a 2.0 GB per core ratio and no discrete GPU hardware, it optimizes dense multi-threaded throughput. Benchmark results demonstrate upper-tier performance in multi-core metrics, registering 85,051.53 on stress-ng, 39,975.0 on Clang software compilation, and 62.24 million Redis SET operations per second. In contrast, per-thread metrics such as Geekbench single-core (1,117.0) reflect entry-level performance. This tradeoff makes the instance an efficient platform for horizontally scalable, multi-threaded tasks including software build pipelines, web serving clusters, and caching layers.",
-  "og_description": "Microsoft Azure D48plds_v5 offers 48 Ampere Neoverse-N1 ARM cores, 96.0 GB RAM, and 1933 GB local SSD storage, optimized for multi-threaded compilation and distributed web workloads.",
-  "meta_description": "Microsoft Azure D48plds_v5 is a 48-core ARM Neoverse-N1 instance with 96 GB RAM and 1933 GB local SSD, built for multi-threaded scale and caching.",
-  "tagline": "Dense 48-core ARM compute paired with bundled local SSD storage for parallel compilation, distributed serving, and caching.",
+  "description": "Microsoft Azure D48plds_v5 is an ARM64 general-purpose compute instance equipped with 48 dedicated Ampere Neoverse-N1 cores operating at 3.0 GHz, 96 GB of RAM, and 1,933 GB of bundled local SSD storage. Designed with a 1:2 vCPU-to-memory ratio, the server delivers top-tier parallel throughput across multi-threaded applications, achieving standout performance in Clang code compilation and high-frequency Redis caching operations. Single-thread processing remains modest, presenting an architectural tradeoff common to high-density ARM implementations. The included high-capacity local SSD provides fast scratch storage without relying on remote network volumes. Because of its 48 independent execution threads and balanced memory footprint, the instance provides cost-effective efficiency for concurrent microservices, continuous integration pipelines, batch data transforms, and distributed caching clusters.",
+  "og_description": "Microsoft Azure D48plds_v5 is an ARM64 virtual machine featuring 48 dedicated Ampere Neoverse-N1 cores at 3.0 GHz, 96 GB RAM, and 1,933 GB local SSD storage suited for multi-threaded compute workloads.",
+  "meta_description": "Microsoft Azure D48plds_v5 delivers 48 dedicated ARM64 cores, 96 GB RAM, and 1,933 GB local SSD storage for scalable, multi-threaded workloads.",
+  "tagline": "High-density ARM64 compute instance featuring forty-eight physical cores, integrated solid-state storage, and efficient throughput for parallelized microservices and compilation.",
   "bullet_points": [
-    "48 dedicated Ampere ARMv8 Neoverse-N1 physical cores operating at 3.0 GHz",
-    "96.0 GB system memory providing 2.0 GB per core",
-    "1933 GB local SSD bundled storage for fast scratch disk access",
-    "Top-tier performance in multi-core compilation and Redis SET operations",
-    "Tailored for parallel builds, distributed caching, and containerized web serving"
+    "48 dedicated Ampere Neoverse-N1 physical cores clocked at 3.0 GHz",
+    "96 GB system memory delivering a 1:2 compute-optimized ratio",
+    "1,933 GB integrated local SSD temporary storage",
+    "High multi-core throughput in code compilation and Redis caching",
+    "Architectural trade-off with lower single-threaded IPC compared to x86 alternatives",
+    "Well suited for container orchestration, CI/CD runners, and caching layers"
   ],
   "categories": [
     "Compute Optimized",
-    "Storage & Database",
-    "General Purpose"
+    "General Purpose",
+    "Storage & Database"
   ]
 }

@@ -1,23 +1,24 @@
 {
   "page": [
-    "Amazon Web Services m9gd.8xlarge is a general-purpose, ARM-based cloud instance powered by the AWS Nitro System. The system features 32 dedicated physical cores running on 32 vCPUs with an ARMv9 Neoverse-V3 architecture clocked at 3.3 GHz. Each core provides 64 KB of L1 data cache and 2 MB of L2 cache, supported by a shared 48 MB L3 cache. Memory capacity totals 128 GB of RAM, establishing a 4:1 memory-to-vCPU ratio. The configuration includes 1900 GB of direct-attached NVMe SSD instance storage and delivers a 17 Gbps baseline network bandwidth without discrete GPU accelerators.",
-    "Benchmark results demonstrate strong parallel processing and memory subsystem throughput. In multi-core testing, the instance scored 25,006 in Geekbench and 64,195.97 in stress-ng multi-core metrics, both falling into the upper performance tiers. Single-threaded capabilities are reflected in a Geekbench score of 2,302, with top-tier marks in clang compilation (62,134.0) and single-threaded gzip compression (36.47 GB/sec). Memory benchmarks register top-tier performance in PassMark memory testing (4,567.63) and cached read bandwidth (4,272.72 GB/sec), alongside 45,874.73 points in PassMark database operations and 94.77 million Redis SET operations per second.",
-    "The 1:1 ratio between physical cores and vCPUs eliminates hardware hyper-threading contention, resulting in consistent multi-threaded compute. Coupled with bundled 1.9 TB high-speed local NVMe storage and balanced memory, the instance delivers high compute efficiency per core for data-heavy workloads. It is structurally well-suited for high-throughput relational databases, in-memory caching layers, static web serving clusters, large-scale CI/CD software compilation pipelines, and transactional backend applications."
+    "Amazon Web Services m9gd.8xlarge is a general-purpose cloud instance built on the AWS Nitro hypervisor and powered by the 3.3 GHz ARMv9 AWS Graviton Neoverse-V3 processor. The system provides 32 dedicated physical cores and 32 vCPUs with a single thread per core, eliminating simultaneous multithreading contention. Cache provisioning includes 64 KB of L1 data cache and 2 MB of L2 cache per core, alongside 48 MB of shared L3 cache. Memory capacity totals 128.0 GB, yielding a balanced 4.0 GB of RAM per vCPU.",
+    "Integrated hardware includes 1900 GB of direct-attached NVMe SSD instance storage alongside a 17 Gbps baseline network connection. The platform contains no dedicated GPU accelerators. In synthetic and application-level testing, the configuration exhibits strong multi-core processing capabilities, scoring 25006.0 in Geekbench multi-core and 62134.0 in Geekbench Clang software compilation, both situated within the top 10% tier. Compression throughput is also strong, achieving 36.47 GB/sec in single-threaded gzip and 17.32 GB/sec in bzip3 decompression.",
+    "Database operations measure in the top tier at 45874.73 ops on PassMark, supported by a 4272.72 GB/sec cached memory read score and strong Redis SET throughput of 94.77 million operations per second. Tradeoffs are present in large uncached memory transfers (174.43 GB/sec read and 81.64 GB/sec write) and CPU-based large language model inference, both ranking within mid-tier percentiles. The combination of dedicated ARM cores and direct-attached NVMe storage delivers high resource efficiency for transactional databases, CI/CD build farms, caching clusters, and high-throughput static web serving."
   ],
-  "description": "Amazon Web Services m9gd.8xlarge is a general-purpose instance featuring 32 dedicated physical cores and 32 vCPUs built on the 3.3 GHz ARMv9 AWS Neoverse-V3 architecture. It includes 128 GB of system memory, maintaining a 4 GB per core allocation, paired with 1900 GB of bundled local NVMe SSD storage and 17 Gbps baseline network bandwidth. The instance achieves top-tier results in multi-core compilation, database operations, and data compression benchmarks, supported by high memory bandwidth and absence of simultaneous multithreading overhead. While CPU-bound single-thread stress-ng runs and small-model LLM inference register in average benchmark percentiles, the system offers efficient parallel performance. This profile makes the instance well suited for database engines, Redis caching tiers, code compilation pipelines, and transactional web serving workloads.",
-  "og_description": "Amazon Web Services m9gd.8xlarge features 32 ARM Neoverse-V3 cores, 128 GB RAM, 1900 GB local NVMe SSD storage, and 17 Gbps networking, delivering strong multi-core and database performance.",
-  "meta_description": "Amazon Web Services m9gd.8xlarge provides 32 ARMv9 cores, 128 GB RAM, and 1900 GB NVMe local storage for databases, compilation, and high-throughput web serving.",
-  "tagline": "ARM Neoverse-V3 32-core general-purpose platform with integrated NVMe storage for memory-intensive and transactional processing workloads.",
+  "description": "Amazon Web Services m9gd.8xlarge is a general-purpose Nitro instance equipped with 32 dedicated physical cores (32 vCPUs) built on the 3.3 GHz ARMv9 AWS Graviton Neoverse-V3 architecture. It pairs 128.0 GB of memory (4.0 GB per core) with 1900 GB of local NVMe SSD instance storage and a 17 Gbps baseline network interface, operating without discrete GPU accelerators. Benchmarks highlight exceptional performance in software compilation, Geekbench multi-core and single-core evaluation, and PassMark database operations, all placing within the top 10%. Memory-cached operations and single-threaded compression throughput also score at top levels, while uncached bandwidth and CPU-based machine learning inference show average performance. The instance provides an efficient compute-to-storage architecture well suited for relational and key-value databases, distributed caching layers, web serving platforms, and software build pipelines requiring fast direct-attached NVMe storage.",
+  "og_description": "Amazon Web Services m9gd.8xlarge features 32 dedicated ARMv9 Neoverse-V3 cores, 128 GB RAM, 1900 GB NVMe local storage, and 17 Gbps networking, delivering top-tier performance for database and CI/CD workloads.",
+  "meta_description": "Amazon Web Services m9gd.8xlarge is an ARMv9 instance with 32 dedicated cores, 128 GB RAM, and 1900 GB NVMe storage optimized for databases and build pipelines.",
+  "tagline": "Dedicated thirty-two core ARMv9 architecture delivering balanced memory, fast local NVMe storage, and top-tier compilation and database operational throughput.",
   "bullet_points": [
-    "32 dedicated ARMv9 Neoverse-V3 cores clocked at 3.3 GHz with no hyper-threading overhead",
-    "128 GB system memory providing a balanced 4:1 memory-to-vCPU ratio",
-    "1900 GB integrated local NVMe SSD storage for low-latency scratchpad and logging",
-    "17 Gbps baseline network bandwidth managed by the AWS Nitro System",
-    "Top-tier performance in software compilation, database operations, and compression tasks",
-    "Suited for relational databases, in-memory caches, CI/CD runners, and web services"
+    "32 dedicated ARMv9 Neoverse-V3 physical cores operating at 3.3 GHz without SMT",
+    "128.0 GB memory capacity with a balanced 4.0 GB allocation per core",
+    "1900 GB direct-attached high-speed NVMe SSD instance storage",
+    "17 Gbps baseline network bandwidth running on AWS Nitro System",
+    "Top 10% benchmark results in Clang compilation, database operations, and data compression",
+    "Optimized for high-throughput databases, CI/CD builds, in-memory caching, and web serving"
   ],
   "categories": [
     "General Purpose",
-    "Storage & Database"
+    "Storage & Database",
+    "Compute Optimized"
   ]
 }

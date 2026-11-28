@@ -1,24 +1,23 @@
 {
   "page": [
-    "Vultr vhp-4c-8gb-amd is an entry-to-mid-tier instance within the High Performance family, utilizing AMD EPYC x86_64 processors. It provides 4 shared vCPUs mapped to 2 physical cores with multithreading at a clock speed of 2.0 GHz. The processor includes 32 KB of L1d cache, 0.5 MB of L2 cache, and 16 MB of L3 cache, with support for AVX, AES, SHA-NI, and BMI2 instruction sets. System memory is configured at 8.0 GB of RAM, offering 2.0 GB per vCPU. The server has no dedicated GPUs and comes provisioned with 180 GB of local NVMe SSD storage and 1 complimentary public IPv4 address.",
-    "Benchmark outcomes show moderate CPU baseline compute alongside restrained memory throughput. Multi-core and single-core stress-ng tests perform in the average middle tier at 9232.12 and 2306.16 points, respectively, with cryptographic operations demonstrating steady capability on PassMark encryption tests (3693.88). However, the shared-vCPU configuration and memory subsystem show bottlenecks under high demand: uncached read bandwidth drops to 17.9 GB/sec and uncached write bandwidth to 12.56 GB/sec, placing memory bandwidth in the lower decile. Geekbench single-core (1119.0) and multi-core (3378.0) scores, along with Redis SET operations (3.94 million ops/sec) and static web serving (2.66 GB/sec), reflect typical shared-resource constraints.",
-    "From a qualitative cost-efficiency perspective, the instance targets density over peak computational intensity. The 1:2 vCPU-to-RAM ratio combined with bundled local NVMe storage provides solid general utility for small-to-medium tasks without incurring the costs associated with dedicated-core or massive memory profiles. Workloads best matched to this profile include lightweight web applications, staging environments, modest internal utilities, asynchronous background task workers, and developmental build tasks that do not require high sustained memory bandwidth."
+    "Vultr vhp-4c-8gb-amd is a virtual server instance categorized within the High Performance family, configured with a 1:2 memory-to-vCPU ratio. It features 4 shared vCPUs derived from 2 physical cores on an AMD EPYC processor running at a base clock frequency of 2.0 GHz. The processor includes 32 KB of L1 data cache, 0.5 MB of L2 cache, and 16 MB of L3 cache, alongside support for AVX, AES, SHA-NI, and BMI2 instruction sets. System memory is sized at 8.0 GB, equating to 2.0 GB per vCPU. No dedicated GPU hardware is included. Storage is bundled as a single 180 GB local NVMe SSD, and networking is provisioned with one complimentary public IPv4 address.",
+    "Benchmark outcomes show mid-tier raw CPU compute capacity coupled with bottlenecks in uncached memory throughput and general data processing. Under stress-ng, the instance achieves average results with 2306.16 in single-core and 9232.12 in multi-core metrics. PassMark CPU encryption performs solidly at 3693.88, assisted by hardware-level AES and SHA extensions. In contrast, Geekbench results fall into lower percentiles, recording a single-core score of 1119.0 and a multi-core score of 3378.0. Large-block uncached memory operations register 17.9 GB/sec read and 12.56 GB/sec write bandwidth, contributing to weak outcomes in PassMark memory (870.44) and database operations (919.74).",
+    "Given its shared-core execution model and constrained uncached memory throughput, this instance is suited for lightweight compute tasks, small-scale utility microservices, staging environments, and entry-level automation workers. The bundled 180 GB NVMe volume provides ample local drive space without secondary attachment overhead, though heavy memory-bound tasks and high-throughput transactional database engines should be avoided."
   ],
-  "description": "Vultr vhp-4c-8gb-amd is a High Performance series instance powered by AMD EPYC x86_64 processors running at 2.0 GHz. The virtual server is configured with 4 shared vCPUs derived from 2 physical cores, 8.0 GB of system memory, and 180 GB of attached local NVMe SSD storage, without GPU accelerators. Benchmark evaluations place raw compute in the average middle range via stress-ng, while memory bandwidth tests and Geekbench scores reflect lower-tier performance typical of shared virtualization environments. The 1:2 vCPU-to-RAM ratio offers balanced resource distribution for non-memory-intensive workloads. Given its balanced resource footprint and bundled fast storage, the instance serves effectively for lightweight web serving, staging environments, microservices, internal automation tooling, and general-purpose development pipelines.",
-  "og_description": "Vultr vhp-4c-8gb-amd features 4 shared AMD EPYC vCPUs, 8.0 GB RAM, and 180 GB local NVMe SSD storage, providing dependable compute for general web applications and development workloads.",
-  "meta_description": "Vultr vhp-4c-8gb-amd offers 4 shared AMD EPYC vCPUs, 8.0 GB RAM, and 180 GB NVMe storage, designed for light web applications and dev environments.",
-  "tagline": "Shared four-core AMD EPYC computing paired with fast NVMe storage for cost-efficient utility and staging workloads.",
+  "description": "Vultr vhp-4c-8gb-amd is a shared-core compute instance within Vultr's High Performance family, providing 4 vCPUs across 2 physical AMD EPYC cores clocked at 2.0 GHz, 8.0 GB of system memory, and a bundled 180 GB local NVMe SSD. It features x86_64 architecture with hardware instruction support for AES, SHA-NI, and AVX, without dedicated GPU acceleration. Benchmark data demonstrates standard synthetic compute throughput on stress-ng tests, alongside mid-range cryptographic acceleration. However, uncached memory bandwidth is comparatively restricted at 17.9 GB/sec read and 12.56 GB/sec write, resulting in lower scores on database operations and web serving benchmarks. This configuration provides a functional balance of compute resources and local NVMe capacity for lightweight application serving, CI/CD runners, internal tool hosting, and pre-production staging workloads that do not demand persistent high-memory bandwidth.",
+  "og_description": "Vultr vhp-4c-8gb-amd is a virtual server offering 4 shared AMD EPYC vCPUs, 8.0 GB RAM, and a bundled 180 GB NVMe SSD for budget-conscious compute workloads and test environments.",
+  "meta_description": "Vultr vhp-4c-8gb-amd is a virtual instance featuring 4 shared AMD EPYC vCPUs, 8.0 GB of memory, and 180 GB local NVMe storage for general utility workloads.",
+  "tagline": "Shared four-vCPU AMD EPYC computing paired with eight gigabytes of memory and integrated local NVMe storage for everyday utility hosting.",
   "bullet_points": [
-    "4 shared AMD EPYC vCPUs (2 physical cores) clocked at 2.0 GHz",
-    "8.0 GB system memory (2.0 GB per vCPU)",
-    "Bundled 180 GB local NVMe SSD storage",
-    "No integrated GPU accelerator",
-    "Average raw compute throughput with low uncached memory bandwidth",
-    "Suited for web serving, microservices, staging environments, and CI/CD pipelines"
+    "4 shared vCPUs on 2 physical AMD EPYC cores running at 2.0 GHz",
+    "8.0 GB total system memory providing 2.0 GB per vCPU",
+    "Integrated 180 GB NVMe solid-state storage volume",
+    "Hardware cryptographic acceleration via AES and SHA-NI instruction sets",
+    "Best suited for small microservices, CI/CD workers, and staging environments"
   ],
   "categories": [
     "Compute Optimized",
-    "General Purpose",
-    "Burstable & Budget"
+    "Burstable & Budget",
+    "Storage & Database"
   ]
 }

@@ -1,24 +1,21 @@
 {
   "page": [
-    "Microsoft Azure E32s_v7 is a memory-optimized virtual machine built on Microsoft Hyper-V virtualization. The instance provides 32 dedicated vCPUs mapped to 16 physical cores on an Intel Xeon 6973P-C processor clocked at 4.2 GHz. The x86_64 architecture incorporates 480 MB of shared L3 cache, 2 MB of L2 cache per core, and hardware acceleration extensions including Intel AMX (tile and int8) alongside AVX-512 vector instruction sets. The server includes 256.0 GB of system memory, yielding an 8.0 GB RAM per vCPU allocation.",
-    "Hardware benchmark testing shows strong throughput in selected execution profiles, including static web serving throughput measuring 43.89 GB/sec and single-threaded gzip compression at 35.62 GB/sec. In quantized small and medium language model workloads, CPU-based prompt processing and generation reach top-quartile performance bands due to AMX and AVX-512 extensions. Memory bandwidth reaches 181.75 GB/sec for uncached 256 MB reads and 2352.2 GB/sec for cached 16 KB read blocks, while multi-core stress-ng tests and PassMark CPU metrics sit within median performance distributions.",
-    "The server does not include local NVMe or ephemeral disk storage, requiring external Azure Premium Storage attachments for persistent file systems. It also lacks discrete GPU hardware. Cost efficiency is driven by its high memory-to-vCPU density and substantial L3 cache allocation, which allow organizations to consolidate memory-bound enterprise systems onto fewer virtualized nodes without paying for unneeded hardware accelerators.",
-    "Microsoft Azure E32s_v7 is designed for in-memory databases, large caching layers such as Redis, enterprise relational database systems, memory-intensive batch processing, and CPU-driven inference workloads."
+    "Microsoft Azure E32s_v7 is an x86_64 memory-optimized virtual machine powered by an Intel Xeon 6973P-C processor operating at 4.2 GHz. The instance provides 32 dedicated virtual CPUs across 16 physical cores via multithreading, backed by a 480 MB L3 cache. It allocates 256.0 GB of system memory, establishing an 8.0 GB per vCPU ratio tailored for data-dense workloads. The server does not bundle local ephemeral storage, utilizing network-attached block volumes like Azure Premium Storage, and provides zero complimentary public IPv4 addresses.",
+    "Benchmark testing shows consistent middle-tier performance across general multi-threaded compute, recording a PassMark CPU score of 47694.11 and a stress-ng multi-core result of 31862.21. Memory bandwidth throughput reaches 181.75 GB/sec for uncached 256MB reads and 77.85 GB/sec for writes. The platform delivers top-quartile performance in targeted vector and matrix operations due to AVX-512 and AMX instruction sets, demonstrated by a single-threaded gzip compression rate of 35.62 GB/sec and 186.24 tokens per second in 7B model prompt processing.",
+    "Without integrated local disks or hardware accelerators, cost efficiency relies heavily on high memory utilization and CPU-bound analytical throughput. The absence of local scratch space requires workloads to direct all storage operations through external block storage. The system configuration is best aligned with in-memory caching tiers, large relational or NoSQL database engines, real-time analytics platforms, and batch data processing."
   ],
-  "description": "Microsoft Azure E32s_v7 is a memory-optimized virtual machine featuring 32 dedicated vCPUs derived from 16 physical cores of an Intel Xeon 6973P-C processor running at 4.2 GHz. Built on x86_64 architecture with Microsoft Hyper-V, the instance includes 480 MB of L3 cache, Intel AMX, and AVX-512 instruction support. It is provisioned with 256.0 GB of RAM, establishing an 8.0 GB per vCPU ratio, with no onboard local storage or discrete GPU accelerators. Synthetic and application testing shows strong capabilities in static web throughput at 43.89 GB/sec and single-threaded gzip compression at 35.62 GB/sec, alongside upper-tier small-model LLM inference generation. Standard compute, memory, and database stress benchmarks perform within median industry tiers. The configuration offers favorable resource density for memory-heavy architectures, making it well fitted for Redis clusters, in-memory analytics, relational databases, and enterprise Java application tiers.",
-  "og_description": "Microsoft Azure E32s_v7 is a memory-optimized instance featuring 32 vCPUs on an Intel Xeon 6973P-C processor, 256 GB RAM, 480 MB L3 cache, and strong static web and compression performance.",
-  "meta_description": "Microsoft Azure E32s_v7 is a memory-optimized instance providing 32 vCPUs, 256 GB RAM, and an Intel Xeon 6973P-C processor for memory-bound workloads.",
-  "tagline": "Memory-optimized compute delivering an eight-to-one memory-to-core ratio, large L3 cache, and dedicated Intel Xeon performance for enterprise memory-intensive workloads.",
+  "description": "Microsoft Azure E32s_v7 is a memory-optimized virtual machine configured with 32 dedicated vCPUs across 16 physical cores on an Intel Xeon 6973P-C processor operating at 4.2 GHz with 480 MB of L3 cache. It provides 256.0 GB of RAM, yielding an 8.0 GB per vCPU allocation, and contains no local storage or onboard GPUs, relying on remote block storage solutions. Benchmark measurements indicate steady mid-tier performance across general multi-threaded compute, while logging top-quartile results in single-threaded gzip compression and small-to-medium CPU-driven LLM inference via hardware acceleration flags like AVX-512 and Intel AMX. The instance maintains a balance between high-capacity system memory and sustained CPU throughput, making it suitable for in-memory database deployments, caching engines, real-time data analytics, and memory-intensive enterprise services.",
+  "og_description": "Microsoft Azure E32s_v7 is a memory-optimized instance featuring 32 vCPUs on an Intel Xeon 6973P-C processor, 256 GB RAM, and no local disk, engineered for in-memory databases and large-scale data processing.",
+  "meta_description": "Microsoft Azure E32s_v7 is a memory-optimized VM providing 32 dedicated vCPUs, 256 GB RAM, and 480 MB L3 cache on an Intel Xeon processor.",
+  "tagline": "A memory-optimized platform pairing 32 dedicated vCPUs with 256 GB RAM and advanced matrix extensions for memory-heavy enterprise computing.",
   "bullet_points": [
-    "32 dedicated vCPUs on 16-core Intel Xeon 6973P-C processor clocked at 4.2 GHz",
-    "256.0 GB total system RAM providing an 8 GB per vCPU allocation",
-    "480 MB L3 cache with hardware support for Intel AMX and AVX-512",
-    "No bundled local storage, requiring attached Azure Premium Storage",
-    "Strong performance in single-threaded compression, static web throughput, and small-model inference",
-    "Suited for in-memory caching, enterprise databases, and memory-bound data processing"
+    "32 dedicated vCPUs (16 physical cores) via 4.2 GHz Intel Xeon 6973P-C",
+    "256 GB system RAM providing an 8.0 GB per vCPU memory allocation",
+    "480 MB L3 cache with Intel AMX and AVX-512 instruction set support",
+    "No bundled local storage, requiring network-attached storage volumes",
+    "Engineered for in-memory databases, Redis caches, and data processing"
   ],
   "categories": [
-    "Memory Optimized",
-    "General Purpose"
+    "Memory Optimized"
   ]
 }
